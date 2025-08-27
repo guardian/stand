@@ -3,7 +3,6 @@ import {
 	nbSpace,
 	space,
 } from '@guardian/prosemirror-invisibles';
-import { Stand } from '@guardian/stand';
 import { dropCursor } from 'prosemirror-dropcursor';
 import { history } from 'prosemirror-history';
 import type { Node } from 'prosemirror-model';
@@ -433,7 +432,6 @@ export const Byline = ({
 
 	return (
 		<div css={bylineContainerStyles}>
-			<Stand />
 			<div css={bylineEditorStyles(theme?.editor)} ref={editorRef} />
 			<div
 				ref={dropdownRef}
@@ -510,7 +508,8 @@ export const Byline = ({
 								);
 							}}
 						>
-							Add "{currentText}" as untagged contributor
+							Add &quot;{currentText}&quot; as untagged
+							contributor
 						</li>
 					)}
 				</ul>
