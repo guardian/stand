@@ -3,7 +3,7 @@ import {
 	nbSpace,
 	space,
 } from '@guardian/prosemirror-invisibles';
-import { Foo } from '@guardian/stand';
+import { Stand } from '@guardian/stand';
 import { dropCursor } from 'prosemirror-dropcursor';
 import { history } from 'prosemirror-history';
 import type { Node } from 'prosemirror-model';
@@ -61,8 +61,6 @@ export const Byline = ({
 	handleSave,
 	searchContributors,
 }: BylineProps) => {
-	Foo();
-
 	const editorRef = useRef<HTMLDivElement>(null);
 	const viewRef = useRef<EditorView | null>(null);
 	const dropdownRef = useRef<HTMLDivElement>(null);
@@ -435,6 +433,7 @@ export const Byline = ({
 
 	return (
 		<div css={bylineContainerStyles}>
+			<Stand />
 			<div css={bylineEditorStyles(theme?.editor)} ref={editorRef} />
 			<div
 				ref={dropdownRef}
