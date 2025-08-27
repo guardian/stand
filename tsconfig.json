@@ -1,0 +1,17 @@
+{
+	"extends": "@guardian/tsconfig/tsconfig.json",
+	"compilerOptions": {
+		"outDir": "dist/types",
+		"declarationDir": "dist/types",
+		"emitDeclarationOnly": true,
+		"declaration": true,
+		"skipLibCheck": true,
+		"baseUrl": "./",
+		"target": "es2022",
+		"module": "nodenext",
+		"moduleResolution": "nodenext",
+		"jsx": "react-jsx",
+		"lib": ["dom", "es2022"]
+	},
+	"exclude": ["node_modules", "dist"]
+}
