@@ -5,12 +5,13 @@
 		"declarationDir": "dist/types",
 		"emitDeclarationOnly": true,
 		"declaration": true,
+		"forceConsistentCasingInFileNames": true,
+		"importHelpers": true,
+		"isolatedModules": true,
 		"skipLibCheck": true,
 		"baseUrl": "./",
-		"target": "es2022",
-		"module": "nodenext",
-		"moduleResolution": "nodenext",
 		"jsx": "react-jsx",
+		"jsxImportSource": "@emotion/react",
 		"lib": ["dom", "es2022"]
 	},
 	"exclude": ["node_modules", "dist"]
