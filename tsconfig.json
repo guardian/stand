@@ -14,5 +14,6 @@
 		"jsxImportSource": "@emotion/react",
 		"lib": ["dom", "es2022"]
 	},
+	"include": ["src/**/*", ".storybook/**/*"],
 	"exclude": ["node_modules", "dist"]
 }
