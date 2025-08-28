@@ -14,6 +14,6 @@
 		"jsxImportSource": "@emotion/react",
 		"lib": ["dom", "es2022"]
 	},
-	"include": ["src/**/*", ".storybook/**/*"],
+	"include": ["src/**/*", ".storybook/**/*", "jest-setup-after-env.ts"],
 	"exclude": ["node_modules", "dist"]
 }
