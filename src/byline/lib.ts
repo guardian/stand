@@ -12,14 +12,31 @@ export type TypingFromStartRange = {
 };
 
 // Name detection algorithm
-const detectNameInText = (
+export const detectNameInText = (
 	text: string,
 	cursorOffset: number,
 	isTypingFromStartRange?: TypingFromStartRange,
 ): { name: string; startIndex: number; endIndex: number } | undefined => {
-	// Simplified name pattern: Capitalized words with common name symbols
+	/**
+	 * Name detection regex pattern that matches:
+	 * - Names starting with uppercase letters followed optionally by 0 or more any letters ([\p{Lu}*][\p{L}*]*)
+	 * - Connected by hyphens, apostrophes (straight ' and curly ’), periods, or ampersands ([-'.&’]+)
+	 * - Or separated by spaces, but not when a period is followed by space ((?!\.\s)\s+)
+	 * - With optional trailing space ([ ]?) so search doesn't break between first name and following names
+	 * - * character anywhere in the string for match any in search
+	 *
+	 * Examples:
+	 * ✓ "John Smith" - basic name with space
+	 * ✓ "A.C Skinner" - initials with periods
+	 * ✓ "J.R.R Tolkien" - multiple initials
+	 * ✓ "D'Artagnan-Jones" - apostrophe in name
+	 * ✓ "O’Connor" - curly apostrophe
+	 * ✓ "Waz&Lenny" - ampersand connection
+	 * ✓ "Mary-Jane Watson" - hyphenated name
+	 * ✗ "A.C Skinner. Produced by" - stops at ". " (period + space)
+	 */
 	const namePattern =
-		/[\p{Lu}*][\p{L}*]*(?:[-'\s*]+[\p{Lu}*][\p{L}*]*)*[ ]?/gu;
+		/[\p{Lu}*][\p{L}*]*(?:[-'.&’]+[\p{Lu}*][\p{L}*]*|(?!\.\s)\s+[\p{Lu}*][\p{L}*]*)*[ ]?/gu;
 
 	// When typing from start, only search in the text up to maxReached position
 	const searchText = isTypingFromStartRange
