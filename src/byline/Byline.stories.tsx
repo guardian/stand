@@ -155,4 +155,32 @@ export const WithoutPreview = {
 	...disableSnapshot,
 } satisfies Story;
 
+export const ReadOnly = {
+	args: {
+		readOnly: true,
+		allowUntaggedContributors: true,
+		enablePreview: true,
+		initialValue: [
+			{
+				type: 'contributor',
+				value: 'Joe Bloggs',
+				tagId: '1',
+				path: 'profile/joebloggs',
+			},
+			{
+				type: 'text',
+				value: ' in London and ',
+			},
+			{
+				type: 'contributor',
+				value: 'Jane Doe',
+			},
+			{
+				type: 'text',
+				value: ' in New York',
+			},
+		],
+	},
+} satisfies Story;
+
 export default meta;

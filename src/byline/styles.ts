@@ -24,6 +24,11 @@ export const bylineEditorStyles = (theme: PartialBylineTheme['editor']) => css`
 		line-height: ${theme?.lineHeight ?? '1.8'};
 	}
 
+	.ProseMirror[contenteditable='false'] {
+		background: ${theme?.readOnlyBackground ?? '#dcdcdc'};
+		cursor: 'not-allowed';
+	}
+
 	.ProseMirror pre {
 		white-space: pre-wrap;
 	}

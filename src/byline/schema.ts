@@ -15,7 +15,7 @@ export const bylineEditorSchema = new Schema({
 				type: { default: 'untagged' },
 				tagId: { default: '' }, // tagId is optional for untagged contributors
 				path: { default: '' }, // path is optional for untagged contributors
-				meta: { default: null }, // meta is optional and can hold any additional data
+				meta: { default: {} }, // meta is optional and can hold any additional data
 			},
 			parseDOM: [
 				{
@@ -30,7 +30,7 @@ export const bylineEditorSchema = new Schema({
 								? (JSON.parse(
 										dom.getAttribute('data-meta') as string,
 									) as unknown)
-								: null,
+								: {},
 						};
 					},
 				},
@@ -49,7 +49,7 @@ export const bylineEditorSchema = new Schema({
 						'data-path': node.attrs.path,
 						'data-meta': node.attrs.meta
 							? JSON.stringify(node.attrs.meta)
-							: undefined,
+							: {},
 					},
 					node.attrs.label,
 				];

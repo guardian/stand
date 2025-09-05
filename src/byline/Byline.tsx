@@ -44,6 +44,7 @@ type BylineProps = {
 	enablePreview?: boolean;
 	placeholder?: string;
 	initialValue?: BylineModel;
+	readOnly?: boolean;
 	handleSave: (newValue: BylineModel) => void;
 	searchContributors?: (selectedText: string) => Promise<TaggedContributor[]>;
 };
@@ -55,6 +56,7 @@ export const Byline = ({
 	enablePreview,
 	placeholder,
 	initialValue,
+	readOnly,
 	handleSave,
 	searchContributors,
 }: BylineProps) => {
@@ -147,6 +149,10 @@ export const Byline = ({
 		view: EditorView,
 		selectedText: string,
 	): boolean => {
+		if (readOnly) {
+			return false;
+		}
+
 		/**
 		 * Determines whether to hide or show the contributor dropdown based on component props,
 		 * and should be used in combination with the selected/current text when calling setShowDropdown
@@ -208,15 +214,21 @@ export const Byline = ({
 
 		viewRef.current = new EditorView(editorRef.current, {
 			state,
+			editable: () => !readOnly,
 			attributes: {
 				role: 'combobox',
 				'aria-label': 'byline',
 				'aria-controls': 'byline-dropdown',
 				'aria-expanded': 'false',
 				'data-testid': 'byline-input',
+				...(readOnly && { 'aria-readonly': 'true' }),
 			},
 			handleDOMEvents: {
 				keydown: (view, event) => {
+					if (readOnly) {
+						return false;
+					}
+
 					// Handle escape key for dropdown
 					if (event.key === 'Escape') {
 						setShowDropdown(false);
@@ -257,6 +269,10 @@ export const Byline = ({
 					return false;
 				},
 				blur: (_view, event) => {
+					if (readOnly) {
+						return false;
+					}
+
 					if (
 						!dropdownRef.current?.contains(
 							event.relatedTarget as HTMLElement,
@@ -268,6 +284,20 @@ export const Byline = ({
 				},
 			},
 			dispatchTransaction(tr) {
+				if (readOnly) {
+					// In readOnly mode, only allow selection, not document changes
+					if (tr.docChanged) {
+						// Block any transaction that changes the document
+						return;
+					}
+					// Allow selection-only changes for text selection
+					if (viewRef.current) {
+						const newState = viewRef.current.state.apply(tr);
+						viewRef.current.updateState(newState);
+					}
+					return;
+				}
+
 				if (viewRef.current?.hasFocus()) {
 					trackTypingFromStart(tr);
 
@@ -478,8 +508,7 @@ export const Byline = ({
 								);
 							}}
 						>
-							Add &quot;{currentText}&quot; as untagged
-							contributor
+							Add "{currentText}" as untagged contributor
 						</li>
 					)}
 				</ul>

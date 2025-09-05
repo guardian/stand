@@ -25,6 +25,7 @@ type BylineTheme = {
 		placeholder: {
 			color: string;
 		};
+        readOnlyBackground: string;
 	};
 	dropdown: {
 		background: string;
