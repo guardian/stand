@@ -9,6 +9,7 @@ import type { Node } from 'prosemirror-model';
 import type { Transaction } from 'prosemirror-state';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
+import type { FocusEventHandler} from 'react';
 import { useEffect, useRef, useState } from 'react';
 import type {
 	BylineModel,
@@ -47,6 +48,7 @@ type BylineProps = {
 	readOnly?: boolean;
 	handleSave: (newValue: BylineModel) => void;
 	searchContributors?: (selectedText: string) => Promise<TaggedContributor[]>;
+	onBlur?: FocusEventHandler<HTMLDivElement>;
 };
 
 export const Byline = ({
@@ -59,6 +61,7 @@ export const Byline = ({
 	readOnly,
 	handleSave,
 	searchContributors,
+	onBlur,
 }: BylineProps) => {
 	const editorRef = useRef<HTMLDivElement>(null);
 	const viewRef = useRef<EditorView | null>(null);
@@ -432,7 +435,7 @@ export const Byline = ({
 
 	return (
 		<div css={bylineContainerStyles}>
-			<div css={bylineEditorStyles(theme?.editor)} ref={editorRef} />
+			<div css={bylineEditorStyles(theme?.editor)} ref={editorRef} onBlur={onBlur} />
 			<div
 				ref={dropdownRef}
 				tabIndex={0}
