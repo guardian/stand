@@ -13,3 +13,7 @@ Stand is component library for Guardian editorial tools. It is co-located within
 - Run `pnpm install` to install dependencies.
 - Run `pnpm build` to build, this makes any changes available to flexible-frontend
 - Run `pnpm storybook` to run Storybook
+
+## Contributing
+
+See the [Contributing to Stand](./CONTRIBUTING.md) documentation
