@@ -14,6 +14,12 @@
 		"jsxImportSource": "@emotion/react",
 		"lib": ["dom", "es2022"]
 	},
-	"include": ["src/**/*", ".storybook/**/*", "jest-setup-after-env.ts"],
+	"include": [
+		"src/**/*",
+		".storybook/**/*",
+		"playwright/**/*",
+		"jest-setup-after-env.ts",
+		"playwright-ct.config.ts"
+	],
 	"exclude": ["node_modules", "dist"]
 }

@@ -9,4 +9,5 @@ export default {
 	transform: {
 		...tsJestTransformCfg,
 	},
+	modulePathIgnorePatterns: ['playwright'],
 };
