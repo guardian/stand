@@ -17,3 +17,13 @@ Stand is component library for Guardian editorial tools. It is co-located within
 ## Contributing
 
 See the [Contributing to Stand](./CONTRIBUTING.md) documentation
+
+## Compatibility
+
+See the package.json `peerDependencies` section for compatible versions of React and other dependencies that Stand works with.
+
+When updating React, Emotion or TypeScript versions, please ensure that the [script](./scripts/test-deps-matrix.sh) and [CI workflow](../.github/workflows/stand-component-library-deps-matrix.yml) is updated to match the versions range.
+
+After which run `./scripts/test-deps-matrix.sh` to ensure that the package works correctly with the new versions.
+
+If everything works correctly, update the `peerDependencies` section in package.json to reflect the new versions.

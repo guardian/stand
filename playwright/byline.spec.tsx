@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/unbound-method -- playwright mount */
-import { expect, test } from '@playwright/experimental-ct-react17';
 import type { BylineModel } from '../src';
 import { Byline } from '../src/byline/Byline';
 import { BylineWithMockSearchContributors } from './byline.mock';
+import playwrightComponentTestReact from './playwrightImport';
+
+const { expect, test } = playwrightComponentTestReact;
 
 test('displays placeholder text when no content is present', async ({
 	mount,

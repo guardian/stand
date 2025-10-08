@@ -43,11 +43,13 @@ const mockSearchContributors: (
 	return Promise.resolve(filteredContributors);
 };
 
+type BylineWithMockProps = Omit<
+	ComponentProps<typeof Byline>,
+	'searchContributors' | 'handleSave'
+>;
+
 export const BylineWithMockSearchContributors = (
-	props: Omit<
-		ComponentProps<typeof Byline>,
-		'searchContributors' | 'handleSave'
-	>,
+	props: BylineWithMockProps,
 ) => (
 	<Byline
 		{...props}

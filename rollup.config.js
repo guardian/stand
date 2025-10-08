@@ -23,7 +23,7 @@ export default [
 				jsx: 'automatic',
 			}),
 			typescript({
-				tsconfig: './tsconfig.json',
+				tsconfig: './tsconfig.build.json',
 				outDir: 'dist/types',
 			}),
 		],

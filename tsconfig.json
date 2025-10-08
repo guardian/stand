@@ -2,7 +2,6 @@
 	"extends": "@guardian/tsconfig/tsconfig.json",
 	"compilerOptions": {
 		"outDir": "dist/types",
-		"declarationDir": "dist/types",
 		"emitDeclarationOnly": true,
 		"declaration": true,
 		"forceConsistentCasingInFileNames": true,

@@ -1,9 +1,11 @@
-/* eslint-disable import/no-default-export -- playwright way */
-import { defineConfig, devices } from '@playwright/experimental-ct-react17';
+import playwrightComponentTestReact from 'playwright/playwrightImport';
+
+const { defineConfig, devices } = playwrightComponentTestReact;
 
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+// eslint-disable-next-line import/no-default-export -- playwright expects default export
 export default defineConfig({
 	testDir: './playwright',
 	/* The base directory, relative to the config file, for snapshot files created with toMatchSnapshot and toHaveScreenshot. */

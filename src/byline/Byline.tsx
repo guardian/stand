@@ -9,7 +9,7 @@ import type { Node } from 'prosemirror-model';
 import type { Transaction } from 'prosemirror-state';
 import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
-import type { FocusEventHandler} from 'react';
+import type { FocusEventHandler, MouseEvent } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import type {
 	BylineModel,
@@ -435,7 +435,11 @@ export const Byline = ({
 
 	return (
 		<div css={bylineContainerStyles}>
-			<div css={bylineEditorStyles(theme?.editor)} ref={editorRef} onBlur={onBlur} />
+			<div
+				css={bylineEditorStyles(theme?.editor)}
+				ref={editorRef}
+				onBlur={onBlur}
+			/>
 			<div
 				ref={dropdownRef}
 				tabIndex={0}
@@ -464,7 +468,7 @@ export const Byline = ({
 									setCurrentOptionIndex(i);
 								}
 							}}
-							onMouseDown={(e) => {
+							onMouseDown={(e: MouseEvent<HTMLLIElement>) => {
 								e.preventDefault(); // Prevent focus loss
 								addTaggedContributor(
 									contributor,
@@ -501,7 +505,7 @@ export const Byline = ({
 									);
 								}
 							}}
-							onMouseDown={(e) => {
+							onMouseDown={(e: MouseEvent<HTMLLIElement>) => {
 								e.preventDefault(); // Prevent focus loss
 								addUntaggedContributor(
 									viewRef,

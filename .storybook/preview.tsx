@@ -72,7 +72,6 @@ const preview: Preview = {
 		},
 	},
 	decorators: [
-		// eslint-disable-next-line @typescript-eslint/no-unsafe-call -- withThemeFromJSXProvider is a valid function
 		withThemeFromJSXProvider({
 			GlobalStyles, // Adds GlobalStyles to all stories
 		}),
