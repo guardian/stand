@@ -8,7 +8,7 @@ In each ADR file, write these sections:
 
 # Why create @guardian/stand
 
-Date: September 2025
+Date: August 2025
 
 ## Status
 
