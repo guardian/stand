@@ -1,11 +1,3 @@
-# Decision record template
-
-This template is adapted from the [Decision record template by Michael Nygard](https://github.com/joelparkerhenderson/architecture-decision-record/blob/main/templates/decision-record-template-by-michael-nygard/index.md) from [Documenting architecture decisions - Michael Nygard](http://thinkrelevance.com/blog/2011/11/15/documenting-architecture-decisions).
-
-File name template: ####-decision-title.md
-
-In each ADR file, write these sections:
-
 # Why colocate @guardian/stand within flexible-content
 
 Date: September 2025
