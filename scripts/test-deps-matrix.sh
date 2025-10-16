@@ -54,15 +54,10 @@ for rv in $REACT_VERSIONS; do
 
 			# Determine major React major version for logging and conditional deps
 			REACT_MAJOR_VERSION=${rv%%.*}
-			printf 'REACT_MAJOR_VERSION = %s\n' "$REACT_MAJOR_VERSION"
 
-			if [ "$REACT_MAJOR_VERSION" = "19" ] && [ "$ev" = "11.11.4" ]; then
-				echo "Skipping unsupported combo React $REACT_MAJOR_VERSION + @emotion/react $ev (TS $tv)" >&2
-				RESULT_ROWS+=("$REACT_MAJOR_VERSION|$ev|$tv|skip|skip|skip|skip")
-				continue
-			fi
 
 			# Determine appropriate @types/react version and playwright renderer package
+            # i.e use @playwright/experimental-ct-react for React 18+; otherwise use @playwright/experimental-ct-react17
 			TYPES_VERSION="latest"
 			PLAYWRIGHT_CT_REACT_18=false
 			case "$REACT_MAJOR_VERSION" in
@@ -77,7 +72,7 @@ for rv in $REACT_VERSIONS; do
 
 			# Installing deps
 			echo "-- Installing deps - React $REACT_MAJOR_VERSION, @emotion/react $ev"
-			pnpm add react@"~$rv" react-dom@"~$rv" @emotion/react@"~$ev"
+			pnpm add -D react@"~$rv" react-dom@"~$rv" @emotion/react@"~$ev"
 
 			# Installing devDeps
 			echo "-- Installing devDeps - TypeScript $tv"
@@ -146,27 +141,26 @@ echo ""
 # Write table header conditionally (file only if MATRIX_OUTPUT_FILE provided)
 if [ -n "$OUTPUT_FILE" ]; then
 	: > "$OUTPUT_FILE"
-	echo "| React | Emotion | TypeScript |" | tee "$OUTPUT_FILE"
-	echo "|-------|---------|------------|" | tee -a "$OUTPUT_FILE"
+	echo "| React | Emotion | TypeScript | Typecheck | Unit | E2E | Build |" | tee "$OUTPUT_FILE"
+	echo "|-------|---------|------------|-----------|------|-----|-------|" | tee -a "$OUTPUT_FILE"
 else
-	echo "| React | Emotion | TypeScript |"
-	echo "|-------|---------|------------|"
+	echo "| React | Emotion | TypeScript | Typecheck | Unit | E2E | Build |"
+	echo "|-------|---------|------------|-----------|------|-----|-------|"
 fi
 OVERALL_FAIL=0
 for row in "${RESULT_ROWS[@]}"; do
 	IFS='|' read -r rv ev tv type unit e2e build <<<"$row"
-	# Exclude any row with skip or fail in critical phases
+	# Mark any failure as overall failure, but continue printing the table
 	if [ "$type" = "fail" ] || [ "$unit" = "fail" ] || [ "$e2e" = "fail" ] || [ "$build" = "fail" ] || [ "$type" = "skip" ]; then
 		[ "$type" = "fail" ] && OVERALL_FAIL=1
 		[ "$unit" = "fail" ] && OVERALL_FAIL=1
 		[ "$e2e" = "fail" ] && OVERALL_FAIL=1
 		[ "$build" = "fail" ] && OVERALL_FAIL=1
-		continue
 	fi
 	if [ -n "$OUTPUT_FILE" ]; then
-		printf '| %s | %s | %s |\n' "$rv" "$ev" "$tv" | tee -a "$OUTPUT_FILE"
+		printf '| %s | %s | %s | %s | %s | %s | %s |\n' "$rv" "$ev" "$tv" "$type" "$unit" "$e2e" "$build" | tee -a "$OUTPUT_FILE"
 	else
-		printf '| %s | %s | %s |\n' "$rv" "$ev" "$tv"
+		printf '| %s | %s | %s | %s | %s | %s | %s |\n' "$rv" "$ev" "$tv" "$type" "$unit" "$e2e" "$build"
 	fi
 done
 
