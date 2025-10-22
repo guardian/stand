@@ -2,14 +2,44 @@
 set -euo pipefail
 
 # Local helper to test the stand component library against multiple dependency versions.
+# Use deps-matrix-versions.json to define default version sets.
 # Default versions can be overridden via REACT_VERSIONS / EMOTION_VERSIONS / TS_VERSIONS env var (space-separated).
 # Example: REACT_VERSIONS="17.0.2 18.0.0 19.0.0" ./scripts/test-react-matrix.sh
 
-REACT_VERSIONS=${REACT_VERSIONS:-"17.0.2 18.0.0 19.0.0"}
-# Two emotion versions: baseline (lower bound) and upper tested bound within peer range.
-EMOTION_VERSIONS=${EMOTION_VERSIONS:-"11.11.4 11.14.0"}
-# TypeScript minor versions 5.0, 5.1 and 5.9 (Override with TS_VERSIONS env var if needed.
-TS_VERSIONS=${TS_VERSIONS:-"5.0 5.1 5.9"}
+# Load defaults from JSON versions file, then allow explicit environment overrides.
+VERSIONS_JSON_FILE="${VERSIONS_JSON_FILE:-scripts/deps-matrix-versions.json}"
+USER_REACT_VERSIONS=${REACT_VERSIONS-}
+USER_EMOTION_VERSIONS=${EMOTION_VERSIONS-}
+USER_TS_VERSIONS=${TS_VERSIONS-}
+
+if [ -f "$VERSIONS_JSON_FILE" ]; then
+	REACT_VERSIONS=$(jq -r '.react | join(" ")' "$VERSIONS_JSON_FILE")
+	EMOTION_VERSIONS=$(jq -r '.emotion | join(" ")' "$VERSIONS_JSON_FILE")
+	TS_VERSIONS=$(jq -r '.typescript | join(" ")' "$VERSIONS_JSON_FILE")
+    EXCLUDE_RULES=()
+    while IFS= read -r line; do
+        [ -n "$line" ] && EXCLUDE_RULES+=("$line")
+    done < <(jq -r '.exclude[]? | to_entries | map(.key+"="+.value) | join(" ")' "$VERSIONS_JSON_FILE")
+else
+	echo "Versions JSON file not found at $VERSIONS_JSON_FILE (continuing; relying solely on provided overrides)." >&2
+fi
+
+# Re-apply overrides supplied by user (precedence)
+[ -n "${USER_REACT_VERSIONS}" ] && REACT_VERSIONS="$USER_REACT_VERSIONS"
+[ -n "${USER_EMOTION_VERSIONS}" ] && EMOTION_VERSIONS="$USER_EMOTION_VERSIONS"
+[ -n "${USER_TS_VERSIONS}" ] && TS_VERSIONS="$USER_TS_VERSIONS"
+
+# Validate presence (after optional sourcing). Allow user overrides by exporting before invocation.
+missing=()
+if [ -z "${REACT_VERSIONS:-}" ]; then missing+=("REACT_VERSIONS"); fi
+if [ -z "${EMOTION_VERSIONS:-}" ]; then missing+=("EMOTION_VERSIONS"); fi
+if [ -z "${TS_VERSIONS:-}" ]; then missing+=("TS_VERSIONS"); fi
+
+if [ ${#missing[@]} -ne 0 ]; then
+	echo "Error: Missing required version variable(s): ${missing[*]}." >&2
+	echo "Set them via environment (e.g. REACT_VERSIONS=\"18.0.0\") or define them in $VERSIONS_JSON_FILE." >&2
+	exit 1
+fi
 
 # Keep original manifest to restore at the end
 ORIG_PKG=$(mktemp)
@@ -32,6 +62,12 @@ pnpm install
 echo "React versions: $REACT_VERSIONS"
 echo "Emotion versions: $EMOTION_VERSIONS"
 echo "TypeScript versions: $TS_VERSIONS"
+if [ ${#EXCLUDE_RULES[@]} -gt 0 ]; then
+	echo "Exclude rules:"
+	for r in "${EXCLUDE_RULES[@]}"; do
+		echo "  - $r"
+	done
+fi
 
 FAILURES=()
 
@@ -44,17 +80,43 @@ else
 	echo "MATRIX_OUTPUT_FILE not set; will only print compatibility results to stdout" >&2
 fi
 
+should_skip() {
+	local rv="$1" ev="$2" tv="$3"
+	# Return 0 (true) if any rule matches all its specified key=value pairs
+	for rule in "${EXCLUDE_RULES[@]:-}"; do
+		[ -z "$rule" ] && continue
+		local match=1
+		for kv in $rule; do
+			local key="${kv%%=*}" val="${kv#*=}"
+			case "$key" in
+				react) [ "$rv" = "$val" ] || match=0 ;;
+				emotion) [ "$ev" = "$val" ] || match=0 ;;
+				typescript) [ "$tv" = "$val" ] || match=0 ;;
+			esac
+			[ $match -eq 0 ] && break
+		done
+		[ $match -eq 1 ] && return 0
+	done
+	return 1
+}
+
 for rv in $REACT_VERSIONS; do
 	for ev in $EMOTION_VERSIONS; do
 		for tv in $TS_VERSIONS; do
-			# Revert to baseline each loop to avoid version layering
-			cp "$ORIG_PKG" package.json || true
-			cp "$ORIG_LOCK" pnpm-lock.yaml || true
-			pnpm install
-
 			# Determine major React major version for logging and conditional deps
 			REACT_MAJOR_VERSION=${rv%%.*}
 
+			if should_skip "$rv" "$ev" "$tv"; then
+				printf '\n-- Skipping excluded combination React %s | Emotion %s | TypeScript %s\n' "$rv" "$ev" "$tv"
+				# Use 'skip' for all statuses if excluded
+				RESULT_ROWS+=("$REACT_MAJOR_VERSION|$ev|$tv|skip|skip|skip|skip")
+				continue
+			fi
+
+			# Revert to baseline each loop to avoid version layering
+			cp "$ORIG_PKG" package.json || true
+			cp "$ORIG_LOCK" pnpm-lock.yaml || true
+			pnpm install --frozen-lockfile || pnpm install
 
 			# Determine appropriate @types/react version and playwright renderer package
             # i.e use @playwright/experimental-ct-react for React 18+; otherwise use @playwright/experimental-ct-react17
@@ -72,11 +134,11 @@ for rv in $REACT_VERSIONS; do
 
 			# Installing deps
 			echo "-- Installing deps - React $REACT_MAJOR_VERSION, @emotion/react $ev"
-			pnpm add -D react@"~$rv" react-dom@"~$rv" @emotion/react@"~$ev"
+			pnpm add -D react@"$rv" react-dom@"$rv" @emotion/react@"$ev" @types/react@"^$TYPES_VERSION" @types/react-dom@"^$TYPES_VERSION"
 
 			# Installing devDeps
 			echo "-- Installing devDeps - TypeScript $tv"
-			pnpm add -D typescript@"~$tv"
+			pnpm add -D typescript@"$tv"
 
 			# if PLAYWRIGHT_CT_REACT_18 = true then remove @playwright/experimental-ct-react17 and install @playwright/experimental-ct-react
 			if [ "$PLAYWRIGHT_CT_REACT_18" = true ]; then
