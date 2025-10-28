@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.4
+
+### Patch Changes
+
+- 0ec4660: Attempt to use trusted publishing
+
 ## 0.0.3
 
 ### Patch Changes
