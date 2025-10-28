@@ -1,6 +1,6 @@
 {
 	"name": "@guardian/stand",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"type": "module",
 	"exports": {
 		"types": "./dist/types/index.d.ts",
