@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.5
+
+### Patch Changes
+
+- a315cae: Testing changesets and canaries
+
 ## 0.0.4
 
 ### Patch Changes
