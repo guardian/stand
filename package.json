@@ -23,6 +23,8 @@
 		"build-storybook": "storybook build",
 		"lint": "eslint . --ext .ts,.tsx",
 		"lint:fix": "eslint --fix . --ext .ts,.tsx",
+		"format:check": "prettier --check .",
+		"format:fix": "prettier --write .",
 		"tsc": "tsc",
 		"test": "jest",
 		"test:e2e": "playwright test -c playwright-ct.config.ts",
