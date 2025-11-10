@@ -21,6 +21,8 @@
 		"build": "rimraf dist && rollup -c",
 		"storybook": "storybook dev -p 6007",
 		"build-storybook": "storybook build",
+		"lint": "eslint . --ext .ts,.tsx",
+		"lint:fix": "eslint --fix . --ext .ts,.tsx",
 		"tsc": "tsc",
 		"test": "jest",
 		"test:e2e": "playwright test -c playwright-ct.config.ts",
