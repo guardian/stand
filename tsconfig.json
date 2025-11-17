@@ -17,8 +17,10 @@
 		"src/**/*",
 		".storybook/**/*",
 		"playwright/**/*",
+		"src/styleD/**/*",
 		"jest-setup-after-env.ts",
-		"playwright-ct.config.ts"
+		"playwright-ct.config.ts",
+		"scripts"
 	],
 	"exclude": ["node_modules", "dist"]
 }
