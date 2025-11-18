@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved -- not sure why it's unresolved
 import { fileHeader, minifyDictionary } from 'style-dictionary/utils';
 
 // eslint-disable-next-line import/no-default-export -- style dictionary way
