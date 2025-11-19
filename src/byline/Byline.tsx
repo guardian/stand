@@ -55,7 +55,7 @@ type BylineProps = {
 	readOnly?: boolean;
 	/** `handleSave` - Callback function to handle saving the byline value */
 	handleSave: (newValue: BylineModel) => void;
-	/** `searchContributors` - Function to search for contributors based on selected text that will appear on the dropdown */
+	/** `searchContributors` - Function to search for contributors based on selected text, results will appear on the dropdown */
 	searchContributors?: (selectedText: string) => Promise<TaggedContributor[]>;
 	/** `onBlur` - Optional blur event handler for the byline editor */
 	onBlur?: FocusEventHandler<HTMLDivElement>;
