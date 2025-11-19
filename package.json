@@ -89,5 +89,28 @@
 		"react": "^17.0.2 || ^18.0.0 || ^19.0.0",
 		"react-dom": "^17.0.2 || ^18.0.0 || ^19.0.0",
 		"typescript": ">=5.0.0 <=5.9.3"
+	},
+	"peerDependenciesMeta": {
+		"@guardian/prosemirror-invisibles": {
+			"optional": true
+		},
+		"prosemirror-dropcursor": {
+			"optional": true
+		},
+		"prosemirror-history": {
+			"optional": true
+		},
+		"prosemirror-keymap": {
+			"optional": true
+		},
+		"prosemirror-model": {
+			"optional": true
+		},
+		"prosemirror-state": {
+			"optional": true
+		},
+		"prosemirror-view": {
+			"optional": true
+		}
 	}
 }
