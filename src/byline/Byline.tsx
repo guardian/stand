@@ -39,15 +39,25 @@ import {
 import type { PartialBylineTheme } from './theme';
 
 type BylineProps = {
+	/** `theme` - Used to customise the look and feel of the Byline component */
 	theme?: PartialBylineTheme;
+	/** `allowUntaggedContributors` - Whether to allow untagged contributors in the byline */
 	allowUntaggedContributors?: boolean;
+	/** `contributorLimit` - Maximum number of tagged/untagged contributors allowed in the byline */
 	contributorLimit?: number;
+	/** `enablePreview` - Whether to show the byline preview below the editor */
 	enablePreview?: boolean;
+	/** `placeholder` - Placeholder text for the byline editor */
 	placeholder?: string;
+	/** `initialValue` - Initial value for the byline editor */
 	initialValue?: BylineModel;
+	/** `readOnly` - Whether the byline editor is in read-only mode */
 	readOnly?: boolean;
+	/** `handleSave` - Callback function to handle saving the byline value */
 	handleSave: (newValue: BylineModel) => void;
+	/** `searchContributors` - Function to search for contributors based on selected text that will appear on the dropdown */
 	searchContributors?: (selectedText: string) => Promise<TaggedContributor[]>;
+	/** `onBlur` - Optional blur event handler for the byline editor */
 	onBlur?: FocusEventHandler<HTMLDivElement>;
 };
 
