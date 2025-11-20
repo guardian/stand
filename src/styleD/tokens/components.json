@@ -1,0 +1,10 @@
+{
+	"components": {
+		"byline": {
+			"color": {
+				"$type": "color",
+				"$value": "{semantic.colors.text.primary}"
+			}
+		}
+	}
+}

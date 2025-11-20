@@ -1,10 +1,10 @@
-import { tokens } from '../build/typescript/tokens';
+import { base } from '../build/typescript/base';
 import { ColorItem, ColorPalette } from './storybookColorPalette';
 
-export const PrimitivePalette = {
+export const BasePalette = {
 	render: () => (
 		<ColorPalette>
-			{Object.entries(tokens).map(([category, shades]) => {
+			{Object.entries(base.colors).map(([category, shades]) => {
 				return (
 					<ColorItem
 						key={category}
@@ -18,8 +18,8 @@ export const PrimitivePalette = {
 };
 
 export default {
-	title: 'Stand/Primitive palette',
-	component: PrimitivePalette,
+	title: 'Stand/Base Palette',
+	component: BasePalette,
 
 	parameters: {
 		previewTabs: {

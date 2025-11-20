@@ -30,7 +30,7 @@ export default [
 			copy({
 				targets: [
 					{
-						src: 'src/styleD/build/css/_variables.css',
+						src: 'src/styleD/build/css/*.css',
 						dest: 'dist/styleD/build/css',
 					},
 				],

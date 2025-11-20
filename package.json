@@ -8,7 +8,9 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./foundations.css": "./dist/styleD/build/css/_variables.css"
+		"./base.css": "./dist/styleD/build/css/base.css",
+		"./semantic.css": "./dist/styleD/build/css/semantic.css",
+		"./components.css": "./dist/styleD/build/css/components.css"
 	},
 	"files": [
 		"dist"

@@ -115,7 +115,7 @@ export function tokenFilesFromLocalVariables(
 		collection?.modes.forEach((mode) => {
 			//const fileName = `${collection.name}.${mode.name}.json`;
 			// We're only using one mode at this point
-			const fileName = `${collection.name}.json`;
+			const fileName = collection.name;
 			// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing -- TODO: we'll eventually replace this file with our own code
 			if (!tokenFiles[fileName]) {
 				tokenFiles[fileName] = {};

@@ -1,19 +1,41 @@
+/* eslint-disable import/no-default-export -- style dictionary way */
+
 import { fileHeader, minifyDictionary } from 'style-dictionary/utils';
 
-// eslint-disable-next-line import/no-default-export -- style dictionary way
+/**
+ * @param {string[]} tokenGroups
+ * @param {string | import('style-dictionary').File['format']} format
+ * @param {string} fileExtension
+ * @returns {import('style-dictionary').File[]}
+ */
+const generateSplitTokenConfig = (tokenGroups, format, fileExtension) => {
+	return tokenGroups.map((component) => ({
+		destination: `${component}.${fileExtension}`,
+		format: format,
+		filter: (token) => token.path[0] === component,
+	}));
+};
+
+/**
+ * @type {string[]}
+ */
+const tokenGroups = ['base', 'semantic', 'components'];
+
+/**
+ * @type {import('style-dictionary').Config}
+ */
 export default {
 	source: ['tokens/**/*.json'],
 	hooks: {
 		formats: {
 			'typescript/const': async ({ dictionary, file }) => {
+				const name = file.destination.replace('.ts', '');
+
 				const { tokens } = dictionary;
 				const header = await fileHeader({ file });
-				const module = JSON.stringify(
-					minifyDictionary(tokens, true),
-					null,
-					2,
-				);
-				return `${header}export const tokens = ${module} as const;\n`;
+				const minified = minifyDictionary(tokens, true);
+				const module = JSON.stringify(minified[name], null, 2);
+				return `${header}export const ${name} = ${module}${name === 'base' ? ' as const' : ''};\nexport type ${`${name[0].toUpperCase()}${name.slice(1)}`} = typeof ${name};\n`;
 			},
 		},
 	},
@@ -21,22 +43,20 @@ export default {
 		css: {
 			transformGroup: 'css',
 			buildPath: 'build/css/',
-			files: [
-				{
-					destination: '_variables.css',
-					format: 'css/variables',
-				},
-			],
+			files: generateSplitTokenConfig(
+				tokenGroups,
+				'css/variables',
+				'css',
+			),
 		},
 		typescript: {
 			transforms: ['attribute/cti', 'name/camel', 'color/hex'],
-			buildPath: 'build/typescript',
-			files: [
-				{
-					destination: 'tokens.ts',
-					format: 'typescript/const',
-				},
-			],
+			buildPath: 'build/typescript/',
+			files: generateSplitTokenConfig(
+				tokenGroups,
+				'typescript/const',
+				'ts',
+			),
 		},
 	},
 };
