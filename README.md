@@ -107,6 +107,8 @@ Most tokens are generated from Figma variables using a script to make these avai
 
 Use `pnpm build-styled` to generate the styles after making changes to the tokens and make sure to test and commit the changes to the built styles.
 
+See the [Style Dictionary documentation](./docs/style-dictionary.md) for more details on how we structure and generate the styles.
+
 ### Compatibility
 
 See the package.json `peerDependencies` section for compatible versions of React and other dependencies that Stand works with.

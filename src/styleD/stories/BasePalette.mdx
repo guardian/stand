@@ -1,22 +1,20 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
-import PaletteStories, {
-	PrimitivePalette,
-} from './primitivePalette.stories.tsx';
+import PaletteStories, { BasePalette } from './BasePalette.stories.js';
 
 <Meta of={PaletteStories} />
 
-# Primitive palette
+# Base Palette
 
 This palette represents the raw values of the colour palette.
 
 ## Example usage
 
 ```tsx
-import { StyleTokens } from '@guardian/stand';
+import { base } from '@guardian/stand';
 
 const headline = css`
-	color: ${tokens.neutral[100]};
-	background: ${tokens.['cool-purple'][400]};
+	color: ${base.colors.neutral[100]};
+	background: ${base.colors['cool-purple'][400]};
 `;
 
 /*
@@ -29,4 +27,4 @@ const headline = css`
 
 ## Colour tokens
 
-<Story of={PrimitivePalette} />
+<Story of={BasePalette} />
