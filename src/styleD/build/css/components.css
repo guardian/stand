@@ -4,4 +4,32 @@
 
 :root {
 	--components-byline-color: #000000;
+	--components-byline-background-color: #ffffff;
+	--components-byline-readonly-background-color: #dcdcdc;
+	--components-byline-border-color: #000000;
+	--components-byline-border-width: 1px;
+	--components-byline-border-style: solid;
+	--components-byline-line-height: 1.8;
+	--components-byline-chip-color: #000000;
+	--components-byline-chip-border-color: #dcdcdc;
+	--components-byline-chip-border-width: 1px;
+	--components-byline-chip-border-style: solid;
+	--components-byline-chip-border-radius: 8px;
+	--components-byline-chip-padding: 2px 4px;
+	--components-byline-chip-selected-border-color: #bdd4f4;
+	--components-byline-chip-tagged-background-color: #dcdcdc;
+	--components-byline-chip-untagged-color: #000000;
+	--components-byline-dropdown-border-color: #cccccc;
+	--components-byline-dropdown-border-width: 1px;
+	--components-byline-dropdown-border-style: solid;
+	--components-byline-dropdown-background-color: #ffffff;
+	--components-byline-dropdown-li-color: #000000;
+	--components-byline-dropdown-li-border-bottom-color: #cccccc;
+	--components-byline-dropdown-li-border-bottom-width: 1px;
+	--components-byline-dropdown-li-border-bottom-style: solid;
+	--components-byline-dropdown-li-selected-background-color: #56a0a7;
+	--components-byline-dropdown-li-selected-color: #ffffff;
+	--components-byline-dropdown-max-height: 320px;
+	--components-byline-invisibles-color: #bababa;
+	--components-byline-placeholder-color: #8d8d8d;
 }

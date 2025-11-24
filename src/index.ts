@@ -1,5 +1,6 @@
 export { Byline } from './byline/Byline';
 export type { BylineModel } from './byline/lib';
+export type { PartialBylineTheme } from './byline/theme';
 
 export { base } from './styleD/build/typescript/base';
 export type { Base } from './styleD/build/typescript/base';

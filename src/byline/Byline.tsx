@@ -11,6 +11,7 @@ import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import type { FocusEventHandler, MouseEvent } from 'react';
 import { useEffect, useRef, useState } from 'react';
+import type { Components } from '../styleD/build/typescript/components';
 import type {
 	BylineModel,
 	TaggedContributor,
@@ -36,11 +37,11 @@ import {
 	dropdownUlStyles,
 	selectedDropdownLiStyles,
 } from './styles';
-import type { PartialBylineTheme } from './theme';
+import type { DeepPartial } from './util';
 
 type BylineProps = {
 	/** `theme` - Used to customise the look and feel of the Byline component */
-	theme?: PartialBylineTheme;
+	theme?: DeepPartial<Components['byline']>;
 	/** `allowUntaggedContributors` - Whether to allow untagged contributors in the byline */
 	allowUntaggedContributors?: boolean;
 	/** `contributorLimit` - Maximum number of tagged/untagged contributors allowed in the byline */
@@ -446,7 +447,7 @@ export const Byline = ({
 	return (
 		<div css={bylineContainerStyles}>
 			<div
-				css={bylineEditorStyles(theme?.editor)}
+				css={bylineEditorStyles(theme)}
 				ref={editorRef}
 				onBlur={onBlur}
 			/>
@@ -469,9 +470,9 @@ export const Byline = ({
 							role="option"
 							aria-selected={i === currentOptionIndex}
 							css={[
-								dropdownLiStyles(theme),
+								dropdownLiStyles(theme?.dropdown),
 								i === currentOptionIndex &&
-									selectedDropdownLiStyles(theme),
+									selectedDropdownLiStyles(theme?.dropdown),
 							]}
 							onMouseMove={() => {
 								if (currentOptionIndex !== i) {
@@ -500,10 +501,10 @@ export const Byline = ({
 								currentOptionIndex === taggedContributors.length
 							}
 							css={[
-								dropdownLiStyles(theme),
+								dropdownLiStyles(theme?.dropdown),
 								currentOptionIndex ===
 									taggedContributors.length &&
-									selectedDropdownLiStyles(theme),
+									selectedDropdownLiStyles(theme?.dropdown),
 							]}
 							onMouseMove={() => {
 								if (

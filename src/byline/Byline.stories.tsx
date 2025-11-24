@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { base } from '../styleD/build/typescript/base';
 import { Byline } from './Byline';
 import { contributors } from './contributors-fixture';
 import type { TaggedContributor } from './lib';
@@ -53,33 +54,29 @@ export const WithTheme = {
 		allowUntaggedContributors: true,
 		searchContributors,
 		theme: {
-			editor: {
-				invisibles: {
-					color: 'lightblue',
-				},
-				color: 'rgba(255, 255, 255, 0.87)',
-				background: 'rgb(51, 51, 51)',
-				border: '1px solid rgb(173, 216, 230)',
-				chip: {
-					color: 'initial',
-					taggedBackground: 'rgb(173, 216, 230)',
-					border: '1px solid rgb(173, 216, 230)',
-					borderRadius: '3px',
-					padding: '5.5px 7px',
-					untagged: {
-						color: 'rgba(255, 255, 255, 0.87)',
-					},
-				},
+			invisiblesColor: 'lightblue',
+			color: 'rgba(255, 255, 255, 0.87)',
+			backgroundColor: 'rgb(51, 51, 51)',
+			borderColor: 'rgb(173, 216, 230)',
+			borderWidth: '1px',
+			borderStyle: 'solid',
+			chip: {
+				color: 'initial',
+				taggedBackgroundColor: 'rgb(173, 216, 230)',
+				borderColor: 'rgb(173, 216, 230)',
+				borderWidth: '1px',
+				borderStyle: 'solid',
+				borderRadius: '3px',
+				padding: '5.5px 7px',
+				untaggedColor: 'rgba(255, 255, 255, 0.87)',
 			},
 			dropdown: {
-				background: 'rgb(36, 36, 36)',
+				backgroundColor: 'rgb(36, 36, 36)',
 				li: {
 					color: 'rgba(255, 255, 255, 0.87)',
-					borderBottom: 'none',
-					selected: {
-						color: 'rgba(255, 255, 255, 0.87)',
-						background: 'rgb(51, 51, 51)',
-					},
+					borderBottomStyle: 'none',
+					selectedColor: 'rgba(255, 255, 255, 0.87)',
+					selectedBackgroundColor: base.colors['cool-purple'][500],
 				},
 			},
 		},

@@ -4,6 +4,115 @@
 			"color": {
 				"$type": "color",
 				"$value": "{semantic.colors.text.primary}"
+			},
+			"backgroundColor": {
+				"$type": "color",
+				"$value": "{base.colors.neutral.100}"
+			},
+			"readonlyBackgroundColor": {
+				"$type": "color",
+				"$value": "{base.colors.neutral.86}"
+			},
+			"borderColor": {
+				"$type": "color",
+				"$value": "{base.colors.neutral.0}"
+			},
+			"borderWidth": {
+				"$type": "dimension",
+				"$value": "1px"
+			},
+			"borderStyle": {
+				"$value": "solid"
+			},
+			"lineHeight": {
+				"$type": "number",
+				"$value": 1.8
+			},
+			"chip": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.primary}"
+				},
+				"borderColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.86}"
+				},
+				"borderWidth": {
+					"$type": "dimension",
+					"$value": "1px"
+				},
+				"borderStyle": {
+					"$value": "solid"
+				},
+				"borderRadius": {
+					"$value": "8px"
+				},
+				"padding": {
+					"$value": "2px 4px"
+				},
+				"selectedBorderColor": {
+					"$type": "color",
+					"$value": "{base.colors.blue.800}"
+				},
+				"taggedBackgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.86}"
+				},
+				"untaggedColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.primary}"
+				}
+			},
+			"dropdown": {
+				"borderColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.80}"
+				},
+				"borderWidth": {
+					"$type": "dimension",
+					"$value": "1px"
+				},
+				"borderStyle": {
+					"$value": "solid"
+				},
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.100}"
+				},
+				"li": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.primary}"
+					},
+					"borderBottomColor": {
+						"$type": "color",
+						"$value": "{base.colors.neutral.80}"
+					},
+					"borderBottomWidth": {
+						"$type": "dimension",
+						"$value": "1px"
+					},
+					"borderBottomStyle": {
+						"$value": "solid"
+					},
+					"selectedBackgroundColor": {
+						"$type": "color",
+						"$value": "{base.colors.teal.500}"
+					},
+					"selectedColor": {
+						"$type": "color",
+						"$value": "{base.colors.neutral.100}"
+					}
+				},
+				"maxHeight": { "$value": "320px" }
+			},
+			"invisiblesColor": {
+				"$type": "color",
+				"$value": "{base.colors.neutral.73}"
+			},
+			"placeholderColor": {
+				"$type": "color",
+				"$value": "{base.colors.neutral.55}"
 			}
 		}
 	}
