@@ -21,7 +21,7 @@
 	},
 	"main": "./dist/index.cjs",
 	"types": "./dist/types/index.d.ts",
-	"packageManager": "pnpm@10.21.0+sha512.da3337267e400fdd3d479a6c68079ac6db01d8ca4f67572083e722775a796788a7a9956613749e000fac20d424b594f7a791a5f4e2e13581c5ef947f26968a40",
+	"packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b",
 	"scripts": {
 		"build": "rimraf dist && rollup -c",
 		"build-styled": "cd src/styleD && node build.js",
@@ -67,6 +67,7 @@
 		"prosemirror-state": "1.4.3",
 		"prosemirror-view": "1.37.2",
 		"react": "17.0.2",
+		"react-aria-components": "1.13.0",
 		"react-dom": "17.0.2",
 		"rimraf": "6.1.0",
 		"rollup": "4.53.2",
@@ -89,6 +90,7 @@
 		"prosemirror-state": "1.4.3",
 		"prosemirror-view": "1.37.2",
 		"react": "^17.0.2 || ^18.0.0 || ^19.0.0",
+		"react-aria-components": "1.13.0",
 		"react-dom": "^17.0.2 || ^18.0.0 || ^19.0.0",
 		"typescript": ">=5.0.0 <=5.9.3"
 	},

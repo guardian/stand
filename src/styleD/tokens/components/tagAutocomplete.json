@@ -1,0 +1,66 @@
+{
+	"components": {
+		"tagAutocomplete": {
+			"input": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.primary}"
+				},
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.100}"
+				},
+				"borderWidth": {
+					"$type": "dimension",
+					"$value": "1px"
+				},
+				"borderStyle": {
+					"$value": "solid"
+				},
+				"borderColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.55}"
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": "11px"
+				}
+			},
+			"listbox": {
+				"borderWidth": {
+					"$type": "dimension",
+					"$value": "1px"
+				},
+				"borderStyle": {
+					"$value": "solid"
+				},
+				"borderColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.55}"
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": "8px 0px"
+				},
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.100}"
+				},
+				"item": {
+					"padding": {
+						"$type": "dimension",
+						"$value": "8px 12px"
+					},
+					"backgroundHoverColor": {
+						"$type": "color",
+						"$value": "{base.colors.neutral.93}"
+					},
+					"backgroundFocusedColor": {
+						"$type": "color",
+						"$value": "{base.colors.neutral.93}"
+					}
+				}
+			}
+		}
+	}
+}

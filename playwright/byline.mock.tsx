@@ -1,6 +1,6 @@
 import type { ComponentProps } from 'react';
 import { Byline } from '../src';
-import type { TaggedContributor } from '../src/byline/lib';
+import type { TaggedContributor } from '../src/components/byline/lib';
 
 const mockSearchContributors: (
 	selectedText: string,

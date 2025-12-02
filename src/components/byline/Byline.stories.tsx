@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { base } from '../styleD/build/typescript/base';
+import { base } from '../../styleD/build/typescript/base';
 import { Byline } from './Byline';
 import { contributors } from './contributors-fixture';
 import type { TaggedContributor } from './lib';

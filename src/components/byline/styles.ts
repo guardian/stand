@@ -4,9 +4,9 @@ import type { Node } from 'prosemirror-model';
 import {
 	type Components,
 	components as componentsTheme,
-} from '../styleD/build/typescript/components';
-import type { DeepPartial } from './util';
-import { mergeDeep } from './util';
+} from '../../styleD/build/typescript/components';
+import type { DeepPartial } from '../util';
+import { mergeDeep } from '../util';
 
 export const bylineContainerStyles = css`
 	position: relative;

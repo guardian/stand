@@ -11,7 +11,8 @@ import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import type { FocusEventHandler, MouseEvent } from 'react';
 import { useEffect, useRef, useState } from 'react';
-import type { Components } from '../styleD/build/typescript/components';
+import type { Components } from '../../styleD/build/typescript/components';
+import type { DeepPartial } from '../util';
 import type {
 	BylineModel,
 	TaggedContributor,
@@ -37,7 +38,6 @@ import {
 	dropdownUlStyles,
 	selectedDropdownLiStyles,
 } from './styles';
-import type { DeepPartial } from './util';
 
 type BylineProps = {
 	/** `theme` - Used to customise the look and feel of the Byline component */

@@ -1,0 +1,244 @@
+import type { SerializedStyles } from '@emotion/react';
+import { css } from '@emotion/react';
+import type { ReactElement } from 'react';
+import {
+	Button,
+	Cell,
+	Column,
+	Row,
+	Table,
+	TableBody,
+	TableHeader,
+	useDragAndDrop,
+} from 'react-aria-components';
+import type { Components } from '../../styleD/build/typescript/components';
+import type { DeepPartial } from '../util';
+import {
+	tagTableAddButtonStyles as addButtonStyles,
+	tagTableCellStyles as cellStyles,
+	tagTableDragButtonStyles as dragButtonStyles,
+	tagTableHeadingStyles as headingStyles,
+	tagTableRemoveButtonStyles as removeButtonStyles,
+	tagTableRowStyles as rowStyles,
+	tagTableStyles,
+	tagTableTypeBadgeStyles as typeBadgeStyles,
+} from './styles';
+import type { TagRow } from './types';
+
+type Row = TagRow | { tag: TagRow };
+const rowToTag = (row: Row): TagRow => ('tag' in row ? row.tag : row);
+
+export interface TagTableProps<R extends Row> {
+	rows: R[];
+	filterRows: (row: R) => boolean;
+	heading?: string;
+	showTagType?: boolean;
+	showTagSectionName?: boolean;
+	removeAction?: (tag: R) => void;
+	addAction?: (tag: R) => void;
+	onReorder?: (tags: R[]) => void;
+	canRemove?: (tag: R) => boolean;
+	'data-testid'?: string;
+	removeIcon?: ReactElement;
+	gripIcon?: ReactElement;
+	/** `theme` - Used to customise the look and feel of the TagTable component */
+	theme?: DeepPartial<Components['tagTable']>;
+	cssOverrides?: SerializedStyles;
+}
+
+const TypeBadge = (
+	type: string,
+	theme?: DeepPartial<Components['tagTable']>,
+) => {
+	return <span css={typeBadgeStyles(theme)}>{type}</span>;
+};
+const defaultCanRemove = () => true;
+
+export function TagTable<R extends Row>({
+	rows,
+	filterRows,
+	heading,
+	showTagType,
+	showTagSectionName,
+	removeAction: removeTag,
+	addAction: addTag,
+	onReorder,
+	canRemove = defaultCanRemove,
+	'data-testid': dataTestId,
+	removeIcon,
+	gripIcon,
+	theme,
+	cssOverrides,
+}: TagTableProps<R>) {
+	const canDrag = !!onReorder;
+	const filtered = rows.filter(filterRows);
+
+	const { dragAndDropHooks } = useDragAndDrop<R>({
+		getItems: (_keys, items) => {
+			return items.map((item) => ({
+				'text/plain': rowToTag(item).id.toString(),
+			}));
+		},
+		onReorder(e) {
+			const draggedElementKey = [...e.keys].at(0);
+			if (draggedElementKey === e.target.key) {
+				return;
+			}
+
+			const localList = [...rows];
+
+			const draggedElementIndex = localList.findIndex(
+				(i) => rowToTag(i).id === draggedElementKey,
+			);
+
+			const draggedElement = localList.at(draggedElementIndex);
+
+			if (!draggedElement) {
+				return;
+			}
+
+			localList.splice(draggedElementIndex, 1);
+
+			const targetElementIndex = localList.findIndex(
+				(i) => rowToTag(i).id === e.target.key,
+			);
+
+			if (e.target.dropPosition === 'before') {
+				localList.splice(targetElementIndex, 0, draggedElement);
+			} else if (e.target.dropPosition === 'after') {
+				localList.splice(targetElementIndex + 1, 0, draggedElement);
+			}
+
+			onReorder?.(localList);
+		},
+	});
+
+	if (filtered.length === 0) {
+		return null;
+	}
+
+	return (
+		<div css={cssOverrides}>
+			{heading && <div css={headingStyles(theme)}>{heading}</div>}
+			<Table
+				css={tagTableStyles(!!removeTag, theme)}
+				aria-label="Tag Table"
+				data-testid={dataTestId}
+				dragAndDropHooks={onReorder && dragAndDropHooks}
+			>
+				<TableHeader hidden>
+					{onReorder && <Column></Column>}
+					{showTagType && <Column>Type</Column>}
+					<Column isRowHeader>Name</Column>
+					{showTagSectionName && <Column>Section</Column>}
+					{removeTag && <Column></Column>}
+					{addTag && <Column></Column>}
+				</TableHeader>
+				<TableBody items={filtered} dependencies={[filtered]}>
+					{(item) => (
+						<Row
+							id={rowToTag(item).id}
+							css={rowStyles(canDrag, theme)}
+							key={rowToTag(item).id}
+							textValue={rowToTag(item).id.toString()}
+						>
+							{onReorder && (
+								<Cell
+									css={[
+										css`
+											width: 1%;
+										`,
+									]}
+								>
+									<Button slot="drag" css={dragButtonStyles}>
+										{gripIcon}
+									</Button>
+								</Cell>
+							)}
+							{showTagType && (
+								<Cell
+									css={[
+										cellStyles(theme),
+										css`
+											position: relative;
+											width: 15%;
+										`,
+									]}
+								>
+									{TypeBadge(rowToTag(item).type)}
+								</Cell>
+							)}
+							<Cell
+								css={[
+									cellStyles(theme),
+									css`
+										width: 50%;
+									`,
+								]}
+								data-testid={`tags-table-item-${filtered.indexOf(item)}-name`}
+							>
+								{rowToTag(item).internalName}
+							</Cell>
+							{showTagSectionName && (
+								<Cell
+									css={[
+										cellStyles(theme),
+										css`
+											width: 20%;
+										`,
+									]}
+								>
+									{rowToTag(item).section.name}
+								</Cell>
+							)}
+							{removeTag && (
+								<Cell
+									css={[
+										cellStyles(theme),
+										css`
+											text-align: center;
+											width: 10%;
+										`,
+									]}
+								>
+									{canRemove(item) && (
+										<Button
+											css={removeButtonStyles}
+											onPress={() => {
+												removeTag(item);
+											}}
+											aria-label={`Remove ${rowToTag(item).internalName}`}
+										>
+											{removeIcon ?? 'Remove'}
+										</Button>
+									)}
+								</Cell>
+							)}
+							{addTag && (
+								<Cell
+									css={[
+										cellStyles(theme),
+										css`
+											text-align: center;
+											width: 10%;
+										`,
+									]}
+								>
+									<Button
+										css={addButtonStyles(theme)}
+										onPress={() => {
+											addTag(item);
+										}}
+										aria-label={`Add ${rowToTag(item).internalName}`}
+									>
+										Add
+									</Button>
+								</Cell>
+							)}
+						</Row>
+					)}
+				</TableBody>
+			</Table>
+		</div>
+	);
+}

@@ -54,7 +54,7 @@ and further sublevels should be the corresponding foundation or component we're 
 }
 ```
 
-`components.json`
+`components/byline.json`
 
 ```json
 {
