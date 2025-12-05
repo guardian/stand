@@ -1,18 +1,54 @@
+import { useState } from 'react';
 import type { Components } from 'src/styleD/build/typescript/components';
 import type { DeepPartial } from '../util';
-import { userMenuHeadingStyles } from './styles';
+import { PreferenceRadioGroup } from './PreferenceRadioGroup';
+import { userMenuHeadingStyles, userMenuStyles } from './styles';
+import { fontFamilies, textSizes } from './values';
 
 interface UserMenuProps {
 	theme?: DeepPartial<Components['userMenu']>;
+	feedBacklink?: string;
 }
 
-export function UserMenu({ theme }: UserMenuProps) {
+export function UserMenu({ theme, feedBacklink }: UserMenuProps) {
+	const [textSizePreference, setTextSizePreference] = useState(
+		textSizes[0]?.label ?? '',
+	);
+	const [fontFamilyPreference, setFontFamilyPreference] = useState(
+		fontFamilies[0]?.label ?? '',
+	);
+
 	return (
-		<div>
-			<header css={userMenuHeadingStyles(theme)}>user menu</header>
-            <div>
-                text
-            </div>
-		</div>
+		<aside css={userMenuStyles(theme)}>
+			<header css={userMenuHeadingStyles(theme)}>
+				<h2>Accessibilty Settings</h2>
+			</header>
+			<div>
+				<p>
+					Customise your reeading & writing experience.
+					{feedBacklink && (
+						<a href={feedBacklink} target="_blank" rel="noreferrer">
+							Send feedback
+						</a>
+					)}
+				</p>
+			</div>
+			<div>
+				<PreferenceRadioGroup theme={theme}
+					options={textSizes}
+					name="Text Size"
+					currentValue={textSizePreference}
+					changeValue={setTextSizePreference}
+				/>
+			</div>
+			<div>
+				<PreferenceRadioGroup theme={theme}
+					options={fontFamilies}
+					name="Font Family"
+					currentValue={fontFamilyPreference}
+					changeValue={setFontFamilyPreference}
+				/>
+			</div>
+		</aside>
 	);
 }

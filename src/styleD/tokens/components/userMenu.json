@@ -1,18 +1,32 @@
 {
 	"components": {
 		"userMenu": {
+			"backgroundColor": {
+				"$type": "color",
+				"$value": "{base.colors.neutral.86}"
+			},
 			"heading": {
-				"backgroundColor": {
-					"$type": "color",
-					"$value": "{base.colors.neutral.86}"
-				},
 				"fontWeight": {
 					"$type": "number",
 					"$value": 700
 				},
 				"padding": {
 					"$type": "dimension",
-					"$value": "3px 5px 3px 12px"
+					"$value": "3px 5px"
+				}
+			},
+			"toggleButton": {
+				"basebackgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.100}"
+				},
+				"disabledbackgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.86}"
+				},
+				"selectedbackgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.blue.800}"
 				}
 			}
 		}

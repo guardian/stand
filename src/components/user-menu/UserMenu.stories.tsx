@@ -2,28 +2,26 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { UserMenu } from './UserMenu';
 
 const meta = {
-    title: 'Stand/UserMenu',
-    component: UserMenu,
+	title: 'Stand/UserMenu',
+	component: UserMenu,
+	args: {
+		feedBacklink: '/',
+	}
 } satisfies Meta<typeof UserMenu>;
 
 type Story = StoryObj<typeof UserMenu>;
 
-export const Default:Story = {
-    args: {
-        theme: {
-            
-        }
-    }
-}
+export const Default: Story = {};
 
-export const Themed:Story = {
-    args: {
-        theme: {
-            heading: {
-                backgroundColor: 'pink'
-            }
-        }
-    }
-}
+export const Themed: Story = {
+	args: {
+		theme: {
+			backgroundColor: 'pink',
+			toggleButton: {
+				selectedbackgroundColor: 'crimson'
+			}
+		},
+	},
+};
 
-export default meta
+export default meta;
