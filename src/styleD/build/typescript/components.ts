@@ -105,5 +105,12 @@ export const components = {
 			fontSize: '10px',
 		},
 	},
+	userMenu: {
+		heading: {
+			backgroundColor: '#dcdcdc',
+			fontWeight: 700,
+			padding: '3px 5px 3px 12px',
+		},
+	},
 };
 export type Components = typeof components;

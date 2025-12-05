@@ -1,0 +1,20 @@
+{
+	"components": {
+		"userMenu": {
+			"heading": {
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.86}"
+				},
+				"fontWeight": {
+					"$type": "number",
+					"$value": 700
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": "3px 5px 3px 12px"
+				}
+			}
+		}
+	}
+}

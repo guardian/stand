@@ -3,10 +3,10 @@
  */
 
 export const semantic = {
-	colors: {
-		text: {
-			primary: '#000000',
-		},
-	},
+  "colors": {
+    "text": {
+      "primary": "#000000"
+    }
+  }
 };
 export type Semantic = typeof semantic;
