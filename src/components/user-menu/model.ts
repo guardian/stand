@@ -4,4 +4,5 @@ export type Option = {
     label: string;
     description?: string;
     labelCss?: SerializedStyles;
+    buttonCss?: SerializedStyles;
 };

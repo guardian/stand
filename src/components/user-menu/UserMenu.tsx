@@ -3,7 +3,7 @@ import type { Components } from 'src/styleD/build/typescript/components';
 import type { DeepPartial } from '../util';
 import { PreferenceRadioGroup } from './PreferenceRadioGroup';
 import { userMenuHeadingStyles, userMenuStyles } from './styles';
-import { fontFamilies, textSizes } from './values';
+import { colorSchemes, fontFamilies, textSizes } from './values';
 
 interface UserMenuProps {
 	theme?: DeepPartial<Components['userMenu']>;
@@ -16,6 +16,9 @@ export function UserMenu({ theme, feedBacklink }: UserMenuProps) {
 	);
 	const [fontFamilyPreference, setFontFamilyPreference] = useState(
 		fontFamilies[0]?.label ?? '',
+	);
+	const [colorSchemePreference, setColorSchemePreference] = useState(
+		colorSchemes[0]?.label ?? '',
 	);
 
 	return (
@@ -33,22 +36,30 @@ export function UserMenu({ theme, feedBacklink }: UserMenuProps) {
 					)}
 				</p>
 			</div>
-			<div>
-				<PreferenceRadioGroup theme={theme}
-					options={textSizes}
-					name="Text Size"
-					currentValue={textSizePreference}
-					changeValue={setTextSizePreference}
-				/>
-			</div>
-			<div>
-				<PreferenceRadioGroup theme={theme}
-					options={fontFamilies}
-					name="Font Family"
-					currentValue={fontFamilyPreference}
-					changeValue={setFontFamilyPreference}
-				/>
-			</div>
+			<PreferenceRadioGroup
+				theme={theme}
+				options={textSizes}
+				name="Text Size"
+				currentValue={textSizePreference}
+				changeValue={setTextSizePreference}
+			/>
+
+			<PreferenceRadioGroup
+				theme={theme}
+				options={fontFamilies}
+				name="Font Family"
+				currentValue={fontFamilyPreference}
+				changeValue={setFontFamilyPreference}
+			/>
+
+			<PreferenceRadioGroup
+				theme={theme}
+				format="rows"
+				options={colorSchemes}
+				name="Color scheme"
+				currentValue={colorSchemePreference}
+				changeValue={setColorSchemePreference}
+			/>
 		</aside>
 	);
 }

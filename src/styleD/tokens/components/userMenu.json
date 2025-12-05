@@ -24,9 +24,13 @@
 					"$type": "color",
 					"$value": "{base.colors.neutral.86}"
 				},
-				"selectedbackgroundColor": {
+				"baseBorderColor": {
 					"$type": "color",
-					"$value": "{base.colors.blue.800}"
+					"$value": "{base.colors.neutral.86}"
+				},
+				"selectedBorderColor": {
+					"$type": "color",
+					"$value": "{base.colors.blue.200}"
 				}
 			}
 		}

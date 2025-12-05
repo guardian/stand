@@ -18,7 +18,7 @@ export const Themed: Story = {
 		theme: {
 			backgroundColor: 'pink',
 			toggleButton: {
-				selectedbackgroundColor: 'crimson'
+				selectedBorderColor: 'crimson'
 			}
 		},
 	},

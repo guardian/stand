@@ -109,12 +109,13 @@ export const components = {
     "backgroundColor": "#dcdcdc",
     "heading": {
       "fontWeight": 700,
-      "padding": "3px 5px 3px 12px"
+      "padding": "3px 5px"
     },
     "toggleButton": {
       "basebackgroundColor": "#ffffff",
       "disabledbackgroundColor": "#dcdcdc",
-      "selectedbackgroundColor": "#bdd4f4"
+      "baseBorderColor": "#dcdcdc",
+      "selectedBorderColor": "#0d4289"
     }
   }
 };

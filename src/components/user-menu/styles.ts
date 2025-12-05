@@ -31,31 +31,51 @@ export const userMenuHeadingStyles = (
 	`;
 };
 
-export const toggleButtonGroupStyles = (
+export const toggleButtonStackedGroupStyles = (
+	// _partialTheme: DeepPartial<Components['userMenu']> = {},
+): SerializedStyles => {
+	// const theme = mergeDeep(componentsTheme['userMenu'], partialTheme);
+	return css`
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	`;
+};
+
+export const toggleButtonRowsGroupStyles = (
+	// _partialTheme: DeepPartial<Components['userMenu']> = {},
+): SerializedStyles => {
+	// const theme = mergeDeep(componentsTheme['userMenu'], partialTheme);
+	return css`
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 5px;
+	`;
+};
+
+export const toggleButtonStyles = (
 	partialTheme: DeepPartial<Components['userMenu']> = {},
 ): SerializedStyles => {
 	const theme = mergeDeep(componentsTheme['userMenu'], partialTheme);
 
 	return css`
-		display: flex;
-		flex-direction: column;
-		gap: 5px;
+		border-radius: 0;
+		border-style: solid;
+		border-color: ${theme.toggleButton.baseBorderColor};
+		background-color: ${theme.toggleButton.basebackgroundColor};
 
-		> button {
-			border-radius: 0;
-			background-color: ${theme.toggleButton.basebackgroundColor};
+		&[data-disabled] {
+			background-color: ${theme.toggleButton.disabledbackgroundColor};
+		}
 
-			&[data-disabled] {
-				background-color: ${theme.toggleButton.disabledbackgroundColor};
-			}
+		&[data-focus-visible] {
+			outline-offset: 1px;
+			outline: 2px solid blue;
+		}
 
-			&[data-focus-visible] {
-				outline: 3px solid blue;
-			}
-
-			&[data-selected] {
-				background-color: ${theme.toggleButton.selectedbackgroundColor};
-			}
+		&[data-selected] {
+			border-color: ${theme.toggleButton.selectedBorderColor};
 		}
 	`;
 };

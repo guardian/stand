@@ -26,22 +26,67 @@ const textSizes: Option[] = [
 ];
 
 const fontFamilies: Option[] = [
-    {
-        label: 'Guardian Text Egyptian',
-        description: 'Classic Guardian Serif',
-        labelCss: css({
-            fontFamily: 'serif',
-            fontSize: 20,
-        })
-    },
-    {
-        label: 'Guardian Text Sans',
-        description: 'Sans-Serif',
-        labelCss: css({
-            fontFamily: 'sans-serif',
-            fontSize: 20,
-        })
-    }
-]
+	{
+		label: 'Guardian Text Egyptian',
+		description: 'Classic Guardian Serif',
+		labelCss: css({
+			fontFamily: 'serif',
+			fontSize: 20,
+		}),
+	},
+	{
+		label: 'Guardian Text Sans',
+		description: 'Sans-Serif',
+		labelCss: css({
+			fontFamily: 'sans-serif',
+			fontSize: 20,
+		}),
+	},
+];
 
-export { textSizes, fontFamilies };
+const colorSchemes: Option[] = [
+	{
+		label: 'white',
+		buttonCss: css({
+			backgroundColor: 'white',
+			padding: 10,
+		}),
+	},
+	{
+		label: 'cream',
+		buttonCss: css({
+			backgroundColor: 'antiquewhite',
+			padding: 10,
+		}),
+	},
+	{
+		label: 'green',
+		buttonCss: css({
+			backgroundColor: 'lightgreen',
+			padding: 10,
+		}),
+	},
+	{
+		label: 'pink',
+		buttonCss: css({
+			backgroundColor: 'pink',
+			padding: 10,
+		}),
+	},
+	{
+		label: 'blue',
+		buttonCss: css({
+			backgroundColor: 'skyblue',
+			padding: 10,
+		}),
+	},
+	{
+		label: 'orange',
+		buttonCss: css({
+			backgroundColor: 'orange',
+			padding: 10,
+		}),
+	},
+];
+
+export { textSizes, fontFamilies, colorSchemes };

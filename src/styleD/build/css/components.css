@@ -75,8 +75,9 @@
   --components-tag-table-type-badge-font-size: 10px;
   --components-user-menu-background-color: #dcdcdc;
   --components-user-menu-heading-font-weight: 700;
-  --components-user-menu-heading-padding: 3px 5px 3px 12px;
+  --components-user-menu-heading-padding: 3px 5px;
   --components-user-menu-toggle-button-basebackground-color: #ffffff;
   --components-user-menu-toggle-button-disabledbackground-color: #dcdcdc;
-  --components-user-menu-toggle-button-selectedbackground-color: #bdd4f4;
+  --components-user-menu-toggle-button-base-border-color: #dcdcdc;
+  --components-user-menu-toggle-button-selected-border-color: #0d4289;
 }
