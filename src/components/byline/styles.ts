@@ -2,9 +2,9 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { Node } from 'prosemirror-model';
 import {
-	type Components,
-	components as componentsTheme,
-} from '../../styleD/build/typescript/components';
+	type ComponentByline,
+	componentByline,
+} from '../../styleD/build/typescript/component/byline';
 import type { DeepPartial } from '../util';
 import { mergeDeep } from '../util';
 
@@ -14,9 +14,9 @@ export const bylineContainerStyles = css`
 `;
 
 export const bylineEditorStyles = (
-	partialTheme: DeepPartial<Components['byline']> = {},
+	partialTheme: DeepPartial<ComponentByline> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentsTheme['byline'], partialTheme);
+	const theme = mergeDeep(componentByline, partialTheme);
 	return css`
 		border-color: ${theme.borderColor};
 		border-style: ${theme.borderStyle};
@@ -171,7 +171,7 @@ export const bylineEditorStyles = (
 			border-style: ${theme.chip.borderStyle};
 			border-width: ${theme.chip.borderWidth};
 			border-radius: ${theme.chip.borderRadius};
-			padding: ${theme.chip.padding};
+			padding: ${theme.chip.paddingY} ${theme.chip.paddingX};
 			color: ${theme.chip.color};
 
 			cursor: default;
@@ -214,12 +214,9 @@ export const bylineEditorStyles = (
 
 export const dropdownContainerStyles = (
 	showDropdown: boolean,
-	partialTheme: DeepPartial<Components['byline']['dropdown']> = {},
+	partialTheme: DeepPartial<ComponentByline['dropdown']> = {},
 ) => {
-	const theme = mergeDeep(
-		componentsTheme['byline']['dropdown'],
-		partialTheme,
-	);
+	const theme = mergeDeep(componentByline['dropdown'], partialTheme);
 	return css`
 		position: absolute;
 		box-sizing: border-box;
@@ -242,12 +239,9 @@ export const dropdownUlStyles = css`
 `;
 
 export const dropdownLiStyles = (
-	partialTheme: DeepPartial<Components['byline']['dropdown']> = {},
+	partialTheme: DeepPartial<ComponentByline['dropdown']> = {},
 ) => {
-	const theme = mergeDeep(
-		componentsTheme['byline']['dropdown'],
-		partialTheme,
-	);
+	const theme = mergeDeep(componentByline['dropdown'], partialTheme);
 	return css`
 		cursor: pointer;
 		padding: 5px;
@@ -259,12 +253,9 @@ export const dropdownLiStyles = (
 };
 
 export const selectedDropdownLiStyles = (
-	partialTheme: DeepPartial<Components['byline']['dropdown']> = {},
+	partialTheme: DeepPartial<ComponentByline['dropdown']> = {},
 ) => {
-	const theme = mergeDeep(
-		componentsTheme['byline']['dropdown'],
-		partialTheme,
-	);
+	const theme = mergeDeep(componentByline['dropdown'], partialTheme);
 	return css`
 		background-color: ${theme.li.selectedBackgroundColor};
 		color: ${theme.li.selectedColor};

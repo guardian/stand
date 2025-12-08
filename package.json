@@ -8,9 +8,13 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./base.css": "./dist/styleD/build/css/base.css",
-		"./semantic.css": "./dist/styleD/build/css/semantic.css",
-		"./components.css": "./dist/styleD/build/css/components.css"
+		"./base/colors.css": "./dist/styleD/build/css/base/colors.css",
+		"./base/typography.css": "./dist/styleD/build/css/base/typography.css",
+		"./semantic/colors.css": "./dist/styleD/build/css/semantic/colors.css",
+		"./semantic/typography.css": "./dist/styleD/build/css/semantic/typography.css",
+		"./component/byline.css": "./dist/styleD/build/css/component/byline.css",
+		"./component/tagAutocomplete.css": "./dist/styleD/build/css/component/tagAutocomplete.css",
+		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css"
 	},
 	"files": [
 		"dist"
@@ -21,7 +25,7 @@
 	},
 	"main": "./dist/index.cjs",
 	"types": "./dist/types/index.d.ts",
-	"packageManager": "pnpm@10.23.0+sha512.21c4e5698002ade97e4efe8b8b4a89a8de3c85a37919f957e7a0f30f38fbc5bbdd05980ffe29179b2fb6e6e691242e098d945d1601772cad0fef5fb6411e2a4b",
+	"packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a",
 	"scripts": {
 		"build": "rimraf dist && rollup -c",
 		"build-styled": "cd src/styleD && node build.js",
@@ -29,6 +33,7 @@
 		"build-storybook": "storybook build",
 		"lint": "eslint . --ext .ts,.tsx",
 		"lint:fix": "eslint --fix . --ext .ts,.tsx",
+		"lint:tokens": "tz check",
 		"format:check": "prettier --check .",
 		"format:fix": "prettier --write .",
 		"tsc": "tsc",
@@ -51,10 +56,12 @@
 		"@storybook/addon-docs": "^10.0.8",
 		"@storybook/addon-themes": "^10.0.8",
 		"@storybook/react-vite": "^10.0.8",
+		"@terrazzo/cli": "^0.10.5",
 		"@types/jest": "30.0.0",
 		"@types/node": "^24.10.1",
 		"@types/react": "17.0.76",
 		"@types/react-dom": "17.0.25",
+		"change-case": "^5.4.4",
 		"eslint": "9.39.1",
 		"eslint-plugin-storybook": "^10.0.8",
 		"jest": "30.2.0",

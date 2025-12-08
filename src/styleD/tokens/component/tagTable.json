@@ -1,24 +1,40 @@
 {
-	"components": {
+	"component": {
 		"tagTable": {
 			"heading": {
 				"backgroundColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.86}"
+					"$value": "{base.colors.neutral.700}"
 				},
 				"fontWeight": {
 					"$type": "number",
 					"$value": 700
 				},
-				"padding": {
+				"paddingTop": {
 					"$type": "dimension",
-					"$value": "3px 5px 3px 12px"
+					"$value": "3px"
+				},
+				"paddingRight": {
+					"$type": "dimension",
+					"$value": "5px"
+				},
+				"paddingBottom": {
+					"$type": "dimension",
+					"$value": "3px"
+				},
+				"paddingLeft": {
+					"$type": "dimension",
+					"$value": "12px"
 				}
 			},
 			"cell": {
-				"padding": {
+				"paddingX": {
 					"$type": "dimension",
-					"$value": "3px 5px"
+					"$value": "5px"
+				},
+				"paddingY": {
+					"$type": "dimension",
+					"$value": "3px"
 				},
 				"firstCellPaddingLeft": {
 					"$type": "dimension",
@@ -30,11 +46,12 @@
 						"$value": "1px"
 					},
 					"borderStyle": {
+						"$type": "strokeStyle",
 						"$value": "solid"
 					},
 					"borderColor": {
 						"$type": "color",
-						"$value": "{base.colors.neutral.100}"
+						"$value": "{base.colors.neutral.900}"
 					}
 				}
 			},
@@ -45,11 +62,11 @@
 				},
 				"backgroundColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.93}"
+					"$value": "{base.colors.neutral.800}"
 				},
 				"backgroundHoverColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.97}"
+					"$value": "{base.colors.neutral.850}"
 				},
 				"borderBottom": {
 					"borderWidth": {
@@ -57,11 +74,12 @@
 						"$value": "1px"
 					},
 					"borderStyle": {
+						"$type": "strokeStyle",
 						"$value": "solid"
 					},
 					"borderColor": {
 						"$type": "color",
-						"$value": "{base.colors.neutral.100}"
+						"$value": "{base.colors.neutral.900}"
 					}
 				},
 				"firstRowBackgroundColor": {
@@ -76,19 +94,23 @@
 			"addButton": {
 				"color": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.100}"
+					"$value": "{base.colors.neutral.900}"
 				},
-				"padding": {
+				"paddingX": {
 					"$type": "dimension",
-					"$value": "0 10px"
+					"$value": "10px"
+				},
+				"paddingY": {
+					"$type": "dimension",
+					"$value": "0px"
 				},
 				"backgroundColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.55}"
+					"$value": "{base.colors.neutral.400}"
 				},
 				"backgroundHoverColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.33}"
+					"$value": "{base.colors.neutral.200}"
 				},
 				"fontWeight": {
 					"$type": "number",
@@ -106,11 +128,15 @@
 				},
 				"backgroundColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.100}"
+					"$value": "{base.colors.neutral.900}"
 				},
-				"padding": {
+				"paddingX": {
 					"$type": "dimension",
-					"$value": "2px 6px"
+					"$value": "6px"
+				},
+				"paddingY": {
+					"$type": "dimension",
+					"$value": "2px"
 				},
 				"fontWeight": {
 					"$type": "number",

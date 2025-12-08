@@ -11,7 +11,7 @@ import {
 	TableHeader,
 	useDragAndDrop,
 } from 'react-aria-components';
-import type { Components } from '../../styleD/build/typescript/components';
+import type { ComponentTagTable } from '../../styleD/build/typescript/component/tagTable';
 import type { DeepPartial } from '../util';
 import {
 	tagTableAddButtonStyles as addButtonStyles,
@@ -42,14 +42,11 @@ export interface TagTableProps<R extends Row> {
 	removeIcon?: ReactElement;
 	gripIcon?: ReactElement;
 	/** `theme` - Used to customise the look and feel of the TagTable component */
-	theme?: DeepPartial<Components['tagTable']>;
+	theme?: DeepPartial<ComponentTagTable>;
 	cssOverrides?: SerializedStyles;
 }
 
-const TypeBadge = (
-	type: string,
-	theme?: DeepPartial<Components['tagTable']>,
-) => {
+const TypeBadge = (type: string, theme?: DeepPartial<ComponentTagTable>) => {
 	return <span css={typeBadgeStyles(theme)}>{type}</span>;
 };
 const defaultCanRemove = () => true;

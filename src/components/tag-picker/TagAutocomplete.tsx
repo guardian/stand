@@ -10,7 +10,7 @@ import {
 	ListBoxLoadMoreItem,
 	Popover,
 } from 'react-aria-components';
-import type { Components } from '../../styleD/build/typescript/components';
+import type { ComponentTagAutocomplete } from '../../styleD/build/typescript/component/tagAutocomplete';
 import type { DeepPartial } from '../util';
 import {
 	listboxInfoStyles,
@@ -20,11 +20,11 @@ import {
 } from './styles';
 import type { Tag } from './types';
 
-interface TagAutocompleteProps {
-	addTag: (tag: Tag) => void;
+interface TagAutocompleteProps<T extends Tag = Tag> {
+	addTag: (tag: T) => void;
 	loading: boolean;
 	onChange: (inputText: string) => void;
-	options: Tag[];
+	options: T[];
 	label: string;
 	placeholder: string;
 	disabled: boolean;
@@ -32,11 +32,11 @@ interface TagAutocompleteProps {
 	'data-testid'?: string;
 	loadingIcon?: ReactElement;
 	/** `theme` - Used to customise the look and feel of the TagAutocomplete component */
-	theme?: DeepPartial<Components['tagAutocomplete']>;
+	theme?: DeepPartial<ComponentTagAutocomplete>;
 	cssOverrides?: SerializedStyles;
 }
 
-export function TagAutocomplete({
+export function TagAutocomplete<T extends Tag = Tag>({
 	addTag,
 	loading,
 	onChange,
@@ -49,7 +49,7 @@ export function TagAutocomplete({
 	loadingIcon,
 	theme,
 	cssOverrides,
-}: TagAutocompleteProps) {
+}: TagAutocompleteProps<T>) {
 	return (
 		<div
 			css={[

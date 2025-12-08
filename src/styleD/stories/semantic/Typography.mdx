@@ -1,0 +1,26 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import TypographyPresets, { Presets } from './Typography.stories.tsx';
+
+<Meta of={TypographyPresets} />
+
+# Semantic - Typography Presets
+
+This story showcases the semantic typography presets available in the design system.
+
+## Example usage
+
+```tsx
+import { css } from '@emotion/react';
+import {
+	semanticTypography,
+	convertTypographyToEmotion,
+} from '@guardian/stand';
+
+const headline = css`
+	${convertTypographyToEmotion(semanticTypography['title-lg'])};
+`;
+```
+
+## Typography tokens
+
+<Story of={Presets} />

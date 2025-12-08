@@ -6,6 +6,18 @@ import type { Preview } from '@storybook/react-vite';
 const ASSETS_URL = 'https://interactive.guim.co.uk/fonts/guss-webfonts/';
 
 const Fonts = css`
+	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
+	@font-face {
+		font-family: 'GH Guardian Headline';
+		src:
+			url('https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Bold.woff2')
+				format('woff2'),
+			url('https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/latin1-not-hinted/GHGuardianHeadline-Bold.woff')
+				format('woff');
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
 	@font-face {
 		font-family: 'Guardian Agate Sans';
 		src: url('${ASSETS_URL}GuardianAgateSans1Web/GuardianAgateSans1Web-Regular.woff2')

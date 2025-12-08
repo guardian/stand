@@ -4,19 +4,21 @@
 
 :root {
 	--base-colors-neutral-0: #000000;
-	--base-colors-neutral-7: #121212;
-	--base-colors-neutral-20: #333333;
-	--base-colors-neutral-33: #545454;
-	--base-colors-neutral-40: #666666;
-	--base-colors-neutral-55: #8d8d8d;
-	--base-colors-neutral-60: #999999;
-	--base-colors-neutral-73: #bababa;
-	--base-colors-neutral-80: #cccccc;
-	--base-colors-neutral-86: #dcdcdc;
-	--base-colors-neutral-90: #e6e6e6;
-	--base-colors-neutral-93: #ededed;
-	--base-colors-neutral-97: #f6f6f6;
-	--base-colors-neutral-100: #ffffff;
+	--base-colors-neutral-50: #121212;
+	--base-colors-neutral-100: #333333;
+	--base-colors-neutral-200: #545454;
+	--base-colors-neutral-300: #666666;
+	--base-colors-neutral-400: #8d8d8d;
+	--base-colors-neutral-500: #999999;
+	--base-colors-neutral-550: #aeaeae;
+	--base-colors-neutral-600: #bababa;
+	--base-colors-neutral-625: #c1c1c1;
+	--base-colors-neutral-650: #cccccc;
+	--base-colors-neutral-700: #dcdcdc;
+	--base-colors-neutral-750: #e6e6e6;
+	--base-colors-neutral-800: #ededed;
+	--base-colors-neutral-850: #f6f6f6;
+	--base-colors-neutral-900: #ffffff;
 	--base-colors-red-50: #3d0e08;
 	--base-colors-red-100: #65170e;
 	--base-colors-red-200: #8c2113;
@@ -90,7 +92,7 @@
 	--base-colors-magenta-50: #350e20;
 	--base-colors-magenta-100: #581734;
 	--base-colors-magenta-200: #7a2048;
-	--base-colors-magenta-300: #bf3271;
+	--base-colors-magenta-300: #9d295d;
 	--base-colors-magenta-400: #bf3271;
 	--base-colors-magenta-500: #cb578b;
 	--base-colors-magenta-600: #d67ca4;
