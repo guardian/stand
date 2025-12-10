@@ -21,18 +21,28 @@ import {
 import type { Tag } from './types';
 
 interface TagAutocompleteProps<T extends Tag = Tag> {
+	/** `addTag` - Function called when an option is picked from the dropdown */
 	addTag: (tag: T) => void;
+	/** `loading` - Whether the component is loading options for the dropdown */
 	loading: boolean;
+	/** `onChange` - Function called when the combobox input changes */
 	onChange: (inputText: string) => void;
+	/** `options` - The list of options shown in the dropdown */
 	options: T[];
+	/** `label` - An accessible label for the combobox input */
 	label: string;
+	/** `placeholder` - A placeholder string for the combobox input */
 	placeholder: string;
+	/** `disabled` - Whether the combobox input is disabled */
 	disabled: boolean;
+	/** `value` - The value of the combobox input */
 	value: string;
 	'data-testid'?: string;
+	/** `loadingIcon` - Icon used to show loading happening in the dropdown */
 	loadingIcon?: ReactElement;
 	/** `theme` - Used to customise the look and feel of the TagAutocomplete component */
 	theme?: DeepPartial<ComponentTagAutocomplete>;
+	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
 	cssOverrides?: SerializedStyles;
 }
 
@@ -95,6 +105,7 @@ export function TagAutocomplete<T extends Tag = Tag>({
 							(value || options.length || loading) &&
 							listboxStyles(theme)
 						}
+						autoFocus="first"
 						renderEmptyState={() =>
 							// Only show a "no results" box if user has typed
 							value &&

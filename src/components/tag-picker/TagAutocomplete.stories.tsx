@@ -9,11 +9,27 @@ import type { TagManagerObjectData } from './types';
 const meta = {
 	title: 'Stand/TagAutocomplete',
 	component: TagAutocomplete,
+	args: {
+		addTag: () => {},
+		loading: false,
+		onChange: () => {},
+		options: [],
+		label: 'tag',
+		placeholder: 'Choose a tag',
+		disabled: false,
+		value: '',
+	},
 } satisfies Meta<typeof TagAutocomplete>;
 
 type Story = StoryObj<typeof TagAutocomplete>;
 
-export const TagPicker: Story = {
+export const Default = {} satisfies Story;
+
+export const Disabled = {
+	args: { disabled: true },
+} satisfies Story;
+
+export const TagPicker = {
 	render: () => {
 		const [selectedTags, setSelectedTags] = useState<
 			TagManagerObjectData[]
@@ -72,7 +88,7 @@ export const TagPicker: Story = {
 	},
 } satisfies Story;
 
-export const Async: Story = {
+export const Async = {
 	render: () => {
 		const [options, setOptions] = useState<TagManagerObjectData[]>([]);
 		const [value, setValue] = useState('');

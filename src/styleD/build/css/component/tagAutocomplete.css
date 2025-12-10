@@ -5,6 +5,7 @@
 :root {
 	--component-tag-autocomplete-input-color: #000000;
 	--component-tag-autocomplete-input-background-color: #ffffff;
+	--component-tag-autocomplete-input-disabled-background-color: #dcdcdc;
 	--component-tag-autocomplete-input-border-width: 1px;
 	--component-tag-autocomplete-input-border-style: solid;
 	--component-tag-autocomplete-input-border-color: #8d8d8d;

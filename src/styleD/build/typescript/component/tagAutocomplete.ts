@@ -6,6 +6,7 @@ export const componentTagAutocomplete = {
 	input: {
 		color: '#000000',
 		backgroundColor: '#ffffff',
+		disabledBackgroundColor: '#dcdcdc',
 		borderWidth: '1px',
 		borderStyle: 'solid',
 		borderColor: '#8d8d8d',
