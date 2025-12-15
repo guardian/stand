@@ -10,6 +10,10 @@
 					"$type": "color",
 					"$value": "{base.colors.neutral.900}"
 				},
+				"disabledBackgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.700}"
+				},
 				"borderWidth": {
 					"$type": "dimension",
 					"$value": "1px"

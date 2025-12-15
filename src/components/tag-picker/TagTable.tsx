@@ -1,6 +1,6 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ReactElement } from 'react';
+import { type ReactElement, useEffect, useRef, useState } from 'react';
 import {
 	Button,
 	Cell,
@@ -29,20 +29,32 @@ type Row = TagRow | { tag: TagRow };
 const rowToTag = (row: Row): TagRow => ('tag' in row ? row.tag : row);
 
 export interface TagTableProps<R extends Row> {
+	/** `rows` - The collection of rows */
 	rows: R[];
+	/** `filterRows` - Function to filter rows from `rows` prop from appearing in the table */
 	filterRows: (row: R) => boolean;
+	/** `heading` - The table heading */
 	heading?: string;
+	/** `showTagType` - Whether to show tags' type in table */
 	showTagType?: boolean;
+	/** `showTagSectionName` - Whether to show tags' section name in table */
 	showTagSectionName?: boolean;
+	/** `removeAction` - Function called when the Remove button is pressed on a row */
 	removeAction?: (tag: R) => void;
+	/** `addAction` - Function called when the Add button is pressed on a row */
 	addAction?: (tag: R) => void;
+	/** `onReorder` - Function called when a re-ordering of rows through drag and drop is performed */
 	onReorder?: (tags: R[]) => void;
+	/** `canRemove` - Function to determine if a given row can be removed from the table */
 	canRemove?: (tag: R) => boolean;
 	'data-testid'?: string;
+	/** `removeIcon` - Icon used in the remove row button */
 	removeIcon?: ReactElement;
+	/** `gripIcon` - Icon to indicate that a row can be dragged, used in the accessible drag button */
 	gripIcon?: ReactElement;
 	/** `theme` - Used to customise the look and feel of the TagTable component */
 	theme?: DeepPartial<ComponentTagTable>;
+	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
 	cssOverrides?: SerializedStyles;
 }
 
@@ -68,7 +80,20 @@ export function TagTable<R extends Row>({
 	cssOverrides,
 }: TagTableProps<R>) {
 	const canDrag = !!onReorder;
-	const filtered = rows.filter(filterRows);
+
+	// Local copy of row data, so we can reorder as needed
+	const [localRows, setLocalRows] = useState(() => [...rows]);
+	// Ref to local row data, so we can access up-to-date state within callbacks
+	const localRowsRef = useRef(localRows);
+	// eslint-disable-next-line react-hooks/refs -- need to update the ref with latest local copy
+	localRowsRef.current = localRows;
+
+	useEffect(() => {
+		// Keep local row data tags in sync with row prop
+		setLocalRows([...rows]);
+	}, [rows]);
+
+	const filtered = localRows.filter(filterRows);
 
 	const { dragAndDropHooks } = useDragAndDrop<R>({
 		getItems: (_keys, items) => {
@@ -76,13 +101,14 @@ export function TagTable<R extends Row>({
 				'text/plain': rowToTag(item).id.toString(),
 			}));
 		},
+
 		onReorder(e) {
 			const draggedElementKey = [...e.keys].at(0);
 			if (draggedElementKey === e.target.key) {
 				return;
 			}
 
-			const localList = [...rows];
+			const localList = [...localRows];
 
 			const draggedElementIndex = localList.findIndex(
 				(i) => rowToTag(i).id === draggedElementKey,
@@ -106,6 +132,7 @@ export function TagTable<R extends Row>({
 				localList.splice(targetElementIndex + 1, 0, draggedElement);
 			}
 
+			setLocalRows(localList);
 			onReorder?.(localList);
 		},
 	});
@@ -131,13 +158,13 @@ export function TagTable<R extends Row>({
 					{removeTag && <Column></Column>}
 					{addTag && <Column></Column>}
 				</TableHeader>
-				<TableBody items={filtered} dependencies={[filtered]}>
+				<TableBody items={filtered} dependencies={[localRows]}>
 					{(item) => (
 						<Row
 							id={rowToTag(item).id}
 							css={rowStyles(canDrag, theme)}
 							key={rowToTag(item).id}
-							textValue={rowToTag(item).id.toString()}
+							textValue={rowToTag(item).internalName}
 						>
 							{onReorder && (
 								<Cell

@@ -24,6 +24,10 @@ export const tagAutocompleteInputStyles = (
 		border-color: ${theme.input.borderColor};
 		border-width: ${theme.input.borderWidth};
 		border-style: ${theme.input.borderStyle};
+
+		&[data-disabled] {
+			background-color: ${theme.input.disabledBackgroundColor};
+		}
 	`;
 };
 
