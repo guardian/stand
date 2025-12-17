@@ -7,17 +7,30 @@ import TypographyPresets, { Presets } from './Typography.stories.tsx';
 
 This story showcases the semantic typography presets available in the design system.
 
+The preview text has `contentEditable` enabled so you can see how the typography styles look with different text lengths and characters.
+Just click inside the preview box and start typing or pasting text.
+
 ## Example usage
 
-```tsx
+```ts
 import { css } from '@emotion/react';
 import {
 	semanticTypography,
 	convertTypographyToEmotion,
-} from '@guardian/stand';
+} from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/semantic/typography.css'; // CSS usage
 
-const headline = css`
-	${convertTypographyToEmotion(semanticTypography['title-lg'])};
+const styleJS = css`
+	/* JS/TS usage */
+	${convertTypographyToEmotion(semanticTypography['body-compact-md'])}
+`;
+
+const styleCSS = css`
+	/* CSS usage */
+	font: var(--semantic-typography-body-compact-sm-font);
+	letter-spacing: var(--semantic-typography-body-compact-sm-letter-spacing);
+	font-variation-settings: 'wdth'
+		var(--semantic-typography-body-compact-sm-font-width);
 `;
 ```
 

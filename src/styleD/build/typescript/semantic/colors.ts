@@ -29,7 +29,6 @@ export const semanticColors = {
 		'default-onDark': '#121212',
 		'default-onLight': '#ffffff',
 	},
-	Color: '#ffffff',
 	status: {
 		'status-draft': '#f1c21b',
 		'status-live': '#4e9e3e',

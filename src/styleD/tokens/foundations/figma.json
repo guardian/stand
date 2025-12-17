@@ -747,10 +747,6 @@
 					"$value": "{base.colors.neutral.900}"
 				}
 			},
-			"Color": {
-				"$type": "color",
-				"$value": "#ffffff"
-			},
 			"status": {
 				"status-draft": {
 					"$type": "color",
