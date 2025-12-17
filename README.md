@@ -28,6 +28,85 @@ Stand provides the foundations via CSS variables, as well as JS/TS exports for u
 
 Base / Primitive tokens should not be overridden if they are used directly, as this could have unintended consequences. Instead override the Semantic tokens which are designed to be overridden.
 
+### Fonts
+
+Most applications should only need to load the `Open Sans` and `Guardian Headline` fonts, as these are the primary fonts used across the Guardian's Editorial Tool design system.
+
+You only need to load Guardian Text Egyptian if you're planning to use it in your project, in most cases you only need this when working on Guardian editorial content on an editorial tool, i.e. when using `article-body-*` semantic tokens.
+
+#### Open Sans
+
+We're currently looking at how to best self host this font under a Guardian specific domain, before we release `@guardian/stand` design system for wider usage.
+
+For now, the Open Sans variable font can be loaded via Google Fonts:
+
+1. Visit [Google Fonts - Open Sans](https://fonts.google.com/specimen/Open+Sans)
+2. Click "Get Font" -> "Get embed code"
+3. Click "Change styles" dropdown
+4. Use "Full axis" for all options (Italic, Weight, Width)
+5. Copy the relevant `<link>` tag or `@import` code snippet into your project
+    - You don't need to include the CSS class, as the design system will handle applying the correct font-family via CSS variables or JS/TS tokens.
+
+### Guardian Fonts
+
+Make sure to visit [guardian/fonts](https://github.com/guardian/fonts) repo for the latest information on how to self-host these fonts.
+
+In general, we always want to use the `full-not-hinted` versions of the fonts where possible.
+
+#### Guardian Headline
+
+We only use the bold weight (700) of Guardian Headline in the design system.
+
+```css
+@font-face {
+	font-family: 'GH Guardian Headline';
+	src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/full-not-hinted/GHGuardianHeadline-Bold.woff2')
+		format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+```
+
+#### Guardian Text Egyptian
+
+We want the regular/normal weight (400), the bold weight (700), and the italic version of each weight for Guardian Text Egyptian in the design system.
+
+```css
+@font-face {
+	font-family: 'GuardianTextEgyptian';
+	src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-textegyptian/full-not-hinted/GuardianTextEgyptian-Regular.woff2')
+		format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'GuardianTextEgyptian';
+	src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-textegyptian/full-not-hinted/GuardianTextEgyptian-RegularItalic.woff2')
+		format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'GuardianTextEgyptian';
+	src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-textegyptian/full-not-hinted/GuardianTextEgyptian-Bold.woff2')
+		format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'GuardianTextEgyptian';
+	src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-textegyptian/full-not-hinted/GuardianTextEgyptian-BoldItalic.woff2')
+		format('woff2');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+```
+
 ### Semantic
 
 #### Colors
@@ -55,7 +134,7 @@ For a full list of CSS Semantic Color tokens see [`semantic/colors.css`](./src/s
 import { css } from '@emotion/react';
 import {
 	semanticTypography,
-	convertTypographyToEmotion,
+	convertTypographyToEmotion, // helper function to convert from typography token object to emotion CSS
 } from '@guardian/stand'; // JS/TS usage
 import '@guardian/stand/semantic/typography.css'; // CSS usage
 

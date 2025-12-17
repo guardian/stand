@@ -9,13 +9,42 @@ const Fonts = css`
 	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
 	@font-face {
 		font-family: 'GH Guardian Headline';
-		src:
-			url('https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/noalts-not-hinted/GHGuardianHeadline-Bold.woff2')
-				format('woff2'),
-			url('https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/latin1-not-hinted/GHGuardianHeadline-Bold.woff')
-				format('woff');
+		src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/full-not-hinted/GHGuardianHeadline-Bold.woff2')
+			format('woff2');
 		font-weight: 700;
 		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'GuardianTextEgyptian';
+		src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-textegyptian/full-not-hinted/GuardianTextEgyptian-Regular.woff2')
+			format('woff2');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'GuardianTextEgyptian';
+		src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-textegyptian/full-not-hinted/GuardianTextEgyptian-RegularItalic.woff2')
+			format('woff2');
+		font-weight: 400;
+		font-style: italic;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'GuardianTextEgyptian';
+		src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-textegyptian/full-not-hinted/GuardianTextEgyptian-Bold.woff2')
+			format('woff2');
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'GuardianTextEgyptian';
+		src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-textegyptian/full-not-hinted/GuardianTextEgyptian-BoldItalic.woff2')
+			format('woff2');
+		font-weight: 700;
+		font-style: italic;
 		font-display: swap;
 	}
 	@font-face {
