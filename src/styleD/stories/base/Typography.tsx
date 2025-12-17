@@ -36,7 +36,7 @@ export const Typography = () => (
 								font-family: '${value}';
 								font-weight: 460; /* use a hard coded weight to normalise the output for family */
 								font-size: ${baseTypography.size['18-px']};
-								font-style: normal; /* use a hard coded weight to normalise the output for family */
+								font-style: ${baseTypography.style.normal};
 								line-height: ${baseTypography['line-height']
 									.normal};
 								letter-spacing: ${baseTypography[
@@ -68,9 +68,9 @@ export const Typography = () => (
 								]}';
 								font-weight: ${baseTypography.weight[
 									'Open Sans'
-								].Regular};
+								].normal};
 								font-size: ${value};
-								font-style: normal;
+								font-style: ${baseTypography.style.normal};
 								line-height: ${baseTypography['line-height']
 									.normal};
 								letter-spacing: ${baseTypography[
@@ -110,7 +110,8 @@ export const Typography = () => (
 												font-weight: ${sizeValue};
 												font-size: ${baseTypography
 													.size['18-px']};
-												font-style: normal;
+												font-style: ${baseTypography
+													.style.normal};
 												line-height: ${baseTypography[
 													'line-height'
 												].normal};
@@ -148,9 +149,9 @@ export const Typography = () => (
 								]}';
 								font-weight: ${baseTypography.weight[
 									'Open Sans'
-								].Regular};
+								].normal};
 								font-size: ${baseTypography.size['18-px']};
-								font-style: normal;
+								font-style: ${baseTypography.style.normal};
 								line-height: ${baseTypography['line-height']
 									.normal};
 								letter-spacing: ${baseTypography[
@@ -175,7 +176,7 @@ export const Typography = () => (
 						<span
 							css={css`
 								font-family: '${baseTypography.family['Open Sans']}';
-								font-weight: ${baseTypography.weight['Open Sans'].Regular}
+								font-weight: ${baseTypography.weight['Open Sans'].normal}
 								font-size: ${baseTypography.size['18-px']};
 								font-style: ${value};
 								line-height: ${baseTypography['line-height'].normal};
@@ -206,9 +207,9 @@ export const Typography = () => (
 									]}';
 									font-weight: ${baseTypography.weight[
 										'Open Sans'
-									].Regular};
+									].normal};
 									font-size: ${baseTypography.size['18-px']};
-									font-style: normal;
+									font-style: ${baseTypography.style.normal};
 									line-height: ${value};
 									letter-spacing: ${baseTypography[
 										'letter-spacing'
@@ -240,9 +241,9 @@ export const Typography = () => (
 									]}';
 									font-weight: ${baseTypography.weight[
 										'Open Sans'
-									].Regular};
+									].normal};
 									font-size: ${baseTypography.size['18-px']};
-									font-style: normal;
+									font-style: ${baseTypography.style.normal};
 									line-height: ${baseTypography['line-height']
 										.normal};
 									letter-spacing: ${value};

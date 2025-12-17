@@ -107,9 +107,9 @@ const styleJs = css`
 	/* JS/TS usage */
 	font-family: ${baseTypography.family['Open Sans']};
 	font-size: ${baseTypography.size['14-px']};
-	font-weight: ${baseTypography.weight['Open Sans'].Regular};
+	font-weight: ${baseTypography.weight['Open Sans'].normal};
 	font-variation-settings: 'wdth' ${baseTypography.width['Open Sans']};
-	style: ${baseTypography.style.Italic};
+	font-style: ${baseTypography.style.normal};
 	line-height: ${baseTypography.lineHeight.normal};
 	letter-spacing: ${baseTypography.letterSpacing['default-px']};
 `;
@@ -118,9 +118,9 @@ const styleCss = css`
 	/* CSS usage */
 	font-family: var(--base-typography-family-open-sans);
 	font-size: var(--base-typography-size-14-px);
-	font-weight: var(--base-typography-weight-open-sans-regular);
+	font-weight: var(--base-typography-weight-open-sans-normal);
 	font-variation-settings: 'wdth' var(--base-typography-width-open-sans);
-	font-style: var(--base-typography-style-italic);
+	font-style: var(--base-typography-style-normal);
 	line-height: var(--base-typography-line-height-normal);
 	letter-spacing: var(--base-typography-letter-spacing-default-px);
 `;

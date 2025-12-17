@@ -554,54 +554,54 @@
 				}
 			},
 			"weight": {
-				"Guardian Headline": {
-					"Bold": {
+				"Guardian Text Egyptian": {
+					"normal": {
+						"$type": "fontWeight",
+						"$value": 400
+					},
+					"bold": {
 						"$type": "fontWeight",
 						"$value": 700
 					}
 				},
-				"Guardian Text Egyptian": {
-					"Regular": {
-						"$type": "fontWeight",
-						"$value": 400
-					},
-					"Bold": {
+				"Guardian Headline": {
+					"bold": {
 						"$type": "fontWeight",
 						"$value": 700
 					}
 				},
 				"Open Sans": {
-					"Light": {
+					"light": {
 						"$type": "fontWeight",
 						"$value": 340
 					},
-					"Regular": {
+					"normal": {
 						"$type": "fontWeight",
 						"$value": 460
 					},
-					"SemiBold": {
+					"semiBold": {
 						"$type": "fontWeight",
 						"$value": 600
 					},
-					"Bold": {
+					"bold": {
 						"$type": "fontWeight",
 						"$value": 700
 					}
 				},
 				"Open Sans Compact": {
-					"Light": {
+					"light": {
 						"$type": "fontWeight",
 						"$value": 360
 					},
-					"Regular": {
+					"normal": {
 						"$type": "fontWeight",
 						"$value": 460
 					},
-					"SemiBold": {
+					"semiBold": {
 						"$type": "fontWeight",
 						"$value": 600
 					},
-					"Bold": {
+					"bold": {
 						"$type": "fontWeight",
 						"$value": 700
 					}
@@ -618,17 +618,13 @@
 				}
 			},
 			"style": {
-				"Italic": {
+				"normal": {
+					"$type": "string",
+					"$value": "normal"
+				},
+				"italic": {
 					"$type": "string",
 					"$value": "italic"
-				},
-				"Light Italic": {
-					"$type": "string",
-					"$value": "light italic"
-				},
-				"Bold Italic": {
-					"$type": "string",
-					"$value": "bold italic"
 				}
 			},
 			"line-height": {

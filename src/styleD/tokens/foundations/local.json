@@ -6,9 +6,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Guardian Headline}",
-						"fontWeight": "{base.typography.weight.Guardian Headline.Bold}",
+						"fontWeight": "{base.typography.weight.Guardian Headline.bold}",
 						"fontSize": "{base.typography.size.18-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -27,9 +27,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Guardian Headline}",
-						"fontWeight": "{base.typography.weight.Guardian Headline.Bold}",
+						"fontWeight": "{base.typography.weight.Guardian Headline.bold}",
 						"fontSize": "{base.typography.size.20-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -48,9 +48,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Guardian Headline}",
-						"fontWeight": "{base.typography.weight.Guardian Headline.Bold}",
+						"fontWeight": "{base.typography.weight.Guardian Headline.bold}",
 						"fontSize": "{base.typography.size.24-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -69,9 +69,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Guardian Headline}",
-						"fontWeight": "{base.typography.weight.Guardian Headline.Bold}",
+						"fontWeight": "{base.typography.weight.Guardian Headline.bold}",
 						"fontSize": "{base.typography.size.32-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -90,9 +90,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
-						"fontWeight": "{base.typography.weight.Open Sans.Bold}",
+						"fontWeight": "{base.typography.weight.Open Sans.bold}",
 						"fontSize": "{base.typography.size.12-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -111,9 +111,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
-						"fontWeight": "{base.typography.weight.Open Sans.Bold}",
+						"fontWeight": "{base.typography.weight.Open Sans.bold}",
 						"fontSize": "{base.typography.size.14-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.dense-px}"
 					}
@@ -132,9 +132,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
-						"fontWeight": "{base.typography.weight.Open Sans.Bold}",
+						"fontWeight": "{base.typography.weight.Open Sans.bold}",
 						"fontSize": "{base.typography.size.16-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.denser-px}"
 					}
@@ -153,9 +153,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
-						"fontWeight": "{base.typography.weight.Open Sans.Bold}",
+						"fontWeight": "{base.typography.weight.Open Sans.bold}",
 						"fontSize": "{base.typography.size.18-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.denser-px}"
 					}
@@ -174,9 +174,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
-						"fontWeight": "{base.typography.weight.Open Sans.Bold}",
+						"fontWeight": "{base.typography.weight.Open Sans.bold}",
 						"fontSize": "{base.typography.size.20-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.denser-px}"
 					}
@@ -195,9 +195,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
-						"fontWeight": "{base.typography.weight.Open Sans.Bold}",
+						"fontWeight": "{base.typography.weight.Open Sans.bold}",
 						"fontSize": "{base.typography.size.24-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.densest-px}"
 					}
@@ -216,9 +216,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
-						"fontWeight": "{base.typography.weight.Open Sans Compact.Bold}",
+						"fontWeight": "{base.typography.weight.Open Sans Compact.bold}",
 						"fontSize": "{base.typography.size.12-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -237,9 +237,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
-						"fontWeight": "{base.typography.weight.Open Sans Compact.Bold}",
+						"fontWeight": "{base.typography.weight.Open Sans Compact.bold}",
 						"fontSize": "{base.typography.size.14-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -258,9 +258,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
-						"fontWeight": "{base.typography.weight.Open Sans Compact.Bold}",
+						"fontWeight": "{base.typography.weight.Open Sans Compact.bold}",
 						"fontSize": "{base.typography.size.16-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.dense-px}"
 					}
@@ -279,9 +279,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
-						"fontWeight": "{base.typography.weight.Open Sans Compact.Bold}",
+						"fontWeight": "{base.typography.weight.Open Sans Compact.bold}",
 						"fontSize": "{base.typography.size.18-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.dense-px}"
 					}
@@ -300,9 +300,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
-						"fontWeight": "{base.typography.weight.Open Sans Compact.Bold}",
+						"fontWeight": "{base.typography.weight.Open Sans Compact.bold}",
 						"fontSize": "{base.typography.size.20-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.denser-px}"
 					}
@@ -321,9 +321,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
-						"fontWeight": "{base.typography.weight.Open Sans Compact.Bold}",
+						"fontWeight": "{base.typography.weight.Open Sans Compact.bold}",
 						"fontSize": "{base.typography.size.24-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
 						"letterSpacing": "{base.typography.letter-spacing.denser-px}"
 					}
@@ -342,9 +342,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
-						"fontWeight": "{base.typography.weight.Open Sans.Regular}",
+						"fontWeight": "{base.typography.weight.Open Sans.normal}",
 						"fontSize": "{base.typography.size.14-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -363,9 +363,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
-						"fontWeight": "{base.typography.weight.Open Sans.Regular}",
+						"fontWeight": "{base.typography.weight.Open Sans.normal}",
 						"fontSize": "{base.typography.size.16-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -384,9 +384,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
-						"fontWeight": "{base.typography.weight.Open Sans.Regular}",
+						"fontWeight": "{base.typography.weight.Open Sans.normal}",
 						"fontSize": "{base.typography.size.18-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -405,9 +405,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
-						"fontWeight": "{base.typography.weight.Open Sans.Regular}",
+						"fontWeight": "{base.typography.weight.Open Sans.normal}",
 						"fontSize": "{base.typography.size.20-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -426,9 +426,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
-						"fontWeight": "{base.typography.weight.Open Sans Compact.Regular}",
+						"fontWeight": "{base.typography.weight.Open Sans Compact.normal}",
 						"fontSize": "{base.typography.size.14-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -447,9 +447,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
-						"fontWeight": "{base.typography.weight.Open Sans Compact.Regular}",
+						"fontWeight": "{base.typography.weight.Open Sans Compact.normal}",
 						"fontSize": "{base.typography.size.16-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -468,9 +468,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
-						"fontWeight": "{base.typography.weight.Open Sans Compact.Regular}",
+						"fontWeight": "{base.typography.weight.Open Sans Compact.normal}",
 						"fontSize": "{base.typography.size.18-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
@@ -489,9 +489,9 @@
 					"$type": "typography",
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
-						"fontWeight": "{base.typography.weight.Open Sans Compact.Regular}",
+						"fontWeight": "{base.typography.weight.Open Sans Compact.normal}",
 						"fontSize": "{base.typography.size.20-px}",
-						"fontStyle": "normal",
+						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
 						"letterSpacing": "{base.typography.letter-spacing.default-px}"
 					}
