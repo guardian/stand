@@ -3,3 +3,5 @@ playwright
 node_modules
 pnpm-lock.yaml
 test-results
+.storybook
+storybook-static

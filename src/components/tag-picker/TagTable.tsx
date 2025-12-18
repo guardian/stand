@@ -63,6 +63,92 @@ const TypeBadge = (type: string, theme?: DeepPartial<ComponentTagTable>) => {
 };
 const defaultCanRemove = () => true;
 
+/**
+ * ## TagTable
+ *
+ * *Status: Testing*
+ *
+ * Part of the overall TagPicker component, the TagTable provides an accessible
+ * table for displaying tags, with options to add, remove, and reorder tags via drag and drop,
+ * based on the [React Aria Table](https://react-spectrum.adobe.com/react-aria/Table) component.
+ *
+ * **Peer dependencies:**
+ * - `react-aria-components`
+ *
+ * See the `peerDependencies` section of the `package.json` for compatible versions to install.
+ *
+ * ## Usage
+ *
+ * *Example with TagAutocomplete and TagTable combined:*
+ *
+ * ```tsx
+ * import { TagAutocomplete, TagTable } from '@guardian/stand';
+ *
+ * const Component = () => {
+ *   const [selectedTags, setSelectedTags] = useState<
+ *     TagManagerObjectData[] // TagManagerObjectData is an internal type representing a Tag
+ *   >([]);
+
+ *   const [options, setOptions] = useState<TagManagerObjectData[]>([]);
+ *   const [value, setValue] = useState('');
+ *   const onChange = (inputText: string) => {
+ *     setValue(inputText);
+ *     if (inputText === '') {
+ *       setOptions([]);
+ *       return;
+ *     }
+ *
+ *     if (inputText === '*') {
+ *       setOptions(exampleTags); // exampleTags is an array of Tags
+ *       return;
+ *     }
+ *
+ *     // Simple filtering against exampleTags
+ *     const filteredItems = exampleTags.filter((t) =>
+ *       t.internalName.toLowerCase().includes(inputText.toLowerCase()),
+ *     );
+ *     return setOptions(filteredItems);
+ *   };
+
+ *   return (
+ *     <>
+ *       <div
+ *         css={css`
+ *             display: flex;
+ *         `}
+ *       >
+ *         <TagAutocomplete
+ *           onChange={onChange}
+ *           options={options}
+ *           label="Tags"
+ *           addTag={(tag) =>
+ *               setSelectedTags((tags) => {
+ *                   return [...tags, tag];
+ *               })
+ *           }
+ *           loading={false}
+ *           placeholder={''}
+ *           disabled={false}
+ *           value={value}
+ *         />
+ *         <select>
+ *            option>All tags</option>
+ *         </select>
+ *       </div>
+ *       <TagTable rows={selectedTags} filterRows={() => true} />
+ *     </>
+ *   );
+ * };
+ * ```
+ *
+ * #### Props
+ *
+ * See {@link TagTableProps} for a full list of props and descriptions.
+ *
+ * #### Example
+ *
+ * This is currently still in testing phase, so a production implementation is not yet available.
+ */
 export function TagTable<R extends Row>({
 	rows,
 	filterRows,

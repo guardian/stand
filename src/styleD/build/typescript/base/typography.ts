@@ -23,24 +23,24 @@ export const baseTypography = {
 		'48-px': '48px',
 	},
 	weight: {
-		'Guardian Headline': {
-			Bold: 700,
-		},
 		'Guardian Text Egyptian': {
-			Regular: 400,
-			Bold: 700,
+			normal: 400,
+			bold: 700,
+		},
+		'Guardian Headline': {
+			bold: 700,
 		},
 		'Open Sans': {
-			Light: 340,
-			Regular: 460,
-			SemiBold: 600,
-			Bold: 700,
+			light: 340,
+			normal: 460,
+			semiBold: 600,
+			bold: 700,
 		},
 		'Open Sans Compact': {
-			Light: 360,
-			Regular: 460,
-			SemiBold: 600,
-			Bold: 700,
+			light: 360,
+			normal: 460,
+			semiBold: 600,
+			bold: 700,
 		},
 	},
 	width: {
@@ -48,9 +48,8 @@ export const baseTypography = {
 		'Open Sans Compact': 88,
 	},
 	style: {
-		Italic: 'italic',
-		'Light Italic': 'light italic',
-		'Bold Italic': 'bold italic',
+		normal: 'normal',
+		italic: 'italic',
 	},
 	'line-height': {
 		tight: 1.15,

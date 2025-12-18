@@ -4,7 +4,13 @@ import storybook from 'eslint-plugin-storybook';
 
 export default [
 	{
-		ignores: ['dist', 'node_modules', 'playwright'],
+		ignores: [
+			'dist',
+			'node_modules',
+			'playwright',
+			'.storybook',
+			'storybook-static',
+		],
 	},
 	...guardian.configs.recommended,
 	...guardian.configs.jest,
