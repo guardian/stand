@@ -1,26 +1,23 @@
-import { useState } from 'react';
 import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
 import type { DeepPartial } from '../util';
 import { PreferenceRadioGroup } from './PreferenceRadioGroup';
 import { userMenuHeadingStyles, userMenuStyles } from './styles';
+import type { UserPreferences } from './types';
 import { colorSchemes, fontFamilies, textSizes } from './values';
 
-interface UserMenuProps {
+export interface UserMenuProps {
 	theme?: DeepPartial<ComponentUserMenu>;
 	feedBacklink?: string;
+	preferences: UserPreferences;
+	updatePreferences: { (mod: Partial<UserPreferences>): void };
 }
 
-export function UserMenu({ theme, feedBacklink }: UserMenuProps) {
-	const [textSizePreference, setTextSizePreference] = useState(
-		textSizes[0]?.label ?? '',
-	);
-	const [fontFamilyPreference, setFontFamilyPreference] = useState(
-		fontFamilies[0]?.label ?? '',
-	);
-	const [colorSchemePreference, setColorSchemePreference] = useState(
-		colorSchemes[0]?.label ?? '',
-	);
-
+export function UserMenu({
+	theme,
+	feedBacklink,
+	preferences,
+	updatePreferences,
+}: UserMenuProps) {
 	return (
 		<aside css={userMenuStyles(theme)}>
 			<header css={userMenuHeadingStyles(theme)}>
@@ -40,16 +37,18 @@ export function UserMenu({ theme, feedBacklink }: UserMenuProps) {
 				theme={theme}
 				options={textSizes}
 				name="Text Size"
-				currentValue={textSizePreference}
-				changeValue={setTextSizePreference}
+				currentValue={preferences.fontpreferences}
+				changeValue={(fontpreferences) =>
+					updatePreferences({ fontpreferences })
+				}
 			/>
 
 			<PreferenceRadioGroup
 				theme={theme}
 				options={fontFamilies}
 				name="Font Family"
-				currentValue={fontFamilyPreference}
-				changeValue={setFontFamilyPreference}
+				currentValue={preferences.fontType}
+				changeValue={(fontType) => updatePreferences({ fontType })}
 			/>
 
 			<PreferenceRadioGroup
@@ -57,8 +56,10 @@ export function UserMenu({ theme, feedBacklink }: UserMenuProps) {
 				format="rows"
 				options={colorSchemes}
 				name="Color scheme"
-				currentValue={colorSchemePreference}
-				changeValue={setColorSchemePreference}
+				currentValue={preferences.colorScheme}
+				changeValue={(colorScheme) =>
+					updatePreferences({ colorScheme })
+				}
 			/>
 		</aside>
 	);

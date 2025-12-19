@@ -3,6 +3,7 @@ import type { Option } from './model';
 
 const textSizes: Option[] = [
 	{
+		id: 'font-preference-small',
 		label: 'Small',
 		description: 'Compact reading',
 		labelCss: css({
@@ -10,6 +11,7 @@ const textSizes: Option[] = [
 		}),
 	},
 	{
+		id: 'font-preference-medium',
 		label: 'Medium',
 		description: 'Standard reading',
 		labelCss: css({
@@ -17,6 +19,7 @@ const textSizes: Option[] = [
 		}),
 	},
 	{
+		id: 'font-preference-large',
 		label: 'Large',
 		description: 'Comfortable reading',
 		labelCss: css({
@@ -27,6 +30,7 @@ const textSizes: Option[] = [
 
 const fontFamilies: Option[] = [
 	{
+		id: 'font-serif',
 		label: 'Guardian Text Egyptian',
 		description: 'Classic Guardian Serif',
 		labelCss: css({
@@ -35,6 +39,7 @@ const fontFamilies: Option[] = [
 		}),
 	},
 	{
+		id: 'font-sans',
 		label: 'Guardian Text Sans',
 		description: 'Sans-Serif',
 		labelCss: css({
@@ -46,42 +51,43 @@ const fontFamilies: Option[] = [
 
 const colorSchemes: Option[] = [
 	{
-		label: 'white',
+		id: 'white',
 		buttonCss: css({
 			backgroundColor: 'white',
 			padding: 10,
 		}),
+		isDefault: true,
 	},
 	{
-		label: 'cream',
+		id: 'cream',
 		buttonCss: css({
 			backgroundColor: 'antiquewhite',
 			padding: 10,
 		}),
 	},
 	{
-		label: 'green',
+		id: 'green',
 		buttonCss: css({
 			backgroundColor: 'lightgreen',
 			padding: 10,
 		}),
 	},
 	{
-		label: 'pink',
+		id: 'pink',
 		buttonCss: css({
 			backgroundColor: 'pink',
 			padding: 10,
 		}),
 	},
 	{
-		label: 'blue',
+		id: 'blue',
 		buttonCss: css({
 			backgroundColor: 'skyblue',
 			padding: 10,
 		}),
 	},
 	{
-		label: 'orange',
+		id: 'orange',
 		buttonCss: css({
 			backgroundColor: 'orange',
 			padding: 10,

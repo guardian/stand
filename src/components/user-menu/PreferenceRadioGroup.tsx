@@ -13,7 +13,7 @@ interface PreferenceRadioGroupProps {
 	theme?: DeepPartial<ComponentUserMenu>;
 	options: Option[];
 	name: string;
-	currentValue: string;
+	currentValue?: string;
 	changeValue: { (value: string): void };
 	format?: 'stack' | 'rows';
 }
@@ -36,6 +36,14 @@ export function PreferenceRadioGroup({
 			? toggleButtonStyles(theme)
 			: [toggleButtonStyles(theme), css({ flexBasis: '30%' })];
 
+	const defaultOptionId = options.find((option) => option.isDefault)?.id;
+
+	const selectedKeys: string[] = currentValue
+		? [currentValue]
+		: defaultOptionId
+			? [defaultOptionId]
+			: [];
+
 	return (
 		<label>
 			<h3>{name}</h3>
@@ -43,7 +51,7 @@ export function PreferenceRadioGroup({
 				css={groupCss}
 				selectionMode="single"
 				orientation={format === 'stack' ? 'vertical' : 'horizontal'}
-				selectedKeys={[currentValue]}
+				selectedKeys={selectedKeys}
 				onSelectionChange={(e) => {
 					const newValue = Array.from(e).pop() ?? currentValue;
 					if (typeof newValue === 'string') {
@@ -54,10 +62,12 @@ export function PreferenceRadioGroup({
 				{options.map((option, index) => (
 					<ToggleButton
 						key={index}
-						id={option.label}
+						id={option.id}
 						css={[buttonCss, option.buttonCss]}
 					>
-						<div css={option.labelCss}>{option.label}</div>
+						<div css={option.labelCss}>
+							{option.label ?? option.id}
+						</div>
 						<div>{option.description}</div>
 					</ToggleButton>
 				))}
