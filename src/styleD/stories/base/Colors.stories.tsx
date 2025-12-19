@@ -1,10 +1,10 @@
-import { base } from '../build/typescript/base';
+import { baseColors } from '../../build/typescript/base/colors';
 import { ColorItem, ColorPalette } from './storybookColorPalette';
 
 export const BasePalette = {
 	render: () => (
 		<ColorPalette>
-			{Object.entries(base.colors).map(([category, shades]) => {
+			{Object.entries(baseColors).map(([category, shades]) => {
 				return (
 					<ColorItem
 						key={category}
@@ -18,7 +18,7 @@ export const BasePalette = {
 };
 
 export default {
-	title: 'Stand/Base Palette',
+	title: 'Stand/Editorial Design System/Base/Color Palette',
 	component: BasePalette,
 
 	parameters: {

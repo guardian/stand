@@ -11,7 +11,7 @@ import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import type { FocusEventHandler, MouseEvent } from 'react';
 import { useEffect, useRef, useState } from 'react';
-import type { Components } from '../../styleD/build/typescript/components';
+import type { ComponentByline } from '../../styleD/build/typescript/component/byline';
 import type { DeepPartial } from '../util';
 import type {
 	BylineModel,
@@ -41,7 +41,7 @@ import {
 
 type BylineProps = {
 	/** `theme` - Used to customise the look and feel of the Byline component */
-	theme?: DeepPartial<Components['byline']>;
+	theme?: DeepPartial<ComponentByline>;
 	/** `allowUntaggedContributors` - Whether to allow untagged contributors in the byline */
 	allowUntaggedContributors?: boolean;
 	/** `contributorLimit` - Maximum number of tagged/untagged contributors allowed in the byline */
@@ -62,6 +62,61 @@ type BylineProps = {
 	onBlur?: FocusEventHandler<HTMLDivElement>;
 };
 
+/**
+ * ## Byline
+ *
+ * *Status: Production*
+ *
+ * A flexible byline editor component built in ProseMirror and React with usability and accessibility in mind.
+ *
+ * **Peer dependencies:**
+ *
+ * You'll need to install the following peer dependencies in your project to use the `Byline` component:
+ * - `@guardian/prosemirror-invisibles`
+ * - `prosemirror-dropcursor`
+ * - `prosemirror-history`
+ * - `prosemirror-keymap`
+ * - `prosemirror-model`
+ * - `prosemirror-state`
+ * - `prosemirror-view`
+ *
+ * See the `peerDependencies` section of `package.json` for compatible versions to install.
+ *
+ * #### Usage
+ *
+ * ```tsx
+ * import type { BylineModel } from '@guardian/stand';
+ * import { Byline } from '@guardian/stand';
+ *
+ * const Component = () => {
+ *     const bylineModel: BylineModel = {
+ *         // ...set up your byline model here
+ *     };
+ *     ...
+ * 	return (
+ *         <>
+ *         ...
+ *             <Byline initialValue={bylineModel} />
+ *         ...
+ *         </>
+ *     );
+ * };
+ * ```
+ *
+ * By itself the `Byline` component is just the editor UI.
+ * You will need to set up the ProseMirror editor state, schema, and plugins to get a fully functioning byline editor.
+ * See the props and example below for a more complete implementation.
+ * The `BylineModel` type defines the structure of the byline data which is agnostic from any other data structure. You must convert to/from this model when integrating with your application's data structures.
+ *
+ * #### Props
+ *
+ * See {@link BylineProps} for the full list of props, usage example can be seen in Storybook.
+ *
+ * #### Example
+ *
+ * The `ContentByline` component in `flexible-frontend` has a detailed example of how to use the `Byline` component from Stand.
+ * See [ContentByline.tsx](https://github.com/guardian/flexible-content/blob/1d537615a18ae24a4a5410a3f945b2b9db1dbb47/flexible-frontend/src/app/components/furniture/content-byline/ContentByline.tsx#L72-L205).
+ */
 export const Byline = ({
 	theme,
 	allowUntaggedContributors,

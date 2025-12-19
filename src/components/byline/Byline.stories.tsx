@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { base } from '../../styleD/build/typescript/base';
+import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { Byline } from './Byline';
 import { contributors } from './contributors-fixture';
 import type { TaggedContributor } from './lib';
@@ -67,7 +67,8 @@ export const WithTheme = {
 				borderWidth: '1px',
 				borderStyle: 'solid',
 				borderRadius: '3px',
-				padding: '5.5px 7px',
+				paddingX: '7px',
+				paddingY: '5.5px',
 				untaggedColor: 'rgba(255, 255, 255, 0.87)',
 			},
 			dropdown: {
@@ -76,7 +77,7 @@ export const WithTheme = {
 					color: 'rgba(255, 255, 255, 0.87)',
 					borderBottomStyle: 'none',
 					selectedColor: 'rgba(255, 255, 255, 0.87)',
-					selectedBackgroundColor: base.colors['cool-purple'][500],
+					selectedBackgroundColor: baseColors['cool-purple'][500],
 				},
 			},
 		},

@@ -14,7 +14,7 @@ export interface Token {
 	 * We allow `string` and `boolean` types in addition to the draft W3C spec's `color` and `number` types
 	 * to align with the resolved types for Figma variables.
 	 */
-	$type: 'color' | 'number' | 'string' | 'boolean';
+	$type: 'color' | 'number' | 'string' | 'boolean' | 'dimension';
 	$value: string | number | boolean;
 	$description?: string;
 	$extensions?: {
@@ -33,6 +33,7 @@ export type TokenOrTokenGroup =
 	| Token
 	| (Record<string, Token> & { $type?: never; $value?: never });
 
+const Dimensions = ['px', 'em', 'rem'] as const;
 /**
  * Defines what we expect a Design Tokens file to look like in the codebase.
  *
@@ -68,8 +69,25 @@ export function tokenTypeFromVariable(variable: LocalVariable) {
 		case 'COLOR':
 			return 'color';
 		case 'FLOAT':
+			if (variable.name.startsWith('weight/')) {
+				return 'fontWeight';
+			}
+			if (variable.name.startsWith('letter-spacing/')) {
+				return 'dimension';
+			}
+			if (
+				Dimensions.some((suffix) =>
+					variable.name.endsWith(`-${suffix}`),
+				)
+			) {
+				return 'dimension';
+			}
 			return 'number';
 		case 'STRING':
+			if (variable.name.startsWith('family/')) {
+				return 'fontFamily';
+			}
+
 			return 'string';
 	}
 }
@@ -78,19 +96,31 @@ export function tokenValueFromVariable(
 	variable: LocalVariable,
 	modeId: string,
 	localVariables: Record<string, LocalVariable>,
-) {
+): Token['$value'] | undefined {
 	const value = variable.valuesByMode[modeId];
 	if (typeof value === 'object') {
-		if ('type' in value) {
+		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- needed for type narrowing
+		if ('type' in value && value.type === 'VARIABLE_ALIAS') {
 			const aliasedVariable = localVariables[value.id];
-			return `{${aliasedVariable?.name.replace(/\//g, '.')}}`;
+			return `{${aliasedVariable!.name.replace(/\//g, '.')}}`;
 		} else if ('r' in value) {
 			return rgbToHex(value);
 		}
 
-		// eslint-disable-next-line @typescript-eslint/restrict-template-expressions -- existing code
+		// eslint-disable-next-line @typescript-eslint/no-base-to-string, @typescript-eslint/restrict-template-expressions -- existing code
 		throw new Error(`Format of variable value is invalid: ${value}`);
 	} else {
+		const dimension =
+			typeof value === 'number' &&
+			Dimensions.find((suffix) => variable.name.endsWith(`-${suffix}`));
+		if (dimension) {
+			return `${+value.toFixed(2)}${dimension}`;
+		}
+
+		if (typeof value === 'number') {
+			return +Number(value).toFixed(2);
+		}
+
 		return value;
 	}
 }
@@ -125,8 +155,7 @@ export function tokenFilesFromLocalVariables(
 
 			variable.name.split('/').forEach((groupName) => {
 				obj![groupName] = obj![groupName] ?? {};
-				// @ts-expect-error -- TODO: we'll eventually replace this file with our own code
-				obj = obj![groupName] as TokensFile | undefined;
+				obj = obj![groupName] as TokensFile;
 			});
 
 			const token = {

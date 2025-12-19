@@ -1,15 +1,19 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import {
-	type Components,
-	components as componentsTheme,
-} from '../../styleD/build/typescript/components';
+	type ComponentTagAutocomplete,
+	componentTagAutocomplete,
+} from '../../styleD/build/typescript/component/tagAutocomplete';
+import {
+	type ComponentTagTable,
+	componentTagTable,
+} from '../../styleD/build/typescript/component/tagTable';
 import { type DeepPartial, mergeDeep } from '../util';
 
 export const tagAutocompleteInputStyles = (
-	partialTheme: DeepPartial<Components['tagAutocomplete']> = {},
+	partialTheme: DeepPartial<ComponentTagAutocomplete> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentsTheme['tagAutocomplete'], partialTheme);
+	const theme = mergeDeep(componentTagAutocomplete, partialTheme);
 
 	return css`
 		width: 100%;
@@ -20,16 +24,20 @@ export const tagAutocompleteInputStyles = (
 		border-color: ${theme.input.borderColor};
 		border-width: ${theme.input.borderWidth};
 		border-style: ${theme.input.borderStyle};
+
+		&[data-disabled] {
+			background-color: ${theme.input.disabledBackgroundColor};
+		}
 	`;
 };
 
 export const listboxStyles = (
-	partialTheme: DeepPartial<Components['tagAutocomplete']> = {},
+	partialTheme: DeepPartial<ComponentTagAutocomplete> = {},
 ) => {
-	const theme = mergeDeep(componentsTheme['tagAutocomplete'], partialTheme);
+	const theme = mergeDeep(componentTagAutocomplete, partialTheme);
 
 	return css`
-		padding: ${theme.listbox.padding};
+		padding: ${theme.listbox.paddingY} ${theme.listbox.paddingX};
 		max-height: 320px;
 		overflow-y: auto;
 		background-color: ${theme.listbox.backgroundColor};
@@ -40,12 +48,12 @@ export const listboxStyles = (
 };
 
 export const listboxItemStyles = (
-	partialTheme: DeepPartial<Components['tagAutocomplete']> = {},
+	partialTheme: DeepPartial<ComponentTagAutocomplete> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentsTheme['tagAutocomplete'], partialTheme);
+	const theme = mergeDeep(componentTagAutocomplete, partialTheme);
 
 	return css`
-		padding: ${theme.listbox.item.padding};
+		padding: ${theme.listbox.item.paddingY} ${theme.listbox.item.paddingX};
 		cursor: pointer;
 		&:hover {
 			background-color: ${theme.listbox.item.backgroundHoverColor};
@@ -57,34 +65,35 @@ export const listboxItemStyles = (
 };
 
 export const listboxInfoStyles = (
-	partialTheme: DeepPartial<Components['tagAutocomplete']> = {},
+	partialTheme: DeepPartial<ComponentTagAutocomplete> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentsTheme['tagAutocomplete'], partialTheme);
+	const theme = mergeDeep(componentTagAutocomplete, partialTheme);
 
 	return css`
-		padding: ${theme.listbox.item.padding};
+		padding: ${theme.listbox.item.paddingY} ${theme.listbox.item.paddingX};
 	`;
 };
 
 export const tagTableHeadingStyles = (
-	partialTheme: DeepPartial<Components['tagTable']> = {},
+	partialTheme: DeepPartial<ComponentTagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentsTheme['tagTable'], partialTheme);
+	const theme = mergeDeep(componentTagTable, partialTheme);
 
 	return css`
 		background-color: ${theme.heading.backgroundColor};
 		font-weight: ${theme.heading.fontWeight};
-		padding: ${theme.heading.padding};
+		padding: ${theme.heading.paddingTop} ${theme.heading.paddingRight}
+			${theme.heading.paddingBottom} ${theme.heading.paddingLeft};
 	`;
 };
 
 export const tagTableCellStyles = (
-	partialTheme: DeepPartial<Components['tagTable']> = {},
+	partialTheme: DeepPartial<ComponentTagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentsTheme['tagTable'], partialTheme);
+	const theme = mergeDeep(componentTagTable, partialTheme);
 
 	return css`
-		padding: ${theme.cell.padding};
+		padding: ${theme.cell.paddingY} ${theme.cell.paddingX};
 
 		:first-of-type {
 			padding-left: ${theme.cell.firstCellPaddingLeft};
@@ -100,9 +109,9 @@ export const tagTableCellStyles = (
 
 export const tagTableRowStyles = (
 	canDrag: boolean,
-	partialTheme: DeepPartial<Components['tagTable']> = {},
+	partialTheme: DeepPartial<ComponentTagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentsTheme['tagTable'], partialTheme);
+	const theme = mergeDeep(componentTagTable, partialTheme);
 
 	return css`
 		background-color: ${theme.row.backgroundColor};
@@ -133,9 +142,9 @@ export const tagTableRowStyles = (
 
 export const tagTableStyles = (
 	canRemoveTag: boolean,
-	partialTheme: DeepPartial<Components['tagTable']> = {},
+	partialTheme: DeepPartial<ComponentTagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentsTheme['tagTable'], partialTheme);
+	const theme = mergeDeep(componentTagTable, partialTheme);
 
 	return css`
 		width: 100%;
@@ -163,9 +172,9 @@ export const tagTableRemoveButtonStyles = css`
 `;
 
 export const tagTableAddButtonStyles = (
-	partialTheme: DeepPartial<Components['tagTable']> = {},
+	partialTheme: DeepPartial<ComponentTagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentsTheme['tagTable'], partialTheme);
+	const theme = mergeDeep(componentTagTable, partialTheme);
 
 	return css`
 		:hover {
@@ -176,7 +185,7 @@ export const tagTableAddButtonStyles = (
 		color: ${theme.addButton.color};
 		-webkit-text-decoration: none;
 		text-decoration: none;
-		padding: ${theme.addButton.padding};
+		padding: ${theme.addButton.paddingY} ${theme.addButton.paddingX};
 		position: relative;
 		border: 0;
 		border-radius: 0;
@@ -211,16 +220,16 @@ export const tagTableDragButtonStyles = css`
 `;
 
 export const tagTableTypeBadgeStyles = (
-	partialTheme: DeepPartial<Components['tagTable']> = {},
+	partialTheme: DeepPartial<ComponentTagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentsTheme['tagTable'], partialTheme);
+	const theme = mergeDeep(componentTagTable, partialTheme);
 
 	return css`
 		white-space: nowrap;
 		text-transform: uppercase;
 		color: ${theme.typeBadge.color};
 		background-color: ${theme.typeBadge.backgroundColor};
-		padding: ${theme.typeBadge.padding};
+		padding: ${theme.typeBadge.paddingY} ${theme.typeBadge.paddingX};
 		font-size: ${theme.typeBadge.fontSize};
 		font-weight: ${theme.typeBadge.fontWeight};
 	`;

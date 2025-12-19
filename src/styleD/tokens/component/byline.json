@@ -1,5 +1,5 @@
 {
-	"components": {
+	"component": {
 		"byline": {
 			"color": {
 				"$type": "color",
@@ -7,11 +7,11 @@
 			},
 			"backgroundColor": {
 				"$type": "color",
-				"$value": "{base.colors.neutral.100}"
+				"$value": "{base.colors.neutral.900}"
 			},
 			"readonlyBackgroundColor": {
 				"$type": "color",
-				"$value": "{base.colors.neutral.86}"
+				"$value": "{base.colors.neutral.700}"
 			},
 			"borderColor": {
 				"$type": "color",
@@ -22,6 +22,7 @@
 				"$value": "1px"
 			},
 			"borderStyle": {
+				"$type": "strokeStyle",
 				"$value": "solid"
 			},
 			"lineHeight": {
@@ -35,20 +36,27 @@
 				},
 				"borderColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.86}"
+					"$value": "{base.colors.neutral.700}"
 				},
 				"borderWidth": {
 					"$type": "dimension",
 					"$value": "1px"
 				},
 				"borderStyle": {
+					"$type": "strokeStyle",
 					"$value": "solid"
 				},
 				"borderRadius": {
+					"$type": "dimension",
 					"$value": "8px"
 				},
-				"padding": {
-					"$value": "2px 4px"
+				"paddingX": {
+					"$type": "dimension",
+					"$value": "4px"
+				},
+				"paddingY": {
+					"$type": "dimension",
+					"$value": "2px"
 				},
 				"selectedBorderColor": {
 					"$type": "color",
@@ -56,7 +64,7 @@
 				},
 				"taggedBackgroundColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.86}"
+					"$value": "{base.colors.neutral.700}"
 				},
 				"untaggedColor": {
 					"$type": "color",
@@ -66,18 +74,19 @@
 			"dropdown": {
 				"borderColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.80}"
+					"$value": "{base.colors.neutral.650}"
 				},
 				"borderWidth": {
 					"$type": "dimension",
 					"$value": "1px"
 				},
 				"borderStyle": {
+					"$type": "strokeStyle",
 					"$value": "solid"
 				},
 				"backgroundColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.100}"
+					"$value": "{base.colors.neutral.900}"
 				},
 				"li": {
 					"color": {
@@ -86,13 +95,14 @@
 					},
 					"borderBottomColor": {
 						"$type": "color",
-						"$value": "{base.colors.neutral.80}"
+						"$value": "{base.colors.neutral.650}"
 					},
 					"borderBottomWidth": {
 						"$type": "dimension",
 						"$value": "1px"
 					},
 					"borderBottomStyle": {
+						"$type": "strokeStyle",
 						"$value": "solid"
 					},
 					"selectedBackgroundColor": {
@@ -101,18 +111,21 @@
 					},
 					"selectedColor": {
 						"$type": "color",
-						"$value": "{base.colors.neutral.100}"
+						"$value": "{base.colors.neutral.900}"
 					}
 				},
-				"maxHeight": { "$value": "320px" }
+				"maxHeight": {
+					"$type": "dimension",
+					"$value": "320px"
+				}
 			},
 			"invisiblesColor": {
 				"$type": "color",
-				"$value": "{base.colors.neutral.73}"
+				"$value": "{base.colors.neutral.600}"
 			},
 			"placeholderColor": {
 				"$type": "color",
-				"$value": "{base.colors.neutral.55}"
+				"$value": "{base.colors.neutral.400}"
 			}
 		}
 	}

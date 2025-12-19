@@ -1,5 +1,5 @@
 {
-	"components": {
+	"component": {
 		"tagAutocomplete": {
 			"input": {
 				"color": {
@@ -8,18 +8,23 @@
 				},
 				"backgroundColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.100}"
+					"$value": "{base.colors.neutral.900}"
+				},
+				"disabledBackgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.700}"
 				},
 				"borderWidth": {
 					"$type": "dimension",
 					"$value": "1px"
 				},
 				"borderStyle": {
+					"$type": "strokeStyle",
 					"$value": "solid"
 				},
 				"borderColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.55}"
+					"$value": "{base.colors.neutral.400}"
 				},
 				"padding": {
 					"$type": "dimension",
@@ -32,32 +37,41 @@
 					"$value": "1px"
 				},
 				"borderStyle": {
+					"$type": "strokeStyle",
 					"$value": "solid"
 				},
 				"borderColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.55}"
+					"$value": "{base.colors.neutral.400}"
 				},
-				"padding": {
+				"paddingY": {
 					"$type": "dimension",
-					"$value": "8px 0px"
+					"$value": "8px"
+				},
+				"paddingX": {
+					"$type": "dimension",
+					"$value": "0px"
 				},
 				"backgroundColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.100}"
+					"$value": "{base.colors.neutral.900}"
 				},
 				"item": {
-					"padding": {
+					"paddingY": {
 						"$type": "dimension",
-						"$value": "8px 12px"
+						"$value": "8px"
+					},
+					"paddingX": {
+						"$type": "dimension",
+						"$value": "12px"
 					},
 					"backgroundHoverColor": {
 						"$type": "color",
-						"$value": "{base.colors.neutral.93}"
+						"$value": "{base.colors.neutral.800}"
 					},
 					"backgroundFocusedColor": {
 						"$type": "color",
-						"$value": "{base.colors.neutral.93}"
+						"$value": "{base.colors.neutral.800}"
 					}
 				}
 			}

@@ -3,10 +3,21 @@ import type { GetLocalVariablesResponse } from '@figma/rest-api-spec';
 import type { TokensFile } from './figma-utils';
 import { tokenFilesFromLocalVariables } from './figma-utils';
 
-const FigmaFiles = [
+type FigmaFile = {
+	id: string;
+	name: string;
+	skipSemantic?: boolean;
+};
+
+const FigmaFiles: FigmaFile[] = [
 	{
 		id: 'wG6955GSVuE5ieuHMbBZSG',
 		name: 'colors',
+	},
+	{
+		id: 'sGUAN5t7uS05ZmCBI5KGTU',
+		name: 'typography',
+		skipSemantic: true,
 	},
 ];
 
@@ -21,7 +32,6 @@ const figmaApi = async <T>(url: string): Promise<T> => {
 		`https://api.figma.com/v1/${url}`,
 		FIGMA_API_OPTIONS,
 	);
-	console.log('response', response);
 	return response.json() as Promise<T>;
 };
 
@@ -40,27 +50,44 @@ void (async () => {
 		);
 
 		const tokenFiles = tokenFilesFromLocalVariables(figmaResponse);
-		console.log('tokenFiles', tokenFiles);
 
 		Object.entries(tokenFiles).forEach(
 			([collectionName, collectionContent]) => {
-				if (collectionName.toLowerCase() === 'primitives') {
-					foundations.base[file.name] = collectionContent;
-				}
+				switch (collectionName.toLowerCase()) {
+					case 'primitives':
+					case 'base':
+					case 'base font':
+						foundations.base[file.name] = collectionContent;
+						break;
+					case 'semantic':
+						{
+							if (file.skipSemantic) {
+								console.log(
+									`Skipping semantic tokens for file: ${file.name}`,
+								);
+								break;
+							}
+							const jsonCollectionContent =
+								JSON.stringify(collectionContent);
+							const updatedJsonCollectionContent: TokensFile =
+								JSON.parse(
+									jsonCollectionContent.replace(
+										/"\$value"\s*:\s*"\{([^}]+)\}"/g,
+										(match, inner) => {
+											return `"${'$value'}": "{base.${file.name}.${inner}}"`;
+										},
+									),
+								) as TokensFile;
 
-				if (collectionName.toLowerCase() === 'semantic') {
-					const jsonCollectionContent =
-						JSON.stringify(collectionContent);
-					const updatedJsonCollectionContent: TokensFile = JSON.parse(
-						jsonCollectionContent.replace(
-							/"\$value"\s*:\s*"\{([^}]+)\}"/g,
-							(match, inner) =>
-								`"${'$value'}": "{base.${file.name}.${inner}}"`,
-						),
-					) as TokensFile;
-
-					foundations.semantic[file.name] =
-						updatedJsonCollectionContent;
+							foundations.semantic[file.name] =
+								updatedJsonCollectionContent;
+						}
+						break;
+					default:
+						console.warn(
+							`Unknown collection name: ${collectionName}`,
+						);
+						return; // Skip unknown collections
 				}
 			},
 		);
@@ -68,6 +95,6 @@ void (async () => {
 
 	const json = JSON.stringify(foundations, null, 2);
 
-	fs.writeFileSync(`src/styleD/tokens/foundations.json`, json);
-	console.log(`Wrote foundations.json`);
+	fs.writeFileSync(`src/styleD/tokens/foundations/figma.json`, json);
+	console.log(`Wrote src/styleD/tokens/foundations/figma.json`);
 })();

@@ -1,0 +1,43 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--base-typography-family-open-sans: 'Open Sans';
+	--base-typography-family-open-sans-compact: 'Open Sans';
+	--base-typography-family-guardian-text-egyptian: GuardianTextEgyptian;
+	--base-typography-family-guardian-headline: 'GH Guardian Headline';
+	--base-typography-size-12-px: 12px;
+	--base-typography-size-14-px: 14px;
+	--base-typography-size-16-px: 16px;
+	--base-typography-size-18-px: 18px;
+	--base-typography-size-20-px: 20px;
+	--base-typography-size-24-px: 24px;
+	--base-typography-size-28-px: 28px;
+	--base-typography-size-32-px: 32px;
+	--base-typography-size-36-px: 36px;
+	--base-typography-size-42-px: 42px;
+	--base-typography-size-48-px: 48px;
+	--base-typography-weight-guardian-text-egyptian-normal: 400;
+	--base-typography-weight-guardian-text-egyptian-bold: 700;
+	--base-typography-weight-guardian-headline-bold: 700;
+	--base-typography-weight-open-sans-light: 340;
+	--base-typography-weight-open-sans-normal: 460;
+	--base-typography-weight-open-sans-semi-bold: 600;
+	--base-typography-weight-open-sans-bold: 700;
+	--base-typography-weight-open-sans-compact-light: 360;
+	--base-typography-weight-open-sans-compact-normal: 460;
+	--base-typography-weight-open-sans-compact-semi-bold: 600;
+	--base-typography-weight-open-sans-compact-bold: 700;
+	--base-typography-width-open-sans: 95;
+	--base-typography-width-open-sans-compact: 88;
+	--base-typography-style-normal: normal;
+	--base-typography-style-italic: italic;
+	--base-typography-line-height-tight: 1.15;
+	--base-typography-line-height-normal: 1.3;
+	--base-typography-line-height-loose: 1.4;
+	--base-typography-letter-spacing-densest-px: -1px;
+	--base-typography-letter-spacing-denser-px: -0.5px;
+	--base-typography-letter-spacing-dense-px: -0.2px;
+	--base-typography-letter-spacing-default-px: 0px;
+}
