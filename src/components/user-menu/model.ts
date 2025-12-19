@@ -1,10 +1,10 @@
-import type { SerializedStyles } from '@emotion/react';
+import type { CSSProperties } from 'react';
 
 export type Option = {
 	id: string;
 	label?: string;
 	description?: string;
-	labelCss?: SerializedStyles;
-	buttonCss?: SerializedStyles;
+	labelStyle?: CSSProperties;
+	buttonStyle?: CSSProperties;
 	isDefault?: boolean;
 };

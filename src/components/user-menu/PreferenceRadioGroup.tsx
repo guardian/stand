@@ -31,7 +31,7 @@ export function PreferenceRadioGroup({
 			? toggleButtonStackedGroupStyles()
 			: toggleButtonRowsGroupStyles();
 
-	const buttonCss =
+	const buttonStyle =
 		format === 'stack'
 			? toggleButtonStyles(theme)
 			: [toggleButtonStyles(theme), css({ flexBasis: '30%' })];
@@ -63,9 +63,10 @@ export function PreferenceRadioGroup({
 					<ToggleButton
 						key={index}
 						id={option.id}
-						css={[buttonCss, option.buttonCss]}
+						css={buttonStyle}
+						style={option.buttonStyle}
 					>
-						<div css={option.labelCss}>
+						<div style={option.labelStyle}>
 							{option.label ?? option.id}
 						</div>
 						<div>{option.description}</div>
