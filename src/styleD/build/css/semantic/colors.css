@@ -3,25 +3,25 @@
  */
 
 :root {
-	--semantic-colors-text-primary: #000000;
-	--semantic-colors-text-secondary: #333333;
-	--semantic-colors-text-tertiary: #666666;
-	--semantic-colors-text-inverse-default: #dcdcdc;
-	--semantic-colors-text-inverse-secondary: #cccccc;
-	--semantic-colors-text-inverse-tertiary: #aeaeae;
-	--semantic-colors-text-inverse-strong: #ffffff;
-	--semantic-colors-text-warning: #8c2113;
-	--semantic-colors-text-success: #326528;
-	--semantic-colors-surface-light-1: #f6f6f6;
-	--semantic-colors-surface-light-2: #ededed;
-	--semantic-colors-surface-dark-1: #333333;
-	--semantic-colors-border-subtle: #cccccc;
-	--semantic-colors-border-default: #8d8d8d;
-	--semantic-colors-border-strong: #545454;
-	--semantic-colors-border-inverse-strong: #ffffff;
-	--semantic-colors-bg-default-on-dark: #121212;
-	--semantic-colors-bg-default-on-light: #ffffff;
-	--semantic-colors-status-status-draft: #f1c21b;
-	--semantic-colors-status-status-live: #4e9e3e;
-	--semantic-colors-status-status-selected: #0072a9;
+  --semantic-colors-text-primary: #000000;
+  --semantic-colors-text-secondary: #333333;
+  --semantic-colors-text-tertiary: #666666;
+  --semantic-colors-text-inverse-default: #dcdcdc;
+  --semantic-colors-text-inverse-secondary: #cccccc;
+  --semantic-colors-text-inverse-tertiary: #aeaeae;
+  --semantic-colors-text-inverse-strong: #ffffff;
+  --semantic-colors-text-warning: #8c2113;
+  --semantic-colors-text-success: #326528;
+  --semantic-colors-surface-light-1: #f6f6f6;
+  --semantic-colors-surface-light-2: #ededed;
+  --semantic-colors-surface-dark-1: #333333;
+  --semantic-colors-border-subtle: #cccccc;
+  --semantic-colors-border-default: #8d8d8d;
+  --semantic-colors-border-strong: #545454;
+  --semantic-colors-border-inverse-strong: #ffffff;
+  --semantic-colors-bg-default-on-dark: #121212;
+  --semantic-colors-bg-default-on-light: #ffffff;
+  --semantic-colors-status-status-draft: #f1c21b;
+  --semantic-colors-status-status-live: #4e9e3e;
+  --semantic-colors-status-status-selected: #0072a9;
 }

@@ -1,15 +1,13 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import {
-	type Components,
-	components as componentsTheme,
-} from '../../styleD/build/typescript/components';
+import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
+import  { componentUserMenu } from '../../styleD/build/typescript/component/userMenu';
 import { type DeepPartial, mergeDeep } from '../util';
 
 export const userMenuStyles = (
-	partialTheme: DeepPartial<Components['userMenu']> = {},
+	partialTheme: DeepPartial<ComponentUserMenu> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentsTheme['userMenu'], partialTheme);
+	const theme = mergeDeep(componentUserMenu, partialTheme);
 
 	return css`
 		background-color: ${theme.backgroundColor};
@@ -21,9 +19,9 @@ export const userMenuStyles = (
 };
 
 export const userMenuHeadingStyles = (
-	partialTheme: DeepPartial<Components['userMenu']> = {},
+	partialTheme: DeepPartial<ComponentUserMenu> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentsTheme['userMenu'], partialTheme);
+	const theme = mergeDeep(componentUserMenu, partialTheme);
 
 	return css`
 		font-weight: ${theme.heading.fontWeight};
@@ -32,7 +30,7 @@ export const userMenuHeadingStyles = (
 };
 
 export const toggleButtonStackedGroupStyles = (
-	// _partialTheme: DeepPartial<Components['userMenu']> = {},
+	// _partialTheme: DeepPartial<ComponentUserMenu> = {},
 ): SerializedStyles => {
 	// const theme = mergeDeep(componentsTheme['userMenu'], partialTheme);
 	return css`
@@ -43,7 +41,7 @@ export const toggleButtonStackedGroupStyles = (
 };
 
 export const toggleButtonRowsGroupStyles = (
-	// _partialTheme: DeepPartial<Components['userMenu']> = {},
+	// _partialTheme: DeepPartial<ComponentUserMenu> = {},
 ): SerializedStyles => {
 	// const theme = mergeDeep(componentsTheme['userMenu'], partialTheme);
 	return css`
@@ -55,9 +53,9 @@ export const toggleButtonRowsGroupStyles = (
 };
 
 export const toggleButtonStyles = (
-	partialTheme: DeepPartial<Components['userMenu']> = {},
+	partialTheme: DeepPartial<ComponentUserMenu> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentsTheme['userMenu'], partialTheme);
+	const theme = mergeDeep(componentUserMenu, partialTheme);
 
 	return css`
 		border-radius: 0;

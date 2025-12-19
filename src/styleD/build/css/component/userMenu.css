@@ -1,0 +1,13 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --component-user-menu-background-color: #dcdcdc;
+  --component-user-menu-heading-font-weight: 700;
+  --component-user-menu-heading-padding: 3px 5px;
+  --component-user-menu-toggle-button-basebackground-color: #ededed;
+  --component-user-menu-toggle-button-disabledbackground-color: #dcdcdc;
+  --component-user-menu-toggle-button-base-border-color: #dcdcdc;
+  --component-user-menu-toggle-button-selected-border-color: #0d4289;
+}

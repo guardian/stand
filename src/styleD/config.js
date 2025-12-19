@@ -46,6 +46,10 @@ const fileList = [
 		group: 'component',
 		component: 'tagTable',
 	},
+	{
+		group: 'component',
+		component: 'userMenu',
+	},
 ];
 
 /**

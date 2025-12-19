@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import { ToggleButton, ToggleButtonGroup } from 'react-aria-components';
-import type { Components } from 'src/styleD/build/typescript/components';
+import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
 import type { DeepPartial } from '../util';
 import type { Option } from './model';
 import {
@@ -10,7 +10,7 @@ import {
 } from './styles';
 
 interface PreferenceRadioGroupProps {
-	theme?: DeepPartial<Components['userMenu']>;
+	theme?: DeepPartial<ComponentUserMenu>;
 	options: Option[];
 	name: string;
 	currentValue: string;

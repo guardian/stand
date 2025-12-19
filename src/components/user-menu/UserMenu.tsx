@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import type { Components } from 'src/styleD/build/typescript/components';
+import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
 import type { DeepPartial } from '../util';
 import { PreferenceRadioGroup } from './PreferenceRadioGroup';
 import { userMenuHeadingStyles, userMenuStyles } from './styles';
 import { colorSchemes, fontFamilies, textSizes } from './values';
 
 interface UserMenuProps {
-	theme?: DeepPartial<Components['userMenu']>;
+	theme?: DeepPartial<ComponentUserMenu>;
 	feedBacklink?: string;
 }
 

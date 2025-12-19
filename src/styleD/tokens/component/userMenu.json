@@ -1,9 +1,9 @@
 {
-	"components": {
+	"component": {
 		"userMenu": {
 			"backgroundColor": {
 				"$type": "color",
-				"$value": "{base.colors.neutral.86}"
+				"$value": "{base.colors.neutral.700}"
 			},
 			"heading": {
 				"fontWeight": {
@@ -18,15 +18,15 @@
 			"toggleButton": {
 				"basebackgroundColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.100}"
+					"$value": "{base.colors.neutral.800}"
 				},
 				"disabledbackgroundColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.86}"
+					"$value": "{base.colors.neutral.700}"
 				},
 				"baseBorderColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.86}"
+					"$value": "{base.colors.neutral.700}"
 				},
 				"selectedBorderColor": {
 					"$type": "color",
