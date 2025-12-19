@@ -4,6 +4,8 @@
 
 :root {
   --component-user-menu-background-color: #dcdcdc;
+  --component-user-menu-width: 300px;
+  --component-user-menu-padding: 5px;
   --component-user-menu-heading-font-weight: 700;
   --component-user-menu-heading-padding: 3px 5px;
   --component-user-menu-toggle-button-basebackground-color: #ededed;

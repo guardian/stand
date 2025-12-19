@@ -34,6 +34,8 @@ export const Themed: Story = {
 	args: {
 		theme: {
 			backgroundColor: 'pink',
+			width: '200px',
+			padding: '.5em 2em',
 			toggleButton: {
 				selectedBorderColor: 'crimson',
 			},

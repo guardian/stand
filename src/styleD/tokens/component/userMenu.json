@@ -5,6 +5,14 @@
 				"$type": "color",
 				"$value": "{base.colors.neutral.700}"
 			},
+			"width": {
+				"$type": "dimension",
+				"$value": "300px"
+			},
+			"padding": {
+				"$type": "dimension",
+				"$value": "5px"
+			},
 			"heading": {
 				"fontWeight": {
 					"$type": "number",

@@ -28,7 +28,7 @@ export function UserMenu({
 	return (
 		<aside css={userMenuStyles(theme)}>
 			<header css={userMenuHeadingStyles(theme)}>
-				<h2>Accessibilty Settings</h2>
+				<h2>Accessibility Settings</h2>
 			</header>
 			<div>
 				<p>

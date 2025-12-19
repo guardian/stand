@@ -13,8 +13,8 @@ export const userMenuStyles = (
 		background-color: ${theme.backgroundColor};
 		display: flex;
 		flex-direction: column;
-		width: 300px;
-		padding: 5px;
+		width: ${theme.width};
+		padding: ${theme.padding};
 	`;
 };
 

@@ -4,6 +4,8 @@
 
 export const componentUserMenu = {
   "backgroundColor": "#dcdcdc",
+  "width": "300px",
+  "padding": "5px",
   "heading": {
     "fontWeight": 700,
     "padding": "3px 5px"
