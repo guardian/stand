@@ -1,5 +1,6 @@
 import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
 import type { DeepPartial } from '../util';
+import type { Option } from './model';
 import { PreferenceRadioGroup } from './PreferenceRadioGroup';
 import { userMenuHeadingStyles, userMenuStyles } from './styles';
 import type { UserPreferences } from './types';
@@ -10,6 +11,9 @@ export interface UserMenuProps {
 	feedBacklink?: string;
 	preferences: UserPreferences;
 	updatePreferences: { (mod: Partial<UserPreferences>): void };
+	textSizeOptions?: Option[];
+	fontFamilyOptions?: Option[];
+	colorSchemeOptions?: Option[];
 }
 
 export function UserMenu({
@@ -17,6 +21,9 @@ export function UserMenu({
 	feedBacklink,
 	preferences,
 	updatePreferences,
+	textSizeOptions,
+	fontFamilyOptions,
+	colorSchemeOptions,
 }: UserMenuProps) {
 	return (
 		<aside css={userMenuStyles(theme)}>
@@ -33,34 +40,41 @@ export function UserMenu({
 					)}
 				</p>
 			</div>
-			<PreferenceRadioGroup
-				theme={theme}
-				options={textSizes}
-				name="Text Size"
-				currentValue={preferences.fontpreferences}
-				changeValue={(fontpreferences) =>
-					updatePreferences({ fontpreferences })
-				}
-			/>
 
-			<PreferenceRadioGroup
-				theme={theme}
-				options={fontFamilies}
-				name="Font Family"
-				currentValue={preferences.fontType}
-				changeValue={(fontType) => updatePreferences({ fontType })}
-			/>
+			{(!textSizeOptions || textSizeOptions.length > 0) && (
+				<PreferenceRadioGroup
+					theme={theme}
+					options={textSizeOptions ?? textSizes}
+					name="Text Size"
+					currentValue={preferences.fontpreferences}
+					changeValue={(fontpreferences) =>
+						updatePreferences({ fontpreferences })
+					}
+				/>
+			)}
 
-			<PreferenceRadioGroup
-				theme={theme}
-				format="rows"
-				options={colorSchemes}
-				name="Color scheme"
-				currentValue={preferences.colorScheme}
-				changeValue={(colorScheme) =>
-					updatePreferences({ colorScheme })
-				}
-			/>
+			{(!fontFamilyOptions || fontFamilyOptions.length > 0) && (
+				<PreferenceRadioGroup
+					theme={theme}
+					options={fontFamilyOptions ?? fontFamilies}
+					name="Font Family"
+					currentValue={preferences.fontType}
+					changeValue={(fontType) => updatePreferences({ fontType })}
+				/>
+			)}
+
+			{(!colorSchemeOptions || colorSchemeOptions.length > 0) && (
+				<PreferenceRadioGroup
+					theme={theme}
+					format="rows"
+					options={colorSchemeOptions ?? colorSchemes}
+					name="Color scheme"
+					currentValue={preferences.colorScheme}
+					changeValue={(colorScheme) =>
+						updatePreferences({ colorScheme })
+					}
+				/>
+			)}
 		</aside>
 	);
 }

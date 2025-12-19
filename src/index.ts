@@ -6,6 +6,8 @@ export type { BylineModel } from './components/byline/lib';
 export type { PartialBylineTheme } from './components/byline/theme';
 export { TagTable } from './components/tag-picker/TagTable';
 export { TagAutocomplete } from './components/tag-picker/TagAutocomplete';
+export type { PartialUserMenuTheme } from './components/user-menu/theme';
+export { UserMenu } from './components/user-menu/UserMenu';
 
 /**
  * style dictionary exports - base
