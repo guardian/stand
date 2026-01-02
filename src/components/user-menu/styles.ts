@@ -48,6 +48,22 @@ export const toggleButtonStackedGroupStyles = (
 	`;
 };
 
+export const radioGroupLabelStyles = (
+	partialTheme: DeepPartial<ComponentUserMenu> = {},
+): SerializedStyles => {
+	const { label } = mergeDeep(componentUserMenu, partialTheme);
+
+	return css`
+		font-weight: ${label.fontWeight};
+		font-size: ${label.fontSize};
+		text-align: ${label.textAlign};
+		padding-left: ${label.paddingLeft};
+		padding-right: ${label.paddingRight};
+		padding-top: ${label.paddingTop};
+		padding-bottom: ${label.paddingBottom};
+	`;
+};
+
 export const toggleButtonRowsGroupStyles = (
 	partialTheme: DeepPartial<ComponentUserMenu> = {},
 ): SerializedStyles => {

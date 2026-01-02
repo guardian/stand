@@ -1,9 +1,11 @@
 import { css } from '@emotion/react';
 import { ToggleButton, ToggleButtonGroup } from 'react-aria-components';
 import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
+import { TitleText } from '../TitleText';
 import type { DeepPartial } from '../util';
 import type { Option } from './model';
 import {
+	radioGroupLabelStyles,
 	toggleButtonRowsGroupStyles,
 	toggleButtonStackedGroupStyles,
 	toggleButtonStyles,
@@ -46,7 +48,7 @@ export function PreferenceRadioGroup({
 
 	return (
 		<label>
-			<h3>{name}</h3>
+			<div css={radioGroupLabelStyles(theme)}>{name}</div>
 			<ToggleButtonGroup
 				css={groupCss}
 				selectionMode="single"

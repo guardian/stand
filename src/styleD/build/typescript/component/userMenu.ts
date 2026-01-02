@@ -11,10 +11,19 @@ export const componentUserMenu = {
   },
   "heading": {
     "fontWeight": 700,
-    "fontSize": "",
+    "fontSize": "1.5em",
     "paddingTop": "0px",
     "paddingRight": "0px",
     "paddingBottom": "0px",
+    "paddingLeft": "0px",
+    "textAlign": "left"
+  },
+  "label": {
+    "fontWeight": 700,
+    "fontSize": "1.2em",
+    "paddingTop": "15px",
+    "paddingRight": "0px",
+    "paddingBottom": "5px",
     "paddingLeft": "0px",
     "textAlign": "left"
   },

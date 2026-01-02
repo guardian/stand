@@ -113,6 +113,11 @@ export const Themed: Story = {
 				paddingTop: '10px',
 				fontSize: '3em',
 			},
+			label:{
+				textAlign: 'center',
+				paddingTop: '2em',
+				fontSize: '1.4em',
+			},
 			toggleButton: {
 				selectedBorderColor: 'crimson',
 				gap: '10px',
