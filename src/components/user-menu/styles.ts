@@ -55,6 +55,7 @@ export const toggleButtonRowsGroupStyles = (
 	return css`
 		display: flex;
 		flex-direction: row;
+		justify-content: space-between;
 		flex-wrap: wrap;
 		gap: ${toggleButton.gap};
 	`;
