@@ -3,18 +3,27 @@
  */
 
 export const componentUserMenu = {
-  "backgroundColor": "#dcdcdc",
-  "width": "300px",
-  "padding": "5px",
+  "container": {
+    "backgroundColor": "#dcdcdc",
+    "width": "300px",
+    "paddingY": "5px",
+    "paddingX": "5px"
+  },
   "heading": {
     "fontWeight": 700,
-    "padding": "3px 5px"
+    "fontSize": "",
+    "paddingTop": "0px",
+    "paddingRight": "0px",
+    "paddingBottom": "0px",
+    "paddingLeft": "0px",
+    "textAlign": "left"
   },
   "toggleButton": {
     "basebackgroundColor": "#ededed",
     "disabledbackgroundColor": "#dcdcdc",
     "baseBorderColor": "#dcdcdc",
-    "selectedBorderColor": "#0d4289"
+    "selectedBorderColor": "#0d4289",
+    "gap": "5px"
   }
 };
 export type ComponentUserMenu = typeof componentUserMenu;

@@ -1,10 +1,15 @@
 import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
+import { TitleText } from '../TitleText';
 import type { DeepPartial } from '../util';
 import type { Option } from './model';
 import { PreferenceRadioGroup } from './PreferenceRadioGroup';
 import { userMenuHeadingStyles, userMenuStyles } from './styles';
 import type { UserPreferences } from './types';
-import { colorSchemes, fontFamilies, textSizes } from './values';
+import {
+	colorSchemes as defaultColorSchemes,
+	fontFamilies as defaultFontFamilies,
+	textSizes as defaultTextSizes,
+} from './values';
 
 export interface UserMenuProps {
 	theme?: DeepPartial<ComponentUserMenu>;
@@ -14,6 +19,7 @@ export interface UserMenuProps {
 	textSizeOptions?: Option[];
 	fontFamilyOptions?: Option[];
 	colorSchemeOptions?: Option[];
+	headingLevel?: 2 | 3 | 4 | 5 | 6;
 }
 
 export function UserMenu({
@@ -24,12 +30,16 @@ export function UserMenu({
 	textSizeOptions,
 	fontFamilyOptions,
 	colorSchemeOptions,
+	headingLevel,
 }: UserMenuProps) {
 	return (
 		<aside css={userMenuStyles(theme)}>
-			<header css={userMenuHeadingStyles(theme)}>
-				<h2>Accessibility Settings</h2>
-			</header>
+			<TitleText
+				headingLevel={headingLevel}
+				css={userMenuHeadingStyles(theme)}
+			>
+				Accessibility Settings
+			</TitleText>
 			<div>
 				<p>
 					Customise your reeading & writing experience.
@@ -44,7 +54,7 @@ export function UserMenu({
 			{(!textSizeOptions || textSizeOptions.length > 0) && (
 				<PreferenceRadioGroup
 					theme={theme}
-					options={textSizeOptions ?? textSizes}
+					options={textSizeOptions ?? defaultTextSizes}
 					name="Text Size"
 					currentValue={preferences.fontpreferences}
 					changeValue={(fontpreferences) =>
@@ -56,7 +66,7 @@ export function UserMenu({
 			{(!fontFamilyOptions || fontFamilyOptions.length > 0) && (
 				<PreferenceRadioGroup
 					theme={theme}
-					options={fontFamilyOptions ?? fontFamilies}
+					options={fontFamilyOptions ?? defaultFontFamilies}
 					name="Font Family"
 					currentValue={preferences.fontType}
 					changeValue={(fontType) => updatePreferences({ fontType })}
@@ -67,7 +77,7 @@ export function UserMenu({
 				<PreferenceRadioGroup
 					theme={theme}
 					format="rows"
-					options={colorSchemeOptions ?? colorSchemes}
+					options={colorSchemeOptions ?? defaultColorSchemes}
 					name="Color scheme"
 					currentValue={preferences.colorScheme}
 					changeValue={(colorScheme) =>

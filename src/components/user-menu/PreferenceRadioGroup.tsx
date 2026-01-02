@@ -28,8 +28,8 @@ export function PreferenceRadioGroup({
 }: PreferenceRadioGroupProps) {
 	const groupCss =
 		format === 'stack'
-			? toggleButtonStackedGroupStyles()
-			: toggleButtonRowsGroupStyles();
+			? toggleButtonStackedGroupStyles(theme)
+			: toggleButtonRowsGroupStyles(theme);
 
 	const buttonStyle =
 		format === 'stack'

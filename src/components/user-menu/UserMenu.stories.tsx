@@ -30,14 +30,30 @@ export const Default: Story = {
 	render: render,
 };
 
+export const HeadingTwoTitle: Story = {
+	render: render,
+	args: {
+		headingLevel: 2,
+	},
+};
+
 export const Themed: Story = {
 	args: {
 		theme: {
-			backgroundColor: 'pink',
-			width: '200px',
-			padding: '.5em 2em',
+			container: {
+				backgroundColor: 'skyblue',
+				width: '500px',
+				paddingX: '10px',
+				paddingY:'20px',
+			},
+			heading: {
+				textAlign: 'center',
+				paddingTop: '10px',
+				fontSize: '3em',
+			},
 			toggleButton: {
 				selectedBorderColor: 'crimson',
+				gap:'10px'
 			},
 		},
 	},

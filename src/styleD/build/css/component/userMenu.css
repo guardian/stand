@@ -3,13 +3,20 @@
  */
 
 :root {
-  --component-user-menu-background-color: #dcdcdc;
-  --component-user-menu-width: 300px;
-  --component-user-menu-padding: 5px;
+  --component-user-menu-container-background-color: #dcdcdc;
+  --component-user-menu-container-width: 300px;
+  --component-user-menu-container-padding-y: 5px;
+  --component-user-menu-container-padding-x: 5px;
   --component-user-menu-heading-font-weight: 700;
-  --component-user-menu-heading-padding: 3px 5px;
+  --fontSize: ;
+  --component-user-menu-heading-padding-top: 0px;
+  --component-user-menu-heading-padding-right: 0px;
+  --component-user-menu-heading-padding-bottom: 0px;
+  --component-user-menu-heading-padding-left: 0px;
+  --component-user-menu-heading-text-align: left;
   --component-user-menu-toggle-button-basebackground-color: #ededed;
   --component-user-menu-toggle-button-disabledbackground-color: #dcdcdc;
   --component-user-menu-toggle-button-base-border-color: #dcdcdc;
   --component-user-menu-toggle-button-selected-border-color: #0d4289;
+  --component-user-menu-toggle-button-gap: 5px;
 }
