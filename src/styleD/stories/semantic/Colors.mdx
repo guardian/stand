@@ -14,12 +14,18 @@ import { css } from '@emotion/react';
 import { semanticColors } from '@guardian/stand'; // JS/TS usage
 import '@guardian/stand/semantic/colors.css'; // CSS usage
 
-const style = css`
+const stringStyle = css`
 	color: ${semanticColors.text.primary}; /* JS/TS usage */
 	background-color: var(
 		--semantic-colors-bg-default-on-light
 	); /* CSS usage */
 `;
+
+const objectStyle = {
+	color: semanticColors.text.primary /* JS/TS usage */,
+	backgroundColor:
+		'var(--semantic-colors-bg-default-on-light)' /* CSS usage */,
+};
 ```
 
 ## Colour tokens

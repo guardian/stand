@@ -96,6 +96,7 @@ We want the regular/normal weight (400), the bold weight (700), and the italic v
 ```ts
 import { css } from '@emotion/react';
 import {
+	semanticColors,
 	semanticTypography,
 	convertTypographyToEmotionObjectStyle, // helper function to convert from typography token object to emotion CSS object style
 	convertTypographyToEmotionStringStyle, // helper function to convert from typography token object to emotion CSS string style
@@ -108,9 +109,15 @@ const stringStyleJS = css`
 		semanticTypography['body-compact-md'],
 	)}
 `;
-const objectStyleJS = convertTypographyToEmotionObjectStyle(
-	semanticTypography['body-compact-sm'],
-);
+const objectStyleJS = {
+	// other styles e.g.
+	color: semanticColors.text.primary,
+
+	// typography styles
+	...convertTypographyToEmotionObjectStyle(
+		semanticTypography['body-compact-sm'],
+	),
+};
 
 /* CSS usage */
 const stringStyleCSS = css`

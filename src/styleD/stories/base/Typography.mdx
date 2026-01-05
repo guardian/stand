@@ -20,8 +20,8 @@ import { css } from '@emotion/react';
 import { baseTypography } from '@guardian/stand'; // JS/TS usage
 import '@guardian/stand/base/typography.css'; // CSS usage
 
-const styleJs = css`
-	/* JS/TS usage */
+/* JS/TS usage */
+const stringStyleJS = css`
 	font-family: ${baseTypography.family['Open Sans']};
 	font-size: ${baseTypography.size['14-px']};
 	font-weight: ${baseTypography.weight['Open Sans'].normal};
@@ -30,9 +30,18 @@ const styleJs = css`
 	line-height: ${baseTypography.lineHeight.normal};
 	letter-spacing: ${baseTypography.letterSpacing['default-px']};
 `;
+const objectStyleJS = {
+	fontFamily: baseTypography.family['Open Sans'],
+	fontSize: baseTypography.size['14-px'],
+	fontWeight: baseTypography.weight['Open Sans'].normal,
+	fontVariationSettings: `'wdth' ${baseTypography.width['Open Sans']}`,
+	fontStyle: baseTypography.style.normal,
+	lineHeight: baseTypography.lineHeight.normal,
+	letterSpacing: baseTypography.letterSpacing['default-px'],
+};
 
-const styleCss = css`
-	/* CSS usage */
+/* CSS usage */
+const stringStyleCSS = css`
 	font-family: var(--base-typography-family-open-sans);
 	font-size: var(--base-typography-size-14-px);
 	font-weight: var(--base-typography-weight-open-sans-normal);
@@ -41,6 +50,15 @@ const styleCss = css`
 	line-height: var(--base-typography-line-height-normal);
 	letter-spacing: var(--base-typography-letter-spacing-default-px);
 `;
+const objectStyleCSS = {
+	fontFamily: 'var(--base-typography-family-open-sans)',
+	fontSize: 'var(--base-typography-size-14-px)',
+	fontWeight: 'var(--base-typography-weight-open-sans-normal)',
+	fontVariationSettings: `'wdth' var(--base-typography-width-open-sans)`,
+	fontStyle: 'var(--base-typography-style-normal)',
+	lineHeight: 'var(--base-typography-line-height-normal)',
+	letterSpacing: 'var(--base-typography-letter-spacing-default-px)',
+};
 ```
 
 ## Typography tokens

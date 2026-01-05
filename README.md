@@ -116,12 +116,18 @@ import { css } from '@emotion/react';
 import { semanticColors } from '@guardian/stand'; // JS/TS usage
 import '@guardian/stand/semantic/colors.css'; // CSS usage
 
-const style = css`
+const stringStyle = css`
 	color: ${semanticColors.text.primary}; /* JS/TS usage */
 	background-color: var(
 		--semantic-colors-bg-default-on-light
 	); /* CSS usage */
 `;
+
+const objectStyle = {
+	color: semanticColors.text.primary /* JS/TS usage */,
+	backgroundColor:
+		'var(--semantic-colors-bg-default-on-light)' /* CSS usage */,
+};
 ```
 
 For a list of available semantic color styles see the [Storybook Semantic Colors](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-semantic-color-palette--docs) section.
@@ -133,6 +139,7 @@ For a full list of CSS Semantic Color tokens see [`semantic/colors.css`](./src/s
 ```ts
 import { css } from '@emotion/react';
 import {
+	semanticColors,
 	semanticTypography,
 	convertTypographyToEmotionObjectStyle, // helper function to convert from typography token object to emotion CSS object style
 	convertTypographyToEmotionStringStyle, // helper function to convert from typography token object to emotion CSS string style
@@ -145,9 +152,15 @@ const stringStyleJS = css`
 		semanticTypography['body-compact-md'],
 	)}
 `;
-const objectStyleJS = convertTypographyToEmotionObjectStyle(
-	semanticTypography['body-compact-sm'],
-);
+const objectStyleJS = {
+	// other styles e.g.
+	color: semanticColors.text.primary,
+
+	// typography styles
+	...convertTypographyToEmotionObjectStyle(
+		semanticTypography['body-compact-sm'],
+	),
+};
 
 /* CSS usage */
 const stringStyleCSS = css`
@@ -180,10 +193,15 @@ import { css } from '@emotion/react';
 import { baseColors } from '@guardian/stand'; // JS/TS usage
 import '@guardian/stand/base/colors.css'; // CSS usage
 
-const style = css`
+const stringStyle = css`
 	color: ${baseColors.neutral['900']}; /* JS/TS usage */
 	background-color: var(--base-colors-blue-500); /* CSS usage */
 `;
+
+const objectStyle = {
+	color: baseColors.neutral['900'] /* JS/TS usage */,
+	backgroundColor: 'var(--base-colors-blue-500)' /* CSS usage */,
+};
 ```
 
 For a list of the available base/primitives color styles see the [Storybook Base Colors](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-base-color-palette--docs) section.
@@ -197,19 +215,28 @@ import { css } from '@emotion/react';
 import { baseTypography } from '@guardian/stand'; // JS/TS usage
 import '@guardian/stand/base/typography.css'; // CSS usage
 
-const styleJs = css`
-	/* JS/TS usage */
+/* JS/TS usage */
+const stringStyleJS = css`
 	font-family: ${baseTypography.family['Open Sans']};
 	font-size: ${baseTypography.size['14-px']};
 	font-weight: ${baseTypography.weight['Open Sans'].normal};
 	font-variation-settings: 'wdth' ${baseTypography.width['Open Sans']};
-	font-style: ${baseTypography.style.normal};
+	style: ${baseTypography.style.normal};
 	line-height: ${baseTypography.lineHeight.normal};
 	letter-spacing: ${baseTypography.letterSpacing['default-px']};
 `;
+const objectStyleJS = {
+	fontFamily: baseTypography.family['Open Sans'],
+	fontSize: baseTypography.size['14-px'],
+	fontWeight: baseTypography.weight['Open Sans'].normal,
+	fontVariationSettings: `'wdth' ${baseTypography.width['Open Sans']}`,
+	fontStyle: baseTypography.style.normal,
+	lineHeight: baseTypography.lineHeight.normal,
+	letterSpacing: baseTypography.letterSpacing['default-px'],
+};
 
-const styleCss = css`
-	/* CSS usage */
+/* CSS usage */
+const stringStyleCSS = css`
 	font-family: var(--base-typography-family-open-sans);
 	font-size: var(--base-typography-size-14-px);
 	font-weight: var(--base-typography-weight-open-sans-normal);
@@ -218,6 +245,15 @@ const styleCss = css`
 	line-height: var(--base-typography-line-height-normal);
 	letter-spacing: var(--base-typography-letter-spacing-default-px);
 `;
+const objectStyleCSS = {
+	fontFamily: 'var(--base-typography-family-open-sans)',
+	fontSize: 'var(--base-typography-size-14-px)',
+	fontWeight: 'var(--base-typography-weight-open-sans-normal)',
+	fontVariationSettings: `'wdth' var(--base-typography-width-open-sans)`,
+	fontStyle: 'var(--base-typography-style-normal)',
+	lineHeight: 'var(--base-typography-line-height-normal)',
+	letterSpacing: 'var(--base-typography-letter-spacing-default-px)',
+};
 ```
 
 For a list of the available base/primitives typography tokens see the [Storybook Base Typography](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-base-typography--docs) section.
