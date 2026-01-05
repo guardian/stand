@@ -124,7 +124,7 @@ const style = css`
 `;
 ```
 
-For a list of available semantic color styles see the [Storybook Semantic Colors](https://68c12e3ed577cb56abfd31bf-ktzjjbdtby.chromatic.com/?path=/docs/stand-editorial-design-system-semantic-color-palette--docs) section.
+For a list of available semantic color styles see the [Storybook Semantic Colors](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-semantic-color-palette--docs) section.
 
 For a full list of CSS Semantic Color tokens see [`semantic/colors.css`](./src/styleD/build/css/semantic/colors.css).
 
@@ -167,7 +167,7 @@ const objectStyleCSS = {
 };
 ```
 
-For a list of available typography styles see the [Storybook Semantic Typography](https://68c12e3ed577cb56abfd31bf-ktzjjbdtby.chromatic.com/?path=/docs/stand-editorial-design-system-semantic-typography--docs) section.
+For a list of available typography styles see the [Storybook Semantic Typography](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-semantic-typography--docs) section.
 
 For a full list of CSS Semantic Typography tokens see [`semantic/typography.css`](./src/styleD/build/css/semantic/typography.css).
 
@@ -186,7 +186,7 @@ const style = css`
 `;
 ```
 
-For a list of the available base/primitives color styles see the [Storybook Base Colors](https://68c12e3ed577cb56abfd31bf-ktzjjbdtby.chromatic.com/?path=/docs/stand-editorial-design-system-base-color-palette--docs) section.
+For a list of the available base/primitives color styles see the [Storybook Base Colors](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-base-color-palette--docs) section.
 
 For a full list of CSS Base/Primitives Color tokens see [`base/colors.css`](./src/styleD/build/css/base/colors.css).
 
@@ -220,7 +220,7 @@ const styleCss = css`
 `;
 ```
 
-For a list of the available base/primitives typography tokens see the [Storybook Base Typography](https://68c12e3ed577cb56abfd31bf-ktzjjbdtby.chromatic.com/?path=/docs/stand-editorial-design-system-base-typography--docs) section.
+For a list of the available base/primitives typography tokens see the [Storybook Base Typography](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-base-typography--docs) section.
 
 For a full list of CSS Base/Primitives Typography tokens see [`base/typography.css`](./src/styleD/build/css/base/typography.css).
 
