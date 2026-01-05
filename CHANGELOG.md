@@ -4,8 +4,9 @@
 
 ### Patch Changes
 
-- a287cfd: - Start adding design tokens, through css and js/ts, for colours and typography
-  - Add TagAutocomplete and TagTable components in testing
+- a287cfd:
+    - Start adding design tokens, through css and js/ts, for colours and typography
+    - Add TagAutocomplete and TagTable components in testing
 
 ## 0.0.5
 
