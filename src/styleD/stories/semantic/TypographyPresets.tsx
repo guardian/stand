@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { semanticColors } from '../../build/typescript/semantic/colors';
 import { semanticTypography } from '../../build/typescript/semantic/typography';
-import { convertTypographyToEmotion } from '../../utils/semantic/typography';
+import { convertTypographyToEmotionStringStyle } from '../../utils/semantic/typography';
 
 const listCss = css`
 	list-style: none;
@@ -27,13 +27,13 @@ const propertiesCss = css`
 	display: flex;
 	gap: 16px;
 	dt {
-		${convertTypographyToEmotion(semanticTypography['body-sm'])}
+		${convertTypographyToEmotionStringStyle(semanticTypography['body-sm'])}
 		color: ${semanticColors.text.primary};
 		margin: 0;
 		padding: 0;
 	}
 	dd {
-		${convertTypographyToEmotion(semanticTypography['body-md'])}
+		${convertTypographyToEmotionStringStyle(semanticTypography['body-md'])}
 		margin: 0;
 		padding: 0;
 	}
@@ -43,7 +43,7 @@ const convertedPresets = Object.entries(
 	Object.fromEntries(
 		Object.entries(semanticTypography).map(([preset, token]) => [
 			preset,
-			convertTypographyToEmotion(token).styles,
+			convertTypographyToEmotionStringStyle(token).styles,
 		]),
 	),
 );

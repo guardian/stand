@@ -134,22 +134,37 @@ For a full list of CSS Semantic Color tokens see [`semantic/colors.css`](./src/s
 import { css } from '@emotion/react';
 import {
 	semanticTypography,
-	convertTypographyToEmotion, // helper function to convert from typography token object to emotion CSS
+	convertTypographyToEmotionObjectStyle, // helper function to convert from typography token object to emotion CSS object style
+	convertTypographyToEmotionStringStyle, // helper function to convert from typography token object to emotion CSS string style
 } from '@guardian/stand'; // JS/TS usage
 import '@guardian/stand/semantic/typography.css'; // CSS usage
 
-const styleJS = css`
-	/* JS/TS usage */
-	${convertTypographyToEmotion(semanticTypography['body-compact-md'])}
+/* JS/TS usage */
+const stringStyleJS = css`
+	${convertTypographyToEmotionStringStyle(
+		semanticTypography['body-compact-md'],
+	)}
 `;
+const objectStyleJS = convertTypographyToEmotionObjectStyle(
+	semanticTypography['body-compact-sm'],
+);
 
-const styleCSS = css`
+/* CSS usage */
+const stringStyleCSS = css`
 	/* CSS usage */
 	font: var(--semantic-typography-body-compact-sm-font);
 	letter-spacing: var(--semantic-typography-body-compact-sm-letter-spacing);
 	font-variation-settings: 'wdth'
 		var(--semantic-typography-body-compact-sm-font-width);
 `;
+const objectStyleCSS = {
+	fontFamily: 'var(--semantic-typography-body-compact-sm-font-family)',
+	fontWeight: 'var(--semantic-typography-body-compact-sm-font-weight)',
+	fontSize: 'var(--semantic-typography-body-compact-sm-font-size)',
+	lineHeight: 'var(--semantic-typography-body-compact-sm-line-height)',
+	letterSpacing: 'var(--semantic-typography-body-compact-sm-letter-spacing)',
+	fontVariationSettings: `'wdth' var(--semantic-typography-body-compact-sm-font-variation-settings)`,
+};
 ```
 
 For a list of available typography styles see the [Storybook Semantic Typography](https://68c12e3ed577cb56abfd31bf-ktzjjbdtby.chromatic.com/?path=/docs/stand-editorial-design-system-semantic-typography--docs) section.

@@ -1,4 +1,4 @@
-import type { SerializedStyles } from '@emotion/react';
+import type { CSSObject, SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 
 type SemanticTypography = {
@@ -14,7 +14,7 @@ type SemanticTypography = {
 	fontWidth: number;
 };
 
-export const convertTypographyToEmotion = (
+export const convertTypographyToEmotionStringStyle = (
 	typography: SemanticTypography,
 ): SerializedStyles => {
 	return css`
@@ -26,4 +26,18 @@ export const convertTypographyToEmotion = (
 		letter-spacing: ${typography.letterSpacing};
 		font-variation-settings: \"wdth\" ${typography.fontWidth};
 	`;
+};
+
+export const convertTypographyToEmotionObjectStyle = (
+	typography: SemanticTypography,
+): CSSObject => {
+	return {
+		fontFamily: typography.font.fontFamily,
+		fontWeight: typography.font.fontWeight,
+		fontSize: typography.font.fontSize,
+		fontStyle: typography.font.fontStyle,
+		lineHeight: typography.font.lineHeight,
+		letterSpacing: typography.letterSpacing,
+		fontVariationSettings: `"wdth" ${typography.fontWidth}`,
+	};
 };
