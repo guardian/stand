@@ -1,12 +1,18 @@
 # @guardian/stand
 
+## 0.0.7
+
+### Patch Changes
+
+- 44a43ef: Add `convertTypographyToEmotionObjectStyle` helper function if using emotion css object styles
+
 ## 0.0.6
 
 ### Patch Changes
 
 - a287cfd:
-    - Start adding design tokens, through css and js/ts, for colours and typography
-    - Add TagAutocomplete and TagTable components in testing
+  - Start adding design tokens, through css and js/ts, for colours and typography
+  - Add TagAutocomplete and TagTable components in testing
 
 ## 0.0.5
 
