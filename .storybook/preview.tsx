@@ -2,8 +2,10 @@ import { Global } from '@emotion/react';
 import { css } from '@emotion/react';
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react-vite';
-
-const ASSETS_URL = 'https://interactive.guim.co.uk/fonts/guss-webfonts/';
+import {
+	convertTypographyToEmotionObjectStyle,
+	semanticTypography,
+} from '../src';
 
 const Fonts = css`
 	@import url('https://assets.guim.co.uk/fonts/open-sans/OpenSans.css');
@@ -47,45 +49,11 @@ const Fonts = css`
 		font-style: italic;
 		font-display: swap;
 	}
-	@font-face {
-		font-family: 'Guardian Agate Sans';
-		src: url('${ASSETS_URL}GuardianAgateSans1Web/GuardianAgateSans1Web-Regular.woff2')
-			format('woff2');
-		font-weight: 400;
-		font-style: 'normal';
-		font-display: 'fallback';
-	}
-	@font-face {
-		font-family: 'Guardian Agate Sans';
-		src: url('${ASSETS_URL}GuardianAgateSans1Web/GuardianAgateSans1Web-Bold.woff2')
-			format('woff2');
-		font-weight: 700;
-		font-style: normal;
-		font-display: swap;
-	}
-	@font-face {
-		font-family: 'Guardian Agate Sans';
-		src: url('${ASSETS_URL}GuardianAgateSans1Web/GuardianAgateSans1Web-RegularItalic.woff2')
-			format('woff2');
-		font-weight: 400;
-		font-style: italic;
-		font-display: swap;
-	}
-	@font-face {
-		font-family: 'Guardian Agate Sans';
-		src: url('${ASSETS_URL}GuardianAgateSans1Web/GuardianAgateSans1Web-BoldItalic.woff2')
-			format('woff2');
-		font-weight: 700;
-		font-style: italic;
-		font-display: swap;
-	}
 `;
 
 const globalFont = {
-	fontFamily: '"Guardian Agate Sans", "Arial", sans-serif',
-	fontSize: '13px',
-	lineHeight: '1.2',
 	color: '#292929',
+	...convertTypographyToEmotionObjectStyle(semanticTypography['body-sm']),
 };
 
 const globalStyles = css({
