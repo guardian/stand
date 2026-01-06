@@ -8,6 +8,7 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
+		"./fonts/OpenSans.css": "./dist/fonts/OpenSans.css",
 		"./base/colors.css": "./dist/styleD/build/css/base/colors.css",
 		"./base/typography.css": "./dist/styleD/build/css/base/typography.css",
 		"./semantic/colors.css": "./dist/styleD/build/css/semantic/colors.css",

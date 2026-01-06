@@ -6,7 +6,7 @@ import type { Preview } from '@storybook/react-vite';
 const ASSETS_URL = 'https://interactive.guim.co.uk/fonts/guss-webfonts/';
 
 const Fonts = css`
-	@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
+	@import url('https://assets.guim.co.uk/fonts/open-sans/OpenSans.css');
 	@font-face {
 		font-family: 'GH Guardian Headline';
 		src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/full-not-hinted/GHGuardianHeadline-Bold.woff2')

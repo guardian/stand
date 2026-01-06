@@ -33,6 +33,10 @@ export default [
 						src: 'src/styleD/build/css/',
 						dest: 'dist/styleD/build/css/',
 					},
+					{
+						src: 'src/fonts/OpenSans.css',
+						dest: 'dist/fonts/',
+					},
 				],
 			}),
 		],
