@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import { ToggleButton, ToggleButtonGroup } from 'react-aria-components';
 import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
-import { TitleText } from '../TitleText';
 import type { DeepPartial } from '../util';
 import type { Option } from './model';
 import {

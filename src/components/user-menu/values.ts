@@ -95,4 +95,3 @@ const colorSchemes: Option[] = [
 ];
 
 export { colorSchemes, fontFamilies, textSizes };
-
