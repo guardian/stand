@@ -7,15 +7,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Guardian Headline}",
 						"fontWeight": "{base.typography.weight.Guardian Headline.bold}",
-						"fontSize": "{base.typography.size.18-px}",
+						"fontSize": "{base.typography.size.18-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -28,15 +28,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Guardian Headline}",
 						"fontWeight": "{base.typography.weight.Guardian Headline.bold}",
-						"fontSize": "{base.typography.size.20-px}",
+						"fontSize": "{base.typography.size.20-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -49,15 +49,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Guardian Headline}",
 						"fontWeight": "{base.typography.weight.Guardian Headline.bold}",
-						"fontSize": "{base.typography.size.24-px}",
+						"fontSize": "{base.typography.size.24-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -70,15 +70,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Guardian Headline}",
 						"fontWeight": "{base.typography.weight.Guardian Headline.bold}",
-						"fontSize": "{base.typography.size.32-px}",
+						"fontSize": "{base.typography.size.32-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -91,15 +91,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.bold}",
-						"fontSize": "{base.typography.size.12-px}",
+						"fontSize": "{base.typography.size.12-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -112,15 +112,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.bold}",
-						"fontSize": "{base.typography.size.14-px}",
+						"fontSize": "{base.typography.size.14-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.dense-px}"
+						"letterSpacing": "{base.typography.letter-spacing.dense-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.dense-px}"
+					"$value": "{base.typography.letter-spacing.dense-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -133,15 +133,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.bold}",
-						"fontSize": "{base.typography.size.16-px}",
+						"fontSize": "{base.typography.size.16-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.denser-px}"
+						"letterSpacing": "{base.typography.letter-spacing.denser-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.denser-px}"
+					"$value": "{base.typography.letter-spacing.denser-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -154,15 +154,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.bold}",
-						"fontSize": "{base.typography.size.18-px}",
+						"fontSize": "{base.typography.size.18-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.denser-px}"
+						"letterSpacing": "{base.typography.letter-spacing.denser-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.denser-px}"
+					"$value": "{base.typography.letter-spacing.denser-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -175,15 +175,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.bold}",
-						"fontSize": "{base.typography.size.20-px}",
+						"fontSize": "{base.typography.size.20-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.denser-px}"
+						"letterSpacing": "{base.typography.letter-spacing.denser-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.denser-px}"
+					"$value": "{base.typography.letter-spacing.denser-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -196,15 +196,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.bold}",
-						"fontSize": "{base.typography.size.24-px}",
+						"fontSize": "{base.typography.size.24-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.densest-px}"
+						"letterSpacing": "{base.typography.letter-spacing.densest-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.densest-px}"
+					"$value": "{base.typography.letter-spacing.densest-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -217,15 +217,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.bold}",
-						"fontSize": "{base.typography.size.12-px}",
+						"fontSize": "{base.typography.size.12-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -238,15 +238,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.bold}",
-						"fontSize": "{base.typography.size.14-px}",
+						"fontSize": "{base.typography.size.14-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -259,15 +259,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.bold}",
-						"fontSize": "{base.typography.size.16-px}",
+						"fontSize": "{base.typography.size.16-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.dense-px}"
+						"letterSpacing": "{base.typography.letter-spacing.dense-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.dense-px}"
+					"$value": "{base.typography.letter-spacing.dense-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -280,15 +280,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.bold}",
-						"fontSize": "{base.typography.size.18-px}",
+						"fontSize": "{base.typography.size.18-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.dense-px}"
+						"letterSpacing": "{base.typography.letter-spacing.dense-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.dense-px}"
+					"$value": "{base.typography.letter-spacing.dense-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -301,15 +301,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.bold}",
-						"fontSize": "{base.typography.size.20-px}",
+						"fontSize": "{base.typography.size.20-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.denser-px}"
+						"letterSpacing": "{base.typography.letter-spacing.denser-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.denser-px}"
+					"$value": "{base.typography.letter-spacing.denser-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -322,15 +322,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.bold}",
-						"fontSize": "{base.typography.size.24-px}",
+						"fontSize": "{base.typography.size.24-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.tight}",
-						"letterSpacing": "{base.typography.letter-spacing.denser-px}"
+						"letterSpacing": "{base.typography.letter-spacing.denser-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.denser-px}"
+					"$value": "{base.typography.letter-spacing.denser-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -343,15 +343,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.normal}",
-						"fontSize": "{base.typography.size.14-px}",
+						"fontSize": "{base.typography.size.14-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -364,15 +364,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.normal}",
-						"fontSize": "{base.typography.size.16-px}",
+						"fontSize": "{base.typography.size.16-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -385,15 +385,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.normal}",
-						"fontSize": "{base.typography.size.18-px}",
+						"fontSize": "{base.typography.size.18-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -406,15 +406,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.normal}",
-						"fontSize": "{base.typography.size.20-px}",
+						"fontSize": "{base.typography.size.20-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -427,15 +427,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.normal}",
-						"fontSize": "{base.typography.size.14-px}",
+						"fontSize": "{base.typography.size.14-rem}",
 						"fontStyle": "{base.typography.style.italic}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -448,15 +448,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.normal}",
-						"fontSize": "{base.typography.size.16-px}",
+						"fontSize": "{base.typography.size.16-rem}",
 						"fontStyle": "{base.typography.style.italic}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -469,15 +469,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.normal}",
-						"fontSize": "{base.typography.size.18-px}",
+						"fontSize": "{base.typography.size.18-rem}",
 						"fontStyle": "{base.typography.style.italic}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -490,15 +490,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.normal}",
-						"fontSize": "{base.typography.size.20-px}",
+						"fontSize": "{base.typography.size.20-rem}",
 						"fontStyle": "{base.typography.style.italic}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -511,15 +511,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.normal}",
-						"fontSize": "{base.typography.size.14-px}",
+						"fontSize": "{base.typography.size.14-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -532,15 +532,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.normal}",
-						"fontSize": "{base.typography.size.16-px}",
+						"fontSize": "{base.typography.size.16-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -553,15 +553,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.normal}",
-						"fontSize": "{base.typography.size.18-px}",
+						"fontSize": "{base.typography.size.18-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -574,15 +574,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.normal}",
-						"fontSize": "{base.typography.size.20-px}",
+						"fontSize": "{base.typography.size.20-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -595,15 +595,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.normal}",
-						"fontSize": "{base.typography.size.14-px}",
+						"fontSize": "{base.typography.size.14-rem}",
 						"fontStyle": "{base.typography.style.italic}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -616,15 +616,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.normal}",
-						"fontSize": "{base.typography.size.16-px}",
+						"fontSize": "{base.typography.size.16-rem}",
 						"fontStyle": "{base.typography.style.italic}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -637,15 +637,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.normal}",
-						"fontSize": "{base.typography.size.18-px}",
+						"fontSize": "{base.typography.size.18-rem}",
 						"fontStyle": "{base.typography.style.italic}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -658,15 +658,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.normal}",
-						"fontSize": "{base.typography.size.20-px}",
+						"fontSize": "{base.typography.size.20-rem}",
 						"fontStyle": "{base.typography.style.italic}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -679,15 +679,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans}",
 						"fontWeight": "{base.typography.weight.Open Sans.normal}",
-						"fontSize": "{base.typography.size.12-px}",
+						"fontSize": "{base.typography.size.12-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -700,15 +700,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Open Sans Compact}",
 						"fontWeight": "{base.typography.weight.Open Sans Compact.normal}",
-						"fontSize": "{base.typography.size.12-px}",
+						"fontSize": "{base.typography.size.12-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.normal}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -721,15 +721,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Guardian Text Egyptian}",
 						"fontWeight": "{base.typography.weight.Guardian Text Egyptian.normal}",
-						"fontSize": "{base.typography.size.16-px}",
+						"fontSize": "{base.typography.size.16-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.loose}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -742,15 +742,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Guardian Text Egyptian}",
 						"fontWeight": "{base.typography.weight.Guardian Text Egyptian.bold}",
-						"fontSize": "{base.typography.size.16-px}",
+						"fontSize": "{base.typography.size.16-rem}",
 						"fontStyle": "{base.typography.style.normal}",
 						"lineHeight": "{base.typography.line-height.loose}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -763,15 +763,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Guardian Text Egyptian}",
 						"fontWeight": "{base.typography.weight.Guardian Text Egyptian.normal}",
-						"fontSize": "{base.typography.size.16-px}",
+						"fontSize": "{base.typography.size.16-rem}",
 						"fontStyle": "{base.typography.style.italic}",
 						"lineHeight": "{base.typography.line-height.loose}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
@@ -784,15 +784,15 @@
 					"$value": {
 						"fontFamily": "{base.typography.family.Guardian Text Egyptian}",
 						"fontWeight": "{base.typography.weight.Guardian Text Egyptian.bold}",
-						"fontSize": "{base.typography.size.16-px}",
+						"fontSize": "{base.typography.size.16-rem}",
 						"fontStyle": "{base.typography.style.italic}",
 						"lineHeight": "{base.typography.line-height.loose}",
-						"letterSpacing": "{base.typography.letter-spacing.default-px}"
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
 					}
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{base.typography.letter-spacing.default-px}"
+					"$value": "{base.typography.letter-spacing.default-rem}"
 				},
 				"fontWidth": {
 					"$type": "number",
