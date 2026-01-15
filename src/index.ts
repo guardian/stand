@@ -14,7 +14,12 @@ export { baseColors } from './styleD/build/typescript/base/colors';
 export type { BaseColors } from './styleD/build/typescript/base/colors';
 export { baseTypography } from './styleD/build/typescript/base/typography';
 export type { BaseTypography } from './styleD/build/typescript/base/typography';
-
+export { baseSpacing } from './styleD/build/typescript/base/spacing';
+export type { BaseSpacing } from './styleD/build/typescript/base/spacing';
+export { baseSizing } from './styleD/build/typescript/base/sizing';
+export type { BaseSizing } from './styleD/build/typescript/base/sizing';
+export { baseRadius } from './styleD/build/typescript/base/radius';
+export type { BaseRadius } from './styleD/build/typescript/base/radius';
 /**
  * style dictionary exports - semantic
  */
