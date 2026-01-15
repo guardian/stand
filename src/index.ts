@@ -28,4 +28,7 @@ export type { SemanticTypography } from './styleD/build/typescript/semantic/typo
 /**
  * utils exports
  */
-export { convertTypographyToEmotion } from './styleD/utils/semantic/typography';
+export {
+	convertTypographyToEmotionObjectStyle,
+	convertTypographyToEmotionStringStyle,
+} from './styleD/utils/semantic/typography';

@@ -16,10 +16,15 @@ import { css } from '@emotion/react';
 import { baseColors } from '@guardian/stand'; // JS/TS usage
 import '@guardian/stand/base/colors.css'; // CSS usage
 
-const style = css`
+const stringStyle = css`
 	color: ${baseColors.neutral['900']}; /* JS/TS usage */
 	background-color: var(--base-colors-blue-500); /* CSS usage */
 `;
+
+const objectStyle = {
+	color: baseColors.neutral['900'] /* JS/TS usage */,
+	backgroundColor: 'var(--base-colors-blue-500)' /* CSS usage */,
+};
 ```
 
 ## Colour tokens

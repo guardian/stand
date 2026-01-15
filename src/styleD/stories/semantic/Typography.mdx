@@ -10,7 +10,7 @@ This story showcases the semantic typography presets available in the design sys
 The preview text has `contentEditable` enabled so you can see how the typography styles look with different text lengths and characters.
 Just click inside the preview box and start typing or pasting text.
 
-In most cases, when using Emotion, or a CSS-in-JS solution, you will need to use the `convertTypographyToEmotion` helper function to convert the typography object preset into valid emotion CSS styles, see the example usage below for more information.
+In most cases, when using Emotion, or a CSS-in-JS solution, you will need to use the `convertTypographyToEmotionStringStyle`, or `convertTypographyToEmotionObjectStyle` helper functions to convert the typography object preset into valid emotion CSS styles, see the example usage below for more information.
 
 ### Fonts
 
@@ -96,23 +96,45 @@ We want the regular/normal weight (400), the bold weight (700), and the italic v
 ```ts
 import { css } from '@emotion/react';
 import {
+	semanticColors,
 	semanticTypography,
-	convertTypographyToEmotion,
+	convertTypographyToEmotionObjectStyle, // helper function to convert from typography token object to emotion CSS object style
+	convertTypographyToEmotionStringStyle, // helper function to convert from typography token object to emotion CSS string style
 } from '@guardian/stand'; // JS/TS usage
 import '@guardian/stand/semantic/typography.css'; // CSS usage
 
-const styleJS = css`
-	/* JS/TS usage */
-	${convertTypographyToEmotion(semanticTypography['body-compact-md'])}
+/* JS/TS usage */
+const stringStyleJS = css`
+	${convertTypographyToEmotionStringStyle(
+		semanticTypography['body-compact-md'],
+	)}
 `;
+const objectStyleJS = {
+	// other styles e.g.
+	color: semanticColors.text.primary,
 
-const styleCSS = css`
+	// typography styles
+	...convertTypographyToEmotionObjectStyle(
+		semanticTypography['body-compact-sm'],
+	),
+};
+
+/* CSS usage */
+const stringStyleCSS = css`
 	/* CSS usage */
 	font: var(--semantic-typography-body-compact-sm-font);
 	letter-spacing: var(--semantic-typography-body-compact-sm-letter-spacing);
 	font-variation-settings: 'wdth'
 		var(--semantic-typography-body-compact-sm-font-width);
 `;
+const objectStyleCSS = {
+	fontFamily: 'var(--semantic-typography-body-compact-sm-font-family)',
+	fontWeight: 'var(--semantic-typography-body-compact-sm-font-weight)',
+	fontSize: 'var(--semantic-typography-body-compact-sm-font-size)',
+	lineHeight: 'var(--semantic-typography-body-compact-sm-line-height)',
+	letterSpacing: 'var(--semantic-typography-body-compact-sm-letter-spacing)',
+	fontVariationSettings: `'wdth' var(--semantic-typography-body-compact-sm-font-variation-settings)`,
+};
 ```
 
 ## Typography tokens
