@@ -18,6 +18,17 @@
 	--base-typography-size-36-px: 36px;
 	--base-typography-size-42-px: 42px;
 	--base-typography-size-48-px: 48px;
+	--base-typography-size-12-rem: 0.75rem;
+	--base-typography-size-14-rem: 0.875rem;
+	--base-typography-size-16-rem: 1rem;
+	--base-typography-size-18-rem: 1.125rem;
+	--base-typography-size-20-rem: 1.25rem;
+	--base-typography-size-24-rem: 1.5rem;
+	--base-typography-size-28-rem: 1.75rem;
+	--base-typography-size-32-rem: 2rem;
+	--base-typography-size-36-rem: 2.25rem;
+	--base-typography-size-42-rem: 2.625rem;
+	--base-typography-size-48-rem: 3rem;
 	--base-typography-weight-guardian-text-egyptian-normal: 400;
 	--base-typography-weight-guardian-text-egyptian-bold: 700;
 	--base-typography-weight-guardian-headline-bold: 700;
@@ -40,4 +51,8 @@
 	--base-typography-letter-spacing-denser-px: -0.5px;
 	--base-typography-letter-spacing-dense-px: -0.2px;
 	--base-typography-letter-spacing-default-px: 0px;
+	--base-typography-letter-spacing-densest-rem: -0.0625rem;
+	--base-typography-letter-spacing-denser-rem: -0.03125rem;
+	--base-typography-letter-spacing-dense-rem: -0.0125rem;
+	--base-typography-letter-spacing-default-rem: 0rem;
 }

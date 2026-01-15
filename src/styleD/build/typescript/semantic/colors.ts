@@ -4,15 +4,19 @@
 
 export const semanticColors = {
 	text: {
-		primary: '#000000',
-		secondary: '#333333',
-		tertiary: '#666666',
+		default: '#000000',
+		subdued: '#545454',
 		'inverse-default': '#dcdcdc',
-		'inverse-secondary': '#cccccc',
-		'inverse-tertiary': '#aeaeae',
+		'inverse-subdued': '#cccccc',
 		'inverse-strong': '#ffffff',
-		warning: '#8c2113',
+		error: '#8c2113',
+		warning: '#433608',
 		success: '#326528',
+		information: '#00344e',
+	},
+	bg: {
+		'default-onDark': '#121212',
+		'default-onLight': '#ffffff',
 	},
 	surface: {
 		'light-1': '#f6f6f6',
@@ -24,10 +28,6 @@ export const semanticColors = {
 		default: '#8d8d8d',
 		strong: '#545454',
 		'inverse-strong': '#ffffff',
-	},
-	bg: {
-		'default-onDark': '#121212',
-		'default-onLight': '#ffffff',
 	},
 	status: {
 		'status-draft': '#f1c21b',
