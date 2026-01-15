@@ -140,20 +140,22 @@ We want the regular/normal weight (400), the bold weight (700), and the italic v
 
 #### Colors
 
+_Status: WIP_
+
 ```ts
 import { css } from '@emotion/react';
 import { semanticColors } from '@guardian/stand'; // JS/TS usage
 import '@guardian/stand/semantic/colors.css'; // CSS usage
 
 const stringStyle = css`
-	color: ${semanticColors.text.primary}; /* JS/TS usage */
+	color: ${semanticColors.text.default}; /* JS/TS usage */
 	background-color: var(
 		--semantic-colors-bg-default-on-light
 	); /* CSS usage */
 `;
 
 const objectStyle = {
-	color: semanticColors.text.primary /* JS/TS usage */,
+	color: semanticColors.text.default /* JS/TS usage */,
 	backgroundColor:
 		'var(--semantic-colors-bg-default-on-light)' /* CSS usage */,
 };
@@ -164,6 +166,8 @@ For a list of available semantic color styles see the [Storybook Semantic Colors
 For a full list of CSS Semantic Color tokens see [`semantic/colors.css`](./src/styleD/build/css/semantic/colors.css).
 
 #### Typography
+
+_Status: WIP_
 
 ```ts
 import { css } from '@emotion/react';
@@ -183,7 +187,7 @@ const stringStyleJS = css`
 `;
 const objectStyleJS = {
 	// other styles e.g.
-	color: semanticColors.text.primary,
+	color: semanticColors.text.default,
 
 	// typography styles
 	...convertTypographyToEmotionObjectStyle(
@@ -217,6 +221,8 @@ For a full list of CSS Semantic Typography tokens see [`semantic/typography.css`
 
 #### Colors
 
+_Status: WIP_
+
 ```ts
 import { css } from '@emotion/react';
 import { baseColors } from '@guardian/stand'; // JS/TS usage
@@ -239,6 +245,8 @@ For a full list of CSS Base/Primitives Color tokens see [`base/colors.css`](./sr
 
 #### Typography
 
+_Status: WIP_
+
 ```ts
 import { css } from '@emotion/react';
 import { baseTypography } from '@guardian/stand'; // JS/TS usage
@@ -247,47 +255,162 @@ import '@guardian/stand/base/typography.css'; // CSS usage
 /* JS/TS usage */
 const stringStyleJS = css`
 	font-family: ${baseTypography.family['Open Sans']};
-	font-size: ${baseTypography.size['14-px']};
+	font-size: ${baseTypography.size['14-rem']};
 	font-weight: ${baseTypography.weight['Open Sans'].normal};
 	font-variation-settings: 'wdth' ${baseTypography.width['Open Sans']};
 	style: ${baseTypography.style.normal};
 	line-height: ${baseTypography.lineHeight.normal};
-	letter-spacing: ${baseTypography.letterSpacing['default-px']};
+	letter-spacing: ${baseTypography.letterSpacing['default-rem']};
 `;
 const objectStyleJS = {
 	fontFamily: baseTypography.family['Open Sans'],
-	fontSize: baseTypography.size['14-px'],
+	fontSize: baseTypography.size['14-rem'],
 	fontWeight: baseTypography.weight['Open Sans'].normal,
 	fontVariationSettings: `'wdth' ${baseTypography.width['Open Sans']}`,
 	fontStyle: baseTypography.style.normal,
 	lineHeight: baseTypography.lineHeight.normal,
-	letterSpacing: baseTypography.letterSpacing['default-px'],
+	letterSpacing: baseTypography.letterSpacing['default-rem'],
 };
 
 /* CSS usage */
 const stringStyleCSS = css`
 	font-family: var(--base-typography-family-open-sans);
-	font-size: var(--base-typography-size-14-px);
+	font-size: var(--base-typography-size-14-rem);
 	font-weight: var(--base-typography-weight-open-sans-normal);
 	font-variation-settings: 'wdth' var(--base-typography-width-open-sans);
 	font-style: var(--base-typography-style-normal);
 	line-height: var(--base-typography-line-height-normal);
-	letter-spacing: var(--base-typography-letter-spacing-default-px);
+	letter-spacing: var(--base-typography-letter-spacing-default-rem);
 `;
 const objectStyleCSS = {
 	fontFamily: 'var(--base-typography-family-open-sans)',
-	fontSize: 'var(--base-typography-size-14-px)',
+	fontSize: 'var(--base-typography-size-14-rem)',
 	fontWeight: 'var(--base-typography-weight-open-sans-normal)',
 	fontVariationSettings: `'wdth' var(--base-typography-width-open-sans)`,
 	fontStyle: 'var(--base-typography-style-normal)',
 	lineHeight: 'var(--base-typography-line-height-normal)',
-	letterSpacing: 'var(--base-typography-letter-spacing-default-px)',
+	letterSpacing: 'var(--base-typography-letter-spacing-default-rem)',
 };
 ```
 
 For a list of the available base/primitives typography tokens see the [Storybook Base Typography](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-base-typography--docs) section.
 
 For a full list of CSS Base/Primitives Typography tokens see [`base/typography.css`](./src/styleD/build/css/base/typography.css).
+
+#### Spacing
+
+_Status: WIP_
+
+The `rem` tokens should be used in most cases to ensure scalability across different root font sizes.
+`px` tokens are available for cases where a fixed pixel value is required.
+
+```ts
+import { css } from '@emotion/react';
+import { baseSpacing } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/base/spacing.css'; // CSS usage
+
+/* JS/TS usage */
+const stringStyleJS = css`
+	padding: ${baseSpacing['16-rem']};
+	margin-bottom: ${baseSpacing['24-rem']};
+	gap: ${baseSpacing['8-rem']};
+`;
+const objectStyleJS = {
+	padding: baseSpacing['16-rem'],
+	marginBottom: baseSpacing['24-rem'],
+	gap: baseSpacing['8-rem'],
+};
+
+/* CSS usage */
+const stringStyleCSS = css`
+	padding: var(--base-spacing-16-rem);
+	margin-bottom: var(--base-spacing-24-rem);
+	gap: var(--base-spacing-8-rem);
+`;
+const objectStyleCSS = {
+	padding: 'var(--base-spacing-16-rem)',
+	marginBottom: 'var(--base-spacing-24-rem)',
+	gap: 'var(--base-spacing-8-rem)',
+};
+```
+
+For a list of the available base/primitives spacing tokens see the [Storybook Base Spacing](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-base-spacing--docs) section.
+
+For a full list of CSS Base/Primitives Spacing tokens see [`base/spacing.css`](./src/styleD/build/css/base/spacing.css).
+
+#### Sizing
+
+_Status: WIP_
+
+The `rem` tokens should be used in most cases to ensure scalability across different root font sizes.
+`px` tokens are available for cases where a fixed pixel value is required.
+
+```ts
+import { css } from '@emotion/react';
+import { baseSizing } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/base/sizing.css'; // CSS usage
+
+/* JS/TS usage */
+const stringStyleJS = css`
+	width: ${baseSizing['24-rem']};
+	height: ${baseSizing['24-rem']};
+	min-width: ${baseSizing['48-rem']};
+`;
+const objectStyleJS = {
+	width: baseSizing['24-rem'],
+	height: baseSizing['24-rem'],
+	minWidth: baseSizing['48-rem'],
+};
+
+/* CSS usage */
+const stringStyleCSS = css`
+	width: var(--base-sizing-24-rem);
+	height: var(--base-sizing-24-rem);
+	min-width: var(--base-sizing-48-rem);
+`;
+const objectStyleCSS = {
+	width: 'var(--base-sizing-24-rem)',
+	height: 'var(--base-sizing-24-rem)',
+	minWidth: 'var(--base-sizing-48-rem)',
+};
+```
+
+For a list of the available base/primitives sizing tokens see the [Storybook Base Sizing](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-base-sizing--docs) section.
+
+For a full list of CSS Base/Primitives Sizing tokens see [`base/sizing.css`](./src/styleD/build/css/base/sizing.css).
+
+#### Radius
+
+_Status: WIP_
+
+The `rem` tokens should be used in most cases to ensure scalability across different root font sizes.
+`px` tokens are available for cases where a fixed pixel value is required.
+
+```ts
+import { css } from '@emotion/react';
+import { baseRadius } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/base/radius.css'; // CSS usage
+
+/* JS/TS usage */
+const stringStyleJS = css`
+	border-radius: ${baseRadius['corner-4-rem']};
+`;
+const objectStyleJS = {
+	borderRadius: baseRadius['corner-4-rem'],
+};
+
+/* CSS usage */
+const stringStyleCSS = css`
+	border-radius: var(--base-radius-corner-4-rem);
+`;
+const objectStyleCSS = {
+	borderRadius: 'var(--base-radius-corner-4-rem)',
+};
+```
+
+For a list of the available base/primitives radius tokens see the [Storybook Base Radius](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-base-radius--docs) section.
+
+For a full list of CSS Base/Primitives Radius tokens see [`base/radius.css`](./src/styleD/build/css/base/radius.css).
 
 ## Components
 

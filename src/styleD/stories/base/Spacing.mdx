@@ -1,0 +1,47 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import SpacingStories, { BaseSpacing } from './Spacing.stories.tsx';
+
+<Meta of={SpacingStories} />
+
+# Base - Spacing
+
+This palette represents the raw values of the spacing tokens.
+
+The `rem` tokens should be used in most cases to ensure scalability across different root font sizes.
+`px` tokens are available for cases where a fixed pixel value is required.
+
+## Example usage
+
+```ts
+import { css } from '@emotion/react';
+import { baseSpacing } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/base/spacing.css'; // CSS usage
+
+/* JS/TS usage */
+const stringStyleJS = css`
+	padding: ${baseSpacing['16-rem']};
+	margin-bottom: ${baseSpacing['24-rem']};
+	gap: ${baseSpacing['8-rem']};
+`;
+const objectStyleJS = {
+	padding: baseSpacing['16-rem'],
+	marginBottom: baseSpacing['24-rem'],
+	gap: baseSpacing['8-rem'],
+};
+
+/* CSS usage */
+const stringStyleCSS = css`
+	padding: var(--base-spacing-16-rem);
+	margin-bottom: var(--base-spacing-24-rem);
+	gap: var(--base-spacing-8-rem);
+`;
+const objectStyleCSS = {
+	padding: 'var(--base-spacing-16-rem)',
+	marginBottom: 'var(--base-spacing-24-rem)',
+	gap: 'var(--base-spacing-8-rem)',
+};
+```
+
+## Spacing tokens
+
+<Story of={BaseSpacing} />
