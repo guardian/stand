@@ -34,6 +34,21 @@ export type TokenOrTokenGroup =
 	| (Record<string, Token> & { $type?: never; $value?: never });
 
 const Dimensions = ['px', 'em', 'rem'] as const;
+
+const spacingTokens = [
+	{
+		prefix: 'spacing-',
+		replacement: '',
+	},
+	{
+		prefix: 'size-',
+		replacement: '',
+	},
+	{
+		prefix: 'corner-radius-',
+		replacement: 'corner-',
+	},
+];
 /**
  * Defines what we expect a Design Tokens file to look like in the codebase.
  *
@@ -72,7 +87,12 @@ export function tokenTypeFromVariable(variable: LocalVariable) {
 			if (variable.name.startsWith('weight/')) {
 				return 'fontWeight';
 			}
-			if (variable.name.startsWith('letter-spacing/')) {
+			if (
+				[
+					'letter-spacing/',
+					...spacingTokens.map((token) => token.prefix),
+				].some((prefix) => variable.name.startsWith(prefix))
+			) {
 				return 'dimension';
 			}
 			if (
@@ -117,6 +137,15 @@ export function tokenValueFromVariable(
 			return `${+value.toFixed(2)}${dimension}`;
 		}
 
+		if (
+			spacingTokens.some((token) =>
+				variable.name.startsWith(token.prefix),
+			) &&
+			typeof value === 'number'
+		) {
+			return `${+value.toFixed(2)}px`;
+		}
+
 		if (typeof value === 'number') {
 			return +Number(value).toFixed(2);
 		}
@@ -154,8 +183,20 @@ export function tokenFilesFromLocalVariables(
 			let obj = tokenFiles[fileName];
 
 			variable.name.split('/').forEach((groupName) => {
-				obj![groupName] = obj![groupName] ?? {};
-				obj = obj![groupName] as TokensFile;
+				// Normalise spacing tokens, otherwise the name will have spacing-spacing-X prefix
+				const name = (() => {
+					for (const token of spacingTokens) {
+						if (groupName.startsWith(token.prefix)) {
+							return `${groupName.replace(
+								token.prefix,
+								token.replacement,
+							)}-px`;
+						}
+					}
+					return groupName;
+				})();
+				obj![name] = obj![name] ?? {};
+				obj = obj![name] as TokensFile;
 			});
 
 			const token = {

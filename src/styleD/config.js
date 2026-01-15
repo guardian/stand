@@ -24,6 +24,18 @@ const fileList = [
 		group: 'base',
 		component: 'typography',
 	},
+	{
+		group: 'base',
+		component: 'spacing',
+	},
+	{
+		group: 'base',
+		component: 'radius',
+	},
+	{
+		group: 'base',
+		component: 'sizing',
+	},
 	/** semantic */
 	{
 		group: 'semantic',
