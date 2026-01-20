@@ -12,6 +12,7 @@
 	--semantic-colors-text-warning: #433608;
 	--semantic-colors-text-success: #326528;
 	--semantic-colors-text-information: #00344e;
+	--semantic-colors-text-disabled: #999999;
 	--semantic-colors-bg-default-on-dark: #121212;
 	--semantic-colors-bg-default-on-light: #ffffff;
 	--semantic-colors-surface-light-1: #f6f6f6;
@@ -24,4 +25,5 @@
 	--semantic-colors-status-status-draft: #f1c21b;
 	--semantic-colors-status-status-live: #4e9e3e;
 	--semantic-colors-status-status-selected: #0072a9;
+	--semantic-colors-status-status-focused: #0072a9;
 }

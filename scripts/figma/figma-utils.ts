@@ -35,14 +35,13 @@ export type TokenOrTokenGroup =
 
 const Dimensions = ['px', 'em', 'rem'] as const;
 
-const spacingTokens = [
+export const spacingTokens = [
 	{
 		prefix: 'spacing-',
 		replacement: '',
 	},
 	{
 		prefix: 'size-',
-		replacement: '',
 	},
 	{
 		prefix: 'corner-radius-',
@@ -189,7 +188,7 @@ export function tokenFilesFromLocalVariables(
 						if (groupName.startsWith(token.prefix)) {
 							return `${groupName.replace(
 								token.prefix,
-								token.replacement,
+								token.replacement ?? token.prefix, // if no replacement is specified, keep the original prefix
 							)}-px`;
 						}
 					}

@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import type { GetLocalVariablesResponse } from '@figma/rest-api-spec';
 import type { Token, TokensFile } from './figma-utils';
-import { tokenFilesFromLocalVariables } from './figma-utils';
+import { spacingTokens, tokenFilesFromLocalVariables } from './figma-utils';
 
 type FigmaFile = {
 	id: string;
@@ -22,17 +22,14 @@ const FigmaFiles: FigmaFile[] = [
 	{
 		id: 'uetPMWv7o6OdHG9lQH6B1r',
 		name: 'spacing',
-		skipSemantic: true,
 	},
 	{
 		id: 'H6Lze9W1D9o4zQZWVBqHo1',
 		name: 'radius',
-		skipSemantic: true,
 	},
 	{
 		id: 'H4NLEgB7dLSrW08YtEsIeO',
 		name: 'sizing',
-		skipSemantic: true,
 	},
 ];
 
@@ -63,6 +60,22 @@ const figmaApi = async <T>(url: string): Promise<T> => {
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
+/**
+ * Recursively generates rem equivalents for all px-based dimension tokens in base foundations.
+ *
+ * For each token ending in `-px`, this function:
+ * 1. Extracts the numeric px value from the token
+ * 2. Converts it to rem by dividing by 16 (assuming 16px = 1rem base font size)
+ * 3. Creates a new sibling token with `-rem` suffix
+ *
+ * This dual-unit approach allows consumers to choose between px or rem units while
+ * maintaining a single source of truth from Figma. Rem units are preferred for
+ * accessibility and responsive design, as they respect user font size preferences.
+ *
+ * Example: `size-24-px: "24px"` → generates `size-24-rem: "1.5rem"`
+ *
+ * @param tokens - The base token collection to process (modified in place)
+ */
 const addRemTokens = (tokens: TokensFile): void => {
 	Object.entries(tokens).forEach(([key, value]) => {
 		// If this is a token group (has nested properties), recurse
@@ -92,6 +105,74 @@ const addRemTokens = (tokens: TokensFile): void => {
 			}
 		}
 	});
+};
+
+/**
+ * Recursively updates semantic tokens to reference base tokens with proper suffixes and types.
+ *
+ * For spacing tokens (identified via spacingTokens prefixes), this function:
+ * 1. Appends `-rem` to the base token reference to use rem units instead of px
+ * 2. Changes the `$type` from `number` to `dimension` to match the W3C Design Tokens spec
+ *
+ * This transformation is necessary because Figma variables use `number` type for dimensions,
+ * but our design token system uses `dimension` type with explicit units (rem/px).
+ * By referencing the -rem variants, we ensure consistent rem-based spacing throughout the system.
+ *
+ * @param tokens - The semantic token collection to transform
+ * @param fileName - The name of the Figma file (used to construct base token references)
+ * @returns A new TokensFile with updated references and types
+ */
+const updateTokenReferences = (
+	tokens: TokensFile,
+	fileName: string,
+): TokensFile => {
+	const updated: TokensFile = {};
+
+	Object.entries(tokens).forEach(([key, value]) => {
+		// If this is a token group (has nested properties), recurse
+		if (typeof value === 'object' && !('$value' in value)) {
+			updated[key] = updateTokenReferences(
+				value as TokensFile,
+				fileName,
+			) as Record<string, Token>;
+			return;
+		}
+
+		// If this is a token with a $value reference
+		if (
+			typeof value === 'object' &&
+			'$value' in value &&
+			typeof value.$value === 'string'
+		) {
+			const refMatch = value.$value.match(/^\{([^}]+)\}$/);
+			if (refMatch) {
+				const refPath = refMatch[1]!;
+				const isSpacingToken = spacingTokens.some((token) =>
+					refPath.includes(token.prefix),
+				);
+
+				if (isSpacingToken) {
+					// Update to reference -rem variant and change $type to dimension
+					updated[key] = {
+						...value,
+						$type: 'dimension',
+						$value: `{base.${fileName}.${refPath}-rem}`,
+					};
+				} else {
+					updated[key] = {
+						...value,
+						$value: `{base.${fileName}.${refPath}}`,
+					};
+				}
+			} else {
+				updated[key] = value;
+			}
+		} else {
+			updated[key] = value;
+		}
+	});
+
+	return updated;
 };
 
 void (async () => {
@@ -130,20 +211,12 @@ void (async () => {
 								);
 								break;
 							}
-							const jsonCollectionContent =
-								JSON.stringify(collectionContent);
-							const updatedJsonCollectionContent: TokensFile =
-								JSON.parse(
-									jsonCollectionContent.replace(
-										/"\$value"\s*:\s*"\{([^}]+)\}"/g,
-										(match, inner) => {
-											return `"${'$value'}": "{base.${file.name}.${inner}}"`;
-										},
-									),
-								) as TokensFile;
 
 							foundations.semantic[file.name] =
-								updatedJsonCollectionContent;
+								updateTokenReferences(
+									collectionContent,
+									file.name,
+								);
 						}
 						break;
 					default:
@@ -156,11 +229,8 @@ void (async () => {
 		);
 	}
 
-	// Add rem equivalents for all -px tokens
+	// Add rem equivalents for all -px tokens in base foundations
 	Object.values(foundations.base).forEach((collection) => {
-		addRemTokens(collection);
-	});
-	Object.values(foundations.semantic).forEach((collection) => {
 		addRemTokens(collection);
 	});
 

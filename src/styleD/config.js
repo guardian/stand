@@ -45,6 +45,10 @@ const fileList = [
 		group: 'semantic',
 		component: 'typography',
 	},
+	{
+		group: 'semantic',
+		component: 'sizing',
+	},
 	/** component */
 	{
 		group: 'component',

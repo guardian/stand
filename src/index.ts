@@ -27,6 +27,8 @@ export { semanticColors } from './styleD/build/typescript/semantic/colors';
 export type { SemanticColors } from './styleD/build/typescript/semantic/colors';
 export { semanticTypography } from './styleD/build/typescript/semantic/typography';
 export type { SemanticTypography } from './styleD/build/typescript/semantic/typography';
+export { semanticSizing } from './styleD/build/typescript/semantic/sizing';
+export type { SemanticSizing } from './styleD/build/typescript/semantic/sizing';
 
 /**
  * utils exports

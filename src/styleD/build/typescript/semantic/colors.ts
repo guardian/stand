@@ -13,6 +13,7 @@ export const semanticColors = {
 		warning: '#433608',
 		success: '#326528',
 		information: '#00344e',
+		disabled: '#999999',
 	},
 	bg: {
 		'default-onDark': '#121212',
@@ -33,6 +34,7 @@ export const semanticColors = {
 		'status-draft': '#f1c21b',
 		'status-live': '#4e9e3e',
 		'status-selected': '#0072a9',
+		'status-focused': '#0072a9',
 	},
 };
 export type SemanticColors = typeof semanticColors;

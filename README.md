@@ -34,7 +34,7 @@ Most applications should only need to load the `Open Sans` and `Guardian Headlin
 
 You only need to load Guardian Text Egyptian if you're planning to use it in your project, in most cases you only need this when working on Guardian editorial content on an editorial tool, i.e. when using `article-body-*` semantic tokens.
 
-#### Open Sans
+##### Open Sans
 
 ##### Guardian Hosted (Recommended)
 
@@ -76,13 +76,13 @@ The Open Sans variable font can also be loaded via Google Fonts, but we recommen
 5. Copy the relevant `<link>` tag or `@import` code snippet into your project
     - You don't need to include the CSS class, as the design system will handle applying the correct font-family via CSS variables or JS/TS tokens.
 
-### Guardian Fonts
+#### Guardian Fonts
 
 Make sure to visit [guardian/fonts](https://github.com/guardian/fonts) repo for the latest information on how to self-host these fonts.
 
 In general, we always want to use the `full-not-hinted` versions of the fonts where possible.
 
-#### Guardian Headline
+##### Guardian Headline
 
 We only use the bold weight (700) of Guardian Headline in the design system.
 
@@ -97,7 +97,7 @@ We only use the bold weight (700) of Guardian Headline in the design system.
 }
 ```
 
-#### Guardian Text Egyptian
+##### Guardian Text Egyptian
 
 We want the regular/normal weight (400), the bold weight (700), and the italic version of each weight for Guardian Text Egyptian in the design system.
 
@@ -216,6 +216,36 @@ const objectStyleCSS = {
 For a list of available typography styles see the [Storybook Semantic Typography](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-semantic-typography--docs) section.
 
 For a full list of CSS Semantic Typography tokens see [`semantic/typography.css`](./src/styleD/build/css/semantic/typography.css).
+
+#### Sizing
+
+_Status: WIP_
+
+```ts
+import { css } from '@emotion/react';
+import { semanticSizing } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/semantic/sizing.css'; // CSS usage
+
+const stringStyle = css`
+	height: ${semanticSizing.height.md}; /* JS/TS usage */
+	border-width: var(--semantic-sizing-border-md); /* CSS usage */
+`;
+
+const objectStyle = {
+	height: semanticSizing.height.md /* JS/TS usage */,
+	borderWidth: 'var(--semantic-sizing-border-md)' /* CSS usage */,
+};
+
+// Icon sizing example
+const iconStyle = css`
+	width: ${semanticSizing.icon.lg};
+	height: ${semanticSizing.icon.lg};
+`;
+```
+
+For a list of available semantic sizing styles see the [Storybook Semantic Sizing](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-semantic-sizing--docs) section.
+
+For a full list of CSS Semantic Sizing tokens see [`semantic/sizing.css`](./src/styleD/build/css/semantic/sizing.css).
 
 ### Base / Primitives
 
@@ -352,26 +382,26 @@ import '@guardian/stand/base/sizing.css'; // CSS usage
 
 /* JS/TS usage */
 const stringStyleJS = css`
-	width: ${baseSizing['24-rem']};
-	height: ${baseSizing['24-rem']};
-	min-width: ${baseSizing['48-rem']};
+	width: ${baseSizing['size-48-rem']};
+	height: ${baseSizing['size-24-rem']};
+	min-width: ${baseSizing['size-24-rem']};
 `;
 const objectStyleJS = {
-	width: baseSizing['24-rem'],
-	height: baseSizing['24-rem'],
-	minWidth: baseSizing['48-rem'],
+	width: baseSizing['size-48-rem'],
+	height: baseSizing['size-24-rem'],
+	minWidth: baseSizing['size-24-rem'],
 };
 
 /* CSS usage */
 const stringStyleCSS = css`
-	width: var(--base-sizing-24-rem);
-	height: var(--base-sizing-24-rem);
-	min-width: var(--base-sizing-48-rem);
+	width: var(--base-sizing-size-48-rem);
+	height: var(--base-sizing-size-24-rem);
+	min-width: var(--base-sizing-size-24-rem);
 `;
 const objectStyleCSS = {
-	width: 'var(--base-sizing-24-rem)',
-	height: 'var(--base-sizing-24-rem)',
-	minWidth: 'var(--base-sizing-48-rem)',
+	width: 'var(--base-sizing-size-48-rem)',
+	height: 'var(--base-sizing-size-24-rem)',
+	minWidth: 'var(--base-sizing-size-24-rem)',
 };
 ```
 

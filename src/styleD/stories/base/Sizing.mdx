@@ -19,26 +19,26 @@ import '@guardian/stand/base/sizing.css'; // CSS usage
 
 /* JS/TS usage */
 const stringStyleJS = css`
-	width: ${baseSizing['24-rem']};
-	height: ${baseSizing['24-rem']};
-	min-width: ${baseSizing['48-rem']};
+	width: ${baseSizing['size-48-rem']};
+	height: ${baseSizing['size-24-rem']};
+	min-width: ${baseSizing['size-24-rem']};
 `;
 const objectStyleJS = {
-	width: baseSizing['24-rem'],
-	height: baseSizing['24-rem'],
-	minWidth: baseSizing['48-rem'],
+	width: baseSizing['size-48-rem'],
+	height: baseSizing['size-24-rem'],
+	minWidth: baseSizing['size-24-rem'],
 };
 
 /* CSS usage */
 const stringStyleCSS = css`
-	width: var(--base-sizing-24-rem);
-	height: var(--base-sizing-24-rem);
-	min-width: var(--base-sizing-48-rem);
+	width: var(--base-sizing-size-48-rem);
+	height: var(--base-sizing-size-24-rem);
+	min-width: var(--base-sizing-size-24-rem);
 `;
 const objectStyleCSS = {
-	width: 'var(--base-sizing-24-rem)',
-	height: 'var(--base-sizing-24-rem)',
-	minWidth: 'var(--base-sizing-48-rem)',
+	width: 'var(--base-sizing-size-48-rem)',
+	height: 'var(--base-sizing-size-24-rem)',
+	minWidth: 'var(--base-sizing-size-24-rem)',
 };
 ```
 

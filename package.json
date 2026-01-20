@@ -16,6 +16,7 @@
 		"./base/radius.css": "./dist/styleD/build/css/base/radius.css",
 		"./semantic/colors.css": "./dist/styleD/build/css/semantic/colors.css",
 		"./semantic/typography.css": "./dist/styleD/build/css/semantic/typography.css",
+		"./semantic/sizing.css": "./dist/styleD/build/css/semantic/sizing.css",
 		"./component/byline.css": "./dist/styleD/build/css/component/byline.css",
 		"./component/tagAutocomplete.css": "./dist/styleD/build/css/component/tagAutocomplete.css",
 		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css"
