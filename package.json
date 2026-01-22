@@ -35,7 +35,8 @@
 		"./semantic/sizing.css": "./dist/styleD/build/css/semantic/sizing.css",
 		"./component/byline.css": "./dist/styleD/build/css/component/byline.css",
 		"./component/tagAutocomplete.css": "./dist/styleD/build/css/component/tagAutocomplete.css",
-		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css"
+		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css",
+		"./component/avatar.css": "./dist/styleD/build/css/component/avatar.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
@@ -114,6 +115,7 @@
 		"react": "17.0.2",
 		"react-aria-components": "1.13.0",
 		"react-dom": "17.0.2",
+		"remark-gfm": "^4.0.1",
 		"rimraf": "6.1.2",
 		"rollup": "4.55.3",
 		"rollup-plugin-copy": "^3.5.0",
