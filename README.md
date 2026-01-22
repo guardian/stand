@@ -181,18 +181,33 @@ import '@guardian/stand/semantic/typography.css'; // CSS usage
 
 /* JS/TS usage */
 const stringStyleJS = css`
+	// other styles e.g.
+	color: ${semanticColors.text.default};
+
+	/* (recommended) emotion string style usage helper function*/
 	${convertTypographyToEmotionStringStyle(
 		semanticTypography['body-compact-md'],
 	)}
+
+	/* or direct usage without helper function */
+    font: ${semanticTypography['body-compact-md'].font};
+	letter-spacing: ${semanticTypography['body-compact-md'].letterSpacing};
+	font-variation-settings: 'wdth'
+		${semanticTypography['body-compact-md'].fontWidth};
 `;
 const objectStyleJS = {
 	// other styles e.g.
 	color: semanticColors.text.default,
 
-	// typography styles
+	// (recommended) emotion object style usage helper function
 	...convertTypographyToEmotionObjectStyle(
 		semanticTypography['body-compact-sm'],
 	),
+
+	// or direct usage without helper function
+	font: semanticTypography['body-compact-sm'].font,
+	letterSpacing: semanticTypography['body-compact-sm'].letterSpacing,
+	fontVariationSettings: `'wdth' ${semanticTypography['body-compact-sm'].fontWidth}`,
 };
 
 /* CSS usage */
@@ -204,12 +219,9 @@ const stringStyleCSS = css`
 		var(--semantic-typography-body-compact-sm-font-width);
 `;
 const objectStyleCSS = {
-	fontFamily: 'var(--semantic-typography-body-compact-sm-font-family)',
-	fontWeight: 'var(--semantic-typography-body-compact-sm-font-weight)',
-	fontSize: 'var(--semantic-typography-body-compact-sm-font-size)',
-	lineHeight: 'var(--semantic-typography-body-compact-sm-line-height)',
+	font: 'var(--semantic-typography-body-compact-sm-font)',
 	letterSpacing: 'var(--semantic-typography-body-compact-sm-letter-spacing)',
-	fontVariationSettings: `'wdth' var(--semantic-typography-body-compact-sm-font-variation-settings)`,
+	fontVariationSettings: `'wdth' var(--semantic-typography-body-compact-sm-font-width)`,
 };
 ```
 

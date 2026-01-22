@@ -113,7 +113,12 @@ export default {
 			files: generateSplitTokenConfig(fileList, 'css/variables', 'css'),
 		},
 		typescript: {
-			transforms: ['attribute/cti', 'name/camel', 'color/hex'],
+			transforms: [
+				'attribute/cti',
+				'name/camel',
+				'color/hex',
+				'typography/css/shorthand',
+			],
 			buildPath: 'build/typescript/',
 			files: generateSplitTokenConfig(fileList, 'typescript/const', 'ts'),
 		},

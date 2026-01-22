@@ -52,12 +52,8 @@ export const TypographyPresets = () => (
 		<thead>
 			<tr>
 				<th>Preset</th>
-				<th>Family</th>
-				<th>Weight</th>
-				<th>Size</th>
-				<th>Line Height</th>
+				<th>CSS Font</th>
 				<th>Letter Spacing</th>
-				<th>Style</th>
 				<th>Width</th>
 				<th>Sample</th>
 			</tr>
@@ -69,23 +65,15 @@ export const TypographyPresets = () => (
 						preset as keyof typeof semanticTypography
 					];
 
-				const fontFamily = typographyToken.font.fontFamily;
-				const fontWeight = typographyToken.font.fontWeight;
-				const fontSize = typographyToken.font.fontSize;
-				const lineHeight = typographyToken.font.lineHeight;
-				const letterSpacing = typographyToken.font.letterSpacing;
-				const fontStyle = typographyToken.font.fontStyle;
+				const cssFont = typographyToken.font;
+				const letterSpacing = typographyToken.letterSpacing;
 				const fontWidth = typographyToken.fontWidth;
 
 				return (
 					<tr key={`preset-${index}`}>
 						<td css={presetNameCss}>{preset}</td>
-						<td>{fontFamily}</td>
-						<td>{fontWeight}</td>
-						<td>{fontSize}</td>
-						<td>{lineHeight}</td>
+						<td>{cssFont}</td>
 						<td>{letterSpacing}</td>
-						<td>{fontStyle}</td>
 						<td>{fontWidth}</td>
 						<td css={sampleCss}>
 							<span
