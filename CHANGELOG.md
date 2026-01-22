@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.8
+
+### Patch Changes
+
+- 0a5bf39: Use typography shorthand for style dictionary typescript build
+- df3d28f: Add `base` and `semantic` tokens for `spacing`, `sizing`, and `radius`. Update some exising tokens.
+
 ## 0.0.7
 
 ### Patch Changes
