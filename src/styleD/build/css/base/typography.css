@@ -47,6 +47,7 @@
 	--base-typography-line-height-tight: 1.15;
 	--base-typography-line-height-normal: 1.3;
 	--base-typography-line-height-loose: 1.4;
+	--base-typography-line-height-interactive: 1;
 	--base-typography-letter-spacing-densest-px: -1px;
 	--base-typography-letter-spacing-denser-px: -0.5px;
 	--base-typography-letter-spacing-dense-px: -0.2px;

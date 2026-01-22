@@ -798,6 +798,48 @@
 					"$type": "number",
 					"$value": 100
 				}
+			},
+			"interactive-xs": {
+				"font": {
+					"$type": "typography",
+					"$value": {
+						"fontFamily": "{base.typography.family.Open Sans}",
+						"fontWeight": "{base.typography.weight.Open Sans.bold}",
+						"fontSize": "{base.typography.size.12-rem}",
+						"fontStyle": "{base.typography.style.normal}",
+						"lineHeight": "{base.typography.line-height.interactive}",
+						"letterSpacing": "{base.typography.letter-spacing.default-rem}"
+					}
+				},
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{base.typography.letter-spacing.default-rem}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{base.typography.width.Open Sans}"
+				}
+			},
+			"interactive-sm": {
+				"font": {
+					"$type": "typography",
+					"$value": {
+						"fontFamily": "{base.typography.family.Open Sans}",
+						"fontWeight": "{base.typography.weight.Open Sans.bold}",
+						"fontSize": "{base.typography.size.14-rem}",
+						"fontStyle": "{base.typography.style.normal}",
+						"lineHeight": "{base.typography.line-height.interactive}",
+						"letterSpacing": "{base.typography.letter-spacing.dense-rem}"
+					}
+				},
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{base.typography.letter-spacing.dense-rem}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{base.typography.width.Open Sans}"
+				}
 			}
 		}
 	}

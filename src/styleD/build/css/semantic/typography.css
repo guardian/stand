@@ -142,4 +142,10 @@
 		GuardianTextEgyptian;
 	--semantic-typography-article-body-bold-italic-md-letter-spacing: 0rem;
 	--semantic-typography-article-body-bold-italic-md-font-width: 100;
+	--semantic-typography-interactive-xs-font: normal 700 0.75rem/1 'Open Sans';
+	--semantic-typography-interactive-xs-letter-spacing: 0rem;
+	--semantic-typography-interactive-xs-font-width: 95;
+	--semantic-typography-interactive-sm-font: normal 700 0.875rem/1 'Open Sans';
+	--semantic-typography-interactive-sm-letter-spacing: -0.0125rem;
+	--semantic-typography-interactive-sm-font-width: 95;
 }

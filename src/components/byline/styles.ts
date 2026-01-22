@@ -5,8 +5,8 @@ import {
 	type ComponentByline,
 	componentByline,
 } from '../../styleD/build/typescript/component/byline';
-import type { DeepPartial } from '../util';
-import { mergeDeep } from '../util';
+import { mergeDeep } from '../../util/mergeDeep';
+import type { DeepPartial } from '../../util/types';
 
 export const bylineContainerStyles = css`
 	position: relative;

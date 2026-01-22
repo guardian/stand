@@ -66,6 +66,7 @@ export const baseTypography = {
 		tight: 1.15,
 		normal: 1.3,
 		loose: 1.4,
+		interactive: 1,
 	},
 	'letter-spacing': {
 		'densest-px': '-1px',

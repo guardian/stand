@@ -15,6 +15,7 @@ export const semanticSizing = {
 		lg: '1.5rem',
 	},
 	border: {
+		default: '0.0625rem',
 		md: '0.125rem',
 	},
 };

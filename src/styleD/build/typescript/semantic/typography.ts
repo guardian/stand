@@ -193,5 +193,15 @@ export const semanticTypography = {
 		letterSpacing: '0rem',
 		fontWidth: 100,
 	},
+	'interactive-xs': {
+		font: 'normal 700 0.75rem/1 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'interactive-sm': {
+		font: 'normal 700 0.875rem/1 Open Sans',
+		letterSpacing: '-0.0125rem',
+		fontWidth: 95,
+	},
 };
 export type SemanticTypography = typeof semanticTypography;

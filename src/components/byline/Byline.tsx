@@ -12,7 +12,7 @@ import { EditorView } from 'prosemirror-view';
 import type { FocusEventHandler, MouseEvent } from 'react';
 import { useEffect, useRef, useState } from 'react';
 import type { ComponentByline } from '../../styleD/build/typescript/component/byline';
-import type { DeepPartial } from '../util';
+import type { DeepPartial } from '../../util/types';
 import type {
 	BylineModel,
 	TaggedContributor,

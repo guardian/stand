@@ -1,17 +1,12 @@
-/* eslint-disable @typescript-eslint/no-unsafe-member-access -- copied from existing implementation */
-/* eslint-disable @typescript-eslint/no-explicit-any -- copied from existing implementation */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment -- copied from existing implementation */
-export type DeepPartial<T> = T extends object
-	? {
-			[P in keyof T]?: DeepPartial<T[P]>;
-		}
-	: T;
-
-const isObject = (obj: unknown) => obj && typeof obj === 'object';
-
 /*
     From https://github.com/guardian/cql/blob/11836f504937df264bf075700873af15bc0d8c90/lib/cql/src/utils/merge.ts
 */
+
+/* eslint-disable @typescript-eslint/no-unsafe-member-access -- copied from existing implementation */
+/* eslint-disable @typescript-eslint/no-explicit-any -- copied from existing implementation */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment -- copied from existing implementation */
+
+const isObject = (obj: unknown) => obj && typeof obj === 'object';
 
 export function mergeDeep<A extends object, B extends object>(
 	obj1: A,

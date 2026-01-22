@@ -12,7 +12,7 @@ import {
 	useDragAndDrop,
 } from 'react-aria-components';
 import type { ComponentTagTable } from '../../styleD/build/typescript/component/tagTable';
-import type { DeepPartial } from '../util';
+import type { DeepPartial } from '../../util/types';
 import {
 	tagTableAddButtonStyles as addButtonStyles,
 	tagTableCellStyles as cellStyles,

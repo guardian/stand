@@ -11,7 +11,7 @@ import {
 	Popover,
 } from 'react-aria-components';
 import type { ComponentTagAutocomplete } from '../../styleD/build/typescript/component/tagAutocomplete';
-import type { DeepPartial } from '../util';
+import type { DeepPartial } from '../../util/types';
 import {
 	listboxInfoStyles,
 	listboxItemStyles,

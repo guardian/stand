@@ -8,7 +8,8 @@ import {
 	type ComponentTagTable,
 	componentTagTable,
 } from '../../styleD/build/typescript/component/tagTable';
-import { type DeepPartial, mergeDeep } from '../util';
+import { mergeDeep } from '../../util/mergeDeep';
+import type { DeepPartial } from '../../util/types';
 
 export const tagAutocompleteInputStyles = (
 	partialTheme: DeepPartial<ComponentTagAutocomplete> = {},

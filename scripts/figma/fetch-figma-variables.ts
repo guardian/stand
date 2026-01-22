@@ -45,6 +45,24 @@ const figmaApi = async <T>(url: string): Promise<T> => {
 		FIGMA_API_OPTIONS,
 	);
 
+	if (response.status === 401) {
+		throw new Error(
+			'Unauthorized. Please check your FIGMA_TOKEN environment variable.',
+		);
+	}
+
+	if (response.status === 403) {
+		throw new Error(
+			'Access forbidden. Please check your FIGMA_TOKEN environment variable.',
+		);
+	}
+
+	if (response.status === 404) {
+		throw new Error(
+			`Resource not found at ${url}. Please check the Figma file ID and your access permissions.`,
+		);
+	}
+
 	if (response.status === 429) {
 		const retryAfter = response.headers.get('Retry-After');
 		const waitTime = retryAfter ? parseInt(retryAfter, 10) * 1000 : 60000; // Default to 60s if header missing
@@ -53,6 +71,12 @@ const figmaApi = async <T>(url: string): Promise<T> => {
 		);
 		await delay(waitTime);
 		return figmaApi<T>(url); // Retry the request
+	}
+
+	if (!response.ok) {
+		throw new Error(
+			`Figma API request failed with status ${response.status}: ${response.statusText}`,
+		);
 	}
 
 	return response.json() as Promise<T>;
