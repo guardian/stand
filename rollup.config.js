@@ -31,7 +31,7 @@ export default [
 				targets: [
 					{
 						src: 'src/styleD/build/css/',
-						dest: 'dist/styleD/build/css/',
+						dest: 'dist/styleD/build/',
 					},
 					{
 						src: 'src/fonts/OpenSans.css',
