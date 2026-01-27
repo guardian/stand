@@ -10,7 +10,11 @@ import { nodeExternals } from 'rollup-plugin-node-externals';
  */
 export default [
 	{
-		input: 'src/index.ts',
+		input: {
+			index: 'src/index.ts',
+			byline: 'src/byline.ts',
+			'tag-picker': 'src/tag-picker.ts',
+		},
 		output: {
 			dir: 'dist',
 			format: 'esm',
@@ -42,7 +46,11 @@ export default [
 		],
 	},
 	{
-		input: 'src/index.ts',
+		input: {
+			index: 'src/index.ts',
+			byline: 'src/byline.ts',
+			'tag-picker': 'src/tag-picker.ts',
+		},
 		output: {
 			dir: 'dist',
 			format: 'cjs',

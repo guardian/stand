@@ -464,6 +464,7 @@ A flexible byline editor component built in ProseMirror and React with usability
 
 You'll need to install the following peer dependencies in your project to use the `Byline` component:
 
+- `@emotion/react`
 - `@guardian/prosemirror-invisibles`
 - `prosemirror-dropcursor`
 - `prosemirror-history`
@@ -471,14 +472,19 @@ You'll need to install the following peer dependencies in your project to use th
 - `prosemirror-model`
 - `prosemirror-state`
 - `prosemirror-view`
+- `react`
+- `react-dom`
+- `typescript`
 
-See the `peerDependencies` section of `package.json` for compatible versions to install.
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+**Note:** If you only need the built CSS (`@guardian/stand/component/byline.css`), you don't need to install these dependencies.
 
 #### Usage
 
 ```tsx
-import type { BylineModel } from '@guardian/stand';
-import { Byline } from '@guardian/stand';
+import type { BylineModel } from '@guardian/stand/byline';
+import { Byline } from '@guardian/stand/byline';
 
 const Component = () => {
     const bylineModel: BylineModel = {
@@ -518,9 +524,15 @@ autocomplete input for selecting tags from a list of options, based on the [Reac
 
 **Peer dependencies:**
 
+- `@emotion/react`
+- `react`
 - `react-aria-components`
+- `react-dom`
+- `typescript`
 
-See the `peerDependencies` section of the `package.json` for compatible versions to install.
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+**Note:** If you only need the built CSS (`@guardian/stand/component/tagAutocomplete.css`), you don't need to install these dependencies.
 
 ##### Props
 
@@ -536,9 +548,15 @@ based on the [React Aria Table](https://react-spectrum.adobe.com/react-aria/Tabl
 
 **Peer dependencies:**
 
+- `@emotion/react`
+- `react`
 - `react-aria-components`
+- `react-dom`
+- `typescript`
 
-See the `peerDependencies` section of the `package.json` for compatible versions to install.
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+**Note:** If you only need the built CSS (`@guardian/stand/component/tagTable.css`), you don't need to install these dependencies.
 
 ##### Props
 
@@ -549,7 +567,7 @@ See [`TagTableProps`](src/components/tag-picker/TagTable.tsx#L31) for the full l
 _Example with TagAutocomplete and TagTable combined:_
 
 ```tsx
-import { TagAutocomplete, TagTable } from '@guardian/stand';
+import { TagAutocomplete, TagTable } from '@guardian/stand/tag-picker';
 
 const Component = () => {
   const [selectedTags, setSelectedTags] = useState<

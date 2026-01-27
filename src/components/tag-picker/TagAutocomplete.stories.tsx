@@ -1,9 +1,9 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
-import { TagTable } from '../..';
 import { exampleTags } from './example-tags';
 import { TagAutocomplete } from './TagAutocomplete';
+import { TagTable } from './TagTable';
 import type { TagManagerObjectData } from './types';
 
 const meta = {
