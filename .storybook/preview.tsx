@@ -3,9 +3,9 @@ import { css } from '@emotion/react';
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react-vite';
 import {
-	convertTypographyToEmotionObjectStyle,
 	semanticTypography,
 } from '../src';
+import { convertTypographyToEmotionObjectStyle } from '../src/utils';
 
 const Fonts = css`
 	@import url('https://assets.guim.co.uk/fonts/open-sans/OpenSans.css');

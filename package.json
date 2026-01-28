@@ -19,6 +19,11 @@
 			"import": "./dist/tag-picker.js",
 			"require": "./dist/tag-picker.cjs"
 		},
+		"./utils": {
+			"types": "./dist/types/utils.d.ts",
+			"import": "./dist/utils.js",
+			"require": "./dist/utils.cjs"
+		},
 		"./fonts/OpenSans.css": "./dist/fonts/OpenSans.css",
 		"./base/colors.css": "./dist/styleD/build/css/base/colors.css",
 		"./base/typography.css": "./dist/styleD/build/css/base/typography.css",
@@ -40,6 +45,9 @@
 			],
 			"tag-picker": [
 				"./dist/types/tag-picker.d.ts"
+			],
+			"utils": [
+				"./dist/types/utils.d.ts"
 			]
 		}
 	},

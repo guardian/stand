@@ -1,5 +1,5 @@
 /**
- * Main entry point - Design tokens and utilities only
+ * Main entry point - Design tokens only
  * Import components from their own entry points, this isolates components within their own peer dependencies.
  */
 
@@ -35,11 +35,3 @@ export { semanticTypography } from './styleD/build/typescript/semantic/typograph
 export type { SemanticTypography } from './styleD/build/typescript/semantic/typography';
 export { semanticSizing } from './styleD/build/typescript/semantic/sizing';
 export type { SemanticSizing } from './styleD/build/typescript/semantic/sizing';
-
-/**
- * utils exports
- */
-export {
-	convertTypographyToEmotionObjectStyle,
-	convertTypographyToEmotionStringStyle,
-} from './styleD/utils/semantic/typography';
