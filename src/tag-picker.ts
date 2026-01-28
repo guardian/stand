@@ -15,3 +15,7 @@
  */
 export { TagTable } from './components/tag-picker/TagTable';
 export { TagAutocomplete } from './components/tag-picker/TagAutocomplete';
+export { componentTagTable } from './styleD/build/typescript/component/tagTable';
+export type { ComponentTagTable } from './styleD/build/typescript/component/tagTable';
+export { componentTagAutocomplete } from './styleD/build/typescript/component/tagAutocomplete';
+export type { ComponentTagAutocomplete } from './styleD/build/typescript/component/tagAutocomplete';

@@ -21,3 +21,5 @@
 export { Byline } from './components/byline/Byline';
 export type { BylineModel } from './components/byline/lib';
 export type { PartialBylineTheme } from './components/byline/theme';
+export { componentByline } from './styleD/build/typescript/component/byline';
+export type { ComponentByline } from './styleD/build/typescript/component/byline';
