@@ -6,11 +6,21 @@ import esbuild from 'rollup-plugin-esbuild';
 import { nodeExternals } from 'rollup-plugin-node-externals';
 
 /**
+ * @type {import("rollup").RollupOptions['input']}
+ */
+const input = {
+	index: 'src/index.ts',
+	byline: 'src/byline.ts',
+	'tag-picker': 'src/tag-picker.ts',
+	utils: 'src/utils.ts',
+};
+
+/**
  * @returns {import("rollup").RollupOptions[]}
  */
 export default [
 	{
-		input: 'src/index.ts',
+		input,
 		output: {
 			dir: 'dist',
 			format: 'esm',
@@ -42,7 +52,7 @@ export default [
 		],
 	},
 	{
-		input: 'src/index.ts',
+		input,
 		output: {
 			dir: 'dist',
 			format: 'cjs',

@@ -2,11 +2,27 @@
 	"name": "@guardian/stand",
 	"version": "0.0.8",
 	"type": "module",
+	"//exports": "Each component has its own entry point for optimal tree-shaking. Main entry point only includes design tokens and utilities. New components/foundations should follow the same pattern.",
 	"exports": {
 		".": {
 			"types": "./dist/types/index.d.ts",
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
+		},
+		"./byline": {
+			"types": "./dist/types/byline.d.ts",
+			"import": "./dist/byline.js",
+			"require": "./dist/byline.cjs"
+		},
+		"./tag-picker": {
+			"types": "./dist/types/tag-picker.d.ts",
+			"import": "./dist/tag-picker.js",
+			"require": "./dist/tag-picker.cjs"
+		},
+		"./utils": {
+			"types": "./dist/types/utils.d.ts",
+			"import": "./dist/utils.js",
+			"require": "./dist/utils.cjs"
 		},
 		"./fonts/OpenSans.css": "./dist/fonts/OpenSans.css",
 		"./base/colors.css": "./dist/styleD/build/css/base/colors.css",
@@ -21,6 +37,20 @@
 		"./component/tagAutocomplete.css": "./dist/styleD/build/css/component/tagAutocomplete.css",
 		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css"
 	},
+	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
+	"typesVersions": {
+		"*": {
+			"byline": [
+				"./dist/types/byline.d.ts"
+			],
+			"tag-picker": [
+				"./dist/types/tag-picker.d.ts"
+			],
+			"utils": [
+				"./dist/types/utils.d.ts"
+			]
+		}
+	},
 	"files": [
 		"dist"
 	],
@@ -29,8 +59,10 @@
 		"directory": "stand-component-library"
 	},
 	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
 	"types": "./dist/types/index.d.ts",
-	"packageManager": "pnpm@10.28.1+sha512.7d7dbbca9e99447b7c3bf7a73286afaaf6be99251eb9498baefa7d406892f67b879adb3a1d7e687fc4ccc1a388c7175fbaae567a26ab44d1067b54fcb0d6a316",
+	"sideEffects": false,
+	"packageManager": "pnpm@10.28.2+sha512.41872f037ad22f7348e3b1debbaf7e867cfd448f2726d9cf74c08f19507c31d2c8e7a11525b983febc2df640b5438dee6023ebb1f84ed43cc2d654d2bc326264",
 	"scripts": {
 		"build": "rimraf dist && rollup -c",
 		"build-styled": "cd src/styleD && node build.js",
@@ -108,6 +140,9 @@
 		"typescript": ">=5.0.0 <=5.9.3"
 	},
 	"peerDependenciesMeta": {
+		"@emotion/react": {
+			"optional": true
+		},
 		"@guardian/prosemirror-invisibles": {
 			"optional": true
 		},
@@ -127,6 +162,18 @@
 			"optional": true
 		},
 		"prosemirror-view": {
+			"optional": true
+		},
+		"react": {
+			"optional": true
+		},
+		"react-aria-components": {
+			"optional": true
+		},
+		"react-dom": {
+			"optional": true
+		},
+		"typescript": {
 			"optional": true
 		}
 	}

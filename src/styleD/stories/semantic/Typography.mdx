@@ -124,12 +124,11 @@ We want the regular/normal weight (400), the bold weight (700), and the italic v
 
 ```ts
 import { css } from '@emotion/react';
+import { semanticColors, semanticTypography } from '@guardian/stand'; // JS/TS usage
 import {
-	semanticColors,
-	semanticTypography,
 	convertTypographyToEmotionObjectStyle, // helper function to convert from typography token object to emotion CSS object style
 	convertTypographyToEmotionStringStyle, // helper function to convert from typography token object to emotion CSS string style
-} from '@guardian/stand'; // JS/TS usage
+} from '@guardian/stand/utils'; // Utils for working with design tokens
 import '@guardian/stand/semantic/typography.css'; // CSS usage
 
 /* JS/TS usage */

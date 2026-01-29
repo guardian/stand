@@ -1,11 +1,17 @@
 /**
- * component exports
+ * Main entry point - Design tokens only
+ * Import components from their own entry points, this isolates components within their own peer dependencies.
  */
-export { Byline } from './components/byline/Byline';
-export type { BylineModel } from './components/byline/lib';
-export type { PartialBylineTheme } from './components/byline/theme';
-export { TagTable } from './components/tag-picker/TagTable';
-export { TagAutocomplete } from './components/tag-picker/TagAutocomplete';
+
+/**
+ * editorial components tokens exports
+ */
+export { componentByline } from './styleD/build/typescript/component/byline';
+export type { ComponentByline } from './styleD/build/typescript/component/byline';
+export { componentTagAutocomplete } from './styleD/build/typescript/component/tagAutocomplete';
+export type { ComponentTagAutocomplete } from './styleD/build/typescript/component/tagAutocomplete';
+export { componentTagTable } from './styleD/build/typescript/component/tagTable';
+export type { ComponentTagTable } from './styleD/build/typescript/component/tagTable';
 
 /**
  * style dictionary exports - base
@@ -29,11 +35,3 @@ export { semanticTypography } from './styleD/build/typescript/semantic/typograph
 export type { SemanticTypography } from './styleD/build/typescript/semantic/typography';
 export { semanticSizing } from './styleD/build/typescript/semantic/sizing';
 export type { SemanticSizing } from './styleD/build/typescript/semantic/sizing';
-
-/**
- * utils exports
- */
-export {
-	convertTypographyToEmotionObjectStyle,
-	convertTypographyToEmotionStringStyle,
-} from './styleD/utils/semantic/typography';
