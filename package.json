@@ -9,6 +9,11 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
+		"./avatar": {
+			"types": "./dist/types/avatar.d.ts",
+			"import": "./dist/avatar.js",
+			"require": "./dist/avatar.cjs"
+		},
 		"./byline": {
 			"types": "./dist/types/byline.d.ts",
 			"import": "./dist/byline.js",
@@ -41,6 +46,9 @@
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
 		"*": {
+			"avatar": [
+				"./dist/types/avatar.d.ts"
+			],
 			"byline": [
 				"./dist/types/byline.d.ts"
 			],
