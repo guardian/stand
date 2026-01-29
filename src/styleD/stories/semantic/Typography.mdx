@@ -20,9 +20,38 @@ You only need to load Guardian Text Egyptian if you're planning to use it in you
 
 #### Open Sans
 
-We're currently looking at how to best self host this font under a Guardian specific domain, before we release `@guardian/stand` design system for wider usage.
+##### Guardian Hosted (Recommended)
 
-For now, the Open Sans variable font can be loaded via Google Fonts:
+We are self hosting this font under a Guardian specific domain, so you can load the Open Sans variable font CSS file from our CDN:
+
+Via CSS `@import`:
+
+```css
+@import url('https://assets.guim.co.uk/fonts/open-sans/OpenSans.css');
+```
+
+Via HTML `<link>`:
+
+```html
+<link
+	rel="stylesheet"
+	href="https://assets.guim.co.uk/fonts/open-sans/OpenSans.css"
+/>
+```
+
+We also publish the same `OpenSans.css` file in the `@guardian/stand` package if you prefer to import it from there and you're using a bundler that supports CSS imports:
+
+```ts
+import '@guardian/stand/fonts/OpenSans.css';
+```
+
+All options use the font files hosted on the Guardian CDN at `https://assets.guim.co.uk/fonts/open-sans/woff2/`.
+
+You can also create your own CSS `@font-face` declarations, using the same format as in the `OpenSans.css` file, and/or self host the font files yourself if needed.
+
+##### via Google Fonts
+
+The Open Sans variable font can also be loaded via Google Fonts, but we recommend using the Guardian hosted version to avoid loading from a third party domain:
 
 1. Visit [Google Fonts - Open Sans](https://fonts.google.com/specimen/Open+Sans)
 2. Click "Get Font" -> "Get embed code"
@@ -95,28 +124,42 @@ We want the regular/normal weight (400), the bold weight (700), and the italic v
 
 ```ts
 import { css } from '@emotion/react';
+import { semanticColors, semanticTypography } from '@guardian/stand'; // JS/TS usage
 import {
-	semanticColors,
-	semanticTypography,
 	convertTypographyToEmotionObjectStyle, // helper function to convert from typography token object to emotion CSS object style
 	convertTypographyToEmotionStringStyle, // helper function to convert from typography token object to emotion CSS string style
-} from '@guardian/stand'; // JS/TS usage
+} from '@guardian/stand/utils'; // Utils for working with design tokens
 import '@guardian/stand/semantic/typography.css'; // CSS usage
 
 /* JS/TS usage */
 const stringStyleJS = css`
+	// other styles e.g.
+	color: ${semanticColors.text.default};
+
+	/* (recommended) emotion string style usage helper function*/
 	${convertTypographyToEmotionStringStyle(
 		semanticTypography['body-compact-md'],
 	)}
+
+	/* or direct usage without helper function */
+    font: ${semanticTypography['body-compact-md'].font};
+	letter-spacing: ${semanticTypography['body-compact-md'].letterSpacing};
+	font-variation-settings: 'wdth'
+		${semanticTypography['body-compact-md'].fontWidth};
 `;
 const objectStyleJS = {
 	// other styles e.g.
-	color: semanticColors.text.primary,
+	color: semanticColors.text.default,
 
-	// typography styles
+	// (recommended) emotion object style usage helper function
 	...convertTypographyToEmotionObjectStyle(
 		semanticTypography['body-compact-sm'],
 	),
+
+	// or direct usage without helper function
+	font: semanticTypography['body-compact-sm'].font,
+	letterSpacing: semanticTypography['body-compact-sm'].letterSpacing,
+	fontVariationSettings: `'wdth' ${semanticTypography['body-compact-sm'].fontWidth}`,
 };
 
 /* CSS usage */
@@ -128,12 +171,9 @@ const stringStyleCSS = css`
 		var(--semantic-typography-body-compact-sm-font-width);
 `;
 const objectStyleCSS = {
-	fontFamily: 'var(--semantic-typography-body-compact-sm-font-family)',
-	fontWeight: 'var(--semantic-typography-body-compact-sm-font-weight)',
-	fontSize: 'var(--semantic-typography-body-compact-sm-font-size)',
-	lineHeight: 'var(--semantic-typography-body-compact-sm-line-height)',
+	font: 'var(--semantic-typography-body-compact-sm-font)',
 	letterSpacing: 'var(--semantic-typography-body-compact-sm-letter-spacing)',
-	fontVariationSettings: `'wdth' var(--semantic-typography-body-compact-sm-font-variation-settings)`,
+	fontVariationSettings: `'wdth' var(--semantic-typography-body-compact-sm-font-width)`,
 };
 ```
 

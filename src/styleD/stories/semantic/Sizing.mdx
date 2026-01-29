@@ -1,0 +1,46 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import SizingStories, { Sizing } from './Sizing.stories.tsx';
+
+<Meta of={SizingStories} />
+
+# Semantic - Sizing
+
+This palette represents the semantic sizing tokens available in the design system, and their intended usage.
+
+Semantic sizing tokens provide meaningful abstractions for common sizing needs in the interface, such as heights for interactive elements, icon sizes, and border widths. These tokens ensure consistency across components and help maintain a cohesive visual hierarchy.
+
+## Example usage
+
+```ts
+import { css } from '@emotion/react';
+import { semanticSizing } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/semantic/sizing.css'; // CSS usage
+
+const stringStyle = css`
+	height: ${semanticSizing.height.md}; /* JS/TS usage */
+	border-width: var(--semantic-sizing-border-md); /* CSS usage */
+`;
+
+const objectStyle = {
+	height: semanticSizing.height.md /* JS/TS usage */,
+	borderWidth: 'var(--semantic-sizing-border-md)' /* CSS usage */,
+};
+
+// Icon sizing example
+const iconStyle = css`
+	width: ${semanticSizing.icon.lg};
+	height: ${semanticSizing.icon.lg};
+`;
+```
+
+## When to use semantic sizing
+
+Use semantic sizing tokens when:
+
+- **Height tokens** - Setting heights for buttons, inputs, select dropdowns, and other interactive controls to ensure consistent touch targets and visual rhythm.
+- **Icon tokens** - Sizing icons to match the scale of surrounding text or UI elements, ensuring proper visual balance.
+- **Border tokens** - Applying consistent border widths across components for visual boundaries and separators.
+
+## Sizing tokens
+
+<Story of={Sizing} />

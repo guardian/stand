@@ -21,13 +21,13 @@ describe('Typography Tokens', () => {
 				convertTypographyToEmotionStringStyle(bodyCompactLgToken);
 
 			expect(replaceNewLines(titleSmStyles.styles)).toBe(
-				'font-family: GH Guardian Headline;font-weight: 700;font-size: 18px;font-style: normal;line-height: 1.15;letter-spacing: 0px;font-variation-settings: "wdth" 100;',
+				'font: normal 700 1.125rem/1.15 GH Guardian Headline;letter-spacing: 0rem;font-variation-settings: "wdth" 100;',
 			);
 			expect(replaceNewLines(headingXlStyles.styles)).toBe(
-				'font-family: Open Sans;font-weight: 700;font-size: 20px;font-style: normal;line-height: 1.15;letter-spacing: -0.5px;font-variation-settings: "wdth" 95;',
+				'font: normal 700 1.25rem/1.15 Open Sans;letter-spacing: -0.03125rem;font-variation-settings: "wdth" 95;',
 			);
 			expect(replaceNewLines(bodyCompactLgStyles.styles)).toBe(
-				'font-family: Open Sans;font-weight: 460;font-size: 18px;font-style: normal;line-height: 1.3;letter-spacing: 0px;font-variation-settings: "wdth" 88;',
+				'font: normal 460 1.125rem/1.3 Open Sans;letter-spacing: 0rem;font-variation-settings: "wdth" 88;',
 			);
 		});
 	});
@@ -46,30 +46,18 @@ describe('Typography Tokens', () => {
 				convertTypographyToEmotionObjectStyle(bodyCompactLgToken);
 
 			expect(titleSmStyles).toEqual({
-				fontFamily: 'GH Guardian Headline',
-				fontWeight: 700,
-				fontSize: '18px',
-				fontStyle: 'normal',
-				lineHeight: 1.15,
-				letterSpacing: '0px',
+				font: 'normal 700 1.125rem/1.15 GH Guardian Headline',
+				letterSpacing: '0rem',
 				fontVariationSettings: '"wdth" 100',
 			});
 			expect(headingXlStyles).toEqual({
-				fontFamily: 'Open Sans',
-				fontWeight: 700,
-				fontSize: '20px',
-				fontStyle: 'normal',
-				lineHeight: 1.15,
-				letterSpacing: '-0.5px',
+				font: 'normal 700 1.25rem/1.15 Open Sans',
+				letterSpacing: '-0.03125rem',
 				fontVariationSettings: '"wdth" 95',
 			});
 			expect(bodyCompactLgStyles).toEqual({
-				fontFamily: 'Open Sans',
-				fontWeight: 460,
-				fontSize: '18px',
-				fontStyle: 'normal',
-				lineHeight: 1.3,
-				letterSpacing: '0px',
+				font: 'normal 460 1.125rem/1.3 Open Sans',
+				letterSpacing: '0rem',
 				fontVariationSettings: '"wdth" 88',
 			});
 		});

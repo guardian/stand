@@ -21,13 +21,24 @@ export const baseTypography = {
 		'36-px': '36px',
 		'42-px': '42px',
 		'48-px': '48px',
+		'12-rem': '0.75rem',
+		'14-rem': '0.875rem',
+		'16-rem': '1rem',
+		'18-rem': '1.125rem',
+		'20-rem': '1.25rem',
+		'24-rem': '1.5rem',
+		'28-rem': '1.75rem',
+		'32-rem': '2rem',
+		'36-rem': '2.25rem',
+		'42-rem': '2.625rem',
+		'48-rem': '3rem',
 	},
 	weight: {
-		'Guardian Text Egyptian': {
-			normal: 400,
+		'Guardian Headline': {
 			bold: 700,
 		},
-		'Guardian Headline': {
+		'Guardian Text Egyptian': {
+			normal: 400,
 			bold: 700,
 		},
 		'Open Sans': {
@@ -55,12 +66,17 @@ export const baseTypography = {
 		tight: 1.15,
 		normal: 1.3,
 		loose: 1.4,
+		interactive: 1,
 	},
 	'letter-spacing': {
 		'densest-px': '-1px',
 		'denser-px': '-0.5px',
 		'dense-px': '-0.2px',
 		'default-px': '0px',
+		'densest-rem': '-0.0625rem',
+		'denser-rem': '-0.03125rem',
+		'dense-rem': '-0.0125rem',
+		'default-rem': '0rem',
 	},
 } as const;
 export type BaseTypography = typeof baseTypography;

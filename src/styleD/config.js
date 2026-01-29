@@ -24,6 +24,18 @@ const fileList = [
 		group: 'base',
 		component: 'typography',
 	},
+	{
+		group: 'base',
+		component: 'spacing',
+	},
+	{
+		group: 'base',
+		component: 'radius',
+	},
+	{
+		group: 'base',
+		component: 'sizing',
+	},
 	/** semantic */
 	{
 		group: 'semantic',
@@ -32,6 +44,10 @@ const fileList = [
 	{
 		group: 'semantic',
 		component: 'typography',
+	},
+	{
+		group: 'semantic',
+		component: 'sizing',
 	},
 	/** component */
 	{
@@ -101,7 +117,12 @@ export default {
 			files: generateSplitTokenConfig(fileList, 'css/variables', 'css'),
 		},
 		typescript: {
-			transforms: ['attribute/cti', 'name/camel', 'color/hex'],
+			transforms: [
+				'attribute/cti',
+				'name/camel',
+				'color/hex',
+				'typography/css/shorthand',
+			],
 			buildPath: 'build/typescript/',
 			files: generateSplitTokenConfig(fileList, 'typescript/const', 'ts'),
 		},

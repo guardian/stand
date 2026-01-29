@@ -1,5 +1,5 @@
 import type { ComponentProps } from 'react';
-import { Byline } from '../src';
+import { Byline } from '../src/byline';
 import type { TaggedContributor } from '../src/components/byline/lib';
 
 const mockSearchContributors: (

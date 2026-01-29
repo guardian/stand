@@ -34,11 +34,40 @@ Most applications should only need to load the `Open Sans` and `Guardian Headlin
 
 You only need to load Guardian Text Egyptian if you're planning to use it in your project, in most cases you only need this when working on Guardian editorial content on an editorial tool, i.e. when using `article-body-*` semantic tokens.
 
-#### Open Sans
+##### Open Sans
 
-We're currently looking at how to best self host this font under a Guardian specific domain, before we release `@guardian/stand` design system for wider usage.
+##### Guardian Hosted (Recommended)
 
-For now, the Open Sans variable font can be loaded via Google Fonts:
+We are self hosting this font under a Guardian specific domain, so you can load the Open Sans variable font CSS file from our CDN:
+
+Via CSS `@import`:
+
+```css
+@import url('https://assets.guim.co.uk/fonts/open-sans/OpenSans.css');
+```
+
+Via HTML `<link>`:
+
+```html
+<link
+	rel="stylesheet"
+	href="https://assets.guim.co.uk/fonts/open-sans/OpenSans.css"
+/>
+```
+
+We also publish the same `OpenSans.css` file in the `@guardian/stand` package if you prefer to import it from there and you're using a bundler that supports CSS imports:
+
+```ts
+import '@guardian/stand/fonts/OpenSans.css';
+```
+
+All options use the font files hosted on the Guardian CDN at `https://assets.guim.co.uk/fonts/open-sans/woff2/`.
+
+You can also create your own CSS `@font-face` declarations, using the same format as in the `OpenSans.css` file, and/or self host the font files yourself if needed.
+
+##### via Google Fonts
+
+The Open Sans variable font can also be loaded via Google Fonts, but we recommend using the Guardian hosted version to avoid loading from a third party domain:
 
 1. Visit [Google Fonts - Open Sans](https://fonts.google.com/specimen/Open+Sans)
 2. Click "Get Font" -> "Get embed code"
@@ -47,13 +76,13 @@ For now, the Open Sans variable font can be loaded via Google Fonts:
 5. Copy the relevant `<link>` tag or `@import` code snippet into your project
     - You don't need to include the CSS class, as the design system will handle applying the correct font-family via CSS variables or JS/TS tokens.
 
-### Guardian Fonts
+#### Guardian Fonts
 
 Make sure to visit [guardian/fonts](https://github.com/guardian/fonts) repo for the latest information on how to self-host these fonts.
 
 In general, we always want to use the `full-not-hinted` versions of the fonts where possible.
 
-#### Guardian Headline
+##### Guardian Headline
 
 We only use the bold weight (700) of Guardian Headline in the design system.
 
@@ -68,7 +97,7 @@ We only use the bold weight (700) of Guardian Headline in the design system.
 }
 ```
 
-#### Guardian Text Egyptian
+##### Guardian Text Egyptian
 
 We want the regular/normal weight (400), the bold weight (700), and the italic version of each weight for Guardian Text Egyptian in the design system.
 
@@ -111,20 +140,22 @@ We want the regular/normal weight (400), the bold weight (700), and the italic v
 
 #### Colors
 
+_Status: WIP_
+
 ```ts
 import { css } from '@emotion/react';
 import { semanticColors } from '@guardian/stand'; // JS/TS usage
 import '@guardian/stand/semantic/colors.css'; // CSS usage
 
 const stringStyle = css`
-	color: ${semanticColors.text.primary}; /* JS/TS usage */
+	color: ${semanticColors.text.default}; /* JS/TS usage */
 	background-color: var(
 		--semantic-colors-bg-default-on-light
 	); /* CSS usage */
 `;
 
 const objectStyle = {
-	color: semanticColors.text.primary /* JS/TS usage */,
+	color: semanticColors.text.default /* JS/TS usage */,
 	backgroundColor:
 		'var(--semantic-colors-bg-default-on-light)' /* CSS usage */,
 };
@@ -136,30 +167,46 @@ For a full list of CSS Semantic Color tokens see [`semantic/colors.css`](./src/s
 
 #### Typography
 
+_Status: WIP_
+
 ```ts
 import { css } from '@emotion/react';
+import { semanticColors, semanticTypography } from '@guardian/stand'; // JS/TS usage
 import {
-	semanticColors,
-	semanticTypography,
 	convertTypographyToEmotionObjectStyle, // helper function to convert from typography token object to emotion CSS object style
 	convertTypographyToEmotionStringStyle, // helper function to convert from typography token object to emotion CSS string style
-} from '@guardian/stand'; // JS/TS usage
+} from '@guardian/stand/utils'; // Utils for working with design tokens
 import '@guardian/stand/semantic/typography.css'; // CSS usage
 
 /* JS/TS usage */
 const stringStyleJS = css`
+	// other styles e.g.
+	color: ${semanticColors.text.default};
+
+	/* (recommended) emotion string style usage helper function*/
 	${convertTypographyToEmotionStringStyle(
 		semanticTypography['body-compact-md'],
 	)}
+
+	/* or direct usage without helper function */
+    font: ${semanticTypography['body-compact-md'].font};
+	letter-spacing: ${semanticTypography['body-compact-md'].letterSpacing};
+	font-variation-settings: 'wdth'
+		${semanticTypography['body-compact-md'].fontWidth};
 `;
 const objectStyleJS = {
 	// other styles e.g.
-	color: semanticColors.text.primary,
+	color: semanticColors.text.default,
 
-	// typography styles
+	// (recommended) emotion object style usage helper function
 	...convertTypographyToEmotionObjectStyle(
 		semanticTypography['body-compact-sm'],
 	),
+
+	// or direct usage without helper function
+	font: semanticTypography['body-compact-sm'].font,
+	letterSpacing: semanticTypography['body-compact-sm'].letterSpacing,
+	fontVariationSettings: `'wdth' ${semanticTypography['body-compact-sm'].fontWidth}`,
 };
 
 /* CSS usage */
@@ -171,12 +218,9 @@ const stringStyleCSS = css`
 		var(--semantic-typography-body-compact-sm-font-width);
 `;
 const objectStyleCSS = {
-	fontFamily: 'var(--semantic-typography-body-compact-sm-font-family)',
-	fontWeight: 'var(--semantic-typography-body-compact-sm-font-weight)',
-	fontSize: 'var(--semantic-typography-body-compact-sm-font-size)',
-	lineHeight: 'var(--semantic-typography-body-compact-sm-line-height)',
+	font: 'var(--semantic-typography-body-compact-sm-font)',
 	letterSpacing: 'var(--semantic-typography-body-compact-sm-letter-spacing)',
-	fontVariationSettings: `'wdth' var(--semantic-typography-body-compact-sm-font-variation-settings)`,
+	fontVariationSettings: `'wdth' var(--semantic-typography-body-compact-sm-font-width)`,
 };
 ```
 
@@ -184,9 +228,41 @@ For a list of available typography styles see the [Storybook Semantic Typography
 
 For a full list of CSS Semantic Typography tokens see [`semantic/typography.css`](./src/styleD/build/css/semantic/typography.css).
 
+#### Sizing
+
+_Status: WIP_
+
+```ts
+import { css } from '@emotion/react';
+import { semanticSizing } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/semantic/sizing.css'; // CSS usage
+
+const stringStyle = css`
+	height: ${semanticSizing.height.md}; /* JS/TS usage */
+	border-width: var(--semantic-sizing-border-md); /* CSS usage */
+`;
+
+const objectStyle = {
+	height: semanticSizing.height.md /* JS/TS usage */,
+	borderWidth: 'var(--semantic-sizing-border-md)' /* CSS usage */,
+};
+
+// Icon sizing example
+const iconStyle = css`
+	width: ${semanticSizing.icon.lg};
+	height: ${semanticSizing.icon.lg};
+`;
+```
+
+For a list of available semantic sizing styles see the [Storybook Semantic Sizing](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-semantic-sizing--docs) section.
+
+For a full list of CSS Semantic Sizing tokens see [`semantic/sizing.css`](./src/styleD/build/css/semantic/sizing.css).
+
 ### Base / Primitives
 
 #### Colors
+
+_Status: WIP_
 
 ```ts
 import { css } from '@emotion/react';
@@ -210,6 +286,8 @@ For a full list of CSS Base/Primitives Color tokens see [`base/colors.css`](./sr
 
 #### Typography
 
+_Status: WIP_
+
 ```ts
 import { css } from '@emotion/react';
 import { baseTypography } from '@guardian/stand'; // JS/TS usage
@@ -218,47 +296,162 @@ import '@guardian/stand/base/typography.css'; // CSS usage
 /* JS/TS usage */
 const stringStyleJS = css`
 	font-family: ${baseTypography.family['Open Sans']};
-	font-size: ${baseTypography.size['14-px']};
+	font-size: ${baseTypography.size['14-rem']};
 	font-weight: ${baseTypography.weight['Open Sans'].normal};
 	font-variation-settings: 'wdth' ${baseTypography.width['Open Sans']};
 	style: ${baseTypography.style.normal};
 	line-height: ${baseTypography.lineHeight.normal};
-	letter-spacing: ${baseTypography.letterSpacing['default-px']};
+	letter-spacing: ${baseTypography.letterSpacing['default-rem']};
 `;
 const objectStyleJS = {
 	fontFamily: baseTypography.family['Open Sans'],
-	fontSize: baseTypography.size['14-px'],
+	fontSize: baseTypography.size['14-rem'],
 	fontWeight: baseTypography.weight['Open Sans'].normal,
 	fontVariationSettings: `'wdth' ${baseTypography.width['Open Sans']}`,
 	fontStyle: baseTypography.style.normal,
 	lineHeight: baseTypography.lineHeight.normal,
-	letterSpacing: baseTypography.letterSpacing['default-px'],
+	letterSpacing: baseTypography.letterSpacing['default-rem'],
 };
 
 /* CSS usage */
 const stringStyleCSS = css`
 	font-family: var(--base-typography-family-open-sans);
-	font-size: var(--base-typography-size-14-px);
+	font-size: var(--base-typography-size-14-rem);
 	font-weight: var(--base-typography-weight-open-sans-normal);
 	font-variation-settings: 'wdth' var(--base-typography-width-open-sans);
 	font-style: var(--base-typography-style-normal);
 	line-height: var(--base-typography-line-height-normal);
-	letter-spacing: var(--base-typography-letter-spacing-default-px);
+	letter-spacing: var(--base-typography-letter-spacing-default-rem);
 `;
 const objectStyleCSS = {
 	fontFamily: 'var(--base-typography-family-open-sans)',
-	fontSize: 'var(--base-typography-size-14-px)',
+	fontSize: 'var(--base-typography-size-14-rem)',
 	fontWeight: 'var(--base-typography-weight-open-sans-normal)',
 	fontVariationSettings: `'wdth' var(--base-typography-width-open-sans)`,
 	fontStyle: 'var(--base-typography-style-normal)',
 	lineHeight: 'var(--base-typography-line-height-normal)',
-	letterSpacing: 'var(--base-typography-letter-spacing-default-px)',
+	letterSpacing: 'var(--base-typography-letter-spacing-default-rem)',
 };
 ```
 
 For a list of the available base/primitives typography tokens see the [Storybook Base Typography](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-base-typography--docs) section.
 
 For a full list of CSS Base/Primitives Typography tokens see [`base/typography.css`](./src/styleD/build/css/base/typography.css).
+
+#### Spacing
+
+_Status: WIP_
+
+The `rem` tokens should be used in most cases to ensure scalability across different root font sizes.
+`px` tokens are available for cases where a fixed pixel value is required.
+
+```ts
+import { css } from '@emotion/react';
+import { baseSpacing } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/base/spacing.css'; // CSS usage
+
+/* JS/TS usage */
+const stringStyleJS = css`
+	padding: ${baseSpacing['16-rem']};
+	margin-bottom: ${baseSpacing['24-rem']};
+	gap: ${baseSpacing['8-rem']};
+`;
+const objectStyleJS = {
+	padding: baseSpacing['16-rem'],
+	marginBottom: baseSpacing['24-rem'],
+	gap: baseSpacing['8-rem'],
+};
+
+/* CSS usage */
+const stringStyleCSS = css`
+	padding: var(--base-spacing-16-rem);
+	margin-bottom: var(--base-spacing-24-rem);
+	gap: var(--base-spacing-8-rem);
+`;
+const objectStyleCSS = {
+	padding: 'var(--base-spacing-16-rem)',
+	marginBottom: 'var(--base-spacing-24-rem)',
+	gap: 'var(--base-spacing-8-rem)',
+};
+```
+
+For a list of the available base/primitives spacing tokens see the [Storybook Base Spacing](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-base-spacing--docs) section.
+
+For a full list of CSS Base/Primitives Spacing tokens see [`base/spacing.css`](./src/styleD/build/css/base/spacing.css).
+
+#### Sizing
+
+_Status: WIP_
+
+The `rem` tokens should be used in most cases to ensure scalability across different root font sizes.
+`px` tokens are available for cases where a fixed pixel value is required.
+
+```ts
+import { css } from '@emotion/react';
+import { baseSizing } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/base/sizing.css'; // CSS usage
+
+/* JS/TS usage */
+const stringStyleJS = css`
+	width: ${baseSizing['size-48-rem']};
+	height: ${baseSizing['size-24-rem']};
+	min-width: ${baseSizing['size-24-rem']};
+`;
+const objectStyleJS = {
+	width: baseSizing['size-48-rem'],
+	height: baseSizing['size-24-rem'],
+	minWidth: baseSizing['size-24-rem'],
+};
+
+/* CSS usage */
+const stringStyleCSS = css`
+	width: var(--base-sizing-size-48-rem);
+	height: var(--base-sizing-size-24-rem);
+	min-width: var(--base-sizing-size-24-rem);
+`;
+const objectStyleCSS = {
+	width: 'var(--base-sizing-size-48-rem)',
+	height: 'var(--base-sizing-size-24-rem)',
+	minWidth: 'var(--base-sizing-size-24-rem)',
+};
+```
+
+For a list of the available base/primitives sizing tokens see the [Storybook Base Sizing](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-base-sizing--docs) section.
+
+For a full list of CSS Base/Primitives Sizing tokens see [`base/sizing.css`](./src/styleD/build/css/base/sizing.css).
+
+#### Radius
+
+_Status: WIP_
+
+The `rem` tokens should be used in most cases to ensure scalability across different root font sizes.
+`px` tokens are available for cases where a fixed pixel value is required.
+
+```ts
+import { css } from '@emotion/react';
+import { baseRadius } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/base/radius.css'; // CSS usage
+
+/* JS/TS usage */
+const stringStyleJS = css`
+	border-radius: ${baseRadius['corner-4-rem']};
+`;
+const objectStyleJS = {
+	borderRadius: baseRadius['corner-4-rem'],
+};
+
+/* CSS usage */
+const stringStyleCSS = css`
+	border-radius: var(--base-radius-corner-4-rem);
+`;
+const objectStyleCSS = {
+	borderRadius: 'var(--base-radius-corner-4-rem)',
+};
+```
+
+For a list of the available base/primitives radius tokens see the [Storybook Base Radius](https://68c12e3ed577cb56abfd31bf-kggeezequd.chromatic.com/?path=/docs/stand-editorial-design-system-base-radius--docs) section.
+
+For a full list of CSS Base/Primitives Radius tokens see [`base/radius.css`](./src/styleD/build/css/base/radius.css).
 
 ## Components
 
@@ -270,6 +463,7 @@ A flexible byline editor component built in ProseMirror and React with usability
 
 You'll need to install the following peer dependencies in your project to use the `Byline` component:
 
+- `@emotion/react`
 - `@guardian/prosemirror-invisibles`
 - `prosemirror-dropcursor`
 - `prosemirror-history`
@@ -277,14 +471,19 @@ You'll need to install the following peer dependencies in your project to use th
 - `prosemirror-model`
 - `prosemirror-state`
 - `prosemirror-view`
+- `react`
+- `react-dom`
+- `typescript`
 
-See the `peerDependencies` section of `package.json` for compatible versions to install.
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+**Note:** If you only need the built CSS (`@guardian/stand/component/byline.css`), you don't need to install these dependencies.
 
 #### Usage
 
 ```tsx
-import type { BylineModel } from '@guardian/stand';
-import { Byline } from '@guardian/stand';
+import type { BylineModel } from '@guardian/stand/byline';
+import { Byline } from '@guardian/stand/byline';
 
 const Component = () => {
     const bylineModel: BylineModel = {
@@ -324,9 +523,15 @@ autocomplete input for selecting tags from a list of options, based on the [Reac
 
 **Peer dependencies:**
 
+- `@emotion/react`
+- `react`
 - `react-aria-components`
+- `react-dom`
+- `typescript`
 
-See the `peerDependencies` section of the `package.json` for compatible versions to install.
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+**Note:** If you only need the built CSS (`@guardian/stand/component/tagAutocomplete.css`), you don't need to install these dependencies.
 
 ##### Props
 
@@ -342,9 +547,15 @@ based on the [React Aria Table](https://react-spectrum.adobe.com/react-aria/Tabl
 
 **Peer dependencies:**
 
+- `@emotion/react`
+- `react`
 - `react-aria-components`
+- `react-dom`
+- `typescript`
 
-See the `peerDependencies` section of the `package.json` for compatible versions to install.
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+**Note:** If you only need the built CSS (`@guardian/stand/component/tagTable.css`), you don't need to install these dependencies.
 
 ##### Props
 
@@ -355,7 +566,7 @@ See [`TagTableProps`](src/components/tag-picker/TagTable.tsx#L31) for the full l
 _Example with TagAutocomplete and TagTable combined:_
 
 ```tsx
-import { TagAutocomplete, TagTable } from '@guardian/stand';
+import { TagAutocomplete, TagTable } from '@guardian/stand/tag-picker';
 
 const Component = () => {
   const [selectedTags, setSelectedTags] = useState<

@@ -3,7 +3,7 @@
 		"byline": {
 			"color": {
 				"$type": "color",
-				"$value": "{semantic.colors.text.primary}"
+				"$value": "{semantic.colors.text.default}"
 			},
 			"backgroundColor": {
 				"$type": "color",
@@ -32,7 +32,7 @@
 			"chip": {
 				"color": {
 					"$type": "color",
-					"$value": "{semantic.colors.text.primary}"
+					"$value": "{semantic.colors.text.default}"
 				},
 				"borderColor": {
 					"$type": "color",
@@ -68,7 +68,7 @@
 				},
 				"untaggedColor": {
 					"$type": "color",
-					"$value": "{semantic.colors.text.primary}"
+					"$value": "{semantic.colors.text.default}"
 				}
 			},
 			"dropdown": {
@@ -91,7 +91,7 @@
 				"li": {
 					"color": {
 						"$type": "color",
-						"$value": "{semantic.colors.text.primary}"
+						"$value": "{semantic.colors.text.default}"
 					},
 					"borderBottomColor": {
 						"$type": "color",

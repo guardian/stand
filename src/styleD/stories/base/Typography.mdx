@@ -23,41 +23,41 @@ import '@guardian/stand/base/typography.css'; // CSS usage
 /* JS/TS usage */
 const stringStyleJS = css`
 	font-family: ${baseTypography.family['Open Sans']};
-	font-size: ${baseTypography.size['14-px']};
+	font-size: ${baseTypography.size['14-rem']};
 	font-weight: ${baseTypography.weight['Open Sans'].normal};
 	font-variation-settings: 'wdth' ${baseTypography.width['Open Sans']};
 	style: ${baseTypography.style.normal};
 	line-height: ${baseTypography.lineHeight.normal};
-	letter-spacing: ${baseTypography.letterSpacing['default-px']};
+	letter-spacing: ${baseTypography.letterSpacing['default-rem']};
 `;
 const objectStyleJS = {
 	fontFamily: baseTypography.family['Open Sans'],
-	fontSize: baseTypography.size['14-px'],
+	fontSize: baseTypography.size['14-rem'],
 	fontWeight: baseTypography.weight['Open Sans'].normal,
 	fontVariationSettings: `'wdth' ${baseTypography.width['Open Sans']}`,
 	fontStyle: baseTypography.style.normal,
 	lineHeight: baseTypography.lineHeight.normal,
-	letterSpacing: baseTypography.letterSpacing['default-px'],
+	letterSpacing: baseTypography.letterSpacing['default-rem'],
 };
 
 /* CSS usage */
 const stringStyleCSS = css`
 	font-family: var(--base-typography-family-open-sans);
-	font-size: var(--base-typography-size-14-px);
+	font-size: var(--base-typography-size-14-rem);
 	font-weight: var(--base-typography-weight-open-sans-normal);
 	font-variation-settings: 'wdth' var(--base-typography-width-open-sans);
 	font-style: var(--base-typography-style-normal);
 	line-height: var(--base-typography-line-height-normal);
-	letter-spacing: var(--base-typography-letter-spacing-default-px);
+	letter-spacing: var(--base-typography-letter-spacing-default-rem);
 `;
 const objectStyleCSS = {
 	fontFamily: 'var(--base-typography-family-open-sans)',
-	fontSize: 'var(--base-typography-size-14-px)',
+	fontSize: 'var(--base-typography-size-14-rem)',
 	fontWeight: 'var(--base-typography-weight-open-sans-normal)',
 	fontVariationSettings: `'wdth' var(--base-typography-width-open-sans)`,
 	fontStyle: 'var(--base-typography-style-normal)',
 	lineHeight: 'var(--base-typography-line-height-normal)',
-	letterSpacing: 'var(--base-typography-letter-spacing-default-px)',
+	letterSpacing: 'var(--base-typography-letter-spacing-default-rem)',
 };
 ```
 
