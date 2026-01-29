@@ -1,4 +1,4 @@
+import { DeepPartial } from '../../util/types';
 import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
-import type { DeepPartial } from '../util';
 
 export type PartialUserMenuTheme = DeepPartial<ComponentUserMenu>;

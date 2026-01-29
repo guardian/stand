@@ -5,11 +5,13 @@ export const TitleText = ({
 	children,
 	className,
 }: {
-	headingLevel?: 2 | 3 | 4 | 5 | 6;
+	headingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
 	children: ReactNode;
 	className?: string;
 }) => {
 	switch (headingLevel) {
+		case 1:
+			return <h1 className={className}>{children}</h1>;
 		case 2:
 			return <h2 className={className}>{children}</h2>;
 		case 3:

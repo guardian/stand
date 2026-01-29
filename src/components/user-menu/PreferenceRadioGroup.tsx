@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { ToggleButton, ToggleButtonGroup } from 'react-aria-components';
 import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
-import type { DeepPartial } from '../util';
+import { DeepPartial } from '../../util/types';
 import type { Option } from './model';
 import {
 	radioGroupLabelStyles,

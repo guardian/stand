@@ -1,6 +1,6 @@
 import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
+import { DeepPartial } from '../../util/types';
 import { TitleText } from '../TitleText';
-import type { DeepPartial } from '../util';
 import type { Option } from './model';
 import { PreferenceRadioGroup } from './PreferenceRadioGroup';
 import { userMenuHeadingStyles, userMenuStyles } from './styles';
