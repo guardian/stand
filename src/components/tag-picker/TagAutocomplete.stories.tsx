@@ -7,7 +7,7 @@ import { TagTable } from './TagTable';
 import type { TagManagerObjectData } from './types';
 
 const meta = {
-	title: 'Stand/TagAutocomplete',
+	title: 'Stand/Editorial Components/TagPicker/TagAutocomplete',
 	component: TagAutocomplete,
 	args: {
 		addTag: () => {},
