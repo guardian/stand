@@ -12,11 +12,11 @@
 				},
 				"paddingY": {
 					"$type": "dimension",
-					"$value": "5px"
+					"$value": "{base.spacing.4-rem}"
 				},
 				"paddingX": {
 					"$type": "dimension",
-					"$value": "5px"
+					"$value": "{base.spacing.4-rem}"
 				}
 			},
 			"heading": {
@@ -26,7 +26,7 @@
 				},
 				"fontSize": {
 					"$type": "dimension",
-					"$value": "1.5em"
+					"$value": "{base.typography.size.18-rem}"
 				},
 				"paddingTop": {
 					"$type": "dimension",
@@ -56,7 +56,7 @@
 				},
 				"fontSize": {
 					"$type": "dimension",
-					"$value": "1.2em"
+					"$value": "{base.typography.size.14-rem}"
 				},
 				"paddingTop": {
 					"$type": "dimension",
@@ -68,7 +68,7 @@
 				},
 				"paddingBottom": {
 					"$type": "dimension",
-					"$value": "5px"
+					"$value": "{base.spacing.6-rem}"
 				},
 				"paddingLeft": {
 					"$type": "dimension",
@@ -98,7 +98,7 @@
 				},
 				"gap": {
 					"$type": "dimension",
-					"$value": "5px"
+					"$value": "{base.spacing.4-rem}"
 				}
 			}
 		}
