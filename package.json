@@ -19,6 +19,11 @@
 			"import": "./dist/tag-picker.js",
 			"require": "./dist/tag-picker.cjs"
 		},
+		"./user-menu": {
+			"types": "./dist/types/user-menu.d.ts",
+			"import": "./dist/user-menu.js",
+			"require": "./dist/user-menu.cjs"
+		},
 		"./utils": {
 			"types": "./dist/types/utils.d.ts",
 			"import": "./dist/utils.js",
@@ -35,7 +40,8 @@
 		"./semantic/sizing.css": "./dist/styleD/build/css/semantic/sizing.css",
 		"./component/byline.css": "./dist/styleD/build/css/component/byline.css",
 		"./component/tagAutocomplete.css": "./dist/styleD/build/css/component/tagAutocomplete.css",
-		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css"
+		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css",
+		"./component/userMenu.css": "./dist/styleD/build/css/component/userMenu.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
@@ -45,6 +51,9 @@
 			],
 			"tag-picker": [
 				"./dist/types/tag-picker.d.ts"
+			],
+			"user-menu": [
+				"./dist/types/user-menu.d.ts"
 			],
 			"utils": [
 				"./dist/types/utils.d.ts"

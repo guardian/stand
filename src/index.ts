@@ -2,7 +2,6 @@
  * Main entry point - Design tokens only
  * Import components from their own entry points, this isolates components within their own peer dependencies.
  */
-export { UserMenu } from './components/user-menu/UserMenu';
 
 /**
  * editorial components tokens exports
@@ -13,6 +12,8 @@ export { componentTagAutocomplete } from './styleD/build/typescript/component/ta
 export type { ComponentTagAutocomplete } from './styleD/build/typescript/component/tagAutocomplete';
 export { componentTagTable } from './styleD/build/typescript/component/tagTable';
 export type { ComponentTagTable } from './styleD/build/typescript/component/tagTable';
+export { componentUserMenu } from './styleD/build/typescript/component/userMenu';
+export type { ComponentUserMenu } from './styleD/build/typescript/component/userMenu';
 
 /**
  * style dictionary exports - base
