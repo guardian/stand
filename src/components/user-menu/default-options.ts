@@ -1,3 +1,5 @@
+import { baseSpacing } from '../../styleD/build/typescript/base/spacing';
+import { baseTypography } from '../../styleD/build/typescript/base/typography';
 import type { Option } from './model';
 
 const textSizes: Option[] = [
@@ -6,7 +8,7 @@ const textSizes: Option[] = [
 		label: 'Small',
 		description: 'Compact reading',
 		labelStyle: {
-			fontSize: 10,
+			fontSize: baseTypography.size['12-px'],
 		},
 	},
 	{
@@ -14,7 +16,7 @@ const textSizes: Option[] = [
 		label: 'Medium',
 		description: 'Standard reading',
 		labelStyle: {
-			fontSize: 16,
+			fontSize: baseTypography.size['16-px'],
 		},
 	},
 	{
@@ -22,7 +24,7 @@ const textSizes: Option[] = [
 		label: 'Large',
 		description: 'Comfortable reading',
 		labelStyle: {
-			fontSize: 20,
+			fontSize: baseTypography.size['20-px'],
 		},
 	},
 ];
@@ -33,17 +35,26 @@ const fontFamilies: Option[] = [
 		label: 'Guardian Text Egyptian',
 		description: 'Classic Guardian Serif',
 		labelStyle: {
-			fontFamily: 'serif',
-			fontSize: 20,
+			fontFamily: baseTypography.family['Guardian Text Egyptian'],
+			fontSize: baseTypography.size['20-px'],
 		},
 	},
 	{
-		id: 'font-sans',
-		label: 'Guardian Text Sans',
+		id: 'open-sans-compact',
+		label: 'Open Sans Compact',
+		description: 'compact sans-Serif',
+		labelStyle: {
+			fontFamily: baseTypography.family['Open Sans Compact'],
+			fontSize: baseTypography.size['20-px'],
+		},
+	},
+	{
+		id: 'open-sans',
+		label: 'Open Sans',
 		description: 'Sans-Serif',
 		labelStyle: {
-			fontFamily: 'sans-serif',
-			fontSize: 20,
+			fontFamily: baseTypography.family['Open Sans'],
+			fontSize: baseTypography.size['20-px'],
 		},
 	},
 ];
@@ -53,7 +64,7 @@ const colorSchemes: Option[] = [
 		id: 'white',
 		buttonStyle: {
 			backgroundColor: 'white',
-			padding: 10,
+			padding: baseSpacing['10-rem'],
 		},
 		isDefault: true,
 	},
@@ -61,35 +72,35 @@ const colorSchemes: Option[] = [
 		id: 'cream',
 		buttonStyle: {
 			backgroundColor: 'antiquewhite',
-			padding: 10,
+			padding: baseSpacing['10-rem'],
 		},
 	},
 	{
 		id: 'green',
 		buttonStyle: {
 			backgroundColor: 'lightgreen',
-			padding: 10,
+			padding: baseSpacing['10-rem'],
 		},
 	},
 	{
 		id: 'pink',
 		buttonStyle: {
 			backgroundColor: 'pink',
-			padding: 10,
+			padding: baseSpacing['10-rem'],
 		},
 	},
 	{
 		id: 'blue',
 		buttonStyle: {
 			backgroundColor: 'skyblue',
-			padding: 10,
+			padding: baseSpacing['10-rem'],
 		},
 	},
 	{
 		id: 'orange',
 		buttonStyle: {
 			backgroundColor: 'orange',
-			padding: 10,
+			padding: baseSpacing['10-rem'],
 		},
 	},
 ];

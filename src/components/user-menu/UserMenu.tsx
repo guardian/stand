@@ -1,15 +1,15 @@
 import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
 import type { DeepPartial } from '../../util/types';
 import { TitleText } from '../TitleText';
-import type { Option } from './model';
-import { PreferenceRadioGroup } from './PreferenceRadioGroup';
-import { userMenuHeadingStyles, userMenuStyles } from './styles';
-import type { UserPreferences } from './types';
 import {
 	colorSchemes as defaultColorSchemes,
 	fontFamilies as defaultFontFamilies,
 	textSizes as defaultTextSizes,
-} from './values';
+} from './default-options';
+import type { Option } from './model';
+import { PreferenceRadioGroup } from './PreferenceRadioGroup';
+import { userMenuHeadingStyles, userMenuStyles } from './styles';
+import type { UserPreferences } from './types';
 
 export interface UserMenuProps {
 	theme?: DeepPartial<ComponentUserMenu>;
