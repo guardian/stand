@@ -2,8 +2,8 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
 import { componentUserMenu } from '../../styleD/build/typescript/component/userMenu';
-import { DeepPartial } from '../../util/types';
 import { mergeDeep } from '../../util/mergeDeep';
+import type { DeepPartial } from '../../util/types';
 
 export const userMenuStyles = (
 	partialTheme: DeepPartial<ComponentUserMenu> = {},
