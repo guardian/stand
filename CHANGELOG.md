@@ -1,11 +1,32 @@
 # @guardian/stand
 
+## 0.0.9
+
+### Patch Changes
+
+- c3da8db: Fix `css` exports
+- 8322a9e: Add additional foundations design tokens
+- c264d80: BREAKING: use subpath exports for components
+
+  Old:
+
+  ```ts
+  import { Byline, TagAutocomplete, TagTable } from '@guardian/stand';
+  ```
+
+  New:
+
+  ```ts
+  import { Byline } from '@guardian/stand/byline';
+  import { TagAutocomplete, TagTable } from '@guardian/stand/tag-picker';
+  ```
+
 ## 0.0.8
 
 ### Patch Changes
 
 - 0a5bf39: Use typography shorthand for style dictionary typescript build
-- df3d28f: Add `base` and `semantic` tokens for `spacing`, `sizing`, and `radius`. Update some exising tokens.
+- df3d28f: Add `base` and `semantic` tokens for `spacing`, `sizing`, and `radius`. Update some existing tokens.
 
 ## 0.0.7
 
