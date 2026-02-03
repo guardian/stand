@@ -8,3 +8,5 @@ export {
 	convertTypographyToEmotionObjectStyle,
 	convertTypographyToEmotionStringStyle,
 } from './styleD/utils/semantic/typography';
+
+export { GlobalResetStyles } from './util/reset';

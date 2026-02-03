@@ -5,7 +5,7 @@ import type { Preview } from '@storybook/react-vite';
 import {
 	semanticTypography,
 } from '../src';
-import { convertTypographyToEmotionObjectStyle } from '../src/utils';
+import { convertTypographyToEmotionObjectStyle, GlobalResetStyles } from '../src/utils';
 
 const Fonts = css`
 	@import url('https://assets.guim.co.uk/fonts/open-sans/OpenSans.css');
@@ -56,18 +56,13 @@ const globalFont = {
 	...convertTypographyToEmotionObjectStyle(semanticTypography['body-sm']),
 };
 
-const globalStyles = css({
-	html: {
-		height: '100vh',
-		width: '100vw',
-	},
-	body: {
-		...globalFont,
-		minHeight: '100vh',
-		width: '100vw',
-		margin: '0 auto',
-	},
-});
+const globalStyles = css`
+    ${GlobalResetStyles}
+
+    body {
+        ${globalFont}
+    }
+`;
 
 const GlobalStyles = () => <Global styles={[Fonts, globalStyles]} />;
 

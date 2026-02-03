@@ -3,7 +3,22 @@ import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import copy from 'rollup-plugin-copy';
 import esbuild from 'rollup-plugin-esbuild';
+import css from 'rollup-plugin-import-css';
 import { nodeExternals } from 'rollup-plugin-node-externals';
+
+// A Rollup plugin to handle '?inline' imports for CSS files
+// This allows importing CSS files with '?inline' to get their content inlined,
+// as we needed the ?inline query to get the css files working with vite storybook
+const inlineCssQuery = () => ({
+	name: 'inline-css-query',
+	resolveId(source, importer) {
+		if (source.endsWith('?inline')) {
+			const withoutQuery = source.slice(0, -'?inline'.length);
+			return this.resolve(withoutQuery, importer, { skipSelf: true });
+		}
+		return null;
+	},
+});
 
 /**
  * @type {import("rollup").RollupOptions['input']}
@@ -35,8 +50,10 @@ export default [
 			preserveModulesRoot: 'src',
 		},
 		plugins: [
+			inlineCssQuery(),
 			resolve(),
 			nodeExternals(),
+			css(),
 			esbuild({
 				jsx: 'automatic',
 			}),
@@ -54,6 +71,10 @@ export default [
 						src: 'src/fonts/OpenSans.css',
 						dest: 'dist/fonts/',
 					},
+					{
+						src: 'src/util/reset.css',
+						dest: 'dist/util/css/',
+					},
 				],
 			}),
 		],
@@ -68,9 +89,11 @@ export default [
 			entryFileNames: '[name].cjs',
 		},
 		plugins: [
+			inlineCssQuery(),
 			resolve(),
 			nodeExternals(),
 			commonjs(),
+			css(),
 			esbuild({
 				jsx: 'automatic',
 			}),

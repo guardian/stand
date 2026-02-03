@@ -22,13 +22,13 @@ export const tableStyles = css`
 			${semanticColors.border.default};
 		position: sticky;
 		top: 0;
-		background: ${semanticColors.bg['default-onLight']};
+		background: ${semanticColors.bg.base};
 	}
 
 	td {
 		padding: ${baseSpacing['12-rem']} ${baseSpacing['8-rem']};
 		border-bottom: ${semanticSizing.border.default} solid
-			${semanticColors.border.subtle};
+			${semanticColors.border.secondary};
 		vertical-align: middle;
 	}
 

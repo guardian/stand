@@ -1,0 +1,35 @@
+/*
+Select CSS resets for use with the stand design system.
+Modified from https://github.com/guardian/csnx/blob/0f68024f6f3bee003b5f95e66d29fb74987a8dec/libs/%40guardian/source/src/foundations/utils/resets.ts
+*/
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+html {
+	text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: 'kern';
+	font-kerning: normal; /* Safari 7+, Firefox 24+, Chrome 33(?)+, Opera 21 */
+	font-variant-ligatures: common-ligatures;
+}
+
+*[hidden] {
+	display: none;
+}
+
+body {
+	min-height: 100svh;
+}
