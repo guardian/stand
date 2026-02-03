@@ -38,22 +38,26 @@ export const buttonStyles = (
 		border: ${theme[variant][size].border};
 		border-radius: ${theme[variant][size].borderRadius};
 
-		&:hover {
+		&:hover,
+		&[data-hovered] {
 			background: ${theme[variant][size][':hover'].backgroundColor};
 			border: ${theme[variant][size][':hover'].border};
 		}
 
-		&:active {
+		&:active,
+		&[data-pressed] {
 			background: ${theme[variant][size][':active'].backgroundColor};
 			border: ${theme[variant][size][':active'].border};
 		}
 
-		&:focus-visible {
+		&:focus-visible,
+		&[data-focused] {
 			outline: ${theme.shared[':focus-visible'].outline};
 			outline-offset: ${theme.shared[':focus-visible']['outline-offset']};
 		}
 
-		&[disabled] {
+		&[disabled],
+		&[data-disabled] {
 			cursor: ${theme.shared[':disabled'].cursor};
 			color: ${theme[variant][size][':disabled'].color};
 			background: ${theme[variant][size][':disabled'].backgroundColor};

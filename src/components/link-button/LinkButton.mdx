@@ -1,38 +1,5 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
-import LinkButtonStories, {
-	EmphasisedPrimaryXs,
-	EmphasisedPrimarySm,
-	EmphasisedPrimaryMd,
-	EmphasisedPrimaryLg,
-	EmphasisedPrimaryXsDisabled,
-	EmphasisedPrimarySmDisabled,
-	EmphasisedPrimaryMdDisabled,
-	EmphasisedPrimaryLgDisabled,
-	EmphasisedSecondaryXs,
-	EmphasisedSecondarySm,
-	EmphasisedSecondaryMd,
-	EmphasisedSecondaryLg,
-	EmphasisedSecondaryXsDisabled,
-	EmphasisedSecondarySmDisabled,
-	EmphasisedSecondaryMdDisabled,
-	EmphasisedSecondaryLgDisabled,
-	NeutralPrimaryXs,
-	NeutralPrimarySm,
-	NeutralPrimaryMd,
-	NeutralPrimaryLg,
-	NeutralPrimaryXsDisabled,
-	NeutralPrimarySmDisabled,
-	NeutralPrimaryMdDisabled,
-	NeutralPrimaryLgDisabled,
-	NeutralSecondaryXs,
-	NeutralSecondarySm,
-	NeutralSecondaryMd,
-	NeutralSecondaryLg,
-	NeutralSecondaryXsDisabled,
-	NeutralSecondarySmDisabled,
-	NeutralSecondaryMdDisabled,
-	NeutralSecondaryLgDisabled,
-} from './LinkButton.stories';
+import LinkButtonStories, { LinkButtonTable } from './LinkButton.stories';
 
 <Meta of={LinkButtonStories} />
 
@@ -107,77 +74,13 @@ const Example = () => (
 
 ## Stories
 
-### Emphasised primary
-
-#### Enabled
-
-<Story of={EmphasisedPrimaryXs} />
-<Story of={EmphasisedPrimarySm} />
-<Story of={EmphasisedPrimaryMd} />
-<Story of={EmphasisedPrimaryLg} />
-
-#### Disabled
-
-<Story of={EmphasisedPrimaryXsDisabled} />
-<Story of={EmphasisedPrimarySmDisabled} />
-<Story of={EmphasisedPrimaryMdDisabled} />
-<Story of={EmphasisedPrimaryLgDisabled} />
-
-### Emphasised secondary
-
-#### Enabled
-
-<Story of={EmphasisedSecondaryXs} />
-<Story of={EmphasisedSecondarySm} />
-<Story of={EmphasisedSecondaryMd} />
-<Story of={EmphasisedSecondaryLg} />
-
-#### Disabled
-
-<Story of={EmphasisedSecondaryXsDisabled} />
-<Story of={EmphasisedSecondarySmDisabled} />
-<Story of={EmphasisedSecondaryMdDisabled} />
-<Story of={EmphasisedSecondaryLgDisabled} />
-
-### Neutral primary
-
-#### Enabled
-
-<Story of={NeutralPrimaryXs} />
-<Story of={NeutralPrimarySm} />
-<Story of={NeutralPrimaryMd} />
-<Story of={NeutralPrimaryLg} />
-
-#### Disabled
-
-<Story of={NeutralPrimaryXsDisabled} />
-<Story of={NeutralPrimarySmDisabled} />
-<Story of={NeutralPrimaryMdDisabled} />
-<Story of={NeutralPrimaryLgDisabled} />
-
-### Neutral secondary
-
-#### Enabled
-
-<Story of={NeutralSecondaryXs} />
-<Story of={NeutralSecondarySm} />
-<Story of={NeutralSecondaryMd} />
-<Story of={NeutralSecondaryLg} />
-
-#### Disabled
-
-<Story of={NeutralSecondaryXsDisabled} />
-<Story of={NeutralSecondarySmDisabled} />
-<Story of={NeutralSecondaryMdDisabled} />
-<Story of={NeutralSecondaryLgDisabled} />
+<Story of={LinkButtonTable} />
 
 ## Customisation
 
 LinkButton reuses the `Button` theme tokens. Prefer the default theme; when needed use `theme` or `cssOverrides`.
 
 ### Custom theme
-
-<Story of={EmphasisedSecondaryMd} />
 
 ```tsx
 import type { LinkButtonTheme } from './LinkButton';
@@ -212,8 +115,6 @@ const Component = () => (
 ```
 
 ### CSS overrides
-
-<Story of={NeutralSecondarySm} />
 
 ```tsx
 import { LinkButton } from './LinkButton';
