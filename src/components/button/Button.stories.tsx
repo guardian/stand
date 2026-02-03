@@ -1,4 +1,6 @@
+import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { baseColors, baseSpacing } from '../..';
 import { tableStyles } from '../../util/storybookStyles';
 import { Button } from './Button';
 
@@ -83,4 +85,45 @@ export const ButtonTable = {
 			</tbody>
 		</table>
 	),
+} satisfies Story;
+
+export const CustomTheme = {
+	name: 'custom theme',
+	args: {
+		children: 'Custom Themed Button',
+		variant: 'emphasised-primary',
+		size: 'md',
+		theme: {
+			'emphasised-primary': {
+				shared: {
+					backgroundColor: baseColors['cool-purple'][200],
+					color: baseColors['cool-purple'][900],
+					border: `2px solid ${baseColors['cool-purple'][700]}`,
+					':hover': {
+						backgroundColor: baseColors['cool-purple'][300],
+						border: `2px solid ${baseColors['cool-purple'][700]}`,
+					},
+					':active': {
+						backgroundColor: baseColors['cool-purple'][400],
+						border: `2px solid ${baseColors['cool-purple'][700]}`,
+					},
+				},
+			},
+		},
+	},
+} satisfies Story;
+
+export const CssOverrides = {
+	name: 'cssOverrides',
+	args: {
+		children: 'CSSOverrides Button',
+		variant: 'emphasised-primary',
+		size: 'md',
+		cssOverrides: css`
+			width: 100%;
+			text-transform: full-width;
+			font-variant: small-caps;
+			padding-inline: ${baseSpacing['24-rem']};
+		`,
+	},
 } satisfies Story;

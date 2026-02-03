@@ -21,11 +21,27 @@ export const componentButton = {
 		},
 	},
 	'emphasised-primary': {
-		xs: {
+		shared: {
 			color: '#dcdcdc',
 			backgroundColor: '#0d4289',
-			height: '1.5rem',
 			borderRadius: '0.25rem',
+			border: '0.0625rem solid #0d4289',
+			':hover': {
+				backgroundColor: '#092f62',
+				border: '0.0625rem solid #092f62',
+			},
+			':active': {
+				backgroundColor: '#092f62',
+				border: '0.0625rem solid #092f62',
+			},
+			':disabled': {
+				color: '#999999',
+				backgroundColor: '#dcdcdc',
+				border: '0.0625rem solid #dcdcdc',
+			},
+		},
+		xs: {
+			height: '1.5rem',
 			padding: {
 				top: '0.25rem',
 				right: '0.5rem',
@@ -37,26 +53,9 @@ export const componentButton = {
 				letterSpacing: '0rem',
 				fontWidth: 95,
 			},
-			border: '0.0625rem solid #0d4289',
-			':hover': {
-				backgroundColor: '#092f62',
-				border: '0.0625rem solid #092f62',
-			},
-			':active': {
-				backgroundColor: '#092f62',
-				border: '0.0625rem solid #092f62',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: '#dcdcdc',
-				border: '0.0625rem solid #dcdcdc',
-			},
 		},
 		sm: {
-			color: '#dcdcdc',
-			backgroundColor: '#0d4289',
 			height: '2rem',
-			borderRadius: '0.25rem',
 			padding: {
 				top: '0.25rem',
 				right: '0.75rem',
@@ -68,26 +67,9 @@ export const componentButton = {
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
 			},
-			border: '0.0625rem solid #0d4289',
-			':hover': {
-				backgroundColor: '#092f62',
-				border: '0.0625rem solid #092f62',
-			},
-			':active': {
-				backgroundColor: '#092f62',
-				border: '0.0625rem solid #092f62',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: '#dcdcdc',
-				border: '0.0625rem solid #dcdcdc',
-			},
 		},
 		md: {
-			color: '#dcdcdc',
-			backgroundColor: '#0d4289',
 			height: '2.5rem',
-			borderRadius: '0.25rem',
 			padding: {
 				top: '0.25rem',
 				right: '1rem',
@@ -99,26 +81,9 @@ export const componentButton = {
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
 			},
-			border: '0.0625rem solid #0d4289',
-			':hover': {
-				backgroundColor: '#092f62',
-				border: '0.0625rem solid #092f62',
-			},
-			':active': {
-				backgroundColor: '#092f62',
-				border: '0.0625rem solid #092f62',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: '#dcdcdc',
-				border: '0.0625rem solid #dcdcdc',
-			},
 		},
 		lg: {
-			color: '#dcdcdc',
-			backgroundColor: '#0d4289',
 			height: '3rem',
-			borderRadius: '0.25rem',
 			padding: {
 				top: '0.25rem',
 				right: '1.25rem',
@@ -129,29 +94,31 @@ export const componentButton = {
 				font: 'normal 700 0.875rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
-			},
-			border: '0.0625rem solid #0d4289',
-			':hover': {
-				backgroundColor: '#092f62',
-				border: '0.0625rem solid #092f62',
-			},
-			':active': {
-				backgroundColor: '#092f62',
-				border: '0.0625rem solid #092f62',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: '#dcdcdc',
-				border: '0.0625rem solid #dcdcdc',
 			},
 		},
 	},
 	'emphasised-secondary': {
-		xs: {
+		shared: {
 			color: '#000000',
 			backgroundColor: 'none',
-			height: '1.5rem',
 			borderRadius: '0.25rem',
+			border: '0.0625rem solid #0d4289',
+			':hover': {
+				backgroundColor: '#e8f0fb',
+				border: '0.0625rem solid #0d4289',
+			},
+			':active': {
+				backgroundColor: '#e8f0fb',
+				border: '0.0625rem solid #0d4289',
+			},
+			':disabled': {
+				color: '#999999',
+				backgroundColor: 'none',
+				border: '0.0625rem solid #dcdcdc',
+			},
+		},
+		xs: {
+			height: '1.5rem',
 			padding: {
 				top: '0.25rem',
 				right: '0.5rem',
@@ -163,26 +130,9 @@ export const componentButton = {
 				letterSpacing: '0rem',
 				fontWidth: 95,
 			},
-			border: '0.0625rem solid #0d4289',
-			':hover': {
-				backgroundColor: '#e8f0fb',
-				border: '0.0625rem solid #0d4289',
-			},
-			':active': {
-				backgroundColor: '#e8f0fb',
-				border: '0.0625rem solid #0d4289',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: 'none',
-				border: '0.0625rem solid #dcdcdc',
-			},
 		},
 		sm: {
-			color: '#000000',
-			backgroundColor: 'none',
 			height: '2rem',
-			borderRadius: '0.25rem',
 			padding: {
 				top: '0.25rem',
 				right: '0.75rem',
@@ -194,26 +144,9 @@ export const componentButton = {
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
 			},
-			border: '0.0625rem solid #0d4289',
-			':hover': {
-				backgroundColor: '#e8f0fb',
-				border: '0.0625rem solid #0d4289',
-			},
-			':active': {
-				backgroundColor: '#e8f0fb',
-				border: '0.0625rem solid #0d4289',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: 'none',
-				border: '0.0625rem solid #dcdcdc',
-			},
 		},
 		md: {
-			color: '#000000',
-			backgroundColor: 'none',
 			height: '2.5rem',
-			borderRadius: '0.25rem',
 			padding: {
 				top: '0.25rem',
 				right: '1rem',
@@ -225,26 +158,9 @@ export const componentButton = {
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
 			},
-			border: '0.0625rem solid #0d4289',
-			':hover': {
-				backgroundColor: '#e8f0fb',
-				border: '0.0625rem solid #0d4289',
-			},
-			':active': {
-				backgroundColor: '#e8f0fb',
-				border: '0.0625rem solid #0d4289',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: 'none',
-				border: '0.0625rem solid #dcdcdc',
-			},
 		},
 		lg: {
-			color: '#000000',
-			backgroundColor: 'none',
 			height: '3rem',
-			borderRadius: '0.25rem',
 			padding: {
 				top: '0.25rem',
 				right: '1.25rem',
@@ -255,29 +171,31 @@ export const componentButton = {
 				font: 'normal 700 0.875rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
-			},
-			border: '0.0625rem solid #0d4289',
-			':hover': {
-				backgroundColor: '#e8f0fb',
-				border: '0.0625rem solid #0d4289',
-			},
-			':active': {
-				backgroundColor: '#e8f0fb',
-				border: '0.0625rem solid #0d4289',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: 'none',
-				border: '0.0625rem solid #dcdcdc',
 			},
 		},
 	},
 	'neutral-primary': {
-		xs: {
+		shared: {
 			color: '#dcdcdc',
 			backgroundColor: '#545454',
-			height: '1.5rem',
 			borderRadius: '0.25rem',
+			border: '0.0625rem solid #545454',
+			':hover': {
+				backgroundColor: '#333333',
+				border: '0.0625rem solid #333333',
+			},
+			':active': {
+				backgroundColor: '#333333',
+				border: '0.0625rem solid #333333',
+			},
+			':disabled': {
+				color: '#999999',
+				backgroundColor: '#dcdcdc',
+				border: '0.0625rem solid #dcdcdc',
+			},
+		},
+		xs: {
+			height: '1.5rem',
 			padding: {
 				top: '0.25rem',
 				right: '0.5rem',
@@ -289,26 +207,9 @@ export const componentButton = {
 				letterSpacing: '0rem',
 				fontWidth: 95,
 			},
-			border: '0.0625rem solid #545454',
-			':hover': {
-				backgroundColor: '#333333',
-				border: '0.0625rem solid #333333',
-			},
-			':active': {
-				backgroundColor: '#333333',
-				border: '0.0625rem solid #333333',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: '#dcdcdc',
-				border: '0.0625rem solid #dcdcdc',
-			},
 		},
 		sm: {
-			color: '#dcdcdc',
-			backgroundColor: '#545454',
 			height: '2rem',
-			borderRadius: '0.25rem',
 			padding: {
 				top: '0.25rem',
 				right: '0.75rem',
@@ -320,26 +221,9 @@ export const componentButton = {
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
 			},
-			border: '0.0625rem solid #545454',
-			':hover': {
-				backgroundColor: '#333333',
-				border: '0.0625rem solid #333333',
-			},
-			':active': {
-				backgroundColor: '#333333',
-				border: '0.0625rem solid #333333',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: '#dcdcdc',
-				border: '0.0625rem solid #dcdcdc',
-			},
 		},
 		md: {
-			color: '#dcdcdc',
-			backgroundColor: '#545454',
 			height: '2.5rem',
-			borderRadius: '0.25rem',
 			padding: {
 				top: '0.25rem',
 				right: '1rem',
@@ -351,26 +235,9 @@ export const componentButton = {
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
 			},
-			border: '0.0625rem solid #545454',
-			':hover': {
-				backgroundColor: '#333333',
-				border: '0.0625rem solid #333333',
-			},
-			':active': {
-				backgroundColor: '#333333',
-				border: '0.0625rem solid #333333',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: '#dcdcdc',
-				border: '0.0625rem solid #dcdcdc',
-			},
 		},
 		lg: {
-			color: '#dcdcdc',
-			backgroundColor: '#545454',
 			height: '3rem',
-			borderRadius: '0.25rem',
 			padding: {
 				top: '0.25rem',
 				right: '1.25rem',
@@ -381,29 +248,31 @@ export const componentButton = {
 				font: 'normal 700 0.875rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
-			},
-			border: '0.0625rem solid #545454',
-			':hover': {
-				backgroundColor: '#333333',
-				border: '0.0625rem solid #333333',
-			},
-			':active': {
-				backgroundColor: '#333333',
-				border: '0.0625rem solid #333333',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: '#dcdcdc',
-				border: '0.0625rem solid #dcdcdc',
 			},
 		},
 	},
 	'neutral-secondary': {
-		xs: {
+		shared: {
 			color: '#000000',
 			backgroundColor: 'none',
-			height: '1.5rem',
 			borderRadius: '0.25rem',
+			border: '0.0625rem solid #545454',
+			':hover': {
+				backgroundColor: '#ededed',
+				border: '0.0625rem solid #545454',
+			},
+			':active': {
+				backgroundColor: '#ededed',
+				border: '0.0625rem solid #545454',
+			},
+			':disabled': {
+				color: '#999999',
+				backgroundColor: 'none',
+				border: '0.0625rem solid #dcdcdc',
+			},
+		},
+		xs: {
+			height: '1.5rem',
 			padding: {
 				top: '0.25rem',
 				right: '0.5rem',
@@ -415,26 +284,9 @@ export const componentButton = {
 				letterSpacing: '0rem',
 				fontWidth: 95,
 			},
-			border: '0.0625rem solid #545454',
-			':hover': {
-				backgroundColor: '#ededed',
-				border: '0.0625rem solid #545454',
-			},
-			':active': {
-				backgroundColor: '#ededed',
-				border: '0.0625rem solid #545454',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: 'none',
-				border: '0.0625rem solid #dcdcdc',
-			},
 		},
 		sm: {
-			color: '#000000',
-			backgroundColor: 'none',
 			height: '2rem',
-			borderRadius: '0.25rem',
 			padding: {
 				top: '0.25rem',
 				right: '0.75rem',
@@ -446,26 +298,9 @@ export const componentButton = {
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
 			},
-			border: '0.0625rem solid #545454',
-			':hover': {
-				backgroundColor: '#ededed',
-				border: '0.0625rem solid #545454',
-			},
-			':active': {
-				backgroundColor: '#ededed',
-				border: '0.0625rem solid #545454',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: 'none',
-				border: '0.0625rem solid #dcdcdc',
-			},
 		},
 		md: {
-			color: '#000000',
-			backgroundColor: 'none',
 			height: '2.5rem',
-			borderRadius: '0.25rem',
 			padding: {
 				top: '0.25rem',
 				right: '1rem',
@@ -477,26 +312,9 @@ export const componentButton = {
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
 			},
-			border: '0.0625rem solid #545454',
-			':hover': {
-				backgroundColor: '#ededed',
-				border: '0.0625rem solid #545454',
-			},
-			':active': {
-				backgroundColor: '#ededed',
-				border: '0.0625rem solid #545454',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: 'none',
-				border: '0.0625rem solid #dcdcdc',
-			},
 		},
 		lg: {
-			color: '#000000',
-			backgroundColor: 'none',
 			height: '3rem',
-			borderRadius: '0.25rem',
 			padding: {
 				top: '0.25rem',
 				right: '1.25rem',
@@ -507,20 +325,6 @@ export const componentButton = {
 				font: 'normal 700 0.875rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
-			},
-			border: '0.0625rem solid #545454',
-			':hover': {
-				backgroundColor: '#ededed',
-				border: '0.0625rem solid #545454',
-			},
-			':active': {
-				backgroundColor: '#ededed',
-				border: '0.0625rem solid #545454',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: 'none',
-				border: '0.0625rem solid #dcdcdc',
 			},
 		},
 	},

@@ -25,8 +25,8 @@ export const buttonStyles = (
 		cursor: ${theme.shared.cursor};
 		justify-content: ${theme.shared['justify-content']};
 		align-items: ${theme.shared['align-items']};
-		color: ${theme[variant][size].color};
-		background: ${theme[variant][size].backgroundColor};
+		color: ${theme[variant].shared.color};
+		background: ${theme[variant].shared.backgroundColor};
 		height: ${theme[variant][size].height};
 		padding: ${theme[variant][size].padding.top}
 			${theme[variant][size].padding.right}
@@ -35,33 +35,29 @@ export const buttonStyles = (
 		${convertTypographyToEmotionStringStyle(
 			theme[variant][size].typography,
 		)}
-		border: ${theme[variant][size].border};
-		border-radius: ${theme[variant][size].borderRadius};
+		border: ${theme[variant].shared.border};
+		border-radius: ${theme[variant].shared.borderRadius};
 
-		&:hover,
 		&[data-hovered] {
-			background: ${theme[variant][size][':hover'].backgroundColor};
-			border: ${theme[variant][size][':hover'].border};
+			background: ${theme[variant].shared[':hover'].backgroundColor};
+			border: ${theme[variant].shared[':hover'].border};
 		}
 
-		&:active,
 		&[data-pressed] {
-			background: ${theme[variant][size][':active'].backgroundColor};
-			border: ${theme[variant][size][':active'].border};
+			background: ${theme[variant].shared[':active'].backgroundColor};
+			border: ${theme[variant].shared[':active'].border};
 		}
 
-		&:focus-visible,
-		&[data-focused] {
+		&[data-focus-visible] {
 			outline: ${theme.shared[':focus-visible'].outline};
 			outline-offset: ${theme.shared[':focus-visible']['outline-offset']};
 		}
 
-		&[disabled],
 		&[data-disabled] {
 			cursor: ${theme.shared[':disabled'].cursor};
-			color: ${theme[variant][size][':disabled'].color};
-			background: ${theme[variant][size][':disabled'].backgroundColor};
-			border: ${theme[variant][size][':disabled'].border};
+			color: ${theme[variant].shared[':disabled'].color};
+			background: ${theme[variant].shared[':disabled'].backgroundColor};
+			border: ${theme[variant].shared[':disabled'].border};
 		}
 	`;
 };

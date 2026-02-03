@@ -1,11 +1,15 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
-import LinkButtonStories, { LinkButtonTable } from './LinkButton.stories';
+import LinkButtonStories, {
+	LinkButtonTable,
+	CustomTheme,
+	CssOverrides,
+} from './LinkButton.stories';
 
 <Meta of={LinkButtonStories} />
 
 # LinkButton
 
-An anchor element styled like the Stand button, using React Aria for focus management and accessibility. It keeps link semantics (including `href`, `target`, and `rel`) while sharing the same variants and sizes as `Button`. Refer to React Aria's [Link docs](https://react-aria.adobe.com/Link) for behaviours and accessibility notes.
+An anchor element styled like the Stand `Button` component, and based on the react-aria `Link` component. It keeps link semantics (including `href`, `target`, and `rel`) while sharing the same variants and sizes as `Button`. Refer to React Aria's [Link docs](https://react-aria.adobe.com/Link) for usage guidance.
 
 ## When to use
 
@@ -23,7 +27,11 @@ An anchor element styled like the Stand button, using React Aria for focus manag
 
 See the `peerDependencies` section of `package.json` for compatible versions.
 
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
 ## Example usage
+
+See "Emotion/React" heading on [codesandbox.io](https://codesandbox.io/p/sandbox/jctg2k)
 
 ```tsx
 import { LinkButton } from './LinkButton';
@@ -78,25 +86,30 @@ const Example = () => (
 
 ## Customisation
 
-LinkButton reuses the `Button` theme tokens. Prefer the default theme; when needed use `theme` or `cssOverrides`.
+We recommend using the default theme. When needed, use the `theme` or `cssOverrides` props.
 
 ### Custom theme
 
+<Story of={CustomTheme} />
+
 ```tsx
-import type { LinkButtonTheme } from './LinkButton';
-import { LinkButton } from './LinkButton';
-import { baseColors, baseSpacing } from '@guardian/stand';
+import type { LinkButtonTheme } from '@guardian/stand/button';
+import { LinkButton } from '@guardian/stand/button';
+import { baseColors } from '@guardian/stand';
 
 const customTheme: Partial<LinkButtonTheme> = {
-	'emphasised-secondary': {
-		md: {
-			backgroundColor: baseColors.blue[100],
-			border: `0.0625rem solid ${baseColors.blue[400]}`,
-			padding: {
-				top: baseSpacing['12-rem'],
-				right: baseSpacing['20-rem'],
-				bottom: baseSpacing['12-rem'],
-				left: baseSpacing['20-rem'],
+	'emphasised-primary': {
+		shared: {
+			backgroundColor: baseColors['cool-purple'][200],
+			color: baseColors['cool-purple'][900],
+			border: `2px solid ${baseColors['cool-purple'][700]}`,
+			':hover': {
+				backgroundColor: baseColors['cool-purple'][300],
+				border: `2px solid ${baseColors['cool-purple'][700]}`,
+			},
+			':active': {
+				backgroundColor: baseColors['cool-purple'][400],
+				border: `2px solid ${baseColors['cool-purple'][700]}`,
 			},
 		},
 	},
@@ -104,136 +117,44 @@ const customTheme: Partial<LinkButtonTheme> = {
 
 const Component = () => (
 	<LinkButton
-		variant="emphasised-secondary"
+		href="/"
+		variant="emphasised-primary"
 		size="md"
-		href="/custom"
 		theme={customTheme}
 	>
-		Custom themed link-button
+		Custom Themed LinkButton
 	</LinkButton>
 );
 ```
 
 ### CSS overrides
 
+<Story of={CssOverrides} />
+
 ```tsx
-import { LinkButton } from './LinkButton';
-import { baseColors } from '@guardian/stand';
+import { LinkButton } from '@guardian/stand/button';
+import { baseSpacing } from '@guardian/stand';
 import { css } from '@emotion/react';
 
 const customStyles = css`
-	text-decoration: underline;
-	text-decoration-thickness: 0.125rem;
-	text-decoration-color: ${baseColors.magenta[500]};
+	width: 100%;
+	text-transform: full-width;
+	font-variant: small-caps;
+	padding-inline: ${baseSpacing['24-rem']};
 `;
 
 const Component = () => (
 	<LinkButton
-		variant="neutral-secondary"
+		href="/"
+		variant="neutral-primary"
 		size="sm"
-		href="/decorated"
 		cssOverrides={customStyles}
 	>
-		Decorated link
+		CSSOverrides LinkButton
 	</LinkButton>
 );
 ```
 
 ## Custom Component Build
 
-For non-React usage, import the CSS variables and style your own anchor element.
-
-```css
-/* import the font and button variables */
-@import '@guardian/stand/fonts/OpenSans.css';
-@import '@guardian/stand/component/button.css';
-
-.stand-link-button {
-	display: var(--component-button-shared-display);
-	-webkit-appearance: var(--component-button-shared-webkit-appearance);
-	text-align: var(--component-button-shared-text-align);
-	box-shadow: var(--component-button-shared-box-shadow);
-	text-decoration: var(--component-button-shared-text-decoration);
-	cursor: var(--component-button-shared-cursor);
-	justify-content: var(--component-button-shared-justify-content);
-	align-items: var(--component-button-shared-align-items);
-	background: var(--component-button-neutral-primary-md-background-color);
-	color: var(--component-button-neutral-primary-md-color);
-	height: var(--component-button-neutral-primary-md-height);
-	padding: var(--component-button-neutral-primary-md-padding-top)
-		var(--component-button-neutral-primary-md-padding-right)
-		var(--component-button-neutral-primary-md-padding-bottom)
-		var(--component-button-neutral-primary-md-padding-left);
-	border: var(--component-button-neutral-primary-md-border);
-	border-radius: var(--component-button-neutral-primary-md-border-radius);
-	font: var(--component-button-neutral-primary-md-typography-font);
-	letter-spacing: var(
-		--component-button-neutral-primary-md-typography-letter-spacing
-	);
-	font-variation-settings: 'wdth'
-		var(--component-button-neutral-primary-md-typography-font-width);
-}
-
-.stand-link-button:hover {
-	background: var(
-		--component-button-neutral-primary-md-hover-background-color
-	);
-	border: var(--component-button-neutral-primary-md-hover-border);
-}
-
-.stand-link-button:active {
-	background: var(
-		--component-button-neutral-primary-md-active-background-color
-	);
-	border: var(--component-button-neutral-primary-md-active-border);
-}
-
-.stand-link-button:focus-visible {
-	outline: var(--component-button-shared-focus-visible-outline);
-	outline-offset: var(--component-button-shared-focus-visible-outline-offset);
-}
-
-.stand-link-button[aria-disabled='true'] {
-	cursor: var(--component-button-shared-disabled-cursor);
-	background: var(
-		--component-button-neutral-primary-md-disabled-background-color
-	);
-	border: var(--component-button-neutral-primary-md-disabled-border);
-	color: var(--component-button-neutral-primary-md-disabled-color);
-	pointer-events: none;
-}
-```
-
-```html
-<a class="stand-link-button" href="/" aria-disabled="false">LinkButton Label</a>
-```
-
-**TypeScript/JavaScript**
-
-`LinkButton` uses the same token object as `Button`. You can read the values via `componentButton`:
-
-```ts
-import { componentButton } from '@guardian/stand/button';
-
-const style = `
-  display: ${componentButton.shared.display};
-  justify-content: ${componentButton.shared['justify-content']};
-  align-items: ${componentButton.shared['align-items']};
-  background: ${componentButton['neutral-secondary'].md.backgroundColor};
-  color: ${componentButton['neutral-secondary'].md.color};
-  height: ${componentButton['neutral-secondary'].md.height};
-  padding: ${componentButton['neutral-secondary'].md.padding.top}
-    ${componentButton['neutral-secondary'].md.padding.right}
-    ${componentButton['neutral-secondary'].md.padding.bottom}
-    ${componentButton['neutral-secondary'].md.padding.left};
-  border: ${componentButton['neutral-secondary'].md.border};
-  border-radius: ${componentButton['neutral-secondary'].md.borderRadius};
-  font: ${componentButton['neutral-secondary'].md.typography.font};
-  letter-spacing: ${componentButton['neutral-secondary'].md.typography.letterSpacing};
-  font-variation-settings: 'wdth' ${componentButton['neutral-secondary'].md.typography.fontWidth};
-`;
-
-document.getElementById('app')!.innerHTML = `
-    <a style="${style}" href="/">JS generated link-button</a>
-`;
-```
+See the "Custom Component Build" section in the [Button documentation](/docs/stand-editorial-design-system-components-button--docs#custom-component-build) for guidance on building a custom LinkButton component without React/Emotion.

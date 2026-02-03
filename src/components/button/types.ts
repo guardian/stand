@@ -9,7 +9,7 @@ export interface ButtonProps
 	/**
 	 * Size variant of the avatar
 	 */
-	size?: keyof ButtonTheme['emphasised-primary'];
+	size?: keyof Omit<ButtonTheme['emphasised-primary'], 'shared'>;
 	/**
 	 * Variant of the button
 	 */
