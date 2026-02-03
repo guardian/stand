@@ -14,6 +14,11 @@
 			"import": "./dist/avatar.js",
 			"require": "./dist/avatar.cjs"
 		},
+		"./button": {
+			"types": "./dist/types/button.d.ts",
+			"import": "./dist/button.js",
+			"require": "./dist/button.cjs"
+		},
 		"./byline": {
 			"types": "./dist/types/byline.d.ts",
 			"import": "./dist/byline.js",
@@ -41,13 +46,17 @@
 		"./component/byline.css": "./dist/styleD/build/css/component/byline.css",
 		"./component/tagAutocomplete.css": "./dist/styleD/build/css/component/tagAutocomplete.css",
 		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css",
-		"./component/avatar.css": "./dist/styleD/build/css/component/avatar.css"
+		"./component/avatar.css": "./dist/styleD/build/css/component/avatar.css",
+		"./component/button.css": "./dist/styleD/build/css/component/button.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
 		"*": {
 			"avatar": [
 				"./dist/types/avatar.d.ts"
+			],
+			"button": [
+				"./dist/types/button.d.ts"
 			],
 			"byline": [
 				"./dist/types/byline.d.ts"

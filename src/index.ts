@@ -18,6 +18,8 @@ export type { ComponentTagTable } from './styleD/build/typescript/component/tagT
  */
 export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
+export { componentButton } from './styleD/build/typescript/component/button';
+export type { ComponentButton } from './styleD/build/typescript/component/button';
 
 /**
  * style dictionary exports - base

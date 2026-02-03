@@ -9,11 +9,16 @@ import { nodeExternals } from 'rollup-plugin-node-externals';
  * @type {import("rollup").RollupOptions['input']}
  */
 const input = {
+	// root entry point - design tokens
 	index: 'src/index.ts',
+	// additional utility exports
+	utils: 'src/utils.ts',
+	// design system components
 	avatar: 'src/avatar.ts',
+	button: 'src/button.ts',
+	// editorial components
 	byline: 'src/byline.ts',
 	'tag-picker': 'src/tag-picker.ts',
-	utils: 'src/utils.ts',
 };
 
 /**

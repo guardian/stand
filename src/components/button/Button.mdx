@@ -1,0 +1,655 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import ButtonStories, {
+	EmphasisedPrimaryXs,
+	EmphasisedPrimarySm,
+	EmphasisedPrimaryMd,
+	EmphasisedPrimaryLg,
+	EmphasisedPrimaryXsDisabled,
+	EmphasisedPrimarySmDisabled,
+	EmphasisedPrimaryMdDisabled,
+	EmphasisedPrimaryLgDisabled,
+	EmphasisedSecondaryXs,
+	EmphasisedSecondarySm,
+	EmphasisedSecondaryMd,
+	EmphasisedSecondaryLg,
+	EmphasisedSecondaryXsDisabled,
+	EmphasisedSecondarySmDisabled,
+	EmphasisedSecondaryMdDisabled,
+	EmphasisedSecondaryLgDisabled,
+	NeutralPrimaryXs,
+	NeutralPrimarySm,
+	NeutralPrimaryMd,
+	NeutralPrimaryLg,
+	NeutralPrimaryXsDisabled,
+	NeutralPrimarySmDisabled,
+	NeutralPrimaryMdDisabled,
+	NeutralPrimaryLgDisabled,
+	NeutralSecondaryXs,
+	NeutralSecondarySm,
+	NeutralSecondaryMd,
+	NeutralSecondaryLg,
+	NeutralSecondaryXsDisabled,
+	NeutralSecondarySmDisabled,
+	NeutralSecondaryMdDisabled,
+	NeutralSecondaryLgDisabled,
+} from './Button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+A React Aria powered button that follows Stand theming and accessibility defaults. It supports multiple visual variants, four sizes, disabled state handling, and render props for pending interactions. See React Aria guidance in their [Button docs](https://react-aria.adobe.com/Button).
+
+## When to use
+
+- Primary and secondary actions that require clear affordance
+- Form submissions or confirm/cancel flows
+- Re-usable button styles that align with Stand tokens
+- Situations where you need a pending state without layout shift
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+## Example usage
+
+```tsx
+import { Button } from '@guardian/stand/button';
+import type { ButtonProps, ButtonTheme } from '@guardian/stand/button';
+
+const Example = () => (
+	<>
+		<Button
+			variant="emphasised-primary"
+			size="md"
+			onPress={() => {
+				console.log('Primary action');
+			}}
+		>
+			Publish
+		</Button>
+
+		<Button variant="neutral-secondary" size="sm" isDisabled>
+			Disabled
+		</Button>
+	</>
+);
+```
+
+## Props
+
+| Name           | Type                                                                                               | Required | Default                | Description                                                                                       |
+| -------------- | -------------------------------------------------------------------------------------------------- | -------- | ---------------------- | ------------------------------------------------------------------------------------------------- |
+| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`                                                               | No       | `'md'`                 | Controls the button dimensions and typography.                                                    |
+| `variant`      | `'emphasised-primary'` \| `'emphasised-secondary'` \| `'neutral-primary'` \| `'neutral-secondary'` | No       | `'emphasised-primary'` | Chooses the colour scheme and interaction states.                                                 |
+| `children`     | `ReactNode` \| `RenderProps`                                                                       | Yes      | N/A                    | Content inside the button. Render props receive `{ isPending }` from React Aria.                  |
+| `isDisabled`   | `boolean`                                                                                          | No       | `false`                | Disables interaction and applies disabled styling.                                                |
+| `theme`        | `ButtonTheme` (partial)                                                                            | No       | N/A                    | Override Stand tokens for this instance; merged over the default theme.                           |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                                                         | No       | N/A                    | Low-level escape hatch for Emotion overrides when theming is insufficient.                        |
+| `className`    | `string`                                                                                           | No       | N/A                    | Optional class name forwarded to the root React Aria button.                                      |
+| `...props`     | `ReactAria Button` props                                                                           | No       | N/A                    | All other props from `react-aria-components` `Button` (e.g. `type`, `autoFocus`, event handlers). |
+
+**`size` and `variant`**
+
+- Sizes: `xs`, `sm`, `md`, `lg`
+- Variants: `emphasised-primary`, `emphasised-secondary`, `neutral-primary`, `neutral-secondary`
+
+## Stories
+
+### Emphasised primary
+
+#### Enabled
+
+<Story of={EmphasisedPrimaryXs} />
+<Story of={EmphasisedPrimarySm} />
+<Story of={EmphasisedPrimaryMd} />
+<Story of={EmphasisedPrimaryLg} />
+
+#### Disabled
+
+<Story of={EmphasisedPrimaryXsDisabled} />
+<Story of={EmphasisedPrimarySmDisabled} />
+<Story of={EmphasisedPrimaryMdDisabled} />
+<Story of={EmphasisedPrimaryLgDisabled} />
+
+### Emphasised secondary
+
+#### Enabled
+
+<Story of={EmphasisedSecondaryXs} />
+<Story of={EmphasisedSecondarySm} />
+<Story of={EmphasisedSecondaryMd} />
+<Story of={EmphasisedSecondaryLg} />
+
+#### Disabled
+
+<Story of={EmphasisedSecondaryXsDisabled} />
+<Story of={EmphasisedSecondarySmDisabled} />
+<Story of={EmphasisedSecondaryMdDisabled} />
+<Story of={EmphasisedSecondaryLgDisabled} />
+
+### Neutral primary
+
+#### Enabled
+
+<Story of={NeutralPrimaryXs} />
+<Story of={NeutralPrimarySm} />
+<Story of={NeutralPrimaryMd} />
+<Story of={NeutralPrimaryLg} />
+
+#### Disabled
+
+<Story of={NeutralPrimaryXsDisabled} />
+<Story of={NeutralPrimarySmDisabled} />
+<Story of={NeutralPrimaryMdDisabled} />
+<Story of={NeutralPrimaryLgDisabled} />
+
+### Neutral secondary
+
+#### Enabled
+
+<Story of={NeutralSecondaryXs} />
+<Story of={NeutralSecondarySm} />
+<Story of={NeutralSecondaryMd} />
+<Story of={NeutralSecondaryLg} />
+
+#### Disabled
+
+<Story of={NeutralSecondaryXsDisabled} />
+<Story of={NeutralSecondarySmDisabled} />
+<Story of={NeutralSecondaryMdDisabled} />
+<Story of={NeutralSecondaryLgDisabled} />
+
+## State token matrix
+
+This table lists the button token paths for each variant/size/state combination, matching the React Aria states (enabled, hover, pressed, focus, disabled). Use these when consuming `componentButton` or overriding themes.
+
+<table>
+	<thead>
+		<tr>
+			<th rowSpan="2">Variant / size</th>
+			<th colSpan="5">Emphasised</th>
+			<th colSpan="5">Neutral</th>
+		</tr>
+		<tr>
+			<th>Enabled</th>
+			<th>Hover</th>
+			<th>Pressed</th>
+			<th>Focus</th>
+			<th>Disabled</th>
+			<th>Enabled</th>
+			<th>Hover</th>
+			<th>Pressed</th>
+			<th>Focus</th>
+			<th>Disabled</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Primary xs</td>
+			<td>
+				<code>componentButton['emphasised-primary'].xs</code>
+			</td>
+			<td>
+				<code>componentButton['emphasised-primary'].xs[':hover']</code>
+			</td>
+			<td>
+				<code>componentButton['emphasised-primary'].xs[':active']</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-primary'].xs[':disabled']
+				</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].xs</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].xs[':hover']</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].xs[':active']</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].xs[':disabled']</code>
+			</td>
+		</tr>
+		<tr>
+			<td>Primary sm</td>
+			<td>
+				<code>componentButton['emphasised-primary'].sm</code>
+			</td>
+			<td>
+				<code>componentButton['emphasised-primary'].sm[':hover']</code>
+			</td>
+			<td>
+				<code>componentButton['emphasised-primary'].sm[':active']</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-primary'].sm[':disabled']
+				</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].sm</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].sm[':hover']</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].sm[':active']</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].sm[':disabled']</code>
+			</td>
+		</tr>
+		<tr>
+			<td>Primary md</td>
+			<td>
+				<code>componentButton['emphasised-primary'].md</code>
+			</td>
+			<td>
+				<code>componentButton['emphasised-primary'].md[':hover']</code>
+			</td>
+			<td>
+				<code>componentButton['emphasised-primary'].md[':active']</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-primary'].md[':disabled']
+				</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].md</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].md[':hover']</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].md[':active']</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].md[':disabled']</code>
+			</td>
+		</tr>
+		<tr>
+			<td>Primary lg</td>
+			<td>
+				<code>componentButton['emphasised-primary'].lg</code>
+			</td>
+			<td>
+				<code>componentButton['emphasised-primary'].lg[':hover']</code>
+			</td>
+			<td>
+				<code>componentButton['emphasised-primary'].lg[':active']</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-primary'].lg[':disabled']
+				</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].lg</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].lg[':hover']</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].lg[':active']</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-primary'].lg[':disabled']</code>
+			</td>
+		</tr>
+		<tr>
+			<td>Secondary xs</td>
+			<td>
+				<code>componentButton['emphasised-secondary'].xs</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-secondary'].xs[':hover']
+				</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-secondary'].xs[':active']
+				</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-secondary'].xs[':disabled']
+				</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-secondary'].xs</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-secondary'].xs[':hover']</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-secondary'].xs[':active']</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>
+					componentButton['neutral-secondary'].xs[':disabled']
+				</code>
+			</td>
+		</tr>
+		<tr>
+			<td>Secondary sm</td>
+			<td>
+				<code>componentButton['emphasised-secondary'].sm</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-secondary'].sm[':hover']
+				</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-secondary'].sm[':active']
+				</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-secondary'].sm[':disabled']
+				</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-secondary'].sm</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-secondary'].sm[':hover']</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-secondary'].sm[':active']</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>
+					componentButton['neutral-secondary'].sm[':disabled']
+				</code>
+			</td>
+		</tr>
+		<tr>
+			<td>Secondary md</td>
+			<td>
+				<code>componentButton['emphasised-secondary'].md</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-secondary'].md[':hover']
+				</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-secondary'].md[':active']
+				</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-secondary'].md[':disabled']
+				</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-secondary'].md</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-secondary'].md[':hover']</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-secondary'].md[':active']</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>
+					componentButton['neutral-secondary'].md[':disabled']
+				</code>
+			</td>
+		</tr>
+		<tr>
+			<td>Secondary lg</td>
+			<td>
+				<code>componentButton['emphasised-secondary'].lg</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-secondary'].lg[':hover']
+				</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-secondary'].lg[':active']
+				</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>
+					componentButton['emphasised-secondary'].lg[':disabled']
+				</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-secondary'].lg</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-secondary'].lg[':hover']</code>
+			</td>
+			<td>
+				<code>componentButton['neutral-secondary'].lg[':active']</code>
+			</td>
+			<td>
+				<code>componentButton.shared[':focus-visible']</code>
+			</td>
+			<td>
+				<code>
+					componentButton['neutral-secondary'].lg[':disabled']
+				</code>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+## Customisation
+
+We recommend using the default theme. When needed, use the `theme` or `cssOverrides` props.
+
+### Custom theme
+
+<Story of={EmphasisedPrimaryMd} />
+
+```tsx
+import type { ButtonTheme } from '@guardian/stand/button';
+import { Button } from '@guardian/stand/button';
+import { baseColors, baseSpacing } from '@guardian/stand';
+
+const customTheme: Partial<ButtonTheme> = {
+	'emphasised-primary': {
+		md: {
+			backgroundColor: baseColors.blue[300],
+			border: `0.0625rem solid ${baseColors.blue[400]}`,
+			padding: {
+				top: baseSpacing['8-rem'],
+				right: baseSpacing['16-rem'],
+				bottom: baseSpacing['8-rem'],
+				left: baseSpacing['16-rem'],
+			},
+		},
+	},
+};
+
+const Component = () => (
+	<Button variant="emphasised-primary" size="md" theme={customTheme}>
+		Custom themed button
+	</Button>
+);
+```
+
+### CSS overrides
+
+<Story of={NeutralPrimarySm} />
+
+```tsx
+import { Button } from '@guardian/stand/button';
+import { baseColors, baseSpacing } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	border: 0.125rem dashed ${baseColors.red[500]};
+	padding-inline: ${baseSpacing['24-rem']};
+`;
+
+const Component = () => (
+	<Button variant="neutral-primary" size="sm" cssOverrides={customStyles}>
+		Decorated
+	</Button>
+);
+```
+
+## Custom Component Build
+
+If you are not using React/Emotion, you can build a custom button using the generated CSS variables.
+
+```css
+/* import the font and button variables */
+@import '@guardian/stand/fonts/OpenSans.css';
+@import '@guardian/stand/component/button.css';
+
+.stand-button {
+	display: var(--component-button-shared-display);
+	-webkit-appearance: var(--component-button-shared-webkit-appearance);
+	text-align: var(--component-button-shared-text-align);
+	box-shadow: var(--component-button-shared-box-shadow);
+	text-decoration: var(--component-button-shared-text-decoration);
+	cursor: var(--component-button-shared-cursor);
+	justify-content: var(--component-button-shared-justify-content);
+	align-items: var(--component-button-shared-align-items);
+	background: var(--component-button-emphasised-primary-md-background-color);
+	color: var(--component-button-emphasised-primary-md-color);
+	height: var(--component-button-emphasised-primary-md-height);
+	padding: var(--component-button-emphasised-primary-md-padding-top)
+		var(--component-button-emphasised-primary-md-padding-right)
+		var(--component-button-emphasised-primary-md-padding-bottom)
+		var(--component-button-emphasised-primary-md-padding-left);
+	border: var(--component-button-emphasised-primary-md-border);
+	border-radius: var(--component-button-emphasised-primary-md-border-radius);
+	font: var(--component-button-emphasised-primary-md-typography-font);
+	letter-spacing: var(
+		--component-button-emphasised-primary-md-typography-letter-spacing
+	);
+	font-variation-settings: 'wdth'
+		var(--component-button-emphasised-primary-md-typography-font-width);
+}
+
+.stand-button:hover {
+	background: var(
+		--component-button-emphasised-primary-md-hover-background-color
+	);
+	border: var(--component-button-emphasised-primary-md-hover-border);
+}
+
+.stand-button:active {
+	background: var(
+		--component-button-emphasised-primary-md-active-background-color
+	);
+	border: var(--component-button-emphasised-primary-md-active-border);
+}
+
+.stand-button:focus-visible {
+	outline: var(--component-button-shared-focus-visible-outline);
+	outline-offset: var(--component-button-shared-focus-visible-outline-offset);
+}
+
+.stand-button:disabled {
+	cursor: var(--component-button-shared-disabled-cursor);
+	background: var(
+		--component-button-emphasised-primary-md-disabled-background-color
+	);
+	border: var(--component-button-emphasised-primary-md-disabled-border);
+	color: var(--component-button-emphasised-primary-md-disabled-color);
+}
+```
+
+```html
+<button class="stand-button" type="button">Button Label</button>
+```
+
+**TypeScript/JavaScript**
+
+Use `componentButton` to read the token values directly if you prefer to generate styles in JS/TS:
+
+```ts
+import { componentButton } from '@guardian/stand/button';
+
+const style = `
+  display: ${componentButton.shared.display};
+  justify-content: ${componentButton.shared['justify-content']};
+  align-items: ${componentButton.shared['align-items']};
+  background: ${componentButton['emphasised-primary'].md.backgroundColor};
+  color: ${componentButton['emphasised-primary'].md.color};
+  height: ${componentButton['emphasised-primary'].md.height};
+  padding: ${componentButton['emphasised-primary'].md.padding.top}
+    ${componentButton['emphasised-primary'].md.padding.right}
+    ${componentButton['emphasised-primary'].md.padding.bottom}
+    ${componentButton['emphasised-primary'].md.padding.left};
+  border: ${componentButton['emphasised-primary'].md.border};
+  border-radius: ${componentButton['emphasised-primary'].md.borderRadius};
+  font: ${componentButton['emphasised-primary'].md.typography.font};
+  letter-spacing: ${componentButton['emphasised-primary'].md.typography.letterSpacing};
+  font-variation-settings: 'wdth' ${componentButton['emphasised-primary'].md.typography.fontWidth};
+`;
+
+document.getElementById('app')!.innerHTML = `
+    <button style="${style}" type="button">JS generated button</button>
+`;
+```
