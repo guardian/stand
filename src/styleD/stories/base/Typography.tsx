@@ -26,7 +26,7 @@ const tableCss = css`
 
 	td {
 		padding: 8px;
-		border-bottom: 1px solid ${semanticColors.border.subtle};
+		border-bottom: 1px solid ${semanticColors.border.secondary};
 		vertical-align: middle;
 	}
 

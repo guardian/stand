@@ -5,6 +5,7 @@
 export const baseSizing = {
 	'size-1-px': '1px',
 	'size-2-px': '2px',
+	'size-8-px': '8px',
 	'size-16-px': '16px',
 	'size-18-px': '18px',
 	'size-20-px': '20px',
@@ -14,6 +15,7 @@ export const baseSizing = {
 	'size-48-px': '48px',
 	'size-1-rem': '0.0625rem',
 	'size-2-rem': '0.125rem',
+	'size-8-rem': '0.5rem',
 	'size-16-rem': '1rem',
 	'size-18-rem': '1.125rem',
 	'size-20-rem': '1.25rem',

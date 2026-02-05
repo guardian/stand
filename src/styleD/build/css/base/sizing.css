@@ -5,6 +5,7 @@
 :root {
 	--base-sizing-size-1-px: 1px;
 	--base-sizing-size-2-px: 2px;
+	--base-sizing-size-8-px: 8px;
 	--base-sizing-size-16-px: 16px;
 	--base-sizing-size-18-px: 18px;
 	--base-sizing-size-20-px: 20px;
@@ -14,6 +15,7 @@
 	--base-sizing-size-48-px: 48px;
 	--base-sizing-size-1-rem: 0.0625rem;
 	--base-sizing-size-2-rem: 0.125rem;
+	--base-sizing-size-8-rem: 0.5rem;
 	--base-sizing-size-16-rem: 1rem;
 	--base-sizing-size-18-rem: 1.125rem;
 	--base-sizing-size-20-rem: 1.25rem;

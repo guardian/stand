@@ -123,6 +123,7 @@ export default {
 				'name/camel',
 				'color/hex',
 				'typography/css/shorthand',
+				'border/css/shorthand',
 			],
 			buildPath: 'build/typescript/',
 			files: generateSplitTokenConfig(fileList, 'typescript/const', 'ts'),
