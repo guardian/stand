@@ -1,0 +1,54 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-avatar-shared-color-green-text: #24491d;
+	--component-avatar-shared-color-green-background: #cde4c9;
+	--component-avatar-shared-color-green-border: unset;
+	--component-avatar-shared-color-blue-text: #092f62;
+	--component-avatar-shared-color-blue-background: #bdd4f4;
+	--component-avatar-shared-color-blue-border: unset;
+	--component-avatar-shared-color-red-text: #65170e;
+	--component-avatar-shared-color-red-background: #f5c6c0;
+	--component-avatar-shared-color-red-border: unset;
+	--component-avatar-shared-color-cyan-text: #00344e;
+	--component-avatar-shared-color-cyan-background: #b8d8e7;
+	--component-avatar-shared-color-cyan-border: unset;
+	--component-avatar-shared-color-teal-text: #0e2729;
+	--component-avatar-shared-color-teal-background: #c5dfe1;
+	--component-avatar-shared-color-teal-border: unset;
+	--component-avatar-shared-color-cool-purple-text: #394069;
+	--component-avatar-shared-color-cool-purple-background: #dbdff7;
+	--component-avatar-shared-color-cool-purple-border: unset;
+	--component-avatar-shared-color-warm-purple-text: #381350;
+	--component-avatar-shared-color-warm-purple-background: #dac3e8;
+	--component-avatar-shared-color-warm-purple-border: unset;
+	--component-avatar-shared-color-magenta-text: #581734;
+	--component-avatar-shared-color-magenta-background: #edc6d7;
+	--component-avatar-shared-color-magenta-border: unset;
+	--component-avatar-shared-color-orange-text: #693c16;
+	--component-avatar-shared-color-orange-background: #fcddc6;
+	--component-avatar-shared-color-orange-border: unset;
+	--component-avatar-shared-color-yellow-text: #5b4a0b;
+	--component-avatar-shared-color-yellow-background: #fbeebf;
+	--component-avatar-shared-color-yellow-border: unset;
+	--component-avatar-shared-color-outlined-text: #000000;
+	--component-avatar-shared-color-outlined-background: none;
+	--component-avatar-shared-color-outlined-border: 0.0625rem solid #8d8d8d;
+	--component-avatar-shared-display: inline-flex;
+	--component-avatar-shared-align-items: center;
+	--component-avatar-shared-justify-content: center;
+	--component-avatar-shared-overflow: hidden;
+	--component-avatar-shared-flex-shrink: 0;
+	--component-avatar-shared-border-radius: 50%;
+	--component-avatar-shared-user-select: none;
+	--component-avatar-sm-size: 2rem;
+	--component-avatar-sm-typography-font: normal 700 0.75rem/1 'Open Sans';
+	--component-avatar-sm-typography-letter-spacing: 0rem;
+	--component-avatar-sm-typography-font-width: 95;
+	--component-avatar-md-size: 2.5rem;
+	--component-avatar-md-typography-font: normal 700 0.875rem/1 'Open Sans';
+	--component-avatar-md-typography-letter-spacing: -0.0125rem;
+	--component-avatar-md-typography-font-width: 95;
+}

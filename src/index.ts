@@ -14,6 +14,12 @@ export { componentTagTable } from './styleD/build/typescript/component/tagTable'
 export type { ComponentTagTable } from './styleD/build/typescript/component/tagTable';
 
 /**
+ * design system components tokens exports
+ */
+export { componentAvatar } from './styleD/build/typescript/component/avatar';
+export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
+
+/**
  * style dictionary exports - base
  */
 export { baseColors } from './styleD/build/typescript/base/colors';

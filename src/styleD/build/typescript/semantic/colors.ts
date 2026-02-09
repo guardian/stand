@@ -27,8 +27,9 @@ export const semanticColors = {
 		'interactive-disabled': '#999999',
 	},
 	bg: {
-		'default-onDark': '#121212',
-		'default-onLight': '#ffffff',
+		base: '#ffffff',
+		'raised-1': '#f6f6f6',
+		'raised-2': '#ededed',
 	},
 	surface: {
 		'light-1': '#f6f6f6',
@@ -36,8 +37,9 @@ export const semanticColors = {
 		'dark-1': '#333333',
 	},
 	border: {
-		subtle: '#cccccc',
 		default: '#8d8d8d',
+		secondary: '#cccccc',
+		tertiary: '#ededed',
 		strong: '#545454',
 		'inverse-strong': '#ffffff',
 		'interactive-emphasised': '#0d4289',
