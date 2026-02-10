@@ -22,7 +22,7 @@ export const componentButton = {
 	},
 	'emphasised-primary': {
 		shared: {
-			color: '#dcdcdc',
+			color: '#ffffff',
 			backgroundColor: '#0d4289',
 			borderRadius: '0.25rem',
 			border: '0.0625rem solid #0d4289',
@@ -31,8 +31,8 @@ export const componentButton = {
 				border: '0.0625rem solid #092f62',
 			},
 			':active': {
-				backgroundColor: '#092f62',
-				border: '0.0625rem solid #092f62',
+				backgroundColor: '#061d3c',
+				border: '0.0625rem solid #061d3c',
 			},
 			':disabled': {
 				color: '#999999',
@@ -58,9 +58,9 @@ export const componentButton = {
 			height: '2rem',
 			padding: {
 				top: '0.25rem',
-				right: '0.75rem',
+				right: '0.625rem',
 				bottom: '0.25rem',
-				left: '0.75rem',
+				left: '0.625rem',
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
@@ -72,9 +72,9 @@ export const componentButton = {
 			height: '2.5rem',
 			padding: {
 				top: '0.25rem',
-				right: '1rem',
+				right: '0.75rem',
 				bottom: '0.25rem',
-				left: '1rem',
+				left: '0.75rem',
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
@@ -86,12 +86,12 @@ export const componentButton = {
 			height: '3rem',
 			padding: {
 				top: '0.25rem',
-				right: '1.25rem',
+				right: '1rem',
 				bottom: '0.25rem',
-				left: '1.25rem',
+				left: '1rem',
 			},
 			typography: {
-				font: 'normal 700 0.875rem/1 Open Sans',
+				font: 'normal 700 1rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
 			},
@@ -108,7 +108,7 @@ export const componentButton = {
 				border: '0.0625rem solid #0d4289',
 			},
 			':active': {
-				backgroundColor: '#e8f0fb',
+				backgroundColor: '#c5d9f4',
 				border: '0.0625rem solid #0d4289',
 			},
 			':disabled': {
@@ -135,9 +135,9 @@ export const componentButton = {
 			height: '2rem',
 			padding: {
 				top: '0.25rem',
-				right: '0.75rem',
+				right: '0.625rem',
 				bottom: '0.25rem',
-				left: '0.75rem',
+				left: '0.625rem',
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
@@ -149,9 +149,9 @@ export const componentButton = {
 			height: '2.5rem',
 			padding: {
 				top: '0.25rem',
-				right: '1rem',
+				right: '0.75rem',
 				bottom: '0.25rem',
-				left: '1rem',
+				left: '0.75rem',
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
@@ -163,12 +163,12 @@ export const componentButton = {
 			height: '3rem',
 			padding: {
 				top: '0.25rem',
-				right: '1.25rem',
+				right: '1rem',
 				bottom: '0.25rem',
-				left: '1.25rem',
+				left: '1rem',
 			},
 			typography: {
-				font: 'normal 700 0.875rem/1 Open Sans',
+				font: 'normal 700 1rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
 			},
@@ -176,7 +176,7 @@ export const componentButton = {
 	},
 	'neutral-primary': {
 		shared: {
-			color: '#dcdcdc',
+			color: '#ffffff',
 			backgroundColor: '#545454',
 			borderRadius: '0.25rem',
 			border: '0.0625rem solid #545454',
@@ -185,8 +185,8 @@ export const componentButton = {
 				border: '0.0625rem solid #333333',
 			},
 			':active': {
-				backgroundColor: '#333333',
-				border: '0.0625rem solid #333333',
+				backgroundColor: '#121212',
+				border: '0.0625rem solid #121212',
 			},
 			':disabled': {
 				color: '#999999',
@@ -212,9 +212,9 @@ export const componentButton = {
 			height: '2rem',
 			padding: {
 				top: '0.25rem',
-				right: '0.75rem',
+				right: '0.625rem',
 				bottom: '0.25rem',
-				left: '0.75rem',
+				left: '0.625rem',
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
@@ -226,9 +226,9 @@ export const componentButton = {
 			height: '2.5rem',
 			padding: {
 				top: '0.25rem',
-				right: '1rem',
+				right: '0.75rem',
 				bottom: '0.25rem',
-				left: '1rem',
+				left: '0.75rem',
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
@@ -240,12 +240,12 @@ export const componentButton = {
 			height: '3rem',
 			padding: {
 				top: '0.25rem',
-				right: '1.25rem',
+				right: '1rem',
 				bottom: '0.25rem',
-				left: '1.25rem',
+				left: '1rem',
 			},
 			typography: {
-				font: 'normal 700 0.875rem/1 Open Sans',
+				font: 'normal 700 1rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
 			},
@@ -262,7 +262,7 @@ export const componentButton = {
 				border: '0.0625rem solid #545454',
 			},
 			':active': {
-				backgroundColor: '#ededed',
+				backgroundColor: '#dcdcdc',
 				border: '0.0625rem solid #545454',
 			},
 			':disabled': {
@@ -289,9 +289,9 @@ export const componentButton = {
 			height: '2rem',
 			padding: {
 				top: '0.25rem',
-				right: '0.75rem',
+				right: '0.625rem',
 				bottom: '0.25rem',
-				left: '0.75rem',
+				left: '0.625rem',
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
@@ -303,9 +303,9 @@ export const componentButton = {
 			height: '2.5rem',
 			padding: {
 				top: '0.25rem',
-				right: '1rem',
+				right: '0.75rem',
 				bottom: '0.25rem',
-				left: '1rem',
+				left: '0.75rem',
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
@@ -317,12 +317,12 @@ export const componentButton = {
 			height: '3rem',
 			padding: {
 				top: '0.25rem',
-				right: '1.25rem',
+				right: '1rem',
 				bottom: '0.25rem',
-				left: '1.25rem',
+				left: '1rem',
 			},
 			typography: {
-				font: 'normal 700 0.875rem/1 Open Sans',
+				font: 'normal 700 1rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
 			},

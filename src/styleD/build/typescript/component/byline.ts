@@ -18,7 +18,7 @@ export const componentByline = {
 		borderRadius: '8px',
 		paddingX: '4px',
 		paddingY: '2px',
-		selectedBorderColor: '#bdd4f4',
+		selectedBorderColor: '#c5d9f4',
 		taggedBackgroundColor: '#dcdcdc',
 		untaggedColor: '#000000',
 	},

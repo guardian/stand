@@ -59,7 +59,7 @@
 				"shared": {
 					"color": {
 						"$type": "color",
-						"$value": "{semantic.colors.text.inverse-default}"
+						"$value": "{semantic.colors.text.inverse-strong}"
 					},
 					"backgroundColor": {
 						"$type": "color",
@@ -174,7 +174,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.10-rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -182,7 +182,7 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.10-rem}"
 						}
 					},
 					"typography": {
@@ -212,7 +212,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.12-rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -220,7 +220,7 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.12-rem}"
 						}
 					},
 					"typography": {
@@ -250,7 +250,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.20-rem}"
+							"$value": "{base.spacing.16-rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -258,21 +258,21 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.20-rem}"
+							"$value": "{base.spacing.16-rem}"
 						}
 					},
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-sm.font}"
+							"$value": "{semantic.typography.interactive-md.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-sm.letterSpacing}"
+							"$value": "{semantic.typography.interactive-md.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+							"$value": "{semantic.typography.interactive-md.fontWidth}"
 						}
 					}
 				}
@@ -396,7 +396,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.10-rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -404,7 +404,7 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.10-rem}"
 						}
 					},
 					"typography": {
@@ -434,7 +434,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.12-rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -442,7 +442,7 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.12-rem}"
 						}
 					},
 					"typography": {
@@ -472,7 +472,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.20-rem}"
+							"$value": "{base.spacing.16-rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -480,21 +480,21 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.20-rem}"
+							"$value": "{base.spacing.16-rem}"
 						}
 					},
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-sm.font}"
+							"$value": "{semantic.typography.interactive-md.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-sm.letterSpacing}"
+							"$value": "{semantic.typography.interactive-md.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+							"$value": "{semantic.typography.interactive-md.fontWidth}"
 						}
 					}
 				}
@@ -503,7 +503,7 @@
 				"shared": {
 					"color": {
 						"$type": "color",
-						"$value": "{semantic.colors.text.inverse-default}"
+						"$value": "{semantic.colors.text.inverse-strong}"
 					},
 					"backgroundColor": {
 						"$type": "color",
@@ -618,7 +618,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.10-rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -626,7 +626,7 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.10-rem}"
 						}
 					},
 					"typography": {
@@ -656,7 +656,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.12-rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -664,7 +664,7 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.12-rem}"
 						}
 					},
 					"typography": {
@@ -694,7 +694,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.20-rem}"
+							"$value": "{base.spacing.16-rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -702,21 +702,21 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.20-rem}"
+							"$value": "{base.spacing.16-rem}"
 						}
 					},
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-sm.font}"
+							"$value": "{semantic.typography.interactive-md.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-sm.letterSpacing}"
+							"$value": "{semantic.typography.interactive-md.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+							"$value": "{semantic.typography.interactive-md.fontWidth}"
 						}
 					}
 				}
@@ -840,7 +840,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.10-rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -848,7 +848,7 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.10-rem}"
 						}
 					},
 					"typography": {
@@ -878,7 +878,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.12-rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -886,7 +886,7 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.12-rem}"
 						}
 					},
 					"typography": {
@@ -916,7 +916,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.20-rem}"
+							"$value": "{base.spacing.16-rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -924,21 +924,21 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.20-rem}"
+							"$value": "{base.spacing.16-rem}"
 						}
 					},
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-sm.font}"
+							"$value": "{semantic.typography.interactive-md.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-sm.letterSpacing}"
+							"$value": "{semantic.typography.interactive-md.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+							"$value": "{semantic.typography.interactive-md.fontWidth}"
 						}
 					}
 				}

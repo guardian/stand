@@ -203,5 +203,10 @@ export const semanticTypography = {
 		letterSpacing: '-0.0125rem',
 		fontWidth: 95,
 	},
+	'interactive-md': {
+		font: 'normal 700 1rem/1 Open Sans',
+		letterSpacing: '-0.0125rem',
+		fontWidth: 95,
+	},
 };
 export type SemanticTypography = typeof semanticTypography;
