@@ -42,7 +42,7 @@ export function UserMenu({
 			</TitleText>
 			<div>
 				<p>
-					Customise your reeading & writing experience.
+					Customise your reading & writing experience.{' '}
 					{feedBacklink && (
 						<a href={feedBacklink} target="_blank" rel="noreferrer">
 							Send feedback
