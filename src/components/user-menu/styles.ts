@@ -87,10 +87,10 @@ export const toggleButtonStyles = (
 		border-radius: 0;
 		border-style: solid;
 		border-color: ${toggleButton.baseBorderColor};
-		background-color: ${toggleButton.basebackgroundColor};
+		background-color: ${toggleButton.baseBackgroundColor};
 
 		&[data-disabled] {
-			background-color: ${toggleButton.disabledbackgroundColor};
+			background-color: ${toggleButton.disabledBackgroundColor};
 		}
 
 		&[data-focus-visible] {

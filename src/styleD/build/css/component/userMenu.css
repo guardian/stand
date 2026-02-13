@@ -21,8 +21,8 @@
 	--component-user-menu-label-padding-bottom: 0.375rem;
 	--component-user-menu-label-padding-left: 0px;
 	--component-user-menu-label-text-align: left;
-	--component-user-menu-toggle-button-basebackground-color: #ededed;
-	--component-user-menu-toggle-button-disabledbackground-color: #dcdcdc;
+	--component-user-menu-toggle-button-base-background-color: #ededed;
+	--component-user-menu-toggle-button-disabled-background-color: #dcdcdc;
 	--component-user-menu-toggle-button-base-border-color: #dcdcdc;
 	--component-user-menu-toggle-button-selected-border-color: #0d4289;
 	--component-user-menu-toggle-button-gap: 0.25rem;

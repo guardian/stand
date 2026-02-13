@@ -80,11 +80,11 @@
 				}
 			},
 			"toggleButton": {
-				"basebackgroundColor": {
+				"baseBackgroundColor": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.800}"
 				},
-				"disabledbackgroundColor": {
+				"disabledBackgroundColor": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.700}"
 				},

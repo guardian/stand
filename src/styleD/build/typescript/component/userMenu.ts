@@ -28,8 +28,8 @@ export const componentUserMenu = {
 		textAlign: 'left',
 	},
 	toggleButton: {
-		basebackgroundColor: '#ededed',
-		disabledbackgroundColor: '#dcdcdc',
+		baseBackgroundColor: '#ededed',
+		disabledBackgroundColor: '#dcdcdc',
 		baseBorderColor: '#dcdcdc',
 		selectedBorderColor: '#0d4289',
 		gap: '0.25rem',
