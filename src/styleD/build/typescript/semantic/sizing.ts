@@ -17,6 +17,7 @@ export const semanticSizing = {
 	border: {
 		default: '0.0625rem',
 		md: '0.125rem',
+		'extra-wide': '0.5rem',
 	},
 };
 export type SemanticSizing = typeof semanticSizing;

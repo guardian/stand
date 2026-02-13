@@ -453,7 +453,252 @@ For a list of the available base/primitives radius tokens see the [Storybook Bas
 
 For a full list of CSS Base/Primitives Radius tokens see [`base/radius.css`](./src/styleD/build/css/base/radius.css).
 
-## Components
+## Components - Base
+
+General purpose components for use across a variety of editorial tools based on the design system.
+
+### `Avatar`
+
+The Avatar component displays a user's profile image or initials in a circular container. It supports multiple sizes, colors, and automatic fallback handling.
+
+**When to use**
+
+- Display user profiles in lists, comments, or headers
+- Show user identity in messaging interfaces
+- Represent users in collaborative features
+
+**Peer dependencies:**
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [avatar custom component build](#avatar-custom-component-build) for usage without React/Emotion.
+
+#### Example usage
+
+See "Emotion/React" heading on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-avatar-component-mqvzh5)
+
+```tsx
+import { Avatar } from '@guardian/stand/avatar';
+
+/* types, if required */
+import type { AvatarProps, AvatarTheme } from '@guardian/stand/avatar';
+
+/* Initials only */
+<Avatar initials="AB" size="md" />
+
+/* Image with alt text */
+<Avatar
+	src="https://example.com/avatar.jpg"
+	alt="User Name"
+	size="md"
+/>
+
+/* Image with fallback initials and a specific color */
+<Avatar
+	src="https://example.com/avatar.jpg"
+	alt="User Name"
+	initials="AB"
+	color="blue"
+	size="md"
+/>
+```
+
+#### Props
+
+| Name           | Type               | Required    | Default                         | Description                                    |
+| -------------- | ------------------ | ----------- | ------------------------------- | ---------------------------------------------- |
+| `size`         | `'sm'` \| `'md'`   | No          | `'md'`                          | Size of the avatar.                            |
+| `color`        | Various            | No          | Deterministic based on initials | Color of the avatar.                           |
+| `initials`     | `string`           | Conditional | N/A                             | Initials to display when no image is provided. |
+| `src`          | `string`           | Conditional | N/A                             | URL of the avatar image.                       |
+| `alt`          | `string`           | Conditional | N/A                             | Alt text for the image for accessibility.      |
+| `theme`        | `AvatarTheme`      | No          | N/A                             | Custom theme overrides for the avatar.         |
+| `cssOverrides` | `SerializedStyles` | No          | N/A                             | Custom CSS styles for the avatar.              |
+| `className`    | `string`           | No          | N/A                             | Additional class name(s) for the avatar.       |
+
+When using `src`, the `alt` prop is required for accessibility.
+When not using `src`, the `initials` prop is required.
+
+**`size`**
+
+The avatar supports two sizes:
+
+- `sm` (small): 32px
+- `md` (medium): 40px
+
+**`color`**
+
+When no `color` is set, the avatar picks a deterministic color based on the initials (with the exception of `outlined`). You can also specify a color explicitly.
+
+Available colors: `outlined`, `blue`, `green`, `red`, `cyan`, `teal`, `cool-purple`, `warm-purple`, `magenta`, `orange`, `yellow`
+
+#### Customisation
+
+We recommend using the Avatar component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+**Custom theme**
+
+The `theme` prop allows you to override specific design tokens for the Avatar component:
+
+```tsx
+import type { AvatarTheme } from '@guardian/stand/avatar';
+import { Avatar } from '@guardian/stand/avatar';
+import { baseColors, baseSizing } from '@guardian/stand';
+
+const customTheme: AvatarTheme = {
+	shared: {
+		color: {
+			blue: {
+				background: baseColors.blue[100],
+				text: baseColors.neutral[900],
+			},
+		},
+	},
+	md: {
+		size: baseSizing['size-48-rem'],
+	},
+};
+
+const Component = () => (
+	<Avatar color="blue" initials="CT" size="md" theme={customTheme} />
+);
+```
+
+**CSS overrides**
+
+The `cssOverrides` prop allows you to pass custom CSS to the Avatar component, if the theme prop is not sufficient:
+
+```tsx
+import { Avatar } from '@guardian/stand/avatar';
+import { baseColors, baseSizing, baseSpacing } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	border: ${baseSizing['size-2-rem']} solid ${baseColors.red[500]};
+	margin: ${baseSpacing['8-rem']};
+`;
+
+const Component = () => (
+	<Avatar initials="CO" size="md" color="red" cssOverrides={customStyles} />
+);
+```
+
+#### Avatar Custom Component Build
+
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom Avatar component using the styles defined in the `AvatarTheme` type.
+
+You will however be responsible for any additional functionality on top of the styles, for example image loading, image fallback, accessibility etc.
+
+See "Custom Component" heading on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-avatar-component-mqvzh5)
+
+**`css`**
+
+You can import the Avatar styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+
+```css
+/* import the font and avatar styles */
+@import '@guardian/stand/fonts/OpenSans.css';
+@import '@guardian/stand/component/avatar.css';
+
+/*
+or for scenarios where you have to use relative paths/node_modules directly:
+
+@import 'node_modules/@guardian/stand/dist/fonts/OpenSans.css';
+@import 'node_modules/@guardian/stand/dist/styleD/build/css/component/avatar.css';
+*/
+
+/* example setup of avatar style using md size and blue color */
+.stand-avatar {
+	display: var(--component-avatar-shared-display);
+	align-items: var(--component-avatar-shared-align-items);
+	justify-content: var(--component-avatar-shared-justify-content);
+	overflow: var(--component-avatar-shared-overflow);
+	flex-shrink: var(--component-avatar-shared-flex-shrink);
+	border-radius: var(--component-avatar-shared-border-radius);
+	background-color: var(--component-avatar-shared-color-blue-background);
+	width: var(--component-avatar-md-size);
+	height: var(--component-avatar-md-size);
+	border: var(--component-avatar-shared-color-blue-border);
+	color: var(--component-avatar-shared-color-blue-text);
+	font: var(--component-avatar-md-typography-font);
+	letter-spacing: var(--component-avatar-md-typography-letter-spacing);
+	font-variation-settings: 'wdth'
+		var(--component-avatar-md-typography-font-width);
+}
+
+/* example setup for avatar image */
+.stand-avatar > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+```
+
+```html
+<!-- example usage of avatar style in html with avatar -->
+<div class="stand-avatar">AB</div>
+
+<!-- example usage of avatar style in html with avatar image -->
+<div class="stand-avatar">
+	<img src="https://example.com/avatar.jpg" alt="User Name" />
+</div>
+```
+
+**TypeScript/JavaScript**
+
+Use the `componentAvatar` variable and the `ComponentAvatar` type to define your custom styles in TypeScript/JavaScript:
+
+```ts
+import type { ComponentAvatar } from '@guardian/stand'; // if types required
+import { componentAvatar } from '@guardian/stand';
+
+const style = `
+  display: ${componentAvatar.shared.display};
+  align-items: ${componentAvatar.shared['align-items']};
+  justify-content: ${componentAvatar.shared['justify-content']};
+  overflow: ${componentAvatar.shared.overflow};
+  flex-shrink: ${componentAvatar.shared['flex-shrink']};
+  border-radius: ${componentAvatar.shared['border-radius']};
+  background-color: ${componentAvatar.shared.color.blue.background};
+  width: ${componentAvatar.md.size};
+  height: ${componentAvatar.md.size};
+  border: ${componentAvatar.shared.color.blue.border};
+  color: ${componentAvatar.shared.color.blue.text};
+  font: ${componentAvatar.md.typography.font};
+  letter-spacing: ${componentAvatar.md.typography.letterSpacing};
+  font-variation-settings: 'wdth' ${componentAvatar.md.typography.fontWidth};
+`;
+
+const imgStyle = `
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+// e.g. adding to DOM using vanilla JS styles
+document.getElementById('app')!.innerHTML = `
+    <h2>
+        Using <code>typescript</code>/<code>javascript</code>
+    </h2>
+    <div style="${style}">AB</div>
+    <div style="${style}">
+        <img
+            style="${imgStyle}"
+            src="https://example.com/avatar.jpg"
+            alt="User Name"
+        />
+    </div>
+`;
+```
+
+## Components - Editorial
+
+Specialised components for use in specific editorial use cases.
 
 ### `Byline`
 

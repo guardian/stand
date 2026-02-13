@@ -15,12 +15,12 @@ const tableCss = css`
 		border-bottom: 2px solid ${semanticColors.border.default};
 		position: sticky;
 		top: 0;
-		background: ${semanticColors.bg['default-onLight']};
+		background: ${semanticColors.bg.base};
 	}
 
 	td {
 		padding: 12px 8px;
-		border-bottom: 1px solid ${semanticColors.border.subtle};
+		border-bottom: 1px solid ${semanticColors.border.secondary};
 		vertical-align: top;
 	}
 

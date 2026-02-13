@@ -16,6 +16,12 @@ export { componentUserMenu } from './styleD/build/typescript/component/userMenu'
 export type { ComponentUserMenu } from './styleD/build/typescript/component/userMenu';
 
 /**
+ * design system components tokens exports
+ */
+export { componentAvatar } from './styleD/build/typescript/component/avatar';
+export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
+
+/**
  * style dictionary exports - base
  */
 export { baseColors } from './styleD/build/typescript/base/colors';

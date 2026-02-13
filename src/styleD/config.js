@@ -15,7 +15,7 @@ import { fileHeader, minifyDictionary } from 'style-dictionary/utils';
  * @type {{group: string, component: string}[]}
  */
 const fileList = [
-	/** base */
+	/** design system base/foundations tokens */
 	{
 		group: 'base',
 		component: 'colors',
@@ -36,7 +36,7 @@ const fileList = [
 		group: 'base',
 		component: 'sizing',
 	},
-	/** semantic */
+	/** design system semantic tokens */
 	{
 		group: 'semantic',
 		component: 'colors',
@@ -49,7 +49,12 @@ const fileList = [
 		group: 'semantic',
 		component: 'sizing',
 	},
-	/** component */
+	/** design system components */
+	{
+		group: 'component',
+		component: 'avatar',
+	},
+	/** editorial components */
 	{
 		group: 'component',
 		component: 'byline',
@@ -122,6 +127,7 @@ export default {
 				'name/camel',
 				'color/hex',
 				'typography/css/shorthand',
+				'border/css/shorthand',
 			],
 			buildPath: 'build/typescript/',
 			files: generateSplitTokenConfig(fileList, 'typescript/const', 'ts'),

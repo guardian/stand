@@ -897,6 +897,10 @@
 				"$type": "dimension",
 				"$value": "2px"
 			},
+			"size-8-px": {
+				"$type": "dimension",
+				"$value": "8px"
+			},
 			"size-16-px": {
 				"$type": "dimension",
 				"$value": "16px"
@@ -932,6 +936,10 @@
 			"size-2-rem": {
 				"$type": "dimension",
 				"$value": "0.125rem"
+			},
+			"size-8-rem": {
+				"$type": "dimension",
+				"$value": "0.5rem"
 			},
 			"size-16-rem": {
 				"$type": "dimension",
@@ -1052,13 +1060,17 @@
 				}
 			},
 			"bg": {
-				"default-onDark": {
-					"$type": "color",
-					"$value": "{base.colors.neutral.50}"
-				},
-				"default-onLight": {
+				"base": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.900}"
+				},
+				"raised-1": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.850}"
+				},
+				"raised-2": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.800}"
 				}
 			},
 			"surface": {
@@ -1076,13 +1088,17 @@
 				}
 			},
 			"border": {
-				"subtle": {
-					"$type": "color",
-					"$value": "{base.colors.neutral.650}"
-				},
 				"default": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.400}"
+				},
+				"secondary": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.650}"
+				},
+				"tertiary": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.800}"
 				},
 				"strong": {
 					"$type": "color",
@@ -1255,6 +1271,10 @@
 				"md": {
 					"$type": "dimension",
 					"$value": "{base.sizing.size-2-rem}"
+				},
+				"extra-wide": {
+					"$type": "dimension",
+					"$value": "{base.sizing.size-8-rem}"
 				}
 			}
 		}

@@ -10,6 +10,7 @@ import { nodeExternals } from 'rollup-plugin-node-externals';
  */
 const input = {
 	index: 'src/index.ts',
+	avatar: 'src/avatar.ts',
 	byline: 'src/byline.ts',
 	'tag-picker': 'src/tag-picker.ts',
 	'user-menu': 'src/user-menu.ts',
