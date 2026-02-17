@@ -144,7 +144,7 @@
 				},
 				"800": {
 					"$type": "color",
-					"$value": "#bdd4f4"
+					"$value": "#c5d9f4"
 				},
 				"900": {
 					"$type": "color",
@@ -1123,6 +1123,10 @@
 				"interactive-focused": {
 					"$type": "color",
 					"$value": "{base.colors.cyan.400}"
+				},
+				"interactive-selected": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.400}"
 				}
 			},
 			"status": {
@@ -1154,7 +1158,7 @@
 				},
 				"interactive-primary-emphasised-pressed": {
 					"$type": "color",
-					"$value": "{base.colors.blue.100}"
+					"$value": "{base.colors.blue.50}"
 				},
 				"interactive-secondary-emphasised-hover": {
 					"$type": "color",
@@ -1162,7 +1166,7 @@
 				},
 				"interactive-secondary-emphasised-pressed": {
 					"$type": "color",
-					"$value": "{base.colors.blue.900}"
+					"$value": "{base.colors.blue.800}"
 				},
 				"interactive-primary-neutral": {
 					"$type": "color",
@@ -1174,7 +1178,7 @@
 				},
 				"interactive-primary-neutral-pressed": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.100}"
+					"$value": "{base.colors.neutral.50}"
 				},
 				"interactive-secondary-neutral-hover": {
 					"$type": "color",
@@ -1182,7 +1186,7 @@
 				},
 				"interactive-secondary-neutral-pressed": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.800}"
+					"$value": "{base.colors.neutral.700}"
 				},
 				"interactive-disabled": {
 					"$type": "color",
@@ -1227,6 +1231,10 @@
 				"yellow-subtle": {
 					"$type": "color",
 					"$value": "{base.colors.yellow.800}"
+				},
+				"selected": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.300}"
 				}
 			}
 		},

@@ -46,6 +46,7 @@ export const semanticColors = {
 		'interactive-neutral': '#545454',
 		'interactive-disabled': '#dcdcdc',
 		'interactive-focused': '#0072a9',
+		'interactive-selected': '#0072a9',
 	},
 	status: {
 		'status-draft': '#f1c21b',
@@ -56,17 +57,17 @@ export const semanticColors = {
 	fill: {
 		'interactive-primary-emphasised': '#0d4289',
 		'interactive-primary-emphasised-hover': '#092f62',
-		'interactive-primary-emphasised-pressed': '#092f62',
+		'interactive-primary-emphasised-pressed': '#061d3c',
 		'interactive-secondary-emphasised-hover': '#e8f0fb',
-		'interactive-secondary-emphasised-pressed': '#e8f0fb',
+		'interactive-secondary-emphasised-pressed': '#c5d9f4',
 		'interactive-primary-neutral': '#545454',
 		'interactive-primary-neutral-hover': '#333333',
-		'interactive-primary-neutral-pressed': '#333333',
+		'interactive-primary-neutral-pressed': '#121212',
 		'interactive-secondary-neutral-hover': '#ededed',
-		'interactive-secondary-neutral-pressed': '#ededed',
+		'interactive-secondary-neutral-pressed': '#dcdcdc',
 		'interactive-disabled': '#dcdcdc',
 		'green-subtle': '#cde4c9',
-		'blue-subtle': '#bdd4f4',
+		'blue-subtle': '#c5d9f4',
 		'red-subtle': '#f5c6c0',
 		'cyan-subtle': '#b8d8e7',
 		'teal-subtle': '#c5dfe1',
@@ -75,6 +76,7 @@ export const semanticColors = {
 		'magenta-subtle': '#edc6d7',
 		'orange-subtle': '#fcddc6',
 		'yellow-subtle': '#fbeebf',
+		selected: '#005d8b',
 	},
 };
 export type SemanticColors = typeof semanticColors;

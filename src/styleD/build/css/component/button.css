@@ -1,0 +1,218 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-button-shared-display: inline-flex;
+	--component-button-shared-webkit-appearance: none;
+	--component-button-shared-text-align: inherit;
+	--component-button-shared-box-shadow: none;
+	--component-button-shared-cursor: pointer;
+	--component-button-shared-justify-content: center;
+	--component-button-shared-align-items: center;
+	--component-button-shared-text-decoration: none;
+	--component-button-shared-disabled-cursor: not-allowed;
+	--component-button-shared-focus-visible-outline: 0.125rem solid #0072a9;
+	--component-button-shared-focus-visible-outline-offset: 0.125rem;
+	--component-button-emphasised-primary-shared-color: #ffffff;
+	--component-button-emphasised-primary-shared-background-color: #0d4289;
+	--component-button-emphasised-primary-shared-border-radius: 0.25rem;
+	--component-button-emphasised-primary-shared-border: 0.0625rem solid #0d4289;
+	--component-button-emphasised-primary-shared-hover-background-color: #092f62;
+	--component-button-emphasised-primary-shared-hover-border: 0.0625rem solid
+		#092f62;
+	--component-button-emphasised-primary-shared-active-background-color: #061d3c;
+	--component-button-emphasised-primary-shared-active-border: 0.0625rem solid
+		#061d3c;
+	--component-button-emphasised-primary-shared-disabled-color: #999999;
+	--component-button-emphasised-primary-shared-disabled-background-color: #dcdcdc;
+	--component-button-emphasised-primary-shared-disabled-border: 0.0625rem
+		solid #dcdcdc;
+	--component-button-emphasised-primary-xs-height: 1.5rem;
+	--component-button-emphasised-primary-xs-padding-top: 0.25rem;
+	--component-button-emphasised-primary-xs-padding-right: 0.5rem;
+	--component-button-emphasised-primary-xs-padding-bottom: 0.25rem;
+	--component-button-emphasised-primary-xs-padding-left: 0.5rem;
+	--component-button-emphasised-primary-xs-typography-font: normal 700
+		0.75rem/1 'Open Sans';
+	--component-button-emphasised-primary-xs-typography-letter-spacing: 0rem;
+	--component-button-emphasised-primary-xs-typography-font-width: 95;
+	--component-button-emphasised-primary-sm-height: 2rem;
+	--component-button-emphasised-primary-sm-padding-top: 0.25rem;
+	--component-button-emphasised-primary-sm-padding-right: 0.625rem;
+	--component-button-emphasised-primary-sm-padding-bottom: 0.25rem;
+	--component-button-emphasised-primary-sm-padding-left: 0.625rem;
+	--component-button-emphasised-primary-sm-typography-font: normal 700
+		0.875rem/1 'Open Sans';
+	--component-button-emphasised-primary-sm-typography-letter-spacing: -0.0125rem;
+	--component-button-emphasised-primary-sm-typography-font-width: 95;
+	--component-button-emphasised-primary-md-height: 2.5rem;
+	--component-button-emphasised-primary-md-padding-top: 0.25rem;
+	--component-button-emphasised-primary-md-padding-right: 0.75rem;
+	--component-button-emphasised-primary-md-padding-bottom: 0.25rem;
+	--component-button-emphasised-primary-md-padding-left: 0.75rem;
+	--component-button-emphasised-primary-md-typography-font: normal 700
+		0.875rem/1 'Open Sans';
+	--component-button-emphasised-primary-md-typography-letter-spacing: -0.0125rem;
+	--component-button-emphasised-primary-md-typography-font-width: 95;
+	--component-button-emphasised-primary-lg-height: 3rem;
+	--component-button-emphasised-primary-lg-padding-top: 0.25rem;
+	--component-button-emphasised-primary-lg-padding-right: 1rem;
+	--component-button-emphasised-primary-lg-padding-bottom: 0.25rem;
+	--component-button-emphasised-primary-lg-padding-left: 1rem;
+	--component-button-emphasised-primary-lg-typography-font: normal 700 1rem/1
+		'Open Sans';
+	--component-button-emphasised-primary-lg-typography-letter-spacing: -0.0125rem;
+	--component-button-emphasised-primary-lg-typography-font-width: 95;
+	--component-button-emphasised-secondary-shared-color: #000000;
+	--component-button-emphasised-secondary-shared-background-color: none;
+	--component-button-emphasised-secondary-shared-border-radius: 0.25rem;
+	--component-button-emphasised-secondary-shared-border: 0.0625rem solid
+		#0d4289;
+	--component-button-emphasised-secondary-shared-hover-background-color: #e8f0fb;
+	--component-button-emphasised-secondary-shared-hover-border: 0.0625rem solid
+		#0d4289;
+	--component-button-emphasised-secondary-shared-active-background-color: #c5d9f4;
+	--component-button-emphasised-secondary-shared-active-border: 0.0625rem
+		solid #0d4289;
+	--component-button-emphasised-secondary-shared-disabled-color: #999999;
+	--component-button-emphasised-secondary-shared-disabled-background-color: none;
+	--component-button-emphasised-secondary-shared-disabled-border: 0.0625rem
+		solid #dcdcdc;
+	--component-button-emphasised-secondary-xs-height: 1.5rem;
+	--component-button-emphasised-secondary-xs-padding-top: 0.25rem;
+	--component-button-emphasised-secondary-xs-padding-right: 0.5rem;
+	--component-button-emphasised-secondary-xs-padding-bottom: 0.25rem;
+	--component-button-emphasised-secondary-xs-padding-left: 0.5rem;
+	--component-button-emphasised-secondary-xs-typography-font: normal 700
+		0.75rem/1 'Open Sans';
+	--component-button-emphasised-secondary-xs-typography-letter-spacing: 0rem;
+	--component-button-emphasised-secondary-xs-typography-font-width: 95;
+	--component-button-emphasised-secondary-sm-height: 2rem;
+	--component-button-emphasised-secondary-sm-padding-top: 0.25rem;
+	--component-button-emphasised-secondary-sm-padding-right: 0.625rem;
+	--component-button-emphasised-secondary-sm-padding-bottom: 0.25rem;
+	--component-button-emphasised-secondary-sm-padding-left: 0.625rem;
+	--component-button-emphasised-secondary-sm-typography-font: normal 700
+		0.875rem/1 'Open Sans';
+	--component-button-emphasised-secondary-sm-typography-letter-spacing: -0.0125rem;
+	--component-button-emphasised-secondary-sm-typography-font-width: 95;
+	--component-button-emphasised-secondary-md-height: 2.5rem;
+	--component-button-emphasised-secondary-md-padding-top: 0.25rem;
+	--component-button-emphasised-secondary-md-padding-right: 0.75rem;
+	--component-button-emphasised-secondary-md-padding-bottom: 0.25rem;
+	--component-button-emphasised-secondary-md-padding-left: 0.75rem;
+	--component-button-emphasised-secondary-md-typography-font: normal 700
+		0.875rem/1 'Open Sans';
+	--component-button-emphasised-secondary-md-typography-letter-spacing: -0.0125rem;
+	--component-button-emphasised-secondary-md-typography-font-width: 95;
+	--component-button-emphasised-secondary-lg-height: 3rem;
+	--component-button-emphasised-secondary-lg-padding-top: 0.25rem;
+	--component-button-emphasised-secondary-lg-padding-right: 1rem;
+	--component-button-emphasised-secondary-lg-padding-bottom: 0.25rem;
+	--component-button-emphasised-secondary-lg-padding-left: 1rem;
+	--component-button-emphasised-secondary-lg-typography-font: normal 700
+		1rem/1 'Open Sans';
+	--component-button-emphasised-secondary-lg-typography-letter-spacing: -0.0125rem;
+	--component-button-emphasised-secondary-lg-typography-font-width: 95;
+	--component-button-neutral-primary-shared-color: #ffffff;
+	--component-button-neutral-primary-shared-background-color: #545454;
+	--component-button-neutral-primary-shared-border-radius: 0.25rem;
+	--component-button-neutral-primary-shared-border: 0.0625rem solid #545454;
+	--component-button-neutral-primary-shared-hover-background-color: #333333;
+	--component-button-neutral-primary-shared-hover-border: 0.0625rem solid
+		#333333;
+	--component-button-neutral-primary-shared-active-background-color: #121212;
+	--component-button-neutral-primary-shared-active-border: 0.0625rem solid
+		#121212;
+	--component-button-neutral-primary-shared-disabled-color: #999999;
+	--component-button-neutral-primary-shared-disabled-background-color: #dcdcdc;
+	--component-button-neutral-primary-shared-disabled-border: 0.0625rem solid
+		#dcdcdc;
+	--component-button-neutral-primary-xs-height: 1.5rem;
+	--component-button-neutral-primary-xs-padding-top: 0.25rem;
+	--component-button-neutral-primary-xs-padding-right: 0.5rem;
+	--component-button-neutral-primary-xs-padding-bottom: 0.25rem;
+	--component-button-neutral-primary-xs-padding-left: 0.5rem;
+	--component-button-neutral-primary-xs-typography-font: normal 700 0.75rem/1
+		'Open Sans';
+	--component-button-neutral-primary-xs-typography-letter-spacing: 0rem;
+	--component-button-neutral-primary-xs-typography-font-width: 95;
+	--component-button-neutral-primary-sm-height: 2rem;
+	--component-button-neutral-primary-sm-padding-top: 0.25rem;
+	--component-button-neutral-primary-sm-padding-right: 0.625rem;
+	--component-button-neutral-primary-sm-padding-bottom: 0.25rem;
+	--component-button-neutral-primary-sm-padding-left: 0.625rem;
+	--component-button-neutral-primary-sm-typography-font: normal 700 0.875rem/1
+		'Open Sans';
+	--component-button-neutral-primary-sm-typography-letter-spacing: -0.0125rem;
+	--component-button-neutral-primary-sm-typography-font-width: 95;
+	--component-button-neutral-primary-md-height: 2.5rem;
+	--component-button-neutral-primary-md-padding-top: 0.25rem;
+	--component-button-neutral-primary-md-padding-right: 0.75rem;
+	--component-button-neutral-primary-md-padding-bottom: 0.25rem;
+	--component-button-neutral-primary-md-padding-left: 0.75rem;
+	--component-button-neutral-primary-md-typography-font: normal 700 0.875rem/1
+		'Open Sans';
+	--component-button-neutral-primary-md-typography-letter-spacing: -0.0125rem;
+	--component-button-neutral-primary-md-typography-font-width: 95;
+	--component-button-neutral-primary-lg-height: 3rem;
+	--component-button-neutral-primary-lg-padding-top: 0.25rem;
+	--component-button-neutral-primary-lg-padding-right: 1rem;
+	--component-button-neutral-primary-lg-padding-bottom: 0.25rem;
+	--component-button-neutral-primary-lg-padding-left: 1rem;
+	--component-button-neutral-primary-lg-typography-font: normal 700 1rem/1
+		'Open Sans';
+	--component-button-neutral-primary-lg-typography-letter-spacing: -0.0125rem;
+	--component-button-neutral-primary-lg-typography-font-width: 95;
+	--component-button-neutral-secondary-shared-color: #000000;
+	--component-button-neutral-secondary-shared-background-color: none;
+	--component-button-neutral-secondary-shared-border-radius: 0.25rem;
+	--component-button-neutral-secondary-shared-border: 0.0625rem solid #545454;
+	--component-button-neutral-secondary-shared-hover-background-color: #ededed;
+	--component-button-neutral-secondary-shared-hover-border: 0.0625rem solid
+		#545454;
+	--component-button-neutral-secondary-shared-active-background-color: #dcdcdc;
+	--component-button-neutral-secondary-shared-active-border: 0.0625rem solid
+		#545454;
+	--component-button-neutral-secondary-shared-disabled-color: #999999;
+	--component-button-neutral-secondary-shared-disabled-background-color: none;
+	--component-button-neutral-secondary-shared-disabled-border: 0.0625rem solid
+		#dcdcdc;
+	--component-button-neutral-secondary-xs-height: 1.5rem;
+	--component-button-neutral-secondary-xs-padding-top: 0.25rem;
+	--component-button-neutral-secondary-xs-padding-right: 0.5rem;
+	--component-button-neutral-secondary-xs-padding-bottom: 0.25rem;
+	--component-button-neutral-secondary-xs-padding-left: 0.5rem;
+	--component-button-neutral-secondary-xs-typography-font: normal 700
+		0.75rem/1 'Open Sans';
+	--component-button-neutral-secondary-xs-typography-letter-spacing: 0rem;
+	--component-button-neutral-secondary-xs-typography-font-width: 95;
+	--component-button-neutral-secondary-sm-height: 2rem;
+	--component-button-neutral-secondary-sm-padding-top: 0.25rem;
+	--component-button-neutral-secondary-sm-padding-right: 0.625rem;
+	--component-button-neutral-secondary-sm-padding-bottom: 0.25rem;
+	--component-button-neutral-secondary-sm-padding-left: 0.625rem;
+	--component-button-neutral-secondary-sm-typography-font: normal 700
+		0.875rem/1 'Open Sans';
+	--component-button-neutral-secondary-sm-typography-letter-spacing: -0.0125rem;
+	--component-button-neutral-secondary-sm-typography-font-width: 95;
+	--component-button-neutral-secondary-md-height: 2.5rem;
+	--component-button-neutral-secondary-md-padding-top: 0.25rem;
+	--component-button-neutral-secondary-md-padding-right: 0.75rem;
+	--component-button-neutral-secondary-md-padding-bottom: 0.25rem;
+	--component-button-neutral-secondary-md-padding-left: 0.75rem;
+	--component-button-neutral-secondary-md-typography-font: normal 700
+		0.875rem/1 'Open Sans';
+	--component-button-neutral-secondary-md-typography-letter-spacing: -0.0125rem;
+	--component-button-neutral-secondary-md-typography-font-width: 95;
+	--component-button-neutral-secondary-lg-height: 3rem;
+	--component-button-neutral-secondary-lg-padding-top: 0.25rem;
+	--component-button-neutral-secondary-lg-padding-right: 1rem;
+	--component-button-neutral-secondary-lg-padding-bottom: 0.25rem;
+	--component-button-neutral-secondary-lg-padding-left: 1rem;
+	--component-button-neutral-secondary-lg-typography-font: normal 700 1rem/1
+		'Open Sans';
+	--component-button-neutral-secondary-lg-typography-letter-spacing: -0.0125rem;
+	--component-button-neutral-secondary-lg-typography-font-width: 95;
+}

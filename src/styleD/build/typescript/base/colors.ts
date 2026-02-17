@@ -42,7 +42,7 @@ export const baseColors = {
 		'500': '#3e82dd',
 		'600': '#699ee5',
 		'700': '#93b9ec',
-		'800': '#bdd4f4',
+		'800': '#c5d9f4',
 		'900': '#e8f0fb',
 	},
 	cyan: {

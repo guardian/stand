@@ -12,7 +12,7 @@ export const componentAvatar = {
 			},
 			blue: {
 				text: '#092f62',
-				background: '#bdd4f4',
+				background: '#c5d9f4',
 				border: 'unset',
 			},
 			red: {

@@ -696,6 +696,484 @@ document.getElementById('app')!.innerHTML = `
 `;
 ```
 
+### `Button`
+
+A React Aria powered button that follows Stand design and accessibility defaults. It supports multiple visual variants, four sizes, disabled state handling, and render props for pending interactions.
+
+**When to use**
+
+- Primary and secondary actions that require clear affordance
+- Form submissions or confirm/cancel flows
+- Re-usable button styles that align with Stand tokens
+
+**Peer dependencies:**
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [button custom component build](#button-custom-component-build) for usage without React/Emotion.
+
+#### Example usage
+
+See "Emotion/React" heading on [codesandbox.io](https://codesandbox.io/p/sandbox/jctg2k)
+
+```tsx
+import { Button } from '@guardian/stand/button';
+import type { ButtonProps, ButtonTheme } from '@guardian/stand/button';
+
+const Example = () => (
+	<>
+		<Button
+			variant="emphasised-primary"
+			size="md"
+			onPress={() => {
+				console.log('Primary action');
+			}}
+		>
+			Publish
+		</Button>
+
+		<Button variant="neutral-secondary" size="sm" isDisabled>
+			Disabled
+		</Button>
+	</>
+);
+```
+
+#### Props
+
+| Name           | Type                                                                                               | Required | Default                | Description                                                                                       |
+| -------------- | -------------------------------------------------------------------------------------------------- | -------- | ---------------------- | ------------------------------------------------------------------------------------------------- |
+| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`                                                               | No       | `'md'`                 | Controls the button dimensions and typography.                                                    |
+| `variant`      | `'emphasised-primary'` \| `'emphasised-secondary'` \| `'neutral-primary'` \| `'neutral-secondary'` | No       | `'emphasised-primary'` | Chooses the colour scheme and interaction states.                                                 |
+| `children`     | `ReactNode` \| `RenderProps`                                                                       | Yes      | N/A                    | Content inside the button. Render props receive `{ isPending }` from React Aria.                  |
+| `isDisabled`   | `boolean`                                                                                          | No       | `false`                | Disables interaction and applies disabled styling.                                                |
+| `theme`        | `ButtonTheme` (partial)                                                                            | No       | N/A                    | Override Stand tokens for this instance; merged over the default theme.                           |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                                                         | No       | N/A                    | Low-level escape hatch for Emotion overrides when theming is insufficient.                        |
+| `className`    | `string`                                                                                           | No       | N/A                    | Optional class name forwarded to the root React Aria button.                                      |
+| `...props`     | `ReactAria Button` props                                                                           | No       | N/A                    | All other props from `react-aria-components` `Button` (e.g. `type`, `autoFocus`, event handlers). |
+
+**`size` and `variant`**
+
+- Sizes: `xs`, `sm`, `md`, `lg`
+- Variants: `emphasised-primary`, `emphasised-secondary`, `neutral-primary`, `neutral-secondary`
+
+#### Customisation
+
+We recommend using the default theme. When needed, use the `theme` or `cssOverrides` props.
+
+**Custom theme**
+
+```tsx
+import type { ButtonTheme } from '@guardian/stand/button';
+import { Button } from '@guardian/stand/button';
+import { baseColors } from '@guardian/stand';
+
+const customTheme: Partial<ButtonTheme> = {
+	'emphasised-primary': {
+		shared: {
+			backgroundColor: baseColors['cool-purple'][200],
+			color: baseColors['cool-purple'][900],
+			border: `2px solid ${baseColors['cool-purple'][700]}`,
+			':hover': {
+				backgroundColor: baseColors['cool-purple'][300],
+				border: `2px solid ${baseColors['cool-purple'][700]}`,
+			},
+			':active': {
+				backgroundColor: baseColors['cool-purple'][400],
+				border: `2px solid ${baseColors['cool-purple'][700]}`,
+			},
+		},
+	},
+};
+
+const Component = () => (
+	<Button variant="emphasised-primary" size="md" theme={customTheme}>
+		Custom Themed Button
+	</Button>
+);
+```
+
+**CSS overrides**
+
+```tsx
+import { Button } from '@guardian/stand/button';
+import { baseSpacing } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	width: 100%;
+	text-transform: full-width;
+	font-variant: small-caps;
+	padding-inline: ${baseSpacing['24-rem']};
+`;
+
+const Component = () => (
+	<Button variant="neutral-primary" size="sm" cssOverrides={customStyles}>
+		CSSOverrides Button
+	</Button>
+);
+```
+
+#### Button Custom Component Build
+
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom `Button`/`LinkButton` component using the styles defined in the `ButtonTheme` type.
+
+You will however be responsible for any additional functionality on top of the styles, for example accessibility, focus management, interaction states etc.
+
+See "Custom Component" heading on [codesandbox.io](https://codesandbox.io/p/sandbox/jctg2k)
+
+**`css`**
+
+You can import the Button styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+
+```css
+/* import the font and button variables */
+@import '@guardian/stand/fonts/OpenSans.css';
+@import '@guardian/stand/component/button.css';
+
+/*
+or for scenarios where you have to use relative paths/node_modules directly:
+
+@import 'node_modules/@guardian/stand/dist/fonts/OpenSans.css';
+@import 'node_modules/@guardian/stand/dist/styleD/build/css/component/button.css';
+*/
+
+/* shared button styles for all variants */
+.stand-button {
+	display: var(--component-button-shared-display);
+	-webkit-appearance: var(--component-button-shared-webkit-appearance);
+	text-align: var(--component-button-shared-text-align);
+	box-shadow: var(--component-button-shared-box-shadow);
+	text-decoration: var(--component-button-shared-text-decoration);
+	cursor: var(--component-button-shared-cursor);
+	justify-content: var(--component-button-shared-justify-content);
+	align-items: var(--component-button-shared-align-items);
+}
+.stand-button:focus-visible {
+	outline: var(--component-button-shared-focus-visible-outline);
+	outline-offset: var(--component-button-shared-focus-visible-outline-offset);
+}
+.stand-button:disabled {
+	cursor: var(--component-button-shared-disabled-cursor);
+}
+
+/* example setup of button/link button style using md size and emphasised primary variant */
+.stand-button-emphasised-primary {
+	color: var(--component-button-emphasised-primary-shared-color);
+	background: var(
+		--component-button-emphasised-primary-shared-background-color
+	);
+	height: var(--component-button-emphasised-primary-md-height);
+	padding: var(--component-button-emphasised-primary-md-padding-top)
+		var(--component-button-emphasised-primary-md-padding-right)
+		var(--component-button-emphasised-primary-md-padding-bottom)
+		var(--component-button-emphasised-primary-md-padding-left);
+	font: var(--component-button-emphasised-primary-md-typography-font);
+	letter-spacing: var(
+		--component-button-emphasised-primary-md-typography-letter-spacing
+	);
+	font-variation-settings: 'wdth'
+		var(--component-button-emphasised-primary-md-typography-font-width);
+	border: var(--component-button-emphasised-primary-shared-border);
+	border-radius: var(
+		--component-button-emphasised-primary-shared-border-radius
+	);
+}
+.stand-button-emphasised-primary:hover {
+	background: var(
+		--component-button-emphasised-primary-shared-hover-background-color
+	);
+	border: var(--component-button-emphasised-primary-shared-hover-border);
+}
+.stand-button-emphasised-primary:active {
+	background: var(
+		--component-button-emphasised-primary-shared-active-background-color
+	);
+	border: var(--component-button-emphasised-primary-shared-active-border);
+}
+.stand-button-emphasised-primary:disabled {
+	color: var(--component-button-emphasised-primary-shared-disabled-color);
+	background: var(
+		--component-button-emphasised-primary-shared-disabled-background-color
+	);
+	border: var(--component-button-emphasised-primary-shared-disabled-border);
+}
+
+/* example setup of button/link button style using md size and neutral secondary variant */
+.stand-button-neutral-secondary {
+	color: var(--component-button-neutral-secondary-shared-color);
+	background: var(
+		--component-button-neutral-secondary-shared-background-color
+	);
+	height: var(--component-button-neutral-secondary-md-height);
+	padding: var(--component-button-neutral-secondary-md-padding-top)
+		var(--component-button-neutral-secondary-md-padding-right)
+		var(--component-button-neutral-secondary-md-padding-bottom)
+		var(--component-button-neutral-secondary-md-padding-left);
+	font: var(--component-button-neutral-secondary-md-typography-font);
+	letter-spacing: var(
+		--component-button-neutral-secondary-md-typography-letter-spacing
+	);
+	font-variation-settings: 'wdth'
+		var(--component-button-neutral-secondary-md-typography-font-width);
+	border: var(--component-button-neutral-secondary-shared-border);
+	border-radius: var(
+		--component-button-neutral-secondary-shared-border-radius
+	);
+}
+.stand-button-neutral-secondary:hover {
+	background: var(
+		--component-button-neutral-secondary-shared-hover-background-color
+	);
+	border: var(--component-button-neutral-secondary-shared-hover-border);
+}
+.stand-button-neutral-secondary:active {
+	background: var(
+		--component-button-neutral-secondary-shared-active-background-color
+	);
+	border: var(--component-button-neutral-secondary-shared-active-border);
+}
+.stand-button-neutral-secondary:disabled {
+	color: var(--component-button-neutral-secondary-shared-disabled-color);
+	background: var(
+		--component-button-neutral-secondary-shared-disabled-background-color
+	);
+	border: var(--component-button-neutral-secondary-shared-disabled-border);
+}
+```
+
+```html
+<button class="stand-button stand-button-emphasised-primary">
+	Button Label
+</button>
+<button class="stand-button stand-button-emphasised-primary" disabled>
+	Disabled Button Label
+</button>
+<a class="stand-button stand-button-neutral-secondary" href="#"
+	>LinkButton Label</a
+>
+```
+
+**TypeScript/JavaScript**
+
+Use the `componentButton` variable and the `ComponentButton` type to define your custom styles in TypeScript/JavaScript:
+
+```ts
+import type { ComponentButton } from '@guardian/stand'; // if types required
+import { componentButton } from '@guardian/stand/button';
+
+/* NB: The HTML style attribute cannot target psuedo selectors, so they haven't been implemented e.g. hover/focus */
+const sharedButtonStyles = `
+  display: ${componentButton.shared.display};
+  -webkit-appearance: ${componentButton.shared['-webkit-appearance']};
+  text-align: ${componentButton.shared['text-align']};
+  box-shadow: ${componentButton.shared['box-shadow']};
+  text-decoration: ${componentButton.shared['text-decoration']};
+  cursor: ${componentButton.shared.cursor};
+  justify-content: ${componentButton.shared['justify-content']};
+  align-items: ${componentButton.shared['align-items']};
+`;
+
+const emphasisedPrimaryButtonStyles = `
+  ${sharedButtonStyles}
+  color: ${componentButton['emphasised-primary'].shared.color};
+  background: ${componentButton['emphasised-primary'].shared.backgroundColor};
+  height: ${componentButton['emphasised-primary'].md.height};
+  padding: ${componentButton['emphasised-primary'].md.padding.top}
+    ${componentButton['emphasised-primary'].md.padding.right}
+    ${componentButton['emphasised-primary'].md.padding.bottom}
+    ${componentButton['emphasised-primary'].md.padding.left};
+  font: ${componentButton['emphasised-primary'].md.typography.font};
+  letter-spacing: ${componentButton['emphasised-primary'].md.typography.letterSpacing};
+  font-variation-settings: 'wdth'
+  ${componentButton['emphasised-primary'].md.typography.fontWidth};
+  border: ${componentButton['emphasised-primary'].shared.border};
+  border-radius: ${componentButton['emphasised-primary'].shared.borderRadius};
+`;
+
+const emphasisedPrimaryButtonDisabledStyles = `
+  ${emphasisedPrimaryButtonStyles}
+  cursor: ${componentButton.shared[':disabled'].cursor};
+  color: ${componentButton['emphasised-primary'].shared[':disabled'].color};
+  background: ${componentButton['emphasised-primary'].shared[':disabled'].backgroundColor};
+  border: ${componentButton['emphasised-primary'].shared[':disabled'].border};
+`;
+
+const neutralSecondaryButtonStyles = `
+  ${sharedButtonStyles}
+  color: ${componentButton['neutral-secondary'].shared.color};
+  background: ${componentButton['neutral-secondary'].shared.backgroundColor};
+  height: ${componentButton['neutral-secondary'].md.height};
+  padding: ${componentButton['neutral-secondary'].md.padding.top}
+    ${componentButton['neutral-secondary'].md.padding.right}
+    ${componentButton['neutral-secondary'].md.padding.bottom}
+    ${componentButton['neutral-secondary'].md.padding.left};
+  font: ${componentButton['neutral-secondary'].md.typography.font};
+  letter-spacing: ${componentButton['neutral-secondary'].md.typography.letterSpacing};
+  font-variation-settings: 'wdth'
+  ${componentButton['neutral-secondary'].md.typography.fontWidth};
+  border: ${componentButton['neutral-secondary'].shared.border};
+  border-radius: ${componentButton['neutral-secondary'].shared.borderRadius};
+`;
+
+// e.g. adding to DOM using vanilla JS styles
+document.getElementById('app')!.innerHTML = `
+    <button style="${emphasisedPrimaryButtonStyles}">Button Label</button>
+    <button disabled style="${emphasisedPrimaryButtonDisabledStyles}">Disabled Button Label</button>
+    <a href="#" style="${neutralSecondaryButtonStyles}">LinkButton Label</a>
+`;
+```
+
+### `LinkButton`
+
+An anchor element styled like the Stand `Button` component, based on the React Aria `Link`. It keeps link semantics (`href`, `target`, `rel`) while sharing the same variants and sizes as `Button`.
+
+**When to use**
+
+- Navigational links that should visually align with buttons
+- Cross-page CTAs where a button look-and-feel is preferred
+- Situations requiring disabled styling while preserving link semantics
+
+**Peer dependencies:**
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [link button custom component build](#button-custom-component-build) for usage without React/Emotion.
+
+#### Example usage
+
+See "Emotion/React" heading on [codesandbox.io](https://codesandbox.io/p/sandbox/jctg2k)
+
+```tsx
+import { LinkButton } from '@guardian/stand/button';
+import type { LinkButtonTheme, LinkButtonProps } from '@guardian/stand/button';
+
+const Example = () => (
+	<>
+		<LinkButton
+			href="/article"
+			variant="emphasised-primary"
+			size="md"
+			target="_blank"
+			rel="noreferrer"
+		>
+			Read article
+		</LinkButton>
+
+		<LinkButton
+			href="/settings"
+			variant="neutral-secondary"
+			size="sm"
+			isDisabled
+		>
+			Disabled link
+		</LinkButton>
+	</>
+);
+```
+
+#### Props
+
+| Name           | Type                                                                                               | Required | Default                | Description                                                                                               |
+| -------------- | -------------------------------------------------------------------------------------------------- | -------- | ---------------------- | --------------------------------------------------------------------------------------------------------- |
+| `href`         | `string`                                                                                           | Yes      | N/A                    | Destination URL for the link.                                                                             |
+| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`                                                               | No       | `'md'`                 | Controls the link-button dimensions and typography.                                                       |
+| `variant`      | `'emphasised-primary'` \| `'emphasised-secondary'` \| `'neutral-primary'` \| `'neutral-secondary'` | No       | `'emphasised-primary'` | Chooses the colour scheme and interaction states.                                                         |
+| `children`     | `ReactNode`                                                                                        | Yes      | N/A                    | Content of the link.                                                                                      |
+| `isDisabled`   | `boolean`                                                                                          | No       | `false`                | Disables interaction and applies disabled styling.                                                        |
+| `theme`        | `LinkButtonTheme` (partial)                                                                        | No       | N/A                    | Override Stand tokens for this instance; merged over the default theme.                                   |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                                                         | No       | N/A                    | Low-level escape hatch for Emotion overrides when theming is insufficient.                                |
+| `className`    | `string`                                                                                           | No       | N/A                    | Optional class name forwarded to the root React Aria link.                                                |
+| `...props`     | `ReactAria Link` props                                                                             | No       | N/A                    | All other props from `react-aria-components` `Link` (e.g. `target`, `rel`, `aria-label`, event handlers). |
+
+**`size` and `variant`**
+
+- Sizes: `xs`, `sm`, `md`, `lg`
+- Variants: `emphasised-primary`, `emphasised-secondary`, `neutral-primary`, `neutral-secondary`
+
+#### Customisation
+
+We recommend using the default theme. When needed, use the `theme` or `cssOverrides` props.
+
+**Custom theme**
+
+```tsx
+import type { LinkButtonTheme } from '@guardian/stand/button';
+import { LinkButton } from '@guardian/stand/button';
+import { baseColors } from '@guardian/stand';
+
+const customTheme: Partial<LinkButtonTheme> = {
+	'emphasised-primary': {
+		shared: {
+			backgroundColor: baseColors['cool-purple'][200],
+			color: baseColors['cool-purple'][900],
+			border: `2px solid ${baseColors['cool-purple'][700]}`,
+			':hover': {
+				backgroundColor: baseColors['cool-purple'][300],
+				border: `2px solid ${baseColors['cool-purple'][700]}`,
+			},
+			':active': {
+				backgroundColor: baseColors['cool-purple'][400],
+				border: `2px solid ${baseColors['cool-purple'][700]}`,
+			},
+		},
+	},
+};
+
+const Component = () => (
+	<LinkButton
+		href="/"
+		variant="emphasised-primary"
+		size="md"
+		theme={customTheme}
+	>
+		Custom Themed LinkButton
+	</LinkButton>
+);
+```
+
+**CSS overrides**
+
+```tsx
+import { LinkButton } from '@guardian/stand/button';
+import { baseSpacing } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	width: 100%;
+	text-transform: full-width;
+	font-variant: small-caps;
+	padding-inline: ${baseSpacing['24-rem']};
+`;
+
+const Component = () => (
+	<LinkButton
+		href="/"
+		variant="neutral-primary"
+		size="sm"
+		cssOverrides={customStyles}
+	>
+		CSSOverrides LinkButton
+	</LinkButton>
+);
+```
+
+#### LinkButton Custom Component Build
+
+LinkButton shares the same tokens and CSS output as `Button`. Use the [Button custom component build](#button-custom-component-build) guidance to consume the CSS or TypeScript tokens when you need a non-React implementation.
+
 ## Components - Editorial
 
 Specialised components for use in specific editorial use cases.

@@ -14,6 +14,16 @@
 			"import": "./dist/avatar.js",
 			"require": "./dist/avatar.cjs"
 		},
+		"./button": {
+			"types": "./dist/types/button.d.ts",
+			"import": "./dist/button.js",
+			"require": "./dist/button.cjs"
+		},
+		"./link-button": {
+			"types": "./dist/types/link-button.d.ts",
+			"import": "./dist/link-button.js",
+			"require": "./dist/link-button.cjs"
+		},
 		"./byline": {
 			"types": "./dist/types/byline.d.ts",
 			"import": "./dist/byline.js",
@@ -30,6 +40,7 @@
 			"require": "./dist/utils.cjs"
 		},
 		"./fonts/OpenSans.css": "./dist/fonts/OpenSans.css",
+		"./util/reset.css": "./dist/util/css/reset.css",
 		"./base/colors.css": "./dist/styleD/build/css/base/colors.css",
 		"./base/typography.css": "./dist/styleD/build/css/base/typography.css",
 		"./base/spacing.css": "./dist/styleD/build/css/base/spacing.css",
@@ -41,13 +52,20 @@
 		"./component/byline.css": "./dist/styleD/build/css/component/byline.css",
 		"./component/tagAutocomplete.css": "./dist/styleD/build/css/component/tagAutocomplete.css",
 		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css",
-		"./component/avatar.css": "./dist/styleD/build/css/component/avatar.css"
+		"./component/avatar.css": "./dist/styleD/build/css/component/avatar.css",
+		"./component/button.css": "./dist/styleD/build/css/component/button.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
 		"*": {
 			"avatar": [
 				"./dist/types/avatar.d.ts"
+			],
+			"button": [
+				"./dist/types/button.d.ts"
+			],
+			"link-button": [
+				"./dist/types/link-button.d.ts"
 			],
 			"byline": [
 				"./dist/types/byline.d.ts"
@@ -128,6 +146,7 @@
 		"rollup": "4.55.3",
 		"rollup-plugin-copy": "^3.5.0",
 		"rollup-plugin-esbuild": "6.2.1",
+		"rollup-plugin-import-css": "^4.2.0",
 		"rollup-plugin-node-externals": "8.1.2",
 		"storybook": "^10.1.11",
 		"style-dictionary": "^5.1.4",
