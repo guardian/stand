@@ -36,7 +36,6 @@ const input = {
 	byline: 'src/byline.ts',
 	'tag-picker': 'src/tag-picker.ts',
 	'user-menu': 'src/user-menu.ts',
-	utils: 'src/utils.ts',
 };
 
 /**
