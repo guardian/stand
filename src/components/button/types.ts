@@ -7,7 +7,7 @@ export interface ButtonProps
 		DefaultProps<ButtonTheme, RACButtonProps['className']>,
 		RACButtonProps {
 	/**
-	 * Size variant of the avatar
+	 * Size variant of the button
 	 */
 	size?: keyof Omit<ButtonTheme['emphasised-primary'], 'shared'>;
 	/**

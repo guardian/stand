@@ -33,6 +33,7 @@ const input = {
 	button: 'src/button.ts',
 	'link-button': 'src/link-button.ts',
 	typography: 'src/typography.ts',
+	icon: 'src/icon.ts',
 	// editorial components
 	byline: 'src/byline.ts',
 	'tag-picker': 'src/tag-picker.ts',
@@ -70,7 +71,7 @@ export default [
 						dest: 'dist/styleD/build/',
 					},
 					{
-						src: 'src/fonts/OpenSans.css',
+						src: 'src/fonts/*',
 						dest: 'dist/fonts/',
 					},
 					{

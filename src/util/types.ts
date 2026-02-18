@@ -26,11 +26,12 @@ export interface DefaultProps<ThemeType, ClassNameType = undefined> {
 export interface DefaultPropsWithChildren<
 	ThemeType,
 	ClassNameType = undefined,
+	ChildrenType = React.ReactNode,
 > extends DefaultProps<ThemeType, ClassNameType> {
 	/**
 	 * The content of the component
 	 */
-	children?: React.ReactNode;
+	children?: ChildrenType;
 }
 
 export type Prettify<T> = {

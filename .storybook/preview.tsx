@@ -8,6 +8,7 @@ import {
 import { convertTypographyToEmotionObjectStyle, GlobalResetStyles } from '../src/utils';
 
 const Fonts = css`
+    @import url('https://assets.guim.co.uk/fonts/material-symbols/MaterialSymbolsOutlined.css');
 	@import url('https://assets.guim.co.uk/fonts/open-sans/OpenSans.css');
 	@font-face {
 		font-family: 'GH Guardian Headline';
