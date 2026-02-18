@@ -840,6 +840,27 @@
 					"$type": "number",
 					"$value": "{base.typography.width.Open Sans}"
 				}
+			},
+			"interactive-md": {
+				"font": {
+					"$type": "typography",
+					"$value": {
+						"fontFamily": "{base.typography.family.Open Sans}",
+						"fontWeight": "{base.typography.weight.Open Sans.bold}",
+						"fontSize": "{base.typography.size.16-rem}",
+						"fontStyle": "{base.typography.style.normal}",
+						"lineHeight": "{base.typography.line-height.interactive}",
+						"letterSpacing": "{base.typography.letter-spacing.dense-rem}"
+					}
+				},
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{base.typography.letter-spacing.dense-rem}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{base.typography.width.Open Sans}"
+				}
 			}
 		}
 	}

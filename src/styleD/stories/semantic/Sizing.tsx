@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { tableStyles } from '../../../util/storybookStyles';
 import { semanticColors } from '../../build/typescript/semantic/colors';
 import { semanticSizing } from '../../build/typescript/semantic/sizing';
 import { semanticTypography } from '../../build/typescript/semantic/typography';
@@ -14,32 +15,6 @@ const sectionCss = css`
 		${convertTypographyToEmotionStringStyle(
 			semanticTypography['heading-md'],
 		)}
-	}
-`;
-
-const tableCss = css`
-	width: 100%;
-	border-collapse: collapse;
-	${convertTypographyToEmotionStringStyle(semanticTypography['body-sm'])}
-
-	th {
-		text-align: left;
-		font-weight: 700;
-		padding: 12px 8px;
-		border-bottom: 2px solid ${semanticColors.border.default};
-		position: sticky;
-		top: 0;
-		background: ${semanticColors.bg.base};
-	}
-
-	td {
-		padding: 12px 8px;
-		border-bottom: 1px solid ${semanticColors.border.secondary};
-		vertical-align: middle;
-	}
-
-	tr:hover {
-		background: ${semanticColors.surface['light-1']};
 	}
 `;
 
@@ -78,7 +53,7 @@ const renderSizingCategory = (
 	<div css={sectionCss}>
 		<h2>{categoryName}</h2>
 		<p css={usageCss}>{usage}</p>
-		<table css={tableCss}>
+		<table css={tableStyles}>
 			<thead>
 				<tr>
 					<th>Token</th>

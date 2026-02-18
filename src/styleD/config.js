@@ -54,6 +54,10 @@ const fileList = [
 		group: 'component',
 		component: 'avatar',
 	},
+	{
+		group: 'component',
+		component: 'button',
+	},
 	/** editorial components */
 	{
 		group: 'component',
@@ -126,6 +130,7 @@ export default {
 				'attribute/cti',
 				'name/camel',
 				'color/hex',
+				'border/css/shorthand',
 				'typography/css/shorthand',
 				'border/css/shorthand',
 			],

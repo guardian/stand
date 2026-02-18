@@ -1,5 +1,5 @@
 import type { ComponentAvatar } from '../../styleD/build/typescript/component/avatar';
-import type { DeepPartial, DefaultProps } from '../../util/types';
+import type { DefaultProps } from '../../util/types';
 import type { AvatarTheme } from './styles';
 
 export type AvatarColors = keyof ComponentAvatar['shared']['color'];
@@ -17,7 +17,7 @@ export const avatarColors: AvatarColors[] = [
 	'yellow',
 ];
 
-interface AvatarBaseProps extends DefaultProps {
+interface AvatarBaseProps extends DefaultProps<AvatarTheme> {
 	/**
 	 * Size variant of the avatar
 	 */
@@ -26,10 +26,6 @@ interface AvatarBaseProps extends DefaultProps {
 	 * Color variant of the avatar
 	 */
 	color?: AvatarColors;
-	/**
-	 * Custom theme overrides for the Avatar component
-	 */
-	theme?: DeepPartial<AvatarTheme>;
 }
 
 interface AvatarWithImage extends AvatarBaseProps {

@@ -148,4 +148,7 @@
 	--semantic-typography-interactive-sm-font: normal 700 0.875rem/1 'Open Sans';
 	--semantic-typography-interactive-sm-letter-spacing: -0.0125rem;
 	--semantic-typography-interactive-sm-font-width: 95;
+	--semantic-typography-interactive-md-font: normal 700 1rem/1 'Open Sans';
+	--semantic-typography-interactive-md-letter-spacing: -0.0125rem;
+	--semantic-typography-interactive-md-font-width: 95;
 }
