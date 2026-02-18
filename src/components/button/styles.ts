@@ -13,6 +13,8 @@ export const defaultButtonTheme: ButtonTheme = componentButton;
 export const buttonStyles = (
 	theme: ButtonTheme,
 	{ size, variant }: Required<Pick<ButtonProps, 'size' | 'variant'>>,
+	hasIcon = false,
+	isIconButton = false,
 ): SerializedStyles => {
 	return css`
 		/* button/link button reset styles */
@@ -37,6 +39,19 @@ export const buttonStyles = (
 		)}
 		border: ${theme[variant].shared.border};
 		border-radius: ${theme[variant].shared.borderRadius};
+
+		${hasIcon &&
+		css`
+			padding-left: ${theme[variant][size].padding.withIcon.iconLeft
+				.left};
+			gap: ${theme[variant][size].icon.gap};
+		`}
+
+		${isIconButton &&
+		css`
+			width: ${theme[variant][size].iconButton.width};
+			padding: 0;
+		`}
 
 		&[data-hovered] {
 			background: ${theme[variant].shared[':hover'].backgroundColor};

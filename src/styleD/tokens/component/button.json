@@ -145,6 +145,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.8-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.4-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -159,6 +167,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-xs.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.sm}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.xs}"
 						}
 					}
 				},
@@ -183,6 +207,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.10-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.8-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -197,6 +229,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.sm}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.sm}"
 						}
 					}
 				},
@@ -221,6 +269,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.12-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.8-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -235,6 +291,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.md}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.md}"
 						}
 					}
 				},
@@ -259,6 +331,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.16-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.12-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -273,6 +353,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-md.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.lg}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.lg}"
 						}
 					}
 				}
@@ -367,6 +463,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.8-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.4-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -381,6 +485,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-xs.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.sm}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.xs}"
 						}
 					}
 				},
@@ -405,6 +525,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.10-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.8-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -419,6 +547,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.sm}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.sm}"
 						}
 					}
 				},
@@ -443,6 +587,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.12-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.8-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -457,6 +609,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.md}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.md}"
 						}
 					}
 				},
@@ -481,6 +649,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.16-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.12-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -495,6 +671,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-md.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.lg}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.lg}"
 						}
 					}
 				}
@@ -589,6 +781,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.8-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.4-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -603,6 +803,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-xs.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.sm}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.xs}"
 						}
 					}
 				},
@@ -627,6 +843,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.10-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.8-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -641,6 +865,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.sm}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.sm}"
 						}
 					}
 				},
@@ -665,6 +905,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.12-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.8-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -679,6 +927,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.md}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.md}"
 						}
 					}
 				},
@@ -703,6 +967,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.16-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.12-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -717,6 +989,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-md.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.lg}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.lg}"
 						}
 					}
 				}
@@ -811,6 +1099,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.8-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.4-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -825,6 +1121,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-xs.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.sm}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.xs}"
 						}
 					}
 				},
@@ -849,6 +1161,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.10-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.8-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -863,6 +1183,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.sm}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.sm}"
 						}
 					}
 				},
@@ -887,6 +1223,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.12-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.8-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -901,6 +1245,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.md}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.md}"
 						}
 					}
 				},
@@ -925,6 +1285,14 @@
 						"left": {
 							"$type": "dimension",
 							"$value": "{base.spacing.16-rem}"
+						},
+						"withIcon": {
+							"iconLeft": {
+								"left": {
+									"$type": "dimension",
+									"$value": "{base.spacing.12-rem}"
+								}
+							}
 						}
 					},
 					"typography": {
@@ -939,6 +1307,22 @@
 						"fontWidth": {
 							"$type": "number",
 							"$value": "{semantic.typography.interactive-md.fontWidth}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.icon.lg}"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"iconButton": {
+						"width": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.height.lg}"
 						}
 					}
 				}

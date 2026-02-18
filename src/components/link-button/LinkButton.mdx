@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 import LinkButtonStories, {
 	LinkButtonTable,
+	WithIconAllVariants,
 	CustomTheme,
 	CssOverrides,
 } from './LinkButton.stories';
@@ -57,23 +58,48 @@ const Example = () => (
 		>
 			Disabled link
 		</LinkButton>
+
+		{/* Icon via MaterialSymbol name */}
+		<LinkButton
+			href="/new"
+			variant="emphasised-primary"
+			size="md"
+			icon="add"
+		>
+			New item
+		</LinkButton>
+
+		{/* Icon via SVG element */}
+		<LinkButton
+			href="/remove"
+			variant="neutral-secondary"
+			size="md"
+			icon={
+				<svg aria-hidden viewBox="0 0 24 24">
+					<path d="M19 13H5v-2h14v2z" />
+				</svg>
+			}
+		>
+			Remove
+		</LinkButton>
 	</>
 );
 ```
 
 ## Props
 
-| Name           | Type                                                                                               | Required | Default                | Description                                                                                               |
-| -------------- | -------------------------------------------------------------------------------------------------- | -------- | ---------------------- | --------------------------------------------------------------------------------------------------------- |
-| `href`         | `string`                                                                                           | Yes      | N/A                    | Destination URL for the link.                                                                             |
-| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`                                                               | No       | `'md'`                 | Controls the link-button dimensions and typography.                                                       |
-| `variant`      | `'emphasised-primary'` \| `'emphasised-secondary'` \| `'neutral-primary'` \| `'neutral-secondary'` | No       | `'emphasised-primary'` | Chooses the colour scheme and interaction states.                                                         |
-| `children`     | `ReactNode`                                                                                        | Yes      | N/A                    | Content of the link.                                                                                      |
-| `isDisabled`   | `boolean`                                                                                          | No       | `false`                | Disables interaction and applies disabled styling.                                                        |
-| `theme`        | `LinkButtonTheme` (partial)                                                                        | No       | N/A                    | Override Stand tokens for this instance; merged over the default theme.                                   |
-| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                                                         | No       | N/A                    | Low-level escape hatch for Emotion overrides when theming is insufficient.                                |
-| `className`    | `string`                                                                                           | No       | N/A                    | Optional class name forwarded to the root React Aria link.                                                |
-| `...props`     | `ReactAria Link` props                                                                             | No       | N/A                    | All other props from `react-aria-components` `Link` (e.g. `target`, `rel`, `aria-label`, event handlers). |
+| Name           | Type                                                                                               | Required | Default                | Description                                                                                                                                                                                                       |
+| -------------- | -------------------------------------------------------------------------------------------------- | -------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `href`         | `string`                                                                                           | Yes      | N/A                    | Destination URL for the link.                                                                                                                                                                                     |
+| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`                                                               | No       | `'md'`                 | Controls the link-button dimensions and typography.                                                                                                                                                               |
+| `variant`      | `'emphasised-primary'` \| `'emphasised-secondary'` \| `'neutral-primary'` \| `'neutral-secondary'` | No       | `'emphasised-primary'` | Chooses the colour scheme and interaction states.                                                                                                                                                                 |
+| `children`     | `ReactNode`                                                                                        | Yes      | N/A                    | Content of the link.                                                                                                                                                                                              |
+| `icon`         | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>`                                  | No       | N/A                    | Icon rendered inside the link-button, before the label. Accepts a `MaterialSymbol` name or a non-string `ReactNode` (e.g. an SVG element). Size is inherited from `size`, except for `xs` buttons which use `sm`. |
+| `isDisabled`   | `boolean`                                                                                          | No       | `false`                | Disables interaction and applies disabled styling.                                                                                                                                                                |
+| `theme`        | `LinkButtonTheme` (partial)                                                                        | No       | N/A                    | Override Stand tokens for this instance; merged over the default theme.                                                                                                                                           |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                                                         | No       | N/A                    | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                                                                        |
+| `className`    | `string`                                                                                           | No       | N/A                    | Optional class name forwarded to the root React Aria link.                                                                                                                                                        |
+| `...props`     | `ReactAria Link` props                                                                             | No       | N/A                    | All other props from `react-aria-components` `Link` (e.g. `target`, `rel`, `aria-label`, event handlers).                                                                                                         |
 
 **`size` and `variant`**
 
@@ -82,7 +108,13 @@ const Example = () => (
 
 ## Stories
 
+### All variants and sizes
+
 <Story of={LinkButtonTable} />
+
+### With icon - all variants and sizes
+
+<Story of={WithIconAllVariants} />
 
 ## Customisation
 

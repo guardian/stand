@@ -47,11 +47,23 @@ export const componentButton = {
 				right: '0.5rem',
 				bottom: '0.25rem',
 				left: '0.5rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.25rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 0.75rem/1 Open Sans',
 				letterSpacing: '0rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.125rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '1.5rem',
 			},
 		},
 		sm: {
@@ -61,11 +73,23 @@ export const componentButton = {
 				right: '0.625rem',
 				bottom: '0.25rem',
 				left: '0.625rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.5rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.125rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '2rem',
 			},
 		},
 		md: {
@@ -75,11 +99,23 @@ export const componentButton = {
 				right: '0.75rem',
 				bottom: '0.25rem',
 				left: '0.75rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.5rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.25rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '2.5rem',
 			},
 		},
 		lg: {
@@ -89,11 +125,23 @@ export const componentButton = {
 				right: '1rem',
 				bottom: '0.25rem',
 				left: '1rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.75rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 1rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.5rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '3rem',
 			},
 		},
 	},
@@ -124,11 +172,23 @@ export const componentButton = {
 				right: '0.5rem',
 				bottom: '0.25rem',
 				left: '0.5rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.25rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 0.75rem/1 Open Sans',
 				letterSpacing: '0rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.125rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '1.5rem',
 			},
 		},
 		sm: {
@@ -138,11 +198,23 @@ export const componentButton = {
 				right: '0.625rem',
 				bottom: '0.25rem',
 				left: '0.625rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.5rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.125rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '2rem',
 			},
 		},
 		md: {
@@ -152,11 +224,23 @@ export const componentButton = {
 				right: '0.75rem',
 				bottom: '0.25rem',
 				left: '0.75rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.5rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.25rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '2.5rem',
 			},
 		},
 		lg: {
@@ -166,11 +250,23 @@ export const componentButton = {
 				right: '1rem',
 				bottom: '0.25rem',
 				left: '1rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.75rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 1rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.5rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '3rem',
 			},
 		},
 	},
@@ -201,11 +297,23 @@ export const componentButton = {
 				right: '0.5rem',
 				bottom: '0.25rem',
 				left: '0.5rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.25rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 0.75rem/1 Open Sans',
 				letterSpacing: '0rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.125rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '1.5rem',
 			},
 		},
 		sm: {
@@ -215,11 +323,23 @@ export const componentButton = {
 				right: '0.625rem',
 				bottom: '0.25rem',
 				left: '0.625rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.5rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.125rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '2rem',
 			},
 		},
 		md: {
@@ -229,11 +349,23 @@ export const componentButton = {
 				right: '0.75rem',
 				bottom: '0.25rem',
 				left: '0.75rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.5rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.25rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '2.5rem',
 			},
 		},
 		lg: {
@@ -243,11 +375,23 @@ export const componentButton = {
 				right: '1rem',
 				bottom: '0.25rem',
 				left: '1rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.75rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 1rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.5rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '3rem',
 			},
 		},
 	},
@@ -278,11 +422,23 @@ export const componentButton = {
 				right: '0.5rem',
 				bottom: '0.25rem',
 				left: '0.5rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.25rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 0.75rem/1 Open Sans',
 				letterSpacing: '0rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.125rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '1.5rem',
 			},
 		},
 		sm: {
@@ -292,11 +448,23 @@ export const componentButton = {
 				right: '0.625rem',
 				bottom: '0.25rem',
 				left: '0.625rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.5rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.125rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '2rem',
 			},
 		},
 		md: {
@@ -306,11 +474,23 @@ export const componentButton = {
 				right: '0.75rem',
 				bottom: '0.25rem',
 				left: '0.75rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.5rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 0.875rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.25rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '2.5rem',
 			},
 		},
 		lg: {
@@ -320,11 +500,23 @@ export const componentButton = {
 				right: '1rem',
 				bottom: '0.25rem',
 				left: '1rem',
+				withIcon: {
+					iconLeft: {
+						left: '0.75rem',
+					},
+				},
 			},
 			typography: {
 				font: 'normal 700 1rem/1 Open Sans',
 				letterSpacing: '-0.0125rem',
 				fontWidth: 95,
+			},
+			icon: {
+				size: '1.5rem',
+				gap: '0.25rem',
+			},
+			iconButton: {
+				width: '3rem',
 			},
 		},
 	},

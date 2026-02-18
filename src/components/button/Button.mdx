@@ -1,6 +1,7 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 import ButtonStories, {
 	ButtonTable,
+	WithIconAllVariants,
 	CustomTheme,
 	CssOverrides,
 } from './Button.stories';
@@ -31,7 +32,7 @@ See [custom component build](#custom-component-build) for usage without React/Em
 
 ## Example usage
 
-See "Emotion/React" heading on [codesandbox.io](https://codesandbox.io/p/sandbox/jctg2k)
+See "Emotion/React" heading under the "Button" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-mrzkrw)
 
 ```tsx
 import { Button } from '@guardian/stand/button';
@@ -52,22 +53,41 @@ const Example = () => (
 		<Button variant="neutral-secondary" size="sm" isDisabled>
 			Disabled
 		</Button>
+
+		{/* Icon via MaterialSymbol name */}
+		<Button variant="emphasised-primary" size="md" icon="add">
+			New item
+		</Button>
+
+		{/* Icon via SVG element */}
+		<Button
+			variant="neutral-secondary"
+			size="md"
+			icon={
+				<svg aria-hidden viewBox="0 0 24 24">
+					<path d="M19 13H5v-2h14v2z" />
+				</svg>
+			}
+		>
+			Remove
+		</Button>
 	</>
 );
 ```
 
 ## Props
 
-| Name           | Type                                                                                               | Required | Default                | Description                                                                                       |
-| -------------- | -------------------------------------------------------------------------------------------------- | -------- | ---------------------- | ------------------------------------------------------------------------------------------------- |
-| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`                                                               | No       | `'md'`                 | Controls the button dimensions and typography.                                                    |
-| `variant`      | `'emphasised-primary'` \| `'emphasised-secondary'` \| `'neutral-primary'` \| `'neutral-secondary'` | No       | `'emphasised-primary'` | Chooses the colour scheme and interaction states.                                                 |
-| `children`     | `ReactNode` \| `RenderProps`                                                                       | Yes      | N/A                    | Content inside the button. Render props receive `{ isPending }` from React Aria.                  |
-| `isDisabled`   | `boolean`                                                                                          | No       | `false`                | Disables interaction and applies disabled styling.                                                |
-| `theme`        | `ButtonTheme` (partial)                                                                            | No       | N/A                    | Override Stand tokens for this instance; merged over the default theme.                           |
-| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                                                         | No       | N/A                    | Low-level escape hatch for Emotion overrides when theming is insufficient.                        |
-| `className`    | `string`                                                                                           | No       | N/A                    | Optional class name forwarded to the root React Aria button.                                      |
-| `...props`     | `ReactAria Button` props                                                                           | No       | N/A                    | All other props from `react-aria-components` `Button` (e.g. `type`, `autoFocus`, event handlers). |
+| Name           | Type                                                                                               | Required | Default                | Description                                                                                                                                                                                                  |
+| -------------- | -------------------------------------------------------------------------------------------------- | -------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`                                                               | No       | `'md'`                 | Controls the button dimensions and typography.                                                                                                                                                               |
+| `variant`      | `'emphasised-primary'` \| `'emphasised-secondary'` \| `'neutral-primary'` \| `'neutral-secondary'` | No       | `'emphasised-primary'` | Chooses the colour scheme and interaction states.                                                                                                                                                            |
+| `children`     | `ReactNode` \| `RenderProps`                                                                       | Yes      | N/A                    | Content inside the button. Render props receive `{ isPending }` from React Aria.                                                                                                                             |
+| `icon`         | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>`                                  | No       | N/A                    | Icon rendered inside the button, before the label. Accepts a `MaterialSymbol` name or a non-string `ReactNode` (e.g. an SVG element). Size is inherited from `size`, except for `xs` buttons which use `sm`. |
+| `isDisabled`   | `boolean`                                                                                          | No       | `false`                | Disables interaction and applies disabled styling.                                                                                                                                                           |
+| `theme`        | `ButtonTheme` (partial)                                                                            | No       | N/A                    | Override Stand tokens for this instance; merged over the default theme.                                                                                                                                      |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                                                         | No       | N/A                    | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                                                                   |
+| `className`    | `string`                                                                                           | No       | N/A                    | Optional class name forwarded to the root React Aria button.                                                                                                                                                 |
+| `...props`     | `ReactAria Button` props                                                                           | No       | N/A                    | All other props from `react-aria-components` `Button` (e.g. `type`, `autoFocus`, event handlers).                                                                                                            |
 
 **`size` and `variant`**
 
@@ -76,7 +96,13 @@ const Example = () => (
 
 ## Stories
 
+### All variants and sizes
+
 <Story of={ButtonTable} />
+
+### With icon - all variants and sizes
+
+<Story of={WithIconAllVariants} />
 
 ## Customisation
 
@@ -145,7 +171,7 @@ If you're not using React/Emotion, or `@guardian/stand` is not compatible with y
 
 You will however be responsible for any additional functionality on top of the styles, for example accessibility, focus management, interaction states etc.
 
-See "Custom Component" heading on [codesandbox.io](https://codesandbox.io/p/sandbox/jctg2k)
+See "Custom Component" heading under the "Button" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-mrzkrw)
 
 **`css`**
 
@@ -155,6 +181,10 @@ You can import the Button styles as CSS from the package, make sure that your bu
 /* import the font and button variables */
 @import '@guardian/stand/fonts/OpenSans.css';
 @import '@guardian/stand/component/button.css';
+
+/* for icons */
+@import '@guardian/stand/fonts/MaterialSymbolsOutlined.css';
+@import '@guardian/stand/component/icon.css';
 
 /*
 or for scenarios where you have to use relative paths/node_modules directly:
@@ -223,6 +253,15 @@ or for scenarios where you have to use relative paths/node_modules directly:
 	);
 	border: var(--component-button-emphasised-primary-shared-disabled-border);
 }
+.stand-button-emphasised-primary > .material-symbols {
+	font-size: var(--component-button-emphasised-primary-md-icon-size);
+}
+.stand-button-emphasised-primary:has(> .material-symbols) {
+	padding-left: var(
+		--component-button-emphasised-primary-md-padding-with-icon-icon-left-left
+	);
+	gap: var(--component-button-emphasised-primary-md-icon-gap);
+}
 
 /* example setup of button/link button style using md size and neutral secondary variant */
 .stand-button-neutral-secondary {
@@ -265,6 +304,15 @@ or for scenarios where you have to use relative paths/node_modules directly:
 	);
 	border: var(--component-button-neutral-secondary-shared-disabled-border);
 }
+.stand-button-neutral-secondary > .material-symbols {
+	font-size: var(--component-button-neutral-secondary-md-icon-size);
+}
+.stand-button-neutral-secondary:has(> .material-symbols) {
+	padding-left: var(
+		--component-button-neutral-secondary-md-padding-with-icon-icon-left-left
+	);
+	gap: var(--component-button-neutral-secondary-md-icon-gap);
+}
 ```
 
 ```html
@@ -287,64 +335,123 @@ Use the `componentButton` variable and the `ComponentButton` type to define your
 import type { ComponentButton } from '@guardian/stand'; // if types required
 import { componentButton } from '@guardian/stand/button';
 
-/* NB: The HTML style attribute cannot target psuedo selectors, so they haven't been implemented e.g. hover/focus */
-const sharedButtonStyles = `
-  display: ${componentButton.shared.display};
-  -webkit-appearance: ${componentButton.shared['-webkit-appearance']};
-  text-align: ${componentButton.shared['text-align']};
-  box-shadow: ${componentButton.shared['box-shadow']};
-  text-decoration: ${componentButton.shared['text-decoration']};
-  cursor: ${componentButton.shared.cursor};
-  justify-content: ${componentButton.shared['justify-content']};
-  align-items: ${componentButton.shared['align-items']};
-`;
+// example of creating a stylesheet in js
+const sheet = new CSSStyleSheet();
 
-const emphasisedPrimaryButtonStyles = `
-  ${sharedButtonStyles}
-  color: ${componentButton['emphasised-primary'].shared.color};
-  background: ${componentButton['emphasised-primary'].shared.backgroundColor};
-  height: ${componentButton['emphasised-primary'].md.height};
-  padding: ${componentButton['emphasised-primary'].md.padding.top}
-    ${componentButton['emphasised-primary'].md.padding.right}
-    ${componentButton['emphasised-primary'].md.padding.bottom}
-    ${componentButton['emphasised-primary'].md.padding.left};
-  font: ${componentButton['emphasised-primary'].md.typography.font};
-  letter-spacing: ${componentButton['emphasised-primary'].md.typography.letterSpacing};
-  font-variation-settings: 'wdth'
-  ${componentButton['emphasised-primary'].md.typography.fontWidth};
-  border: ${componentButton['emphasised-primary'].shared.border};
-  border-radius: ${componentButton['emphasised-primary'].shared.borderRadius};
-`;
+// apply the rules to the sheet
+sheet.replaceSync(`
+  /* shared button styles for all variants */
+  .js-stand-button {
+    display: ${componentButton.shared.display};
+    -webkit-appearance: ${componentButton.shared['-webkit-appearance']};
+    text-align: ${componentButton.shared['text-align']};
+    box-shadow: ${componentButton.shared['box-shadow']};
+    text-decoration: ${componentButton.shared['text-decoration']};
+    cursor: ${componentButton.shared.cursor};
+    justify-content: ${componentButton.shared['justify-content']};
+    align-items: ${componentButton.shared['align-items']};
+  }
+  .js-stand-button:focus-visible {
+    outline: ${componentButton.shared[':focus-visible'].outline};
+    outline-offset: ${componentButton.shared[':focus-visible']['outline-offset']};
+  }
+  .js-stand-button:disabled {
+    cursor: ${componentButton.shared[':disabled'].cursor};
+  }
 
-const emphasisedPrimaryButtonDisabledStyles = `
-  ${emphasisedPrimaryButtonStyles}
-  cursor: ${componentButton.shared[':disabled'].cursor};
-  color: ${componentButton['emphasised-primary'].shared[':disabled'].color};
-  background: ${componentButton['emphasised-primary'].shared[':disabled'].backgroundColor};
-  border: ${componentButton['emphasised-primary'].shared[':disabled'].border};
-`;
+  /* example setup of button/link button style using md size and emphasised primary variant */
+  .js-stand-button-emphasised-primary {
+    color: ${componentButton['emphasised-primary'].shared.color};
+    background: ${componentButton['emphasised-primary'].shared.backgroundColor};
+    height: ${componentButton['emphasised-primary'].md.height};
+    padding: ${componentButton['emphasised-primary'].md.padding.top}
+      ${componentButton['emphasised-primary'].md.padding.right}
+      ${componentButton['emphasised-primary'].md.padding.bottom}
+      ${componentButton['emphasised-primary'].md.padding.left};
+    font: ${componentButton['emphasised-primary'].md.typography.font};
+    letter-spacing: ${componentButton['emphasised-primary'].md.typography.letterSpacing};
+    font-variation-settings: 'wdth'
+    ${componentButton['emphasised-primary'].md.typography.fontWidth};
+    border: ${componentButton['emphasised-primary'].shared.border};
+    border-radius: ${componentButton['emphasised-primary'].shared.borderRadius};
+  }
+  .js-stand-button-emphasised-primary:hover {
+    background: ${componentButton['emphasised-primary'].shared[':hover'].backgroundColor};
+    border: ${componentButton['emphasised-primary'].shared[':hover'].border}
+  }
+  .js-stand-button-emphasised-primary:active {
+    background: ${componentButton['emphasised-primary'].shared[':active'].backgroundColor};
+    border: ${componentButton['emphasised-primary'].shared[':active'].border};
+  }
+  .js-stand-button-emphasised-primary:disabled {
+    color: ${componentButton['emphasised-primary'].shared[':disabled'].color};
+    background: ${componentButton['emphasised-primary'].shared[':disabled'].backgroundColor};
+    border: ${componentButton['emphasised-primary'].shared[':disabled'].border};
+  }
+  .js-stand-button-emphasised-primary > .material-symbols {
+    font-size: ${componentButton['emphasised-primary'].md.icon.size}
+  }
+  .js-stand-button-emphasised-primary:has(> .material-symbols) {
+    padding-left: ${componentButton['emphasised-primary'].md.padding.withIcon.iconLeft.left};
+    gap: ${componentButton['emphasised-primary'].md.icon.gap};
+  }
 
-const neutralSecondaryButtonStyles = `
-  ${sharedButtonStyles}
-  color: ${componentButton['neutral-secondary'].shared.color};
-  background: ${componentButton['neutral-secondary'].shared.backgroundColor};
-  height: ${componentButton['neutral-secondary'].md.height};
-  padding: ${componentButton['neutral-secondary'].md.padding.top}
-    ${componentButton['neutral-secondary'].md.padding.right}
-    ${componentButton['neutral-secondary'].md.padding.bottom}
-    ${componentButton['neutral-secondary'].md.padding.left};
-  font: ${componentButton['neutral-secondary'].md.typography.font};
-  letter-spacing: ${componentButton['neutral-secondary'].md.typography.letterSpacing};
-  font-variation-settings: 'wdth'
-  ${componentButton['neutral-secondary'].md.typography.fontWidth};
-  border: ${componentButton['neutral-secondary'].shared.border};
-  border-radius: ${componentButton['neutral-secondary'].shared.borderRadius};
-`;
+  /* example setup of button/link button style using md size and neutral secondary variant */
+  .js-stand-button-neutral-secondary {
+    color: ${componentButton['neutral-secondary'].shared.color};
+    background: ${componentButton['neutral-secondary'].shared.backgroundColor};
+    height: ${componentButton['neutral-secondary'].md.height};
+    padding: ${componentButton['neutral-secondary'].md.padding.top}
+      ${componentButton['neutral-secondary'].md.padding.right}
+      ${componentButton['neutral-secondary'].md.padding.bottom}
+      ${componentButton['neutral-secondary'].md.padding.left};
+    font: ${componentButton['neutral-secondary'].md.typography.font};
+    letter-spacing: ${componentButton['neutral-secondary'].md.typography.letterSpacing};
+    font-variation-settings: 'wdth'
+    ${componentButton['neutral-secondary'].md.typography.fontWidth};
+    border: ${componentButton['neutral-secondary'].shared.border};
+    border-radius: ${componentButton['neutral-secondary'].shared.borderRadius};
+  }
+  .js-stand-button-neutral-secondary:hover {
+    background: ${componentButton['neutral-secondary'].shared[':hover'].backgroundColor};
+    border: ${componentButton['neutral-secondary'].shared[':hover'].border};
+  }
+  .js-stand-button-neutral-secondary:active {
+    background: ${componentButton['neutral-secondary'].shared[':active'].backgroundColor};
+    border: ${componentButton['neutral-secondary'].shared[':active'].border};
+  }
+  .js-stand-button-neutral-secondary:disabled {
+    color: ${componentButton['neutral-secondary'].shared[':disabled'].color};
+    background: ${componentButton['neutral-secondary'].shared[':disabled'].backgroundColor};
+    border: ${componentButton['neutral-secondary'].shared[':disabled'].border};
+  }
+  .js-stand-button-neutral-secondary > .material-symbols {
+    font-size: ${componentButton['neutral-secondary'].md.icon.size}
+  }
+  .js-stand-button-neutral-secondary:has(> .material-symbols) {
+    padding-left: ${componentButton['neutral-secondary'].md.padding.withIcon.iconLeft.left};
+    gap: ${componentButton['neutral-secondary'].md.icon.gap};
+  }
+`);
 
-// e.g. adding to DOM using vanilla JS styles
+// update the document with the sheet
+document.adoptedStyleSheets.push(sheet);
+
+// modify the dom with the button components using the generated stylesheet
 document.getElementById('app')!.innerHTML = `
-    <button style="${emphasisedPrimaryButtonStyles}">Button Label</button>
-    <button disabled style="${emphasisedPrimaryButtonDisabledStyles}">Disabled Button Label</button>
-    <a href="#" style="${neutralSecondaryButtonStyles}">LinkButton Label</a>
+  <h3>
+        Using <code>typescript</code>/<code>javascript</code>
+  </h3>
+  <span>see <code>src/button/custom.ts</code><span>
+  <div class="container">
+    <button class="js-stand-button js-stand-button-emphasised-primary">Button Label</button>
+    <button class="js-stand-button js-stand-button-emphasised-primary" disabled>Disabled Button Label</button>
+    <a class="js-stand-button js-stand-button-neutral-secondary" href="#">LinkButton Label</a>
+  </div>
+  <div class="container">
+    <button class="js-stand-button js-stand-button-emphasised-primary"><span class="material-symbols">raven</span>Button Label</button>
+    <button class="js-stand-button js-stand-button-emphasised-primary" disabled><span class="material-symbols">owl</span>Disabled Button Label</button>
+    <a class="js-stand-button js-stand-button-neutral-secondary" href="#"><span class="material-symbols">emoji_nature</span>LinkButton Label</a>
+  </div>
 `;
 ```
