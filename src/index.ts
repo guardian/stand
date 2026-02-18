@@ -12,6 +12,8 @@ export { componentTagAutocomplete } from './styleD/build/typescript/component/ta
 export type { ComponentTagAutocomplete } from './styleD/build/typescript/component/tagAutocomplete';
 export { componentTagTable } from './styleD/build/typescript/component/tagTable';
 export type { ComponentTagTable } from './styleD/build/typescript/component/tagTable';
+export { componentUserMenu } from './styleD/build/typescript/component/userMenu';
+export type { ComponentUserMenu } from './styleD/build/typescript/component/userMenu';
 
 /**
  * design system components tokens exports

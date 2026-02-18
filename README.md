@@ -1350,6 +1350,86 @@ const Component = () => {
 
 This is currently still in testing phase, so a production implementation is not yet available.
 
+### `UserMenu`
+
+The UserMenu component presents a collection of accessibility settings for users to customise their experience of using the application. The current supported settings are:
+
+- "Text Size"
+- "Font Family"
+- "Color scheme"
+
+**Peer dependencies:**
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+- `react-aria-components`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+**When to use**
+
+- as an application-level "accessibility options" panel
+- as part of a more general options page
+
+#### Usage
+
+```tsx
+import { UserMenu, type UserMenuProps } from '@guardian/stand/user-menu';
+
+const customFontFamilyOptions = [
+	{
+		id: 'white',
+		buttonStyle: {
+			backgroundColor: 'white',
+		},
+		isDefault: true,
+	},
+	{
+		id: 'pink',
+		buttonStyle: {
+			backgroundColor: 'pink',
+		},
+	},
+];
+
+const Component = ({
+	currentPreferences,
+	updatePreferences,
+}: {
+	currentPreferences: UserMenuProps['preferences'];
+	updatePreferences: UserMenuProps['updatePreferences'];
+}) => {
+	...
+	return (
+		<>
+			...
+			<UserMenu
+				feedBacklink="https://example.com/feedback-form"
+				fontFamilyOptions={customFontFamilyOptions}
+				colorSchemeOptions={[]}
+				preferences={currentPreferences}
+				updatePreferences={updatePreferences}
+			/>
+			...
+		</>
+	);
+};
+```
+
+`UserMenu` does not manage the persistence of the settings, nor how they are applied in the application when set - it merely presents a set of [controlled](https://react.dev/learn/sharing-state-between-components#controlled-and-uncontrolled-components) inputs for displaying and setting the values held by the application.
+
+There are options defaults for each of the setting, but these can be overridden with the props. IF the application does not support customising one of the options, setting an empty array for one of the sets of options will exclude that option from the UI (like in `colorSchemeOptions` in the example above).
+
+#### Props
+
+See [`UserMenuProps`](src/user-menu/UserMenu.tsx#L14) for the full list of props, usage example can be seen in Storybook.
+
+#### Example
+
+This is currently still in testing phase, so a production implementation is not yet available.
+
 ### Contributing
 
 See the [Contributing to Stand](./CONTRIBUTING.md) documentation for guidelines on contributing to this project. Project setup and common tasks are listed below.

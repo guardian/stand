@@ -34,6 +34,11 @@
 			"import": "./dist/tag-picker.js",
 			"require": "./dist/tag-picker.cjs"
 		},
+		"./user-menu": {
+			"types": "./dist/types/user-menu.d.ts",
+			"import": "./dist/user-menu.js",
+			"require": "./dist/user-menu.cjs"
+		},
 		"./utils": {
 			"types": "./dist/types/utils.d.ts",
 			"import": "./dist/utils.js",
@@ -52,6 +57,7 @@
 		"./component/byline.css": "./dist/styleD/build/css/component/byline.css",
 		"./component/tagAutocomplete.css": "./dist/styleD/build/css/component/tagAutocomplete.css",
 		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css",
+		"./component/userMenu.css": "./dist/styleD/build/css/component/userMenu.css",
 		"./component/avatar.css": "./dist/styleD/build/css/component/avatar.css",
 		"./component/button.css": "./dist/styleD/build/css/component/button.css"
 	},
@@ -72,6 +78,9 @@
 			],
 			"tag-picker": [
 				"./dist/types/tag-picker.d.ts"
+			],
+			"user-menu": [
+				"./dist/types/user-menu.d.ts"
 			],
 			"utils": [
 				"./dist/types/utils.d.ts"
