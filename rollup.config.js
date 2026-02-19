@@ -32,6 +32,7 @@ const input = {
 	avatar: 'src/avatar.ts',
 	button: 'src/button.ts',
 	'link-button': 'src/link-button.ts',
+	typography: 'src/typography.ts',
 	// editorial components
 	byline: 'src/byline.ts',
 	'tag-picker': 'src/tag-picker.ts',

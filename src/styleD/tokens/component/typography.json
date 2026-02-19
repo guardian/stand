@@ -1,0 +1,10 @@
+{
+	"component": {
+		"typography": {
+			"color": {
+				"$type": "color",
+				"$value": "{semantic.colors.text.default}"
+			}
+		}
+	}
+}

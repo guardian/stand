@@ -1174,6 +1174,69 @@ const Component = () => (
 
 LinkButton shares the same tokens and CSS output as `Button`. Use the [Button custom component build](#button-custom-component-build) guidance to consume the CSS or TypeScript tokens when you need a non-React implementation.
 
+### Typography
+
+The Typography component provides a convenient way to wrap React elements in a font variant.
+
+**Peer dependencies**
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+#### Example usage
+
+```tsx
+import { Typography } from '@guardian/stand/typography';
+
+/* types, if required */
+import type { Typography, TypographyTheme } from '@guardian/stand/typography';
+
+/* Paragraph element with body-md preset and text children */
+<Typography element="p" variant="body-md">Body text here</Typography>
+
+/* Div with an italic text wrapped inside */
+<Typography element="div" variant="body-md">Some text, with <Typography element="i" variant="body-italic-md">even more text</Typography></Typography>
+```
+
+#### Props
+
+| Name           | Type               | Required | Default   | Description                                          |
+| -------------- | ------------------ | -------- | --------- | ---------------------------------------------------- |
+| `element`      | Various            | No       | 'span'    | HTML element to render with font applied to.         |
+| `variant`      | Various            | No       | 'body-md' | Font variant to apply as a CSS style to the element. |
+| `children`     | `ReactNode`        | No       | N/A       | Content to render inside the supplied HTML element.  |
+| `theme`        | `TypographyTheme`  | No       | N/A       | Custom theme overrides for the typography.           |
+| `cssOverrides` | `SerializedStyles` | No       | N/A       | Custom CSS styles for the typography.                |
+| `className`    | `string`           | No       | N/A       | Additional class name(s) for the typography.         |
+
+#### Customisation
+
+**Custom theme**
+
+The `theme` prop allows you to override the color of the text:
+
+```tsx
+import type { TypographyTheme } from '@guardian/stand/typography';
+import { Typography } from '@guardian/stand/typography';
+
+const customTheme: TypographyTheme = {
+	color: 'red',
+};
+const Component = () => (
+	<Typography element="p" variant="body-md" theme={customTheme}>
+		Text
+	</Typography>
+);
+```
+
+**CSS overrides**
+
+The `cssOverrides` prop allows you to pass custom CSS to the rendered element.
+
 ## Components - Editorial
 
 Specialised components for use in specific editorial use cases.

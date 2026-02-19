@@ -58,6 +58,10 @@ const fileList = [
 		group: 'component',
 		component: 'button',
 	},
+	{
+		group: 'component',
+		component: 'typography',
+	},
 	/** editorial components */
 	{
 		group: 'component',

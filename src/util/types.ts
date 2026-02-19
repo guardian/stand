@@ -23,6 +23,16 @@ export interface DefaultProps<ThemeType, ClassNameType = undefined> {
 	cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
+export interface DefaultPropsWithChildren<
+	ThemeType,
+	ClassNameType = undefined,
+> extends DefaultProps<ThemeType, ClassNameType> {
+	/**
+	 * The content of the component
+	 */
+	children?: React.ReactNode;
+}
+
 export type Prettify<T> = {
 	[K in keyof T]: T[K];
 } & {};

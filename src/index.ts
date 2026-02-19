@@ -22,6 +22,8 @@ export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
 export { componentButton } from './styleD/build/typescript/component/button';
 export type { ComponentButton } from './styleD/build/typescript/component/button';
+export { componentTypography } from './styleD/build/typescript/component/typography';
+export type { ComponentTypography } from './styleD/build/typescript/component/typography';
 
 /**
  * style dictionary exports - base

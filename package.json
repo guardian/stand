@@ -24,6 +24,11 @@
 			"import": "./dist/link-button.js",
 			"require": "./dist/link-button.cjs"
 		},
+		"./typography": {
+			"types": "./dist/types/typography.d.ts",
+			"import": "./dist/typography.js",
+			"require": "./dist/typography.cjs"
+		},
 		"./byline": {
 			"types": "./dist/types/byline.d.ts",
 			"import": "./dist/byline.js",
@@ -59,7 +64,8 @@
 		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css",
 		"./component/userMenu.css": "./dist/styleD/build/css/component/userMenu.css",
 		"./component/avatar.css": "./dist/styleD/build/css/component/avatar.css",
-		"./component/button.css": "./dist/styleD/build/css/component/button.css"
+		"./component/button.css": "./dist/styleD/build/css/component/button.css",
+		"./component/typography.css": "./dist/styleD/build/css/component/typography.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
@@ -72,6 +78,9 @@
 			],
 			"link-button": [
 				"./dist/types/link-button.d.ts"
+			],
+			"typography": [
+				"./dist/types/typography.d.ts"
 			],
 			"byline": [
 				"./dist/types/byline.d.ts"
