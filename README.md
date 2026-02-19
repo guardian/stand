@@ -1030,6 +1030,261 @@ document.getElementById('app')!.innerHTML = `
 `;
 ```
 
+### `Icon`
+
+The Icon component provides a flexible way to display icons in your application. It supports both Material Symbols (font-based icons) and SVG icons (Material Icons or custom SVG components), with consistent sizing and color control.
+
+**When to use**
+
+- Display icons alongside text or buttons
+- Represent actions, states, or categories visually
+- Provide visual cues in UI elements
+
+**Peer dependencies:**
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [icon custom component build](#icon-custom-component-build) for usage without React/Emotion.
+
+#### Example usage
+
+See "Emotion/React" heading under the `Icon` component on [codesandbox.io](https://codesandbox.io/p/sandbox/mrzkrw).
+
+```tsx
+import { Icon } from '@guardian/stand/icon';
+import { baseColors } from '@guardian/stand';
+
+/* types, if required */
+import type { IconProps, IconTheme } from '@guardian/stand/icon';
+
+/* Material Symbols (font icon) */
+<Icon size="md" symbol="home"></Icon>
+
+/* Material Symbols with custom color */
+<Icon size="md" fill={baseColors.red[500]} symbol="home"></Icon>
+
+/* Standalone meaningful icon (use alt prop) */
+<Icon alt="Warning: High priority" symbol="warning"></Icon>
+
+/* Material Icons (SVG) */
+import HomeIcon from '@material-design-icons/svg/outlined/home.svg?react';
+<Icon size="md" alt="Home">
+	<HomeIcon />
+</Icon>
+
+/* Custom SVG component */
+const CustomIcon = () => (
+	<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+		<path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z" />
+	</svg>
+);
+
+<Icon size="lg" fill={baseColors.blue[500]} alt="Shield protection">
+	<CustomIcon />
+</Icon>
+```
+
+#### Props
+
+| Name           | Type                            | Required    | Default | Description                                                                                                                                                 |
+| -------------- | ------------------------------- | ----------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `symbol`       | `MaterialSymbol`                | Conditional | N/A     | Name of the Material Symbol to display (e.g., "home", "add"). Uses the `MaterialSymbol` type for type safety. Alternative to providing the icon as a child. |
+| `children`     | `ReactNode` \| `MaterialSymbol` | Conditional | N/A     | Icon content - either a Material Symbol name (typed as `MaterialSymbol`), an SVG component (ReactNode), or left empty if using `symbol`.                    |
+| `size`         | `'sm'` \| `'md'` \| `'lg'`      | No          | `'md'`  | Controls the icon dimensions.                                                                                                                               |
+| `fill`         | `string`                        | No          | N/A     | Fill/color of the icon. Default is to inherit from text color or icon defaults.                                                                             |
+| `alt`          | `string`                        | Conditional | N/A     | Alternative text for screen readers. Required if the icon conveys meaning on its own. Omit for decorative icons alongside text.                             |
+| `theme`        | `IconTheme` (partial)           | No          | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                                     |
+| `cssOverrides` | `SerializedStyles`              | No          | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                  |
+| `className`    | `string`                        | No          | N/A     | Additional class name(s) for the icon. For Material Symbols, combines with `material-symbols`.                                                              |
+
+**`size`**
+
+The icon supports three sizes:
+
+- `sm` (small): 20px
+- `md` (medium): 24px
+- `lg` (large): 32px
+
+**`symbol`**
+
+The `symbol` prop provides a convenient way to specify a Material Symbol icon by name (typed as `MaterialSymbol`, e.g., `"home"`, `"add"`, `"close"`). This is the recommended approach for font-based icons. If both `symbol` and `children` are provided, `symbol` takes precedence for Material Symbols.
+
+**`children`**
+
+The Icon component accepts two types of children:
+
+- **MaterialSymbol**: Pass the icon name as a string typed as `MaterialSymbol` (e.g., `"home"`, `"add"`, `"close"`). Requires the Material Symbols font to be loaded. (Prefer using the `symbol` prop for clarity.)
+- **ReactNode** (SVG): Pass an SVG component (e.g., from `@material-design-icons/svg` or a custom SVG component).
+
+**`alt`**
+
+Provide alternative text to describe the icon's meaning for screen readers:
+
+- **When to use**: Icons that convey meaning on their own (status indicators, standalone alerts, informational graphics)
+- **When to omit**: Icons that are purely decorative or appear alongside descriptive text
+
+#### Customisation
+
+We recommend using the default theme. When needed, use the `theme` or `cssOverrides` props.
+
+**Custom theme**
+
+```tsx
+import type { IconTheme } from '@guardian/stand/icon';
+import { Icon } from '@guardian/stand/icon';
+import { baseSizing } from '@guardian/stand';
+
+const customTheme: Partial<IconTheme> = {
+	shared: {
+		display: 'block',
+		'user-select': 'all',
+	},
+	md: {
+		size: baseSizing['size-48-rem'],
+	},
+};
+
+const Component = () => (
+	<Icon size="md" theme={customTheme}>
+		home
+	</Icon>
+);
+```
+
+**CSS overrides**
+
+```tsx
+import { Icon } from '@guardian/stand/icon';
+import { baseColors, baseSpacing, semanticSizing } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	padding: ${baseSpacing['4-rem']};
+	background-color: ${baseColors.yellow[400]};
+	border-radius: ${semanticSizing.border['extra-wide']};
+`;
+
+const Component = () => (
+	<Icon size="lg" fill={baseColors.neutral[900]} cssOverrides={customStyles}>
+		home
+	</Icon>
+);
+```
+
+#### Icon Custom Component Build
+
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom Icon component using the styles defined in the `IconTheme` type.
+
+You will however be responsible for any additional functionality on top of the styles, for example icon loading, accessibility, etc.
+
+See "Custom Component" heading under the `Icon` component on [codesandbox.io](https://codesandbox.io/p/sandbox/mrzkrw) for an example of a custom component build without React/Emotion.
+
+**`css`**
+
+You can import the Icon styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+
+```css
+/* import the icon font and icon styles */
+@import '@guardian/stand/fonts/MaterialSymbolsOutlined.css';
+@import '@guardian/stand/component/icon.css';
+
+/*
+or for scenarios where you have to use relative paths/node_modules directly:
+
+@import 'node_modules/@guardian/stand/dist/fonts/MaterialSymbolsOutlined.css';
+@import 'node_modules/@guardian/stand/dist/style/build/css/component/icon.css';
+*/
+
+@import '@guardian/stand/base/spacing.css';
+@import '@guardian/stand/base/colors.css';
+
+.stand-icon {
+	display: var(--component-icon-shared-display);
+	user-select: var(--component-icon-shared-user-select);
+	font-size: var(--component-icon-lg-size);
+}
+
+.stand-icon-font-color {
+	color: var(--base-colors-magenta-400);
+}
+
+.stand-icon-svg > svg {
+	width: var(--component-icon-lg-size);
+	height: var(--component-icon-lg-size);
+}
+
+.stand-icon-svg-color > svg {
+	fill: var(--base-colors-magenta-400);
+}
+```
+
+```html
+<!-- Material Symbols (font icons) -->
+<span class="material-symbols stand-icon">home</span>
+<span class="material-symbols stand-icon stand-icon-font-color">upload</span>
+
+<!-- SVG icons -->
+<span class="material-symbols stand-icon stand-icon-svg">
+	<svg xmlns="http://www.w3.org/2000/svg" ...>...</svg>
+</span>
+<span class="material-symbols stand-icon stand-icon-svg stand-icon-svg-color">
+	<svg xmlns="http://www.w3.org/2000/svg" ...>...</svg>
+</span>
+```
+
+**TypeScript/JavaScript**
+
+Use the `componentIcon` variable and the `ComponentIcon` type to define your custom styles in TypeScript/JavaScript:
+
+```ts
+import type { ComponentIcon } from '@guardian/stand'; // if types required
+import { componentIcon, baseColors } from '@guardian/stand';
+
+const iconStyles = `
+  display: ${componentIcon.shared.display};
+  user-select: ${componentIcon.shared['user-select']};
+  font-size: ${componentIcon.lg.size};
+`;
+
+const iconFontColorStyles = `
+  ${iconStyles}
+  color: ${baseColors.magenta[400]};
+`;
+
+const iconSvgStyles = `
+  width: ${componentIcon.lg.size};
+  height: ${componentIcon.lg.size};
+`;
+
+const iconSvgColorStyles = `
+  ${iconSvgStyles}
+  fill: ${baseColors.magenta[400]};
+`;
+
+// e.g. adding to DOM using vanilla JS styles
+document.getElementById('app')!.innerHTML = `
+  <h3>
+        Using <code>typescript</code>/<code>javascript</code>
+  </h3>
+  <div>see <code>src/icon/custom.ts</code><div>
+  <div style="margin-top: 4px;">Material Symbols</div>
+  <div class="container">
+    <span class="material-symbols" style="${iconStyles}">home</span>
+    <span class="material-symbols" style="${iconFontColorStyles}">upload</span>
+  </div>
+  <div style="margin-top: 4px;">SVGs</div>
+  <div class="container">
+    <span class="material-symbols" style="${iconStyles}"><svg style="${iconSvgStyles}"...>...</svg></span>
+    <span class="material-symbols" style="${iconFontColorStyles}"><svg style="${iconSvgColorStyles}"...>...</svg></span>
+  </div>
+`;
+```
+
 ### `LinkButton`
 
 An anchor element styled like the Stand `Button` component, based on the React Aria `Link`. It keeps link semantics (`href`, `target`, `rel`) while sharing the same variants and sizes as `Button`.

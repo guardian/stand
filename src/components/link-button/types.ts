@@ -7,7 +7,7 @@ export interface LinkButtonProps
 		DefaultProps<LinkButtonTheme, RACLinkProps['className']>,
 		RACLinkProps {
 	/**
-	 * Size variant of the avatar
+	 * Size variant of the link button
 	 */
 	size?: keyof Omit<LinkButtonTheme['emphasised-primary'], 'shared'>;
 	/**

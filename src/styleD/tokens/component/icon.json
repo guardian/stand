@@ -1,0 +1,34 @@
+{
+	"component": {
+		"icon": {
+			"shared": {
+				"display": {
+					"$type": "string",
+					"$value": "inline-flex"
+				},
+				"user-select": {
+					"$type": "string",
+					"$value": "none"
+				}
+			},
+			"sm": {
+				"size": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.icon.sm}"
+				}
+			},
+			"md": {
+				"size": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.icon.md}"
+				}
+			},
+			"lg": {
+				"size": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.icon.lg}"
+				}
+			}
+		}
+	}
+}
