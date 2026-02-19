@@ -1,0 +1,352 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import IconButtonStories, {
+	IconButtonTable,
+	CustomTheme,
+	CssOverrides,
+} from './IconButton.stories';
+
+<Meta of={IconButtonStories} />
+
+# IconButton
+
+A React Aria powered button that displays only an icon, following Stand design and accessibility defaults. It supports multiple visual variants, four sizes, disabled state handling, and render props for pending interactions. Based on the same styling system as the `Button` component. See React Aria guidance in their [Button docs](https://react-aria.adobe.com/Button).
+
+## When to use
+
+- Compact actions where an icon alone provides sufficient context
+- Toolbar buttons or action menus
+- Icon-only controls (edit, delete, close, etc.)
+- Space-constrained interfaces where text labels aren't feasible
+- When an `aria-label` can provide accessible text alternative
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+See "Emotion/React" heading under the "IconButton" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-mrzkrw)
+
+```tsx
+import { IconButton } from '@guardian/stand/icon-button';
+import type {
+	IconButtonProps,
+	IconButtonTheme,
+} from '@guardian/stand/icon-button';
+
+const Example = () => (
+	<>
+		<IconButton
+			variant="emphasised-primary"
+			size="md"
+			ariaLabel="Add item"
+			onPress={() => {
+				console.log('Add action');
+			}}
+		>
+			add
+		</IconButton>
+
+		<IconButton
+			variant="neutral-secondary"
+			size="sm"
+			ariaLabel="Delete item"
+			isDisabled
+		>
+			delete
+		</IconButton>
+	</>
+);
+```
+
+## Props
+
+| Name           | Type                                                                                               | Required    | Default                | Description                                                                                                                                                                        |
+| -------------- | -------------------------------------------------------------------------------------------------- | ----------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `symbol`       | `MaterialSymbol`                                                                                   | Conditional | N/A                    | Name of the Material Symbol to display (e.g., "add", "delete"). Uses the `MaterialSymbol` type for type safety. Alternative to providing the icon as a child.                      |
+| `children`     | `ReactNode` \| `MaterialSymbol` \| `RenderProps`                                                   | Conditional | N/A                    | Icon content - either a Material Symbol name (typed as `MaterialSymbol`), an SVG component, or left empty if using `symbol`. Render props receive `{ isPending }` from React Aria. |
+| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`                                                               | No          | `'md'`                 | Controls the button dimensions. Icon size adjusts automatically (sm for xs buttons, otherwise matches button size).                                                                |
+| `variant`      | `'emphasised-primary'` \| `'emphasised-secondary'` \| `'neutral-primary'` \| `'neutral-secondary'` | No          | `'emphasised-primary'` | Chooses the colour scheme and interaction states.                                                                                                                                  |
+| `isDisabled`   | `boolean`                                                                                          | No          | `false`                | Disables interaction and applies disabled styling.                                                                                                                                 |
+| `theme`        | `IconButtonTheme` (partial)                                                                        | No          | N/A                    | Override Stand tokens for this instance; merged over the default theme.                                                                                                            |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                                                         | No          | N/A                    | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                                         |
+| `className`    | `string`                                                                                           | No          | N/A                    | Optional class name forwarded to the root React Aria button.                                                                                                                       |
+| `ariaLabel`    | `string`                                                                                           | Yes         | N/A                    | Accessible label for screen readers. Required for icon-only buttons to ensure accessibility.                                                                                       |
+| `...props`     | `ReactAria Button` props                                                                           | No          | N/A                    | All other props from `react-aria-components` `Button` (e.g. `type`, `autoFocus`, event handlers).                                                                                  |
+
+**`size` and `variant`**
+
+- Sizes: `xs`, `sm`, `md`, `lg`
+- Variants: `emphasised-primary`, `emphasised-secondary`, `neutral-primary`, `neutral-secondary`
+
+**`symbol`**
+
+The `symbol` prop provides a convenient way to specify a Material Symbol icon by name (typed as `MaterialSymbol`, e.g., `"add"`, `"delete"`, `"edit"`). This is the recommended approach for font-based icons. If both `symbol` and `children` are provided, `symbol` takes precedence for Material Symbols.
+**`children`**
+
+The IconButton component accepts as children either:
+
+- **MaterialSymbol**: Pass the icon name as a string typed as `MaterialSymbol` (e.g., `"add"`, `"delete"`).
+- **ReactNode** (SVG): Pass an SVG component (e.g., from `@material-design-icons/svg` or a custom SVG component).
+- **RenderProps**: Render props receive `{ isPending }` from React Aria.
+
+**Icon sizing**
+
+The Icon component nested inside IconButton automatically adjusts:
+
+- `xs` button size → `sm` icon size
+- `sm`, `md`, `lg` button sizes → matching icon size
+
+## Stories
+
+<Story of={IconButtonTable} />
+
+## Customisation
+
+We recommend using the default theme. When needed, use the `theme` or `cssOverrides` props.
+
+### Custom theme
+
+<Story of={CustomTheme} />
+
+```tsx
+import type { IconButtonTheme } from '@guardian/stand/icon-button';
+import { IconButton } from '@guardian/stand/icon-button';
+import { baseColors } from '@guardian/stand';
+
+const customTheme: Partial<IconButtonTheme> = {
+	'emphasised-primary': {
+		shared: {
+			backgroundColor: baseColors['cool-purple'][200],
+			color: baseColors['cool-purple'][900],
+			border: `2px solid ${baseColors['cool-purple'][700]}`,
+			':hover': {
+				backgroundColor: baseColors['cool-purple'][300],
+				border: `2px solid ${baseColors['cool-purple'][700]}`,
+			},
+			':active': {
+				backgroundColor: baseColors['cool-purple'][400],
+				border: `2px solid ${baseColors['cool-purple'][700]}`,
+			},
+		},
+	},
+};
+
+const Component = () => (
+	<IconButton
+		variant="emphasised-primary"
+		size="md"
+		theme={customTheme}
+		ariaLabel="Add item"
+	>
+		add
+	</IconButton>
+);
+```
+
+### CSS overrides
+
+<Story of={CssOverrides} />
+
+```tsx
+import { IconButton } from '@guardian/stand/icon-button';
+import { baseSpacing } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	width: 100%;
+	padding-inline: ${baseSpacing['24-rem']};
+`;
+
+const Component = () => (
+	<IconButton
+		variant="neutral-primary"
+		size="sm"
+		cssOverrides={customStyles}
+		ariaLabel="Add item"
+	>
+		add
+	</IconButton>
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom `IconButton` component using styling that shares the same design tokens as the [Button](/docs/stand-editorial-design-system-components-button--docs#custom-component-build) component.
+
+However there are some minor differences in the styles for `IconButton` vs `Button`, so we'll show the exact examples below.
+
+You will however be responsible for any additional functionality on top of the styles, for example accessibility, focus management, interaction states, icon rendering, etc.
+
+See "Custom Component" heading under the "IconButton" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-mrzkrw)
+
+**Accessibility considerations**
+
+Icon-only buttons require proper labeling for screen readers:
+
+```html
+<button
+	aria-label="Add item"
+	title="Add item"
+	class="stand-icon-button stand-icon-button-emphasised-primary"
+>
+	<span class="material-symbols" aria-hidden="true">add</span>
+</button>
+```
+
+**`css`**
+
+You can import the Button styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+
+```css
+/* import the icon font (if using Material symbols), button and icon variables */
+@import '@guardian/stand/fonts/MaterialSymbolsOutlined.css';
+@import '@guardian/stand/component/button.css';
+@import '@guardian/stand/component/icon.css';
+
+/*
+or for scenarios where you have to use relative paths/node_modules directly:
+
+@import 'node_modules/@guardian/stand/dist/styleD/build/css/component/button.css';
+@import 'node_modules/@guardian/stand/dist/fonts/MaterialSymbolsOutlined.css';
+@import 'node_modules/@guardian/stand/dist/styleD/build/css/component/icon.css';
+*/
+
+/* shared button styles for all variants */
+.stand-icon-button {
+	display: var(--component-button-shared-display);
+	-webkit-appearance: var(--component-button-shared-webkit-appearance);
+	text-align: var(--component-button-shared-text-align);
+	box-shadow: var(--component-button-shared-box-shadow);
+	text-decoration: var(--component-button-shared-text-decoration);
+	cursor: var(--component-button-shared-cursor);
+	justify-content: var(--component-button-shared-justify-content);
+	align-items: var(--component-button-shared-align-items);
+}
+.stand-icon-button:focus-visible {
+	outline: var(--component-button-shared-focus-visible-outline);
+	outline-offset: var(--component-button-shared-focus-visible-outline-offset);
+}
+.stand-icon-button:disabled {
+	cursor: var(--component-button-shared-disabled-cursor);
+}
+
+/* example setup of button/link button style using md size and emphasised primary variant */
+.stand-icon-button-emphasised-primary {
+	color: var(--component-button-emphasised-primary-shared-color);
+	background: var(
+		--component-button-emphasised-primary-shared-background-color
+	);
+	width: var(--component-button-emphasised-primary-md-icon-button-width);
+	height: var(--component-button-emphasised-primary-md-height);
+	padding: 0;
+	font: var(--component-button-emphasised-primary-md-typography-font);
+	letter-spacing: var(
+		--component-button-emphasised-primary-md-typography-letter-spacing
+	);
+	font-variation-settings: 'wdth'
+		var(--component-button-emphasised-primary-md-typography-font-width);
+	border: var(--component-button-emphasised-primary-shared-border);
+	border-radius: var(
+		--component-button-emphasised-primary-shared-border-radius
+	);
+}
+.stand-icon-button-emphasised-primary:hover {
+	background: var(
+		--component-button-emphasised-primary-shared-hover-background-color
+	);
+	border: var(--component-button-emphasised-primary-shared-hover-border);
+}
+.stand-icon-button-emphasised-primary:active {
+	background: var(
+		--component-button-emphasised-primary-shared-active-background-color
+	);
+	border: var(--component-button-emphasised-primary-shared-active-border);
+}
+.stand-icon-button-emphasised-primary:disabled {
+	color: var(--component-button-emphasised-primary-shared-disabled-color);
+	background: var(
+		--component-button-emphasised-primary-shared-disabled-background-color
+	);
+	border: var(--component-button-emphasised-primary-shared-disabled-border);
+}
+.stand-icon-button-emphasised-primary > .material-symbols {
+	font-size: var(--component-button-emphasised-primary-md-icon-size);
+}
+
+/* example setup of button/link button style using md size and neutral secondary variant */
+.stand-icon-button-neutral-secondary {
+	color: var(--component-button-neutral-secondary-shared-color);
+	background: var(
+		--component-button-neutral-secondary-shared-background-color
+	);
+	width: var(--component-button-neutral-secondary-md-icon-button-width);
+	height: var(--component-button-neutral-secondary-md-height);
+	padding: 0;
+	font: var(--component-button-neutral-secondary-md-typography-font);
+	letter-spacing: var(
+		--component-button-neutral-secondary-md-typography-letter-spacing
+	);
+	font-variation-settings: 'wdth'
+		var(--component-button-neutral-secondary-md-typography-font-width);
+	border: var(--component-button-neutral-secondary-shared-border);
+	border-radius: var(
+		--component-button-neutral-secondary-shared-border-radius
+	);
+}
+.stand-icon-button-neutral-secondary:hover {
+	background: var(
+		--component-button-neutral-secondary-shared-hover-background-color
+	);
+	border: var(--component-button-neutral-secondary-shared-hover-border);
+}
+.stand-icon-button-neutral-secondary:active {
+	background: var(
+		--component-button-neutral-secondary-shared-active-background-color
+	);
+	border: var(--component-button-neutral-secondary-shared-active-border);
+}
+.stand-icon-button-neutral-secondary:disabled {
+	color: var(--component-button-neutral-secondary-shared-disabled-color);
+	background: var(
+		--component-button-neutral-secondary-shared-disabled-background-color
+	);
+	border: var(--component-button-neutral-secondary-shared-disabled-border);
+}
+.stand-icon-button-neutral-secondary > .material-symbols {
+	font-size: var(--component-button-neutral-secondary-md-icon-size);
+}
+```
+
+```html
+<button
+	class="stand-icon-button stand-icon-button-emphasised-primary"
+	title="Summon a raven"
+	aria-label="Summon a raven"
+>
+	<span class="material-symbols" aria-hidden="true">raven</span>
+</button>
+<button
+	class="stand-icon-button stand-icon-button-emphasised-primary"
+	disabled
+	title="Consult with an owl"
+	aria-label="Consult with an owl"
+>
+	<span class="material-symbols" aria-hidden="true">owl</span>
+</button>
+<a
+	class="stand-icon-button stand-icon-button-neutral-secondary"
+	href="#"
+	title="Gain nectar"
+	aria-label="Gain nectar"
+	><span class="material-symbols" aria-hidden="true">emoji_nature</span></a
+>
+```

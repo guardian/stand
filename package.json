@@ -24,6 +24,16 @@
 			"import": "./dist/link-button.js",
 			"require": "./dist/link-button.cjs"
 		},
+		"./icon-button": {
+			"types": "./dist/types/icon-button.d.ts",
+			"import": "./dist/icon-button.js",
+			"require": "./dist/icon-button.cjs"
+		},
+		"./icon-link-button": {
+			"types": "./dist/types/icon-link-button.d.ts",
+			"import": "./dist/icon-link-button.js",
+			"require": "./dist/icon-link-button.cjs"
+		},
 		"./typography": {
 			"types": "./dist/types/typography.d.ts",
 			"import": "./dist/typography.js",
@@ -87,6 +97,12 @@
 			],
 			"link-button": [
 				"./dist/types/link-button.d.ts"
+			],
+			"icon-button": [
+				"./dist/types/icon-button.d.ts"
+			],
+			"icon-link-button": [
+				"./dist/types/icon-link-button.d.ts"
 			],
 			"typography": [
 				"./dist/types/typography.d.ts"

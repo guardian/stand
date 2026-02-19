@@ -1,0 +1,186 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import IconLinkButtonStories, {
+	IconLinkButtonTable,
+	CustomTheme,
+	CssOverrides,
+} from './IconLinkButton.stories';
+
+<Meta of={IconLinkButtonStories} />
+
+# IconLinkButton
+
+An anchor element styled like the Stand `IconButton` component, and based on the react-aria `Link` component. It displays only an icon and keeps link semantics (including `href`, `target`, and `rel`) while sharing the same variants and sizes as `IconButton`. Refer to React Aria's [Link docs](https://react-aria.adobe.com/Link) for usage guidance.
+
+## When to use
+
+- Navigational links that should visually align with icon buttons
+- Icon-only links in toolbars or action menus
+- Cross-page actions where an icon button look-and-feel is preferred
+- Situations requiring disabled styling while preserving link semantics
+- When an `aria-label` can provide accessible text alternative
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+See "Emotion/React" heading under the "IconLinkButton" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-mrzkrw)
+
+```tsx
+import { IconLinkButton } from '@guardian/stand/icon-link-button';
+import type {
+	IconLinkButtonProps,
+	IconLinkButtonTheme,
+} from '@guardian/stand/icon-link-button';
+
+const Example = () => (
+	<>
+		<IconLinkButton
+			href="/add"
+			variant="emphasised-primary"
+			size="md"
+			ariaLabel="Add new item"
+			target="_blank"
+			rel="noreferrer"
+		>
+			add
+		</IconLinkButton>
+
+		<IconLinkButton
+			href="/settings"
+			variant="neutral-secondary"
+			size="sm"
+			ariaLabel="Settings"
+			isDisabled
+		>
+			settings
+		</IconLinkButton>
+	</>
+);
+```
+
+## Props
+
+| Name           | Type                                                                                               | Required    | Default                | Description                                                                                                                                                     |
+| -------------- | -------------------------------------------------------------------------------------------------- | ----------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `href`         | `string`                                                                                           | Yes         | N/A                    | Destination URL for the link.                                                                                                                                   |
+| `symbol`       | `MaterialSymbol`                                                                                   | Conditional | N/A                    | Name of the Material Symbol to display (e.g., "settings", "add"). Uses the `MaterialSymbol` type for type safety. Alternative to providing the icon as a child. |
+| `children`     | `ReactNode` \| `MaterialSymbol`                                                                    | Conditional | N/A                    | Icon content - either a Material Symbol name (typed as `MaterialSymbol`), an SVG component, or left empty if using `symbol`.                                    |
+| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`                                                               | No          | `'md'`                 | Controls the link-button dimensions. Icon size adjusts automatically (sm for xs buttons, otherwise matches button size).                                        |
+| `variant`      | `'emphasised-primary'` \| `'emphasised-secondary'` \| `'neutral-primary'` \| `'neutral-secondary'` | No          | `'emphasised-primary'` | Chooses the colour scheme and interaction states.                                                                                                               |
+| `isDisabled`   | `boolean`                                                                                          | No          | `false`                | Disables interaction and applies disabled styling.                                                                                                              |
+| `theme`        | `IconLinkButtonTheme` (partial)                                                                    | No          | N/A                    | Override Stand tokens for this instance; merged over the default theme.                                                                                         |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                                                         | No          | N/A                    | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                      |
+| `className`    | `string`                                                                                           | No          | N/A                    | Optional class name forwarded to the root React Aria link.                                                                                                      |
+| `ariaLabel`    | `string`                                                                                           | Yes         | N/A                    | Accessible label for screen readers. Required for icon-only links to ensure accessibility.                                                                      |
+| `...props`     | `ReactAria Link` props                                                                             | No          | N/A                    | All other props from `react-aria-components` `Link` (e.g. `target`, `rel`, event handlers).                                                                     |
+
+**`size` and `variant`**
+
+- Sizes: `xs`, `sm`, `md`, `lg`
+- Variants: `emphasised-primary`, `emphasised-secondary`, `neutral-primary`, `neutral-secondary`
+
+**`symbol`**
+
+The `symbol` prop provides a convenient way to specify a Material Symbol icon by name (typed as `MaterialSymbol`, e.g., `"settings"`, `"add"`, `"edit"`). This is the recommended approach for font-based icons. If both `symbol` and `children` are provided, `symbol` takes precedence for Material Symbols.
+**`children`**
+
+The IconLinkButton component accepts as children either:
+
+- **MaterialSymbol**: Pass the icon name as a string typed as `MaterialSymbol` (e.g., `"settings"`, `"add"`).
+- **ReactNode** (SVG): Pass an SVG component (e.g., from `@material-design-icons/svg` or a custom SVG component).
+
+**Icon sizing**
+
+The Icon component nested inside IconLinkButton automatically adjusts:
+
+- `xs` button size → `sm` icon size
+- `sm`, `md`, `lg` button sizes → matching icon size
+
+## Stories
+
+<Story of={IconLinkButtonTable} />
+
+## Customisation
+
+We recommend using the default theme. When needed, use the `theme` or `cssOverrides` props.
+
+### Custom theme
+
+<Story of={CustomTheme} />
+
+```tsx
+import type { IconLinkButtonTheme } from '@guardian/stand/icon-link-button';
+import { IconLinkButton } from '@guardian/stand/icon-link-button';
+import { baseColors } from '@guardian/stand';
+
+const customTheme: Partial<IconLinkButtonTheme> = {
+	'emphasised-primary': {
+		shared: {
+			backgroundColor: baseColors['cool-purple'][200],
+			color: baseColors['cool-purple'][900],
+			border: `2px solid ${baseColors['cool-purple'][700]}`,
+			':hover': {
+				backgroundColor: baseColors['cool-purple'][300],
+				border: `2px solid ${baseColors['cool-purple'][700]}`,
+			},
+			':active': {
+				backgroundColor: baseColors['cool-purple'][400],
+				border: `2px solid ${baseColors['cool-purple'][700]}`,
+			},
+		},
+	},
+};
+
+const Component = () => (
+	<IconLinkButton
+		href="/add"
+		variant="emphasised-primary"
+		size="md"
+		theme={customTheme}
+		ariaLabel="Add item"
+	>
+		add
+	</IconLinkButton>
+);
+```
+
+### CSS overrides
+
+<Story of={CssOverrides} />
+
+```tsx
+import { IconLinkButton } from '@guardian/stand/icon-link-button';
+import { baseSpacing } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	width: 100%;
+	padding-inline: ${baseSpacing['24-rem']};
+`;
+
+const Component = () => (
+	<IconLinkButton
+		href="/settings"
+		variant="neutral-primary"
+		size="sm"
+		cssOverrides={customStyles}
+		ariaLabel="Settings"
+	>
+		settings
+	</IconLinkButton>
+);
+```
+
+## Custom Component Build
+
+See the "Custom Component Build" section in the [`IconButton` documentation](/docs/stand-editorial-design-system-components-iconbutton--docs#custom-component-build) for guidance on building a custom LinkButton component without React/Emotion.

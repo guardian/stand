@@ -32,6 +32,8 @@ const input = {
 	avatar: 'src/avatar.ts',
 	button: 'src/button.ts',
 	'link-button': 'src/link-button.ts',
+	'icon-button': 'src/icon-button.ts',
+	'icon-link-button': 'src/icon-link-button.ts',
 	typography: 'src/typography.ts',
 	icon: 'src/icon.ts',
 	// editorial components
