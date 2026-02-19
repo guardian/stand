@@ -1,6 +1,6 @@
 {
 	"name": "@guardian/stand",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"type": "module",
 	"//exports": "Each component has its own entry point for optimal tree-shaking. Main entry point only includes design tokens and utilities. New components/foundations should follow the same pattern.",
 	"exports": {

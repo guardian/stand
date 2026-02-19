@@ -1,5 +1,14 @@
 # @guardian/stand
 
+## 0.0.10
+
+### Patch Changes
+
+- 53fe46c: Add `Typography` component
+- 27ab298: Add `Button` and `LinkButton` components
+- 26b605d: Add `Icon` component and documentation
+- dd7e2c2: Add `UserMenu` editorial component
+
 ## 0.0.9
 
 ### Patch Changes
