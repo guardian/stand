@@ -1,0 +1,16 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+
+# Storybook
+storybook-static/
+*storybook.log
+
+# Stand Playwright
+
+*/test-results/
+*/playwright-report/
+*/blob-report/
+*/playwright/.cache/
+*/playwright/.auth/
