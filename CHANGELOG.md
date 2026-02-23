@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.11
+
+### Patch Changes
+
+- 241affd: Add `IconButton` and `LinkIconButton` components
+- 21e8dc5: Add `icon` prop to `Button` and `LinkButton` components
+
 ## 0.0.10
 
 ### Patch Changes
