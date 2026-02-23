@@ -1,0 +1,41 @@
+name: CI
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - changeset-release/main
+permissions:
+  contents: read
+jobs:
+  build_stand:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-24.04-arm
+    strategy:
+      matrix:
+        include:
+          - name: Type check
+            run: pnpm tsc
+          - name: Lint
+            run: pnpm lint
+          - name: Format check
+            run: pnpm format:check
+          - name: Unit tests
+            run: pnpm test
+          - name: Build
+            run: pnpm run build
+          - name: Build style dictionary
+            run: pnpm run build-styled
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: pnpm
+          cache-dependency-path: 'pnpm-lock.yaml'
+      - name: Install dependencies
+        run: pnpm install
+      - name: ${{ matrix.name }}
+        run: ${{ matrix.run }}
