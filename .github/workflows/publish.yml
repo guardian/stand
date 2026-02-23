@@ -1,0 +1,132 @@
+name: Publish @guardian/stand
+
+on:
+  # Trigger for canary release on PR label
+  pull_request:
+    types: [labeled, synchronize]
+  # Trigger for standard (changesets) release after CI on main
+  workflow_run:
+    workflows: [CI]
+    branches: [main]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  release-canaries:
+    name: Release Stand Canaries
+    if: ${{ github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, '🐥 Canaries') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          # This makes Actions fetch all Git history so that Changesets can
+          # generate changelogs with the correct commits
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: pnpm
+          cache-dependency-path: 'pnpm-lock.yaml'
+
+      # Ensure npm 11.5.1 or later is installed
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - name: Version
+        run: |
+          pnpm i
+          pnpm changeset version --snapshot canary
+
+      - name: Build library
+        run: |
+          pnpm run build
+
+      - name: Release
+        uses: changesets/action@6a0a831ff30acef54f2c6aa1cbbc1096b066edaf # v1.7.0
+        id: publish-canary
+        with:
+          # currently, you have to tag releases in git to get the action output to appear
+          # https://github.com/changesets/action/issues/141
+          # publish: pnpm changeset publish --no-git-tag --tag canary
+          publish: pnpm changeset publish --tag canary
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        if: steps.publish-canary.outputs.published == 'true'
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            const publishedPackages = ${{ steps.publish-canary.outputs.publishedPackages }};
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: [
+                `> [!NOTE]`,
+                `> The following canaries were published to NPM:`,
+                `>`,
+                ...publishedPackages.map((pkg) => `> - [\`${pkg.name}@${pkg.version}\`](https://www.npmjs.com/package/${pkg.name}/v/${pkg.version})`),
+                '',
+                '🐥'
+              ].join('\n')
+            });
+            github.rest.issues.removeLabel({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              name: '🐥 Canaries',
+            });
+  changesets-version:
+    name: Manage Stand Changesets Pull Request
+    if: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          # This makes Actions fetch all Git history so that Changesets can
+          # generate changelogs with the correct commits
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: pnpm
+          cache-dependency-path: 'pnpm-lock.yaml'
+
+      # Ensure npm 11.5.1 or later is installed
+      - name: Update npm
+        run: npm install -g npm@latest
+
+      - name: Build library
+        run: |
+          pnpm i
+          pnpm run build
+
+      - name: Use GitHub App Token
+        uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        id: app-token
+        with:
+          app-id: ${{ secrets.GU_CHANGESETS_APP_ID }}
+          private-key: ${{ secrets.GU_CHANGESETS_PRIVATE_KEY }}
+      - name: Set git user to Gu Changesets app
+        run: |
+          git config user.name "gu-changesets-release-pr[bot]"
+          git config user.email "gu-changesets-release-pr[bot]@users.noreply.github.com"
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@6a0a831ff30acef54f2c6aa1cbbc1096b066edaf # v1.7.0
+        with:
+          publish: pnpm changeset publish
+          title: '🦋 Release package updates'
+          commit: 'Bump package versions'
+          setupGitUser: false
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
