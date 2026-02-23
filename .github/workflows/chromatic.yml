@@ -1,0 +1,51 @@
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+    types:
+      - opened
+      - synchronize
+      - labeled
+      - reopened
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    # Run Chromatic only if `run_chromatic` label has been applied or we're
+    # pushing to `main`.
+    if: contains(github.event.pull_request.labels.*.name, 'run_chromatic')  ||  github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+          # See https://www.chromatic.com/docs/github-actions/#recommended-configuration-for-build-events
+          ref: ${{ github.event.pull_request.head.ref }}
+        env:
+          CHROMATIC_BRANCH: ${{ github.event.pull_request.head.ref || github.ref_name }}
+          CHROMATIC_SHA: ${{ github.event.pull_request.head.sha || github.ref }}
+          CHROMATIC_SLUG: ${{ github.repository }}
+      - name: Setup pnpm - Stand Component Library
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+      - name: Setup Node.js - Stand Component Library
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: pnpm
+          cache-dependency-path: 'pnpm-lock.yaml'
+      - name: Build Storybook - Stand Component Library
+        run: |
+          pnpm install
+          pnpm run build
+          pnpm run build-storybook
+
+      - name: Chromatic - Stand Component Library
+        uses: chromaui/action@93712e37669f856c4828136f9cb535dbfa60b50c # v15.1.1
+        with:
+          projectToken: ${{ secrets.STAND_CHROMATIC_PROJECT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          onlyChanged: true
