@@ -35,12 +35,7 @@ export function IconLinkButton({
 			ref={linkRef}
 			aria-label={ariaLabel}
 			css={[
-				iconLinkButtonStyles(
-					mergedTheme,
-					{ variant, size },
-					false,
-					true,
-				),
+				iconLinkButtonStyles(mergedTheme, { variant, size }, false, true),
 				cssOverrides,
 			]}
 		>

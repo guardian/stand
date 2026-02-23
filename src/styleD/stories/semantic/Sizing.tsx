@@ -12,9 +12,7 @@ const sectionCss = css`
 		margin-bottom: 16px;
 		border-bottom: 2px solid ${semanticColors.border.default};
 		padding-bottom: 8px;
-		${convertTypographyToEmotionStringStyle(
-			semanticTypography['heading-md'],
-		)}
+		${convertTypographyToEmotionStringStyle(semanticTypography['heading-md'])}
 	}
 `;
 

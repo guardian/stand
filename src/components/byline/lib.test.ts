@@ -125,8 +125,7 @@ describe('detectNameInText', () => {
 	});
 
 	it('handles complex combinations', () => {
-		const text =
-			"A.B.C D’Artagnan-Jones. E.F.G Huckleberry Finn and H'G Wells";
+		const text = "A.B.C D’Artagnan-Jones. E.F.G Huckleberry Finn and H'G Wells";
 
 		const result1 = detectNameInText(text, 0);
 		expect(result1?.name).toBe('A.B.C D’Artagnan-Jones');

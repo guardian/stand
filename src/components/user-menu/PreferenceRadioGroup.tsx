@@ -67,9 +67,7 @@ export function PreferenceRadioGroup({
 						css={buttonStyle}
 						style={option.buttonStyle}
 					>
-						<div style={option.labelStyle}>
-							{option.label ?? option.id}
-						</div>
+						<div style={option.labelStyle}>{option.label ?? option.id}</div>
 						<div>{option.description}</div>
 					</ToggleButton>
 				))}

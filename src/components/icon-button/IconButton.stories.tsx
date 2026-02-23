@@ -51,11 +51,7 @@ export const IconButtonTable = {
 							</td>
 							{sizes.map((size) => (
 								<td key={`${variant}-${size}-enabled`}>
-									<IconButton
-										variant={variant}
-										size={size}
-										ariaLabel="Add"
-									>
+									<IconButton variant={variant} size={size} ariaLabel="Add">
 										add
 									</IconButton>
 								</td>

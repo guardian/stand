@@ -34,13 +34,8 @@ export function Icon({
 	return (
 		<span
 			className={className}
-			css={[
-				iconStyles(mergedTheme, { size, fill, mode: 'svg' }),
-				cssOverrides,
-			]}
-			{...(alt
-				? { role: 'img', 'aria-label': alt }
-				: { 'aria-hidden': true })}
+			css={[iconStyles(mergedTheme, { size, fill, mode: 'svg' }), cssOverrides]}
+			{...(alt ? { role: 'img', 'aria-label': alt } : { 'aria-hidden': true })}
 		>
 			{children}
 		</span>

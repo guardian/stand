@@ -5,13 +5,7 @@ export const SemanticPalette = {
 	render: () => (
 		<ColorPalette>
 			{Object.entries(semanticColors).map(([category, shades]) => {
-				return (
-					<ColorItem
-						key={category}
-						title={category}
-						colors={shades}
-					/>
-				);
+				return <ColorItem key={category} title={category} colors={shades} />;
 			})}
 		</ColorPalette>
 	),

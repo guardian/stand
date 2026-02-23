@@ -101,11 +101,7 @@ export const clipboardPlugin = (
 						{},
 						transformedNodes,
 					).content;
-					return new Slice(
-						newFragment,
-						slice.openStart,
-						slice.openEnd,
-					);
+					return new Slice(newFragment, slice.openStart, slice.openEnd);
 				}
 
 				return slice;
@@ -150,10 +146,7 @@ export const bylinePlugin = (): Plugin => {
 					dom.setAttribute('data-tag-id', node.attrs.tagId as string);
 					dom.setAttribute('data-path', node.attrs.path as string);
 					if (node.attrs.meta) {
-						dom.setAttribute(
-							'data-meta',
-							JSON.stringify(node.attrs.meta),
-						);
+						dom.setAttribute('data-meta', JSON.stringify(node.attrs.meta));
 					}
 					dom.textContent = node.attrs.label as string;
 
@@ -169,10 +162,7 @@ export const bylinePlugin = (): Plugin => {
 							return;
 						}
 
-						const tr = view.state.tr.deleteRange(
-							pos,
-							pos + node.nodeSize,
-						);
+						const tr = view.state.tr.deleteRange(pos, pos + node.nodeSize);
 						view.dispatch(tr);
 					});
 

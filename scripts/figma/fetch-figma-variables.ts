@@ -230,23 +230,18 @@ void (async () => {
 					case 'semantic':
 						{
 							if (file.skipSemantic) {
-								console.log(
-									`Skipping semantic tokens for file: ${file.name}`,
-								);
+								console.log(`Skipping semantic tokens for file: ${file.name}`);
 								break;
 							}
 
-							foundations.semantic[file.name] =
-								updateTokenReferences(
-									collectionContent,
-									file.name,
-								);
+							foundations.semantic[file.name] = updateTokenReferences(
+								collectionContent,
+								file.name,
+							);
 						}
 						break;
 					default:
-						console.warn(
-							`Unknown collection name: ${collectionName}`,
-						);
+						console.warn(`Unknown collection name: ${collectionName}`);
 						return; // Skip unknown collections
 				}
 			},

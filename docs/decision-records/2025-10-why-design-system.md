@@ -15,19 +15,19 @@ Having a go to design system (DS) reduces friction, improves developer efficienc
 ## Options
 
 - Adopt an existing design system as a standard, e.g. Elastic UI
-    - Some teams may have existing familiarity with it
-    - Gives an existing set of design and UX patterns
-    - The design will not align with the Guardian's brand
-    - No design or engineering effort needed to be able to use
-    - Less control over the future direction that the DS takes
+  - Some teams may have existing familiarity with it
+  - Gives an existing set of design and UX patterns
+  - The design will not align with the Guardian's brand
+  - No design or engineering effort needed to be able to use
+  - Less control over the future direction that the DS takes
 - Create a Guardian design system from scratch
-    - Maximum flexibility in terms of design
-    - Significant up front design and engineering work to build out a DS that has enough breadth to use
-    - A lot of time would be spent building basic design patterns that already exist elsewhere
+  - Maximum flexibility in terms of design
+  - Significant up front design and engineering work to build out a DS that has enough breadth to use
+  - A lot of time would be spent building basic design patterns that already exist elsewhere
 - Build design foundations from scratch and apply them to an existing UI library
-    - Customise the look and feel to match Guardian branding
-    - Gives an initial breadth of components to apply a custom design to
-    - Requires some engineering resource to customise a library in code
+  - Customise the look and feel to match Guardian branding
+  - Gives an initial breadth of components to apply a custom design to
+  - Requires some engineering resource to customise a library in code
 
 Any option that we take would need to focus on the ability to build and share Guardian journalism specific components, e.g. byline editor.
 

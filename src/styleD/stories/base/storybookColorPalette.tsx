@@ -141,9 +141,7 @@ const renderSwatchSpecimen = (colors: Colors) => {
 					{colors.map((color, index) => renderSwatch(color, index))}
 				</div>
 				<div css={SwatchLabelsStyles}>
-					{colors.map((color, index) =>
-						renderSwatchLabel(color, index),
-					)}
+					{colors.map((color, index) => renderSwatchLabel(color, index))}
 				</div>
 			</div>
 		);

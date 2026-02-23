@@ -34,10 +34,7 @@ export function UserMenu({
 }: UserMenuProps) {
 	return (
 		<aside css={userMenuStyles(theme)}>
-			<TitleText
-				headingLevel={headingLevel}
-				css={userMenuHeadingStyles(theme)}
-			>
+			<TitleText headingLevel={headingLevel} css={userMenuHeadingStyles(theme)}>
 				Accessibility Settings
 			</TitleText>
 			<div>
@@ -80,9 +77,7 @@ export function UserMenu({
 					options={colorSchemeOptions ?? defaultColorSchemes}
 					name="Color scheme"
 					currentValue={preferences.colorScheme}
-					changeValue={(colorScheme) =>
-						updatePreferences({ colorScheme })
-					}
+					changeValue={(colorScheme) => updatePreferences({ colorScheme })}
 				/>
 			)}
 		</aside>

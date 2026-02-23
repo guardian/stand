@@ -13,17 +13,17 @@ Across the journalism tools there are components/patterns that are repeated and 
 ## Options
 
 - Do nothing
-    - No change to existing components
-    - Any improvements to a single component isn't shared between similar components
-    - New instances will have to reimplement or copy and paste existing code
+  - No change to existing components
+  - Any improvements to a single component isn't shared between similar components
+  - New instances will have to reimplement or copy and paste existing code
 - Publish flexible-frontend
-    - Components already almost in a sharable state
-    - Components are designed with a look and feel for composer with not much room to modify
-    - Reliant on dependencies matching flexible-frontend/composer
+  - Components already almost in a sharable state
+  - Components are designed with a look and feel for composer with not much room to modify
+  - Reliant on dependencies matching flexible-frontend/composer
 - Create a new component library with the shared components
-    - Single place to contribute and share components
-    - Flexibility in how components can be created and shared e.g. web components
-    - Separation of concerns, independent from any existing project
+  - Single place to contribute and share components
+  - Flexibility in how components can be created and shared e.g. web components
+  - Separation of concerns, independent from any existing project
 
 ## Decision
 

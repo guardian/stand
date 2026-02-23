@@ -21,10 +21,7 @@ export const Preview = ({ doc }: { doc: Node | null }) => {
 			{parts.map((node, i) => {
 				if (node.isText) {
 					return (
-						<span
-							key={`${node.text}${i}`}
-							css={previewFreeTextStyles}
-						>
+						<span key={`${node.text}${i}`} css={previewFreeTextStyles}>
 							{node.text}
 						</span>
 					);

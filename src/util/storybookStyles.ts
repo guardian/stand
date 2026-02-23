@@ -14,9 +14,7 @@ export const tableStyles = css`
 
 	th {
 		text-align: left;
-		${convertTypographyToEmotionStringStyle(
-			semanticTypography['heading-sm'],
-		)}
+		${convertTypographyToEmotionStringStyle(semanticTypography['heading-sm'])}
 		padding: ${baseSpacing['12-rem']} ${baseSpacing['8-rem']};
 		border-bottom: ${semanticSizing.border.md} solid
 			${semanticColors.border.default};

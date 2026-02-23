@@ -9,17 +9,14 @@ const searchContributors = (
 ): Promise<TaggedContributor[]> => {
 	return new Promise<TaggedContributor[]>((resolve) => {
 		const results = contributors
-			.filter((name) =>
-				name.toLowerCase().includes(selectedText.toLowerCase()),
-			)
+			.filter((name) => name.toLowerCase().includes(selectedText.toLowerCase()))
 			.map((name, index) => ({
 				path: `profile/${name.toLowerCase().replace(/\s/g, '-')}`,
 				label: name,
 				type: 'Contributor',
 				tagId: `${index + 1}`,
 				// show internal label for every 5th contributor for testing internalLabel
-				internalLabel:
-					index % 5 === 0 ? `${name} (internal)` : undefined,
+				internalLabel: index % 5 === 0 ? `${name} (internal)` : undefined,
 			}))
 			.slice(0, 20);
 

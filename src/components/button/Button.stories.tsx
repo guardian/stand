@@ -31,7 +31,8 @@ export const ButtonTable = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'This table showcases all Button variants and sizes in both enabled and disabled states.',
+				story:
+					'This table showcases all Button variants and sizes in both enabled and disabled states.',
 			},
 		},
 	},
@@ -70,11 +71,7 @@ export const ButtonTable = {
 							</td>
 							{sizes.map((size) => (
 								<td key={`${variant}-${size}-disabled`}>
-									<Button
-										variant={variant}
-										size={size}
-										isDisabled
-									>
+									<Button variant={variant} size={size} isDisabled>
 										Button Label
 									</Button>
 								</td>
@@ -133,7 +130,8 @@ export const WithIconAllVariants = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'This table showcases all Button variants and sizes with icons in both enabled and disabled states.',
+				story:
+					'This table showcases all Button variants and sizes with icons in both enabled and disabled states.',
 			},
 		},
 	},
@@ -160,11 +158,7 @@ export const WithIconAllVariants = {
 							</td>
 							{sizes.map((size) => (
 								<td key={`${variant}-${size}-enabled`}>
-									<Button
-										variant={variant}
-										size={size}
-										icon="upload"
-									>
+									<Button variant={variant} size={size} icon="upload">
 										Button Label
 									</Button>
 								</td>
