@@ -32,7 +32,8 @@ export const LinkButtonTable = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'This table showcases all Button variants and sizes in both enabled and disabled states.',
+				story:
+					'This table showcases all Button variants and sizes in both enabled and disabled states.',
 			},
 		},
 	},
@@ -59,11 +60,7 @@ export const LinkButtonTable = {
 							</td>
 							{sizes.map((size) => (
 								<td key={`${variant}-${size}-enabled`}>
-									<LinkButton
-										href="#"
-										variant={variant}
-										size={size}
-									>
+									<LinkButton href="#" variant={variant} size={size}>
 										LinkButton Label
 									</LinkButton>
 								</td>
@@ -75,12 +72,7 @@ export const LinkButtonTable = {
 							</td>
 							{sizes.map((size) => (
 								<td key={`${variant}-${size}-disabled`}>
-									<LinkButton
-										href="#"
-										variant={variant}
-										size={size}
-										isDisabled
-									>
+									<LinkButton href="#" variant={variant} size={size} isDisabled>
 										LinkButton Label
 									</LinkButton>
 								</td>
@@ -139,7 +131,8 @@ export const WithIconAllVariants = {
 	parameters: {
 		docs: {
 			description: {
-				story: 'This table showcases all LinkButton variants and sizes with icons in both enabled and disabled states.',
+				story:
+					'This table showcases all LinkButton variants and sizes with icons in both enabled and disabled states.',
 			},
 		},
 	},

@@ -34,16 +34,13 @@ export const buttonStyles = (
 			${theme[variant][size].padding.right}
 			${theme[variant][size].padding.bottom}
 			${theme[variant][size].padding.left};
-		${convertTypographyToEmotionStringStyle(
-			theme[variant][size].typography,
-		)}
+		${convertTypographyToEmotionStringStyle(theme[variant][size].typography)}
 		border: ${theme[variant].shared.border};
 		border-radius: ${theme[variant].shared.borderRadius};
 
 		${hasIcon &&
 		css`
-			padding-left: ${theme[variant][size].padding.withIcon.iconLeft
-				.left};
+			padding-left: ${theme[variant][size].padding.withIcon.iconLeft.left};
 			gap: ${theme[variant][size].icon.gap};
 		`}
 

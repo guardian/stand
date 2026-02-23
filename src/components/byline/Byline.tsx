@@ -182,8 +182,7 @@ export const Byline = ({
 			// or adjacent to extend the range (requires changes)
 			const isWithinRange =
 				currentPosition >= start && currentPosition <= maxReached;
-			const isExtendingRange =
-				hasChanges && currentPosition === maxReached + 1;
+			const isExtendingRange = hasChanges && currentPosition === maxReached + 1;
 
 			if (isWithinRange || isExtendingRange) {
 				// update the maximum reached position based on changes
@@ -193,18 +192,15 @@ export const Byline = ({
 
 					if (positionDelta < 0) {
 						// backspace/delete: content was removed, decrease maxReached by 1
-						isTypingFromStartRange.current.maxReached =
-							maxReached - 1;
+						isTypingFromStartRange.current.maxReached = maxReached - 1;
 					} else if (positionDelta > 0) {
 						// content was added: increase maxReached by 1
-						isTypingFromStartRange.current.maxReached =
-							maxReached + 1;
+						isTypingFromStartRange.current.maxReached = maxReached + 1;
 					}
 					// if positionDelta === 0, content was replaced at same position, no maxReached change needed
 
 					// update lastPosition for next transaction
-					isTypingFromStartRange.current.lastPosition =
-						currentPosition;
+					isTypingFromStartRange.current.lastPosition = currentPosition;
 				}
 				return;
 			}
@@ -343,9 +339,7 @@ export const Byline = ({
 					}
 
 					if (
-						!dropdownRef.current?.contains(
-							event.relatedTarget as HTMLElement,
-						)
+						!dropdownRef.current?.contains(event.relatedTarget as HTMLElement)
 					) {
 						setShowDropdown(false);
 					}
@@ -393,10 +387,7 @@ export const Byline = ({
 								setTaggedContributors(contributors);
 							})
 							.catch((error) => {
-								console.error(
-									'Error fetching tagged contributors:',
-									error,
-								);
+								console.error('Error fetching tagged contributors:', error);
 								setTaggedContributors([]);
 							});
 					} else {
@@ -501,19 +492,14 @@ export const Byline = ({
 
 	return (
 		<div css={bylineContainerStyles}>
-			<div
-				css={bylineEditorStyles(theme)}
-				ref={editorRef}
-				onBlur={onBlur}
-			/>
+			<div css={bylineEditorStyles(theme)} ref={editorRef} onBlur={onBlur} />
 			<div
 				ref={dropdownRef}
 				tabIndex={0}
 				css={dropdownContainerStyles(
 					showDropdown &&
 						// show the dropdown if there are tagged contributors to select or untagged contributors are allowed
-						(taggedContributors.length > 0 ||
-							!!allowUntaggedContributors),
+						(taggedContributors.length > 0 || !!allowUntaggedContributors),
 					theme?.dropdown,
 				)}
 			>
@@ -552,23 +538,15 @@ export const Byline = ({
 						<li
 							role="option"
 							id={`contributor-option-${taggedContributors.length}`}
-							aria-selected={
-								currentOptionIndex === taggedContributors.length
-							}
+							aria-selected={currentOptionIndex === taggedContributors.length}
 							css={[
 								dropdownLiStyles(theme?.dropdown),
-								currentOptionIndex ===
-									taggedContributors.length &&
+								currentOptionIndex === taggedContributors.length &&
 									selectedDropdownLiStyles(theme?.dropdown),
 							]}
 							onMouseMove={() => {
-								if (
-									currentOptionIndex !==
-									taggedContributors.length
-								) {
-									setCurrentOptionIndex(
-										taggedContributors.length,
-									);
+								if (currentOptionIndex !== taggedContributors.length) {
+									setCurrentOptionIndex(taggedContributors.length);
 								}
 							}}
 							onMouseDown={(e: MouseEvent<HTMLLIElement>) => {
@@ -581,8 +559,7 @@ export const Byline = ({
 								);
 							}}
 						>
-							Add &quot;{currentText}&quot; as untagged
-							contributor
+							Add &quot;{currentText}&quot; as untagged contributor
 						</li>
 					)}
 				</ul>

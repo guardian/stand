@@ -74,7 +74,7 @@ The Open Sans variable font can also be loaded via Google Fonts, but we recommen
 3. Click "Change styles" dropdown
 4. Use "Full axis" for all options (Italic, Weight, Width)
 5. Copy the relevant `<link>` tag or `@import` code snippet into your project
-    - You don't need to include the CSS class, as the design system will handle applying the correct font-family via CSS variables or JS/TS tokens.
+   - You don't need to include the CSS class, as the design system will handle applying the correct font-family via CSS variables or JS/TS tokens.
 
 #### Guardian Fonts
 
@@ -149,15 +149,12 @@ import '@guardian/stand/semantic/colors.css'; // CSS usage
 
 const stringStyle = css`
 	color: ${semanticColors.text.default}; /* JS/TS usage */
-	background-color: var(
-		--semantic-colors-bg-default-on-light
-	); /* CSS usage */
+	background-color: var(--semantic-colors-bg-default-on-light); /* CSS usage */
 `;
 
 const objectStyle = {
 	color: semanticColors.text.default /* JS/TS usage */,
-	backgroundColor:
-		'var(--semantic-colors-bg-default-on-light)' /* CSS usage */,
+	backgroundColor: 'var(--semantic-colors-bg-default-on-light)' /* CSS usage */,
 };
 ```
 
@@ -908,9 +905,7 @@ or for scenarios where you have to use relative paths/node_modules directly:
 /* example setup of button/link button style using md size and neutral secondary variant */
 .stand-button-neutral-secondary {
 	color: var(--component-button-neutral-secondary-shared-color);
-	background: var(
-		--component-button-neutral-secondary-shared-background-color
-	);
+	background: var(--component-button-neutral-secondary-shared-background-color);
 	height: var(--component-button-neutral-secondary-md-height);
 	padding: var(--component-button-neutral-secondary-md-padding-top)
 		var(--component-button-neutral-secondary-md-padding-right)
@@ -923,9 +918,7 @@ or for scenarios where you have to use relative paths/node_modules directly:
 	font-variation-settings: 'wdth'
 		var(--component-button-neutral-secondary-md-typography-font-width);
 	border: var(--component-button-neutral-secondary-shared-border);
-	border-radius: var(
-		--component-button-neutral-secondary-shared-border-radius
-	);
+	border-radius: var(--component-button-neutral-secondary-shared-border-radius);
 }
 .stand-button-neutral-secondary:hover {
 	background: var(
@@ -1768,9 +1761,9 @@ See the [Contributing to Stand](./CONTRIBUTING.md) documentation for guidelines 
 - Run `pnpm test:react-matrix` to run matrix tests (see Compatibility section below)
 - Run `pnpm tsc` to run check TypeScript types
 - Run `pnpm lint` to run the linter
-    - Run `pnpm lint:fix` to fix any auto-fixable issues
+  - Run `pnpm lint:fix` to fix any auto-fixable issues
 - Run `pnpm format:check` to check code formatting
-    - Run `pnpm format:fix` to fix code formatting issues
+  - Run `pnpm format:fix` to fix code formatting issues
 
 ### Style Dictionary
 
@@ -1807,13 +1800,13 @@ Matrix generation in CI uses the same JSON file in the workflow: `../.github/wor
 
 1. Edit `./scripts/deps-matrix-versions.json` with new versions
 2. Run the matrix test locally:
-    ```bash
-    ./scripts/test-deps-matrix.sh
-    ```
+   ```bash
+   ./scripts/test-deps-matrix.sh
+   ```
 3. (Optional) Narrow the matrix with overrides:
-    ```bash
-    REACT_VERSIONS="18.0.0" EMOTION_VERSIONS="11.14.0" TS_VERSIONS="5.1" ./scripts/test-deps-matrix.sh
-    ```
+   ```bash
+   REACT_VERSIONS="18.0.0" EMOTION_VERSIONS="11.14.0" TS_VERSIONS="5.1" ./scripts/test-deps-matrix.sh
+   ```
 4. Review results (table output and any failures). Fix issues or adjust code
 5. Update `peerDependencies` in `package.json` to reflect the new minimum / tested range
 6. Open a PR, the CI pipeline will comment with the compatibility matrix

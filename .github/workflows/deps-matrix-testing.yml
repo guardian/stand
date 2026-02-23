@@ -1,0 +1,219 @@
+name: Stand Component Library Dependency Matrix
+permissions:
+  contents: read
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  generate_matrix:
+    name: Generate dependency matrix JSON
+    runs-on: ubuntu-24.04-arm
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Set matrix
+        id: set-matrix
+        shell: bash
+        run: |
+          set -euo pipefail
+          VERSIONS_JSON_FILE="scripts/deps-matrix-versions.json"
+          if [ ! -f "$VERSIONS_JSON_FILE" ]; then
+              echo "Versions JSON file not found at $VERSIONS_JSON_FILE" >&2
+              exit 1
+          fi
+          MATRIX_JSON=$(jq -cn --slurpfile v "$VERSIONS_JSON_FILE" '$v[0] | [.react[] as $r | .emotion[] as $e | .typescript[] as $t | {react: $r, emotion: $e, typescript: $t}] | map(. as $combo | select($v[0].exclude | any(.react == $combo.react and .emotion == $combo.emotion) | not)) | {include: .}')
+          echo "Generated matrix: $MATRIX_JSON"
+          echo "matrix=$MATRIX_JSON" >> "$GITHUB_OUTPUT"
+
+  prepare_environment:
+    name: Prepare dependencies and browsers
+    permissions:
+      contents: read
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: pnpm
+          cache-dependency-path: 'pnpm-lock.yaml'
+      - name: Cache node_modules
+        id: cache-node-modules
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('pnpm-lock.yaml') }}
+      - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
+        run: pnpm install
+      - name: Cache Playwright browsers
+        id: cache-playwright-browsers
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-browsers-${{ hashFiles('pnpm-lock.yaml') }}
+      - name: Install Playwright browsers and system dependencies
+        run: |
+          pnpm exec playwright install --with-deps chromium --only-shell
+
+  test_dependency_combinations:
+    name: Test React ${{ matrix.react }} + Emotion ${{ matrix.emotion }} + TS ${{ matrix.typescript }}
+    permissions:
+      contents: read
+    runs-on: ubuntu-24.04-arm
+    needs: [prepare_environment, generate_matrix]
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix: ${{ fromJSON(needs.generate_matrix.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+        with:
+          package_json_file: package.json
+      - uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        with:
+          node-version-file: '.nvmrc'
+      - name: Restore node_modules cache
+        uses: actions/cache/restore@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('pnpm-lock.yaml') }}
+          fail-on-cache-miss: true
+      - name: Restore Playwright browsers cache
+        uses: actions/cache/restore@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-browsers-${{ hashFiles('pnpm-lock.yaml') }}
+          fail-on-cache-miss: true
+      - name: Test single dependency combination
+        shell: bash
+        run: |
+          # Set environment variables for single combination testing
+          export REACT_VERSIONS="${{ matrix.react }}"
+          export EMOTION_VERSIONS="${{ matrix.emotion }}"
+          export TS_VERSIONS="${{ matrix.typescript }}"
+          export MATRIX_OUTPUT_FILE="compat-matrix-${{ matrix.react }}-${{ matrix.emotion }}-${{ matrix.typescript }}.md"
+          ./scripts/test-deps-matrix.sh
+      - name: Upload individual test results
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        if: always()
+        with:
+          name: test-results-${{ matrix.react }}-${{ matrix.emotion }}-${{ matrix.typescript }}
+          path: |
+            compat-matrix-${{ matrix.react }}-${{ matrix.emotion }}-${{ matrix.typescript }}.md
+          retention-days: 1
+
+  aggregate_results:
+    name: Aggregate compatibility matrix results
+    needs: [prepare_environment, test_dependency_combinations]
+    runs-on: ubuntu-latest
+    if: always()
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Download all test results
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
+        with:
+          pattern: test-results-*
+          merge-multiple: true
+          path: ./test-results
+      - name: Combine compatibility matrix results
+        run: |
+          echo "| React | Emotion | TypeScript | Typecheck | Unit | E2E | Build | Overall |" > combined-matrix.md
+          echo "|-------|---------|------------|-----------|------|-----|-------|---------|" >> combined-matrix.md
+
+          # Process all individual matrix files produced by test-deps-matrix.sh
+          for file in test-results/compat-matrix-*.md; do
+              [ -f "$file" ] || continue
+
+              # Expect a single data row (since each workflow job tests one combination)
+              # Skip header/separator lines and capture the first data row.
+              data_row=$(grep -E '^\| [0-9]+' "$file" | head -n 1 || true)
+
+              if [ -z "$data_row" ]; then
+                  # Derive versions from filename as fallback and mark as failure
+                  filename=$(basename "$file")
+                  versions=$(echo "$filename" | sed 's/compat-matrix-\(.*\)\.md/\1/' | tr '-' ' ')
+                  read react emotion typescript <<< "$versions"
+                  echo "| $react | $emotion | $typescript | n/a | n/a | n/a | n/a | ❌ |" >> combined-matrix.md
+                  continue
+              fi
+
+              # Extract columns using awk (trim spaces with xargs)
+              react=$(echo "$data_row" | awk -F'|' '{print $2}' | xargs)
+              emotion=$(echo "$data_row" | awk -F'|' '{print $3}' | xargs)
+              typescript=$(echo "$data_row" | awk -F'|' '{print $4}' | xargs)
+              typecheck=$(echo "$data_row" | awk -F'|' '{print $5}' | xargs)
+              unit=$(echo "$data_row" | awk -F'|' '{print $6}' | xargs)
+              e2e=$(echo "$data_row" | awk -F'|' '{print $7}' | xargs)
+              build=$(echo "$data_row" | awk -F'|' '{print $8}' | xargs)
+
+              overall="✅"
+              if echo "$typecheck $unit $e2e $build" | grep -q 'fail'; then
+                  overall="❌"
+              elif echo "$typecheck $unit $e2e $build" | grep -q 'skip'; then
+                  overall="⚠️"
+              fi
+
+              echo "| $react | $emotion | $typescript | $typecheck | $unit | $e2e | $build | $overall |" >> combined-matrix.md
+          done
+
+          echo "" >> combined-matrix.md
+      - name: Upload combined compatibility matrix
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: dependency-compatibility-matrix
+          path: combined-matrix.md
+          retention-days: 1
+      - name: Comment PR with matrix results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+        with:
+          script: |
+            const fs = require("fs");
+            const path = "./combined-matrix.md";
+
+            if (fs.existsSync(path)) {
+                const matrix = fs.readFileSync(path, "utf8");
+                // Attempt to find an existing comment to update instead of creating a new one
+                const { data: comments } = await github.rest.issues.listComments({
+                    issue_number: context.issue.number,
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    per_page: 100,
+                });
+
+                const heading = "## Dependency Compatibility Matrix";
+                const existing = comments.find((c) => c.body && c.body.startsWith(heading));
+
+                const body =
+                  (() => {
+                      const commit = context.sha;
+                      const shortSha = commit.substring(0, 7);
+                      const timestamp = new Date().toISOString();
+                      return `${heading}\n\n${matrix}\n\n> Columns show granular outcomes for each dependency set: ok = passed, fail = failed, skip = upstream failure prevented running later stages. Overall: ✅ all passed, ⚠️ only skips (no hard fails), ❌ at least one fail.\n> Last updated: ${timestamp} (commit ${shortSha})`;
+                  })();
+
+                if (existing) {
+                    await github.rest.issues.updateComment({
+                        comment_id: existing.id,
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        body,
+                    });
+                } else {
+                    await github.rest.issues.createComment({
+                        issue_number: context.issue.number,
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        body,
+                    });
+                }
+            }

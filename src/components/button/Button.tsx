@@ -22,10 +22,7 @@ export function Button({
 	return (
 		<ReactAriaButton
 			{...props}
-			css={[
-				buttonStyles(mergedTheme, { variant, size }, !!icon),
-				cssOverrides,
-			]}
+			css={[buttonStyles(mergedTheme, { variant, size }, !!icon), cssOverrides]}
 		>
 			{composeRenderProps(props.children, (children) => (
 				// TODO: isPending (loading) state - see https://react-aria.adobe.com/Button

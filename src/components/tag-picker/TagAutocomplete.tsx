@@ -186,19 +186,12 @@ export function TagAutocomplete<T extends Tag = Tag>({
 					shouldFlip={false}
 				>
 					<ListBox
-						css={
-							(value || options.length || loading) &&
-							listboxStyles(theme)
-						}
+						css={(value || options.length || loading) && listboxStyles(theme)}
 						autoFocus="first"
 						renderEmptyState={() =>
 							// Only show a "no results" box if user has typed
 							value &&
-							!loading && (
-								<div css={listboxInfoStyles(theme)}>
-									No results
-								</div>
-							)
+							!loading && <div css={listboxInfoStyles(theme)}>No results</div>
 						}
 					>
 						<Collection items={options}>
@@ -217,9 +210,7 @@ export function TagAutocomplete<T extends Tag = Tag>({
 							css={listboxInfoStyles(theme)}
 							isLoading={loading}
 						>
-							<span aria-label="Loading">
-								{loadingIcon ?? 'Loading...'}
-							</span>
+							<span aria-label="Loading">{loadingIcon ?? 'Loading...'}</span>
 						</ListBoxLoadMoreItem>
 					</ListBox>
 				</Popover>

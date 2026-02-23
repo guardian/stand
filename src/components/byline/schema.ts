@@ -47,9 +47,7 @@ export const bylineEditorSchema = new Schema({
 						'data-tag-id': node.attrs.tagId,
 						// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- path exists as string on chip node
 						'data-path': node.attrs.path,
-						'data-meta': node.attrs.meta
-							? JSON.stringify(node.attrs.meta)
-							: {},
+						'data-meta': node.attrs.meta ? JSON.stringify(node.attrs.meta) : {},
 					},
 					node.attrs.label,
 				];

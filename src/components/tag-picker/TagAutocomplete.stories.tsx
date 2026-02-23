@@ -31,9 +31,9 @@ export const Disabled = {
 
 export const TagPicker = {
 	render: () => {
-		const [selectedTags, setSelectedTags] = useState<
-			TagManagerObjectData[]
-		>([]);
+		const [selectedTags, setSelectedTags] = useState<TagManagerObjectData[]>(
+			[],
+		);
 
 		const [options, setOptions] = useState<TagManagerObjectData[]>([]);
 		const [value, setValue] = useState('');

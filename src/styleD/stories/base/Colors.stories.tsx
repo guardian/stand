@@ -5,13 +5,7 @@ export const BasePalette = {
 	render: () => (
 		<ColorPalette>
 			{Object.entries(baseColors).map(([category, shades]) => {
-				return (
-					<ColorItem
-						key={category}
-						title={category}
-						colors={shades}
-					/>
-				);
+				return <ColorItem key={category} title={category} colors={shades} />;
 			})}
 		</ColorPalette>
 	),

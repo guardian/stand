@@ -22,26 +22,26 @@ We created a shortlist of potential libraries and considered them against the fo
 ## Options
 
 - React-Aria
-    - Pros:
-        - unstyled components, allowing greater flexibility to implement our own design
-        - a specific focus on accessibility
-        - exposes hooks and components that can be composed into our own components
-    - Cons:
-        - requires styling foundations before a base set of components can be published
-        - not used by any team at the Guardian
+  - Pros:
+    - unstyled components, allowing greater flexibility to implement our own design
+    - a specific focus on accessibility
+    - exposes hooks and components that can be composed into our own components
+  - Cons:
+    - requires styling foundations before a base set of components can be published
+    - not used by any team at the Guardian
 - Elastic UI
-    - Pros:
-        - breadth of components
-        - familiar to many teams at the Guardian
-    - Cons:
-        - harder to customise styling outside themes
+  - Pros:
+    - breadth of components
+    - familiar to many teams at the Guardian
+  - Cons:
+    - harder to customise styling outside themes
 - Material UI
-    - Pros:
-        - breadth of components
-        - already used in Composer
-    - Cons:
-        - uncertainty over Material design changes vs the UI library
-        - some advanced components are published in a separate library, MuiX,such as Date/Time pickers
+  - Pros:
+    - breadth of components
+    - already used in Composer
+  - Cons:
+    - uncertainty over Material design changes vs the UI library
+    - some advanced components are published in a separate library, MuiX,such as Date/Time pickers
 
 ## Decision
 

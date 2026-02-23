@@ -87,18 +87,13 @@ export function tokenTypeFromVariable(variable: LocalVariable) {
 				return 'fontWeight';
 			}
 			if (
-				[
-					'letter-spacing/',
-					...spacingTokens.map((token) => token.prefix),
-				].some((prefix) => variable.name.startsWith(prefix))
+				['letter-spacing/', ...spacingTokens.map((token) => token.prefix)].some(
+					(prefix) => variable.name.startsWith(prefix),
+				)
 			) {
 				return 'dimension';
 			}
-			if (
-				Dimensions.some((suffix) =>
-					variable.name.endsWith(`-${suffix}`),
-				)
-			) {
+			if (Dimensions.some((suffix) => variable.name.endsWith(`-${suffix}`))) {
 				return 'dimension';
 			}
 			return 'number';
@@ -137,9 +132,7 @@ export function tokenValueFromVariable(
 		}
 
 		if (
-			spacingTokens.some((token) =>
-				variable.name.startsWith(token.prefix),
-			) &&
+			spacingTokens.some((token) => variable.name.startsWith(token.prefix)) &&
 			typeof value === 'number'
 		) {
 			return `${+value.toFixed(2)}px`;
@@ -167,8 +160,7 @@ export function tokenFilesFromLocalVariables(
 			return;
 		}
 
-		const collection =
-			localVariableCollections[variable.variableCollectionId];
+		const collection = localVariableCollections[variable.variableCollectionId];
 
 		collection?.modes.forEach((mode) => {
 			//const fileName = `${collection.name}.${mode.name}.json`;
@@ -200,11 +192,7 @@ export function tokenFilesFromLocalVariables(
 
 			const token = {
 				$type: tokenTypeFromVariable(variable),
-				$value: tokenValueFromVariable(
-					variable,
-					mode.modeId,
-					localVariables,
-				),
+				$value: tokenValueFromVariable(variable, mode.modeId, localVariables),
 			};
 
 			Object.assign(obj!, token);

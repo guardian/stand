@@ -51,27 +51,15 @@ export const IconTable = {
 					<td>Material Symbols (font icons)</td>
 					<td>
 						<Icon size="sm" symbol="home"></Icon>
-						<Icon
-							size="sm"
-							fill={baseColors.magenta[400]}
-							symbol="home"
-						></Icon>
+						<Icon size="sm" fill={baseColors.magenta[400]} symbol="home"></Icon>
 					</td>
 					<td>
 						<Icon size="md" symbol="home"></Icon>
-						<Icon
-							size="md"
-							fill={baseColors.magenta[400]}
-							symbol="home"
-						></Icon>
+						<Icon size="md" fill={baseColors.magenta[400]} symbol="home"></Icon>
 					</td>
 					<td>
 						<Icon size="lg" symbol="home"></Icon>
-						<Icon
-							size="lg"
-							fill={baseColors.magenta[400]}
-							symbol="home"
-						></Icon>
+						<Icon size="lg" fill={baseColors.magenta[400]} symbol="home"></Icon>
 					</td>
 				</tr>
 				<tr>

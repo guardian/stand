@@ -13,8 +13,7 @@ describe('Typography Tokens', () => {
 			const headingXlToken = semanticTypography['heading-xl'];
 			const bodyCompactLgToken = semanticTypography['body-compact-lg'];
 
-			const titleSmStyles =
-				convertTypographyToEmotionStringStyle(titleSmToken);
+			const titleSmStyles = convertTypographyToEmotionStringStyle(titleSmToken);
 			const headingXlStyles =
 				convertTypographyToEmotionStringStyle(headingXlToken);
 			const bodyCompactLgStyles =
@@ -38,8 +37,7 @@ describe('Typography Tokens', () => {
 			const headingXlToken = semanticTypography['heading-xl'];
 			const bodyCompactLgToken = semanticTypography['body-compact-lg'];
 
-			const titleSmStyles =
-				convertTypographyToEmotionObjectStyle(titleSmToken);
+			const titleSmStyles = convertTypographyToEmotionObjectStyle(titleSmToken);
 			const headingXlStyles =
 				convertTypographyToEmotionObjectStyle(headingXlToken);
 			const bodyCompactLgStyles =

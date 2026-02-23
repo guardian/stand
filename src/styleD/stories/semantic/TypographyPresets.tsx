@@ -61,9 +61,7 @@ export const TypographyPresets = () => (
 		<tbody>
 			{convertedPresets.map(([preset, styles], index) => {
 				const typographyToken =
-					semanticTypography[
-						preset as keyof typeof semanticTypography
-					];
+					semanticTypography[preset as keyof typeof semanticTypography];
 
 				const cssFont = typographyToken.font;
 				const letterSpacing = typographyToken.letterSpacing;

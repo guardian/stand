@@ -128,8 +128,7 @@
 		"dist"
 	],
 	"repository": {
-		"url": "https://github.com/guardian/flexible-content",
-		"directory": "stand-component-library"
+		"url": "https://github.com/guardian/stand"
 	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
@@ -148,6 +147,7 @@
 		"format:fix": "prettier --write .",
 		"tsc": "tsc",
 		"test": "jest",
+		"test:setup-e2e": "playwright install --with-deps",
 		"test:e2e": "playwright test -c playwright-ct.config.ts",
 		"test:react-matrix": "./scripts/test-react-matrix.sh"
 	},
