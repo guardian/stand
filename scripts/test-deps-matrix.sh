@@ -151,7 +151,7 @@ for rv in $REACT_VERSIONS; do
 			fi
 
 			echo "-- Installing playwright browsers"
-			pnpm exec playwright install chromium --only-shell
+			pnpm exec playwright install --with-deps chromium --only-shell
 
 			TYPECHECK_STATUS=ok
 			UNIT_TEST_STATUS=ok
