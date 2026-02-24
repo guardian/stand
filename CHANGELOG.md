@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.12
+
+### Patch Changes
+
+- 119bff5: Publish `@guardian/stand` from guardian/stand repo
+
 ## 0.0.11
 
 ### Patch Changes
