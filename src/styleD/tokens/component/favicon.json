@@ -1,0 +1,50 @@
+{
+	"component": {
+		"favicon": {
+			"color": {
+				"background": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.200}"
+				},
+				"text": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.inverse-strong}"
+				}
+			},
+			"size": {
+				"$type": "dimension",
+				"$value": "{base.sizing.size-32-rem}"
+			},
+			"display": {
+				"$type": "string",
+				"$value": "inline-flex"
+			},
+			"align-items": {
+				"$type": "string",
+				"$value": "center"
+			},
+			"justify-content": {
+				"$type": "string",
+				"$value": "center"
+			},
+			"user-select": {
+				"$type": "string",
+				"$value": "none"
+			},
+			"typography": {
+				"font": {
+					"$type": "typography",
+					"$value": "{semantic.typography.title-md.font}"
+				},
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{semantic.typography.title-md.letterSpacing}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{semantic.typography.title-md.fontWidth}"
+				}
+			}
+		}
+	}
+}
