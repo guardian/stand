@@ -155,7 +155,7 @@
 		"@changesets/cli": "^2.29.8",
 		"@emotion/react": "11.11.4",
 		"@figma/rest-api-spec": "^0.36.0",
-		"@guardian/eslint-config": "13.0.5",
+		"@guardian/eslint-config": "13.0.6",
 		"@guardian/prettier": "10.0.0",
 		"@guardian/prosemirror-invisibles": "3.1.1",
 		"@guardian/tsconfig": "1.0.1",
@@ -174,7 +174,7 @@
 		"@types/react": "17.0.76",
 		"@types/react-dom": "17.0.25",
 		"change-case": "^5.4.4",
-		"eslint": "9.39.2",
+		"eslint": "9.39.3",
 		"eslint-plugin-storybook": "^10.2.11",
 		"jest": "30.2.0",
 		"jest-environment-jsdom": "^30.1.2",
@@ -253,6 +253,11 @@
 		},
 		"typescript": {
 			"optional": true
+		}
+	},
+	"pnpm": {
+		"overrides": {
+			"minimatch": "^10.2.1"
 		}
 	}
 }
