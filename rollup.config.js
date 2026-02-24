@@ -36,6 +36,7 @@ const input = {
 	'icon-link-button': 'src/icon-link-button.ts',
 	typography: 'src/typography.ts',
 	icon: 'src/icon.ts',
+	favicon: 'src/favicon.ts',
 	// editorial components
 	byline: 'src/byline.ts',
 	'tag-picker': 'src/tag-picker.ts',
