@@ -2,7 +2,7 @@
 
 _Find what you need on the (news)stand!_
 
-Stand is component library for Guardian editorial tools. It is co-located within flexible-content as Composer is expected to be the main consumer of the UI components within Stand. But any editorial tool should be able to make use of the components as an npm package - `@guardian/stand` - and developers should feel comfortable contributing.
+Stand is component library and design system for internal Guardian tools. Any tool should be able to make use of the components as an npm package - `@guardian/stand` - and developers should feel comfortable contributing.
 
 ## Installation
 
