@@ -111,7 +111,7 @@ jobs:
   aggregate_results:
     name: Aggregate compatibility matrix results
     needs: [prepare_environment, test_dependency_combinations]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     if: always()
     permissions:
       contents: read
