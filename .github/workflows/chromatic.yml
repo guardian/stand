@@ -14,7 +14,7 @@ on:
 
 jobs:
   chromatic:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     # Run Chromatic only if `run_chromatic` label has been applied or we're
     # pushing to `main`.
     if: contains(github.event.pull_request.labels.*.name, 'run_chromatic')  ||  github.ref == 'refs/heads/main'
