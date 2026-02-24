@@ -12,7 +12,7 @@ export const BasePalette = {
 };
 
 export default {
-	title: 'Stand/Editorial Design System/Base/Color Palette',
+	title: 'Stand/Tools Design System/Base/Color',
 	component: BasePalette,
 
 	parameters: {

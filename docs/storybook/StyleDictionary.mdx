@@ -1,0 +1,101 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Style Dictionary" />
+
+# Style Dictionary
+
+The project uses [Style Dictionary](https://styledictionary.com/) to manage design tokens.
+
+Tokens are defined in `src/styleD/tokens/`, the generated outputs live in `src/styleD/build/`, and both are committed to the repository. During the package build, Rollup copies the build outputs into `dist/styleD/build/` for publishing.
+
+Most foundation tokens are generated from Figma variables, see `scripts/figma/README.md` in the repository for more details.
+
+After making changes to any token files, regenerate the outputs and commit them:
+
+```sh
+pnpm build-styled
+```
+
+See the [Contributing guidelines](/docs/contributing--docs) for how to register new token files and wire them into the package exports.
+
+---
+
+## Token structure
+
+Tokens are split across two folders:
+
+- `src/styleD/tokens/foundations/`
+  - base and semantic tokens (colours, typography, spacing, sizing, radius)
+- `src/styleD/tokens/component/`
+  - per-component tokens (one file per component)
+
+Tokens follow the [W3C Design Token Community Group](https://design-tokens.github.io/community-group/format/) format, using `$type` and `$value`:
+
+```json
+{
+	"$type": "color",
+	"$value": "{semantic.colors.text.primary}"
+}
+```
+
+Values can reference other tokens using `{path.to.token}` syntax.
+
+### Foundations
+
+Foundation files use `base` and `semantic` as top-level keys:
+
+```json
+{
+  "base": {
+    "colors": { ... }
+  },
+  "semantic": {
+    "colors": { ... }
+  }
+}
+```
+
+**Base** tokens are the raw primitives (e.g. a specific hex value). They should not be overridden directly by consumers.
+
+**Semantic** tokens reference base tokens and are applied to specific use cases (e.g. `text.primary`). These are the appropriate level for consumers to override.
+
+### Components
+
+Component files use `component` as the top-level key, with the component name as the next level:
+
+```json
+{
+  "component": {
+    "avatar": { ... }
+  }
+}
+```
+
+Component tokens should reference semantic tokens wherever possible, falling back to base tokens only when necessary.
+
+---
+
+## Output formats
+
+Style Dictionary generates two output formats for each token file, into `src/styleD/build/`:
+
+**CSS** (`src/styleD/build/css/`): CSS custom properties, for use without JS dependencies:
+
+```css
+:root {
+	--component-avatar-color-background: #e0f2ff;
+}
+```
+
+**TypeScript** (`src/styleD/build/typescript/`): a typed JS object:
+
+```ts
+export const componentAvatar = {
+	color: {
+		background: '#e0f2ff',
+	},
+};
+export type ComponentAvatar = typeof componentAvatar;
+```
+
+Both outputs are committed and published with the package. See the [Contributing guidelines](/docs/contributing--docs) for how to expose them as package exports.

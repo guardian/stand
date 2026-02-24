@@ -5,7 +5,7 @@ import { tableStyles } from '../../util/storybookStyles';
 import { Button } from './Button';
 
 const meta = {
-	title: 'Stand/Editorial Design System/Components/Button',
+	title: 'Stand/Tools Design System/Components/Button',
 	component: Button,
 	parameters: {},
 	args: {

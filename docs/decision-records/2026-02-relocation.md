@@ -16,10 +16,14 @@ The Guardian has a strong culture of [coding in the open](https://theguardian.en
 
 ### Why the original reasons for colocation no longer apply
 
-- _Composer is likely to be one of, if not the biggest consumer_ — this did not turn out to be the case. The focus shifted to building an all-encompassing design system for journalism/internal tools rather than focusing on editorial components for Composer specifically.
-- _Components live where they're consumed in at least one place_ — only the byline is currently consumed within flexible-content. New components being built will not initially be used in that library.
-- _Composer won't need to do a version bump to get the latest components_ — a version bump is not, in practice, a significant burden, and the stability it provides outweighs the convenience.
-- _Developers are more likely to contribute components when already working in the repo_ — by integrating `@guardian/stand` across multiple projects, starting with flexible-content and newsletters, there is now a central, well-known place to contribute regardless of which project a developer is working in.
+- _Composer is likely to be one of, if not the biggest consumer_
+  - This did not turn out to be the case. The focus shifted to building an all-encompassing design system for journalism/internal tools rather than focusing on editorial components for Composer specifically.
+- _Components live where they're consumed in at least one place_
+  - Only the byline is currently consumed within flexible-content. New components being built will not initially be used in that library.
+- _Composer won't need to do a version bump to get the latest components_
+  - A version bump is not, in practice, a significant burden, and the stability it provides outweighs the convenience.
+- _Developers are more likely to contribute components when already working in the repo_
+  - By integrating `@guardian/stand` across multiple projects, starting with flexible-content and newsletters, there is now a central, well-known place to contribute regardless of which project a developer is working in.
 
 ## Options
 

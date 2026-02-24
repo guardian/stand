@@ -1,0 +1,49 @@
+import React from 'react';
+import { Meta, Markdown } from '@storybook/addon-docs/blocks';
+
+export const adrs = Object.entries(
+	import.meta.glob('../decision-records/*.md', {
+		eager: true,
+		query: '?raw',
+		import: 'default',
+	}),
+).sort(([a], [b]) => b.localeCompare(a));
+
+export const getTitle = (content) =>
+	content.match(/^#\s+(.+)$/m)?.[1] ?? 'Untitled';
+
+export const toSlug = (title) =>
+	title
+		.toLowerCase()
+		.replace(/[@/]/g, '')
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-|-$/g, '');
+
+<Meta title="Architecture Decision Records" />
+
+# Architecture Decision Records
+
+A log of architectural and product decisions made during the development of `@guardian/stand`, in reverse chronological order.
+
+When a significant decision is made, a new ADR should be created in the `docs/decision-records` directory. The ADR should include the context, the decision, and the consequences of the decision. It will automatically be added to this page, and linked in the table of contents below.
+
+## Table of Contents
+
+<Markdown>
+	{adrs
+		.map(([, content]) => {
+			const title = getTitle(content);
+			return `- [${title}](#${toSlug(title)})`;
+		})
+		.join('\n')}
+</Markdown>
+
+---
+
+{adrs.map(([, content], i) => (
+
+  <React.Fragment key={i}>
+    <Markdown>{content}</Markdown>
+    {i < adrs.length - 1 && <hr />}
+  </React.Fragment>
+))}

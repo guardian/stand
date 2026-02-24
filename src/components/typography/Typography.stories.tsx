@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Typography } from './Typography';
 
 const meta = {
-	title: 'Stand/Editorial Design System/Components/Typography',
+	title: 'Stand/Tools Design System/Components/Typography',
 	component: Typography,
 	parameters: {},
 	args: {
