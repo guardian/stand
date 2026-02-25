@@ -18,7 +18,9 @@ export const Favicon = (props: FaviconProps) => {
 		setImageError(true);
 	};
 
-	if ('letter' in props) {
+	const displayLetter = props.letter?.slice(0, 1).toUpperCase() ?? '';
+
+	if ('letter' in props || imageError) {
 		return (
 			<div
 				css={[
@@ -27,7 +29,7 @@ export const Favicon = (props: FaviconProps) => {
 					props.cssOverrides,
 				]}
 			>
-				{props.letter}
+				{displayLetter}
 			</div>
 		);
 	}
@@ -41,17 +43,13 @@ export const Favicon = (props: FaviconProps) => {
 	if ('src' in props) {
 		return (
 			<div css={[faviconStyles(mergedTheme), props.cssOverrides]}>
-				{imageError ? (
-					<>Backup</>
-				) : (
-					<img
-						src={props.src}
-						alt={props.alt}
-						title={props.alt}
-						onError={handleImageError}
-						css={faviconImageStyles}
-					/>
-				)}
+				<img
+					src={props.src}
+					alt={props.alt}
+					title={props.alt}
+					onError={handleImageError}
+					css={faviconImageStyles}
+				/>
 			</div>
 		);
 	}

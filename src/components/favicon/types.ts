@@ -38,7 +38,10 @@ interface FaviconWithImage extends FaviconBaseProps {
 	 * Alternative text for the image (required when src is provided)
 	 */
 	alt: string;
-	letter?: never;
+	/**
+	 * Letter to display when image fails to load (optional)
+	 */
+	letter?: string;
 	icon?: never;
 }
 

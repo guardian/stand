@@ -43,6 +43,15 @@ export const Image = {
 	args: {
 		src: 'https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg',
 		alt: 'Mahesh Makani',
+		letter: 'M',
+	},
+} satisfies Story;
+
+export const ImageError = {
+	args: {
+		src: 'https://uploads.',
+		alt: 'Mahesh Makani',
+		letter: 'M',
 	},
 } satisfies Story;
 
