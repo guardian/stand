@@ -37,14 +37,13 @@ import { Favicon } from '@guardian/stand/favicon';
 import type { FaviconProps, FaviconTheme } from '@guardian/stand/favicon';
 
 /* Letter */
-<Favicon type="letter" letter="F" />
+<Favicon letter="F" />
 
 /* Icon */
-<Favicon type="icon" icon="email" />
+<Favicon icon="email" />
 
 /* Image */
 <Favicon
-    type="image"
 	src="https://example.com/favicon.jpg"
 	alt="App icon"
 />
@@ -54,7 +53,6 @@ import type { FaviconProps, FaviconTheme } from '@guardian/stand/favicon';
 
 | Name           | Type                                                              | Required    | Default | Description                                                                                                                           |
 | -------------- | ----------------------------------------------------------------- | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `type`         | `'letter'` \| `'icon'` \| `'image'`                               | Yes         | N/A     | The type of favicon to render                                                                                                         |
 | `letter`       | `string`                                                          | Conditional | N/A     | Letter to render in the favicon.                                                                                                      |
 | `icon`         | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>` | Conditional | N/A     | Icon rendered inside the favicon. Accepts a `MaterialSymbol` name or a non-string `ReactNode` (e.g. an SVG element). Size is default. |
 | `src`          | `string`                                                          | Conditional | N/A     | URL of the favicon image.                                                                                                             |
@@ -63,9 +61,7 @@ import type { FaviconProps, FaviconTheme } from '@guardian/stand/favicon';
 | `cssOverrides` | `SerializedStyles`                                                | No          | N/A     | Custom CSS styles for the favicon.                                                                                                    |
 | `className`    | `string`                                                          | No          | N/A     | Additional class name(s) for the favicon.                                                                                             |
 
-- When using `type` `'letter'` the `letter` prop is required.
-- When using `type` `'icon'` the `icon` prop is required.
-- When using `type` `'image'` the `src` and `alt` props are required.
+One of `letter`, `icon` and `src` must be supplied. When using `src`, the `alt` prop is required for accessibility.
 
 ## Stories
 
@@ -105,9 +101,7 @@ const customTheme: FaviconTheme = {
 	},
 };
 
-const Component = () => (
-	<Favicon type="letter" letter="C" theme={customTheme} />
-);
+const Component = () => <Favicon letter="C" theme={customTheme} />;
 ```
 
 ### CSS overrides
@@ -128,9 +122,7 @@ const customStyles = css`
 	border-radius: ${baseRadius['corner-4-px']};
 `;
 
-const Component = () => (
-	<Favicon type="letter" letter="O" cssOverrides={customStyles} />
-);
+const Component = () => <Favicon letter="O" cssOverrides={customStyles} />;
 ```
 
 ## Custom Component Build
@@ -168,6 +160,13 @@ or for scenarios where you have to use relative paths/node_modules directly:
 	font: var(--component-favicon-typography-font);
 	letter-spacing: var(--component-favicon-typography-letter-spacing);
 	font-variation-settings: 'wdth' var(--component-favicon-typography-font-width);
+}
+
+.stand-favicon-icon {
+	display: var(--component-icon-shared-display);
+	user-select: var(--component-icon-shared-user-select);
+	font-size: var(--component-icon-lg-size);
+	color: var(--base-colors-magenta-400);
 }
 
 /* example setup for favicon image */

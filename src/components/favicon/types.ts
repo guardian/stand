@@ -10,23 +10,26 @@ interface FaviconBaseProps extends DefaultProps<FaviconTheme> {
 }
 
 interface FaviconWithLetter extends FaviconBaseProps {
-	type: 'letter';
 	/**
 	 * Letter to render in the favicon
 	 */
 	letter: string;
+	icon?: never;
+	src?: never;
+	alt?: never;
 }
 
 interface FaviconWithIcon extends FaviconBaseProps {
-	type: 'icon';
 	/**
 	 * Icon to display in the favicon
 	 */
 	icon: IconProps['symbol'] | Exclude<IconProps['children'], string>;
+	letter?: never;
+	src?: never;
+	alt?: never;
 }
 
 interface FaviconWithImage extends FaviconBaseProps {
-	type: 'image';
 	/**
 	 * Image URL for the favicon
 	 */
@@ -35,6 +38,8 @@ interface FaviconWithImage extends FaviconBaseProps {
 	 * Alternative text for the image (required when src is provided)
 	 */
 	alt: string;
+	letter?: never;
+	icon?: never;
 }
 
 export type FaviconProps =

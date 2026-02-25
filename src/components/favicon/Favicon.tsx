@@ -18,40 +18,43 @@ export const Favicon = (props: FaviconProps) => {
 		setImageError(true);
 	};
 
-	switch (props.type) {
-		case 'letter':
-			return (
-				<div
-					css={[
-						faviconStyles(mergedTheme),
-						faviconTypographyStyles(mergedTheme),
-						props.cssOverrides,
-					]}
-				>
-					{props.letter}
-				</div>
-			);
-		case 'icon':
-			return (
-				<div css={[faviconStyles(mergedTheme), props.cssOverrides]}>
-					<Icon fill={mergedTheme.color.text}>{props.icon}</Icon>
-				</div>
-			);
-		case 'image':
-			return (
-				<div css={[faviconStyles(mergedTheme), props.cssOverrides]}>
-					{imageError ? (
-						<>Backup</>
-					) : (
-						<img
-							src={props.src}
-							alt={props.alt}
-							title={props.alt}
-							onError={handleImageError}
-							css={faviconImageStyles}
-						/>
-					)}
-				</div>
-			);
+	if ('letter' in props) {
+		return (
+			<div
+				css={[
+					faviconStyles(mergedTheme),
+					faviconTypographyStyles(mergedTheme),
+					props.cssOverrides,
+				]}
+			>
+				{props.letter}
+			</div>
+		);
 	}
+	if ('icon' in props) {
+		return (
+			<div css={[faviconStyles(mergedTheme), props.cssOverrides]}>
+				<Icon fill={mergedTheme.color.text}>{props.icon}</Icon>
+			</div>
+		);
+	}
+	if ('src' in props) {
+		return (
+			<div css={[faviconStyles(mergedTheme), props.cssOverrides]}>
+				{imageError ? (
+					<>Backup</>
+				) : (
+					<img
+						src={props.src}
+						alt={props.alt}
+						title={props.alt}
+						onError={handleImageError}
+						css={faviconImageStyles}
+					/>
+				)}
+			</div>
+		);
+	}
+
+	return null;
 };

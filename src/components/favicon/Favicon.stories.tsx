@@ -13,21 +13,18 @@ type Story = StoryObj<typeof Favicon>;
 
 export const Letter = {
 	args: {
-		type: 'letter',
 		letter: 'C',
 	},
 } satisfies Story;
 
 export const Icon = {
 	args: {
-		type: 'icon',
 		icon: 'email',
 	},
 } satisfies Story;
 
 export const Image = {
 	args: {
-		type: 'image',
 		src: 'https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg',
 		alt: 'Mahesh Makani',
 	},
@@ -35,7 +32,6 @@ export const Image = {
 
 export const CustomTheme = {
 	args: {
-		type: 'letter',
 		letter: 'C',
 		theme: {
 			color: {
@@ -49,7 +45,6 @@ export const CustomTheme = {
 export const CssOverrides = {
 	name: 'cssOverrides',
 	args: {
-		type: 'letter',
 		letter: 'O',
 		cssOverrides: css`
 			border: ${baseSizing['size-2-rem']} solid ${baseColors.red[500]};
