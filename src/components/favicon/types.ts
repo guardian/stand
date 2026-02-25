@@ -2,14 +2,7 @@ import type { DefaultProps } from '../../util/types';
 import type { IconProps } from '../icon/types';
 import type { FaviconTheme } from './styles';
 
-interface FaviconBaseProps extends DefaultProps<FaviconTheme> {
-	/**
-	 * The type of icon to use
-	 */
-	type: 'letter' | 'icon' | 'image';
-}
-
-interface FaviconWithLetter extends FaviconBaseProps {
+interface FaviconWithLetter extends DefaultProps<FaviconTheme> {
 	/**
 	 * Letter to render in the favicon
 	 */
@@ -19,7 +12,7 @@ interface FaviconWithLetter extends FaviconBaseProps {
 	alt?: never;
 }
 
-interface FaviconWithIcon extends FaviconBaseProps {
+interface FaviconWithIcon extends DefaultProps<FaviconTheme> {
 	/**
 	 * Icon to display in the favicon
 	 */
@@ -29,7 +22,7 @@ interface FaviconWithIcon extends FaviconBaseProps {
 	alt?: never;
 }
 
-interface FaviconWithImage extends FaviconBaseProps {
+interface FaviconWithImage extends DefaultProps<FaviconTheme> {
 	/**
 	 * Image URL for the favicon
 	 */
