@@ -1,7 +1,8 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 import FaviconStories, {
 	Letter,
-	Icon,
+	IconSymbol,
+	IconSvg,
 	Image,
 	CustomTheme,
 	CssOverrides,
@@ -29,6 +30,8 @@ See the `peerDependencies` section of `package.json` for compatible versions.
 See [custom component build](#custom-component-build) for usage without React/Emotion.
 
 ## Example usage
+
+See "Emotion/React" heading under the "Favicon" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-forked-j8cjhy)
 
 ```tsx
 import { Favicon } from '@guardian/stand/favicon';
@@ -69,9 +72,13 @@ One of `letter`, `icon` and `src` must be supplied. When using `src`, the `alt` 
 
 <Story of={Letter} />
 
-### Icon
+### Icon Symbol
 
-<Story of={Icon} />
+<Story of={IconSymbol} />
+
+### Icon SVG
+
+<Story of={IconSvg} />
 
 ### Image
 
@@ -131,6 +138,8 @@ If you're not using React/Emotion, or `@guardian/stand` is not compatible with y
 
 You will however be responsible for any additional functionality on top of the styles, for example image loading, image fallback, accessibility etc.
 
+See "Custom Component" heading under the "Favicon" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-forked-j8cjhy)
+
 **`css`**
 
 You can import the Favicon styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
@@ -167,6 +176,12 @@ or for scenarios where you have to use relative paths/node_modules directly:
 	user-select: var(--component-icon-shared-user-select);
 	font-size: var(--component-icon-lg-size);
 	color: var(--base-colors-magenta-400);
+}
+
+.stand-favicon-icon-color-svg > svg {
+	width: var(--component-icon-md-size);
+	height: var(--component-icon-md-size);
+	fill: var(--semantic-colors-text-inverse-strong);
 }
 
 /* example setup for favicon image */
@@ -207,9 +222,9 @@ const style = `
 
 const typographyStyle = `
     color: ${componentFavicon.color.text};
-    font: ${componentFavicon.md.typography.font};
-    letter-spacing: ${componentFavicon.md.typography.letterSpacing};
-    font-variation-settings: 'wdth' ${componentFavicon.md.typography.fontWidth};
+    font: ${componentFavicon.typography.font};
+    letter-spacing: ${componentFavicon.typography.letterSpacing};
+    font-variation-settings: 'wdth' ${componentFavicon.typography.fontWidth};
 `;
 
 const imgStyle = `
@@ -221,12 +236,13 @@ const imgStyle = `
 const iconStyles = `
   display: ${componentIcon.shared.display};
   user-select: ${componentIcon.shared['user-select']};
-  font-size: ${componentIcon.lg.size};
+  font-size: ${componentIcon.md.size};
+  color: ${componentFavicon.color.text};
 `;
 
 const iconSvgStyles = `
-  width: ${componentIcon.lg.size};
-  height: ${componentIcon.lg.size};
+  width: ${componentIcon.md.size};
+  height: ${componentIcon.md.size};
 `;
 
 // e.g. adding to DOM using vanilla JS styles
