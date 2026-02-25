@@ -5,7 +5,7 @@ export const Sizing = {
 };
 
 export default {
-	title: 'Stand/Editorial Design System/Semantic/Sizing',
+	title: 'Stand/Tools Design System/Semantic/Sizing',
 	component: Sizing,
 
 	parameters: {

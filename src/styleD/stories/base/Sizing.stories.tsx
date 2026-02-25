@@ -5,7 +5,7 @@ export const BaseSizing = {
 };
 
 export default {
-	title: 'Stand/Editorial Design System/Base/Sizing',
+	title: 'Stand/Tools Design System/Base/Sizing',
 	component: Sizing,
 
 	parameters: {

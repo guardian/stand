@@ -6,7 +6,7 @@ import { tableStyles } from '../../util/storybookStyles';
 import { Icon } from './Icon';
 
 const meta = {
-	title: 'Stand/Editorial Design System/Components/Icon',
+	title: 'Stand/Tools Design System/Components/Icon',
 	component: Icon,
 	parameters: {},
 	args: {

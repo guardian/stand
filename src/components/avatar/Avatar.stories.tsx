@@ -6,7 +6,7 @@ import type { AvatarColors } from './types';
 import { avatarColors } from './types';
 
 const meta = {
-	title: 'Stand/Editorial Design System/Components/Avatar',
+	title: 'Stand/Tools Design System/Components/Avatar',
 	component: Avatar,
 	parameters: {},
 	args: {

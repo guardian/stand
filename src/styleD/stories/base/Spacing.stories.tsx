@@ -5,7 +5,7 @@ export const BaseSpacing = {
 };
 
 export default {
-	title: 'Stand/Editorial Design System/Base/Spacing',
+	title: 'Stand/Tools Design System/Base/Spacing',
 	component: Spacing,
 
 	parameters: {

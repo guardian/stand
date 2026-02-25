@@ -6,7 +6,7 @@ export const Presets = {
 };
 
 export default {
-	title: 'Stand/Editorial Design System/Semantic/Typography',
+	title: 'Stand/Tools Design System/Semantic/Typography',
 	component: Presets,
 
 	parameters: {

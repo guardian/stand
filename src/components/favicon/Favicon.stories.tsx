@@ -14,7 +14,7 @@ const HomeSvg = () => (
 	</svg>
 );
 const meta = {
-	title: 'Stand/Editorial Design System/Components/Favicon',
+	title: 'Stand/Tools Design System/Components/Favicon',
 	component: Favicon,
 	parameters: {},
 } satisfies Meta<typeof Favicon>;

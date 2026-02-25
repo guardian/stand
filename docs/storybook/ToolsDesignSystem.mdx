@@ -1,0 +1,84 @@
+import { Meta, Markdown } from '@storybook/addon-docs/blocks';
+
+export const tdsStories = Object.values(
+	import.meta.glob('../../src/**/*.stories.tsx', {
+		eager: true,
+		query: '?raw',
+		import: 'default',
+	}),
+)
+	.map((content) =>
+		content.match(
+			/title:\s*['"]Stand\/Tools Design System\/([^/'"]+)\/([^'"]+)['"]/,
+		),
+	)
+	.filter(Boolean)
+	.map(([, category, name]) => ({ category, name }))
+	.sort(
+		(a, b) =>
+			a.category.localeCompare(b.category) || a.name.localeCompare(b.name),
+	);
+
+export const toDocSlug = (title) =>
+	title
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-|-$/g, '');
+
+export const toDocLink = ({ category, name }) => {
+	const slug = toDocSlug(`Stand Tools Design System ${category} ${name}`);
+	return `- [${name}](/docs/${slug}--docs)`;
+};
+
+export const storiesForCategory = (category) =>
+	tdsStories.filter((s) => s.category === category);
+
+<Meta title="Stand/Tools Design System/Introduction" />
+
+# `@guardian/stand` - Tools Design System
+
+The Tools Design System is the core design system for the Guardian's internal tools. It includes the foundational design tokens and styles, as well as a set of React components that implement these styles.
+
+We split the design system into two main categories, "Foundations" and "Components", which are described in more detail below.
+
+**Foundations**
+
+The Tools Design System foundations are available via Stand. These are split into two categories: "Semantic" and "Base".
+
+In most cases consumers should use the Component tokens, or the Semantic tokens, which are more meaningful abstractions of the base tokens, i.e applied to specific use cases.
+
+The base tokens are available for low-level use cases, or very specific styling cases, but these should be avoided where possible in favour of the semantic tokens.
+
+Stand provides the foundations via CSS variables, as well as JS/TS exports for use in code, which could also be used in other CSS-in-JS or styling solutions.
+
+Base tokens should not be overridden if they are used directly, as this could have unintended consequences. Instead override the Semantic tokens which are designed to be overridden.
+
+**Components**
+
+General purpose components for use across a variety of editorial tools based on the design system.
+
+Most components are built upon [React Aria](https://react-aria.adobe.com/getting-started), which provides accessibility and unstyled logic for common UI patterns, allowing us to focus on implementing the design and styles for these components.
+
+All components are built with TypeScript, React, and Emotion, but we also provide documentation and examples for how to use the design tokens and styles without these dependencies, using purely CSS and/or TS/JS, so you can use them in your project regardless of your tech stack.
+
+---
+
+Use the links below to navigate to the documentation for each section of the design system, and see the [Getting Started documentation](/docs/getting-started--docs) for more information on how to use the design system in your project, and how to contribute.
+
+---
+
+## Foundations
+
+### Base
+
+<Markdown>{storiesForCategory('Base').map(toDocLink).join('\n')}</Markdown>
+
+### Semantic
+
+<Markdown>{storiesForCategory('Semantic').map(toDocLink).join('\n')}</Markdown>
+
+## Components
+
+<Markdown>
+	{storiesForCategory('Components').map(toDocLink).join('\n')}
+</Markdown>

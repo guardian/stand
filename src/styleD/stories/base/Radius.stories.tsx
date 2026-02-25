@@ -5,7 +5,7 @@ export const BaseRadius = {
 };
 
 export default {
-	title: 'Stand/Editorial Design System/Base/Radius',
+	title: 'Stand/Tools Design System/Base/Radius',
 	component: Radius,
 
 	parameters: {

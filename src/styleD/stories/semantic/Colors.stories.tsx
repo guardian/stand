@@ -12,7 +12,7 @@ export const SemanticPalette = {
 };
 
 export default {
-	title: 'Stand/Editorial Design System/Semantic/Color Palette',
+	title: 'Stand/Tools Design System/Semantic/Color',
 	component: SemanticPalette,
 
 	parameters: {

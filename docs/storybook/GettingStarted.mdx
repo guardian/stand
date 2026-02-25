@@ -1,0 +1,10 @@
+import { Meta, Markdown } from '@storybook/addon-docs/blocks';
+
+import Readme from '../../README.md?raw';
+
+<Meta title="Getting Started" />
+
+<Markdown>
+	{/* {Used to correct the Storybook links when running on local environment/when previewing not on the `main` branch} */}
+	{Readme.replaceAll('https://guardian.github.io/stand/?path=', '')}
+</Markdown>

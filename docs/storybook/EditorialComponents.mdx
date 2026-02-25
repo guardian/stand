@@ -1,0 +1,46 @@
+import { Meta, Markdown } from '@storybook/addon-docs/blocks';
+
+export const editorialStories = Object.values(
+	import.meta.glob('../../src/components/**/*.stories.tsx', {
+		eager: true,
+		query: '?raw',
+		import: 'default',
+	}),
+)
+	.map(
+		(content) =>
+			content.match(
+				/title:\s*['"]Stand\/Editorial Components\/([^'"]+)['"]/,
+			)?.[1],
+	)
+	.filter(Boolean)
+	.sort()
+	.map((subPath) => ({
+		label: subPath.split('/').join(' / '),
+		slug: `stand-editorial-components-${subPath
+			.toLowerCase()
+			.replace(/[^a-z0-9]+/g, '-')
+			.replace(/^-|-$/g, '')}`,
+	}));
+
+<Meta title="Stand/Editorial Components/Introduction" />
+
+# `@guardian/stand` - Editorial Components
+
+The Editorial Components are a set of shared UI components for Guardian internal editorial tooling. They are built on top of the [Tools Design System](/docs/stand-tools-design-system-introduction--docs) foundations, and are designed to be reusable across multiple Guardian tools.
+
+All components are built with TypeScript, React, and Emotion, and are API-agnostic, they expose props so that consumers can wire in their own data and behaviour.
+
+---
+
+Use the links below to navigate to the documentation for each component, and see the [Getting Started documentation](/docs/getting-started--docs) for more information on how to use them in your project. See the [Contributing guidelines](/docs/contributing--docs) if you'd like to contribute.
+
+---
+
+## Components
+
+<Markdown>
+	{editorialStories
+		.map(({ label, slug }) => `- [${label}](/story/${slug}--default)`)
+		.join('\n')}
+</Markdown>

@@ -5,7 +5,7 @@ import { tableStyles } from '../../util/storybookStyles';
 import { LinkButton } from './LinkButton';
 
 const meta = {
-	title: 'Stand/Editorial Design System/Components/LinkButton',
+	title: 'Stand/Tools Design System/Components/LinkButton',
 	component: LinkButton,
 	parameters: {},
 	args: {

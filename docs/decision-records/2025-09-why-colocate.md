@@ -21,7 +21,7 @@ After deciding to create a new component library for journalism tools ([ADR](202
   - Developers are more likely to contribute components when already working in the repo
 - Add stand to the CSNX repo
   - There is mature tooling infrastructure for building and releasing packages
-  - The monorepo requires using the latest version of dependencies within it, e.g. React or Typescript
+  - The monorepo requires using the latest version of dependencies within it, e.g. React or TypeScript
   - This will be difficult for "legacy" applications to use if they are far behind on dependency updates
 - Create a new repo to store `@guardian/stand`
   - It can be more obvious who owns the repo and therefore responsible for the library
