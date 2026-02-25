@@ -5,12 +5,26 @@ import TypographyStories, {
 	HeadingCompact,
 	Nested,
 } from './Typography.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
 
 <Meta of={TypographyStories} />
 
 # Typography Component
 
-The Typography component provides a convenient way to wrap React elements in a font variant.
+The Typography component provides a convenient way to wrap React elements in a font variant. All possible presets can be found in the [typography tokens documentation](/docs/stand-tools-design-system-semantic-typography--docs#typography-tokens).
+
+See the ["Semantic - Typography Presets"](/docs/stand-tools-design-system-semantic-typography--docs) documentation for more details on the available typography presets and their intended use as well as how to set up fonts in your project.
 
 ## Peer dependencies
 
@@ -22,6 +36,12 @@ The Typography component provides a convenient way to wrap React elements in a f
 See the `peerDependencies` section of `package.json` for compatible versions.
 
 ## Example usage
+
+<SandboxReact
+	flowColumn
+	componentName={componentName}
+	componentTsx={componentTsx}
+/>
 
 ```tsx
 import { Typography } from '@guardian/stand/typography';
@@ -38,14 +58,14 @@ import type { Typography, TypographyTheme } from '@guardian/stand/typography';
 
 ## Props
 
-| Name           | Type               | Required | Default | Description                                          |
-| -------------- | ------------------ | -------- | ------- | ---------------------------------------------------- |
-| `element`      | Various            | Yes      | N/A     | HTML element to render with font applied to.         |
-| `variant`      | Various            | Yes      | N/A     | Font variant to apply as a CSS style to the element. |
-| `children`     | `ReactNode`        | No       | N/A     | Content to render inside the supplied HTML element.  |
-| `theme`        | `TypographyTheme`  | No       | N/A     | Custom theme overrides for the typography.           |
-| `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles for the typography.                |
-| `className`    | `string`           | No       | N/A     | Additional class name(s) for the typography.         |
+| Name           | Type               | Required | Default | Description                                                                                                                                                                                 |
+| -------------- | ------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `element`      | Various            | Yes      | N/A     | HTML element to render with font applied to.                                                                                                                                                |
+| `variant`      | Various            | Yes      | N/A     | Font variant to apply as a CSS style to the element. See the list of variants from [typography tokens presets](/docs/stand-tools-design-system-semantic-typography--docs#typography-tokens) |
+| `children`     | `ReactNode`        | No       | N/A     | Content to render inside the supplied HTML element.                                                                                                                                         |
+| `theme`        | `TypographyTheme`  | No       | N/A     | Custom theme overrides for the typography.                                                                                                                                                  |
+| `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles for the typography.                                                                                                                                                       |
+| `className`    | `string`           | No       | N/A     | Additional class name(s) for the typography.                                                                                                                                                |
 
 ## Stories
 
@@ -88,3 +108,25 @@ const Component = () => (
 ### CSS overrides
 
 The `cssOverrides` prop allows you to pass custom CSS to the rendered element.
+
+## Custom Component Build
+
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom `Typography` component using styling that shares the same design tokens seen in the [Semantic Typography documentation](/docs/stand-tools-design-system-semantic-typography--docs).
+
+Some basic examples are shown below for how to use the typography tokens in your own CSS or JS/TS styles.
+
+**`css`**
+
+You can import the Typography styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentTypography` variable and the `ComponentTypography` type to define your custom styles in TypeScript/JavaScript:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
