@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import HomeIcon from '@material-design-icons/svg/outlined/home.svg?react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { baseColors, baseSizing, baseSpacing, semanticSizing } from '../..';
-import { tableStyles } from '../../util/storybookStyles';
+import { tableStyles } from '../../util/storybook/styles';
 import { Icon } from './Icon';
 
 const meta = {

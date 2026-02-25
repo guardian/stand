@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import { tableStyles } from '../../../util/storybookStyles';
+import { tableStyles } from '../../../util/storybook/styles';
 import { semanticColors } from '../../build/typescript/semantic/colors';
 import { semanticSizing } from '../../build/typescript/semantic/sizing';
 import { semanticTypography } from '../../build/typescript/semantic/typography';
