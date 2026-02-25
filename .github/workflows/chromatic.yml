@@ -40,7 +40,7 @@ jobs:
           cache-dependency-path: 'pnpm-lock.yaml'
       - name: Build Storybook - Stand Component Library
         run: |
-          pnpm install
+          pnpm install --frozen-lockfile
           pnpm run build
           pnpm run build-storybook
 
