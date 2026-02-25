@@ -4,14 +4,14 @@ _Find what you need on the (news)stand!_
 
 A tools component library and design system
 
-Any tool should be able to make use of the components as an npm package, [`@guardian/stand`](https://www.npmjs.com/package/@guardian/stand), and developers should feel comfortable [contributing](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/contributing--docs).
+Any tool should be able to make use of the components as an npm package, [`@guardian/stand`](https://www.npmjs.com/package/@guardian/stand), and developers should feel comfortable [contributing](https://guardian.github.io/stand/?path=/docs/contributing--docs).
 
 This library is split into two main sections:
 
-- [Tools Design System](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/stand-tools-design-system-introduction--docs)
+- [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs)
   - The core design system and components used across the Guardian's internal tools.
   - e.g. Colour, Typography, Buttons, Forms, etc.
-- [Editorial Components](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/stand-editorial-components-introduction--docs)
+- [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs)
   - A collection of highly specific components shared across a smaller number of tools.
   - e.g. Byline editor, Tag picker, etc.
 
@@ -32,7 +32,7 @@ Stand is built with [React](https://reactjs.org/), [Emotion](https://emotion.sh/
 
 ## Documentation
 
-All documentation is available on [Storybook](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/), which is updated with the latest changes to the library.
+All documentation is available on [Github Pages Storybook](https://guardian.github.io/stand/), which is updated with the latest changes to the library.
 
 ## Install
 
@@ -69,15 +69,15 @@ You can import CSS variables from the package, provided your build process suppo
 
 ## Usage
 
-See the [Tools Design System](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/stand-tools-design-system-introduction--docs) and [Editorial Components](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/stand-editorial-components-introduction--docs) documentation for details.
+See the [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) and [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs) documentation for details.
 
 ## Contributing
 
-See the [Contributing guidelines](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/contributing--docs) for guidelines on contributing to this project. Project setup and common tasks are listed below.
+See the [Contributing guidelines](https://guardian.github.io/stand/?path=/docs/contributing--docs) for guidelines on contributing to this project. Project setup and common tasks are listed below.
 
 ## Getting Started
 
-> If you are looking to **use Stand in your project**, see the [Tools Design System](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/stand-tools-design-system-introduction--docs) or [Editorial Components](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/stand-editorial-components-introduction--docs) documentation for installation and usage instructions.
+> If you are looking to **use Stand in your project**, see the [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs) documentation for installation and usage instructions.
 
 The following steps are for **developing the Stand library itself**.
 
@@ -94,7 +94,7 @@ The following steps are for **developing the Stand library itself**.
    pnpm storybook
    ```
 
-   This will start Storybook at `http://localhost:6007`. See the [contributing guidelines](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/contributing--docs) for how to add new components and stories.
+   This will start Storybook at `http://localhost:6007`. See the [contributing guidelines](https://guardian.github.io/stand/?path=/docs/contributing--docs) for how to add new components and stories.
 
 3. **Build** the package for publishing:
 
@@ -135,7 +135,7 @@ After making changes to any token files, regenerate the outputs and commit them:
 pnpm build-styled
 ```
 
-See the [Style Dictionary documentation](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/style-dictionary--docs) for more details on how we structure and generate the styles.
+See the [Style Dictionary documentation](https://guardian.github.io/stand/?path=/docs/style-dictionary--docs) for more details on how we structure and generate the styles.
 
 ## Compatibility
 
@@ -174,10 +174,10 @@ Matrix generation in CI uses the same JSON file in the workflow `../.github/work
 
 ## Documentation Site Map
 
-- [Getting Started](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/getting-started--docs)
-- [Contributing](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/contributing--docs)
-- [Tools Design System Introduction](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/stand-tools-design-system-introduction--docs)
-- [Editorial Components Introduction](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/stand-editorial-components-introduction--docs)
-- [Style Dictionary](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/style-dictionary--docs)
-- [Architecture Decision Records](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/architecture-decision-records--docs)
-- [Changelog](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/changelog--docs)
+- [Getting Started](https://guardian.github.io/stand/?path=/docs/getting-started--docs)
+- [Contributing](https://guardian.github.io/stand/?path=/docs/contributing--docs)
+- [Tools Design System Introduction](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs)
+- [Editorial Components Introduction](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs)
+- [Style Dictionary](https://guardian.github.io/stand/?path=/docs/style-dictionary--docs)
+- [Architecture Decision Records](https://guardian.github.io/stand/?path=/docs/architecture-decision-records--docs)
+- [Changelog](https://guardian.github.io/stand/?path=/docs/changelog--docs)

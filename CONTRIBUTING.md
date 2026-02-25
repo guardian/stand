@@ -1,6 +1,6 @@
 # Contributing
 
-See the [Getting Started docs](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/getting-started--docs) for an overview of the project and setup guidelines.
+See the [Getting Started docs](https://guardian.github.io/stand/?path=/docs/getting-started--docs) for an overview of the project and setup guidelines.
 
 `@guardian/stand` is a shared component library for Guardian internal/editorial tooling.
 
@@ -30,7 +30,7 @@ Components for the Tools Design System should also:
 
 - **Follow the design system foundations**
   - Use the established design tokens (base, semantic, and component-level) rather than hard-coded values.
-  - Prefer [semantic tokens over base tokens](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/stand-tools-design-system-semantic-color--docs) wherever possible.
+  - Prefer [semantic tokens over base tokens](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-semantic-color--docs) wherever possible.
 
 - **Framework agnostic**
   - Components are built with React, Emotion and possibly React Aria, but must also be stylable without these dependencies via CSS and/or TS/JS exports.
@@ -59,7 +59,7 @@ All new components must:
   - Create stories that demonstrate the component's functionality, variations, and edge cases.
   - The naming convention for stories should follow the pattern of existing components, `Stand/Tools Design System/<Type>/<Name>` or `Stand/Editorial Components/<Component Name>`.
   - Create an accompanying MDX file for documentation, following the pattern of existing components (e.g. `Avatar.mdx`).
-  - Update the component list in the relevant introduction page ([Tools Design System](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/stand-tools-design-system-introduction--docs) or [Editorial Components](https://main--68c12e3ed577cb56abfd31bf.chromatic.com/?path=/docs/stand-editorial-components-introduction--docs)).
+  - Update the component list in the relevant introduction page ([Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs)).
 - Be accessible (see below).
 
 ## Style Dictionary - Design Tokens
