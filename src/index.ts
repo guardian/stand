@@ -26,6 +26,8 @@ export { componentTypography } from './styleD/build/typescript/component/typogra
 export type { ComponentTypography } from './styleD/build/typescript/component/typography';
 export { componentIcon } from './styleD/build/typescript/component/icon';
 export type { ComponentIcon } from './styleD/build/typescript/component/icon';
+export { componentFavicon } from './styleD/build/typescript/component/favicon';
+export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';
 
 /**
  * style dictionary exports - base

@@ -1,0 +1,17 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-favicon-color-background: #00496c;
+	--component-favicon-color-text: #ffffff;
+	--component-favicon-size: 2rem;
+	--component-favicon-display: inline-flex;
+	--component-favicon-align-items: center;
+	--component-favicon-justify-content: center;
+	--component-favicon-user-select: none;
+	--component-favicon-typography-font: normal 700 1.25rem/1.15
+		'GH Guardian Headline';
+	--component-favicon-typography-letter-spacing: 0rem;
+	--component-favicon-typography-font-width: 100;
+}
