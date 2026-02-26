@@ -163,6 +163,7 @@
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.29.8",
+		"@codesandbox/sandpack-react": "^2.20.0",
 		"@emotion/react": "11.11.4",
 		"@figma/rest-api-spec": "^0.36.0",
 		"@guardian/eslint-config": "13.0.6",

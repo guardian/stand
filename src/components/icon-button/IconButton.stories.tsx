@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { baseColors, baseSpacing } from '../..';
-import { tableStyles } from '../../util/storybookStyles';
+import { tableStyles } from '../../util/storybook/styles';
 import { IconButton } from './IconButton';
 
 const meta = {

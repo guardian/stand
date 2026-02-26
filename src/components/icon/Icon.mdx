@@ -4,6 +4,18 @@ import IconStories, {
 	CustomTheme,
 	CssOverrides,
 } from './Icon.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
 
 <Meta of={IconStories} />
 
@@ -92,7 +104,11 @@ For SVG icons, you can either use the Material Icons SVGs from [`@material-desig
 
 ## Example usage
 
-See "Emotion/React" heading under the `Icon` component on [codesandbox.io](https://codesandbox.io/p/sandbox/mrzkrw).
+<SandboxReact
+	flowColumn
+	componentName={componentName}
+	componentTsx={componentTsx}
+/>
 
 ```tsx
 import { Icon } from '@guardian/stand/icon';
@@ -235,99 +251,14 @@ See "Custom Component" heading under the `Icon` component on [codesandbox.io](Se
 
 You can import the Icon styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
 
-```css
-/* import the icon font and icon styles */
-@import '@guardian/stand/fonts/MaterialSymbolsOutlined.css';
-@import '@guardian/stand/component/icon.css';
-
-/*
-or for scenarios where you have to use relative paths/node_modules directly:
-
-@import 'node_modules/@guardian/stand/dist/fonts/MaterialSymbolsOutlined.css';
-@import 'node_modules/@guardian/stand/dist/styleD/build/css/component/icon.css';
-*/
-
-@import '@guardian/stand/base/spacing.css';
-@import '@guardian/stand/base/colors.css';
-
-.stand-icon {
-	display: var(--component-icon-shared-display);
-	user-select: var(--component-icon-shared-user-select);
-	font-size: var(--component-icon-lg-size);
-}
-
-.stand-icon-font-color {
-	color: var(--base-colors-magenta-400);
-}
-
-.stand-icon-svg > svg {
-	width: var(--component-icon-lg-size);
-	height: var(--component-icon-lg-size);
-}
-
-.stand-icon-svg-color > svg {
-	fill: var(--base-colors-magenta-400);
-}
-```
-
-```html
-<!-- Material Symbols (font icons) -->
-<span class="material-symbols stand-icon">home</span>
-<span class="material-symbols stand-icon stand-icon-font-color">upload</span>
-
-<!-- SVG icons -->
-<span class="material-symbols stand-icon stand-icon-svg">
-	<svg xmlns="http://www.w3.org/2000/svg" ...>...</svg>
-</span>
-<span class="material-symbols stand-icon stand-icon-svg stand-icon-svg-color">
-	<svg xmlns="http://www.w3.org/2000/svg" ...>...</svg>
-</span>
-```
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
 
 **TypeScript/JavaScript**
 
 Use the `componentIcon` variable and the `ComponentIcon` type to define your custom styles in TypeScript/JavaScript:
 
-```ts
-import type { ComponentIcon } from '@guardian/stand'; // if types required
-import { componentIcon, baseColors } from '@guardian/stand';
-
-const iconStyles = `
-  display: ${componentIcon.shared.display};
-  user-select: ${componentIcon.shared['user-select']};
-  font-size: ${componentIcon.lg.size};
-`;
-
-const iconFontColorStyles = `
-  ${iconStyles}
-  color: ${baseColors.magenta[400]};
-`;
-
-const iconSvgStyles = `
-  width: ${componentIcon.lg.size};
-  height: ${componentIcon.lg.size};
-`;
-
-const iconSvgColorStyles = `
-  ${iconSvgStyles}
-  fill: ${baseColors.magenta[400]};
-`;
-
-// e.g. adding to DOM using vanilla JS styles
-document.getElementById('app')!.innerHTML = `
-  <h3>
-        Using <code>typescript</code>/<code>javascript</code>
-  </h3>
-  <div>see <code>src/icon/custom.ts</code><div>
-  <div style="margin-top: 4px;">Material Symbols</div>
-  <div class="container">
-    <span class="material-symbols" style="${iconStyles}">home</span>
-    <span class="material-symbols" style="${iconFontColorStyles}">upload</span>
-  </div>
-  <div style="margin-top: 4px;">SVGs</div>
-  <div class="container">
-    <span class="material-symbols" style="${iconStyles}"><svg style="${iconSvgStyles}"...>...</svg></span>
-    <span class="material-symbols" style="${iconFontColorStyles}"><svg style="${iconSvgColorStyles}"...>...</svg></span>
-  </div>
-`;
-```
+<SandboxJs componentName={componentName} componentJs={componentJs} />

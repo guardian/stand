@@ -4,8 +4,8 @@ import {
 	semanticColors,
 	semanticSizing,
 	semanticTypography,
-} from '../';
-import { convertTypographyToEmotionStringStyle } from '../utils';
+} from '../..';
+import { convertTypographyToEmotionStringStyle } from '../../utils';
 
 export const tableStyles = css`
 	width: 100%;
