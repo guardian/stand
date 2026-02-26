@@ -24,19 +24,19 @@ jobs:
               echo "Versions JSON file not found at $VERSIONS_JSON_FILE" >&2
               exit 1
           fi
-          MATRIX_JSON=$(jq -cn --slurpfile v "$VERSIONS_JSON_FILE" '$v[0] | [.react[] as $r | .emotion[] as $e | .typescript[] as $t | {react: $r, emotion: $e, typescript: $t}] | map(. as $combo | select($v[0].exclude | any(.react == $combo.react and .emotion == $combo.emotion) | not)) | {include: .}')
+          MATRIX_JSON=$(jq -cn --slurpfile v "$VERSIONS_JSON_FILE" '$v[0] | [.react[] as $r | .emotion[] as $e | .typescript[] as $t | .["react-aria-components"][] as $rac | {react: $r, emotion: $e, typescript: $t, "react-aria-components": $rac}] | map(. as $combo | select($v[0].exclude | any(.react == $combo.react and .emotion == $combo.emotion) | not)) | {include: .}')
           echo "Generated matrix: $MATRIX_JSON"
           echo "matrix=$MATRIX_JSON" >> "$GITHUB_OUTPUT"
 
   test_dependency_combinations:
-    name: Test React ${{ matrix.react }} + Emotion ${{ matrix.emotion }} + TS ${{ matrix.typescript }}
+    name: Test React ${{ matrix.react }} + Emotion ${{ matrix.emotion }} + TS ${{ matrix.typescript }} + RAC ${{ matrix['react-aria-components'] }}
     permissions:
       contents: read
     runs-on: ubuntu-latest
     needs: [generate_matrix]
     strategy:
       fail-fast: false
-      max-parallel: 5
+      max-parallel: 10
       matrix: ${{ fromJSON(needs.generate_matrix.outputs.matrix) }}
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -51,15 +51,16 @@ jobs:
           export REACT_VERSIONS="${{ matrix.react }}"
           export EMOTION_VERSIONS="${{ matrix.emotion }}"
           export TS_VERSIONS="${{ matrix.typescript }}"
-          export MATRIX_OUTPUT_FILE="compat-matrix-${{ matrix.react }}-${{ matrix.emotion }}-${{ matrix.typescript }}.md"
+          export RAC_VERSIONS="${{ matrix['react-aria-components'] }}"
+          export MATRIX_OUTPUT_FILE="compat-matrix-${{ matrix.react }}-${{ matrix.emotion }}-${{ matrix.typescript }}-${{ matrix['react-aria-components'] }}.md"
           ./scripts/test-deps-matrix.sh
       - name: Upload individual test results
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         if: always()
         with:
-          name: test-results-${{ matrix.react }}-${{ matrix.emotion }}-${{ matrix.typescript }}
+          name: test-results-${{ matrix.react }}-${{ matrix.emotion }}-${{ matrix.typescript }}-${{ matrix['react-aria-components'] }}
           path: |
-            compat-matrix-${{ matrix.react }}-${{ matrix.emotion }}-${{ matrix.typescript }}.md
+            compat-matrix-${{ matrix.react }}-${{ matrix.emotion }}-${{ matrix.typescript }}-${{ matrix['react-aria-components'] }}.md
           retention-days: 1
 
   aggregate_results:
@@ -80,8 +81,8 @@ jobs:
           path: ./test-results
       - name: Combine compatibility matrix results
         run: |
-          echo "| React | Emotion | TypeScript | Typecheck | Unit | E2E | Build | Overall |" > combined-matrix.md
-          echo "|-------|---------|------------|-----------|------|-----|-------|---------|" >> combined-matrix.md
+          echo "| React | Emotion | TypeScript | RAC | Typecheck | Unit | E2E | Build | Overall |" > combined-matrix.md
+          echo "|-------|---------|------------|-----|-----------|------|-----|-------|---------|" >> combined-matrix.md
 
           # Process all individual matrix files produced by test-deps-matrix.sh
           for file in test-results/compat-matrix-*.md; do
@@ -95,8 +96,8 @@ jobs:
                   # Derive versions from filename as fallback and mark as failure
                   filename=$(basename "$file")
                   versions=$(echo "$filename" | sed 's/compat-matrix-\(.*\)\.md/\1/' | tr '-' ' ')
-                  read react emotion typescript <<< "$versions"
-                  echo "| $react | $emotion | $typescript | n/a | n/a | n/a | n/a | ❌ |" >> combined-matrix.md
+                  read react emotion typescript rac <<< "$versions"
+                  echo "| $react | $emotion | $typescript | $rac | n/a | n/a | n/a | n/a | ❌ |" >> combined-matrix.md
                   continue
               fi
 
@@ -104,10 +105,11 @@ jobs:
               react=$(echo "$data_row" | awk -F'|' '{print $2}' | xargs)
               emotion=$(echo "$data_row" | awk -F'|' '{print $3}' | xargs)
               typescript=$(echo "$data_row" | awk -F'|' '{print $4}' | xargs)
-              typecheck=$(echo "$data_row" | awk -F'|' '{print $5}' | xargs)
-              unit=$(echo "$data_row" | awk -F'|' '{print $6}' | xargs)
-              e2e=$(echo "$data_row" | awk -F'|' '{print $7}' | xargs)
-              build=$(echo "$data_row" | awk -F'|' '{print $8}' | xargs)
+              rac=$(echo "$data_row" | awk -F'|' '{print $5}' | xargs)
+              typecheck=$(echo "$data_row" | awk -F'|' '{print $6}' | xargs)
+              unit=$(echo "$data_row" | awk -F'|' '{print $7}' | xargs)
+              e2e=$(echo "$data_row" | awk -F'|' '{print $8}' | xargs)
+              build=$(echo "$data_row" | awk -F'|' '{print $9}' | xargs)
 
               overall="✅"
               if echo "$typecheck $unit $e2e $build" | grep -q 'fail'; then
@@ -116,7 +118,7 @@ jobs:
                   overall="⚠️"
               fi
 
-              echo "| $react | $emotion | $typescript | $typecheck | $unit | $e2e | $build | $overall |" >> combined-matrix.md
+              echo "| $react | $emotion | $typescript | $rac | $typecheck | $unit | $e2e | $build | $overall |" >> combined-matrix.md
           done
 
           echo "" >> combined-matrix.md
