@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.13
+
+### Patch Changes
+
+- 9dad093: Add Favicon component
+
 ## 0.0.12
 
 ### Patch Changes
