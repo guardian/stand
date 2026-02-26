@@ -1,0 +1,20 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-tool-name-display: flex;
+	--component-tool-name-align-items: center;
+	--component-tool-name-gap: 8px;
+	--component-tool-name-typography-font: normal 700 1.25rem/1.15
+		'GH Guardian Headline';
+	--component-tool-name-typography-letter-spacing: 0rem;
+	--component-tool-name-typography-font-width: 100;
+	--component-tool-name-divider-border: 0.0625rem solid #cccccc;
+	--component-tool-name-divider-height: 2rem;
+	--component-tool-name-content-type-gap: 2px;
+	--component-tool-name-content-type-typography-font: normal 700 1rem/1.15
+		'Open Sans';
+	--component-tool-name-content-type-typography-letter-spacing: -0.0125rem;
+	--component-tool-name-content-type-typography-font-width: 88;
+}
