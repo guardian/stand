@@ -49,6 +49,11 @@
 			"import": "./dist/favicon.js",
 			"require": "./dist/favicon.cjs"
 		},
+		"./ToolName": {
+			"types": "./dist/types/ToolName.d.ts",
+			"import": "./dist/ToolName.js",
+			"require": "./dist/ToolName.cjs"
+		},
 		"./byline": {
 			"types": "./dist/types/byline.d.ts",
 			"import": "./dist/byline.js",
@@ -90,7 +95,8 @@
 		"./component/button.css": "./dist/styleD/build/css/component/button.css",
 		"./component/typography.css": "./dist/styleD/build/css/component/typography.css",
 		"./component/icon.css": "./dist/styleD/build/css/component/icon.css",
-		"./component/favicon.css": "./dist/styleD/build/css/component/favicon.css"
+		"./component/favicon.css": "./dist/styleD/build/css/component/favicon.css",
+		"./component/ToolName.css": "./dist/styleD/build/css/component/ToolName.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
@@ -118,6 +124,9 @@
 			],
 			"favicon": [
 				"./dist/types/favicon.d.ts"
+			],
+			"ToolName": [
+				"./dist/types/ToolName.d.ts"
 			],
 			"byline": [
 				"./dist/types/byline.d.ts"

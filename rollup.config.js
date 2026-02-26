@@ -37,6 +37,7 @@ const input = {
 	typography: 'src/typography.ts',
 	icon: 'src/icon.ts',
 	favicon: 'src/favicon.ts',
+	ToolName: 'src/ToolName.ts',
 	// editorial components
 	byline: 'src/byline.ts',
 	'tag-picker': 'src/tag-picker.ts',
