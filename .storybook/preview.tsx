@@ -5,7 +5,8 @@ import type { Preview } from '@storybook/react-vite';
 import {
 	semanticTypography,
 } from '../src';
-import { convertTypographyToEmotionObjectStyle, GlobalResetStyles } from '../src/utils';
+import { convertTypographyToEmotionObjectStyle } from '../src/utils';
+import '../src/util/reset.css';
 
 const Fonts = css`
     @import url('https://assets.guim.co.uk/fonts/material-symbols/MaterialSymbolsOutlined.css');
@@ -58,8 +59,6 @@ const globalFont = {
 };
 
 const globalStyles = css`
-    ${GlobalResetStyles}
-
     body {
         ${globalFont}
     }
