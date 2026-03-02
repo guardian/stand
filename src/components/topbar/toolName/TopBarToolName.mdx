@@ -4,17 +4,17 @@ import ToolNameStories, {
 	WithContentType,
 	CustomTheme,
 	CssOverrides,
-} from './ToolName.stories';
+} from './TopBarToolName.stories';
 
 <Meta of={ToolNameStories} />
 
 # Tool Name
 
-The Tool Name component represents the identity of the application and (optionally) the current type of content on the page, this is intended to be used within a header bar.
+The Top Bar Tool Name component represents the identity of the application and (optionally) the current type of content on the page, this is intended to be used within the top bar.
 
 ## When to use
 
-- In the header bar of the application
+- In the header/top bar/navbar of the application
 
 ## Peer dependencies
 
@@ -31,19 +31,22 @@ See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--
 
 ## Example usage
 
-See "Emotion/React" heading under the `ToolName` component on [codesandbox.io]().
+See "Emotion/React" heading under the `TopBarToolName` component on [codesandbox.io]().
 
 ```tsx
-import { ToolName } from '@guardian/stand/ToolName';
+import { TopBarToolName } from '@guardian/stand/TopBarToolName';
 
 /* types, if required */
-import type { ToolNameProps, ToolNameTheme } from '@guardian/stand/ToolName';
+import type {
+	TopBarToolNameProps,
+	TopBarToolNameTheme,
+} from '@guardian/stand/TopBarToolName';
 
 /* Tool name only */
-<ToolName name="Songwriter" favicon={{ type: 'letter', letter: 'S' }} />;
+<TopBarToolName name="Songwriter" favicon={{ type: 'letter', letter: 'S' }} />;
 
 /* Tool name and content type */
-<ToolName
+<TopBarToolName
 	name="Songwriter"
 	favicon={{ type: 'letter', letter: 'S' }}
 	contentType="Article"
@@ -59,7 +62,7 @@ import type { ToolNameProps, ToolNameTheme } from '@guardian/stand/ToolName';
 | `favicon`         | `FaviconProps`                                                    | Yes      | N/A     | Favicon of the tool                                                        |
 | `contentType`     | `string`                                                          | No       | N/A     | The type of content type of the current page.                              |
 | `contentTypeIcon` | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>` | No       | N/A     | Icon that represents the content type.                                     |
-| `theme`           | `ToolNameTheme` (partial)                                         | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.    |
+| `theme`           | `TopBarToolNameTheme` (partial)                                   | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.    |
 | `cssOverrides`    | `SerializedStyles`                                                | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient. |
 | `className`       | `string`                                                          | No       | N/A     | Additional class name(s) for the tool name.                                |
 
@@ -82,11 +85,11 @@ We recommend using the default theme. When needed, use the `theme` or `cssOverri
 <Story of={CustomTheme} />
 
 ```tsx
-import type { ToolNameTheme } from '@guardian/stand/ToolName';
-import { ToolName } from '@guardian/stand/ToolName';
+import type { TopBarToolNameTheme } from '@guardian/stand/TopBarToolName';
+import { TopBarToolName } from '@guardian/stand/TopBarToolName';
 import { baseSizing, semanticTypography } from '@guardian/stand';
 
-const customTheme: Partial<ToolNameTheme> = {
+const customTheme: Partial<TopBarToolNameTheme> = {
 	gap: baseSizing['size-1-px'],
 	typography: semanticTypography['article-body-bold-italic-md'],
 	contentType: {
@@ -103,7 +106,7 @@ const faviconCustomTheme = {
 };
 
 const Component = () => (
-	<ToolName
+	<TopBarToolName
 		name="Songwriter"
 		contentType="Article"
 		contentTypeIcon="menu"
@@ -121,7 +124,7 @@ const Component = () => (
 <Story of={CssOverrides} />
 
 ```tsx
-import { ToolName } from '@guardian/stand/ToolName';
+import { TopBarToolName } from '@guardian/stand/TopBarToolName';
 import { baseColors, baseRadius, baseSizing } from '@guardian/stand';
 import { css } from '@emotion/react';
 
@@ -133,7 +136,7 @@ const customStyles = css`
 `;
 
 const Component = () => (
-	<ToolName
+	<TopBarToolName
 		name="Songwriter"
 		contentType="Article"
 		cssOverrides={customStyles}
@@ -143,7 +146,7 @@ const Component = () => (
 
 ## Custom Component Build
 
-If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom Tool Name component using the styles defined in the `ToolNameTheme` type.
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom Tool Name component using the styles defined in the `TopBarToolNameTheme` type.
 
 You will however be responsible for any additional functionality on top of the styles, for example icon loading, accessibility, etc.
 
@@ -151,18 +154,18 @@ TODO in sandbox
 
 **`css`**
 
-You can import the ToolName styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+You can import the TopBarToolName styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
 
 ```css
 /* import the tool name font and tool name styles */
 @import '@guardian/stand/fonts/MaterialSymbolsOutlined.css';
-@import '@guardian/stand/component/ToolName.css';
+@import '@guardian/stand/component/TopBarToolName.css';
 
 /*
 or for scenarios where you have to use relative paths/node_modules directly:
 
 @import 'node_modules/@guardian/stand/dist/fonts/MaterialSymbolsOutlined.css';
-@import 'node_modules/@guardian/stand/dist/styleD/build/css/component/ToolName.css';
+@import 'node_modules/@guardian/stand/dist/styleD/build/css/component/TopBarToolName.css';
 */
 
 @import '@guardian/stand/base/spacing.css';
@@ -178,17 +181,17 @@ or for scenarios where you have to use relative paths/node_modules directly:
 
 **TypeScript/JavaScript**
 
-Use the `componentToolName` variable and the `ComponentToolName` type to define your custom styles in TypeScript/JavaScript:
+Use the `componentTopBarToolName` variable and the `ComponentTopBarToolName` type to define your custom styles in TypeScript/JavaScript:
 
 ```ts
-import type { ComponentToolName } from '@guardian/stand'; // if types required
-import { componentToolName, baseColors } from '@guardian/stand';
+import type { ComponentTopBarToolName } from '@guardian/stand'; // if types required
+import { componentTopBarToolName, baseColors } from '@guardian/stand';
 
 // e.g. adding to DOM using vanilla JS styles
 document.getElementById('app')!.innerHTML = `
   <h3>
         Using <code>typescript</code>/<code>javascript</code>
   </h3>
-  <div>see <code>src/ToolName/custom.ts</code><div>
+  <div>see <code>src/TopBarToolName/custom.ts</code><div>
 `;
 ```

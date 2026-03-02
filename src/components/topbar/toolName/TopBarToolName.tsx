@@ -1,6 +1,6 @@
-import { mergeDeep } from '../../util/mergeDeep';
-import { Favicon } from '../favicon/Favicon';
-import { Icon } from '../icon/Icon';
+import { mergeDeep } from '../../../util/mergeDeep';
+import { Favicon } from '../../favicon/Favicon';
+import { Icon } from '../../icon/Icon';
 import {
 	contentTypeStyles,
 	contentTypeTypography,
@@ -9,16 +9,16 @@ import {
 	toolNameStyles,
 	toolNameTypography,
 } from './styles';
-import type { ToolNameProps } from './types';
+import type { TopBarToolNameProps } from './types';
 
-export const ToolName = ({
+export const TopBarToolName = ({
 	name,
 	favicon,
 	contentType,
 	contentTypeIcon,
 	theme = {},
 	cssOverrides,
-}: ToolNameProps) => {
+}: TopBarToolNameProps) => {
 	const mergedTheme = mergeDeep(defaultToolNameTheme, theme);
 	return (
 		<div css={[toolNameStyles(mergedTheme), cssOverrides]}>

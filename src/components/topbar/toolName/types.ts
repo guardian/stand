@@ -1,9 +1,9 @@
-import type { DefaultProps } from '../../util/types';
-import type { FaviconProps } from '../favicon/types';
-import type { IconProps } from '../icon/types';
-import type { ToolNameTheme } from './styles';
+import type { DefaultProps } from '../../../util/types';
+import type { FaviconProps } from '../../favicon/types';
+import type { IconProps } from '../../icon/types';
+import type { TopBarToolNameTheme } from './styles';
 
-export interface ToolNameProps extends DefaultProps<ToolNameTheme> {
+export interface TopBarToolNameProps extends DefaultProps<TopBarToolNameTheme> {
 	/**
 	 * Name of the tool to display
 	 */

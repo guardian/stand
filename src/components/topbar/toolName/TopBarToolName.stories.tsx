@@ -1,18 +1,18 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
-import { baseRadius } from '../../styleD/build/typescript/base/radius';
-import { baseSizing } from '../../styleD/build/typescript/base/sizing';
-import { semanticTypography } from '../../styleD/build/typescript/semantic/typography';
-import { ToolName } from './ToolName';
+import { baseColors } from '../../../styleD/build/typescript/base/colors';
+import { baseRadius } from '../../../styleD/build/typescript/base/radius';
+import { baseSizing } from '../../../styleD/build/typescript/base/sizing';
+import { semanticTypography } from '../../../styleD/build/typescript/semantic/typography';
+import { TopBarToolName } from './TopBarToolName';
 
 const meta = {
-	title: 'Stand/Editorial Design System/Components/ToolName',
-	component: ToolName,
+	title: 'Stand/Tools Design System/Components/TopBar/TopBarToolName',
+	component: TopBarToolName,
 	parameters: {},
-} satisfies Meta<typeof ToolName>;
+} satisfies Meta<typeof TopBarToolName>;
 
-type Story = StoryObj<typeof ToolName>;
+type Story = StoryObj<typeof TopBarToolName>;
 
 export const WithName = {
 	args: {

@@ -72,7 +72,7 @@ const fileList = [
 	},
 	{
 		group: 'component',
-		component: 'ToolName',
+		component: 'TopBar',
 	},
 	/** editorial components */
 	{
