@@ -1,5 +1,16 @@
 # @guardian/stand
 
+## 0.0.14
+
+### Patch Changes
+
+- b74e7c3: update peer dependencies to support range of react-aria-components
+- 21a3976: BREAKING: Removes the `GlobalResetStyles` export from `index.ts`
+
+  Instead:
+  - For consumers using emotion - `import { GlobalResetStyles } from @guardian/stand/utils`
+  - For consumers using css styling - `import '@guardian/stand/util/reset.css'`
+
 ## 0.0.13
 
 ### Patch Changes
