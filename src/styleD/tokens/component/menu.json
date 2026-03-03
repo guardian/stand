@@ -1,0 +1,12 @@
+{
+	"component": {
+		"menu": {
+			"shared": {
+				"display": {
+					"$type": "string",
+					"$value": "inline-flex"
+				}
+			}
+		}
+	}
+}
