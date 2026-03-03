@@ -5,6 +5,18 @@ import ToolNameStories, {
 	CustomTheme,
 	CssOverrides,
 } from './TopBarToolName.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../../util/storybook/sandbox/Sandbox';
+import {
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentName,
+	componentTsx,
+} from './sandbox';
 
 <Meta of={ToolNameStories} />
 
@@ -31,7 +43,7 @@ See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--
 
 ## Example usage
 
-See "Emotion/React" heading under the `TopBarToolName` component on [codesandbox.io]().
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
 
 ```tsx
 import { TopBarToolName } from '@guardian/stand/TopBarToolName';
@@ -150,48 +162,19 @@ If you're not using React/Emotion, or `@guardian/stand` is not compatible with y
 
 You will however be responsible for any additional functionality on top of the styles, for example icon loading, accessibility, etc.
 
-TODO in sandbox
-
 **`css`**
 
 You can import the TopBarToolName styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
 
-```css
-/* import the tool name font and tool name styles */
-@import '@guardian/stand/fonts/MaterialSymbolsOutlined.css';
-@import '@guardian/stand/component/TopBarToolName.css';
+<SandboxCss
+	componentName={componentName}
+  	componentHtml={componentHtml}
+    componentCss={componentCss}
 
-/*
-or for scenarios where you have to use relative paths/node_modules directly:
-
-@import 'node_modules/@guardian/stand/dist/fonts/MaterialSymbolsOutlined.css';
-@import 'node_modules/@guardian/stand/dist/styleD/build/css/component/TopBarToolName.css';
-*/
-
-@import '@guardian/stand/base/spacing.css';
-@import '@guardian/stand/base/colors.css';
-
-.stand-tool-name {
-}
-```
-
-```html
-
-```
+/>
 
 **TypeScript/JavaScript**
 
-Use the `componentTopBarToolName` variable and the `ComponentTopBarToolName` type to define your custom styles in TypeScript/JavaScript:
+Use the `componentTopBar` variable and the `componentTopBar` type to define your custom styles in TypeScript/JavaScript:
 
-```ts
-import type { ComponentTopBarToolName } from '@guardian/stand'; // if types required
-import { componentTopBarToolName, baseColors } from '@guardian/stand';
-
-// e.g. adding to DOM using vanilla JS styles
-document.getElementById('app')!.innerHTML = `
-  <h3>
-        Using <code>typescript</code>/<code>javascript</code>
-  </h3>
-  <div>see <code>src/TopBarToolName/custom.ts</code><div>
-`;
-```
+<SandboxJs componentName={componentName} componentJs={componentJs} />
