@@ -1,0 +1,24 @@
+{
+	"component": {
+		"menu": {
+			"shared": {
+				"display": {
+					"$type": "string",
+					"$value": "inline-flex"
+				},
+				"align-items": {
+					"$type": "string",
+					"$value": "center"
+				},
+				"justify-content": {
+					"$type": "string",
+					"$value": "center"
+				},
+				"user-select": {
+					"$type": "string",
+					"$value": "none"
+				}
+			}
+		}
+	}
+}
