@@ -70,6 +70,10 @@ const fileList = [
 		group: 'component',
 		component: 'favicon',
 	},
+	{
+		group: 'component',
+		component: 'menu',
+	},
 	/** editorial components */
 	{
 		group: 'component',

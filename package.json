@@ -90,7 +90,13 @@
 		"./component/button.css": "./dist/styleD/build/css/component/button.css",
 		"./component/typography.css": "./dist/styleD/build/css/component/typography.css",
 		"./component/icon.css": "./dist/styleD/build/css/component/icon.css",
-		"./component/favicon.css": "./dist/styleD/build/css/component/favicon.css"
+		"./component/favicon.css": "./dist/styleD/build/css/component/favicon.css",
+		"./menu": {
+			"types": "./dist/types/menu.d.ts",
+			"import": "./dist/menu.js",
+			"require": "./dist/menu.cjs"
+		},
+		"./component/menu.css": "./dist/styleD/build/css/component/menu.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
@@ -130,6 +136,9 @@
 			],
 			"utils": [
 				"./dist/types/utils.d.ts"
+			],
+			"menu": [
+				"./dist/types/menu.d.ts"
 			]
 		}
 	},
@@ -154,6 +163,7 @@
 		"lint:tokens": "tz check",
 		"format:check": "prettier --check .",
 		"format:fix": "prettier --write .",
+		"scaffold": "node scripts/scaffold-component.mjs",
 		"tsc": "tsc",
 		"test": "jest",
 		"test:setup-e2e": "playwright install --with-deps",
