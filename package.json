@@ -154,6 +154,7 @@
 		"lint:tokens": "tz check",
 		"format:check": "prettier --check .",
 		"format:fix": "prettier --write .",
+		"scaffold": "node scripts/scaffold-component.mjs",
 		"tsc": "tsc",
 		"test": "jest",
 		"test:setup-e2e": "playwright install --with-deps",
