@@ -28,6 +28,8 @@ export { componentIcon } from './styleD/build/typescript/component/icon';
 export type { ComponentIcon } from './styleD/build/typescript/component/icon';
 export { componentFavicon } from './styleD/build/typescript/component/favicon';
 export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';
+export { componentTopBar } from './styleD/build/typescript/component/TopBar';
+export type { ComponentTopBar } from './styleD/build/typescript/component/TopBar';
 
 /**
  * style dictionary exports - base
