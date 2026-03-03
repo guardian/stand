@@ -2,10 +2,10 @@ import { mergeDeep } from '../../../util/mergeDeep';
 import { Favicon } from '../../favicon/Favicon';
 import { Icon } from '../../icon/Icon';
 import {
-	contentTypeStyles,
-	contentTypeTypography,
 	defaultToolNameTheme,
 	dividerStyles,
+	subsectionStyles,
+	subsectionTypography,
 	toolNameStyles,
 	toolNameTypography,
 } from './styles';
@@ -14,8 +14,8 @@ import type { TopBarToolNameProps } from './types';
 export const TopBarToolName = ({
 	name,
 	favicon,
-	contentType,
-	contentTypeIcon,
+	subsection,
+	subsectionIcon,
 	theme = {},
 	cssOverrides,
 }: TopBarToolNameProps) => {
@@ -24,12 +24,12 @@ export const TopBarToolName = ({
 		<div css={[toolNameStyles(mergedTheme), cssOverrides]}>
 			<Favicon {...favicon} />
 			<div css={[toolNameTypography(mergedTheme)]}>{name}</div>
-			{contentType && (
+			{subsection && (
 				<>
 					<div css={dividerStyles(mergedTheme)}>&nbsp;</div>
-					<div css={contentTypeStyles(mergedTheme)}>
-						{contentTypeIcon && <Icon size="sm">{contentTypeIcon}</Icon>}
-						<div css={contentTypeTypography(mergedTheme)}>{contentType}</div>
+					<div css={subsectionStyles(mergedTheme)}>
+						{subsectionIcon && <Icon size="sm">{subsectionIcon}</Icon>}
+						<div css={subsectionTypography(mergedTheme)}>{subsection}</div>
 					</div>
 				</>
 			)}

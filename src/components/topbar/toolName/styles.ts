@@ -36,7 +36,7 @@ export const dividerStyles = (theme: TopBarToolNameTheme): SerializedStyles => {
 	`;
 };
 
-export const contentTypeStyles = (
+export const subsectionStyles = (
 	theme: TopBarToolNameTheme,
 ): SerializedStyles => {
 	return css`
@@ -46,7 +46,7 @@ export const contentTypeStyles = (
 	`;
 };
 
-export const contentTypeTypography = (
+export const subsectionTypography = (
 	theme: TopBarToolNameTheme,
 ): SerializedStyles => {
 	return css`

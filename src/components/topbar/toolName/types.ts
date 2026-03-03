@@ -13,13 +13,11 @@ export interface TopBarToolNameProps extends DefaultProps<TopBarToolNameTheme> {
 	 */
 	favicon: FaviconProps;
 	/**
-	 * Type of content that is represented on the page e.g. a subsection of the application (optional)
+	 * The subsection or type of content that is represented on the page (optional)
 	 * */
-	contentType?: string;
+	subsection?: string;
 	/**
 	 * Icon that represents the content type (optional)
 	 * */
-	contentTypeIcon?:
-		| IconProps['symbol']
-		| Exclude<IconProps['children'], string>;
+	subsectionIcon?: IconProps['symbol'] | Exclude<IconProps['children'], string>;
 }

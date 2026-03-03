@@ -1,7 +1,7 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 import ToolNameStories, {
 	WithName,
-	WithContentType,
+	WithSubsection,
 	CustomTheme,
 	CssOverrides,
 } from './TopBarToolName.stories';
@@ -49,22 +49,22 @@ import type {
 <TopBarToolName
 	name="Songwriter"
 	favicon={{ type: 'letter', letter: 'S' }}
-	contentType="Article"
-	contentTypeIcon="menu"
+	subsection="Article"
+	subsectionIcon="menu"
 />;
 ```
 
 ## Props
 
-| Name              | Type                                                              | Required | Default | Description                                                                |
-| ----------------- | ----------------------------------------------------------------- | -------- | ------- | -------------------------------------------------------------------------- |
-| `name`            | `string`                                                          | Yes      | N/A     | Name of the tool.                                                          |
-| `favicon`         | `FaviconProps`                                                    | Yes      | N/A     | Favicon of the tool                                                        |
-| `contentType`     | `string`                                                          | No       | N/A     | The type of content type of the current page.                              |
-| `contentTypeIcon` | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>` | No       | N/A     | Icon that represents the content type.                                     |
-| `theme`           | `TopBarToolNameTheme` (partial)                                   | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.    |
-| `cssOverrides`    | `SerializedStyles`                                                | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient. |
-| `className`       | `string`                                                          | No       | N/A     | Additional class name(s) for the tool name.                                |
+| Name             | Type                                                              | Required | Default | Description                                                                |
+| ---------------- | ----------------------------------------------------------------- | -------- | ------- | -------------------------------------------------------------------------- |
+| `name`           | `string`                                                          | Yes      | N/A     | Name of the tool.                                                          |
+| `favicon`        | `FaviconProps`                                                    | Yes      | N/A     | Favicon of the tool                                                        |
+| `subsection`     | `string`                                                          | No       | N/A     | The subsection or content type of the current page.                        |
+| `subsectionIcon` | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>` | No       | N/A     | Icon that represents the content type.                                     |
+| `theme`          | `TopBarToolNameTheme` (partial)                                   | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.    |
+| `cssOverrides`   | `SerializedStyles`                                                | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient. |
+| `className`      | `string`                                                          | No       | N/A     | Additional class name(s) for the tool name.                                |
 
 ## Stories
 
@@ -74,7 +74,7 @@ import type {
 
 ### With content type
 
-<Story of={WithContentType} />
+<Story of={WithSubsection} />
 
 ## Customisation
 
@@ -92,7 +92,7 @@ import { baseSizing, semanticTypography } from '@guardian/stand';
 const customTheme: Partial<TopBarToolNameTheme> = {
 	gap: baseSizing['size-1-px'],
 	typography: semanticTypography['article-body-bold-italic-md'],
-	contentType: {
+	subsection: {
 		typography: semanticTypography['meta-compact-md'],
 	},
 };
@@ -108,8 +108,8 @@ const faviconCustomTheme = {
 const Component = () => (
 	<TopBarToolName
 		name="Songwriter"
-		contentType="Article"
-		contentTypeIcon="menu"
+		subsection="Article"
+		subsectionIcon="menu"
 		theme={customTheme}
 		favicon={{
 			letter: 'S,
@@ -138,7 +138,7 @@ const customStyles = css`
 const Component = () => (
 	<TopBarToolName
 		name="Songwriter"
-		contentType="Article"
+		subsection="Article"
 		cssOverrides={customStyles}
 	/>
 );

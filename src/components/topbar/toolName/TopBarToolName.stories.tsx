@@ -23,22 +23,22 @@ export const WithName = {
 	},
 } satisfies Story;
 
-export const WithContentType = {
+export const WithSubsection = {
 	args: {
 		name: 'Songwriter',
 		favicon: {
 			letter: 'S',
 		},
-		contentType: 'Article',
-		contentTypeIcon: 'menu',
+		subsection: 'Article',
+		subsectionIcon: 'menu',
 	},
 } satisfies Story;
 
 export const CustomTheme = {
 	args: {
 		name: 'Songwriter',
-		contentType: 'Article',
-		contentTypeIcon: 'menu',
+		subsection: 'Article',
+		subsectionIcon: 'menu',
 		favicon: {
 			letter: 'S',
 			theme: {
