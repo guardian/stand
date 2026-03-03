@@ -4,6 +4,18 @@ import IconButtonStories, {
 	CustomTheme,
 	CssOverrides,
 } from './IconButton.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
 
 <Meta of={IconButtonStories} />
 
@@ -33,7 +45,7 @@ See [custom component build](#custom-component-build) for usage without React/Em
 
 ## Example usage
 
-See "Emotion/React" heading under the "IconButton" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-mrzkrw)
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
 
 ```tsx
 import { IconButton } from '@guardian/stand/icon-button';
@@ -186,8 +198,6 @@ However there are some minor differences in the styles for `IconButton` vs `Butt
 
 You will however be responsible for any additional functionality on top of the styles, for example accessibility, focus management, interaction states, icon rendering, etc.
 
-See "Custom Component" heading under the "IconButton" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-mrzkrw)
-
 **Accessibility considerations**
 
 Icon-only buttons require proper labeling for screen readers:
@@ -206,143 +216,14 @@ Icon-only buttons require proper labeling for screen readers:
 
 You can import the Button styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
 
-```css
-/* import the icon font (if using Material symbols), button and icon variables */
-@import '@guardian/stand/fonts/MaterialSymbolsOutlined.css';
-@import '@guardian/stand/component/button.css';
-@import '@guardian/stand/component/icon.css';
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
 
-/*
-or for scenarios where you have to use relative paths/node_modules directly:
+**TypeScript/JavaScript**
 
-@import 'node_modules/@guardian/stand/dist/styleD/build/css/component/button.css';
-@import 'node_modules/@guardian/stand/dist/fonts/MaterialSymbolsOutlined.css';
-@import 'node_modules/@guardian/stand/dist/styleD/build/css/component/icon.css';
-*/
+Use the `componentButton` variable and the `ComponentButton` type to define your custom styles in TypeScript/JavaScript:
 
-/* shared button styles for all variants */
-.stand-icon-button {
-	display: var(--component-button-shared-display);
-	-webkit-appearance: var(--component-button-shared-webkit-appearance);
-	text-align: var(--component-button-shared-text-align);
-	box-shadow: var(--component-button-shared-box-shadow);
-	text-decoration: var(--component-button-shared-text-decoration);
-	cursor: var(--component-button-shared-cursor);
-	justify-content: var(--component-button-shared-justify-content);
-	align-items: var(--component-button-shared-align-items);
-}
-.stand-icon-button:focus-visible {
-	outline: var(--component-button-shared-focus-visible-outline);
-	outline-offset: var(--component-button-shared-focus-visible-outline-offset);
-}
-.stand-icon-button:disabled {
-	cursor: var(--component-button-shared-disabled-cursor);
-}
-
-/* example setup of button/link button style using md size and emphasised primary variant */
-.stand-icon-button-emphasised-primary {
-	color: var(--component-button-emphasised-primary-shared-color);
-	background: var(
-		--component-button-emphasised-primary-shared-background-color
-	);
-	width: var(--component-button-emphasised-primary-md-icon-button-width);
-	height: var(--component-button-emphasised-primary-md-height);
-	padding: 0;
-	font: var(--component-button-emphasised-primary-md-typography-font);
-	letter-spacing: var(
-		--component-button-emphasised-primary-md-typography-letter-spacing
-	);
-	font-variation-settings: 'wdth'
-		var(--component-button-emphasised-primary-md-typography-font-width);
-	border: var(--component-button-emphasised-primary-shared-border);
-	border-radius: var(
-		--component-button-emphasised-primary-shared-border-radius
-	);
-}
-.stand-icon-button-emphasised-primary:hover {
-	background: var(
-		--component-button-emphasised-primary-shared-hover-background-color
-	);
-	border: var(--component-button-emphasised-primary-shared-hover-border);
-}
-.stand-icon-button-emphasised-primary:active {
-	background: var(
-		--component-button-emphasised-primary-shared-active-background-color
-	);
-	border: var(--component-button-emphasised-primary-shared-active-border);
-}
-.stand-icon-button-emphasised-primary:disabled {
-	color: var(--component-button-emphasised-primary-shared-disabled-color);
-	background: var(
-		--component-button-emphasised-primary-shared-disabled-background-color
-	);
-	border: var(--component-button-emphasised-primary-shared-disabled-border);
-}
-.stand-icon-button-emphasised-primary > .material-symbols {
-	font-size: var(--component-button-emphasised-primary-md-icon-size);
-}
-
-/* example setup of button/link button style using md size and neutral secondary variant */
-.stand-icon-button-neutral-secondary {
-	color: var(--component-button-neutral-secondary-shared-color);
-	background: var(--component-button-neutral-secondary-shared-background-color);
-	width: var(--component-button-neutral-secondary-md-icon-button-width);
-	height: var(--component-button-neutral-secondary-md-height);
-	padding: 0;
-	font: var(--component-button-neutral-secondary-md-typography-font);
-	letter-spacing: var(
-		--component-button-neutral-secondary-md-typography-letter-spacing
-	);
-	font-variation-settings: 'wdth'
-		var(--component-button-neutral-secondary-md-typography-font-width);
-	border: var(--component-button-neutral-secondary-shared-border);
-	border-radius: var(--component-button-neutral-secondary-shared-border-radius);
-}
-.stand-icon-button-neutral-secondary:hover {
-	background: var(
-		--component-button-neutral-secondary-shared-hover-background-color
-	);
-	border: var(--component-button-neutral-secondary-shared-hover-border);
-}
-.stand-icon-button-neutral-secondary:active {
-	background: var(
-		--component-button-neutral-secondary-shared-active-background-color
-	);
-	border: var(--component-button-neutral-secondary-shared-active-border);
-}
-.stand-icon-button-neutral-secondary:disabled {
-	color: var(--component-button-neutral-secondary-shared-disabled-color);
-	background: var(
-		--component-button-neutral-secondary-shared-disabled-background-color
-	);
-	border: var(--component-button-neutral-secondary-shared-disabled-border);
-}
-.stand-icon-button-neutral-secondary > .material-symbols {
-	font-size: var(--component-button-neutral-secondary-md-icon-size);
-}
-```
-
-```html
-<button
-	class="stand-icon-button stand-icon-button-emphasised-primary"
-	title="Summon a raven"
-	aria-label="Summon a raven"
->
-	<span class="material-symbols" aria-hidden="true">raven</span>
-</button>
-<button
-	class="stand-icon-button stand-icon-button-emphasised-primary"
-	disabled
-	title="Consult with an owl"
-	aria-label="Consult with an owl"
->
-	<span class="material-symbols" aria-hidden="true">owl</span>
-</button>
-<a
-	class="stand-icon-button stand-icon-button-neutral-secondary"
-	href="#"
-	title="Gain nectar"
-	aria-label="Gain nectar"
-	><span class="material-symbols" aria-hidden="true">emoji_nature</span></a
->
-```
+<SandboxJs componentName={componentName} componentJs={componentJs} />

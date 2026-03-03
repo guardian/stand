@@ -5,6 +5,18 @@ import LinkButtonStories, {
 	CustomTheme,
 	CssOverrides,
 } from './LinkButton.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
 
 <Meta of={LinkButtonStories} />
 
@@ -32,7 +44,11 @@ See [custom component build](#custom-component-build) for usage without React/Em
 
 ## Example usage
 
-See "Emotion/React" heading under the "LinkButton" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-mrzkrw)
+<SandboxReact
+	flowColumn
+	componentName={componentName}
+	componentTsx={componentTsx}
+/>
 
 ```tsx
 import { LinkButton } from './LinkButton';
@@ -184,4 +200,24 @@ const Component = () => (
 
 ## Custom Component Build
 
-See the "Custom Component Build" section in the [Button documentation](/docs/stand-tools-design-system-components-button--docs#custom-component-build) for guidance on building a custom LinkButton component without React/Emotion.
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom `LinkButton` component using styling that shares the same design tokens as the [Button](/docs/stand-tools-design-system-components-button--docs#custom-component-build) component.
+
+However there are some minor differences in the styles for `LinkButton` vs `Button`, so we'll show the exact examples below.
+
+You will however be responsible for any additional functionality on top of the styles, for example accessibility, focus management, interaction states, icon rendering, etc.
+
+**`css`**
+
+You can import the Button styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentButton` variable and the `ComponentButton` type to define your custom styles in TypeScript/JavaScript:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />

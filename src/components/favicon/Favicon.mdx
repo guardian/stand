@@ -7,6 +7,18 @@ import FaviconStories, {
 	CustomTheme,
 	CssOverrides,
 } from './Favicon.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
 
 <Meta of={FaviconStories} />
 
@@ -31,7 +43,7 @@ See [custom component build](#custom-component-build) for usage without React/Em
 
 ## Example usage
 
-See "Emotion/React" heading under the "Favicon" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-forked-j8cjhy)
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
 
 ```tsx
 import { Favicon } from '@guardian/stand/favicon';
@@ -144,122 +156,14 @@ See "Custom Component" heading under the "Favicon" component on [codesandbox.io]
 
 You can import the Favicon styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
 
-```css
-/* import the font and favicon styles */
-@import '@guardian/stand/fonts/OpenSans.css';
-@import '@guardian/stand/component/favicon.css';
-
-/*
-or for scenarios where you have to use relative paths/node_modules directly:
-
-@import 'node_modules/@guardian/stand/dist/fonts/OpenSans.css';
-@import 'node_modules/@guardian/stand/dist/styleD/build/css/component/favicon.css';
-*/
-
-/* example setup of favicon style */
-.stand-favicon {
-	background-color: var(--component-favicon-color-background);
-	display: var(--component-favicon-display);
-	align-items: var(--component-favicon-align-items);
-	justify-content: var(--component-favicon-justify-content);
-	width: var(--component-favicon-size);
-	height: var(--component-favicon-size);
-	user-select: var(--component-favicon-user-select);
-	color: var(--component-favicon-color-text);
-	font: var(--component-favicon-typography-font);
-	letter-spacing: var(--component-favicon-typography-letter-spacing);
-	font-variation-settings: 'wdth' var(--component-favicon-typography-font-width);
-}
-
-.stand-favicon-icon {
-	display: var(--component-icon-shared-display);
-	user-select: var(--component-icon-shared-user-select);
-	font-size: var(--component-icon-lg-size);
-	color: var(--base-colors-magenta-400);
-}
-
-.stand-favicon-icon-color-svg > svg {
-	width: var(--component-icon-md-size);
-	height: var(--component-icon-md-size);
-	fill: var(--semantic-colors-text-inverse-strong);
-}
-
-/* example setup for favicon image */
-.stand-favicon > img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-```
-
-```html
-<!-- example usage of favicon style in html with favicon -->
-<div class="stand-favicon">C</div>
-
-<!-- example usage of favicon style in html with favicon image -->
-<div class="stand-favicon">
-	<img src="https://example.com/favicon.jpg" alt="App icon" />
-</div>
-```
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
 
 **TypeScript/JavaScript**
 
 Use the `componentFavicon` variable and the `ComponentFavicon` type to define your custom styles in TypeScript/JavaScript:
 
-```ts
-import type { ComponentFavicon } from '@guardian/stand'; // if types required
-import { componentFavicon } from '@guardian/stand';
-
-const style = `
-    background-color: ${componentFavicon.color.background};
-    display: ${componentFavicon.display};
-    align-items: ${componentFavicon['align-items']};
-    justify-content: ${componentFavicon['justify-content']};
-    width: ${componentFavicon.size};
-    height: ${componentFavicon.size};
-    user-select: ${componentFavicon['user-select']};
-`;
-
-const typographyStyle = `
-    color: ${componentFavicon.color.text};
-    font: ${componentFavicon.typography.font};
-    letter-spacing: ${componentFavicon.typography.letterSpacing};
-    font-variation-settings: 'wdth' ${componentFavicon.typography.fontWidth};
-`;
-
-const imgStyle = `
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-const iconStyles = `
-  display: ${componentIcon.shared.display};
-  user-select: ${componentIcon.shared['user-select']};
-  font-size: ${componentIcon.md.size};
-  color: ${componentFavicon.color.text};
-`;
-
-const iconSvgStyles = `
-  width: ${componentIcon.md.size};
-  height: ${componentIcon.md.size};
-`;
-
-// e.g. adding to DOM using vanilla JS styles
-document.getElementById('app')!.innerHTML = `
-    <h2>
-        Using <code>typescript</code>/<code>javascript</code>
-    </h2>
-    <div style="${style}${typographyStyle}">C</div>
-    <div style="${style}>
-        <span class="material-symbols" style="${iconStyles}"><svg style="${iconSvgStyles}"...>...</svg></span>
-    </div>
-    <div style="${style}">
-        <img
-            style="${imgStyle}"
-            src="https://example.com/favicon.jpg"
-            alt="App icon"
-        />
-    </div>
-`;
-```
+<SandboxJs componentName={componentName} componentJs={componentJs} />
