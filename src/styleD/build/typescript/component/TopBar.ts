@@ -16,7 +16,7 @@ export const componentTopBar = {
 			border: '0.0625rem solid #cccccc',
 			height: '2rem',
 		},
-		contentType: {
+		subsection: {
 			gap: '2px',
 			typography: {
 				font: 'normal 700 1rem/1.15 Open Sans',

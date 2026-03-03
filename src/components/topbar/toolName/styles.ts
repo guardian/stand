@@ -42,7 +42,7 @@ export const subsectionStyles = (
 	return css`
 		display: ${theme.display};
 		align-items: ${theme['align-items']};
-		gap: ${theme.contentType.gap};
+		gap: ${theme.subsection.gap};
 	`;
 };
 
@@ -50,6 +50,6 @@ export const subsectionTypography = (
 	theme: TopBarToolNameTheme,
 ): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(theme.contentType.typography)}
+		${convertTypographyToEmotionStringStyle(theme.subsection.typography)}
 	`;
 };

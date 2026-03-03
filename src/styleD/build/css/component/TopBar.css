@@ -12,9 +12,9 @@
 	--component-top-bar-tool-name-typography-font-width: 100;
 	--component-top-bar-tool-name-divider-border: 0.0625rem solid #cccccc;
 	--component-top-bar-tool-name-divider-height: 2rem;
-	--component-top-bar-tool-name-content-type-gap: 2px;
-	--component-top-bar-tool-name-content-type-typography-font: normal 700
-		1rem/1.15 'Open Sans';
-	--component-top-bar-tool-name-content-type-typography-letter-spacing: -0.0125rem;
-	--component-top-bar-tool-name-content-type-typography-font-width: 88;
+	--component-top-bar-tool-name-subsection-gap: 2px;
+	--component-top-bar-tool-name-subsection-typography-font: normal 700 1rem/1.15
+		'Open Sans';
+	--component-top-bar-tool-name-subsection-typography-letter-spacing: -0.0125rem;
+	--component-top-bar-tool-name-subsection-typography-font-width: 88;
 }

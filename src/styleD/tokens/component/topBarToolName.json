@@ -42,7 +42,7 @@
 						"$value": "{base.sizing.size-32-rem}"
 					}
 				},
-				"contentType": {
+				"subsection": {
 					"gap": {
 						"$type": "dimension",
 						"$value": "{base.spacing.2-px}"

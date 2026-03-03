@@ -52,7 +52,7 @@ export const CustomTheme = {
 		theme: {
 			gap: baseSizing['size-1-px'],
 			typography: semanticTypography['article-body-bold-italic-md'],
-			contentType: {
+			subsection: {
 				typography: semanticTypography['meta-compact-md'],
 			},
 		},
