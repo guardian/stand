@@ -51,22 +51,25 @@ export const buttonStyles = (
 			padding: 0;
 		`}
 
-		&[data-hovered] {
+		&[data-hovered], &:hover {
 			background: ${theme[variant].shared[':hover'].backgroundColor};
 			border: ${theme[variant].shared[':hover'].border};
 		}
 
-		&[data-pressed] {
+		&[data-pressed],
+		&:active {
 			background: ${theme[variant].shared[':active'].backgroundColor};
 			border: ${theme[variant].shared[':active'].border};
 		}
 
-		&[data-focus-visible] {
+		&[data-focus-visible],
+		&:focus-visible {
 			outline: ${theme.shared[':focus-visible'].outline};
 			outline-offset: ${theme.shared[':focus-visible']['outline-offset']};
 		}
 
-		&[data-disabled] {
+		&[data-disabled],
+		&:disabled {
 			cursor: ${theme.shared[':disabled'].cursor};
 			color: ${theme[variant].shared[':disabled'].color};
 			background: ${theme[variant].shared[':disabled'].backgroundColor};
