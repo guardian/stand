@@ -1,0 +1,117 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import MenuStories, { Default } from './Menu.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={MenuStories} />
+
+# Menu
+
+TODO: Add a description for the Menu component.
+
+## When to use
+
+- TODO: Describe when to use this component
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Menu } from '@guardian/stand/menu';
+
+/* types, if required */
+import type { MenuProps, MenuTheme } from '@guardian/stand/menu';
+
+<Menu>Hello</Menu>;
+```
+
+## Props
+
+| Name           | Type               | Required | Default | Description                             |
+| -------------- | ------------------ | -------- | ------- | --------------------------------------- |
+| `children`     | `React.ReactNode`  | No       | N/A     | Content to render inside the component. |
+| `theme`        | `MenuTheme`        | No       | N/A     | Custom theme overrides.                 |
+| `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles.                      |
+| `className`    | `string`           | No       | N/A     | Additional class name(s).               |
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+## Customisation
+
+We recommend using the Menu component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the Menu component:
+
+```tsx
+import type { MenuTheme } from '@guardian/stand/menu';
+import { Menu } from '@guardian/stand/menu';
+
+const customTheme: Partial<MenuTheme> = {
+	// override tokens here
+};
+
+const Component = () => <Menu theme={customTheme}>Hello</Menu>;
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the Menu component:
+
+```tsx
+import { Menu } from '@guardian/stand/menu';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	// custom styles here
+\`;
+
+const Component = () => <Menu cssOverrides={customStyles}>Hello</Menu>;
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom Menu component using the styles defined in the `MenuTheme` type.
+
+**`css`**
+
+You can import the Menu styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentMenu` variable and the `ComponentMenu` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
