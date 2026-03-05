@@ -53,3 +53,5 @@ export { semanticTypography } from './styleD/build/typescript/semantic/typograph
 export type { SemanticTypography } from './styleD/build/typescript/semantic/typography';
 export { semanticSizing } from './styleD/build/typescript/semantic/sizing';
 export type { SemanticSizing } from './styleD/build/typescript/semantic/sizing';
+export { semanticShadow } from './styleD/build/typescript/semantic/shadow';
+export type { SemanticShadow } from './styleD/build/typescript/semantic/shadow';
