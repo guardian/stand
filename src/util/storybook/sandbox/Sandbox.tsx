@@ -38,6 +38,7 @@ const PackageJson = `
 		"parcel": "^2.16.3",
 		"@guardian/stand": "${standVersion}",
 		"@emotion/react": "^11.14.0",
+		"@react-aria/focus": "^3.21.5",
 		"react": "^19.2.4",
 		"react-dom": "^19.2.4",
 		"react-aria-components": "^1.13.0"
