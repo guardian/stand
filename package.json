@@ -49,6 +49,11 @@
 			"import": "./dist/favicon.js",
 			"require": "./dist/favicon.cjs"
 		},
+		"./menu": {
+			"types": "./dist/types/menu.d.ts",
+			"import": "./dist/menu.js",
+			"require": "./dist/menu.cjs"
+		},
 		"./TopBar": {
 			"types": "./dist/types/TopBar.d.ts",
 			"import": "./dist/TopBar.js",
@@ -97,6 +102,7 @@
 		"./component/typography.css": "./dist/styleD/build/css/component/typography.css",
 		"./component/icon.css": "./dist/styleD/build/css/component/icon.css",
 		"./component/favicon.css": "./dist/styleD/build/css/component/favicon.css",
+		"./component/menu.css": "./dist/styleD/build/css/component/menu.css",
 		"./component/TopBar.css": "./dist/styleD/build/css/component/TopBar.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
@@ -140,6 +146,9 @@
 			],
 			"utils": [
 				"./dist/types/utils.d.ts"
+			],
+			"menu": [
+				"./dist/types/menu.d.ts"
 			]
 		}
 	},
@@ -182,6 +191,7 @@
 		"@guardian/tsconfig": "1.0.1",
 		"@material-design-icons/svg": "^0.14.15",
 		"@playwright/experimental-ct-react17": "^1.58.2",
+		"@react-aria/focus": "3.21.5",
 		"@rollup/plugin-commonjs": "29.0.0",
 		"@rollup/plugin-node-resolve": "16.0.3",
 		"@rollup/plugin-typescript": "12.3.0",
@@ -235,7 +245,7 @@
 		"prosemirror-state": "1.4.3",
 		"prosemirror-view": "1.37.2",
 		"react": "^17.0.2 || ^18.0.0 || ^19.0.0",
-		"react-aria-components": ">= 1.13.0 <= 1.15.1",
+		"react-aria-components": ">= 1.13.0 <= 1.16.0",
 		"react-dom": "^17.0.2 || ^18.0.0 || ^19.0.0",
 		"typescript": ">=5.0.0 <=5.9.3"
 	},
