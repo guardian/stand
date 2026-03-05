@@ -122,3 +122,13 @@ video {
 body {
 	min-height: 100svh;
 }
+
+.focus-ring {
+	outline: 0.125rem solid blue;
+	outline-offset: -1px;
+}
+
+.focus-focus {
+	outline: 0.125rem solid red;
+	outline-offset: -1px;
+}
