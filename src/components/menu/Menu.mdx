@@ -1,0 +1,369 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import MenuStories, {
+	SizeMdDefault,
+	SizeSm,
+	SizeMdOpened,
+	SizeSmOpened,
+	CustomTheme,
+	CssOverrides,
+} from './Menu.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={MenuStories} />
+
+# Menu
+
+A dropdown menu component built on [React Aria](https://react-spectrum.adobe.com/react-aria/Menu.html).
+The `Menu` component combines a trigger element with a popover containing `MenuItem`, `MenuSection`, and `MenuSeparator` sub-components.
+It supports single and multiple selection modes, icons, descriptions, keyboard navigation, and full accessibility out of the box.
+
+## When to use
+
+- To reveal a list of actions or options triggered by a button click
+- To group related actions using `MenuSection` with an optional header
+- To let users toggle settings with single or multiple selection modes
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+- `react-aria-components`
+- `@react-aria/focus`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import {
+	Menu,
+	MenuToggle,
+	MenuSection,
+	MenuItem,
+	MenuSeparator,
+} from '@guardian/stand/menu';
+import { IconButton } from '@guardian/stand/icon-button';
+import { Keyboard } from 'react-aria-components';
+
+/* types, if required */
+import type {
+	MenuProps,
+	MenuTheme,
+	MenuItemProps,
+	MenuItemTheme,
+	MenuSectionProps,
+	MenuSectionTheme,
+	MenuSeparatorProps,
+	MenuSeparatorTheme,
+} from '@guardian/stand/menu';
+
+<Menu>
+	<MenuToggle>
+		<IconButton symbol="settings" ariaLabel="Open menu" />
+	</MenuToggle>
+
+	<MenuSection name="File actions">
+		<MenuItem
+			icon="open_in_new"
+			label="Open"
+			description="Open in a new tab"
+			aside={<Keyboard>⌘O</Keyboard>}
+			onAction={() => console.log('open')}
+		/>
+		<MenuItem
+			icon="edit"
+			label="Rename"
+			description="Rename the file"
+			onAction={() => console.log('rename')}
+		/>
+		<MenuItem label="Delete" onAction={() => console.log('delete')} />
+	</MenuSection>
+
+	<MenuSeparator />
+
+	<MenuSection
+		selectionMode="multiple"
+		defaultSelectedKeys={['files']}
+		onSelectionChange={(keys) => console.log(keys)}
+	>
+		<MenuItem id="files" label="Show files" />
+		<MenuItem id="folders" label="Show folders" />
+	</MenuSection>
+
+	<MenuSeparator />
+
+	<MenuSection
+		selectionMode="single"
+		onSelectionChange={(keys) => console.log(keys)}
+	>
+		<MenuItem id="list" label="List view" />
+		<MenuItem id="grid" label="Grid view" />
+	</MenuSection>
+</Menu>;
+```
+
+## Components
+
+The `Menu` component is composed of several sub-components. Only the components listed below are valid direct children of `Menu` and `MenuSection`.
+
+### Menu
+
+_Required_
+
+The root component. Wraps a `MenuToggle` and a popover containing `MenuSection`, `MenuItem`, and `MenuSeparator` components. Manages the open/close state of the popover and provides context for size and selection state.
+
+| Name               | Type                                       | Required | Default | Description                                                                               |
+| ------------------ | ------------------------------------------ | -------- | ------- | ----------------------------------------------------------------------------------------- |
+| `children`         | `React.ReactNode`                          | No       | -       | Must only contain `MenuToggle`, `MenuItem`, `MenuSection`, or `MenuSeparator` components. |
+| `size`             | `'sm' \| 'md'`                             | No       | `'md'`  | Size variant. Passed down automatically to all child components.                          |
+| `popoverProps`     | `Omit<PopoverProps, 'children' \| 'size'>` | No       | -       | Props for the underlying React Aria `Popover`, e.g. `offset`, `placement`.                |
+| `menuTriggerProps` | `Omit<MenuTriggerProps, 'children'>`       | No       | -       | Props for the underlying React Aria `MenuTrigger`, e.g. `isOpen` to control open state.   |
+| `theme`            | `Partial<MenuTheme>`                       | No       | -       | Custom theme overrides.                                                                   |
+| `cssOverrides`     | `SerializedStyles`                         | No       | -       | Custom CSS styles applied to the `<menu>` element.                                        |
+| `className`        | `string`                                   | No       | -       | Additional class name(s).                                                                 |
+
+`Menu` also accepts all props from the underlying [React Aria `Menu` component](https://react-spectrum.adobe.com/react-aria/Menu.html).
+
+### MenuToggle
+
+_Required_
+
+Wraps the component used to toggle the menu open/closed state. Can be a form of Button/Link or a [custom trigger](https://react-aria.adobe.com/Menu#custom-trigger). Must be a direct child of `Menu` and must contain exactly one interactive element.
+
+| Name       | Type              | Required | Default | Description                               |
+| ---------- | ----------------- | -------- | ------- | ----------------------------------------- |
+| `children` | `React.ReactNode` | Yes      | -       | The trigger element, e.g. `<IconButton>`. |
+
+### MenuSection
+
+Groups `MenuItem` components into a labelled or unlabelled section. Supports single and multiple selection modes when a `selectionMode` is set so that each `MenuItem` within the section renders the appropriate selection indicator (checkbox or radio button) automatically.
+
+| Name                  | Type                               | Required | Default  | Description                                                                  |
+| --------------------- | ---------------------------------- | -------- | -------- | ---------------------------------------------------------------------------- |
+| `children`            | `React.ReactNode`                  | No       | -        | Must only contain `MenuItem` components.                                     |
+| `name`                | `string`                           | No       | -        | Optional section header label rendered above the items.                      |
+| `size`                | `'sm' \| 'md'`                     | No       | `'md'`   | Size variant. Automatically inherited from `Menu`, no need to pass manually. |
+| `selectionMode`       | `'none' \| 'single' \| 'multiple'` | No       | `'none'` | Enables single or multiple item selection within the section.                |
+| `defaultSelectedKeys` | `Iterable<Key>`                    | No       | -        | Default selected keys (uncontrolled).                                        |
+| `selectedKeys`        | `Iterable<Key>`                    | No       | -        | Selected keys (controlled). Use together with `onSelectionChange`.           |
+| `onSelectionChange`   | `(keys: Selection) => void`        | No       | -        | Called when the selection changes.                                           |
+| `theme`               | `Partial<MenuSectionTheme>`        | No       | -        | Custom theme overrides.                                                      |
+| `cssOverrides`        | `SerializedStyles`                 | No       | -        | Custom CSS styles applied to the section element.                            |
+| `className`           | `string`                           | No       | -        | Additional class name(s).                                                    |
+
+`MenuSection` also accepts all props from the underlying [React Aria `MenuSection` component](https://react-spectrum.adobe.com/react-aria/Menu.html).
+
+### MenuItem
+
+A single interactive item within a `MenuSection`. Renders a label with optional icon, description, and aside content. When the parent `MenuSection` has a `selectionMode`, the `icon` prop is ignored and a selection indicator is rendered instead.
+
+| Name           | Type                     | Required | Default | Description                                                                                                                                   |
+| -------------- | ------------------------ | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `label`        | `React.ReactNode`        | Yes      | -       | The main label. Can be a string or any React node for complex layouts.                                                                        |
+| `id`           | `Key`                    | No       | -       | Unique key used for selection. Required when the parent `MenuSection` has a `selectionMode`.                                                  |
+| `description`  | `React.ReactNode`        | No       | -       | Optional description rendered below the label in a smaller font.                                                                              |
+| `aside`        | `React.ReactNode`        | No       | -       | Optional content on the right side, e.g. a keyboard shortcut using `<Keyboard>` from `react-aria-components`.                                 |
+| `icon`         | `string \| SVGElement`   | No       | -       | Icon for the left side. Accepts a Material Symbols name (string) or an SVG element. Hidden when `selectionMode` is set on the parent section. |
+| `size`         | `'sm' \| 'md'`           | No       | `'md'`  | Size variant. Automatically inherited from `Menu`, no need to pass manually.                                                                  |
+| `textValue`    | `string`                 | No       | -       | Plain-text label used for typeahead keyboard search. Defaults to `label` when it is a string.                                                 |
+| `theme`        | `Partial<MenuItemTheme>` | No       | -       | Custom theme overrides.                                                                                                                       |
+| `cssOverrides` | `SerializedStyles`       | No       | -       | Custom CSS styles.                                                                                                                            |
+| `className`    | `string`                 | No       | -       | Additional class name(s).                                                                                                                     |
+
+`MenuItem` also accepts all props from the underlying [React Aria `MenuItem` component](https://react-spectrum.adobe.com/react-aria/Menu.html).
+
+### MenuSeparator
+
+A horizontal rule for visually separating groups at the top level of a `Menu` (between `MenuSection` components or standalone `MenuItem` components).
+
+| Name           | Type                          | Required | Default | Description               |
+| -------------- | ----------------------------- | -------- | ------- | ------------------------- |
+| `theme`        | `Partial<MenuSeparatorTheme>` | No       | -       | Custom theme overrides.   |
+| `cssOverrides` | `SerializedStyles`            | No       | -       | Custom CSS styles.        |
+| `className`    | `string`                      | No       | -       | Additional class name(s). |
+
+## Stories
+
+### Size md (default)
+
+<Story of={SizeMdDefault} />
+
+### Size sm
+
+<Story of={SizeSm} />
+
+## Customisation
+
+We recommend using the Menu component as provided, but individual sub-components can be customised using their `theme` or `cssOverrides` props as needed.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens on any component, using the `ComponentTheme` type, or individual sub-component themes like `MenuTheme`, `MenuItemTheme` etc.
+
+```tsx
+import type { ComponentMenu } from '@guardian/stand/menu';
+import {
+	Menu,
+	MenuToggle,
+	MenuSection,
+	MenuItem,
+	MenuSeparator,
+} from '@guardian/stand/menu';
+import { IconButton } from '@guardian/stand/icon-button';
+
+const theme: DeepPartial<ComponentMenu> = {
+	menu: {
+		shared: {
+			border: `${baseSizing['size-8-px']} solid ${baseColors.orange[900]}`,
+			'background-color': baseColors.orange[50],
+		},
+	},
+	menuItem: {
+		shared: {
+			':hover': {
+				'background-color': baseColors.orange[100],
+			},
+			label: {
+				color: baseColors.orange[900],
+			},
+			aside: {
+				color: baseColors.orange[700],
+			},
+			icon: {
+				color: baseColors.orange[900],
+			},
+			description: {
+				color: baseColors.orange[700],
+			},
+		},
+	},
+	menuSection: {
+		header: {
+			shared: {
+				'background-color': baseColors.orange[50],
+				color: baseColors.orange[900],
+			},
+		},
+	},
+	menuSeparator: {
+		shared: {
+			'background-color': baseColors.orange[200],
+		},
+	},
+	menuPopover: {
+		shared: {
+			shadow: `0 ${baseSizing['size-2-px']} ${baseSizing['size-16-px']} 0 rgb(255 165 0 / 0.3)`,
+		},
+	},
+};
+
+const Component = () => (
+	<Menu theme={theme.menu} popoverProps={{ theme: theme.menuPopover }}>
+		<MenuToggle>
+			<IconButton symbol="settings" ariaLabel="Open menu" />
+		</MenuToggle>
+		<MenuSection theme={theme.menuSection}>
+			<MenuItem label="Option" theme={theme.menuItem} />
+		</MenuSection>
+		<MenuSeparator theme={theme.menuSeparator} />
+		<MenuSection theme={theme.menuSection}>
+			<MenuItem label="Option" theme={theme.menuItem} />
+		</MenuSection>
+	</Menu>
+);
+```
+
+<Story of={CustomTheme} />
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to any component:
+
+```tsx
+import {
+	Menu,
+	MenuToggle,
+	MenuSection,
+	MenuItem,
+	MenuSeparator,
+} from '@guardian/stand/menu';
+import { IconButton } from '@guardian/stand/icon-button';
+import { css } from '@emotion/react';
+
+const menuStyles = css`
+	padding: ${baseSpacing['16-px']};
+`;
+
+const menuPopoverStyles = css`
+	z-index: 1;
+`;
+
+const menuItemStyles = css`
+	padding: ${baseSpacing['8-px']} ${baseSpacing['16-px']};
+`;
+
+const menuSeparatorStyles = css`
+	filter: drop-shadow(0 1px 0 ${baseColors.blue[500]});
+`;
+
+const Component = () => (
+	<Menu
+		cssOverrides={menuStyles}
+		popoverProps={{ cssOverrides: menuPopoverStyles }}
+	>
+		<MenuToggle>
+			<IconButton symbol="settings" ariaLabel="Open menu" />
+		</MenuToggle>
+		<MenuSection>
+			<MenuItem label="Option" cssOverrides={menuItemStyles} />
+		</MenuSection>
+		<MenuSeparator cssOverrides={menuSeparatorStyles} />
+		<MenuSection>
+			<MenuItem label="Option" cssOverrides={menuItemStyles} />
+		</MenuSection>
+	</Menu>
+);
+```
+
+<Story of={CssOverrides} />
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom Menu component using the styles defined in the `MenuTheme` type.
+
+You will however be responsible for any additional functionality on top of the styles, for example accessibility, focus management, interaction states etc.
+
+The styles only show the open state of the menu, so you will need to add the functionality to show and hide the menu based on a trigger.
+
+**`css`**
+
+You can import the Menu styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentMenu` variable and the `ComponentMenu` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
