@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.15
+
+### Patch Changes
+
+- b2814a0: Add TopBar ToolName component
+
 ## 0.0.14
 
 ### Patch Changes
