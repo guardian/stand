@@ -3,6 +3,31 @@
  */
 
 :root {
+	--component-top-bar-navigation-shared-display: flex;
+	--component-top-bar-navigation-shared-align-items: center;
+	--component-top-bar-navigation-shared-padding-top: 1.25rem;
+	--component-top-bar-navigation-shared-padding-right: 1rem;
+	--component-top-bar-navigation-shared-padding-bottom: 0.75rem;
+	--component-top-bar-navigation-shared-padding-left: 1rem;
+	--component-top-bar-navigation-shared-text-decoration: none;
+	--component-top-bar-navigation-shared-disabled-cursor: not-allowed;
+	--component-top-bar-navigation-shared-focus-visible-outline: 0.125rem solid
+		#0072a9;
+	--component-top-bar-navigation-shared-focus-visible-outline-offset: 0.125rem;
+	--component-top-bar-navigation-text-margin-left: 0.375rem;
+	--component-top-bar-navigation-expand-more-padding-top: 0.375rem;
+	--component-top-bar-navigation-expand-more-padding-left: 0.125rem;
+	--component-top-bar-navigation-selected-color: #000000;
+	--component-top-bar-navigation-selected-border-bottom: 0.5rem solid #0072a9;
+	--component-top-bar-navigation-unselected-color: #545454;
+	--component-top-bar-navigation-md-typography-font: normal 700 1rem/1.15
+		'Open Sans';
+	--component-top-bar-navigation-md-typography-letter-spacing: -0.03125rem;
+	--component-top-bar-navigation-md-typography-font-width: 95;
+	--component-top-bar-navigation-sm-typography-font: normal 700 0.875rem/1.15
+		'Open Sans';
+	--component-top-bar-navigation-sm-typography-letter-spacing: -0.0125rem;
+	--component-top-bar-navigation-sm-typography-font-width: 95;
 	--component-top-bar-tool-name-display: flex;
 	--component-top-bar-tool-name-align-items: center;
 	--component-top-bar-tool-name-gap: 8px;
