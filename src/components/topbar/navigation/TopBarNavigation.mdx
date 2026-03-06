@@ -1,0 +1,152 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import TopBarNavigationStories, {
+	Default,
+	WithIcon,
+	Expandable,
+	Selected,
+	Disabled,
+} from './TopBarNavigation.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={TopBarNavigationStories} />
+
+# TopBarNavigation
+
+The Top Bar Navigation component is a link to another part of a tool, and also shows the currently navigated page or section.
+
+## When to use
+
+- In a Top Bar component
+- When you have multiple pages or tabs in an app and need a way to navigate between them
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+- ToDo: react aria if menu?
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { TopBarNavigation } from '@guardian/stand/top-bar-navigation';
+
+/* types, if required */
+import type {
+	TopBarNavigationProps,
+	TopBarNavigationTheme,
+} from '@guardian/stand/top-bar-navigation';
+
+<TopBarNavigation>Hello</TopBarNavigation>;
+```
+
+## Props
+
+| Name           | Type                                                              | Required | Default | Description                                                                                                                              |
+| -------------- | ----------------------------------------------------------------- | -------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `text`         | `string`                                                          | Yes      | N/A     | Text content to render inside the component.                                                                                             |
+| `size`         | `'md'` \| `'sm'`                                                  | No       | `'md'`  | Size of the component - affects text and icon.                                                                                           |
+| `isSelected`   | `boolean`                                                         | No       | `false` | Whether this navigation component represents the currently selected navigation option.                                                   |
+| `icon`         | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>` | No       | N/A     | Icon rendered inside the navigation. Accepts a `MaterialSymbol` name or a non-string `ReactNode` (e.g. an SVG element). Size is default. |
+| `expandsMore`  | `boolean`                                                         | No       | `false` | Whether the navigation has an expandable menu.                                                                                           |
+| `href`         | `string`                                                          | No       | N/A     | A URL to link to handle navigation.                                                                                                      |
+| `onPress`      | `(e: PressEvent) => void`                                         | No       | N/A     | On Press handler that handles navigation.                                                                                                |
+| `theme`        | `TopBarNavigationTheme`                                           | No       | N/A     | Custom theme overrides.                                                                                                                  |
+| `cssOverrides` | `SerializedStyles`                                                | No       | N/A     | Custom CSS styles.                                                                                                                       |
+| `className`    | `string`                                                          | No       | N/A     | Additional class name(s).                                                                                                                |
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+### With Icon
+
+<Story of={WithIcon} />
+
+### Expandable
+
+<Story of={Expandable} />
+
+### Selected
+
+<Story of={Selected} />
+
+### Disabled
+
+<Story of={Disabled} />
+
+## Customisation
+
+We recommend using the TopBarNavigation component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the TopBarNavigation component:
+
+```tsx
+import type { TopBarNavigationTheme } from '@guardian/stand/top-bar-navigation';
+import { TopBarNavigation } from '@guardian/stand/top-bar-navigation';
+
+const customTheme: Partial<TopBarNavigationTheme> = {
+	// override tokens here
+};
+
+const Component = () => (
+	<TopBarNavigation theme={customTheme}>Hello</TopBarNavigation>
+);
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the TopBarNavigation component:
+
+```tsx
+import { TopBarNavigation } from '@guardian/stand/top-bar-navigation';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	// custom styles here
+\`;
+
+const Component = () => <TopBarNavigation cssOverrides={customStyles}>Hello</TopBarNavigation>;
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom TopBarNavigation component using the styles defined in the `TopBarNavigationTheme` type.
+
+**`css`**
+
+You can import the TopBarNavigation styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentTopBarNavigation` variable and the `ComponentTopBarNavigation` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
