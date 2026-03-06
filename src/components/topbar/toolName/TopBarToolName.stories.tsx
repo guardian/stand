@@ -50,7 +50,6 @@ export const CustomTheme = {
 			},
 		},
 		theme: {
-			gap: baseSizing['size-1-px'],
 			typography: semanticTypography['article-body-bold-italic-md'],
 			subsection: {
 				typography: semanticTypography['meta-compact-md'],
