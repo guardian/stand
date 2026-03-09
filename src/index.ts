@@ -28,6 +28,8 @@ export { componentIcon } from './styleD/build/typescript/component/icon';
 export type { ComponentIcon } from './styleD/build/typescript/component/icon';
 export { componentFavicon } from './styleD/build/typescript/component/favicon';
 export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';
+export { componentMenu } from './styleD/build/typescript/component/menu';
+export type { ComponentMenu } from './styleD/build/typescript/component/menu';
 export { componentTopBar } from './styleD/build/typescript/component/TopBar';
 export type { ComponentTopBar } from './styleD/build/typescript/component/TopBar';
 
@@ -53,3 +55,5 @@ export { semanticTypography } from './styleD/build/typescript/semantic/typograph
 export type { SemanticTypography } from './styleD/build/typescript/semantic/typography';
 export { semanticSizing } from './styleD/build/typescript/semantic/sizing';
 export type { SemanticSizing } from './styleD/build/typescript/semantic/sizing';
+export { semanticShadow } from './styleD/build/typescript/semantic/shadow';
+export type { SemanticShadow } from './styleD/build/typescript/semantic/shadow';
