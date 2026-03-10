@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import type { PressEvent } from 'react-aria-components';
 import type { DefaultProps } from '../../../util/types';
 import type { IconProps } from '../../icon/types';
@@ -20,11 +21,11 @@ export interface TopBarNavigationProps extends DefaultProps<TopBarNavigationThem
 	 * Icon to display in navigation
 	 */
 	icon?: IconProps['symbol'] | Exclude<IconProps['children'], string>;
-
 	/**
-	 * Whether the navigation expands more to show a menu
+	 * Menu sections and items to render in the dropdown menu - only children of type MenuSection and MenuItem will be rendered.
+	 * `href` and `onPress` will be ignored if this prop is supplied.
 	 */
-	expandsMore?: boolean;
+	menuChildren?: ReactNode;
 	/**
 	 * Link to navigate to
 	 */
