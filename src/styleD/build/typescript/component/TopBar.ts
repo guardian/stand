@@ -19,7 +19,6 @@ export const componentTopBar = {
 			},
 			':focus-visible': {
 				outline: '0.125rem solid #0072a9',
-				'outline-offset': '0.125rem',
 			},
 		},
 		text: {

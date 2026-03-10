@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { baseColors } from '../../../styleD/build/typescript/base/colors';
 import { semanticColors } from '../../../styleD/build/typescript/semantic/colors';
 import { tableStyles } from '../../../util/storybook/styles';
+import { MenuItem, MenuSection } from '../../menu/Menu';
 import { TopBarNavigation } from './TopBarNavigation';
 import type { TopBarNavigationProps } from './types';
 
@@ -56,11 +57,30 @@ export const WithIcon = {
 	},
 } satisfies Story;
 
-export const Expandable = {
+export const WithMenu = {
 	args: {
 		text: 'Navigation',
 		icon: 'file_upload',
-		expandsMore: true,
+		menuChildren: (
+			<MenuSection name="Menu section">
+				<MenuItem label="Menu item 1" />
+				<MenuItem label="Menu item 2" />
+			</MenuSection>
+		),
+	},
+} satisfies Story;
+
+export const WithMenuDisabled = {
+	args: {
+		text: 'Navigation',
+		icon: 'file_upload',
+		isDisabled: true,
+		menuChildren: (
+			<MenuSection name="Menu section">
+				<MenuItem label="Menu item 1" />
+				<MenuItem label="Menu item 2" />
+			</MenuSection>
+		),
 	},
 } satisfies Story;
 
@@ -68,7 +88,6 @@ export const Selected = {
 	args: {
 		text: 'Navigation',
 		icon: 'file_upload',
-		expandsMore: true,
 		isSelected: true,
 	},
 } satisfies Story;
@@ -77,7 +96,6 @@ export const Disabled = {
 	args: {
 		text: 'Navigation',
 		icon: 'file_upload',
-		expandsMore: true,
 		isDisabled: true,
 	},
 } satisfies Story;
@@ -86,7 +104,6 @@ export const CustomTheme = {
 	args: {
 		text: 'Navigation',
 		icon: 'file_upload',
-		expandsMore: true,
 		isSelected: true,
 		theme: {
 			selected: {
@@ -101,7 +118,6 @@ export const CssOverrides = {
 	args: {
 		text: 'Navigation',
 		icon: 'file_upload',
-		expandsMore: true,
 		isSelected: true,
 		cssOverrides: css`
 			background-color: ${semanticColors.surface['dark-1']};

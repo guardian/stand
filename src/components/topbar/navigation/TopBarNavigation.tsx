@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Link } from 'react-aria-components';
+import { Link, Pressable } from 'react-aria-components';
 import { mergeDeep } from '../../../util/mergeDeep';
 import { Icon } from '../../icon/Icon';
 import type { MaterialSymbol } from '../../icon/types';
+import { Menu, MenuToggle } from '../../menu/Menu';
 import {
 	defaultTopBarNavigationTheme,
 	isSelectedStyles,
@@ -20,7 +20,7 @@ export function TopBarNavigation({
 	size = 'md',
 	isSelected = false,
 	icon,
-	expandsMore,
+	menuChildren,
 	href,
 	onPress,
 	isDisabled,
@@ -33,35 +33,58 @@ export function TopBarNavigation({
 
 	const iconSize = size === 'md' ? 'lg' : 'sm';
 
-	const [menuExpanded, setMenuExpanded] = useState(false);
-
 	return (
 		<>
-			<Link
-				css={[
-					topBarNavigationStyles(mergedTheme, isSelected),
-					topBarNavigationTypographyStyles(mergedTheme, size),
-					isSelected && isSelectedStyles(mergedTheme),
-					cssOverrides,
-				]}
-				href={href}
-				onPress={onPress}
-				className={className}
-				isDisabled={isDisabled}
-				{...props}
-			>
-				<Icon size={iconSize}>{icon}</Icon>
-				<span css={topBarNavigationTextStyles(mergedTheme)}>{text}</span>
-				{expandsMore && (
-					<div
-						css={topBarExpandMoreStyles(mergedTheme)}
-						onClick={() => setMenuExpanded(!menuExpanded)}
-					>
-						<Icon size={iconSize}>{expandMoreSymbol}</Icon>
-					</div>
-				)}
-			</Link>
-			{menuExpanded && <div>Menu TODO</div>}
+			{menuChildren ? (
+				<Menu
+					popoverProps={{
+						offset: 8,
+					}}
+				>
+					<MenuToggle>
+						<Pressable isDisabled={isDisabled}>
+							<span
+								role="button"
+								data-disabled={isDisabled ? true : undefined}
+								css={[
+									topBarNavigationStyles(mergedTheme, isSelected),
+									topBarNavigationTypographyStyles(mergedTheme, size),
+									isSelected && isSelectedStyles(mergedTheme),
+									cssOverrides,
+								]}
+								className={className}
+								{...props}
+							>
+								<Icon size={iconSize}>{icon}</Icon>
+								<span css={topBarNavigationTextStyles(mergedTheme)}>
+									{text}
+								</span>
+								<div css={topBarExpandMoreStyles(mergedTheme)}>
+									<Icon size={iconSize}>{expandMoreSymbol}</Icon>
+								</div>
+							</span>
+						</Pressable>
+					</MenuToggle>
+					{menuChildren}
+				</Menu>
+			) : (
+				<Link
+					css={[
+						topBarNavigationStyles(mergedTheme, isSelected),
+						topBarNavigationTypographyStyles(mergedTheme, size),
+						isSelected && isSelectedStyles(mergedTheme),
+						cssOverrides,
+					]}
+					href={href}
+					onPress={onPress}
+					className={className}
+					isDisabled={isDisabled}
+					{...props}
+				>
+					<Icon size={iconSize}>{icon}</Icon>
+					<span css={topBarNavigationTextStyles(mergedTheme)}>{text}</span>
+				</Link>
+			)}
 		</>
 	);
 }
