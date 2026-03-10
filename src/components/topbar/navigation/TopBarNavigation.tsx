@@ -36,11 +36,7 @@ export function TopBarNavigation({
 	return (
 		<>
 			{menuChildren ? (
-				<Menu
-					popoverProps={{
-						offset: 8,
-					}}
-				>
+				<Menu>
 					<MenuToggle>
 						<Pressable isDisabled={isDisabled}>
 							<span
