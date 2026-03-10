@@ -5,7 +5,7 @@ export const componentName = 'TopBarNavigation';
 export const componentTsx = /* javascript */ `import { TopBarNavigation } from '@guardian/stand/TopBar';
 
 export const Component = () => (
-	<TopBarNavigation text="Recipe" icon="yakitori" expandsMore={true} />
+	<TopBarNavigation text="Recipe" icon="yakitori" />
 );
 `;
 
