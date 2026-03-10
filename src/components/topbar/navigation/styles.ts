@@ -25,20 +25,18 @@ export const topBarNavigationStyles = (
 		padding-bottom: ${theme.shared.padding.bottom};
 		padding-left: ${theme.shared.padding.left};
 
-		&[data-hovered] {
-			border-bottom: ${theme.selected['border-bottom']};
-		}
-		&[data-hovered] {
+		:hover {
 			border-bottom: ${theme.selected['border-bottom']};
 		}
 
-		&[data-focus-visible] {
+		:focus-visible {
 			outline: ${theme.shared[':focus-visible'].outline};
 			border-bottom: ${theme.selected['border-bottom']};
 		}
 
 		&[data-disabled] {
 			cursor: ${theme.shared[':disabled'].cursor};
+			border-bottom: none;
 		}
 
 		text-decoration: ${theme.shared['text-decoration']};
