@@ -49,6 +49,10 @@ const fileList = [
 		group: 'semantic',
 		component: 'sizing',
 	},
+	{
+		group: 'semantic',
+		component: 'shadow',
+	},
 	/** design system components */
 	{
 		group: 'component',
@@ -69,6 +73,10 @@ const fileList = [
 	{
 		group: 'component',
 		component: 'favicon',
+	},
+	{
+		group: 'component',
+		component: 'menu',
 	},
 	{
 		group: 'component',
@@ -149,6 +157,7 @@ export default {
 				'border/css/shorthand',
 				'typography/css/shorthand',
 				'border/css/shorthand',
+				'shadow/css/shorthand',
 			],
 			buildPath: 'build/typescript/',
 			files: generateSplitTokenConfig(fileList, 'typescript/const', 'ts'),
