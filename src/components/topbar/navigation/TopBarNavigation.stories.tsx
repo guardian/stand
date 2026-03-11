@@ -8,7 +8,7 @@ import { TopBarNavigation } from './TopBarNavigation';
 import type { TopBarNavigationProps } from './types';
 
 const meta = {
-	title: 'Stand/Tools Design System/Components/TopBar/Navigation',
+	title: 'Stand/Tools Design System/Components/TopBar/TopBarNavigation',
 	component: TopBarNavigation,
 	parameters: {},
 	args: {
