@@ -3,6 +3,7 @@
  */
 
 :root {
+	--component-top-bar-item-border: 0.0625rem solid #cccccc;
 	--component-top-bar-navigation-shared-display: flex;
 	--component-top-bar-navigation-shared-align-items: center;
 	--component-top-bar-navigation-shared-padding-top: 1.25rem;

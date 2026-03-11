@@ -3,6 +3,9 @@
  */
 
 export const componentTopBar = {
+	Item: {
+		border: '0.0625rem solid #cccccc',
+	},
 	Navigation: {
 		shared: {
 			display: 'flex',

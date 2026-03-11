@@ -22,3 +22,7 @@ export type { PartialTopBarToolNameTheme as TopBarToolNameTheme } from './compon
 export { TopBarNavigation } from './components/topbar/navigation/TopBarNavigation';
 export type { TopBarNavigationProps } from './components/topbar/navigation/types';
 export type { PartialTopBarNavigationTheme as TopBarNavigationTheme } from './components/topbar/navigation/styles';
+
+export { TopBarItem } from './components/topbar/topbarItem/TopBarItem';
+export type { TopBarItemProps } from './components/topbar/topbarItem/types';
+export type { TopBarItemTheme } from './components/topbar/topbarItem/styles';

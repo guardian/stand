@@ -1,0 +1,16 @@
+{
+	"component": {
+		"TopBar": {
+			"Item": {
+				"border": {
+					"$type": "border",
+					"$value": {
+						"color": "{semantic.colors.border.secondary}",
+						"width": "{semantic.sizing.border.default}",
+						"style": "solid"
+					}
+				}
+			}
+		}
+	}
+}

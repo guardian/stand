@@ -1,6 +1,7 @@
 import { mergeDeep } from '../../../util/mergeDeep';
 import { Favicon } from '../../favicon/Favicon';
 import { Icon } from '../../icon/Icon';
+import { TopBarItem } from '../topbarItem/TopBarItem';
 import {
 	defaultToolNameTheme,
 	dividerStyles,
@@ -21,18 +22,20 @@ export const TopBarToolName = ({
 }: TopBarToolNameProps) => {
 	const mergedTheme = mergeDeep(defaultToolNameTheme, theme);
 	return (
-		<div css={[toolNameStyles(mergedTheme), cssOverrides]}>
-			<Favicon {...favicon} />
-			<div css={[toolNameTypography(mergedTheme)]}>{name}</div>
-			{subsection && (
-				<>
-					<div css={dividerStyles(mergedTheme)}>&nbsp;</div>
-					<div css={subsectionStyles(mergedTheme)}>
-						{subsectionIcon && <Icon size="sm">{subsectionIcon}</Icon>}
-						<div css={subsectionTypography(mergedTheme)}>{subsection}</div>
-					</div>
-				</>
-			)}
-		</div>
+		<TopBarItem alignment="left">
+			<div css={[toolNameStyles(mergedTheme), cssOverrides]}>
+				<Favicon {...favicon} />
+				<div css={[toolNameTypography(mergedTheme)]}>{name}</div>
+				{subsection && (
+					<>
+						<div css={dividerStyles(mergedTheme)}>&nbsp;</div>
+						<div css={subsectionStyles(mergedTheme)}>
+							{subsectionIcon && <Icon size="sm">{subsectionIcon}</Icon>}
+							<div css={subsectionTypography(mergedTheme)}>{subsection}</div>
+						</div>
+					</>
+				)}
+			</div>
+		</TopBarItem>
 	);
 };

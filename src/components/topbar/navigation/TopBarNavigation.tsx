@@ -3,6 +3,7 @@ import { mergeDeep } from '../../../util/mergeDeep';
 import { Icon } from '../../icon/Icon';
 import type { MaterialSymbol } from '../../icon/types';
 import { Menu, MenuToggle } from '../../menu/Menu';
+import { TopBarItem } from '../topbarItem/TopBarItem';
 import {
 	defaultTopBarNavigationTheme,
 	isSelectedStyles,
@@ -34,7 +35,7 @@ export function TopBarNavigation({
 	const iconSize = size === 'md' ? 'lg' : 'sm';
 
 	return (
-		<>
+		<TopBarItem alignment="left">
 			{menuChildren ? (
 				<Menu>
 					<MenuToggle>
@@ -81,6 +82,6 @@ export function TopBarNavigation({
 					<span css={topBarNavigationTextStyles(mergedTheme)}>{text}</span>
 				</Link>
 			)}
-		</>
+		</TopBarItem>
 	);
 }
