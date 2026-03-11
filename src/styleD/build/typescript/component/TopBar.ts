@@ -3,6 +3,55 @@
  */
 
 export const componentTopBar = {
+	Navigation: {
+		shared: {
+			display: 'flex',
+			'align-items': 'center',
+			padding: {
+				top: '1.25rem',
+				right: '1rem',
+				bottom: '0.75rem',
+				left: '1rem',
+			},
+			'text-decoration': 'none',
+			':disabled': {
+				cursor: 'not-allowed',
+			},
+			':focus-visible': {
+				outline: '0.125rem solid #0072a9',
+			},
+		},
+		text: {
+			margin: {
+				left: '0.375rem',
+			},
+		},
+		expandMorePadding: {
+			top: '0.375rem',
+			left: '0.125rem',
+		},
+		selected: {
+			color: '#000000',
+			'border-bottom': '0.5rem solid #0072a9',
+		},
+		unselected: {
+			color: '#545454',
+		},
+		md: {
+			typography: {
+				font: 'normal 700 1rem/1.15 Open Sans',
+				letterSpacing: '-0.03125rem',
+				fontWidth: 95,
+			},
+		},
+		sm: {
+			typography: {
+				font: 'normal 700 0.875rem/1.15 Open Sans',
+				letterSpacing: '-0.0125rem',
+				fontWidth: 95,
+			},
+		},
+	},
 	ToolName: {
 		display: 'flex',
 		'align-items': 'center',
