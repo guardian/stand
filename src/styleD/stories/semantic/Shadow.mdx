@@ -1,0 +1,37 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import ShadowStories, { Shadow } from './Shadow.stories.tsx';
+
+<Meta of={ShadowStories} />
+
+# Semantic - Shadow
+
+This palette represents the semantic shadow tokens available in the design system, and their intended usage.
+
+Semantic shadow tokens provide meaningful abstractions for elevation and depth cues in the interface, such as raised cards, dropdowns, and overlays. Using these tokens ensures consistent shadow treatment across components.
+
+## Example usage
+
+```ts
+import { css } from '@emotion/react';
+import { semanticShadow } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/semantic/shadow.css'; // CSS usage
+
+const stringStyle = css`
+	box-shadow: ${semanticShadow.raised}; /* JS/TS usage */
+	box-shadow: var(--semantic-shadow-raised); /* CSS usage */
+`;
+
+const objectStyle = {
+	boxShadow: semanticShadow.raised /* JS/TS usage */,
+};
+```
+
+## When to use semantic shadows
+
+Use semantic shadow tokens when:
+
+- **Raised** — Applying elevation to cards, panels, or other surfaces that sit above the base layer to create visual depth.
+
+## Shadow tokens
+
+<Story of={Shadow} />

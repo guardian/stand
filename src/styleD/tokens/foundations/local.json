@@ -862,6 +862,22 @@
 					"$value": "{base.typography.width.Open Sans}"
 				}
 			}
+		},
+		"shadow": {
+			"raised": {
+				"$type": "shadow",
+				"$value": {
+					"color": {
+						"colorSpace": "srgb",
+						"components": [0, 0, 0],
+						"alpha": 0.3
+					},
+					"offsetX": "0",
+					"offsetY": "{base.spacing.2-rem}",
+					"blur": "{base.spacing.6-rem}",
+					"spread": "0"
+				}
+			}
 		}
 	}
 }
