@@ -5,11 +5,12 @@ import {
 	componentTypography,
 	type ComponentTypography,
 } from '../../styleD/build/typescript/component/typography';
-import type { Prettify } from '../../util/types';
+import type { DeepPartial, Prettify } from '../../util/types';
 import { convertTypographyToEmotionStringStyle } from '../../utils';
 import type { TypographyProps } from './types';
 
 export type TypographyTheme = Prettify<ComponentTypography>;
+export type PartialTypographyTheme = DeepPartial<TypographyTheme>;
 
 export const defaultTypographyTheme: TypographyTheme = componentTypography;
 

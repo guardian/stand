@@ -14,6 +14,6 @@
  */
 export { Favicon } from './components/favicon/Favicon';
 export type { FaviconProps } from './components/favicon/types';
-export type { FaviconTheme } from './components/favicon/styles';
+export type { PartialFaviconTheme as FaviconTheme } from './components/favicon/styles';
 export { componentFavicon } from './styleD/build/typescript/component/favicon';
 export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';

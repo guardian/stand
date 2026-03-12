@@ -3,10 +3,11 @@ import { css } from '@emotion/react';
 import type { ComponentAvatar } from '../../styleD/build/typescript/component/avatar';
 import { componentAvatar } from '../../styleD/build/typescript/component/avatar';
 import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
-import type { Prettify } from '../../util/types';
+import type { DeepPartial, Prettify } from '../../util/types';
 import type { AvatarProps } from './types';
 
 export type AvatarTheme = Prettify<ComponentAvatar>;
+export type PartialAvatarTheme = DeepPartial<AvatarTheme>;
 
 export const defaultAvatarTheme: AvatarTheme = componentAvatar;
 

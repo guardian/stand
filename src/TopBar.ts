@@ -14,6 +14,6 @@
  */
 export { TopBarToolName } from './components/topbar/toolName/TopBarToolName';
 export type { TopBarToolNameProps } from './components/topbar/toolName/types';
-export type { TopBarToolNameTheme } from './components/topbar/toolName/styles';
+export type { PartialTopBarToolNameTheme as TopBarToolNameTheme } from './components/topbar/toolName/styles';
 export { componentTopBar } from './styleD/build/typescript/component/TopBar';
 export type { ComponentTopBar } from './styleD/build/typescript/component/TopBar';

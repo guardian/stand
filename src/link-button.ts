@@ -17,4 +17,4 @@
  */
 export { LinkButton } from './components/link-button/LinkButton';
 export type { LinkButtonProps } from './components/link-button/types';
-export type { LinkButtonTheme } from './components/link-button/styles';
+export type { PartialLinkButtonTheme as LinkButtonTheme } from './components/link-button/styles';
