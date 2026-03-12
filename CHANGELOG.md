@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.16
+
+### Patch Changes
+
+- 60e80cd: Add Menu component
+- 9ed1a9f: Update component theme type exports to be partial type
+
 ## 0.0.15
 
 ### Patch Changes
