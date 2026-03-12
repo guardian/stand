@@ -14,6 +14,6 @@
  */
 export { Typography } from './components/typography/Typography';
 export type { TypographyProps } from './components/typography/types';
-export type { TypographyTheme } from './components/typography/styles';
+export type { PartialTypographyTheme as TypographyTheme } from './components/typography/styles';
 export { componentTypography } from './styleD/build/typescript/component/typography';
 export type { ComponentTypography } from './styleD/build/typescript/component/typography';

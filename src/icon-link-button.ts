@@ -17,4 +17,4 @@
  */
 export { IconLinkButton } from './components/icon-link-button/IconLinkButton';
 export type { IconLinkButtonProps } from './components/icon-link-button/types';
-export type { IconLinkButtonTheme } from './components/icon-link-button/styles';
+export type { PartialIconLinkButtonTheme as IconLinkButtonTheme } from './components/icon-link-button/styles';

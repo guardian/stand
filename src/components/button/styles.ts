@@ -3,10 +3,11 @@ import { css } from '@emotion/react';
 import type { ComponentButton } from '../../styleD/build/typescript/component/button';
 import { componentButton } from '../../styleD/build/typescript/component/button';
 import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
-import type { Prettify } from '../../util/types';
+import type { DeepPartial, Prettify } from '../../util/types';
 import type { ButtonProps } from './types';
 
 export type ButtonTheme = Prettify<ComponentButton>;
+export type PartialButtonTheme = DeepPartial<ButtonTheme>;
 
 export const defaultButtonTheme: ButtonTheme = componentButton;
 
