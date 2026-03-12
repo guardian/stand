@@ -23,7 +23,7 @@ Each component defines when designers and engineers should use it. Its behaviour
 
 ## Consistency
 
-Stand components should work universally across tools. Components should increase efficiency by reducing friction in user interactions and improving delivery speed for engineers and designers.
+Stand components should work across tools in a predictable way. Components should increase efficiency by reducing friction in user interactions and improving delivery speed for engineers and designers.
 
 Stand should provide clear defaults to reduce repeated design decisions and avoid one-off customisations that increase maintenance costs. Their design should feel familiar but distinct across tools. Components should be modular and composable.
 
@@ -44,4 +44,5 @@ Components should be well documented so designers and engineers can adopt them q
 ### KPIs:
 
 - Number of engineers contributing to the design system
-- Passes accessibility testing
+- Stand components pass accessibility tests
+- Accessibility improves in tools using Stand
