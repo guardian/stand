@@ -13,6 +13,12 @@ export const topBarItemStyles = (
 	alignment: 'left' | 'right',
 ): SerializedStyles => {
 	return css`
+		display: ${theme.display};
+		align-items: ${theme['align-items']};
+		height: ${theme.height};
+		padding: ${theme.padding.top} ${theme.padding.right} ${theme.padding.bottom}
+			${theme.padding.left};
 		${alignment === 'left' ? 'border-right' : 'border-left'}: ${theme.border};
+		${alignment === 'right' && 'margin-left: auto'};
 	`;
 };

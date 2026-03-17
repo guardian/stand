@@ -3,19 +3,28 @@
  */
 
 export const componentTopBar = {
+	display: 'flex',
+	height: '4rem',
+	'justify-content': 'space-between',
+	border: '0.0625rem solid #cccccc',
 	Item: {
+		display: 'flex',
+		'align-items': 'center',
+		height: '100%',
+		padding: {
+			top: '0',
+			right: '1rem',
+			bottom: '0',
+			left: '1rem',
+		},
 		border: '0.0625rem solid #cccccc',
 	},
 	Navigation: {
 		shared: {
-			display: 'flex',
+			display: 'inline-flex',
+			position: 'relative',
 			'align-items': 'center',
-			padding: {
-				top: '1.25rem',
-				right: '1rem',
-				bottom: '0.75rem',
-				left: '1rem',
-			},
+			cursor: 'pointer',
 			'text-decoration': 'none',
 			':disabled': {
 				cursor: 'not-allowed',
@@ -30,13 +39,22 @@ export const componentTopBar = {
 				left: '0.375rem',
 			},
 		},
-		expandMorePadding: {
-			top: '0.375rem',
-			left: '0.125rem',
+		menuIndicator: {
+			margin: {
+				top: '0.375rem',
+				left: '0.125rem',
+			},
+		},
+		underline: {
+			position: 'absolute',
+			bottom: '0',
+			'background-color': '#0072a9',
+			height: '0.5rem',
+			width: '100%',
+			transformTranslateX: '-1rem',
 		},
 		selected: {
 			color: '#000000',
-			'border-bottom': '0.5rem solid #0072a9',
 		},
 		unselected: {
 			color: '#545454',

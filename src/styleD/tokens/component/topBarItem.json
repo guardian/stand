@@ -2,6 +2,36 @@
 	"component": {
 		"TopBar": {
 			"Item": {
+				"display": {
+					"$type": "string",
+					"$value": "flex"
+				},
+				"align-items": {
+					"$type": "string",
+					"$value": "center"
+				},
+				"height": {
+					"$type": "dimension",
+					"$value": "100%"
+				},
+				"padding": {
+					"top": {
+						"$type": "dimension",
+						"$value": "0"
+					},
+					"right": {
+						"$type": "dimension",
+						"$value": "{base.spacing.16-rem}"
+					},
+					"bottom": {
+						"$type": "dimension",
+						"$value": "0"
+					},
+					"left": {
+						"$type": "dimension",
+						"$value": "{base.spacing.16-rem}"
+					}
+				},
 				"border": {
 					"$type": "border",
 					"$value": {

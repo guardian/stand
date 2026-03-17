@@ -3,18 +3,18 @@ import { mergeDeep } from '../../../util/mergeDeep';
 import { Icon } from '../../icon/Icon';
 import type { MaterialSymbol } from '../../icon/types';
 import { Menu, MenuToggle } from '../../menu/Menu';
-import { TopBarItem } from '../topbarItem/TopBarItem';
+import { defaultTopBarItemTheme, topBarItemStyles } from '../topbarItem/styles';
 import {
 	defaultTopBarNavigationTheme,
 	isSelectedStyles,
-	topBarExpandMoreStyles,
+	topBarMenuIndicatorStyles,
 	topBarNavigationStyles,
 	topBarNavigationTextStyles,
 	topBarNavigationTypographyStyles,
 } from './styles';
 import type { TopBarNavigationProps } from './types';
 
-const expandMoreSymbol: MaterialSymbol = 'keyboard_arrow_down';
+const menuIndicator: MaterialSymbol = 'keyboard_arrow_down';
 
 export function TopBarNavigation({
 	text,
@@ -28,14 +28,18 @@ export function TopBarNavigation({
 	theme = {},
 	cssOverrides,
 	className,
+	topBarItemProps,
 	...props
 }: TopBarNavigationProps) {
 	const mergedTheme = mergeDeep(defaultTopBarNavigationTheme, theme);
-
+	const mergedTopBarItemTheme = mergeDeep(
+		defaultTopBarItemTheme,
+		topBarItemProps?.theme ?? {},
+	);
 	const iconSize = size === 'md' ? 'lg' : 'sm';
 
 	return (
-		<TopBarItem alignment="left">
+		<>
 			{menuChildren ? (
 				<Menu>
 					<MenuToggle>
@@ -45,6 +49,10 @@ export function TopBarNavigation({
 								data-disabled={isDisabled ? true : undefined}
 								css={[
 									topBarNavigationStyles(mergedTheme, isSelected),
+									topBarItemStyles(
+										mergedTopBarItemTheme,
+										topBarItemProps?.alignment ?? 'left',
+									),
 									topBarNavigationTypographyStyles(mergedTheme, size),
 									isSelected && isSelectedStyles(mergedTheme),
 									cssOverrides,
@@ -56,8 +64,8 @@ export function TopBarNavigation({
 								<span css={topBarNavigationTextStyles(mergedTheme)}>
 									{text}
 								</span>
-								<div css={topBarExpandMoreStyles(mergedTheme)}>
-									<Icon size={iconSize}>{expandMoreSymbol}</Icon>
+								<div css={topBarMenuIndicatorStyles(mergedTheme)}>
+									<Icon size={iconSize}>{menuIndicator}</Icon>
 								</div>
 							</span>
 						</Pressable>
@@ -68,6 +76,10 @@ export function TopBarNavigation({
 				<Link
 					css={[
 						topBarNavigationStyles(mergedTheme, isSelected),
+						topBarItemStyles(
+							mergedTopBarItemTheme,
+							topBarItemProps?.alignment ?? 'left',
+						),
 						topBarNavigationTypographyStyles(mergedTheme, size),
 						isSelected && isSelectedStyles(mergedTheme),
 						cssOverrides,
@@ -82,6 +94,6 @@ export function TopBarNavigation({
 					<span css={topBarNavigationTextStyles(mergedTheme)}>{text}</span>
 				</Link>
 			)}
-		</TopBarItem>
+		</>
 	);
 }
