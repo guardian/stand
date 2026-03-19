@@ -7,8 +7,8 @@ import {
 	topBarRHSStyles,
 	topBarStyles,
 } from './styles';
-import { TopBarItem } from './topBarItemtemp/TopBarItem';
-import type { TopBarItemProps } from './topBarItemtemp/types';
+import { TopBarItem } from './topBarItem/TopBarItem';
+import type { TopBarItemProps } from './topBarItem/types';
 import { TopBarNavigation } from './topBarNavigation/TopBarNavigation';
 import type { TopBarNavigationProps } from './topBarNavigation/types';
 import { TopBarToolName } from './topBarToolName/TopBarToolName';

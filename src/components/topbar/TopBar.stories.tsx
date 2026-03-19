@@ -5,7 +5,7 @@ import { Avatar } from '../avatar/Avatar';
 import { Button } from '../button/Button';
 import { MenuItem, MenuSection } from '../menu/Menu';
 import { TopBar, TopBarLHS, TopBarRHS } from './TopBar';
-import { TopBarItem } from './topBarItemtemp/TopBarItem';
+import { TopBarItem } from './topBarItem/TopBarItem';
 import { TopBarNavigation } from './topBarNavigation/TopBarNavigation';
 import { TopBarToolName } from './topBarToolName/TopBarToolName';
 
