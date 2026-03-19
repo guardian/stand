@@ -4,10 +4,10 @@ import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { Avatar } from '../avatar/Avatar';
 import { Button } from '../button/Button';
 import { MenuItem, MenuSection } from '../menu/Menu';
-import { TopBarNavigation } from './navigation/TopBarNavigation';
-import { TopBarToolName } from './toolName/TopBarToolName';
 import { TopBar, TopBarLHS, TopBarRHS } from './TopBar';
-import { TopBarItem } from './topbarItem/TopBarItem';
+import { TopBarItem } from './topBarItem/TopBarItem';
+import { TopBarNavigation } from './topBarNavigation/TopBarNavigation';
+import { TopBarToolName } from './topBarToolName/TopBarToolName';
 
 const meta = {
 	title: 'Stand/Tools Design System/Components/TopBar/Top Bar',

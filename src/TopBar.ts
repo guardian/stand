@@ -15,14 +15,14 @@
 export { componentTopBar } from './styleD/build/typescript/component/TopBar';
 export type { ComponentTopBar } from './styleD/build/typescript/component/TopBar';
 
-export { TopBarToolName } from './components/topbar/toolName/TopBarToolName';
-export type { TopBarToolNameProps } from './components/topbar/toolName/types';
-export type { PartialTopBarToolNameTheme as TopBarToolNameTheme } from './components/topbar/toolName/styles';
+export { TopBarToolName } from './components/topbar/topBarToolName/TopBarToolName';
+export type { TopBarToolNameProps } from './components/topbar/topBarToolName/types';
+export type { PartialTopBarToolNameTheme as TopBarToolNameTheme } from './components/topbar/topBarToolName/styles';
 
-export { TopBarNavigation } from './components/topbar/navigation/TopBarNavigation';
-export type { TopBarNavigationProps } from './components/topbar/navigation/types';
-export type { PartialTopBarNavigationTheme as TopBarNavigationTheme } from './components/topbar/navigation/styles';
+export { TopBarNavigation } from './components/topbar/topBarNavigation/TopBarNavigation';
+export type { TopBarNavigationProps } from './components/topbar/topBarNavigation/types';
+export type { PartialTopBarNavigationTheme as TopBarNavigationTheme } from './components/topbar/topBarNavigation/styles';
 
-export { TopBarItem } from './components/topbar/topbarItem/TopBarItem';
-export type { TopBarItemProps } from './components/topbar/topbarItem/types';
-export type { PartialTopBarItemTheme as TopBarItemTheme } from './components/topbar/topbarItem/styles';
+export { TopBarItem } from './components/topbar/topBarItem/TopBarItem';
+export type { TopBarItemProps } from './components/topbar/topBarItem/types';
+export type { PartialTopBarItemTheme as TopBarItemTheme } from './components/topbar/topBarItem/styles';

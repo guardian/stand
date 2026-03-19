@@ -1,6 +1,4 @@
-import type { DefaultProps } from '../../util/types';
+import type { DefaultPropsWithChildren } from '../../util/types';
 import type { TopBarTheme } from './styles';
 
-export interface TopBarProps extends DefaultProps<TopBarTheme> {
-	children?: React.ReactNode;
-}
+export type TopBarProps = DefaultPropsWithChildren<TopBarTheme>;

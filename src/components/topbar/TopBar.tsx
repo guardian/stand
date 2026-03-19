@@ -1,17 +1,17 @@
 import React from 'react';
 import { mergeDeep } from '../../util/mergeDeep';
 import { Avatar } from '../avatar/Avatar';
-import { TopBarNavigation } from './navigation/TopBarNavigation';
-import type { TopBarNavigationProps } from './navigation/types';
 import {
 	defaultTopBarTheme,
 	topBarLHSStyles,
 	topBarRHSStyles,
 	topBarStyles,
 } from './styles';
-import { TopBarToolName } from './toolName/TopBarToolName';
-import { TopBarItem } from './topbarItem/TopBarItem';
-import type { TopBarItemProps } from './topbarItem/types';
+import { TopBarItem } from './topBarItem/TopBarItem';
+import type { TopBarItemProps } from './topBarItem/types';
+import { TopBarNavigation } from './topBarNavigation/TopBarNavigation';
+import type { TopBarNavigationProps } from './topBarNavigation/types';
+import { TopBarToolName } from './topBarToolName/TopBarToolName';
 import type { TopBarProps } from './types';
 
 function TopBarSide({

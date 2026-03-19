@@ -18,38 +18,32 @@ export const componentCss = /* css */ `
 	display: var(--component-top-bar-navigation-shared-display);
 	align-items: var(--component-top-bar-navigation-shared-align-items);
 	color: var(--component-top-bar-navigation-unselected-color);
+	height: var(--component-top-bar-navigation-shared-height);
 	padding-top: var(--component-top-bar-navigation-shared-padding-top);
 	padding-right: var(--component-top-bar-navigation-shared-padding-right);
 	padding-bottom: var(--component-top-bar-navigation-shared-padding-bottom);
 	padding-left: var(--component-top-bar-navigation-shared-padding-left);
 	text-decoration: var(--component-top-bar-navigation-shared-text-decoration);
 
-	:hover::after {
-		content: '';
-		position: var(--component-top-bar-navigation-underline-position);
-		bottom: var(--component-top-bar-navigation-underline-bottom);
-		background-color: var(--component-top-bar-navigation-underline-background-color);
-		height: var(--component-top-bar-navigation-underline-height);
-		width: var(--component-top-bar-navigation-underline-width);
-		transform: translateX(var(--component-top-bar-navigation-underline-transform-translate-x));
+	border-top: var(--component-top-bar-navigation-shared-border-top);
+	border-bottom: var(--component-top-bar-navigation-unselected-border-bottom);
+
+	&[data-hovered],
+	:hover {
+		border-bottom: var(--component-top-bar-navigation-selected-border-bottom);
+		cursor: var(--component-top-bar-navigation-shared-cursor);
 	}
 
+	&[data-focus-visible],
 	:focus-visible {
 		outline: var(--component-top-bar-navigation-shared-focus-visible-outline);
-
-		::after {
-			content: '';
-			position: var(--component-top-bar-navigation-underline-position);
-			bottom: var(--component-top-bar-navigation-underline-bottom);
-			background-color: var(--component-top-bar-navigation-underline-background-color);
-			height: var(--component-top-bar-navigation-underline-height);
-			width: var(--component-top-bar-navigation-underline-width);
-			transform: translateX(var(--component-top-bar-navigation-underline-transform-translate-x));
-		}
+		border-bottom: var(--component-top-bar-navigation-selected-border-bottom);
+		outline-offset: var(--component-top-bar-navigation-shared-focus-visible-outline-offset);
 	}
 
 	&[data-disabled] {
 		cursor: var(--component-top-bar-navigation-shared-disabled-cursor);
+		color: var(--component-top-bar-navigation-shared-disabled-color);
 	}
 
 	font: var(--component-top-bar-navigation-md-typography-font);
@@ -87,6 +81,7 @@ const style = \`
 	display: \${componentTopBar.Navigation.shared.display};
 	align-items: \${componentTopBar.Navigation.shared['align-items']};
 	color: \${componentTopBar.Navigation.unselected.color};
+	height: \${componentTopBar.Navigation.shared.height};
 	padding-top: \${componentTopBar.Navigation.shared.padding.top};
 	padding-right: \${componentTopBar.Navigation.shared.padding.right};
 	padding-bottom: \${componentTopBar.Navigation.shared.padding.bottom};
@@ -98,32 +93,20 @@ const style = \`
 	font-variation-settings: 'wdth'
 		\${componentTopBar.Navigation.md.typography.fontWidth};
 
-	:hover::after {
-		content: '';
-		position: \${componentTopBar.Navigation.underline.position};
-		bottom: \${componentTopBar.Navigation.underline.bottom};
-		background-color: \${componentTopBar.Navigation.underline['background-color']};
-		height: \${componentTopBar.Navigation.underline.height};
-		width: \${componentTopBar.Navigation.underline.width};
-		transform: translateX(\${componentTopBar.Navigation.underline.transformTranslateX});
+	:hover {
+		border-bottom: \${componentTopBar.Navigation.selected['border-bottom']};
+		cursor: \${componentTopBar.Navigation.shared.cursor};
 	}
 
 	:focus-visible {
 		outline: \${componentTopBar.Navigation.shared[':focus-visible'].outline};
-
-		::after {
-			content: '';
-			position: \${componentTopBar.Navigation.underline.position};
-			bottom: \${componentTopBar.Navigation.underline.bottom};
-			background-color: \${componentTopBar.Navigation.underline['background-color']};
-			height: \${componentTopBar.Navigation.underline.height};
-			width: \${componentTopBar.Navigation.underline.width};
-			transform: translateX(\${componentTopBar.Navigation.underline.transformTranslateX});
-		}
+		border-bottom: \${componentTopBar.Navigation.selected['border-bottom']};
+		outline-offset: \${componentTopBar.Navigation.shared[':focus-visible']['outline-offset']};
 	}
 
 	&[data-disabled] {
 		cursor: \${componentTopBar.Navigation.shared[':disabled'].cursor};
+		color: \${componentTopBar.Navigation.shared[':disabled'].color};
 	}
 \`;
 

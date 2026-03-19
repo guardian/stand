@@ -2,10 +2,10 @@
 export const componentName = 'TopBar';
 
 // TopBar - React sandbox example
-export const componentTsx = /* javascript */ `import { TopBar } from '@guardian/stand/top-bar-item';
+export const componentTsx = /* javascript */ `import { TopBar } from '@guardian/stand/TopBar';
 
 export const Component = () => (
-	<TopBar>Hello</TopBar>
+	<TopBar><Toolname name="Composer"></TopBar>
 );
 `;
 
