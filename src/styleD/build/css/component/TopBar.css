@@ -10,10 +10,18 @@
 	--component-top-bar-item-display: flex;
 	--component-top-bar-item-align-items: center;
 	--component-top-bar-item-height: 100%;
-	--component-top-bar-item-padding-top: 0;
-	--component-top-bar-item-padding-right: 1rem;
-	--component-top-bar-item-padding-bottom: 0;
-	--component-top-bar-item-padding-left: 1rem;
+	--component-top-bar-item-sm-padding-top: 0;
+	--component-top-bar-item-sm-padding-right: 0.75rem;
+	--component-top-bar-item-sm-padding-bottom: 0;
+	--component-top-bar-item-sm-padding-left: 0.75rem;
+	--component-top-bar-item-md-padding-top: 0;
+	--component-top-bar-item-md-padding-right: 1rem;
+	--component-top-bar-item-md-padding-bottom: 0;
+	--component-top-bar-item-md-padding-left: 1rem;
+	--component-top-bar-item-lg-padding-top: 0;
+	--component-top-bar-item-lg-padding-right: 1.5rem;
+	--component-top-bar-item-lg-padding-bottom: 0;
+	--component-top-bar-item-lg-padding-left: 1.5rem;
 	--component-top-bar-item-border: 0.0625rem solid #cccccc;
 	--component-top-bar-navigation-shared-display: inline-flex;
 	--component-top-bar-navigation-shared-position: relative;
@@ -34,6 +42,7 @@
 	--component-top-bar-navigation-underline-width: 100%;
 	--component-top-bar-navigation-underline-transform-translate-x: -1rem;
 	--component-top-bar-navigation-selected-color: #000000;
+	--component-top-bar-navigation-selected-border-bottom: 0.5rem solid #0072a9;
 	--component-top-bar-navigation-unselected-color: #545454;
 	--component-top-bar-navigation-unselected-border-bottom: 0.5rem solid
 		transparent;

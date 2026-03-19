@@ -77,18 +77,26 @@ export function TopBar({
 			return;
 		}
 
+		/**
+		 * Accepts a tool name that will always be rendered on the left hand side
+		 */
 		if (child.type === TopBarToolName) {
 			toolName ??= child;
 		}
 
+		/**
+		 * Accepts an avatar that will always be rendered on the right hand side, within an item for styling
+		 */
 		if (child.type === Avatar) {
-			avatar ??= child;
+			avatar ??= <TopBarItem alignment="right">{child}</TopBarItem>;
 		}
 
+		/**
+		 * Other items must be defined as part of the LHS or RHS
+		 */
 		if (child.type === TopBarLHS) {
 			leftSide ??= child;
 		}
-
 		if (child.type === TopBarRHS) {
 			rightSide ??= child;
 		}
@@ -108,7 +116,7 @@ export function TopBar({
 			{/* RHS */}
 			<div css={topBarRHSStyles(mergedTheme)}>
 				{rightSide}
-				<TopBarItem alignment="right">{avatar}</TopBarItem>
+				{avatar}
 			</div>
 		</div>
 	);

@@ -17,6 +17,7 @@ export const topBarNavigationStyles = (
 ): SerializedStyles => {
 	return css`
 		display: ${theme.shared.display};
+		position: ${theme.shared.position};
 		align-items: ${theme.shared['align-items']};
 		color: ${selected
 			? `${theme.selected.color}`
@@ -66,12 +67,12 @@ export const topBarNavigationTypographyStyles = (
 			`;
 };
 
-export const topBarExpandMoreStyles = (
+export const topBarMenuIndicatorStyles = (
 	theme: TopBarNavigationTheme,
 ): SerializedStyles => {
 	return css`
-		margin-top: ${theme.expandMorePadding.top};
-		margin-left: ${theme.expandMorePadding.left};
+		margin-top: ${theme.menuIndicator.margin.top};
+		margin-left: ${theme.menuIndicator.margin.left};
 	`;
 };
 

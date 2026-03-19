@@ -11,11 +11,29 @@ export const componentTopBar = {
 		display: 'flex',
 		'align-items': 'center',
 		height: '100%',
-		padding: {
-			top: '0',
-			right: '1rem',
-			bottom: '0',
-			left: '1rem',
+		sm: {
+			padding: {
+				top: '0',
+				right: '0.75rem',
+				bottom: '0',
+				left: '0.75rem',
+			},
+		},
+		md: {
+			padding: {
+				top: '0',
+				right: '1rem',
+				bottom: '0',
+				left: '1rem',
+			},
+		},
+		lg: {
+			padding: {
+				top: '0',
+				right: '1.5rem',
+				bottom: '0',
+				left: '1.5rem',
+			},
 		},
 		border: '0.0625rem solid #cccccc',
 	},
@@ -55,6 +73,7 @@ export const componentTopBar = {
 		},
 		selected: {
 			color: '#000000',
+			'border-bottom': '0.5rem solid #0072a9',
 		},
 		unselected: {
 			color: '#545454',

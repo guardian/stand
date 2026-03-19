@@ -20,7 +20,7 @@ export const componentCss = /* css */ `
 `;
 
 export const componentHtml = /* html */ `<div class="container">
-	<div class="stand-top-bar">Hello</div>
+	<div class="css-q7r0r3-TopBar"><div class="css-1ozkauk-TopBar"><div class="css-l7bj66-TopBarItem"><div class="css-132cki5-TopBarToolName"><div class="css-lve7a-Favicon">C</div><div class="css-sex2cu-TopBarToolName">CssOverides</div></div></div><div class="css-l7bj66-TopBarItem">Top Bar</div></div><div class="css-1ozkauk-TopBar"></div></div>
 </div>
 `;
 

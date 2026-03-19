@@ -8,13 +8,14 @@ export function TopBarItem({
 	theme = {},
 	cssOverrides,
 	className,
+	size = 'md',
 	...props
 }: TopBarItemProps) {
 	const mergedTheme = mergeDeep(defaultTopBarItemTheme, theme);
 
 	return (
 		<div
-			css={[topBarItemStyles(mergedTheme, alignment), cssOverrides]}
+			css={[topBarItemStyles(mergedTheme, alignment, { size }), cssOverrides]}
 			className={className}
 			{...props}
 		>

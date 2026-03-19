@@ -52,6 +52,7 @@ export function TopBarNavigation({
 									topBarItemStyles(
 										mergedTopBarItemTheme,
 										topBarItemProps?.alignment ?? 'left',
+										{ size: 'md' },
 									),
 									topBarNavigationTypographyStyles(mergedTheme, size),
 									isSelected && isSelectedStyles(mergedTheme),
@@ -79,6 +80,7 @@ export function TopBarNavigation({
 						topBarItemStyles(
 							mergedTopBarItemTheme,
 							topBarItemProps?.alignment ?? 'left',
+							{ size: 'md' },
 						),
 						topBarNavigationTypographyStyles(mergedTheme, size),
 						isSelected && isSelectedStyles(mergedTheme),
