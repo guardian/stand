@@ -1,7 +1,7 @@
 import { mergeDeep } from '../../../util/mergeDeep';
 import { Favicon } from '../../favicon/Favicon';
 import { Icon } from '../../icon/Icon';
-import { TopBarItem } from '../topBarItem/TopBarItem';
+import { TopBarItem } from '../topBarItemtemp/TopBarItem';
 import {
 	defaultToolNameTheme,
 	dividerStyles,

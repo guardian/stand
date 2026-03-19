@@ -23,6 +23,6 @@ export { TopBarNavigation } from './components/topbar/topBarNavigation/TopBarNav
 export type { TopBarNavigationProps } from './components/topbar/topBarNavigation/types';
 export type { PartialTopBarNavigationTheme as TopBarNavigationTheme } from './components/topbar/topBarNavigation/styles';
 
-export { TopBarItem } from './components/topbar/topBarItem/TopBarItem';
-export type { TopBarItemProps } from './components/topbar/topBarItem/types';
-export type { PartialTopBarItemTheme as TopBarItemTheme } from './components/topbar/topBarItem/styles';
+export { TopBarItem } from './components/topbar/topBarItemtemp/TopBarItem';
+export type { TopBarItemProps } from './components/topbar/topBarItemtemp/types';
+export type { PartialTopBarItemTheme as TopBarItemTheme } from './components/topbar/topBarItemtemp/styles';
