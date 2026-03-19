@@ -25,13 +25,14 @@ export const topBarNavigationStyles = (
 		padding-right: ${theme.shared.padding.right};
 		padding-bottom: ${theme.shared.padding.bottom};
 		padding-left: ${theme.shared.padding.left};
-		border-bottom: ${theme.selected['border-bottom']};
-		border-bottom-color: transparent;
+		border-bottom: ${theme.unselected['border-bottom']};
 
+		&[data-hovered],
 		:hover {
 			border-bottom: ${theme.selected['border-bottom']};
 		}
 
+		&[data-focus-visible],
 		:focus-visible {
 			outline: ${theme.shared[':focus-visible'].outline};
 			border-bottom: ${theme.selected['border-bottom']};
@@ -39,7 +40,7 @@ export const topBarNavigationStyles = (
 
 		&[data-disabled] {
 			cursor: ${theme.shared[':disabled'].cursor};
-			border-bottom: none;
+			color: ${theme.shared[':disabled'].color};
 		}
 
 		text-decoration: ${theme.shared['text-decoration']};

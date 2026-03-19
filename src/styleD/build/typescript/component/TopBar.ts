@@ -16,6 +16,7 @@ export const componentTopBar = {
 			'text-decoration': 'none',
 			':disabled': {
 				cursor: 'not-allowed',
+				color: '#999999',
 			},
 			':focus-visible': {
 				outline: '0.125rem solid #0072a9',
@@ -36,6 +37,7 @@ export const componentTopBar = {
 		},
 		unselected: {
 			color: '#545454',
+			'border-bottom': '0.5rem solid transparent',
 		},
 		md: {
 			typography: {

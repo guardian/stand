@@ -37,6 +37,10 @@
 						"cursor": {
 							"$type": "string",
 							"$value": "not-allowed"
+						},
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.disabled}"
 						}
 					},
 					":focus-visible": {
@@ -83,6 +87,14 @@
 					"color": {
 						"$type": "color",
 						"$value": "{semantic.colors.text.subdued}"
+					},
+					"border-bottom": {
+						"$type": "border",
+						"$value": {
+							"color": "transparent",
+							"width": "{semantic.sizing.border.extra-wide}",
+							"style": "solid"
+						}
 					}
 				},
 				"md": {
