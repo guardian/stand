@@ -25,4 +25,4 @@ export type { PartialTopBarNavigationTheme as TopBarNavigationTheme } from './co
 
 export { TopBarItem } from './components/topbar/topbarItem/TopBarItem';
 export type { TopBarItemProps } from './components/topbar/topbarItem/types';
-export type { TopBarItemTheme } from './components/topbar/topbarItem/styles';
+export type { PartialTopBarItemTheme as TopBarItemTheme } from './components/topbar/topbarItem/styles';

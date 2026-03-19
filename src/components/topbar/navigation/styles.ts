@@ -22,10 +22,6 @@ export const topBarNavigationStyles = (
 		color: ${selected
 			? `${theme.selected.color}`
 			: `${theme.unselected.color}`};
-		padding-top: ${theme.shared.padding.top};
-		padding-right: ${theme.shared.padding.right};
-		padding-bottom: ${theme.shared.padding.bottom};
-		padding-left: ${theme.shared.padding.left};
 		border-bottom: ${theme.unselected['border-bottom']};
 
 		&[data-hovered],
