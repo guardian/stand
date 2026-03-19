@@ -49,7 +49,7 @@ export const componentMenu = {
 			'grid-template-areas': "'icon label aside'",
 			'grid-template-areas-with-description':
 				"'icon label aside' '. description .'",
-			'grid-template-columns': '1fr 6fr 1fr',
+			'grid-template-columns': 'auto 6fr 1fr',
 			gap: '0.25rem',
 			'align-items': 'center',
 			padding: {
@@ -61,23 +61,37 @@ export const componentMenu = {
 			'border-bottom': '0.0625rem solid #cccccc',
 			icon: {
 				'grid-area': 'icon',
-				'justify-self': 'end',
 				'align-self': 'start',
 				color: '#545454',
 			},
 			label: {
 				'grid-area': 'label',
 				color: '#000000',
+				typography: {
+					font: 'normal 460 1rem/1.3 Open Sans',
+					letterSpacing: '0rem',
+					fontWidth: 95,
+				},
 			},
 			description: {
 				'grid-area': 'description',
 				color: '#545454',
+				typography: {
+					font: 'normal 460 0.875rem/1.3 Open Sans',
+					letterSpacing: '0rem',
+					fontWidth: 95,
+				},
 			},
 			aside: {
 				'grid-area': 'aside',
 				'justify-self': 'end',
 				'align-self': 'start',
 				color: '#000000',
+				typography: {
+					font: 'normal 460 1rem/1.3 Open Sans',
+					letterSpacing: '0rem',
+					fontWidth: 95,
+				},
 			},
 			':last-child': {
 				'border-bottom': 'none',
@@ -91,22 +105,12 @@ export const componentMenu = {
 			},
 		},
 		sm: {
-			typography: {
-				font: 'normal 460 0.875rem/1.3 Open Sans',
-				letterSpacing: '0rem',
-				fontWidth: 95,
-			},
 			icon: {
 				size: '1.125rem',
 				'line-height': 1.3,
 			},
 		},
 		md: {
-			typography: {
-				font: 'normal 460 1rem/1.3 Open Sans',
-				letterSpacing: '0rem',
-				fontWidth: 95,
-			},
 			icon: {
 				size: '1.25rem',
 				'line-height': 1.3,

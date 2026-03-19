@@ -98,23 +98,9 @@ import type {
 
 	<MenuSeparator />
 
-	<MenuSection
-		selectionMode="multiple"
-		defaultSelectedKeys={['files']}
-		onSelectionChange={(keys) => console.log(keys)}
-	>
+	<MenuSection>
 		<MenuItem id="files" label="Show files" />
 		<MenuItem id="folders" label="Show folders" />
-	</MenuSection>
-
-	<MenuSeparator />
-
-	<MenuSection
-		selectionMode="single"
-		onSelectionChange={(keys) => console.log(keys)}
-	>
-		<MenuItem id="list" label="List view" />
-		<MenuItem id="grid" label="Grid view" />
 	</MenuSection>
 </Menu>;
 ```
@@ -153,39 +139,35 @@ Wraps the component used to toggle the menu open/closed state. Can be a form of 
 
 ### MenuSection
 
-Groups `MenuItem` components into a labelled or unlabelled section. Supports single and multiple selection modes when a `selectionMode` is set so that each `MenuItem` within the section renders the appropriate selection indicator (checkbox or radio button) automatically.
+Groups `MenuItem` components into a labelled or unlabelled section.
 
-| Name                  | Type                               | Required | Default  | Description                                                                  |
-| --------------------- | ---------------------------------- | -------- | -------- | ---------------------------------------------------------------------------- |
-| `children`            | `React.ReactNode`                  | No       | -        | Must only contain `MenuItem` components.                                     |
-| `name`                | `string`                           | No       | -        | Optional section header label rendered above the items.                      |
-| `size`                | `'sm' \| 'md'`                     | No       | `'md'`   | Size variant. Automatically inherited from `Menu`, no need to pass manually. |
-| `selectionMode`       | `'none' \| 'single' \| 'multiple'` | No       | `'none'` | Enables single or multiple item selection within the section.                |
-| `defaultSelectedKeys` | `Iterable<Key>`                    | No       | -        | Default selected keys (uncontrolled).                                        |
-| `selectedKeys`        | `Iterable<Key>`                    | No       | -        | Selected keys (controlled). Use together with `onSelectionChange`.           |
-| `onSelectionChange`   | `(keys: Selection) => void`        | No       | -        | Called when the selection changes.                                           |
-| `theme`               | `Partial<MenuSectionTheme>`        | No       | -        | Custom theme overrides.                                                      |
-| `cssOverrides`        | `SerializedStyles`                 | No       | -        | Custom CSS styles applied to the section element.                            |
-| `className`           | `string`                           | No       | -        | Additional class name(s).                                                    |
+| Name           | Type                        | Required | Default | Description                                                                  |
+| -------------- | --------------------------- | -------- | ------- | ---------------------------------------------------------------------------- |
+| `children`     | `React.ReactNode`           | No       | -       | Must only contain `MenuItem` components.                                     |
+| `name`         | `string`                    | No       | -       | Optional section header label rendered above the items.                      |
+| `size`         | `'sm' \| 'md'`              | No       | `'md'`  | Size variant. Automatically inherited from `Menu`, no need to pass manually. |
+| `theme`        | `Partial<MenuSectionTheme>` | No       | -       | Custom theme overrides.                                                      |
+| `cssOverrides` | `SerializedStyles`          | No       | -       | Custom CSS styles applied to the section element.                            |
+| `className`    | `string`                    | No       | -       | Additional class name(s).                                                    |
 
 `MenuSection` also accepts all props from the underlying [React Aria `MenuSection` component](https://react-spectrum.adobe.com/react-aria/Menu.html).
 
 ### MenuItem
 
-A single interactive item within a `MenuSection`. Renders a label with optional icon, description, and aside content. When the parent `MenuSection` has a `selectionMode`, the `icon` prop is ignored and a selection indicator is rendered instead.
+A single interactive item within a `MenuSection`. Renders a label with optional icon, description, and aside content.
 
-| Name           | Type                     | Required | Default | Description                                                                                                                                   |
-| -------------- | ------------------------ | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| `label`        | `React.ReactNode`        | Yes      | -       | The main label. Can be a string or any React node for complex layouts.                                                                        |
-| `id`           | `Key`                    | No       | -       | Unique key used for selection. Required when the parent `MenuSection` has a `selectionMode`.                                                  |
-| `description`  | `React.ReactNode`        | No       | -       | Optional description rendered below the label in a smaller font.                                                                              |
-| `aside`        | `React.ReactNode`        | No       | -       | Optional content on the right side, e.g. a keyboard shortcut using `<Keyboard>` from `react-aria-components`.                                 |
-| `icon`         | `string \| SVGElement`   | No       | -       | Icon for the left side. Accepts a Material Symbols name (string) or an SVG element. Hidden when `selectionMode` is set on the parent section. |
-| `size`         | `'sm' \| 'md'`           | No       | `'md'`  | Size variant. Automatically inherited from `Menu`, no need to pass manually.                                                                  |
-| `textValue`    | `string`                 | No       | -       | Plain-text label used for typeahead keyboard search. Defaults to `label` when it is a string.                                                 |
-| `theme`        | `Partial<MenuItemTheme>` | No       | -       | Custom theme overrides.                                                                                                                       |
-| `cssOverrides` | `SerializedStyles`       | No       | -       | Custom CSS styles.                                                                                                                            |
-| `className`    | `string`                 | No       | -       | Additional class name(s).                                                                                                                     |
+| Name           | Type                     | Required | Default | Description                                                                                                   |
+| -------------- | ------------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------------- |
+| `label`        | `React.ReactNode`        | Yes      | -       | The main label. Can be a string or any React node for complex layouts.                                        |
+| `id`           | `Key`                    | No       | -       | Unique key used for selection.                                                                                |
+| `description`  | `React.ReactNode`        | No       | -       | Optional description rendered below the label in a smaller font.                                              |
+| `aside`        | `React.ReactNode`        | No       | -       | Optional content on the right side, e.g. a keyboard shortcut using `<Keyboard>` from `react-aria-components`. |
+| `icon`         | `string \| SVGElement`   | No       | -       | Icon for the left side. Accepts a Material Symbols name (string) or an SVG element.                           |
+| `size`         | `'sm' \| 'md'`           | No       | `'md'`  | Size variant. Automatically inherited from `Menu`, no need to pass manually.                                  |
+| `textValue`    | `string`                 | No       | -       | Plain-text label used for typeahead keyboard search. Defaults to `label` when it is a string.                 |
+| `theme`        | `Partial<MenuItemTheme>` | No       | -       | Custom theme overrides.                                                                                       |
+| `cssOverrides` | `SerializedStyles`       | No       | -       | Custom CSS styles.                                                                                            |
+| `className`    | `string`                 | No       | -       | Additional class name(s).                                                                                     |
 
 `MenuItem` also accepts all props from the underlying [React Aria `MenuItem` component](https://react-spectrum.adobe.com/react-aria/Menu.html).
 

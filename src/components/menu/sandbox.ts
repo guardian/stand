@@ -35,11 +35,7 @@ export const Component = () => (
 
 		<MenuSeparator />
 
-		<MenuSection
-			selectionMode="multiple"
-			defaultSelectedKeys={['files']}
-			onSelectionChange={(keys) => console.log(keys)}
-		>
+		<MenuSection>
 			<MenuItem id="files" label="Show files" />
 			<MenuItem id="folders" label="Show folders" />
 		</MenuSection>
@@ -113,7 +109,6 @@ export const componentCss = /* css */ `@import '@guardian/stand/component/menu.c
 
 .stand-menu-item-icon {
 	grid-area: var(--component-menu-menu-item-shared-icon-grid-area);
-	justify-self: var(--component-menu-menu-item-shared-icon-justify-self);
 	align-self: var(--component-menu-menu-item-shared-icon-align-self);
 	color: var(--component-menu-menu-item-shared-icon-color);
 	font-size: var(--component-menu-menu-item-md-icon-size);
@@ -122,20 +117,24 @@ export const componentCss = /* css */ `@import '@guardian/stand/component/menu.c
 .stand-menu-item-label {
 	grid-area: var(--component-menu-menu-item-shared-label-grid-area);
 	color: var(--component-menu-menu-item-shared-label-color);
-	font: var(--component-menu-menu-item-md-typography-font);
-	letter-spacing: var(--component-menu-menu-item-md-typography-letter-spacing);
-	font-variation-settings: "wdth" var(--component-menu-menu-item-md-typography-font-width);
+	font: var(--component-menu-menu-item-shared-label-typography-font);
+	letter-spacing: var(--component-menu-menu-item-shared-label-typography-letter-spacing);
+	font-variation-settings: "wdth" var(--component-menu-menu-item-shared-label-typography-font-width);
 }
 .stand-menu-item-description {
 	grid-area: var(--component-menu-menu-item-shared-description-grid-area);
 	color: var(--component-menu-menu-item-shared-description-color);
-	font: var(--component-menu-menu-item-md-typography-font);
+	font: var(--component-menu-menu-item-shared-description-typography-font);
+	letter-spacing: var(--component-menu-menu-item-shared-description-typography-letter-spacing);
+	font-variation-settings: "wdth" var(--component-menu-menu-item-shared-description-typography-font-width);
 }
 .stand-menu-item-aside {
 	grid-area: var(--component-menu-menu-item-shared-aside-grid-area);
 	justify-self: var(--component-menu-menu-item-shared-aside-justify-self);
 	color: var(--component-menu-menu-item-shared-aside-color);
-	font: var(--component-menu-menu-item-md-typography-font);
+	font: var(--component-menu-menu-item-shared-aside-typography-font);
+	letter-spacing: var(--component-menu-menu-item-shared-aside-typography-letter-spacing);
+	font-variation-settings: "wdth" var(--component-menu-menu-item-shared-aside-typography-font-width);
 }
 
 /* Separator */
@@ -167,11 +166,9 @@ export const componentHtml = /* html */ `<div class="stand-popover">
 		<div class="stand-menu-separator"></div>
 		<div>
 			<div class="stand-menu-item" tabindex="0">
-				<span class="stand-menu-item-icon material-symbols">check_box</span>
 				<span class="stand-menu-item-label">Show files</span>
 			</div>
 			<div class="stand-menu-item" tabindex="0">
-				<span class="stand-menu-item-icon material-symbols">check_box_outline_blank</span>
 				<span class="stand-menu-item-label">Show folders</span>
 			</div>
 		</div>
@@ -245,7 +242,6 @@ sheet.replaceSync(\`
 
 	.js-stand-menu-item-icon {
 		grid-area: \${menuItem.shared.icon['grid-area']};
-		justify-self: \${menuItem.shared.icon['justify-self']};
 		align-self: \${menuItem.shared.icon['align-self']};
 		color: \${menuItem.shared.icon.color};
 		font-size: \${menuItem.md.icon.size};
@@ -254,20 +250,24 @@ sheet.replaceSync(\`
 	.js-stand-menu-item-label {
 		grid-area: \${menuItem.shared.label['grid-area']};
 		color: \${menuItem.shared.label.color};
-		font: \${menuItem.md.typography.font};
-		letter-spacing: \${menuItem.md.typography.letterSpacing};
-		font-variation-settings: 'wdth' \${menuItem.md.typography.fontWidth};
+		font: \${menuItem.shared.label.typography.font};
+		letter-spacing: \${menuItem.shared.label.typography.letterSpacing};
+		font-variation-settings: 'wdth' \${menuItem.shared.label.typography.fontWidth};
 	}
 	.js-stand-menu-item-description {
 		grid-area: \${menuItem.shared.description['grid-area']};
 		color: \${menuItem.shared.description.color};
-		font: \${menuItem.md.typography.font};
+		font: \${menuItem.shared.description.typography.font};
+		letter-spacing: \${menuItem.shared.description.typography.letterSpacing};
+		font-variation-settings: 'wdth' \${menuItem.shared.description.typography.fontWidth};
 	}
 	.js-stand-menu-item-aside {
 		grid-area: \${menuItem.shared.aside['grid-area']};
 		justify-self: \${menuItem.shared.aside['justify-self']};
 		color: \${menuItem.shared.aside.color};
-		font: \${menuItem.md.typography.font};
+		font: \${menuItem.shared.aside.typography.font};
+		letter-spacing: \${menuItem.shared.aside.typography.letterSpacing};
+		font-variation-settings: 'wdth' \${menuItem.shared.aside.typography.fontWidth};
 	}
 
 	/* Separator */
@@ -304,11 +304,9 @@ document.getElementById("app").innerHTML = \`
 			<div class="js-stand-menu-separator"></div>
 			<div>
 				<div class="js-stand-menu-item" tabindex="0">
-					<span class="js-stand-menu-item-icon material-symbols">check_box</span>
 					<span class="js-stand-menu-item-label">Show files</span>
 				</div>
 				<div class="js-stand-menu-item" tabindex="0">
-					<span class="js-stand-menu-item-icon material-symbols">check_box_outline_blank</span>
 					<span class="js-stand-menu-item-label">Show folders</span>
 				</div>
 			</div>

@@ -50,6 +50,10 @@ export interface MenuSectionProps
 	 * Size variant of the MenuSection, this doesn't need to be passed if the MenuSection is a child of Menu, as it will inherit the size of the Menu.
 	 */
 	size?: MenuPopoverProps['size'];
+	/**
+	 * Disable the selectionMode option for the time being, as we currently don't have a checkbox or radio button component to use for the selectable menu items that this would require. This can be added in the future when we have these components available.
+	 */
+	selectionMode?: 'none';
 }
 
 /* MenuItem */

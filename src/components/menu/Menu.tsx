@@ -187,17 +187,15 @@ export function MenuItem({
 						/>
 					) : null}
 					{/* Label */}
-					<div css={menuItemLabelStyles(mergedTheme, { size })}>{label}</div>
+					<div css={menuItemLabelStyles(mergedTheme)}>{label}</div>
 					{/* Description */}
 					{description && (
-						<div css={menuItemDescriptionStyles(mergedTheme, { size })}>
+						<div css={menuItemDescriptionStyles(mergedTheme)}>
 							{description}
 						</div>
 					)}
 					{/* Aside */}
-					{aside && (
-						<div css={menuItemAsideStyles(mergedTheme, { size })}>{aside}</div>
-					)}
+					{aside && <div css={menuItemAsideStyles(mergedTheme)}>{aside}</div>}
 				</>
 			)}
 		</ReactAriaMenuItem>

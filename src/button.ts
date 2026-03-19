@@ -15,6 +15,6 @@
  */
 export { Button } from './components/button/Button';
 export type { ButtonProps } from './components/button/types';
-export type { ButtonTheme } from './components/button/styles';
+export type { PartialButtonTheme as ButtonTheme } from './components/button/styles';
 export { componentButton } from './styleD/build/typescript/component/button';
 export type { ComponentButton } from './styleD/build/typescript/component/button';

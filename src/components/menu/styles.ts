@@ -2,7 +2,7 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentMenu } from '../../styleD/build/typescript/component/menu';
 import { componentMenu } from '../../styleD/build/typescript/component/menu';
-import type { Prettify } from '../../util/types';
+import type { DeepPartial, Prettify } from '../../util/types';
 import { convertTypographyToEmotionStringStyle } from '../../utils';
 import type {
 	MenuItemProps,
@@ -12,6 +12,7 @@ import type {
 
 /* Menu */
 export type MenuTheme = Prettify<ComponentMenu['menu']>;
+export type PartialMenuTheme = DeepPartial<MenuTheme>;
 export const defaultMenuTheme: MenuTheme = componentMenu.menu;
 export const menuStyles = (theme: MenuTheme): SerializedStyles => css`
 	display: ${theme.shared.display};
@@ -22,6 +23,7 @@ export const menuStyles = (theme: MenuTheme): SerializedStyles => css`
 
 /* MenuSection */
 export type MenuSectionTheme = Prettify<ComponentMenu['menuSection']>;
+export type PartialMenuSectionTheme = DeepPartial<MenuSectionTheme>;
 export const defaultMenuSectionTheme: MenuSectionTheme =
 	componentMenu.menuSection;
 export const menuSectionHeaderStyles = (
@@ -41,6 +43,7 @@ export const menuSectionHeaderStyles = (
 
 /* MenuItem */
 export type MenuItemTheme = Prettify<ComponentMenu['menuItem']>;
+export type PartialMenuItemTheme = DeepPartial<MenuItemTheme>;
 export const defaultMenuItemTheme: MenuItemTheme = componentMenu.menuItem;
 export const menuItemStyles = (
 	theme: MenuItemTheme,
@@ -79,7 +82,6 @@ export const menuItemIconStyles = (
 	{ size }: Required<Pick<MenuItemProps, 'size'>>,
 ): SerializedStyles => css`
 	grid-area: ${theme.shared.icon['grid-area']};
-	justify-self: ${theme.shared.icon['justify-self']};
 	align-self: ${theme.shared.icon['align-self']};
 	color: ${theme.shared.icon.color};
 	/* Ensure the line-height matches the font line-height of the label for alignment */
@@ -87,33 +89,32 @@ export const menuItemIconStyles = (
 `;
 export const menuItemLabelStyles = (
 	theme: MenuItemTheme,
-	{ size }: Required<Pick<MenuItemProps, 'size'>>,
 ): SerializedStyles => css`
 	grid-area: ${theme.shared.label['grid-area']};
 	color: ${theme.shared.label.color};
-	${convertTypographyToEmotionStringStyle(theme[size].typography)}
+	${convertTypographyToEmotionStringStyle(theme.shared.label.typography)}
+	)}
 `;
 export const menuItemDescriptionStyles = (
 	theme: MenuItemTheme,
-	{ size }: Required<Pick<MenuItemProps, 'size'>>,
 ): SerializedStyles => css`
 	grid-area: ${theme.shared.description['grid-area']};
 	color: ${theme.shared.description.color};
-	${convertTypographyToEmotionStringStyle(theme[size].typography)}
+	${convertTypographyToEmotionStringStyle(theme.shared.description.typography)}
 `;
 export const menuItemAsideStyles = (
 	theme: MenuItemTheme,
-	{ size }: Required<Pick<MenuItemProps, 'size'>>,
 ): SerializedStyles => css`
 	grid-area: ${theme.shared.aside['grid-area']};
 	justify-self: ${theme.shared.aside['justify-self']};
 	align-self: ${theme.shared.aside['align-self']};
 	color: ${theme.shared.aside.color};
-	${convertTypographyToEmotionStringStyle(theme[size].typography)}
+	${convertTypographyToEmotionStringStyle(theme.shared.aside.typography)}
 `;
 
 /* MenuSeparator */
 export type MenuSeparatorTheme = Prettify<ComponentMenu['menuSeparator']>;
+export type PartialMenuSeparatorTheme = DeepPartial<MenuSeparatorTheme>;
 export const defaultMenuSeparatorTheme: MenuSeparatorTheme =
 	componentMenu.menuSeparator;
 export const menuSeparatorStyles = (
@@ -126,6 +127,7 @@ export const menuSeparatorStyles = (
 
 /* Popover */
 export type MenuPopoverTheme = Prettify<ComponentMenu['menuPopover']>;
+export type PartialMenuPopoverTheme = DeepPartial<MenuPopoverTheme>;
 export const defaultMenuPopoverTheme: MenuPopoverTheme =
 	componentMenu.menuPopover;
 export const menuPopoverStyles = (

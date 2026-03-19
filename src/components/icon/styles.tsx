@@ -1,10 +1,11 @@
 import { css } from '@emotion/react';
 import type { ComponentIcon } from '../../styleD/build/typescript/component/icon';
 import { componentIcon } from '../../styleD/build/typescript/component/icon';
-import type { Prettify } from '../../util/types';
+import type { DeepPartial, Prettify } from '../../util/types';
 import type { IconProps } from './types';
 
 export type IconTheme = Prettify<ComponentIcon>;
+export type PartialIconTheme = DeepPartial<IconTheme>;
 
 export const defaultIconTheme: IconTheme = componentIcon;
 

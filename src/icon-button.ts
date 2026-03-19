@@ -17,4 +17,4 @@
  */
 export { IconButton } from './components/icon-button/IconButton';
 export type { IconButtonProps } from './components/icon-button/types';
-export type { IconButtonTheme } from './components/icon-button/styles';
+export type { PartialIconButtonTheme as IconButtonTheme } from './components/icon-button/styles';

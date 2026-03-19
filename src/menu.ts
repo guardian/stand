@@ -6,6 +6,8 @@
  * - `react`
  * - `react-dom`
  * - `typescript`
+ * - `react-aria-components`
+ * - `@react-aria/focus`
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
@@ -28,11 +30,11 @@ export type {
 	MenuPopoverProps as PopoverProps,
 } from './components/menu/types';
 export type {
-	MenuTheme,
-	MenuItemTheme,
-	MenuSectionTheme,
-	MenuSeparatorTheme,
-	MenuPopoverTheme,
+	PartialMenuTheme as MenuTheme,
+	PartialMenuItemTheme as MenuItemTheme,
+	PartialMenuSectionTheme as MenuSectionTheme,
+	PartialMenuSeparatorTheme as MenuSeparatorTheme,
+	PartialMenuPopoverTheme as MenuPopoverTheme,
 } from './components/menu/styles';
 export { componentMenu } from './styleD/build/typescript/component/menu';
 export type { ComponentMenu } from './styleD/build/typescript/component/menu';

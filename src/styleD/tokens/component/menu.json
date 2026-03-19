@@ -121,7 +121,7 @@
 					},
 					"grid-template-columns": {
 						"$type": "string",
-						"$value": "1fr 6fr 1fr"
+						"$value": "auto 6fr 1fr"
 					},
 					"gap": {
 						"$type": "dimension",
@@ -162,10 +162,6 @@
 							"$type": "string",
 							"$value": "icon"
 						},
-						"justify-self": {
-							"$type": "string",
-							"$value": "end"
-						},
 						"align-self": {
 							"$type": "string",
 							"$value": "start"
@@ -183,6 +179,20 @@
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.default}"
+						},
+						"typography": {
+							"font": {
+								"$type": "typography",
+								"$value": "{semantic.typography.body-md.font}"
+							},
+							"letterSpacing": {
+								"$type": "dimension",
+								"$value": "{semantic.typography.body-md.letterSpacing}"
+							},
+							"fontWidth": {
+								"$type": "number",
+								"$value": "{semantic.typography.body-md.fontWidth}"
+							}
 						}
 					},
 					"description": {
@@ -193,6 +203,20 @@
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.subdued}"
+						},
+						"typography": {
+							"font": {
+								"$type": "typography",
+								"$value": "{semantic.typography.body-sm.font}"
+							},
+							"letterSpacing": {
+								"$type": "dimension",
+								"$value": "{semantic.typography.body-sm.letterSpacing}"
+							},
+							"fontWidth": {
+								"$type": "number",
+								"$value": "{semantic.typography.body-sm.fontWidth}"
+							}
 						}
 					},
 					"aside": {
@@ -211,6 +235,20 @@
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.default}"
+						},
+						"typography": {
+							"font": {
+								"$type": "typography",
+								"$value": "{semantic.typography.body-md.font}"
+							},
+							"letterSpacing": {
+								"$type": "dimension",
+								"$value": "{semantic.typography.body-md.letterSpacing}"
+							},
+							"fontWidth": {
+								"$type": "number",
+								"$value": "{semantic.typography.body-md.fontWidth}"
+							}
 						}
 					},
 					":last-child": {
@@ -241,20 +279,6 @@
 					}
 				},
 				"sm": {
-					"typography": {
-						"font": {
-							"$type": "typography",
-							"$value": "{semantic.typography.body-sm.font}"
-						},
-						"letterSpacing": {
-							"$type": "dimension",
-							"$value": "{semantic.typography.body-sm.letterSpacing}"
-						},
-						"fontWidth": {
-							"$type": "number",
-							"$value": "{semantic.typography.body-sm.fontWidth}"
-						}
-					},
 					"icon": {
 						"size": {
 							"$type": "dimension",
@@ -267,20 +291,6 @@
 					}
 				},
 				"md": {
-					"typography": {
-						"font": {
-							"$type": "typography",
-							"$value": "{semantic.typography.body-md.font}"
-						},
-						"letterSpacing": {
-							"$type": "dimension",
-							"$value": "{semantic.typography.body-md.letterSpacing}"
-						},
-						"fontWidth": {
-							"$type": "number",
-							"$value": "{semantic.typography.body-md.fontWidth}"
-						}
-					},
 					"icon": {
 						"size": {
 							"$type": "dimension",

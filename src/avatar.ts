@@ -14,6 +14,6 @@
  */
 export { Avatar } from './components/avatar/Avatar';
 export type { AvatarProps } from './components/avatar/types';
-export type { AvatarTheme } from './components/avatar/styles';
+export type { PartialAvatarTheme as AvatarTheme } from './components/avatar/styles';
 export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';

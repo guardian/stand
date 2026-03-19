@@ -30,8 +30,8 @@ export const SizeMdDefault = {
 					<MenuItem
 						icon="open_in_new"
 						onAction={() => alert('open')}
-						label="Long menu label which wraps in two lines"
-						description="Another quite lengthy description"
+						label="Long menu label which wraps in multiple lines"
+						description="Another quite lengthy description that spans multiple lines too"
 						aside={<Keyboard>⌘O</Keyboard>}
 					/>
 					{/* rename */}
@@ -42,26 +42,18 @@ export const SizeMdDefault = {
 						description="Rename the file"
 					/>
 					{/* duplicate */}
-					<MenuItem onAction={() => alert('duplicate')} label="Duplicate" />
+					<MenuItem
+						onAction={() => alert('duplicate')}
+						label="Duplicate"
+						aside={<Keyboard>⌘D</Keyboard>}
+					/>
 					{/* delete */}
 					<MenuItem onAction={() => alert('delete')} label="Delete" />
 				</MenuSection>
 				<MenuSeparator />
-				<MenuSection
-					onSelectionChange={(args) => console.log(args)}
-					selectionMode="multiple"
-					defaultSelectedKeys={['files']}
-				>
+				<MenuSection>
 					<MenuItem id="files" label="Show files" />
 					<MenuItem id="folders" label="Show folders" />
-				</MenuSection>
-				<MenuSeparator />
-				<MenuSection
-					onSelectionChange={(args) => console.log(args)}
-					selectionMode="single"
-				>
-					<MenuItem id="owls" label="Show owls" />
-					<MenuItem id="ravens" label="Show ravens" />
 				</MenuSection>
 			</Menu>
 		</>
@@ -79,8 +71,8 @@ export const SizeSm = {
 				<MenuItem
 					icon="open_in_new"
 					onAction={() => alert('open')}
-					label="Long menu label which wraps in two lines"
-					description="Another quite lengthy description"
+					label="Long menu label which wraps in multiple lines"
+					description="Another quite lengthy description that spans multiple lines too"
 					aside={<Keyboard>⌘O</Keyboard>}
 				/>
 				{/* rename */}
@@ -91,26 +83,18 @@ export const SizeSm = {
 					description="Rename the file"
 				/>
 				{/* duplicate */}
-				<MenuItem onAction={() => alert('duplicate')} label="Duplicate" />
+				<MenuItem
+					onAction={() => alert('duplicate')}
+					label="Duplicate"
+					aside={<Keyboard>⌘D</Keyboard>}
+				/>
 				{/* delete */}
 				<MenuItem onAction={() => alert('delete')} label="Delete" />
 			</MenuSection>
 			<MenuSeparator />
-			<MenuSection
-				onSelectionChange={(args) => console.log(args)}
-				selectionMode="multiple"
-				defaultSelectedKeys={['files']}
-			>
+			<MenuSection>
 				<MenuItem id="files" label="Show files" />
 				<MenuItem id="folders" label="Show folders" />
-			</MenuSection>
-			<MenuSeparator />
-			<MenuSection
-				onSelectionChange={(args) => console.log(args)}
-				selectionMode="single"
-			>
-				<MenuItem id="owls" label="Show owls" />
-				<MenuItem id="ravens" label="Show ravens" />
 			</MenuSection>
 		</Menu>
 	),
@@ -127,8 +111,8 @@ export const SizeMdOpened = {
 				<MenuItem
 					icon="open_in_new"
 					onAction={() => alert('open')}
-					label="Long menu label which wraps in two lines"
-					description="Another quite lengthy description"
+					label="Long menu label which wraps in multiple lines"
+					description="Another quite lengthy description that spans multiple lines too"
 					aside={<Keyboard>⌘O</Keyboard>}
 				/>
 				{/* rename */}
@@ -139,26 +123,18 @@ export const SizeMdOpened = {
 					description="Rename the file"
 				/>
 				{/* duplicate */}
-				<MenuItem onAction={() => alert('duplicate')} label="Duplicate" />
+				<MenuItem
+					onAction={() => alert('duplicate')}
+					label="Duplicate"
+					aside={<Keyboard>⌘D</Keyboard>}
+				/>
 				{/* delete */}
 				<MenuItem onAction={() => alert('delete')} label="Delete" />
 			</MenuSection>
 			<MenuSeparator />
-			<MenuSection
-				onSelectionChange={(args) => console.log(args)}
-				selectionMode="multiple"
-				defaultSelectedKeys={['files']}
-			>
+			<MenuSection>
 				<MenuItem id="files" label="Show files" />
 				<MenuItem id="folders" label="Show folders" />
-			</MenuSection>
-			<MenuSeparator />
-			<MenuSection
-				onSelectionChange={(args) => console.log(args)}
-				selectionMode="single"
-			>
-				<MenuItem id="owls" label="Show owls" />
-				<MenuItem id="ravens" label="Show ravens" />
 			</MenuSection>
 		</Menu>
 	),
@@ -175,8 +151,8 @@ export const SizeSmOpened = {
 				<MenuItem
 					icon="open_in_new"
 					onAction={() => alert('open')}
-					label="Long menu label which wraps in two lines"
-					description="Another quite lengthy description"
+					label="Long menu label which wraps in multiple lines"
+					description="Another quite lengthy description that spans multiple lines too"
 					aside={<Keyboard>⌘O</Keyboard>}
 				/>
 				{/* rename */}
@@ -187,26 +163,18 @@ export const SizeSmOpened = {
 					description="Rename the file"
 				/>
 				{/* duplicate */}
-				<MenuItem onAction={() => alert('duplicate')} label="Duplicate" />
+				<MenuItem
+					onAction={() => alert('duplicate')}
+					label="Duplicate"
+					aside={<Keyboard>⌘D</Keyboard>}
+				/>
 				{/* delete */}
 				<MenuItem onAction={() => alert('delete')} label="Delete" />
 			</MenuSection>
 			<MenuSeparator />
-			<MenuSection
-				onSelectionChange={(args) => console.log(args)}
-				selectionMode="multiple"
-				defaultSelectedKeys={['files']}
-			>
+			<MenuSection>
 				<MenuItem id="files" label="Show files" />
 				<MenuItem id="folders" label="Show folders" />
-			</MenuSection>
-			<MenuSeparator />
-			<MenuSection
-				onSelectionChange={(args) => console.log(args)}
-				selectionMode="single"
-			>
-				<MenuItem id="owls" label="Show owls" />
-				<MenuItem id="ravens" label="Show ravens" />
 			</MenuSection>
 		</Menu>
 	),
@@ -272,8 +240,8 @@ export const CustomTheme = {
 							theme={theme.menuItem}
 							icon="open_in_new"
 							onAction={() => alert('open')}
-							label="Long menu label which wraps in two lines"
-							description="Another quite lengthy description"
+							label="Long menu label which wraps in multiple lines"
+							description="Another quite lengthy description that spans multiple lines too"
 							aside={<Keyboard>⌘O</Keyboard>}
 						/>
 						{/* rename */}
@@ -289,6 +257,7 @@ export const CustomTheme = {
 							theme={theme.menuItem}
 							onAction={() => alert('duplicate')}
 							label="Duplicate"
+							aside={<Keyboard>⌘D</Keyboard>}
 						/>
 						{/* delete */}
 						<MenuItem
@@ -297,26 +266,14 @@ export const CustomTheme = {
 							label="Delete"
 						/>
 					</MenuSection>
-					<MenuSeparator theme={theme.menuSeparator} />
-					<MenuSection
-						onSelectionChange={(args) => console.log(args)}
-						selectionMode="multiple"
-						defaultSelectedKeys={['files']}
-					>
+					<MenuSeparator />
+					<MenuSection theme={theme.menuSection}>
 						<MenuItem theme={theme.menuItem} id="files" label="Show files" />
 						<MenuItem
 							theme={theme.menuItem}
 							id="folders"
 							label="Show folders"
 						/>
-					</MenuSection>
-					<MenuSeparator theme={theme.menuSeparator} />
-					<MenuSection
-						onSelectionChange={(args) => console.log(args)}
-						selectionMode="single"
-					>
-						<MenuItem theme={theme.menuItem} id="owls" label="Show owls" />
-						<MenuItem theme={theme.menuItem} id="ravens" label="Show ravens" />
 					</MenuSection>
 				</Menu>
 			</>
@@ -356,8 +313,8 @@ export const CssOverrides = {
 						<MenuItem
 							icon="open_in_new"
 							onAction={() => alert('open')}
-							label="Long menu label which wraps in two lines"
-							description="Another quite lengthy description"
+							label="Long menu label which wraps in multiple lines"
+							description="Another quite lengthy description that spans multiple lines too"
 							aside={<Keyboard>⌘O</Keyboard>}
 							cssOverrides={menuItemStyles}
 						/>
@@ -374,6 +331,7 @@ export const CssOverrides = {
 							onAction={() => alert('duplicate')}
 							label="	Duplicate"
 							cssOverrides={menuItemStyles}
+							aside={<Keyboard>⌘D</Keyboard>}
 						/>
 						{/* delete */}
 						<MenuItem
@@ -383,11 +341,7 @@ export const CssOverrides = {
 						/>
 					</MenuSection>
 					<MenuSeparator cssOverrides={menuSeparatorStyles} />
-					<MenuSection
-						onSelectionChange={(args) => console.log(args)}
-						selectionMode="multiple"
-						defaultSelectedKeys={['files']}
-					>
+					<MenuSection>
 						<MenuItem
 							id="files"
 							label="Show files"
@@ -396,22 +350,6 @@ export const CssOverrides = {
 						<MenuItem
 							id="folders"
 							label="Show folders"
-							cssOverrides={menuItemStyles}
-						/>
-					</MenuSection>
-					<MenuSeparator cssOverrides={menuSeparatorStyles} />
-					<MenuSection
-						onSelectionChange={(args) => console.log(args)}
-						selectionMode="single"
-					>
-						<MenuItem
-							id="owls"
-							label="Show owls"
-							cssOverrides={menuItemStyles}
-						/>
-						<MenuItem
-							id="ravens"
-							label="Show ravens"
 							cssOverrides={menuItemStyles}
 						/>
 					</MenuSection>
