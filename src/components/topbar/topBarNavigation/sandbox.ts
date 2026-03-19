@@ -29,13 +29,13 @@ export const componentCss = /* css */ `
 	border-bottom: var(--component-top-bar-navigation-unselected-border-bottom);
 
 	&[data-hovered],
-	:hover {
+	&:hover {
 		border-bottom: var(--component-top-bar-navigation-selected-border-bottom);
 		cursor: var(--component-top-bar-navigation-shared-cursor);
 	}
 
 	&[data-focus-visible],
-	:focus-visible {
+	&:focus-visible {
 		outline: var(--component-top-bar-navigation-shared-focus-visible-outline);
 		border-bottom: var(--component-top-bar-navigation-selected-border-bottom);
 		outline-offset: var(--component-top-bar-navigation-shared-focus-visible-outline-offset);
@@ -93,12 +93,12 @@ const style = \`
 	font-variation-settings: 'wdth'
 		\${componentTopBar.Navigation.md.typography.fontWidth};
 
-	:hover {
+	&:hover {
 		border-bottom: \${componentTopBar.Navigation.selected['border-bottom']};
 		cursor: \${componentTopBar.Navigation.shared.cursor};
 	}
 
-	:focus-visible {
+	&:focus-visible {
 		outline: \${componentTopBar.Navigation.shared[':focus-visible'].outline};
 		border-bottom: \${componentTopBar.Navigation.selected['border-bottom']};
 		outline-offset: \${componentTopBar.Navigation.shared[':focus-visible']['outline-offset']};
@@ -114,8 +114,8 @@ const textStyle = \`margin-left: \${componentTopBar.Navigation.text.margin.left}
 \`;
 
 const expandMoreStyle = \`
-	margin-top: \${componentTopBar.Navigation.expandMorePadding.top};
-	margin-left: \${componentTopBar.Navigation.expandMorePadding.left};
+	margin-top: \${componentTopBar.Navigation.menuIndicator.margin.top};
+	margin-left: \${componentTopBar.Navigation.menuIndicator.margin.left};
 \`;
 
 document.getElementById("app").innerHTML = \`

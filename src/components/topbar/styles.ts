@@ -2,10 +2,10 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentTopBar } from '../../styleD/build/typescript/component/TopBar';
 import { componentTopBar } from '../../styleD/build/typescript/component/TopBar';
-import type { Prettify } from '../../util/types';
+import type { DeepPartial, Prettify } from '../../util/types';
 
 export type TopBarTheme = Prettify<ComponentTopBar>;
-
+export type PartialTopBarTheme = DeepPartial<TopBarTheme>;
 export const defaultTopBarTheme: TopBarTheme = componentTopBar;
 
 export const topBarStyles = (theme: TopBarTheme): SerializedStyles => {

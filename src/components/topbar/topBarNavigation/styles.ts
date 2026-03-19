@@ -30,13 +30,13 @@ export const topBarNavigationStyles = (
 		border-bottom: ${theme.unselected['border-bottom']};
 
 		&[data-hovered],
-		:hover {
+		&:hover {
 			border-bottom: ${theme.selected['border-bottom']};
 			cursor: ${theme.shared.cursor};
 		}
 
 		&[data-focus-visible],
-		:focus-visible {
+		&:focus-visible {
 			outline: ${theme.shared[':focus-visible'].outline};
 			border-bottom: ${theme.selected['border-bottom']};
 			outline-offset: ${theme.shared[':focus-visible']['outline-offset']};
