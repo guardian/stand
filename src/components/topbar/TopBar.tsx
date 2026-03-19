@@ -41,7 +41,7 @@ function TopBarSide({
 			items.push(
 				React.cloneElement(child as React.ReactElement<TopBarNavigationProps>, {
 					key: `${child.key}-${i}`,
-					topBarItemProps: { alignment },
+					alignment,
 				}),
 			);
 		}

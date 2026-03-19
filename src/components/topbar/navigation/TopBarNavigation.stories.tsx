@@ -125,9 +125,7 @@ export const CustomTheme = {
 		theme: {
 			selected: {
 				color: baseColors.blue[200],
-			},
-			underline: {
-				'background-color': baseColors['cool-purple'][700],
+				'border-bottom': `1px solid ${baseColors['cool-purple'][700]}`,
 			},
 		},
 	},

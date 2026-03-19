@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 import type { PressEvent } from 'react-aria-components';
 import type { DefaultProps } from '../../../util/types';
 import type { IconProps } from '../../icon/types';
-import type { TopBarItemProps } from '../topbarItem/types';
 import type { TopBarNavigationTheme } from './styles';
 
 export interface TopBarNavigationProps extends DefaultProps<TopBarNavigationTheme> {
@@ -40,7 +39,7 @@ export interface TopBarNavigationProps extends DefaultProps<TopBarNavigationThem
 	 */
 	isDisabled?: boolean;
 	/**
-	 * Controls the alignment and styling within the topbar
+	 * Determines the alignment of the item within the top bar
 	 */
-	topBarItemProps?: TopBarItemProps;
+	alignment?: 'left' | 'right';
 }

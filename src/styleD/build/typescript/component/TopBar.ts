@@ -44,13 +44,23 @@ export const componentTopBar = {
 			'align-items': 'center',
 			cursor: 'pointer',
 			'text-decoration': 'none',
+			height: '100%',
 			':disabled': {
 				cursor: 'not-allowed',
 				color: '#999999',
 			},
+			padding: {
+				top: '0',
+				right: '1rem',
+				bottom: '0',
+				left: '1rem',
+			},
 			':focus-visible': {
 				outline: '0.125rem solid #0072a9',
+				'outline-offset': '-0.0625rem',
 			},
+			'border-top': '0.5rem solid transparent',
+			divider: '0.0625rem solid #cccccc',
 		},
 		text: {
 			margin: {
@@ -62,14 +72,6 @@ export const componentTopBar = {
 				top: '0.375rem',
 				left: '0.125rem',
 			},
-		},
-		underline: {
-			position: 'absolute',
-			bottom: '0',
-			'background-color': '#0072a9',
-			height: '0.5rem',
-			width: '100%',
-			transformTranslateX: '-1rem',
 		},
 		selected: {
 			color: '#000000',

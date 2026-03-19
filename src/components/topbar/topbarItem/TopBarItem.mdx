@@ -17,11 +17,12 @@ import {
 
 # TopBarItem
 
-TODO: Add a description for the TopBarItem component.
+A component that represents a generic element within a top bar.
 
 ## When to use
 
-- TODO: Describe when to use this component
+- Adding a custom element to the top bar
+- Must be used inside `TopBarLHS` or `TopBarRHS` components within a `TopBar`
 
 ## Peer dependencies
 
@@ -39,25 +40,23 @@ See [custom component build](#custom-component-build) for usage without React/Em
 <SandboxReact componentName={componentName} componentTsx={componentTsx} />
 
 ```tsx
-import { TopBarItem } from '@guardian/stand/top-bar-item';
+import { TopBarItem } from '@guardian/stand/TopBar';
 
 /* types, if required */
-import type {
-	TopBarItemProps,
-	TopBarItemTheme,
-} from '@guardian/stand/top-bar-item';
+import type { TopBarItemProps, TopBarItemTheme } from '@guardian/stand/TopBar';
 
 <TopBarItem>Hello</TopBarItem>;
 ```
 
 ## Props
 
-| Name           | Type               | Required | Default | Description                             |
-| -------------- | ------------------ | -------- | ------- | --------------------------------------- |
-| `children`     | `React.ReactNode`  | No       | N/A     | Content to render inside the component. |
-| `theme`        | `TopBarItemTheme`  | No       | N/A     | Custom theme overrides.                 |
-| `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles.                      |
-| `className`    | `string`           | No       | N/A     | Additional class name(s).               |
+| Name           | Type                  | Required | Default  | Description                             |
+| -------------- | --------------------- | -------- | -------- | --------------------------------------- |
+| `children`     | `React.ReactNode`     | No       | N/A      | Content to render inside the component. |
+| `alignment`    | `'left'` \| `'right'` | No       | `'left'` | Content to render inside the component. |
+| `theme`        | `TopBarItemTheme`     | No       | N/A      | Custom theme overrides.                 |
+| `cssOverrides` | `SerializedStyles`    | No       | N/A      | Custom CSS styles.                      |
+| `className`    | `string`              | No       | N/A      | Additional class name(s).               |
 
 ## Stories
 

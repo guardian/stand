@@ -3,11 +3,10 @@ import { mergeDeep } from '../../../util/mergeDeep';
 import { Icon } from '../../icon/Icon';
 import type { MaterialSymbol } from '../../icon/types';
 import { Menu, MenuToggle } from '../../menu/Menu';
-import { defaultTopBarItemTheme, topBarItemStyles } from '../topbarItem/styles';
 import {
 	defaultTopBarNavigationTheme,
-	isSelectedStyles,
 	topBarMenuIndicatorStyles,
+	topBarNavigationDividerStyles,
 	topBarNavigationStyles,
 	topBarNavigationTextStyles,
 	topBarNavigationTypographyStyles,
@@ -25,21 +24,17 @@ export function TopBarNavigation({
 	href,
 	onPress,
 	isDisabled,
+	alignment = 'left',
 	theme = {},
 	cssOverrides,
 	className,
-	topBarItemProps,
 	...props
 }: TopBarNavigationProps) {
 	const mergedTheme = mergeDeep(defaultTopBarNavigationTheme, theme);
-	const mergedTopBarItemTheme = mergeDeep(
-		defaultTopBarItemTheme,
-		topBarItemProps?.theme ?? {},
-	);
 	const iconSize = size === 'md' ? 'lg' : 'sm';
 
 	return (
-		<>
+		<div css={topBarNavigationDividerStyles(mergedTheme, { alignment })}>
 			{menuChildren ? (
 				<Menu>
 					<MenuToggle>
@@ -49,13 +44,7 @@ export function TopBarNavigation({
 								data-disabled={isDisabled ? true : undefined}
 								css={[
 									topBarNavigationStyles(mergedTheme, isSelected),
-									topBarItemStyles(
-										mergedTopBarItemTheme,
-										topBarItemProps?.alignment ?? 'left',
-										{ size: 'md' },
-									),
 									topBarNavigationTypographyStyles(mergedTheme, size),
-									isSelected && isSelectedStyles(mergedTheme),
 									cssOverrides,
 								]}
 								className={className}
@@ -77,13 +66,7 @@ export function TopBarNavigation({
 				<Link
 					css={[
 						topBarNavigationStyles(mergedTheme, isSelected),
-						topBarItemStyles(
-							mergedTopBarItemTheme,
-							topBarItemProps?.alignment ?? 'left',
-							{ size: 'md' },
-						),
 						topBarNavigationTypographyStyles(mergedTheme, size),
-						isSelected && isSelectedStyles(mergedTheme),
 						cssOverrides,
 					]}
 					href={href}
@@ -96,6 +79,6 @@ export function TopBarNavigation({
 					<span css={topBarNavigationTextStyles(mergedTheme)}>{text}</span>
 				</Link>
 			)}
-		</>
+		</div>
 	);
 }
