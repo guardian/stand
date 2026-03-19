@@ -24,6 +24,8 @@ export const topBarNavigationStyles = (
 		padding-right: ${theme.shared.padding.right};
 		padding-bottom: ${theme.shared.padding.bottom};
 		padding-left: ${theme.shared.padding.left};
+		border-bottom: ${theme.selected['border-bottom']};
+		border-bottom-color: transparent;
 
 		:hover {
 			border-bottom: ${theme.selected['border-bottom']};
