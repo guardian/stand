@@ -18,23 +18,32 @@ export const componentCss = /* css */ `
 	display: var(--component-top-bar-navigation-shared-display);
 	align-items: var(--component-top-bar-navigation-shared-align-items);
 	color: var(--component-top-bar-navigation-unselected-color);
+	height: var(--component-top-bar-navigation-shared-height);
 	padding-top: var(--component-top-bar-navigation-shared-padding-top);
 	padding-right: var(--component-top-bar-navigation-shared-padding-right);
 	padding-bottom: var(--component-top-bar-navigation-shared-padding-bottom);
 	padding-left: var(--component-top-bar-navigation-shared-padding-left);
 	text-decoration: var(--component-top-bar-navigation-shared-text-decoration);
 
-	&[data-hovered] {
+	border-top: var(--component-top-bar-navigation-shared-border-top);
+	border-bottom: var(--component-top-bar-navigation-unselected-border-bottom);
+
+	&[data-hovered],
+	&:hover {
 		border-bottom: var(--component-top-bar-navigation-selected-border-bottom);
+		cursor: var(--component-top-bar-navigation-shared-cursor);
 	}
 
-	&[data-focus-visible] {
+	&[data-focus-visible],
+	&:focus-visible {
 		outline: var(--component-top-bar-navigation-shared-focus-visible-outline);
 		border-bottom: var(--component-top-bar-navigation-selected-border-bottom);
+		outline-offset: var(--component-top-bar-navigation-shared-focus-visible-outline-offset);
 	}
 
 	&[data-disabled] {
 		cursor: var(--component-top-bar-navigation-shared-disabled-cursor);
+		color: var(--component-top-bar-navigation-shared-disabled-color);
 	}
 
 	font: var(--component-top-bar-navigation-md-typography-font);
@@ -72,6 +81,7 @@ const style = \`
 	display: \${componentTopBar.Navigation.shared.display};
 	align-items: \${componentTopBar.Navigation.shared['align-items']};
 	color: \${componentTopBar.Navigation.unselected.color};
+	height: \${componentTopBar.Navigation.shared.height};
 	padding-top: \${componentTopBar.Navigation.shared.padding.top};
 	padding-right: \${componentTopBar.Navigation.shared.padding.right};
 	padding-bottom: \${componentTopBar.Navigation.shared.padding.bottom};
@@ -83,17 +93,20 @@ const style = \`
 	font-variation-settings: 'wdth'
 		\${componentTopBar.Navigation.md.typography.fontWidth};
 
-	&[data-hovered] {
+	&:hover {
 		border-bottom: \${componentTopBar.Navigation.selected['border-bottom']};
+		cursor: \${componentTopBar.Navigation.shared.cursor};
 	}
 
-	&[data-focus-visible] {
+	&:focus-visible {
 		outline: \${componentTopBar.Navigation.shared[':focus-visible'].outline};
 		border-bottom: \${componentTopBar.Navigation.selected['border-bottom']};
+		outline-offset: \${componentTopBar.Navigation.shared[':focus-visible']['outline-offset']};
 	}
 
 	&[data-disabled] {
 		cursor: \${componentTopBar.Navigation.shared[':disabled'].cursor};
+		color: \${componentTopBar.Navigation.shared[':disabled'].color};
 	}
 \`;
 
@@ -101,8 +114,8 @@ const textStyle = \`margin-left: \${componentTopBar.Navigation.text.margin.left}
 \`;
 
 const expandMoreStyle = \`
-	margin-top: \${componentTopBar.Navigation.expandMorePadding.top};
-	margin-left: \${componentTopBar.Navigation.expandMorePadding.left};
+	margin-top: \${componentTopBar.Navigation.menuIndicator.margin.top};
+	margin-left: \${componentTopBar.Navigation.menuIndicator.margin.left};
 \`;
 
 document.getElementById("app").innerHTML = \`

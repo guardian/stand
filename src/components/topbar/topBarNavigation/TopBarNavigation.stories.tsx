@@ -23,7 +23,16 @@ export default meta;
 
 // render a sm and md size side by side
 const renderBothSizes = (props: TopBarNavigationProps) => (
-	<table css={tableStyles}>
+	<table
+		css={[
+			tableStyles,
+			css`
+				tr:hover {
+					background: unset;
+				}
+			`,
+		]}
+	>
 		<thead>
 			<tr>
 				<th>Small</th>
@@ -32,10 +41,18 @@ const renderBothSizes = (props: TopBarNavigationProps) => (
 		</thead>
 		<tbody>
 			<tr>
-				<td>
+				<td
+					css={css`
+						height: 100px;
+					`}
+				>
 					<TopBarNavigation {...props} size="sm" />
 				</td>
-				<td>
+				<td
+					css={css`
+						height: 100px;
+					`}
+				>
 					<TopBarNavigation {...props} size="md" />
 				</td>
 			</tr>
@@ -108,7 +125,7 @@ export const CustomTheme = {
 		theme: {
 			selected: {
 				color: baseColors.blue[200],
-				'border-bottom': `5px solid ${baseColors['cool-purple'][700]}`,
+				'border-bottom': `1px solid ${baseColors['cool-purple'][700]}`,
 			},
 		},
 	},
