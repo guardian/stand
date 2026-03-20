@@ -10,7 +10,7 @@ const sectionCss = css`
 
 	h2 {
 		margin-bottom: 16px;
-		border-bottom: 2px solid ${semanticColors.border.default};
+		border-bottom: 2px solid ${semanticColors.border.strong};
 		padding-bottom: 8px;
 		${convertTypographyToEmotionStringStyle(semanticTypography['heading-md'])}
 	}
@@ -22,7 +22,7 @@ const tokenNameCss = css`
 `;
 
 const tokenValueCss = css`
-	color: ${semanticColors.text.subdued};
+	color: ${semanticColors.text.weak};
 	font-family: monospace;
 	font-size: 0.9em;
 `;
@@ -34,12 +34,12 @@ const visualizationCss = css`
 `;
 
 const sizingBoxCss = css`
-	background: ${semanticColors.border.default};
+	background: ${semanticColors.border.strong};
 	border-radius: 2px;
 `;
 
 const usageCss = css`
-	color: ${semanticColors.text.subdued};
+	color: ${semanticColors.text.weak};
 	font-size: 0.9em;
 `;
 

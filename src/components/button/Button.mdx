@@ -57,7 +57,7 @@ import type { ButtonProps, ButtonTheme } from '@guardian/stand/button';
 const Example = () => (
 	<>
 		<Button
-			variant="emphasised-primary"
+			variant="primary"
 			size="md"
 			onPress={() => {
 				console.log('Primary action');
@@ -66,18 +66,18 @@ const Example = () => (
 			Publish
 		</Button>
 
-		<Button variant="neutral-secondary" size="sm" isDisabled>
+		<Button variant="tertiary" size="sm" isDisabled>
 			Disabled
 		</Button>
 
 		{/* Icon via MaterialSymbol name */}
-		<Button variant="emphasised-primary" size="md" icon="add">
+		<Button variant="primary" size="md" icon="add">
 			New item
 		</Button>
 
 		{/* Icon via SVG element */}
 		<Button
-			variant="neutral-secondary"
+			variant="tertiary"
 			size="md"
 			icon={
 				<svg aria-hidden viewBox="0 0 24 24">
@@ -93,22 +93,22 @@ const Example = () => (
 
 ## Props
 
-| Name           | Type                                                                                               | Required | Default                | Description                                                                                                                                                                                                                                                                                                                                                      |
-| -------------- | -------------------------------------------------------------------------------------------------- | -------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`                                                               | No       | `'md'`                 | Controls the button dimensions and typography.                                                                                                                                                                                                                                                                                                                   |
-| `variant`      | `'emphasised-primary'` \| `'emphasised-secondary'` \| `'neutral-primary'` \| `'neutral-secondary'` | No       | `'emphasised-primary'` | Chooses the colour scheme and interaction states.                                                                                                                                                                                                                                                                                                                |
-| `children`     | `ReactNode` \| `RenderProps`                                                                       | Yes      | N/A                    | Content inside the button. Render props receive `{ isPending }` from React Aria.                                                                                                                                                                                                                                                                                 |
-| `icon`         | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>`                                  | No       | N/A                    | Icon rendered inside the button, before the label. Accepts a `MaterialSymbol` name or a non-string `ReactNode` (e.g. an SVG element). Size is inherited from `size`, except for `xs` buttons which use `sm`. See ["Installing Icons"](/docs/stand-tools-design-system-components-icon--docs#installing-icons) for how to set up your project to work with icons. |
-| `isDisabled`   | `boolean`                                                                                          | No       | `false`                | Disables interaction and applies disabled styling.                                                                                                                                                                                                                                                                                                               |
-| `theme`        | `ButtonTheme` (partial)                                                                            | No       | N/A                    | Override Stand tokens for this instance; merged over the default theme.                                                                                                                                                                                                                                                                                          |
-| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                                                         | No       | N/A                    | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                                                                                                                                                                                                                       |
-| `className`    | `string`                                                                                           | No       | N/A                    | Optional class name forwarded to the root React Aria button.                                                                                                                                                                                                                                                                                                     |
-| `...props`     | `ReactAria Button` props                                                                           | No       | N/A                    | All other props from `react-aria-components` `Button` (e.g. `type`, `autoFocus`, event handlers).                                                                                                                                                                                                                                                                |
+| Name           | Type                                                              | Required | Default     | Description                                                                                                                                                                                                                                                                                                                                                      |
+| -------------- | ----------------------------------------------------------------- | -------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`                              | No       | `'md'`      | Controls the button dimensions and typography.                                                                                                                                                                                                                                                                                                                   |
+| `variant`      | `'primary'` \| `'secondary'` \| `'tertiary'`                      | No       | `'primary'` | Chooses the colour scheme and interaction states.                                                                                                                                                                                                                                                                                                                |
+| `children`     | `ReactNode` \| `RenderProps`                                      | Yes      | N/A         | Content inside the button. Render props receive `{ isPending }` from React Aria.                                                                                                                                                                                                                                                                                 |
+| `icon`         | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>` | No       | N/A         | Icon rendered inside the button, before the label. Accepts a `MaterialSymbol` name or a non-string `ReactNode` (e.g. an SVG element). Size is inherited from `size`, except for `xs` buttons which use `sm`. See ["Installing Icons"](/docs/stand-tools-design-system-components-icon--docs#installing-icons) for how to set up your project to work with icons. |
+| `isDisabled`   | `boolean`                                                         | No       | `false`     | Disables interaction and applies disabled styling.                                                                                                                                                                                                                                                                                                               |
+| `theme`        | `ButtonTheme` (partial)                                           | No       | N/A         | Override Stand tokens for this instance; merged over the default theme.                                                                                                                                                                                                                                                                                          |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                        | No       | N/A         | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                                                                                                                                                                                                                       |
+| `className`    | `string`                                                          | No       | N/A         | Optional class name forwarded to the root React Aria button.                                                                                                                                                                                                                                                                                                     |
+| `...props`     | `ReactAria Button` props                                          | No       | N/A         | All other props from `react-aria-components` `Button` (e.g. `type`, `autoFocus`, event handlers).                                                                                                                                                                                                                                                                |
 
 **`size` and `variant`**
 
 - Sizes: `xs`, `sm`, `md`, `lg`
-- Variants: `emphasised-primary`, `emphasised-secondary`, `neutral-primary`, `neutral-secondary`
+- Variants: `primary`, `secondary`, `tertiary`
 
 ## Stories
 
@@ -134,7 +134,7 @@ import { Button } from '@guardian/stand/button';
 import { baseColors } from '@guardian/stand';
 
 const customTheme: Partial<ButtonTheme> = {
-	'emphasised-primary': {
+	primary: {
 		shared: {
 			backgroundColor: baseColors['cool-purple'][200],
 			color: baseColors['cool-purple'][900],
@@ -152,7 +152,7 @@ const customTheme: Partial<ButtonTheme> = {
 };
 
 const Component = () => (
-	<Button variant="emphasised-primary" size="md" theme={customTheme}>
+	<Button variant="primary" size="md" theme={customTheme}>
 		Custom Themed Button
 	</Button>
 );
@@ -175,7 +175,7 @@ const customStyles = css`
 `;
 
 const Component = () => (
-	<Button variant="neutral-primary" size="sm" cssOverrides={customStyles}>
+	<Button variant="primary" size="sm" cssOverrides={customStyles}>
 		CSSOverrides Button
 	</Button>
 );

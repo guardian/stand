@@ -8,7 +8,7 @@ import { buttonStyles, defaultButtonTheme } from './styles';
 import type { ButtonProps } from './types';
 
 export function Button({
-	variant = 'emphasised-primary',
+	variant = 'primary',
 	size = 'md',
 	theme = {},
 	cssOverrides,

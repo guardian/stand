@@ -20,7 +20,7 @@ export const componentButton = {
 			'outline-offset': '0.125rem',
 		},
 	},
-	'emphasised-primary': {
+	primary: {
 		shared: {
 			color: '#ffffff',
 			backgroundColor: '#0d4289',
@@ -145,132 +145,7 @@ export const componentButton = {
 			},
 		},
 	},
-	'emphasised-secondary': {
-		shared: {
-			color: '#000000',
-			backgroundColor: 'none',
-			borderRadius: '0.25rem',
-			border: '0.0625rem solid #0d4289',
-			':hover': {
-				backgroundColor: '#e8f0fb',
-				border: '0.0625rem solid #0d4289',
-			},
-			':active': {
-				backgroundColor: '#c5d9f4',
-				border: '0.0625rem solid #0d4289',
-			},
-			':disabled': {
-				color: '#999999',
-				backgroundColor: 'none',
-				border: '0.0625rem solid #dcdcdc',
-			},
-		},
-		xs: {
-			height: '1.5rem',
-			padding: {
-				top: '0.25rem',
-				right: '0.5rem',
-				bottom: '0.25rem',
-				left: '0.5rem',
-				withIcon: {
-					iconLeft: {
-						left: '0.25rem',
-					},
-				},
-			},
-			typography: {
-				font: 'normal 700 0.75rem/1 Open Sans',
-				letterSpacing: '0rem',
-				fontWidth: 95,
-			},
-			icon: {
-				size: '1.125rem',
-				gap: '0.25rem',
-			},
-			iconButton: {
-				width: '1.5rem',
-			},
-		},
-		sm: {
-			height: '2rem',
-			padding: {
-				top: '0.25rem',
-				right: '0.625rem',
-				bottom: '0.25rem',
-				left: '0.625rem',
-				withIcon: {
-					iconLeft: {
-						left: '0.5rem',
-					},
-				},
-			},
-			typography: {
-				font: 'normal 700 0.875rem/1 Open Sans',
-				letterSpacing: '-0.0125rem',
-				fontWidth: 95,
-			},
-			icon: {
-				size: '1.125rem',
-				gap: '0.25rem',
-			},
-			iconButton: {
-				width: '2rem',
-			},
-		},
-		md: {
-			height: '2.5rem',
-			padding: {
-				top: '0.25rem',
-				right: '0.75rem',
-				bottom: '0.25rem',
-				left: '0.75rem',
-				withIcon: {
-					iconLeft: {
-						left: '0.5rem',
-					},
-				},
-			},
-			typography: {
-				font: 'normal 700 0.875rem/1 Open Sans',
-				letterSpacing: '-0.0125rem',
-				fontWidth: 95,
-			},
-			icon: {
-				size: '1.25rem',
-				gap: '0.25rem',
-			},
-			iconButton: {
-				width: '2.5rem',
-			},
-		},
-		lg: {
-			height: '3rem',
-			padding: {
-				top: '0.25rem',
-				right: '1rem',
-				bottom: '0.25rem',
-				left: '1rem',
-				withIcon: {
-					iconLeft: {
-						left: '0.75rem',
-					},
-				},
-			},
-			typography: {
-				font: 'normal 700 1rem/1 Open Sans',
-				letterSpacing: '-0.0125rem',
-				fontWidth: 95,
-			},
-			icon: {
-				size: '1.5rem',
-				gap: '0.25rem',
-			},
-			iconButton: {
-				width: '3rem',
-			},
-		},
-	},
-	'neutral-primary': {
+	secondary: {
 		shared: {
 			color: '#ffffff',
 			backgroundColor: '#545454',
@@ -395,18 +270,18 @@ export const componentButton = {
 			},
 		},
 	},
-	'neutral-secondary': {
+	tertiary: {
 		shared: {
 			color: '#000000',
 			backgroundColor: 'none',
 			borderRadius: '0.25rem',
 			border: '0.0625rem solid #545454',
 			':hover': {
-				backgroundColor: '#ededed',
+				backgroundColor: '#f6f6f6',
 				border: '0.0625rem solid #545454',
 			},
 			':active': {
-				backgroundColor: '#dcdcdc',
+				backgroundColor: '#ededed',
 				border: '0.0625rem solid #545454',
 			},
 			':disabled': {

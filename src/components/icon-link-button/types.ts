@@ -14,7 +14,7 @@ export interface IconLinkButtonProps
 	/**
 	 * Size variant of the avatar
 	 */
-	size?: keyof Omit<IconLinkButtonTheme['emphasised-primary'], 'shared'>;
+	size?: keyof Omit<IconLinkButtonTheme['primary'], 'shared'>;
 	/**
 	 * Variant of the button
 	 */
