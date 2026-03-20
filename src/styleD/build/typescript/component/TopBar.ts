@@ -3,33 +3,75 @@
  */
 
 export const componentTopBar = {
-	Navigation: {
-		shared: {
-			display: 'flex',
-			'align-items': 'center',
+	display: 'flex',
+	height: '4rem',
+	'justify-content': 'space-between',
+	border: '0.0625rem solid #cccccc',
+	Item: {
+		display: 'flex',
+		'align-items': 'center',
+		height: '100%',
+		sm: {
 			padding: {
-				top: '1.25rem',
+				top: '0',
+				right: '0.75rem',
+				bottom: '0',
+				left: '0.75rem',
+			},
+		},
+		md: {
+			padding: {
+				top: '0',
 				right: '1rem',
-				bottom: '0.75rem',
+				bottom: '0',
 				left: '1rem',
 			},
+		},
+		lg: {
+			padding: {
+				top: '0',
+				right: '1.5rem',
+				bottom: '0',
+				left: '1.5rem',
+			},
+		},
+		border: '0.0625rem solid #cccccc',
+	},
+	Navigation: {
+		shared: {
+			display: 'inline-flex',
+			position: 'relative',
+			'align-items': 'center',
+			cursor: 'pointer',
 			'text-decoration': 'none',
+			height: '100%',
 			':disabled': {
 				cursor: 'not-allowed',
 				color: '#999999',
 			},
+			padding: {
+				top: '0',
+				right: '1rem',
+				bottom: '0',
+				left: '1rem',
+			},
 			':focus-visible': {
 				outline: '0.125rem solid #0072a9',
+				'outline-offset': '-0.0625rem',
 			},
+			'border-top': '0.5rem solid transparent',
+			divider: '0.0625rem solid #cccccc',
 		},
 		text: {
 			margin: {
 				left: '0.375rem',
 			},
 		},
-		expandMorePadding: {
-			top: '0.375rem',
-			left: '0.125rem',
+		menuIndicator: {
+			margin: {
+				top: '0.375rem',
+				left: '0.125rem',
+			},
 		},
 		selected: {
 			color: '#000000',

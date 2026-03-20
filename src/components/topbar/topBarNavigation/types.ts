@@ -38,4 +38,8 @@ export interface TopBarNavigationProps extends DefaultProps<TopBarNavigationThem
 	 * Whether the navigation is disabled
 	 */
 	isDisabled?: boolean;
+	/**
+	 * Determines the alignment of the item within the top bar
+	 */
+	alignment?: 'left' | 'right';
 }

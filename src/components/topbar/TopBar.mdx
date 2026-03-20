@@ -1,0 +1,176 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import TopBarStories, {
+	CssOverrides,
+	CustomTheme,
+	Default,
+} from './TopBar.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={TopBarStories} />
+
+# TopBar
+
+A top bar that provides information about the tool, the current state and navigation links among other things.
+
+## When to use
+
+- At the top of a tool
+- To identify the tool, its current state and the user
+- To navigate around the tool
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { TopBar, TopBarLHS, TopBarItem } from '@guardian/stand/TopBar';
+
+/* types, if required */
+import type { TopBarProps, TopBarTheme } from '@guardian/stand/TopBar';
+
+<TopBar theme={customTheme}>
+	<TopBarToolName name="Author" favicon={{ letter: 'A' }} />
+	<TopBarLHS>
+		<TopBarItem>Hello</TopBarItem>
+	</TopBarLHS>
+	<TopBarRHS>
+		<TopBarNavigation text={'Link to somewhere'} href="#" />
+	</TopBarRHS>
+	<Avatar
+		src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg"
+		alt="Mahesh Makani"
+		size="sm"
+	/>
+</TopBar>;
+```
+
+## Composition
+
+The `TopBar` component is composed of several sub-components. Only children of type `TopBarToolName`, `Avatar`, `TopBarLHS` or `TopBarRHS` are valid.
+
+The children will be rendered in the following order from left to right:
+
+| `TopBarToolName` | `TopBarLHS` | `TopBarRHS` | `Avatar` |
+
+`TopBarToolName` will always be on the left and `Avatar` on the right.
+
+### Props
+
+| Name           | Type               | Required | Default | Description                                                                                                                            |
+| -------------- | ------------------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`     | `React.ReactNode`  | No       | N/A     | Content to render inside the component. Only children of type `TopBarToolName`, `Avatar`, `TopBarLHS` or `TopBarRHS` will be rendered. |
+| `theme`        | `TopBarTheme`      | No       | N/A     | Custom theme overrides.                                                                                                                |
+| `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles.                                                                                                                     |
+| `className`    | `string`           | No       | N/A     | Additional class name(s).                                                                                                              |
+
+### `TopBarRHS` / `TopBarRHS` props
+
+All other content must be composed within the left hand side or right hand side. The only valid children are [TopBarNavigation](/docs/stand-tools-design-system-components-topbar-topbarnavigation--docs) and [TopBarItem](/docs/stand-tools-design-system-components-topbar-topbaritem--docs).
+
+`TopBarNavigation` children should be used for navigation links around the tool. `TopBarItem` provides the necessary styling for any other child components in the top bar.
+
+| Name       | Type              | Required | Default | Description                                                                                                              |
+| ---------- | ----------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------ |
+| `children` | `React.ReactNode` | No       | N/A     | Content to render on one side of the top bar. Only children of type `TopBarItem` or `TopBarNavigation` will be rendered. |
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+## Customisation
+
+We recommend using the TopBar component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the TopBar component:
+
+```tsx
+import type { TopBarTheme } from '@guardian/stand/TopBar';
+import { TopBar, TopBarLHS, TopBarItem } from '@guardian/stand/TopBar';
+import { baseColors } from '@guardian/stand';
+
+const customTheme: Partial<TopBarTheme> = {
+	border: `5px solid ${baseColors['cool-purple']['700']}`,
+};
+
+const Component = () => (
+	<TopBar theme={customTheme}>
+		<TopBarLHS>
+			<TopBarToolName name="Custom" favicon={{ letter: 'C' }} />
+			<TopBarItem>Hello</TopBarItem>
+		</TopBarLHS>
+	</TopBar>
+);
+```
+
+<Story of={CustomTheme} />
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the TopBar component:
+
+```tsx
+import { TopBar } from '@guardian/stand/TopBar';
+import { baseColors } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	border: 4px solid ${baseColors.cyan['300']};
+\`;
+
+const Component = () =>
+	<TopBar cssOverrides={customStyles}>
+		<TopBarToolName name="CssOverrides" favicon={{ letter: 'C' }} />
+		<TopBarLHS>
+			<TopBarItem>Hello</TopBarItem>
+		</TopBarLHS>
+	</TopBar>
+;
+```
+
+<Story of={CssOverrides} />
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom TopBar component using the styles defined in the `TopBarTheme` type.
+
+**`css`**
+
+You can import the TopBar styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentTopBar` variable and the `ComponentTopBar` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
