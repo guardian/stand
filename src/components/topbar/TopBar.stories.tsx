@@ -74,7 +74,7 @@ export const CssOverrides = {
 				border: 4px solid ${baseColors.cyan['300']};
 			`}
 		>
-			<TopBarToolName name="CssOverides" favicon={{ letter: 'C' }} />
+			<TopBarToolName name="CssOverrides" favicon={{ letter: 'C' }} />
 			<TopBarLHS>
 				<TopBarItem>Top Bar</TopBarItem>
 			</TopBarLHS>
