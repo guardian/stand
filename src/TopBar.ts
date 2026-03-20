@@ -12,8 +12,13 @@
  * If you only need the built CSS (./component/TopBar.css),
  * you don't need to install these.
  */
+export { componentTopBar } from './styleD/build/typescript/component/TopBar';
+export type { ComponentTopBar } from './styleD/build/typescript/component/TopBar';
+
 export { TopBarToolName } from './components/topbar/toolName/TopBarToolName';
 export type { TopBarToolNameProps } from './components/topbar/toolName/types';
 export type { PartialTopBarToolNameTheme as TopBarToolNameTheme } from './components/topbar/toolName/styles';
-export { componentTopBar } from './styleD/build/typescript/component/TopBar';
-export type { ComponentTopBar } from './styleD/build/typescript/component/TopBar';
+
+export { TopBarNavigation } from './components/topbar/navigation/TopBarNavigation';
+export type { TopBarNavigationProps } from './components/topbar/navigation/types';
+export type { PartialTopBarNavigationTheme as TopBarNavigationTheme } from './components/topbar/navigation/styles';
