@@ -190,7 +190,7 @@
 					"$type": "string",
 					"$value": "none"
 				},
-				"link-button": {
+				"link": {
 					"width": {
 						"$type": "string",
 						"$value": "fit-content"
@@ -212,6 +212,30 @@
 					"text-decoration": {
 						"$type": "string",
 						"$value": "none"
+					}
+				},
+				"button": {
+					"background": {
+						"$type": "string",
+						"$value": "none"
+					},
+					"border": {
+						"$type": "string",
+						"$value": "none"
+					},
+					"padding": {
+						"$type": "string",
+						"$value": "0"
+					},
+					"cursor": {
+						"$type": "string",
+						"$value": "pointer"
+					},
+					":disabled": {
+						"cursor": {
+							"$type": "string",
+							"$value": "not-allowed"
+						}
 					}
 				}
 			},

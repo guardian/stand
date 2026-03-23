@@ -47,6 +47,11 @@
 	--component-avatar-shared-link-focus-visible-outline: 0.125rem solid #0072a9;
 	--component-avatar-shared-link-focus-visible-outline-offset: 0.125rem;
 	--component-avatar-shared-link-text-decoration: none;
+	--component-avatar-shared-button-background: none;
+	--component-avatar-shared-button-border: none;
+	--component-avatar-shared-button-padding: 0;
+	--component-avatar-shared-button-cursor: pointer;
+	--component-avatar-shared-button-disabled-cursor: not-allowed;
 	--component-avatar-sm-size: 2rem;
 	--component-avatar-sm-typography-font: normal 700 0.75rem/1 'Open Sans';
 	--component-avatar-sm-typography-letter-spacing: 0;

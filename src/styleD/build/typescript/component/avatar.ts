@@ -76,6 +76,15 @@ export const componentAvatar = {
 			},
 			'text-decoration': 'none',
 		},
+		button: {
+			background: 'none',
+			border: 'none',
+			padding: '0',
+			cursor: 'pointer',
+			':disabled': {
+				cursor: 'not-allowed',
+			},
+		},
 	},
 	sm: {
 		size: '2rem',
