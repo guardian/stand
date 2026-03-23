@@ -43,6 +43,10 @@
 	--component-avatar-shared-flex-shrink: 0;
 	--component-avatar-shared-border-radius: 50%;
 	--component-avatar-shared-user-select: none;
+	--component-avatar-shared-link-width: fit-content;
+	--component-avatar-shared-link-focus-visible-outline: 0.125rem solid #0072a9;
+	--component-avatar-shared-link-focus-visible-outline-offset: 0.125rem;
+	--component-avatar-shared-link-text-decoration: none;
 	--component-avatar-sm-size: 2rem;
 	--component-avatar-sm-typography-font: normal 700 0.75rem/1 'Open Sans';
 	--component-avatar-sm-typography-letter-spacing: 0;

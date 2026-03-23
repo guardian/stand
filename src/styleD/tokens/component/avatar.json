@@ -189,6 +189,30 @@
 				"user-select": {
 					"$type": "string",
 					"$value": "none"
+				},
+				"link-button": {
+					"width": {
+						"$type": "string",
+						"$value": "fit-content"
+					},
+					":focus-visible": {
+						"outline": {
+							"$type": "border",
+							"$value": {
+								"color": "{semantic.colors.border.interactive-focused}",
+								"width": "{semantic.sizing.border.md}",
+								"style": "solid"
+							}
+						},
+						"outline-offset": {
+							"$type": "dimension",
+							"$value": "{base.spacing.2-rem}"
+						}
+					},
+					"text-decoration": {
+						"$type": "string",
+						"$value": "none"
+					}
 				}
 			},
 			"sm": {

@@ -1,0 +1,240 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import AvatarLinkStories, {
+	Default,
+	Disabled,
+	InitialsSm,
+	InitialsMd,
+	ImageSm,
+	ImageMd,
+	SingleInitial,
+	ImageWithFallback,
+	DefaultColors,
+	CustomTheme,
+	CssOverrides,
+} from './AvatarLink.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={AvatarLinkStories} />
+
+# AvatarLink
+
+An anchor element styled like the Stand `Avatar` component, and based on the react-aria `Link` component. It displays only an icon and keeps link semantics (including `href`, `target`, and `rel`) while sharing the same color variants and sizes as `Avatar`. Refer to React Aria's [Link docs](https://react-aria.adobe.com/Link) for usage guidance.
+
+## When to use
+
+- Display user profiles in lists, comments, or headers
+- Show user identity in messaging interfaces
+- Represent users in collaborative features
+- Navigation to user profile
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { AvatarLink } from '@guardian/stand/Link';
+
+/* types, if required */
+import type { AvatarLinkProps, AvatarLinkTheme } from '@guardian/stand/avatarLink';
+
+/* Initials only */
+<AvatarLink initials="AB" size="md" href="/user" />
+
+/* Image with alt text */
+<AvatarLink
+	src="https://example.com/avatar.jpg"
+	alt="User Name"
+	size="md"
+	href="/user"
+/>
+
+/* Image with fallback initials and a specific color */
+<AvatarLink
+	src="https://example.com/avatar.jpg"
+	alt="User Name"
+	initials="AB"
+	color="blue"
+	size="md"
+	href="/user"
+/>
+```
+
+## Props
+
+The props are an intersection of the `Avatar` and `ReactAria Link` props.
+
+| Name           | Type                   | Required    | Default                         | Description                                                                                 |
+| -------------- | ---------------------- | ----------- | ------------------------------- | ------------------------------------------------------------------------------------------- |
+| `href`         | `string`               | Yes         | N/A                             | Destination URL for the link.                                                               |
+| `isDisabled`   | `boolean`              | No          | `false`                         | Disables interaction and applies disabled styling.                                          |
+| `size`         | `'sm'` \| `'md'`       | No          | `'md'`                          | Size of the avatar.                                                                         |
+| `color`        | Various                | No          | Deterministic based on initials | Color of the avatar.                                                                        |
+| `initials`     | `string`               | Conditional | N/A                             | Initials to display when no image is provided.                                              |
+| `src`          | `string`               | Conditional | N/A                             | URL of the avatar image.                                                                    |
+| `alt`          | `string`               | Conditional | N/A                             | Alt text for the image for accessibility.                                                   |
+| `theme`        | `AvatarTheme`          | No          | N/A                             | Custom theme overrides for the avatar.                                                      |
+| `cssOverrides` | `SerializedStyles`     | No          | N/A                             | Custom CSS styles for the avatar.                                                           |
+| `className`    | `string`               | No          | N/A                             | Additional class name(s) for the avatar.                                                    |
+| `...props`     | `ReactAria Link` props | No          | N/A                             | All other props from `react-aria-components` `Link` (e.g. `target`, `rel`, event handlers). |
+
+When using `src`, the `alt` prop is required for accessibility.
+When not using `src`, the `initials` prop is required.
+
+**`size`**
+
+The avatar link supports two sizes:
+
+- `sm` (small): 32px
+- `md` (medium): 40px
+
+**`color`**
+
+When no `color` is set, the avatar picks a deterministic color based on the initials (with the exception of `outlined`). You can also specify a color explicitly.
+
+Available colors: `outlined`, `blue`, `green`, `red`, `cyan`, `teal`, `cool-purple`, `warm-purple`, `magenta`, `orange`, `yellow`
+
+## Stories
+
+### Sizes
+
+#### `md` (default)
+
+<Story of={InitialsMd} />
+
+#### `sm`
+
+<Story of={InitialsSm} />
+
+### Disabled
+
+<Story of={Disabled} />
+
+### Initials
+
+#### Two initials
+
+<Story of={InitialsMd} />
+
+#### Single initial
+
+<Story of={SingleInitial} />
+
+### Images
+
+#### Image - `md`
+
+<Story of={ImageMd} />
+
+#### Image - `sm`
+
+<Story of={ImageSm} />
+
+#### Image with fallback
+
+When an image fails to load, the avatar falls back to displaying initials:
+
+<Story of={ImageWithFallback} />
+
+### Colors
+
+<Story of={DefaultColors} />
+
+## Customisation
+
+We recommend using the AvatarLink component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the AvatarLink component:
+
+<Story of={CustomTheme} />
+
+```tsx
+import type { AvatarLinkTheme } from '@guardian/stand/avatarLink';
+import { AvatarLink } from '@guardian/stand/avatarLink';
+import { baseColors, baseSizing } from '@guardian/stand';
+
+const customTheme: AvatarTheme = {
+	shared: {
+		color: {
+			blue: {
+				background: baseColors.blue[100],
+				text: baseColors.neutral[900],
+			},
+		},
+	},
+	md: {
+		size: baseSizing['size-48-rem'],
+	},
+};
+
+const Component = () => (
+	<Avatar color="blue" initials="CT" size="md" theme={customTheme} />
+);
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the Avatar component, if the theme prop is not sufficient:
+
+<Story of={CssOverrides} />
+
+```tsx
+import { Avatar } from '@guardian/stand/avatarLink';
+import { baseColors, baseSizing, baseSpacing } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	border: ${baseSizing['size-2-rem']} solid ${baseColors.red[500]};
+	margin: ${baseSpacing['8-rem']};
+`;
+
+const Component = () => (
+	<AvatarLink initials="CO" size="md" color="red" cssOverrides={customStyles} />
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom AvatarLink component using the styles defined in the `AvatarLinkTheme` type.
+
+You will however be responsible for any additional functionality on top of the styles, for example image loading, image fallback, accessibility etc.
+
+**`css`**
+
+You can import the AvatarLink styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+
+<SandboxCss
+	componentName={componentName}
+  	componentHtml={componentHtml}
+    componentCss={componentCss}
+
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentAvatar` variable and the `ComponentAvatar` type to define your custom styles in TypeScript/JavaScript:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />

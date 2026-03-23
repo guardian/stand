@@ -68,6 +68,14 @@ export const componentAvatar = {
 		'flex-shrink': '0',
 		'border-radius': '50%',
 		'user-select': 'none',
+		link: {
+			width: 'fit-content',
+			':focus-visible': {
+				outline: '0.125rem solid #0072a9',
+				'outline-offset': '0.125rem',
+			},
+			'text-decoration': 'none',
+		},
 	},
 	sm: {
 		size: '2rem',
