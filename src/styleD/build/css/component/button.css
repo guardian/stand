@@ -36,7 +36,7 @@
 	--component-button-emphasised-primary-xs-padding-with-icon-icon-left-left: 0.25rem;
 	--component-button-emphasised-primary-xs-typography-font: normal 700 0.75rem/1
 		'Open Sans';
-	--component-button-emphasised-primary-xs-typography-letter-spacing: 0rem;
+	--component-button-emphasised-primary-xs-typography-letter-spacing: 0;
 	--component-button-emphasised-primary-xs-typography-font-width: 95;
 	--component-button-emphasised-primary-xs-icon-size: 1.125rem;
 	--component-button-emphasised-primary-xs-icon-gap: 0.25rem;
@@ -102,7 +102,7 @@
 	--component-button-emphasised-secondary-xs-padding-with-icon-icon-left-left: 0.25rem;
 	--component-button-emphasised-secondary-xs-typography-font: normal 700
 		0.75rem/1 'Open Sans';
-	--component-button-emphasised-secondary-xs-typography-letter-spacing: 0rem;
+	--component-button-emphasised-secondary-xs-typography-letter-spacing: 0;
 	--component-button-emphasised-secondary-xs-typography-font-width: 95;
 	--component-button-emphasised-secondary-xs-icon-size: 1.125rem;
 	--component-button-emphasised-secondary-xs-icon-gap: 0.25rem;
@@ -168,7 +168,7 @@
 	--component-button-neutral-primary-xs-padding-with-icon-icon-left-left: 0.25rem;
 	--component-button-neutral-primary-xs-typography-font: normal 700 0.75rem/1
 		'Open Sans';
-	--component-button-neutral-primary-xs-typography-letter-spacing: 0rem;
+	--component-button-neutral-primary-xs-typography-letter-spacing: 0;
 	--component-button-neutral-primary-xs-typography-font-width: 95;
 	--component-button-neutral-primary-xs-icon-size: 1.125rem;
 	--component-button-neutral-primary-xs-icon-gap: 0.25rem;
@@ -234,7 +234,7 @@
 	--component-button-neutral-secondary-xs-padding-with-icon-icon-left-left: 0.25rem;
 	--component-button-neutral-secondary-xs-typography-font: normal 700 0.75rem/1
 		'Open Sans';
-	--component-button-neutral-secondary-xs-typography-letter-spacing: 0rem;
+	--component-button-neutral-secondary-xs-typography-letter-spacing: 0;
 	--component-button-neutral-secondary-xs-typography-font-width: 95;
 	--component-button-neutral-secondary-xs-icon-size: 1.125rem;
 	--component-button-neutral-secondary-xs-icon-gap: 0.25rem;
