@@ -181,3 +181,4 @@ Matrix generation in CI uses the same JSON file in the workflow `../.github/work
 - [Style Dictionary](https://guardian.github.io/stand/?path=/docs/style-dictionary--docs)
 - [Architecture Decision Records](https://guardian.github.io/stand/?path=/docs/architecture-decision-records--docs)
 - [Changelog](https://guardian.github.io/stand/?path=/docs/changelog--docs)
+- [Vision](https://guardian.github.io/stand/?path=/docs/vision--docs)
