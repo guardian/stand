@@ -45,7 +45,7 @@
 	--component-avatar-shared-user-select: none;
 	--component-avatar-sm-size: 2rem;
 	--component-avatar-sm-typography-font: normal 700 0.75rem/1 'Open Sans';
-	--component-avatar-sm-typography-letter-spacing: 0rem;
+	--component-avatar-sm-typography-letter-spacing: 0;
 	--component-avatar-sm-typography-font-width: 95;
 	--component-avatar-md-size: 2.5rem;
 	--component-avatar-md-typography-font: normal 700 0.875rem/1 'Open Sans';
