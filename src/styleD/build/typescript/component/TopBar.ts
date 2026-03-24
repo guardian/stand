@@ -3,6 +3,7 @@
  */
 
 export const componentTopBar = {
+	'background-color': '#f6f6f6',
 	display: 'flex',
 	height: '4rem',
 	'justify-content': 'space-between',

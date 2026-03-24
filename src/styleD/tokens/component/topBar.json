@@ -1,6 +1,10 @@
 {
 	"component": {
 		"TopBar": {
+			"background-color": {
+				"$type": "color",
+				"$value": "{semantic.colors.bg.raised-1}"
+			},
 			"display": {
 				"$type": "string",
 				"$value": "flex"

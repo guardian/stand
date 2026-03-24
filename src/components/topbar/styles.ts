@@ -10,6 +10,7 @@ export const defaultTopBarTheme: TopBarTheme = componentTopBar;
 
 export const topBarStyles = (theme: TopBarTheme): SerializedStyles => {
 	return css`
+		background-color: ${theme['background-color']};
 		height: ${theme.height};
 		border: ${theme.border};
 		display: ${theme.display};

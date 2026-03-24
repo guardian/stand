@@ -22,7 +22,7 @@ export const TopBarToolName = ({
 }: TopBarToolNameProps) => {
 	const mergedTheme = mergeDeep(defaultToolNameTheme, theme);
 	return (
-		<TopBarItem alignment="left">
+		<TopBarItem alignment="left" size="sm">
 			<div css={[toolNameStyles(mergedTheme), cssOverrides]}>
 				<Favicon {...favicon} />
 				<div css={[toolNameTypography(mergedTheme)]}>{name}</div>

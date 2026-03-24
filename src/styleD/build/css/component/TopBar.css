@@ -3,6 +3,7 @@
  */
 
 :root {
+	--component-top-bar-background-color: #f6f6f6;
 	--component-top-bar-display: flex;
 	--component-top-bar-height: 4rem;
 	--component-top-bar-justify-content: space-between;
