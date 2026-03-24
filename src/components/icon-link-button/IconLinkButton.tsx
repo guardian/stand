@@ -9,7 +9,7 @@ import { defaultIconLinkButtonTheme, iconLinkButtonStyles } from './styles';
 import type { IconLinkButtonProps } from './types';
 
 export function IconLinkButton({
-	variant = 'emphasised-primary',
+	variant = 'primary',
 	size = 'md',
 	symbol,
 	ariaLabel,

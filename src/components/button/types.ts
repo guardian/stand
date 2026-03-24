@@ -10,7 +10,7 @@ export interface ButtonProps
 	/**
 	 * Size variant of the button
 	 */
-	size?: keyof Omit<ButtonTheme['emphasised-primary'], 'shared'>;
+	size?: keyof Omit<ButtonTheme['primary'], 'shared'>;
 	/**
 	 * Variant of the button
 	 */

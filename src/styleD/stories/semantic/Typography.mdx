@@ -136,7 +136,7 @@ import '@guardian/stand/semantic/typography.css'; // CSS usage
 /* JS/TS usage */
 const stringStyleJS = css`
 	// other styles e.g.
-	color: ${semanticColors.text.default};
+	color: ${semanticcolors.text.strong};
 
 	/* (recommended) emotion string style usage helper function*/
 	${convertTypographyToEmotionStringStyle(
@@ -151,7 +151,7 @@ const stringStyleJS = css`
 `;
 const objectStyleJS = {
 	// other styles e.g.
-	color: semanticColors.text.default,
+	color: semanticcolors.text.strong,
 
 	// (recommended) emotion object style usage helper function
 	...convertTypographyToEmotionObjectStyle(

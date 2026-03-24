@@ -8,7 +8,7 @@ import { defaultLinkButtonTheme, linkButtonStyles } from './styles';
 import type { LinkButtonProps } from './types';
 
 export function LinkButton({
-	variant = 'emphasised-primary',
+	variant = 'primary',
 	size = 'md',
 	theme = {},
 	cssOverrides,

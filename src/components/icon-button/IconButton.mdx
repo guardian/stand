@@ -57,7 +57,7 @@ import type {
 const Example = () => (
 	<>
 		<IconButton
-			variant="emphasised-primary"
+			variant="primary"
 			size="md"
 			ariaLabel="Add item"
 			onPress={() => {
@@ -67,12 +67,7 @@ const Example = () => (
 			add
 		</IconButton>
 
-		<IconButton
-			variant="neutral-secondary"
-			size="sm"
-			ariaLabel="Delete item"
-			isDisabled
-		>
+		<IconButton variant="tertiary" size="sm" ariaLabel="Delete item" isDisabled>
 			delete
 		</IconButton>
 	</>
@@ -81,23 +76,23 @@ const Example = () => (
 
 ## Props
 
-| Name           | Type                                                                                               | Required    | Default                | Description                                                                                                                                                                        |
-| -------------- | -------------------------------------------------------------------------------------------------- | ----------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `symbol`       | `MaterialSymbol`                                                                                   | Conditional | N/A                    | Name of the Material Symbol to display (e.g., "add", "delete"). Uses the `MaterialSymbol` type for type safety. Alternative to providing the icon as a child.                      |
-| `children`     | `ReactNode` \| `MaterialSymbol` \| `RenderProps`                                                   | Conditional | N/A                    | Icon content - either a Material Symbol name (typed as `MaterialSymbol`), an SVG component, or left empty if using `symbol`. Render props receive `{ isPending }` from React Aria. |
-| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`                                                               | No          | `'md'`                 | Controls the button dimensions. Icon size adjusts automatically (sm for xs buttons, otherwise matches button size).                                                                |
-| `variant`      | `'emphasised-primary'` \| `'emphasised-secondary'` \| `'neutral-primary'` \| `'neutral-secondary'` | No          | `'emphasised-primary'` | Chooses the colour scheme and interaction states.                                                                                                                                  |
-| `isDisabled`   | `boolean`                                                                                          | No          | `false`                | Disables interaction and applies disabled styling.                                                                                                                                 |
-| `theme`        | `IconButtonTheme` (partial)                                                                        | No          | N/A                    | Override Stand tokens for this instance; merged over the default theme.                                                                                                            |
-| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                                                         | No          | N/A                    | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                                         |
-| `className`    | `string`                                                                                           | No          | N/A                    | Optional class name forwarded to the root React Aria button.                                                                                                                       |
-| `ariaLabel`    | `string`                                                                                           | Yes         | N/A                    | Accessible label for screen readers. Required for icon-only buttons to ensure accessibility.                                                                                       |
-| `...props`     | `ReactAria Button` props                                                                           | No          | N/A                    | All other props from `react-aria-components` `Button` (e.g. `type`, `autoFocus`, event handlers).                                                                                  |
+| Name           | Type                                             | Required    | Default     | Description                                                                                                                                                                        |
+| -------------- | ------------------------------------------------ | ----------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `symbol`       | `MaterialSymbol`                                 | Conditional | N/A         | Name of the Material Symbol to display (e.g., "add", "delete"). Uses the `MaterialSymbol` type for type safety. Alternative to providing the icon as a child.                      |
+| `children`     | `ReactNode` \| `MaterialSymbol` \| `RenderProps` | Conditional | N/A         | Icon content - either a Material Symbol name (typed as `MaterialSymbol`), an SVG component, or left empty if using `symbol`. Render props receive `{ isPending }` from React Aria. |
+| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`             | No          | `'md'`      | Controls the button dimensions. Icon size adjusts automatically (sm for xs buttons, otherwise matches button size).                                                                |
+| `variant`      | `'primary'` \| `'secondary'` \| `'tertiary'`     | No          | `'primary'` | Chooses the colour scheme and interaction states.                                                                                                                                  |
+| `isDisabled`   | `boolean`                                        | No          | `false`     | Disables interaction and applies disabled styling.                                                                                                                                 |
+| `theme`        | `IconButtonTheme` (partial)                      | No          | N/A         | Override Stand tokens for this instance; merged over the default theme.                                                                                                            |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`       | No          | N/A         | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                                         |
+| `className`    | `string`                                         | No          | N/A         | Optional class name forwarded to the root React Aria button.                                                                                                                       |
+| `ariaLabel`    | `string`                                         | Yes         | N/A         | Accessible label for screen readers. Required for icon-only buttons to ensure accessibility.                                                                                       |
+| `...props`     | `ReactAria Button` props                         | No          | N/A         | All other props from `react-aria-components` `Button` (e.g. `type`, `autoFocus`, event handlers).                                                                                  |
 
 **`size` and `variant`**
 
 - Sizes: `xs`, `sm`, `md`, `lg`
-- Variants: `emphasised-primary`, `emphasised-secondary`, `neutral-primary`, `neutral-secondary`
+- Variants: `primary`, `secondary`, `tertiary`
 
 **`symbol`**
 
@@ -135,7 +130,7 @@ import { IconButton } from '@guardian/stand/icon-button';
 import { baseColors } from '@guardian/stand';
 
 const customTheme: Partial<IconButtonTheme> = {
-	'emphasised-primary': {
+	primary: {
 		shared: {
 			backgroundColor: baseColors['cool-purple'][200],
 			color: baseColors['cool-purple'][900],
@@ -154,7 +149,7 @@ const customTheme: Partial<IconButtonTheme> = {
 
 const Component = () => (
 	<IconButton
-		variant="emphasised-primary"
+		variant="primary"
 		size="md"
 		theme={customTheme}
 		ariaLabel="Add item"
@@ -180,7 +175,7 @@ const customStyles = css`
 
 const Component = () => (
 	<IconButton
-		variant="neutral-primary"
+		variant="primary"
 		size="sm"
 		cssOverrides={customStyles}
 		ariaLabel="Add item"
@@ -206,7 +201,7 @@ Icon-only buttons require proper labeling for screen readers:
 <button
 	aria-label="Add item"
 	title="Add item"
-	class="stand-icon-button stand-icon-button-emphasised-primary"
+	class="stand-icon-button stand-icon-button-primary"
 >
 	<span class="material-symbols" aria-hidden="true">add</span>
 </button>

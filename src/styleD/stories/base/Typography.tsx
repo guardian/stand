@@ -7,7 +7,7 @@ const sectionCss = css`
 
 	h1 {
 		margin-bottom: 16px;
-		border-bottom: 2px solid ${semanticColors.border.default};
+		border-bottom: 2px solid ${semanticColors.border.strong};
 		padding-bottom: 8px;
 	}
 `;
@@ -20,18 +20,18 @@ const tableCss = css`
 		text-align: left;
 		font-weight: 700;
 		padding: 8px;
-		border-bottom: 2px solid ${semanticColors.border.default};
-		background: ${semanticColors.surface['light-1']};
+		border-bottom: 2px solid ${semanticColors.border.strong};
+		background: ${semanticColors.bg['raised-level-1']};
 	}
 
 	td {
 		padding: 8px;
-		border-bottom: 1px solid ${semanticColors.border.secondary};
+		border-bottom: 1px solid ${semanticColors.border.weak};
 		vertical-align: middle;
 	}
 
 	tr:hover {
-		background: ${semanticColors.surface['light-1']};
+		background: ${semanticColors.bg['raised-level-1']};
 	}
 `;
 
@@ -41,7 +41,7 @@ const tokenNameCss = css`
 `;
 
 const tokenValueCss = css`
-	color: ${semanticColors.text.subdued};
+	color: ${semanticColors.text.weak};
 	font-family: monospace;
 	font-size: 0.9em;
 `;

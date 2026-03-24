@@ -58,7 +58,7 @@ const Example = () => (
 	<>
 		<IconLinkButton
 			href="/add"
-			variant="emphasised-primary"
+			variant="primary"
 			size="md"
 			ariaLabel="Add new item"
 			target="_blank"
@@ -69,7 +69,7 @@ const Example = () => (
 
 		<IconLinkButton
 			href="/settings"
-			variant="neutral-secondary"
+			variant="tertiary"
 			size="sm"
 			ariaLabel="Settings"
 			isDisabled
@@ -82,24 +82,24 @@ const Example = () => (
 
 ## Props
 
-| Name           | Type                                                                                               | Required    | Default                | Description                                                                                                                                                     |
-| -------------- | -------------------------------------------------------------------------------------------------- | ----------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `href`         | `string`                                                                                           | Yes         | N/A                    | Destination URL for the link.                                                                                                                                   |
-| `symbol`       | `MaterialSymbol`                                                                                   | Conditional | N/A                    | Name of the Material Symbol to display (e.g., "settings", "add"). Uses the `MaterialSymbol` type for type safety. Alternative to providing the icon as a child. |
-| `children`     | `ReactNode` \| `MaterialSymbol`                                                                    | Conditional | N/A                    | Icon content - either a Material Symbol name (typed as `MaterialSymbol`), an SVG component, or left empty if using `symbol`.                                    |
-| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`                                                               | No          | `'md'`                 | Controls the link-button dimensions. Icon size adjusts automatically (sm for xs buttons, otherwise matches button size).                                        |
-| `variant`      | `'emphasised-primary'` \| `'emphasised-secondary'` \| `'neutral-primary'` \| `'neutral-secondary'` | No          | `'emphasised-primary'` | Chooses the colour scheme and interaction states.                                                                                                               |
-| `isDisabled`   | `boolean`                                                                                          | No          | `false`                | Disables interaction and applies disabled styling.                                                                                                              |
-| `theme`        | `IconLinkButtonTheme` (partial)                                                                    | No          | N/A                    | Override Stand tokens for this instance; merged over the default theme.                                                                                         |
-| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                                                         | No          | N/A                    | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                      |
-| `className`    | `string`                                                                                           | No          | N/A                    | Optional class name forwarded to the root React Aria link.                                                                                                      |
-| `ariaLabel`    | `string`                                                                                           | Yes         | N/A                    | Accessible label for screen readers. Required for icon-only links to ensure accessibility.                                                                      |
-| `...props`     | `ReactAria Link` props                                                                             | No          | N/A                    | All other props from `react-aria-components` `Link` (e.g. `target`, `rel`, event handlers).                                                                     |
+| Name           | Type                                         | Required    | Default     | Description                                                                                                                                                     |
+| -------------- | -------------------------------------------- | ----------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `href`         | `string`                                     | Yes         | N/A         | Destination URL for the link.                                                                                                                                   |
+| `symbol`       | `MaterialSymbol`                             | Conditional | N/A         | Name of the Material Symbol to display (e.g., "settings", "add"). Uses the `MaterialSymbol` type for type safety. Alternative to providing the icon as a child. |
+| `children`     | `ReactNode` \| `MaterialSymbol`              | Conditional | N/A         | Icon content - either a Material Symbol name (typed as `MaterialSymbol`), an SVG component, or left empty if using `symbol`.                                    |
+| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`         | No          | `'md'`      | Controls the link-button dimensions. Icon size adjusts automatically (sm for xs buttons, otherwise matches button size).                                        |
+| `variant`      | `'primary'` \| `'secondary'` \| `'tertiary'` | No          | `'primary'` | Chooses the colour scheme and interaction states.                                                                                                               |
+| `isDisabled`   | `boolean`                                    | No          | `false`     | Disables interaction and applies disabled styling.                                                                                                              |
+| `theme`        | `IconLinkButtonTheme` (partial)              | No          | N/A         | Override Stand tokens for this instance; merged over the default theme.                                                                                         |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`   | No          | N/A         | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                      |
+| `className`    | `string`                                     | No          | N/A         | Optional class name forwarded to the root React Aria link.                                                                                                      |
+| `ariaLabel`    | `string`                                     | Yes         | N/A         | Accessible label for screen readers. Required for icon-only links to ensure accessibility.                                                                      |
+| `...props`     | `ReactAria Link` props                       | No          | N/A         | All other props from `react-aria-components` `Link` (e.g. `target`, `rel`, event handlers).                                                                     |
 
 **`size` and `variant`**
 
 - Sizes: `xs`, `sm`, `md`, `lg`
-- Variants: `emphasised-primary`, `emphasised-secondary`, `neutral-primary`, `neutral-secondary`
+- Variants: `primary`, `secondary`, `tertiary`
 
 **`symbol`**
 
@@ -136,7 +136,7 @@ import { IconLinkButton } from '@guardian/stand/icon-link-button';
 import { baseColors } from '@guardian/stand';
 
 const customTheme: Partial<IconLinkButtonTheme> = {
-	'emphasised-primary': {
+	primary: {
 		shared: {
 			backgroundColor: baseColors['cool-purple'][200],
 			color: baseColors['cool-purple'][900],
@@ -156,7 +156,7 @@ const customTheme: Partial<IconLinkButtonTheme> = {
 const Component = () => (
 	<IconLinkButton
 		href="/add"
-		variant="emphasised-primary"
+		variant="primary"
 		size="md"
 		theme={customTheme}
 		ariaLabel="Add item"
@@ -183,7 +183,7 @@ const customStyles = css`
 const Component = () => (
 	<IconLinkButton
 		href="/settings"
-		variant="neutral-primary"
+		variant="primary"
 		size="sm"
 		cssOverrides={customStyles}
 		ariaLabel="Settings"

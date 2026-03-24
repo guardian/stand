@@ -18,12 +18,7 @@ type Story = StoryObj<typeof IconLinkButton>;
 
 export default meta;
 
-const variants = [
-	'emphasised-primary',
-	'emphasised-secondary',
-	'neutral-primary',
-	'neutral-secondary',
-] as const;
+const variants = ['primary', 'secondary', 'tertiary'] as const;
 const sizes = ['xs', 'sm', 'md', 'lg'] as const;
 
 export const IconLinkButtonTable = {
@@ -91,11 +86,11 @@ export const CustomTheme = {
 	name: 'custom theme',
 	args: {
 		children: 'add',
-		variant: 'emphasised-primary',
+		variant: 'primary',
 		size: 'md',
 		ariaLabel: 'Add',
 		theme: {
-			'emphasised-primary': {
+			primary: {
 				shared: {
 					backgroundColor: baseColors['cool-purple'][200],
 					color: baseColors['cool-purple'][900],
@@ -118,7 +113,7 @@ export const CssOverrides = {
 	name: 'cssOverrides',
 	args: {
 		children: 'add',
-		variant: 'emphasised-primary',
+		variant: 'primary',
 		size: 'md',
 		ariaLabel: 'Add',
 		cssOverrides: css`

@@ -12,7 +12,7 @@ const tableCss = css`
 		text-align: left;
 		font-weight: 700;
 		padding: 12px 8px;
-		border-bottom: 2px solid ${semanticColors.border.default};
+		border-bottom: 2px solid ${semanticColors.border.strong};
 		position: sticky;
 		top: 0;
 		background: ${semanticColors.bg.base};
@@ -20,12 +20,12 @@ const tableCss = css`
 
 	td {
 		padding: 12px 8px;
-		border-bottom: 1px solid ${semanticColors.border.secondary};
+		border-bottom: 1px solid ${semanticColors.border.weak};
 		vertical-align: top;
 	}
 
 	tr:hover {
-		background: ${semanticColors.surface['light-1']};
+		background: ${semanticColors.bg['raised-level-1']};
 	}
 `;
 

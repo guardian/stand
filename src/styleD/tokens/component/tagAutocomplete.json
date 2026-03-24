@@ -4,7 +4,7 @@
 			"input": {
 				"color": {
 					"$type": "color",
-					"$value": "{semantic.colors.text.default}"
+					"$value": "{semantic.colors.text.strong}"
 				},
 				"backgroundColor": {
 					"$type": "color",
