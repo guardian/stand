@@ -18,13 +18,17 @@ export const topBarStyles = (theme: TopBarTheme): SerializedStyles => {
 	`;
 };
 
-export const topBarLHSStyles = (theme: TopBarTheme): SerializedStyles => {
+export const topBarContainerLeftStyles = (
+	theme: TopBarTheme,
+): SerializedStyles => {
 	return css`
 		display: ${theme.display};
 	`;
 };
 
-export const topBarRHSStyles = (theme: TopBarTheme): SerializedStyles => {
+export const topBarContainerRightStyles = (
+	theme: TopBarTheme,
+): SerializedStyles => {
 	return css`
 		display: ${theme.display};
 	`;

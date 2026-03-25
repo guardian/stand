@@ -4,7 +4,7 @@ import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { Avatar } from '../avatar/Avatar';
 import { Button } from '../button/Button';
 import { MenuItem, MenuSection } from '../menu/Menu';
-import { TopBar, TopBarLHS, TopBarRHS } from './TopBar';
+import { TopBar, TopBarContainerLeft, TopBarContainerRight } from './TopBar';
 import { TopBarItem } from './topBarItem/TopBarItem';
 import { TopBarNavigation } from './topBarNavigation/TopBarNavigation';
 import { TopBarToolName } from './topBarToolName/TopBarToolName';
@@ -25,14 +25,14 @@ export const Default = {
 	render: () => (
 		<TopBar>
 			<TopBarToolName name="Default" favicon={{ letter: 'D' }} />
-			<TopBarLHS>
+			<TopBarContainerLeft>
 				<TopBarItem>Some text</TopBarItem>
 				<TopBarItem>
 					<Button>Click me</Button>
 				</TopBarItem>
 				<TopBarNavigation icon="zoom_out_map" text={'Or click me'} href="#" />
-			</TopBarLHS>
-			<TopBarRHS>
+			</TopBarContainerLeft>
+			<TopBarContainerRight>
 				<TopBarNavigation
 					text="Menu"
 					menuChildren={
@@ -42,7 +42,7 @@ export const Default = {
 					}
 				/>
 				<TopBarItem>On the right</TopBarItem>
-			</TopBarRHS>
+			</TopBarContainerRight>
 			<Avatar
 				src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg"
 				alt="Mahesh Makani"
@@ -60,9 +60,9 @@ export const CustomTheme = {
 			}}
 		>
 			<TopBarToolName name="Custom" favicon={{ letter: 'C' }} />
-			<TopBarLHS>
+			<TopBarContainerLeft>
 				<TopBarItem>Top Bar</TopBarItem>
-			</TopBarLHS>
+			</TopBarContainerLeft>
 		</TopBar>
 	),
 } satisfies Story;
@@ -75,9 +75,9 @@ export const CssOverrides = {
 			`}
 		>
 			<TopBarToolName name="CssOverrides" favicon={{ letter: 'C' }} />
-			<TopBarLHS>
+			<TopBarContainerLeft>
 				<TopBarItem>Top Bar</TopBarItem>
-			</TopBarLHS>
+			</TopBarContainerLeft>
 		</TopBar>
 	),
 } satisfies Story;

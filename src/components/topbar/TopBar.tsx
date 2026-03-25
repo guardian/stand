@@ -3,8 +3,8 @@ import { mergeDeep } from '../../util/mergeDeep';
 import { Avatar } from '../avatar/Avatar';
 import {
 	defaultTopBarTheme,
-	topBarLHSStyles,
-	topBarRHSStyles,
+	topBarContainerLeftStyles,
+	topBarContainerRightStyles,
 	topBarStyles,
 } from './styles';
 import { TopBarItem } from './topBarItem/TopBarItem';
@@ -50,11 +50,19 @@ function TopBarSide({
 	return <>{items}</>;
 }
 
-export function TopBarRHS({ children }: { children: TopBarProps['children'] }) {
+export function TopBarContainerRight({
+	children,
+}: {
+	children: TopBarProps['children'];
+}) {
 	return <TopBarSide alignment="right">{children}</TopBarSide>;
 }
 
-export function TopBarLHS({ children }: { children: TopBarProps['children'] }) {
+export function TopBarContainerLeft({
+	children,
+}: {
+	children: TopBarProps['children'];
+}) {
 	return <TopBarSide alignment="left">{children}</TopBarSide>;
 }
 
@@ -94,10 +102,10 @@ export function TopBar({
 		/**
 		 * Other items must be defined as part of the LHS or RHS
 		 */
-		if (child.type === TopBarLHS) {
+		if (child.type === TopBarContainerLeft) {
 			leftSide ??= child;
 		}
-		if (child.type === TopBarRHS) {
+		if (child.type === TopBarContainerRight) {
 			rightSide ??= child;
 		}
 	});
@@ -109,12 +117,12 @@ export function TopBar({
 			{...props}
 		>
 			{/* LHS */}
-			<div css={topBarLHSStyles(mergedTheme)}>
+			<div css={topBarContainerLeftStyles(mergedTheme)}>
 				{toolName}
 				{leftSide}
 			</div>
 			{/* RHS */}
-			<div css={topBarRHSStyles(mergedTheme)}>
+			<div css={topBarContainerRightStyles(mergedTheme)}>
 				{rightSide}
 				{avatar}
 			</div>
