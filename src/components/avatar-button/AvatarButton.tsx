@@ -9,7 +9,7 @@ export function AvatarButton(props: AvatarButtonProps) {
 
 	return (
 		<ReactAriaButton css={avatarButtonStyles(mergedTheme)} {...props}>
-			<Avatar {...props} />
+			<Avatar {...props} data-avatar-context="interactive" />
 		</ReactAriaButton>
 	);
 }

@@ -35,5 +35,29 @@ export const avatarStyles = (
 		user-select: ${theme.shared['user-select']};
 		color: ${theme.shared.color[color].text};
 		${convertTypographyToEmotionStringStyle(theme[size].typography)}
+
+		&[data-avatar-context='interactive']:hover {
+			background-color: ${theme.shared.color[color][':hover'].background};
+
+			:has(> img) {
+				background-color: black;
+			}
+
+			img {
+				mask-image: linear-gradient(rgb(0 0 0 / 70%), rgb(0 0 0 / 70%));
+			}
+		}
+
+		&[data-avatar-context='interactive']:active {
+			background-color: ${theme.shared.color[color][':active'].background};
+
+			:has(> img) {
+				background-color: black;
+			}
+
+			img {
+				mask-image: linear-gradient(rgb(0 0 0 / 60%), rgb(0 0 0 / 60%));
+			}
+		}
 	`;
 };

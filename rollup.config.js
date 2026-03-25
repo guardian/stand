@@ -30,6 +30,8 @@ const input = {
 	utils: 'src/utils.ts',
 	// design system components
 	avatar: 'src/avatar.ts',
+	avatarLink: 'src/avatar-link.ts',
+	avatarButton: 'src/avatar-button.ts',
 	button: 'src/button.ts',
 	'link-button': 'src/link-button.ts',
 	'icon-button': 'src/icon-button.ts',

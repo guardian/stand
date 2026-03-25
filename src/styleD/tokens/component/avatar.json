@@ -15,6 +15,18 @@
 						"border": {
 							"$type": "border",
 							"$value": "unset"
+						},
+						":hover": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.green.700}"
+							}
+						},
+						":active": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.green.600}"
+							}
 						}
 					},
 					"blue": {
@@ -29,6 +41,18 @@
 						"border": {
 							"$type": "border",
 							"$value": "unset"
+						},
+						":hover": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.blue.700}"
+							}
+						},
+						":active": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.blue.600}"
+							}
 						}
 					},
 					"red": {
@@ -43,6 +67,18 @@
 						"border": {
 							"$type": "border",
 							"$value": "unset"
+						},
+						":hover": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.red.700}"
+							}
+						},
+						":active": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.red.600}"
+							}
 						}
 					},
 					"cyan": {
@@ -57,6 +93,18 @@
 						"border": {
 							"$type": "border",
 							"$value": "unset"
+						},
+						":hover": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.cyan.700}"
+							}
+						},
+						":active": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.cyan.600}"
+							}
 						}
 					},
 					"teal": {
@@ -71,6 +119,18 @@
 						"border": {
 							"$type": "border",
 							"$value": "unset"
+						},
+						":hover": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.teal.700}"
+							}
+						},
+						":active": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.teal.600}"
+							}
 						}
 					},
 					"cool-purple": {
@@ -85,6 +145,18 @@
 						"border": {
 							"$type": "border",
 							"$value": "unset"
+						},
+						":hover": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.cool-purple.700}"
+							}
+						},
+						":active": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.cool-purple.600}"
+							}
 						}
 					},
 					"warm-purple": {
@@ -99,6 +171,18 @@
 						"border": {
 							"$type": "border",
 							"$value": "unset"
+						},
+						":hover": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.warm-purple.700}"
+							}
+						},
+						":active": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.warm-purple.600}"
+							}
 						}
 					},
 					"magenta": {
@@ -113,6 +197,18 @@
 						"border": {
 							"$type": "border",
 							"$value": "unset"
+						},
+						":hover": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.magenta.700}"
+							}
+						},
+						":active": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.magenta.600}"
+							}
 						}
 					},
 					"orange": {
@@ -127,6 +223,18 @@
 						"border": {
 							"$type": "border",
 							"$value": "unset"
+						},
+						":hover": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.orange.700}"
+							}
+						},
+						":active": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.orange.600}"
+							}
 						}
 					},
 					"yellow": {
@@ -141,6 +249,18 @@
 						"border": {
 							"$type": "border",
 							"$value": "unset"
+						},
+						":hover": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.yellow.700}"
+							}
+						},
+						":active": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.yellow.600}"
+							}
 						}
 					},
 					"outlined": {
@@ -158,6 +278,18 @@
 								"color": "{semantic.colors.border.strong}",
 								"width": "{semantic.sizing.border.default}",
 								"style": "solid"
+							}
+						},
+						":hover": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.neutral.800}"
+							}
+						},
+						":active": {
+							"background": {
+								"$type": "color",
+								"$value": "{base.colors.neutral.700}"
 							}
 						}
 					}

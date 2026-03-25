@@ -9,7 +9,7 @@ export function AvatarLink(props: AvatarLinkProps) {
 
 	return (
 		<ReactAriaLink css={avatarLinkStyles(mergedTheme)} {...props}>
-			<Avatar {...props} />
+			<Avatar {...props} data-avatar-context="interactive" />
 		</ReactAriaLink>
 	);
 }
