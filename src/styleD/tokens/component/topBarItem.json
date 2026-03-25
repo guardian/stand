@@ -77,7 +77,7 @@
 				"border": {
 					"$type": "border",
 					"$value": {
-						"color": "{semantic.colors.border.secondary}",
+						"color": "{semantic.colors.border.weak}",
 						"width": "{semantic.sizing.border.default}",
 						"style": "solid"
 					}

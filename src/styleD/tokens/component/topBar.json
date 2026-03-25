@@ -3,7 +3,7 @@
 		"TopBar": {
 			"background-color": {
 				"$type": "color",
-				"$value": "{semantic.colors.bg.raised-1}"
+				"$value": "{semantic.colors.bg.raised-level-1}"
 			},
 			"display": {
 				"$type": "string",
@@ -20,7 +20,7 @@
 			"border": {
 				"$type": "border",
 				"$value": {
-					"color": "{semantic.colors.border.secondary}",
+					"color": "{semantic.colors.border.weak}",
 					"width": "{semantic.sizing.border.default}",
 					"style": "solid"
 				}
