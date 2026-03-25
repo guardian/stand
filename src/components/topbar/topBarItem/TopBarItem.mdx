@@ -1,0 +1,119 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import TopBarItemStories, { Default } from './TopBarItem.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={TopBarItemStories} />
+
+# TopBarItem
+
+A component that represents a generic element within a top bar.
+
+## When to use
+
+- Adding a custom element to the top bar, e.g. a button that is not a navigation link
+- Must be used inside `TopBarContainerLeft` or `TopBarContainerRight` components within a `TopBar`
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { TopBarItem } from '@guardian/stand/TopBar';
+
+/* types, if required */
+import type { TopBarItemProps, TopBarItemTheme } from '@guardian/stand/TopBar';
+
+<TopBarItem>Hello</TopBarItem>;
+```
+
+## Props
+
+| Name           | Type                  | Required | Default  | Description                             |
+| -------------- | --------------------- | -------- | -------- | --------------------------------------- |
+| `children`     | `React.ReactNode`     | No       | N/A      | Content to render inside the component. |
+| `alignment`    | `'left'` \| `'right'` | No       | `'left'` | Content to render inside the component. |
+| `theme`        | `TopBarItemTheme`     | No       | N/A      | Custom theme overrides.                 |
+| `cssOverrides` | `SerializedStyles`    | No       | N/A      | Custom CSS styles.                      |
+| `className`    | `string`              | No       | N/A      | Additional class name(s).               |
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+## Customisation
+
+We recommend using the TopBarItem component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the TopBarItem component:
+
+```tsx
+import type { TopBarItemTheme } from '@guardian/stand/top-bar-item';
+import { TopBarItem } from '@guardian/stand/top-bar-item';
+
+const customTheme: Partial<TopBarItemTheme> = {
+	// override tokens here
+};
+
+const Component = () => <TopBarItem theme={customTheme}>Hello</TopBarItem>;
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the TopBarItem component:
+
+```tsx
+import { TopBarItem } from '@guardian/stand/top-bar-item';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	// custom styles here
+\`;
+
+const Component = () => <TopBarItem cssOverrides={customStyles}>Hello</TopBarItem>;
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom TopBarItem component using the styles defined in the `TopBarItemTheme` type.
+
+**`css`**
+
+You can import the TopBarItem styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentTopBar` variable and the `ComponentTopBar` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />

@@ -1,0 +1,30 @@
+{
+	"component": {
+		"TopBar": {
+			"background-color": {
+				"$type": "color",
+				"$value": "{semantic.colors.bg.raised-level-1}"
+			},
+			"display": {
+				"$type": "string",
+				"$value": "flex"
+			},
+			"height": {
+				"$type": "dimension",
+				"$value": "{base.spacing.64-rem}"
+			},
+			"justify-content": {
+				"$type": "string",
+				"$value": "space-between"
+			},
+			"border": {
+				"$type": "border",
+				"$value": {
+					"color": "{semantic.colors.border.weak}",
+					"width": "{semantic.sizing.border.default}",
+					"style": "solid"
+				}
+			}
+		}
+	}
+}
