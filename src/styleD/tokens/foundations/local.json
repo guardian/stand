@@ -861,6 +861,146 @@
 					"$type": "number",
 					"$value": "{base.typography.width.Open Sans}"
 				}
+			},
+			"label-form-sm": {
+				"font": {
+					"$type": "typography",
+					"$value": "{semantic.typography.heading-sm.font}"
+				},
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{semantic.typography.heading-sm.letterSpacing}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{semantic.typography.heading-sm.fontWidth}"
+				}
+			},
+			"label-form-md": {
+				"font": {
+					"$type": "typography",
+					"$value": "{semantic.typography.heading-md.font}"
+				},
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{semantic.typography.heading-md.letterSpacing}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{semantic.typography.heading-md.fontWidth}"
+				}
+			},
+			"label-form-inline-sm": {
+				"font": {
+					"$type": "typography",
+					"$value": "{semantic.typography.body-sm.font}"
+				},
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{semantic.typography.body-sm.letterSpacing}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{semantic.typography.body-sm.fontWidth}"
+				}
+			},
+			"label-form-inline-md": {
+				"font": {
+					"$type": "typography",
+					"$value": "{semantic.typography.body-md.font}"
+				},
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{semantic.typography.body-md.letterSpacing}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{semantic.typography.body-md.fontWidth}"
+				}
+			},
+			"label-form-compact-sm": {
+				"font": {
+					"$type": "typography",
+					"$value": "{semantic.typography.heading-compact-sm.font}"
+				},
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{semantic.typography.heading-compact-sm.letterSpacing}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{semantic.typography.heading-compact-sm.fontWidth}"
+				}
+			},
+			"label-form-compact-md": {
+				"font": {
+					"$type": "typography",
+					"$value": "{semantic.typography.heading-compact-md.font}"
+				},
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{semantic.typography.heading-compact-md.letterSpacing}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{semantic.typography.heading-compact-md.fontWidth}"
+				}
+			},
+			"label-form-inline-compact-sm": {
+				"font": {
+					"$type": "typography",
+					"$value": "{semantic.typography.body-compact-sm.font}"
+				},
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{semantic.typography.body-compact-sm.letterSpacing}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{semantic.typography.body-compact-sm.fontWidth}"
+				}
+			},
+			"label-form-inline-compact-md": {
+				"font": {
+					"$type": "typography",
+					"$value": "{semantic.typography.body-compact-md.font}"
+				},
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{semantic.typography.body-compact-md.letterSpacing}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{semantic.typography.body-compact-md.fontWidth}"
+				}
+			},
+			"help-text-form-md": {
+				"font": {
+					"$type": "typography",
+					"$value": "{semantic.typography.body-sm.font}"
+				},
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{semantic.typography.body-sm.letterSpacing}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{semantic.typography.body-sm.fontWidth}"
+				},
+				"help-text-form-compact-md": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.body-compact-sm.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.body-compact-sm.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.body-compact-sm.fontWidth}"
+					}
+				}
 			}
 		},
 		"shadow": {

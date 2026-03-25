@@ -208,5 +208,55 @@ export const semanticTypography = {
 		letterSpacing: '-0.0125rem',
 		fontWidth: 95,
 	},
+	'label-form-sm': {
+		font: 'normal 700 0.875rem/1.15 Open Sans',
+		letterSpacing: '-0.0125rem',
+		fontWidth: 95,
+	},
+	'label-form-md': {
+		font: 'normal 700 1rem/1.15 Open Sans',
+		letterSpacing: '-0.03125rem',
+		fontWidth: 95,
+	},
+	'label-form-inline-sm': {
+		font: 'normal 460 0.875rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'label-form-inline-md': {
+		font: 'normal 460 1rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'label-form-compact-sm': {
+		font: 'normal 700 0.875rem/1.15 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
+	'label-form-compact-md': {
+		font: 'normal 700 1rem/1.15 Open Sans',
+		letterSpacing: '-0.0125rem',
+		fontWidth: 88,
+	},
+	'label-form-inline-compact-sm': {
+		font: 'normal 460 0.875rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
+	'label-form-inline-compact-md': {
+		font: 'normal 460 1rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
+	'help-text-form-md': {
+		font: 'normal 460 0.875rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+		'help-text-form-compact-md': {
+			font: 'normal 460 0.875rem/1.3 Open Sans',
+			letterSpacing: '0rem',
+			fontWidth: 88,
+		},
+	},
 };
 export type SemanticTypography = typeof semanticTypography;
