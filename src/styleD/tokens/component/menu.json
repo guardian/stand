@@ -18,7 +18,7 @@
 					"border": {
 						"$type": "border",
 						"$value": {
-							"color": "{semantic.colors.border.secondary}",
+							"color": "{semantic.colors.border.weak}",
 							"width": "{semantic.sizing.border.default}",
 							"style": "solid"
 						}
@@ -56,11 +56,11 @@
 						},
 						"background-color": {
 							"$type": "color",
-							"$value": "{semantic.colors.bg.raised-2}"
+							"$value": "{semantic.colors.bg.raised-level-2}"
 						},
 						"color": {
 							"$type": "color",
-							"$value": "{semantic.colors.text.default}"
+							"$value": "{semantic.colors.text.strong}"
 						}
 					},
 					"sm": {
@@ -152,7 +152,7 @@
 					"border-bottom": {
 						"$type": "border",
 						"$value": {
-							"color": "{semantic.colors.border.secondary}",
+							"color": "{semantic.colors.border.weak}",
 							"width": "{semantic.sizing.border.default}",
 							"style": "solid"
 						}
@@ -168,7 +168,7 @@
 						},
 						"color": {
 							"$type": "color",
-							"$value": "{semantic.colors.text.subdued}"
+							"$value": "{semantic.colors.text.weak}"
 						}
 					},
 					"label": {
@@ -178,7 +178,7 @@
 						},
 						"color": {
 							"$type": "color",
-							"$value": "{semantic.colors.text.default}"
+							"$value": "{semantic.colors.text.strong}"
 						},
 						"typography": {
 							"font": {
@@ -202,7 +202,7 @@
 						},
 						"color": {
 							"$type": "color",
-							"$value": "{semantic.colors.text.subdued}"
+							"$value": "{semantic.colors.text.weak}"
 						},
 						"typography": {
 							"font": {
@@ -234,7 +234,7 @@
 						},
 						"color": {
 							"$type": "color",
-							"$value": "{semantic.colors.text.default}"
+							"$value": "{semantic.colors.text.strong}"
 						},
 						"typography": {
 							"font": {
@@ -260,14 +260,14 @@
 					":hover": {
 						"background-color": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.interactive-secondary-neutral-hover}"
+							"$value": "{semantic.colors.fill.weak-pressed}"
 						}
 					},
 					":focus-visible": {
 						"outline": {
 							"$type": "border",
 							"$value": {
-								"color": "{semantic.colors.border.interactive-focused}",
+								"color": "{semantic.colors.border.focused}",
 								"width": "{semantic.sizing.border.md}",
 								"style": "solid"
 							}
@@ -307,7 +307,7 @@
 				"shared": {
 					"background-color": {
 						"$type": "color",
-						"$value": "{semantic.colors.border.tertiary}"
+						"$value": "{semantic.colors.border.weaker}"
 					},
 					"height": {
 						"$type": "dimension",

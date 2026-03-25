@@ -137,8 +137,8 @@ export const CssOverrides = {
 		icon: 'file_upload',
 		isSelected: true,
 		cssOverrides: css`
-			background-color: ${semanticColors.surface['dark-1']};
-			color: ${semanticColors.text['inverse-default']};
+			background-color: ${semanticColors.fill['strong-hover']};
+			color: ${semanticColors.text['strong-inverse']};
 		`,
 	},
 } satisfies Story;

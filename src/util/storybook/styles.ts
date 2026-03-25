@@ -17,7 +17,7 @@ export const tableStyles = css`
 		${convertTypographyToEmotionStringStyle(semanticTypography['heading-sm'])}
 		padding: ${baseSpacing['12-rem']} ${baseSpacing['8-rem']};
 		border-bottom: ${semanticSizing.border.md} solid
-			${semanticColors.border.default};
+			${semanticColors.border.strong};
 		position: sticky;
 		top: 0;
 		background: ${semanticColors.bg.base};
@@ -26,11 +26,11 @@ export const tableStyles = css`
 	td {
 		padding: ${baseSpacing['12-rem']} ${baseSpacing['8-rem']};
 		border-bottom: ${semanticSizing.border.default} solid
-			${semanticColors.border.secondary};
+			${semanticColors.border.weak};
 		vertical-align: middle;
 	}
 
 	tr:hover {
-		background: ${semanticColors.surface['light-1']};
+		background: ${semanticColors.bg['raised-level-1']};
 	}
 `;

@@ -10,7 +10,7 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.green-subtle}"
+							"$value": "{semantic.colors.fill.green-weak}"
 						},
 						"border": {
 							"$type": "border",
@@ -24,7 +24,7 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.blue-subtle}"
+							"$value": "{semantic.colors.fill.blue-weak}"
 						},
 						"border": {
 							"$type": "border",
@@ -38,7 +38,7 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.red-subtle}"
+							"$value": "{semantic.colors.fill.red-weak}"
 						},
 						"border": {
 							"$type": "border",
@@ -52,7 +52,7 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.cyan-subtle}"
+							"$value": "{semantic.colors.fill.cyan-weak}"
 						},
 						"border": {
 							"$type": "border",
@@ -66,7 +66,7 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.teal-subtle}"
+							"$value": "{semantic.colors.fill.teal-weak}"
 						},
 						"border": {
 							"$type": "border",
@@ -80,7 +80,7 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.cool-purple-subtle}"
+							"$value": "{semantic.colors.fill.cool-purple-weak}"
 						},
 						"border": {
 							"$type": "border",
@@ -94,7 +94,7 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.warm-purple-subtle}"
+							"$value": "{semantic.colors.fill.warm-purple-weak}"
 						},
 						"border": {
 							"$type": "border",
@@ -108,7 +108,7 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.magenta-subtle}"
+							"$value": "{semantic.colors.fill.magenta-weak}"
 						},
 						"border": {
 							"$type": "border",
@@ -122,7 +122,7 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.orange-subtle}"
+							"$value": "{semantic.colors.fill.orange-weak}"
 						},
 						"border": {
 							"$type": "border",
@@ -136,7 +136,7 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.yellow-subtle}"
+							"$value": "{semantic.colors.fill.yellow-weak}"
 						},
 						"border": {
 							"$type": "border",
@@ -146,7 +146,7 @@
 					"outlined": {
 						"text": {
 							"$type": "color",
-							"$value": "{semantic.colors.text.default}"
+							"$value": "{semantic.colors.text.strong}"
 						},
 						"background": {
 							"$type": "color",
@@ -155,7 +155,7 @@
 						"border": {
 							"$type": "border",
 							"$value": {
-								"color": "{semantic.colors.border.default}",
+								"color": "{semantic.colors.border.strong}",
 								"width": "{semantic.sizing.border.default}",
 								"style": "solid"
 							}

@@ -10,7 +10,7 @@ export interface LinkButtonProps
 	/**
 	 * Size variant of the link button
 	 */
-	size?: keyof Omit<LinkButtonTheme['emphasised-primary'], 'shared'>;
+	size?: keyof Omit<LinkButtonTheme['primary'], 'shared'>;
 	/**
 	 * Variant of the button
 	 */

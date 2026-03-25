@@ -14,7 +14,7 @@ export const Component = () => (
         <IconLinkButton
           href="#"
           isDisabled
-          variant="emphasised-secondary"
+          variant="secondary"
           symbol="owl"
           ariaLabel="Consult with an owl"
         />
@@ -46,92 +46,92 @@ export const componentCss = /* css */ `@import '@guardian/stand/component/button
 	}
 
 	/* example setup of button/link button style using md size and emphasised primary variant */
-	.stand-icon-button-emphasised-primary {
-		color: var(--component-button-emphasised-primary-shared-color);
+	.stand-icon-button-primary {
+		color: var(--component-button-primary-shared-color);
 		background: var(
-			--component-button-emphasised-primary-shared-background-color
+			--component-button-primary-shared-background-color
 		);
-		width: var(--component-button-emphasised-primary-md-icon-button-width);
-		height: var(--component-button-emphasised-primary-md-height);
+		width: var(--component-button-primary-md-icon-button-width);
+		height: var(--component-button-primary-md-height);
 		padding: 0;
-		font: var(--component-button-emphasised-primary-md-typography-font);
+		font: var(--component-button-primary-md-typography-font);
 		letter-spacing: var(
-			--component-button-emphasised-primary-md-typography-letter-spacing
+			--component-button-primary-md-typography-letter-spacing
 		);
 		font-variation-settings: "wdth"
-			var(--component-button-emphasised-primary-md-typography-font-width);
-		border: var(--component-button-emphasised-primary-shared-border);
+			var(--component-button-primary-md-typography-font-width);
+		border: var(--component-button-primary-shared-border);
 		border-radius: var(
-			--component-button-emphasised-primary-shared-border-radius
+			--component-button-primary-shared-border-radius
 		);
 	}
-	.stand-icon-button-emphasised-primary:hover {
+	.stand-icon-button-primary:hover {
 		background: var(
-			--component-button-emphasised-primary-shared-hover-background-color
+			--component-button-primary-shared-hover-background-color
 		);
-		border: var(--component-button-emphasised-primary-shared-hover-border);
+		border: var(--component-button-primary-shared-hover-border);
 	}
-	.stand-icon-button-emphasised-primary:active {
+	.stand-icon-button-primary:active {
 		background: var(
-			--component-button-emphasised-primary-shared-active-background-color
+			--component-button-primary-shared-active-background-color
 		);
-		border: var(--component-button-emphasised-primary-shared-active-border);
+		border: var(--component-button-primary-shared-active-border);
 	}
-	.stand-icon-button-emphasised-primary:disabled {
-		color: var(--component-button-emphasised-primary-shared-disabled-color);
+	.stand-icon-button-primary:disabled {
+		color: var(--component-button-primary-shared-disabled-color);
 		background: var(
-			--component-button-emphasised-primary-shared-disabled-background-color
+			--component-button-primary-shared-disabled-background-color
 		);
-		border: var(--component-button-emphasised-primary-shared-disabled-border);
+		border: var(--component-button-primary-shared-disabled-border);
 	}
-	.stand-icon-button-emphasised-primary > .material-symbols {
-		font-size: var(--component-button-emphasised-primary-md-icon-size);
+	.stand-icon-button-primary > .material-symbols {
+		font-size: var(--component-button-primary-md-icon-size);
 	}
 
 	/* example setup of button/link button style using md size and neutral secondary variant */
-	.stand-icon-button-neutral-secondary {
-		color: var(--component-button-neutral-secondary-shared-color);
-		background: var(--component-button-neutral-secondary-shared-background-color);
-		width: var(--component-button-neutral-secondary-md-icon-button-width);
-		height: var(--component-button-neutral-secondary-md-height);
+	.stand-icon-button-tertiary {
+		color: var(--component-button-tertiary-shared-color);
+		background: var(--component-button-tertiary-shared-background-color);
+		width: var(--component-button-tertiary-md-icon-button-width);
+		height: var(--component-button-tertiary-md-height);
 		padding: 0;
-		font: var(--component-button-neutral-secondary-md-typography-font);
+		font: var(--component-button-tertiary-md-typography-font);
 		letter-spacing: var(
-			--component-button-neutral-secondary-md-typography-letter-spacing
+			--component-button-tertiary-md-typography-letter-spacing
 		);
 		font-variation-settings: "wdth"
-			var(--component-button-neutral-secondary-md-typography-font-width);
-		border: var(--component-button-neutral-secondary-shared-border);
-		border-radius: var(--component-button-neutral-secondary-shared-border-radius);
+			var(--component-button-tertiary-md-typography-font-width);
+		border: var(--component-button-tertiary-shared-border);
+		border-radius: var(--component-button-tertiary-shared-border-radius);
 	}
-	.stand-icon-button-neutral-secondary:hover {
+	.stand-icon-button-tertiary:hover {
 		background: var(
-			--component-button-neutral-secondary-shared-hover-background-color
+			--component-button-tertiary-shared-hover-background-color
 		);
-		border: var(--component-button-neutral-secondary-shared-hover-border);
+		border: var(--component-button-tertiary-shared-hover-border);
 	}
-	.stand-icon-button-neutral-secondary:active {
+	.stand-icon-button-tertiary:active {
 		background: var(
-			--component-button-neutral-secondary-shared-active-background-color
+			--component-button-tertiary-shared-active-background-color
 		);
-		border: var(--component-button-neutral-secondary-shared-active-border);
+		border: var(--component-button-tertiary-shared-active-border);
 	}
-	.stand-icon-button-neutral-secondary:disabled, .stand-icon-button-neutral-secondary[data-disabled] {
-		color: var(--component-button-neutral-secondary-shared-disabled-color);
+	.stand-icon-button-tertiary:disabled, .stand-icon-button-tertiary[data-disabled] {
+		color: var(--component-button-tertiary-shared-disabled-color);
 		background: var(
-			--component-button-neutral-secondary-shared-disabled-background-color
+			--component-button-tertiary-shared-disabled-background-color
 		);
-		border: var(--component-button-neutral-secondary-shared-disabled-border);
+		border: var(--component-button-tertiary-shared-disabled-border);
 	}
-	.stand-icon-button-neutral-secondary > .material-symbols {
-		font-size: var(--component-button-neutral-secondary-md-icon-size);
+	.stand-icon-button-tertiary > .material-symbols {
+		font-size: var(--component-button-tertiary-md-icon-size);
 	}
 
 `;
 
 export const componentHtml = /* html */ `<div class="container">
-    <a class="stand-icon-button stand-icon-button-emphasised-primary" href="#" title="Summon a raven" aria-label="Summon a raven"><span class="material-symbols" aria-hidden="true">raven</span></a>
-    <a class="stand-icon-button stand-icon-button-neutral-secondary" data-disabled title="Consult with an owl" aria-label="Consult with an owl"><span class="material-symbols" aria-hidden="true">owl</span></a>
+    <a class="stand-icon-button stand-icon-button-primary" href="#" title="Summon a raven" aria-label="Summon a raven"><span class="material-symbols" aria-hidden="true">raven</span></a>
+    <a class="stand-icon-button stand-icon-button-tertiary" data-disabled title="Consult with an owl" aria-label="Consult with an owl"><span class="material-symbols" aria-hidden="true">owl</span></a>
 </div>
 `;
 
@@ -164,65 +164,65 @@ export const componentJs = /* javascript */ `	// for ts/js
 	}
 
 	/* example setup of button/link button style using md size and emphasised primary variant */
-	.js-stand-icon-button-emphasised-primary {
-		color: \${componentButton["emphasised-primary"].shared.color};
-		background: \${componentButton["emphasised-primary"].shared.backgroundColor};
-		width: \${componentButton["emphasised-primary"].md.iconButton.width};
-		height: \${componentButton["emphasised-primary"].md.height};
+	.js-stand-icon-button-primary {
+		color: \${componentButton["primary"].shared.color};
+		background: \${componentButton["primary"].shared.backgroundColor};
+		width: \${componentButton["primary"].md.iconButton.width};
+		height: \${componentButton["primary"].md.height};
 		padding: 0;
-		font: \${componentButton["emphasised-primary"].md.typography.font};
-		letter-spacing: \${componentButton["emphasised-primary"].md.typography.letterSpacing};
+		font: \${componentButton["primary"].md.typography.font};
+		letter-spacing: \${componentButton["primary"].md.typography.letterSpacing};
 		font-variation-settings: 'wdth'
-		\${componentButton["emphasised-primary"].md.typography.fontWidth};
-		border: \${componentButton["emphasised-primary"].shared.border};
-		border-radius: \${componentButton["emphasised-primary"].shared.borderRadius};
+		\${componentButton["primary"].md.typography.fontWidth};
+		border: \${componentButton["primary"].shared.border};
+		border-radius: \${componentButton["primary"].shared.borderRadius};
 	}
-	.js-stand-icon-button-emphasised-primary:hover {
-		background: \${componentButton["emphasised-primary"].shared[":hover"].backgroundColor};
-		border: \${componentButton["emphasised-primary"].shared[":hover"].border}
+	.js-stand-icon-button-primary:hover {
+		background: \${componentButton["primary"].shared[":hover"].backgroundColor};
+		border: \${componentButton["primary"].shared[":hover"].border}
 	}
-	.js-stand-icon-button-emphasised-primary:active {
-		background: \${componentButton["emphasised-primary"].shared[":active"].backgroundColor};
-		border: \${componentButton["emphasised-primary"].shared[":active"].border};
+	.js-stand-icon-button-primary:active {
+		background: \${componentButton["primary"].shared[":active"].backgroundColor};
+		border: \${componentButton["primary"].shared[":active"].border};
 	}
-	.js-stand-icon-button-emphasised-primary:disabled, .js-stand-icon-button-emphasised-primary[data-disabled] {
-		color: \${componentButton["emphasised-primary"].shared[":disabled"].color};
-		background: \${componentButton["emphasised-primary"].shared[":disabled"].backgroundColor};
-		border: \${componentButton["emphasised-primary"].shared[":disabled"].border};
+	.js-stand-icon-button-primary:disabled, .js-stand-icon-button-primary[data-disabled] {
+		color: \${componentButton["primary"].shared[":disabled"].color};
+		background: \${componentButton["primary"].shared[":disabled"].backgroundColor};
+		border: \${componentButton["primary"].shared[":disabled"].border};
 	}
-	.js-stand-icon-button-emphasised-primary > .material-symbols {
-		font-size: \${componentButton["emphasised-primary"].md.icon.size}
+	.js-stand-icon-button-primary > .material-symbols {
+		font-size: \${componentButton["primary"].md.icon.size}
 	}
 
 	/* example setup of button/link button style using md size and neutral secondary variant */
-	.js-stand-icon-button-neutral-secondary {
-		color: \${componentButton["neutral-secondary"].shared.color};
-		background: \${componentButton["neutral-secondary"].shared.backgroundColor};
-		width: \${componentButton["neutral-secondary"].md.iconButton.width};
-		height: \${componentButton["neutral-secondary"].md.height};
+	.js-stand-icon-button-tertiary {
+		color: \${componentButton["tertiary"].shared.color};
+		background: \${componentButton["tertiary"].shared.backgroundColor};
+		width: \${componentButton["tertiary"].md.iconButton.width};
+		height: \${componentButton["tertiary"].md.height};
 		padding: 0;
-		font: \${componentButton["neutral-secondary"].md.typography.font};
-		letter-spacing: \${componentButton["neutral-secondary"].md.typography.letterSpacing};
+		font: \${componentButton["tertiary"].md.typography.font};
+		letter-spacing: \${componentButton["tertiary"].md.typography.letterSpacing};
 		font-variation-settings: 'wdth'
-		\${componentButton["neutral-secondary"].md.typography.fontWidth};
-		border: \${componentButton["neutral-secondary"].shared.border};
-		border-radius: \${componentButton["neutral-secondary"].shared.borderRadius};
+		\${componentButton["tertiary"].md.typography.fontWidth};
+		border: \${componentButton["tertiary"].shared.border};
+		border-radius: \${componentButton["tertiary"].shared.borderRadius};
 	}
-	.js-stand-icon-button-neutral-secondary:hover {
-		background: \${componentButton["neutral-secondary"].shared[":hover"].backgroundColor};
-		border: \${componentButton["neutral-secondary"].shared[":hover"].border};
+	.js-stand-icon-button-tertiary:hover {
+		background: \${componentButton["tertiary"].shared[":hover"].backgroundColor};
+		border: \${componentButton["tertiary"].shared[":hover"].border};
 	}
-	.js-stand-icon-button-neutral-secondary:active {
-		background: \${componentButton["neutral-secondary"].shared[":active"].backgroundColor};
-		border: \${componentButton["neutral-secondary"].shared[":active"].border};
+	.js-stand-icon-button-tertiary:active {
+		background: \${componentButton["tertiary"].shared[":active"].backgroundColor};
+		border: \${componentButton["tertiary"].shared[":active"].border};
 	}
-	.js-stand-icon-button-neutral-secondary:disabled, .js-stand-icon-button-neutral-secondary[data-disabled] {
-		color: \${componentButton["neutral-secondary"].shared[":disabled"].color};
-		background: \${componentButton["neutral-secondary"].shared[":disabled"].backgroundColor};
-		border: \${componentButton["neutral-secondary"].shared[":disabled"].border};
+	.js-stand-icon-button-tertiary:disabled, .js-stand-icon-button-tertiary[data-disabled] {
+		color: \${componentButton["tertiary"].shared[":disabled"].color};
+		background: \${componentButton["tertiary"].shared[":disabled"].backgroundColor};
+		border: \${componentButton["tertiary"].shared[":disabled"].border};
 	}
-	.js-stand-icon-button-neutral-secondary > .material-symbols {
-		font-size: \${componentButton["neutral-secondary"].md.icon.size}
+	.js-stand-icon-button-tertiary > .material-symbols {
+		font-size: \${componentButton["tertiary"].md.icon.size}
 	}
 	\`);
 
@@ -232,8 +232,8 @@ export const componentJs = /* javascript */ `	// for ts/js
 	// modify the dom with the button components using the generated stylesheet
 	document.getElementById("app").innerHTML = \`
 	<div class="container">
-		<a class="js-stand-icon-button js-stand-icon-button-emphasised-primary" href="#" title="Summon a raven"><span class="material-symbols">raven</span></a>
-		<a class="js-stand-icon-button js-stand-icon-button-neutral-secondary" data-disabled title="Consult with an owl"><span class="material-symbols">owl</span></a>
+		<a class="js-stand-icon-button js-stand-icon-button-primary" href="#" title="Summon a raven"><span class="material-symbols">raven</span></a>
+		<a class="js-stand-icon-button js-stand-icon-button-tertiary" data-disabled title="Consult with an owl"><span class="material-symbols">owl</span></a>
 	</div>
 	\`;
 

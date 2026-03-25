@@ -8,7 +8,7 @@
 				},
 				"text": {
 					"$type": "color",
-					"$value": "{semantic.colors.text.inverse-strong}"
+					"$value": "{semantic.colors.text.stronger-inverse}"
 				}
 			},
 			"size": {

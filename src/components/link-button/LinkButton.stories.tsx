@@ -19,12 +19,7 @@ type Story = StoryObj<typeof LinkButton>;
 
 export default meta;
 
-const variants = [
-	'emphasised-primary',
-	'emphasised-secondary',
-	'neutral-primary',
-	'neutral-secondary',
-] as const;
+const variants = ['primary', 'secondary', 'tertiary'] as const;
 const sizes = ['xs', 'sm', 'md', 'lg'] as const;
 
 export const LinkButtonTable = {
@@ -89,10 +84,10 @@ export const CustomTheme = {
 	name: 'custom theme',
 	args: {
 		children: 'Custom Themed LinkButton',
-		variant: 'emphasised-primary',
+		variant: 'primary',
 		size: 'md',
 		theme: {
-			'emphasised-primary': {
+			primary: {
 				shared: {
 					backgroundColor: baseColors['cool-purple'][200],
 					color: baseColors['cool-purple'][900],
@@ -115,7 +110,7 @@ export const CssOverrides = {
 	name: 'cssOverrides',
 	args: {
 		children: 'CSSOverrides LinkButton',
-		variant: 'emphasised-primary',
+		variant: 'primary',
 		size: 'md',
 		cssOverrides: css`
 			width: 100%;

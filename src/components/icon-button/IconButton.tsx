@@ -9,7 +9,7 @@ import { defaultIconButtonTheme, iconButtonStyles } from './styles';
 import type { IconButtonProps } from './types';
 
 export function IconButton({
-	variant = 'emphasised-primary',
+	variant = 'primary',
 	size = 'md',
 	symbol,
 	ariaLabel,
