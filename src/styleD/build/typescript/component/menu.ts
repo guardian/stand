@@ -59,6 +59,7 @@ export const componentMenu = {
 				left: '1rem',
 			},
 			'border-bottom': '0.0625rem solid #cccccc',
+			'background-color': '#ffffff',
 			icon: {
 				'grid-area': 'icon',
 				'align-self': 'start',
@@ -97,7 +98,7 @@ export const componentMenu = {
 				'border-bottom': 'none',
 			},
 			':hover': {
-				'background-color': '#ededed',
+				'background-color': '#f6f6f6',
 			},
 			':focus-visible': {
 				outline: '0.125rem solid #0072a9',

@@ -60,6 +60,7 @@ export const menuItemStyles = (
 	padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
 		${theme.shared.padding.bottom} ${theme.shared.padding.left};
 	border-bottom: ${theme.shared['border-bottom']};
+	background: ${theme.shared['background-color']};
 	&:last-child {
 		border-bottom: ${theme.shared[':last-child']['border-bottom']};
 	}
