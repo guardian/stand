@@ -37,6 +37,7 @@
 	--component-menu-menu-item-shared-padding-bottom: 0.75rem;
 	--component-menu-menu-item-shared-padding-left: 1rem;
 	--component-menu-menu-item-shared-border-bottom: 0.0625rem solid #cccccc;
+	--component-menu-menu-item-shared-background-color: #ffffff;
 	--component-menu-menu-item-shared-icon-grid-area: icon;
 	--component-menu-menu-item-shared-icon-align-self: start;
 	--component-menu-menu-item-shared-icon-color: #545454;
@@ -61,7 +62,7 @@
 	--component-menu-menu-item-shared-aside-typography-letter-spacing: 0;
 	--component-menu-menu-item-shared-aside-typography-font-width: 95;
 	--component-menu-menu-item-shared-last-child-border-bottom: none;
-	--component-menu-menu-item-shared-hover-background-color: #ededed;
+	--component-menu-menu-item-shared-hover-background-color: #f6f6f6;
 	--component-menu-menu-item-shared-focus-visible-outline: 0.125rem solid
 		#0072a9;
 	--component-menu-menu-item-shared-focus-visible-outline-offset: -0.125rem;

@@ -157,6 +157,10 @@
 							"style": "solid"
 						}
 					},
+					"background-color": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.weak}"
+					},
 					"icon": {
 						"grid-area": {
 							"$type": "string",
@@ -260,7 +264,7 @@
 					":hover": {
 						"background-color": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.weak-pressed}"
+							"$value": "{semantic.colors.fill.weak-hover}"
 						}
 					},
 					":focus-visible": {
