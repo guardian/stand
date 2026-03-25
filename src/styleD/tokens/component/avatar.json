@@ -331,7 +331,7 @@
 						"outline": {
 							"$type": "border",
 							"$value": {
-								"color": "{semantic.colors.border.interactive-focused}",
+								"color": "{semantic.colors.border.focused}",
 								"width": "{semantic.sizing.border.md}",
 								"style": "solid"
 							}
