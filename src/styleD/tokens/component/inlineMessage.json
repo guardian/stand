@@ -1,0 +1,58 @@
+{
+	"component": {
+		"inlineMessage": {
+			"shared": {
+				"display": {
+					"$type": "string",
+					"$value": "inline-flex"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{base.spacing.4-rem}"
+				},
+				"align-items": {
+					"$type": "string",
+					"$value": "center"
+				},
+				"icon": {
+					"size": {
+						"$type": "dimension",
+						"$value": "{semantic.sizing.icon.md}"
+					}
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.help-text-form-md.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.help-text-form-md.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.help-text-form-md.fontWidth}"
+					}
+				}
+			},
+			"error": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.error}"
+				}
+			},
+			"success": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.success}"
+				}
+			},
+			"information": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.information}"
+				}
+			}
+		}
+	}
+}
