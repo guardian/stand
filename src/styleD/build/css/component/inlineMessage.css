@@ -1,0 +1,12 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-inline-message-shared-display: inline-flex;
+	--component-inline-message-shared-gap: 0.25rem;
+	--component-inline-message-shared-align-items: center;
+	--component-inline-message-error-color: #8c2113;
+	--component-inline-message-success-color: #326528;
+	--component-inline-message-information-color: #00344e;
+}
