@@ -14,6 +14,16 @@
 			"import": "./dist/avatar.js",
 			"require": "./dist/avatar.cjs"
 		},
+		"./avatar-link": {
+			"types": "./dist/types/avatar-link.d.ts",
+			"import": "./dist/avatar-link.js",
+			"require": "./dist/avatar-link.cjs"
+		},
+		"./avatar-button": {
+			"types": "./dist/types/avatar-button.d.ts",
+			"import": "./dist/avatar-button.js",
+			"require": "./dist/avatar-button.cjs"
+		},
 		"./button": {
 			"types": "./dist/types/button.d.ts",
 			"import": "./dist/button.js",
