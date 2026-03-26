@@ -37,6 +37,7 @@ const input = {
 	typography: 'src/typography.ts',
 	icon: 'src/icon.ts',
 	favicon: 'src/favicon.ts',
+	'inline-message': 'src/inline-message.ts',
 	menu: 'src/menu.ts',
 	TopBar: 'src/TopBar.ts',
 	// editorial components

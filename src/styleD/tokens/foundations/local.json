@@ -986,20 +986,20 @@
 				"fontWidth": {
 					"$type": "number",
 					"$value": "{semantic.typography.body-sm.fontWidth}"
+				}
+			},
+			"help-text-form-compact-md": {
+				"font": {
+					"$type": "typography",
+					"$value": "{semantic.typography.body-compact-sm.font}"
 				},
-				"help-text-form-compact-md": {
-					"font": {
-						"$type": "typography",
-						"$value": "{semantic.typography.body-compact-sm.font}"
-					},
-					"letterSpacing": {
-						"$type": "dimension",
-						"$value": "{semantic.typography.body-compact-sm.letterSpacing}"
-					},
-					"fontWidth": {
-						"$type": "number",
-						"$value": "{semantic.typography.body-compact-sm.fontWidth}"
-					}
+				"letterSpacing": {
+					"$type": "dimension",
+					"$value": "{semantic.typography.body-compact-sm.letterSpacing}"
+				},
+				"fontWidth": {
+					"$type": "number",
+					"$value": "{semantic.typography.body-compact-sm.fontWidth}"
 				}
 			}
 		},

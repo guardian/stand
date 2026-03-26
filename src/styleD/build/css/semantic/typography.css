@@ -180,8 +180,8 @@
 		'Open Sans';
 	--semantic-typography-help-text-form-md-letter-spacing: 0;
 	--semantic-typography-help-text-form-md-font-width: 95;
-	--semantic-typography-help-text-form-md-help-text-form-compact-md-font: normal
-		460 0.875rem/1.3 'Open Sans';
-	--semantic-typography-help-text-form-md-help-text-form-compact-md-letter-spacing: 0;
-	--semantic-typography-help-text-form-md-help-text-form-compact-md-font-width: 88;
+	--semantic-typography-help-text-form-compact-md-font: normal 460 0.875rem/1.3
+		'Open Sans';
+	--semantic-typography-help-text-form-compact-md-letter-spacing: 0;
+	--semantic-typography-help-text-form-compact-md-font-width: 88;
 }
