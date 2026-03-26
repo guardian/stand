@@ -1,0 +1,192 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import InlineMessageStories, {
+	Error,
+	Success,
+	Information,
+	CustomIcon,
+	HideIcon,
+	CustomTheme,
+	CssOverrides,
+} from './InlineMessage.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={InlineMessageStories} />
+
+# InlineMessage
+
+A compact inline component used to display contextual feedback messages. It pairs an icon with a short text message and supports three severity levels: `error`, `success`, and `information`.
+
+## When to use
+
+- To give the user inline feedback following an action (e.g. form validation errors, submission success)
+- To surface contextual status information close to the relevant UI element
+- When a full alert or banner would be too visually prominent
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact
+	componentName={componentName}
+	componentTsx={componentTsx}
+	flowColumn
+/>
+
+```tsx
+import { InlineMessage } from '@guardian/stand/inline-message';
+
+/* types, if required */
+import type {
+	InlineMessageProps,
+	InlineMessageTheme,
+} from '@guardian/stand/inline-message';
+
+<InlineMessage level="error">Something went wrong</InlineMessage>
+<InlineMessage level="success">Changes saved successfully</InlineMessage>
+<InlineMessage level="information">
+	Your session will expire soon
+</InlineMessage>
+<InlineMessage level="error" hideIcon>
+	This message has no icon
+</InlineMessage>
+<InlineMessage
+	level="success"
+	icon={
+		<svg viewBox="-3 -3 30 30" xmlns="http://www.w3.org/2000/svg">
+			<path
+				fillRule="evenodd"
+				clipRule="evenodd"
+				d="M12.36 2.5h-.905l-7.6 7.69-.905.905v.453h.905v9.056l.904.896h5.872v-6.333h2.715V21.5h5.89l.904-.932v-9.02h.905v-.453l-1.357-1.357-.001.005zm5.97 8.447-6.412-6.34-6.254 6.326v8.758h3.158V13.81l.452-.453h5.438l.443.453v5.88h3.176z"
+			/>
+		</svg>
+	}
+>
+	This message uses a custom svg icon
+</InlineMessage>
+```
+
+## Props
+
+| Name           | Type                                     | Required | Default | Description                                                                                                                               |
+| -------------- | ---------------------------------------- | -------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `level`        | `'error' \| 'success' \| 'information'`  | Yes      | N/A     | The severity level of the message. Determines colour and default icon.                                                                    |
+| `children`     | `React.ReactNode`                        | No       | N/A     | The message content to render inside the component.                                                                                       |
+| `hideIcon`     | `boolean`                                | No       | `false` | When `true`, hides the default icon associated with the message level.                                                                    |
+| `icon`         | `string \| SVGElement`                   | No       | N/A     | Overrides the default icon, for example if you're not using Material Symbols. Accepts a Material Symbols name (string) or an SVG element. |
+| `theme`        | `Partial<InlineMessageTheme>`            | No       | N/A     | Custom theme overrides for design tokens.                                                                                                 |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Custom Emotion CSS styles applied to the root element.                                                                                    |
+| `className`    | `string`                                 | No       | N/A     | Additional class name(s) applied to the root element.                                                                                     |
+
+## Stories
+
+### Error
+
+<Story of={Error} />
+
+### Success
+
+<Story of={Success} />
+
+### Information
+
+<Story of={Information} />
+
+### Custom Icon
+
+<Story of={CustomIcon} />
+
+### Hide Icon
+
+<Story of={HideIcon} />
+
+## Customisation
+
+We recommend using the InlineMessage component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the InlineMessage component. The available tokens mirror the `InlineMessageTheme` type:
+
+<Story of={CustomTheme} />
+
+```tsx
+import { baseColors } from '@guardian/stand';
+import type { InlineMessageTheme } from '@guardian/stand/inline-message';
+import { InlineMessage } from '@guardian/stand/inline-message';
+
+const customTheme: Partial<InlineMessageTheme> = {
+	error: {
+		color: baseColors.orange[400],
+	},
+};
+
+const Component = () => (
+	<InlineMessage level="error" theme={customTheme}>
+		Something went wrong
+	</InlineMessage>
+);
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the InlineMessage component:
+
+<Story of={CssOverrides} />
+
+```tsx
+import { css } from '@emotion/react';
+import { baseColors } from '@guardian/stand';
+import { InlineMessage } from '@guardian/stand/inline-message';
+
+const customStyles = css`
+	background-color: ${baseColors.green[50]};
+	padding: 16px;
+	border-radius: 4px;
+`;
+
+const Component = () => (
+	<InlineMessage level="information" cssOverrides={customStyles}>
+		Your session will expire soon
+	</InlineMessage>
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom InlineMessage component using the styles defined in the `InlineMessageTheme` type.
+
+**`css`**
+
+You can import the InlineMessage styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentInlineMessage` variable and the `ComponentInlineMessage` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
