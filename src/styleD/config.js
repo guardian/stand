@@ -82,6 +82,10 @@ const fileList = [
 		group: 'component',
 		component: 'TopBar',
 	},
+	{
+		group: 'component',
+		component: 'inlineMessage',
+	},
 	/** editorial components */
 	{
 		group: 'component',
