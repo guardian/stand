@@ -252,11 +252,11 @@ export const semanticTypography = {
 		font: 'normal 460 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
-		'help-text-form-compact-md': {
-			font: 'normal 460 0.875rem/1.3 Open Sans',
-			letterSpacing: '0rem',
-			fontWidth: 88,
-		},
+	},
+	'help-text-form-compact-md': {
+		font: 'normal 460 0.875rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
 	},
 };
 export type SemanticTypography = typeof semanticTypography;
