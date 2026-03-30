@@ -3,7 +3,6 @@
 1. A large estate of tools has been built using a variety of UI frameworks and patterns. This inconsistency creates a steep learning curve for users using those tools and engineers developing them.
 1. The designs and implementations of many tools are old and may not meet modern accessibility standards.
 1. There is no clear path for how to develop UI or implement UX when building new tools, especially with limited design support.
-1. There is unlikely to be a team dedicated to maintaining a design system long term.
 
 # Vision:
 
@@ -17,7 +16,7 @@ Each component defines when designers and engineers should use it. Its behaviour
 
 ### KPIs:
 
-- User feedback.
+- User feedback - from engineers and end users
 - New UI is built using Stand
 - Existing UI migrated to use Stand
 
