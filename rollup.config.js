@@ -40,6 +40,7 @@ const input = {
 	icon: 'src/icon.ts',
 	favicon: 'src/favicon.ts',
 	'inline-message': 'src/inline-message.ts',
+	select: 'src/select.ts',
 	menu: 'src/menu.ts',
 	TopBar: 'src/TopBar.ts',
 	// editorial components
