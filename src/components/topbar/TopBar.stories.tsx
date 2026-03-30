@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { Avatar } from '../avatar/Avatar';
 import { Button } from '../button/Button';
-import { MenuItem, MenuSection } from '../menu/Menu';
 import { TopBar, TopBarContainerLeft, TopBarContainerRight } from './TopBar';
 import { TopBarItem } from './topBarItem/TopBarItem';
 import { TopBarNavigation } from './topBarNavigation/TopBarNavigation';
@@ -25,23 +24,49 @@ export const Default = {
 	render: () => (
 		<TopBar>
 			<TopBarToolName name="Default" favicon={{ letter: 'D' }} />
+			<Avatar
+				src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg"
+				alt="Mahesh Makani"
+				size="sm"
+			/>
+		</TopBar>
+	),
+} satisfies Story;
+
+export const WithTopNavigation = {
+	render: () => (
+		<TopBar>
+			<TopBarToolName name="Default" favicon={{ letter: 'D' }} />
 			<TopBarContainerLeft>
-				<TopBarItem>Some text</TopBarItem>
-				<TopBarItem>
-					<Button>Click me</Button>
-				</TopBarItem>
-				<TopBarNavigation icon="zoom_out_map" text={'Or click me'} href="#" />
+				<TopBarNavigation isSelected text="Navigation 1" href="#" />
+				<TopBarNavigation text="Navigation 2" href="#" />
+				<TopBarNavigation text="Navigation 3" href="#" />
+			</TopBarContainerLeft>
+			<Avatar
+				src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg"
+				alt="Mahesh Makani"
+				size="sm"
+			/>
+		</TopBar>
+	),
+} satisfies Story;
+
+export const WithButtons = {
+	render: () => (
+		<TopBar>
+			<TopBarToolName name="Default" favicon={{ letter: 'D' }} />
+			<TopBarContainerLeft>
+				<TopBarNavigation isSelected text="Navigation 1" href="#" />
+				<TopBarNavigation text="Navigation 2" href="#" />
+				<TopBarNavigation text="Navigation 3" href="#" />
 			</TopBarContainerLeft>
 			<TopBarContainerRight>
-				<TopBarNavigation
-					text="Menu"
-					menuChildren={
-						<MenuSection name="Stuff">
-							<MenuItem label="Text" />
-						</MenuSection>
-					}
-				/>
-				<TopBarItem>On the right</TopBarItem>
+				<TopBarItem>
+					<Button variant="primary">Button label</Button>
+				</TopBarItem>
+				<TopBarItem>
+					<Button variant="tertiary">Button label</Button>
+				</TopBarItem>
 			</TopBarContainerRight>
 			<Avatar
 				src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg"

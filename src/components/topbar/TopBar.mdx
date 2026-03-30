@@ -3,6 +3,8 @@ import TopBarStories, {
 	CssOverrides,
 	CustomTheme,
 	Default,
+	WithTopNavigation,
+	WithButtons,
 } from './TopBar.stories';
 import {
 	SandboxReact,
@@ -89,7 +91,7 @@ The children will be rendered in the following order from left to right:
 | `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles.                                                                                                                                          |
 | `className`    | `string`           | No       | N/A     | Additional class name(s).                                                                                                                                   |
 
-### `TopBarContainerRight` / `TopBarContainerRight` props
+### `TopBarContainerLeft` / `TopBarContainerRight` props
 
 All other content must be composed within the left hand side or right hand side. The only valid children are [TopBarNavigation](/docs/stand-tools-design-system-components-topbar-topbarnavigation--docs) and [TopBarItem](/docs/stand-tools-design-system-components-topbar-topbaritem--docs).
 
@@ -104,6 +106,14 @@ All other content must be composed within the left hand side or right hand side.
 ### Default
 
 <Story of={Default} />
+
+### With Navigation
+
+<Story of={WithTopNavigation} />
+
+### With Buttons
+
+<Story of={WithButtons} />
 
 ## Customisation
 
