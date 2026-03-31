@@ -35,25 +35,29 @@ export const listBoxItemStyles = (theme: SelectTheme): SerializedStyles => {
 		padding-top: ${theme.option.paddingTop};
 		padding-bottom: ${theme.option.paddingBottom};
 
-		&[data-hovered],
-		&:hover {
-			background: ${theme.shared[':hover'].backgroundColor};
+		&[data-hovered] {
+			outline: ${theme.shared.hover.outline};
 		}
 
-		&[data-pressed],
-		&:active {
-			background: ${theme.shared[':active'].backgroundColor};
+		/* Hovering adds data-focused and the item stays focused after hovering away */
+		&[data-focused] {
+			background-color: ${theme.shared.hover.backgroundColor};
 		}
 
-		&[data-hovered]:not([data-focus-visible]),
-		&:hover:not(:focus-visible) {
+		/* Override default browser focus behaviour */
+		:focus-visible {
 			outline: none;
 		}
 
-		&[data-focus-visible]:not([data-hovered]),
-		&:focus-visible:not(:hover) {
-			outline: ${theme.option[':focus-visible'].outline};
-			outline-offset: ${theme.option[':focus-visible']['outline-offset']};
+		&[data-focus-visible] {
+			outline: ${theme.option.focused.outline};
+			outline-offset: ${theme.option.focused['outline-offset']};
+			background-color: ${theme.option.focused.backgroundColor};
+		}
+
+		/* Must be last to take precedence */
+		&[data-pressed] {
+			background-color: ${theme.shared.pressed.backgroundColor};
 		}
 	`;
 };
@@ -66,6 +70,7 @@ export const listBoxStyles = (theme: SelectTheme): SerializedStyles => {
 		box-shadow: ${theme.listBox.shadow};
 		max-width: ${theme.shared['max-width']};
 		width: ${theme.shared.width};
+		outline: none;
 	`;
 };
 
@@ -101,28 +106,24 @@ export const buttonStyles = (
 		${convertTypographyToEmotionStringStyle(theme.button.typography)}
 		color: ${theme.button.color};
 
-		&[data-hovered],
-		&:hover {
-			background: ${theme.shared[':hover'].backgroundColor};
+		&[data-hovered] {
+			background-color: ${theme.shared.hover.backgroundColor};
 		}
 
-		&[data-pressed],
-		&:active {
-			background: ${theme.shared[':active'].backgroundColor};
+		&[data-pressed] {
+			background-color: ${theme.shared.pressed.backgroundColor};
 		}
 
-		&[data-focus-visible],
-		&:focus-visible {
-			outline: ${theme.button[':focus-visible'].outline};
-			outline-offset: ${theme.button[':focus-visible']['outline-offset']};
+		&[data-focus-visible] {
+			outline: ${theme.button.focused.outline};
+			outline-offset: ${theme.button.focused['outline-offset']};
 		}
 
-		&[data-disabled],
-		&:disabled {
-			cursor: ${theme.button[':disabled'].cursor};
-			background-color: ${theme.button[':disabled'].backgroundColor};
-			color: ${theme.button[':disabled'].color};
-			border: ${theme.button[':disabled'].border};
+		&[data-disabled] {
+			cursor: ${theme.button.disabled.cursor};
+			background-color: ${theme.button.disabled.backgroundColor};
+			color: ${theme.button.disabled.color};
+			border: ${theme.button.disabled.border};
 		}
 
 		${isInvalid ? `border: ${theme.button.error.border};` : ``}

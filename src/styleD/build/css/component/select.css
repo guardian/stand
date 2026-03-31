@@ -9,7 +9,8 @@
 	--component-select-shared-max-width: 333px;
 	--component-select-shared-width: 100%;
 	--component-select-shared-hover-background-color: #f6f6f6;
-	--component-select-shared-active-background-color: #ededed;
+	--component-select-shared-hover-outline: none; /** Override outline focus styles on hover */
+	--component-select-shared-pressed-background-color: #ededed;
 	--component-select-label-color: #000000;
 	--component-select-label-typography-font: normal 700 1rem/1.15 'Open Sans';
 	--component-select-label-typography-letter-spacing: -0.03125rem;
@@ -33,8 +34,8 @@
 	--component-select-button-typography-font: normal 460 1rem/1.3 'Open Sans';
 	--component-select-button-typography-letter-spacing: 0;
 	--component-select-button-typography-font-width: 95;
-	--component-select-button-focus-visible-outline: 0.125rem solid #0072a9;
-	--component-select-button-focus-visible-outline-offset: 0.125rem;
+	--component-select-button-focused-outline: 0.125rem solid #0072a9;
+	--component-select-button-focused-outline-offset: 0.125rem;
 	--component-select-button-disabled-background-color: #ffffff;
 	--component-select-button-disabled-cursor: not-allowed;
 	--component-select-button-disabled-color: #999999;
@@ -44,8 +45,9 @@
 	--component-select-option-padding-right: 1rem;
 	--component-select-option-padding-top: 0.75rem;
 	--component-select-option-padding-bottom: 0.75rem;
-	--component-select-option-focus-visible-outline: 0.125rem solid #0072a9;
-	--component-select-option-focus-visible-outline-offset: 0;
+	--component-select-option-focused-outline: 0.125rem solid #0072a9;
+	--component-select-option-focused-outline-offset: 0;
+	--component-select-option-focused-background-color: inherit;
 	--component-select-list-box-typography-font: normal 460 1rem/1.3 'Open Sans';
 	--component-select-list-box-typography-letter-spacing: 0;
 	--component-select-list-box-typography-font-width: 95;

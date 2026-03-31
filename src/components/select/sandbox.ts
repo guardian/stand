@@ -39,9 +39,9 @@ export const componentCss = /* css */ `
 		margin-top: var(--component-select-button-margin-top);
 		color: var(--component-select-button-color);
 
-		font: var(--component-menu-menu-section-body-md-typography-font);
-		letter-spacing: var(--component-menu-menu-section-body-md-typography-letter-spacing);
-		font-variation-settings: "wdth" var(--component-menu-menu-section-body-md-typography-font-width);
+		font: var(--component-select-button-body-md-typography-font);
+		letter-spacing: var(--component-select-button-body-md-typography-letter-spacing);
+		font-variation-settings: "wdth" var(--component-select-button-body-md-typography-font-width);
 
 
 		&:hover {
@@ -53,8 +53,8 @@ export const componentCss = /* css */ `
 		}
 
 		&:focus-visible {
-			outline: var(--component-select-button-focus-visible-outline);
-			outline-offset: var(--component-select-button-focus-visible-outline-offset);
+			outline: var(--component-select-button-focused-outline);
+			outline-offset: var(--component-select-button-focused-outline-offset);
 		}
 
 		&:disabled {
@@ -108,23 +108,23 @@ const selectStyle = \`
 	font-variation-settings: "wdth" \${componentSelect.button.typography.fontWidth};
 
 	&:hover {
-		background: \${componentSelect.shared[':hover'].backgroundColor};
+		background: \${componentSelect.shared.hover.backgroundColor};
 	}
 
 	&:active {
-		background: \${componentSelect.shared[':active'].backgroundColor};
+		background: \${componentSelect.shared.pressed.backgroundColor};
 	}
 
 	&:focus-visible {
-		outline: \${componentSelect.button[':focus-visible'].outline};
-		outline-offset: \${componentSelect.button[':focus-visible']['outline-offset']};
+		outline: \${componentSelect.button.focused.outline};
+		outline-offset: \${componentSelect.button.focused['outline-offset']};
 	}
 
 	&:disabled {
-		cursor: \${componentSelect.button[':disabled'].cursor};
-		background-color: \${componentSelect.button[':disabled'].backgroundColor};
-		color: \${componentSelect.button[':disabled'].color};
-		border: \${componentSelect.button[':disabled'].border};
+		cursor: \${componentSelect.button.disabled.cursor};
+		background-color: \${componentSelect.button.disabled.backgroundColor};
+		color: \${componentSelect.button.disabled.color};
+		border: \${componentSelect.button.disabled.border};
 	}
 \`;
 
