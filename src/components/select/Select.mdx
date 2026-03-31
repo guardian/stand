@@ -1,0 +1,170 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import SelectStories, {
+	Default,
+	Disabled,
+	WithError,
+	WithHelpText,
+	CustomTheme,
+	CssOverrides,
+} from './Select.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={SelectStories} />
+
+# Select
+
+A select component built on [React Aria](https://react-aria.adobe.com/Select).
+The `Select` component combines a button with a popover containing `Option`s.
+It provides validation error support, keyboard navigation and full accessibility out of the box.
+
+## When to use
+
+- Within a form to select an option from a menu
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+- `react-aria-components`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Option, Select } from '@guardian/stand/select';
+
+/* types, if required */
+import type { SelectProps, SelectTheme } from '@guardian/stand/select';
+
+<Select label="label">
+	<Option>Option 1</Option>
+	<Option>Option 2</Option>
+</Select>;
+```
+
+## Props
+
+| Name                 | Type               | Required | Default | Description                                                               |
+| -------------------- | ------------------ | -------- | ------- | ------------------------------------------------------------------------- |
+| `label`              | `string`           | Yes      | N/A     | A label.                                                                  |
+| `contextualHelpText` | `string`           | No       | N/A     | Optional contextual help text.                                            |
+| `errorMessage`       | `string`           | Yes      | N/A     | A validation error message.                                               |
+| `children`           | `React.ReactNode`  | No       | N/A     | Options to render in the dropdown, only `Option` components are accepted. |
+| `theme`              | `SelectTheme`      | No       | N/A     | Custom theme overrides.                                                   |
+| `cssOverrides`       | `SerializedStyles` | No       | N/A     | Custom CSS styles.                                                        |
+| `className`          | `string`           | No       | N/A     | Additional class name(s).                                                 |
+
+`Select` also accepts all props from the underlying [React Aria `Select` component](https://react-aria.adobe.com/Select).
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+### Disabled
+
+<Story of={Disabled} />
+
+### With Error
+
+<Story of={WithError} />
+
+### With Help Text
+
+<Story of={WithHelpText} />
+
+## Customisation
+
+We recommend using the Select component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the Select component:
+
+```tsx
+import type { SelectTheme } from '@guardian/stand/select';
+import { Option, Select } from '@guardian/stand/select';
+import { baseColors } from '@guardian/stand';
+
+const customTheme: Partial<SelectTheme> = {
+	label: {
+		color: baseColors['cool-purple'][300],
+	},
+	button: {
+		color: baseColors['cool-purple'][200],
+		backgroundColor: baseColors['cool-purple'][800],
+	},
+};
+
+const Component = () => (
+	<Select label="Select" theme={customTheme}>
+		<Option>Option</Option>
+	</Select>
+);
+```
+
+<Story of={CustomTheme} />
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the Select component:
+
+```tsx
+import { Select } from '@guardian/stand/select';
+import { css } from '@emotion/react';
+import { baseColors } from '@guardian/stand';
+
+const customStyles = css\`
+button {
+	color: ${baseColors.red[300]};
+	border: 3px solid ${baseColors.red[800]};
+}
+
+\`;
+
+const Component = () =>
+	<Select label="Select" cssOverrides={customStyles}>
+		<Option>Option</Option
+	</Select>;
+```
+
+<Story of={CssOverrides} />
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom Select component using the styles defined in the `SelectTheme` type. You should use the default `option` styling, as styling these elements only has [limited browser availability](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select).
+
+**`css`**
+
+You can import the Select styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentSelect` variable and the `ComponentSelect` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />

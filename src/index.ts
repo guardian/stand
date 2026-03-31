@@ -30,6 +30,8 @@ export { componentFavicon } from './styleD/build/typescript/component/favicon';
 export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';
 export { componentInlineMessage } from './styleD/build/typescript/component/inlineMessage';
 export type { ComponentInlineMessage } from './styleD/build/typescript/component/inlineMessage';
+export { componentSelect } from './styleD/build/typescript/component/select';
+export type { ComponentSelect } from './styleD/build/typescript/component/select';
 export { componentMenu } from './styleD/build/typescript/component/menu';
 export type { ComponentMenu } from './styleD/build/typescript/component/menu';
 export { componentTopBar } from './styleD/build/typescript/component/TopBar';
