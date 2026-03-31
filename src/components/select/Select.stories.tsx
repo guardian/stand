@@ -43,6 +43,12 @@ export const WithHelpText = {
 	},
 } satisfies Story;
 
+export const IsOpen = {
+	args: {
+		isOpen: true,
+	},
+} satisfies Story;
+
 export const CustomTheme = {
 	args: {
 		theme: {
