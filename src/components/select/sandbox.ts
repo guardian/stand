@@ -22,7 +22,7 @@ export const componentCss = /* css */ `
 	flex-direction: var(--component-select-shared-flex-direction);
 	gap: var(--component-select-shared-gap);
 
-	max-width: var(--component-select-shared-max-width);
+	max-width: var(--component-select-shared-maxWidth);
 	width: var(--component-select-shared-width);
 }
 
@@ -39,9 +39,9 @@ export const componentCss = /* css */ `
 		margin-top: var(--component-select-button-margin-top);
 		color: var(--component-select-button-color);
 
-		font: var(--component-menu-menu-section-body-md-typography-font);
-		letter-spacing: var(--component-menu-menu-section-body-md-typography-letter-spacing);
-		font-variation-settings: "wdth" var(--component-menu-menu-section-body-md-typography-font-width);
+		font: var(--component-select-button-body-md-typography-font);
+		letter-spacing: var(--component-select-button-body-md-typography-letter-spacing);
+		font-variation-settings: "wdth" var(--component-select-button-body-md-typography-font-width);
 
 
 		&:hover {
@@ -53,8 +53,8 @@ export const componentCss = /* css */ `
 		}
 
 		&:focus-visible {
-			outline: var(--component-select-button-focus-visible-outline);
-			outline-offset: var(--component-select-button-focus-visible-outline-offset);
+			outline: var(--component-select-button-focused-outline);
+			outline-offset: var(--component-select-button-focused-outline-offset);
 		}
 
 		&:disabled {
@@ -81,16 +81,22 @@ export const componentHtml = /* html */ `<div class="container">
 export const componentJs = /* javascript */ `
 import { componentSelect } from "@guardian/stand";
 
-const style = \`
+// example of creating a stylesheet in js
+const sheet = new CSSStyleSheet();
+
+// apply the rules to the sheet
+sheet.replaceSync(\`
+
+.js-stand-select-container {
 	display: \${componentSelect.shared.display};
 	flex-direction: \${componentSelect.shared.flexDirection};
 	gap: \${componentSelect.shared.gap};
 
 	max-width: \${componentSelect.shared.maxWidth};
 	width: \${componentSelect.shared.width};
-\`;
+}
 
-const selectStyle = \`
+.js-stand-select {
 	display: \${componentSelect.button.display};
 	justify-content: \${componentSelect.button.justifyContent};
 	align-items: \${componentSelect.button.alignItems};
@@ -108,30 +114,34 @@ const selectStyle = \`
 	font-variation-settings: "wdth" \${componentSelect.button.typography.fontWidth};
 
 	&:hover {
-		background: \${componentSelect.shared[':hover'].backgroundColor};
+		background: \${componentSelect.shared.hover.backgroundColor};
 	}
 
 	&:active {
-		background: \${componentSelect.shared[':active'].backgroundColor};
+		background: \${componentSelect.shared.pressed.backgroundColor};
 	}
 
 	&:focus-visible {
-		outline: \${componentSelect.button[':focus-visible'].outline};
-		outline-offset: \${componentSelect.button[':focus-visible']['outline-offset']};
+		outline: \${componentSelect.button.focused.outline};
+		outline-offset: \${componentSelect.button.focused['outline-offset']};
 	}
 
 	&:disabled {
-		cursor: \${componentSelect.button[':disabled'].cursor};
-		background-color: \${componentSelect.button[':disabled'].backgroundColor};
-		color: \${componentSelect.button[':disabled'].color};
-		border: \${componentSelect.button[':disabled'].border};
+		cursor: \${componentSelect.button.disabled.cursor};
+		background-color: \${componentSelect.button.disabled.backgroundColor};
+		color: \${componentSelect.button.disabled.color};
+		border: \${componentSelect.button.disabled.border};
 	}
-\`;
+}
+\`);
+
+// update the document with the sheet
+document.adoptedStyleSheets.push(sheet);
 
 document.getElementById("app").innerHTML = \`
-	<div style="\${style}">
+	<div class="js-stand-select-container">
 		<label>Select</label>
-		<select style="\${selectStyle}">
+		<select class="js-stand-select">
 			<option>Option 1</option>
 			<option>Option 2</option>
 		</select>

@@ -7,12 +7,13 @@ export const componentSelect = {
 		display: 'flex',
 		flexDirection: 'column',
 		gap: '0.25rem',
-		'max-width': '333px',
+		maxWidth: '333px',
 		width: '100%',
-		':hover': {
+		hover: {
 			backgroundColor: '#f6f6f6',
+			outline: 'none',
 		},
-		':active': {
+		pressed: {
 			backgroundColor: '#ededed',
 		},
 	},
@@ -49,11 +50,11 @@ export const componentSelect = {
 			letterSpacing: '0rem',
 			fontWidth: 95,
 		},
-		':focus-visible': {
+		focused: {
 			outline: '0.125rem solid #0072a9',
 			'outline-offset': '0.125rem',
 		},
-		':disabled': {
+		disabled: {
 			backgroundColor: '#ffffff',
 			cursor: 'not-allowed',
 			color: '#999999',
@@ -68,9 +69,10 @@ export const componentSelect = {
 		paddingRight: '1rem',
 		paddingTop: '0.75rem',
 		paddingBottom: '0.75rem',
-		':focus-visible': {
+		focused: {
 			outline: '0.125rem solid #0072a9',
 			'outline-offset': '0',
+			backgroundColor: 'inherit',
 		},
 	},
 	listBox: {
