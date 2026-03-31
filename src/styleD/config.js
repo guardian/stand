@@ -94,6 +94,10 @@ const fileList = [
 		group: 'component',
 		component: 'select',
 	},
+	{
+		group: 'component',
+		component: 'textInput',
+	},
 	/** editorial components */
 	{
 		group: 'component',

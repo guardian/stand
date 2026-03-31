@@ -84,6 +84,11 @@
 			"import": "./dist/select.js",
 			"require": "./dist/select.cjs"
 		},
+		"./text-input": {
+			"types": "./dist/types/text-input.d.ts",
+			"import": "./dist/text-input.js",
+			"require": "./dist/text-input.cjs"
+		},
 		"./byline": {
 			"types": "./dist/types/byline.d.ts",
 			"import": "./dist/byline.js",
@@ -131,7 +136,8 @@
 		"./component/TopBar.css": "./dist/styleD/build/css/component/TopBar.css",
 		"./component/form.css": "./dist/styleD/build/css/component/form.css",
 		"./component/inlineMessage.css": "./dist/styleD/build/css/component/inlineMessage.css",
-		"./component/select.css": "./dist/styleD/build/css/component/select.css"
+		"./component/select.css": "./dist/styleD/build/css/component/select.css",
+		"./component/textInput.css": "./dist/styleD/build/css/component/textInput.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
@@ -192,6 +198,9 @@
 			],
 			"select": [
 				"./dist/types/select.d.ts"
+			],
+			"text-input": [
+				"./dist/types/text-input.d.ts"
 			]
 		}
 	},
