@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.18
+
+### Patch Changes
+
+- b32cc1b: Add InlineMessage component
+
 ## 0.0.17
 
 ### Patch Changes
