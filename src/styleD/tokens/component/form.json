@@ -1,0 +1,114 @@
+{
+	"component": {
+		"form": {
+			"input": {
+				"shared": {
+					"container": {
+						"display": {
+							"$type": "string",
+							"$value": "flex"
+						},
+						"flex-direction": {
+							"$type": "string",
+							"$value": "column"
+						},
+						"gap": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						},
+						"width": {
+							"$type": "dimension",
+							"$value": "100%"
+						}
+					},
+					"label": {
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.strong}"
+						},
+						"disabled": {
+							"color": {
+								"$type": "color",
+								"$value": "{semantic.colors.text.disabled}"
+							}
+						}
+					},
+					"description": {
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.weak}"
+						},
+						"typography": {
+							"font": {
+								"$type": "typography",
+								"$value": "{semantic.typography.help-text-form-md.font}"
+							},
+							"letterSpacing": {
+								"$type": "dimension",
+								"$value": "{semantic.typography.help-text-form-md.letterSpacing}"
+							},
+							"fontWidth": {
+								"$type": "number",
+								"$value": "{semantic.typography.help-text-form-md.fontWidth}"
+							}
+						},
+						"disabled": {
+							"color": {
+								"$type": "color",
+								"$value": "{semantic.colors.text.disabled}"
+							}
+						}
+					}
+				},
+				"sm": {
+					"container": {
+						"max-width": {
+							"$type": "dimension",
+							"$value": "200px"
+						}
+					},
+					"label": {
+						"typography": {
+							"font": {
+								"$type": "typography",
+								"$value": "{semantic.typography.label-form-sm.font}"
+							},
+							"letterSpacing": {
+								"$type": "typography",
+								"$value": "{semantic.typography.label-form-sm.letterSpacing}"
+							},
+							"fontWidth": {
+								"$type": "typography",
+								"$value": "{semantic.typography.label-form-sm.fontWidth}"
+							}
+						}
+					}
+				},
+				"md": {
+					"container": {
+						"max-width": {
+							"$type": "dimension",
+							"$value": "320px"
+						}
+					},
+					"label": {
+						"typography": {
+							"font": {
+								"$type": "typography",
+								"$value": "{semantic.typography.label-form-md.font}"
+							},
+							"letterSpacing": {
+								"$type": "typography",
+								"$value": "{semantic.typography.label-form-md.letterSpacing}"
+							},
+							"fontWidth": {
+								"$type": "typography",
+								"$value": "{semantic.typography.label-form-md.fontWidth}"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

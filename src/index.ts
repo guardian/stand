@@ -36,6 +36,8 @@ export { componentMenu } from './styleD/build/typescript/component/menu';
 export type { ComponentMenu } from './styleD/build/typescript/component/menu';
 export { componentTopBar } from './styleD/build/typescript/component/TopBar';
 export type { ComponentTopBar } from './styleD/build/typescript/component/TopBar';
+export { componentForm } from './styleD/build/typescript/component/form';
+export type { ComponentForm } from './styleD/build/typescript/component/form';
 
 /**
  * style dictionary exports - base

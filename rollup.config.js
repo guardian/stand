@@ -39,6 +39,7 @@ const input = {
 	typography: 'src/typography.ts',
 	icon: 'src/icon.ts',
 	favicon: 'src/favicon.ts',
+	form: 'src/form.ts',
 	'inline-message': 'src/inline-message.ts',
 	select: 'src/select.ts',
 	menu: 'src/menu.ts',
