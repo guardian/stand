@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.19
+
+### Patch Changes
+
+- 48490f5: Add Select component
+- d38c18b: Fix AvatarLink and AvatarButton exports
+
 ## 0.0.18
 
 ### Patch Changes
