@@ -1,8 +1,6 @@
 import React from 'react';
 import {
 	Button,
-	FieldError,
-	Label,
 	Popover,
 	ListBox as ReactAriaListBox,
 	ListBoxItem as ReactAriaListBoxItem,
@@ -10,17 +8,14 @@ import {
 	SelectValue,
 } from 'react-aria-components';
 import { mergeDeep } from '../../util/mergeDeep';
+import { FormInputContainer } from '../form/Form';
 import { Icon } from '../icon/Icon';
-import { InlineMessage } from '../inline-message/InlineMessage';
 import {
 	buttonStyles,
 	defaultSelectTheme,
-	helpTextStyles,
-	labelStyles,
 	listBoxItemStyles,
 	listBoxStyles,
 	popoverStyles,
-	selectStyles,
 } from './styles';
 import type { ListBoxProps, OptionProps, SelectProps } from './types';
 
@@ -59,38 +54,27 @@ function ListBox({ children, theme = {} }: ListBoxProps) {
 }
 
 export function Select({
-	children,
-	label,
-	contextualHelpText,
-	theme = {},
-	cssOverrides,
-	className,
 	isInvalid,
-	errorMessage,
+	theme = {},
+	children,
 	...props
 }: SelectProps) {
 	const mergedTheme = mergeDeep(defaultSelectTheme, theme);
+
 	return (
-		<ReactAriaSelect
-			css={[selectStyles(mergedTheme), cssOverrides]}
-			className={className}
+		<FormInputContainer
+			as={ReactAriaSelect}
+			size="md"
 			isInvalid={isInvalid}
 			{...props}
 		>
-			{label && <Label css={labelStyles(mergedTheme)}>{label}</Label>}{' '}
-			{contextualHelpText && (
-				<div css={helpTextStyles(mergedTheme)}>{contextualHelpText}</div>
-			)}
 			<Button css={buttonStyles(mergedTheme, isInvalid)}>
 				<SelectValue />
 				<Icon symbol="keyboard_arrow_down" size="lg" />
 			</Button>
-			<FieldError>
-				<InlineMessage level={'error'}>{errorMessage}</InlineMessage>
-			</FieldError>
 			<Popover css={popoverStyles(mergedTheme)}>
 				<ListBox>{children}</ListBox>
 			</Popover>
-		</ReactAriaSelect>
+		</FormInputContainer>
 	);
 }

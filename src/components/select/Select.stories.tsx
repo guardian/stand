@@ -33,13 +33,13 @@ export const Disabled = {
 export const WithError = {
 	args: {
 		isInvalid: true,
-		errorMessage: 'Error text',
+		error: 'Error text',
 	},
 } satisfies Story;
 
 export const WithHelpText = {
 	args: {
-		contextualHelpText: 'Optional contextual help text',
+		description: 'Optional contextual help text',
 	},
 } satisfies Story;
 
@@ -52,12 +52,11 @@ export const IsOpen = {
 export const CustomTheme = {
 	args: {
 		theme: {
-			label: {
-				color: baseColors['cool-purple'][300],
-			},
-			button: {
-				color: baseColors['cool-purple'][200],
-				backgroundColor: baseColors['cool-purple'][800],
+			shared: {
+				button: {
+					color: baseColors['cool-purple'][200],
+					backgroundColor: baseColors['cool-purple'][800],
+				},
 			},
 		},
 	},

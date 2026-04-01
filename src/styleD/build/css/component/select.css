@@ -3,55 +3,46 @@
  */
 
 :root {
-	--component-select-shared-display: flex;
-	--component-select-shared-flex-direction: column;
-	--component-select-shared-gap: 0.25rem;
-	--component-select-shared-max-width: 333px;
+	--component-select-shared-max-width: 320px;
 	--component-select-shared-width: 100%;
 	--component-select-shared-hover-background-color: #f6f6f6;
 	--component-select-shared-hover-outline: none; /** Override outline focus styles on hover */
 	--component-select-shared-pressed-background-color: #ededed;
-	--component-select-label-color: #000000;
-	--component-select-label-typography-font: normal 700 1rem/1.15 'Open Sans';
-	--component-select-label-typography-letter-spacing: -0.03125rem;
-	--component-select-label-typography-font-width: 95;
-	--component-select-help-text-color: #545454;
-	--component-select-help-text-typography-font: normal 460 0.875rem/1.3
+	--component-select-shared-button-display: flex;
+	--component-select-shared-button-justify-content: space-between;
+	--component-select-shared-button-align-items: center;
+	--component-select-shared-button-margin-top: 0.25rem;
+	--component-select-shared-button-background-color: #ffffff;
+	--component-select-shared-button-border: 0.0625rem solid #545454;
+	--component-select-shared-button-border-radius: 0.25rem;
+	--component-select-shared-button-height: 2.5rem;
+	--component-select-shared-button-padding-left: 0.75rem;
+	--component-select-shared-button-padding-right: 0.25rem;
+	--component-select-shared-button-color: #545454;
+	--component-select-shared-button-typography-font: normal 460 1rem/1.3
 		'Open Sans';
-	--component-select-help-text-typography-letter-spacing: 0;
-	--component-select-help-text-typography-font-width: 95;
-	--component-select-button-display: flex;
-	--component-select-button-justify-content: space-between;
-	--component-select-button-align-items: center;
-	--component-select-button-margin-top: 0.25rem;
-	--component-select-button-background-color: #ffffff;
-	--component-select-button-border: 0.0625rem solid #545454;
-	--component-select-button-border-radius: 0.25rem;
-	--component-select-button-height: 2.5rem;
-	--component-select-button-padding-left: 0.75rem;
-	--component-select-button-padding-right: 0.25rem;
-	--component-select-button-color: #545454;
-	--component-select-button-typography-font: normal 460 1rem/1.3 'Open Sans';
-	--component-select-button-typography-letter-spacing: 0;
-	--component-select-button-typography-font-width: 95;
-	--component-select-button-focused-outline: 0.125rem solid #0072a9;
-	--component-select-button-focused-outline-offset: 0.125rem;
-	--component-select-button-disabled-background-color: #ffffff;
-	--component-select-button-disabled-cursor: not-allowed;
-	--component-select-button-disabled-color: #999999;
-	--component-select-button-disabled-border: 0.0625rem solid #dcdcdc;
-	--component-select-button-error-border: 0.0625rem solid #b42a19;
-	--component-select-option-padding-left: 1rem;
-	--component-select-option-padding-right: 1rem;
-	--component-select-option-padding-top: 0.75rem;
-	--component-select-option-padding-bottom: 0.75rem;
-	--component-select-option-focused-outline: 0.125rem solid #0072a9;
-	--component-select-option-focused-outline-offset: 0;
-	--component-select-option-focused-background-color: inherit;
-	--component-select-list-box-typography-font: normal 460 1rem/1.3 'Open Sans';
-	--component-select-list-box-typography-letter-spacing: 0;
-	--component-select-list-box-typography-font-width: 95;
-	--component-select-list-box-border: 0.0625rem solid #cccccc;
-	--component-select-list-box-background-color: #ffffff;
-	--component-select-list-box-shadow: 0 0.125rem 0.375rem 0 rgb(0% 0% 0% / 0.3);
+	--component-select-shared-button-typography-letter-spacing: 0;
+	--component-select-shared-button-typography-font-width: 95;
+	--component-select-shared-button-focused-outline: 0.125rem solid #0072a9;
+	--component-select-shared-button-focused-outline-offset: 0.125rem;
+	--component-select-shared-button-disabled-background-color: #ffffff;
+	--component-select-shared-button-disabled-cursor: not-allowed;
+	--component-select-shared-button-disabled-color: #999999;
+	--component-select-shared-button-disabled-border: 0.0625rem solid #dcdcdc;
+	--component-select-shared-button-error-border: 0.0625rem solid #b42a19;
+	--component-select-shared-option-padding-left: 1rem;
+	--component-select-shared-option-padding-right: 1rem;
+	--component-select-shared-option-padding-top: 0.75rem;
+	--component-select-shared-option-padding-bottom: 0.75rem;
+	--component-select-shared-option-focused-outline: 0.125rem solid #0072a9;
+	--component-select-shared-option-focused-outline-offset: 0;
+	--component-select-shared-option-focused-background-color: inherit;
+	--component-select-shared-list-box-typography-font: normal 460 1rem/1.3
+		'Open Sans';
+	--component-select-shared-list-box-typography-letter-spacing: 0;
+	--component-select-shared-list-box-typography-font-width: 95;
+	--component-select-shared-list-box-border: 0.0625rem solid #cccccc;
+	--component-select-shared-list-box-background-color: #ffffff;
+	--component-select-shared-list-box-shadow: 0 0.125rem 0.375rem 0
+		rgb(0% 0% 0% / 0.3);
 }
