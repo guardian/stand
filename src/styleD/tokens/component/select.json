@@ -1,0 +1,260 @@
+{
+	"component": {
+		"select": {
+			"shared": {
+				"display": {
+					"$type": "string",
+					"$value": "flex"
+				},
+				"flexDirection": {
+					"$type": "string",
+					"$value": "column"
+				},
+				"gap": { "$type": "dimension", "$value": "{base.spacing.4-rem}" },
+				"maxWidth": {
+					"$type": "dimension",
+					"$value": "333px"
+				},
+				"width": {
+					"$type": "dimension",
+					"$value": "100%"
+				},
+				"hover": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.weak-hover}"
+					},
+					"outline": {
+						"$description": "Override outline focus styles on hover",
+						"$type": "border",
+						"$value": "none"
+					}
+				},
+				"pressed": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.weak-pressed}"
+					}
+				}
+			},
+			"label": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.strong}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.label-form-md.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.label-form-md.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.label-form-md.fontWidth}"
+					}
+				}
+			},
+			"helpText": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.weak}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.help-text-form-md.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.help-text-form-md.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.help-text-form-md.fontWidth}"
+					}
+				}
+			},
+			"button": {
+				"display": {
+					"$type": "string",
+					"$value": "flex"
+				},
+				"justifyContent": {
+					"$type": "string",
+					"$value": "space-between"
+				},
+				"alignItems": {
+					"$type": "string",
+					"$value": "center"
+				},
+				"marginTop": {
+					"$type": "dimension",
+					"$value": "{base.spacing.4-rem}"
+				},
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.weak}"
+				},
+				"border": {
+					"$type": "border",
+					"$value": {
+						"color": "{semantic.colors.border.stronger}",
+						"width": "{semantic.sizing.border.default}",
+						"style": "solid"
+					}
+				},
+				"borderRadius": {
+					"$type": "dimension",
+					"$value": "{base.radius.corner-4-rem}"
+				},
+				"height": {
+					"$type": "dimension",
+					"$value": "{base.sizing.size-40-rem}"
+				},
+				"paddingLeft": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12-rem}"
+				},
+				"paddingRight": {
+					"$type": "dimension",
+					"$value": "{base.spacing.4-rem}"
+				},
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.weak}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.body-md.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.body-md.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.body-md.fontWidth}"
+					}
+				},
+				"focused": {
+					"outline": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.focused}",
+							"width": "{semantic.sizing.border.md}",
+							"style": "solid"
+						}
+					},
+					"outline-offset": {
+						"$type": "dimension",
+						"$value": "{base.spacing.2-rem}"
+					}
+				},
+				"disabled": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.weak}"
+					},
+					"cursor": {
+						"$type": "string",
+						"$value": "not-allowed"
+					},
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.disabled}"
+					},
+					"border": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.disabled}",
+							"width": "{semantic.sizing.border.default}",
+							"style": "solid"
+						}
+					}
+				},
+				"error": {
+					"border": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.error}",
+							"width": "{semantic.sizing.border.default}",
+							"style": "solid"
+						}
+					}
+				}
+			},
+			"option": {
+				"paddingLeft": {
+					"$type": "dimension",
+					"$value": "{base.spacing.16-rem}"
+				},
+				"paddingRight": {
+					"$type": "dimension",
+					"$value": "{base.spacing.16-rem}"
+				},
+				"paddingTop": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12-rem}"
+				},
+				"paddingBottom": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12-rem}"
+				},
+				"focused": {
+					"outline": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.focused}",
+							"width": "{semantic.sizing.border.md}",
+							"style": "solid"
+						}
+					},
+					"outline-offset": {
+						"$type": "dimension",
+						"$value": "0"
+					},
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "inherit"
+					}
+				}
+			},
+			"listBox": {
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.body-md.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.body-md.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.body-md.fontWidth}"
+					}
+				},
+				"border": {
+					"$type": "border",
+					"$value": {
+						"color": "{semantic.colors.border.weak}",
+						"width": "{semantic.sizing.border.default}",
+						"style": "solid"
+					}
+				},
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.weak}"
+				},
+				"shadow": {
+					"$type": "shadow",
+					"$value": "{semantic.shadow.raised}"
+				}
+			}
+		}
+	}
+}

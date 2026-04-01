@@ -74,6 +74,11 @@
 			"import": "./dist/inline-message.js",
 			"require": "./dist/inline-message.cjs"
 		},
+		"./select": {
+			"types": "./dist/types/select.d.ts",
+			"import": "./dist/select.js",
+			"require": "./dist/select.cjs"
+		},
 		"./byline": {
 			"types": "./dist/types/byline.d.ts",
 			"import": "./dist/byline.js",
@@ -119,7 +124,8 @@
 		"./component/favicon.css": "./dist/styleD/build/css/component/favicon.css",
 		"./component/menu.css": "./dist/styleD/build/css/component/menu.css",
 		"./component/TopBar.css": "./dist/styleD/build/css/component/TopBar.css",
-		"./component/inlineMessage.css": "./dist/styleD/build/css/component/inlineMessage.css"
+		"./component/inlineMessage.css": "./dist/styleD/build/css/component/inlineMessage.css",
+		"./component/select.css": "./dist/styleD/build/css/component/select.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
@@ -168,6 +174,9 @@
 			],
 			"inline-message": [
 				"./dist/types/inline-message.d.ts"
+			],
+			"select": [
+				"./dist/types/select.d.ts"
 			]
 		}
 	},
