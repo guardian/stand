@@ -14,15 +14,15 @@
 			"import": "./dist/avatar.js",
 			"require": "./dist/avatar.cjs"
 		},
-		"./avatar-link": {
-			"types": "./dist/types/avatar-link.d.ts",
-			"import": "./dist/avatar-link.js",
-			"require": "./dist/avatar-link.cjs"
+		"./AvatarLink": {
+			"types": "./dist/types/avatarLink.d.ts",
+			"import": "./dist/avatarLink.js",
+			"require": "./dist/avatarLink.cjs"
 		},
-		"./avatar-button": {
-			"types": "./dist/types/avatar-button.d.ts",
-			"import": "./dist/avatar-button.js",
-			"require": "./dist/avatar-button.cjs"
+		"./AvatarButton": {
+			"types": "./dist/types/avatarButton.d.ts",
+			"import": "./dist/avatarButton.js",
+			"require": "./dist/avatarButton.cjs"
 		},
 		"./button": {
 			"types": "./dist/types/button.d.ts",
@@ -132,6 +132,12 @@
 		"*": {
 			"avatar": [
 				"./dist/types/avatar.d.ts"
+			],
+			"AvatarButton": [
+				"./dist/types/avatarButton.d.ts"
+			],
+			"AvatarLink": [
+				"./dist/types/avatarLink.d.ts"
 			],
 			"button": [
 				"./dist/types/button.d.ts"
