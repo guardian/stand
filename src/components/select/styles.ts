@@ -10,17 +10,6 @@ export type PartialSelectTheme = DeepPartial<SelectTheme>;
 
 export const defaultSelectTheme: SelectTheme = componentSelect;
 
-export const selectStyles = (theme: SelectTheme): SerializedStyles => {
-	return css`
-		display: ${theme.shared.display};
-		flex-direction: ${theme.shared.flexDirection};
-		gap: ${theme.shared.gap};
-
-		max-width: ${theme.shared.maxWidth};
-		width: ${theme.shared.width};
-	`;
-};
-
 export const popoverStyles = (theme: SelectTheme): SerializedStyles => {
 	return css`
 		max-width: ${theme.shared.maxWidth};
@@ -30,10 +19,10 @@ export const popoverStyles = (theme: SelectTheme): SerializedStyles => {
 
 export const listBoxItemStyles = (theme: SelectTheme): SerializedStyles => {
 	return css`
-		padding-left: ${theme.option.paddingLeft};
-		padding-right: ${theme.option.paddingRight};
-		padding-top: ${theme.option.paddingTop};
-		padding-bottom: ${theme.option.paddingBottom};
+		padding-left: ${theme.shared.option.paddingLeft};
+		padding-right: ${theme.shared.option.paddingRight};
+		padding-top: ${theme.shared.option.paddingTop};
+		padding-bottom: ${theme.shared.option.paddingBottom};
 
 		&[data-hovered] {
 			outline: ${theme.shared.hover.outline};
@@ -50,9 +39,9 @@ export const listBoxItemStyles = (theme: SelectTheme): SerializedStyles => {
 		}
 
 		&[data-focus-visible] {
-			outline: ${theme.option.focused.outline};
-			outline-offset: ${theme.option.focused['outline-offset']};
-			background-color: ${theme.option.focused.backgroundColor};
+			outline: ${theme.shared.option.focused.outline};
+			outline-offset: ${theme.shared.option.focused['outline-offset']};
+			background-color: ${theme.shared.option.focused.backgroundColor};
 		}
 
 		/* Must be last to take precedence */
@@ -64,27 +53,13 @@ export const listBoxItemStyles = (theme: SelectTheme): SerializedStyles => {
 
 export const listBoxStyles = (theme: SelectTheme): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(theme.listBox.typography)}
-		background-color: ${theme.listBox.backgroundColor};
-		border: ${theme.listBox.border};
-		box-shadow: ${theme.listBox.shadow};
+		${convertTypographyToEmotionStringStyle(theme.shared.listBox.typography)}
+		background-color: ${theme.shared.listBox.backgroundColor};
+		border: ${theme.shared.listBox.border};
+		box-shadow: ${theme.shared.listBox.shadow};
 		max-width: ${theme.shared.maxWidth};
 		width: ${theme.shared.width};
 		outline: none;
-	`;
-};
-
-export const labelStyles = (theme: SelectTheme): SerializedStyles => {
-	return css`
-		color: ${theme.label.color};
-		${convertTypographyToEmotionStringStyle(theme.label.typography)};
-	`;
-};
-
-export const helpTextStyles = (theme: SelectTheme): SerializedStyles => {
-	return css`
-		color: ${theme.helpText.color};
-		${convertTypographyToEmotionStringStyle(theme.helpText.typography)}
 	`;
 };
 
@@ -93,18 +68,18 @@ export const buttonStyles = (
 	isInvalid?: boolean,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.button.display};
-		justify-content: ${theme.button.justifyContent};
-		align-items: ${theme.button.alignItems};
-		background-color: ${theme.button.backgroundColor};
-		border: ${theme.button.border};
-		border-radius: ${theme.button.borderRadius};
-		height: ${theme.button.height};
-		padding-left: ${theme.button.paddingLeft};
-		padding-right: ${theme.button.paddingRight};
-		margin-top: ${theme.button.marginTop};
-		${convertTypographyToEmotionStringStyle(theme.button.typography)}
-		color: ${theme.button.color};
+		display: ${theme.shared.button.display};
+		justify-content: ${theme.shared.button.justifyContent};
+		align-items: ${theme.shared.button.alignItems};
+		background-color: ${theme.shared.button.backgroundColor};
+		border: ${theme.shared.button.border};
+		border-radius: ${theme.shared.button.borderRadius};
+		height: ${theme.shared.button.height};
+		padding-left: ${theme.shared.button.paddingLeft};
+		padding-right: ${theme.shared.button.paddingRight};
+		margin-top: ${theme.shared.button.marginTop};
+		${convertTypographyToEmotionStringStyle(theme.shared.button.typography)}
+		color: ${theme.shared.button.color};
 
 		&[data-hovered] {
 			background-color: ${theme.shared.hover.backgroundColor};
@@ -115,17 +90,17 @@ export const buttonStyles = (
 		}
 
 		&[data-focus-visible] {
-			outline: ${theme.button.focused.outline};
-			outline-offset: ${theme.button.focused['outline-offset']};
+			outline: ${theme.shared.button.focused.outline};
+			outline-offset: ${theme.shared.button.focused['outline-offset']};
 		}
 
 		&[data-disabled] {
-			cursor: ${theme.button.disabled.cursor};
-			background-color: ${theme.button.disabled.backgroundColor};
-			color: ${theme.button.disabled.color};
-			border: ${theme.button.disabled.border};
+			cursor: ${theme.shared.button.disabled.cursor};
+			background-color: ${theme.shared.button.disabled.backgroundColor};
+			color: ${theme.shared.button.disabled.color};
+			border: ${theme.shared.button.disabled.border};
 		}
 
-		${isInvalid ? `border: ${theme.button.error.border};` : ``}
+		${isInvalid ? `border: ${theme.shared.button.error.border};` : ``}
 	`;
 };

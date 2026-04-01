@@ -69,6 +69,11 @@
 			"import": "./dist/TopBar.js",
 			"require": "./dist/TopBar.cjs"
 		},
+		"./form": {
+			"types": "./dist/types/form.d.ts",
+			"import": "./dist/form.js",
+			"require": "./dist/form.cjs"
+		},
 		"./inline-message": {
 			"types": "./dist/types/inline-message.d.ts",
 			"import": "./dist/inline-message.js",
@@ -124,6 +129,7 @@
 		"./component/favicon.css": "./dist/styleD/build/css/component/favicon.css",
 		"./component/menu.css": "./dist/styleD/build/css/component/menu.css",
 		"./component/TopBar.css": "./dist/styleD/build/css/component/TopBar.css",
+		"./component/form.css": "./dist/styleD/build/css/component/form.css",
 		"./component/inlineMessage.css": "./dist/styleD/build/css/component/inlineMessage.css",
 		"./component/select.css": "./dist/styleD/build/css/component/select.css"
 	},
@@ -177,6 +183,9 @@
 			],
 			"menu": [
 				"./dist/types/menu.d.ts"
+			],
+			"form": [
+				"./dist/types/form.d.ts"
 			],
 			"inline-message": [
 				"./dist/types/inline-message.d.ts"
