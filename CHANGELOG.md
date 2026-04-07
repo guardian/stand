@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.20
+
+### Patch Changes
+
+- 709ca42: Fix: Export `TopBarContainerLeft` and `TopBarContainerRight`
+
 ## 0.0.19
 
 ### Patch Changes
