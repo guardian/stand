@@ -36,7 +36,12 @@ export const Default = {
 export const WithTopNavigation = {
 	render: () => (
 		<TopBar>
-			<TopBarToolName name="Default" favicon={{ letter: 'D' }} />
+			<TopBarToolName
+				name="Default"
+				favicon={{ letter: 'D' }}
+				href="#"
+				hoverText="Back to dashboard"
+			/>
 			<TopBarContainerLeft>
 				<TopBarNavigation isSelected text="Navigation 1" href="#" />
 				<TopBarNavigation text="Navigation 2" href="#" />

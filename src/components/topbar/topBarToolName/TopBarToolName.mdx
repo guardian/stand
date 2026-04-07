@@ -2,6 +2,7 @@ import { Meta, Story } from '@storybook/addon-docs/blocks';
 import ToolNameStories, {
 	WithName,
 	WithSubsection,
+	WithLink,
 	CustomTheme,
 	CssOverrides,
 } from './TopBarToolName.stories';
@@ -34,6 +35,7 @@ The Top Bar Tool Name component represents the identity of the application and (
 - `react`
 - `react-dom`
 - `typescript`
+- `react-aria-components`
 
 See the `peerDependencies` section of `package.json` for compatible versions.
 
@@ -68,15 +70,18 @@ import type {
 
 ## Props
 
-| Name             | Type                                                              | Required | Default | Description                                                                |
-| ---------------- | ----------------------------------------------------------------- | -------- | ------- | -------------------------------------------------------------------------- |
-| `name`           | `string`                                                          | Yes      | N/A     | Name of the tool.                                                          |
-| `favicon`        | `FaviconProps`                                                    | Yes      | N/A     | Favicon of the tool                                                        |
-| `subsection`     | `string`                                                          | No       | N/A     | The subsection or content type of the current page.                        |
-| `subsectionIcon` | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>` | No       | N/A     | Icon that represents the content type.                                     |
-| `theme`          | `TopBarToolNameTheme` (partial)                                   | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.    |
-| `cssOverrides`   | `SerializedStyles`                                                | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient. |
-| `className`      | `string`                                                          | No       | N/A     | Additional class name(s) for the tool name.                                |
+| Name             | Type                                                              | Required | Default | Description                                                                                               |
+| ---------------- | ----------------------------------------------------------------- | -------- | ------- | --------------------------------------------------------------------------------------------------------- |
+| `name`           | `string`                                                          | Yes      | N/A     | Name of the tool.                                                                                         |
+| `favicon`        | `FaviconProps`                                                    | Yes      | N/A     | Favicon of the tool                                                                                       |
+| `subsection`     | `string`                                                          | No       | N/A     | The subsection or content type of the current page.                                                       |
+| `subsectionIcon` | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>` | No       | N/A     | Icon that represents the content type.                                                                    |
+| `href`           | `string`                                                          | No       | N/A     | Optional destination URL for the link.                                                                    |
+| `hoverText`      | `string`                                                          | No       | N/A     | Optional label for the link shown on hover. Must be provided if a link is.                                |
+| `theme`          | `TopBarToolNameTheme` (partial)                                   | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                   |
+| `cssOverrides`   | `SerializedStyles`                                                | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                |
+| `className`      | `string`                                                          | No       | N/A     | Additional class name(s) for the tool name.                                                               |
+| `...props`       | `ReactAria Link` props                                            | No       | N/A     | All other props from `react-aria-components` `Link` (e.g. `target`, `rel`, `aria-label`, event handlers). |
 
 ## Stories
 
@@ -87,6 +92,10 @@ import type {
 ### With content type
 
 <Story of={WithSubsection} />
+
+### With link
+
+<Story of={WithLink} />
 
 ## Customisation
 

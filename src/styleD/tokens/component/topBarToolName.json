@@ -61,6 +61,102 @@
 							"$value": "{semantic.typography.heading-compact-md.fontWidth}"
 						}
 					}
+				},
+				"link": {
+					"textDecoration": {
+						"$type": "string",
+						"$value": "none"
+					},
+					"color": {
+						"$type": "color",
+						"$value": "unset"
+					},
+					"position": {
+						"$type": "string",
+						"$value": "relative"
+					},
+					"width": {
+						"$type": "dimension",
+						"$value": "100%"
+					},
+					"height": {
+						"$type": "dimension",
+						"$value": "100%"
+					}
+				},
+				"hoverLink": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.stronger-inverse}"
+					},
+					"paddingLeft": {
+						"$type": "dimension",
+						"$value": "{base.spacing.20-rem}"
+					},
+					"paddingRight": {
+						"$type": "dimension",
+						"$value": "{base.spacing.20-rem}"
+					},
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.accent-strong-hover}"
+					},
+					"opacity": {
+						"$type": "number",
+						"$value": "0"
+					},
+					"typography": {
+						"font": {
+							"$type": "typography",
+							"$value": "{semantic.typography.body-bold-sm.font}"
+						},
+						"letterSpacing": {
+							"$type": "dimension",
+							"$value": "{semantic.typography.body-bold-sm.letterSpacing}"
+						},
+						"fontWidth": {
+							"$type": "number",
+							"$value": "{semantic.typography.body-bold-sm.fontWidth}"
+						}
+					},
+					"position": {
+						"$type": "string",
+						"$value": "absolute"
+					},
+					"width": {
+						"$type": "dimension",
+						"$value": "100%"
+					},
+					"height": {
+						"$type": "dimension",
+						"$value": "100%"
+					},
+					"hover": {
+						"opacity": {
+							"$type": "number",
+							"$value": "1"
+						}
+					},
+					"pressed": {
+						"backgroundColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.fill.accent-strong-pressed}"
+						}
+					},
+					"focused": {
+						"outline": {
+							"$type": "border",
+							"$value": {
+								"color": "{semantic.colors.border.focused}",
+								"width": "{semantic.sizing.border.md}",
+								"style": "solid"
+							}
+						},
+						"outline-offset": {
+							"$type": "dimension",
+							"$value": "-{base.spacing.2-rem}"
+						}
+					}
 				}
 			}
 		}
