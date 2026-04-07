@@ -27,6 +27,10 @@ export { TopBarItem } from './components/topbar/topBarItem/TopBarItem';
 export type { TopBarItemProps } from './components/topbar/topBarItem/types';
 export type { PartialTopBarItemTheme as TopBarItemTheme } from './components/topbar/topBarItem/styles';
 
-export { TopBar } from './components/topbar/TopBar';
+export {
+	TopBar,
+	TopBarContainerLeft,
+	TopBarContainerRight,
+} from './components/topbar/TopBar';
 export type { TopBarProps } from './components/topbar/types';
 export type { PartialTopBarTheme as TopBarTheme } from './components/topbar/styles';
