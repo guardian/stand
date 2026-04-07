@@ -147,10 +147,10 @@ for rv in $REACT_VERSIONS; do
 			if [ "$PLAYWRIGHT_CT_REACT_18" = true ]; then
 				echo "-- Installing @playwright/experimental-ct-react for React $REACT_MAJOR_VERSION"
 				pnpm remove @playwright/experimental-ct-react17
-				pnpm add -D @playwright/experimental-ct-react@"^1.56.0"
+				pnpm add -D @playwright/experimental-ct-react@"^1.59.1"
 			else
 				echo "-- Using existing @playwright/experimental-ct-react17 for React $REACT_MAJOR_VERSION"
-				pnpm add -D @playwright/experimental-ct-react17@"^1.55.1"
+				pnpm add -D @playwright/experimental-ct-react17@"^1.59.1"
 			fi
 
 			echo "-- Installing playwright browsers"
