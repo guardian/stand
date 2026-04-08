@@ -83,6 +83,11 @@ export const semanticTypography = {
 		letterSpacing: '-0.03125rem',
 		fontWidth: 88,
 	},
+	'body-xs': {
+		font: 'normal 460 0.75rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
 	'body-sm': {
 		font: 'normal 460 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
@@ -100,6 +105,36 @@ export const semanticTypography = {
 	},
 	'body-xl': {
 		font: 'normal 460 1.25rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'body-bold-xs': {
+		font: 'normal 700 0.75rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'body-bold-sm': {
+		font: 'normal 700 0.875rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'body-bold-md': {
+		font: 'normal 700 1rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'body-bold-lg': {
+		font: 'normal 700 1.125rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'body-bold-xl': {
+		font: 'normal 700 1.25rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'body-italic-xs': {
+		font: 'italic 460 0.75rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
@@ -123,6 +158,36 @@ export const semanticTypography = {
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
+	'body-italic-bold-xs': {
+		font: 'italic 700 0.75rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'body-italic-bold-sm': {
+		font: 'italic 700 0.875rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'body-italic-bold-md': {
+		font: 'italic 700 1rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'body-italic-bold-lg': {
+		font: 'italic 700 1.125rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'body-italic-bold-xl': {
+		font: 'italic 700 1.25rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 95,
+	},
+	'body-compact-xs': {
+		font: 'normal 460 0.75rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
 	'body-compact-sm': {
 		font: 'normal 460 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
@@ -143,6 +208,36 @@ export const semanticTypography = {
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
+	'body-compact-bold-xs': {
+		font: 'normal 700 0.75rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
+	'body-compact-bold-sm': {
+		font: 'normal 700 0.875rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
+	'body-compact-bold-md': {
+		font: 'normal 700 1rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
+	'body-compact-bold-lg': {
+		font: 'normal 700 1.125rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
+	'body-compact-bold-xl': {
+		font: 'normal 700 1.25rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
+	'body-compact-italic-xs': {
+		font: 'italic 460 0.75rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
 	'body-compact-italic-sm': {
 		font: 'italic 460 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
@@ -160,6 +255,31 @@ export const semanticTypography = {
 	},
 	'body-compact-italic-xl': {
 		font: 'italic 460 1.25rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
+	'body-compact-italic-bold-xs': {
+		font: 'italic 700 0.75rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
+	'body-compact-italic-bold-sm': {
+		font: 'italic 700 0.875rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
+	'body-compact-italic-bold-md': {
+		font: 'italic 700 1rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
+	'body-compact-italic-bold-lg': {
+		font: 'italic 700 1.125rem/1.3 Open Sans',
+		letterSpacing: '0rem',
+		fontWidth: 88,
+	},
+	'body-compact-italic-bold-xl': {
+		font: 'italic 700 1.25rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
