@@ -28,6 +28,8 @@ export { componentIcon } from './styleD/build/typescript/component/icon';
 export type { ComponentIcon } from './styleD/build/typescript/component/icon';
 export { componentFavicon } from './styleD/build/typescript/component/favicon';
 export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';
+export { componentTextInput } from './styleD/build/typescript/component/textInput';
+export type { ComponentTextInput } from './styleD/build/typescript/component/textInput';
 export { componentInlineMessage } from './styleD/build/typescript/component/inlineMessage';
 export type { ComponentInlineMessage } from './styleD/build/typescript/component/inlineMessage';
 export { componentSelect } from './styleD/build/typescript/component/select';

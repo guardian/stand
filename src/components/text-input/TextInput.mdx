@@ -1,0 +1,209 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import TextInputStories, {
+	Default,
+	WithLabelAndDescription,
+	WithLabelValueAndDescription,
+	WithLabelValueDescriptionAndError,
+	WithLabelOnly,
+	WithDescriptionOnly,
+	SmallSize,
+	Disabled,
+	WithTypePassword,
+} from './TextInput.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={TextInputStories} />
+
+# TextInput
+
+A text input component built on [React Aria `TextField`](https://react-aria.adobe.com/TextField) component, see their documentation for the API.
+
+It provides a labelled, accessible text field with support for descriptions, validation errors, two sizes, and a disabled state.
+
+## When to use
+
+- Within a form to collect a single line of free-text input from the user, or a specific type of input such as an email address/password (with appropriate `type` prop).
+- Whenever an accessible, labelled text field is needed that aligns with Stand tokens
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact
+	flowColumn
+	componentName={componentName}
+	componentTsx={componentTsx}
+/>
+
+```tsx
+import { TextInput } from '@guardian/stand/text-input';
+
+/* types, if required */
+import type {
+	TextInputProps,
+	TextInputTheme,
+} from '@guardian/stand/text-input';
+
+const Example = () => (
+	<>
+		<TextInput
+			label="Name"
+			description="This is a description for the text input."
+		/>
+
+		<TextInput
+			size="sm"
+			label="Username"
+			isInvalid
+			error="Username is already taken."
+			defaultValue="guardian_user"
+		/>
+
+		<TextInput
+			label="Password"
+			description="Showing a different type"
+			type="password"
+		/>
+
+		<TextInput label="Notes" isDisabled placeholder="Read only content" />
+	</>
+);
+```
+
+## Props
+
+| Name                      | Type                                       | Required | Default | Description                                                                                                                                 |
+| ------------------------- | ------------------------------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `size`                    | `'md'` \| `'sm'`                           | No       | `'md'`  | Controls the input height and typography.                                                                                                   |
+| `label`                   | `string`                                   | No       | N/A     | Visible label rendered above the input.                                                                                                     |
+| `description`             | `string`                                   | No       | N/A     | Helper text rendered below the label.                                                                                                       |
+| `error`                   | `string`                                   | No       | N/A     | Validation error message; displayed when `isInvalid` is `true`.                                                                             |
+| `isInvalid`               | `boolean`                                  | No       | `false` | Marks the field as invalid and applies error border styling.                                                                                |
+| `isDisabled`              | `boolean`                                  | No       | `false` | Disables interaction and applies disabled styling.                                                                                          |
+| `theme`                   | `TextInputTheme` (partial)                 | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                     |
+| `formInputContainerTheme` | `FormInputContainerTheme` (partial)        | No       | N/A     | Override Stand tokens for the wrapping label and description container.                                                                     |
+| `cssOverrides`            | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                  |
+| `className`               | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria TextField element.                                                                     |
+| `...props`                | `ReactAria TextField` props                | No       | N/A     | All other props from `react-aria-components` [`TextField`](https://react-aria.adobe.com/TextField) (e.g. `value`, `onChange`, `autoFocus`). |
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+### With Label and Description
+
+<Story of={WithLabelAndDescription} />
+
+### With Label, Value and Description
+
+<Story of={WithLabelValueAndDescription} />
+
+### With Label, Value, Description and Error
+
+<Story of={WithLabelValueDescriptionAndError} />
+
+### With Label Only
+
+<Story of={WithLabelOnly} />
+
+### With Description Only
+
+<Story of={WithDescriptionOnly} />
+
+### Small Size
+
+<Story of={SmallSize} />
+
+### Disabled
+
+<Story of={Disabled} />
+
+### With Type Password
+
+<Story of={WithTypePassword} />
+
+## Customisation
+
+We recommend using the TextInput component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the TextInput component:
+
+```tsx
+import type { TextInputTheme } from '@guardian/stand/text-input';
+import { TextInput } from '@guardian/stand/text-input';
+import { baseColors } from '@guardian/stand';
+
+const customTheme: Partial<TextInputTheme> = {
+	shared: {
+		border: `0.0625rem solid ${baseColors['cool-purple'][500]}`,
+		'border-radius': '0.5rem',
+		error: {
+			border: `0.0625rem solid ${baseColors.red[500]}`,
+		},
+	},
+};
+
+const Component = () => <TextInput label="Email" theme={customTheme} />;
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the TextInput component:
+
+```tsx
+import { TextInput } from '@guardian/stand/text-input';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	font-style: italic;
+\`;
+
+const Component = () => (
+	<TextInput label="Notes" cssOverrides={customStyles} />
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom TextInput component using the styles defined in the `TextInputTheme` type. You will be responsible for any additional functionality on top of the styles, for example accessibility, focus management, and interaction states.
+
+**`css`**
+
+You can import the TextInput styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentTextInput` variable and the `ComponentTextInput` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
