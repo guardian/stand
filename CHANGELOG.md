@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.21
+
+### Patch Changes
+
+- d03f7ea: Add TextInput component
+- c595ebe: Refactor `MenuItem` focus/hover styles to remove `@react-aria/focus` peer dependency
+
 ## 0.0.20
 
 ### Patch Changes
