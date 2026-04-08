@@ -41,9 +41,6 @@ importers:
       '@playwright/experimental-ct-react17':
         specifier: ^1.59.1
         version: 1.59.1(@types/node@24.10.1)(lightningcss@1.32.0)(tsx@4.20.6)(vite@8.0.5(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)(@types/node@24.10.1)(esbuild@0.27.7)(tsx@4.20.6))
-      '@react-aria/focus':
-        specifier: 3.21.5
-        version: 3.21.5(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@rollup/plugin-commonjs':
         specifier: 29.0.2
         version: 29.0.2(rollup@4.60.1)

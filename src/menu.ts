@@ -7,7 +7,6 @@
  * - `react-dom`
  * - `typescript`
  * - `react-aria-components`
- * - `@react-aria/focus`
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *

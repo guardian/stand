@@ -99,10 +99,14 @@ export const componentMenu = {
 			},
 			':hover': {
 				'background-color': '#f6f6f6',
+				outline: 'none',
 			},
 			':focus-visible': {
 				outline: '0.125rem solid #0072a9',
 				'outline-offset': '-0.125rem',
+			},
+			':pressed': {
+				'background-color': '#ededed',
 			},
 		},
 		sm: {

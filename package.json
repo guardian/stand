@@ -242,7 +242,6 @@
 		"@guardian/tsconfig": "1.0.1",
 		"@material-design-icons/svg": "^0.14.15",
 		"@playwright/experimental-ct-react17": "^1.59.1",
-		"@react-aria/focus": "3.21.5",
 		"@rollup/plugin-commonjs": "29.0.2",
 		"@rollup/plugin-node-resolve": "16.0.3",
 		"@rollup/plugin-typescript": "12.3.0",
@@ -288,7 +287,6 @@
 	"peerDependencies": {
 		"@emotion/react": ">=11.11.4 <=11.14.0",
 		"@guardian/prosemirror-invisibles": "3.1.1",
-		"@react-aria/focus": "^3.21.5",
 		"prosemirror-dropcursor": "1.8.2",
 		"prosemirror-history": "1.4.1",
 		"prosemirror-keymap": "1.2.2",
@@ -305,9 +303,6 @@
 			"optional": true
 		},
 		"@guardian/prosemirror-invisibles": {
-			"optional": true
-		},
-		"@react-aria/focus": {
 			"optional": true
 		},
 		"prosemirror-dropcursor": {
