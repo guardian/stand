@@ -265,6 +265,11 @@
 						"background-color": {
 							"$type": "color",
 							"$value": "{semantic.colors.fill.weak-hover}"
+						},
+						"outline": {
+							"$description": "Override outline focus styles on hover",
+							"$type": "border",
+							"$value": "none"
 						}
 					},
 					":focus-visible": {
@@ -279,6 +284,12 @@
 						"outline-offset": {
 							"$type": "dimension",
 							"$value": "-{semantic.sizing.border.md}"
+						}
+					},
+					":pressed": {
+						"background-color": {
+							"$type": "color",
+							"$value": "{semantic.colors.fill.weak-pressed}"
 						}
 					}
 				},

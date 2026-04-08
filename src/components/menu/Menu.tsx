@@ -1,4 +1,3 @@
-import { useFocusRing } from '@react-aria/focus';
 import React from 'react';
 import {
 	Header,
@@ -132,18 +131,9 @@ export function MenuItem({
 	const textValue =
 		props.textValue ?? (typeof label === 'string' ? label : undefined);
 
-	const { isFocusVisible, focusProps } = useFocusRing();
-
 	return (
 		<ReactAriaMenuItem
-			// fixes focus ring issues, i.e don't show focus ring on hover, but show it when navigating with keyboard,
-			// previously the focus ring was showing on hover as well which is not desired
-			// the type assertion is required for compatibility with higher versions of react-aria-components
-			{...(focusProps as object)}
-			css={[
-				menuItemStyles(mergedTheme, { description }, isFocusVisible),
-				cssOverrides,
-			]}
+			css={[menuItemStyles(mergedTheme, { description }), cssOverrides]}
 			{...props}
 			textValue={textValue}
 		>

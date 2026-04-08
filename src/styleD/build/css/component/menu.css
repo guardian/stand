@@ -63,9 +63,11 @@
 	--component-menu-menu-item-shared-aside-typography-font-width: 95;
 	--component-menu-menu-item-shared-last-child-border-bottom: none;
 	--component-menu-menu-item-shared-hover-background-color: #f6f6f6;
+	--component-menu-menu-item-shared-hover-outline: none; /** Override outline focus styles on hover */
 	--component-menu-menu-item-shared-focus-visible-outline: 0.125rem solid
 		#0072a9;
 	--component-menu-menu-item-shared-focus-visible-outline-offset: -0.125rem;
+	--component-menu-menu-item-shared-pressed-background-color: #ededed;
 	--component-menu-menu-item-sm-icon-size: 1.125rem;
 	--component-menu-menu-item-sm-icon-line-height: 1.3;
 	--component-menu-menu-item-md-icon-size: 1.25rem;

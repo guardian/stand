@@ -48,7 +48,6 @@ export const defaultMenuItemTheme: MenuItemTheme = componentMenu.menuItem;
 export const menuItemStyles = (
 	theme: MenuItemTheme,
 	{ description }: Pick<MenuItemProps, 'description'>,
-	isFocusVisible = false,
 ): SerializedStyles => css`
 	display: ${theme.shared.display};
 	grid-template-columns: ${theme.shared['grid-template-columns']};
@@ -64,20 +63,33 @@ export const menuItemStyles = (
 	&:last-child {
 		border-bottom: ${theme.shared[':last-child']['border-bottom']};
 	}
-	&[data-hovered],
-	&:hover {
-		background: ${theme.shared[':hover']['background-color']};
+
+	/* Hovering adds data-focused and the item stays focused after hovering away */
+	&[data-focused] {
+		background-color: ${theme.shared[':hover']['background-color']};
 	}
-	${isFocusVisible
-		? css`
-				outline: ${theme.shared[':focus-visible']['outline']};
-				outline-offset: ${theme.shared[':focus-visible']['outline-offset']};
-				background: ${theme.shared[':hover']['background-color']};
-			`
-		: css`
-				outline: none;
-			`}
+	&[data-hovered] {
+		outline: ${theme.shared[':hover'].outline};
+	}
+
+	/* Override default browser focus behaviour */
+	:focus-visible {
+		outline: none;
+	}
+
+	/* focus visible used for keyboard focus */
+	&[data-focus-visible] {
+		outline: ${theme.shared[':focus-visible']['outline']};
+		outline-offset: ${theme.shared[':focus-visible']['outline-offset']};
+		background-color: ${theme.shared[':hover']['background-color']};
+	}
+
+	/* Must be last to take precedence */
+	&[data-pressed] {
+		background-color: ${theme.shared[':pressed']['background-color']};
+	}
 `;
+
 export const menuItemIconStyles = (
 	theme: MenuItemTheme,
 	{ size }: Required<Pick<MenuItemProps, 'size'>>,
