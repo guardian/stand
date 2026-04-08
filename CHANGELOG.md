@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.22
+
+### Patch Changes
+
+- f4c4a59: Make the `TopBarToolName` component a clickable link with hover text
+- d269841: Add new xs and bold typography tokens
+
 ## 0.0.21
 
 ### Patch Changes
