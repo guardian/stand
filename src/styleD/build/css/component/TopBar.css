@@ -71,4 +71,26 @@
 		'Open Sans';
 	--component-top-bar-tool-name-subsection-typography-letter-spacing: -0.0125rem;
 	--component-top-bar-tool-name-subsection-typography-font-width: 88;
+	--component-top-bar-tool-name-link-text-decoration: none;
+	--component-top-bar-tool-name-link-color: unset;
+	--component-top-bar-tool-name-link-position: relative;
+	--component-top-bar-tool-name-link-width: 100%;
+	--component-top-bar-tool-name-link-height: 100%;
+	--component-top-bar-tool-name-hover-link-color: #ffffff;
+	--component-top-bar-tool-name-hover-link-padding-left: 1.25rem;
+	--component-top-bar-tool-name-hover-link-padding-right: 1.25rem;
+	--component-top-bar-tool-name-hover-link-background-color: #092f62;
+	--component-top-bar-tool-name-hover-link-opacity: 0;
+	--component-top-bar-tool-name-hover-link-typography-font: normal 700
+		0.875rem/1.3 'Open Sans';
+	--component-top-bar-tool-name-hover-link-typography-letter-spacing: 0;
+	--component-top-bar-tool-name-hover-link-typography-font-width: 95;
+	--component-top-bar-tool-name-hover-link-position: absolute;
+	--component-top-bar-tool-name-hover-link-width: 100%;
+	--component-top-bar-tool-name-hover-link-height: 100%;
+	--component-top-bar-tool-name-hover-link-hover-opacity: 1;
+	--component-top-bar-tool-name-hover-link-pressed-background-color: #061d3c;
+	--component-top-bar-tool-name-hover-link-focused-outline: 0.125rem solid
+		#0072a9;
+	--component-top-bar-tool-name-hover-link-focused-outline-offset: -0.125rem;
 }

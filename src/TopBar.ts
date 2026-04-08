@@ -5,6 +5,7 @@
  * - `@emotion/react`
  * - `react`
  * - `react-dom`
+ * - `react-aria-components`
  * - `typescript`
  *
  * See the `peerDependencies` section of package.json for compatible versions.

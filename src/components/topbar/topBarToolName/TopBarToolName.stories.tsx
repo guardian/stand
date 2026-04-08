@@ -10,6 +10,17 @@ const meta = {
 	title: 'Stand/Tools Design System/Components/TopBar/TopBarToolName',
 	component: TopBarToolName,
 	parameters: {},
+	render: (args) => {
+		return (
+			<div
+				css={css`
+					display: flex;
+				`}
+			>
+				<TopBarToolName {...args} />
+			</div>
+		);
+	},
 } satisfies Meta<typeof TopBarToolName>;
 
 type Story = StoryObj<typeof TopBarToolName>;
@@ -31,6 +42,19 @@ export const WithSubsection = {
 		},
 		subsection: 'Article',
 		subsectionIcon: 'menu',
+	},
+} satisfies Story;
+
+export const WithLink = {
+	args: {
+		name: 'Songwriter',
+		favicon: {
+			letter: 'S',
+		},
+		subsection: 'Article',
+		subsectionIcon: 'menu',
+		href: '#',
+		hoverText: 'Back to dashboard',
 	},
 } satisfies Story;
 

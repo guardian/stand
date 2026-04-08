@@ -1,9 +1,13 @@
+import type { LinkProps as RACLinkProps } from 'react-aria-components';
 import type { DefaultProps } from '../../../util/types';
 import type { FaviconProps } from '../../favicon/types';
 import type { IconProps } from '../../icon/types';
 import type { TopBarToolNameTheme } from './styles';
 
-export interface TopBarToolNameProps extends DefaultProps<TopBarToolNameTheme> {
+export interface TopBarToolNameProps
+	extends
+		DefaultProps<TopBarToolNameTheme, RACLinkProps['className']>,
+		Omit<RACLinkProps, 'children'> {
 	/**
 	 * Name of the tool to display
 	 */
@@ -20,4 +24,9 @@ export interface TopBarToolNameProps extends DefaultProps<TopBarToolNameTheme> {
 	 * Icon that represents the content type (optional)
 	 * */
 	subsectionIcon?: IconProps['symbol'] | Exclude<IconProps['children'], string>;
+	/**
+	 * Text to display on hover, labels the link
+	 * e.g. 'Back to dashboard'
+	 */
+	hoverText?: string;
 }

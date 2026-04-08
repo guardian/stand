@@ -118,6 +118,38 @@ export const componentTopBar = {
 				fontWidth: 88,
 			},
 		},
+		link: {
+			textDecoration: 'none',
+			color: 'unset',
+			position: 'relative',
+			width: '100%',
+			height: '100%',
+		},
+		hoverLink: {
+			color: '#ffffff',
+			paddingLeft: '1.25rem',
+			paddingRight: '1.25rem',
+			backgroundColor: '#092f62',
+			opacity: '0',
+			typography: {
+				font: 'normal 700 0.875rem/1.3 Open Sans',
+				letterSpacing: '0rem',
+				fontWidth: 95,
+			},
+			position: 'absolute',
+			width: '100%',
+			height: '100%',
+			hover: {
+				opacity: '1',
+			},
+			pressed: {
+				backgroundColor: '#061d3c',
+			},
+			focused: {
+				outline: '0.125rem solid #0072a9',
+				'outline-offset': '-0.125rem',
+			},
+		},
 	},
 };
 export type ComponentTopBar = typeof componentTopBar;
