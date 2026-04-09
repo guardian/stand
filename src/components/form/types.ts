@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import {
 	RadioGroup as RACRadioGroup,
+	CheckboxGroup as RACCheckboxGroup,
 	Select as RACSelect,
 	TextField as RACTextField,
 } from 'react-aria-components';
@@ -49,5 +50,6 @@ export const ALLOWED_FORM_CONTAINERS = [
 	RACTextField,
 	RACSelect,
 	RACRadioGroup,
+	RACCheckboxGroup,
 ] as const;
 export type AllowedContainer = (typeof ALLOWED_FORM_CONTAINERS)[number];

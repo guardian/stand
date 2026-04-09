@@ -30,6 +30,8 @@ export { componentFavicon } from './styleD/build/typescript/component/favicon';
 export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';
 export { componentRadioGroup } from './styleD/build/typescript/component/radioGroup';
 export type { ComponentRadioGroup } from './styleD/build/typescript/component/radioGroup';
+export { componentCheckbox } from './styleD/build/typescript/component/checkbox';
+export type { ComponentCheckbox } from './styleD/build/typescript/component/checkbox';
 export { componentTextInput } from './styleD/build/typescript/component/textInput';
 export type { ComponentTextInput } from './styleD/build/typescript/component/textInput';
 export { componentInlineMessage } from './styleD/build/typescript/component/inlineMessage';
