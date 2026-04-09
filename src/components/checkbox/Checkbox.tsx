@@ -1,12 +1,7 @@
-import React from 'react';
-import {
-	Checkbox as RACCheckbox,
-	CheckboxGroup as RACCheckboxGroup,
-} from 'react-aria-components';
+import { Checkbox as RACCheckbox } from 'react-aria-components';
 import { mergeDeep } from '../../util/mergeDeep';
-import { FormInputContainer } from '../form/Form';
 import { checkboxStyles, defaultCheckboxTheme } from './styles';
-import type { CheckboxGroupProps, CheckboxProps } from './types';
+import type { CheckboxProps } from './types';
 
 export function Checkbox({
 	children,
@@ -50,33 +45,5 @@ export function Checkbox({
 			</>
 			{children}
 		</RACCheckbox>
-	);
-}
-
-export function CheckboxGroup({
-	size = 'md',
-	theme = {},
-	...props
-}: CheckboxGroupProps) {
-	const checkboxes: React.ReactElement[] = [];
-
-	// only allow Checkbox components as children of CheckboxGroup and apply theme and size props to them
-	React.Children.forEach(props.children, (child) => {
-		if (!React.isValidElement(child) || child.type !== Checkbox) {
-			return;
-		}
-
-		checkboxes.push(
-			React.cloneElement(child as React.ReactElement<CheckboxProps>, {
-				theme: mergeDeep(defaultCheckboxTheme, theme),
-				size,
-			}),
-		);
-	});
-
-	return (
-		<FormInputContainer as={RACCheckboxGroup} size={size} {...props}>
-			<div>{checkboxes}</div>
-		</FormInputContainer>
 	);
 }
