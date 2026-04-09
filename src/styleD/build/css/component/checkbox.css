@@ -1,0 +1,56 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-checkbox-input-shared-display: flex;
+	--component-checkbox-input-shared-position: relative;
+	--component-checkbox-input-shared-gap: 0.5rem;
+	--component-checkbox-input-shared-align-items: flex-start;
+	--component-checkbox-input-shared-color: #000000;
+	--component-checkbox-input-shared-cursor: pointer;
+	--component-checkbox-input-shared-indicator-display: flex;
+	--component-checkbox-input-shared-indicator-align-items: center;
+	--component-checkbox-input-shared-indicator-justify-content: center;
+	--component-checkbox-input-shared-indicator-flex-shrink: 0;
+	--component-checkbox-input-shared-indicator-border: 0.0625rem solid #545454;
+	--component-checkbox-input-shared-indicator-border-radius: 0.25rem;
+	--component-checkbox-input-shared-indicator-transition: all 200ms;
+	--component-checkbox-input-shared-indicator-svg-fill: none;
+	--component-checkbox-input-shared-indicator-check-width: 20px;
+	--component-checkbox-input-shared-indicator-check-height: 20px;
+	--component-checkbox-input-shared-indicator-indeterminate-width: 12px;
+	--component-checkbox-input-shared-indicator-indeterminate-height: 2px;
+	--component-checkbox-input-shared-indicator-selected-background-color: #005d8b;
+	--component-checkbox-input-shared-indicator-selected-border: 0.0625rem solid
+		#0072a9;
+	--component-checkbox-input-shared-indicator-selected-svg-fill: #ffffff;
+	--component-checkbox-input-shared-indicator-focus-visible-outline: 0.125rem
+		solid #0072a9;
+	--component-checkbox-input-shared-indicator-focus-visible-outline-offset: 0.125rem;
+	--component-checkbox-input-shared-indicator-error-background-color: #b42a19;
+	--component-checkbox-input-shared-indicator-error-border: 0.0625rem solid
+		#b42a19;
+	--component-checkbox-input-shared-disabled-color: #999999;
+	--component-checkbox-input-shared-disabled-cursor: not-allowed;
+	--component-checkbox-input-shared-disabled-indicator-border: 0.0625rem solid
+		#dcdcdc;
+	--component-checkbox-input-shared-disabled-indicator-selected-background-color: #dcdcdc;
+	--component-checkbox-input-sm-typography-font: normal 460 0.875rem/1.3
+		'Open Sans';
+	--component-checkbox-input-sm-typography-letter-spacing: 0;
+	--component-checkbox-input-sm-typography-font-width: 95;
+	--component-checkbox-input-sm-indicator-size: 1.25rem;
+	--component-checkbox-input-md-typography-font: normal 460 1rem/1.3 'Open Sans';
+	--component-checkbox-input-md-typography-letter-spacing: 0;
+	--component-checkbox-input-md-typography-font-width: 95;
+	--component-checkbox-input-md-indicator-size: 1.5rem;
+	--component-checkbox-group-shared-display: flex;
+	--component-checkbox-group-shared-flex-direction: column;
+	--component-checkbox-group-sm-gap: 1rem;
+	--component-checkbox-group-sm-margin-top: 0.5rem; /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
+	--component-checkbox-group-sm-margin-bottom: 0.5rem; /** spacing between the input itself and the following element (error) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
+	--component-checkbox-group-md-gap: 1.25rem;
+	--component-checkbox-group-md-margin-top: 0.75rem; /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
+	--component-checkbox-group-md-margin-bottom: 0.75rem; /** spacing between the input itself and the following element (error) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
+}

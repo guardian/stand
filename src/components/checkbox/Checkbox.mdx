@@ -1,0 +1,117 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import CheckboxStories, { Default } from './Checkbox.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+TODO: Add a description for the Checkbox component.
+
+## When to use
+
+- TODO: Describe when to use this component
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Checkbox } from '@guardian/stand/checkbox';
+
+/* types, if required */
+import type { CheckboxProps, CheckboxTheme } from '@guardian/stand/checkbox';
+
+<Checkbox>Hello</Checkbox>;
+```
+
+## Props
+
+| Name           | Type               | Required | Default | Description                             |
+| -------------- | ------------------ | -------- | ------- | --------------------------------------- |
+| `children`     | `React.ReactNode`  | No       | N/A     | Content to render inside the component. |
+| `theme`        | `CheckboxTheme`    | No       | N/A     | Custom theme overrides.                 |
+| `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles.                      |
+| `className`    | `string`           | No       | N/A     | Additional class name(s).               |
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+## Customisation
+
+We recommend using the Checkbox component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the Checkbox component:
+
+```tsx
+import type { CheckboxTheme } from '@guardian/stand/checkbox';
+import { Checkbox } from '@guardian/stand/checkbox';
+
+const customTheme: Partial<CheckboxTheme> = {
+	// override tokens here
+};
+
+const Component = () => <Checkbox theme={customTheme}>Hello</Checkbox>;
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the Checkbox component:
+
+```tsx
+import { Checkbox } from '@guardian/stand/checkbox';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	// custom styles here
+\`;
+
+const Component = () => <Checkbox cssOverrides={customStyles}>Hello</Checkbox>;
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom Checkbox component using the styles defined in the `CheckboxTheme` type.
+
+**`css`**
+
+You can import the Checkbox styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentCheckbox` variable and the `ComponentCheckbox` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
