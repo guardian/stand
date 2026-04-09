@@ -1,207 +1,253 @@
 {
 	"component": {
 		"checkbox": {
-			"shared": {
-				"display": {
-					"$type": "string",
-					"$value": "flex"
-				},
-				"position": {
-					"$type": "string",
-					"$value": "relative"
-				},
-				"gap": {
-					"$type": "dimension",
-					"$value": "{base.spacing.8-rem}"
-				},
-				"align-items": {
-					"$type": "string",
-					"$value": "flex-start"
-				},
-				"color": {
-					"$type": "color",
-					"$value": "{semantic.colors.text.strong}"
-				},
-				"cursor": {
-					"$type": "string",
-					"$value": "pointer"
-				},
-				"indicator": {
+			"input": {
+				"shared": {
 					"display": {
 						"$type": "string",
 						"$value": "flex"
 					},
+					"position": {
+						"$type": "string",
+						"$value": "relative"
+					},
+					"gap": {
+						"$type": "dimension",
+						"$value": "{base.spacing.8-rem}"
+					},
 					"align-items": {
 						"$type": "string",
-						"$value": "center"
+						"$value": "flex-start"
 					},
-					"justify-content": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.strong}"
+					},
+					"cursor": {
 						"$type": "string",
-						"$value": "center"
+						"$value": "pointer"
 					},
-					"flex-shrink": {
-						"$type": "number",
-						"$value": 0
-					},
-					"border": {
-						"$type": "border",
-						"$value": {
-							"color": "{semantic.colors.border.stronger}",
-							"width": "{semantic.sizing.border.default}",
-							"style": "solid"
-						}
-					},
-					"border-radius": {
-						"$type": "string",
-						"$value": "{base.radius.corner-4-rem}"
-					},
-					"transition": {
-						"$type": "string",
-						"$value": "all 200ms"
-					},
-					"svg": {
-						"fill": {
-							"$type": "color",
-							"$value": "none"
-						}
-					},
-					"check": {
-						"width": {
+					"indicator": {
+						"display": {
 							"$type": "string",
-							"$value": "20px"
+							"$value": "flex"
 						},
-						"height": {
+						"align-items": {
 							"$type": "string",
-							"$value": "20px"
-						}
-					},
-					"indeterminate": {
-						"width": {
-							"$type": "string",
-							"$value": "12px"
+							"$value": "center"
 						},
-						"height": {
+						"justify-content": {
 							"$type": "string",
-							"$value": "2px"
-						}
-					},
-					"selected": {
-						"background-color": {
-							"$type": "color",
-							"$value": "{semantic.colors.fill.selected}"
+							"$value": "center"
+						},
+						"flex-shrink": {
+							"$type": "number",
+							"$value": 0
 						},
 						"border": {
 							"$type": "border",
 							"$value": {
-								"color": "{semantic.colors.border.selected}",
+								"color": "{semantic.colors.border.stronger}",
 								"width": "{semantic.sizing.border.default}",
 								"style": "solid"
 							}
+						},
+						"border-radius": {
+							"$type": "string",
+							"$value": "{base.radius.corner-4-rem}"
+						},
+						"transition": {
+							"$type": "string",
+							"$value": "all 200ms"
 						},
 						"svg": {
 							"fill": {
 								"$type": "color",
-								"$value": "{semantic.colors.text.stronger-inverse}"
-							}
-						}
-					},
-					":focus-visible": {
-						"outline": {
-							"$type": "border",
-							"$value": {
-								"color": "{semantic.colors.border.focused}",
-								"width": "{semantic.sizing.border.md}",
-								"style": "solid"
+								"$value": "none"
 							}
 						},
-						"outline-offset": {
-							"$type": "dimension",
-							"$value": "{base.spacing.2-rem}"
-						}
-					},
-					"error": {
-						"background-color": {
-							"$type": "color",
-							"$value": "{semantic.colors.fill.error-strong}"
-						},
-						"border": {
-							"$type": "border",
-							"$value": {
-								"color": "{semantic.colors.border.error}",
-								"width": "{semantic.sizing.border.default}",
-								"style": "solid"
+						"check": {
+							"width": {
+								"$type": "string",
+								"$value": "20px"
+							},
+							"height": {
+								"$type": "string",
+								"$value": "20px"
 							}
-						}
-					}
-				},
-				"disabled": {
-					"color": {
-						"$type": "color",
-						"$value": "{semantic.colors.text.disabled}"
-					},
-					"cursor": {
-						"$type": "string",
-						"$value": "not-allowed"
-					},
-					"indicator": {
-						"border": {
-							"$type": "border",
-							"$value": {
-								"color": "{semantic.colors.border.disabled}",
-								"width": "{semantic.sizing.border.default}",
-								"style": "solid"
+						},
+						"indeterminate": {
+							"width": {
+								"$type": "string",
+								"$value": "12px"
+							},
+							"height": {
+								"$type": "string",
+								"$value": "2px"
 							}
 						},
 						"selected": {
 							"background-color": {
 								"$type": "color",
-								"$value": "{semantic.colors.fill.disabled}"
+								"$value": "{semantic.colors.fill.selected}"
+							},
+							"border": {
+								"$type": "border",
+								"$value": {
+									"color": "{semantic.colors.border.selected}",
+									"width": "{semantic.sizing.border.default}",
+									"style": "solid"
+								}
+							},
+							"svg": {
+								"fill": {
+									"$type": "color",
+									"$value": "{semantic.colors.text.stronger-inverse}"
+								}
 							}
+						},
+						":focus-visible": {
+							"outline": {
+								"$type": "border",
+								"$value": {
+									"color": "{semantic.colors.border.focused}",
+									"width": "{semantic.sizing.border.md}",
+									"style": "solid"
+								}
+							},
+							"outline-offset": {
+								"$type": "dimension",
+								"$value": "{base.spacing.2-rem}"
+							}
+						},
+						"error": {
+							"background-color": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.error-strong}"
+							},
+							"border": {
+								"$type": "border",
+								"$value": {
+									"color": "{semantic.colors.border.error}",
+									"width": "{semantic.sizing.border.default}",
+									"style": "solid"
+								}
+							}
+						}
+					},
+					"disabled": {
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.disabled}"
+						},
+						"cursor": {
+							"$type": "string",
+							"$value": "not-allowed"
+						},
+						"indicator": {
+							"border": {
+								"$type": "border",
+								"$value": {
+									"color": "{semantic.colors.border.disabled}",
+									"width": "{semantic.sizing.border.default}",
+									"style": "solid"
+								}
+							},
+							"selected": {
+								"background-color": {
+									"$type": "color",
+									"$value": "{semantic.colors.fill.disabled}"
+								}
+							}
+						}
+					}
+				},
+				"sm": {
+					"typography": {
+						"font": {
+							"$type": "typography",
+							"$value": "{semantic.typography.label-form-inline-sm.font}"
+						},
+						"letterSpacing": {
+							"$type": "dimension",
+							"$value": "{semantic.typography.label-form-inline-sm.letterSpacing}"
+						},
+						"fontWidth": {
+							"$type": "number",
+							"$value": "{semantic.typography.label-form-inline-sm.fontWidth}"
+						}
+					},
+					"indicator": {
+						"size": {
+							"$type": "string",
+							"$value": "{base.sizing.size-20-rem}"
+						}
+					}
+				},
+				"md": {
+					"typography": {
+						"font": {
+							"$type": "typography",
+							"$value": "{semantic.typography.label-form-inline-md.font}"
+						},
+						"letterSpacing": {
+							"$type": "dimension",
+							"$value": "{semantic.typography.label-form-inline-md.letterSpacing}"
+						},
+						"fontWidth": {
+							"$type": "number",
+							"$value": "{semantic.typography.label-form-inline-md.fontWidth}"
+						}
+					},
+					"indicator": {
+						"size": {
+							"$type": "string",
+							"$value": "{base.sizing.size-24-rem}"
 						}
 					}
 				}
 			},
-			"sm": {
-				"typography": {
-					"font": {
-						"$type": "typography",
-						"$value": "{semantic.typography.label-form-inline-sm.font}"
+			"group": {
+				"shared": {
+					"display": {
+						"$type": "string",
+						"$value": "flex"
 					},
-					"letterSpacing": {
-						"$type": "dimension",
-						"$value": "{semantic.typography.label-form-inline-sm.letterSpacing}"
-					},
-					"fontWidth": {
-						"$type": "number",
-						"$value": "{semantic.typography.label-form-inline-sm.fontWidth}"
+					"flex-direction": {
+						"$type": "string",
+						"$value": "column"
 					}
 				},
-				"indicator": {
-					"size": {
-						"$type": "string",
-						"$value": "{base.sizing.size-20-rem}"
-					}
-				}
-			},
-			"md": {
-				"typography": {
-					"font": {
-						"$type": "typography",
-						"$value": "{semantic.typography.label-form-inline-md.font}"
-					},
-					"letterSpacing": {
+				"sm": {
+					"gap": {
 						"$type": "dimension",
-						"$value": "{semantic.typography.label-form-inline-md.letterSpacing}"
+						"$value": "{base.spacing.16-rem}"
 					},
-					"fontWidth": {
-						"$type": "number",
-						"$value": "{semantic.typography.label-form-inline-md.fontWidth}"
+					"margin-top": {
+						"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
+						"$type": "dimension",
+						"$value": "{base.spacing.8-rem}"
+					},
+					"margin-bottom": {
+						"$description": "spacing between the input itself and the following element (error) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
+						"$type": "dimension",
+						"$value": "{base.spacing.8-rem}"
 					}
 				},
-				"indicator": {
-					"size": {
-						"$type": "string",
-						"$value": "{base.sizing.size-24-rem}"
+				"md": {
+					"gap": {
+						"$type": "dimension",
+						"$value": "{base.spacing.20-rem}"
+					},
+					"margin-top": {
+						"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
+						"$type": "dimension",
+						"$value": "{base.spacing.12-rem}"
+					},
+					"margin-bottom": {
+						"$description": "spacing between the input itself and the following element (error) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
+						"$type": "dimension",
+						"$value": "{base.spacing.12-rem}"
 					}
 				}
 			}

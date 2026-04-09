@@ -13,10 +13,10 @@ export interface CheckboxProps
 	/**
 	 * Size variant of the Checkbox - TODO: replace with CheckboxProps['size'] when we add size variants to the Checkbox component in the future
 	 */
-	size?: 'sm' | 'md';
+	size?: keyof Omit<CheckboxTheme['input'], 'shared'>;
 }
 
 export type CheckboxGroupProps = FormInputContainerDefaultProps<
 	RACCheckboxGroupProps,
-	CheckboxTheme
+	CheckboxTheme['group']
 >;
