@@ -56,11 +56,14 @@ export const listboxItemStyles = (
 	return css`
 		padding: ${theme.listbox.item.paddingY} ${theme.listbox.item.paddingX};
 		cursor: pointer;
+		color: ${theme.listbox.item.color};
 		&:hover {
 			background-color: ${theme.listbox.item.backgroundHoverColor};
+			color: ${theme.listbox.item.colorHover};
 		}
 		&[data-focused] {
 			background-color: ${theme.listbox.item.backgroundFocusedColor};
+			color: ${theme.listbox.item.colorFocused};
 		}
 	`;
 };
