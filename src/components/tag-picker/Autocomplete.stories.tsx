@@ -1,18 +1,15 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
-import { exampleTags } from './example-tags';
-import { TagAutocomplete } from './TagAutocomplete';
-import { TagTable } from './TagTable';
-import type { TagManagerObjectData, TagRow } from './types';
-
-type TagManagerObjectRow = TagManagerObjectData & TagRow;
+import type { AutocompleteOption } from './Autocomplete';
+import { Autocomplete } from './Autocomplete';
+import { SelectionTable } from './SelectionTable';
 
 const meta = {
-	title: 'Stand/Editorial Components/TagPicker/TagAutocomplete',
-	component: TagAutocomplete,
+	title: 'Stand/Editorial Components/TagPicker/Autocomplete',
+	component: Autocomplete,
 	args: {
-		addTag: () => {},
+		addSelection: () => {},
 		loading: false,
 		onTextInputChange: () => {},
 		options: [],
@@ -21,9 +18,9 @@ const meta = {
 		disabled: false,
 		value: '',
 	},
-} satisfies Meta<typeof TagAutocomplete>;
+} satisfies Meta<typeof Autocomplete>;
 
-type Story = StoryObj<typeof TagAutocomplete>;
+type Story = StoryObj<typeof Autocomplete>;
 
 export const Default = {} satisfies Story;
 
@@ -31,21 +28,21 @@ export const Disabled = {
 	args: { disabled: true },
 } satisfies Story;
 
-const mappedExampleTags: TagManagerObjectRow[] = exampleTags.map((tag) => ({
-	...tag,
-	type: tag.type || 'Unknown',
-	sectionName: tag.section.name || 'Unknown',
-	name: tag.internalName || 'Unknown',
-	id: tag.id,
-}));
+const exampleFruits: AutocompleteOption[] = [
+	{ id: 1, name: 'Apple' },
+	{ id: 2, name: 'Banana' },
+	{ id: 3, name: 'Cherry' },
+	{ id: 4, name: 'Date' },
+	{ id: 5, name: 'Elderberry' },
+];
 
-export const TagPicker = {
+export const FruitPicker = {
 	render: () => {
-		const [selectedTags, setSelectedTags] = useState<TagManagerObjectRow[]>([]);
+		const [selectedTags, setSelectedTags] = useState<AutocompleteOption[]>([]);
 
-		const [options, setOptions] = useState<TagManagerObjectRow[]>([]);
+		const [options, setOptions] = useState<AutocompleteOption[]>([]);
 		const [value, setValue] = useState('');
-		const onTextInputChange = (inputText: string) => {
+		const onChange = (inputText: string) => {
 			setValue(inputText);
 			if (inputText === '') {
 				setOptions([]);
@@ -53,12 +50,12 @@ export const TagPicker = {
 			}
 
 			if (inputText === '*') {
-				setOptions(mappedExampleTags);
+				setOptions(exampleFruits);
 				return;
 			}
 
-			// Simple filtering against mappedExampleTags
-			const filteredItems = mappedExampleTags.filter((t) =>
+			// Simple filtering against exampleFruits
+			const filteredItems = exampleFruits.filter((t) =>
 				t.name.toLowerCase().includes(inputText.toLowerCase()),
 			);
 
@@ -72,11 +69,11 @@ export const TagPicker = {
 						display: flex;
 					`}
 				>
-					<TagAutocomplete
-						onTextInputChange={onTextInputChange}
+					<Autocomplete
+						onTextInputChange={onChange}
 						options={options}
 						label="Tags"
-						addTag={(tag) =>
+						addSelection={(tag) =>
 							setSelectedTags((tags) => {
 								return [...tags, tag];
 							})
@@ -87,10 +84,17 @@ export const TagPicker = {
 						value={value}
 					/>
 					<select>
-						<option>All tags</option>
+						<option>All fruits</option>
 					</select>
 				</div>
-				<TagTable rows={selectedTags} filterRows={() => true} />
+				<SelectionTable
+					heading="Selected Fruits"
+					rows={selectedTags}
+					filterRows={() => true}
+					onReorder={(newTags) => {
+						setSelectedTags([...newTags]);
+					}}
+				/>
 			</>
 		);
 	},
@@ -98,9 +102,12 @@ export const TagPicker = {
 
 export const Async = {
 	render: () => {
-		const [options, setOptions] = useState<TagManagerObjectData[]>([]);
+		const [options, setOptions] = useState<AutocompleteOption[]>([]);
 		const [value, setValue] = useState('');
 		const [loading, setLoading] = useState(false);
+		const [selectedFruits, setSelectedFruits] = useState<AutocompleteOption[]>(
+			[],
+		);
 
 		useEffect(() => {
 			const loadData = async () => {
@@ -115,12 +122,12 @@ export const Async = {
 				}
 
 				if (value === '*') {
-					setOptions(mappedExampleTags);
+					setOptions(exampleFruits);
 					return;
 				}
 
-				// Simple filtering against mappedExampleTags
-				const filteredItems = mappedExampleTags.filter((t) =>
+				// Simple filtering against exampleFruits
+				const filteredItems = exampleFruits.filter((t) =>
 					t.name.toLowerCase().includes(value.toLowerCase()),
 				);
 
@@ -135,6 +142,10 @@ export const Async = {
 			setValue(inputText);
 		};
 
+		const onAddSelection = (fruit: AutocompleteOption) => {
+			setSelectedFruits((fruits) => [...fruits, fruit]);
+		};
+
 		return (
 			<>
 				<div
@@ -142,21 +153,25 @@ export const Async = {
 						display: flex;
 					`}
 				>
-					<TagAutocomplete
+					<Autocomplete
 						onTextInputChange={onTextInputChange}
 						options={options}
-						label="Tags"
-						addTag={(tag) => console.log('Tag added:', tag)}
+						label="Fruits"
+						addSelection={onAddSelection}
 						loading={loading}
 						placeholder={''}
 						disabled={false}
 						value={value}
 					/>
 					<select>
-						<option>All tags</option>
+						<option>All fruits</option>
 					</select>
 				</div>
-				<div>Some content below</div>
+				<SelectionTable
+					heading="Selected Fruits"
+					rows={selectedFruits}
+					filterRows={() => true}
+				/>
 			</>
 		);
 	},

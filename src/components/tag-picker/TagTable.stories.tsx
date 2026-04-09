@@ -2,27 +2,36 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { exampleTags } from './example-tags';
 import { TagTable } from './TagTable';
-import type { TagManagerObjectData } from './types';
+import type { TagManagerObjectData, TagRow } from './types';
+
+type TagManagerRow = TagManagerObjectData & TagRow;
 
 const meta = {
 	title: 'Stand/Editorial Components/TagPicker/TagTable',
-	component: TagTable<TagManagerObjectData>,
+	component: TagTable<TagManagerRow>,
 	args: {
-		rows: exampleTags,
+		rows: exampleTags.map((tag) => ({
+			...tag,
+			type: tag.type || 'Unknown',
+			sectionName: tag.section.name || 'Unknown',
+			name: tag.internalName || 'Unknown',
+			id: tag.id,
+		})),
+		heading: 'Selected tags',
 		filterRows: () => true,
 		'data-testid': 'storybook',
 		removeIcon: <>🗑️</>,
 		gripIcon: <>⣿</>,
 	},
-} satisfies Meta<typeof TagTable<TagManagerObjectData>>;
+} satisfies Meta<typeof TagTable<TagManagerRow>>;
 
-type Story = StoryObj<typeof TagTable<TagManagerObjectData>>;
+type Story = StoryObj<typeof TagTable<TagManagerRow>>;
 
 const getHandleRemove = (
-	tags: TagManagerObjectData[],
-	setTags: React.Dispatch<React.SetStateAction<TagManagerObjectData[]>>,
+	tags: TagManagerRow[],
+	setTags: React.Dispatch<React.SetStateAction<TagManagerRow[]>>,
 ) => {
-	return (tag: TagManagerObjectData) => {
+	return (tag: TagManagerRow) => {
 		console.log('Remove tag:', tag);
 
 		const index = tags.findIndex((t) => t.id === tag.id);
@@ -65,7 +74,6 @@ export const WithReorder: Story = {
 				showTagType
 				showTagSectionName
 				onReorder={(newTags) => {
-					console.log('Reordered tags', newTags);
 					setTags([...newTags]);
 				}}
 			/>
@@ -80,14 +88,13 @@ export const WithRemove: Story = {
 		const handleRemove = getHandleRemove(tags, setTags);
 
 		return (
-			<TagTable<TagManagerObjectData>
+			<TagTable<TagManagerRow>
 				{...meta.args}
 				rows={tags}
 				showTagType
 				showTagSectionName
 				removeAction={handleRemove}
 				onReorder={(newTags) => {
-					console.log('Reordered tags', newTags);
 					setTags([...newTags]);
 				}}
 			/>

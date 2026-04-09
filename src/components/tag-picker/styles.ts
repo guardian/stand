@@ -1,20 +1,20 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import {
-	type ComponentTagAutocomplete,
-	componentTagAutocomplete,
-} from '../../styleD/build/typescript/component/tagAutocomplete';
+	type ComponentAutocomplete,
+	componentAutocomplete,
+} from '../../styleD/build/typescript/component/autocomplete';
 import {
-	type ComponentTagTable,
-	componentTagTable,
-} from '../../styleD/build/typescript/component/tagTable';
+	type ComponentSelectionTable,
+	componentSelectionTable,
+} from '../../styleD/build/typescript/component/selectionTable';
 import { mergeDeep } from '../../util/mergeDeep';
 import type { DeepPartial } from '../../util/types';
 
-export const tagAutocompleteInputStyles = (
-	partialTheme: DeepPartial<ComponentTagAutocomplete> = {},
+export const autocompleteInputStyles = (
+	partialTheme: DeepPartial<ComponentAutocomplete> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagAutocomplete, partialTheme);
+	const theme = mergeDeep(componentAutocomplete, partialTheme);
 
 	return css`
 		width: 100%;
@@ -33,9 +33,9 @@ export const tagAutocompleteInputStyles = (
 };
 
 export const listboxStyles = (
-	partialTheme: DeepPartial<ComponentTagAutocomplete> = {},
+	partialTheme: DeepPartial<ComponentAutocomplete> = {},
 ) => {
-	const theme = mergeDeep(componentTagAutocomplete, partialTheme);
+	const theme = mergeDeep(componentAutocomplete, partialTheme);
 
 	return css`
 		padding: ${theme.listbox.paddingY} ${theme.listbox.paddingX};
@@ -49,26 +49,29 @@ export const listboxStyles = (
 };
 
 export const listboxItemStyles = (
-	partialTheme: DeepPartial<ComponentTagAutocomplete> = {},
+	partialTheme: DeepPartial<ComponentAutocomplete> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagAutocomplete, partialTheme);
+	const theme = mergeDeep(componentAutocomplete, partialTheme);
 
 	return css`
 		padding: ${theme.listbox.item.paddingY} ${theme.listbox.item.paddingX};
 		cursor: pointer;
+		color: ${theme.listbox.item.color};
 		&:hover {
 			background-color: ${theme.listbox.item.backgroundHoverColor};
+			color: ${theme.listbox.item.colorHover};
 		}
 		&[data-focused] {
 			background-color: ${theme.listbox.item.backgroundFocusedColor};
+			color: ${theme.listbox.item.colorFocused};
 		}
 	`;
 };
 
 export const listboxInfoStyles = (
-	partialTheme: DeepPartial<ComponentTagAutocomplete> = {},
+	partialTheme: DeepPartial<ComponentAutocomplete> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagAutocomplete, partialTheme);
+	const theme = mergeDeep(componentAutocomplete, partialTheme);
 
 	return css`
 		padding: ${theme.listbox.item.paddingY} ${theme.listbox.item.paddingX};
@@ -76,9 +79,9 @@ export const listboxInfoStyles = (
 };
 
 export const tagTableHeadingStyles = (
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<ComponentSelectionTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(componentSelectionTable, partialTheme);
 
 	return css`
 		background-color: ${theme.heading.backgroundColor};
@@ -89,9 +92,9 @@ export const tagTableHeadingStyles = (
 };
 
 export const tagTableCellStyles = (
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<ComponentSelectionTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(componentSelectionTable, partialTheme);
 
 	return css`
 		padding: ${theme.cell.paddingY} ${theme.cell.paddingX};
@@ -110,9 +113,9 @@ export const tagTableCellStyles = (
 
 export const tagTableRowStyles = (
 	canDrag: boolean,
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<ComponentSelectionTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(componentSelectionTable, partialTheme);
 
 	return css`
 		background-color: ${theme.row.backgroundColor};
@@ -143,9 +146,9 @@ export const tagTableRowStyles = (
 
 export const tagTableStyles = (
 	canRemoveTag: boolean,
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<ComponentSelectionTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(componentSelectionTable, partialTheme);
 
 	return css`
 		width: 100%;
@@ -173,9 +176,9 @@ export const tagTableRemoveButtonStyles = css`
 `;
 
 export const tagTableAddButtonStyles = (
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<ComponentSelectionTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(componentSelectionTable, partialTheme);
 
 	return css`
 		:hover {
@@ -221,9 +224,9 @@ export const tagTableDragButtonStyles = css`
 `;
 
 export const tagTableTypeBadgeStyles = (
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<ComponentSelectionTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(componentSelectionTable, partialTheme);
 
 	return css`
 		white-space: nowrap;

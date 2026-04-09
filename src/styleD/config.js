@@ -121,11 +121,11 @@ const fileList = [
 	},
 	{
 		group: 'component',
-		component: 'tagAutocomplete',
+		component: 'autocomplete',
 	},
 	{
 		group: 'component',
-		component: 'tagTable',
+		component: 'selectionTable',
 	},
 	{
 		group: 'component',
