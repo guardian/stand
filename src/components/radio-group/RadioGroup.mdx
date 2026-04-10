@@ -1,0 +1,209 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import RadioGroupStories, {
+	Default,
+	IsInvalid,
+	IsDisabled,
+	SizeSmall,
+	CustomTheme,
+	CssOverrides,
+} from './RadioGroup.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={RadioGroupStories} />
+
+# RadioGroup
+
+A radio button input collection built on [React Aria `RadioGroup`](https://react-aria.adobe.com/RadioGroup) component, see their documentation for the API.
+
+It provides a labelled, accessible collection of radio buttons with support for descriptions, validation errors, two sizes, and a disabled state.
+
+## When to use
+
+- Within a form to collect one input from a set of mutually exclusive options
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Radio, RadioGroup } from '@guardian/stand/radio-group';
+
+/* types, if required */
+import type {
+	RadioProps,
+	RadioGroupProps,
+	RadioGroupTheme,
+} from '@guardian/stand/radio-group';
+
+<RadioGroup
+	label="Option"
+	description="This is a description for the radio button input"
+>
+	<Radio value="one">Option 1</Radio>
+	<Radio value="two">Option 2</Radio>
+</RadioGroup>;
+```
+
+## Props
+
+### RadioGroup
+
+| Name           | Type                         | Required | Default | Description                                                                                                                                 |
+| -------------- | ---------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `size`         | `'md'` \| `'sm'`             | No       | `'md'`  | Controls the input height and typography.                                                                                                   |
+| `label`        | `string`                     | No       | N/A     | Visible label rendered above the input.                                                                                                     |
+| `description`  | `string`                     | No       | N/A     | Helper text rendered below the label.                                                                                                       |
+| `error`        | `string`                     | No       | N/A     | Validation error message; displayed when `isInvalid` is `true`.                                                                             |
+| `isInvalid`    | `boolean`                    | No       | `false` | Marks the field as invalid and applies error border styling.                                                                                |
+| `isDisabled`   | `boolean`                    | No       | `false` | Disables interaction and applies disabled styling.                                                                                          |
+| `children`     | `React.ReactNode`            | No       | N/A     | Content to render inside the component. Only children of type `Radio` will be rendered.                                                     |
+| `theme`        | `RadioGroupTheme`            | No       | N/A     | Custom theme overrides.                                                                                                                     |
+| `cssOverrides` | `SerializedStyles`           | No       | N/A     | Custom CSS styles.                                                                                                                          |
+| `className`    | `string`                     | No       | N/A     | Additional class name(s).                                                                                                                   |
+| `...props`     | `ReactAria RadioGroup` props | No       | N/A     | All other props from `react-aria-components` [React Aria `RadioGroup`](https://react-aria.adobe.com/RadioGroup) (e.g. `value`, `onChange`). |
+
+### Radio
+
+When composing a set of options you do not need to provide any of these props except for
+`children` or `value` as they will be passed down from the `RadioGroup`
+
+| Name           | Type                         | Required | Default | Description                                                                                                |
+| -------------- | ---------------------------- | -------- | ------- | ---------------------------------------------------------------------------------------------------------- |
+| `children`     | `React.ReactNode`            | No       | N/A     | Content to render inside the component.                                                                    |
+| `value`        | `string`                     | No       | N/A     | The value of the radio button, used when submitting an HTML form.                                          |
+| `size`         | `'md'` \| `'sm'`             | No       | `'md'`  | Controls the input height and typography.                                                                  |
+| `isInvalid`    | `boolean`                    | No       | `false` | Marks the field as invalid and applies error border styling.                                               |
+| `isDisabled`   | `boolean`                    | No       | `false` | Disables interaction and applies disabled styling.                                                         |
+| `theme`        | `RadioGroupTheme`            | No       | N/A     | Custom theme overrides.                                                                                    |
+| `cssOverrides` | `SerializedStyles`           | No       | N/A     | Custom CSS styles.                                                                                         |
+| `className`    | `string`                     | No       | N/A     | Additional class name(s).                                                                                  |
+| `...props`     | `ReactAria RadioGroup` props | No       | N/A     | All other props from `react-aria-components` [React Aria `Radio`](https://react-aria.adobe.com/RadioGroup) |
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+### Invalid
+
+<Story of={IsInvalid} />
+
+### Disabled
+
+<Story of={IsDisabled} />
+
+### Size Small
+
+<Story of={SizeSmall} />
+
+## Customisation
+
+We recommend using the RadioGroup component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the RadioGroup component:
+
+```tsx
+import type { RadioGroupTheme } from '@guardian/stand/radio-group';
+import { Radio, RadioGroup } from '@guardian/stand/radio-group';
+import { baseColors } from '@guardian/stand';
+
+const customTheme: Partial<RadioGroupTheme> = {
+	// override tokens here
+	shared: {
+		radio: {
+			color: baseColors['warm-purple'][300],
+		},
+
+		indicator: {
+			border: `2px dashed ${baseColors['warm-purple'][100]}`,
+		},
+	},
+};
+
+const Component = () => (
+	<RadioGroup
+		theme={customTheme}
+		label="Option"
+		description="This is a description for the radio button input"
+	>
+		<Radio value="one">Option 1</Radio>
+		<Radio value="two">Option 2</Radio>
+	</RadioGroup>
+);
+```
+
+<Story of={CustomTheme} />
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the RadioGroup component:
+
+```tsx
+import { Radio, RadioGroup } from '@guardian/stand/radio-group';
+import { css } from '@emotion/react';
+import { baseColors } from '@guardian/stand';
+
+const customStyles = css\`
+	// custom styles here
+	border: 2px solid ${baseColors['cool-purple'][700]};
+	background-color: ${baseColors['cool-purple'][900]};
+\`;
+
+const Component = () =>
+	<RadioGroup
+		cssOverrides={customStyles}
+		label="Option"
+		description="This is a description for the radio button input"
+	>
+		<Radio value="one">Option 1</Radio>
+		<Radio value="two">Option 2</Radio>
+	</RadioGroup>;
+```
+
+<Story of={CssOverrides} />
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom RadioGroup component using the styles defined in the `RadioGroupTheme` type.
+
+**`css`**
+
+You can import the RadioGroup styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentRadioGroup` variable and the `ComponentRadioGroup` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
