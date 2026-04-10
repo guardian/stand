@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import {
+	RadioGroup as RACRadioGroup,
 	Select as RACSelect,
 	TextField as RACTextField,
 } from 'react-aria-components';
@@ -44,5 +45,9 @@ export type FormInputContainerDefaultProps<
  * The React Aria form container components FormInputContainer supports.
  * Add new components here
  */
-export const ALLOWED_FORM_CONTAINERS = [RACTextField, RACSelect] as const;
+export const ALLOWED_FORM_CONTAINERS = [
+	RACTextField,
+	RACSelect,
+	RACRadioGroup,
+] as const;
 export type AllowedContainer = (typeof ALLOWED_FORM_CONTAINERS)[number];

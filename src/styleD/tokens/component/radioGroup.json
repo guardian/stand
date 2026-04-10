@@ -1,0 +1,218 @@
+{
+	"component": {
+		"radioGroup": {
+			"shared": {
+				"marginTop": {
+					"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
+					"$type": "dimension",
+					"$value": "{base.spacing.8-rem}"
+				},
+				"marginBottom": {
+					"$description": "spacing between the input itself and the next element (error text) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
+					"$type": "dimension",
+					"$value": "{base.spacing.8-rem}"
+				},
+				"display": {
+					"$type": "string",
+					"$value": "flex"
+				},
+				"flexDirection": {
+					"$type": "string",
+					"$value": "column"
+				},
+				"radio": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.strong}"
+					},
+					"disabled": {
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.disabled}"
+						}
+					},
+					"display": {
+						"$type": "string",
+						"$value": "flex"
+					},
+					"alignItems": {
+						"$type": "string",
+						"$value": "center"
+					},
+					"gap": {
+						"$type": "dimension",
+						"$value": "{base.spacing.8-rem}"
+					}
+				},
+				"indicator": {
+					"position": {
+						"$type": "string",
+						"$value": "relative"
+					},
+					"after": {
+						"position": {
+							"$type": "string",
+							"$value": "absolute"
+						},
+						"borderRadius": {
+							"$type": "string",
+							"$value": "inherit"
+						},
+						"inset": {
+							"$type": "dimension",
+							"$value": "0px"
+						},
+						"scale": {
+							"$type": "number",
+							"$value": "0"
+						}
+					},
+					"borderRadius": {
+						"$type": "dimension",
+						"$value": "50%"
+					},
+					"border": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.stronger}",
+							"width": "{semantic.sizing.border.default}",
+							"style": "solid"
+						}
+					},
+					"invalid": {
+						"border": {
+							"$type": "border",
+							"$value": {
+								"color": "{semantic.colors.border.error}",
+								"width": "{semantic.sizing.border.default}",
+								"style": "solid"
+							}
+						},
+						"after": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.error-strong}"
+							}
+						}
+					},
+					"disabled": {
+						"border": {
+							"$type": "border",
+							"$value": {
+								"color": "{semantic.colors.border.disabled}",
+								"width": "{semantic.sizing.border.default}",
+								"style": "solid"
+							}
+						}
+					},
+					"selected": {
+						"after": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.selected}"
+							},
+							"scale": {
+								"$type": "dimension",
+								"$value": "0.6"
+							}
+						},
+						"border": {
+							"$type": "border",
+							"$value": {
+								"color": "{semantic.colors.border.selected}",
+								"width": "{semantic.sizing.border.md}",
+								"style": "solid"
+							}
+						},
+						"invalid": {
+							"border": {
+								"$type": "border",
+								"$value": {
+									"color": "{semantic.colors.border.error}",
+									"width": "{semantic.sizing.border.md}",
+									"style": "solid"
+								}
+							}
+						},
+						"disabled": {
+							"border": {
+								"$type": "border",
+								"$value": {
+									"color": "{semantic.colors.border.disabled}",
+									"width": "{semantic.sizing.border.md}",
+									"style": "solid"
+								}
+							},
+							"after": {
+								"backgroundColor": {
+									"$type": "color",
+									"$value": "{semantic.colors.fill.disabled}"
+								}
+							}
+						}
+					}
+				}
+			},
+			"sm": {
+				"gap": {
+					"$type": "dimension",
+					"$value": "{base.spacing.16-rem}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.label-form-inline-sm.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.label-form-inline-sm.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.label-form-inline-sm.fontWidth}"
+					}
+				},
+				"indicator": {
+					"width": {
+						"$type": "dimension",
+						"$value": "{base.sizing.size-20-rem}"
+					},
+					"height": {
+						"$type": "dimension",
+						"$value": "{semantic.sizing.height.xxs}"
+					}
+				}
+			},
+			"md": {
+				"gap": {
+					"$type": "dimension",
+					"$value": "{base.spacing.20-rem}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.label-form-inline-md.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.label-form-inline-md.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.label-form-inline-md.fontWidth}"
+					}
+				},
+				"indicator": {
+					"width": {
+						"$type": "dimension",
+						"$value": "{base.sizing.size-24-rem}"
+					},
+					"height": {
+						"$type": "dimension",
+						"$value": "{semantic.sizing.height.xs}"
+					}
+				}
+			}
+		}
+	}
+}
