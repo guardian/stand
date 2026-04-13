@@ -79,6 +79,20 @@
 							"style": "solid"
 						}
 					},
+					"focused": {
+						"outline": {
+							"$type": "border",
+							"$value": {
+								"color": "{semantic.colors.border.focused}",
+								"width": "{semantic.sizing.border.md}",
+								"style": "solid"
+							}
+						},
+						"outlineOffset": {
+							"$type": "dimension",
+							"$value": "{base.spacing.2-rem}"
+						}
+					},
 					"invalid": {
 						"border": {
 							"$type": "border",

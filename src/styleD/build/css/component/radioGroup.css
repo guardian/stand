@@ -19,6 +19,9 @@
 	--component-radio-group-shared-indicator-after-scale: 0;
 	--component-radio-group-shared-indicator-border-radius: 50%;
 	--component-radio-group-shared-indicator-border: 0.0625rem solid #545454;
+	--component-radio-group-shared-indicator-focused-outline: 0.125rem solid
+		#0072a9;
+	--component-radio-group-shared-indicator-focused-outline-offset: 0.125rem;
 	--component-radio-group-shared-indicator-invalid-border: 0.0625rem solid
 		#b42a19;
 	--component-radio-group-shared-indicator-invalid-after-background-color: #b42a19;

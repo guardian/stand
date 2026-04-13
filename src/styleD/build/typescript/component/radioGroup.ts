@@ -27,6 +27,10 @@ export const componentRadioGroup = {
 			},
 			borderRadius: '50%',
 			border: '0.0625rem solid #545454',
+			focused: {
+				outline: '0.125rem solid #0072a9',
+				outlineOffset: '0.125rem',
+			},
 			invalid: {
 				border: '0.0625rem solid #b42a19',
 				after: {

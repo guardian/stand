@@ -52,6 +52,11 @@ export const radioStyles = (
 			}
 		}
 
+		&[data-focus-visible] :first-of-type {
+			outline: ${theme.shared.indicator.focused.outline};
+			outline-offset: ${theme.shared.indicator.focused.outlineOffset};
+		}
+
 		&[data-selected] :first-of-type {
 			border: ${isInvalid
 				? theme.shared.indicator.selected.invalid.border
