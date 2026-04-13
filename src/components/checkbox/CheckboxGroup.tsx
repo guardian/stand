@@ -11,7 +11,9 @@ export function CheckboxGroup({
 	theme = {},
 	...props
 }: CheckboxGroupProps) {
-	const mergedTheme = mergeDeep(defaultCheckboxTheme, theme);
+	const mergedTheme = mergeDeep(defaultCheckboxTheme, {
+		group: theme,
+	});
 
 	const checkboxes: React.ReactElement[] = [];
 	let hasError = props.isInvalid;

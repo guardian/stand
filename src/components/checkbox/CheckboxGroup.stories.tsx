@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Checkbox } from './Checkbox';
 import { CheckboxGroup } from './CheckboxGroup';
@@ -178,6 +179,46 @@ export const SingleOptionErrorSmall = {
 			<Checkbox value="option1" isInvalid>
 				Option 1
 			</Checkbox>
+			<Checkbox value="option2">Option 2</Checkbox>
+			<Checkbox value="option3">Option 3</Checkbox>
+		</CheckboxGroup>
+	),
+} satisfies Story;
+
+export const CustomTheme = {
+	name: 'Custom Theme',
+	args: {
+		label: 'Checkbox Group',
+		description: 'This is a description for the checkbox group.',
+		theme: {
+			shared: {
+				'flex-direction': 'row',
+			},
+		},
+	},
+	render: (args) => (
+		<CheckboxGroup {...args}>
+			<Checkbox value="option1">Option 1</Checkbox>
+			<Checkbox value="option2">Option 2</Checkbox>
+			<Checkbox value="option3">Option 3</Checkbox>
+		</CheckboxGroup>
+	),
+} satisfies Story;
+
+export const CssOverrides = {
+	name: 'CSS Overrides',
+	args: {
+		label: 'Checkbox Group',
+		description: 'This is a description for the checkbox group.',
+		cssOverrides: css`
+			& > div:not(:last-child) {
+				border-bottom: 1px solid #e0e0e0;
+			}
+		`,
+	},
+	render: (args) => (
+		<CheckboxGroup {...args}>
+			<Checkbox value="option1">Option 1</Checkbox>
 			<Checkbox value="option2">Option 2</Checkbox>
 			<Checkbox value="option3">Option 3</Checkbox>
 		</CheckboxGroup>

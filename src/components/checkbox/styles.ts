@@ -7,6 +7,7 @@ import { convertTypographyToEmotionStringStyle } from '../../utils';
 import type { CheckboxGroupProps, CheckboxProps } from './types';
 
 export type CheckboxTheme = Prettify<ComponentCheckbox>;
+export type PartialCheckboxTheme = Prettify<Partial<CheckboxTheme>>;
 
 export const defaultCheckboxTheme: CheckboxTheme = componentCheckbox;
 

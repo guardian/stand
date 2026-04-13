@@ -1,4 +1,6 @@
+import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { Checkbox } from './Checkbox';
 
 const meta = {
@@ -167,3 +169,34 @@ export const SmallDisabledIndeterminate = {
 		isIndeterminate: true,
 	},
 } satisfies Story;
+
+export const CustomTheme = {
+	args: {
+		children: 'Checkbox with custom theme',
+		theme: {
+			input: {
+				shared: {
+					indicator: {
+						selected: {
+							'background-color': baseColors['cool-purple'][500],
+							border: `0.0625rem solid ${baseColors['cool-purple'][700]}`,
+						},
+					},
+				},
+			},
+		},
+		isSelected: true,
+	},
+};
+
+export const CssOverrides = {
+	name: 'CSS Overrides',
+	args: {
+		children: 'Checkbox with CSS overrides',
+		cssOverrides: css`
+			svg {
+				fill: ${baseColors.neutral[800]};
+			}
+		`,
+	},
+};
