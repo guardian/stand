@@ -1,0 +1,179 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import CheckboxGroupStories, {
+	Default,
+	GroupDisabledMd,
+	SingleOptionDisabledMd,
+	GroupErrorMd,
+	SingleOptionErrorMd,
+	SizeSmall,
+	GroupDisabledSmall,
+	SingleOptionDisabledSmall,
+	GroupErrorSmall,
+	SingleOptionErrorSmall,
+} from './CheckboxGroup.stories';
+
+<Meta of={CheckboxGroupStories} />
+
+# CheckboxGroup
+
+A wrapper component built on [React Aria](https://react-aria.adobe.com/CheckboxGroup) that groups multiple `Checkbox` components under a shared label, description, and validation error message.
+Size is applied uniformly to all child checkboxes.
+
+## When to use
+
+- To group multiple related `Checkbox` options under a common label
+- When group-level validation (a single error for the whole set) is needed
+- As the accessible wrapper for any list of checkboxes in a form
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+## Example usage
+
+```tsx
+import { Checkbox, CheckboxGroup } from '@guardian/stand/checkbox';
+
+/* types, if required */
+import type {
+	CheckboxGroupProps,
+	CheckboxTheme,
+} from '@guardian/stand/checkbox';
+
+const Example = () => (
+	<>
+		<CheckboxGroup label="Notifications" description="Choose what to receive.">
+			<Checkbox value="email">Email</Checkbox>
+			<Checkbox value="sms">SMS</Checkbox>
+			<Checkbox value="push">Push notification</Checkbox>
+		</CheckboxGroup>
+
+		<CheckboxGroup
+			label="Preferences"
+			size="sm"
+			isInvalid
+			error="Please select at least one option."
+		>
+			<Checkbox value="news">News</Checkbox>
+			<Checkbox value="offers">Offers</Checkbox>
+		</CheckboxGroup>
+	</>
+);
+```
+
+## Props
+
+| Name                      | Type                                       | Required | Default | Description                                                                              |
+| ------------------------- | ------------------------------------------ | -------- | ------- | ---------------------------------------------------------------------------------------- |
+| `label`                   | `string`                                   | No       | N/A     | Visible label rendered above the group.                                                  |
+| `description`             | `string`                                   | No       | N/A     | Helper text rendered below the label.                                                    |
+| `error`                   | `string`                                   | No       | N/A     | Group-level validation error message; displayed when `isInvalid` is `true` on the group. |
+| `size`                    | `'md'` \| `'sm'`                           | No       | `'md'`  | Controls spacing and is forwarded to all child `Checkbox` components.                    |
+| `isInvalid`               | `boolean`                                  | No       | `false` | Marks the entire group as invalid and displays the `error` message.                      |
+| `isDisabled`              | `boolean`                                  | No       | `false` | Disables all child checkboxes.                                                           |
+| `children`                | `React.ReactElement<CheckboxProps>[]`      | No       | N/A     | Only `Checkbox` components are accepted; other elements are silently ignored.            |
+| `theme`                   | `CheckboxTheme['group']` (partial)         | No       | N/A     | Override Stand tokens for the group container; merged over the default theme.            |
+| `formInputContainerTheme` | `FormInputContainerTheme` (partial)        | No       | N/A     | Override Stand tokens for the wrapping label and description container.                  |
+| `cssOverrides`            | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.               |
+| `className`               | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria CheckboxGroup element.              |
+| `...props`                | `ReactAria CheckboxGroup` props            | No       | N/A     | All other props from `react-aria-components` `CheckboxGroup` (e.g. `value`, `onChange`). |
+
+> **Note:** `size` is automatically forwarded to every child `Checkbox` — you do not need to set it on individual checkboxes. Individual checkboxes can still set `isInvalid` independently to mark a single option as invalid without invalidating the whole group.
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+### Group Disabled
+
+<Story of={GroupDisabledMd} />
+
+### Single Option Disabled
+
+<Story of={SingleOptionDisabledMd} />
+
+### Group Error
+
+<Story of={GroupErrorMd} />
+
+### Single Option Error
+
+<Story of={SingleOptionErrorMd} />
+
+### Small Size
+
+<Story of={SizeSmall} />
+
+### Small — Group Disabled
+
+<Story of={GroupDisabledSmall} />
+
+### Small — Single Option Disabled
+
+<Story of={SingleOptionDisabledSmall} />
+
+### Small — Group Error
+
+<Story of={GroupErrorSmall} />
+
+### Small — Single Option Error
+
+<Story of={SingleOptionErrorSmall} />
+
+## Customisation
+
+We recommend using the CheckboxGroup component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop targets the group container's spacing tokens:
+
+```tsx
+import type { CheckboxTheme } from '@guardian/stand/checkbox';
+import { Checkbox, CheckboxGroup } from '@guardian/stand/checkbox';
+
+const customTheme: Partial<CheckboxTheme['group']> = {
+	md: {
+		gap: '1.5rem',
+	},
+};
+
+const Component = () => (
+	<CheckboxGroup label="Options" theme={customTheme}>
+		<Checkbox value="a">Option A</Checkbox>
+		<Checkbox value="b">Option B</Checkbox>
+	</CheckboxGroup>
+);
+```
+
+To customise the label and description container, use `formInputContainerTheme`.
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the CheckboxGroup component:
+
+```tsx
+import { Checkbox, CheckboxGroup } from '@guardian/stand/checkbox';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	border: 1px solid currentColor;
+	padding: 1rem;
+	border-radius: 0.5rem;
+\`;
+
+const Component = () => (
+	<CheckboxGroup label="Options" cssOverrides={customStyles}>
+		<Checkbox value="a">Option A</Checkbox>
+		<Checkbox value="b">Option B</Checkbox>
+	</CheckboxGroup>
+);
+```

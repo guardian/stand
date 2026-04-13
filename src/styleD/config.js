@@ -98,6 +98,10 @@ const fileList = [
 		group: 'component',
 		component: 'textInput',
 	},
+	{
+		group: 'component',
+		component: 'checkbox',
+	},
 	/** editorial components */
 	{
 		group: 'component',

@@ -1,0 +1,232 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import CheckboxStories, {
+	Default,
+	Error,
+	Selected,
+	ErrorSelected,
+	Indeterminate,
+	ErrorIndeterminate,
+	Disabled,
+	DisabledSelected,
+	DisabledIndeterminate,
+	Small,
+	SmallSelected,
+	SmallErrorSelected,
+	SmallIndeterminate,
+	SmallErrorIndeterminate,
+	SmallDisabledSelected,
+	SmallDisabledIndeterminate,
+} from './Checkbox.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+A checkbox component built on [React Aria](https://react-aria.adobe.com/Checkbox).
+It supports two sizes, checked, indeterminate and disabled states, and validation error styling.
+Use `CheckboxGroup` to group multiple checkboxes under a shared label and error message.
+
+## When to use
+
+- To let users select one or more independent options
+- Inside a `CheckboxGroup` when a shared label, description, or group-level validation message is needed
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Checkbox } from '@guardian/stand/checkbox';
+
+/* types, if required */
+import type { CheckboxProps, CheckboxTheme } from '@guardian/stand/checkbox';
+
+const Example = () => (
+	<>
+		<Checkbox>Accept terms and conditions</Checkbox>
+
+		<Checkbox size="sm" isIndeterminate>
+			Select all
+		</Checkbox>
+
+		<Checkbox isInvalid>Required option</Checkbox>
+
+		<Checkbox isDisabled>Unavailable option</Checkbox>
+	</>
+);
+```
+
+## Props
+
+| Name              | Type                                       | Required | Default | Description                                                                                             |
+| ----------------- | ------------------------------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------- |
+| `children`        | `React.ReactNode`                          | No       | N/A     | Label content rendered beside the checkbox indicator.                                                   |
+| `size`            | `'md'` \| `'sm'`                           | No       | `'md'`  | Controls the indicator size and typography.                                                             |
+| `isSelected`      | `boolean`                                  | No       | N/A     | Controlled checked state.                                                                               |
+| `defaultSelected` | `boolean`                                  | No       | N/A     | Default checked state (uncontrolled).                                                                   |
+| `isIndeterminate` | `boolean`                                  | No       | `false` | Renders the indeterminate (dash) indicator. The checkbox must also be selected for this to take effect. |
+| `isInvalid`       | `boolean`                                  | No       | `false` | Applies error border and background styling to the indicator.                                           |
+| `isDisabled`      | `boolean`                                  | No       | `false` | Disables interaction and applies disabled styling.                                                      |
+| `value`           | `string`                                   | No       | N/A     | The value submitted in a form or read by a parent `CheckboxGroup`.                                      |
+| `theme`           | `CheckboxTheme` (partial)                  | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                 |
+| `cssOverrides`    | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                              |
+| `className`       | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria Checkbox element.                                  |
+| `...props`        | `ReactAria Checkbox` props                 | No       | N/A     | All other props from `react-aria-components` `Checkbox` (e.g. `onChange`, `autoFocus`).                 |
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+### Error
+
+<Story of={Error} />
+
+### Selected
+
+<Story of={Selected} />
+
+### Error Selected
+
+<Story of={ErrorSelected} />
+
+### Indeterminate
+
+<Story of={Indeterminate} />
+
+### Error Indeterminate
+
+<Story of={ErrorIndeterminate} />
+
+### Disabled
+
+<Story of={Disabled} />
+
+### Disabled Selected
+
+<Story of={DisabledSelected} />
+
+### Disabled Indeterminate
+
+<Story of={DisabledIndeterminate} />
+
+### Small
+
+<Story of={Small} />
+
+### Small Selected
+
+<Story of={SmallSelected} />
+
+### Small Error Selected
+
+<Story of={SmallErrorSelected} />
+
+### Small Indeterminate
+
+<Story of={SmallIndeterminate} />
+
+### Small Error Indeterminate
+
+<Story of={SmallErrorIndeterminate} />
+
+### Small Disabled Selected
+
+<Story of={SmallDisabledSelected} />
+
+### Small Disabled Indeterminate
+
+<Story of={SmallDisabledIndeterminate} />
+
+## Customisation
+
+We recommend using the Checkbox component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the Checkbox component:
+
+```tsx
+import type { CheckboxTheme } from '@guardian/stand/checkbox';
+import { Checkbox } from '@guardian/stand/checkbox';
+import { baseColors } from '@guardian/stand';
+
+const customTheme: Partial<CheckboxTheme> = {
+	input: {
+		shared: {
+			indicator: {
+				selected: {
+					'background-color': baseColors['cool-purple'][500],
+					border: `0.0625rem solid ${baseColors['cool-purple'][700]}`,
+				},
+			},
+		},
+	},
+};
+
+const Component = () => (
+	<Checkbox theme={customTheme}>Custom themed checkbox</Checkbox>
+);
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the Checkbox component:
+
+```tsx
+import { Checkbox } from '@guardian/stand/checkbox';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	font-style: italic;
+\`;
+
+const Component = () => (
+	<Checkbox cssOverrides={customStyles}>Custom styled checkbox</Checkbox>
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom Checkbox component using the styles defined in the `CheckboxTheme` type.
+
+**`css`**
+
+You can import the Checkbox styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentCheckbox` variable and the `ComponentCheckbox` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />

@@ -137,7 +137,13 @@
 		"./component/form.css": "./dist/styleD/build/css/component/form.css",
 		"./component/inlineMessage.css": "./dist/styleD/build/css/component/inlineMessage.css",
 		"./component/select.css": "./dist/styleD/build/css/component/select.css",
-		"./component/textInput.css": "./dist/styleD/build/css/component/textInput.css"
+		"./component/textInput.css": "./dist/styleD/build/css/component/textInput.css",
+		"./checkbox": {
+			"types": "./dist/types/checkbox.d.ts",
+			"import": "./dist/checkbox.js",
+			"require": "./dist/checkbox.cjs"
+		},
+		"./component/checkbox.css": "./dist/styleD/build/css/component/checkbox.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
@@ -201,6 +207,9 @@
 			],
 			"text-input": [
 				"./dist/types/text-input.d.ts"
+			],
+			"checkbox": [
+				"./dist/types/checkbox.d.ts"
 			]
 		}
 	},
