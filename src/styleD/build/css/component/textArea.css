@@ -14,6 +14,7 @@
 	--component-text-area-shared-border-radius: 0.25rem;
 	--component-text-area-shared-border: 0.0625rem solid #545454;
 	--component-text-area-shared-background-color: #ffffff;
+	--component-text-area-shared-placeholder-color: #545454;
 	--component-text-area-shared-disabled-background-color: #ffffff;
 	--component-text-area-shared-disabled-cursor: not-allowed;
 	--component-text-area-shared-disabled-color: #999999;

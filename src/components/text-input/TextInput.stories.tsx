@@ -93,3 +93,22 @@ export const WithTypePassword = {
 		type: 'password',
 	},
 } satisfies Story;
+
+export const WithPlaceholder = {
+	args: {
+		size: 'md',
+		label: 'Placeholder',
+		description: 'With placeholder',
+		placeholder: 'Placeholder',
+	},
+} satisfies Story;
+
+export const WithPlaceholderDisabled = {
+	args: {
+		size: 'md',
+		label: 'Placeholder',
+		description: 'With placeholder',
+		placeholder: 'Placeholder',
+		isDisabled: true,
+	},
+} satisfies Story;

@@ -7,6 +7,9 @@ import TextAreaStories, {
 	WithLabelOnly,
 	WithDescriptionOnly,
 	Disabled,
+	WithPlaceholder,
+	WithPlaceholderDisabled,
+	SizeSmall,
 } from './TextArea.stories';
 import {
 	SandboxReact,
@@ -53,15 +56,7 @@ import { TextArea } from '@guardian/stand/text-area';
 /* types, if required */
 import type { TextAreaProps, TextAreaTheme } from '@guardian/stand/text-area';
 
-const Example = () => (
-	<TextInput
-		size="sm"
-		label="Username"
-		isInvalid
-		error="Username is already taken."
-		defaultValue="guardian_user"
-	/>
-);
+const Example = () => <TextArea size="sm" label="Description" />;
 ```
 
 ## Props
@@ -75,6 +70,7 @@ const Example = () => (
 | `isInvalid`               | `boolean`                           | No       | `false` | Marks the field as invalid and applies error border styling.                                                                                |
 | `isDisabled`              | `boolean`                           | No       | `false` | Disables interaction and applies disabled styling.                                                                                          |
 | `theme`                   | `TextAreaTheme`                     | No       | N/A     | Custom theme overrides.                                                                                                                     |
+| `placeholder`             | `string`                            | No       | N/A     | Temporary text that occupies the text area when it is empty.                                                                                |
 | `formInputContainerTheme` | `FormInputContainerTheme` (partial) | No       | N/A     | Override Stand tokens for the wrapping label and description container.                                                                     |
 | `cssOverrides`            | `SerializedStyles`                  | No       | N/A     | Custom CSS styles.                                                                                                                          |
 | `className`               | `string`                            | No       | N/A     | Additional class name(s).                                                                                                                   |
@@ -108,9 +104,19 @@ const Example = () => (
 
 ### Small Size
 
+<Story of={SizeSmall} />
+
 ### Disabled
 
 <Story of={Disabled} />
+
+### With Placeholder Disabled
+
+<Story of={WithPlaceholderDisabled} />
+
+### With Placeholder
+
+<Story of={WithPlaceholder} />
 
 ## Customisation
 
@@ -125,7 +131,13 @@ import type { TextAreaTheme } from '@guardian/stand/text-area';
 import { TextArea } from '@guardian/stand/text-area';
 
 const customTheme: Partial<TextAreaTheme> = {
-	// override tokens here
+	shared: {
+		border: `0.0625rem solid ${baseColors['cool-purple'][500]}`,
+		'border-radius': '0.5rem',
+		error: {
+			border: `0.0625rem solid ${baseColors.red[500]}`,
+		},
+	},
 };
 
 const Component = () => <TextArea theme={customTheme}>Hello</TextArea>;
@@ -140,7 +152,7 @@ import { TextArea } from '@guardian/stand/text-area';
 import { css } from '@emotion/react';
 
 const customStyles = css\`
-	// custom styles here
+	font-style: italic;
 \`;
 
 const Component = () => <TextArea cssOverrides={customStyles}>Hello</TextArea>;

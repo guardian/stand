@@ -11,6 +11,7 @@ export function TextArea({
 	size = 'md',
 	isInvalid = false,
 	theme = {},
+	placeholder,
 	...props
 }: TextAreaProps) {
 	const mergedTheme = mergeDeep(defaultTextAreaTheme, theme);
@@ -22,7 +23,10 @@ export function TextArea({
 			isInvalid={isInvalid}
 			{...props}
 		>
-			<ReactTextArea css={textAreaStyles(mergedTheme, { size, isInvalid })} />
+			<ReactTextArea
+				placeholder={placeholder}
+				css={textAreaStyles(mergedTheme, { size, isInvalid })}
+			/>
 		</FormInputContainer>
 	);
 }

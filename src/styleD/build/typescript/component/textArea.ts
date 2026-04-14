@@ -17,6 +17,7 @@ export const componentTextArea = {
 		'border-radius': '0.25rem',
 		border: '0.0625rem solid #545454',
 		'background-color': '#ffffff',
+		placeholderColor: '#545454',
 		disabled: {
 			backgroundColor: '#ffffff',
 			cursor: 'not-allowed',

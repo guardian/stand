@@ -74,3 +74,32 @@ export const Disabled = {
 		isDisabled: true,
 	},
 } satisfies Story;
+
+export const WithPlaceholder = {
+	args: {
+		size: 'md',
+		label: 'Label',
+		description: 'This is a description for the text input.',
+		placeholder: 'Placeholder',
+	},
+} satisfies Story;
+
+export const WithPlaceholderDisabled = {
+	args: {
+		size: 'md',
+		label: 'Label',
+		description: 'This is a description for the text input.',
+		defaultValue: 'Text input value',
+		placeholder: 'Placeholder',
+		isDisabled: true,
+	},
+} satisfies Story;
+
+export const SizeSmall = {
+	name: 'With Label and Description - sm size',
+	args: {
+		size: 'sm',
+		label: 'Label',
+		description: 'This is a description for the text input.',
+	},
+} satisfies Story;

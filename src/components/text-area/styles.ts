@@ -26,11 +26,19 @@ export const textAreaStyles = (
 		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
 			${theme.shared.padding.bottom} ${theme.shared.padding.left};
 
+		::placeholder {
+			color: ${theme.shared.placeholderColor};
+		}
+
 		&[data-disabled] {
 			background-color: ${theme.shared.disabled.backgroundColor};
 			border: ${theme.shared.disabled.border};
 			color: ${theme.shared.disabled.color};
 			cursor: ${theme.shared.disabled.cursor};
+
+			::placeholder {
+				color: ${theme.shared.disabled.color};
+			}
 		}
 
 		&[data-focused] {

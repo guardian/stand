@@ -11,6 +11,7 @@ export function TextInput({
 	size = 'md',
 	isInvalid = false,
 	theme = {},
+	placeholder,
 	...props
 }: TextInputProps) {
 	const mergedTheme = mergeDeep(defaultTextInputTheme, theme);
@@ -22,7 +23,10 @@ export function TextInput({
 			isInvalid={isInvalid}
 			{...props}
 		>
-			<ReactAriaInput css={textInputStyles(mergedTheme, { size, isInvalid })} />
+			<ReactAriaInput
+				placeholder={placeholder}
+				css={textInputStyles(mergedTheme, { size, isInvalid })}
+			/>
 		</FormInputContainer>
 	);
 }

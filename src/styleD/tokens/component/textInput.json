@@ -49,6 +49,10 @@
 					"$type": "color",
 					"$value": "{semantic.colors.fill.weak}"
 				},
+				"placeholderColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.weak}"
+				},
 				"disabled": {
 					"backgroundColor": {
 						"$type": "color",

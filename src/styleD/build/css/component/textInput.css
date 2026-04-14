@@ -13,6 +13,7 @@
 	--component-text-input-shared-border-radius: 0.25rem;
 	--component-text-input-shared-border: 0.0625rem solid #545454;
 	--component-text-input-shared-background-color: #ffffff;
+	--component-text-input-shared-placeholder-color: #545454;
 	--component-text-input-shared-disabled-background-color: #ffffff;
 	--component-text-input-shared-disabled-cursor: not-allowed;
 	--component-text-input-shared-disabled-color: #999999;
