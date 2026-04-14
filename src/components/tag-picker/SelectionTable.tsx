@@ -24,14 +24,12 @@ import {
 	tagTableStyles,
 } from './styles';
 
-type ColumnDef<R, K extends keyof R = keyof R> = {
+export type ColumnDef<R, K extends keyof R = keyof R> = {
 	key: K;
 	label: string;
-	renderCell?: (value: R[K]) => ReactElement;
+	css?: SerializedStyles;
+	renderCell?: (row: R) => ReactElement;
 };
-
-/** Produces a union of ColumnDef over all keys of R, so render() receives the narrowed value type */
-export type ColumnDefFor<R> = { [K in keyof R]: ColumnDef<R, K> }[keyof R];
 
 export interface TagTableProps<
 	R extends AutocompleteOption = AutocompleteOption,
@@ -63,7 +61,7 @@ export interface TagTableProps<
 	theme?: DeepPartial<ComponentTagTable>;
 	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
 	cssOverrides?: SerializedStyles;
-	columns?: Array<ColumnDefFor<R>>;
+	columns?: Array<ColumnDef<R>>;
 }
 
 function defaultCanRemove() {
@@ -284,9 +282,12 @@ export function SelectionTable<
 								</Cell>
 							)}
 							{columns.map((column) => (
-								<Cell key={String(column.key)} css={cellStyles(theme)}>
+								<Cell
+									key={String(column.key)}
+									css={[cellStyles(theme), column.css]}
+								>
 									{column.renderCell
-										? column.renderCell(item[column.key])
+										? column.renderCell(item)
 										: item[column.key]}
 								</Cell>
 							))}

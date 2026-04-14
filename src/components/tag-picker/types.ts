@@ -4,9 +4,8 @@ export type Tag = { id: number; internalName: string };
 // for use in tagtable
 export type TagRow = Tag & {
 	type: string;
-	section: {
-		name: string;
-	};
+	sectionName: string;
+	name: string;
 };
 
 // for use in tests only
