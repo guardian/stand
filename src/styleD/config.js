@@ -102,6 +102,10 @@ const fileList = [
 		group: 'component',
 		component: 'radioGroup',
 	},
+	{
+		group: 'component',
+		component: 'textArea',
+	},
 	/** editorial components */
 	{
 		group: 'component',
