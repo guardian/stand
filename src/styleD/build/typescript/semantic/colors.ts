@@ -12,6 +12,7 @@ export const semanticColors = {
 		error: '#8c2113',
 		warning: '#433608',
 		success: '#326528',
+		'success-inverse': '#cde4c9',
 		information: '#00344e',
 		disabled: '#999999',
 		green: '#24491d',
@@ -71,7 +72,8 @@ export const semanticColors = {
 		'information-weak': '#e8f0fb',
 		'error-weak': '#f5c6c0',
 		'error-strong': '#b42a19',
-		'success-weak': '#edf5ec',
+		'success-weak': '#cde4c9',
+		'success-strong': '#326528',
 	},
 };
 export type SemanticColors = typeof semanticColors;

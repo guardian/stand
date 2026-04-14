@@ -11,6 +11,7 @@
 	--semantic-colors-text-error: #8c2113;
 	--semantic-colors-text-warning: #433608;
 	--semantic-colors-text-success: #326528;
+	--semantic-colors-text-success-inverse: #cde4c9;
 	--semantic-colors-text-information: #00344e;
 	--semantic-colors-text-disabled: #999999;
 	--semantic-colors-text-green: #24491d;
@@ -64,5 +65,6 @@
 	--semantic-colors-fill-information-weak: #e8f0fb;
 	--semantic-colors-fill-error-weak: #f5c6c0;
 	--semantic-colors-fill-error-strong: #b42a19;
-	--semantic-colors-fill-success-weak: #edf5ec;
+	--semantic-colors-fill-success-weak: #cde4c9;
+	--semantic-colors-fill-success-strong: #326528;
 }

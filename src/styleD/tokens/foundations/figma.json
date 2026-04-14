@@ -598,17 +598,17 @@
 				}
 			},
 			"weight": {
-				"Guardian Text Egyptian": {
-					"normal": {
-						"$type": "fontWeight",
-						"$value": 400
-					},
+				"Guardian Headline": {
 					"bold": {
 						"$type": "fontWeight",
 						"$value": 700
 					}
 				},
-				"Guardian Headline": {
+				"Guardian Text Egyptian": {
+					"normal": {
+						"$type": "fontWeight",
+						"$value": 400
+					},
 					"bold": {
 						"$type": "fontWeight",
 						"$value": 700
@@ -1006,6 +1006,10 @@
 					"$type": "color",
 					"$value": "{base.colors.green.200}"
 				},
+				"success-inverse": {
+					"$type": "color",
+					"$value": "{base.colors.green.800}"
+				},
 				"information": {
 					"$type": "color",
 					"$value": "{base.colors.cyan.100}"
@@ -1226,12 +1230,20 @@
 				},
 				"success-weak": {
 					"$type": "color",
-					"$value": "{base.colors.green.900}"
+					"$value": "{base.colors.green.800}"
+				},
+				"success-strong": {
+					"$type": "color",
+					"$value": "{base.colors.green.200}"
 				}
 			}
 		},
 		"sizing": {
 			"height": {
+				"xxxs": {
+					"$type": "dimension",
+					"$value": "{base.sizing.size-18-rem}"
+				},
 				"xxs": {
 					"$type": "dimension",
 					"$value": "{base.sizing.size-20-rem}"
