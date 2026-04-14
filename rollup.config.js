@@ -39,6 +39,7 @@ const input = {
 	typography: 'src/typography.ts',
 	icon: 'src/icon.ts',
 	favicon: 'src/favicon.ts',
+	'radio-group': 'src/radio-group.ts',
 	form: 'src/form.ts',
 	'text-input': 'src/text-input.ts',
 	'inline-message': 'src/inline-message.ts',
