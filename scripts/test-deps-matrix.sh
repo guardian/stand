@@ -110,7 +110,7 @@ for rv in $REACT_VERSIONS; do
 	for ev in $EMOTION_VERSIONS; do
 		for tv in $TS_VERSIONS; do
 			for racv in $RAC_VERSIONS; do
-			# Determine major React major version for logging and conditional deps
+			# Determine React major version for logging and conditional deps
 			REACT_MAJOR_VERSION=${rv%%.*}
 
 			if should_skip "$rv" "$ev" "$tv" "$racv"; then
