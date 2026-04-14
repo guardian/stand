@@ -1,5 +1,6 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
+import type { ReactNode } from 'react';
 import { type ReactElement, useEffect, useRef, useState } from 'react';
 import {
 	Button,
@@ -24,7 +25,10 @@ import {
 	tagTableStyles,
 } from './styles';
 
-export type ColumnDef<R, K extends keyof R = keyof R> = {
+export type ColumnDef<
+	R extends Record<string, string | number | ReactNode>,
+	K extends keyof R = keyof R,
+> = {
 	key: K;
 	label: string;
 	css?: SerializedStyles;
@@ -288,7 +292,7 @@ export function SelectionTable<
 								>
 									{column.renderCell
 										? column.renderCell(item)
-										: item[column.key]}
+										: (item[column.key] as number | string | ReactNode)}
 								</Cell>
 							))}
 							{removeTag && (
