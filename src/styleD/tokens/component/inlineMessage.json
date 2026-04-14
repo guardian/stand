@@ -18,6 +18,10 @@
 					"size": {
 						"$type": "dimension",
 						"$value": "{semantic.sizing.icon.md}"
+					},
+					"align-self": {
+						"$type": "string",
+						"$value": "flex-start"
 					}
 				},
 				"typography": {

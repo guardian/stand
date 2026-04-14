@@ -108,6 +108,12 @@ export const checkboxStyles = (
 	`;
 };
 
+export const checkboxLabelStyles = (theme: CheckboxTheme): SerializedStyles => {
+	return css`
+		align-self: ${theme.input.shared.label['align-self']};
+	`;
+};
+
 export const checkboxGroupStyles = (
 	theme: CheckboxTheme,
 	{ size }: Required<Pick<CheckboxGroupProps, 'size'>>,

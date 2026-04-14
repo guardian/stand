@@ -2,7 +2,11 @@ import { useMemo } from 'react';
 import { mergeDeep } from '../../util/mergeDeep';
 import { Icon } from '../icon/Icon';
 import { Typography } from '../typography/Typography';
-import { defaultInlineMessageTheme, inlineMessageStyles } from './styles';
+import {
+	defaultInlineMessageTheme,
+	inlineMessageIconStyles,
+	inlineMessageStyles,
+} from './styles';
 import type { InlineMessageProps } from './types';
 
 export function InlineMessage({
@@ -40,7 +44,11 @@ export function InlineMessage({
 			{...props}
 		>
 			{!hideIcon && (
-				<Icon fill={mergedTheme[level].color} size="md">
+				<Icon
+					fill={mergedTheme[level].color}
+					cssOverrides={inlineMessageIconStyles(mergedTheme)}
+					size="md"
+				>
 					{determinedIcon}
 				</Icon>
 			)}

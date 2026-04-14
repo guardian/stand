@@ -11,7 +11,7 @@ export interface CheckboxProps
 		DefaultPropsWithChildren<CheckboxTheme, RACCheckboxProps['className']>,
 		Omit<RACCheckboxProps, 'children'> {
 	/**
-	 * Size variant of the Checkbox - TODO: replace with CheckboxProps['size'] when we add size variants to the Checkbox component in the future
+	 * Size variant of the Checkbox
 	 */
 	size?: keyof Omit<CheckboxTheme['input'], 'shared'>;
 }

@@ -31,6 +31,7 @@
 	--component-checkbox-input-shared-indicator-error-background-color: #b42a19;
 	--component-checkbox-input-shared-indicator-error-border: 0.0625rem solid
 		#b42a19;
+	--component-checkbox-input-shared-label-align-self: center;
 	--component-checkbox-input-shared-disabled-color: #999999;
 	--component-checkbox-input-shared-disabled-cursor: not-allowed;
 	--component-checkbox-input-shared-disabled-indicator-border: 0.0625rem solid

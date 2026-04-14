@@ -1,5 +1,5 @@
 ---
-'@guardian/stand': minor
+'@guardian/stand': patch
 ---
 
-Add Checkbox component
+Add `Checkbox` and `CheckboxGroup` components

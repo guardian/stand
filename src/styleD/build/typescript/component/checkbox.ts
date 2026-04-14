@@ -46,6 +46,9 @@ export const componentCheckbox = {
 					border: '0.0625rem solid #b42a19',
 				},
 			},
+			label: {
+				'align-self': 'center',
+			},
 			disabled: {
 				color: '#999999',
 				cursor: 'not-allowed',

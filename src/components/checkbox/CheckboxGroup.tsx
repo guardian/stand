@@ -16,16 +16,11 @@ export function CheckboxGroup({
 	});
 
 	const checkboxes: React.ReactElement[] = [];
-	let hasError = props.isInvalid;
 
 	// only allow Checkbox components as children of CheckboxGroup and apply theme and size props to them
 	React.Children.forEach(props.children, (child, index) => {
 		if (!React.isValidElement(child) || child.type !== Checkbox) {
 			return;
-		}
-
-		if ((child.props as CheckboxProps).isInvalid) {
-			hasError = true;
 		}
 
 		checkboxes.push(
@@ -38,7 +33,7 @@ export function CheckboxGroup({
 
 	return (
 		<FormInputContainer as={RACCheckboxGroup} size={size} {...props}>
-			<div css={checkboxGroupStyles(mergedTheme, { size }, hasError)}>
+			<div css={checkboxGroupStyles(mergedTheme, { size }, props.isInvalid)}>
 				{checkboxes}
 			</div>
 		</FormInputContainer>

@@ -135,6 +135,12 @@
 							}
 						}
 					},
+					"label": {
+						"align-self": {
+							"$type": "string",
+							"$value": "center"
+						}
+					},
 					"disabled": {
 						"color": {
 							"$type": "color",

@@ -1,6 +1,10 @@
 import { Checkbox as RACCheckbox } from 'react-aria-components';
 import { mergeDeep } from '../../util/mergeDeep';
-import { checkboxStyles, defaultCheckboxTheme } from './styles';
+import {
+	checkboxLabelStyles,
+	checkboxStyles,
+	defaultCheckboxTheme,
+} from './styles';
 import type { CheckboxProps } from './types';
 
 export function Checkbox({
@@ -47,7 +51,7 @@ export function Checkbox({
 					)}
 				</div>
 			</>
-			{children}
+			<span css={checkboxLabelStyles(mergedTheme)}>{children}</span>
 		</RACCheckbox>
 	);
 }
