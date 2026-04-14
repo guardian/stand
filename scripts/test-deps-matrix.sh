@@ -217,7 +217,7 @@ OVERALL_FAIL=0
 for row in "${RESULT_ROWS[@]}"; do
 	IFS='|' read -r rv ev tv rac type unit e2e build <<<"$row"
 	# Mark any failure as overall failure, but continue printing the table
-	if [ "$type" = "fail" ] || [ "$unit" = "fail" ] || [ "$e2e" = "fail" ] || [ "$build" = "fail" ] || [ "$type" = "skip" ]; then
+	if [ "$type" = "fail" ] || [ "$unit" = "fail" ] || [ "$e2e" = "fail" ] || [ "$build" = "fail" ]; then
 		[ "$type" = "fail" ] && OVERALL_FAIL=1
 		[ "$unit" = "fail" ] && OVERALL_FAIL=1
 		[ "$e2e" = "fail" ] && OVERALL_FAIL=1
