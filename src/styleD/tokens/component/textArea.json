@@ -1,6 +1,6 @@
 {
 	"component": {
-		"textInput": {
+		"textArea": {
 			"shared": {
 				"color": {
 					"$type": "color",
@@ -13,7 +13,7 @@
 				"padding": {
 					"top": {
 						"$type": "dimension",
-						"$value": "0"
+						"$value": "{base.spacing.8-rem}"
 					},
 					"right": {
 						"$type": "dimension",
@@ -21,12 +21,16 @@
 					},
 					"bottom": {
 						"$type": "dimension",
-						"$value": "0"
+						"$value": "{base.spacing.8-rem}"
 					},
 					"left": {
 						"$type": "dimension",
 						"$value": "{base.spacing.12-rem}"
 					}
+				},
+				"height": {
+					"$type": "dimension",
+					"$value": "144px"
 				},
 				"margin-top": {
 					"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
@@ -93,10 +97,6 @@
 				}
 			},
 			"sm": {
-				"height": {
-					"$type": "dimension",
-					"$value": "{semantic.sizing.height.sm}"
-				},
 				"typography": {
 					"font": {
 						"$type": "typography",
@@ -113,10 +113,6 @@
 				}
 			},
 			"md": {
-				"height": {
-					"$type": "dimension",
-					"$value": "{semantic.sizing.height.md}"
-				},
 				"typography": {
 					"font": {
 						"$type": "typography",
