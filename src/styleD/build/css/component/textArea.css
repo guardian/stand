@@ -1,0 +1,26 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-text-area-shared-color: #000000;
+	--component-text-area-shared-cursor: text;
+	--component-text-area-shared-padding-top: 0.5rem;
+	--component-text-area-shared-padding-right: 0.75rem;
+	--component-text-area-shared-padding-bottom: 0.5rem;
+	--component-text-area-shared-padding-left: 0.75rem;
+	--component-text-area-shared-margin-top: 0.5rem; /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
+	--component-text-area-shared-border-radius: 0.25rem;
+	--component-text-area-shared-border: 0.0625rem solid #545454;
+	--component-text-area-shared-background-color: #ffffff;
+	--component-text-area-shared-disabled-background-color: #ffffff;
+	--component-text-area-shared-disabled-cursor: not-allowed;
+	--component-text-area-shared-disabled-color: #999999;
+	--component-text-area-shared-disabled-border: 0.0625rem solid #dcdcdc;
+	--component-text-area-shared-focused-outline: 0.125rem solid #0072a9;
+	--component-text-area-shared-error-border: 0.0625rem solid #b42a19;
+	--component-text-area-md-height: 144px;
+	--component-text-area-md-typography-font: normal 460 1rem/1.3 'Open Sans';
+	--component-text-area-md-typography-letter-spacing: 0;
+	--component-text-area-md-typography-font-width: 95;
+}

@@ -94,6 +94,11 @@
 			"import": "./dist/text-input.js",
 			"require": "./dist/text-input.cjs"
 		},
+		"./text-area": {
+			"types": "./dist/types/text-area.d.ts",
+			"import": "./dist/text-area.js",
+			"require": "./dist/text-area.cjs"
+		},
 		"./byline": {
 			"types": "./dist/types/byline.d.ts",
 			"import": "./dist/byline.js",
@@ -143,7 +148,8 @@
 		"./component/inlineMessage.css": "./dist/styleD/build/css/component/inlineMessage.css",
 		"./component/select.css": "./dist/styleD/build/css/component/select.css",
 		"./component/textInput.css": "./dist/styleD/build/css/component/textInput.css",
-		"./component/radioGroup.css": "./dist/styleD/build/css/component/radioGroup.css"
+		"./component/radioGroup.css": "./dist/styleD/build/css/component/radioGroup.css",
+		"./component/textArea.css": "./dist/styleD/build/css/component/textArea.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
@@ -210,6 +216,9 @@
 			],
 			"radio-group": [
 				"./dist/types/radio-group.d.ts"
+			],
+			"text-area": [
+				"./dist/types/text-area.d.ts"
 			]
 		}
 	},
