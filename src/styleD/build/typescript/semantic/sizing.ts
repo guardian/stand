@@ -4,6 +4,7 @@
 
 export const semanticSizing = {
 	height: {
+		xxxs: '1.125rem',
 		xxs: '1.25rem',
 		xs: '1.5rem',
 		sm: '2rem',

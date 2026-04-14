@@ -34,11 +34,11 @@ export const baseTypography = {
 		'48-rem': '3rem',
 	},
 	weight: {
-		'Guardian Text Egyptian': {
-			normal: 400,
+		'Guardian Headline': {
 			bold: 700,
 		},
-		'Guardian Headline': {
+		'Guardian Text Egyptian': {
+			normal: 400,
 			bold: 700,
 		},
 		'Open Sans': {

@@ -3,6 +3,7 @@
  */
 
 :root {
+	--semantic-sizing-height-xxxs: 1.125rem;
 	--semantic-sizing-height-xxs: 1.25rem;
 	--semantic-sizing-height-xs: 1.5rem;
 	--semantic-sizing-height-sm: 2rem;
