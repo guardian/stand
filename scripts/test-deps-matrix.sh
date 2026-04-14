@@ -4,7 +4,7 @@ set -euo pipefail
 # Local helper to test the stand component library against multiple dependency versions.
 # Use deps-matrix-versions.json to define default version sets.
 # Default versions can be overridden via REACT_VERSIONS / EMOTION_VERSIONS / TS_VERSIONS / RAC_VERSIONS env var (space-separated).
-# Example: REACT_VERSIONS="17.0.2 18.0.0 19.0.0" ./scripts/test-react-matrix.sh
+# Example: REACT_VERSIONS="17.0.2 18.0.0 19.0.0" ./scripts/test-deps-matrix.sh
 
 # Load defaults from JSON versions file, then allow explicit environment overrides.
 VERSIONS_JSON_FILE="${VERSIONS_JSON_FILE:-scripts/deps-matrix-versions.json}"
