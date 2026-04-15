@@ -1,5 +1,14 @@
 # @guardian/stand
 
+## 0.0.23
+
+### Patch Changes
+
+- aef2a45: Add `Checkbox` and `CheckboxGroup` components
+- b5da451: Add RadioGroup and Radio components
+- 4d54595: Update figma tokens: add success-strong, success-inverse colors, xxxs height sizing
+- a0e0585: Use filled icons for Material Symbols css
+
 ## 0.0.22
 
 ### Patch Changes
