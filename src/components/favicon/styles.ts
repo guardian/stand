@@ -8,7 +8,7 @@ import type { DeepPartial, Prettify } from '../../util/types';
 import { convertTypographyToEmotionStringStyle } from '../../utils';
 
 export type FaviconTheme = Prettify<ComponentFavicon>;
-export type PartialFaviconTheme = DeepPartial<FaviconTheme>;
+export type PartialFaviconTheme = Prettify<DeepPartial<FaviconTheme>>;
 export const defaultFaviconTheme: FaviconTheme = componentFavicon;
 
 export const faviconStyles = (theme: FaviconTheme): SerializedStyles => {

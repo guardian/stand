@@ -7,7 +7,7 @@ import type { DeepPartial, Prettify } from '../../util/types';
 import type { ButtonProps } from './types';
 
 export type ButtonTheme = Prettify<ComponentButton>;
-export type PartialButtonTheme = DeepPartial<ButtonTheme>;
+export type PartialButtonTheme = Prettify<DeepPartial<ButtonTheme>>;
 
 export const defaultButtonTheme: ButtonTheme = componentButton;
 

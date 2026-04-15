@@ -6,7 +6,7 @@ import type { DeepPartial, Prettify } from '../../util/types';
 import { convertTypographyToEmotionStringStyle } from '../../utils';
 
 export type SelectTheme = Prettify<ComponentSelect>;
-export type PartialSelectTheme = DeepPartial<SelectTheme>;
+export type PartialSelectTheme = Prettify<DeepPartial<SelectTheme>>;
 
 export const defaultSelectTheme: SelectTheme = componentSelect;
 

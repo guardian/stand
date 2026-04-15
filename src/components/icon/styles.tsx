@@ -5,7 +5,7 @@ import type { DeepPartial, Prettify } from '../../util/types';
 import type { IconProps } from './types';
 
 export type IconTheme = Prettify<ComponentIcon>;
-export type PartialIconTheme = DeepPartial<IconTheme>;
+export type PartialIconTheme = Prettify<DeepPartial<IconTheme>>;
 
 export const defaultIconTheme: IconTheme = componentIcon;
 

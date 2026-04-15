@@ -12,7 +12,7 @@ import type {
 
 /* Menu */
 export type MenuTheme = Prettify<ComponentMenu['menu']>;
-export type PartialMenuTheme = DeepPartial<MenuTheme>;
+export type PartialMenuTheme = Prettify<DeepPartial<MenuTheme>>;
 export const defaultMenuTheme: MenuTheme = componentMenu.menu;
 export const menuStyles = (theme: MenuTheme): SerializedStyles => css`
 	display: ${theme.shared.display};
@@ -23,7 +23,7 @@ export const menuStyles = (theme: MenuTheme): SerializedStyles => css`
 
 /* MenuSection */
 export type MenuSectionTheme = Prettify<ComponentMenu['menuSection']>;
-export type PartialMenuSectionTheme = DeepPartial<MenuSectionTheme>;
+export type PartialMenuSectionTheme = Prettify<DeepPartial<MenuSectionTheme>>;
 export const defaultMenuSectionTheme: MenuSectionTheme =
 	componentMenu.menuSection;
 export const menuSectionHeaderStyles = (
@@ -43,7 +43,7 @@ export const menuSectionHeaderStyles = (
 
 /* MenuItem */
 export type MenuItemTheme = Prettify<ComponentMenu['menuItem']>;
-export type PartialMenuItemTheme = DeepPartial<MenuItemTheme>;
+export type PartialMenuItemTheme = Prettify<DeepPartial<MenuItemTheme>>;
 export const defaultMenuItemTheme: MenuItemTheme = componentMenu.menuItem;
 export const menuItemStyles = (
 	theme: MenuItemTheme,
@@ -127,7 +127,9 @@ export const menuItemAsideStyles = (
 
 /* MenuSeparator */
 export type MenuSeparatorTheme = Prettify<ComponentMenu['menuSeparator']>;
-export type PartialMenuSeparatorTheme = DeepPartial<MenuSeparatorTheme>;
+export type PartialMenuSeparatorTheme = Prettify<
+	DeepPartial<MenuSeparatorTheme>
+>;
 export const defaultMenuSeparatorTheme: MenuSeparatorTheme =
 	componentMenu.menuSeparator;
 export const menuSeparatorStyles = (
@@ -140,7 +142,7 @@ export const menuSeparatorStyles = (
 
 /* Popover */
 export type MenuPopoverTheme = Prettify<ComponentMenu['menuPopover']>;
-export type PartialMenuPopoverTheme = DeepPartial<MenuPopoverTheme>;
+export type PartialMenuPopoverTheme = Prettify<DeepPartial<MenuPopoverTheme>>;
 export const defaultMenuPopoverTheme: MenuPopoverTheme =
 	componentMenu.menuPopover;
 export const menuPopoverStyles = (

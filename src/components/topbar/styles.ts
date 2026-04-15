@@ -5,7 +5,7 @@ import { componentTopBar } from '../../styleD/build/typescript/component/TopBar'
 import type { DeepPartial, Prettify } from '../../util/types';
 
 export type TopBarTheme = Prettify<ComponentTopBar>;
-export type PartialTopBarTheme = DeepPartial<TopBarTheme>;
+export type PartialTopBarTheme = Prettify<DeepPartial<TopBarTheme>>;
 export const defaultTopBarTheme: TopBarTheme = componentTopBar;
 
 export const topBarStyles = (theme: TopBarTheme): SerializedStyles => {
