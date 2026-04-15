@@ -106,7 +106,6 @@ export const menuItemLabelStyles = (
 	grid-area: ${theme.shared.label['grid-area']};
 	color: ${theme.shared.label.color};
 	${convertTypographyToEmotionStringStyle(theme.shared.label.typography)}
-	)}
 `;
 export const menuItemDescriptionStyles = (
 	theme: MenuItemTheme,
