@@ -58,6 +58,7 @@
 	--component-top-bar-navigation-sm-typography-letter-spacing: -0.0125rem;
 	--component-top-bar-navigation-sm-typography-font-width: 95;
 	--component-top-bar-tool-name-display: flex;
+	--component-top-bar-tool-name-color: #000000;
 	--component-top-bar-tool-name-align-items: center;
 	--component-top-bar-tool-name-gap: 8px;
 	--component-top-bar-tool-name-typography-font: normal 700 1.25rem/1.15

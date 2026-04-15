@@ -99,6 +99,7 @@ export const componentTopBar = {
 	},
 	ToolName: {
 		display: 'flex',
+		color: '#000000',
 		'align-items': 'center',
 		gap: '8px',
 		typography: {

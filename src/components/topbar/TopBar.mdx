@@ -121,7 +121,8 @@ We recommend using the TopBar component as provided, but it can be customised us
 
 ### Custom theme
 
-The `theme` prop allows you to override specific design tokens for the TopBar component:
+The `theme` prop allows you to override specific design tokens for the TopBar component. This prop will also be propagated to its subcomponents that compose it.
+This means for example to define an inverse colour scheme you only have to pass one prop.
 
 ```tsx
 import type { TopBarTheme } from '@guardian/stand/TopBar';
@@ -130,18 +131,50 @@ import {
 	TopBarContainerLeft,
 	TopBarItem,
 } from '@guardian/stand/TopBar';
-import { baseColors } from '@guardian/stand';
+import { baseColors, semanticColors } from '@guardian/stand';
 
 const customTheme: Partial<TopBarTheme> = {
-	border: `5px solid ${baseColors['cool-purple']['700']}`,
+	'background-color': baseColors.cyan[200],
+	ToolName: {
+		color: semanticColors.text['stronger-inverse'],
+	},
+	Navigation: {
+		selected: {
+			color: semanticColors.text['stronger-inverse'],
+			'border-bottom': `${semanticSizing.border['extra-wide']} solid ${semanticColors.border['selected-inverse']}`,
+		},
+		unselected: {
+			color: semanticColors.text['stronger-inverse'],
+		},
+	},
 };
 
 const Component = () => (
 	<TopBar theme={customTheme}>
+		<TopBarToolName
+			name="Default"
+			favicon={{
+				letter: 'D',
+				theme: {
+					color: {
+						background: baseColors.cyan[100],
+						text: baseColors.cyan[900],
+					},
+				},
+			}}
+			href="#"
+			hoverText="Back to dashboard"
+		/>
 		<TopBarContainerLeft>
-			<TopBarToolName name="Custom" favicon={{ letter: 'C' }} />
-			<TopBarItem>Hello</TopBarItem>
+			<TopBarNavigation isSelected text="Navigation 1" href="#" />
+			<TopBarNavigation text="Navigation 2" href="#" />
+			<TopBarNavigation text="Navigation 3" href="#" />
 		</TopBarContainerLeft>
+		<Avatar
+			src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg"
+			alt="Mahesh Makani"
+			size="sm"
+		/>
 	</TopBar>
 );
 ```

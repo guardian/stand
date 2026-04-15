@@ -6,6 +6,10 @@
 					"$type": "string",
 					"$value": "flex"
 				},
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.strong}"
+				},
 				"align-items": {
 					"$type": "string",
 					"$value": "center"
