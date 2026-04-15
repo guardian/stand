@@ -7,7 +7,9 @@ import { convertTypographyToEmotionStringStyle } from '../../../utils';
 import type { TopBarNavigationProps } from './types';
 
 export type TopBarNavigationTheme = Prettify<ComponentTopBar['Navigation']>;
-export type PartialTopBarNavigationTheme = DeepPartial<TopBarNavigationTheme>;
+export type PartialTopBarNavigationTheme = Prettify<
+	DeepPartial<TopBarNavigationTheme>
+>;
 
 export const defaultTopBarNavigationTheme: TopBarNavigationTheme =
 	componentTopBar.Navigation;

@@ -57,12 +57,12 @@ import type {
 } from '@guardian/stand/TopBarToolName';
 
 /* Tool name only */
-<TopBarToolName name="Songwriter" favicon={{ type: 'letter', letter: 'S' }} />;
+<TopBarToolName name="Songwriter" favicon={{ letter: 'S' }} />;
 
 /* Tool name and content type */
 <TopBarToolName
 	name="Songwriter"
-	favicon={{ type: 'letter', letter: 'S' }}
+	favicon={{ letter: 'S' }}
 	subsection="Article"
 	subsectionIcon="menu"
 />;
@@ -132,8 +132,8 @@ const Component = () => (
 		subsectionIcon="menu"
 		theme={customTheme}
 		favicon={{
-			letter: 'S,
-			theme: faviconCustomTheme
+			letter: 'S',
+			theme: faviconCustomTheme,
 		}}
 	/>
 );

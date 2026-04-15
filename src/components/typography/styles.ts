@@ -10,7 +10,7 @@ import { convertTypographyToEmotionStringStyle } from '../../utils';
 import type { TypographyProps } from './types';
 
 export type TypographyTheme = Prettify<ComponentTypography>;
-export type PartialTypographyTheme = DeepPartial<TypographyTheme>;
+export type PartialTypographyTheme = Prettify<DeepPartial<TypographyTheme>>;
 
 export const defaultTypographyTheme: TypographyTheme = componentTypography;
 

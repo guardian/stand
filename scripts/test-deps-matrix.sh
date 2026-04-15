@@ -4,7 +4,7 @@ set -euo pipefail
 # Local helper to test the stand component library against multiple dependency versions.
 # Use deps-matrix-versions.json to define default version sets.
 # Default versions can be overridden via REACT_VERSIONS / EMOTION_VERSIONS / TS_VERSIONS / RAC_VERSIONS env var (space-separated).
-# Example: REACT_VERSIONS="17.0.2 18.0.0 19.0.0" ./scripts/test-react-matrix.sh
+# Example: REACT_VERSIONS="17.0.2 18.0.0 19.0.0" ./scripts/test-deps-matrix.sh
 
 # Load defaults from JSON versions file, then allow explicit environment overrides.
 VERSIONS_JSON_FILE="${VERSIONS_JSON_FILE:-scripts/deps-matrix-versions.json}"
@@ -110,7 +110,7 @@ for rv in $REACT_VERSIONS; do
 	for ev in $EMOTION_VERSIONS; do
 		for tv in $TS_VERSIONS; do
 			for racv in $RAC_VERSIONS; do
-			# Determine major React major version for logging and conditional deps
+			# Determine major React version for logging and conditional deps
 			REACT_MAJOR_VERSION=${rv%%.*}
 
 			if should_skip "$rv" "$ev" "$tv" "$racv"; then
@@ -217,7 +217,7 @@ OVERALL_FAIL=0
 for row in "${RESULT_ROWS[@]}"; do
 	IFS='|' read -r rv ev tv rac type unit e2e build <<<"$row"
 	# Mark any failure as overall failure, but continue printing the table
-	if [ "$type" = "fail" ] || [ "$unit" = "fail" ] || [ "$e2e" = "fail" ] || [ "$build" = "fail" ] || [ "$type" = "skip" ]; then
+	if [ "$type" = "fail" ] || [ "$unit" = "fail" ] || [ "$e2e" = "fail" ] || [ "$build" = "fail" ]; then
 		[ "$type" = "fail" ] && OVERALL_FAIL=1
 		[ "$unit" = "fail" ] && OVERALL_FAIL=1
 		[ "$e2e" = "fail" ] && OVERALL_FAIL=1

@@ -2,12 +2,12 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentCheckbox } from '../../styleD/build/typescript/component/checkbox';
 import { componentCheckbox } from '../../styleD/build/typescript/component/checkbox';
-import type { Prettify } from '../../util/types';
+import type { DeepPartial, Prettify } from '../../util/types';
 import { convertTypographyToEmotionStringStyle } from '../../utils';
 import type { CheckboxGroupProps, CheckboxProps } from './types';
 
 export type CheckboxTheme = Prettify<ComponentCheckbox>;
-export type PartialCheckboxTheme = Prettify<Partial<CheckboxTheme>>;
+export type PartialCheckboxTheme = Prettify<DeepPartial<CheckboxTheme>>;
 
 export const defaultCheckboxTheme: CheckboxTheme = componentCheckbox;
 

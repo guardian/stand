@@ -6,7 +6,7 @@ import type { DeepPartial, Prettify } from '../../../util/types';
 import type { TopBarItemProps } from './types';
 
 export type TopBarItemTheme = Prettify<ComponentTopBar['Item']>;
-export type PartialTopBarItemTheme = DeepPartial<TopBarItemTheme>;
+export type PartialTopBarItemTheme = Prettify<DeepPartial<TopBarItemTheme>>;
 export const defaultTopBarItemTheme: TopBarItemTheme = componentTopBar.Item;
 
 export const topBarItemStyles = (

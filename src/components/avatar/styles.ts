@@ -7,7 +7,7 @@ import type { DeepPartial, Prettify } from '../../util/types';
 import type { AvatarProps } from './types';
 
 export type AvatarTheme = Prettify<ComponentAvatar>;
-export type PartialAvatarTheme = DeepPartial<AvatarTheme>;
+export type PartialAvatarTheme = Prettify<DeepPartial<AvatarTheme>>;
 
 export const defaultAvatarTheme: AvatarTheme = componentAvatar;
 
