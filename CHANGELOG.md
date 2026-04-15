@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.25
+
+### Patch Changes
+
+- b4673bc: Apply minor fixes
+- d3e9d5f: Propagate TopBar theme through its subcomponents
+
 ## 0.0.24
 
 ### Patch Changes
