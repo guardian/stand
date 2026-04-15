@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.24
+
+### Patch Changes
+
+- f9685a0: Add TextArea component
+
 ## 0.0.23
 
 ### Patch Changes
