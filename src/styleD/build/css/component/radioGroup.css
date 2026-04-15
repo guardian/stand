@@ -28,7 +28,7 @@
 	--component-radio-group-shared-indicator-disabled-border: 0.0625rem solid
 		#dcdcdc;
 	--component-radio-group-shared-indicator-selected-after-background-color: #005d8b;
-	--component-radio-group-shared-indicator-selected-after-scale: 0.6rem;
+	--component-radio-group-shared-indicator-selected-after-scale: 0.6;
 	--component-radio-group-shared-indicator-selected-border: 0.125rem solid
 		#0072a9;
 	--component-radio-group-shared-indicator-selected-invalid-border: 0.125rem

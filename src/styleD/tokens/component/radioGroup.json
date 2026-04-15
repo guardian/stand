@@ -126,8 +126,8 @@
 								"$value": "{semantic.colors.fill.selected}"
 							},
 							"scale": {
-								"$type": "dimension",
-								"$value": "0.6"
+								"$type": "number",
+								"$value": 0.6
 							}
 						},
 						"border": {
