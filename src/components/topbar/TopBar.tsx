@@ -1,6 +1,8 @@
 import React from 'react';
+import type { TopBarToolNameProps } from '../../TopBar';
 import { mergeDeep } from '../../util/mergeDeep';
 import { Avatar } from '../avatar/Avatar';
+import type { TopBarTheme } from './styles';
 import {
 	defaultTopBarTheme,
 	topBarContainerLeftStyles,
@@ -17,9 +19,11 @@ import type { TopBarProps } from './types';
 function TopBarSide({
 	children,
 	alignment,
+	theme,
 }: {
 	children: TopBarProps['children'];
 	alignment: 'left' | 'right';
+	theme?: TopBarTheme;
 }) {
 	const items: React.ReactElement[] = [];
 
@@ -32,6 +36,7 @@ function TopBarSide({
 			items.push(
 				React.cloneElement(child as React.ReactElement<TopBarItemProps>, {
 					key: `${child.key}-${i}`,
+					theme: theme?.Item,
 					alignment,
 				}),
 			);
@@ -41,6 +46,7 @@ function TopBarSide({
 			items.push(
 				React.cloneElement(child as React.ReactElement<TopBarNavigationProps>, {
 					key: `${child.key}-${i}`,
+					theme: theme?.Navigation,
 					alignment,
 				}),
 			);
@@ -52,18 +58,30 @@ function TopBarSide({
 
 export function TopBarContainerRight({
 	children,
+	theme,
 }: {
 	children: TopBarProps['children'];
+	theme?: TopBarTheme;
 }) {
-	return <TopBarSide alignment="right">{children}</TopBarSide>;
+	return (
+		<TopBarSide alignment="right" theme={theme}>
+			{children}
+		</TopBarSide>
+	);
 }
 
 export function TopBarContainerLeft({
 	children,
+	theme,
 }: {
 	children: TopBarProps['children'];
+	theme?: TopBarTheme;
 }) {
-	return <TopBarSide alignment="left">{children}</TopBarSide>;
+	return (
+		<TopBarSide alignment="left" theme={theme}>
+			{children}
+		</TopBarSide>
+	);
 }
 
 export function TopBar({
@@ -89,24 +107,37 @@ export function TopBar({
 		 * Accepts a tool name that will always be rendered on the left hand side
 		 */
 		if (child.type === TopBarToolName) {
-			toolName ??= child;
+			toolName ??= React.cloneElement(
+				child as React.ReactElement<TopBarToolNameProps>,
+				{ theme: mergedTheme.ToolName },
+			);
 		}
 
 		/**
 		 * Accepts an avatar that will always be rendered on the right hand side, within an item for styling
 		 */
 		if (child.type === Avatar) {
-			avatar ??= <TopBarItem alignment="right">{child}</TopBarItem>;
+			avatar ??= (
+				<TopBarItem theme={mergedTheme.Item} alignment="right">
+					{child}
+				</TopBarItem>
+			);
 		}
 
 		/**
 		 * Other items must be defined as part of the LHS or RHS
 		 */
 		if (child.type === TopBarContainerLeft) {
-			leftSide ??= child;
+			leftSide ??= React.cloneElement(
+				child as React.ReactElement<{ theme?: TopBarTheme }>,
+				{ theme: mergedTheme },
+			);
 		}
 		if (child.type === TopBarContainerRight) {
-			rightSide ??= child;
+			rightSide ??= React.cloneElement(
+				child as React.ReactElement<{ theme?: TopBarTheme }>,
+				{ theme: mergedTheme },
+			);
 		}
 	});
 

@@ -62,6 +62,7 @@ export const toolNameStyles = (
 		display: ${theme.display};
 		align-items: ${theme['align-items']};
 		gap: ${theme.gap};
+		color: ${theme.color};
 	`;
 };
 
