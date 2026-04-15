@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import {
+	CheckboxGroup as RACCheckboxGroup,
 	RadioGroup as RACRadioGroup,
 	Select as RACSelect,
 	TextField as RACTextField,
@@ -49,5 +50,6 @@ export const ALLOWED_FORM_CONTAINERS = [
 	RACTextField,
 	RACSelect,
 	RACRadioGroup,
+	RACCheckboxGroup,
 ] as const;
 export type AllowedContainer = (typeof ALLOWED_FORM_CONTAINERS)[number];

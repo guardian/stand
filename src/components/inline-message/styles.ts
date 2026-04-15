@@ -22,3 +22,11 @@ export const inlineMessageStyles = (
 		color: ${theme[level].color};
 	`;
 };
+
+export const inlineMessageIconStyles = (
+	theme: InlineMessageTheme,
+): SerializedStyles => {
+	return css`
+		align-self: ${theme.shared.icon['align-self']};
+	`;
+};

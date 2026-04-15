@@ -9,6 +9,7 @@ export const componentInlineMessage = {
 		'align-items': 'center',
 		icon: {
 			size: '1.25rem',
+			'align-self': 'flex-start',
 		},
 		typography: {
 			font: 'normal 460 0.875rem/1.3 Open Sans',
