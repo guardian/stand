@@ -1,18 +1,18 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentTextInput } from '../../styleD/build/typescript/component/textInput';
-import { componentTextInput } from '../../styleD/build/typescript/component/textInput';
+import type { ComponentTextArea } from '../../styleD/build/typescript/component/textArea';
+import { componentTextArea } from '../../styleD/build/typescript/component/textArea';
 import type { Prettify } from '../../util/types';
 import { convertTypographyToEmotionStringStyle } from '../../utils';
-import type { TextInputProps } from './types';
+import type { TextAreaProps } from './types';
 
-export type TextInputTheme = Prettify<ComponentTextInput>;
+export type TextAreaTheme = Prettify<ComponentTextArea>;
 
-export const defaultTextInputTheme: TextInputTheme = componentTextInput;
+export const defaultTextAreaTheme: TextAreaTheme = componentTextArea;
 
-export const textInputStyles = (
-	theme: TextInputTheme,
-	{ size, isInvalid }: Required<Pick<TextInputProps, 'size' | 'isInvalid'>>,
+export const textAreaStyles = (
+	theme: TextAreaTheme,
+	{ size, isInvalid }: Required<Pick<TextAreaProps, 'size' | 'isInvalid'>>,
 ): SerializedStyles => {
 	return css`
 		${convertTypographyToEmotionStringStyle(theme[size].typography)}
@@ -21,7 +21,7 @@ export const textInputStyles = (
 		border: ${theme.shared.border};
 		color: ${theme.shared.color};
 		cursor: ${theme.shared.cursor};
-		height: ${theme[size].height};
+		height: ${theme.shared.height};
 		margin-top: ${theme.shared['margin-top']};
 		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
 			${theme.shared.padding.bottom} ${theme.shared.padding.left};

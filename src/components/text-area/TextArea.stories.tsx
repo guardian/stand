@@ -1,14 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { TextInput } from './TextInput';
+import { TextArea } from './TextArea';
 
 const meta = {
-	title: 'Stand/Tools Design System/Components/TextInput',
-	component: TextInput,
+	title: 'Stand/Tools Design System/Components/TextArea',
+	component: TextArea,
 	parameters: {},
 	args: {},
-} satisfies Meta<typeof TextInput>;
+} satisfies Meta<typeof TextArea>;
 
-type Story = StoryObj<typeof TextInput>;
+type Story = StoryObj<typeof TextArea>;
 
 export default meta;
 
@@ -64,15 +64,6 @@ export const WithDescriptionOnly = {
 	},
 } satisfies Story;
 
-export const SmallSize = {
-	name: 'Small Size - sm size',
-	args: {
-		size: 'sm',
-		label: 'Label',
-		description: 'This is a description for the text input.',
-	},
-} satisfies Story;
-
 export const Disabled = {
 	name: 'Disabled State',
 	args: {
@@ -84,21 +75,11 @@ export const Disabled = {
 	},
 } satisfies Story;
 
-export const WithTypePassword = {
-	name: 'With Type Password',
-	args: {
-		size: 'md',
-		label: 'Password',
-		description: 'Please enter your password.',
-		type: 'password',
-	},
-} satisfies Story;
-
 export const WithPlaceholder = {
 	args: {
 		size: 'md',
-		label: 'Placeholder',
-		description: 'With placeholder',
+		label: 'Label',
+		description: 'This is a description for the text input.',
 		placeholder: 'Placeholder',
 	},
 } satisfies Story;
@@ -106,9 +87,19 @@ export const WithPlaceholder = {
 export const WithPlaceholderDisabled = {
 	args: {
 		size: 'md',
-		label: 'Placeholder',
-		description: 'With placeholder',
+		label: 'Label',
+		description: 'This is a description for the text input.',
+		defaultValue: 'Text input value',
 		placeholder: 'Placeholder',
 		isDisabled: true,
+	},
+} satisfies Story;
+
+export const SizeSmall = {
+	name: 'With Label and Description - sm size',
+	args: {
+		size: 'sm',
+		label: 'Label',
+		description: 'This is a description for the text input.',
 	},
 } satisfies Story;

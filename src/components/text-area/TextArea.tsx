@@ -1,20 +1,20 @@
 import {
 	TextField as RACTextField,
-	Input as ReactAriaInput,
+	TextArea as ReactTextArea,
 } from 'react-aria-components';
 import { mergeDeep } from '../../util/mergeDeep';
 import { FormInputContainer } from '../form/Form';
-import { defaultTextInputTheme, textInputStyles } from './styles';
-import type { TextInputProps } from './types';
+import { defaultTextAreaTheme, textAreaStyles } from './styles';
+import type { TextAreaProps } from './types';
 
-export function TextInput({
+export function TextArea({
 	size = 'md',
 	isInvalid = false,
 	theme = {},
 	placeholder,
 	...props
-}: TextInputProps) {
-	const mergedTheme = mergeDeep(defaultTextInputTheme, theme);
+}: TextAreaProps) {
+	const mergedTheme = mergeDeep(defaultTextAreaTheme, theme);
 
 	return (
 		<FormInputContainer
@@ -23,9 +23,9 @@ export function TextInput({
 			isInvalid={isInvalid}
 			{...props}
 		>
-			<ReactAriaInput
+			<ReactTextArea
 				placeholder={placeholder}
-				css={textInputStyles(mergedTheme, { size, isInvalid })}
+				css={textAreaStyles(mergedTheme, { size, isInvalid })}
 			/>
 		</FormInputContainer>
 	);

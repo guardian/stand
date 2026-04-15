@@ -106,6 +106,10 @@ const fileList = [
 		group: 'component',
 		component: 'checkbox',
 	},
+	{
+		group: 'component',
+		component: 'textArea',
+	},
 	/** editorial components */
 	{
 		group: 'component',

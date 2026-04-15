@@ -41,6 +41,7 @@ const input = {
 	favicon: 'src/favicon.ts',
 	'radio-group': 'src/radio-group.ts',
 	checkbox: 'src/checkbox.ts',
+	'text-area': 'src/text-area.ts',
 	form: 'src/form.ts',
 	'text-input': 'src/text-input.ts',
 	'inline-message': 'src/inline-message.ts',
