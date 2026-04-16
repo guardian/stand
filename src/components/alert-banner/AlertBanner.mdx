@@ -1,0 +1,185 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import AlertBannerStories, {
+	Information,
+	Error,
+	Success,
+	Warning,
+	InformationWithIconAndCloseButton,
+	CustomTheme,
+	CssOverrides,
+} from './AlertBanner.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={AlertBannerStories} />
+
+# AlertBanner
+
+A full-width banner used to communicate high-priority status messages at page or section level. It supports four levels (`information`, `success`, `warning`, `error`), optional icon display, custom icons, and an optional dismiss action.
+
+## When to use
+
+- To show important status feedback that should be visible across the full container width
+- For success, warning, error, or informational messages tied to a page or workflow
+- When a message may need optional dismissal via a close button
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { AlertBanner } from '@guardian/stand/alert-banner';
+
+/* types, if required */
+import type {
+	AlertBannerProps,
+	AlertBannerTheme,
+} from '@guardian/stand/alert-banner';
+
+<AlertBanner level="information">
+	You are working in the CODE Environment
+</AlertBanner>;
+
+<AlertBanner level="warning" showIcon>
+	Your session will expire in 2 minutes.
+</AlertBanner>;
+
+<AlertBanner
+	level="error"
+	closeButtonProps={{ onPress: () => console.log('dismissed') }}
+>
+	Unable to save changes. Try again.
+</AlertBanner>;
+```
+
+## Props
+
+| Name               | Type                                                 | Required | Default | Description                                                                                                                                                                                     |
+| ------------------ | ---------------------------------------------------- | -------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `level`            | `'error' \| 'success' \| 'information' \| 'warning'` | Yes      | N/A     | Severity level of the banner. Controls the background treatment and the default icon choice when `showIcon` is enabled.                                                                         |
+| `children`         | `React.ReactNode`                                    | No       | N/A     | Content rendered inside the banner.                                                                                                                                                             |
+| `showIcon`         | `boolean`                                            | No       | `false` | When `true`, renders an icon before the message content. Uses a level-based default icon unless overridden by `icon`.                                                                           |
+| `icon`             | `IconProps['symbol'] \| SVGElement`                  | No       | N/A     | Optional custom icon. Accepts a Material Symbols name (`string`) or non-string icon element (for example an inline SVG).                                                                        |
+| `closeButtonProps` | `Partial<IconButtonProps>`                           | No       | N/A     | Optional props for the close button. If provided, a close icon button is rendered and the props are forwarded to `IconButton` (with defaults for `variant`, `size`, `symbol`, and `ariaLabel`). |
+| `theme`            | `Partial<AlertBannerTheme>`                          | No       | N/A     | Custom theme token overrides merged over the component defaults.                                                                                                                                |
+| `cssOverrides`     | `SerializedStyles \| SerializedStyles[]`             | No       | N/A     | Additional Emotion CSS styles applied to the root element.                                                                                                                                      |
+| `className`        | `string`                                             | No       | N/A     | Additional class name(s) for the root element.                                                                                                                                                  |
+
+## Stories
+
+### Information
+
+<Story of={Information} />
+
+### Success
+
+<Story of={Success} />
+
+### Warning
+
+<Story of={Warning} />
+
+### Error
+
+<Story of={Error} />
+
+### Information with Icon and Close Button
+
+<Story of={InformationWithIconAndCloseButton} />
+
+## Customisation
+
+We recommend using the AlertBanner component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the AlertBanner component:
+
+<Story of={CustomTheme} />
+
+```tsx
+import { baseColors } from '@guardian/stand';
+import type { AlertBannerTheme } from '@guardian/stand/alert-banner';
+import { AlertBanner } from '@guardian/stand/alert-banner';
+
+const customTheme: Partial<AlertBannerTheme> = {
+	error: {
+		'background-color': baseColors.red[100],
+	},
+	shared: {
+		content: {
+			color: baseColors.red[700],
+		},
+	},
+};
+
+const Component = () => (
+	<AlertBanner level="error" theme={customTheme}>
+		Unable to save changes.
+	</AlertBanner>
+);
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the AlertBanner component:
+
+<Story of={CssOverrides} />
+
+```tsx
+import { AlertBanner } from '@guardian/stand/alert-banner';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	box-shadow: inset 0 -2px 0 currentColor;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+\`;
+
+const Component = () => (
+	<AlertBanner level="success" cssOverrides={customStyles}>
+		Changes published successfully.
+	</AlertBanner>
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom AlertBanner component using the styles defined in the `AlertBannerTheme` type.
+
+**`css`**
+
+You can import the AlertBanner styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentAlertBanner` variable and the `ComponentAlertBanner` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
