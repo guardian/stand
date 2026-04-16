@@ -1,0 +1,31 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-alert-banner-shared-display: flex;
+	--component-alert-banner-shared-align-items: center;
+	--component-alert-banner-shared-justify-content: space-between;
+	--component-alert-banner-shared-padding-top: 0;
+	--component-alert-banner-shared-padding-right: 1rem;
+	--component-alert-banner-shared-padding-bottom: 0;
+	--component-alert-banner-shared-padding-left: 1rem;
+	--component-alert-banner-shared-width: 100%;
+	--component-alert-banner-shared-height: 2.5rem;
+	--component-alert-banner-shared-content-display: flex;
+	--component-alert-banner-shared-content-justify-content: center;
+	--component-alert-banner-shared-content-gap: 0.5rem;
+	--component-alert-banner-shared-content-flex: 1;
+	--component-alert-banner-shared-content-height: 100%;
+	--component-alert-banner-shared-content-align-items: center;
+	--component-alert-banner-shared-content-color: #000000;
+	--component-alert-banner-shared-content-typography-font: normal 460
+		0.875rem/1.3 'Open Sans';
+	--component-alert-banner-shared-content-typography-letter-spacing: 0;
+	--component-alert-banner-shared-content-typography-font-width: 95;
+	--component-alert-banner-shared-content-icon-color: #545454;
+	--component-alert-banner-information-background-color: #e8f0fb;
+	--component-alert-banner-success-background-color: #cde4c9;
+	--component-alert-banner-warning-background-color: #fbeebf;
+	--component-alert-banner-error-background-color: #f5c6c0;
+}
