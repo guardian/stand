@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.26
+
+### Patch Changes
+
+- 45215c1: Add AlertBanner component
+- b1340b7: Update peer deps compatible range for `react-aria-components` to `>= 1.13.0 <= 1.17.0`
+
 ## 0.0.25
 
 ### Patch Changes
