@@ -35,17 +35,17 @@ const PackageJson = `
 		"build": "parcel build index.html"
 	},
 	"dependencies": {
-		"parcel": "^2.16.3",
+		"parcel": "2.16.3",
 		"@guardian/stand": "${standVersion}",
-		"@emotion/react": "^11.14.0",
-		"react": "^19.2.4",
-		"react-dom": "^19.2.4",
-		"react-aria-components": "^1.13.0"
+		"@emotion/react": "11.14.0",
+		"react": "19.2.4",
+		"react-dom": "19.2.4",
+		"react-aria-components": "1.13.0"
 	},
 	"devDependencies": {
-		"@types/react": "^19.2.10",
-		"@types/react-dom": "^19.2.3",
-		"typescript": "^5.9.3"
+		"@types/react": "19.2.10",
+		"@types/react-dom": "19.2.3",
+		"typescript": "5.9.3"
 	}
 }
 `;
