@@ -110,6 +110,10 @@ const fileList = [
 		group: 'component',
 		component: 'textArea',
 	},
+	{
+		group: 'component',
+		component: 'alertBanner',
+	},
 	/** editorial components */
 	{
 		group: 'component',

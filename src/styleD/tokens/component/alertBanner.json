@@ -1,0 +1,120 @@
+{
+	"component": {
+		"alertBanner": {
+			"shared": {
+				"display": {
+					"$type": "string",
+					"$value": "flex"
+				},
+				"align-items": {
+					"$type": "string",
+					"$value": "center"
+				},
+				"justify-content": {
+					"$type": "string",
+					"$value": "space-between"
+				},
+				"padding": {
+					"top": {
+						"$type": "dimension",
+						"$value": "0"
+					},
+					"right": {
+						"$type": "dimension",
+						"$value": "{base.spacing.16-rem}"
+					},
+					"bottom": {
+						"$type": "dimension",
+						"$value": "0"
+					},
+					"left": {
+						"$type": "dimension",
+						"$value": "{base.spacing.16-rem}"
+					}
+				},
+				"width": {
+					"$type": "string",
+					"$value": "100%"
+				},
+				"height": {
+					"$type": "string",
+					"$value": "{semantic.sizing.height.md}"
+				},
+				"content": {
+					"display": {
+						"$type": "string",
+						"$value": "flex"
+					},
+					"justify-content": {
+						"$type": "string",
+						"$value": "center"
+					},
+					"gap": {
+						"$type": "string",
+						"$value": "{base.spacing.8-rem}"
+					},
+					"flex": {
+						"$type": "string",
+						"$value": "1"
+					},
+					"height": {
+						"$type": "string",
+						"$value": "100%"
+					},
+					"align-items": {
+						"$type": "string",
+						"$value": "center"
+					},
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.strong}"
+					},
+					"typography": {
+						"font": {
+							"$type": "typography",
+							"$value": "{semantic.typography.help-text-form-md.font}"
+						},
+						"letterSpacing": {
+							"$type": "dimension",
+							"$value": "{semantic.typography.help-text-form-md.letterSpacing}"
+						},
+						"fontWidth": {
+							"$type": "dimension",
+							"$value": "{semantic.typography.help-text-form-md.fontWidth}"
+						}
+					},
+					"icon": {
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.weak}"
+						}
+					}
+				}
+			},
+			"information": {
+				"background-color": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.information-weak}"
+				}
+			},
+			"success": {
+				"background-color": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.success-weak}"
+				}
+			},
+			"warning": {
+				"background-color": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.warning-weak}"
+				}
+			},
+			"error": {
+				"background-color": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.error-weak}"
+				}
+			}
+		}
+	}
+}
