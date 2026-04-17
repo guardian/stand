@@ -228,7 +228,7 @@
 		"test": "jest",
 		"test:setup-e2e": "playwright install --with-deps",
 		"test:e2e": "playwright test -c playwright-ct.config.ts",
-		"test:react-matrix": "./scripts/test-react-matrix.sh",
+		"test:react-matrix": "./scripts/test-deps-matrix.sh",
 		"prepare": "husky"
 	},
 	"devDependencies": {
