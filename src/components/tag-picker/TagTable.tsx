@@ -62,59 +62,53 @@ const defaultCanRemove = () => true;
  * *Example with TagAutocomplete and TagTable combined:*
  *
  * ```tsx
+ * import { useState } from 'react';
  * import { TagAutocomplete, TagTable } from '@guardian/stand';
  *
+ * // Your tag type must satisfy `TagRow`: { id, name, type, sectionName }
+ * type MyTag = {
+ *   id: number;
+ *   name: string;
+ *   type: string;
+ *   sectionName: string;
+ * };
+ *
+ * const allTags: MyTag[] = [
+ *   { id: 1, name: 'UK news', type: 'Keyword', sectionName: 'World' },
+ *   { id: 2, name: 'US politics', type: 'Keyword', sectionName: 'Politics' },
+ * ];
+ *
  * const Component = () => {
- *   const [selectedTags, setSelectedTags] = useState<
- *     TagManagerObjectData[] // TagManagerObjectData is an internal type representing a Tag
- *   >([]);
-
- *   const [options, setOptions] = useState<TagManagerObjectData[]>([]);
+ *   const [selectedTags, setSelectedTags] = useState<MyTag[]>([]);
+ *   const [options, setOptions] = useState<MyTag[]>([]);
  *   const [value, setValue] = useState('');
- *   const onChange = (inputText: string) => {
+ *
+ *   const onTextInputChange = (inputText: string) => {
  *     setValue(inputText);
  *     if (inputText === '') {
  *       setOptions([]);
  *       return;
  *     }
  *
- *     if (inputText === '*') {
- *       setOptions(exampleTags); // exampleTags is an array of Tags
- *       return;
- *     }
- *
- *     // Simple filtering against exampleTags
- *     const filteredItems = exampleTags.filter((t) =>
- *       t.internalName.toLowerCase().includes(inputText.toLowerCase()),
+ *     setOptions(
+ *       allTags.filter((t) =>
+ *         t.name.toLowerCase().includes(inputText.toLowerCase()),
+ *       ),
  *     );
- *     return setOptions(filteredItems);
  *   };
-
+ *
  *   return (
  *     <>
- *       <div
- *         css={css`
- *             display: flex;
- *         `}
- *       >
- *         <TagAutocomplete
- *           onChange={onChange}
- *           options={options}
- *           label="Tags"
- *           addTag={(tag) =>
- *               setSelectedTags((tags) => {
- *                   return [...tags, tag];
- *               })
- *           }
- *           loading={false}
- *           placeholder={''}
- *           disabled={false}
- *           value={value}
- *         />
- *         <select>
- *            option>All tags</option>
- *         </select>
- *       </div>
+ *       <TagAutocomplete
+ *         onTextInputChange={onTextInputChange}
+ *         options={options}
+ *         label="Tags"
+ *         addTag={(tag) => setSelectedTags((tags) => [...tags, tag])}
+ *         loading={false}
+ *         placeholder="Search tags"
+ *         disabled={false}
+ *         value={value}
+ *       />
  *       <TagTable rows={selectedTags} filterRows={() => true} />
  *     </>
  *   );

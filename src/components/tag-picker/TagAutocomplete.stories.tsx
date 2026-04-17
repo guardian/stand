@@ -14,7 +14,7 @@ const meta = {
 	args: {
 		addTag: () => {},
 		loading: false,
-		onChange: () => {},
+		onTextInputChange: () => {},
 		options: [],
 		label: 'tag',
 		placeholder: 'Choose a tag',
@@ -45,7 +45,7 @@ export const TagPicker = {
 
 		const [options, setOptions] = useState<TagManagerObjectRow[]>([]);
 		const [value, setValue] = useState('');
-		const onChange = (inputText: string) => {
+		const onTextInputChange = (inputText: string) => {
 			setValue(inputText);
 			if (inputText === '') {
 				setOptions([]);
@@ -73,7 +73,7 @@ export const TagPicker = {
 					`}
 				>
 					<TagAutocomplete
-						onChange={onChange}
+						onTextInputChange={onTextInputChange}
 						options={options}
 						label="Tags"
 						addTag={(tag) =>
@@ -131,7 +131,7 @@ export const Async = {
 			loadData().catch(console.error);
 		}, [value]);
 
-		const onChange = (inputText: string) => {
+		const onTextInputChange = (inputText: string) => {
 			setValue(inputText);
 		};
 
@@ -143,7 +143,7 @@ export const Async = {
 					`}
 				>
 					<TagAutocomplete
-						onChange={onChange}
+						onTextInputChange={onTextInputChange}
 						options={options}
 						label="Tags"
 						addTag={(tag) => console.log('Tag added:', tag)}

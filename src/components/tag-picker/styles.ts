@@ -11,7 +11,7 @@ import {
 import { mergeDeep } from '../../util/mergeDeep';
 import type { DeepPartial } from '../../util/types';
 
-export const tagAutocompleteInputStyles = (
+export const autocompleteInputStyles = (
 	partialTheme: DeepPartial<ComponentTagAutocomplete> = {},
 ): SerializedStyles => {
 	const theme = mergeDeep(componentTagAutocomplete, partialTheme);

@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
 import type { AutocompleteOption } from './Autocomplete';
 import { Autocomplete } from './Autocomplete';
+import { SelectionTable } from './SelectionTable';
 
 const meta = {
 	title: 'Stand/Editorial Components/TagPicker/Autocomplete',
@@ -10,7 +11,7 @@ const meta = {
 	args: {
 		addSelection: () => {},
 		loading: false,
-		onChange: () => {},
+		onTextInputChange: () => {},
 		options: [],
 		label: 'tag',
 		placeholder: 'Choose a tag',
@@ -69,7 +70,7 @@ export const FruitPicker = {
 					`}
 				>
 					<Autocomplete
-						onChange={onChange}
+						onTextInputChange={onChange}
 						options={options}
 						label="Tags"
 						addSelection={(tag) =>
@@ -134,7 +135,7 @@ export const Async = {
 			loadData().catch(console.error);
 		}, [value]);
 
-		const onChange = (inputText: string) => {
+		const onTextInputChange = (inputText: string) => {
 			setValue(inputText);
 		};
 
@@ -150,7 +151,7 @@ export const Async = {
 					`}
 				>
 					<Autocomplete
-						onChange={onChange}
+						onTextInputChange={onTextInputChange}
 						options={options}
 						label="Fruits"
 						addSelection={onAddSelection}
@@ -163,11 +164,7 @@ export const Async = {
 						<option>All fruits</option>
 					</select>
 				</div>
-				<ul>
-					{selectedFruits.map((fruit) => (
-						<li key={fruit.id}>{fruit.name}</li>
-					))}
-				</ul>
+				<SelectionTable rows={selectedFruits} filterRows={() => true} />
 			</>
 		);
 	},

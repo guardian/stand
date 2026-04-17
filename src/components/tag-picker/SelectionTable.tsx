@@ -73,13 +73,16 @@ function defaultCanRemove() {
 }
 
 /**
- * ## TagTable
+ * ## SelectionTable
  *
  * *Status: Testing*
  *
- * Part of the overall TagPicker component, the TagTable provides an accessible
- * table for displaying tags, with options to add, remove, and reorder tags via drag and drop,
- * based on the [React Aria Table](https://react-spectrum.adobe.com/react-aria/Table) component.
+ * The underlying generic table used by `TagTable`. Renders a collection of rows with
+ * optional remove, add, and drag-to-reorder actions, based on the
+ * [React Aria Table](https://react-spectrum.adobe.com/react-aria/Table) component.
+ *
+ * Prefer `TagTable` from `@guardian/stand` for tag-specific use cases. Use
+ * `SelectionTable` directly when you need a generic selectable table with custom columns.
  *
  * **Peer dependencies:**
  * - `react-aria-components`
@@ -88,63 +91,48 @@ function defaultCanRemove() {
  *
  * ## Usage
  *
- * *Example with TagAutocomplete and TagTable combined:*
- *
  * ```tsx
- * import { TagAutocomplete, TagTable } from '@guardian/stand';
+ * import { useState } from 'react';
+ * import { Autocomplete, SelectionTable } from '@guardian/stand';
  *
- * const Component = () => {
- *   const [selectedTags, setSelectedTags] = useState<
- *     TagManagerObjectData[] // TagManagerObjectData is an internal type representing a Tag
- *   >([]);
-
- *   const [options, setOptions] = useState<TagManagerObjectData[]>([]);
+ * type Fruit = { id: number; name: string };
+ *
+ * const exampleFruits: Fruit[] = [
+ *   { id: 1, name: 'Apple' },
+ *   { id: 2, name: 'Banana' },
+ * ];
+ *
+ * const FruitPicker = () => {
+ *   const [selected, setSelected] = useState<Fruit[]>([]);
+ *   const [options, setOptions] = useState<Fruit[]>([]);
  *   const [value, setValue] = useState('');
- *   const onChange = (inputText: string) => {
- *     setValue(inputText);
- *     if (inputText === '') {
- *       setOptions([]);
- *       return;
- *     }
  *
- *     if (inputText === '*') {
- *       setOptions(exampleTags); // exampleTags is an array of Tags
- *       return;
- *     }
- *
- *     // Simple filtering against exampleTags
- *     const filteredItems = exampleTags.filter((t) =>
- *       t.internalName.toLowerCase().includes(inputText.toLowerCase()),
- *     );
- *     return setOptions(filteredItems);
- *   };
-
  *   return (
  *     <>
- *       <div
- *         css={css`
- *             display: flex;
- *         `}
- *       >
- *         <TagAutocomplete
- *           onChange={onChange}
- *           options={options}
- *           label="Tags"
- *           addTag={(tag) =>
- *               setSelectedTags((tags) => {
- *                   return [...tags, tag];
- *               })
- *           }
- *           loading={false}
- *           placeholder={''}
- *           disabled={false}
- *           value={value}
- *         />
- *         <select>
- *            option>All tags</option>
- *         </select>
- *       </div>
- *       <TagTable rows={selectedTags} filterRows={() => true} />
+ *       <Autocomplete
+ *         onTextInputChange={(text) => {
+ *           setValue(text);
+ *           setOptions(
+ *             exampleFruits.filter((f) =>
+ *               f.name.toLowerCase().includes(text.toLowerCase()),
+ *             ),
+ *           );
+ *         }}
+ *         options={options}
+ *         label="Fruits"
+ *         addSelection={(fruit) => setSelected((prev) => [...prev, fruit])}
+ *         loading={false}
+ *         placeholder="Search fruits"
+ *         disabled={false}
+ *         value={value}
+ *       />
+ *       <SelectionTable
+ *         rows={selected}
+ *         filterRows={() => true}
+ *         removeAction={(fruit) =>
+ *           setSelected((prev) => prev.filter((f) => f.id !== fruit.id))
+ *         }
+ *       />
  *     </>
  *   );
  * };

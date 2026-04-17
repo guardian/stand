@@ -10,13 +10,13 @@ import {
 	ListBoxLoadMoreItem,
 	Popover,
 } from 'react-aria-components';
-import type { ComponentTagAutocomplete } from '../../styleD/build/typescript/component/tagAutocomplete';
+import type { ComponentAutocomplete } from '../../styleD/build/typescript/component/autocomplete';
 import type { DeepPartial } from '../../util/types';
 import {
+	autocompleteInputStyles,
 	listboxInfoStyles,
 	listboxItemStyles,
 	listboxStyles,
-	tagAutocompleteInputStyles,
 } from './styles';
 
 export type AutocompleteOption = {
@@ -29,8 +29,8 @@ interface AutocompleteProps<T extends AutocompleteOption = AutocompleteOption> {
 	addSelection: (selection: T) => void;
 	/** `loading` - Whether the component is loading options for the dropdown */
 	loading: boolean;
-	/** `onChange` - Function called when the combobox input changes */
-	onChange: (inputText: string) => void;
+	/** `onTextInputChange` - Function called when the combobox input changes */
+	onTextInputChange: (inputText: string) => void;
 	/** `options` - The list of options shown in the dropdown */
 	options: T[];
 	/** `label` - An accessible label for the combobox input */
@@ -45,7 +45,7 @@ interface AutocompleteProps<T extends AutocompleteOption = AutocompleteOption> {
 	/** `loadingIcon` - Icon used to show loading happening in the dropdown */
 	loadingIcon?: ReactElement;
 	/** `theme` - Used to customise the look and feel of the Autocomplete component */
-	theme?: DeepPartial<ComponentTagAutocomplete>;
+	theme?: DeepPartial<ComponentAutocomplete>;
 	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
 	cssOverrides?: SerializedStyles;
 }
@@ -68,18 +68,61 @@ interface AutocompleteProps<T extends AutocompleteOption = AutocompleteOption> {
  * *Example with synchronous data:*
  *
  * ```tsx
+ * import { useState } from 'react';
  * import { Autocomplete } from '@guardian/stand';
  *
  * const exampleFruits = [
- *  { id: 1, name: 'Apple' },
- *  { id: 2, name: 'Banana' },
- *  { id: 3, name: 'Cherry' },
- *  { id: 4, name: 'Date' },
- *  { id: 5, name: 'Elderberry' },
+ *   { id: 1, name: 'Apple' },
+ *   { id: 2, name: 'Banana' },
+ *   { id: 3, name: 'Cherry' },
+ *   { id: 4, name: 'Date' },
+ *   { id: 5, name: 'Elderberry' },
  * ];
- * 
-
-}
+ *
+ * const FruitPicker = () => {
+ *   const [selectedFruits, setSelectedFruits] = useState<{ id: number; name: string }[]>([]);
+ *   const [options, setOptions] = useState<{ id: number; name: string }[]>([]);
+ *   const [value, setValue] = useState('');
+ *
+ *   const onTextInputChange = (inputText: string) => {
+ *     setValue(inputText);
+ *     if (inputText === '') {
+ *       setOptions([]);
+ *       return;
+ *     }
+ *
+ *     if (inputText === '*') {
+ *       setOptions(exampleFruits);
+ *       return;
+ *     }
+ *
+ *     setOptions(
+ *       exampleFruits.filter((f) =>
+ *         f.name.toLowerCase().includes(inputText.toLowerCase()),
+ *       ),
+ *     );
+ *   };
+ *
+ *   return (
+ *     <>
+ *       <Autocomplete
+ *         onTextInputChange={onTextInputChange}
+ *         options={options}
+ *         label="Fruits"
+ *         addSelection={(fruit) => setSelectedFruits((prev) => [...prev, fruit])}
+ *         loading={false}
+ *         placeholder="Search fruits"
+ *         disabled={false}
+ *         value={value}
+ *       />
+ *       <ul>
+ *         {selectedFruits.map((fruit) => (
+ *           <li key={fruit.id}>{fruit.name}</li>
+ *         ))}
+ *       </ul>
+ *     </>
+ *   );
+ * };
  * ```
  *
  * #### Props
@@ -88,74 +131,15 @@ interface AutocompleteProps<T extends AutocompleteOption = AutocompleteOption> {
  *
  * #### Example
  *
- * const FruitPicker = () => {
-	const [selectedTags, setSelectedTags] = useState<AutocompleteOption[]>([]);
-
-	const [options, setOptions] = useState<AutocompleteOption[]>([]);
-	const [value, setValue] = useState('');
-	const onChange = (inputText: string) => {
-		setValue(inputText);
-		if (inputText === '') {
-			setOptions([]);
-			return;
-		}
-
-		if (inputText === '*') {
-			setOptions(exampleFruits);
-			return;
-		}
-
-		// Simple filtering against exampleFruits
-		const filteredItems = exampleFruits.filter((t) =>
-			t.name.toLowerCase().includes(inputText.toLowerCase()),
-		);
-
-		return setOptions(filteredItems);
-	};
-
-	return (
-		<>
-			<div
-				css={css`
-					display: flex;
-				`}
-			>
-				<Autocomplete
-					onChange={onChange}
-					options={options}
-					label="Tags"
-					addSelection={(tag) =>
-						setSelectedTags((tags) => {
-							return [...tags, tag];
-						})
-					}
-					loading={false}
-					placeholder={''}
-					disabled={false}
-					value={value}
-				/>
-				<select>
-					<option>All fruits</option>
-				</select>
-			</div>
-			<ul>
-				{selectedTags.map((tag) => (
-					<li key={tag.id}>{tag.name}</li>
-				))}
-			</ul>
-		</>
-	);
-}
- * 
  * This is currently still in testing phase, so a production implementation is not yet available.
  */
 
 export function Autocomplete<
 	T extends AutocompleteOption = AutocompleteOption,
 >({
-	addSelection: addTag,
+	addSelection,
 	loading,
-	onChange,
+	onTextInputChange,
 	options,
 	label,
 	placeholder,
@@ -178,12 +162,12 @@ export function Autocomplete<
 			<ComboBox
 				aria-label={label}
 				inputValue={value}
-				onInputChange={onChange}
-				onSelectionChange={(key) => {
+				onInputChange={onTextInputChange}
+				onChange={(key) => {
 					const tag = options.find((t) => t.id === key);
 					if (tag) {
-						addTag(tag);
-						onChange('');
+						addSelection(tag);
+						onTextInputChange('');
 					}
 				}}
 				allowsEmptyCollection
@@ -193,7 +177,7 @@ export function Autocomplete<
 				shouldFocusWrap
 			>
 				<Input
-					css={tagAutocompleteInputStyles(theme)}
+					css={autocompleteInputStyles(theme)}
 					placeholder={placeholder}
 					disabled={disabled}
 					data-testid={dataTestId}

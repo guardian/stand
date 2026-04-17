@@ -73,7 +73,6 @@ export const WithReorder: Story = {
 				showTagType
 				showTagSectionName
 				onReorder={(newTags) => {
-					console.log('Reordered tags', newTags);
 					setTags([...newTags]);
 				}}
 			/>
@@ -95,7 +94,6 @@ export const WithRemove: Story = {
 				showTagSectionName
 				removeAction={handleRemove}
 				onReorder={(newTags) => {
-					console.log('Reordered tags', newTags);
 					setTags([...newTags]);
 				}}
 			/>

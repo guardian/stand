@@ -1,23 +1,8 @@
 import type { SerializedStyles } from '@emotion/react';
-import { css } from '@emotion/react';
 import type { ReactElement } from 'react';
-import {
-	Collection,
-	ComboBox,
-	Input,
-	ListBox,
-	ListBoxItem,
-	ListBoxLoadMoreItem,
-	Popover,
-} from 'react-aria-components';
 import type { ComponentTagAutocomplete } from '../../styleD/build/typescript/component/tagAutocomplete';
 import type { DeepPartial } from '../../util/types';
-import {
-	listboxInfoStyles,
-	listboxItemStyles,
-	listboxStyles,
-	tagAutocompleteInputStyles,
-} from './styles';
+import { Autocomplete } from './Autocomplete';
 import type { Tag } from './types';
 
 interface TagAutocompleteProps<T extends Tag = Tag> {
@@ -25,8 +10,8 @@ interface TagAutocompleteProps<T extends Tag = Tag> {
 	addTag: (tag: T) => void;
 	/** `loading` - Whether the component is loading options for the dropdown */
 	loading: boolean;
-	/** `onChange` - Function called when the combobox input changes */
-	onChange: (inputText: string) => void;
+	/** `onTextInputChange` - Function called when the combobox input changes */
+	onTextInputChange: (inputText: string) => void;
 	/** `options` - The list of options shown in the dropdown */
 	options: T[];
 	/** `label` - An accessible label for the combobox input */
@@ -66,14 +51,27 @@ interface TagAutocompleteProps<T extends Tag = Tag> {
  * ```tsx
  * import { TagAutocomplete, TagTable } from '@guardian/stand';
  *
+ * // Define a type for your tags — it must include `id` and `name`,
+ * // plus any extra fields TagTable needs (type, sectionName)
+ * type MyTag = {
+ *   id: number;
+ *   name: string;
+ *   type: string;
+ *   sectionName: string;
+ * };
+ *
+ * const allTags: MyTag[] = [
+ *   { id: 1, name: 'UK news', type: 'Keyword', sectionName: 'World' },
+ *   { id: 2, name: 'US politics', type: 'Keyword', sectionName: 'Politics' },
+ *   // ...
+ * ];
+ *
  * const Component = () => {
- *   const [selectedTags, setSelectedTags] = useState<
- *     TagManagerObjectData[] // TagManagerObjectData is an internal type representing a Tag
- *   >([]);
-
- *   const [options, setOptions] = useState<TagManagerObjectData[]>([]);
+ *   const [selectedTags, setSelectedTags] = useState<MyTag[]>([]);
+ *   const [options, setOptions] = useState<MyTag[]>([]);
  *   const [value, setValue] = useState('');
- *   const onChange = (inputText: string) => {
+ *
+ *   const onTextInputChange = (inputText: string) => {
  *     setValue(inputText);
  *     if (inputText === '') {
  *       setOptions([]);
@@ -81,32 +79,30 @@ interface TagAutocompleteProps<T extends Tag = Tag> {
  *     }
  *
  *     if (inputText === '*') {
- *       setOptions(exampleTags); // exampleTags is an array of Tags
+ *       setOptions(allTags);
  *       return;
  *     }
  *
- *     // Simple filtering against exampleTags
- *     const filteredItems = exampleTags.filter((t) =>
- *       t.internalName.toLowerCase().includes(inputText.toLowerCase()),
+ *     // Simple filtering against allTags
+ *     const filteredItems = allTags.filter((t) =>
+ *       t.name.toLowerCase().includes(inputText.toLowerCase()),
  *     );
- *     return setOptions(filteredItems);
+ *     setOptions(filteredItems);
  *   };
-
+ *
  *   return (
  *     <>
  *       <div
  *         css={css`
- *             display: flex;
+ *           display: flex;
  *         `}
  *       >
  *         <TagAutocomplete
- *           onChange={onChange}
+ *           onTextInputChange={onTextInputChange}
  *           options={options}
  *           label="Tags"
  *           addTag={(tag) =>
- *               setSelectedTags((tags) => {
- *                   return [...tags, tag];
- *               })
+ *             setSelectedTags((tags) => [...tags, tag])
  *           }
  *           loading={false}
  *           placeholder={''}
@@ -114,7 +110,7 @@ interface TagAutocompleteProps<T extends Tag = Tag> {
  *           value={value}
  *         />
  *         <select>
- *            option>All tags</option>
+ *           <option>All tags</option>
  *         </select>
  *       </div>
  *       <TagTable rows={selectedTags} filterRows={() => true} />
@@ -134,7 +130,7 @@ interface TagAutocompleteProps<T extends Tag = Tag> {
 export function TagAutocomplete<T extends Tag = Tag>({
 	addTag,
 	loading,
-	onChange,
+	onTextInputChange,
 	options,
 	label,
 	placeholder,
@@ -146,75 +142,19 @@ export function TagAutocomplete<T extends Tag = Tag>({
 	cssOverrides,
 }: TagAutocompleteProps<T>) {
 	return (
-		<div
-			css={[
-				css`
-					position: relative;
-				`,
-				cssOverrides,
-			]}
-		>
-			<ComboBox
-				aria-label={label}
-				inputValue={value}
-				onInputChange={onChange}
-				onSelectionChange={(key) => {
-					const tag = options.find((t) => t.id === key);
-					if (tag) {
-						addTag(tag);
-						onChange('');
-					}
-				}}
-				allowsEmptyCollection
-				items={options}
-				allowsCustomValue
-				menuTrigger="focus"
-				shouldFocusWrap
-			>
-				<Input
-					css={tagAutocompleteInputStyles(theme)}
-					placeholder={placeholder}
-					disabled={disabled}
-					data-testid={dataTestId}
-				/>
-				<Popover
-					placement="bottom"
-					css={css`
-						width: var(--trigger-width);
-					`}
-					offset={0}
-					shouldFlip={false}
-				>
-					<ListBox
-						css={(value || options.length || loading) && listboxStyles(theme)}
-						autoFocus="first"
-						renderEmptyState={() =>
-							// Only show a "no results" box if user has typed
-							value &&
-							!loading && <div css={listboxInfoStyles(theme)}>No results</div>
-						}
-					>
-						<Collection items={options}>
-							{(item) => (
-								<ListBoxItem
-									css={listboxItemStyles(theme)}
-									value={item}
-									key={item.id}
-								>
-									{item.internalName}
-								</ListBoxItem>
-							)}
-						</Collection>
-
-						<ListBoxLoadMoreItem
-							css={listboxInfoStyles(theme)}
-							isLoading={loading}
-						>
-							<span aria-label="Loading">{loadingIcon ?? 'Loading...'}</span>
-						</ListBoxLoadMoreItem>
-					</ListBox>
-				</Popover>
-			</ComboBox>
-		</div>
+		<Autocomplete<T>
+			onTextInputChange={onTextInputChange}
+			options={options}
+			label={label}
+			addSelection={addTag}
+			loading={loading}
+			placeholder={placeholder}
+			disabled={disabled}
+			value={value}
+			data-testid={dataTestId}
+			loadingIcon={loadingIcon}
+			theme={theme}
+			cssOverrides={cssOverrides}
+		/>
 	);
 }

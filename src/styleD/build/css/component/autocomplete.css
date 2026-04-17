@@ -1,0 +1,26 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-autocomplete-input-color: #000000;
+	--component-autocomplete-input-background-color: #ffffff;
+	--component-autocomplete-input-disabled-background-color: #dcdcdc;
+	--component-autocomplete-input-border-width: 1px;
+	--component-autocomplete-input-border-style: solid;
+	--component-autocomplete-input-border-color: #8d8d8d;
+	--component-autocomplete-input-padding: 11px;
+	--component-autocomplete-listbox-border-width: 1px;
+	--component-autocomplete-listbox-border-style: solid;
+	--component-autocomplete-listbox-border-color: #8d8d8d;
+	--component-autocomplete-listbox-padding-y: 8px;
+	--component-autocomplete-listbox-padding-x: 0;
+	--component-autocomplete-listbox-background-color: #ffffff;
+	--component-autocomplete-listbox-item-padding-y: 8px;
+	--component-autocomplete-listbox-item-padding-x: 12px;
+	--component-autocomplete-listbox-item-background-hover-color: #ededed;
+	--component-autocomplete-listbox-item-background-focused-color: #ededed;
+	--component-autocomplete-listbox-item-color: #000000;
+	--component-autocomplete-listbox-item-color-hover: #000000;
+	--component-autocomplete-listbox-item-color-focused: #000000;
+}
