@@ -24,6 +24,9 @@ export const componentTagAutocomplete = {
 			paddingX: '12px',
 			backgroundHoverColor: '#ededed',
 			backgroundFocusedColor: '#ededed',
+			color: '#000000',
+			colorHover: '#000000',
+			colorFocused: '#000000',
 		},
 	},
 };

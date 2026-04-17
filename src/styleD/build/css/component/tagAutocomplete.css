@@ -20,4 +20,7 @@
 	--component-tag-autocomplete-listbox-item-padding-x: 12px;
 	--component-tag-autocomplete-listbox-item-background-hover-color: #ededed;
 	--component-tag-autocomplete-listbox-item-background-focused-color: #ededed;
+	--component-tag-autocomplete-listbox-item-color: #000000;
+	--component-tag-autocomplete-listbox-item-color-hover: #000000;
+	--component-tag-autocomplete-listbox-item-color-focused: #000000;
 }
