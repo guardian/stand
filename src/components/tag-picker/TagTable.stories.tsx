@@ -2,36 +2,31 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { exampleTags } from './example-tags';
 import { TagTable } from './TagTable';
-import type { TagManagerObjectData, TagRow } from './types';
-
-type TagManagerRow = TagManagerObjectData & TagRow;
+import type { TagManagerObjectData } from './types';
 
 const meta = {
 	title: 'Stand/Editorial Components/TagPicker/TagTable',
-	component: TagTable<TagManagerRow>,
+	component: TagTable<TagManagerObjectData>,
 	args: {
 		rows: exampleTags.map((tag) => ({
 			...tag,
-			type: tag.type || 'Unknown',
-			sectionName: tag.section.name || 'Unknown',
-			name: tag.internalName || 'Unknown',
-			id: tag.id,
+			name: tag.internalName,
+			sectionName: tag.section.name,
 		})),
-		heading: 'Selected tags',
 		filterRows: () => true,
 		'data-testid': 'storybook',
 		removeIcon: <>🗑️</>,
 		gripIcon: <>⣿</>,
 	},
-} satisfies Meta<typeof TagTable<TagManagerRow>>;
+} satisfies Meta<typeof TagTable<TagManagerObjectData>>;
 
-type Story = StoryObj<typeof TagTable<TagManagerRow>>;
+type Story = StoryObj<typeof TagTable<TagManagerObjectData>>;
 
 const getHandleRemove = (
-	tags: TagManagerRow[],
-	setTags: React.Dispatch<React.SetStateAction<TagManagerRow[]>>,
+	tags: TagManagerObjectData[],
+	setTags: React.Dispatch<React.SetStateAction<TagManagerObjectData[]>>,
 ) => {
-	return (tag: TagManagerRow) => {
+	return (tag: TagManagerObjectData) => {
 		console.log('Remove tag:', tag);
 
 		const index = tags.findIndex((t) => t.id === tag.id);
@@ -74,6 +69,7 @@ export const WithReorder: Story = {
 				showTagType
 				showTagSectionName
 				onReorder={(newTags) => {
+					console.log('Reordered tags', newTags);
 					setTags([...newTags]);
 				}}
 			/>
@@ -88,13 +84,14 @@ export const WithRemove: Story = {
 		const handleRemove = getHandleRemove(tags, setTags);
 
 		return (
-			<TagTable<TagManagerRow>
+			<TagTable<TagManagerObjectData>
 				{...meta.args}
 				rows={tags}
 				showTagType
 				showTagSectionName
 				removeAction={handleRemove}
 				onReorder={(newTags) => {
+					console.log('Reordered tags', newTags);
 					setTags([...newTags]);
 				}}
 			/>

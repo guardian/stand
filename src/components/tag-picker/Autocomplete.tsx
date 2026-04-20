@@ -24,7 +24,9 @@ export type AutocompleteOption = {
 	name: string;
 };
 
-interface AutocompleteProps<T extends AutocompleteOption = AutocompleteOption> {
+export interface AutocompleteProps<
+	T extends AutocompleteOption = AutocompleteOption,
+> {
 	/** `addSelection` - Function called when an option is picked from the dropdown */
 	addSelection: (selection: T) => void;
 	/** `loading` - Whether the component is loading options for the dropdown */

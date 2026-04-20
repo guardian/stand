@@ -2,7 +2,7 @@
  * Do not edit directly, this file was auto-generated.
  */
 
-export const componentSelectionTable = {
+export const componentTagTable = {
 	heading: {
 		backgroundColor: '#dcdcdc',
 		fontWeight: 700,
@@ -51,4 +51,4 @@ export const componentSelectionTable = {
 		fontSize: '10px',
 	},
 };
-export type ComponentSelectionTable = typeof componentSelectionTable;
+export type ComponentTagTable = typeof componentTagTable;

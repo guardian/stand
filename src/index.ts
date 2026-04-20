@@ -10,8 +10,8 @@ export { componentAutocomplete } from './styleD/build/typescript/component/autoc
 export type { ComponentAutocomplete } from './styleD/build/typescript/component/autocomplete';
 export { componentByline } from './styleD/build/typescript/component/byline';
 export type { ComponentByline } from './styleD/build/typescript/component/byline';
-export { componentSelectionTable } from './styleD/build/typescript/component/selectionTable';
-export type { ComponentSelectionTable } from './styleD/build/typescript/component/selectionTable';
+export { componentTagTable } from './styleD/build/typescript/component/tagTable';
+export type { ComponentTagTable } from './styleD/build/typescript/component/tagTable';
 export { componentUserMenu } from './styleD/build/typescript/component/userMenu';
 export type { ComponentUserMenu } from './styleD/build/typescript/component/userMenu';
 

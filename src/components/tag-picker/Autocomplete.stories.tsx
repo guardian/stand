@@ -3,7 +3,6 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
 import type { AutocompleteOption } from './Autocomplete';
 import { Autocomplete } from './Autocomplete';
-import { SelectionTable } from './SelectionTable';
 
 const meta = {
 	title: 'Stand/Editorial Components/TagPicker/Autocomplete',
@@ -13,11 +12,20 @@ const meta = {
 		loading: false,
 		onTextInputChange: () => {},
 		options: [],
-		label: 'tag',
-		placeholder: 'Choose a tag',
+		label: 'Example label',
+		placeholder: 'Choose an option',
 		disabled: false,
 		value: '',
 	},
+	render: (args) => (
+		<div
+			css={css`
+				max-width: 300px;
+			`}
+		>
+			<Autocomplete {...args} />
+		</div>
+	),
 } satisfies Meta<typeof Autocomplete>;
 
 type Story = StoryObj<typeof Autocomplete>;
@@ -38,7 +46,9 @@ const exampleFruits: AutocompleteOption[] = [
 
 export const FruitPicker = {
 	render: () => {
-		const [selectedTags, setSelectedTags] = useState<AutocompleteOption[]>([]);
+		const [selectedFruits, setSelectedFruits] = useState<AutocompleteOption[]>(
+			() => [],
+		);
 
 		const [options, setOptions] = useState<AutocompleteOption[]>([]);
 		const [value, setValue] = useState('');
@@ -63,50 +73,46 @@ export const FruitPicker = {
 		};
 
 		return (
-			<>
-				<div
+			<div
+				css={css`
+					max-width: 300px;
+				`}
+			>
+				<Autocomplete
+					onTextInputChange={onChange}
+					options={options}
+					label="Fruits"
+					addSelection={(fruit) =>
+						setSelectedFruits((fruits) => {
+							return [...fruits, fruit];
+						})
+					}
+					loading={false}
+					placeholder={''}
+					disabled={false}
+					value={value}
+				/>
+				<ul
 					css={css`
-						display: flex;
+						padding-left: 20px;
 					`}
 				>
-					<Autocomplete
-						onTextInputChange={onChange}
-						options={options}
-						label="Tags"
-						addSelection={(tag) =>
-							setSelectedTags((tags) => {
-								return [...tags, tag];
-							})
-						}
-						loading={false}
-						placeholder={''}
-						disabled={false}
-						value={value}
-					/>
-					<select>
-						<option>All fruits</option>
-					</select>
-				</div>
-				<SelectionTable
-					heading="Selected Fruits"
-					rows={selectedTags}
-					filterRows={() => true}
-					onReorder={(newTags) => {
-						setSelectedTags([...newTags]);
-					}}
-				/>
-			</>
+					{selectedFruits.map((fruit) => (
+						<li key={fruit.id}>{fruit.name}</li>
+					))}
+				</ul>
+			</div>
 		);
 	},
 } satisfies Story;
 
 export const Async = {
 	render: () => {
-		const [options, setOptions] = useState<AutocompleteOption[]>([]);
+		const [options, setOptions] = useState<AutocompleteOption[]>(() => []);
 		const [value, setValue] = useState('');
 		const [loading, setLoading] = useState(false);
 		const [selectedFruits, setSelectedFruits] = useState<AutocompleteOption[]>(
-			[],
+			() => [],
 		);
 
 		useEffect(() => {
@@ -147,32 +153,31 @@ export const Async = {
 		};
 
 		return (
-			<>
-				<div
+			<div
+				css={css`
+					max-width: 300px;
+				`}
+			>
+				<Autocomplete
+					onTextInputChange={onTextInputChange}
+					options={options}
+					label="Fruits"
+					addSelection={onAddSelection}
+					loading={loading}
+					placeholder={''}
+					disabled={false}
+					value={value}
+				/>
+				<ul
 					css={css`
-						display: flex;
+						padding-left: 20px;
 					`}
 				>
-					<Autocomplete
-						onTextInputChange={onTextInputChange}
-						options={options}
-						label="Fruits"
-						addSelection={onAddSelection}
-						loading={loading}
-						placeholder={''}
-						disabled={false}
-						value={value}
-					/>
-					<select>
-						<option>All fruits</option>
-					</select>
-				</div>
-				<SelectionTable
-					heading="Selected Fruits"
-					rows={selectedFruits}
-					filterRows={() => true}
-				/>
-			</>
+					{selectedFruits.map((fruit) => (
+						<li key={fruit.id}>{fruit.name}</li>
+					))}
+				</ul>
+			</div>
 		);
 	},
 } satisfies Story;

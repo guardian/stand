@@ -13,9 +13,9 @@
  * If you only need the built CSS (./component/tagTable.css, ./component/tagAutocomplete.css),
  * you don't need to install these.
  */
-export { TagTable } from './components/tag-picker/TagTable';
 export { TagAutocomplete } from './components/tag-picker/TagAutocomplete';
+export { TagTable } from './components/tag-picker/TagTable';
+export { componentAutocomplete } from './styleD/build/typescript/component/autocomplete';
+export type { ComponentAutocomplete } from './styleD/build/typescript/component/autocomplete';
 export { componentTagTable } from './styleD/build/typescript/component/tagTable';
 export type { ComponentTagTable } from './styleD/build/typescript/component/tagTable';
-export { componentTagAutocomplete } from './styleD/build/typescript/component/tagAutocomplete';
-export type { ComponentTagAutocomplete } from './styleD/build/typescript/component/tagAutocomplete';

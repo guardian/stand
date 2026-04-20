@@ -1,6 +1,6 @@
 {
 	"component": {
-		"selectionTable": {
+		"tagTable": {
 			"heading": {
 				"backgroundColor": {
 					"$type": "color",

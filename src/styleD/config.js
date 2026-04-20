@@ -125,7 +125,7 @@ const fileList = [
 	},
 	{
 		group: 'component',
-		component: 'selectionTable',
+		component: 'tagTable',
 	},
 	{
 		group: 'component',
