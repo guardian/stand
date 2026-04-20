@@ -1,7 +1,9 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { baseColors } from '../..';
+import { SandboxJs } from '../../util/storybook/sandbox/Sandbox';
 import { Radio, RadioGroup } from './RadioGroup';
+import { componentJs, componentName } from './sandbox';
 
 const meta = {
 	title: 'Stand/Tools Design System/Components/RadioGroup',
@@ -117,4 +119,10 @@ export const CssOverrides = {
 			</RadioGroup>
 		);
 	},
+} satisfies Story;
+
+export const Sandbox = {
+	render: () => (
+		<SandboxJs componentName={componentName} componentJs={componentJs} />
+	),
 } satisfies Story;
