@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.27
+
+### Patch Changes
+
+- e008ac7: Export Select Option correctly
+
 ## 0.0.26
 
 ### Patch Changes
