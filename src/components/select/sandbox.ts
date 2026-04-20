@@ -2,7 +2,7 @@
 export const componentName = 'Select';
 
 // Select - React sandbox example
-export const componentTsx = /* javascript */ `import { Select } from '@guardian/stand/select';
+export const componentTsx = /* javascript */ `import { Option, Select } from '@guardian/stand/select';
 
 export const Component = () => (
 	<Select label="Select">
