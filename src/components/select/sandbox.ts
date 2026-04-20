@@ -2,7 +2,7 @@
 export const componentName = 'Select';
 
 // Select - React sandbox example
-export const componentTsx = /* javascript */ `import { Select } from '@guardian/stand/select';
+export const componentTsx = /* javascript */ `import { Option, Select } from '@guardian/stand/select';
 
 export const Component = () => (
 	<Select label="Select">
@@ -16,32 +16,45 @@ export const Component = () => (
 export const componentCss = /* css */ `
 /* import the select styles */
 @import '@guardian/stand/component/select.css';
+@import '@guardian/stand/component/form.css';
 
 .stand-select-container {
-	display: var(--component-select-shared-display);
-	flex-direction: var(--component-select-shared-flex-direction);
-	gap: var(--component-select-shared-gap);
+	display: var(--component-form-input-shared-container-display);
+	flex-direction: var(--component-form-input-shared-container-flex-direction);
+	gap: var(--component-form-input-shared-container-gap);
+	width: var(--component-form-input-shared-container-width);
+}
 
-	max-width: var(--component-select-shared-maxWidth);
-	width: var(--component-select-shared-width);
+.stand-select-container > label {
+	color: var(--component-form-input-shared-label-color);
+	font: var(--component-form-input-md-label-typography-font);
+	letter-spacing: var(--component-form-input-md-label-typography-letter-spacing);
+	font-variation-settings: "wdth" var(--component-form-input-md-label-typography-font-width);
+}
+
+.stand-select-container > span.description {
+	color: var(--component-form-input-shared-description-color);
+	font: var(--component-form-input-shared-description-typography-font);
+	letter-spacing: var(--component-form-input-shared-description-typography-letter-spacing);
+	font-variation-settings: "wdth" var(--component-form-input-shared-description-typography-font-width);
 }
 
 .stand-select {
-		display: var(--component-select-button-display);
-		justify-content: var(--component-select-button-justify-content);
-		align-items: var(--component-select-button-align-items);
-		background-color: var(--component-select-button-background-color);
-		border: var(--component-select-button-border);
-		border-radius: var(--component-select-button-border-radius);
-		height: var(--component-select-button-height);
-		padding-left: var(--component-select-button-padding-left);
-		padding-right: var(--component-select-button-padding-right);
-		margin-top: var(--component-select-button-margin-top);
-		color: var(--component-select-button-color);
+		display: var(--component-select-shared-button-display);
+		justify-content: var(--component-select-shared-button-justify-content);
+		align-items: var(--component-select-shared-button-align-items);
+		background-color: var(--component-select-shared-button-background-color);
+		border: var(--component-select-shared-button-border);
+		border-radius: var(--component-select-shared-button-border-radius);
+		height: var(--component-select-shared-button-height);
+		padding-left: var(--component-select-shared-button-padding-left);
+		padding-right: var(--component-select-shared-button-padding-right);
+		margin-top: var(--component-select-shared-button-margin-top);
+		color: var(--component-select-shared-button-color);
 
-		font: var(--component-select-button-body-md-typography-font);
-		letter-spacing: var(--component-select-button-body-md-typography-letter-spacing);
-		font-variation-settings: "wdth" var(--component-select-button-body-md-typography-font-width);
+		font: var(--component-select-shared-button-body-md-typography-font);
+		letter-spacing: var(--component-select-shared-button-body-md-typography-letter-spacing);
+		font-variation-settings: "wdth" var(--component-select-shared-button-body-md-typography-font-width);
 
 
 		&:hover {
@@ -79,7 +92,7 @@ export const componentHtml = /* html */ `<div class="container">
 
 // Select - Custom component - JS example
 export const componentJs = /* javascript */ `
-import { componentSelect } from "@guardian/stand";
+import { componentForm, componentSelect } from "@guardian/stand";
 
 // example of creating a stylesheet in js
 const sheet = new CSSStyleSheet();
@@ -88,30 +101,42 @@ const sheet = new CSSStyleSheet();
 sheet.replaceSync(\`
 
 .js-stand-select-container {
-	display: \${componentSelect.shared.display};
-	flex-direction: \${componentSelect.shared.flexDirection};
-	gap: \${componentSelect.shared.gap};
+	display: \${componentForm.input.shared.container.display};
+	flex-direction: \${componentForm.input.shared.container['flex-direction']};
+	gap: \${componentForm.input.shared.container.gap};
+	width: \${componentForm.input.shared.container.width};
+}
 
-	max-width: \${componentSelect.shared.maxWidth};
-	width: \${componentSelect.shared.width};
+.js-stand-select-container > label {
+	color: \${componentForm.input.shared.label.color};
+	font: \${componentForm.input.md.label.typography.font};
+	letter-spacing: \${componentForm.input.md.label.typography.letterSpacing};
+	font-variation-settings: "wdth" \${componentForm.input.md.label.typography.fontWidth};
+}
+
+.js-stand-select-container > span.description {
+	color: \${componentForm.input.shared.description.color};
+	font: \${componentForm.input.shared.description.font};
+	letter-spacing: \${componentForm.input.shared.description.letterSpacing};
+	font-variation-settings: "wdth" \${componentForm.input.shared.description.fontWidth};
 }
 
 .js-stand-select {
-	display: \${componentSelect.button.display};
-	justify-content: \${componentSelect.button.justifyContent};
-	align-items: \${componentSelect.button.alignItems};
-	background-color: \${componentSelect.button.backgroundColor};
-	border: \${componentSelect.button.border};
-	border-radius: \${componentSelect.button.borderRadius};
-	height: \${componentSelect.button.height};
-	padding-left: \${componentSelect.button.paddingLeft};
-	padding-right: \${componentSelect.button.paddingRight};
-	margin-top: \${componentSelect.button.marginTop};
-	color: \${componentSelect.button.color};
+	display: \${componentSelect.shared.button.display};
+	justify-content: \${componentSelect.shared.button.justifyContent};
+	align-items: \${componentSelect.shared.button.alignItems};
+	background-color: \${componentSelect.shared.button.backgroundColor};
+	border: \${componentSelect.shared.button.border};
+	border-radius: \${componentSelect.shared.button.borderRadius};
+	height: \${componentSelect.shared.button.height};
+	padding-left: \${componentSelect.shared.button.paddingLeft};
+	padding-right: \${componentSelect.shared.button.paddingRight};
+	margin-top: \${componentSelect.shared.button.marginTop};
+	color: \${componentSelect.shared.button.color};
 
-	font: \${componentSelect.button.typography.font};
-	letter-spacing: \${componentSelect.button.typography.letterSpacing};
-	font-variation-settings: "wdth" \${componentSelect.button.typography.fontWidth};
+	font: \${componentSelect.shared.button.typography.font};
+	letter-spacing: \${componentSelect.shared.button.typography.letterSpacing};
+	font-variation-settings: "wdth" \${componentSelect.shared.button.typography.fontWidth};
 
 	&:hover {
 		background: \${componentSelect.shared.hover.backgroundColor};
@@ -122,15 +147,15 @@ sheet.replaceSync(\`
 	}
 
 	&:focus-visible {
-		outline: \${componentSelect.button.focused.outline};
-		outline-offset: \${componentSelect.button.focused['outline-offset']};
+		outline: \${componentSelect.shared.button.focused.outline};
+		outline-offset: \${componentSelect.shared.button.focused['outline-offset']};
 	}
 
 	&:disabled {
-		cursor: \${componentSelect.button.disabled.cursor};
-		background-color: \${componentSelect.button.disabled.backgroundColor};
-		color: \${componentSelect.button.disabled.color};
-		border: \${componentSelect.button.disabled.border};
+		cursor: \${componentSelect.shared.button.disabled.cursor};
+		background-color: \${componentSelect.shared.button.disabled.backgroundColor};
+		color: \${componentSelect.shared.button.disabled.color};
+		border: \${componentSelect.shared.button.disabled.border};
 	}
 }
 \`);
