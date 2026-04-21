@@ -5,7 +5,8 @@ import {
 	type ComponentTopBar,
 } from '../../..//styleD/build/typescript/component/TopBar';
 import type { DeepPartial, Prettify } from '../../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../../utils';
+import { convertTypographyToEmotionStringStyle, until } from '../../../utils';
+import type { TopBarToolNameProps } from './types';
 
 export type TopBarToolNameTheme = Prettify<ComponentTopBar['ToolName']>;
 export type PartialTopBarToolNameTheme = Prettify<
@@ -16,6 +17,7 @@ export const defaultToolNameTheme: TopBarToolNameTheme =
 
 export const toolNameHoverLinkStyles = (
 	theme: TopBarToolNameTheme,
+	{ collapseBelow }: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>,
 ): SerializedStyles => {
 	return css`
 		${convertTypographyToEmotionStringStyle(theme.hoverLink.typography)}
@@ -30,6 +32,34 @@ export const toolNameHoverLinkStyles = (
 		position: ${theme.hoverLink.position};
 		width: ${theme.hoverLink.width};
 		height: ${theme.hoverLink.height};
+
+		${until[collapseBelow]} {
+			padding-left: ${theme.hoverLink.collapsed.paddingLeft};
+			padding-right: ${theme.hoverLink.collapsed.paddingRight};
+			justify-content: ${theme.hoverLink.collapsed['justify-content']};
+		}
+	`;
+};
+
+export const toolNameHoverLinkTextExpandedStyles = ({
+	collapseBelow,
+}: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>): SerializedStyles => {
+	return css`
+		${until[collapseBelow]} {
+			display: none;
+		}
+	`;
+};
+
+export const toolNameHoverLinkTextCollapsedStyles = ({
+	collapseBelow,
+}: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>): SerializedStyles => {
+	return css`
+		display: none;
+
+		${until[collapseBelow]} {
+			display: block;
+		}
 	`;
 };
 
@@ -70,26 +100,40 @@ export const toolNameStyles = (
 
 export const toolNameTypography = (
 	theme: TopBarToolNameTheme,
+	{ collapseBelow }: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>,
 ): SerializedStyles => {
 	return css`
 		${convertTypographyToEmotionStringStyle(theme.typography)}
+		${until[collapseBelow]} {
+			display: none;
+		}
 	`;
 };
 
-export const dividerStyles = (theme: TopBarToolNameTheme): SerializedStyles => {
+export const dividerStyles = (
+	theme: TopBarToolNameTheme,
+	{ collapseBelow }: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>,
+): SerializedStyles => {
 	return css`
 		border-right: ${theme.divider.border};
 		height: ${theme.divider.height};
+		${until[collapseBelow]} {
+			display: none;
+		}
 	`;
 };
 
 export const subsectionStyles = (
 	theme: TopBarToolNameTheme,
+	{ collapseBelow }: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>,
 ): SerializedStyles => {
 	return css`
 		display: ${theme.display};
 		align-items: ${theme['align-items']};
 		gap: ${theme.subsection.gap};
+		${until[collapseBelow]} {
+			display: none;
+		}
 	`;
 };
 

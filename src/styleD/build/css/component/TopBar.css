@@ -94,4 +94,7 @@
 	--component-top-bar-tool-name-hover-link-focused-outline: 0.125rem solid
 		#0072a9;
 	--component-top-bar-tool-name-hover-link-focused-outline-offset: -0.125rem;
+	--component-top-bar-tool-name-hover-link-collapsed-padding-left: 0.25rem;
+	--component-top-bar-tool-name-hover-link-collapsed-padding-right: 0.25rem;
+	--component-top-bar-tool-name-hover-link-collapsed-justify-content: center;
 }

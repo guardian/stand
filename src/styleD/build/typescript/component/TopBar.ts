@@ -150,6 +150,11 @@ export const componentTopBar = {
 				outline: '0.125rem solid #0072a9',
 				'outline-offset': '-0.125rem',
 			},
+			collapsed: {
+				paddingLeft: '0.25rem',
+				paddingRight: '0.25rem',
+				'justify-content': 'center',
+			},
 		},
 	},
 };

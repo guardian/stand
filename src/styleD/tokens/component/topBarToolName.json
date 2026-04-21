@@ -160,6 +160,20 @@
 							"$type": "dimension",
 							"$value": "-{base.spacing.2-rem}"
 						}
+					},
+					"collapsed": {
+						"paddingLeft": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						},
+						"paddingRight": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4-rem}"
+						},
+						"justify-content": {
+							"$type": "string",
+							"$value": "center"
+						}
 					}
 				}
 			}
