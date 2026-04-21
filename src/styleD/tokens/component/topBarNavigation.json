@@ -84,6 +84,16 @@
 							"width": "{semantic.sizing.border.default}",
 							"style": "solid"
 						}
+					},
+					"_menuOpen": {
+						"width": { "$type": "dimension", "$value": "100%" },
+						"height": { "$type": "dimension", "$value": "64px" },
+						"selected": {
+							"background-color": {
+								"$type": "color",
+								"$value": "{semantic.colors.bg.raised-level-2}"
+							}
+						}
 					}
 				},
 				"text": {

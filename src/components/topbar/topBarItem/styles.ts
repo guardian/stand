@@ -13,6 +13,7 @@ export const topBarItemStyles = (
 	theme: TopBarItemTheme,
 	alignment: 'left' | 'right',
 	{ size }: Required<Pick<TopBarItemProps, 'size'>>,
+	_menuOpen?: boolean,
 ): SerializedStyles => {
 	return css`
 		display: ${theme.display};
@@ -20,7 +21,18 @@ export const topBarItemStyles = (
 		height: ${theme.height};
 		padding: ${theme[size].padding.top} ${theme[size].padding.right}
 			${theme[size].padding.bottom} ${theme[size].padding.left};
-		${alignment === 'left' ? 'border-right' : 'border-left'}: ${theme.border};
-		${alignment === 'right' && 'margin-left: auto'};
+
+		${_menuOpen
+			? css`
+					height: 64px;
+					justify-content: center;
+					border-bottom: ${theme.border};
+				`
+			: css`
+					${alignment === 'left'
+						? 'border-right'
+						: 'border-left'}: ${theme.border};
+					${alignment === 'right' && 'margin-left: auto'};
+				`}
 	`;
 };

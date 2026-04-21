@@ -28,22 +28,30 @@ export function TopBarNavigation({
 	theme = {},
 	cssOverrides,
 	className,
+	_menuOpen,
 	...props
 }: TopBarNavigationProps) {
 	const mergedTheme = mergeDeep(defaultTopBarNavigationTheme, theme);
 	const iconSize = size === 'md' ? 'lg' : 'sm';
 
 	return (
-		<div css={topBarNavigationDividerStyles(mergedTheme, { alignment })}>
+		<div
+			css={topBarNavigationDividerStyles(mergedTheme, { alignment }, _menuOpen)}
+		>
 			{menuChildren ? (
-				<Menu>
+				<Menu
+					popoverProps={{
+						placement: _menuOpen ? 'end' : undefined,
+					}}
+					size={_menuOpen ? 'sm' : undefined}
+				>
 					<MenuToggle>
 						<Pressable isDisabled={isDisabled}>
 							<span
 								role="button"
 								data-disabled={isDisabled ? true : undefined}
 								css={[
-									topBarNavigationStyles(mergedTheme, isSelected),
+									topBarNavigationStyles(mergedTheme, isSelected, _menuOpen),
 									topBarNavigationTypographyStyles(mergedTheme, size),
 									cssOverrides,
 								]}
@@ -65,7 +73,7 @@ export function TopBarNavigation({
 			) : (
 				<Link
 					css={[
-						topBarNavigationStyles(mergedTheme, isSelected),
+						topBarNavigationStyles(mergedTheme, isSelected, _menuOpen),
 						topBarNavigationTypographyStyles(mergedTheme, size),
 						cssOverrides,
 					]}
