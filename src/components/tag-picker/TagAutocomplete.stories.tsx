@@ -4,7 +4,9 @@ import { useEffect, useState } from 'react';
 import { exampleTags } from './example-tags';
 import { TagAutocomplete } from './TagAutocomplete';
 import { TagTable } from './TagTable';
-import type { TagManagerObjectData } from './types';
+import type { TagManagerObjectData, TagRow } from './types';
+
+type TagManagerObjectRow = TagManagerObjectData & TagRow;
 
 const meta = {
 	title: 'Stand/Editorial Components/TagPicker/TagAutocomplete',
@@ -12,7 +14,7 @@ const meta = {
 	args: {
 		addTag: () => {},
 		loading: false,
-		onChange: () => {},
+		onTextInputChange: () => {},
 		options: [],
 		label: 'tag',
 		placeholder: 'Choose a tag',
@@ -29,15 +31,21 @@ export const Disabled = {
 	args: { disabled: true },
 } satisfies Story;
 
+const mappedExampleTags: TagManagerObjectRow[] = exampleTags.map((tag) => ({
+	...tag,
+	type: tag.type || 'Unknown',
+	sectionName: tag.section.name || 'Unknown',
+	name: tag.internalName || 'Unknown',
+	id: tag.id,
+}));
+
 export const TagPicker = {
 	render: () => {
-		const [selectedTags, setSelectedTags] = useState<TagManagerObjectData[]>(
-			[],
-		);
+		const [selectedTags, setSelectedTags] = useState<TagManagerObjectRow[]>([]);
 
-		const [options, setOptions] = useState<TagManagerObjectData[]>([]);
+		const [options, setOptions] = useState<TagManagerObjectRow[]>([]);
 		const [value, setValue] = useState('');
-		const onChange = (inputText: string) => {
+		const onTextInputChange = (inputText: string) => {
 			setValue(inputText);
 			if (inputText === '') {
 				setOptions([]);
@@ -45,13 +53,13 @@ export const TagPicker = {
 			}
 
 			if (inputText === '*') {
-				setOptions(exampleTags);
+				setOptions(mappedExampleTags);
 				return;
 			}
 
-			// Simple filtering against exampleTags
-			const filteredItems = exampleTags.filter((t) =>
-				t.internalName.toLowerCase().includes(inputText.toLowerCase()),
+			// Simple filtering against mappedExampleTags
+			const filteredItems = mappedExampleTags.filter((t) =>
+				t.name.toLowerCase().includes(inputText.toLowerCase()),
 			);
 
 			return setOptions(filteredItems);
@@ -65,7 +73,7 @@ export const TagPicker = {
 					`}
 				>
 					<TagAutocomplete
-						onChange={onChange}
+						onTextInputChange={onTextInputChange}
 						options={options}
 						label="Tags"
 						addTag={(tag) =>
@@ -107,13 +115,13 @@ export const Async = {
 				}
 
 				if (value === '*') {
-					setOptions(exampleTags);
+					setOptions(mappedExampleTags);
 					return;
 				}
 
-				// Simple filtering against exampleTags
-				const filteredItems = exampleTags.filter((t) =>
-					t.internalName.toLowerCase().includes(value.toLowerCase()),
+				// Simple filtering against mappedExampleTags
+				const filteredItems = mappedExampleTags.filter((t) =>
+					t.name.toLowerCase().includes(value.toLowerCase()),
 				);
 
 				setOptions(filteredItems);
@@ -123,7 +131,7 @@ export const Async = {
 			loadData().catch(console.error);
 		}, [value]);
 
-		const onChange = (inputText: string) => {
+		const onTextInputChange = (inputText: string) => {
 			setValue(inputText);
 		};
 
@@ -135,7 +143,7 @@ export const Async = {
 					`}
 				>
 					<TagAutocomplete
-						onChange={onChange}
+						onTextInputChange={onTextInputChange}
 						options={options}
 						label="Tags"
 						addTag={(tag) => console.log('Tag added:', tag)}

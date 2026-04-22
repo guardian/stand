@@ -1,6 +1,6 @@
 {
 	"component": {
-		"tagAutocomplete": {
+		"autocomplete": {
 			"input": {
 				"color": {
 					"$type": "color",
@@ -72,6 +72,18 @@
 					"backgroundFocusedColor": {
 						"$type": "color",
 						"$value": "{base.colors.neutral.800}"
+					},
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.strong}"
+					},
+					"colorHover": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.strong}"
+					},
+					"colorFocused": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.strong}"
 					}
 				}
 			}

@@ -2,7 +2,7 @@
  * Do not edit directly, this file was auto-generated.
  */
 
-export const componentTagAutocomplete = {
+export const componentAutocomplete = {
 	input: {
 		color: '#000000',
 		backgroundColor: '#ffffff',
@@ -24,7 +24,10 @@ export const componentTagAutocomplete = {
 			paddingX: '12px',
 			backgroundHoverColor: '#ededed',
 			backgroundFocusedColor: '#ededed',
+			color: '#000000',
+			colorHover: '#000000',
+			colorFocused: '#000000',
 		},
 	},
 };
-export type ComponentTagAutocomplete = typeof componentTagAutocomplete;
+export type ComponentAutocomplete = typeof componentAutocomplete;
