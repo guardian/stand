@@ -48,6 +48,10 @@
 	--semantic-colors-fill-weak-hover: #f6f6f6;
 	--semantic-colors-fill-weak-pressed: #ededed;
 	--semantic-colors-fill-disabled: #dcdcdc;
+	--semantic-colors-fill-disabled-inverse: #666666;
+	--semantic-colors-fill-link: #00496c;
+	--semantic-colors-fill-link-hover: #00344e;
+	--semantic-colors-fill-link-pressed: #00202f;
 	--semantic-colors-fill-green-weak: #cde4c9;
 	--semantic-colors-fill-blue-weak: #c5d9f4;
 	--semantic-colors-fill-red-weak: #f5c6c0;
