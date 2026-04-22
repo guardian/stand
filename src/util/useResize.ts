@@ -1,9 +1,12 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 
+const useIsomorphicLayoutEffect =
+	typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
 export const useResize = (callback: () => void, debounceMs = 100) => {
 	const callbackRef = useRef(callback);
 
-	useLayoutEffect(() => {
+	useIsomorphicLayoutEffect(() => {
 		callbackRef.current = callback;
 	});
 

@@ -25,7 +25,7 @@ export const semanticBreakpoints = {
 	},
 	maxplus: {
 		min: '1784px',
-		max: null,
+		max: 'initial',
 	},
 };
 export type SemanticBreakpoints = typeof semanticBreakpoints;

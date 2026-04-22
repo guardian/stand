@@ -1581,7 +1581,7 @@
 				},
 				"max": {
 					"$type": "dimension",
-					"$value": null
+					"$value": "initial"
 				}
 			}
 		}

@@ -14,5 +14,5 @@
 	--semantic-breakpoints-max-min: 1584px;
 	--semantic-breakpoints-max-max: 1783px;
 	--semantic-breakpoints-maxplus-min: 1784px;
-	--semantic-breakpoints-maxplus-max: null;
+	--semantic-breakpoints-maxplus-max: initial;
 }

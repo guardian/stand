@@ -8,7 +8,7 @@ import { AvatarButton } from '../../avatar-button';
 import { AvatarLink } from '../../avatar-link';
 import type { TopBarToolNameProps } from '../../TopBar';
 import { mergeDeep } from '../../util/mergeDeep';
-import { useResize } from '../../util/useRezise';
+import { useResize } from '../../util/useResize';
 import { Avatar } from '../avatar/Avatar';
 import { Icon } from '../icon/Icon';
 import type { TopBarTheme } from './styles';
@@ -164,38 +164,40 @@ export function TopBar({
 
 	const leftSideMenuItems: React.ReactElement[] = [];
 
-	React.Children.forEach(
-		(leftSide as React.ReactElement<{ children?: React.ReactNode }>).props
-			.children as React.ReactElement[],
-		(child) => {
-			if (!React.isValidElement(child)) {
-				return;
-			}
+	if (leftSide) {
+		React.Children.forEach(
+			(leftSide as React.ReactElement<{ children?: React.ReactNode }>).props
+				.children as React.ReactElement[],
+			(child) => {
+				if (!React.isValidElement(child)) {
+					return;
+				}
 
-			if (child.type === TopBarNavigation) {
-				leftSideMenuItems.push(
-					React.cloneElement(
-						child as React.ReactElement<TopBarNavigationProps>,
-						{
-							theme: mergedTheme.Navigation,
+				if (child.type === TopBarNavigation) {
+					leftSideMenuItems.push(
+						React.cloneElement(
+							child as React.ReactElement<TopBarNavigationProps>,
+							{
+								theme: mergedTheme.Navigation,
+								alignment: 'left',
+								_menuOpen: menuOpen,
+							},
+						),
+					);
+				}
+
+				if (child.type === TopBarItem) {
+					leftSideMenuItems.push(
+						React.cloneElement(child as React.ReactElement<TopBarItemProps>, {
+							theme: mergedTheme.Item,
 							alignment: 'left',
 							_menuOpen: menuOpen,
-						},
-					),
-				);
-			}
-
-			if (child.type === TopBarItem) {
-				leftSideMenuItems.push(
-					React.cloneElement(child as React.ReactElement<TopBarItemProps>, {
-						theme: mergedTheme.Item,
-						alignment: 'left',
-						_menuOpen: menuOpen,
-					}),
-				);
-			}
-		},
-	);
+						}),
+					);
+				}
+			},
+		);
+	}
 
 	useResize(() => {
 		if (menuOpen) {
@@ -210,39 +212,41 @@ export function TopBar({
 			{...props}
 		>
 			{/* LHS */}
-			<div
-				css={topBarContainerStyles(mergedTheme, {
-					showUntil: collapseBelow.containerLeft,
-				})}
-			>
-				<ReactAriaDialogTrigger
-					isOpen={menuOpen}
-					onOpenChange={(isOpen) => {
-						setMenuOpen(isOpen);
-					}}
+			{leftSideMenuItems.length > 0 && (
+				<div
+					css={topBarContainerStyles(mergedTheme, {
+						showUntil: collapseBelow.containerLeft,
+					})}
 				>
-					<ReactAriaButton
-						aria-label="Navigation Menu"
-						ref={buttonRef}
-						css={topBarCollapsedNavMenuButtonStyles(mergedTheme, menuOpen)}
+					<ReactAriaDialogTrigger
+						isOpen={menuOpen}
+						onOpenChange={(isOpen) => {
+							setMenuOpen(isOpen);
+						}}
 					>
-						<TopBarItem
-							alignment="left"
-							size="sm"
-							theme={mergedTheme.Item}
+						<ReactAriaButton
 							aria-label="Navigation Menu"
+							ref={buttonRef}
+							css={topBarCollapsedNavMenuButtonStyles(mergedTheme, menuOpen)}
 						>
-							<Icon size="lg">{menuOpen ? 'close' : 'menu'}</Icon>
-						</TopBarItem>
-					</ReactAriaButton>
-					<ReactAriaPopover
-						css={topBarCollapsedNavMenuPopoverStyles(mergedTheme)}
-						offset={12}
-					>
-						{leftSideMenuItems}
-					</ReactAriaPopover>
-				</ReactAriaDialogTrigger>
-			</div>
+							<TopBarItem
+								alignment="left"
+								size="sm"
+								theme={mergedTheme.Item}
+								aria-label="Navigation Menu"
+							>
+								<Icon size="lg">{menuOpen ? 'close' : 'menu'}</Icon>
+							</TopBarItem>
+						</ReactAriaButton>
+						<ReactAriaPopover
+							css={topBarCollapsedNavMenuPopoverStyles(mergedTheme)}
+							offset={12}
+						>
+							{leftSideMenuItems}
+						</ReactAriaPopover>
+					</ReactAriaDialogTrigger>
+				</div>
+			)}
 			<div css={topBarContainerStyles(mergedTheme)}>{toolName}</div>
 			<div
 				css={topBarContainerStyles(mergedTheme, {

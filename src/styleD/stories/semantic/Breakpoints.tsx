@@ -107,7 +107,7 @@ export const SemanticBreakpointTokens = () => {
 							<tr key={name} css={isActive ? activeRowCss : undefined}>
 								<td css={tokenNameCss}>{name}</td>
 								<td css={tokenValueCss}>{min}</td>
-								<td css={tokenValueCss}>{max ?? '-'}</td>
+								<td css={tokenValueCss}>{max}</td>
 								<td>{isActive && <span css={activeBadgeCss}>Current</span>}</td>
 							</tr>
 						);
