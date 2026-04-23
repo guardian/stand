@@ -30,9 +30,6 @@ export const componentForm = {
 			},
 		},
 		sm: {
-			container: {
-				'max-width': '200px',
-			},
 			label: {
 				typography: {
 					font: 'normal 700 0.875rem/1.15 Open Sans',
@@ -42,9 +39,6 @@ export const componentForm = {
 			},
 		},
 		md: {
-			container: {
-				'max-width': '320px',
-			},
 			label: {
 				typography: {
 					font: 'normal 700 1rem/1.15 Open Sans',

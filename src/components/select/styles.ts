@@ -12,7 +12,6 @@ export const defaultSelectTheme: SelectTheme = componentSelect;
 
 export const popoverStyles = (theme: SelectTheme): SerializedStyles => {
 	return css`
-		max-width: ${theme.shared.maxWidth};
 		width: ${theme.shared.width};
 	`;
 };
@@ -57,7 +56,6 @@ export const listBoxStyles = (theme: SelectTheme): SerializedStyles => {
 		background-color: ${theme.shared.listBox.backgroundColor};
 		border: ${theme.shared.listBox.border};
 		box-shadow: ${theme.shared.listBox.shadow};
-		max-width: ${theme.shared.maxWidth};
 		width: ${theme.shared.width};
 		outline: none;
 	`;

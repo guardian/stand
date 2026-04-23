@@ -2,10 +2,6 @@
 	"component": {
 		"select": {
 			"shared": {
-				"maxWidth": {
-					"$type": "dimension",
-					"$value": "320px"
-				},
 				"width": {
 					"$type": "dimension",
 					"$value": "100%"
