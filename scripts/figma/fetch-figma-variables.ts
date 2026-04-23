@@ -1,5 +1,8 @@
 import * as fs from 'fs';
+import * as path from 'path';
+import { fileURLToPath } from 'url';
 import type { GetLocalVariablesResponse } from '@figma/rest-api-spec';
+import * as prettier from 'prettier';
 import type { Token, TokensFile } from './figma-utils';
 import { spacingTokens, tokenFilesFromLocalVariables } from './figma-utils';
 
@@ -261,6 +264,14 @@ void (async () => {
 		return;
 	}
 
-	fs.writeFileSync(`src/styleD/tokens/foundations/figma.json`, json);
+	const __filename = fileURLToPath(import.meta.url);
+	const __dirname = path.dirname(__filename);
+
+	const prettierConfigPath = path.resolve(__dirname, '../../.prettierrc');
+
+	const options = await prettier.resolveConfig(prettierConfigPath);
+	const formatted = await prettier.format(json, { parser: 'json', ...options });
+
+	fs.writeFileSync(`src/styleD/tokens/foundations/figma.json`, formatted);
 	console.log(`Wrote src/styleD/tokens/foundations/figma.json`);
 })();

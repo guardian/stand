@@ -67,9 +67,11 @@ export type { BaseTypography } from './styleD/build/typescript/base/typography';
  */
 export { semanticColors } from './styleD/build/typescript/semantic/colors';
 export type { SemanticColors } from './styleD/build/typescript/semantic/colors';
-export { semanticShadow } from './styleD/build/typescript/semantic/shadow';
-export type { SemanticShadow } from './styleD/build/typescript/semantic/shadow';
-export { semanticSizing } from './styleD/build/typescript/semantic/sizing';
-export type { SemanticSizing } from './styleD/build/typescript/semantic/sizing';
 export { semanticTypography } from './styleD/build/typescript/semantic/typography';
 export type { SemanticTypography } from './styleD/build/typescript/semantic/typography';
+export { semanticSizing } from './styleD/build/typescript/semantic/sizing';
+export type { SemanticSizing } from './styleD/build/typescript/semantic/sizing';
+export { semanticShadow } from './styleD/build/typescript/semantic/shadow';
+export type { SemanticShadow } from './styleD/build/typescript/semantic/shadow';
+export { semanticBreakpoints } from './styleD/build/typescript/semantic/breakpoints';
+export type { SemanticBreakpoints } from './styleD/build/typescript/semantic/breakpoints';

@@ -6,8 +6,32 @@ export const componentTopBar = {
 	'background-color': '#f6f6f6',
 	display: 'flex',
 	height: '4rem',
-	'justify-content': 'space-between',
+	'justify-content': 'flex-start',
 	border: '0.0625rem solid #cccccc',
+	spacer: {
+		'margin-left': 'auto',
+	},
+	collapsedNavMenu: {
+		button: {
+			margin: '0',
+			padding: '0',
+			background: 'none',
+			border: 'none',
+			cursor: 'pointer',
+			hovered: {
+				'background-color': '#ededed',
+			},
+			active: {
+				'background-color': '#ededed',
+			},
+		},
+		popover: {
+			left: 'auto !important',
+			top: 'auto !important',
+			'background-color': '#f6f6f6',
+			border: '0.0625rem solid #cccccc',
+		},
+	},
 	Item: {
 		display: 'flex',
 		'align-items': 'center',
@@ -62,6 +86,13 @@ export const componentTopBar = {
 			},
 			'border-top': '0.5rem solid transparent',
 			divider: '0.0625rem solid #cccccc',
+			_menuOpen: {
+				width: '100%',
+				height: '64px',
+				selected: {
+					'background-color': '#ededed',
+				},
+			},
 		},
 		text: {
 			margin: {
@@ -149,6 +180,11 @@ export const componentTopBar = {
 			focused: {
 				outline: '0.125rem solid #0072a9',
 				'outline-offset': '-0.125rem',
+			},
+			collapsed: {
+				paddingLeft: '0.25rem',
+				paddingRight: '0.25rem',
+				'justify-content': 'center',
 			},
 		},
 	},

@@ -55,6 +55,7 @@ export const WithLink = {
 		subsectionIcon: 'menu',
 		href: '#',
 		hoverText: 'Back to dashboard',
+		collapsedHoverText: 'Back',
 	},
 } satisfies Story;
 
