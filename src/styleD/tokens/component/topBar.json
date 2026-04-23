@@ -67,14 +67,6 @@
 					}
 				},
 				"popover": {
-					"left": {
-						"$type": "string",
-						"$value": "auto !important"
-					},
-					"top": {
-						"$type": "string",
-						"$value": "auto !important"
-					},
 					"background-color": {
 						"$type": "color",
 						"$value": "{semantic.colors.bg.raised-level-1}"
@@ -86,6 +78,16 @@
 							"width": "{semantic.sizing.border.default}",
 							"style": "solid"
 						}
+					},
+					"offset": {
+						"$description": "The additional offset applied along the main axis between the element and its anchor element. https://react-aria.adobe.com/Popover#popover",
+						"$type": "number",
+						"$value": 1
+					},
+					"containerPadding": {
+						"$description": "The placement padding that should be applied between the element and its surrounding container. https://react-aria.adobe.com/Popover#popover",
+						"$type": "number",
+						"$value": 0
 					}
 				}
 			}

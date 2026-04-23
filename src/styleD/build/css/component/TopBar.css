@@ -16,10 +16,10 @@
 	--component-top-bar-collapsed-nav-menu-button-cursor: pointer;
 	--component-top-bar-collapsed-nav-menu-button-hovered-background-color: #ededed;
 	--component-top-bar-collapsed-nav-menu-button-active-background-color: #ededed;
-	--component-top-bar-collapsed-nav-menu-popover-left: auto !important;
-	--component-top-bar-collapsed-nav-menu-popover-top: auto !important;
 	--component-top-bar-collapsed-nav-menu-popover-background-color: #f6f6f6;
 	--component-top-bar-collapsed-nav-menu-popover-border: 0.0625rem solid #cccccc;
+	--component-top-bar-collapsed-nav-menu-popover-offset: 1; /** The additional offset applied along the main axis between the element and its anchor element. https://react-aria.adobe.com/Popover#popover */
+	--component-top-bar-collapsed-nav-menu-popover-container-padding: 0; /** The placement padding that should be applied between the element and its surrounding container. https://react-aria.adobe.com/Popover#popover */
 	--component-top-bar-item-display: flex;
 	--component-top-bar-item-align-items: center;
 	--component-top-bar-item-height: 100%;

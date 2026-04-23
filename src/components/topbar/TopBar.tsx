@@ -240,7 +240,11 @@ export function TopBar({
 						</ReactAriaButton>
 						<ReactAriaPopover
 							css={topBarCollapsedNavMenuPopoverStyles(mergedTheme)}
-							offset={12}
+							offset={mergedTheme.collapsedNavMenu.popover.offset}
+							containerPadding={
+								mergedTheme.collapsedNavMenu.popover.containerPadding
+							}
+							shouldFlip={false}
 						>
 							{leftSideMenuItems}
 						</ReactAriaPopover>

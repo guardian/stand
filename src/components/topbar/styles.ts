@@ -81,8 +81,6 @@ export const topBarCollapsedNavMenuPopoverStyles = (
 	theme: TopBarTheme,
 ): SerializedStyles => {
 	return css`
-		left: ${theme.collapsedNavMenu.popover.left};
-		top: ${theme.collapsedNavMenu.popover.top};
 		background-color: ${theme.collapsedNavMenu.popover['background-color']};
 		border-left: ${theme.collapsedNavMenu.popover.border};
 		border-right: ${theme.collapsedNavMenu.popover.border};
