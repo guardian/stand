@@ -15,12 +15,10 @@
 	--component-form-input-shared-description-typography-letter-spacing: 0;
 	--component-form-input-shared-description-typography-font-width: 95;
 	--component-form-input-shared-description-disabled-color: #999999;
-	--component-form-input-sm-container-max-width: 200px;
 	--component-form-input-sm-label-typography-font: normal 700 0.875rem/1.15
 		'Open Sans';
 	--component-form-input-sm-label-typography-letter-spacing: -0.0125rem;
 	--component-form-input-sm-label-typography-font-width: 95;
-	--component-form-input-md-container-max-width: 320px;
 	--component-form-input-md-label-typography-font: normal 700 1rem/1.15
 		'Open Sans';
 	--component-form-input-md-label-typography-letter-spacing: -0.03125rem;

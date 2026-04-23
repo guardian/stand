@@ -42,7 +42,7 @@ export function FormInputContainer<C extends AllowedContainer>({
 
 	return (
 		<Tag
-			css={[formInputContainerStyles(mergedTheme, { size }), cssOverrides]}
+			css={[formInputContainerStyles(mergedTheme), cssOverrides]}
 			isDisabled={isDisabled}
 			{...(props as AllowedContainerProps)}
 		>

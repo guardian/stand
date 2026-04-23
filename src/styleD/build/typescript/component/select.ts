@@ -4,7 +4,6 @@
 
 export const componentSelect = {
 	shared: {
-		maxWidth: '320px',
 		width: '100%',
 		hover: {
 			backgroundColor: '#f6f6f6',

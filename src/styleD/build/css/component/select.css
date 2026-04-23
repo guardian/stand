@@ -3,7 +3,6 @@
  */
 
 :root {
-	--component-select-shared-max-width: 320px;
 	--component-select-shared-width: 100%;
 	--component-select-shared-hover-background-color: #f6f6f6;
 	--component-select-shared-hover-outline: none; /** Override outline focus styles on hover */

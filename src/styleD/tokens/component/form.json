@@ -61,12 +61,6 @@
 					}
 				},
 				"sm": {
-					"container": {
-						"max-width": {
-							"$type": "dimension",
-							"$value": "200px"
-						}
-					},
 					"label": {
 						"typography": {
 							"font": {
@@ -85,12 +79,6 @@
 					}
 				},
 				"md": {
-					"container": {
-						"max-width": {
-							"$type": "dimension",
-							"$value": "320px"
-						}
-					},
 					"label": {
 						"typography": {
 							"font": {
