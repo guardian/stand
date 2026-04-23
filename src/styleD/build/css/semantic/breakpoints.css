@@ -1,0 +1,18 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--semantic-breakpoints-sm-min: 0;
+	--semantic-breakpoints-sm-max: 671px;
+	--semantic-breakpoints-md-min: 672px;
+	--semantic-breakpoints-md-max: 1055px;
+	--semantic-breakpoints-lg-min: 1056px;
+	--semantic-breakpoints-lg-max: 1311px;
+	--semantic-breakpoints-xl-min: 1312px;
+	--semantic-breakpoints-xl-max: 1583px;
+	--semantic-breakpoints-max-min: 1584px;
+	--semantic-breakpoints-max-max: 1783px;
+	--semantic-breakpoints-maxplus-min: 1784px;
+	--semantic-breakpoints-maxplus-max: initial;
+}

@@ -3,8 +3,10 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
 import { semanticSizing } from '../../styleD/build/typescript/semantic/sizing';
+import { TextInput } from '../../text-input';
 import { Avatar } from '../avatar/Avatar';
 import { Button } from '../button/Button';
+import { MenuItem, MenuSection } from '../menu/Menu';
 import { TopBar, TopBarContainerLeft, TopBarContainerRight } from './TopBar';
 import { TopBarItem } from './topBarItem/TopBarItem';
 import { TopBarNavigation } from './topBarNavigation/TopBarNavigation';
@@ -43,6 +45,7 @@ export const WithTopNavigation = {
 				favicon={{ letter: 'D' }}
 				href="#"
 				hoverText="Back to dashboard"
+				collapsedHoverText="Back"
 			/>
 			<TopBarContainerLeft>
 				<TopBarNavigation isSelected text="Navigation 1" href="#" />
@@ -73,6 +76,54 @@ export const WithButtons = {
 				</TopBarItem>
 				<TopBarItem>
 					<Button variant="tertiary">Button label</Button>
+				</TopBarItem>
+			</TopBarContainerRight>
+			<Avatar
+				src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg"
+				alt="Mahesh Makani"
+				size="sm"
+			/>
+		</TopBar>
+	),
+} satisfies Story;
+
+export const WithButtonsMenuNavigation = {
+	render: () => (
+		<TopBar>
+			<TopBarToolName name="Default" favicon={{ letter: 'D' }} />
+			<TopBarContainerLeft>
+				<TopBarNavigation
+					text="Menu"
+					icon="file_upload"
+					menuChildren={
+						<MenuSection name="Menu section">
+							<MenuItem label="Menu item 1" />
+							<MenuItem label="Menu item 2" />
+						</MenuSection>
+					}
+				/>
+				<TopBarNavigation isSelected text="Current" href="#" />
+				<TopBarItem>
+					<Button variant="primary">Primary</Button>
+				</TopBarItem>
+				<TopBarNavigation text="Link" href="#" />
+			</TopBarContainerLeft>
+			<TopBarContainerRight>
+				<TopBarItem>
+					<TextInput
+						theme={{
+							shared: {
+								'margin-top': '0',
+							},
+						}}
+						cssOverrides={css`
+							width: 100px;
+						`}
+						placeholder="Search"
+					/>
+				</TopBarItem>
+				<TopBarItem>
+					<Button variant="tertiary">Tertiary</Button>
 				</TopBarItem>
 			</TopBarContainerRight>
 			<Avatar
@@ -116,6 +167,7 @@ export const CustomTheme = {
 				}}
 				href="#"
 				hoverText="Back to dashboard"
+				collapsedHoverText="Back"
 			/>
 			<TopBarContainerLeft>
 				<TopBarNavigation isSelected text="Navigation 1" href="#" />

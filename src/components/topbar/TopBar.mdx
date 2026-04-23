@@ -5,6 +5,7 @@ import TopBarStories, {
 	Default,
 	WithTopNavigation,
 	WithButtons,
+	WithButtonsMenuNavigation,
 } from './TopBar.stories';
 import {
 	SandboxReact,
@@ -84,12 +85,13 @@ The children will be rendered in the following order from left to right:
 
 ### Props
 
-| Name           | Type               | Required | Default | Description                                                                                                                                                 |
-| -------------- | ------------------ | -------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `children`     | `React.ReactNode`  | No       | N/A     | Content to render inside the component. Only children of type `TopBarToolName`, `Avatar`, `TopBarContainerLeft` or `TopBarContainerRight` will be rendered. |
-| `theme`        | `TopBarTheme`      | No       | N/A     | Custom theme overrides.                                                                                                                                     |
-| `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles.                                                                                                                                          |
-| `className`    | `string`           | No       | N/A     | Additional class name(s).                                                                                                                                   |
+| Name            | Type                                                    | Required | Default                                   | Description                                                                                                                                                 |
+| --------------- | ------------------------------------------------------- | -------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`      | `React.ReactNode`                                       | No       | N/A                                       | Content to render inside the component. Only children of type `TopBarToolName`, `Avatar`, `TopBarContainerLeft` or `TopBarContainerRight` will be rendered. |
+| `collapseBelow` | `{ toolName?: Breakpoint; containerLeft?: Breakpoint }` | No       | `{ toolName: 'lg', containerLeft: 'lg' }` | Controls at which breakpoint each section collapses. See [Responsive behaviour](#responsive-behaviour).                                                     |
+| `theme`         | `TopBarTheme`                                           | No       | N/A                                       | Custom theme overrides.                                                                                                                                     |
+| `cssOverrides`  | `SerializedStyles`                                      | No       | N/A                                       | Custom CSS styles.                                                                                                                                          |
+| `className`     | `string`                                                | No       | N/A                                       | Additional class name(s).                                                                                                                                   |
 
 ### `TopBarContainerLeft` / `TopBarContainerRight` props
 
@@ -114,6 +116,42 @@ All other content must be composed within the left hand side or right hand side.
 ### With Buttons
 
 <Story of={WithButtons} />
+
+### With Buttons and Menu Navigation
+
+<Story of={WithButtonsMenuNavigation} />
+
+## Responsive behaviour
+
+The TopBar supports responsive design via the `collapseBelow` prop. This controls at which breakpoint each section of the top bar collapses.
+
+Available breakpoints: `sm` (0px), `md` (672px), `lg` (1056px), `xl` (1312px), `max` (1584px), `maxplus` (1784px).
+
+```tsx
+import type { TopBarProps } from '@guardian/stand/TopBar';
+
+// collapses at md and below (i.e. below 1056px)
+<TopBar collapseBelow={{ containerLeft: 'lg', toolName: 'lg' }}>
+```
+
+### `containerLeft` collapse
+
+When the viewport is below the specified breakpoint:
+
+- The `TopBarContainerLeft` content is hidden.
+- A **hamburger menu button** appears in its place.
+- Clicking the button opens a popover containing the left container's `TopBarNavigation` and `TopBarItem` children.
+- The menu closes automatically when the viewport is resized back above the breakpoint.
+
+The default value for both `containerLeft` and `toolName` is `'lg'`, meaning both collapse below 1056px by default.
+
+### `toolName` collapse
+
+When the viewport is below the `toolName` breakpoint, the `TopBarToolName` displays in a shortened form. See the [TopBarToolName docs](/docs/stand-tools-design-system-components-topbar-topbartoolname--docs) for the `collapsedHoverText` prop that controls its collapsed label.
+
+### Note
+
+The right container does not currently have a collapse behaviour, but this may be added in the future if there is demand for it. If using the right container be sure to test the layout on smaller screen sizes to ensure it works for your use case.
 
 ## Customisation
 
