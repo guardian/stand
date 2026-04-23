@@ -265,7 +265,8 @@
 		"test:setup-e2e": "playwright install --with-deps",
 		"test:e2e": "playwright test -c playwright-ct.config.ts",
 		"test:react-matrix": "./scripts/test-react-matrix.sh",
-		"prepare": "husky"
+		"prepare": "husky",
+		"create-component": "npx ts-node ./scripts/create-component.ts"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.30.0",
