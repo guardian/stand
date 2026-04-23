@@ -1160,6 +1160,22 @@
 					"$type": "color",
 					"$value": "{base.colors.neutral.700}"
 				},
+				"disabled-inverse": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.300}"
+				},
+				"link": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.200}"
+				},
+				"link-hover": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.100}"
+				},
+				"link-pressed": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.50}"
+				},
 				"green-weak": {
 					"$type": "color",
 					"$value": "{base.colors.green.800}"
