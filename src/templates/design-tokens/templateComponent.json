@@ -1,9 +1,15 @@
 {
 	"component": {
-		"typography": {
+		"templateComponent": {
 			"color": {
-				"$type": "color",
-				"$value": "{semantic.colors.text.strong}"
+				"background": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.green-weak}"
+				},
+				"text": {
+					"$type": "color",
+					"$value": "hotpink"
+				}
 			}
 		}
 	}

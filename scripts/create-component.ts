@@ -7,10 +7,13 @@ type NameSet = {
 	camelCase: string;
 };
 
-const COMPONENTS_PATH = './src/components';
-const TEMPLATE_PATH = './src/templates/component';
+const SRC_COMPONENTS_PATH = './src/components';
+const TOKENS_PATH = './src/styleD/tokens/component';
+const SRC_COMPONENT_TEMPLATE_PATH = './src/templates/component';
+const TOKEN_TEMPATE_PATH = './src/templates/design-tokens';
+
 const componentFolder = (kebabCasedName: string) =>
-	`${COMPONENTS_PATH}/${kebabCasedName}`;
+	`${SRC_COMPONENTS_PATH}/${kebabCasedName}`;
 
 const rl = readline.createInterface({
 	input: process.stdin,
@@ -104,7 +107,7 @@ const writeFile = async (
 };
 
 const getFilesToCopy = async (names: NameSet) => {
-	const templateFileNames = await getDirContents(TEMPLATE_PATH);
+	const templateFileNames = await getDirContents(SRC_COMPONENT_TEMPLATE_PATH);
 	const map: Record<string, string> = {};
 	templateFileNames.forEach(
 		(fileName) =>
@@ -131,7 +134,7 @@ const replaceName = (fileContents: string, names: NameSet): string => {
 };
 
 const run = async () => {
-	const existingFolders = (await getDirContents(COMPONENTS_PATH)).filter(
+	const existingFolders = (await getDirContents(SRC_COMPONENTS_PATH)).filter(
 		(name) => !name.endsWith('.tsx'),
 	);
 
@@ -159,23 +162,26 @@ const run = async () => {
 	await Promise.all(
 		Object.entries(fileMap).map(
 			async ([templateFileName, destinationFileName]) => {
-				const templateContents = await readFile(
-					`${TEMPLATE_PATH}/${templateFileName}`,
+				const srcComponentTemplateContents = await readFile(
+					`${SRC_COMPONENT_TEMPLATE_PATH}/${templateFileName}`,
 				);
-				const contents = replaceName(templateContents, names);
+				const contents = replaceName(srcComponentTemplateContents, names);
 				await writeFile(
 					`${componentFolder(kebabCase)}/${destinationFileName}`,
 					contents,
 				);
-				console.log(
-					'wrote',
-					destinationFileName,
-					contents === templateContents,
-				);
+				console.log('wrote', destinationFileName);
 			},
 		),
 	);
 
+	const tokenDestinationFilename = `${names.camelCase}.json`;
+	const tokenTemplateContents = await readFile(
+		`${TOKEN_TEMPATE_PATH}/templateComponent.json`,
+	);
+	const tokenContents = replaceName(tokenTemplateContents, names);
+	await writeFile(`${TOKENS_PATH}/${tokenDestinationFilename}`, tokenContents);
+	console.log('wrote', tokenDestinationFilename);
 	// add index file to ./src/{name}
 	// add to rollup and package.json
 	// run styledD build
