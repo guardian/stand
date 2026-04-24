@@ -26,9 +26,28 @@ const getDirContents = (path: fs.PathLike): Promise<string[]> => {
 	});
 };
 
-// TO DO - lowercase and dash only
-const sanitiseName = (rawInput: string): string => {
-	return rawInput.toLowerCase();
+const patternToReplaceWithDash = /[^\d\w]+/g;
+const tokeniseString = (rawInput: string) =>
+	rawInput
+		.toLowerCase()
+		.replaceAll(patternToReplaceWithDash, '-')
+		.split('-')
+		.filter((t) => t.length > 0);
+
+const capitalise = (input: string): string =>
+	`${(input[0] ?? 'a').toUpperCase()}${input.substring(1)}`;
+
+const decapitalise = (input: string): string =>
+	`${(input[0] ?? 'a').toLowerCase()}${input.substring(1)}`;
+
+const toKebabCase = (rawInput: string): string => {
+	return tokeniseString(rawInput).join('-');
+};
+const toPascalCase = (rawInput: string): string => {
+	return tokeniseString(rawInput).map(capitalise).join('');
+};
+const toCamelCase = (rawInput: string): string => {
+	return decapitalise(toPascalCase(rawInput));
 };
 
 const createComponentFolder = (name: string): Promise<void> => {
@@ -53,20 +72,22 @@ const run = async () => {
 
 	console.log('existing compontents', existingFolders);
 
-	const input = await getInput(
-		'What is your new component called? (in-kebab-case-please) ',
-	);
-	const name = sanitiseName(input);
+	const input = await getInput('What is your new component called?');
+	const kebabCase = toKebabCase(input);
+	const pascalCase = toPascalCase(input);
+	const camelCase = toCamelCase(input);
 
-	console.log({ name });
+	console.log({ kebabCase, pascalCase, camelCase });
 
-	if (existingFolders.includes(name)) {
-		return console.error(`There is already a ${name} component`);
+	if (existingFolders.includes(kebabCase)) {
+		return console.error(`There is already a "${kebabCase}" component folder`);
 	}
 
-	console.log(`ok! creating the scaffolding for ${name}...`);
+	console.log(
+		`ok! creating the scaffolding for ${kebabCase} (${pascalCase})...`,
+	);
 
-	await createComponentFolder(name);
+	await createComponentFolder(kebabCase);
 	// add index file to ./src/{name}
 	// add to rollup and package.json
 	// run styledD build
