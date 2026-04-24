@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.29
+
+### Patch Changes
+
+- 443d0cf: Fix TopBar responsive menu positioning
+
 ## 0.0.28
 
 ### Patch Changes
