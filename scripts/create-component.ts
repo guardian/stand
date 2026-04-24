@@ -182,10 +182,10 @@ const run = async () => {
 	const tokenContents = replaceName(tokenTemplateContents, names);
 	await writeFile(`${TOKENS_PATH}/${tokenDestinationFilename}`, tokenContents);
 	console.log('wrote', tokenDestinationFilename);
-	// add index file to ./src/{name}
-	// add to rollup and package.json
-	// run styledD build
-	// update src/index.ts
+
+	// TODO - add the component name to the config.js file and run Style dictionary.
+	// TODO - add index file to ./src/{name}
+	// TODO - add a checklist to publish the component to npm, adding a changelog, updating rollup config, package json and src/index.ts.
 };
 
 void run();
