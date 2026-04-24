@@ -28,18 +28,7 @@ const getInput = (promptText: string): Promise<string> => {
 	});
 };
 
-const getDirContents = (path: fs.PathLike): Promise<string[]> => {
-	return new Promise((resolve, reject) => {
-		fs.readdir(path, (err, files) => {
-			if (err) {
-				reject(err);
-			} else {
-				resolve(files);
-			}
-		});
-	});
-};
-
+// component name casing helpers
 const patternToReplaceWithDash = /[^\d\w]+/g;
 const tokeniseString = (rawInput: string) =>
 	rawInput
@@ -64,21 +53,29 @@ const toCamelCase = (rawInput: string): string => {
 	return decapitalise(toPascalCase(rawInput));
 };
 
-const createComponentFolder = (kebabCasedName: string): Promise<void> => {
+// file system helpers
+const getDirContents = (path: fs.PathLike): Promise<string[]> => {
 	return new Promise((resolve, reject) => {
-		fs.mkdir(componentFolder(kebabCasedName), (err) => {
+		fs.readdir(path, (err, files) => {
 			if (err) {
 				reject(err);
 			} else {
-				// TO DO
-				//  -copy template files and inject name
-				// will need to convert from camel-case to PascalCase for file names and component name
+				resolve(files);
+			}
+		});
+	});
+};
+const createFolder = (path: fs.PathLike): Promise<void> => {
+	return new Promise((resolve, reject) => {
+		fs.mkdir(path, (err) => {
+			if (err) {
+				reject(err);
+			} else {
 				resolve();
 			}
 		});
 	});
 };
-
 const readFile = (path: fs.PathLike): Promise<string> => {
 	return new Promise((resolve, reject) => {
 		fs.readFile(path, (err, data) => {
@@ -90,7 +87,6 @@ const readFile = (path: fs.PathLike): Promise<string> => {
 		});
 	});
 };
-
 const writeFile = async (
 	path: fs.PathLike,
 	contents: string,
@@ -106,7 +102,7 @@ const writeFile = async (
 	});
 };
 
-const getFilesToCopy = async (names: NameSet) => {
+const getComponentTemplateFileNameMap = async (names: NameSet) => {
 	const templateFileNames = await getDirContents(SRC_COMPONENT_TEMPLATE_PATH);
 	const map: Record<string, string> = {};
 	templateFileNames.forEach(
@@ -138,26 +134,28 @@ const run = async () => {
 		(name) => !name.endsWith('.tsx'),
 	);
 
-	console.log('existing compontents', existingFolders);
+	console.log('existing components', existingFolders);
 
 	const input = await getInput('What is your new component called?');
-	const kebabCase = toKebabCase(input);
-	const pascalCase = toPascalCase(input);
-	const camelCase = toCamelCase(input);
+	const names = {
+		kebabCase: toKebabCase(input),
+		pascalCase: toPascalCase(input),
+		camelCase: toCamelCase(input),
+	};
 
-	if (existingFolders.includes(kebabCase)) {
-		return console.error(`There is already a "${kebabCase}" component folder`);
+	if (existingFolders.includes(names.kebabCase)) {
+		return console.error(
+			`There is already a "${names.kebabCase}" component folder`,
+		);
 	}
 
 	console.log(
-		`ok! creating the scaffolding for ${kebabCase} (${pascalCase})...`,
+		`ok! creating the scaffolding for ${names.kebabCase} (${names.pascalCase})...`,
 	);
 
-	await createComponentFolder(kebabCase);
+	await createFolder(componentFolder(names.kebabCase));
 
-	const names = { kebabCase, pascalCase, camelCase };
-
-	const fileMap = await getFilesToCopy(names);
+	const fileMap = await getComponentTemplateFileNameMap(names);
 
 	await Promise.all(
 		Object.entries(fileMap).map(
@@ -166,11 +164,9 @@ const run = async () => {
 					`${SRC_COMPONENT_TEMPLATE_PATH}/${templateFileName}`,
 				);
 				const contents = replaceName(srcComponentTemplateContents, names);
-				await writeFile(
-					`${componentFolder(kebabCase)}/${destinationFileName}`,
-					contents,
-				);
-				console.log('wrote', destinationFileName);
+				const destinationPath = `${componentFolder(names.kebabCase)}/${destinationFileName}`;
+				await writeFile(destinationPath, contents);
+				console.log('wrote:', destinationPath);
 			},
 		),
 	);
@@ -180,8 +176,17 @@ const run = async () => {
 		`${TOKEN_TEMPATE_PATH}/templateComponent.json`,
 	);
 	const tokenContents = replaceName(tokenTemplateContents, names);
-	await writeFile(`${TOKENS_PATH}/${tokenDestinationFilename}`, tokenContents);
-	console.log('wrote', tokenDestinationFilename);
+	const tokenFilePath = `${TOKENS_PATH}/${tokenDestinationFilename}`;
+	await writeFile(tokenFilePath, tokenContents);
+	console.log('wrote:', tokenFilePath);
+
+	console.log(
+		`component ${names.pascalCase} generated. To make it available in storybook:`,
+	);
+	console.log(
+		' - add your component to the fileList in ./src/styleD/config.js',
+	);
+	console.log(' - run `pnpm run build-styled`');
 
 	// TODO - add the component name to the config.js file and run Style dictionary.
 	// TODO - add index file to ./src/{name}
