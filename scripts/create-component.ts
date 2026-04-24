@@ -1,6 +1,12 @@
 import fs from 'node:fs';
 import readline from 'node:readline';
 
+type NameSet = {
+	kebabCase: string;
+	pascalCase: string;
+	camelCase: string;
+};
+
 const COMPONENTS_PATH = './src/components';
 const TEMPLATE_PATH = './src/templates/component';
 const componentFolder = (kebabCasedName: string) =>
@@ -97,17 +103,29 @@ const writeFile = async (
 	});
 };
 
-const replaceName = (
-	fileContents: string,
-	name: {
-		kebabCase: string;
-		pascalCase: string;
-		camelCase: string;
-	},
-): string => {
-	fileContents.replaceAll(/TemplateComponent/g, name.pascalCase);
-	fileContents.replaceAll(/templateComponent/g, name.camelCase);
-	fileContents.replaceAll(/template-component/g, name.kebabCase);
+const getFilesToCopy = async (names: NameSet) => {
+	const templateFileNames = await getDirContents(TEMPLATE_PATH);
+	const map: Record<string, string> = {};
+	templateFileNames.forEach(
+		(fileName) =>
+			(map[fileName] = fileName.replace(
+				/TemplateComponent/g,
+				names.pascalCase,
+			)),
+	);
+	return map;
+};
+
+const replaceName = (fileContents: string, names: NameSet): string => {
+	fileContents = fileContents.replaceAll(
+		/TemplateComponent/g,
+		names.pascalCase,
+	);
+	fileContents = fileContents.replaceAll(/templateComponent/g, names.camelCase);
+	fileContents = fileContents.replaceAll(
+		/template-component/g,
+		names.kebabCase,
+	);
 
 	return fileContents;
 };
@@ -136,18 +154,26 @@ const run = async () => {
 
 	const names = { kebabCase, pascalCase, camelCase };
 
-	const componentFileContents = await readFile(
-		`${TEMPLATE_PATH}/TemplateComponent.tsx`,
-	);
-	await writeFile(
-		`${componentFolder(kebabCase)}/${pascalCase}.tsx`,
-		replaceName(componentFileContents, names),
-	);
+	const fileMap = await getFilesToCopy(names);
 
-	const typesFileContents = await readFile(`${TEMPLATE_PATH}/types.ts`);
-	await writeFile(
-		`${componentFolder(kebabCase)}/types.ts`,
-		replaceName(typesFileContents, names),
+	await Promise.all(
+		Object.entries(fileMap).map(
+			async ([templateFileName, destinationFileName]) => {
+				const templateContents = await readFile(
+					`${TEMPLATE_PATH}/${templateFileName}`,
+				);
+				const contents = replaceName(templateContents, names);
+				await writeFile(
+					`${componentFolder(kebabCase)}/${destinationFileName}`,
+					contents,
+				);
+				console.log(
+					'wrote',
+					destinationFileName,
+					contents === templateContents,
+				);
+			},
+		),
 	);
 
 	// add index file to ./src/{name}
