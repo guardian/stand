@@ -1,16 +1,14 @@
 // for use in tagautocomplete
-export type Tag = { id: number; internalName: string };
+export type Tag = { id: number; name: string };
 
 // for use in tagtable
 export type TagRow = Tag & {
 	type: string;
-	section: {
-		name: string;
-	};
+	sectionName: string;
 };
 
 // for use in tests only
-export type TagManagerObjectData = {
+export type TagManagerObject = {
 	id: number;
 	type: string;
 	internalName: string;
@@ -69,3 +67,5 @@ export type TagManagerObjectData = {
 	adBlockingLevel?: 'NONE' | 'SUGGEST' | 'FORCE' | undefined;
 	contributionBlockingLevel?: 'NONE' | 'SUGGEST' | 'FORCE' | undefined;
 };
+
+export type TagManagerObjectData = TagRow & TagManagerObject;

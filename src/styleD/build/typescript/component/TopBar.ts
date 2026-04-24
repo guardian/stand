@@ -26,10 +26,10 @@ export const componentTopBar = {
 			},
 		},
 		popover: {
-			left: 'auto !important',
-			top: 'auto !important',
 			'background-color': '#f6f6f6',
 			border: '0.0625rem solid #cccccc',
+			offset: 1,
+			containerPadding: 0,
 		},
 	},
 	Item: {

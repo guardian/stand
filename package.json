@@ -1,6 +1,6 @@
 {
 	"name": "@guardian/stand",
-	"version": "0.0.27",
+	"version": "0.0.29",
 	"type": "module",
 	"//exports": "Each component has its own entry point for optimal tree-shaking. Main entry point only includes design tokens and utilities. New components/foundations should follow the same pattern.",
 	"exports": {
@@ -264,9 +264,9 @@
 		"test": "jest",
 		"test:setup-e2e": "playwright install --with-deps",
 		"test:e2e": "playwright test -c playwright-ct.config.ts",
-		"test:react-matrix": "./scripts/test-react-matrix.sh",
-		"prepare": "husky",
-		"create-component": "npx ts-node ./scripts/create-component.ts"
+		"create-component": "npx ts-node ./scripts/create-component.ts",
+		"test:react-matrix": "./scripts/test-deps-matrix.sh",
+		"prepare": "husky"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.30.0",
