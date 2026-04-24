@@ -1,0 +1,117 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import LinkStories, { Default } from './Link.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={LinkStories} />
+
+# Link
+
+TODO: Add a description for the Link component.
+
+## When to use
+
+- TODO: Describe when to use this component
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Link } from '@guardian/stand/link';
+
+/* types, if required */
+import type { LinkProps, LinkTheme } from '@guardian/stand/link';
+
+<Link>Hello</Link>;
+```
+
+## Props
+
+| Name           | Type               | Required | Default | Description                             |
+| -------------- | ------------------ | -------- | ------- | --------------------------------------- |
+| `children`     | `React.ReactNode`  | No       | N/A     | Content to render inside the component. |
+| `theme`        | `LinkTheme`        | No       | N/A     | Custom theme overrides.                 |
+| `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles.                      |
+| `className`    | `string`           | No       | N/A     | Additional class name(s).               |
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+## Customisation
+
+We recommend using the Link component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the Link component:
+
+```tsx
+import type { LinkTheme } from '@guardian/stand/link';
+import { Link } from '@guardian/stand/link';
+
+const customTheme: Partial<LinkTheme> = {
+	// override tokens here
+};
+
+const Component = () => <Link theme={customTheme}>Hello</Link>;
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the Link component:
+
+```tsx
+import { Link } from '@guardian/stand/link';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	// custom styles here
+\`;
+
+const Component = () => <Link cssOverrides={customStyles}>Hello</Link>;
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom Link component using the styles defined in the `LinkTheme` type.
+
+**`css`**
+
+You can import the Link styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentLink` variable and the `ComponentLink` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
