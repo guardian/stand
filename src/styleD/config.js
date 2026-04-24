@@ -125,7 +125,7 @@ const fileList = [
 	},
 	{
 		group: 'component',
-		component: 'tagAutocomplete',
+		component: 'autocomplete',
 	},
 	{
 		group: 'component',

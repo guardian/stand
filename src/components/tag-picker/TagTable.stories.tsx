@@ -8,7 +8,11 @@ const meta = {
 	title: 'Stand/Editorial Components/TagPicker/TagTable',
 	component: TagTable<TagManagerObjectData>,
 	args: {
-		rows: exampleTags,
+		rows: exampleTags.map((tag) => ({
+			...tag,
+			name: tag.internalName,
+			sectionName: tag.section.name,
+		})),
 		filterRows: () => true,
 		'data-testid': 'storybook',
 		removeIcon: <>🗑️</>,

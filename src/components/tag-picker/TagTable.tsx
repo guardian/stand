@@ -250,7 +250,7 @@ export function TagTable<R extends Row>({
 							id={rowToTag(item).id}
 							css={rowStyles(canDrag, theme)}
 							key={rowToTag(item).id}
-							textValue={rowToTag(item).internalName}
+							textValue={rowToTag(item).name}
 						>
 							{onReorder && (
 								<Cell
@@ -287,7 +287,7 @@ export function TagTable<R extends Row>({
 								]}
 								data-testid={`tags-table-item-${filtered.indexOf(item)}-name`}
 							>
-								{rowToTag(item).internalName}
+								{rowToTag(item).name}
 							</Cell>
 							{showTagSectionName && (
 								<Cell
@@ -298,7 +298,7 @@ export function TagTable<R extends Row>({
 										`,
 									]}
 								>
-									{rowToTag(item).section.name}
+									{rowToTag(item).sectionName}
 								</Cell>
 							)}
 							{removeTag && (
@@ -317,7 +317,7 @@ export function TagTable<R extends Row>({
 											onPress={() => {
 												removeTag(item);
 											}}
-											aria-label={`Remove ${rowToTag(item).internalName}`}
+											aria-label={`Remove ${rowToTag(item).name}`}
 										>
 											{removeIcon ?? 'Remove'}
 										</Button>
@@ -339,7 +339,7 @@ export function TagTable<R extends Row>({
 										onPress={() => {
 											addTag(item);
 										}}
-										aria-label={`Add ${rowToTag(item).internalName}`}
+										aria-label={`Add ${rowToTag(item).name}`}
 									>
 										Add
 									</Button>
