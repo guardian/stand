@@ -1,0 +1,16 @@
+{
+	"component": {
+		"templateComponent": {
+			"color": {
+				"background": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.800}"
+				},
+				"text": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.stronger-inverse}"
+				}
+			}
+		}
+	}
+}

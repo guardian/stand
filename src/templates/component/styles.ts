@@ -1,9 +1,9 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import {
-	componentFavicon as componentTemplateComponent,
-	type ComponentFavicon as ComponentTemplateComponent,
-} from '../../styleD/build/typescript/component/favicon';
+	componentTemplateComponent,
+	type ComponentTemplateComponent,
+} from '../../styleD/build/typescript/component/templateComponent';
 import type { DeepPartial, Prettify } from '../../util/types';
 
 export type TemplateComponentTheme = Prettify<ComponentTemplateComponent>;
@@ -18,5 +18,6 @@ export const templateComponentStyles = (
 ): SerializedStyles => {
 	return css`
 		background-color: ${theme.color.background};
+		color: ${theme.color.text};
 	`;
 };

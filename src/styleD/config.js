@@ -135,6 +135,12 @@ const fileList = [
 		group: 'component',
 		component: 'userMenu',
 	},
+
+	/** template */
+	{
+		group: 'component',
+		component: 'templateComponent',
+	},
 ];
 
 /**

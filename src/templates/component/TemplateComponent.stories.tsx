@@ -24,7 +24,8 @@ export const CustomTheme = {
 	args: {
 		theme: {
 			color: {
-				background: 'pink',
+				background: 'blue',
+				text: 'lime',
 			},
 		},
 	},
@@ -33,8 +34,9 @@ export const CustomTheme = {
 export const CssOverrides = {
 	args: {
 		cssOverrides: css({
-			color: 'lime',
-			border: '2px dotted skyblue',
+			color: 'red',
+			border: '4px dotted black',
+			padding: 5,
 		}),
 	},
 } satisfies Story;
