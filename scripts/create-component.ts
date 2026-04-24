@@ -1,6 +1,11 @@
 import fs from 'node:fs';
 import readline from 'node:readline';
 
+const COMPONENTS_PATH = './src/components';
+const TEMPLATE_PATH = './src/templates/component';
+const componentFolder = (kebabCasedName: string) =>
+	`${COMPONENTS_PATH}/${kebabCasedName}`;
+
 const rl = readline.createInterface({
 	input: process.stdin,
 	output: process.stdout,
@@ -50,9 +55,9 @@ const toCamelCase = (rawInput: string): string => {
 	return decapitalise(toPascalCase(rawInput));
 };
 
-const createComponentFolder = (name: string): Promise<void> => {
+const createComponentFolder = (kebabCasedName: string): Promise<void> => {
 	return new Promise((resolve, reject) => {
-		fs.mkdir(`./src/components/${name}`, (err) => {
+		fs.mkdir(componentFolder(kebabCasedName), (err) => {
 			if (err) {
 				reject(err);
 			} else {
@@ -65,8 +70,50 @@ const createComponentFolder = (name: string): Promise<void> => {
 	});
 };
 
+const readFile = (path: fs.PathLike): Promise<string> => {
+	return new Promise((resolve, reject) => {
+		fs.readFile(path, (err, data) => {
+			if (err) {
+				reject(err);
+			} else {
+				resolve(data.toString());
+			}
+		});
+	});
+};
+
+const writeFile = async (
+	path: fs.PathLike,
+	contents: string,
+): Promise<void> => {
+	return new Promise((resolve, reject) => {
+		fs.writeFile(path, contents, { encoding: 'utf8' }, (err) => {
+			if (err) {
+				reject(err);
+			} else {
+				resolve();
+			}
+		});
+	});
+};
+
+const replaceName = (
+	fileContents: string,
+	name: {
+		kebabCase: string;
+		pascalCase: string;
+		camelCase: string;
+	},
+): string => {
+	fileContents.replaceAll(/TemplateComponent/g, name.pascalCase);
+	fileContents.replaceAll(/templateComponent/g, name.camelCase);
+	fileContents.replaceAll(/template-component/g, name.kebabCase);
+
+	return fileContents;
+};
+
 const run = async () => {
-	const existingFolders = (await getDirContents('./src/components')).filter(
+	const existingFolders = (await getDirContents(COMPONENTS_PATH)).filter(
 		(name) => !name.endsWith('.tsx'),
 	);
 
@@ -77,8 +124,6 @@ const run = async () => {
 	const pascalCase = toPascalCase(input);
 	const camelCase = toCamelCase(input);
 
-	console.log({ kebabCase, pascalCase, camelCase });
-
 	if (existingFolders.includes(kebabCase)) {
 		return console.error(`There is already a "${kebabCase}" component folder`);
 	}
@@ -88,6 +133,23 @@ const run = async () => {
 	);
 
 	await createComponentFolder(kebabCase);
+
+	const names = { kebabCase, pascalCase, camelCase };
+
+	const componentFileContents = await readFile(
+		`${TEMPLATE_PATH}/TemplateComponent.tsx`,
+	);
+	await writeFile(
+		`${componentFolder(kebabCase)}/${pascalCase}.tsx`,
+		replaceName(componentFileContents, names),
+	);
+
+	const typesFileContents = await readFile(`${TEMPLATE_PATH}/types.ts`);
+	await writeFile(
+		`${componentFolder(kebabCase)}/types.ts`,
+		replaceName(typesFileContents, names),
+	);
+
 	// add index file to ./src/{name}
 	// add to rollup and package.json
 	// run styledD build
