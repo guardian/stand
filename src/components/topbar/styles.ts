@@ -13,7 +13,10 @@ export const topBarStyles = (theme: TopBarTheme): SerializedStyles => {
 	return css`
 		background-color: ${theme['background-color']};
 		height: ${theme.height};
-		border: ${theme.border};
+		border-top: ${theme['border-top']};
+		border-right: ${theme['border-right']};
+		border-bottom: ${theme['border-bottom']};
+		border-left: ${theme['border-left']};
 		display: ${theme.display};
 		justify-content: ${theme['justify-content']};
 	`;

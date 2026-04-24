@@ -235,7 +235,12 @@ export function TopBar({
 								theme={mergedTheme.Item}
 								aria-label="Navigation Menu"
 							>
-								<Icon size="lg">{menuOpen ? 'close' : 'menu'}</Icon>
+								<Icon
+									fill={mergedTheme.collapsedNavMenu.button.color}
+									size="lg"
+								>
+									{menuOpen ? 'close' : 'menu'}
+								</Icon>
 							</TopBarItem>
 						</ReactAriaButton>
 						<ReactAriaPopover

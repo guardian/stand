@@ -17,7 +17,31 @@
 				"$type": "string",
 				"$value": "flex-start"
 			},
-			"border": {
+			"border-right": {
+				"$type": "border",
+				"$value": {
+					"color": "{semantic.colors.border.weak}",
+					"width": "{semantic.sizing.border.default}",
+					"style": "solid"
+				}
+			},
+			"border-top": {
+				"$type": "border",
+				"$value": {
+					"color": "{semantic.colors.border.weak}",
+					"width": "{semantic.sizing.border.default}",
+					"style": "solid"
+				}
+			},
+			"border-bottom": {
+				"$type": "border",
+				"$value": {
+					"color": "{semantic.colors.border.weak}",
+					"width": "{semantic.sizing.border.default}",
+					"style": "solid"
+				}
+			},
+			"border-left": {
 				"$type": "border",
 				"$value": {
 					"color": "{semantic.colors.border.weak}",
@@ -33,6 +57,10 @@
 			},
 			"collapsedNavMenu": {
 				"button": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.strong}"
+					},
 					"margin": {
 						"$type": "dimension",
 						"$value": "0"
