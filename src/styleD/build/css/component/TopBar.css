@@ -7,8 +7,12 @@
 	--component-top-bar-display: flex;
 	--component-top-bar-height: 4rem;
 	--component-top-bar-justify-content: flex-start;
-	--component-top-bar-border: 0.0625rem solid #cccccc;
+	--component-top-bar-border-right: 0.0625rem solid #cccccc;
+	--component-top-bar-border-top: 0.0625rem solid #cccccc;
+	--component-top-bar-border-bottom: 0.0625rem solid #cccccc;
+	--component-top-bar-border-left: 0.0625rem solid #cccccc;
 	--component-top-bar-spacer-margin-left: auto;
+	--component-top-bar-collapsed-nav-menu-button-color: #000000;
 	--component-top-bar-collapsed-nav-menu-button-margin: 0;
 	--component-top-bar-collapsed-nav-menu-button-padding: 0;
 	--component-top-bar-collapsed-nav-menu-button-background: none;
