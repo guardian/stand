@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.30
+
+### Patch Changes
+
+- a32c7c5: Extract a more generic Autocomplete for export and use in TagAutocomplete
+
 ## 0.0.29
 
 ### Patch Changes
