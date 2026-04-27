@@ -16,17 +16,17 @@ export const linkStyles = (theme: LinkTheme): SerializedStyles => {
 		text-decoration-thickness: 5%;
 		${theme.shared.enabled};
 		&[data-hovered] {
-			${theme.shared.hover};
-			cursor: pointer;
+			color: ${theme.shared.hover.color};
+			cursor: ${theme.shared.hover.cursor};
 		}
 		&[data-pressed] {
-			${theme.shared.pressed};
+			color: ${theme.shared.pressed.color};
 		}
 		&[data-disabled] {
-			${theme.shared.disabled};
+			color: ${theme.shared.disabled.color};
 		}
 		&[data-focus-visible] {
-			outline: 1px solid #0072a9;
+			outline: ${theme.shared.outline};
 		}
 	`;
 };
