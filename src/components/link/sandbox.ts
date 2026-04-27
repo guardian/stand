@@ -5,7 +5,7 @@ export const componentName = 'Link';
 export const componentTsx = /* javascript */ `import { Link } from '@guardian/stand/link';
 
 export const Component = () => (
-	<Link>Hello</Link>
+	<Link href="#">Hello</Link>
 );
 `;
 
@@ -15,12 +15,37 @@ export const componentCss = /* css */ `
 @import '@guardian/stand/component/link.css';
 
 .stand-link {
-	display: var(--component-link-shared-display);
+	text-decoration: underline;
+	text-decoration-style: solid;
+	text-underline-offset: 8%;
+	text-decoration-thickness: 5%;
+	color: var(--component-link-shared-enabled-color);
+}
+
+.stand-link[data-hovered] {
+	color: var(--component-link-shared-hover-color);
+	cursor: var(--component-link-shared-hover-cursor);
+}
+
+.stand-link[data-pressed] {
+	color: var(--component-link-shared-pressed-color);
+}
+
+.stand-link[data-disabled] {
+	color: var(--component-link-shared-disabled-color);
+}
+
+.stand-link[data-focus-visible] {
+	outline: var(--component-link-shared-outline);
 }
 `;
 
 export const componentHtml = /* html */ `<div class="container">
-	<div class="stand-link">Hello</div>
+	<a class="stand-link" href="#">Default link</a>
+	<a class="stand-link" href="#" data-hovered>Hovered link</a>
+	<a class="stand-link" href="#" data-pressed>Pressed link</a>
+	<a class="stand-link" href="#" data-disabled>Disabled link</a>
+	<a class="stand-link" href="#" data-focus-visible>Focused link</a>
 </div>
 `;
 
@@ -28,11 +53,45 @@ export const componentHtml = /* html */ `<div class="container">
 export const componentJs = /* javascript */ `
 import { componentLink } from "@guardian/stand";
 
-const style = \`
-	display: \${componentLink.shared.display};
+const baseStyle = \`
+	text-decoration: underline;
+	text-decoration-style: solid;
+	text-underline-offset: 8%;
+	text-decoration-thickness: 5%;
+	color: \${componentLink.shared.enabled.color};
+\`;
+
+const hoverStyle = \`
+	color: \${componentLink.shared.hover.color};
+	cursor: \${componentLink.shared.hover.cursor};
+\`;
+
+const pressedStyle = \`
+	color: \${componentLink.shared.pressed.color};
+\`;
+
+const disabledStyle = \`
+	color: \${componentLink.shared.disabled.color};
+\`;
+
+const focusVisibleStyle = \`
+	outline: \${componentLink.shared.outline};
 \`;
 
 document.getElementById("app").innerHTML = \`
-	<div style="\${style}">Hello</div>
+	<style>
+		.stand-link { \${baseStyle} }
+		.stand-link[data-hovered] { \${hoverStyle} }
+		.stand-link[data-pressed] { \${pressedStyle} }
+		.stand-link[data-disabled] { \${disabledStyle} }
+		.stand-link[data-focus-visible] { \${focusVisibleStyle} }
+	</style>
+	<div class="container">
+		<a class="stand-link" href="#">Default link</a>
+		<a class="stand-link" href="#" data-hovered>Hovered link</a>
+		<a class="stand-link" href="#" data-pressed>Pressed link</a>
+		<a class="stand-link" href="#" data-disabled>Disabled link</a>
+		<a class="stand-link" href="#" data-focus-visible>Focused link</a>
+	</div>
 \`;
 `;
