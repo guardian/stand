@@ -1,5 +1,5 @@
 import type { LinkProps as RACLinkProps } from 'react-aria-components';
-import type { SemanticTypography } from '../../styleD/build/typescript/semantic/typography';
+import type { TypographyVariant } from '../../styleD/build/typescript/semantic/typography';
 import type { DefaultProps } from '../../util/types';
 import type { LinkTheme } from './styles';
 
@@ -11,6 +11,6 @@ export interface LinkProps
 	 * to change the typography of the link, you can pass a variant from semanticTypography.
 	 * By default, it is set to "body-sm".
 	 */
-	typography?: keyof SemanticTypography;
+	typography?: TypographyVariant;
 	children?: React.ReactNode;
 }

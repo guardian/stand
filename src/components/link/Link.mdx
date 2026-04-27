@@ -1,5 +1,5 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
-import LinkStories, { Default } from './Link.stories';
+import LinkStories, { Default, Disabled, TitleMd } from './Link.stories';
 import {
 	SandboxReact,
 	SandboxCss,
@@ -49,14 +49,14 @@ import type { LinkProps, LinkTheme } from '@guardian/stand/link';
 
 ## Props
 
-| Name           | Type                       | Required | Default   | Description                                        |
-| -------------- | -------------------------- | -------- | --------- | -------------------------------------------------- |
-| `children`     | `React.ReactNode`          | No       | N/A       | Content to render inside the component.            |
-| `theme`        | `LinkTheme`                | No       | N/A       | Custom theme overrides.                            |
-| `cssOverrides` | `SerializedStyles`         | No       | N/A       | Custom CSS styles.                                 |
-| `className`    | `string`                   | No       | N/A       | Additional class name(s).                          |
-| `isDisabled`   | `boolean`                  | No       | `false`   | disables interaction and adds disabled styles link |
-| `typography`   | `keyof SemanticTypography` | No       | `body-sm` | Typography variant to apply to the link text.      |
+| Name           | Type                | Required | Default   | Description                                        |
+| -------------- | ------------------- | -------- | --------- | -------------------------------------------------- |
+| `children`     | `React.ReactNode`   | No       | N/A       | Content to render inside the component.            |
+| `theme`        | `LinkTheme`         | No       | N/A       | Custom theme overrides.                            |
+| `cssOverrides` | `SerializedStyles`  | No       | N/A       | Custom CSS styles.                                 |
+| `className`    | `string`            | No       | N/A       | Additional class name(s).                          |
+| `isDisabled`   | `boolean`           | No       | `false`   | disables interaction and adds disabled styles link |
+| `typography`   | `TypographyVariant` | No       | `body-sm` | Typography variant to apply to the link text.      |
 
 ## Stories
 
@@ -64,9 +64,17 @@ import type { LinkProps, LinkTheme } from '@guardian/stand/link';
 
 <Story of={Default} />
 
+### Disabled
+
+<Story of={Disabled} />
+
+### TitleMd
+
+<Story of={TitleMd} />
+
 ## Customisation
 
-We recommend using the Link component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the Link component as provided, but it can be customised using the `theme`, `cssOverrides` or `typography` props as required.
 
 ### Custom theme
 
@@ -96,6 +104,16 @@ const customStyles = css\`
 \`;
 
 const Component = () => <Link cssOverrides={customStyles}>Hello</Link>;
+```
+
+### Typography
+
+The typography prop allows you to apply any of the typography variants defined in the Stand theme to the Link text:
+
+```tsx
+import { Link } from '@guardian/stand/link';
+
+const Component = () => <Link typography="title-md">Hello</Link>;
 ```
 
 ## Custom Component Build
