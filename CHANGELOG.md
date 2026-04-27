@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.31
+
+### Patch Changes
+
+- bcb7595: Expose collapsed menu button color and specific border sides from TopBar theme
+
 ## 0.0.30
 
 ### Patch Changes
