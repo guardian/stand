@@ -10,25 +10,23 @@ export const defaultLinkTheme: LinkTheme = componentLink;
 
 export const linkStyles = (theme: LinkTheme): SerializedStyles => {
 	return css`
-		.linkTypography {
-			text-decoration: underline;
-			text-decoration-style: solid;
-			text-underline-offset: 8%;
-			text-decoration-thickness: 5%;
-			${theme.shared.enabled};
-			&[data-hovered] {
-				${theme.shared.hover};
-				cursor: pointer;
-			}
-			&[data-pressed] {
-				${theme.shared.pressed};
-			}
-			&[data-disabled] {
-				${theme.shared.disabled};
-			}
-			&[data-focus-visible] {
-				outline: 1px solid #0072a9;
-			}
+		text-decoration: underline;
+		text-decoration-style: solid;
+		text-underline-offset: 8%;
+		text-decoration-thickness: 5%;
+		${theme.shared.enabled};
+		&[data-hovered] {
+			${theme.shared.hover};
+			cursor: pointer;
+		}
+		&[data-pressed] {
+			${theme.shared.pressed};
+		}
+		&[data-disabled] {
+			${theme.shared.disabled};
+		}
+		&[data-focus-visible] {
+			outline: 1px solid #0072a9;
 		}
 	`;
 };

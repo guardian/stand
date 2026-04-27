@@ -49,12 +49,14 @@ import type { LinkProps, LinkTheme } from '@guardian/stand/link';
 
 ## Props
 
-| Name           | Type               | Required | Default | Description                             |
-| -------------- | ------------------ | -------- | ------- | --------------------------------------- |
-| `children`     | `React.ReactNode`  | No       | N/A     | Content to render inside the component. |
-| `theme`        | `LinkTheme`        | No       | N/A     | Custom theme overrides.                 |
-| `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles.                      |
-| `className`    | `string`           | No       | N/A     | Additional class name(s).               |
+| Name           | Type                       | Required | Default   | Description                                        |
+| -------------- | -------------------------- | -------- | --------- | -------------------------------------------------- |
+| `children`     | `React.ReactNode`          | No       | N/A       | Content to render inside the component.            |
+| `theme`        | `LinkTheme`                | No       | N/A       | Custom theme overrides.                            |
+| `cssOverrides` | `SerializedStyles`         | No       | N/A       | Custom CSS styles.                                 |
+| `className`    | `string`                   | No       | N/A       | Additional class name(s).                          |
+| `isDisabled`   | `boolean`                  | No       | `false`   | disables interaction and adds disabled styles link |
+| `typography`   | `keyof SemanticTypography` | No       | `body-sm` | Typography variant to apply to the link text.      |
 
 ## Stories
 

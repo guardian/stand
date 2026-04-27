@@ -16,5 +16,22 @@ export const Default = {
 	name: 'Default',
 	args: {
 		children: 'Link',
+		href: 'https://www.theguardian.com',
+	},
+} satisfies Story;
+
+export const Disabled = {
+	args: {
+		children: 'Link',
+		isDisabled: true,
+		href: 'https://www.theguardian.com',
+	},
+} satisfies Story;
+
+export const TitleMd = {
+	args: {
+		children: 'Link',
+		href: 'https://www.theguardian.com',
+		typography: 'title-md',
 	},
 } satisfies Story;
