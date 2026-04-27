@@ -62,6 +62,11 @@ All new components must:
   - Update the component list in the relevant introduction page ([Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs)).
 - Be accessible (see below).
 
+There is a cli script available to generate the the src files needed for a new component:
+`pnpm run create-component`
+
+The script does not add the component to the package - follow the steps in the [Exports](#exports) section below for that.
+
 ## Style Dictionary - Design Tokens
 
 If you are adding or modifying design tokens:
