@@ -1,0 +1,152 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import IntendedAudienceSignifierStories, {
+	TestStory,
+	UKAndUSStory,
+	UKAndGlobalStory,
+} from './IntendedAudienceSignifier.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={IntendedAudienceSignifierStories} />
+
+# IntendedAudienceSignifier
+
+The IntendedAudienceSignifier component is a visual indicator of the intended audience for a piece of content. It's value is determined by the Production Office assigned to an article and the readership level intended for that.The component is primarily to be used in Composer and Workflow to help content creators and global editors understand the intended audience for a piece of content at a glance.
+
+## When to use
+
+- To show current production office and intended audience for an article
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact
+	componentName={componentName}
+	componentTsx={componentTsx}
+	flowColumn
+/>
+
+```tsx
+import { IntendedAudienceSignifier } from '@guardian/stand/intended-audience-signifier';
+
+/* types, if required */
+import type {
+	IntendedAudienceSignifierProps,
+	IntendedAudienceSignifierTheme,
+} from '@guardian/stand/intended-audience-signifier';
+
+<IntendedAudienceSignifier rightIcon="uk" leftIcon="us" />
+<IntendedAudienceSignifier rightIcon="uk" leftIcon="global" />
+<IntendedAudienceSignifier
+	rightIcon="au"
+	leftIcon="global"
+	theme={{ color: '#c70000' }}
+/>
+```
+
+## Props
+
+| Name           | Type                                      | Required | Default | Description                                                                                       |
+| -------------- | ----------------------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------- |
+| `rightIcon`    | `string`                                  | Yes      | N/A     | Icon key rendered on the left side of the chevron. Supported values: `uk`, `us`, `au`, `global`.  |
+| `leftIcon`     | `string`                                  | Yes      | N/A     | Icon key rendered on the right side of the chevron. Supported values: `uk`, `us`, `au`, `global`. |
+| `theme`        | `Partial<IntendedAudienceSignifierTheme>` | No       | N/A     | Custom theme token overrides merged over the component defaults.                                  |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]`  | No       | N/A     | Additional Emotion CSS styles applied to the root element.                                        |
+| `className`    | `string`                                  | No       | N/A     | Additional class name(s) applied to the root element.                                             |
+
+## Stories
+
+### Test story
+
+<Story of={TestStory} />
+
+### UK and US
+
+<Story of={UKAndUSStory} />
+
+### UK and Global
+
+<Story of={UKAndGlobalStory} />
+
+## Customisation
+
+Can customise the component using `theme` and `cssOverrides` as required.
+
+```tsx
+import { IntendedAudienceSignifier } from '@guardian/stand/intended-audience-signifier';
+import type { IntendedAudienceSignifierTheme } from '@guardian/stand/intended-audience-signifier';
+
+const customTheme: Partial<IntendedAudienceSignifierTheme> = {
+	color: '#c70000',
+};
+
+const Component = () => (
+	<IntendedAudienceSignifier
+		rightIcon="uk"
+		leftIcon="global"
+		theme={customTheme}
+	/>
+);
+```
+
+### CSS overrides
+
+Pass custom Emotion styles with `cssOverrides`:
+
+```tsx
+import { css } from '@emotion/react';
+import { IntendedAudienceSignifier } from '@guardian/stand/intended-audience-signifier';
+
+const customStyles = css`
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+`;
+
+const Component = () => (
+	<IntendedAudienceSignifier
+		rightIcon="uk"
+		leftIcon="us"
+		cssOverrides={customStyles}
+	/>
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom IntendedAudienceSignifier component using the styles defined in the `IntendedAudienceSignifierTheme` type.
+
+**`css`**
+
+You can import the IntendedAudienceSignifier styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentIntendedAudienceSignifier` variable and the `ComponentIntendedAudienceSignifier` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />

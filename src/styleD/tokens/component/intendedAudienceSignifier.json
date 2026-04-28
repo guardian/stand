@@ -1,0 +1,10 @@
+{
+	"component": {
+		"intendedAudienceSignifier": {
+			"color": {
+				"$type": "color",
+				"$value": "{semantic.colors.text.strong}"
+			}
+		}
+	}
+}

@@ -50,6 +50,8 @@ export { componentTopBar } from './styleD/build/typescript/component/TopBar';
 export type { ComponentTopBar } from './styleD/build/typescript/component/TopBar';
 export { componentTypography } from './styleD/build/typescript/component/typography';
 export type { ComponentTypography } from './styleD/build/typescript/component/typography';
+export { componentIntendedAudienceSignifier } from './styleD/build/typescript/component/intendedAudienceSignifier';
+export type { ComponentIntendedAudienceSignifier } from './styleD/build/typescript/component/intendedAudienceSignifier';
 
 /**
  * style dictionary exports - base
