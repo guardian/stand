@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { IntendedAudienceSignifier } from './IntendedAudienceSignifier';
 
@@ -10,19 +11,63 @@ const meta = {
 
 type Story = StoryObj<typeof IntendedAudienceSignifier>;
 
-export default meta;
+const iconStyles = css`
+	border-color: #0000ffff;
+	align-items: flex-end;
+`;
 
-export const TestStory = {
-	name: 'TestStory',
-	args: {},
-} satisfies Story;
+export default meta;
 
 export const UKAndUSStory = {
 	name: 'UKandUS',
-	args: { rightIcon: 'uk', leftIcon: 'us' },
+	args: { sourceTag: 'uk', intendedAudienceTag: 'us' },
+} satisfies Story;
+
+export const UKAndAUStory = {
+	name: 'UKandAU',
+	args: { sourceTag: 'uk', intendedAudienceTag: 'au' },
 } satisfies Story;
 
 export const UKAndGlobalStory = {
 	name: 'UKandGlobal',
-	args: { rightIcon: 'uk', leftIcon: 'global', theme: { color: 'red' } },
+	args: { sourceTag: 'uk', intendedAudienceTag: 'global' },
+} satisfies Story;
+
+export const USAndAUStory = {
+	name: 'USandAU',
+	args: { sourceTag: 'us', intendedAudienceTag: 'au' },
+} satisfies Story;
+
+export const USAndGlobalStory = {
+	name: 'USandGlobal',
+	args: {
+		sourceTag: 'us',
+		intendedAudienceTag: 'global',
+	},
+} satisfies Story;
+
+export const AUAndGlobalStory = {
+	name: 'AUandGlobal',
+	args: {
+		sourceTag: 'au',
+		intendedAudienceTag: 'global',
+	},
+} satisfies Story;
+
+export const UKAndGlobalStoryWithCustomTheme = {
+	name: 'UKandGlobalWithCustomTheme',
+	args: {
+		sourceTag: 'uk',
+		intendedAudienceTag: 'global',
+		theme: { color: 'red' },
+	},
+} satisfies Story;
+
+export const AUAndGlobalWithCSSOverrides = {
+	name: 'AUAndGlobalWithCSSOverrides',
+	args: {
+		sourceTag: 'au',
+		intendedAudienceTag: 'global',
+		cssOverrides: iconStyles,
+	},
 } satisfies Story;

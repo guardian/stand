@@ -1,8 +1,13 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 import IntendedAudienceSignifierStories, {
-	TestStory,
 	UKAndUSStory,
+	UKAndAUStory,
 	UKAndGlobalStory,
+	USAndAUStory,
+	USAndGlobalStory,
+	AUAndGlobalStory,
+	UKAndGlobalStoryWithCustomTheme,
+	AUAndGlobalWithCSSOverrides,
 } from './IntendedAudienceSignifier.stories';
 import {
 	SandboxReact,
@@ -55,38 +60,67 @@ import type {
 	IntendedAudienceSignifierTheme,
 } from '@guardian/stand/intended-audience-signifier';
 
-<IntendedAudienceSignifier rightIcon="uk" leftIcon="us" />
-<IntendedAudienceSignifier rightIcon="uk" leftIcon="global" />
-<IntendedAudienceSignifier
-	rightIcon="au"
-	leftIcon="global"
-	theme={{ color: '#c70000' }}
-/>
+	<IntendedAudienceSignifier sourceTag="uk" intendedAudienceTag="us" />
+	<IntendedAudienceSignifier sourceTag="uk" intendedAudienceTag="au" />
+	<IntendedAudienceSignifier sourceTag="uk" intendedAudienceTag="global" />
+	<IntendedAudienceSignifier sourceTag="us" intendedAudienceTag="au" />
+	<IntendedAudienceSignifier sourceTag="us" intendedAudienceTag="global" />
+	<IntendedAudienceSignifier sourceTag="au" intendedAudienceTag="global" />
+	<IntendedAudienceSignifier
+		sourceTag="uk"
+		intendedAudienceTag="global"
+		theme={{ color: '#c70000' }}
+	/>
+	<IntendedAudienceSignifier
+		sourceTag="au"
+		intendedAudienceTag="global"
+		cssOverrides={{ border-color: '#0000FF',align-items: 'flex-end' }}
+	/>
 ```
 
 ## Props
 
-| Name           | Type                                      | Required | Default | Description                                                                                       |
-| -------------- | ----------------------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------- |
-| `rightIcon`    | `string`                                  | Yes      | N/A     | Icon key rendered on the left side of the chevron. Supported values: `uk`, `us`, `au`, `global`.  |
-| `leftIcon`     | `string`                                  | Yes      | N/A     | Icon key rendered on the right side of the chevron. Supported values: `uk`, `us`, `au`, `global`. |
-| `theme`        | `Partial<IntendedAudienceSignifierTheme>` | No       | N/A     | Custom theme token overrides merged over the component defaults.                                  |
-| `cssOverrides` | `SerializedStyles \| SerializedStyles[]`  | No       | N/A     | Additional Emotion CSS styles applied to the root element.                                        |
-| `className`    | `string`                                  | No       | N/A     | Additional class name(s) applied to the root element.                                             |
+| Name                  | Type                                      | Required | Default | Description                                                                                       |
+| --------------------- | ----------------------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------- |
+| `sourceTag`           | `string`                                  | Yes      | N/A     | Icon key rendered on the left side of the chevron. Supported values: `uk`, `us`, `au`, `global`.  |
+| `intendedAudienceTag` | `string`                                  | Yes      | N/A     | Icon key rendered on the right side of the chevron. Supported values: `uk`, `us`, `au`, `global`. |
+| `theme`               | `Partial<IntendedAudienceSignifierTheme>` | No       | N/A     | Custom theme token overrides merged over the component defaults.                                  |
+| `cssOverrides`        | `SerializedStyles \| SerializedStyles[]`  | No       | N/A     | Additional Emotion CSS styles applied to the root element.                                        |
+| `className`           | `string`                                  | No       | N/A     | Additional class name(s) applied to the root element.                                             |
 
 ## Stories
-
-### Test story
-
-<Story of={TestStory} />
 
 ### UK and US
 
 <Story of={UKAndUSStory} />
 
+### UK and AU
+
+<Story of={UKAndAUStory} />
+
 ### UK and Global
 
 <Story of={UKAndGlobalStory} />
+
+### US and AU
+
+<Story of={USAndAUStory} />
+
+### US and Global
+
+<Story of={USAndGlobalStory} />
+
+### AU and Global
+
+<Story of={AUAndGlobalStory} />
+
+### UK and Global and custom theme
+
+<Story of={UKAndGlobalStoryWithCustomTheme} />
+
+### AU and Global With CssOverrides
+
+<Story of={AUAndGlobalWithCSSOverrides} />
 
 ## Customisation
 
@@ -102,8 +136,8 @@ const customTheme: Partial<IntendedAudienceSignifierTheme> = {
 
 const Component = () => (
 	<IntendedAudienceSignifier
-		rightIcon="uk"
-		leftIcon="global"
+		sourceTag="uk"
+		intendedAudienceTag="global"
 		theme={customTheme}
 	/>
 );
@@ -118,14 +152,14 @@ import { css } from '@emotion/react';
 import { IntendedAudienceSignifier } from '@guardian/stand/intended-audience-signifier';
 
 const customStyles = css`
-	text-transform: uppercase;
-	letter-spacing: 0.04em;
+	border-color: '#00000FF';
+	align-items: 'flex-end';
 `;
 
 const Component = () => (
 	<IntendedAudienceSignifier
-		rightIcon="uk"
-		leftIcon="us"
+		sourceTag="uk"
+		intendedAudienceTag="us"
 		cssOverrides={customStyles}
 	/>
 );

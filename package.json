@@ -244,7 +244,7 @@
 			"alert-banner": [
 				"./dist/types/alert-banner.d.ts"
 			],
-			"intendedAudienceSignifier": [
+			"intended-audience-signifier": [
 				"./dist/types/intended-audience-signifier.d.ts"
 			]
 		}

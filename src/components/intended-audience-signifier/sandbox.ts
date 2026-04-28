@@ -6,12 +6,21 @@ export const componentTsx = /* javascript */ `import { IntendedAudienceSignifier
 
 export const Component = () => (
 	<>
-		<IntendedAudienceSignifier rightIcon="uk" leftIcon="us" />
-		<IntendedAudienceSignifier rightIcon="uk" leftIcon="global" />
+		<IntendedAudienceSignifier sourceTag="uk" intendedAudienceTag="us" />
+		<IntendedAudienceSignifier sourceTag="uk" intendedAudienceTag="au" />
+		<IntendedAudienceSignifier sourceTag="uk" intendedAudienceTag="global" />
+		<IntendedAudienceSignifier sourceTag="us" intendedAudienceTag="au" />
+		<IntendedAudienceSignifier sourceTag="us" intendedAudienceTag="global" />
+		<IntendedAudienceSignifier sourceTag="au" intendedAudienceTag="global" />
 		<IntendedAudienceSignifier
-			rightIcon="au"
-			leftIcon="global"
+			sourceTag="uk"
+			intendedAudienceTag="global"
 			theme={{ color: '#c70000' }}
+		/>
+		<IntendedAudienceSignifier
+			sourceTag="au"
+			intendedAudienceTag="global"
+			cssOverrides={{ borderColor: '#0000FF', alignItems: 'flex-end' }}
 		/>
 	</>
 );
