@@ -13,7 +13,10 @@ export const topBarStyles = (theme: TopBarTheme): SerializedStyles => {
 	return css`
 		background-color: ${theme['background-color']};
 		height: ${theme.height};
-		border: ${theme.border};
+		border-top: ${theme['border-top']};
+		border-right: ${theme['border-right']};
+		border-bottom: ${theme['border-bottom']};
+		border-left: ${theme['border-left']};
 		display: ${theme.display};
 		justify-content: ${theme['justify-content']};
 	`;
@@ -81,8 +84,6 @@ export const topBarCollapsedNavMenuPopoverStyles = (
 	theme: TopBarTheme,
 ): SerializedStyles => {
 	return css`
-		left: ${theme.collapsedNavMenu.popover.left};
-		top: ${theme.collapsedNavMenu.popover.top};
 		background-color: ${theme.collapsedNavMenu.popover['background-color']};
 		border-left: ${theme.collapsedNavMenu.popover.border};
 		border-right: ${theme.collapsedNavMenu.popover.border};

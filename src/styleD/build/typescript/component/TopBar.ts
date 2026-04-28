@@ -7,12 +7,16 @@ export const componentTopBar = {
 	display: 'flex',
 	height: '4rem',
 	'justify-content': 'flex-start',
-	border: '0.0625rem solid #cccccc',
+	'border-right': '0.0625rem solid #cccccc',
+	'border-top': '0.0625rem solid #cccccc',
+	'border-bottom': '0.0625rem solid #cccccc',
+	'border-left': '0.0625rem solid #cccccc',
 	spacer: {
 		'margin-left': 'auto',
 	},
 	collapsedNavMenu: {
 		button: {
+			color: '#000000',
 			margin: '0',
 			padding: '0',
 			background: 'none',
@@ -26,10 +30,10 @@ export const componentTopBar = {
 			},
 		},
 		popover: {
-			left: 'auto !important',
-			top: 'auto !important',
 			'background-color': '#f6f6f6',
 			border: '0.0625rem solid #cccccc',
+			offset: 1,
+			containerPadding: 0,
 		},
 	},
 	Item: {

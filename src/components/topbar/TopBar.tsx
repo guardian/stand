@@ -235,12 +235,21 @@ export function TopBar({
 								theme={mergedTheme.Item}
 								aria-label="Navigation Menu"
 							>
-								<Icon size="lg">{menuOpen ? 'close' : 'menu'}</Icon>
+								<Icon
+									fill={mergedTheme.collapsedNavMenu.button.color}
+									size="lg"
+								>
+									{menuOpen ? 'close' : 'menu'}
+								</Icon>
 							</TopBarItem>
 						</ReactAriaButton>
 						<ReactAriaPopover
 							css={topBarCollapsedNavMenuPopoverStyles(mergedTheme)}
-							offset={12}
+							offset={mergedTheme.collapsedNavMenu.popover.offset}
+							containerPadding={
+								mergedTheme.collapsedNavMenu.popover.containerPadding
+							}
+							shouldFlip={false}
 						>
 							{leftSideMenuItems}
 						</ReactAriaPopover>
