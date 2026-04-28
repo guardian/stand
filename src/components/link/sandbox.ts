@@ -14,6 +14,11 @@ export const componentCss = /* css */ `
 /* import the link styles */
 @import '@guardian/stand/component/link.css';
 
+.stand-typography-body-sm {
+	font: var(--semantic-typography-body-sm-font);
+	letter-spacing: var(--semantic-typography-body-sm-letter-spacing);
+	font-variation-settings: "wdth" var(--semantic-typography-body-sm-font-width);
+}
 .stand-link {
 	text-decoration: underline;
 	text-decoration-style: solid;
@@ -41,17 +46,23 @@ export const componentCss = /* css */ `
 `;
 
 export const componentHtml = /* html */ `<div class="container">
-	<a class="stand-link" href="#">Default link</a>
-	<a class="stand-link" href="#" data-hovered>Hovered link</a>
-	<a class="stand-link" href="#" data-pressed>Pressed link</a>
-	<a class="stand-link" href="#" data-disabled>Disabled link</a>
-	<a class="stand-link" href="#" data-focus-visible>Focused link</a>
+	<a class="stand-link stand-typography-body-sm" href="#">Default link</a></br>
+	<a class="stand-link stand-typography-body-sm" href="#" data-hovered>Hovered link</a></br>
+	<a class="stand-link stand-typography-body-sm" href="#" data-pressed>Pressed link</a></br>
+	<a class="stand-link stand-typography-body-sm" href="#" data-disabled>Disabled link</a></br>
+	<a class="stand-link stand-typography-body-sm" href="#" data-focus-visible>Focused link</a>
 </div>
 `;
 
 // Link - Custom component - JS example
 export const componentJs = /* javascript */ `
-import { componentLink } from "@guardian/stand";
+import { componentLink, semanticTypography } from "@guardian/stand";
+
+const semanticTypographyBodySm = \`
+		font: \${semanticTypography['body-sm'].font};
+		letter-spacing: \${semanticTypography['body-sm'].letterSpacing};
+		font-variation-settings: "wdth" \${semanticTypography['body-sm'].fontWidth};
+\`;
 
 const baseStyle = \`
 	text-decoration: underline;
@@ -80,6 +91,7 @@ const focusVisibleStyle = \`
 
 document.getElementById("app").innerHTML = \`
 	<style>
+		.stand-typography-body-sm { \${semanticTypographyBodySm} }
 		.stand-link { \${baseStyle} }
 		.stand-link[data-hovered] { \${hoverStyle} }
 		.stand-link[data-pressed] { \${pressedStyle} }
@@ -87,11 +99,11 @@ document.getElementById("app").innerHTML = \`
 		.stand-link[data-focus-visible] { \${focusVisibleStyle} }
 	</style>
 	<div class="container">
-		<a class="stand-link" href="#">Default link</a>
-		<a class="stand-link" href="#" data-hovered>Hovered link</a>
-		<a class="stand-link" href="#" data-pressed>Pressed link</a>
-		<a class="stand-link" href="#" data-disabled>Disabled link</a>
-		<a class="stand-link" href="#" data-focus-visible>Focused link</a>
+		<a class="stand-link stand-typography-body-sm" href="#">Default link</a></br>
+		<a class="stand-link stand-typography-body-sm" href="#" data-hovered>Hovered link</a></br>
+		<a class="stand-link stand-typography-body-sm" href="#" data-pressed>Pressed link</a></br>
+		<a class="stand-link stand-typography-body-sm" href="#" data-disabled>Disabled link</a></br>
+		<a class="stand-link stand-typography-body-sm" href="#" data-focus-visible>Focused link</a>
 	</div>
 \`;
 `;
