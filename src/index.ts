@@ -18,8 +18,6 @@ export type { ComponentUserMenu } from './styleD/build/typescript/component/user
 /**
  * design system components tokens exports
  */
-export { componentAlertBanner } from './styleD/build/typescript/component/alertBanner';
-export type { ComponentAlertBanner } from './styleD/build/typescript/component/alertBanner';
 export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
 export { componentButton } from './styleD/build/typescript/component/button';
@@ -36,6 +34,10 @@ export { componentInlineMessage } from './styleD/build/typescript/component/inli
 export type { ComponentInlineMessage } from './styleD/build/typescript/component/inlineMessage';
 export { componentMenu } from './styleD/build/typescript/component/menu';
 export type { ComponentMenu } from './styleD/build/typescript/component/menu';
+export { componentLink } from './styleD/build/typescript/component/link';
+export type { ComponentLink } from './styleD/build/typescript/component/link';
+export { componentAlertBanner } from './styleD/build/typescript/component/alertBanner';
+export type { ComponentAlertBanner } from './styleD/build/typescript/component/alertBanner';
 export { componentRadioGroup } from './styleD/build/typescript/component/radioGroup';
 export type { ComponentRadioGroup } from './styleD/build/typescript/component/radioGroup';
 export { componentSelect } from './styleD/build/typescript/component/select';

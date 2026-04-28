@@ -1,0 +1,164 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import LinkStories, { Default, Disabled, TitleMd } from './Link.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={LinkStories} />
+
+# Link
+
+A text link for navigation.
+
+## When to use
+
+- To navigate to another page, route or destination
+- When you need link semantics with keyboard and screen reader support
+
+Links with an href will be handled by the browser, or via a [client side router](https://react-aria.adobe.com/frameworks).
+Links without an href will be rendered as a `<span role="link">` instead of an `<a>`.
+Use the onPress event to handle user interaction. If the intent is to trigger an action (not navigation), use the button component.
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-aria-components`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Link } from '@guardian/stand/link';
+
+/* types, if required */
+import type { LinkProps, LinkTheme } from '@guardian/stand/link';
+
+<Link>Hello</Link>;
+```
+
+## Props
+
+| Name           | Type                             | Required | Default   | Description                                                       |
+| -------------- | -------------------------------- | -------- | --------- | ----------------------------------------------------------------- |
+| `children`     | `React.ReactNode`                | No       | N/A       | Content to render inside the component.                           |
+| `href`         | `string`                         | No       | N/A       | Link destination URL.                                             |
+| `theme`        | `LinkTheme`                      | No       | N/A       | Custom theme overrides.                                           |
+| `cssOverrides` | `SerializedStyles`               | No       | N/A       | Custom CSS styles.                                                |
+| `className`    | `string`                         | No       | N/A       | Additional class name(s).                                         |
+| `isDisabled`   | `boolean`                        | No       | `false`   | Disables interaction and applies disabled styling to the link.    |
+| `typography`   | `TypographyVariant`              | No       | `body-sm` | Typography variant to apply to the link text.                     |
+| `...props`     | `Omit<RACLinkProps, 'children'>` | No       | N/A       | All additional props supported by `react-aria-components` `Link`. |
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+### Disabled
+
+<Story of={Disabled} />
+
+### TitleMd
+
+<Story of={TitleMd} />
+
+## Customisation
+
+We recommend using the Link component as provided, but it can be customised using the `theme`, `cssOverrides` or `typography` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the Link component:
+
+```tsx
+import type { LinkTheme } from '@guardian/stand/link';
+import { Link } from '@guardian/stand/link';
+import { semanticColors } from '@guardian/stand/tokens';
+
+const customTheme: Partial<LinkTheme> = {
+	shared: {
+		enabled: { color: 'hotpink' },
+		hover: {
+			color: 'green',
+			cursor: 'pointer',
+		},
+		pressed: {
+			color: 'brown',
+		},
+		disabled: {
+			color: 'gray',
+		},
+		focus: {
+			outline: `2px solid ${semanticColors.border.error};`,
+		},
+	},
+};
+
+const Component = () => <Link theme={customTheme}>Hello</Link>;
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the Link component:
+
+```tsx
+import { Link } from '@guardian/stand/link';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	text-decoration-thickness: 50px;
+\`;
+
+const Component = () => <Link cssOverrides={customStyles}>Hello</Link>;
+```
+
+### Typography
+
+The `typography` prop allows you to apply any of the typography variants defined in the Stand theme to the link text:
+
+```tsx
+import { Link } from '@guardian/stand/link';
+
+const Component = () => <Link typography="title-md">Hello</Link>;
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom Link component using the styles defined in the `LinkTheme` type.
+
+To match the component states, style `data-hovered`, `data-pressed`, `data-disabled` and `data-focus-visible` attributes in your custom implementation.
+In non-React-Aria implementations, you may also map equivalent browser pseudo-selectors such as :hover, :active, and :focus-visible
+
+**`css`**
+
+You can import the Link styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentLink` variable and the `ComponentLink` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
