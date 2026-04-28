@@ -53,6 +53,7 @@ const input = {
 	byline: 'src/byline.ts',
 	'tag-picker': 'src/tag-picker.ts',
 	'user-menu': 'src/user-menu.ts',
+	'intended-audience-signifier': 'src/intended-audience-signifier.ts',
 };
 
 /**

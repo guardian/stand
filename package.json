@@ -129,6 +129,11 @@
 			"import": "./dist/utils.js",
 			"require": "./dist/utils.cjs"
 		},
+		"./intendedAudienceSignifier": {
+			"types": "./dist/types/intended-audience-signifier.d.ts",
+			"import": "./dist/intended-audience-signifier.js",
+			"require": "./dist/intended-audience-signifier.cjs"
+		},
 		"./fonts/OpenSans.css": "./dist/fonts/OpenSans.css",
 		"./fonts/MaterialSymbolsOutlined.css": "./dist/fonts/MaterialSymbolsOutlined.css",
 		"./fonts/MaterialSymbolsRound.css": "./dist/fonts/MaterialSymbolsRound.css",
@@ -161,7 +166,8 @@
 		"./component/radioGroup.css": "./dist/styleD/build/css/component/radioGroup.css",
 		"./component/checkbox.css": "./dist/styleD/build/css/component/checkbox.css",
 		"./component/textArea.css": "./dist/styleD/build/css/component/textArea.css",
-		"./component/alertBanner.css": "./dist/styleD/build/css/component/alertBanner.css"
+		"./component/alertBanner.css": "./dist/styleD/build/css/component/alertBanner.css",
+		"./component/intendedAudienceSignifier.css": "./dist/styleD/build/css/component/intendedAudienceSignifier.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
@@ -237,6 +243,9 @@
 			],
 			"alert-banner": [
 				"./dist/types/alert-banner.d.ts"
+			],
+			"intendedAudienceSignifier": [
+				"./dist/types/intended-audience-signifier.d.ts"
 			]
 		}
 	},
