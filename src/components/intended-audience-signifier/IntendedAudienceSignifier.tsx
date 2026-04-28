@@ -13,8 +13,8 @@ import {
 import type { IntendedAudienceSignifierProps } from './types';
 
 export function IntendedAudienceSignifier({
-	rightIcon,
-	leftIcon,
+	sourceTag,
+	intendedAudienceTag,
 	theme = {},
 	cssOverrides,
 	className,
@@ -43,9 +43,9 @@ export function IntendedAudienceSignifier({
 			className={className}
 			css={[intendedAudienceSignifierStyles(mergedTheme), cssOverrides]}
 		>
-			<div>{getIconElement(rightIcon)}</div>
+			<div>{getIconElement(sourceTag)}</div>
 			<div> {DoubleChevronRightSvg}</div>
-			<div>{getIconElement(leftIcon)}</div>
+			<div>{getIconElement(intendedAudienceTag)}</div>
 		</div>
 	);
 }

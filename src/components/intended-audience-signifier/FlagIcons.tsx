@@ -1,30 +1,3 @@
-export const ukFlagRound = (
-	<svg
-		style={{ marginRight: '8px' }}
-		width="5vh"
-		height="5vh"
-		viewBox="0 0 512 512"
-	>
-		<mask id="a">
-			<circle cx="256" cy="256" r="256" fill="#fff" />
-		</mask>
-		<g mask="url(#a)">
-			<path
-				fill="#eee"
-				d="m0 0 8 22-8 23v23l32 54-32 54v32l32 48-32 48v32l32 54-32 54v68l22-8 23 8h23l54-32 54 32h32l48-32 48 32h32l54-32 54 32h68l-8-22 8-23v-23l-32-54 32-54v-32l-32-48 32-48v-32l-32-54 32-54V0l-22 8-23-8h-23l-54 32-54-32h-32l-48 32-48-32h-32l-54 32L68 0H0z"
-			/>
-			<path
-				fill="#0052b4"
-				d="M336 0v108L444 0Zm176 68L404 176h108zM0 176h108L0 68ZM68 0l108 108V0Zm108 512V404L68 512ZM0 444l108-108H0Zm512-108H404l108 108Zm-68 176L336 404v108z"
-			/>
-			<path
-				fill="#d80027"
-				d="M0 0v45l131 131h45L0 0zm208 0v208H0v96h208v208h96V304h208v-96H304V0h-96zm259 0L336 131v45L512 0h-45zM176 336 0 512h45l131-131v-45zm160 0 176 176v-45L381 336h-45z"
-			/>
-		</g>
-	</svg>
-);
-
 export const ukFlag = (
 	<svg
 		height="12px"
@@ -43,34 +16,6 @@ export const ukFlag = (
 		/>
 		<path fill="#FFF" d="M241 0v480h160V0zM0 160v160h640V160z" />
 		<path fill="#C8102E" d="M0 193v96h640v-96zM273 0v480h96V0z" />
-	</svg>
-);
-
-export const usFlagRound = (
-	<svg
-		style={{ marginRight: '8px' }}
-		width="5vh"
-		height="5vh"
-		viewBox="0 0 512 512"
-	>
-		<mask id="a">
-			<circle cx="256" cy="256" r="256" fill="#fff" />
-		</mask>
-		<g mask="url(#a)">
-			<path
-				fill="#eee"
-				d="M256 0h256v64l-32 32 32 32v64l-32 32 32 32v64l-32 32 32 32v64l-256 32L0 448v-64l32-32-32-32v-64z"
-			/>
-			<path
-				fill="#d80027"
-				d="M224 64h288v64H224Zm0 128h288v64H256ZM0 320h512v64H0Zm0 128h512v64H0Z"
-			/>
-			<path fill="#0052b4" d="M0 0h256v256H0Z" />
-			<path
-				fill="#eee"
-				d="m187 243 57-41h-70l57 41-22-67zm-81 0 57-41H93l57 41-22-67zm-81 0 57-41H12l57 41-22-67zm162-81 57-41h-70l57 41-22-67zm-81 0 57-41H93l57 41-22-67zm-81 0 57-41H12l57 41-22-67Zm162-82 57-41h-70l57 41-22-67Zm-81 0 57-41H93l57 41-22-67zm-81 0 57-41H12l57 41-22-67Z"
-			/>
-		</g>
 	</svg>
 );
 
@@ -96,30 +41,6 @@ export const usFlag = (
 			markerMid="url(#us-a)"
 			d="m0 0 16 11h61 61 61 61 60L47 37h61 61 60 61L16 63h61 61 61 61 60L47 89h61 61 60 61L16 115h61 61 61 61 60L47 141h61 61 60 61L16 166h61 61 61 61 60L47 192h61 61 60 61L16 218h61 61 61 61 60z"
 		/>
-	</svg>
-);
-
-export const auFlagRound = (
-	<svg
-		style={{ marginRight: '8px' }}
-		width="5vh"
-		height="5vh"
-		viewBox="0 0 512 512"
-	>
-		<mask id="a">
-			<circle cx="256" cy="256" r="256" fill="#fff" />
-		</mask>
-		<g mask="url(#a)">
-			<path fill="#0052b4" d="M0 0h512v512H0z" />
-			<path
-				fill="#eee"
-				d="m154 300 14 30 32-8-14 30 25 20-32 7 1 33-26-21-26 21 1-33-33-7 26-20-14-30 32 8zm222-27h47l-38 27 15-44 14 44zm7-162 7 15 16-4-7 15 12 10-15 3v17l-13-11-13 11v-17l-15-3 12-10-7-15 16 4zm57 67 7 15 16-4-7 15 12 10-15 3v16l-13-10-13 11v-17l-15-3 12-10-7-15 16 4zm-122 22 7 15 16-4-7 15 12 10-15 3v16l-13-10-13 11v-17l-15-3 12-10-7-15 16 4zm65 156 7 15 16-4-7 15 12 10-15 3v17l-13-11-13 11v-17l-15-3 12-10-7-15 16 4zM0 0v32l32 32L0 96v160h32l32-32 32 32h32v-83l83 83h45l-8-16 8-15v-14l-83-83h83V96l-32-32 32-32V0H96L64 32 32 0Z"
-			/>
-			<path
-				fill="#d80027"
-				d="M32 0v32H0v64h32v160h64V96h160V32H96V0Zm96 128 128 128v-31l-97-97z"
-			/>
-		</g>
 	</svg>
 );
 
@@ -150,7 +71,7 @@ export const auFlag = (
 
 export const globeIcon = (
 	<svg
-		style={{ marginRight: '8px', marginTop: '2px' }}
+		style={{ marginTop: '2px' }}
 		width="16px"
 		height="16px"
 		fill="#000000"
