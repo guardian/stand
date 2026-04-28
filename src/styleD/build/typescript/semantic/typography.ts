@@ -380,3 +380,4 @@ export const semanticTypography = {
 	},
 };
 export type SemanticTypography = typeof semanticTypography;
+export type TypographyVariant = keyof SemanticTypography;

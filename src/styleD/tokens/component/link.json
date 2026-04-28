@@ -1,0 +1,47 @@
+{
+	"component": {
+		"link": {
+			"shared": {
+				"outline": {
+					"$type": "border",
+					"$value": {
+						"color": "{semantic.colors.border.focused}",
+						"width": {
+							"value": 1,
+							"unit": "px"
+						},
+						"style": "solid"
+					}
+				},
+				"hover": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.link-hover}"
+					},
+					"cursor": {
+						"$type": "string",
+						"$value": "pointer"
+					}
+				},
+				"enabled": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.link}"
+					}
+				},
+				"disabled": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.disabled}"
+					}
+				},
+				"pressed": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.link-pressed}"
+					}
+				}
+			}
+		}
+	}
+}
