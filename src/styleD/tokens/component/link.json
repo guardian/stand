@@ -2,15 +2,17 @@
 	"component": {
 		"link": {
 			"shared": {
-				"outline": {
-					"$type": "border",
-					"$value": {
-						"color": "{semantic.colors.border.focused}",
-						"width": {
-							"value": 1,
-							"unit": "px"
-						},
-						"style": "solid"
+				"focus": {
+					"outline": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.focused}",
+							"width": {
+								"value": 1,
+								"unit": "px"
+							},
+							"style": "solid"
+						}
 					}
 				},
 				"hover": {

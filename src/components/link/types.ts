@@ -1,6 +1,6 @@
 import type { LinkProps as RACLinkProps } from 'react-aria-components';
-import type { TypographyVariant } from '../../styleD/build/typescript/semantic/typography';
 import type { DefaultProps } from '../../util/types';
+import type { TypographyVariant } from '../typography/types';
 import type { LinkTheme } from './styles';
 
 export interface LinkProps

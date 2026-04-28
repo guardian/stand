@@ -1,6 +1,8 @@
-import type { TypographyVariant } from '../../styleD/build/typescript/semantic/typography';
+import type { SemanticTypography } from '../../styleD/build/typescript/semantic/typography';
 import type { DefaultPropsWithChildren } from '../../util/types';
 import type { TypographyTheme } from './styles';
+
+export type TypographyVariant = keyof SemanticTypography;
 
 export interface TypographyProps extends DefaultPropsWithChildren<TypographyTheme> {
 	/**

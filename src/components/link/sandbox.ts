@@ -41,7 +41,7 @@ export const componentCss = /* css */ `
 }
 
 .stand-link[data-focus-visible] {
-	outline: var(--component-link-shared-outline);
+	outline: var(--component-link-shared-focus-outline);
 }
 `;
 
@@ -86,7 +86,7 @@ const disabledStyle = \`
 \`;
 
 const focusVisibleStyle = \`
-	outline: \${componentLink.shared.outline};
+	outline: \${componentLink.shared.focus.outline};
 \`;
 
 document.getElementById("app").innerHTML = \`

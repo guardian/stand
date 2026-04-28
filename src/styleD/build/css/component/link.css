@@ -3,7 +3,7 @@
  */
 
 :root {
-	--component-link-shared-outline: 1px solid #0072a9;
+	--component-link-shared-focus-outline: 1px solid #0072a9;
 	--component-link-shared-hover-color: #00344e;
 	--component-link-shared-hover-cursor: pointer;
 	--component-link-shared-enabled-color: #00496c;

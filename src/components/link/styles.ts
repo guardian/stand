@@ -26,7 +26,7 @@ export const linkStyles = (theme: LinkTheme): SerializedStyles => {
 			color: ${theme.shared.disabled.color};
 		}
 		&[data-focus-visible] {
-			outline: ${theme.shared.outline};
+			outline: ${theme.shared.focus.outline};
 		}
 	`;
 };

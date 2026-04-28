@@ -26,7 +26,7 @@ A text link for navigation.
 
 Links with an href will be handled by the browser, or via a [client side router](https://react-aria.adobe.com/frameworks).
 Links without an href will be rendered as a `<span role="link">` instead of an `<a>`.
-Use the onPress event to handle user interaction. If the intent is to trigger an action (not navigation), prefer the button component.
+Use the onPress event to handle user interaction. If the intent is to trigger an action (not navigation), use the button component.
 
 ## Peer dependencies
 
@@ -91,9 +91,25 @@ The `theme` prop allows you to override specific design tokens for the Link comp
 ```tsx
 import type { LinkTheme } from '@guardian/stand/link';
 import { Link } from '@guardian/stand/link';
+import { semanticColors } from '@guardian/stand/tokens';
 
 const customTheme: Partial<LinkTheme> = {
-	// override tokens here
+	shared: {
+		enabled: { color: 'hotpink' },
+		hover: {
+			color: 'green',
+			cursor: 'pointer',
+		},
+		pressed: {
+			color: 'brown',
+		},
+		disabled: {
+			color: 'gray',
+		},
+		focus: {
+			outline: `2px solid ${semanticColors.border.error};`,
+		},
+	},
 };
 
 const Component = () => <Link theme={customTheme}>Hello</Link>;
@@ -108,7 +124,7 @@ import { Link } from '@guardian/stand/link';
 import { css } from '@emotion/react';
 
 const customStyles = css\`
-	// custom styles here
+	text-decoration-thickness: 50px;
 \`;
 
 const Component = () => <Link cssOverrides={customStyles}>Hello</Link>;
