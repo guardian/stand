@@ -1,0 +1,136 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import BreakpointsStories, {
+	Breakpoints,
+	From,
+	Until,
+	Between,
+} from './Breakpoints.stories.tsx';
+
+<Meta of={BreakpointsStories} />
+
+# Semantic - Breakpoints
+
+Semantic breakpoint tokens define the viewport width ranges used across the design system. They are the foundation for all responsive styling, and should be used via the media query API rather than referenced directly.
+
+## Media query API
+
+The recommended way to write responsive styles is with the `from`, `until`, and `between` helpers exported from `@guardian/stand/utils`. They return plain media query strings that work with any CSS-in-JS library or as object-style keys.
+
+```ts
+import { from, until, between } from '@guardian/stand/utils';
+```
+
+---
+
+### `from`
+
+Applies styles at the given breakpoint **and above** (`min-width`).
+
+```ts
+import { css } from '@emotion/react';
+import { from } from '@guardian/stand/utils';
+
+const styles = css`
+	display: none;
+
+	${from.md} {
+		display: block;
+	}
+`;
+```
+
+You can also use object-style syntax (e.g. with Emotion's `css()` or a `style` prop):
+
+```ts
+const styles = css({
+	display: 'none',
+	[from.md]: {
+		display: 'block',
+	},
+});
+```
+
+**Live demo** - resize the viewport and watch the cards highlight as each breakpoint is reached:
+
+<Story of={From} />
+
+---
+
+### `until`
+
+Applies styles on viewports **below** the given breakpoint (exclusive `max-width`). The query ends just before the breakpoint starts, preventing overlap with `from`.
+
+```ts
+import { css } from '@emotion/react';
+import { until } from '@guardian/stand/utils';
+
+const styles = css`
+	display: block;
+	${until.md} {
+		display: none;
+	}
+`;
+```
+
+**Live demo**
+Each box is highlighted while the viewport is below its threshold:
+
+<Story of={Until} />
+
+---
+
+### `between...and...`
+
+Applies styles for viewports **within a range**, from breakpoint A up to (but not including) breakpoint B.
+
+```ts
+import { css } from '@emotion/react';
+import { between } from '@guardian/stand/utils';
+
+const styles = css`
+	display: flex;
+	${between.md.and.xl} {
+		flex-direction: column;
+	}
+`;
+```
+
+**Live demo**
+One box highlights at a time as you move through each range:
+
+<Story of={Between} />
+
+---
+
+## Raw breakpoint tokens
+
+If you need direct access to the pixel values, for example, to pass into a third-party component or to build a custom query, you can import the token object:
+
+```ts
+import { semanticBreakpoints } from '@guardian/stand';
+import '@guardian/stand/semantic/breakpoints.css'; // CSS custom properties
+
+// JS/TS
+const minWidth = semanticBreakpoints.md.min; // '672px'
+
+// CSS custom properties
+// var(--semantic-breakpoints-md-min)  →  672px
+// var(--semantic-breakpoints-md-max)  →  1055px
+```
+
+---
+
+## When to use semantic breakpoints
+
+- **`from`**
+  - when a style should kick in at a given size and scale up from there (mobile-first).
+- **`until`**
+  - when something should only appear on smaller screens.
+- **`between`**
+  - for styles scoped to a specific viewport range, such as a tablet-only layout adjustment.
+
+---
+
+## Breakpoints
+
+<Story of={Breakpoints} />

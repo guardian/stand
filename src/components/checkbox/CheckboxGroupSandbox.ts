@@ -68,14 +68,6 @@ export const componentCss = /* css */ `
 	width: var(--component-form-input-shared-container-width);
 }
 
-.stand-form-input-container.sm {
-	max-width: var(--component-form-input-sm-container-max-width);
-}
-
-.stand-form-input-container.md {
-	max-width: var(--component-form-input-md-container-max-width);
-}
-
 .stand-form-input-container > label {
 	color: var(--component-form-input-shared-label-color);
 	font: var(--component-form-input-md-label-typography-font);
@@ -250,14 +242,6 @@ sheet.replaceSync(\`
 	flex-direction: \${componentForm.input.shared.container["flex-direction"]};
 	gap: \${componentForm.input.shared.container.gap};
 	width: \${componentForm.input.shared.container.width};
-}
-
-.js-stand-form-input-container.sm {
-	max-width: \${componentForm.input.sm.container.maxWidth};
-}
-
-.js-stand-form-input-container.md {
-	max-width: \${componentForm.input.md.container.maxWidth};
 }
 
 .js-stand-form-input-container > label {

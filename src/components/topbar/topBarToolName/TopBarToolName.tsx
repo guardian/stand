@@ -9,6 +9,8 @@ import {
 	subsectionStyles,
 	subsectionTypography,
 	toolNameHoverLinkStyles,
+	toolNameHoverLinkTextCollapsedStyles,
+	toolNameHoverLinkTextExpandedStyles,
 	toolNameLinkStyles,
 	toolNameStyles,
 	toolNameTypography,
@@ -20,6 +22,7 @@ function ToolName({
 	favicon,
 	subsection,
 	subsectionIcon,
+	collapseBelow = 'lg',
 	theme = {},
 	cssOverrides,
 }: TopBarToolNameProps) {
@@ -29,11 +32,15 @@ function ToolName({
 		<TopBarItem alignment="left" size="sm">
 			<div css={[toolNameStyles(mergedTheme), cssOverrides]}>
 				<Favicon {...favicon} />
-				<div css={[toolNameTypography(mergedTheme)]}>{name}</div>
+				<div css={[toolNameTypography(mergedTheme, { collapseBelow })]}>
+					{name}
+				</div>
 				{subsection && (
 					<>
-						<div css={dividerStyles(mergedTheme)}>&nbsp;</div>
-						<div css={subsectionStyles(mergedTheme)}>
+						<div css={dividerStyles(mergedTheme, { collapseBelow })}>
+							&nbsp;
+						</div>
+						<div css={subsectionStyles(mergedTheme, { collapseBelow })}>
 							{subsectionIcon && <Icon size="sm">{subsectionIcon}</Icon>}
 							<div css={subsectionTypography(mergedTheme)}>{subsection}</div>
 						</div>
@@ -44,23 +51,57 @@ function ToolName({
 	);
 }
 
-export const TopBarToolName = (props: TopBarToolNameProps) => {
-	const mergedTheme = mergeDeep(defaultToolNameTheme, props.theme ?? {});
+export const TopBarToolName = ({
+	collapseBelow = 'lg',
+	theme = {},
+	...props
+}: TopBarToolNameProps) => {
+	const mergedTheme = mergeDeep(defaultToolNameTheme, theme);
 
-	if (('href' in props || 'onPress' in props) && 'hoverText' in props) {
+	if (
+		('href' in props || 'onPress' in props) &&
+		('hoverText' in props || 'collapsedHoverText' in props)
+	) {
 		return (
 			<ReactAriaLink
 				css={toolNameLinkStyles(mergedTheme)}
 				href={props.href}
 				onPress={props.onPress}
 			>
-				<div css={[toolNameHoverLinkStyles(mergedTheme)]}>
-					{props.hoverText}
+				<div
+					css={[
+						toolNameHoverLinkStyles(mergedTheme, {
+							collapseBelow,
+						}),
+					]}
+				>
+					{/* shown on and above collapseBelow */}
+					<span
+						css={toolNameHoverLinkTextExpandedStyles({
+							collapseBelow,
+						})}
+					>
+						{props.hoverText ?? props.collapsedHoverText}
+					</span>
+					{/* shown below collapseBelow */}
+					<span
+						css={toolNameHoverLinkTextCollapsedStyles({
+							collapseBelow,
+						})}
+					>
+						{props.collapsedHoverText ?? props.hoverText}
+					</span>
 				</div>
-				<ToolName {...props} />
+				<ToolName
+					theme={mergedTheme}
+					collapseBelow={collapseBelow}
+					{...props}
+				/>
 			</ReactAriaLink>
 		);
 	}
 
-	return <ToolName {...props} />;
+	return (
+		<ToolName theme={mergedTheme} collapseBelow={collapseBelow} {...props} />
+	);
 };

@@ -12,18 +12,12 @@ export const defaultFormInputContainerTheme: FormInputContainerTheme =
 
 export const formInputContainerStyles = (
 	theme: FormInputContainerTheme,
-	{
-		size,
-	}: {
-		size: keyof Omit<FormInputContainerTheme, 'shared'>;
-	},
 ): SerializedStyles => {
 	return css`
 		display: ${theme.shared.container.display};
 		flex-direction: ${theme.shared.container['flex-direction']};
 		gap: ${theme.shared.container.gap};
 		width: ${theme.shared.container.width};
-		max-width: ${theme[size].container['max-width']};
 	`;
 };
 

@@ -6,10 +6,10 @@
 /**
  * editorial components tokens exports
  */
+export { componentAutocomplete } from './styleD/build/typescript/component/autocomplete';
+export type { ComponentAutocomplete } from './styleD/build/typescript/component/autocomplete';
 export { componentByline } from './styleD/build/typescript/component/byline';
 export type { ComponentByline } from './styleD/build/typescript/component/byline';
-export { componentTagAutocomplete } from './styleD/build/typescript/component/tagAutocomplete';
-export type { ComponentTagAutocomplete } from './styleD/build/typescript/component/tagAutocomplete';
 export { componentTagTable } from './styleD/build/typescript/component/tagTable';
 export type { ComponentTagTable } from './styleD/build/typescript/component/tagTable';
 export { componentUserMenu } from './styleD/build/typescript/component/userMenu';
@@ -22,48 +22,48 @@ export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
 export { componentButton } from './styleD/build/typescript/component/button';
 export type { ComponentButton } from './styleD/build/typescript/component/button';
-export { componentTypography } from './styleD/build/typescript/component/typography';
-export type { ComponentTypography } from './styleD/build/typescript/component/typography';
-export { componentIcon } from './styleD/build/typescript/component/icon';
-export type { ComponentIcon } from './styleD/build/typescript/component/icon';
+export { componentCheckbox } from './styleD/build/typescript/component/checkbox';
+export type { ComponentCheckbox } from './styleD/build/typescript/component/checkbox';
 export { componentFavicon } from './styleD/build/typescript/component/favicon';
 export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';
+export { componentForm } from './styleD/build/typescript/component/form';
+export type { ComponentForm } from './styleD/build/typescript/component/form';
+export { componentIcon } from './styleD/build/typescript/component/icon';
+export type { ComponentIcon } from './styleD/build/typescript/component/icon';
+export { componentInlineMessage } from './styleD/build/typescript/component/inlineMessage';
+export type { ComponentInlineMessage } from './styleD/build/typescript/component/inlineMessage';
+export { componentMenu } from './styleD/build/typescript/component/menu';
+export type { ComponentMenu } from './styleD/build/typescript/component/menu';
 export { componentLink } from './styleD/build/typescript/component/link';
 export type { ComponentLink } from './styleD/build/typescript/component/link';
 export { componentAlertBanner } from './styleD/build/typescript/component/alertBanner';
 export type { ComponentAlertBanner } from './styleD/build/typescript/component/alertBanner';
 export { componentRadioGroup } from './styleD/build/typescript/component/radioGroup';
 export type { ComponentRadioGroup } from './styleD/build/typescript/component/radioGroup';
-export { componentCheckbox } from './styleD/build/typescript/component/checkbox';
-export type { ComponentCheckbox } from './styleD/build/typescript/component/checkbox';
+export { componentSelect } from './styleD/build/typescript/component/select';
+export type { ComponentSelect } from './styleD/build/typescript/component/select';
 export { componentTextArea } from './styleD/build/typescript/component/textArea';
 export type { ComponentTextArea } from './styleD/build/typescript/component/textArea';
 export { componentTextInput } from './styleD/build/typescript/component/textInput';
 export type { ComponentTextInput } from './styleD/build/typescript/component/textInput';
-export { componentInlineMessage } from './styleD/build/typescript/component/inlineMessage';
-export type { ComponentInlineMessage } from './styleD/build/typescript/component/inlineMessage';
-export { componentSelect } from './styleD/build/typescript/component/select';
-export type { ComponentSelect } from './styleD/build/typescript/component/select';
-export { componentMenu } from './styleD/build/typescript/component/menu';
-export type { ComponentMenu } from './styleD/build/typescript/component/menu';
 export { componentTopBar } from './styleD/build/typescript/component/TopBar';
 export type { ComponentTopBar } from './styleD/build/typescript/component/TopBar';
-export { componentForm } from './styleD/build/typescript/component/form';
-export type { ComponentForm } from './styleD/build/typescript/component/form';
+export { componentTypography } from './styleD/build/typescript/component/typography';
+export type { ComponentTypography } from './styleD/build/typescript/component/typography';
 
 /**
  * style dictionary exports - base
  */
 export { baseColors } from './styleD/build/typescript/base/colors';
 export type { BaseColors } from './styleD/build/typescript/base/colors';
-export { baseTypography } from './styleD/build/typescript/base/typography';
-export type { BaseTypography } from './styleD/build/typescript/base/typography';
-export { baseSpacing } from './styleD/build/typescript/base/spacing';
-export type { BaseSpacing } from './styleD/build/typescript/base/spacing';
-export { baseSizing } from './styleD/build/typescript/base/sizing';
-export type { BaseSizing } from './styleD/build/typescript/base/sizing';
 export { baseRadius } from './styleD/build/typescript/base/radius';
 export type { BaseRadius } from './styleD/build/typescript/base/radius';
+export { baseSizing } from './styleD/build/typescript/base/sizing';
+export type { BaseSizing } from './styleD/build/typescript/base/sizing';
+export { baseSpacing } from './styleD/build/typescript/base/spacing';
+export type { BaseSpacing } from './styleD/build/typescript/base/spacing';
+export { baseTypography } from './styleD/build/typescript/base/typography';
+export type { BaseTypography } from './styleD/build/typescript/base/typography';
 /**
  * style dictionary exports - semantic
  */
@@ -75,3 +75,5 @@ export { semanticSizing } from './styleD/build/typescript/semantic/sizing';
 export type { SemanticSizing } from './styleD/build/typescript/semantic/sizing';
 export { semanticShadow } from './styleD/build/typescript/semantic/shadow';
 export type { SemanticShadow } from './styleD/build/typescript/semantic/shadow';
+export { semanticBreakpoints } from './styleD/build/typescript/semantic/breakpoints';
+export type { SemanticBreakpoints } from './styleD/build/typescript/semantic/breakpoints';

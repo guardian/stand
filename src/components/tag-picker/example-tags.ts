@@ -1,6 +1,6 @@
-import type { TagManagerObjectData } from './types';
+import type { TagManagerObject } from './types';
 
-const worldNewsSection: TagManagerObjectData['section'] = {
+const worldNewsSection: TagManagerObject['section'] = {
 	id: 342,
 	name: 'World news',
 	slug: 'world',
@@ -8,7 +8,7 @@ const worldNewsSection: TagManagerObjectData['section'] = {
 	sectionTagId: 9234,
 };
 
-const lifeAndStyleSection: TagManagerObjectData['section'] = {
+const lifeAndStyleSection: TagManagerObject['section'] = {
 	id: 196,
 	name: 'Life and style',
 	slug: 'lifeandstyle',
@@ -16,7 +16,7 @@ const lifeAndStyleSection: TagManagerObjectData['section'] = {
 	sectionTagId: 8857,
 };
 
-const globalSection: TagManagerObjectData['section'] = {
+const globalSection: TagManagerObject['section'] = {
 	id: 281,
 	name: 'Global',
 	pathPrefix: 'global',
@@ -24,7 +24,7 @@ const globalSection: TagManagerObjectData['section'] = {
 	sectionTagId: 14821,
 };
 
-const booksSection: TagManagerObjectData['section'] = {
+const booksSection: TagManagerObject['section'] = {
 	id: 187,
 	name: 'Books',
 	pathPrefix: 'books',
@@ -32,7 +32,7 @@ const booksSection: TagManagerObjectData['section'] = {
 	sectionTagId: 8802,
 };
 
-const chickenTag: TagManagerObjectData = {
+const chickenTag: TagManagerObject = {
 	id: 58843,
 	path: 'lifeandstyle/chicken',
 	type: 'Topic',
@@ -44,7 +44,7 @@ const chickenTag: TagManagerObjectData = {
 	externalReferences: [],
 	contributorInformation: null,
 };
-const riceTag: TagManagerObjectData = {
+const riceTag: TagManagerObject = {
 	id: 60180,
 	path: 'lifeandstyle/rice',
 	type: 'Topic',
@@ -57,7 +57,7 @@ const riceTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const boliviaTag: TagManagerObjectData = {
+const boliviaTag: TagManagerObject = {
 	id: 19843,
 	path: 'world/bolivia',
 	type: 'Topic',
@@ -70,7 +70,7 @@ const boliviaTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const weLoveSeriesTag: TagManagerObjectData = {
+const weLoveSeriesTag: TagManagerObject = {
 	id: 71519,
 	path: 'lifeandstyle/series/we-love',
 	type: 'Series',
@@ -83,7 +83,7 @@ const weLoveSeriesTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const reviewTag: TagManagerObjectData = {
+const reviewTag: TagManagerObject = {
 	id: 19805,
 	path: 'tone/reviews',
 	type: 'Tone',
@@ -96,7 +96,7 @@ const reviewTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const worldNewsTag: TagManagerObjectData = {
+const worldNewsTag: TagManagerObject = {
 	id: 9234,
 	type: 'Keyword',
 	internalName: 'World news',
@@ -109,7 +109,7 @@ const worldNewsTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const paidContentTestTag: TagManagerObjectData = {
+const paidContentTestTag: TagManagerObject = {
 	id: 73671,
 	type: 'PaidContent',
 	internalName: 'paid content test',
@@ -122,7 +122,7 @@ const paidContentTestTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const adFeaturesToneTag: TagManagerObjectData = {
+const adFeaturesToneTag: TagManagerObject = {
 	id: 61349,
 	type: 'Tone',
 	internalName: 'Advertisement feature (Tone)',
@@ -135,7 +135,7 @@ const adFeaturesToneTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const blockAdsTag: TagManagerObjectData = {
+const blockAdsTag: TagManagerObject = {
 	id: 73886,
 	type: 'Keyword',
 	internalName: 'Block Ads, Please',
@@ -156,7 +156,7 @@ const blockAdsTag: TagManagerObjectData = {
 	contributionBlockingLevel: 'NONE',
 };
 
-const foodSafetyTag: TagManagerObjectData = {
+const foodSafetyTag: TagManagerObject = {
 	id: 44419,
 	type: 'Keyword',
 	internalName: 'Food safety',
@@ -178,7 +178,7 @@ const foodSafetyTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const foodAndDrinkTag: TagManagerObjectData = {
+const foodAndDrinkTag: TagManagerObject = {
 	id: 8958,
 	type: 'Keyword',
 	internalName: 'Food and drink (Life and style)',
@@ -197,7 +197,7 @@ const foodAndDrinkTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const lifeAndStyleTag: TagManagerObjectData = {
+const lifeAndStyleTag: TagManagerObject = {
 	id: 8857,
 	type: 'Keyword',
 	internalName: 'Life and style',
@@ -213,7 +213,7 @@ const lifeAndStyleTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const williamGibsonTag: TagManagerObjectData = {
+const williamGibsonTag: TagManagerObject = {
 	id: 24562,
 	type: 'Keyword',
 	internalName: 'William Gibson (Author)',
@@ -226,7 +226,7 @@ const williamGibsonTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const blogpostTag: TagManagerObjectData = {
+const blogpostTag: TagManagerObject = {
 	id: 24335,
 	type: 'Tone',
 	internalName: 'Blogpost (Tone)',
@@ -239,7 +239,7 @@ const blogpostTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const minuteByMinuteTag: TagManagerObjectData = {
+const minuteByMinuteTag: TagManagerObject = {
 	id: 22394,
 	type: 'Tone',
 	internalName: 'Minute by minute (Tone)',
@@ -252,7 +252,7 @@ const minuteByMinuteTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const nanotechnologyTag: TagManagerObjectData = {
+const nanotechnologyTag: TagManagerObject = {
 	id: 11650,
 	type: 'Keyword',
 	internalName: 'Nanotechnology',
@@ -271,7 +271,7 @@ const nanotechnologyTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-const badgersTag: TagManagerObjectData = {
+const badgersTag: TagManagerObject = {
 	id: 43865,
 	type: 'Keyword',
 	internalName: 'Badgers (environment)',
@@ -293,7 +293,7 @@ const badgersTag: TagManagerObjectData = {
 	contributorInformation: null,
 };
 
-export const exampleTags: TagManagerObjectData[] = [
+export const exampleTags: TagManagerObject[] = [
 	chickenTag,
 	riceTag,
 	boliviaTag,

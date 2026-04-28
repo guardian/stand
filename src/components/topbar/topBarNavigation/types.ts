@@ -42,4 +42,9 @@ export interface TopBarNavigationProps extends DefaultProps<TopBarNavigationThem
 	 * Determines the alignment of the item within the top bar
 	 */
 	alignment?: 'left' | 'right';
+	/**
+	 * This is an internal prop used to determine if the item is within an open menu, which affects the styling of the item.
+	 * It is not intended to be set by consumers of the component.
+	 */
+	_menuOpen?: boolean;
 }

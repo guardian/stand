@@ -53,6 +53,10 @@ const fileList = [
 		group: 'semantic',
 		component: 'shadow',
 	},
+	{
+		group: 'semantic',
+		component: 'breakpoints',
+	},
 	/** design system components */
 	{
 		group: 'component',
@@ -125,7 +129,7 @@ const fileList = [
 	},
 	{
 		group: 'component',
-		component: 'tagAutocomplete',
+		component: 'autocomplete',
 	},
 	{
 		group: 'component',

@@ -56,6 +56,22 @@ const renderBothSizes = (props: TopBarNavigationProps) => (
 					<TopBarNavigation {...props} size="md" />
 				</td>
 			</tr>
+			<tr>
+				<td
+					css={css`
+						height: 100px;
+					`}
+				>
+					<TopBarNavigation {...props} size="sm" _menuOpen />
+				</td>
+				<td
+					css={css`
+						height: 100px;
+					`}
+				>
+					<TopBarNavigation {...props} size="md" _menuOpen />
+				</td>
+			</tr>
 		</tbody>
 	</table>
 );

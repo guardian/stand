@@ -10,3 +10,5 @@ export {
 } from './styleD/utils/semantic/typography';
 
 export { GlobalResetStyles } from './util/reset';
+
+export { from, until, between } from './styleD/utils/semantic/mq';
