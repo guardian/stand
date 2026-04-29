@@ -109,6 +109,11 @@
 			"import": "./dist/alert-banner.js",
 			"require": "./dist/alert-banner.cjs"
 		},
+		"./date-picker": {
+			"types": "./dist/types/date-picker.d.ts",
+			"import": "./dist/date-picker.js",
+			"require": "./dist/date-picker.cjs"
+		},
 		"./byline": {
 			"types": "./dist/types/byline.d.ts",
 			"import": "./dist/byline.js",
@@ -161,7 +166,8 @@
 		"./component/radioGroup.css": "./dist/styleD/build/css/component/radioGroup.css",
 		"./component/checkbox.css": "./dist/styleD/build/css/component/checkbox.css",
 		"./component/textArea.css": "./dist/styleD/build/css/component/textArea.css",
-		"./component/alertBanner.css": "./dist/styleD/build/css/component/alertBanner.css"
+		"./component/alertBanner.css": "./dist/styleD/build/css/component/alertBanner.css",
+		"./component/datePicker.css": "./dist/styleD/build/css/component/datePicker.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
@@ -237,6 +243,9 @@
 			],
 			"alert-banner": [
 				"./dist/types/alert-banner.d.ts"
+			],
+			"date-picker": [
+				"./dist/types/date-picker.d.ts"
 			]
 		}
 	},
@@ -276,6 +285,7 @@
 		"@guardian/prettier": "10.0.0",
 		"@guardian/prosemirror-invisibles": "3.1.1",
 		"@guardian/tsconfig": "1.0.1",
+		"@internationalized/date": "^3.12.1",
 		"@material-design-icons/svg": "^0.14.15",
 		"@playwright/experimental-ct-react17": "^1.59.1",
 		"@rollup/plugin-commonjs": "29.0.2",
@@ -323,6 +333,7 @@
 	"peerDependencies": {
 		"@emotion/react": ">=11.11.4 <=11.14.0",
 		"@guardian/prosemirror-invisibles": "3.1.1",
+		"@internationalized/date": "^3.12.1",
 		"prosemirror-dropcursor": "1.8.2",
 		"prosemirror-history": "1.4.1",
 		"prosemirror-keymap": "1.2.2",
@@ -339,6 +350,9 @@
 			"optional": true
 		},
 		"@guardian/prosemirror-invisibles": {
+			"optional": true
+		},
+		"@internationalized/date": {
 			"optional": true
 		},
 		"prosemirror-dropcursor": {
