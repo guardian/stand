@@ -46,6 +46,8 @@ export { componentTextInput } from './styleD/build/typescript/component/textInpu
 export type { ComponentTextInput } from './styleD/build/typescript/component/textInput';
 export { componentTopBar } from './styleD/build/typescript/component/TopBar';
 export type { ComponentTopBar } from './styleD/build/typescript/component/TopBar';
+export { componentIntendedAudienceSignifier } from './styleD/build/typescript/component/intendedAudienceSignifier';
+export type { ComponentIntendedAudienceSignifier } from './styleD/build/typescript/component/intendedAudienceSignifier';
 export { componentTypography } from './styleD/build/typescript/component/typography';
 export type { ComponentTypography } from './styleD/build/typescript/component/typography';
 
