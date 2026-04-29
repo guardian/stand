@@ -28,6 +28,8 @@ export { componentCheckbox } from './styleD/build/typescript/component/checkbox'
 export type { ComponentCheckbox } from './styleD/build/typescript/component/checkbox';
 export { componentFavicon } from './styleD/build/typescript/component/favicon';
 export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';
+export { componentDatePicker } from './styleD/build/typescript/component/datePicker';
+export type { ComponentDatePicker } from './styleD/build/typescript/component/datePicker';
 export { componentForm } from './styleD/build/typescript/component/form';
 export type { ComponentForm } from './styleD/build/typescript/component/form';
 export { componentIcon } from './styleD/build/typescript/component/icon';
