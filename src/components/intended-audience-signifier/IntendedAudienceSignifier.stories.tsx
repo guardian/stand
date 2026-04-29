@@ -18,56 +18,96 @@ const iconStyles = css`
 
 export default meta;
 
-export const UKAndUSStory = {
-	name: 'UKandUS',
-	args: { sourceTag: 'uk', intendedAudienceTag: 'us' },
+export const GlobalUKStory = {
+	name: 'GlobalUK',
+	args: { source: 'UK', intendedAudience: 'Global' },
 } satisfies Story;
 
-export const UKAndAUStory = {
-	name: 'UKandAU',
-	args: { sourceTag: 'uk', intendedAudienceTag: 'au' },
+export const GlobalUSStory = {
+	name: 'GlobalUS',
+	args: { source: 'US', intendedAudience: 'Global' },
+} satisfies Story;
+
+export const GlobalAUSStory = {
+	name: 'GlobalAUS',
+	args: { source: 'AUS', intendedAudience: 'Global' },
+} satisfies Story;
+
+export const UKAndUKStory = {
+	name: 'UKandUK',
+	args: { source: 'UK', intendedAudience: 'Domestic for Domestic' },
+} satisfies Story;
+
+export const USAndUSStory = {
+	name: 'USandUS',
+	args: { source: 'US', intendedAudience: 'Domestic for Domestic' },
+} satisfies Story;
+
+export const AUSAndAUSStory = {
+	name: 'AUSandAUS',
+	args: { source: 'AUS', intendedAudience: 'Domestic for Domestic' },
 } satisfies Story;
 
 export const UKAndGlobalStory = {
 	name: 'UKandGlobal',
-	args: { sourceTag: 'uk', intendedAudienceTag: 'global' },
-} satisfies Story;
-
-export const USAndAUStory = {
-	name: 'USandAU',
-	args: { sourceTag: 'us', intendedAudienceTag: 'au' },
+	args: { source: 'UK', intendedAudience: 'Domestic For Global' },
 } satisfies Story;
 
 export const USAndGlobalStory = {
 	name: 'USandGlobal',
 	args: {
-		sourceTag: 'us',
-		intendedAudienceTag: 'global',
+		source: 'US',
+		intendedAudience: 'Domestic For Global',
 	},
 } satisfies Story;
 
-export const AUAndGlobalStory = {
-	name: 'AUandGlobal',
+export const AUSAndGlobalStory = {
+	name: 'AUSandGlobal',
 	args: {
-		sourceTag: 'au',
-		intendedAudienceTag: 'global',
+		source: 'AUS',
+		intendedAudience: 'Domestic For Global',
 	},
 } satisfies Story;
 
 export const UKAndGlobalStoryWithCustomTheme = {
 	name: 'UKandGlobalWithCustomTheme',
 	args: {
-		sourceTag: 'uk',
-		intendedAudienceTag: 'global',
+		source: 'UK',
+		intendedAudience: 'Domestic For Global',
 		theme: { color: 'red' },
 	},
 } satisfies Story;
 
-export const AUAndGlobalWithCSSOverrides = {
-	name: 'AUAndGlobalWithCSSOverrides',
+export const AUSAndGlobalWithCSSOverrides = {
+	name: 'AUSAndGlobalWithCSSOverrides',
 	args: {
-		sourceTag: 'au',
-		intendedAudienceTag: 'global',
+		source: 'AUS',
+		intendedAudience: 'Domestic For Global',
 		cssOverrides: iconStyles,
 	},
+} satisfies Story;
+
+export const DontKnowStoryUK = {
+	name: 'DontKnowUK',
+	args: { source: 'UK', intendedAudience: "Don't know" },
+} satisfies Story;
+
+export const DontKnowStoryUS = {
+	name: 'DontKnowUS',
+	args: { source: 'US', intendedAudience: "Don't know" },
+} satisfies Story;
+
+export const DontKnowStoryAUS = {
+	name: 'DontKnowAUS',
+	args: { source: 'AUS', intendedAudience: "Don't know" },
+} satisfies Story;
+
+export const UKAndUSStory = {
+	name: 'UKAndUSStory',
+	args: { source: 'UK', intendedAudience: 'US' },
+} satisfies Story;
+
+export const USAndUKStory = {
+	name: 'USAndUKStory',
+	args: { source: 'US', intendedAudience: 'UK' },
 } satisfies Story;

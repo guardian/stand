@@ -1,6 +1,7 @@
 import { mergeDeep } from '../../util/mergeDeep';
 import {
 	auFlag,
+	DontKnowIcon,
 	DoubleChevronRightSvg,
 	globeIcon,
 	ukFlag,
@@ -13,8 +14,8 @@ import {
 import type { IntendedAudienceSignifierProps } from './types';
 
 export function IntendedAudienceSignifier({
-	sourceTag,
-	intendedAudienceTag,
+	source,
+	intendedAudience,
 	theme = {},
 	cssOverrides,
 	className,
@@ -22,20 +23,65 @@ export function IntendedAudienceSignifier({
 }: IntendedAudienceSignifierProps) {
 	const mergedTheme = mergeDeep(defaultIntendedAudienceSignifierTheme, theme);
 
-	const getIconElement = (icon: string) => {
-		switch (icon) {
-			case 'uk':
+	const getSourceIconElement = (
+		sourceTag: string,
+		intendedAudience: string,
+	) => {
+		if (intendedAudience === 'Global') {
+			return globeIcon;
+		}
+		if (intendedAudience === "Don't know") {
+			return DontKnowIcon;
+		}
+		switch (sourceTag) {
+			case 'UK':
 				return ukFlag;
-			case 'us':
+			case 'US':
 				return usFlag;
-			case 'au':
+			case 'AUS':
 				return auFlag;
-			case 'global':
+			case 'Global':
 				return globeIcon;
 			default:
-				return '';
+				return DontKnowIcon;
 		}
 	};
+
+	const getIntendedAudienceIconElement = (
+		sourceTag: string,
+		intendedAudience: string,
+	) => {
+		switch (intendedAudience) {
+			case 'Global':
+				return globeIcon;
+			case 'Domestic for Domestic':
+				return getSourceIconElement(sourceTag, intendedAudience);
+			case 'Domestic For Global':
+				return globeIcon;
+			case "Don't know":
+				return DontKnowIcon;
+			case 'UK':
+				return ukFlag;
+			case 'US':
+				return usFlag;
+			case 'AUS':
+				return auFlag;
+			default:
+				return DontKnowIcon;
+		}
+	};
+
+	if (intendedAudience === "Don't know") {
+		return (
+			<div
+				{...props}
+				className={className}
+				css={[intendedAudienceSignifierStyles(mergedTheme), cssOverrides]}
+			>
+				<div>{getSourceIconElement(source, intendedAudience)}</div>
+			</div>
+		);
+	}
 
 	return (
 		<div
@@ -43,9 +89,9 @@ export function IntendedAudienceSignifier({
 			className={className}
 			css={[intendedAudienceSignifierStyles(mergedTheme), cssOverrides]}
 		>
-			<div>{getIconElement(sourceTag)}</div>
+			<div>{getSourceIconElement(source, intendedAudience)}</div>
 			<div> {DoubleChevronRightSvg}</div>
-			<div>{getIconElement(intendedAudienceTag)}</div>
+			<div>{getIntendedAudienceIconElement(source, intendedAudience)}</div>
 		</div>
 	);
 }
