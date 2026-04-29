@@ -1,13 +1,21 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 import IntendedAudienceSignifierStories, {
-	UKAndUSStory,
-	UKAndAUStory,
+	GlobalUKStory,
+	GlobalUSStory,
+	GlobalAUSStory,
+	UKAndUKStory,
+	USAndUSStory,
+	AUSAndAUSStory,
 	UKAndGlobalStory,
-	USAndAUStory,
 	USAndGlobalStory,
-	AUAndGlobalStory,
+	AUSAndGlobalStory,
 	UKAndGlobalStoryWithCustomTheme,
-	AUAndGlobalWithCSSOverrides,
+	AUSAndGlobalWithCSSOverrides,
+	DontKnowStoryUK,
+	DontKnowStoryUS,
+	DontKnowStoryAUS,
+	UKAndUSStory,
+	USAndUKStory,
 } from './IntendedAudienceSignifier.stories';
 import {
 	SandboxReact,
@@ -60,67 +68,101 @@ import type {
 	IntendedAudienceSignifierTheme,
 } from '@guardian/stand/intended-audience-signifier';
 
-	<IntendedAudienceSignifier sourceTag="uk" intendedAudienceTag="us" />
-	<IntendedAudienceSignifier sourceTag="uk" intendedAudienceTag="au" />
-	<IntendedAudienceSignifier sourceTag="uk" intendedAudienceTag="global" />
-	<IntendedAudienceSignifier sourceTag="us" intendedAudienceTag="au" />
-	<IntendedAudienceSignifier sourceTag="us" intendedAudienceTag="global" />
-	<IntendedAudienceSignifier sourceTag="au" intendedAudienceTag="global" />
-	<IntendedAudienceSignifier
-		sourceTag="uk"
-		intendedAudienceTag="global"
-		theme={{ color: '#c70000' }}
-	/>
-	<IntendedAudienceSignifier
-		sourceTag="au"
-		intendedAudienceTag="global"
-		cssOverrides={{ border-color: '#0000FF',align-items: 'flex-end' }}
-	/>
+	<IntendedAudienceSignifier source="UK" intendedAudience='Global' />
+	<IntendedAudienceSignifier source="US" intendedAudience='Global' />
+	<IntendedAudienceSignifier source="AUS" intendedAudience='Global' />
+	<IntendedAudienceSignifier source="UK" intendedAudience='Domestic for Domestic' />
+	<IntendedAudienceSignifier source="US" intendedAudience='Domestic for Domestic' />
+	<IntendedAudienceSignifier source="AUS" intendedAudience='Domestic for Domestic' />
+	<IntendedAudienceSignifier source="UK" intendedAudience='Domestic For Global' />
+	<IntendedAudienceSignifier source="US" intendedAudience='Domestic For Global' />
+	<IntendedAudienceSignifier source="AUS" intendedAudience='Domestic For Global' />
+	<IntendedAudienceSignifier source="UK" intendedAudience='Domestic For Global' theme={{ color: '#c70000' }} />
+	<IntendedAudienceSignifier source="AUS" intendedAudience='Global' cssOverrides={{ border-color: '#0000FF',align-items: 'flex-end' }}/>
+	<IntendedAudienceSignifier source="UK" intendedAudience="Don't know" />
+	<IntendedAudienceSignifier source="US" intendedAudience="Don't know" />
+	<IntendedAudienceSignifier source="AUS" intendedAudience="Don't know" />
+	<IntendedAudienceSignifier source="UK" intendedAudience='US' />
+	<IntendedAudienceSignifier source="US" intendedAudience='UK' />
+
+
 ```
 
 ## Props
 
-| Name                  | Type                                      | Required | Default | Description                                                                                       |
-| --------------------- | ----------------------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------- |
-| `sourceTag`           | `string`                                  | Yes      | N/A     | Icon key rendered on the left side of the chevron. Supported values: `uk`, `us`, `au`, `global`.  |
-| `intendedAudienceTag` | `string`                                  | Yes      | N/A     | Icon key rendered on the right side of the chevron. Supported values: `uk`, `us`, `au`, `global`. |
-| `theme`               | `Partial<IntendedAudienceSignifierTheme>` | No       | N/A     | Custom theme token overrides merged over the component defaults.                                  |
-| `cssOverrides`        | `SerializedStyles \| SerializedStyles[]`  | No       | N/A     | Additional Emotion CSS styles applied to the root element.                                        |
-| `className`           | `string`                                  | No       | N/A     | Additional class name(s) applied to the root element.                                             |
+| Name               | Type                                      | Required | Default | Description                                                                                                                                                  |
+| ------------------ | ----------------------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `source`           | `Source`                                  | Yes      | N/A     | Icon key rendered on the left side of the chevron. Supported values: `UK`, `US`, `AUS` .                                                                     |
+| `intendedAudience` | `IntendedAudience`                        | Yes      | N/A     | Icon key rendered on the right side of the chevron. Supported values: `Global`,`Domestic for Domestic`,`Domestic For Global`,`Don't know`,`UK`, `US`, `AUS`. |
+| `theme`            | `Partial<IntendedAudienceSignifierTheme>` | No       | N/A     | Custom theme token overrides merged over the component defaults.                                                                                             |
+| `cssOverrides`     | `SerializedStyles \| SerializedStyles[]`  | No       | N/A     | Additional Emotion CSS styles applied to the root element.                                                                                                   |
+| `className`        | `string`                                  | No       | N/A     | Additional class name(s) applied to the root element.                                                                                                        |
 
 ## Stories
 
-### UK and US
+### Global and Global UK
 
-<Story of={UKAndUSStory} />
+<Story of={GlobalUKStory} />
 
-### UK and AU
+### Global and Global US
 
-<Story of={UKAndAUStory} />
+<Story of={GlobalUSStory} />
+
+### Global and Global AUS
+
+<Story of={GlobalAUSStory} />
+
+### UK and UK
+
+<Story of={UKAndUKStory} />
+
+### US and US
+
+<Story of={USAndUSStory} />
+
+### AUS and AUS
+
+<Story of={AUSAndAUSStory} />
 
 ### UK and Global
 
 <Story of={UKAndGlobalStory} />
 
-### US and AU
-
-<Story of={USAndAUStory} />
-
 ### US and Global
 
 <Story of={USAndGlobalStory} />
 
-### AU and Global
+### AUS and Global
 
-<Story of={AUAndGlobalStory} />
+<Story of={AUSAndGlobalStory} />
 
-### UK and Global and custom theme
+### UK and Global With Custom Theme
 
 <Story of={UKAndGlobalStoryWithCustomTheme} />
 
-### AU and Global With CssOverrides
+### AUS and Global With CSS Overrides
 
-<Story of={AUAndGlobalWithCSSOverrides} />
+<Story of={AUSAndGlobalWithCSSOverrides} />
+
+### Don't Know Story UK
+
+<Story of={DontKnowStoryUK} />
+
+### Don't Know Story US
+
+<Story of={DontKnowStoryUS} />
+
+### Don't Know Story AUS
+
+<Story of={DontKnowStoryAUS} />
+
+### UK and US Story
+
+<Story of={UKAndUSStory} />
+
+### US and UK Story
+
+<Story of={USAndUKStory} />
 
 ## Customisation
 
@@ -136,8 +178,8 @@ const customTheme: Partial<IntendedAudienceSignifierTheme> = {
 
 const Component = () => (
 	<IntendedAudienceSignifier
-		sourceTag="uk"
-		intendedAudienceTag="global"
+		source="UK"
+		intendedAudience="Global"
 		theme={customTheme}
 	/>
 );
@@ -158,8 +200,8 @@ const customStyles = css`
 
 const Component = () => (
 	<IntendedAudienceSignifier
-		sourceTag="uk"
-		intendedAudienceTag="us"
+		source="UK"
+		intendedAudience="US"
 		cssOverrides={customStyles}
 	/>
 );
