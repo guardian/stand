@@ -5,26 +5,14 @@
 export const semanticBreakpoints = {
 	sm: {
 		min: '0',
-		max: '671px',
+		max: '599px',
 	},
 	md: {
-		min: '672px',
-		max: '1055px',
+		min: '600px',
+		max: '1023px',
 	},
 	lg: {
-		min: '1056px',
-		max: '1311px',
-	},
-	xl: {
-		min: '1312px',
-		max: '1583px',
-	},
-	max: {
-		min: '1584px',
-		max: '1783px',
-	},
-	maxplus: {
-		min: '1784px',
+		min: '1024px',
 		max: 'initial',
 	},
 };
