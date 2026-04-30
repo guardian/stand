@@ -1,0 +1,191 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import DatePickerStories, {
+	Default,
+	UseMonthTextInputFalse,
+	Disabled,
+	MinMaxDate,
+	SelectedDate,
+	Invalid,
+	CustomTheme,
+	CssOverrides,
+} from './DatePicker.stories';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
+
+<Meta of={DatePickerStories} />
+
+# DatePicker
+
+A date picker component built on [React Aria `DatePicker`](https://react-aria.adobe.com/DatePicker), see their documentation for the full API.
+
+It provides an accessible, labelled date field with a calendar popover, support for descriptions, validation errors, minimum/maximum date constraints, and a disabled state. The month segment displays full month names by default and supports typing the first letters of a month name to select it.
+
+## When to use
+
+- Within a form to collect a specific calendar date from the user
+- Whenever an accessible, labelled date picker is needed that aligns with Stand tokens
+- When users need to pick a date from a calendar or type it directly
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `@internationalized/date`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+## Example usage
+
+<SandboxReact
+	flowColumn
+	componentName={componentName}
+	componentTsx={componentTsx}
+/>
+
+```tsx
+import { DatePicker } from '@guardian/stand/date-picker';
+import { CalendarDate } from '@internationalized/date';
+
+/* types, if required */
+import type {
+	DatePickerProps,
+	DatePickerTheme,
+} from '@guardian/stand/date-picker';
+
+/* Basic usage */
+<DatePicker
+	label="Date of birth"
+	description="Enter your date of birth (e.g. 15 April 1990)"
+/>
+
+/* With a pre-selected date */
+<DatePicker
+	label="Select a date"
+	value={new CalendarDate(2026, 4, 15)}
+	onChange={(value) => console.log('Selected date:', value)}
+/>
+
+/* With min/max constraints */
+<DatePicker
+	label="Select a date"
+	minValue={new CalendarDate(2026, 1, 1)}
+	maxValue={new CalendarDate(2026, 12, 31)}
+/>
+
+/* Invalid state */
+<DatePicker
+	label="Select a date"
+	isInvalid
+	error="Please select a valid date."
+/>
+```
+
+## Props
+
+| Name                      | Type                                       | Required | Default | Description                                                                                                                                        |
+| ------------------------- | ------------------------------------------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `label`                   | `string`                                   | No       | N/A     | Visible label rendered above the date input.                                                                                                       |
+| `description`             | `string`                                   | No       | N/A     | Helper text rendered below the label.                                                                                                              |
+| `error`                   | `string`                                   | No       | N/A     | Validation error message; displayed when `isInvalid` is `true`.                                                                                    |
+| `isInvalid`               | `boolean`                                  | No       | `false` | Marks the field as invalid and applies error border styling.                                                                                       |
+| `isDisabled`              | `boolean`                                  | No       | `false` | Disables interaction and applies disabled styling.                                                                                                 |
+| `useMonthTextInput`       | `boolean`                                  | No       | `true`  | When `true`, the month segment displays full month names (e.g. "April") and supports typing the first letters of a month name to select it.        |
+| `locale`                  | `string`                                   | No       | `en-GB` | Locale used for formatting. See [Intl.Locale docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale).  |
+| `minValue`                | `DateValue`                                | No       | N/A     | The minimum selectable date.                                                                                                                       |
+| `maxValue`                | `DateValue`                                | No       | N/A     | The maximum selectable date.                                                                                                                       |
+| `value`                   | `DateValue`                                | No       | N/A     | The controlled selected date value.                                                                                                                |
+| `defaultValue`            | `DateValue`                                | No       | N/A     | The default (uncontrolled) selected date value.                                                                                                    |
+| `onChange`                | `(value: DateValue \| null) => void`       | No       | N/A     | Callback fired when the selected date changes.                                                                                                     |
+| `theme`                   | `DatePickerTheme` (partial)                | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                            |
+| `formInputContainerTheme` | `FormInputContainerTheme` (partial)        | No       | N/A     | Override Stand tokens for the wrapping label and description container.                                                                            |
+| `cssOverrides`            | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                         |
+| `className`               | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria DatePicker element.                                                                           |
+| `...props`                | `ReactAria DatePicker` props               | No       | N/A     | All other props from `react-aria-components` [`DatePicker`](https://react-aria.adobe.com/DatePicker) (e.g. `autoFocus`, `isOpen`, `onOpenChange`). |
+
+Note: `granularity` and `hideTimeZone` are fixed internally and cannot be overridden. Use a separate TimePicker component if time selection is required.
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+### useMonthTextInput: false
+
+Reverts the month segment to React Aria's default numeric month behaviour:
+
+<Story of={UseMonthTextInputFalse} />
+
+### Disabled
+
+<Story of={Disabled} />
+
+### Min and Max Date
+
+<Story of={MinMaxDate} />
+
+### Selected Date
+
+<Story of={SelectedDate} />
+
+### Invalid
+
+<Story of={Invalid} />
+
+## Customisation
+
+We recommend using the DatePicker component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the DatePicker component:
+
+<Story of={CustomTheme} />
+
+```tsx
+import type { DatePickerTheme } from '@guardian/stand/date-picker';
+import { DatePicker } from '@guardian/stand/date-picker';
+import { baseColors } from '@guardian/stand';
+
+const customTheme: Partial<DatePickerTheme> = {
+	picker: {
+		shared: {
+			border: `0.0625rem solid ${baseColors['cool-purple'][500]}`,
+			borderRadius: '0.5rem',
+		},
+	},
+};
+
+const Component = () => (
+	<DatePicker label="Select a date" theme={customTheme} />
+);
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the DatePicker component:
+
+<Story of={CssOverrides} />
+
+```tsx
+import { DatePicker } from '@guardian/stand/date-picker';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	border: 0.125rem solid ${baseColors.red[500]};
+	border-radius: 0.5rem;
+\`;
+
+const Component = () => (
+	<DatePicker label="Select a date" cssOverrides={customStyles} />
+);
+```
+
+## Custom Component Build
+
+Due to the interactive functionality of the DatePicker component (keyboard navigation, calendar popover, accessibility), it is only available as a React component with Emotion for styling.
+
+If you want to use a date picker in a non-React environment, you would need to build a custom version using vanilla JavaScript and CSS, which requires significant effort to replicate the accessibility and interaction features of this component. We recommend using the provided React component where possible.
