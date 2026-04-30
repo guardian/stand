@@ -1,0 +1,496 @@
+{
+	"component": {
+		"datePicker": {
+			"picker": {
+				"shared": {
+					"display": {
+						"$type": "string",
+						"$value": "flex"
+					},
+					"width": {
+						"$type": "string",
+						"$value": "100%"
+					},
+					"justifyContent": {
+						"$type": "string",
+						"$value": "space-between"
+					},
+					"alignItems": {
+						"$type": "string",
+						"$value": "center"
+					},
+					"height": {
+						"$type": "string",
+						"$value": "{semantic.sizing.height.md}"
+					},
+					"borderRadius": {
+						"$type": "string",
+						"$value": "{base.radius.corner-4-rem}"
+					},
+					"border": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.stronger}",
+							"width": "{semantic.sizing.border.default}",
+							"style": "solid"
+						}
+					},
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.weak}"
+					},
+					"gap": {
+						"$type": "string",
+						"$value": "{base.spacing.8-rem}"
+					},
+					"padding": {
+						"top": {
+							"$type": "string",
+							"$value": "0"
+						},
+						"right": {
+							"$type": "string",
+							"$value": "{base.spacing.4-rem}"
+						},
+						"bottom": {
+							"$type": "string",
+							"$value": "0"
+						},
+						"left": {
+							"$type": "string",
+							"$value": "{base.spacing.12-rem}"
+						}
+					},
+					"disabled": {
+						"cursor": {
+							"$type": "string",
+							"$value": "not-allowed"
+						},
+						"backgroundColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.fill.weak-pressed}"
+						},
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.disabled}"
+						}
+					},
+					"focusVisible": {
+						"outline": {
+							"$type": "border",
+							"$value": {
+								"color": "{semantic.colors.border.focused}",
+								"width": "{semantic.sizing.border.md}",
+								"style": "solid"
+							}
+						}
+					},
+					"invalid": {
+						"border": {
+							"$type": "border",
+							"$value": {
+								"color": "{semantic.colors.border.error}",
+								"width": "{semantic.sizing.border.default}",
+								"style": "solid"
+							}
+						}
+					},
+					"button": {
+						"flex": {
+							"$type": "string",
+							"$value": "1"
+						},
+						"backgroundColor": {
+							"$type": "color",
+							"$value": "transparent"
+						},
+						"border": {
+							"$type": "border",
+							"$value": {
+								"color": "transparent",
+								"width": "0",
+								"style": "solid"
+							}
+						},
+						"padding": {
+							"top": {
+								"$type": "string",
+								"$value": "0"
+							},
+							"right": {
+								"$type": "string",
+								"$value": "0"
+							},
+							"bottom": {
+								"$type": "string",
+								"$value": "0"
+							},
+							"left": {
+								"$type": "string",
+								"$value": "0"
+							}
+						},
+						"margin": {
+							"top": {
+								"$type": "string",
+								"$value": "0"
+							},
+							"right": {
+								"$type": "string",
+								"$value": "0"
+							},
+							"bottom": {
+								"$type": "string",
+								"$value": "0"
+							},
+							"left": {
+								"$type": "string",
+								"$value": "0"
+							}
+						},
+						"display": {
+							"$type": "string",
+							"$value": "flex"
+						},
+						"alignItems": {
+							"$type": "string",
+							"$value": "center"
+						},
+						"justifyContent": {
+							"$type": "string",
+							"$value": "flex-end"
+						},
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.weak}"
+						},
+						"cursor": {
+							"$type": "string",
+							"$value": "pointer"
+						},
+						"disabled": {
+							"color": {
+								"$type": "color",
+								"$value": "{semantic.colors.text.disabled}"
+							},
+							"cursor": {
+								"$type": "string",
+								"$value": "not-allowed"
+							}
+						}
+					}
+				}
+			},
+			"segment": {
+				"shared": {
+					"placeholder": {
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.weak}"
+						},
+						"focusVisible": {
+							"outline": {
+								"$type": "border",
+								"$value": {
+									"color": "{semantic.colors.border.focused}",
+									"width": "{semantic.sizing.border.md}",
+									"style": "solid"
+								}
+							}
+						}
+					}
+				}
+			},
+			"popover": {
+				"shared": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.bg.base}"
+					},
+					"padding": {
+						"top": {
+							"$type": "string",
+							"$value": "{base.spacing.4-rem}"
+						},
+						"right": {
+							"$type": "string",
+							"$value": "{base.spacing.4-rem}"
+						},
+						"bottom": {
+							"$type": "string",
+							"$value": "{base.spacing.4-rem}"
+						},
+						"left": {
+							"$type": "string",
+							"$value": "{base.spacing.4-rem}"
+						}
+					},
+					"boxShadow": {
+						"$type": "string",
+						"$value": "0 2px 6px 0 rgba(0, 0, 0, 0.3)"
+					}
+				}
+			},
+			"calendar": {
+				"header": {
+					"shared": {
+						"display": {
+							"$type": "string",
+							"$value": "flex"
+						},
+						"alignItems": {
+							"$type": "string",
+							"$value": "center"
+						},
+						"justifyContent": {
+							"$type": "string",
+							"$value": "space-between"
+						},
+						"typography": {
+							"font": {
+								"$type": "typography",
+								"$value": "{semantic.typography.heading-sm.font}"
+							},
+							"letterSpacing": {
+								"$type": "dimension",
+								"$value": "{semantic.typography.heading-sm.letterSpacing}"
+							},
+							"fontWidth": {
+								"$type": "number",
+								"$value": "{semantic.typography.heading-sm.fontWidth}"
+							}
+						},
+						"button": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "transparent"
+							},
+							"border": {
+								"$type": "string",
+								"$value": "none"
+							},
+							"padding": {
+								"top": {
+									"$type": "dimension",
+									"$value": "0"
+								},
+								"right": {
+									"$type": "dimension",
+									"$value": "0"
+								},
+								"bottom": {
+									"$type": "dimension",
+									"$value": "0"
+								},
+								"left": {
+									"$type": "dimension",
+									"$value": "0"
+								}
+							},
+							"margin": {
+								"top": {
+									"$type": "dimension",
+									"$value": "0"
+								},
+								"right": {
+									"$type": "dimension",
+									"$value": "0"
+								},
+								"bottom": {
+									"$type": "dimension",
+									"$value": "0"
+								},
+								"left": {
+									"$type": "dimension",
+									"$value": "0"
+								}
+							},
+							"display": {
+								"$type": "string",
+								"$value": "flex"
+							},
+							"alignItems": {
+								"$type": "string",
+								"$value": "center"
+							},
+							"justifyContent": {
+								"$type": "string",
+								"$value": "center"
+							},
+							"color": {
+								"$type": "color",
+								"$value": "{semantic.colors.text.weak}"
+							},
+							"cursor": {
+								"$type": "string",
+								"$value": "pointer"
+							},
+							"width": {
+								"$type": "dimension",
+								"$value": "{semantic.sizing.height.md}"
+							},
+							"height": {
+								"$type": "dimension",
+								"$value": "{semantic.sizing.height.md}"
+							},
+							"aspectRatio": {
+								"$type": "string",
+								"$value": "1"
+							},
+							"hovered": {
+								"backgroundColor": {
+									"$type": "color",
+									"$value": "{semantic.colors.fill.weak-hover}"
+								}
+							},
+							"pressed": {
+								"backgroundColor": {
+									"$type": "color",
+									"$value": "{semantic.colors.fill.weak-pressed}"
+								}
+							},
+							"selected": {
+								"backgroundColor": {
+									"$type": "color",
+									"$value": "{semantic.colors.fill.cyan-weak}"
+								}
+							},
+							"focusVisible": {
+								"outline": {
+									"$type": "border",
+									"$value": {
+										"color": "{semantic.colors.border.focused}",
+										"width": "{semantic.sizing.border.md}",
+										"style": "solid"
+									}
+								}
+							},
+							"disabled": {
+								"cursor": {
+									"$type": "string",
+									"$value": "not-allowed"
+								},
+								"color": {
+									"$type": "color",
+									"$value": "{semantic.colors.text.disabled}"
+								}
+							}
+						}
+					}
+				},
+				"grid": {
+					"shared": {
+						"typography": {
+							"font": {
+								"$type": "typography",
+								"$value": "{semantic.typography.body-sm.font}"
+							},
+							"letterSpacing": {
+								"$type": "dimension",
+								"$value": "{semantic.typography.body-sm.letterSpacing}"
+							},
+							"fontWidth": {
+								"$type": "number",
+								"$value": "{semantic.typography.body-sm.fontWidth}"
+							}
+						},
+						"borderCollapse": {
+							"$type": "string",
+							"$value": "collapse"
+						},
+						"borderSpacing": {
+							"$type": "string",
+							"$value": "0"
+						},
+						"th": {
+							"width": {
+								"$type": "string",
+								"$value": "{semantic.sizing.height.md}"
+							},
+							"height": {
+								"$type": "string",
+								"$value": "{semantic.sizing.height.md}"
+							},
+							"verticalAlign": {
+								"$type": "string",
+								"$value": "middle"
+							}
+						}
+					}
+				},
+				"cell": {
+					"shared": {
+						"width": {
+							"$type": "string",
+							"$value": "{semantic.sizing.height.md}"
+						},
+						"aspectRatio": {
+							"$type": "string",
+							"$value": "1"
+						},
+						"display": {
+							"$type": "string",
+							"$value": "flex"
+						},
+						"alignItems": {
+							"$type": "string",
+							"$value": "center"
+						},
+						"justifyContent": {
+							"$type": "string",
+							"$value": "center"
+						},
+						"cursor": {
+							"$type": "string",
+							"$value": "pointer"
+						},
+						"outsideMonth": {
+							"display": {
+								"$type": "string",
+								"$value": "none"
+							}
+						},
+						"hovered": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.weak-hover}"
+							}
+						},
+						"pressed": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.weak-pressed}"
+							}
+						},
+						"selected": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.cyan-weak}"
+							}
+						},
+						"focusVisible": {
+							"outline": {
+								"$type": "border",
+								"$value": {
+									"color": "{semantic.colors.border.focused}",
+									"width": "{semantic.sizing.border.md}",
+									"style": "solid"
+								}
+							}
+						},
+						"disabled": {
+							"cursor": {
+								"$type": "string",
+								"$value": "not-allowed"
+							},
+							"color": {
+								"$type": "color",
+								"$value": "{semantic.colors.text.disabled}"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
