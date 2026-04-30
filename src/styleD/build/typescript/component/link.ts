@@ -5,7 +5,7 @@
 export const componentLink = {
 	shared: {
 		focus: {
-			outline: '1px solid #0072a9',
+			outline: '0.0625rem solid #0072a9',
 		},
 		hover: {
 			color: '#00344e',

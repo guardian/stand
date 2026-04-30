@@ -52,16 +52,14 @@ const viewportWidthCss = css`
 const parseMin = (value: string): number =>
 	value === '0' ? 0 : parseFloat(value);
 
-const parseMax = (value: string | null): number =>
-	value === null ? Infinity : parseFloat(value);
-
 const getActiveBreakpoint = (width: number): string | null => {
-	for (const [name, { min, max }] of Object.entries(semanticBreakpoints)) {
-		if (width >= parseMin(min) && width <= parseMax(max)) {
-			return name;
+	let active: string | null = null;
+	for (const [name, min] of Object.entries(semanticBreakpoints)) {
+		if (width >= parseMin(min)) {
+			active = name;
 		}
 	}
-	return null;
+	return active;
 };
 
 const useViewportWidth = (): number => {
@@ -96,18 +94,16 @@ export const SemanticBreakpointTokens = () => {
 					<tr>
 						<th>Breakpoint</th>
 						<th>Min</th>
-						<th>Max</th>
 						<th>Active</th>
 					</tr>
 				</thead>
 				<tbody>
-					{Object.entries(semanticBreakpoints).map(([name, { min, max }]) => {
+					{Object.entries(semanticBreakpoints).map(([name, min]) => {
 						const isActive = name === activeBreakpoint;
 						return (
 							<tr key={name} css={isActive ? activeRowCss : undefined}>
 								<td css={tokenNameCss}>{name}</td>
 								<td css={tokenValueCss}>{min}</td>
-								<td css={tokenValueCss}>{max}</td>
 								<td>{isActive && <span css={activeBadgeCss}>Current</span>}</td>
 							</tr>
 						);
@@ -157,10 +153,6 @@ const fromGridCss = css`
 	${from.lg} {
 		grid-template-columns: repeat(3, 1fr);
 	}
-
-	${from.xl} {
-		grid-template-columns: repeat(6, 1fr);
-	}
 `;
 
 const fromCardCss = css`
@@ -175,9 +167,6 @@ const fromCardBreakpoints: Array<keyof typeof semanticBreakpoints> = [
 	'sm',
 	'md',
 	'lg',
-	'xl',
-	'max',
-	'maxplus',
 ];
 
 /**
@@ -186,9 +175,7 @@ const fromCardBreakpoints: Array<keyof typeof semanticBreakpoints> = [
  */
 export const FromDemo = () => (
 	<div css={demoWrapperCss}>
-		<span css={demoLabelCss}>
-			from.sm / from.md / from.lg / from.xl / from.max / from.maxplus
-		</span>
+		<span css={demoLabelCss}>from.sm / from.md / from.lg</span>
 		<div css={fromGridCss}>
 			{fromCardBreakpoints.map((bp) => {
 				const cardActiveCss = css`
@@ -206,7 +193,7 @@ export const FromDemo = () => (
 					<div key={bp} css={[fromCardCss, cardActiveCss]}>
 						<p css={demoHeadingCss}>{bp}</p>
 						<p css={demoDescCss}>
-							{semanticBreakpoints[bp].min}
+							{semanticBreakpoints[bp]}
 							{' +'}
 						</p>
 					</div>
@@ -238,7 +225,7 @@ const untilBoxBaseCss = css`
  */
 export const UntilDemo = () => (
 	<div css={demoWrapperCss}>
-		<span css={demoLabelCss}>until.md / until.lg / until.xl</span>
+		<span css={demoLabelCss}>until.md / until.lg</span>
 		<div
 			css={css`
 				display: flex;
@@ -262,8 +249,7 @@ export const UntilDemo = () => (
 			>
 				<p css={demoHeadingCss}>Visible below md</p>
 				<p css={demoDescCss}>
-					<code>until.md</code> - hidden at {semanticBreakpoints.md.min} and
-					above
+					<code>until.md</code> - hidden at {semanticBreakpoints.md} and above
 				</p>
 			</div>
 			<div
@@ -282,28 +268,7 @@ export const UntilDemo = () => (
 			>
 				<p css={demoHeadingCss}>Visible below lg</p>
 				<p css={demoDescCss}>
-					<code>until.lg</code> - hidden at {semanticBreakpoints.lg.min} and
-					above
-				</p>
-			</div>
-			<div
-				css={css`
-					${untilBoxBaseCss}
-					${until.xl} {
-						background: ${semanticColors.fill['accent-strong']};
-						border-color: ${semanticColors.fill['accent-strong']};
-						color: ${semanticColors.text['stronger-inverse']};
-
-						p {
-							color: ${semanticColors.text['stronger-inverse']};
-						}
-					}
-				`}
-			>
-				<p css={demoHeadingCss}>Visible below xl</p>
-				<p css={demoDescCss}>
-					<code>until.xl</code> - hidden at {semanticBreakpoints.xl.min} and
-					above
+					<code>until.lg</code> - hidden at {semanticBreakpoints.lg} and above
 				</p>
 			</div>
 		</div>
@@ -327,8 +292,6 @@ const betweenPairs: Array<{
 }> = [
 	{ from: 'sm', to: 'md' },
 	{ from: 'md', to: 'lg' },
-	{ from: 'lg', to: 'xl' },
-	{ from: 'xl', to: 'max' },
 ];
 
 /**
@@ -368,7 +331,7 @@ export const BetweenDemo = () => (
 						<code>
 							between.{a}.and.{b}
 						</code>{' '}
-						- {semanticBreakpoints[a].min} up to {semanticBreakpoints[b].min}
+						- {semanticBreakpoints[a]} up to {semanticBreakpoints[b]}
 					</p>
 				</div>
 			))}

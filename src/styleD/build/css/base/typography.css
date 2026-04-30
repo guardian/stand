@@ -51,9 +51,9 @@
 	--base-typography-letter-spacing-densest-px: -1px;
 	--base-typography-letter-spacing-denser-px: -0.5px;
 	--base-typography-letter-spacing-dense-px: -0.2px;
-	--base-typography-letter-spacing-default-px: 0px;
+	--base-typography-letter-spacing-default-px: 0;
 	--base-typography-letter-spacing-densest-rem: -0.0625rem;
 	--base-typography-letter-spacing-denser-rem: -0.03125rem;
 	--base-typography-letter-spacing-dense-rem: -0.0125rem;
-	--base-typography-letter-spacing-default-rem: 0rem;
+	--base-typography-letter-spacing-default-rem: 0;
 }
