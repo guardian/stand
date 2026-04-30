@@ -52,8 +52,8 @@ const viewportWidthCss = css`
 const parseMin = (value: string): number =>
 	value === '0' ? 0 : parseFloat(value);
 
-const parseMax = (value: string | null): number =>
-	value === null ? Infinity : parseFloat(value);
+const parseMax = (value: string): number =>
+	value === 'initial' ? Infinity : parseFloat(value);
 
 const getActiveBreakpoint = (width: number): string | null => {
 	for (const [name, { min, max }] of Object.entries(semanticBreakpoints)) {
@@ -157,10 +157,6 @@ const fromGridCss = css`
 	${from.lg} {
 		grid-template-columns: repeat(3, 1fr);
 	}
-
-	${from.xl} {
-		grid-template-columns: repeat(6, 1fr);
-	}
 `;
 
 const fromCardCss = css`
@@ -175,9 +171,6 @@ const fromCardBreakpoints: Array<keyof typeof semanticBreakpoints> = [
 	'sm',
 	'md',
 	'lg',
-	'xl',
-	'max',
-	'maxplus',
 ];
 
 /**
@@ -186,9 +179,7 @@ const fromCardBreakpoints: Array<keyof typeof semanticBreakpoints> = [
  */
 export const FromDemo = () => (
 	<div css={demoWrapperCss}>
-		<span css={demoLabelCss}>
-			from.sm / from.md / from.lg / from.xl / from.max / from.maxplus
-		</span>
+		<span css={demoLabelCss}>from.sm / from.md / from.lg</span>
 		<div css={fromGridCss}>
 			{fromCardBreakpoints.map((bp) => {
 				const cardActiveCss = css`
@@ -238,7 +229,7 @@ const untilBoxBaseCss = css`
  */
 export const UntilDemo = () => (
 	<div css={demoWrapperCss}>
-		<span css={demoLabelCss}>until.md / until.lg / until.xl</span>
+		<span css={demoLabelCss}>until.md / until.lg</span>
 		<div
 			css={css`
 				display: flex;
@@ -286,26 +277,6 @@ export const UntilDemo = () => (
 					above
 				</p>
 			</div>
-			<div
-				css={css`
-					${untilBoxBaseCss}
-					${until.xl} {
-						background: ${semanticColors.fill['accent-strong']};
-						border-color: ${semanticColors.fill['accent-strong']};
-						color: ${semanticColors.text['stronger-inverse']};
-
-						p {
-							color: ${semanticColors.text['stronger-inverse']};
-						}
-					}
-				`}
-			>
-				<p css={demoHeadingCss}>Visible below xl</p>
-				<p css={demoDescCss}>
-					<code>until.xl</code> - hidden at {semanticBreakpoints.xl.min} and
-					above
-				</p>
-			</div>
 		</div>
 		<p
 			css={css`
@@ -327,8 +298,6 @@ const betweenPairs: Array<{
 }> = [
 	{ from: 'sm', to: 'md' },
 	{ from: 'md', to: 'lg' },
-	{ from: 'lg', to: 'xl' },
-	{ from: 'xl', to: 'max' },
 ];
 
 /**

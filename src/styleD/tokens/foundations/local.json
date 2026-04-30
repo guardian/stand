@@ -1531,53 +1531,23 @@
 				},
 				"max": {
 					"$type": "dimension",
-					"$value": "671px"
+					"$value": "599px"
 				}
 			},
 			"md": {
 				"min": {
 					"$type": "dimension",
-					"$value": "672px"
+					"$value": "600px"
 				},
 				"max": {
 					"$type": "dimension",
-					"$value": "1055px"
+					"$value": "1023px"
 				}
 			},
 			"lg": {
 				"min": {
 					"$type": "dimension",
-					"$value": "1056px"
-				},
-				"max": {
-					"$type": "dimension",
-					"$value": "1311px"
-				}
-			},
-			"xl": {
-				"min": {
-					"$type": "dimension",
-					"$value": "1312px"
-				},
-				"max": {
-					"$type": "dimension",
-					"$value": "1583px"
-				}
-			},
-			"max": {
-				"min": {
-					"$type": "dimension",
-					"$value": "1584px"
-				},
-				"max": {
-					"$type": "dimension",
-					"$value": "1783px"
-				}
-			},
-			"maxplus": {
-				"min": {
-					"$type": "dimension",
-					"$value": "1784px"
+					"$value": "1024px"
 				},
 				"max": {
 					"$type": "dimension",
