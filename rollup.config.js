@@ -39,6 +39,7 @@ const input = {
 	typography: 'src/typography.ts',
 	icon: 'src/icon.ts',
 	favicon: 'src/favicon.ts',
+	'date-picker': 'src/date-picker.ts',
 	'alert-banner': 'src/alert-banner.ts',
 	'radio-group': 'src/radio-group.ts',
 	checkbox: 'src/checkbox.ts',
