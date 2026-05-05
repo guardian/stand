@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { IntendedAudienceSignifier } from './IntendedAudienceSignifier';
 
 const meta = {
-	title: 'Stand/Tools Design System/Components/IntendedAudienceSignifier',
+	title: 'Stand/Editorial Components/Components/IntendedAudienceSignifier',
 	component: IntendedAudienceSignifier,
 	parameters: {},
 	args: {},
