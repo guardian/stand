@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import ButtonStories, {
 	ButtonTable,
 	WithIconAllVariants,
@@ -114,11 +114,11 @@ const Example = () => (
 
 ### All variants and sizes
 
-<Story of={ButtonTable} />
+<Canvas layout="padded" of={ButtonTable} />
 
 ### With icon - all variants and sizes
 
-<Story of={WithIconAllVariants} />
+<Canvas layout="padded" of={WithIconAllVariants} />
 
 ## Customisation
 
@@ -126,7 +126,7 @@ We recommend using the default theme. When needed, use the `theme` or `cssOverri
 
 ### Custom theme
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import type { ButtonTheme } from '@guardian/stand/button';
@@ -160,7 +160,7 @@ const Component = () => (
 
 ### CSS overrides
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
 import { Button } from '@guardian/stand/button';

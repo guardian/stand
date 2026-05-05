@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import FaviconStories, {
 	Letter,
 	IconSymbol,
@@ -84,19 +84,19 @@ One of `letter`, `icon` and `src` must be supplied. When using `src`, the `alt` 
 
 ### Letter
 
-<Story of={Letter} />
+<Canvas layout="padded" of={Letter} />
 
 ### Icon Symbol
 
-<Story of={IconSymbol} />
+<Canvas layout="padded" of={IconSymbol} />
 
 ### Icon SVG
 
-<Story of={IconSvg} />
+<Canvas layout="padded" of={IconSvg} />
 
 ### Image
 
-<Story of={Image} />
+<Canvas layout="padded" of={Image} />
 
 ## Customisation
 
@@ -106,7 +106,7 @@ We recommend using the Favicon component as provided, but it can be customised u
 
 The `theme` prop allows you to override specific design tokens for the Favicon component:
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import type { FaviconTheme } from '@guardian/stand/favicon';
@@ -129,7 +129,7 @@ const Component = () => <Favicon letter="C" theme={customTheme} />;
 
 The `cssOverrides` prop allows you to pass custom CSS to the Favicon component, if the theme prop is not sufficient:
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
 import { Favicon } from '@guardian/stand/favicon';

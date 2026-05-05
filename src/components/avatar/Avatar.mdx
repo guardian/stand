@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import AvatarStories, {
 	InitialsSm,
 	InitialsMd,
@@ -111,41 +111,41 @@ Available colors: `outlined`, `blue`, `green`, `red`, `cyan`, `teal`, `cool-purp
 
 #### `md` (default)
 
-<Story of={InitialsMd} />
+<Canvas layout="padded" of={InitialsMd} />
 
 #### `sm`
 
-<Story of={InitialsSm} />
+<Canvas layout="padded" of={InitialsSm} />
 
 ### Initials
 
 #### Two initials
 
-<Story of={InitialsMd} />
+<Canvas layout="padded" of={InitialsMd} />
 
 #### Single initial
 
-<Story of={SingleInitial} />
+<Canvas layout="padded" of={SingleInitial} />
 
 ### Images
 
 #### Image - `md`
 
-<Story of={ImageMd} />
+<Canvas layout="padded" of={ImageMd} />
 
 #### Image - `sm`
 
-<Story of={ImageSm} />
+<Canvas layout="padded" of={ImageSm} />
 
 #### Image with fallback
 
 When an image fails to load, the avatar falls back to displaying initials:
 
-<Story of={ImageWithFallback} />
+<Canvas layout="padded" of={ImageWithFallback} />
 
 ### Colors
 
-<Story of={DefaultColors} />
+<Canvas layout="padded" of={DefaultColors} />
 
 ## Customisation
 
@@ -155,7 +155,7 @@ We recommend using the Avatar component as provided, but it can be customised us
 
 The `theme` prop allows you to override specific design tokens for the Avatar component:
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import type { AvatarTheme } from '@guardian/stand/avatar';
@@ -185,7 +185,7 @@ const Component = () => (
 
 The `cssOverrides` prop allows you to pass custom CSS to the Avatar component, if the theme prop is not sufficient:
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
 import { Avatar } from '@guardian/stand/avatar';

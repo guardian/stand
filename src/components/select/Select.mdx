@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import SelectStories, {
 	Default,
 	Disabled,
@@ -78,19 +78,19 @@ import type { SelectProps, SelectTheme } from '@guardian/stand/select';
 
 ### Default
 
-<Story of={Default} />
+<Canvas layout="padded" of={Default} />
 
 ### Disabled
 
-<Story of={Disabled} />
+<Canvas layout="padded" of={Disabled} />
 
 ### With Error
 
-<Story of={WithError} />
+<Canvas layout="padded" of={WithError} />
 
 ### With Help Text
 
-<Story of={WithHelpText} />
+<Canvas layout="padded" of={WithHelpText} />
 
 ## Customisation
 
@@ -122,7 +122,7 @@ const Component = () => (
 );
 ```
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ### CSS overrides
 
@@ -147,7 +147,7 @@ const Component = () =>
 	</Select>;
 ```
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ## Custom Component Build
 

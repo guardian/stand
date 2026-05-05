@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import RadioGroupStories, {
 	Default,
 	IsInvalid,
@@ -106,19 +106,19 @@ When composing a set of options you do not need to provide any of these props ex
 
 ### Default
 
-<Story of={Default} />
+<Canvas layout="padded" of={Default} />
 
 ### Invalid
 
-<Story of={IsInvalid} />
+<Canvas layout="padded" of={IsInvalid} />
 
 ### Disabled
 
-<Story of={IsDisabled} />
+<Canvas layout="padded" of={IsDisabled} />
 
 ### Size Small
 
-<Story of={SizeSmall} />
+<Canvas layout="padded" of={SizeSmall} />
 
 ## Customisation
 
@@ -158,7 +158,7 @@ const Component = () => (
 );
 ```
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ### CSS overrides
 
@@ -186,7 +186,7 @@ const Component = () =>
 	</RadioGroup>;
 ```
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ## Custom Component Build
 

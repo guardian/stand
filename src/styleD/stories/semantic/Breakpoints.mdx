@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import BreakpointsStories, {
 	Breakpoints,
 	From,
@@ -52,7 +52,7 @@ const styles = css({
 
 **Live demo** - resize the viewport and watch the cards highlight as each breakpoint is reached:
 
-<Story of={From} />
+<Canvas layout="padded" of={From} />
 
 ---
 
@@ -75,7 +75,7 @@ const styles = css`
 **Live demo**
 Each box is highlighted while the viewport is below its threshold:
 
-<Story of={Until} />
+<Canvas layout="padded" of={Until} />
 
 ---
 
@@ -98,7 +98,7 @@ const styles = css`
 **Live demo**
 One box highlights at a time as you move through each range:
 
-<Story of={Between} />
+<Canvas layout="padded" of={Between} />
 
 ---
 
@@ -133,4 +133,4 @@ const minWidth = semanticBreakpoints.md.min; // '672px'
 
 ## Breakpoints
 
-<Story of={Breakpoints} />
+<Canvas layout="padded" of={Breakpoints} />

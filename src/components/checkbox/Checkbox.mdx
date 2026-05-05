@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import CheckboxStories, {
 	Default,
 	Error,
@@ -109,67 +109,67 @@ See [React Aria `Checkbox`](https://react-aria.adobe.com/Checkbox) props for the
 
 ### Default
 
-<Story of={Default} />
+<Canvas layout="padded" of={Default} />
 
 ### Error
 
-<Story of={Error} />
+<Canvas layout="padded" of={Error} />
 
 ### Selected
 
-<Story of={Selected} />
+<Canvas layout="padded" of={Selected} />
 
 ### Error Selected
 
-<Story of={ErrorSelected} />
+<Canvas layout="padded" of={ErrorSelected} />
 
 ### Indeterminate
 
-<Story of={Indeterminate} />
+<Canvas layout="padded" of={Indeterminate} />
 
 ### Error Indeterminate
 
-<Story of={ErrorIndeterminate} />
+<Canvas layout="padded" of={ErrorIndeterminate} />
 
 ### Disabled
 
-<Story of={Disabled} />
+<Canvas layout="padded" of={Disabled} />
 
 ### Disabled Selected
 
-<Story of={DisabledSelected} />
+<Canvas layout="padded" of={DisabledSelected} />
 
 ### Disabled Indeterminate
 
-<Story of={DisabledIndeterminate} />
+<Canvas layout="padded" of={DisabledIndeterminate} />
 
 ### Small
 
-<Story of={Small} />
+<Canvas layout="padded" of={Small} />
 
 ### Small Selected
 
-<Story of={SmallSelected} />
+<Canvas layout="padded" of={SmallSelected} />
 
 ### Small Error Selected
 
-<Story of={SmallErrorSelected} />
+<Canvas layout="padded" of={SmallErrorSelected} />
 
 ### Small Indeterminate
 
-<Story of={SmallIndeterminate} />
+<Canvas layout="padded" of={SmallIndeterminate} />
 
 ### Small Error Indeterminate
 
-<Story of={SmallErrorIndeterminate} />
+<Canvas layout="padded" of={SmallErrorIndeterminate} />
 
 ### Small Disabled Selected
 
-<Story of={SmallDisabledSelected} />
+<Canvas layout="padded" of={SmallDisabledSelected} />
 
 ### Small Disabled Indeterminate
 
-<Story of={SmallDisabledIndeterminate} />
+<Canvas layout="padded" of={SmallDisabledIndeterminate} />
 
 ## Customisation
 
@@ -179,7 +179,7 @@ We recommend using the Checkbox component as provided, but it can be customised 
 
 The `theme` prop allows you to override specific design tokens for the Checkbox component:
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import type { CheckboxTheme } from '@guardian/stand/checkbox';
@@ -208,7 +208,7 @@ const Component = () => (
 
 The `cssOverrides` prop allows you to pass custom CSS to the Checkbox component:
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
 import { baseColors } from '@guardian/stand';
