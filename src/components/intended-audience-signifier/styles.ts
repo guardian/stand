@@ -13,17 +13,17 @@ export const defaultIntendedAudienceSignifierTheme: IntendedAudienceSignifierThe
 export const intendedAudienceSignifierStyles = (
 	theme: IntendedAudienceSignifierTheme,
 ): SerializedStyles => css`
+	display: ${theme.display};
+	flex-direction: ${theme.flexDirection};
+	justify-content: ${theme.justifyContent};
+	align-items: ${theme.alignItems};
 	color: ${theme.color};
-	border-width: 1px;
-	border-style: solid;
-	border-color: ${theme.color};
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	border-radius: 2px;
-	padding: 2px 4px;
-	box-sizing: border-box;
-	width: fit-content;
-	gap: 8px;
+	border-width: ${theme.borderWidth};
+	border-style: ${theme.borderStyle};
+	border-color: ${theme.borderColor};
+	border-radius: ${theme.borderRadius};
+	padding: ${theme.paddingY} ${theme.paddingX};
+	box-sizing: ${theme.boxSizing};
+	width: ${theme.width};
+	gap: ${theme.gap};
 `;

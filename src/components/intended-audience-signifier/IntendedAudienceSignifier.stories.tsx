@@ -11,11 +11,6 @@ const meta = {
 
 type Story = StoryObj<typeof IntendedAudienceSignifier>;
 
-const iconStyles = css`
-	border-color: #0000ffff;
-	align-items: flex-end;
-`;
-
 export default meta;
 
 export const GlobalUKStory = {
@@ -74,7 +69,14 @@ export const UKAndGlobalStoryWithCustomTheme = {
 	args: {
 		source: 'UK',
 		intendedAudience: 'Domestic For Global',
-		theme: { color: 'red' },
+		theme: {
+			borderRadius: '20%',
+			borderStyle: 'dotted',
+			borderColor: 'blue',
+			borderWidth: '4px',
+			gap: '20px',
+			paddingY: '.2em',
+		},
 	},
 } satisfies Story;
 
@@ -83,7 +85,10 @@ export const AUSAndGlobalWithCSSOverrides = {
 	args: {
 		source: 'AUS',
 		intendedAudience: 'Domestic For Global',
-		cssOverrides: iconStyles,
+		cssOverrides: css`
+			border-color: #0000ffff;
+			background-color: pink;
+		`,
 	},
 } satisfies Story;
 

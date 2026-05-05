@@ -33,18 +33,18 @@ export const componentCss = /* css */ `
 
 .stand-intended-audience-signifier {
 	color: var(--component-intended-audience-signifier-color);
-	border-width: 1px;
-	border-style: solid;
-	border-color: var(--component-intended-audience-signifier-color);
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	border-radius: 2px;
-	padding: 2px 4px;
-	box-sizing: border-box;
-	width: fit-content;
-	gap: 8px;
+	border-width: var(--component-intended-audience-signifier-border-width);
+	border-style: var(--component-intended-audience-signifier-border-style);
+	border-color: var(--component-intended-audience-signifier-border-color);
+	display: var(--component-intended-audience-signifier-display);
+	flex-direction: var(--component-intended-audience-signifier-flex-direction);
+	justify-content: var(--component-intended-audience-signifier-justify-content);
+	align-items: var(--component-intended-audience-signifier-align-items);
+	border-radius: var(--component-intended-audience-signifier-border-width);
+	padding: var(--component-intended-audience-signifier-padding-y) var(--component-intended-audience-signifier-padding-x);
+	box-sizing: var(--component-intended-audience-signifier-box-sizing);
+	width: var(--component-intended-audience-signifier-width);
+	gap: var(--component-intended-audience-signifier-gap: 8px);
 }
 
 .stand-intended-audience-signifier-flag {
@@ -92,18 +92,18 @@ const sheet = new CSSStyleSheet();
 sheet.replaceSync(\`
 	.js-stand-intended-audience-signifier {
 		color: \${componentIntendedAudienceSignifier.color};
-		border-width: 1px;
-		border-style: solid;
-		border-color: \${componentIntendedAudienceSignifier.color};
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		border-radius: 2px;
-		padding: 2px 4px;
-		box-sizing: border-box;
-		width: fit-content;
-		gap: 8px;
+		border-width: \${componentIntendedAudienceSignifier.borderWidth};
+		border-style: \${componentIntendedAudienceSignifier.borderStyle};
+		border-color: \${componentIntendedAudienceSignifier.borderColor};
+		display: \${componentIntendedAudienceSignifier.display};
+		flex-direction: \${componentIntendedAudienceSignifier.flexDirection};
+		justify-content: \${componentIntendedAudienceSignifier.justifyContent};
+		align-items: \${componentIntendedAudienceSignifier.alignItems};
+		border-radius: \${componentIntendedAudienceSignifier.borderRadius};
+		padding: \${componentIntendedAudienceSignifier.paddingY} \${componentIntendedAudienceSignifier.paddingX};
+		box-sizing: \${componentIntendedAudienceSignifier.boxSizing};
+		width: \${componentIntendedAudienceSignifier.width};
+		gap: \${componentIntendedAudienceSignifier.gap};
 	}
 
 	.js-stand-intended-audience-signifier-chevron {

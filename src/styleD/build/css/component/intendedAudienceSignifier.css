@@ -3,5 +3,18 @@
  */
 
 :root {
+	--component-intended-audience-signifier-display: flex;
+	--component-intended-audience-signifier-flex-direction: row;
+	--component-intended-audience-signifier-justify-content: center;
+	--component-intended-audience-signifier-align-items: center;
 	--component-intended-audience-signifier-color: #000000;
+	--component-intended-audience-signifier-border-color: #000000;
+	--component-intended-audience-signifier-border-width: 1px;
+	--component-intended-audience-signifier-border-style: solid;
+	--component-intended-audience-signifier-border-radius: 0.125rem;
+	--component-intended-audience-signifier-padding-y: 2px;
+	--component-intended-audience-signifier-padding-x: 4px;
+	--component-intended-audience-signifier-box-sizing: border-box;
+	--component-intended-audience-signifier-width: fit-content;
+	--component-intended-audience-signifier-gap: 8px;
 }
