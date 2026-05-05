@@ -1,0 +1,13 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-grid-shared-display: flex;
+	--component-grid-shared-columns: 12;
+	--component-grid-shared-gap: 8px;
+	--component-grid-shared-direction: row;
+	--component-grid-shared-wrap: wrap;
+	--component-grid-shared-justify-content: flex-start;
+	--component-grid-shared-align-items: stretch;
+}
