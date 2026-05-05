@@ -18,6 +18,9 @@ export const intendedAudienceSignifierStyles = (
 	justify-content: ${theme.justifyContent};
 	align-items: ${theme.alignItems};
 	color: ${theme.color};
+	font-weight: ${theme.typography.fontWeight};
+	font-size: ${theme.typography.fontSize};
+	line-height: ${theme.typography.lineHeight};
 	border-width: ${theme.borderWidth};
 	border-style: ${theme.borderStyle};
 	border-color: ${theme.borderColor};
@@ -26,4 +29,8 @@ export const intendedAudienceSignifierStyles = (
 	box-sizing: ${theme.boxSizing};
 	width: ${theme.width};
 	gap: ${theme.gap};
+	svg {
+		height: ${theme.svg.height};
+		width: ${theme.svg.width};
+	}
 `;

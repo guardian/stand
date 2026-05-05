@@ -17,10 +17,6 @@
 				"$type": "string",
 				"$value": "center"
 			},
-			"color": {
-				"$type": "color",
-				"$value": "{semantic.colors.text.strong}"
-			},
 			"borderColor": {
 				"$type": "color",
 				"$value": "{base.colors.neutral.0}"
@@ -56,6 +52,34 @@
 			"gap": {
 				"$type": "dimension",
 				"$value": "8px"
+			},
+			"svg": {
+				"height": {
+					"$type": "dimension",
+					"$value": "unset"
+				},
+				"width": {
+					"$type": "dimension",
+					"$value": "unset"
+				}
+			},
+			"color": {
+				"$type": "color",
+				"$value": "{semantic.colors.text.weak}"
+			},
+			"typography": {
+				"fontWeight": {
+					"$type": "number",
+					"$value": 400
+				},
+				"fontSize": {
+					"$type": "dimension",
+					"$value": "{base.typography.size.12-rem}"
+				},
+				"lineHeight": {
+					"$type": "number",
+					"$value": 1
+				}
 			}
 		}
 	}

@@ -116,3 +116,37 @@ export const USAndUKStory = {
 	name: 'USAndUKStory',
 	args: { source: 'US', intendedAudience: 'UK' },
 } satisfies Story;
+
+const largeIconTheme = {
+	svg: {
+		width: '40px',
+		height: '28px',
+	},
+	paddingY: '4px',
+	typography: {
+		fontSize: '28px',
+	},
+};
+
+export const DontKnowStoryAUSLargeIconTheme = {
+	name: 'DontKnowStoryAUSLargeIconTheme',
+	args: {
+		source: 'AUS',
+		intendedAudience: "Don't know",
+		theme: largeIconTheme,
+	},
+} satisfies Story;
+
+export const UKAndUSStoryLargeIconTheme = {
+	name: 'UKAndUSStoryLargeIconTheme',
+	args: { source: 'UK', intendedAudience: 'US', theme: largeIconTheme },
+} satisfies Story;
+
+export const GlobalUSStoryLargeIconTheme = {
+	name: 'GlobalUSStoryLargeIconTheme',
+	args: {
+		source: 'US',
+		intendedAudience: 'Domestic For Global',
+		theme: largeIconTheme,
+	},
+} satisfies Story;

@@ -33,6 +33,9 @@ export const componentCss = /* css */ `
 
 .stand-intended-audience-signifier {
 	color: var(--component-intended-audience-signifier-color);
+	font-weight: var(--component-intended-audience-signifier-typography-font-weight);
+	font-size: var(--component-intended-audience-signifier-typography-font-size);
+	line-height: var(--component-intended-audience-signifier-typography-line-height);
 	border-width: var(--component-intended-audience-signifier-border-width);
 	border-style: var(--component-intended-audience-signifier-border-style);
 	border-color: var(--component-intended-audience-signifier-border-color);
@@ -45,6 +48,11 @@ export const componentCss = /* css */ `
 	box-sizing: var(--component-intended-audience-signifier-box-sizing);
 	width: var(--component-intended-audience-signifier-width);
 	gap: var(--component-intended-audience-signifier-gap: 8px);
+}
+
+.stand-intended-audience-signifier svg {
+	width: var(--component-intended-audience-signifier-svg-width):
+	height: var(--component-intended-audience-signifier-svg-height);
 }
 
 .stand-intended-audience-signifier-flag {
@@ -92,6 +100,9 @@ const sheet = new CSSStyleSheet();
 sheet.replaceSync(\`
 	.js-stand-intended-audience-signifier {
 		color: \${componentIntendedAudienceSignifier.color};
+		font-weight: \${componentIntendedAudienceSignifier.typography.fontWeight};
+		font-size: \${componentIntendedAudienceSignifier.typography.fontSize};
+		line-height: \${componentIntendedAudienceSignifier.typography.lineHeight};
 		border-width: \${componentIntendedAudienceSignifier.borderWidth};
 		border-style: \${componentIntendedAudienceSignifier.borderStyle};
 		border-color: \${componentIntendedAudienceSignifier.borderColor};
@@ -110,6 +121,11 @@ sheet.replaceSync(\`
 		width: 13px;
 		height: 13px;
 		fill: #545454;
+	}
+
+	.stand-intended-audience-signifier svg {
+		width: \${componentIntendedAudienceSignifier.svg.width}:
+		height: \${componentIntendedAudienceSignifier.svg.height};
 	}
 \`);
 

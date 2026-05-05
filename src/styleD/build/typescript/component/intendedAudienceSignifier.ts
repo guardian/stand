@@ -7,7 +7,6 @@ export const componentIntendedAudienceSignifier = {
 	flexDirection: 'row',
 	justifyContent: 'center',
 	alignItems: 'center',
-	color: '#000000',
 	borderColor: '#000000',
 	borderWidth: '1px',
 	borderStyle: 'solid',
@@ -17,6 +16,16 @@ export const componentIntendedAudienceSignifier = {
 	boxSizing: 'border-box',
 	width: 'fit-content',
 	gap: '8px',
+	svg: {
+		height: 'unset',
+		width: 'unset',
+	},
+	color: '#545454',
+	typography: {
+		fontWeight: 400,
+		fontSize: '0.75rem',
+		lineHeight: 1,
+	},
 };
 export type ComponentIntendedAudienceSignifier =
 	typeof componentIntendedAudienceSignifier;

@@ -1,8 +1,6 @@
-import type { ReactElement } from 'react';
 import { mergeDeep } from '../../util/mergeDeep';
 import {
 	auFlag,
-	DontKnowIcon,
 	DoubleChevronRightSvg,
 	globeIcon,
 	ukFlag,
@@ -12,13 +10,41 @@ import {
 	defaultIntendedAudienceSignifierTheme,
 	intendedAudienceSignifierStyles,
 } from './styles';
-import type { IntendedAudienceSignifierProps } from './types';
+import type {
+	IntendedAudience,
+	IntendedAudienceSignifierProps,
+	Source,
+} from './types';
 
-const sourceIcons: Record<string, ReactElement> = {
+type KnownAudience = Exclude<IntendedAudience, "Don't know">;
+
+const sourceIcons = {
 	UK: ukFlag,
 	US: usFlag,
 	AUS: auFlag,
 	Global: globeIcon,
+};
+
+const getSourceIconElement = (sourceTag: Source, audience: KnownAudience) => {
+	if (audience === 'Global') {
+		return globeIcon;
+	}
+	return sourceIcons[sourceTag];
+};
+
+const getIntendedAudienceIconElement = (
+	sourceTag: Source,
+	audience: KnownAudience,
+) => {
+	if (audience === 'Domestic for Domestic') {
+		return getSourceIconElement(sourceTag, audience);
+	}
+
+	if (audience === 'Global' || audience === 'Domestic For Global') {
+		return globeIcon;
+	}
+
+	return sourceIcons[audience];
 };
 
 export function IntendedAudienceSignifier({
@@ -31,35 +57,6 @@ export function IntendedAudienceSignifier({
 }: IntendedAudienceSignifierProps) {
 	const mergedTheme = mergeDeep(defaultIntendedAudienceSignifierTheme, theme);
 
-	const getSourceIconElement = (sourceTag: string, audience: string) => {
-		if (audience === 'Global') {
-			return globeIcon;
-		}
-		if (audience === "Don't know") {
-			return DontKnowIcon;
-		}
-		return sourceIcons[sourceTag] ?? DontKnowIcon;
-	};
-
-	const getIntendedAudienceIconElement = (
-		sourceTag: string,
-		audience: string,
-	) => {
-		if (audience === 'Domestic for Domestic') {
-			return getSourceIconElement(sourceTag, audience);
-		}
-
-		if (audience === 'Global' || audience === 'Domestic For Global') {
-			return globeIcon;
-		}
-
-		if (audience === "Don't know") {
-			return DontKnowIcon;
-		}
-
-		return sourceIcons[audience] ?? DontKnowIcon;
-	};
-
 	if (intendedAudience === "Don't know") {
 		return (
 			<div
@@ -67,7 +64,7 @@ export function IntendedAudienceSignifier({
 				className={className}
 				css={[intendedAudienceSignifierStyles(mergedTheme), cssOverrides]}
 			>
-				<div>{getSourceIconElement(source, intendedAudience)}</div>
+				<span>Don&lsquo;t know</span>
 			</div>
 		);
 	}
