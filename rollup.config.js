@@ -41,6 +41,7 @@ const input = {
 	favicon: 'src/favicon.ts',
 	'date-picker': 'src/date-picker.ts',
 	link: 'src/link.ts',
+	grid: 'src/grid.ts',
 	'alert-banner': 'src/alert-banner.ts',
 	'radio-group': 'src/radio-group.ts',
 	checkbox: 'src/checkbox.ts',
