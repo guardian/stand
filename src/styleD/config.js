@@ -118,6 +118,10 @@ const fileList = [
 		group: 'component',
 		component: 'alertBanner',
 	},
+	{
+		group: 'component',
+		component: 'datePicker',
+	},
 	/** editorial components */
 	{
 		group: 'component',
