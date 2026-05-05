@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.32
+
+### Patch Changes
+
+- 0f1160b: Add DatePicker component
+
 ## 0.0.31
 
 ### Patch Changes
