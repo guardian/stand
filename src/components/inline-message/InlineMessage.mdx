@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import InlineMessageStories, {
 	Error,
 	Success,
@@ -101,23 +101,23 @@ import type {
 
 ### Error
 
-<Story of={Error} />
+<Canvas layout="padded" of={Error} />
 
 ### Success
 
-<Story of={Success} />
+<Canvas layout="padded" of={Success} />
 
 ### Information
 
-<Story of={Information} />
+<Canvas layout="padded" of={Information} />
 
 ### Custom Icon
 
-<Story of={CustomIcon} />
+<Canvas layout="padded" of={CustomIcon} />
 
 ### Hide Icon
 
-<Story of={HideIcon} />
+<Canvas layout="padded" of={HideIcon} />
 
 ## Customisation
 
@@ -127,7 +127,7 @@ We recommend using the InlineMessage component as provided, but it can be custom
 
 The `theme` prop allows you to override specific design tokens for the InlineMessage component. The available tokens mirror the `InlineMessageTheme` type:
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import { baseColors } from '@guardian/stand';
@@ -151,7 +151,7 @@ const Component = () => (
 
 The `cssOverrides` prop allows you to pass custom CSS to the InlineMessage component:
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
 import { css } from '@emotion/react';

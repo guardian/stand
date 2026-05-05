@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import MenuStories, {
 	SizeMdDefault,
 	SizeSm,
@@ -184,11 +184,11 @@ A horizontal rule for visually separating groups at the top level of a `Menu` (b
 
 ### Size md (default)
 
-<Story of={SizeMdDefault} />
+<Canvas layout="padded" of={SizeMdDefault} />
 
 ### Size sm
 
-<Story of={SizeSm} />
+<Canvas layout="padded" of={SizeSm} />
 
 ## Customisation
 
@@ -271,7 +271,7 @@ const Component = () => (
 );
 ```
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ### CSS overrides
 
@@ -323,7 +323,7 @@ const Component = () => (
 );
 ```
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ## Custom Component Build
 

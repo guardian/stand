@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import AlertBannerStories, {
 	Information,
 	Error,
@@ -94,23 +94,23 @@ import type {
 
 ### Information
 
-<Story of={Information} />
+<Canvas layout="padded" of={Information} />
 
 ### Success
 
-<Story of={Success} />
+<Canvas layout="padded" of={Success} />
 
 ### Warning
 
-<Story of={Warning} />
+<Canvas layout="padded" of={Warning} />
 
 ### Error
 
-<Story of={Error} />
+<Canvas layout="padded" of={Error} />
 
 ### Information with Icon and Close Button
 
-<Story of={InformationWithIconAndCloseButton} />
+<Canvas layout="padded" of={InformationWithIconAndCloseButton} />
 
 ## Customisation
 
@@ -120,7 +120,7 @@ We recommend using the AlertBanner component as provided, but it can be customis
 
 The `theme` prop allows you to override specific design tokens for the AlertBanner component:
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import { baseColors } from '@guardian/stand';
@@ -149,7 +149,7 @@ const Component = () => (
 
 The `cssOverrides` prop allows you to pass custom CSS to the AlertBanner component:
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
 import { AlertBanner } from '@guardian/stand/alert-banner';
