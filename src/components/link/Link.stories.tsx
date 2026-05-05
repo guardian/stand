@@ -28,18 +28,18 @@ export const Disabled = {
 	},
 } satisfies Story;
 
-export const BodyItalicBoldMd = {
+export const BodyItalicBold = {
 	args: {
 		children: 'Link',
 		href: 'https://www.theguardian.com',
-		typography: 'body-italic-bold-md',
+		typography: 'body-italic-bold-sm',
 	},
 } satisfies Story;
 
-export const BodyBoldLg = {
+export const BodyBold = {
 	args: {
 		children: 'Link',
 		href: 'https://www.theguardian.com',
-		typography: 'body-bold-lg',
+		typography: 'body-bold-sm',
 	},
 } satisfies Story;
