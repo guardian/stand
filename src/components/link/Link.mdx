@@ -1,5 +1,10 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
-import LinkStories, { Default, Disabled, TitleMd } from './Link.stories';
+import LinkStories, {
+	BodyBoldLg,
+	BodyItalicBoldMd,
+	Default,
+	Disabled,
+} from './Link.stories';
 import {
 	SandboxReact,
 	SandboxCss,
@@ -76,9 +81,13 @@ import type { LinkProps, LinkTheme } from '@guardian/stand/link';
 
 <Story of={Disabled} />
 
-### TitleMd
+### Body Italic Bold Md
 
-<Story of={TitleMd} />
+<Story of={BodyItalicBoldMd} />
+
+### Body Bold lg
+
+<Story of={BodyBoldLg} />
 
 ## Customisation
 
