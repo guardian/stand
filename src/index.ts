@@ -14,6 +14,8 @@ export { componentTagTable } from './styleD/build/typescript/component/tagTable'
 export type { ComponentTagTable } from './styleD/build/typescript/component/tagTable';
 export { componentUserMenu } from './styleD/build/typescript/component/userMenu';
 export type { ComponentUserMenu } from './styleD/build/typescript/component/userMenu';
+export { componentIntendedAudienceSignifier } from './styleD/build/typescript/component/intendedAudienceSignifier';
+export type { ComponentIntendedAudienceSignifier } from './styleD/build/typescript/component/intendedAudienceSignifier';
 
 /**
  * design system components tokens exports

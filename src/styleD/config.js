@@ -76,6 +76,10 @@ const fileList = [
 	},
 	{
 		group: 'component',
+		component: 'intendedAudienceSignifier',
+	},
+	{
+		group: 'component',
 		component: 'favicon',
 	},
 	{
