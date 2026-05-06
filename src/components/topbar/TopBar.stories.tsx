@@ -140,10 +140,32 @@ export const CustomTheme = {
 		<TopBar
 			theme={{
 				'background-color': baseColors.cyan[200],
+				'border-top': `${semanticSizing.border.default} solid ${semanticColors.border.strong}`,
+				'border-right': `${semanticSizing.border.default} solid ${semanticColors.border.strong}`,
+				'border-bottom': `${semanticSizing.border.default} solid ${semanticColors.border.weak}`,
+				'border-left': `${semanticSizing.border.default} solid ${semanticColors.border.strong}`,
+
+				collapsedNavMenu: {
+					button: {
+						color: semanticColors.text['stronger-inverse'],
+						active: { 'background-color': baseColors.cyan[100] },
+						hovered: { 'background-color': baseColors.cyan[100] },
+					},
+					popover: {
+						'background-color': baseColors.cyan[200],
+					},
+				},
 				ToolName: {
 					color: semanticColors.text['stronger-inverse'],
 				},
 				Navigation: {
+					shared: {
+						_menuOpen: {
+							selected: {
+								'background-color': baseColors.cyan[100],
+							},
+						},
+					},
 					selected: {
 						color: semanticColors.text['stronger-inverse'],
 						'border-bottom': `${semanticSizing.border['extra-wide']} solid ${semanticColors.border['selected-inverse']}`,
