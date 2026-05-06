@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.34
+
+### Patch Changes
+
+- b73e53b: add intendedAudienceSignifier
+
 ## 0.0.33
 
 ### Patch Changes
