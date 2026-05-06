@@ -1,8 +1,8 @@
 # @guardian/stand
 
-## 0.1.0
+## 0.0.33
 
-### Minor Changes
+### Patch Changes
 
 - 2fd8804: Add Link component which extends the React Aria Link with additional typography variant prop and styling.
 
