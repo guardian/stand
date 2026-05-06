@@ -1,4 +1,6 @@
+import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { Link } from './Link';
 
 const meta = {
@@ -41,5 +43,31 @@ export const BodyBold = {
 		children: 'Link',
 		href: 'https://www.theguardian.com',
 		typography: 'body-bold-sm',
+	},
+} satisfies Story;
+
+export const CssOverrides = {
+	args: {
+		children: 'Link',
+		href: 'https://www.theguardian.com',
+		cssOverrides: css`
+			text-decoration: none;
+			color: ${baseColors.orange[400]};
+		`,
+	},
+} satisfies Story;
+
+export const CustomTheme = {
+	args: {
+		children: 'Link',
+		href: 'https://www.theguardian.com',
+		typography: 'body-bold-sm',
+		theme: {
+			shared: {
+				hover: {
+					color: 'hotpink',
+				},
+			},
+		},
 	},
 } satisfies Story;
