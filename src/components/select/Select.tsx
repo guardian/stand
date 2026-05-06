@@ -64,9 +64,9 @@ export function Select({
 	return (
 		<FormInputContainer
 			as={ReactAriaSelect}
-			size="md"
 			isInvalid={isInvalid}
 			{...props}
+			size="md" // Select doesn't support size prop, so we set it to a default value to avoid passing it down
 		>
 			<Button css={buttonStyles(mergedTheme, isInvalid)}>
 				<SelectValue />

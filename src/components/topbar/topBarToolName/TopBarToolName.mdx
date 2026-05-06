@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import ToolNameStories, {
 	WithName,
 	WithSubsection,
@@ -87,15 +87,15 @@ import type {
 
 ### With name only
 
-<Story of={WithName} />
+<Canvas layout="padded" of={WithName} />
 
 ### With content type
 
-<Story of={WithSubsection} />
+<Canvas layout="padded" of={WithSubsection} />
 
 ### With link
 
-<Story of={WithLink} />
+<Canvas layout="padded" of={WithLink} />
 
 ## Customisation
 
@@ -103,7 +103,7 @@ We recommend using the default theme. When needed, use the `theme` or `cssOverri
 
 ### Custom theme
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import type { TopBarToolNameTheme } from '@guardian/stand/TopBarToolName';
@@ -141,7 +141,7 @@ const Component = () => (
 
 ### CSS overrides
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
 import { TopBarToolName } from '@guardian/stand/TopBarToolName';

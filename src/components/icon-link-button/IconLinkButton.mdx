@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import IconLinkButtonStories, {
 	IconLinkButtonTable,
 	CustomTheme,
@@ -120,7 +120,7 @@ The Icon component nested inside IconLinkButton automatically adjusts:
 
 ## Stories
 
-<Story of={IconLinkButtonTable} />
+<Canvas layout="padded" of={IconLinkButtonTable} />
 
 ## Customisation
 
@@ -128,7 +128,7 @@ We recommend using the default theme. When needed, use the `theme` or `cssOverri
 
 ### Custom theme
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import type { IconLinkButtonTheme } from '@guardian/stand/icon-link-button';
@@ -168,7 +168,7 @@ const Component = () => (
 
 ### CSS overrides
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
 import { IconLinkButton } from '@guardian/stand/icon-link-button';

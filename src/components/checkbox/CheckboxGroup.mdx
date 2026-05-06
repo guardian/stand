@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import CheckboxGroupStories, {
 	Default,
 	GroupDisabledMd,
@@ -112,43 +112,43 @@ See [React Aria `CheckboxGroup`](https://react-aria.adobe.com/CheckboxGroup) pro
 
 ### Default
 
-<Story of={Default} />
+<Canvas layout="padded" of={Default} />
 
 ### Group Disabled
 
-<Story of={GroupDisabledMd} />
+<Canvas layout="padded" of={GroupDisabledMd} />
 
 ### Single Option Disabled
 
-<Story of={SingleOptionDisabledMd} />
+<Canvas layout="padded" of={SingleOptionDisabledMd} />
 
 ### Group Error
 
-<Story of={GroupErrorMd} />
+<Canvas layout="padded" of={GroupErrorMd} />
 
 ### Single Option Error
 
-<Story of={SingleOptionErrorMd} />
+<Canvas layout="padded" of={SingleOptionErrorMd} />
 
 ### Small Size
 
-<Story of={SizeSmall} />
+<Canvas layout="padded" of={SizeSmall} />
 
 ### Small — Group Disabled
 
-<Story of={GroupDisabledSmall} />
+<Canvas layout="padded" of={GroupDisabledSmall} />
 
 ### Small — Single Option Disabled
 
-<Story of={SingleOptionDisabledSmall} />
+<Canvas layout="padded" of={SingleOptionDisabledSmall} />
 
 ### Small — Group Error
 
-<Story of={GroupErrorSmall} />
+<Canvas layout="padded" of={GroupErrorSmall} />
 
 ### Small — Single Option Error
 
-<Story of={SingleOptionErrorSmall} />
+<Canvas layout="padded" of={SingleOptionErrorSmall} />
 
 ## Customisation
 
@@ -158,7 +158,7 @@ We recommend using the CheckboxGroup component as provided, but it can be custom
 
 The `theme` prop targets the group container's spacing tokens:
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import type { CheckboxTheme } from '@guardian/stand/checkbox';
@@ -184,7 +184,7 @@ To customise the label and description container, use `formInputContainerTheme`.
 
 The `cssOverrides` prop allows you to pass custom CSS to the CheckboxGroup component:
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
 import { Checkbox, CheckboxGroup } from '@guardian/stand/checkbox';

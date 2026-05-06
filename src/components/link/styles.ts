@@ -5,7 +5,7 @@ import { componentLink } from '../../styleD/build/typescript/component/link';
 import type { DeepPartial, Prettify } from '../../util/types';
 
 export type LinkTheme = Prettify<ComponentLink>;
-export type PartialLinkTheme = DeepPartial<LinkTheme;
+export type PartialLinkTheme = DeepPartial<LinkTheme>;
 export const defaultLinkTheme: LinkTheme = componentLink;
 
 export const linkStyles = (theme: LinkTheme): SerializedStyles => {

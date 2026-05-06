@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import TopBarNavigationStories, {
 	CssOverrides,
 	CustomTheme,
@@ -82,23 +82,23 @@ export const Component = () => (
 
 ### Default
 
-<Story of={Default} />
+<Canvas layout="padded" of={Default} />
 
 ### With Icon
 
-<Story of={WithIcon} />
+<Canvas layout="padded" of={WithIcon} />
 
 ### With Menu
 
-<Story of={WithMenu} />
+<Canvas layout="padded" of={WithMenu} />
 
 ### Selected
 
-<Story of={Selected} />
+<Canvas layout="padded" of={Selected} />
 
 ### Disabled
 
-<Story of={Disabled} />
+<Canvas layout="padded" of={Disabled} />
 
 ## Customisation
 
@@ -108,7 +108,7 @@ We recommend using the TopBarNavigation component as provided, but it can be cus
 
 The `theme` prop allows you to override specific design tokens for the TopBarNavigation component:
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import type { TopBarNavigationTheme } from '@guardian/stand/TopBar';
@@ -138,7 +138,7 @@ const Component = () => (
 
 The `cssOverrides` prop allows you to pass custom CSS to the TopBarNavigation component:
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
 import { TopBarNavigation } from '@guardian/stand/TopBar';

@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import TopBarStories, {
 	CssOverrides,
 	CustomTheme,
@@ -107,19 +107,19 @@ All other content must be composed within the left hand side or right hand side.
 
 ### Default
 
-<Story of={Default} />
+<Canvas layout="padded" of={Default} />
 
 ### With Navigation
 
-<Story of={WithTopNavigation} />
+<Canvas layout="padded" of={WithTopNavigation} />
 
 ### With Buttons
 
-<Story of={WithButtons} />
+<Canvas layout="padded" of={WithButtons} />
 
 ### With Buttons and Menu Navigation
 
-<Story of={WithButtonsMenuNavigation} />
+<Canvas layout="padded" of={WithButtonsMenuNavigation} />
 
 ## Responsive behaviour
 
@@ -217,7 +217,7 @@ const Component = () => (
 );
 ```
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ### CSS overrides
 
@@ -242,7 +242,7 @@ const Component = () =>
 ;
 ```
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ## Custom Component Build
 

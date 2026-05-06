@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import IconStories, {
 	IconTable,
 	CustomTheme,
@@ -185,7 +185,7 @@ Provide alternative text to describe the icon's meaning for screen readers:
 
 ## Stories
 
-<Story of={IconTable} />
+<Canvas layout="padded" of={IconTable} />
 
 ## Customisation
 
@@ -193,7 +193,7 @@ We recommend using the default theme. When needed, use the `theme` or `cssOverri
 
 ### Custom theme
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import type { IconTheme } from '@guardian/stand/icon';
@@ -219,7 +219,7 @@ const Component = () => (
 
 ### CSS overrides
 
-<Story of={CssOverrides} />
+<Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
 import { Icon } from '@guardian/stand/icon';

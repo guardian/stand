@@ -1,4 +1,4 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import TypographyStories, {
 	Body,
 	CustomTheme,
@@ -71,15 +71,15 @@ import type { Typography, TypographyTheme } from '@guardian/stand/typography';
 
 ### body-md
 
-<Story of={Body} />
+<Canvas layout="padded" of={Body} />
 
 ### heading-compact-2xl
 
-<Story of={HeadingCompact} />
+<Canvas layout="padded" of={HeadingCompact} />
 
 ### Nested Typography
 
-<Story of={Nested} />
+<Canvas layout="padded" of={Nested} />
 
 For a full list of preset variants, see the semantic Typography docs.
 
@@ -89,7 +89,7 @@ For a full list of preset variants, see the semantic Typography docs.
 
 The `theme` prop allows you to override the color of the text:
 
-<Story of={CustomTheme} />
+<Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import type { TypographyTheme } from '@guardian/stand/typography';
