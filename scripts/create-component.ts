@@ -1,4 +1,5 @@
-import fs from 'node:fs';
+import { execSync } from 'node:child_process';
+import fs, { readFileSync, writeFileSync } from 'node:fs';
 import readline from 'node:readline';
 
 type NameSet = {
@@ -11,6 +12,7 @@ const SRC_COMPONENTS_PATH = './src/components';
 const TOKENS_PATH = './src/styleD/tokens/component';
 const SRC_COMPONENT_TEMPLATE_PATH = './src/templates/component';
 const TOKEN_TEMPATE_PATH = './src/templates/design-tokens';
+const STYLED_CONFIG_PATH = './src/styleD/config.js';
 
 const componentFolder = (kebabCasedName: string) =>
 	`${SRC_COMPONENTS_PATH}/${kebabCasedName}`;
@@ -180,15 +182,41 @@ const run = async () => {
 	await writeFile(tokenFilePath, tokenContents);
 	console.log('wrote:', tokenFilePath);
 
+	// update style dictionary config.js file with new component token entry
+	const styleDConfigContent = readFileSync(STYLED_CONFIG_PATH, 'utf8');
 	console.log(
-		`component ${names.pascalCase} generated. To make it available in storybook:`,
+		`adding ${names.kebabCase} to style dictionary config.js file...`,
 	);
-	console.log(
-		' - add your component to the fileList in ./src/styleD/config.js',
-	);
-	console.log(' - run `pnpm run build-styled`');
 
-	// TODO - add the component name to the config.js file and run Style dictionary.
+	// Insert before the "editorial components" comment
+	const editorialMarker = '\t/** editorial components */';
+	if (!styleDConfigContent.includes(editorialMarker)) {
+		console.error(
+			'Could not find "/** editorial components */" marker in config.js',
+		);
+		process.exit(1);
+	}
+
+	const styleDNewEntry = [
+		`\t{`,
+		`\t\tgroup: 'component',`,
+		`\t\tcomponent: '${names.camelCase}',`,
+		`\t},`,
+		``,
+	].join('\n');
+
+	const newStyleDConfigContent = styleDConfigContent.replace(
+		editorialMarker,
+		styleDNewEntry + '\n' + editorialMarker,
+	);
+
+	writeFileSync(STYLED_CONFIG_PATH, newStyleDConfigContent, 'utf8');
+
+	console.log(
+		`updated style dictionary config.js file with ${names.kebabCase}! running pnpm build-styled...`,
+	);
+	execSync('pnpm run build-styled', { stdio: 'inherit' });
+
 	// TODO - add index file to ./src/{name}
 	// TODO - add a checklist to publish the component to npm, adding a changelog, updating rollup config, package json and src/index.ts.
 };
