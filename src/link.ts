@@ -14,6 +14,6 @@
  */
 export { Link } from './components/link/Link';
 export type { LinkProps } from './components/link/types';
-export type { LinkTheme } from './components/link/styles';
+export type { PartialLinkTheme as LinkTheme } from './components/link/styles';
 export { componentLink } from './styleD/build/typescript/component/link';
 export type { ComponentLink } from './styleD/build/typescript/component/link';

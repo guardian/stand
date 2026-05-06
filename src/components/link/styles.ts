@@ -2,10 +2,10 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentLink } from '../../styleD/build/typescript/component/link';
 import { componentLink } from '../../styleD/build/typescript/component/link';
-import type { Prettify } from '../../util/types';
+import type { DeepPartial, Prettify } from '../../util/types';
 
 export type LinkTheme = Prettify<ComponentLink>;
-
+export type PartialLinkTheme = DeepPartial<LinkTheme;
 export const defaultLinkTheme: LinkTheme = componentLink;
 
 export const linkStyles = (theme: LinkTheme): SerializedStyles => {

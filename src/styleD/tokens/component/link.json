@@ -7,10 +7,7 @@
 						"$type": "border",
 						"$value": {
 							"color": "{semantic.colors.border.focused}",
-							"width": {
-								"value": 1,
-								"unit": "px"
-							},
+							"width": "{semantic.sizing.border.default}",
 							"style": "solid"
 						}
 					}
