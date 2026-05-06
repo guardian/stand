@@ -40,6 +40,8 @@ const input = {
 	icon: 'src/icon.ts',
 	favicon: 'src/favicon.ts',
 	'date-picker': 'src/date-picker.ts',
+	link: 'src/link.ts',
+	grid: 'src/grid.ts',
 	'alert-banner': 'src/alert-banner.ts',
 	'radio-group': 'src/radio-group.ts',
 	checkbox: 'src/checkbox.ts',
@@ -54,6 +56,7 @@ const input = {
 	byline: 'src/byline.ts',
 	'tag-picker': 'src/tag-picker.ts',
 	'user-menu': 'src/user-menu.ts',
+	'intended-audience-signifier': 'src/intended-audience-signifier.ts',
 };
 
 /**

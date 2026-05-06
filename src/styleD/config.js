@@ -76,6 +76,10 @@ const fileList = [
 	},
 	{
 		group: 'component',
+		component: 'intendedAudienceSignifier',
+	},
+	{
+		group: 'component',
 		component: 'favicon',
 	},
 	{
@@ -120,7 +124,15 @@ const fileList = [
 	},
 	{
 		group: 'component',
+		component: 'link',
+	},
+	{
+		group: 'component',
 		component: 'datePicker',
+	},
+	{
+		group: 'component',
+		component: 'grid',
 	},
 	/** editorial components */
 	{

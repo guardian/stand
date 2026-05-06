@@ -1,0 +1,86 @@
+{
+	"component": {
+		"intendedAudienceSignifier": {
+			"display": {
+				"$type": "string",
+				"$value": "flex"
+			},
+			"flexDirection": {
+				"$type": "string",
+				"$value": "row"
+			},
+			"justifyContent": {
+				"$type": "string",
+				"$value": "center"
+			},
+			"alignItems": {
+				"$type": "string",
+				"$value": "center"
+			},
+			"borderColor": {
+				"$type": "color",
+				"$value": "{base.colors.neutral.0}"
+			},
+			"borderWidth": {
+				"$type": "dimension",
+				"$value": "1px"
+			},
+			"borderStyle": {
+				"$type": "strokeStyle",
+				"$value": "solid"
+			},
+			"borderRadius": {
+				"$type": "string",
+				"$value": "{base.radius.corner-2-rem}"
+			},
+			"paddingY": {
+				"$type": "dimension",
+				"$value": "2px"
+			},
+			"paddingX": {
+				"$type": "dimension",
+				"$value": "4px"
+			},
+			"boxSizing": {
+				"$type": "string",
+				"$value": "border-box"
+			},
+			"width": {
+				"$type": "string",
+				"$value": "fit-content"
+			},
+			"gap": {
+				"$type": "dimension",
+				"$value": "8px"
+			},
+			"svg": {
+				"height": {
+					"$type": "dimension",
+					"$value": "unset"
+				},
+				"width": {
+					"$type": "dimension",
+					"$value": "unset"
+				}
+			},
+			"color": {
+				"$type": "color",
+				"$value": "{semantic.colors.text.weak}"
+			},
+			"typography": {
+				"fontWeight": {
+					"$type": "number",
+					"$value": 400
+				},
+				"fontSize": {
+					"$type": "dimension",
+					"$value": "{base.typography.size.12-rem}"
+				},
+				"lineHeight": {
+					"$type": "number",
+					"$value": 1
+				}
+			}
+		}
+	}
+}

@@ -1,8 +1,11 @@
 {
 	"name": "@guardian/stand",
-	"version": "0.0.31",
+	"version": "0.0.34",
+	"repository": {
+		"url": "https://github.com/guardian/stand"
+	},
+	"sideEffects": false,
 	"type": "module",
-	"//exports": "Each component has its own entry point for optimal tree-shaking. Main entry point only includes design tokens and utilities. New components/foundations should follow the same pattern.",
 	"exports": {
 		".": {
 			"types": "./dist/types/index.d.ts",
@@ -114,6 +117,11 @@
 			"import": "./dist/date-picker.js",
 			"require": "./dist/date-picker.cjs"
 		},
+		"./grid": {
+			"types": "./dist/types/grid.d.ts",
+			"import": "./dist/grid.js",
+			"require": "./dist/grid.cjs"
+		},
 		"./byline": {
 			"types": "./dist/types/byline.d.ts",
 			"import": "./dist/byline.js",
@@ -133,6 +141,16 @@
 			"types": "./dist/types/utils.d.ts",
 			"import": "./dist/utils.js",
 			"require": "./dist/utils.cjs"
+		},
+		"./intendedAudienceSignifier": {
+			"types": "./dist/types/intended-audience-signifier.d.ts",
+			"import": "./dist/intended-audience-signifier.js",
+			"require": "./dist/intended-audience-signifier.cjs"
+		},
+		"./link": {
+			"types": "./dist/types/link.d.ts",
+			"import": "./dist/link.js",
+			"require": "./dist/link.cjs"
 		},
 		"./fonts/OpenSans.css": "./dist/fonts/OpenSans.css",
 		"./fonts/MaterialSymbolsOutlined.css": "./dist/fonts/MaterialSymbolsOutlined.css",
@@ -167,9 +185,14 @@
 		"./component/checkbox.css": "./dist/styleD/build/css/component/checkbox.css",
 		"./component/textArea.css": "./dist/styleD/build/css/component/textArea.css",
 		"./component/alertBanner.css": "./dist/styleD/build/css/component/alertBanner.css",
-		"./component/datePicker.css": "./dist/styleD/build/css/component/datePicker.css"
+		"./component/datePicker.css": "./dist/styleD/build/css/component/datePicker.css",
+		"./component/intendedAudienceSignifier.css": "./dist/styleD/build/css/component/intendedAudienceSignifier.css",
+		"./component/link.css": "./dist/styleD/build/css/component/link.css",
+		"./component/grid.css": "./dist/styleD/build/css/component/grid.css"
 	},
-	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/types/index.d.ts",
 	"typesVersions": {
 		"*": {
 			"avatar": [
@@ -246,36 +269,38 @@
 			],
 			"date-picker": [
 				"./dist/types/date-picker.d.ts"
+			],
+			"intendedAudienceSignifier": [
+				"./dist/types/intended-audience-signifier.d.ts"
+			],
+			"link": [
+				"./dist/types/link.d.ts"
+			],
+			"grid": [
+				"./dist/types/grid.d.ts"
 			]
 		}
 	},
 	"files": [
 		"dist"
 	],
-	"repository": {
-		"url": "https://github.com/guardian/stand"
-	},
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.js",
-	"types": "./dist/types/index.d.ts",
-	"sideEffects": false,
-	"packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
 	"scripts": {
 		"build": "rimraf dist && rollup -c",
-		"build-styled": "cd src/styleD && node build.js && pnpm run format:fix",
-		"storybook": "storybook dev -p 6007",
 		"build-storybook": "storybook build",
-		"lint": "eslint . --ext .ts,.tsx",
-		"lint:fix": "eslint --fix . --ext .ts,.tsx",
+		"build-styled": "cd src/styleD && node build.js && pnpm run format:fix",
+		"create-component": "npx ts-node ./scripts/create-component.ts",
 		"format:check": "prettier --check .",
 		"format:fix": "prettier --write .",
-		"tsc": "tsc",
+		"lint": "eslint . --ext .ts,.tsx",
+		"lint:fix": "eslint --fix . --ext .ts,.tsx",
+		"lint:staged": "lint-staged",
+		"prepare": "husky",
+		"storybook": "storybook dev -p 6007",
 		"test": "jest",
-		"test:setup-e2e": "playwright install --with-deps",
 		"test:e2e": "playwright test -c playwright-ct.config.ts",
-		"create-component": "npx ts-node ./scripts/create-component.ts",
 		"test:react-matrix": "./scripts/test-deps-matrix.sh",
-		"prepare": "husky"
+		"test:setup-e2e": "playwright install --with-deps",
+		"tsc": "tsc"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.30.0",
@@ -306,6 +331,7 @@
 		"husky": "^9.1.7",
 		"jest": "30.3.0",
 		"jest-environment-jsdom": "^30.3.0",
+		"lint-staged": "^17.0.0",
 		"prettier": "3.8.2",
 		"prosemirror-dropcursor": "1.8.2",
 		"prosemirror-history": "1.4.1",
@@ -323,6 +349,7 @@
 		"rollup-plugin-esbuild": "6.2.1",
 		"rollup-plugin-import-css": "^4.2.0",
 		"rollup-plugin-node-externals": "9.0.0",
+		"sort-package-json": "3.6.1",
 		"storybook": "^10.3.5",
 		"style-dictionary": "^5.4.0",
 		"ts-jest": "29.4.9",
@@ -387,9 +414,12 @@
 			"optional": true
 		}
 	},
+	"packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319",
 	"pnpm": {
 		"overrides": {
 			"minimatch": "^10.2.3"
 		}
-	}
+	},
+	"//exports": "Each component has its own entry point for optimal tree-shaking. Main entry point only includes design tokens and utilities. New components/foundations should follow the same pattern.",
+	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here."
 }

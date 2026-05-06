@@ -14,12 +14,12 @@ export { componentTagTable } from './styleD/build/typescript/component/tagTable'
 export type { ComponentTagTable } from './styleD/build/typescript/component/tagTable';
 export { componentUserMenu } from './styleD/build/typescript/component/userMenu';
 export type { ComponentUserMenu } from './styleD/build/typescript/component/userMenu';
+export { componentIntendedAudienceSignifier } from './styleD/build/typescript/component/intendedAudienceSignifier';
+export type { ComponentIntendedAudienceSignifier } from './styleD/build/typescript/component/intendedAudienceSignifier';
 
 /**
  * design system components tokens exports
  */
-export { componentAlertBanner } from './styleD/build/typescript/component/alertBanner';
-export type { ComponentAlertBanner } from './styleD/build/typescript/component/alertBanner';
 export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
 export { componentButton } from './styleD/build/typescript/component/button';
@@ -30,6 +30,8 @@ export { componentFavicon } from './styleD/build/typescript/component/favicon';
 export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';
 export { componentDatePicker } from './styleD/build/typescript/component/datePicker';
 export type { ComponentDatePicker } from './styleD/build/typescript/component/datePicker';
+export { componentGrid } from './styleD/build/typescript/component/grid';
+export type { ComponentGrid } from './styleD/build/typescript/component/grid';
 export { componentForm } from './styleD/build/typescript/component/form';
 export type { ComponentForm } from './styleD/build/typescript/component/form';
 export { componentIcon } from './styleD/build/typescript/component/icon';
@@ -38,6 +40,10 @@ export { componentInlineMessage } from './styleD/build/typescript/component/inli
 export type { ComponentInlineMessage } from './styleD/build/typescript/component/inlineMessage';
 export { componentMenu } from './styleD/build/typescript/component/menu';
 export type { ComponentMenu } from './styleD/build/typescript/component/menu';
+export { componentLink } from './styleD/build/typescript/component/link';
+export type { ComponentLink } from './styleD/build/typescript/component/link';
+export { componentAlertBanner } from './styleD/build/typescript/component/alertBanner';
+export type { ComponentAlertBanner } from './styleD/build/typescript/component/alertBanner';
 export { componentRadioGroup } from './styleD/build/typescript/component/radioGroup';
 export type { ComponentRadioGroup } from './styleD/build/typescript/component/radioGroup';
 export { componentSelect } from './styleD/build/typescript/component/select';
