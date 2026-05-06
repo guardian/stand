@@ -134,6 +134,11 @@
 			"import": "./dist/utils.js",
 			"require": "./dist/utils.cjs"
 		},
+		"./link": {
+			"types": "./dist/types/link.d.ts",
+			"import": "./dist/link.js",
+			"require": "./dist/link.cjs"
+		},
 		"./fonts/OpenSans.css": "./dist/fonts/OpenSans.css",
 		"./fonts/MaterialSymbolsOutlined.css": "./dist/fonts/MaterialSymbolsOutlined.css",
 		"./fonts/MaterialSymbolsRound.css": "./dist/fonts/MaterialSymbolsRound.css",
@@ -167,7 +172,8 @@
 		"./component/checkbox.css": "./dist/styleD/build/css/component/checkbox.css",
 		"./component/textArea.css": "./dist/styleD/build/css/component/textArea.css",
 		"./component/alertBanner.css": "./dist/styleD/build/css/component/alertBanner.css",
-		"./component/datePicker.css": "./dist/styleD/build/css/component/datePicker.css"
+		"./component/datePicker.css": "./dist/styleD/build/css/component/datePicker.css",
+		"./component/link.css": "./dist/styleD/build/css/component/link.css"
 	},
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here.",
 	"typesVersions": {
@@ -246,6 +252,9 @@
 			],
 			"date-picker": [
 				"./dist/types/date-picker.d.ts"
+			],
+			"link": [
+				"./dist/types/link.d.ts"
 			]
 		}
 	},
