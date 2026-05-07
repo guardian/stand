@@ -152,6 +152,11 @@
 			"import": "./dist/link.js",
 			"require": "./dist/link.cjs"
 		},
+		"./layout": {
+			"types": "./dist/types/layout.d.ts",
+			"import": "./dist/layout.js",
+			"require": "./dist/layout.cjs"
+		},
 		"./fonts/OpenSans.css": "./dist/fonts/OpenSans.css",
 		"./fonts/MaterialSymbolsOutlined.css": "./dist/fonts/MaterialSymbolsOutlined.css",
 		"./fonts/MaterialSymbolsRound.css": "./dist/fonts/MaterialSymbolsRound.css",
@@ -189,7 +194,8 @@
 		"./component/datePicker.css": "./dist/styleD/build/css/component/datePicker.css",
 		"./component/intendedAudienceSignifier.css": "./dist/styleD/build/css/component/intendedAudienceSignifier.css",
 		"./component/link.css": "./dist/styleD/build/css/component/link.css",
-		"./component/grid.css": "./dist/styleD/build/css/component/grid.css"
+		"./component/grid.css": "./dist/styleD/build/css/component/grid.css",
+		"./component/layout.css": "./dist/styleD/build/css/component/layout.css"
 	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
@@ -279,6 +285,9 @@
 			],
 			"grid": [
 				"./dist/types/grid.d.ts"
+			],
+			"layout": [
+				"./dist/types/layout.d.ts"
 			]
 		}
 	},

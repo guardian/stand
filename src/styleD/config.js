@@ -134,6 +134,10 @@ const fileList = [
 		group: 'component',
 		component: 'grid',
 	},
+	{
+		group: 'component',
+		component: 'layout',
+	},
 	/** editorial components */
 	{
 		group: 'component',

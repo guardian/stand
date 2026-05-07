@@ -1,0 +1,27 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-layout-layout-shared-display: grid;
+	--component-layout-layout-shared-min-height: 100svh;
+	--component-layout-layout-shared-width: 100%;
+	--component-layout-layout-sm-grid-template-areas: 'alertbanner' 'topbar'
+		'sidebar' 'grid';
+	--component-layout-layout-sm-grid-template-columns: 1fr;
+	--component-layout-layout-sm-grid-template-rows: min-content min-content
+		min-content 1fr;
+	--component-layout-layout-md-grid-template-areas: 'alertbanner alertbanner'
+		'topbar topbar' 'sidebar grid';
+	--component-layout-layout-md-grid-template-columns: min-content 1fr;
+	--component-layout-layout-md-grid-template-rows: min-content min-content 1fr;
+	--component-layout-layout-lg-grid-template-areas: 'alertbanner alertbanner'
+		'topbar topbar' 'sidebar grid';
+	--component-layout-layout-lg-grid-template-columns: min-content 1fr;
+	--component-layout-layout-lg-grid-template-rows: min-content min-content 1fr;
+	--component-layout-sidebar-sm-hidden-display: none;
+	--component-layout-sidebar-sm-above-grid-display: block;
+	--component-layout-sidebar-md-display: block;
+	--component-layout-sidebar-md-width: 200px;
+	--component-layout-sidebar-lg-width: 320px;
+}
