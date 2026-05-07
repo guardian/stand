@@ -40,6 +40,7 @@ const input = {
 	icon: 'src/icon.ts',
 	favicon: 'src/favicon.ts',
 	'date-picker': 'src/date-picker.ts',
+	layout: 'src/layout.ts',
 	link: 'src/link.ts',
 	grid: 'src/grid.ts',
 	'alert-banner': 'src/alert-banner.ts',
