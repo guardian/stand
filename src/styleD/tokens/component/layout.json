@@ -1,0 +1,58 @@
+{
+	"component": {
+		"layout": {
+			"layout": {
+				"shared": {
+					"display": {
+						"$type": "string",
+						"$value": "grid"
+					},
+					"minHeight": {
+						"$type": "dimension",
+						"$value": "100svh"
+					},
+					"width": {
+						"$type": "dimension",
+						"$value": "100%"
+					},
+					"gridTemplateAreas": {
+						"$type": "string",
+						"$value": "'topbar topbar'\n'sidebar grid'"
+					},
+					"gridTemplateColumns": {
+						"$type": "string",
+						"$value": "min-content 1fr"
+					},
+					"gridTemplateRows": {
+						"$type": "string",
+						"$value": "min-content 1fr"
+					}
+				}
+			},
+			"sidebar": {
+				"sm": {
+					"display": {
+						"$type": "string",
+						"$value": "none"
+					}
+				},
+				"md": {
+					"display": {
+						"$type": "string",
+						"$value": "block"
+					},
+					"width": {
+						"$type": "dimension",
+						"$value": "200px"
+					}
+				},
+				"lg": {
+					"width": {
+						"$type": "dimension",
+						"$value": "320px"
+					}
+				}
+			}
+		}
+	}
+}

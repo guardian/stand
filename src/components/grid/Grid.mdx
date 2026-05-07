@@ -1,0 +1,214 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import GridStories, {
+	AutoSize,
+	Basic,
+	CssOverrides,
+	CustomTheme,
+	GrowSize,
+	Offset,
+	Responsive,
+	ResponsiveOffset,
+	ResponsiveOffsetAndSize,
+} from './Grid.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={GridStories} />
+
+# Grid
+
+Grid is a flexbox layout primitive with a split API: use `Grid` as the outer layout container, and wrap each child in an `Item` to control its column span.
+
+## When to use
+
+- When you need a predictable multi-column layout with configurable gaps.
+- When you need simple responsive sizing with the repo's `sm`, `md`, and `lg` breakpoints.
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Grid, Item } from '@guardian/stand/grid';
+
+/* types, if required */
+import type { GridProps, GridTheme, ItemProps } from '@guardian/stand/grid';
+
+<Grid>
+	<Item size={{ sm: 12, md: 8, lg: 6 }}>Main content</Item>
+	<Item size={{ sm: 12, md: 4, lg: 3 }} offset={{ md: 1, lg: 2 }}>
+		Sidebar
+	</Item>
+	<Item size="auto">Auto width</Item>
+	<Item size="grow">Grows to fill</Item>
+</Grid>;
+```
+
+## Grid Props
+
+| Name           | Type                                     | Required | Default | Description                                                       |
+| -------------- | ---------------------------------------- | -------- | ------- | ----------------------------------------------------------------- |
+| `children`     | `React.ReactNode`                        | No       | N/A     | Content to render inside the container.                           |
+| `theme`        | `GridTheme`                              | No       | N/A     | Theme tokens controlling columns, gap, and container flex layout. |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Custom CSS styles.                                                |
+| `className`    | `string`                                 | No       | N/A     | Additional class name(s).                                         |
+
+Container layout values such as `direction`, `wrap`, `justifyContent`, and `alignItems` now come from the `theme` prop rather than direct component props.
+
+### Grid Theme
+
+| Name             | Type              | Default        | Description                                |
+| ---------------- | ----------------- | -------------- | ------------------------------------------ |
+| `columns`        | `number`          | `12`           | Total number of columns available to items |
+| `gap`            | `string`          | `'8px'`        | Gap between rows and columns               |
+| `direction`      | `flex-direction`  | `'row'`        | Container flex direction                   |
+| `wrap`           | `flex-wrap`       | `'wrap'`       | Container wrap behavior                    |
+| `justifyContent` | `justify-content` | `'flex-start'` | Main-axis distribution of items            |
+| `alignItems`     | `align-items`     | `'stretch'`    | Cross-axis alignment of items              |
+
+## Item Props
+
+| Name           | Type                                     | Required | Default | Description                                              |
+| -------------- | ---------------------------------------- | -------- | ------- | -------------------------------------------------------- |
+| `children`     | `React.ReactNode`                        | No       | N/A     | Content to render inside the grid item.                  |
+| `size`         | `number \| 'auto' \| 'grow' \| object`   | No       | N/A     | Item width as columns, auto width, grow, or breakpoints. |
+| `offset`       | `number \| 'auto' \| object`             | No       | N/A     | Item offset as columns, auto push, or breakpoints.       |
+| `theme`        | `GridTheme`                              | No       | N/A     | Custom theme overrides.                                  |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Custom CSS styles.                                       |
+| `className`    | `string`                                 | No       | N/A     | Additional class name(s).                                |
+
+## Stories
+
+### Basic
+
+<Canvas of={Basic} />
+
+### Responsive
+
+<Canvas of={Responsive} />
+
+### Auto Size
+
+<Canvas of={AutoSize} />
+
+### Grow Size
+
+<Canvas of={GrowSize} />
+
+### Offset
+
+<Canvas of={Offset} />
+
+### Responsive Offset
+
+<Canvas of={ResponsiveOffset} />
+
+### Responsive Offset And Size
+
+<Canvas of={ResponsiveOffsetAndSize} />
+
+## Customisation
+
+We recommend using the Grid component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the Grid component:
+
+<Canvas of={CustomTheme} />
+
+```tsx
+import type { GridTheme } from '@guardian/stand/grid';
+import { Grid, Item } from '@guardian/stand/grid';
+
+const customTheme: Partial<GridTheme> = {
+	gap: '16px',
+	columns: 12,
+	justifyContent: 'space-between',
+	alignItems: 'flex-start',
+};
+
+const Component = () => (
+	<Grid theme={customTheme}>
+		<Item size={6}>Column one</Item>
+		<Item size={6}>Column two</Item>
+	</Grid>
+);
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the Grid component:
+
+<Canvas of={CssOverrides} />
+
+```tsx
+import { Grid, Item } from '@guardian/stand/grid';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	padding-block: 24px;
+\`;
+
+const Component = () => (
+	<Grid cssOverrides={customStyles}>
+		<Item size={8}>Primary content</Item>
+		<Item size={4}>Sidebar</Item>
+	</Grid>
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom Grid component using the styles defined in the `GridTheme` type.
+
+Since we're using flexbox to implement the grid, you'll need to understand how the offset and sizing works.
+
+The calculations for the `size` and `offset` props are as follows:
+
+- For `size`:
+  - If a number is provided, the width is calculated as `(size / columns) * 100%`, where `columns` is defined in the theme (default is 12).
+  - If `auto` is provided, the item will shrink to fit its content.
+  - If `grow` is provided, the item will grow to fill available space after fixed-size items are laid out.
+- For `offset`:
+  - If a number is provided, the left margin is calculated as `(offset / columns) * 100%`, where `columns` is defined in the theme (default is 12).
+  - If `auto` is provided, the item will be pushed to the rightmost edge of the container.
+
+The examples below demonstrate how to implement the grid using the provided CSS, without React or Emotion.
+
+**`css`**
+
+You can import the Grid styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentGrid` variable and the `ComponentGrid` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
