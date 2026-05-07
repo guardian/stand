@@ -1,0 +1,117 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import LayoutStories, { Default } from './Layout.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={LayoutStories} />
+
+# Layout
+
+TODO: Add a description for the Layout component.
+
+## When to use
+
+- TODO: Describe when to use this component
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Layout } from '@guardian/stand/layout';
+
+/* types, if required */
+import type { LayoutProps, LayoutTheme } from '@guardian/stand/layout';
+
+<Layout>Hello</Layout>;
+```
+
+## Props
+
+| Name           | Type               | Required | Default | Description                             |
+| -------------- | ------------------ | -------- | ------- | --------------------------------------- |
+| `children`     | `React.ReactNode`  | No       | N/A     | Content to render inside the component. |
+| `theme`        | `LayoutTheme`      | No       | N/A     | Custom theme overrides.                 |
+| `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles.                      |
+| `className`    | `string`           | No       | N/A     | Additional class name(s).               |
+
+## Stories
+
+### Default
+
+<Story of={Default} />
+
+## Customisation
+
+We recommend using the Layout component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the Layout component:
+
+```tsx
+import type { LayoutTheme } from '@guardian/stand/layout';
+import { Layout } from '@guardian/stand/layout';
+
+const customTheme: Partial<LayoutTheme> = {
+	// override tokens here
+};
+
+const Component = () => <Layout theme={customTheme}>Hello</Layout>;
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the Layout component:
+
+```tsx
+import { Layout } from '@guardian/stand/layout';
+import { css } from '@emotion/react';
+
+const customStyles = css\`
+	// custom styles here
+\`;
+
+const Component = () => <Layout cssOverrides={customStyles}>Hello</Layout>;
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom Layout component using the styles defined in the `LayoutTheme` type.
+
+**`css`**
+
+You can import the Layout styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentLayout` variable and the `ComponentLayout` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
