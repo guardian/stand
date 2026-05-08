@@ -11,6 +11,7 @@ const SRC_COMPONENTS_PATH = './src/components';
 const TOKENS_PATH = './src/styleD/tokens/component';
 const SRC_COMPONENT_TEMPLATE_PATH = './src/templates/component';
 const TOKEN_TEMPATE_PATH = './src/templates/design-tokens';
+const COMPONENT_LIST_PATH = './src/styleD/components.json';
 
 const componentFolder = (kebabCasedName: string) =>
 	`${SRC_COMPONENTS_PATH}/${kebabCasedName}`;
@@ -129,34 +130,16 @@ const replaceName = (fileContents: string, names: NameSet): string => {
 	return fileContents;
 };
 
-const run = async () => {
-	const existingFolders = (await getDirContents(SRC_COMPONENTS_PATH)).filter(
-		(name) => !name.endsWith('.tsx'),
+const updateComponentList = async (names: NameSet, existingNames: string[]) => {
+	await writeFile(
+		COMPONENT_LIST_PATH,
+		JSON.stringify([...existingNames, names.camelCase]),
 	);
+};
 
-	console.log('existing components', existingFolders);
-
-	const input = await getInput('What is your new component called?');
-	const names = {
-		kebabCase: toKebabCase(input),
-		pascalCase: toPascalCase(input),
-		camelCase: toCamelCase(input),
-	};
-
-	if (existingFolders.includes(names.kebabCase)) {
-		return console.error(
-			`There is already a "${names.kebabCase}" component folder`,
-		);
-	}
-
-	console.log(
-		`ok! creating the scaffolding for ${names.kebabCase} (${names.pascalCase})...`,
-	);
-
-	await createFolder(componentFolder(names.kebabCase));
-
+const copyTemplateFiles = async (names: NameSet) => {
 	const fileMap = await getComponentTemplateFileNameMap(names);
-
+	await createFolder(componentFolder(names.kebabCase));
 	await Promise.all(
 		Object.entries(fileMap).map(
 			async ([templateFileName, destinationFileName]) => {
@@ -170,7 +153,9 @@ const run = async () => {
 			},
 		),
 	);
+};
 
+const writeTokenFile = async (names: NameSet) => {
 	const tokenDestinationFilename = `${names.camelCase}.json`;
 	const tokenTemplateContents = await readFile(
 		`${TOKEN_TEMPATE_PATH}/templateComponent.json`,
@@ -179,18 +164,43 @@ const run = async () => {
 	const tokenFilePath = `${TOKENS_PATH}/${tokenDestinationFilename}`;
 	await writeFile(tokenFilePath, tokenContents);
 	console.log('wrote:', tokenFilePath);
+};
 
-	console.log(
-		`component ${names.pascalCase} generated. To make it available in storybook:`,
-	);
-	console.log(
-		' - add your component to the fileList in ./src/styleD/config.js',
-	);
-	console.log(' - run `pnpm run build-styled`');
+const run = async () => {
+	const existingNames = (await readFile(COMPONENT_LIST_PATH).then(
+		JSON.parse,
+	)) as string[];
 
-	// TODO - add the component name to the config.js file and run Style dictionary.
+	console.log('existing components', existingNames.sort());
+
+	const input = await getInput('What is your new component called?');
+	const names = {
+		kebabCase: toKebabCase(input),
+		pascalCase: toPascalCase(input),
+		camelCase: toCamelCase(input),
+	};
+	if (
+		existingNames.includes(names.camelCase) ||
+		existingNames.includes(names.pascalCase)
+	) {
+		return console.error(
+			`There is already a "${names.pascalCase}" component folder`,
+		);
+	}
+	console.log(
+		`ok! creating the scaffolding for ${names.kebabCase} (${names.pascalCase})...`,
+	);
+
+	await updateComponentList(names, existingNames);
+	await copyTemplateFiles(names);
+	await writeTokenFile(names);
+
 	// TODO - add index file to ./src/{name}
 	// TODO - add a checklist to publish the component to npm, adding a changelog, updating rollup config, package json and src/index.ts.
+
+	console.log(
+		`run \`pnpm run build-styled\` to generate the styling for ${names.pascalCase}`,
+	);
 };
 
 void run();

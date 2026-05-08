@@ -2,12 +2,16 @@
 
 import { camelCase, pascalCase } from 'change-case';
 import { fileHeader, minifyDictionary } from 'style-dictionary/utils';
+import COMPONENT_LIST from './components.json' with { type: 'json' };
 
 /**
  * @name fileList
  *
  * List of token files to generate based on the component and group
  * which correspond to the 1st and 2nd level of the token JSON structure.
+ *
+ * The component names are held in the components.json, which is updated by
+ * the create-component script, but can also be manually changed.
  *
  * When adding new tokens to the design system, make sure to add the corresponding
  * entry here so that Style Dictionary generates the appropriate output files.
@@ -57,96 +61,11 @@ const fileList = [
 		group: 'semantic',
 		component: 'breakpoints',
 	},
-	/** design system components */
-	{
+	/** components */
+	...COMPONENT_LIST.map((component) => ({
+		component,
 		group: 'component',
-		component: 'avatar',
-	},
-	{
-		group: 'component',
-		component: 'button',
-	},
-	{
-		group: 'component',
-		component: 'typography',
-	},
-	{
-		group: 'component',
-		component: 'icon',
-	},
-	{
-		group: 'component',
-		component: 'intendedAudienceSignifier',
-	},
-	{
-		group: 'component',
-		component: 'favicon',
-	},
-	{
-		group: 'component',
-		component: 'menu',
-	},
-	{
-		group: 'component',
-		component: 'TopBar',
-	},
-	{
-		group: 'component',
-		component: 'form',
-	},
-	{
-		group: 'component',
-		component: 'inlineMessage',
-	},
-	{
-		group: 'component',
-		component: 'select',
-	},
-	{
-		group: 'component',
-		component: 'textInput',
-	},
-	{
-		group: 'component',
-		component: 'radioGroup',
-	},
-	{
-		group: 'component',
-		component: 'checkbox',
-	},
-	{
-		group: 'component',
-		component: 'textArea',
-	},
-	{
-		group: 'component',
-		component: 'alertBanner',
-	},
-	{
-		group: 'component',
-		component: 'link',
-	},
-	{
-		group: 'component',
-		component: 'datePicker',
-	},
-	/** editorial components */
-	{
-		group: 'component',
-		component: 'byline',
-	},
-	{
-		group: 'component',
-		component: 'autocomplete',
-	},
-	{
-		group: 'component',
-		component: 'tagTable',
-	},
-	{
-		group: 'component',
-		component: 'userMenu',
-	},
+	})),
 ];
 
 /**
