@@ -171,9 +171,12 @@ const run = async () => {
 		JSON.parse,
 	)) as string[];
 
-	console.log('existing components', existingNames.sort());
+	console.log('existing components:');
+	existingNames.sort().forEach((name) => console.log(` - ${name}`));
 
-	const input = await getInput('What is your new component called?');
+	const input = await getInput(
+		'What is your new component called? (please enter in sentence case or kebab-case )',
+	);
 	const names = {
 		kebabCase: toKebabCase(input),
 		pascalCase: toPascalCase(input),
