@@ -130,6 +130,14 @@ const fileList = [
 		group: 'component',
 		component: 'datePicker',
 	},
+	{
+		group: 'component',
+		component: 'grid',
+	},
+	{
+		group: 'component',
+		component: 'layout',
+	},
 	/** editorial components */
 	{
 		group: 'component',
