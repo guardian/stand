@@ -1,0 +1,108 @@
+{
+	"component": {
+		"layout": {
+			"layout": {
+				"shared": {
+					"display": {
+						"$type": "string",
+						"$value": "grid"
+					},
+					"minHeight": {
+						"$type": "dimension",
+						"$value": "100svh"
+					},
+					"width": {
+						"$type": "dimension",
+						"$value": "100%"
+					},
+					"max-width": {
+						"$type": "dimension",
+						"$value": "1584px"
+					},
+					"margin-left": {
+						"$type": "string",
+						"$value": "auto"
+					},
+					"margin-right": {
+						"$type": "string",
+						"$value": "auto"
+					}
+				},
+				"sm": {
+					"gridTemplateAreas": {
+						"$type": "string",
+						"$value": "'alertbanner'\n'topbar'\n'sidebar'\n'main'"
+					},
+					"gridTemplateColumns": {
+						"$type": "string",
+						"$value": "1fr"
+					},
+					"gridTemplateRows": {
+						"$type": "string",
+						"$value": "min-content min-content min-content 1fr"
+					}
+				},
+				"md": {
+					"gridTemplateAreas": {
+						"$type": "string",
+						"$value": "'alertbanner alertbanner'\n'topbar topbar'\n'sidebar main'"
+					},
+					"gridTemplateColumns": {
+						"$type": "string",
+						"$value": "min-content 1fr"
+					},
+					"gridTemplateRows": {
+						"$type": "string",
+						"$value": "min-content min-content 1fr"
+					}
+				},
+				"lg": {
+					"gridTemplateAreas": {
+						"$type": "string",
+						"$value": "'alertbanner alertbanner'\n'topbar topbar'\n'sidebar main'"
+					},
+					"gridTemplateColumns": {
+						"$type": "string",
+						"$value": "min-content 1fr"
+					},
+					"gridTemplateRows": {
+						"$type": "string",
+						"$value": "min-content min-content 1fr"
+					}
+				}
+			},
+			"sidebar": {
+				"sm": {
+					"hidden": {
+						"display": {
+							"$type": "string",
+							"$value": "none"
+						}
+					},
+					"aboveGrid": {
+						"display": {
+							"$type": "string",
+							"$value": "block"
+						}
+					}
+				},
+				"md": {
+					"display": {
+						"$type": "string",
+						"$value": "block"
+					},
+					"width": {
+						"$type": "dimension",
+						"$value": "200px"
+					}
+				},
+				"lg": {
+					"width": {
+						"$type": "dimension",
+						"$value": "320px"
+					}
+				}
+			}
+		}
+	}
+}

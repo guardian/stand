@@ -30,6 +30,8 @@ export { componentFavicon } from './styleD/build/typescript/component/favicon';
 export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';
 export { componentDatePicker } from './styleD/build/typescript/component/datePicker';
 export type { ComponentDatePicker } from './styleD/build/typescript/component/datePicker';
+export { componentGrid } from './styleD/build/typescript/component/grid';
+export type { ComponentGrid } from './styleD/build/typescript/component/grid';
 export { componentForm } from './styleD/build/typescript/component/form';
 export type { ComponentForm } from './styleD/build/typescript/component/form';
 export { componentIcon } from './styleD/build/typescript/component/icon';
@@ -38,6 +40,8 @@ export { componentInlineMessage } from './styleD/build/typescript/component/inli
 export type { ComponentInlineMessage } from './styleD/build/typescript/component/inlineMessage';
 export { componentMenu } from './styleD/build/typescript/component/menu';
 export type { ComponentMenu } from './styleD/build/typescript/component/menu';
+export { componentLayout } from './styleD/build/typescript/component/layout';
+export type { ComponentLayout } from './styleD/build/typescript/component/layout';
 export { componentLink } from './styleD/build/typescript/component/link';
 export type { ComponentLink } from './styleD/build/typescript/component/link';
 export { componentAlertBanner } from './styleD/build/typescript/component/alertBanner';
