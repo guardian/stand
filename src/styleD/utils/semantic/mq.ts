@@ -32,7 +32,7 @@ const minMaxWidthQuery = (minPx: number, maxPx: number): string =>
  * `;
  */
 export const from = Object.fromEntries(
-	Object.entries(semanticBreakpoints).map(([name, { min }]) => [
+	Object.entries(semanticBreakpoints).map(([name, min]) => [
 		name,
 		minWidthQuery(parseMinPx(min)),
 	]),
@@ -52,7 +52,7 @@ export const from = Object.fromEntries(
  * `;
  */
 export const until = Object.fromEntries(
-	Object.entries(semanticBreakpoints).map(([name, { min }]) => [
+	Object.entries(semanticBreakpoints).map(([name, min]) => [
 		name,
 		maxWidthQuery(parseMinPx(min)),
 	]),
@@ -71,13 +71,13 @@ export const until = Object.fromEntries(
  * `;
  */
 export const between = Object.fromEntries(
-	Object.entries(semanticBreakpoints).map(([fromName, { min: fromMin }]) => [
+	Object.entries(semanticBreakpoints).map(([fromName, fromMin]) => [
 		fromName,
 		{
 			and: Object.fromEntries(
 				Object.entries(semanticBreakpoints)
 					.filter(([toName]) => toName !== fromName)
-					.map(([toName, { min: toMin }]) => [
+					.map(([toName, toMin]) => [
 						toName,
 						minMaxWidthQuery(parseMinPx(fromMin), parseMinPx(toMin)),
 					]),

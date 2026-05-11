@@ -33,7 +33,7 @@
 	--component-button-primary-xs-padding-with-icon-icon-left-left: 0.25rem;
 	--component-button-primary-xs-typography-font: normal 700 0.75rem/1
 		'Open Sans';
-	--component-button-primary-xs-typography-letter-spacing: 0rem;
+	--component-button-primary-xs-typography-letter-spacing: 0;
 	--component-button-primary-xs-typography-font-width: 95;
 	--component-button-primary-xs-icon-size: 1.125rem;
 	--component-button-primary-xs-icon-gap: 0.25rem;
@@ -95,7 +95,7 @@
 	--component-button-secondary-xs-padding-with-icon-icon-left-left: 0.25rem;
 	--component-button-secondary-xs-typography-font: normal 700 0.75rem/1
 		'Open Sans';
-	--component-button-secondary-xs-typography-letter-spacing: 0rem;
+	--component-button-secondary-xs-typography-letter-spacing: 0;
 	--component-button-secondary-xs-typography-font-width: 95;
 	--component-button-secondary-xs-icon-size: 1.125rem;
 	--component-button-secondary-xs-icon-gap: 0.25rem;
@@ -157,7 +157,7 @@
 	--component-button-tertiary-xs-padding-with-icon-icon-left-left: 0.25rem;
 	--component-button-tertiary-xs-typography-font: normal 700 0.75rem/1
 		'Open Sans';
-	--component-button-tertiary-xs-typography-letter-spacing: 0rem;
+	--component-button-tertiary-xs-typography-letter-spacing: 0;
 	--component-button-tertiary-xs-typography-font-width: 95;
 	--component-button-tertiary-xs-icon-size: 1.125rem;
 	--component-button-tertiary-xs-icon-gap: 0.25rem;

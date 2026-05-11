@@ -1525,64 +1525,16 @@
 		},
 		"breakpoints": {
 			"sm": {
-				"min": {
-					"$type": "dimension",
-					"$value": "0"
-				},
-				"max": {
-					"$type": "dimension",
-					"$value": "671px"
-				}
+				"$type": "dimension",
+				"$value": "0px"
 			},
 			"md": {
-				"min": {
-					"$type": "dimension",
-					"$value": "672px"
-				},
-				"max": {
-					"$type": "dimension",
-					"$value": "1055px"
-				}
+				"$type": "dimension",
+				"$value": "830px"
 			},
 			"lg": {
-				"min": {
-					"$type": "dimension",
-					"$value": "1056px"
-				},
-				"max": {
-					"$type": "dimension",
-					"$value": "1311px"
-				}
-			},
-			"xl": {
-				"min": {
-					"$type": "dimension",
-					"$value": "1312px"
-				},
-				"max": {
-					"$type": "dimension",
-					"$value": "1583px"
-				}
-			},
-			"max": {
-				"min": {
-					"$type": "dimension",
-					"$value": "1584px"
-				},
-				"max": {
-					"$type": "dimension",
-					"$value": "1783px"
-				}
-			},
-			"maxplus": {
-				"min": {
-					"$type": "dimension",
-					"$value": "1784px"
-				},
-				"max": {
-					"$type": "dimension",
-					"$value": "initial"
-				}
+				"$type": "dimension",
+				"$value": "1056px"
 			}
 		}
 	}
