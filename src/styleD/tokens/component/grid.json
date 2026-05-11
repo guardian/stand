@@ -1,0 +1,40 @@
+{
+	"component": {
+		"grid": {
+			"shared": {
+				"display": {
+					"$type": "string",
+					"$value": "flex"
+				},
+				"width": {
+					"$type": "string",
+					"$value": "100%"
+				},
+				"columns": {
+					"$type": "number",
+					"$value": 12
+				},
+				"gap": {
+					"$type": "string",
+					"$value": "8px"
+				},
+				"direction": {
+					"$type": "string",
+					"$value": "row"
+				},
+				"wrap": {
+					"$type": "string",
+					"$value": "wrap"
+				},
+				"justifyContent": {
+					"$type": "string",
+					"$value": "flex-start"
+				},
+				"alignItems": {
+					"$type": "string",
+					"$value": "stretch"
+				}
+			}
+		}
+	}
+}

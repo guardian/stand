@@ -117,6 +117,11 @@
 			"import": "./dist/date-picker.js",
 			"require": "./dist/date-picker.cjs"
 		},
+		"./grid": {
+			"types": "./dist/types/grid.d.ts",
+			"import": "./dist/grid.js",
+			"require": "./dist/grid.cjs"
+		},
 		"./byline": {
 			"types": "./dist/types/byline.d.ts",
 			"import": "./dist/byline.js",
@@ -146,6 +151,11 @@
 			"types": "./dist/types/link.d.ts",
 			"import": "./dist/link.js",
 			"require": "./dist/link.cjs"
+		},
+		"./layout": {
+			"types": "./dist/types/layout.d.ts",
+			"import": "./dist/layout.js",
+			"require": "./dist/layout.cjs"
 		},
 		"./fonts/OpenSans.css": "./dist/fonts/OpenSans.css",
 		"./fonts/MaterialSymbolsOutlined.css": "./dist/fonts/MaterialSymbolsOutlined.css",
@@ -183,7 +193,9 @@
 		"./component/alertBanner.css": "./dist/styleD/build/css/component/alertBanner.css",
 		"./component/datePicker.css": "./dist/styleD/build/css/component/datePicker.css",
 		"./component/intendedAudienceSignifier.css": "./dist/styleD/build/css/component/intendedAudienceSignifier.css",
-		"./component/link.css": "./dist/styleD/build/css/component/link.css"
+		"./component/link.css": "./dist/styleD/build/css/component/link.css",
+		"./component/grid.css": "./dist/styleD/build/css/component/grid.css",
+		"./component/layout.css": "./dist/styleD/build/css/component/layout.css"
 	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
@@ -270,6 +282,12 @@
 			],
 			"link": [
 				"./dist/types/link.d.ts"
+			],
+			"grid": [
+				"./dist/types/grid.d.ts"
+			],
+			"layout": [
+				"./dist/types/layout.d.ts"
 			]
 		}
 	},
