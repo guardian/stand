@@ -89,7 +89,7 @@ import { between } from '@guardian/stand/utils';
 
 const styles = css`
 	display: flex;
-	${between.md.and.xl} {
+	${between.sm.and.lg} {
 		flex-direction: column;
 	}
 `;
@@ -111,11 +111,14 @@ import { semanticBreakpoints } from '@guardian/stand';
 import '@guardian/stand/semantic/breakpoints.css'; // CSS custom properties
 
 // JS/TS
-const minWidth = semanticBreakpoints.md.min; // '672px'
+const smWidth = semanticBreakpoints.sm; // '0px'
+const mdWidth = semanticBreakpoints.md; // '830px'
+const lgWidth = semanticBreakpoints.lg; // '1056px'
 
 // CSS custom properties
-// var(--semantic-breakpoints-md-min)  →  672px
-// var(--semantic-breakpoints-md-max)  →  1055px
+// var(--semantic-breakpoints-sm)  →  0px
+// var(--semantic-breakpoints-md)  →  830px
+// var(--semantic-breakpoints-lg)  →  1056px
 ```
 
 ---

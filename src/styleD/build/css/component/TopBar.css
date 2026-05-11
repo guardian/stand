@@ -82,7 +82,7 @@
 	--component-top-bar-tool-name-gap: 8px;
 	--component-top-bar-tool-name-typography-font: normal 700 1.25rem/1.15
 		'GH Guardian Headline';
-	--component-top-bar-tool-name-typography-letter-spacing: 0rem;
+	--component-top-bar-tool-name-typography-letter-spacing: 0;
 	--component-top-bar-tool-name-typography-font-width: 100;
 	--component-top-bar-tool-name-divider-border: 0.0625rem solid #cccccc;
 	--component-top-bar-tool-name-divider-height: 2rem;
@@ -103,7 +103,7 @@
 	--component-top-bar-tool-name-hover-link-opacity: 0;
 	--component-top-bar-tool-name-hover-link-typography-font: normal 700
 		0.875rem/1.3 'Open Sans';
-	--component-top-bar-tool-name-hover-link-typography-letter-spacing: 0rem;
+	--component-top-bar-tool-name-hover-link-typography-letter-spacing: 0;
 	--component-top-bar-tool-name-hover-link-typography-font-width: 95;
 	--component-top-bar-tool-name-hover-link-position: absolute;
 	--component-top-bar-tool-name-hover-link-width: 100%;
