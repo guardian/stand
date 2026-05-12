@@ -26,9 +26,8 @@ export const componentIntendedAudienceSignifier = {
 	},
 	color: '#545454',
 	typography: {
-		fontWeight: 400,
-		fontSize: '0.75rem',
-		lineHeight: 1,
+		font: 'normal 460 0.75rem/1.3 Open Sans',
+		lineHeight: '1',
 	},
 };
 export type ComponentIntendedAudienceSignifier =

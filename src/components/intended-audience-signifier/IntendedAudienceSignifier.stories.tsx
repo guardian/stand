@@ -127,7 +127,7 @@ const largeIconTheme = {
 	},
 	paddingY: '4px',
 	typography: {
-		fontSize: '28px',
+		font: "normal 460 28px/1.3 'Open Sans'",
 	},
 };
 

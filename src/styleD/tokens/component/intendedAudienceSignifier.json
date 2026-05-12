@@ -78,17 +78,13 @@
 				"$value": "{semantic.colors.text.weak}"
 			},
 			"typography": {
-				"fontWeight": {
-					"$type": "number",
-					"$value": 400
-				},
-				"fontSize": {
-					"$type": "dimension",
-					"$value": "{base.typography.size.12-rem}"
+				"font": {
+					"$type": "typography",
+					"$value": "{semantic.typography.body-xs.font}"
 				},
 				"lineHeight": {
 					"$type": "number",
-					"$value": 1
+					"$value": "1"
 				}
 			}
 		}
