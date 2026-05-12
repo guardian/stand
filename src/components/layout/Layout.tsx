@@ -1,5 +1,3 @@
-import type { Interpolation, SerializedStyles } from '@emotion/react';
-import { css } from '@emotion/react';
 import React from 'react';
 import { mergeDeep } from '../../util/mergeDeep';
 import { AlertBanner } from '../alert-banner/AlertBanner';
@@ -51,7 +49,9 @@ export function Sidebar({
  *
  * The layout adjusts based on the defined breakpoints in the theme, allowing for responsive design.
  *
- * The Layout component will look through its children and place them in the correct grid area based on their type (AlertBanner, TopBar, Sidebar, Grid), it ignores any children that are not of these types.
+ * The Layout component will look through its children and place them in the correct grid area based on their type (AlertBanner, TopBar, Sidebar, Grid).
+ *
+ * It's also possible to manually specify the grid area for each child by passing cssOverrides to the child component, this allows for more flexibility in how the layout is structured, but requires more manual setup from the consumer.
  *
  * Consumers can customize the layout by providing their own themes and CSS overrides for each of the components.
  */
@@ -68,6 +68,7 @@ export function Layout({
 	let topBar: React.ReactElement | null = null;
 	let sidebar: React.ReactElement | null = null;
 	let main: React.ReactElement | null = null;
+	const otherChildren: React.ReactElement[] = [];
 
 	React.Children.forEach(children, (child) => {
 		if (!React.isValidElement(child)) {
@@ -132,39 +133,11 @@ export function Layout({
 			return;
 		}
 
-		if (!main) {
-			// Other children that are not AlertBanner, TopBar, Sidebar or Grid should be assigned to the main area by default,
-			// allowing for flexibility in the types of content that can be placed in the layout without needing to wrap them in a Grid component.
-			// if child has cssOverrides, we need to merge them with the default main area styles, otherwise assign the main area styles directly to the css prop
-			type ChildWithCssProps = {
-				cssOverrides?: SerializedStyles | SerializedStyles[];
-				css?: Interpolation;
-			};
-
-			const childWithProps = child as React.ReactElement<ChildWithCssProps>;
-
-			if ('cssOverrides' in childWithProps.props) {
-				const childCssOverrides = Array.isArray(
-					childWithProps.props.cssOverrides,
-				)
-					? childWithProps.props.cssOverrides
-					: [childWithProps.props.cssOverrides ?? css``];
-
-				main ??= React.cloneElement(childWithProps, {
-					cssOverrides: [
-						mainLayoutStyles(mergedTheme, { fluid }),
-						...childCssOverrides,
-					],
-				});
-			} else {
-				main ??= React.cloneElement(childWithProps, {
-					css: [
-						mainLayoutStyles(mergedTheme, { fluid }),
-						childWithProps.props.css,
-					],
-				});
-			}
-		}
+		// if the child is not one of the supported types, add it to the otherChildren array
+		// to be rendered in the layout without any modifications, which is useful for allowing
+		// consumers to use their own custom components and place them in the layout as they see fit,
+		// but they'll need to manually assign the `grid-area` for the child component
+		otherChildren.push(child);
 	});
 
 	return (
@@ -173,6 +146,7 @@ export function Layout({
 			{topBar}
 			{sidebar}
 			{main}
+			{otherChildren}
 		</div>
 	);
 }

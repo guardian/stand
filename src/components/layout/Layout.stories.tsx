@@ -238,6 +238,7 @@ const nonGridMainContentStyles = css`
 	padding: 16px;
 	background-color: #f8f8f8;
 	min-height: 30svh;
+	grid-area: main;
 `;
 
 export const TopBarGrid = {
@@ -265,6 +266,9 @@ export const TopBarWithCustomMainContent = {
 			<section css={nonGridMainContentStyles} aria-label="Custom main content">
 				<h2>Custom main content region</h2>
 				<p>This section is rendered without using the Grid component.</p>
+				<p>
+					You&apos;ll need to manually assign the `grid-area` for this section.
+				</p>
 			</section>
 		</Layout>
 	),
