@@ -8,6 +8,8 @@ import {
 } from './FlagIcons';
 import {
 	defaultIntendedAudienceSignifierTheme,
+	intendedAudienceSignifierChevronIconStyles,
+	intendedAudienceSignifierIconStyles,
 	intendedAudienceSignifierStyles,
 } from './styles';
 import type {
@@ -69,15 +71,23 @@ export function IntendedAudienceSignifier({
 		);
 	}
 
+	const iconStyles = intendedAudienceSignifierIconStyles(mergedTheme);
+	const chevronIconStyles =
+		intendedAudienceSignifierChevronIconStyles(mergedTheme);
+
 	return (
 		<div
 			{...props}
 			className={className}
 			css={[intendedAudienceSignifierStyles(mergedTheme), cssOverrides]}
 		>
-			<div>{getSourceIconElement(source, intendedAudience)}</div>
-			<div> {DoubleChevronRightSvg}</div>
-			<div>{getIntendedAudienceIconElement(source, intendedAudience)}</div>
+			<div css={iconStyles}>
+				{getSourceIconElement(source, intendedAudience)}
+			</div>
+			<div css={chevronIconStyles}>{DoubleChevronRightSvg}</div>
+			<div css={iconStyles}>
+				{getIntendedAudienceIconElement(source, intendedAudience)}
+			</div>
 		</div>
 	);
 }

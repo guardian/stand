@@ -71,11 +71,14 @@ export const UKAndGlobalStoryWithCustomTheme = {
 		intendedAudience: 'Domestic For Global',
 		theme: {
 			borderRadius: '20%',
-			borderStyle: 'dotted',
+			borderStyle: 'inset',
 			borderColor: 'blue',
 			borderWidth: '4px',
-			gap: '20px',
+			gap: '12px',
 			paddingY: '.2em',
+			chevron: {
+				fill: 'blue',
+			},
 		},
 	},
 } satisfies Story;

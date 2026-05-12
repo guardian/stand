@@ -19,7 +19,7 @@
 			},
 			"borderColor": {
 				"$type": "color",
-				"$value": "{base.colors.neutral.0}"
+				"$value": "{semantic.colors.border.weak}"
 			},
 			"borderWidth": {
 				"$type": "dimension",
@@ -51,7 +51,7 @@
 			},
 			"gap": {
 				"$type": "dimension",
-				"$value": "8px"
+				"$value": "{base.spacing.4-px}"
 			},
 			"svg": {
 				"height": {
@@ -61,6 +61,12 @@
 				"width": {
 					"$type": "dimension",
 					"$value": "unset"
+				}
+			},
+			"chevron": {
+				"fill": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.strong}"
 				}
 			},
 			"color": {

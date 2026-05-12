@@ -7,7 +7,7 @@ export const componentIntendedAudienceSignifier = {
 	flexDirection: 'row',
 	justifyContent: 'center',
 	alignItems: 'center',
-	borderColor: '#000000',
+	borderColor: '#cccccc',
 	borderWidth: '1px',
 	borderStyle: 'solid',
 	borderRadius: '0.125rem',
@@ -15,10 +15,13 @@ export const componentIntendedAudienceSignifier = {
 	paddingX: '4px',
 	boxSizing: 'border-box',
 	width: 'fit-content',
-	gap: '8px',
+	gap: '4px',
 	svg: {
 		height: 'unset',
 		width: 'unset',
+	},
+	chevron: {
+		fill: '#545454',
 	},
 	color: '#545454',
 	typography: {

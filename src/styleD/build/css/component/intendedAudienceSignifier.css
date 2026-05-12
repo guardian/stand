@@ -7,7 +7,7 @@
 	--component-intended-audience-signifier-flex-direction: row;
 	--component-intended-audience-signifier-justify-content: center;
 	--component-intended-audience-signifier-align-items: center;
-	--component-intended-audience-signifier-border-color: #000000;
+	--component-intended-audience-signifier-border-color: #cccccc;
 	--component-intended-audience-signifier-border-width: 1px;
 	--component-intended-audience-signifier-border-style: solid;
 	--component-intended-audience-signifier-border-radius: 0.125rem;
@@ -15,9 +15,10 @@
 	--component-intended-audience-signifier-padding-x: 4px;
 	--component-intended-audience-signifier-box-sizing: border-box;
 	--component-intended-audience-signifier-width: fit-content;
-	--component-intended-audience-signifier-gap: 8px;
+	--component-intended-audience-signifier-gap: 4px;
 	--component-intended-audience-signifier-svg-height: unset;
 	--component-intended-audience-signifier-svg-width: unset;
+	--component-intended-audience-signifier-chevron-fill: #545454;
 	--component-intended-audience-signifier-color: #545454;
 	--component-intended-audience-signifier-typography-font-weight: 400;
 	--component-intended-audience-signifier-typography-font-size: 0.75rem;
