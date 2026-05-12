@@ -26,7 +26,7 @@ import {
 
 # Layout
 
-Layout is a page-shell component that composes `AlertBanner`, `TopBar`, `Sidebar`, and a main content region into a responsive layout, preferably with a `Grid` in the main content.
+Layout is a page-shell component that composes `AlertBanner`, `TopBar`, `Sidebar`, and a main content region into a responsive layout, typically using a `Grid` for the main content.
 
 It provides consistent structure across tools while allowing each region to be populated with existing Stand components.
 
@@ -74,30 +74,32 @@ import { TopBar, TopBarToolName } from '@guardian/stand/TopBar';
 
 ## Composition
 
-`Layout` looks through its `children` and only renders the first direct child of each supported type:
+`Layout` inspects its direct `children` and places the first child of each supported type into the corresponding layout region:
 
-| Region       | Accepted child type                                                    |
-| ------------ | ---------------------------------------------------------------------- |
-| Alert banner | `AlertBanner`                                                          |
-| Top section  | `TopBar`                                                               |
-| Sidebar      | `Sidebar`                                                              |
-| Main content | `Grid` (preferred), or any other direct child if no `Grid` is provided |
+| Region       | Accepted child type | Grid area name |
+| ------------ | ------------------- | -------------- |
+| Alert banner | `AlertBanner`       | `alertbanner`  |
+| Top section  | `TopBar`            | `topbar`       |
+| Sidebar      | `Sidebar`           | `sidebar`      |
+| Main content | `Grid`              | `main`         |
 
-If no `Grid` is provided, the first other direct child is placed in the main content region.
+Other direct children are still rendered, but `Layout` does not assign them to a grid area or inject layout styles.
 
-Additional children that are not one of the supported types are ignored. Note that `Layout` only inspects direct children; nested children or those wrapped in a `React.Fragment` are not supported.
+If you want a custom child to occupy a specific region without using one of the supported components, you must manually set `grid-area` on that child to one of the layout area names above.
+
+`Layout` only inspects direct children; nested children or those wrapped in a `React.Fragment` are not supported.
 
 This means you can compose the shell declaratively, and `Layout` will place each supported child in the correct grid area.
 
 ## Layout Props
 
-| Name           | Type                                     | Required | Default | Description                                                                        |
-| -------------- | ---------------------------------------- | -------- | ------- | ---------------------------------------------------------------------------------- |
-| `children`     | `React.ReactNode`                        | No       | N/A     | Direct children used to populate alert banner, top bar, sidebar, and main regions. |
-| `fluid`        | `boolean`                                | No       | `true`  | When `false`, constrains the main region to the theme max width and centers it.    |
-| `theme`        | `LayoutTheme`                            | No       | N/A     | Theme token overrides for layout grid structure across breakpoints.                |
-| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Custom CSS styles.                                                                 |
-| `className`    | `string`                                 | No       | N/A     | Additional class name(s).                                                          |
+| Name           | Type                                     | Required | Default | Description                                                                                     |
+| -------------- | ---------------------------------------- | -------- | ------- | ----------------------------------------------------------------------------------------------- |
+| `children`     | `React.ReactNode`                        | No       | N/A     | Direct children used to populate alert banner, top bar, sidebar, and any custom layout content. |
+| `fluid`        | `boolean`                                | No       | `true`  | When `false`, constrains the main region to the theme max width and centers it.                 |
+| `theme`        | `LayoutTheme`                            | No       | N/A     | Theme token overrides for layout grid structure across breakpoints.                             |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Custom CSS styles.                                                                              |
+| `className`    | `string`                                 | No       | N/A     | Additional class name(s).                                                                       |
 
 ## Sidebar Props
 
@@ -132,7 +134,7 @@ Use this when you want the main content region constrained and centered on wide 
 
 ### Top bar with custom main content (no Grid)
 
-Use this when you want `Layout` to place a direct non-Grid child in the main content region.
+Use this when you want to render a custom direct child inside `Layout` and manually assign it to the main region with `grid-area: main`.
 
 <Canvas of={TopBarWithCustomMainContent} />
 
