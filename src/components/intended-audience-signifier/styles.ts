@@ -35,7 +35,6 @@ export const intendedAudienceSignifierIconStyles = (
 	theme: IntendedAudienceSignifierTheme,
 ) => css`
 	display: flex;
-
 	svg {
 		height: ${theme.svg.height};
 		width: ${theme.svg.width};
@@ -44,11 +43,13 @@ export const intendedAudienceSignifierIconStyles = (
 
 export const intendedAudienceSignifierChevronIconStyles = (
 	theme: IntendedAudienceSignifierTheme,
-) => [
-	intendedAudienceSignifierIconStyles(theme),
-	css`
-		svg path {
-			fill: ${theme.chevron.fill};
-		}
-	`,
-];
+) => css`
+	display: flex;
+	svg {
+		height: ${theme.chevron.size};
+		width: ${theme.chevron.size};
+	}
+	svg path {
+		fill: ${theme.chevron.fill};
+	}
+`;

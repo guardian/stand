@@ -67,6 +67,10 @@
 				"fill": {
 					"$type": "color",
 					"$value": "{semantic.colors.fill.strong}"
+				},
+				"size": {
+					"$type": "dimension",
+					"$value": "10px"
 				}
 			},
 			"color": {

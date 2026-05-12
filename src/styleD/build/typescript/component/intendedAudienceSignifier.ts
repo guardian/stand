@@ -22,6 +22,7 @@ export const componentIntendedAudienceSignifier = {
 	},
 	chevron: {
 		fill: '#545454',
+		size: '10px',
 	},
 	color: '#545454',
 	typography: {
