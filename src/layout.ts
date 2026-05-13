@@ -13,7 +13,7 @@
  * If you only need the built CSS (./component/layout.css),
  * you don't need to install these.
  */
-export { Layout, Sidebar } from './components/layout/Layout';
+export { Layout } from './components/layout/Layout';
 export type { LayoutProps, SidebarProps } from './components/layout/types';
 export type {
 	PartialLayoutTheme as LayoutTheme,
