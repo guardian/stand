@@ -22,12 +22,12 @@ export interface LayoutSlotProps extends React.HTMLAttributes<HTMLElement> {
 /**
  * Places children into the alert banner grid area of the Layout.
  */
-const LayoutAlertBanner: React.FC<LayoutSlotProps> = ({
+const LayoutAlertBanner = ({
 	as: Component = 'aside',
 	children,
 	cssOverrides,
 	...props
-}) => {
+}: LayoutSlotProps) => {
 	return (
 		<Component css={[alertBannerLayoutStyles(), cssOverrides]} {...props}>
 			{children}
@@ -38,12 +38,12 @@ const LayoutAlertBanner: React.FC<LayoutSlotProps> = ({
 /**
  * Places children into the top bar grid area of the Layout.
  */
-const LayoutTopBar: React.FC<LayoutSlotProps> = ({
+const LayoutTopBar = ({
 	as: Component = 'nav',
 	children,
 	cssOverrides,
 	...props
-}) => {
+}: LayoutSlotProps) => {
 	return (
 		<Component css={[topBarLayoutStyles(), cssOverrides]} {...props}>
 			{children}
