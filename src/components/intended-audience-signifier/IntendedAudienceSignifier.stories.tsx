@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { IntendedAudienceSignifier } from './IntendedAudienceSignifier';
 
 const meta = {
-	title: 'Stand/Editorial Components/Components/IntendedAudienceSignifier',
+	title: 'Stand/Editorial Components/IntendedAudienceSignifier',
 	component: IntendedAudienceSignifier,
 	parameters: {},
 	args: {},
@@ -71,11 +71,14 @@ export const UKAndGlobalStoryWithCustomTheme = {
 		intendedAudience: 'Domestic For Global',
 		theme: {
 			borderRadius: '20%',
-			borderStyle: 'dotted',
+			borderStyle: 'inset',
 			borderColor: 'blue',
 			borderWidth: '4px',
-			gap: '20px',
+			gap: '12px',
 			paddingY: '.2em',
+			chevron: {
+				fill: 'blue',
+			},
 		},
 	},
 } satisfies Story;
@@ -124,7 +127,7 @@ const largeIconTheme = {
 	},
 	paddingY: '4px',
 	typography: {
-		fontSize: '28px',
+		font: "normal 460 28px/1.3 'Open Sans'",
 	},
 };
 

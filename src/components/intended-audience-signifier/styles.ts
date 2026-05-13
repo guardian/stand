@@ -18,8 +18,7 @@ export const intendedAudienceSignifierStyles = (
 	justify-content: ${theme.justifyContent};
 	align-items: ${theme.alignItems};
 	color: ${theme.color};
-	font-weight: ${theme.typography.fontWeight};
-	font-size: ${theme.typography.fontSize};
+	font: ${theme.typography.font};
 	line-height: ${theme.typography.lineHeight};
 	border-width: ${theme.borderWidth};
 	border-style: ${theme.borderStyle};
@@ -29,8 +28,27 @@ export const intendedAudienceSignifierStyles = (
 	box-sizing: ${theme.boxSizing};
 	width: ${theme.width};
 	gap: ${theme.gap};
+`;
+
+export const intendedAudienceSignifierIconStyles = (
+	theme: IntendedAudienceSignifierTheme,
+) => css`
+	display: flex;
 	svg {
 		height: ${theme.svg.height};
 		width: ${theme.svg.width};
+	}
+`;
+
+export const intendedAudienceSignifierChevronIconStyles = (
+	theme: IntendedAudienceSignifierTheme,
+) => css`
+	display: flex;
+	svg {
+		height: ${theme.chevron.size};
+		width: ${theme.chevron.size};
+	}
+	svg path {
+		fill: ${theme.chevron.fill};
 	}
 `;
