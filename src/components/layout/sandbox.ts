@@ -3,21 +3,25 @@ export const componentName = 'Layout';
 
 // Layout - React sandbox example
 export const componentTsx = /* javascript */ `import { Grid, Item } from '@guardian/stand/grid';
-import { Layout, Sidebar } from '@guardian/stand/layout';
+import { Layout } from '@guardian/stand/layout';
 import { TopBar, TopBarToolName } from '@guardian/stand/TopBar';
 
 export const Component = () => (
 	<Layout>
-		<TopBar>
-			<TopBarToolName name="Layout Demo" favicon={{ letter: 'L' }} />
-		</TopBar>
-		<Sidebar layoutSmBreakpoint="above-grid">
+		<Layout.TopBar>
+			<TopBar>
+				<TopBarToolName name="Layout Demo" favicon={{ letter: 'L' }} />
+			</TopBar>
+		</Layout.TopBar>
+		<Layout.Sidebar layoutSmBreakpoint="above-grid">
 			<div style={{ padding: '8px' }}>Sidebar content</div>
-		</Sidebar>
-		<Grid>
-			<Item size={{ sm: 12, md: 8 }}>Main content</Item>
-			<Item size={{ sm: 12, md: 4 }}>Secondary content</Item>
-		</Grid>
+		</Layout.Sidebar>
+		<Layout.Main>
+			<Grid>
+				<Item size={{ sm: 12, md: 8 }}>Main content</Item>
+				<Item size={{ sm: 12, md: 4 }}>Secondary content</Item>
+			</Grid>
+		</Layout.Main>
 	</Layout>
 );
 `;

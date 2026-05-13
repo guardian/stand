@@ -1,3 +1,4 @@
+import type React from 'react';
 import type { DefaultPropsWithChildren } from '../../util/types';
 import type { LayoutTheme, SidebarTheme } from './styles';
 
@@ -10,7 +11,10 @@ export interface LayoutProps extends DefaultPropsWithChildren<LayoutTheme> {
 	fluid?: boolean;
 }
 
-export interface SidebarProps extends DefaultPropsWithChildren<SidebarTheme> {
+export interface SidebarProps
+	extends
+		DefaultPropsWithChildren<SidebarTheme>,
+		React.HTMLAttributes<HTMLElement> {
 	/**
 	 * Defines the layout behavior of the sidebar at the sm breakpoint.
 	 *
@@ -19,4 +23,5 @@ export interface SidebarProps extends DefaultPropsWithChildren<SidebarTheme> {
 	 *
 	 */
 	layoutSmBreakpoint?: 'above-grid' | 'hidden';
+	as?: React.ElementType;
 }
