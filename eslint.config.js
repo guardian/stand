@@ -16,4 +16,10 @@ export default [
 	...guardian.configs.jest,
 	...guardian.configs.react,
 	...storybook.configs['flat/recommended'],
+	{
+		files: ['*.config.ts', '*.config.js', '*.config.mjs'],
+		rules: {
+			'import/no-default-export': 'off',
+		},
+	},
 ];

@@ -101,7 +101,7 @@ If you are adding or modifying design tokens:
 
 Each component is published as its own **subpath export** (e.g. `@guardian/stand/avatar`) so that consumers only bundle what they use. When adding a new component, the following files must all be updated together:
 
-1. **Create `src/<component-name>.ts`**: the Rollup entry point and public API for the subpath. It should re-export the component, its props type, its theme type, and the style dictionary token variable/type:
+1. **Create `src/<component-name>.ts`**: the tsdown entry point and public API for the subpath. It should re-export the component, its props type, its theme type, and the style dictionary token variable/type:
 
    ```ts
    // use src/avatar.ts or another component as a template
@@ -112,9 +112,9 @@ Each component is published as its own **subpath export** (e.g. `@guardian/stand
    export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
    ```
 
-2. **Update `rollup.config.js`**: Add the new entry point to the `input` object so Rollup picks it up during the build:
+2. **Update `tsdown.config.ts`**: Add the new entry point to the `entry` object so tsdown picks it up during the build:
 
-   ```js
+   ```ts
    // under the appropriate section (tools design system or editorial components)
    avatar: 'src/avatar.ts',
    ```
@@ -125,7 +125,7 @@ Each component is published as its own **subpath export** (e.g. `@guardian/stand
 
    ```json
    "./avatar": {
-     "types": "./dist/types/avatar.d.ts",
+     "types": "./dist/avatar.d.ts",
      "import": "./dist/avatar.js",
      "require": "./dist/avatar.cjs"
    },
@@ -135,7 +135,7 @@ Each component is published as its own **subpath export** (e.g. `@guardian/stand
    **`typesVersions`**: Required for TypeScript consumers using `moduleResolution: node` (legacy):
 
    ```json
-   "avatar": ["./dist/types/avatar.d.ts"]
+   "avatar": ["./dist/avatar.d.ts"]
    ```
 
 4. **Update `src/index.ts`**: Add any token exports that should be available from the root `@guardian/stand` entry point (typically the style dictionary variable and its type):
