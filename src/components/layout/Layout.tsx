@@ -4,6 +4,7 @@ import { mergeDeep } from '../../util/mergeDeep';
 import {
 	alertBannerLayoutStyles,
 	defaultLayoutTheme,
+	defaultMainTheme,
 	defaultSidebarTheme,
 	layoutStyles,
 	mainLayoutStyles,
@@ -11,7 +12,7 @@ import {
 	sidebarStyles,
 	topBarLayoutStyles,
 } from './styles';
-import type { LayoutProps, SidebarProps } from './types';
+import type { LayoutProps, MainProps, SidebarProps } from './types';
 
 export interface LayoutSlotProps extends React.HTMLAttributes<HTMLElement> {
 	children?: React.ReactNode;
@@ -92,11 +93,8 @@ function LayoutMain({
 	theme = {},
 	cssOverrides,
 	...props
-}: LayoutSlotProps & {
-	fluid?: boolean;
-	theme?: LayoutProps['theme'];
-}) {
-	const mergedTheme = mergeDeep(defaultLayoutTheme, theme);
+}: MainProps) {
+	const mergedTheme = mergeDeep(defaultMainTheme, theme);
 
 	return (
 		<Component
@@ -137,7 +135,7 @@ function LayoutRoot({
 	theme = {},
 	cssOverrides,
 	...props
-}: Omit<LayoutProps, 'fluid'>) {
+}: LayoutProps) {
 	const mergedTheme = mergeDeep(defaultLayoutTheme, theme);
 
 	return (
@@ -147,17 +145,12 @@ function LayoutRoot({
 	);
 }
 
-type LayoutMainProps = LayoutSlotProps & {
-	fluid?: boolean;
-	theme?: LayoutProps['theme'];
-};
-
 interface LayoutCompound {
 	(props: Omit<LayoutProps, 'fluid'>): React.JSX.Element;
-	AlertBanner: React.FC<LayoutSlotProps>;
-	TopBar: React.FC<LayoutSlotProps>;
+	AlertBanner: (props: LayoutSlotProps) => React.JSX.Element;
+	TopBar: (props: LayoutSlotProps) => React.JSX.Element;
 	Sidebar: (props: SidebarProps) => React.JSX.Element;
-	Main: React.FC<LayoutMainProps>;
+	Main: (props: MainProps) => React.JSX.Element;
 }
 
 export const Layout: LayoutCompound = Object.assign(LayoutRoot, {

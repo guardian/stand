@@ -1,14 +1,18 @@
 import type React from 'react';
 import type { DefaultPropsWithChildren } from '../../util/types';
-import type { LayoutTheme, SidebarTheme } from './styles';
+import type { LayoutTheme, MainTheme, SidebarTheme } from './styles';
 
-export interface LayoutProps extends DefaultPropsWithChildren<LayoutTheme> {
+export type LayoutProps = DefaultPropsWithChildren<LayoutTheme>;
+
+export interface MainProps extends DefaultPropsWithChildren<MainTheme> {
 	/**
 	 * When `true`, the layout will take up the full width of its container, enabled by default.
 	 * When `false`, the layout will have a max-width of 1584px and be centered within its container.
 	 * This can be used to prevent the layout from becoming too stretched on very wide screens.
 	 */
 	fluid?: boolean;
+
+	as?: React.ElementType;
 }
 
 export interface SidebarProps

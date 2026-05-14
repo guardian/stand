@@ -6,9 +6,6 @@
 	--component-layout-layout-shared-display: grid;
 	--component-layout-layout-shared-min-height: 100svh;
 	--component-layout-layout-shared-width: 100%;
-	--component-layout-layout-shared-max-width: 1584px;
-	--component-layout-layout-shared-margin-left: auto;
-	--component-layout-layout-shared-margin-right: auto;
 	--component-layout-layout-sm-grid-template-areas: 'alertbanner' 'topbar'
 		'sidebar' 'main';
 	--component-layout-layout-sm-grid-template-columns: 1fr;
@@ -27,4 +24,7 @@
 	--component-layout-sidebar-md-display: block;
 	--component-layout-sidebar-md-width: 200px;
 	--component-layout-sidebar-lg-width: 320px;
+	--component-layout-main-max-width: 1584px;
+	--component-layout-main-margin-left: auto;
+	--component-layout-main-margin-right: auto;
 }
