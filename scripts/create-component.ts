@@ -190,7 +190,7 @@ const run = async () => {
 
 	// TODO - add the component name to the config.js file and run Style dictionary.
 	// TODO - add index file to ./src/{name}
-	// TODO - add a checklist to publish the component to npm, adding a changelog, updating rollup config, package json and src/index.ts.
+	// TODO - add a checklist to publish the component to npm, adding a changelog, updating tsdown config, package json and src/index.ts.
 };
 
 void run();

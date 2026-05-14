@@ -8,152 +8,152 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"types": "./dist/types/index.d.ts",
+			"types": "./dist/index.d.ts",
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
 		"./avatar": {
-			"types": "./dist/types/avatar.d.ts",
+			"types": "./dist/avatar.d.ts",
 			"import": "./dist/avatar.js",
 			"require": "./dist/avatar.cjs"
 		},
 		"./AvatarLink": {
-			"types": "./dist/types/avatarLink.d.ts",
+			"types": "./dist/avatarLink.d.ts",
 			"import": "./dist/avatarLink.js",
 			"require": "./dist/avatarLink.cjs"
 		},
 		"./AvatarButton": {
-			"types": "./dist/types/avatarButton.d.ts",
+			"types": "./dist/avatarButton.d.ts",
 			"import": "./dist/avatarButton.js",
 			"require": "./dist/avatarButton.cjs"
 		},
 		"./button": {
-			"types": "./dist/types/button.d.ts",
+			"types": "./dist/button.d.ts",
 			"import": "./dist/button.js",
 			"require": "./dist/button.cjs"
 		},
 		"./link-button": {
-			"types": "./dist/types/link-button.d.ts",
+			"types": "./dist/link-button.d.ts",
 			"import": "./dist/link-button.js",
 			"require": "./dist/link-button.cjs"
 		},
 		"./icon-button": {
-			"types": "./dist/types/icon-button.d.ts",
+			"types": "./dist/icon-button.d.ts",
 			"import": "./dist/icon-button.js",
 			"require": "./dist/icon-button.cjs"
 		},
 		"./icon-link-button": {
-			"types": "./dist/types/icon-link-button.d.ts",
+			"types": "./dist/icon-link-button.d.ts",
 			"import": "./dist/icon-link-button.js",
 			"require": "./dist/icon-link-button.cjs"
 		},
 		"./typography": {
-			"types": "./dist/types/typography.d.ts",
+			"types": "./dist/typography.d.ts",
 			"import": "./dist/typography.js",
 			"require": "./dist/typography.cjs"
 		},
 		"./icon": {
-			"types": "./dist/types/icon.d.ts",
+			"types": "./dist/icon.d.ts",
 			"import": "./dist/icon.js",
 			"require": "./dist/icon.cjs"
 		},
 		"./favicon": {
-			"types": "./dist/types/favicon.d.ts",
+			"types": "./dist/favicon.d.ts",
 			"import": "./dist/favicon.js",
 			"require": "./dist/favicon.cjs"
 		},
 		"./menu": {
-			"types": "./dist/types/menu.d.ts",
+			"types": "./dist/menu.d.ts",
 			"import": "./dist/menu.js",
 			"require": "./dist/menu.cjs"
 		},
 		"./TopBar": {
-			"types": "./dist/types/TopBar.d.ts",
+			"types": "./dist/TopBar.d.ts",
 			"import": "./dist/TopBar.js",
 			"require": "./dist/TopBar.cjs"
 		},
 		"./form": {
-			"types": "./dist/types/form.d.ts",
+			"types": "./dist/form.d.ts",
 			"import": "./dist/form.js",
 			"require": "./dist/form.cjs"
 		},
 		"./inline-message": {
-			"types": "./dist/types/inline-message.d.ts",
+			"types": "./dist/inline-message.d.ts",
 			"import": "./dist/inline-message.js",
 			"require": "./dist/inline-message.cjs"
 		},
 		"./select": {
-			"types": "./dist/types/select.d.ts",
+			"types": "./dist/select.d.ts",
 			"import": "./dist/select.js",
 			"require": "./dist/select.cjs"
 		},
 		"./text-input": {
-			"types": "./dist/types/text-input.d.ts",
+			"types": "./dist/text-input.d.ts",
 			"import": "./dist/text-input.js",
 			"require": "./dist/text-input.cjs"
 		},
 		"./radio-group": {
-			"types": "./dist/types/radio-group.d.ts",
+			"types": "./dist/radio-group.d.ts",
 			"import": "./dist/radio-group.js",
 			"require": "./dist/radio-group.cjs"
 		},
 		"./checkbox": {
-			"types": "./dist/types/checkbox.d.ts",
+			"types": "./dist/checkbox.d.ts",
 			"import": "./dist/checkbox.js",
 			"require": "./dist/checkbox.cjs"
 		},
 		"./text-area": {
-			"types": "./dist/types/text-area.d.ts",
+			"types": "./dist/text-area.d.ts",
 			"import": "./dist/text-area.js",
 			"require": "./dist/text-area.cjs"
 		},
 		"./alert-banner": {
-			"types": "./dist/types/alert-banner.d.ts",
+			"types": "./dist/alert-banner.d.ts",
 			"import": "./dist/alert-banner.js",
 			"require": "./dist/alert-banner.cjs"
 		},
 		"./date-picker": {
-			"types": "./dist/types/date-picker.d.ts",
+			"types": "./dist/date-picker.d.ts",
 			"import": "./dist/date-picker.js",
 			"require": "./dist/date-picker.cjs"
 		},
 		"./grid": {
-			"types": "./dist/types/grid.d.ts",
+			"types": "./dist/grid.d.ts",
 			"import": "./dist/grid.js",
 			"require": "./dist/grid.cjs"
 		},
 		"./byline": {
-			"types": "./dist/types/byline.d.ts",
+			"types": "./dist/byline.d.ts",
 			"import": "./dist/byline.js",
 			"require": "./dist/byline.cjs"
 		},
 		"./tag-picker": {
-			"types": "./dist/types/tag-picker.d.ts",
+			"types": "./dist/tag-picker.d.ts",
 			"import": "./dist/tag-picker.js",
 			"require": "./dist/tag-picker.cjs"
 		},
 		"./user-menu": {
-			"types": "./dist/types/user-menu.d.ts",
+			"types": "./dist/user-menu.d.ts",
 			"import": "./dist/user-menu.js",
 			"require": "./dist/user-menu.cjs"
 		},
 		"./utils": {
-			"types": "./dist/types/utils.d.ts",
+			"types": "./dist/utils.d.ts",
 			"import": "./dist/utils.js",
 			"require": "./dist/utils.cjs"
 		},
 		"./intendedAudienceSignifier": {
-			"types": "./dist/types/intended-audience-signifier.d.ts",
+			"types": "./dist/intended-audience-signifier.d.ts",
 			"import": "./dist/intended-audience-signifier.js",
 			"require": "./dist/intended-audience-signifier.cjs"
 		},
 		"./link": {
-			"types": "./dist/types/link.d.ts",
+			"types": "./dist/link.d.ts",
 			"import": "./dist/link.js",
 			"require": "./dist/link.cjs"
 		},
 		"./layout": {
-			"types": "./dist/types/layout.d.ts",
+			"types": "./dist/layout.d.ts",
 			"import": "./dist/layout.js",
 			"require": "./dist/layout.cjs"
 		},
@@ -199,95 +199,95 @@
 	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
-	"types": "./dist/types/index.d.ts",
+	"types": "./dist/index.d.ts",
 	"typesVersions": {
 		"*": {
 			"avatar": [
-				"./dist/types/avatar.d.ts"
+				"./dist/avatar.d.ts"
 			],
 			"AvatarButton": [
-				"./dist/types/avatarButton.d.ts"
+				"./dist/avatarButton.d.ts"
 			],
 			"AvatarLink": [
-				"./dist/types/avatarLink.d.ts"
+				"./dist/avatarLink.d.ts"
 			],
 			"button": [
-				"./dist/types/button.d.ts"
+				"./dist/button.d.ts"
 			],
 			"link-button": [
-				"./dist/types/link-button.d.ts"
+				"./dist/link-button.d.ts"
 			],
 			"icon-button": [
-				"./dist/types/icon-button.d.ts"
+				"./dist/icon-button.d.ts"
 			],
 			"icon-link-button": [
-				"./dist/types/icon-link-button.d.ts"
+				"./dist/icon-link-button.d.ts"
 			],
 			"typography": [
-				"./dist/types/typography.d.ts"
+				"./dist/typography.d.ts"
 			],
 			"icon": [
-				"./dist/types/icon.d.ts"
+				"./dist/icon.d.ts"
 			],
 			"favicon": [
-				"./dist/types/favicon.d.ts"
+				"./dist/favicon.d.ts"
 			],
 			"TopBar": [
-				"./dist/types/TopBar.d.ts"
+				"./dist/TopBar.d.ts"
 			],
 			"byline": [
-				"./dist/types/byline.d.ts"
+				"./dist/byline.d.ts"
 			],
 			"tag-picker": [
-				"./dist/types/tag-picker.d.ts"
+				"./dist/tag-picker.d.ts"
 			],
 			"user-menu": [
-				"./dist/types/user-menu.d.ts"
+				"./dist/user-menu.d.ts"
 			],
 			"utils": [
-				"./dist/types/utils.d.ts"
+				"./dist/utils.d.ts"
 			],
 			"menu": [
-				"./dist/types/menu.d.ts"
+				"./dist/menu.d.ts"
 			],
 			"form": [
-				"./dist/types/form.d.ts"
+				"./dist/form.d.ts"
 			],
 			"inline-message": [
-				"./dist/types/inline-message.d.ts"
+				"./dist/inline-message.d.ts"
 			],
 			"select": [
-				"./dist/types/select.d.ts"
+				"./dist/select.d.ts"
 			],
 			"text-input": [
-				"./dist/types/text-input.d.ts"
+				"./dist/text-input.d.ts"
 			],
 			"radio-group": [
-				"./dist/types/radio-group.d.ts"
+				"./dist/radio-group.d.ts"
 			],
 			"checkbox": [
-				"./dist/types/checkbox.d.ts"
+				"./dist/checkbox.d.ts"
 			],
 			"text-area": [
-				"./dist/types/text-area.d.ts"
+				"./dist/text-area.d.ts"
 			],
 			"alert-banner": [
-				"./dist/types/alert-banner.d.ts"
+				"./dist/alert-banner.d.ts"
 			],
 			"date-picker": [
-				"./dist/types/date-picker.d.ts"
+				"./dist/date-picker.d.ts"
 			],
 			"intendedAudienceSignifier": [
-				"./dist/types/intended-audience-signifier.d.ts"
+				"./dist/intended-audience-signifier.d.ts"
 			],
 			"link": [
-				"./dist/types/link.d.ts"
+				"./dist/link.d.ts"
 			],
 			"grid": [
-				"./dist/types/grid.d.ts"
+				"./dist/grid.d.ts"
 			],
 			"layout": [
-				"./dist/types/layout.d.ts"
+				"./dist/layout.d.ts"
 			]
 		}
 	},
@@ -295,7 +295,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "rimraf dist && rollup -c",
+		"build": "tsdown",
 		"build-storybook": "storybook build",
 		"build-styled": "cd src/styleD && node build.js && pnpm run format:fix",
 		"create-component": "npx ts-node ./scripts/create-component.ts",
@@ -324,13 +324,11 @@
 		"@internationalized/date": "3.12.1",
 		"@material-design-icons/svg": "^0.14.15",
 		"@playwright/experimental-ct-react17": "^1.59.1",
-		"@rollup/plugin-commonjs": "29.0.2",
-		"@rollup/plugin-node-resolve": "16.0.3",
-		"@rollup/plugin-typescript": "12.3.0",
 		"@storybook/addon-docs": "^10.3.5",
 		"@storybook/addon-themes": "^10.3.5",
 		"@storybook/react-vite": "^10.3.5",
 		"@testing-library/jest-dom": "^6.9.1",
+		"@tsdown/css": "^0.22.0",
 		"@types/jest": "30.0.0",
 		"@types/node": "^24.10.1",
 		"@types/react": "17.0.76",
@@ -353,16 +351,11 @@
 		"react-aria-components": "1.13.0",
 		"react-dom": "17.0.2",
 		"remark-gfm": "^4.0.1",
-		"rimraf": "6.1.3",
-		"rollup": "4.60.1",
-		"rollup-plugin-copy": "^3.5.0",
-		"rollup-plugin-esbuild": "6.2.1",
-		"rollup-plugin-import-css": "^4.2.0",
-		"rollup-plugin-node-externals": "9.0.0",
 		"sort-package-json": "3.6.1",
 		"storybook": "^10.3.5",
 		"style-dictionary": "^5.4.0",
 		"ts-jest": "29.4.9",
+		"tsdown": "^0.22.0",
 		"tslib": "2.8.1",
 		"typescript": "5.1.3",
 		"vite": "^8.0.8",
