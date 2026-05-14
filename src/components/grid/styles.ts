@@ -39,8 +39,12 @@ const clampToColumns = (value: number, columns: number): number =>
  * Formula:
  * `((100% - (columns - 1) * gap) * offset / columns) + offset * gap`
  */
-const numericOffsetMargin = (offset: number, theme: GridTheme): string =>
-	`calc(((100% - (${theme.shared.columns} - 1) * ${theme.shared.gap}) * ${offset} / ${theme.shared.columns}) + ${offset} * ${theme.shared.gap})`;
+const numericOffsetMargin = (
+	offset: number,
+	columns: number,
+	gap: string,
+): string =>
+	`calc(((100% - (${columns} - 1) * ${gap}) * ${offset} / ${columns}) + ${offset} * ${gap})`;
 
 /**
  * Computes the width for an item that spans a fixed number of grid columns.
@@ -53,8 +57,8 @@ const numericOffsetMargin = (offset: number, theme: GridTheme): string =>
  * Formula:
  * `((100% - (columns - 1) * gap) * size / columns) + (size - 1) * gap`
  */
-const numericSizeWidth = (size: number, theme: GridTheme): string =>
-	`calc(((100% - (${theme.shared.columns} - 1) * ${theme.shared.gap}) * ${size} / ${theme.shared.columns}) + (${size} - 1) * ${theme.shared.gap})`;
+const numericSizeWidth = (size: number, columns: number, gap: string): string =>
+	`calc(((100% - (${columns} - 1) * ${gap}) * ${size} / ${columns}) + (${size} - 1) * ${gap})`;
 
 /**
  * Returns non-responsive item size styles for a single `size` value.
@@ -67,6 +71,7 @@ const numericSizeWidth = (size: number, theme: GridTheme): string =>
 const fixedSizeStyles = (
 	size: GridSizeValue,
 	theme: GridTheme,
+	breakpoint: Breakpoint,
 ): SerializedStyles => {
 	if (size === 'grow') {
 		return css`
@@ -86,12 +91,15 @@ const fixedSizeStyles = (
 		`;
 	}
 
-	const clampedSize = clampToColumns(size, theme.shared.columns);
-	const width = numericSizeWidth(clampedSize, theme);
+	const width = numericSizeWidth(
+		clampToColumns(size, theme[breakpoint].columns),
+		theme[breakpoint].columns,
+		theme[breakpoint].gap,
+	);
 
 	return css`
-		flex-basis: ${width};
 		flex-grow: 0;
+		flex-basis: ${width};
 		width: ${width};
 		max-width: ${width};
 	`;
@@ -105,66 +113,59 @@ const fixedSizeStyles = (
  * - `number`: shifts the item right by a computed column offset margin
  */
 const fixedOffsetStyles = (
-	offset: GridOffsetValue,
+	offset: GridOffsetValue | undefined,
 	theme: GridTheme,
+	breakpoint: Breakpoint,
 ): SerializedStyles => {
+	if (typeof offset === 'undefined') {
+		return css``;
+	}
+
 	if (offset === 'auto') {
 		return css`
 			margin-left: auto;
 		`;
 	}
 
-	const clampedOffset = clampToColumns(offset, theme.shared.columns);
-
 	return css`
-		margin-left: ${numericOffsetMargin(clampedOffset, theme)};
+		margin-left: ${numericOffsetMargin(
+			clampToColumns(offset, theme[breakpoint].columns),
+			theme[breakpoint].columns,
+			theme[breakpoint].gap,
+		)};
 	`;
 };
 
 const offsetStyles = (
 	offset: GridItemOwnerState['offset'],
 	theme: GridTheme,
+	breakpoint: Breakpoint,
 ): SerializedStyles => {
-	if (typeof offset === 'undefined') {
-		return css``;
-	}
-
 	if (!isResponsiveOffset(offset)) {
-		return fixedOffsetStyles(offset, theme);
+		return fixedOffsetStyles(offset, theme, breakpoint);
 	}
 
-	return css`
-		${(Object.entries(offset) as Array<[Breakpoint, GridOffsetValue]>).map(
-			([breakpoint, breakpointOffset]) => css`
-				${from[breakpoint]} {
-					${fixedOffsetStyles(breakpointOffset, theme)}
-				}
-			`,
-		)}
-	`;
+	return fixedOffsetStyles(offset[breakpoint], theme, breakpoint);
 };
 
 const sizeStyles = (
 	size: GridItemOwnerState['size'],
 	theme: GridTheme,
+	breakpoint: Breakpoint,
 ): SerializedStyles => {
 	if (typeof size === 'undefined') {
-		return fixedSizeStyles(theme.shared.columns, theme);
+		size = theme[breakpoint].columns;
 	}
 
 	if (!isResponsiveGridSize(size)) {
-		return fixedSizeStyles(size, theme);
+		return fixedSizeStyles(size, theme, breakpoint);
 	}
 
-	return css`
-		${(Object.entries(size) as Array<[Breakpoint, GridSizeValue]>).map(
-			([breakpoint, breakpointSize]) => css`
-				${from[breakpoint]} {
-					${fixedSizeStyles(breakpointSize, theme)}
-				}
-			`,
-		)}
-	`;
+	return fixedSizeStyles(
+		size[breakpoint] ?? theme[breakpoint].columns,
+		theme,
+		breakpoint,
+	);
 };
 
 export const gridStyles = (theme: GridTheme): SerializedStyles => {
@@ -173,10 +174,23 @@ export const gridStyles = (theme: GridTheme): SerializedStyles => {
 		width: ${theme.shared.width};
 		flex-direction: ${theme.shared.direction};
 		flex-wrap: ${theme.shared.wrap};
-		padding: 0 ${theme.shared.gap};
-		gap: ${theme.shared.gap};
 		justify-content: ${theme.shared.justifyContent};
 		align-items: ${theme.shared.alignItems};
+
+		${from.sm} {
+			gap: ${theme.sm.gap};
+			padding: 0 ${theme.sm.padding};
+		}
+
+		${from.md} {
+			gap: ${theme.md.gap};
+			padding: 0 ${theme.md.padding};
+		}
+
+		${from.lg} {
+			gap: ${theme.lg.gap};
+			padding: 0 ${theme.lg.padding};
+		}
 	`;
 };
 
@@ -186,7 +200,20 @@ export const itemStyles = (
 ): SerializedStyles => {
 	return css`
 		min-width: 0;
-		${sizeStyles(size, theme)}
-		${offsetStyles(offset, theme)}
+
+		${from.sm} {
+			${sizeStyles(size, theme, 'sm')}
+			${offsetStyles(offset, theme, 'sm')}
+		}
+
+		${from.md} {
+			${sizeStyles(size, theme, 'md')}
+			${offsetStyles(offset, theme, 'md')}
+		}
+
+		${from.lg} {
+			${sizeStyles(size, theme, 'lg')}
+			${offsetStyles(offset, theme, 'lg')}
+		}
 	`;
 };

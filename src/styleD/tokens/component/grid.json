@@ -10,14 +10,6 @@
 					"$type": "string",
 					"$value": "100%"
 				},
-				"columns": {
-					"$type": "number",
-					"$value": 12
-				},
-				"gap": {
-					"$type": "string",
-					"$value": "8px"
-				},
 				"direction": {
 					"$type": "string",
 					"$value": "row"
@@ -33,6 +25,48 @@
 				"alignItems": {
 					"$type": "string",
 					"$value": "stretch"
+				}
+			},
+			"sm": {
+				"columns": {
+					"$type": "number",
+					"$value": "{semantic.grid.columns.sm}"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{semantic.grid.gutter.sm-px}"
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": "{semantic.grid.margin.sm-px}"
+				}
+			},
+			"md": {
+				"columns": {
+					"$type": "number",
+					"$value": "{semantic.grid.columns.md}"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{semantic.grid.gutter.md-px}"
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": "{semantic.grid.margin.md-px}"
+				}
+			},
+			"lg": {
+				"columns": {
+					"$type": "number",
+					"$value": "{semantic.grid.columns.lg}"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{semantic.grid.gutter.lg-px}"
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": "{semantic.grid.margin.lg-px}"
 				}
 			}
 		}
