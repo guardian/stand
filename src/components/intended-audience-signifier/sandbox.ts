@@ -2,7 +2,7 @@
 export const componentName = 'IntendedAudienceSignifier';
 
 // IntendedAudienceSignifier - React sandbox example
-export const componentTsx = /* javascript */ `import { IntendedAudienceSignifier } from '@guardian/stand/intended-audience-signifier';
+export const componentTsx = /* javascript */ `import { IntendedAudienceSignifier } from '@guardian/stand/intendedAudienceSignifier;
 
 export const Component = () => (
 	<>
@@ -47,7 +47,7 @@ export const componentCss = /* css */ `
 	padding: var(--component-intended-audience-signifier-padding-y) var(--component-intended-audience-signifier-padding-x);
 	box-sizing: var(--component-intended-audience-signifier-box-sizing);
 	width: var(--component-intended-audience-signifier-width);
-	gap: var(--component-intended-audience-signifier-gap: 8px);
+	gap: var(--component-intended-audience-signifier-gap);
 }
 
 .stand-intended-audience-signifier svg {

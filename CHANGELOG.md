@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.37
+
+### Patch Changes
+
+- 3002dfb: correct intendedAudienceSignifier styling
+
 ## 0.0.36
 
 ### Patch Changes
