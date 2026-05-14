@@ -14,10 +14,15 @@
  * you don't need to install these.
  */
 export { Layout } from './components/layout/Layout';
-export type { LayoutProps, SidebarProps } from './components/layout/types';
+export type {
+	LayoutProps,
+	SidebarProps,
+	MainProps,
+} from './components/layout/types';
 export type {
 	PartialLayoutTheme as LayoutTheme,
 	PartialSidebarTheme as SidebarTheme,
+	PartialMainTheme as MainTheme,
 } from './components/layout/styles';
 export { componentLayout } from './styleD/build/typescript/component/layout';
 export type { ComponentLayout } from './styleD/build/typescript/component/layout';

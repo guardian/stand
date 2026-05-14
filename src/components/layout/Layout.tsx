@@ -130,10 +130,19 @@ function LayoutMain({
  * </Layout>
  * ```
  */
-function LayoutRoot({ children, theme = {}, cssOverrides }: LayoutProps) {
+function LayoutRoot({
+	children,
+	theme = {},
+	cssOverrides,
+	...props
+}: LayoutProps) {
 	const mergedTheme = mergeDeep(defaultLayoutTheme, theme);
 
-	return <div css={[layoutStyles(mergedTheme), cssOverrides]}>{children}</div>;
+	return (
+		<div css={[layoutStyles(mergedTheme), cssOverrides]} {...props}>
+			{children}
+		</div>
+	);
 }
 
 interface LayoutCompound {
