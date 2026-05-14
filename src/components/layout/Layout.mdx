@@ -110,25 +110,31 @@ Each slot is a thin wrapper that applies the correct grid-area styles and render
 
 Use `Layout.Sidebar` to fill the sidebar region.
 
-| Name                 | Type                                     | Required | Default    | Description                               |
-| -------------------- | ---------------------------------------- | -------- | ---------- | ----------------------------------------- |
-| `children`           | `React.ReactNode`                        | No       | N/A        | Content to render inside the sidebar.     |
-| `layoutSmBreakpoint` | `'above-grid' \| 'hidden'`               | No       | `'hidden'` | Sidebar behavior at the `sm` breakpoint.  |
-| `theme`              | `SidebarTheme`                           | No       | N/A        | Theme token overrides for sidebar styles. |
-| `cssOverrides`       | `SerializedStyles \| SerializedStyles[]` | No       | N/A        | Custom CSS styles.                        |
-| `className`          | `string`                                 | No       | N/A        | Additional class name(s).                 |
+| Name                 | Type                                     | Required | Default    | Description                                                |
+| -------------------- | ---------------------------------------- | -------- | ---------- | ---------------------------------------------------------- |
+| `children`           | `React.ReactNode`                        | No       | N/A        | Content to render inside the sidebar.                      |
+| `layoutSmBreakpoint` | `'above-grid' \| 'hidden'`               | No       | `'hidden'` | Sidebar behavior at the `sm` breakpoint.                   |
+| `as`                 | `React.ElementType`                      | No       | `'aside'`  | Element or component used to render the sidebar container. |
+| `theme`              | `SidebarTheme`                           | No       | N/A        | Theme token overrides for sidebar styles.                  |
+| `cssOverrides`       | `SerializedStyles \| SerializedStyles[]` | No       | N/A        | Custom CSS styles.                                         |
+| `className`          | `string`                                 | No       | N/A        | Additional class name(s).                                  |
+
+`Layout.Sidebar` also forwards standard HTML attributes (for example `id`, `role`, `aria-*`, and `data-*`) to the rendered container.
 
 ## Main Props
 
 Use `Layout.Main` for the primary page content region.
 
-| Name           | Type                                     | Required | Default | Description                                                                      |
-| -------------- | ---------------------------------------- | -------- | ------- | -------------------------------------------------------------------------------- |
-| `children`     | `React.ReactNode`                        | No       | N/A     | Content to render in the main area (typically a `Grid`).                         |
-| `fluid`        | `boolean`                                | No       | `true`  | When `false`, constrains main width and centers content using main theme tokens. |
-| `theme`        | `MainTheme`                              | No       | N/A     | Theme token overrides for main region width and margins.                         |
-| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Custom CSS styles.                                                               |
-| `className`    | `string`                                 | No       | N/A     | Additional class name(s).                                                        |
+| Name           | Type                                     | Required | Default  | Description                                                                      |
+| -------------- | ---------------------------------------- | -------- | -------- | -------------------------------------------------------------------------------- |
+| `children`     | `React.ReactNode`                        | No       | N/A      | Content to render in the main area (typically a `Grid`).                         |
+| `fluid`        | `boolean`                                | No       | `true`   | When `false`, constrains main width and centers content using main theme tokens. |
+| `as`           | `React.ElementType`                      | No       | `'main'` | Element or component used to render the main container.                          |
+| `theme`        | `MainTheme`                              | No       | N/A      | Theme token overrides for main region width and margins.                         |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A      | Custom CSS styles.                                                               |
+| `className`    | `string`                                 | No       | N/A      | Additional class name(s).                                                        |
+
+`Layout.Main` also forwards standard HTML attributes (for example `id`, `role`, `aria-*`, and `data-*`) to the rendered container.
 
 ### `layoutSmBreakpoint` behavior
 

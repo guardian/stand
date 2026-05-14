@@ -4,7 +4,10 @@ import type { LayoutTheme, MainTheme, SidebarTheme } from './styles';
 
 export type LayoutProps = DefaultPropsWithChildren<LayoutTheme>;
 
-export interface MainProps extends DefaultPropsWithChildren<MainTheme> {
+export interface MainProps
+	extends
+		DefaultPropsWithChildren<MainTheme>,
+		React.HTMLAttributes<HTMLElement> {
 	/**
 	 * When `true`, the layout will take up the full width of its container, enabled by default.
 	 * When `false`, the layout will have a max-width of 1584px and be centered within its container.

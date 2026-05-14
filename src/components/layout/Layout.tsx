@@ -130,23 +130,14 @@ function LayoutMain({
  * </Layout>
  * ```
  */
-function LayoutRoot({
-	children,
-	theme = {},
-	cssOverrides,
-	...props
-}: LayoutProps) {
+function LayoutRoot({ children, theme = {}, cssOverrides }: LayoutProps) {
 	const mergedTheme = mergeDeep(defaultLayoutTheme, theme);
 
-	return (
-		<div css={[layoutStyles(mergedTheme), cssOverrides]} {...props}>
-			{children}
-		</div>
-	);
+	return <div css={[layoutStyles(mergedTheme), cssOverrides]}>{children}</div>;
 }
 
 interface LayoutCompound {
-	(props: Omit<LayoutProps, 'fluid'>): React.JSX.Element;
+	(props: LayoutProps): React.JSX.Element;
 	AlertBanner: (props: LayoutSlotProps) => React.JSX.Element;
 	TopBar: (props: LayoutSlotProps) => React.JSX.Element;
 	Sidebar: (props: SidebarProps) => React.JSX.Element;
