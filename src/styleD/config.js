@@ -57,6 +57,10 @@ const fileList = [
 		group: 'semantic',
 		component: 'breakpoints',
 	},
+	{
+		group: 'semantic',
+		component: 'grid',
+	},
 	/** design system components */
 	{
 		group: 'component',

@@ -44,7 +44,7 @@ export const componentLayout = {
 			width: '200px',
 		},
 		lg: {
-			width: '320px',
+			width: '280px',
 		},
 	},
 };

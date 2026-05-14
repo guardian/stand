@@ -15,4 +15,7 @@
 	--semantic-sizing-border-default: 0.0625rem;
 	--semantic-sizing-border-md: 0.125rem;
 	--semantic-sizing-border-extra-wide: 0.5rem;
+	--semantic-sizing-sidebar-md-px: 200px;
+	--semantic-sizing-sidebar-lg-px: 280px;
+	--semantic-sizing-layout-max-width-px: 1584px;
 }
