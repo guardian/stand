@@ -17,7 +17,7 @@
 					},
 					"max-width": {
 						"$type": "dimension",
-						"$value": "1584px"
+						"$value": "{semantic.sizing.layout.max-width-px}"
 					},
 					"margin-left": {
 						"$type": "string",
@@ -93,13 +93,13 @@
 					},
 					"width": {
 						"$type": "dimension",
-						"$value": "200px"
+						"$value": "{semantic.sizing.sidebar.md-px}"
 					}
 				},
 				"lg": {
 					"width": {
 						"$type": "dimension",
-						"$value": "320px"
+						"$value": "{semantic.sizing.sidebar.lg-px}"
 					}
 				}
 			}

@@ -163,11 +163,12 @@ export const CustomTheme = {
 			{...args}
 			theme={{
 				shared: {
-					gap: '16px',
-					columns: 12,
 					justifyContent: 'space-between',
 					alignItems: 'flex-start',
 				},
+				sm: { gap: '8px' },
+				md: { gap: '16px' },
+				lg: { gap: '16px' },
 			}}
 		>
 			<Item size={6} cssOverrides={demoItemStyles}>

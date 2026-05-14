@@ -77,6 +77,8 @@ export type { BaseTypography } from './styleD/build/typescript/base/typography';
  */
 export { semanticColors } from './styleD/build/typescript/semantic/colors';
 export type { SemanticColors } from './styleD/build/typescript/semantic/colors';
+export { semanticGrid } from './styleD/build/typescript/semantic/grid';
+export type { SemanticGrid } from './styleD/build/typescript/semantic/grid';
 export { semanticTypography } from './styleD/build/typescript/semantic/typography';
 export type { SemanticTypography } from './styleD/build/typescript/semantic/typography';
 export { semanticSizing } from './styleD/build/typescript/semantic/sizing';

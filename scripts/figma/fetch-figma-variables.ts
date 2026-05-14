@@ -34,6 +34,10 @@ const FigmaFiles: FigmaFile[] = [
 		id: 'H4NLEgB7dLSrW08YtEsIeO',
 		name: 'sizing',
 	},
+	{
+		id: 'aZigs0F88LxByBMkBWhir2',
+		name: 'grid',
+	},
 ];
 
 const FIGMA_API_OPTIONS = {

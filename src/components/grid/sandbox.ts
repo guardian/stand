@@ -22,12 +22,28 @@ export const componentCss = /* css */ `
 @import '@guardian/stand/component/grid.css';
 
 .stand-grid-container {
+	--gap: var(--component-grid-sm-gap);
 	display: var(--component-grid-shared-display);
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: stretch;
-	gap: 16px;
+	flex-direction: var(--component-grid-shared-direction);
+	flex-wrap: var(--component-grid-shared-wrap);
+	justify-content: var(--component-grid-shared-justify-content);
+	align-items: var(--component-grid-shared-align-items);
+	gap: var(--gap);
+	padding: 0 var(--component-grid-sm-padding);
+}
+
+@media (min-width: 830px) {
+	.stand-grid-container {
+		--gap: var(--component-grid-md-gap);
+		padding: 0 var(--component-grid-md-padding);
+	}
+}
+
+@media (min-width: 1056px) {
+	.stand-grid-container {
+		--gap: var(--component-grid-lg-gap);
+		padding: 0 var(--component-grid-lg-padding);
+	}
 }
 
 .stand-grid-item {
@@ -39,13 +55,15 @@ export const componentCss = /* css */ `
 	text-align: center;
 }
 
+/* 6-column span: ((100% - 11 * gap) * 6 / 12) + 5 * gap */
 .stand-grid-item--main {
-	flex: 0 0 calc(((100% - 11 * 16px) * 6 / 12) + 5 * 16px);
+	flex: 0 0 calc(((100% - 11 * var(--gap)) * 6 / 12) + 5 * var(--gap));
 }
 
+/* 3-column span with 1-column offset */
 .stand-grid-item--sidebar {
-	flex: 0 0 calc(((100% - 11 * 16px) * 3 / 12) + 2 * 16px);
-	margin-left: calc(((100% - 11 * 16px) * 1 / 12) + 1 * 16px);
+	flex: 0 0 calc(((100% - 11 * var(--gap)) * 3 / 12) + 2 * var(--gap));
+	margin-left: calc(((100% - 11 * var(--gap)) * 1 / 12) + 1 * var(--gap));
 }
 
 .stand-grid-item--auto {
@@ -76,13 +94,16 @@ export const componentHtml = /* html */ `<div class="container">
 export const componentJs = /* javascript */ `
 import { componentGrid } from "@guardian/stand";
 
+const { shared, sm } = componentGrid;
+
 const containerStyle = \`
-	display: \${componentGrid.shared.display};
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	align-items: stretch;
-	gap: 16px;
+	display: \${shared.display};
+	flex-direction: \${shared.direction};
+	flex-wrap: \${shared.wrap};
+	justify-content: \${shared.justifyContent};
+	align-items: \${shared.alignItems};
+	gap: \${sm.gap};
+	padding: 0 \${sm.padding};
 \`;
 
 const itemStyle = \`
@@ -94,10 +115,16 @@ const itemStyle = \`
 	text-align: center;
 \`;
 
+// 6-column span: ((100% - (columns - 1) * gap) * size / columns) + (size - 1) * gap
+const mainWidth = \`calc(((100% - (\${sm.columns} - 1) * \${sm.gap}) * 6 / \${sm.columns}) + 5 * \${sm.gap})\`;
+// 3-column span with 1-column offset
+const sidebarWidth = \`calc(((100% - (\${sm.columns} - 1) * \${sm.gap}) * 3 / \${sm.columns}) + 2 * \${sm.gap})\`;
+const sidebarOffset = \`calc(((100% - (\${sm.columns} - 1) * \${sm.gap}) * 1 / \${sm.columns}) + 1 * \${sm.gap})\`;
+
 document.getElementById("app").innerHTML = \`
 	<div style="\${containerStyle}">
-		<div style="\${itemStyle}; flex: 0 0 calc(((100% - 11 * 16px) * 6 / 12) + 5 * 16px);">Main content</div>
-		<div style="\${itemStyle}; flex: 0 0 calc(((100% - 11 * 16px) * 3 / 12) + 2 * 16px); margin-left: calc(((100% - 11 * 16px) * 1 / 12) + 1 * 16px);">Sidebar</div>
+		<div style="\${itemStyle}; flex: 0 0 \${mainWidth};">Main content</div>
+		<div style="\${itemStyle}; flex: 0 0 \${sidebarWidth}; margin-left: \${sidebarOffset};">Sidebar</div>
 		<div style="\${itemStyle}; flex: 0 0 auto; width: auto; max-width: none; white-space: nowrap;">Auto width</div>
 		<div style="\${itemStyle}; flex-basis: 0; flex-grow: 1; max-width: 100%;">Grows to fill</div>
 	</div>
