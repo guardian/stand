@@ -17,9 +17,9 @@ export const Component = () => (
 		<IntendedAudienceSignifier source="AUS" intendedAudience='domestic-for-global' />
 		<IntendedAudienceSignifier source="UK" intendedAudience='domestic-for-global' theme={{ color: '#c70000' }} />
 		<IntendedAudienceSignifier source="AUS" intendedAudience='global' cssOverrides={{ border-color: '#0000FF',align-items: 'flex-end' }}/>
-		<IntendedAudienceSignifier source="UK" intendedAudience="don-t-know" />
-		<IntendedAudienceSignifier source="US" intendedAudience="don-t-know" />
-		<IntendedAudienceSignifier source="AUS" intendedAudience="don-t-know" />
+		<IntendedAudienceSignifier source="UK" />
+		<IntendedAudienceSignifier source="US" />
+		<IntendedAudienceSignifier source="AUS" />
 		<IntendedAudienceSignifier source="UK" intendedAudience='US' />
 		<IntendedAudienceSignifier source="US" intendedAudience='UK' />
 	</>

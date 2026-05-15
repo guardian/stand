@@ -6,11 +6,10 @@ export type IntendedAudience =
 	| 'global'
 	| 'domestic-for-domestic'
 	| 'domestic-for-global'
-	| 'don-t-know'
 	| 'UK'
 	| 'US'
 	| 'AUS';
 export interface IntendedAudienceSignifierProps extends DefaultProps<IntendedAudienceSignifierTheme> {
 	source: Source;
-	intendedAudience: IntendedAudience;
+	intendedAudience?: IntendedAudience | null;
 }

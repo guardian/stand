@@ -97,17 +97,17 @@ export const AUSAndGlobalWithCSSOverrides = {
 
 export const DontKnowStoryUK = {
 	name: 'DontKnowUK',
-	args: { source: 'UK', intendedAudience: 'don-t-know' },
+	args: { source: 'UK' },
 } satisfies Story;
 
 export const DontKnowStoryUS = {
 	name: 'DontKnowUS',
-	args: { source: 'US', intendedAudience: 'don-t-know' },
+	args: { source: 'US' },
 } satisfies Story;
 
 export const DontKnowStoryAUS = {
 	name: 'DontKnowAUS',
-	args: { source: 'AUS', intendedAudience: 'don-t-know' },
+	args: { source: 'AUS' },
 } satisfies Story;
 
 export const UKAndUSStory = {
@@ -135,7 +135,6 @@ export const DontKnowStoryAUSLargeIconTheme = {
 	name: 'DontKnowStoryAUSLargeIconTheme',
 	args: {
 		source: 'AUS',
-		intendedAudience: 'don-t-know',
 		theme: largeIconTheme,
 	},
 } satisfies Story;
