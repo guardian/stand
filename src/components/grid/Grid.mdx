@@ -87,27 +87,40 @@ Container layout values such as `direction`, `wrap`, `justifyContent`, and `alig
 
 ### Grid Theme
 
-| Name                    | Type              | Default        | Description                                |
-| ----------------------- | ----------------- | -------------- | ------------------------------------------ |
-| `shared.columns`        | `number`          | `12`           | Total number of columns available to items |
-| `shared.gap`            | `string`          | `'8px'`        | Gap between rows and columns               |
-| `shared.direction`      | `flex-direction`  | `'row'`        | Container flex direction                   |
-| `shared.wrap`           | `flex-wrap`       | `'wrap'`       | Container wrap behavior                    |
-| `shared.justifyContent` | `justify-content` | `'flex-start'` | Main-axis distribution of items            |
-| `shared.alignItems`     | `align-items`     | `'stretch'`    | Cross-axis alignment of items              |
+The `GridTheme` type is structured with a `shared` key for flex layout properties and per-breakpoint keys (`sm`, `md`, `lg`) for column count, gap, and padding.
 
-> **Note:** The `theme` prop expects an object with a `shared` key containing these properties. For example:
+**`shared`**
+
+| Name                    | Type              | Default        | Description                     |
+| ----------------------- | ----------------- | -------------- | ------------------------------- |
+| `shared.display`        | `string`          | `'flex'`       | Container display type          |
+| `shared.width`          | `string`          | `'100%'`       | Container width                 |
+| `shared.direction`      | `flex-direction`  | `'row'`        | Container flex direction        |
+| `shared.wrap`           | `flex-wrap`       | `'wrap'`       | Container wrap behavior         |
+| `shared.justifyContent` | `justify-content` | `'flex-start'` | Main-axis distribution of items |
+| `shared.alignItems`     | `align-items`     | `'stretch'`    | Cross-axis alignment of items   |
+
+**Per-breakpoint (`sm` / `md` / `lg`)**
+
+| Name        | Type     | sm default | md default | lg default | Description                                      |
+| ----------- | -------- | ---------- | ---------- | ---------- | ------------------------------------------------ |
+| `*.columns` | `number` | `12`       | `12`       | `12`       | Total columns available to items                 |
+| `*.gap`     | `string` | `'16px'`   | `'16px'`   | `'16px'`   | Gap between rows and columns                     |
+| `*.padding` | `string` | `'16px'`   | `'24px'`   | `'24px'`   | Horizontal padding applied to the Grid container |
+
+> **Note:** The `theme` prop accepts a deeply-partial override of this structure. For example:
 >
 > ```tsx
 > theme={{
 >   shared: {
->     columns: 12,
->     gap: '8px',
 >     direction: 'row',
 >     wrap: 'wrap',
 >     justifyContent: 'flex-start',
 >     alignItems: 'stretch',
->   }
+>   },
+>   sm: { columns: 12, gap: '16px', padding: '16px' },
+>   md: { columns: 12, gap: '16px', padding: '24px' },
+>   lg: { columns: 12, gap: '16px', padding: '24px' },
 > }}
 > ```
 
@@ -166,11 +179,14 @@ The `theme` prop allows you to override specific design tokens for the Grid comp
 import type { GridTheme } from '@guardian/stand/grid';
 import { Grid, Item } from '@guardian/stand/grid';
 
-const customTheme: Partial<GridTheme> = {
-	gap: '16px',
-	columns: 12,
-	justifyContent: 'space-between',
-	alignItems: 'flex-start',
+const customTheme: GridTheme = {
+	shared: {
+		justifyContent: 'space-between',
+		alignItems: 'flex-start',
+	},
+	sm: { gap: '8px' },
+	md: { gap: '16px' },
+	lg: { gap: '16px' },
 };
 
 const Component = () => (

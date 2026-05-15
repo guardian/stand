@@ -1308,6 +1308,66 @@
 					"$type": "dimension",
 					"$value": "{base.sizing.size-8-rem}"
 				}
+			},
+			"sidebar": {
+				"md-px": {
+					"$type": "dimension",
+					"$value": "200px"
+				},
+				"lg-px": {
+					"$type": "dimension",
+					"$value": "280px"
+				}
+			},
+			"layout": {
+				"max-width-px": {
+					"$type": "dimension",
+					"$value": "1584px"
+				}
+			}
+		},
+		"grid": {
+			"gutter": {
+				"lg-px": {
+					"$type": "dimension",
+					"$value": "16px"
+				},
+				"md-px": {
+					"$type": "dimension",
+					"$value": "16px"
+				},
+				"sm-px": {
+					"$type": "dimension",
+					"$value": "16px"
+				}
+			},
+			"margin": {
+				"lg-px": {
+					"$type": "dimension",
+					"$value": "24px"
+				},
+				"md-px": {
+					"$type": "dimension",
+					"$value": "24px"
+				},
+				"sm-px": {
+					"$type": "dimension",
+					"$value": "16px"
+				}
+			},
+			"columns": {
+				"lg": {
+					"$type": "number",
+					"$value": 12
+				},
+				"md": {
+					"$type": "number",
+					"$value": 12
+				},
+				"sm": {
+					"$type": "number",
+					"$value": 12
+				}
 			}
 		}
 	}

@@ -21,5 +21,12 @@ export const semanticSizing = {
 		md: '0.125rem',
 		'extra-wide': '0.5rem',
 	},
+	sidebar: {
+		'md-px': '200px',
+		'lg-px': '280px',
+	},
+	layout: {
+		'max-width-px': '1584px',
+	},
 };
 export type SemanticSizing = typeof semanticSizing;
