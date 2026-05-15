@@ -18,17 +18,17 @@ import type {
 	Source,
 } from './types';
 
-type KnownAudience = Exclude<IntendedAudience, "Don't know">;
+type KnownAudience = Exclude<IntendedAudience, 'don-t-know'>;
 
 const sourceIcons = {
 	UK: ukFlag,
 	US: usFlag,
 	AUS: auFlag,
-	Global: globeIcon,
+	global: globeIcon,
 };
 
 const getSourceIconElement = (sourceTag: Source, audience: KnownAudience) => {
-	if (audience === 'Global') {
+	if (audience === 'global') {
 		return globeIcon;
 	}
 	return sourceIcons[sourceTag];
@@ -38,11 +38,11 @@ const getIntendedAudienceIconElement = (
 	sourceTag: Source,
 	audience: KnownAudience,
 ) => {
-	if (audience === 'Domestic for Domestic') {
+	if (audience === 'domestic-for-domestic') {
 		return getSourceIconElement(sourceTag, audience);
 	}
 
-	if (audience === 'Global' || audience === 'Domestic For Global') {
+	if (audience === 'global' || audience === 'domestic-for-global') {
 		return globeIcon;
 	}
 
@@ -59,7 +59,7 @@ export function IntendedAudienceSignifier({
 }: IntendedAudienceSignifierProps) {
 	const mergedTheme = mergeDeep(defaultIntendedAudienceSignifierTheme, theme);
 
-	if (intendedAudience === "Don't know") {
+	if (intendedAudience === 'don-t-know') {
 		return (
 			<div
 				{...props}

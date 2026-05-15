@@ -6,20 +6,20 @@ export const componentTsx = /* javascript */ `import { IntendedAudienceSignifier
 
 export const Component = () => (
 	<>
-		<IntendedAudienceSignifier source="UK" intendedAudience='Global' />
-		<IntendedAudienceSignifier source="US" intendedAudience='Global' />
-		<IntendedAudienceSignifier source="AUS" intendedAudience='Global' />
-		<IntendedAudienceSignifier source="UK" intendedAudience='Domestic for Domestic' />
-		<IntendedAudienceSignifier source="US" intendedAudience='Domestic for Domestic' />
-		<IntendedAudienceSignifier source="AUS" intendedAudience='Domestic for Domestic' />
-		<IntendedAudienceSignifier source="UK" intendedAudience='Domestic For Global' />
-		<IntendedAudienceSignifier source="US" intendedAudience='Domestic For Global' />
-		<IntendedAudienceSignifier source="AUS" intendedAudience='Domestic For Global' />
-		<IntendedAudienceSignifier source="UK" intendedAudience='Domestic For Global' theme={{ color: '#c70000' }} />
-		<IntendedAudienceSignifier source="AUS" intendedAudience='Global' cssOverrides={{ border-color: '#0000FF',align-items: 'flex-end' }}/>
-		<IntendedAudienceSignifier source="UK" intendedAudience="Don't know" />
-		<IntendedAudienceSignifier source="US" intendedAudience="Don't know" />
-		<IntendedAudienceSignifier source="AUS" intendedAudience="Don't know" />
+		<IntendedAudienceSignifier source="UK" intendedAudience='global' />
+		<IntendedAudienceSignifier source="US" intendedAudience='global' />
+		<IntendedAudienceSignifier source="AUS" intendedAudience='global' />
+		<IntendedAudienceSignifier source="UK" intendedAudience='domestic-for-domestic' />
+		<IntendedAudienceSignifier source="US" intendedAudience='domestic-for-domestic' />
+		<IntendedAudienceSignifier source="AUS" intendedAudience='domestic-for-domestic' />
+		<IntendedAudienceSignifier source="UK" intendedAudience='domestic-for-global' />
+		<IntendedAudienceSignifier source="US" intendedAudience='domestic-for-global' />
+		<IntendedAudienceSignifier source="AUS" intendedAudience='domestic-for-global' />
+		<IntendedAudienceSignifier source="UK" intendedAudience='domestic-for-global' theme={{ color: '#c70000' }} />
+		<IntendedAudienceSignifier source="AUS" intendedAudience='global' cssOverrides={{ border-color: '#0000FF',align-items: 'flex-end' }}/>
+		<IntendedAudienceSignifier source="UK" intendedAudience="don-t-know" />
+		<IntendedAudienceSignifier source="US" intendedAudience="don-t-know" />
+		<IntendedAudienceSignifier source="AUS" intendedAudience="don-t-know" />
 		<IntendedAudienceSignifier source="UK" intendedAudience='US' />
 		<IntendedAudienceSignifier source="US" intendedAudience='UK' />
 	</>

@@ -15,44 +15,44 @@ export default meta;
 
 export const GlobalUKStory = {
 	name: 'GlobalUK',
-	args: { source: 'UK', intendedAudience: 'Global' },
+	args: { source: 'UK', intendedAudience: 'global' },
 } satisfies Story;
 
 export const GlobalUSStory = {
 	name: 'GlobalUS',
-	args: { source: 'US', intendedAudience: 'Global' },
+	args: { source: 'US', intendedAudience: 'global' },
 } satisfies Story;
 
 export const GlobalAUSStory = {
 	name: 'GlobalAUS',
-	args: { source: 'AUS', intendedAudience: 'Global' },
+	args: { source: 'AUS', intendedAudience: 'global' },
 } satisfies Story;
 
 export const UKAndUKStory = {
 	name: 'UKandUK',
-	args: { source: 'UK', intendedAudience: 'Domestic for Domestic' },
+	args: { source: 'UK', intendedAudience: 'domestic-for-domestic' },
 } satisfies Story;
 
 export const USAndUSStory = {
 	name: 'USandUS',
-	args: { source: 'US', intendedAudience: 'Domestic for Domestic' },
+	args: { source: 'US', intendedAudience: 'domestic-for-domestic' },
 } satisfies Story;
 
 export const AUSAndAUSStory = {
 	name: 'AUSandAUS',
-	args: { source: 'AUS', intendedAudience: 'Domestic for Domestic' },
+	args: { source: 'AUS', intendedAudience: 'domestic-for-domestic' },
 } satisfies Story;
 
 export const UKAndGlobalStory = {
 	name: 'UKandGlobal',
-	args: { source: 'UK', intendedAudience: 'Domestic For Global' },
+	args: { source: 'UK', intendedAudience: 'domestic-for-global' },
 } satisfies Story;
 
 export const USAndGlobalStory = {
 	name: 'USandGlobal',
 	args: {
 		source: 'US',
-		intendedAudience: 'Domestic For Global',
+		intendedAudience: 'domestic-for-global',
 	},
 } satisfies Story;
 
@@ -60,7 +60,7 @@ export const AUSAndGlobalStory = {
 	name: 'AUSandGlobal',
 	args: {
 		source: 'AUS',
-		intendedAudience: 'Domestic For Global',
+		intendedAudience: 'domestic-for-global',
 	},
 } satisfies Story;
 
@@ -68,7 +68,7 @@ export const UKAndGlobalStoryWithCustomTheme = {
 	name: 'UKandGlobalWithCustomTheme',
 	args: {
 		source: 'UK',
-		intendedAudience: 'Domestic For Global',
+		intendedAudience: 'domestic-for-global',
 		theme: {
 			borderRadius: '20%',
 			borderStyle: 'inset',
@@ -87,7 +87,7 @@ export const AUSAndGlobalWithCSSOverrides = {
 	name: 'AUSAndGlobalWithCSSOverrides',
 	args: {
 		source: 'AUS',
-		intendedAudience: 'Domestic For Global',
+		intendedAudience: 'domestic-for-global',
 		cssOverrides: css`
 			border-color: #0000ffff;
 			background-color: pink;
@@ -97,17 +97,17 @@ export const AUSAndGlobalWithCSSOverrides = {
 
 export const DontKnowStoryUK = {
 	name: 'DontKnowUK',
-	args: { source: 'UK', intendedAudience: "Don't know" },
+	args: { source: 'UK', intendedAudience: 'don-t-know' },
 } satisfies Story;
 
 export const DontKnowStoryUS = {
 	name: 'DontKnowUS',
-	args: { source: 'US', intendedAudience: "Don't know" },
+	args: { source: 'US', intendedAudience: 'don-t-know' },
 } satisfies Story;
 
 export const DontKnowStoryAUS = {
 	name: 'DontKnowAUS',
-	args: { source: 'AUS', intendedAudience: "Don't know" },
+	args: { source: 'AUS', intendedAudience: 'don-t-know' },
 } satisfies Story;
 
 export const UKAndUSStory = {
@@ -135,7 +135,7 @@ export const DontKnowStoryAUSLargeIconTheme = {
 	name: 'DontKnowStoryAUSLargeIconTheme',
 	args: {
 		source: 'AUS',
-		intendedAudience: "Don't know",
+		intendedAudience: 'don-t-know',
 		theme: largeIconTheme,
 	},
 } satisfies Story;
@@ -149,7 +149,7 @@ export const GlobalUSStoryLargeIconTheme = {
 	name: 'GlobalUSStoryLargeIconTheme',
 	args: {
 		source: 'US',
-		intendedAudience: 'Domestic For Global',
+		intendedAudience: 'domestic-for-global',
 		theme: largeIconTheme,
 	},
 } satisfies Story;
