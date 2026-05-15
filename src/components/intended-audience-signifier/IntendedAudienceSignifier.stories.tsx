@@ -18,6 +18,11 @@ export const GlobalUKStory = {
 	args: { source: 'UK', intendedAudience: 'global' },
 } satisfies Story;
 
+export const GlobalUKStoryTitleOn = {
+	name: 'GlobalUKStoryTitleOn',
+	args: { source: 'UK', intendedAudience: 'global', includeTitle: true },
+} satisfies Story;
+
 export const GlobalUSStory = {
 	name: 'GlobalUS',
 	args: { source: 'US', intendedAudience: 'global' },
@@ -38,6 +43,15 @@ export const USAndUSStory = {
 	args: { source: 'US', intendedAudience: 'domestic-for-domestic' },
 } satisfies Story;
 
+export const USAndUSStoryTitleOn = {
+	name: 'USAndUSStoryTitleOn',
+	args: {
+		source: 'US',
+		intendedAudience: 'domestic-for-domestic',
+		includeTitle: true,
+	},
+} satisfies Story;
+
 export const AUSAndAUSStory = {
 	name: 'AUSandAUS',
 	args: { source: 'AUS', intendedAudience: 'domestic-for-domestic' },
@@ -46,6 +60,15 @@ export const AUSAndAUSStory = {
 export const UKAndGlobalStory = {
 	name: 'UKandGlobal',
 	args: { source: 'UK', intendedAudience: 'domestic-for-global' },
+} satisfies Story;
+
+export const UKAndGlobalStoryTitleOn = {
+	name: 'UKandGlobal',
+	args: {
+		source: 'UK',
+		intendedAudience: 'domestic-for-global',
+		includeTitle: true,
+	},
 } satisfies Story;
 
 export const USAndGlobalStory = {
@@ -110,6 +133,11 @@ export const DontKnowStoryAUS = {
 	args: { source: 'AUS' },
 } satisfies Story;
 
+export const DontKnowStoryAUSTitleOn = {
+	name: 'DontKnowStoryAUSTitleOn',
+	args: { source: 'AUS', includeTitle: true },
+} satisfies Story;
+
 export const UKAndUSStory = {
 	name: 'UKAndUSStory',
 	args: { source: 'UK', intendedAudience: 'US' },
@@ -118,6 +146,11 @@ export const UKAndUSStory = {
 export const USAndUKStory = {
 	name: 'USAndUKStory',
 	args: { source: 'US', intendedAudience: 'UK' },
+} satisfies Story;
+
+export const USAndUKStoryTitleOn = {
+	name: 'USAndUKStory',
+	args: { source: 'US', intendedAudience: 'UK', includeTitle: true },
 } satisfies Story;
 
 const largeIconTheme = {

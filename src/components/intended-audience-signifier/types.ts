@@ -12,4 +12,5 @@ export type IntendedAudience =
 export interface IntendedAudienceSignifierProps extends DefaultProps<IntendedAudienceSignifierTheme> {
 	source: Source;
 	intendedAudience?: IntendedAudience | null;
+	includeTitle?: boolean;
 }
