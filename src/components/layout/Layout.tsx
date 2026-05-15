@@ -146,11 +146,11 @@ function LayoutRoot({
 }
 
 interface LayoutCompound {
-	(props: LayoutProps): React.JSX.Element;
-	AlertBanner: (props: LayoutSlotProps) => React.JSX.Element;
-	TopBar: (props: LayoutSlotProps) => React.JSX.Element;
-	Sidebar: (props: SidebarProps) => React.JSX.Element;
-	Main: (props: MainProps) => React.JSX.Element;
+	(props: LayoutProps): React.ReactElement;
+	AlertBanner: (props: LayoutSlotProps) => React.ReactElement;
+	TopBar: (props: LayoutSlotProps) => React.ReactElement;
+	Sidebar: (props: SidebarProps) => React.ReactElement;
+	Main: (props: MainProps) => React.ReactElement;
 }
 
 export const Layout: LayoutCompound = Object.assign(LayoutRoot, {
