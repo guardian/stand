@@ -1,4 +1,3 @@
-import type { SerializedStyles } from '@emotion/react';
 import type React from 'react';
 import { mergeDeep } from '../../util/mergeDeep';
 import {
@@ -12,13 +11,12 @@ import {
 	sidebarStyles,
 	topBarLayoutStyles,
 } from './styles';
-import type { LayoutProps, MainProps, SidebarProps } from './types';
-
-export interface LayoutSlotProps extends React.HTMLAttributes<HTMLElement> {
-	children?: React.ReactNode;
-	cssOverrides?: SerializedStyles | SerializedStyles[];
-	as?: React.ElementType;
-}
+import type {
+	LayoutProps,
+	LayoutSlotProps,
+	MainProps,
+	SidebarProps,
+} from './types';
 
 /**
  * Places children into the alert banner grid area of the Layout.

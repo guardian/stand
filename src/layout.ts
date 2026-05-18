@@ -16,8 +16,10 @@
 export { Layout } from './components/layout/Layout';
 export type {
 	LayoutProps,
-	SidebarProps,
-	MainProps,
+	SidebarProps as LayoutSidebarProps,
+	MainProps as LayoutMainProps,
+	LayoutSlotProps as LayoutAlertBannerProps,
+	LayoutSlotProps as LayoutTopBarProps,
 } from './components/layout/types';
 export type {
 	PartialLayoutTheme as LayoutTheme,

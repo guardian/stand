@@ -1,3 +1,4 @@
+import type { SerializedStyles } from '@emotion/react';
 import type React from 'react';
 import type { DefaultPropsWithChildren } from '../../util/types';
 import type { LayoutTheme, MainTheme, SidebarTheme } from './styles';
@@ -30,5 +31,11 @@ export interface SidebarProps
 	 *
 	 */
 	layoutSmBreakpoint?: 'above-grid' | 'hidden';
+	as?: React.ElementType;
+}
+
+export interface LayoutSlotProps extends React.HTMLAttributes<HTMLElement> {
+	children?: React.ReactNode;
+	cssOverrides?: SerializedStyles | SerializedStyles[];
 	as?: React.ElementType;
 }
