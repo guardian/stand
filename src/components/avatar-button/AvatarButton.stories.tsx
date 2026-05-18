@@ -104,7 +104,7 @@ export const CustomTheme = {
 				},
 			},
 			md: {
-				size: baseSizing['size-48-rem'],
+				size: baseSizing.size48Rem,
 			},
 		},
 	},
@@ -117,8 +117,8 @@ export const CssOverrides = {
 		size: 'md',
 		color: 'red',
 		cssOverrides: css`
-			border: ${baseSizing['size-2-rem']} solid ${baseColors.red[500]};
-			margin: ${baseSpacing['8-rem']};
+			border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
+			margin: ${baseSpacing['8Rem']};
 		`,
 	},
 } satisfies Story;

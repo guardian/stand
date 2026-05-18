@@ -186,14 +186,14 @@ export const CustomTheme = {
 		const theme: DeepPartial<ComponentMenu> = {
 			menu: {
 				shared: {
-					border: `${baseSizing['size-8-px']} solid ${baseColors.orange[900]}`,
-					'background-color': baseColors.orange[50],
+					border: `${baseSizing.size8Px} solid ${baseColors.orange[900]}`,
+					backgroundColor: baseColors.orange[50],
 				},
 			},
 			menuItem: {
 				shared: {
-					':hover': {
-						'background-color': baseColors.orange[100],
+					hover: {
+						backgroundColor: baseColors.orange[100],
 					},
 					label: {
 						color: baseColors.orange[900],
@@ -212,19 +212,19 @@ export const CustomTheme = {
 			menuSection: {
 				header: {
 					shared: {
-						'background-color': baseColors.orange[50],
+						backgroundColor: baseColors.orange[50],
 						color: baseColors.orange[900],
 					},
 				},
 			},
 			menuSeparator: {
 				shared: {
-					'background-color': baseColors.orange[200],
+					backgroundColor: baseColors.orange[200],
 				},
 			},
 			menuPopover: {
 				shared: {
-					shadow: `0 ${baseSizing['size-2-px']} ${baseSizing['size-16-px']} 0 rgb(255 165 0 / 0.3)`,
+					shadow: `0 ${baseSizing.size2Px} ${baseSizing.size16Px} 0 rgb(255 165 0 / 0.3)`,
 				},
 			},
 		};
@@ -285,7 +285,7 @@ export const CssOverrides = {
 	name: 'css overrides',
 	render: () => {
 		const menuStyles = css`
-			padding: ${baseSpacing['16-px']};
+			padding: ${baseSpacing['16Px']};
 		`;
 
 		const menuPopoverStyles = css`
@@ -293,7 +293,7 @@ export const CssOverrides = {
 		`;
 
 		const menuItemStyles = css`
-			padding: ${baseSpacing['8-px']} ${baseSpacing['16-px']};
+			padding: ${baseSpacing['8Px']} ${baseSpacing['16Px']};
 		`;
 
 		const menuSeparatorStyles = css`

@@ -181,7 +181,7 @@ export const CustomTheme = {
 		children: 'Unable to save changes.',
 		theme: {
 			error: {
-				'background-color': baseColors.red[100],
+				backgroundColor: baseColors.red[100],
 			},
 			shared: {
 				content: {

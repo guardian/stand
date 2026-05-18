@@ -11,14 +11,14 @@ export const defaultTopBarTheme: TopBarTheme = componentTopBar;
 
 export const topBarStyles = (theme: TopBarTheme): SerializedStyles => {
 	return css`
-		background-color: ${theme['background-color']};
+		background-color: ${theme.backgroundColor};
 		height: ${theme.height};
-		border-top: ${theme['border-top']};
-		border-right: ${theme['border-right']};
-		border-bottom: ${theme['border-bottom']};
-		border-left: ${theme['border-left']};
+		border-top: ${theme.borderTop};
+		border-right: ${theme.borderRight};
+		border-bottom: ${theme.borderBottom};
+		border-left: ${theme.borderLeft};
 		display: ${theme.display};
-		justify-content: ${theme['justify-content']};
+		justify-content: ${theme.justifyContent};
 	`;
 };
 
@@ -50,7 +50,7 @@ export const topBarContainerStyles = (
 
 export const topBarSpacerStyles = (theme: TopBarTheme): SerializedStyles => {
 	return css`
-		margin-left: ${theme.spacer['margin-left']};
+		margin-left: ${theme.spacer.marginLeft};
 	`;
 };
 
@@ -66,16 +66,13 @@ export const topBarCollapsedNavMenuButtonStyles = (
 		cursor: ${theme.collapsedNavMenu.button.cursor};
 
 		&[data-hovered] {
-			background-color: ${theme.collapsedNavMenu.button.hovered[
-				'background-color'
-			]};
+			background-color: ${theme.collapsedNavMenu.button.hovered
+				.backgroundColor};
 		}
 
 		${menuOpen &&
 		css`
-			background-color: ${theme.collapsedNavMenu.button.active[
-				'background-color'
-			]};
+			background-color: ${theme.collapsedNavMenu.button.active.backgroundColor};
 		`}
 	`;
 };
@@ -84,7 +81,7 @@ export const topBarCollapsedNavMenuPopoverStyles = (
 	theme: TopBarTheme,
 ): SerializedStyles => {
 	return css`
-		background-color: ${theme.collapsedNavMenu.popover['background-color']};
+		background-color: ${theme.collapsedNavMenu.popover.backgroundColor};
 		border-left: ${theme.collapsedNavMenu.popover.border};
 		border-right: ${theme.collapsedNavMenu.popover.border};
 	`;

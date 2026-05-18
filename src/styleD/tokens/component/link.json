@@ -15,7 +15,7 @@
 				"hover": {
 					"color": {
 						"$type": "color",
-						"$value": "{semantic.colors.fill.link-hover}"
+						"$value": "{semantic.colors.fill.linkHover}"
 					},
 					"cursor": {
 						"$type": "string",
@@ -37,7 +37,7 @@
 				"pressed": {
 					"color": {
 						"$type": "color",
-						"$value": "{semantic.colors.fill.link-pressed}"
+						"$value": "{semantic.colors.fill.linkPressed}"
 					}
 				}
 			}

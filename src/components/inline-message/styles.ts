@@ -17,7 +17,7 @@ export const inlineMessageStyles = (
 ): SerializedStyles => {
 	return css`
 		display: ${theme.shared.display};
-		align-items: ${theme.shared['align-items']};
+		align-items: ${theme.shared.alignItems};
 		gap: ${theme.shared.gap};
 		color: ${theme[level].color};
 	`;
@@ -27,6 +27,6 @@ export const inlineMessageIconStyles = (
 	theme: InlineMessageTheme,
 ): SerializedStyles => {
 	return css`
-		align-self: ${theme.shared.icon['align-self']};
+		align-self: ${theme.shared.icon.alignSelf};
 	`;
 };

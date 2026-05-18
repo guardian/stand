@@ -100,11 +100,11 @@ export const componentJs = /* javascript */ `	// for ts/js
 const faviconStyles = \`
     background-color: \${componentFavicon.color.background};
     display: \${componentFavicon.display};
-    align-items: \${componentFavicon["align-items"]};
-    justify-content: \${componentFavicon["justify-content"]};
+    align-items: \${componentFavicon.alignItems};
+    justify-content: \${componentFavicon.justifyContent};
     width: \${componentFavicon.size};
     height: \${componentFavicon.size};
-    user-select: \${componentFavicon["user-select"]};
+    user-select: \${componentFavicon.userSelect};
 \`;
 
 const typographyStyle = \`
@@ -122,7 +122,7 @@ const imgStyle = \`
 
 const iconStyles = \`
   display: \${componentIcon.shared.display};
-  user-select: \${componentIcon.shared["user-select"]};
+  user-select: \${componentIcon.shared.userSelect};
   font-size: \${componentIcon.md.size};
   color: \${componentFavicon.color.text};
 \`;

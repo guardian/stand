@@ -34,7 +34,7 @@ export const BodyItalicBold = {
 	args: {
 		children: 'Link',
 		href: 'https://www.theguardian.com',
-		typography: 'body-italic-bold-sm',
+		typography: 'bodyItalicBoldSm',
 	},
 } satisfies Story;
 
@@ -42,7 +42,7 @@ export const BodyBold = {
 	args: {
 		children: 'Link',
 		href: 'https://www.theguardian.com',
-		typography: 'body-bold-sm',
+		typography: 'bodyBoldSm',
 	},
 } satisfies Story;
 
@@ -61,7 +61,7 @@ export const CustomTheme = {
 	args: {
 		children: 'Link',
 		href: 'https://www.theguardian.com',
-		typography: 'body-bold-sm',
+		typography: 'bodyBoldSm',
 		theme: {
 			shared: {
 				hover: {

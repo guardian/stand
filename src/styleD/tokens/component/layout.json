@@ -81,26 +81,26 @@
 					},
 					"width": {
 						"$type": "dimension",
-						"$value": "{semantic.sizing.sidebar.md-px}"
+						"$value": "{semantic.sizing.sidebar.mdPx}"
 					}
 				},
 				"lg": {
 					"width": {
 						"$type": "dimension",
-						"$value": "{semantic.sizing.sidebar.lg-px}"
+						"$value": "{semantic.sizing.sidebar.lgPx}"
 					}
 				}
 			},
 			"main": {
-				"max-width": {
+				"maxWidth": {
 					"$type": "dimension",
-					"$value": "{semantic.sizing.layout.max-width-px}"
+					"$value": "{semantic.sizing.layout.maxWidthPx}"
 				},
-				"margin-left": {
+				"marginLeft": {
 					"$type": "string",
 					"$value": "auto"
 				},
-				"margin-right": {
+				"marginRight": {
 					"$type": "string",
 					"$value": "auto"
 				}

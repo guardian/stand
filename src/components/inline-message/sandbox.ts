@@ -111,7 +111,7 @@ const sheet = new CSSStyleSheet();
 sheet.replaceSync(\`
 	.js-stand-inline-message {
 		display: \${componentInlineMessage.shared.display};
-		align-items: \${componentInlineMessage.shared['align-items']};
+		align-items: \${componentInlineMessage.shared.alignItems};
 		gap: \${componentInlineMessage.shared.gap};
 		font: \${componentInlineMessage.shared.typography.font};
 		letter-spacing: \${componentInlineMessage.shared.typography.letterSpacing};

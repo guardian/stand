@@ -112,7 +112,7 @@ sheet.replaceSync(\`
 
 .stand-form-input-container {
 	display: \${componentForm.input.shared.container.display};
-	flex-direction: \${componentForm.input.shared.container['flex-direction']};
+	flex-direction: \${componentForm.input.shared.container.flexDirection};
 	gap: \${componentForm.input.shared.container.gap};
 	width: \${componentForm.input.shared.container.width};
 }

@@ -172,17 +172,17 @@ import {
 import { baseColors, semanticColors } from '@guardian/stand';
 
 const customTheme: Partial<TopBarTheme> = {
-	'background-color': baseColors.cyan[200],
+	backgroundColor: baseColors.cyan[200],
 	ToolName: {
-		color: semanticColors.text['stronger-inverse'],
+		color: semanticColors.text.strongerInverse,
 	},
 	Navigation: {
 		selected: {
-			color: semanticColors.text['stronger-inverse'],
-			'border-bottom': `${semanticSizing.border['extra-wide']} solid ${semanticColors.border['selected-inverse']}`,
+			color: semanticColors.text.strongerInverse,
+			borderBottom: `${semanticSizing.border.extraWide} solid ${semanticColors.border.selectedInverse}`,
 		},
 		unselected: {
-			color: semanticColors.text['stronger-inverse'],
+			color: semanticColors.text.strongerInverse,
 		},
 	},
 };

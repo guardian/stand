@@ -22,22 +22,22 @@ import '@guardian/stand/base/typography.css'; // CSS usage
 
 /* JS/TS usage */
 const stringStyleJS = css`
-	font-family: ${baseTypography.family['Open Sans']};
-	font-size: ${baseTypography.size['14-rem']};
-	font-weight: ${baseTypography.weight['Open Sans'].normal};
-	font-variation-settings: 'wdth' ${baseTypography.width['Open Sans']};
+	font-family: ${baseTypography.family.openSans};
+	font-size: ${baseTypography.size['14Rem']};
+	font-weight: ${baseTypography.weight.openSans.normal};
+	font-variation-settings: 'wdth' ${baseTypography.width.openSans};
 	style: ${baseTypography.style.normal};
 	line-height: ${baseTypography.lineHeight.normal};
-	letter-spacing: ${baseTypography.letterSpacing['default-rem']};
+	letter-spacing: ${baseTypography.letterSpacing.defaultRem};
 `;
 const objectStyleJS = {
-	fontFamily: baseTypography.family['Open Sans'],
-	fontSize: baseTypography.size['14-rem'],
-	fontWeight: baseTypography.weight['Open Sans'].normal,
-	fontVariationSettings: `'wdth' ${baseTypography.width['Open Sans']}`,
+	fontFamily: baseTypography.family.openSans,
+	fontSize: baseTypography.size['14Rem'],
+	fontWeight: baseTypography.weight.openSans.normal,
+	fontVariationSettings: `'wdth' ${baseTypography.width.openSans}`,
 	fontStyle: baseTypography.style.normal,
 	lineHeight: baseTypography.lineHeight.normal,
-	letterSpacing: baseTypography.letterSpacing['default-rem'],
+	letterSpacing: baseTypography.letterSpacing.defaultRem,
 };
 
 /* CSS usage */

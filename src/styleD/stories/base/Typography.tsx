@@ -21,7 +21,7 @@ const tableCss = css`
 		font-weight: 700;
 		padding: 8px;
 		border-bottom: 2px solid ${semanticColors.border.strong};
-		background: ${semanticColors.bg['raised-level-1']};
+		background: ${semanticColors.bg.raisedLevel1};
 	}
 
 	td {
@@ -31,7 +31,7 @@ const tableCss = css`
 	}
 
 	tr:hover {
-		background: ${semanticColors.bg['raised-level-1']};
+		background: ${semanticColors.bg.raisedLevel1};
 	}
 `;
 
@@ -72,12 +72,10 @@ export const Typography = () => (
 									css={css`
 										font-family: '${value}';
 										font-weight: 460;
-										font-size: ${baseTypography.size['18-rem']};
+										font-size: ${baseTypography.size['18Rem']};
 										font-style: ${baseTypography.style.normal};
-										line-height: ${baseTypography['line-height'].normal};
-										letter-spacing: ${baseTypography['letter-spacing'][
-											'default-rem'
-										]};
+										line-height: ${baseTypography.lineHeight.normal};
+										letter-spacing: ${baseTypography.letterSpacing.defaultRem};
 										font-variation-settings: 'wdth'
 											${baseTypography.width[
 												name as keyof typeof baseTypography.width
@@ -112,16 +110,14 @@ export const Typography = () => (
 							<td css={sampleCss}>
 								<span
 									css={css`
-										font-family: '${baseTypography.family['Open Sans']}';
-										font-weight: ${baseTypography.weight['Open Sans'].normal};
+										font-family: '${baseTypography.family.openSans}';
+										font-weight: ${baseTypography.weight.openSans.normal};
 										font-size: ${value};
 										font-style: ${baseTypography.style.normal};
-										line-height: ${baseTypography['line-height'].normal};
-										letter-spacing: ${baseTypography['letter-spacing'][
-											'default-rem'
-										]};
+										line-height: ${baseTypography.lineHeight.normal};
+										letter-spacing: ${baseTypography.letterSpacing.defaultRem};
 										font-variation-settings: 'wdth'
-											${baseTypography.width['Open Sans']};
+											${baseTypography.width.openSans};
 									`}
 									contentEditable
 								>
@@ -164,12 +160,11 @@ export const Typography = () => (
 													familyName as keyof typeof baseTypography.family
 												]}';
 												font-weight: ${weightValue};
-												font-size: ${baseTypography.size['18-rem']};
+												font-size: ${baseTypography.size['18Rem']};
 												font-style: ${baseTypography.style.normal};
-												line-height: ${baseTypography['line-height'].normal};
-												letter-spacing: ${baseTypography['letter-spacing'][
-													'default-rem'
-												]};
+												line-height: ${baseTypography.lineHeight.normal};
+												letter-spacing: ${baseTypography.letterSpacing
+													.defaultRem};
 												font-variation-settings: 'wdth'
 													${baseTypography.width[
 														familyName as keyof typeof baseTypography.width
@@ -209,13 +204,11 @@ export const Typography = () => (
 										font-family: '${baseTypography.family[
 											name as keyof typeof baseTypography.family
 										]}';
-										font-weight: ${baseTypography.weight['Open Sans'].normal};
-										font-size: ${baseTypography.size['18-rem']};
+										font-weight: ${baseTypography.weight.openSans.normal};
+										font-size: ${baseTypography.size['18Rem']};
 										font-style: ${baseTypography.style.normal};
-										line-height: ${baseTypography['line-height'].normal};
-										letter-spacing: ${baseTypography['letter-spacing'][
-											'default-rem'
-										]};
+										line-height: ${baseTypography.lineHeight.normal};
+										letter-spacing: ${baseTypography.letterSpacing.defaultRem};
 										font-variation-settings: 'wdth' ${value};
 									`}
 									contentEditable
@@ -247,16 +240,14 @@ export const Typography = () => (
 							<td css={sampleCss}>
 								<span
 									css={css`
-										font-family: '${baseTypography.family['Open Sans']}';
-										font-weight: ${baseTypography.weight['Open Sans'].normal};
-										font-size: ${baseTypography.size['18-rem']};
+										font-family: '${baseTypography.family.openSans}';
+										font-weight: ${baseTypography.weight.openSans.normal};
+										font-size: ${baseTypography.size['18Rem']};
 										font-style: ${value};
-										line-height: ${baseTypography['line-height'].normal};
-										letter-spacing: ${baseTypography['letter-spacing'][
-											'default-rem'
-										]};
+										line-height: ${baseTypography.lineHeight.normal};
+										letter-spacing: ${baseTypography.letterSpacing.defaultRem};
 										font-variation-settings: 'wdth'
-											${baseTypography.width['Open Sans']};
+											${baseTypography.width.openSans};
 									`}
 									contentEditable
 								>
@@ -280,33 +271,29 @@ export const Typography = () => (
 					</tr>
 				</thead>
 				<tbody>
-					{Object.entries(baseTypography['line-height']).map(
-						([name, value]) => (
-							<tr key={name}>
-								<td css={tokenNameCss}>{name}</td>
-								<td css={tokenValueCss}>{value}</td>
-								<td css={sampleCss}>
-									<span
-										css={css`
-											font-family: '${baseTypography.family['Open Sans']}';
-											font-weight: ${baseTypography.weight['Open Sans'].normal};
-											font-size: ${baseTypography.size['18-rem']};
-											font-style: ${baseTypography.style.normal};
-											line-height: ${value};
-											letter-spacing: ${baseTypography['letter-spacing'][
-												'default-rem'
-											]};
-											font-variation-settings: 'wdth'
-												${baseTypography.width['Open Sans']};
-										`}
-										contentEditable
-									>
-										For facts&apos; sake
-									</span>
-								</td>
-							</tr>
-						),
-					)}
+					{Object.entries(baseTypography.lineHeight).map(([name, value]) => (
+						<tr key={name}>
+							<td css={tokenNameCss}>{name}</td>
+							<td css={tokenValueCss}>{value}</td>
+							<td css={sampleCss}>
+								<span
+									css={css`
+										font-family: '${baseTypography.family.openSans}';
+										font-weight: ${baseTypography.weight.openSans.normal};
+										font-size: ${baseTypography.size['18Rem']};
+										font-style: ${baseTypography.style.normal};
+										line-height: ${value};
+										letter-spacing: ${baseTypography.letterSpacing.defaultRem};
+										font-variation-settings: 'wdth'
+											${baseTypography.width.openSans};
+									`}
+									contentEditable
+								>
+									For facts&apos; sake
+								</span>
+							</td>
+						</tr>
+					))}
 				</tbody>
 			</table>
 		</div>
@@ -322,31 +309,29 @@ export const Typography = () => (
 					</tr>
 				</thead>
 				<tbody>
-					{Object.entries(baseTypography['letter-spacing']).map(
-						([name, value]) => (
-							<tr key={name}>
-								<td css={tokenNameCss}>{name}</td>
-								<td css={tokenValueCss}>{value}</td>
-								<td css={sampleCss}>
-									<span
-										css={css`
-											font-family: '${baseTypography.family['Open Sans']}';
-											font-weight: ${baseTypography.weight['Open Sans'].normal};
-											font-size: ${baseTypography.size['18-rem']};
-											font-style: ${baseTypography.style.normal};
-											line-height: ${baseTypography['line-height'].normal};
-											letter-spacing: ${value};
-											font-variation-settings: 'wdth'
-												${baseTypography.width['Open Sans']};
-										`}
-										contentEditable
-									>
-										For facts&apos; sake
-									</span>
-								</td>
-							</tr>
-						),
-					)}
+					{Object.entries(baseTypography.letterSpacing).map(([name, value]) => (
+						<tr key={name}>
+							<td css={tokenNameCss}>{name}</td>
+							<td css={tokenValueCss}>{value}</td>
+							<td css={sampleCss}>
+								<span
+									css={css`
+										font-family: '${baseTypography.family.openSans}';
+										font-weight: ${baseTypography.weight.openSans.normal};
+										font-size: ${baseTypography.size['18Rem']};
+										font-style: ${baseTypography.style.normal};
+										line-height: ${baseTypography.lineHeight.normal};
+										letter-spacing: ${value};
+										font-variation-settings: 'wdth'
+											${baseTypography.width.openSans};
+									`}
+									contentEditable
+								>
+									For facts&apos; sake
+								</span>
+							</td>
+						</tr>
+					))}
 				</tbody>
 			</table>
 		</div>

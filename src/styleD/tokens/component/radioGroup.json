@@ -5,12 +5,12 @@
 				"marginTop": {
 					"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
 					"$type": "dimension",
-					"$value": "{base.spacing.8-rem}"
+					"$value": "{base.spacing.8Rem}"
 				},
 				"marginBottom": {
 					"$description": "spacing between the input itself and the next element (error text) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
 					"$type": "dimension",
-					"$value": "{base.spacing.8-rem}"
+					"$value": "{base.spacing.8Rem}"
 				},
 				"display": {
 					"$type": "string",
@@ -41,7 +41,7 @@
 					},
 					"gap": {
 						"$type": "dimension",
-						"$value": "{base.spacing.8-rem}"
+						"$value": "{base.spacing.8Rem}"
 					}
 				},
 				"indicator": {
@@ -90,7 +90,7 @@
 						},
 						"outlineOffset": {
 							"$type": "dimension",
-							"$value": "{base.spacing.2-rem}"
+							"$value": "{base.spacing.2Rem}"
 						}
 					},
 					"invalid": {
@@ -105,7 +105,7 @@
 						"after": {
 							"backgroundColor": {
 								"$type": "color",
-								"$value": "{semantic.colors.fill.error-strong}"
+								"$value": "{semantic.colors.fill.errorStrong}"
 							}
 						}
 					},
@@ -170,26 +170,26 @@
 			"sm": {
 				"gap": {
 					"$type": "dimension",
-					"$value": "{base.spacing.16-rem}"
+					"$value": "{base.spacing.16Rem}"
 				},
 				"typography": {
 					"font": {
 						"$type": "typography",
-						"$value": "{semantic.typography.label-form-inline-sm.font}"
+						"$value": "{semantic.typography.labelFormInlineSm.font}"
 					},
 					"letterSpacing": {
 						"$type": "dimension",
-						"$value": "{semantic.typography.label-form-inline-sm.letterSpacing}"
+						"$value": "{semantic.typography.labelFormInlineSm.letterSpacing}"
 					},
 					"fontWidth": {
 						"$type": "number",
-						"$value": "{semantic.typography.label-form-inline-sm.fontWidth}"
+						"$value": "{semantic.typography.labelFormInlineSm.fontWidth}"
 					}
 				},
 				"indicator": {
 					"width": {
 						"$type": "dimension",
-						"$value": "{base.sizing.size-20-rem}"
+						"$value": "{base.sizing.size20Rem}"
 					},
 					"height": {
 						"$type": "dimension",
@@ -200,26 +200,26 @@
 			"md": {
 				"gap": {
 					"$type": "dimension",
-					"$value": "{base.spacing.20-rem}"
+					"$value": "{base.spacing.20Rem}"
 				},
 				"typography": {
 					"font": {
 						"$type": "typography",
-						"$value": "{semantic.typography.label-form-inline-md.font}"
+						"$value": "{semantic.typography.labelFormInlineMd.font}"
 					},
 					"letterSpacing": {
 						"$type": "dimension",
-						"$value": "{semantic.typography.label-form-inline-md.letterSpacing}"
+						"$value": "{semantic.typography.labelFormInlineMd.letterSpacing}"
 					},
 					"fontWidth": {
 						"$type": "number",
-						"$value": "{semantic.typography.label-form-inline-md.fontWidth}"
+						"$value": "{semantic.typography.labelFormInlineMd.fontWidth}"
 					}
 				},
 				"indicator": {
 					"width": {
 						"$type": "dimension",
-						"$value": "{base.sizing.size-24-rem}"
+						"$value": "{base.sizing.size24Rem}"
 					},
 					"height": {
 						"$type": "dimension",

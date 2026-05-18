@@ -31,7 +31,7 @@ export const componentSelect = {
 			},
 			focused: {
 				outline: '0.125rem solid #0072a9',
-				'outline-offset': '0.125rem',
+				outlineOffset: '0.125rem',
 			},
 			disabled: {
 				backgroundColor: '#ffffff',
@@ -50,7 +50,7 @@ export const componentSelect = {
 			paddingBottom: '0.75rem',
 			focused: {
 				outline: '0.125rem solid #0072a9',
-				'outline-offset': '0',
+				outlineOffset: '0',
 				backgroundColor: 'inherit',
 			},
 		},

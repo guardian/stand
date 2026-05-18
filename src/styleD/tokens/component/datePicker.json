@@ -25,7 +25,7 @@
 					},
 					"borderRadius": {
 						"$type": "string",
-						"$value": "{base.radius.corner-4-rem}"
+						"$value": "{base.radius.corner4Rem}"
 					},
 					"border": {
 						"$type": "border",
@@ -41,7 +41,7 @@
 					},
 					"gap": {
 						"$type": "string",
-						"$value": "{base.spacing.8-rem}"
+						"$value": "{base.spacing.8Rem}"
 					},
 					"padding": {
 						"top": {
@@ -50,7 +50,7 @@
 						},
 						"right": {
 							"$type": "string",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"bottom": {
 							"$type": "string",
@@ -58,7 +58,7 @@
 						},
 						"left": {
 							"$type": "string",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.12Rem}"
 						}
 					},
 					"disabled": {
@@ -68,7 +68,7 @@
 						},
 						"backgroundColor": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.weak-pressed}"
+							"$value": "{semantic.colors.fill.weakPressed}"
 						},
 						"color": {
 							"$type": "color",
@@ -218,19 +218,19 @@
 					"padding": {
 						"top": {
 							"$type": "string",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"right": {
 							"$type": "string",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"bottom": {
 							"$type": "string",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"left": {
 							"$type": "string",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						}
 					},
 					"boxShadow": {
@@ -257,15 +257,15 @@
 						"typography": {
 							"font": {
 								"$type": "typography",
-								"$value": "{semantic.typography.heading-sm.font}"
+								"$value": "{semantic.typography.headingSm.font}"
 							},
 							"letterSpacing": {
 								"$type": "dimension",
-								"$value": "{semantic.typography.heading-sm.letterSpacing}"
+								"$value": "{semantic.typography.headingSm.letterSpacing}"
 							},
 							"fontWidth": {
 								"$type": "number",
-								"$value": "{semantic.typography.heading-sm.fontWidth}"
+								"$value": "{semantic.typography.headingSm.fontWidth}"
 							}
 						},
 						"button": {
@@ -348,19 +348,19 @@
 							"hovered": {
 								"backgroundColor": {
 									"$type": "color",
-									"$value": "{semantic.colors.fill.weak-hover}"
+									"$value": "{semantic.colors.fill.weakHover}"
 								}
 							},
 							"pressed": {
 								"backgroundColor": {
 									"$type": "color",
-									"$value": "{semantic.colors.fill.weak-pressed}"
+									"$value": "{semantic.colors.fill.weakPressed}"
 								}
 							},
 							"selected": {
 								"backgroundColor": {
 									"$type": "color",
-									"$value": "{semantic.colors.fill.cyan-weak}"
+									"$value": "{semantic.colors.fill.cyanWeak}"
 								}
 							},
 							"focusVisible": {
@@ -391,15 +391,15 @@
 						"typography": {
 							"font": {
 								"$type": "typography",
-								"$value": "{semantic.typography.body-sm.font}"
+								"$value": "{semantic.typography.bodySm.font}"
 							},
 							"letterSpacing": {
 								"$type": "dimension",
-								"$value": "{semantic.typography.body-sm.letterSpacing}"
+								"$value": "{semantic.typography.bodySm.letterSpacing}"
 							},
 							"fontWidth": {
 								"$type": "number",
-								"$value": "{semantic.typography.body-sm.fontWidth}"
+								"$value": "{semantic.typography.bodySm.fontWidth}"
 							}
 						},
 						"borderCollapse": {
@@ -461,19 +461,19 @@
 						"hovered": {
 							"backgroundColor": {
 								"$type": "color",
-								"$value": "{semantic.colors.fill.weak-hover}"
+								"$value": "{semantic.colors.fill.weakHover}"
 							}
 						},
 						"pressed": {
 							"backgroundColor": {
 								"$type": "color",
-								"$value": "{semantic.colors.fill.weak-pressed}"
+								"$value": "{semantic.colors.fill.weakPressed}"
 							}
 						},
 						"selected": {
 							"backgroundColor": {
 								"$type": "color",
-								"$value": "{semantic.colors.fill.cyan-weak}"
+								"$value": "{semantic.colors.fill.cyanWeak}"
 							}
 						},
 						"focusVisible": {

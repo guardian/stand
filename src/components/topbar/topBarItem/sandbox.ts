@@ -34,7 +34,7 @@ import { componentTopBar } from "@guardian/stand";
 
 const style = \`
 	display: \${componentTopBar.Item.display};
-	align-items: \${componentTopBar.Item['align-items']};
+	align-items: \${componentTopBar.Item.alignItems};
 	height: \${componentTopBar.Item.height};
 	padding: \${componentTopBar.Item.sm.padding.top} \${componentTopBar.Item.sm.padding.right} \${componentTopBar.Item.sm.padding.bottom} \${componentTopBar.Item.sm.padding.left};
 	border-right: \${componentTopBar.Item.border};

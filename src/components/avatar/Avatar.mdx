@@ -103,7 +103,7 @@ The avatar supports two sizes:
 
 When no `color` is set, the avatar picks a deterministic color based on the initials (with the exception of `outlined`). You can also specify a color explicitly.
 
-Available colors: `outlined`, `blue`, `green`, `red`, `cyan`, `teal`, `cool-purple`, `warm-purple`, `magenta`, `orange`, `yellow`
+Available colors: `outlined`, `blue`, `green`, `red`, `cyan`, `teal`, `coolPurple`, `warmPurple`, `magenta`, `orange`, `yellow`
 
 ## Stories
 
@@ -172,7 +172,7 @@ const customTheme: AvatarTheme = {
 		},
 	},
 	md: {
-		size: baseSizing['size-48-rem'],
+		size: baseSizing.size48Rem,
 	},
 };
 
@@ -193,8 +193,8 @@ import { baseColors, baseSizing, baseSpacing } from '@guardian/stand';
 import { css } from '@emotion/react';
 
 const customStyles = css`
-	border: ${baseSizing['size-2-rem']} solid ${baseColors.red[500]};
-	margin: ${baseSpacing['8-rem']};
+	border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
+	margin: ${baseSpacing['8Rem']};
 `;
 
 const Component = () => (

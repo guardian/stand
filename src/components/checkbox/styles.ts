@@ -21,7 +21,7 @@ export const checkboxStyles = (
 	return css`
 		display: ${theme.input.shared.display};
 		position: ${theme.input.shared.position};
-		align-items: ${theme.input.shared['align-items']};
+		align-items: ${theme.input.shared.alignItems};
 		gap: ${theme.input.shared.gap};
 		cursor: ${theme.input.shared.cursor};
 		${convertTypographyToEmotionStringStyle(theme.input[size].typography)}
@@ -31,11 +31,11 @@ export const checkboxStyles = (
 			width: ${theme.input[size].indicator.size};
 			height: ${theme.input[size].indicator.size};
 			border: ${theme.input.shared.indicator.border};
-			border-radius: ${theme.input.shared.indicator['border-radius']};
+			border-radius: ${theme.input.shared.indicator.borderRadius};
 			display: ${theme.input.shared.indicator.display};
-			align-items: ${theme.input.shared.indicator['align-items']};
-			justify-content: ${theme.input.shared.indicator['justify-content']};
-			flex-shrink: ${theme.input.shared.indicator['flex-shrink']};
+			align-items: ${theme.input.shared.indicator.alignItems};
+			justify-content: ${theme.input.shared.indicator.justifyContent};
+			flex-shrink: ${theme.input.shared.indicator.flexShrink};
 			transition: ${theme.input.shared.indicator.transition};
 		}
 
@@ -52,10 +52,9 @@ export const checkboxStyles = (
 
 		&[data-focus-visible] {
 			.checkbox-indicator {
-				outline: ${theme.input.shared.indicator[':focus-visible'].outline};
-				outline-offset: ${theme.input.shared.indicator[':focus-visible'][
-					'outline-offset'
-				]};
+				outline: ${theme.input.shared.indicator.focusVisible.outline};
+				outline-offset: ${theme.input.shared.indicator.focusVisible
+					.outlineOffset};
 			}
 		}
 
@@ -63,9 +62,8 @@ export const checkboxStyles = (
 		&[data-indeterminate] {
 			.checkbox-indicator {
 				border: ${theme.input.shared.indicator.selected.border};
-				background-color: ${theme.input.shared.indicator.selected[
-					'background-color'
-				]};
+				background-color: ${theme.input.shared.indicator.selected
+					.backgroundColor};
 			}
 
 			& svg {
@@ -84,9 +82,8 @@ export const checkboxStyles = (
 			&[data-selected],
 			&[data-indeterminate] {
 				.checkbox-indicator {
-					background-color: ${theme.input.shared.disabled.indicator.selected[
-						'background-color'
-					]};
+					background-color: ${theme.input.shared.disabled.indicator.selected
+						.backgroundColor};
 				}
 			}
 		}
@@ -100,9 +97,7 @@ export const checkboxStyles = (
 		&[data-invalid][data-selected],
 		&[data-invalid][data-indeterminate] {
 			.checkbox-indicator {
-				background-color: ${theme.input.shared.indicator.error[
-					'background-color'
-				]};
+				background-color: ${theme.input.shared.indicator.error.backgroundColor};
 			}
 		}
 	`;
@@ -110,7 +105,7 @@ export const checkboxStyles = (
 
 export const checkboxLabelStyles = (theme: CheckboxTheme): SerializedStyles => {
 	return css`
-		align-self: ${theme.input.shared.label['align-self']};
+		align-self: ${theme.input.shared.label.alignSelf};
 	`;
 };
 
@@ -121,12 +116,12 @@ export const checkboxGroupStyles = (
 ): SerializedStyles => {
 	return css`
 		display: ${theme.group.shared.display};
-		flex-direction: ${theme.group.shared['flex-direction']};
+		flex-direction: ${theme.group.shared.flexDirection};
 		gap: ${theme.group[size].gap};
-		margin-top: ${theme.group[size]['margin-top']};
+		margin-top: ${theme.group[size].marginTop};
 		${hasError &&
 		css`
-			margin-bottom: ${theme.group[size]['margin-bottom']};
+			margin-bottom: ${theme.group[size].marginBottom};
 		`}
 	`;
 };

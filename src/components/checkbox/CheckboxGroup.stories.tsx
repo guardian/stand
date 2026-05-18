@@ -192,7 +192,7 @@ export const CustomTheme = {
 		description: 'This is a description for the checkbox group.',
 		theme: {
 			shared: {
-				'flex-direction': 'row',
+				flexDirection: 'row',
 			},
 		},
 	},

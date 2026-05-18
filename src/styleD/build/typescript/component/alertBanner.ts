@@ -5,8 +5,8 @@
 export const componentAlertBanner = {
 	shared: {
 		display: 'flex',
-		'align-items': 'center',
-		'justify-content': 'space-between',
+		alignItems: 'center',
+		justifyContent: 'space-between',
 		padding: {
 			top: '0',
 			right: '1rem',
@@ -17,11 +17,11 @@ export const componentAlertBanner = {
 		height: '2.5rem',
 		content: {
 			display: 'flex',
-			'justify-content': 'center',
+			justifyContent: 'center',
 			gap: '0.5rem',
 			flex: '1',
 			height: '100%',
-			'align-items': 'center',
+			alignItems: 'center',
 			color: '#000000',
 			typography: {
 				font: 'normal 460 0.875rem/1.3 Open Sans',
@@ -34,16 +34,16 @@ export const componentAlertBanner = {
 		},
 	},
 	information: {
-		'background-color': '#e8f0fb',
+		backgroundColor: '#e8f0fb',
 	},
 	success: {
-		'background-color': '#cde4c9',
+		backgroundColor: '#cde4c9',
 	},
 	warning: {
-		'background-color': '#fbeebf',
+		backgroundColor: '#fbeebf',
 	},
 	error: {
-		'background-color': '#f5c6c0',
+		backgroundColor: '#f5c6c0',
 	},
 };
 export type ComponentAlertBanner = typeof componentAlertBanner;

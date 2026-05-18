@@ -79,14 +79,14 @@ import { componentTopBar } from "@guardian/stand";
 
 const style = \`
 	display: \${componentTopBar.Navigation.shared.display};
-	align-items: \${componentTopBar.Navigation.shared['align-items']};
+	align-items: \${componentTopBar.Navigation.shared.alignItems};
 	color: \${componentTopBar.Navigation.unselected.color};
 	height: \${componentTopBar.Navigation.shared.height};
 	padding-top: \${componentTopBar.Navigation.shared.padding.top};
 	padding-right: \${componentTopBar.Navigation.shared.padding.right};
 	padding-bottom: \${componentTopBar.Navigation.shared.padding.bottom};
 	padding-left: \${componentTopBar.Navigation.shared.padding.left};
-	text-decoration: \${componentTopBar.Navigation.shared['text-decoration']};
+	text-decoration: \${componentTopBar.Navigation.shared.textDecoration};
 
 	font: \${componentTopBar.Navigation.md.typography.font};
 	letter-spacing: \${componentTopBar.Navigation.md.typography.letterSpacing};
@@ -94,19 +94,19 @@ const style = \`
 		\${componentTopBar.Navigation.md.typography.fontWidth};
 
 	&:hover {
-		border-bottom: \${componentTopBar.Navigation.selected['border-bottom']};
+		border-bottom: \${componentTopBar.Navigation.selected.borderBottom};
 		cursor: \${componentTopBar.Navigation.shared.cursor};
 	}
 
 	&:focus-visible {
-		outline: \${componentTopBar.Navigation.shared[':focus-visible'].outline};
-		border-bottom: \${componentTopBar.Navigation.selected['border-bottom']};
-		outline-offset: \${componentTopBar.Navigation.shared[':focus-visible']['outline-offset']};
+		outline: \${componentTopBar.Navigation.shared.focusVisible.outline};
+		border-bottom: \${componentTopBar.Navigation.selected.borderBottom};
+		outline-offset: \${componentTopBar.Navigation.shared.focusVisible.outlineOffset};
 	}
 
 	&[data-disabled] {
-		cursor: \${componentTopBar.Navigation.shared[':disabled'].cursor};
-		color: \${componentTopBar.Navigation.shared[':disabled'].color};
+		cursor: \${componentTopBar.Navigation.shared.disabled.cursor};
+		color: \${componentTopBar.Navigation.shared.disabled.color};
 	}
 \`;
 

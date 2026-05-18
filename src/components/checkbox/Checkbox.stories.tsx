@@ -178,8 +178,8 @@ export const CustomTheme = {
 				shared: {
 					indicator: {
 						selected: {
-							'background-color': baseColors['cool-purple'][500],
-							border: `0.0625rem solid ${baseColors['cool-purple'][700]}`,
+							backgroundColor: baseColors.coolPurple[500],
+							border: `0.0625rem solid ${baseColors.coolPurple[700]}`,
 						},
 					},
 				},

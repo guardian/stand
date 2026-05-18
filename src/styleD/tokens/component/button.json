@@ -6,15 +6,15 @@
 					"$type": "string",
 					"$value": "inline-flex"
 				},
-				"-webkit-appearance": {
+				"webkitAppearance": {
 					"$type": "string",
 					"$value": "none"
 				},
-				"text-align": {
+				"textAlign": {
 					"$type": "string",
 					"$value": "inherit"
 				},
-				"box-shadow": {
+				"boxShadow": {
 					"$type": "string",
 					"$value": "none"
 				},
@@ -22,25 +22,25 @@
 					"$type": "string",
 					"$value": "pointer"
 				},
-				"justify-content": {
+				"justifyContent": {
 					"$type": "string",
 					"$value": "center"
 				},
-				"align-items": {
+				"alignItems": {
 					"$type": "string",
 					"$value": "center"
 				},
-				"text-decoration": {
+				"textDecoration": {
 					"$type": "string",
 					"$value": "none"
 				},
-				":disabled": {
+				"disabled": {
 					"cursor": {
 						"$type": "string",
 						"$value": "not-allowed"
 					}
 				},
-				":focus-visible": {
+				"focusVisible": {
 					"outline": {
 						"$type": "border",
 						"$value": {
@@ -49,9 +49,9 @@
 							"style": "solid"
 						}
 					},
-					"outline-offset": {
+					"outlineOffset": {
 						"$type": "dimension",
-						"$value": "{base.spacing.2-rem}"
+						"$value": "{base.spacing.2Rem}"
 					}
 				}
 			},
@@ -59,15 +59,15 @@
 				"shared": {
 					"color": {
 						"$type": "color",
-						"$value": "{semantic.colors.text.stronger-inverse}"
+						"$value": "{semantic.colors.text.strongerInverse}"
 					},
 					"backgroundColor": {
 						"$type": "color",
-						"$value": "{semantic.colors.fill.accent-strong}"
+						"$value": "{semantic.colors.fill.accentStrong}"
 					},
 					"borderRadius": {
 						"$type": "dimension",
-						"$value": "{base.radius.corner-4-rem}"
+						"$value": "{base.radius.corner4Rem}"
 					},
 					"border": {
 						"$type": "border",
@@ -77,35 +77,35 @@
 							"style": "solid"
 						}
 					},
-					":hover": {
+					"hover": {
 						"backgroundColor": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.accent-strong-hover}"
+							"$value": "{semantic.colors.fill.accentStrongHover}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": {
-								"color": "{semantic.colors.fill.accent-strong-hover}",
+								"color": "{semantic.colors.fill.accentStrongHover}",
 								"width": "{semantic.sizing.border.default}",
 								"style": "solid"
 							}
 						}
 					},
-					":active": {
+					"active": {
 						"backgroundColor": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.accent-strong-pressed}"
+							"$value": "{semantic.colors.fill.accentStrongPressed}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": {
-								"color": "{semantic.colors.fill.accent-strong-pressed}",
+								"color": "{semantic.colors.fill.accentStrongPressed}",
 								"width": "{semantic.sizing.border.default}",
 								"style": "solid"
 							}
 						}
 					},
-					":disabled": {
+					"disabled": {
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.disabled}"
@@ -132,25 +132,25 @@
 					"padding": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.8-rem}"
+							"$value": "{base.spacing.8Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.8-rem}"
+							"$value": "{base.spacing.8Rem}"
 						},
 						"withIcon": {
 							"iconLeft": {
 								"left": {
 									"$type": "dimension",
-									"$value": "{base.spacing.4-rem}"
+									"$value": "{base.spacing.4Rem}"
 								}
 							}
 						}
@@ -158,15 +158,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-xs.font}"
+							"$value": "{semantic.typography.interactiveXs.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-xs.letterSpacing}"
+							"$value": "{semantic.typography.interactiveXs.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-xs.fontWidth}"
+							"$value": "{semantic.typography.interactiveXs.fontWidth}"
 						}
 					},
 					"icon": {
@@ -176,7 +176,7 @@
 						},
 						"gap": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						}
 					},
 					"iconButton": {
@@ -194,25 +194,25 @@
 					"padding": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.10-rem}"
+							"$value": "{base.spacing.10Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.10-rem}"
+							"$value": "{base.spacing.10Rem}"
 						},
 						"withIcon": {
 							"iconLeft": {
 								"left": {
 									"$type": "dimension",
-									"$value": "{base.spacing.8-rem}"
+									"$value": "{base.spacing.8Rem}"
 								}
 							}
 						}
@@ -220,15 +220,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-sm.font}"
+							"$value": "{semantic.typography.interactiveSm.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-sm.letterSpacing}"
+							"$value": "{semantic.typography.interactiveSm.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+							"$value": "{semantic.typography.interactiveSm.fontWidth}"
 						}
 					},
 					"icon": {
@@ -238,7 +238,7 @@
 						},
 						"gap": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						}
 					},
 					"iconButton": {
@@ -256,25 +256,25 @@
 					"padding": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.12Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.12Rem}"
 						},
 						"withIcon": {
 							"iconLeft": {
 								"left": {
 									"$type": "dimension",
-									"$value": "{base.spacing.8-rem}"
+									"$value": "{base.spacing.8Rem}"
 								}
 							}
 						}
@@ -282,15 +282,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-sm.font}"
+							"$value": "{semantic.typography.interactiveSm.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-sm.letterSpacing}"
+							"$value": "{semantic.typography.interactiveSm.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+							"$value": "{semantic.typography.interactiveSm.fontWidth}"
 						}
 					},
 					"icon": {
@@ -300,7 +300,7 @@
 						},
 						"gap": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						}
 					},
 					"iconButton": {
@@ -318,25 +318,25 @@
 					"padding": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.16Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.16Rem}"
 						},
 						"withIcon": {
 							"iconLeft": {
 								"left": {
 									"$type": "dimension",
-									"$value": "{base.spacing.12-rem}"
+									"$value": "{base.spacing.12Rem}"
 								}
 							}
 						}
@@ -344,15 +344,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-md.font}"
+							"$value": "{semantic.typography.interactiveMd.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-md.letterSpacing}"
+							"$value": "{semantic.typography.interactiveMd.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-md.fontWidth}"
+							"$value": "{semantic.typography.interactiveMd.fontWidth}"
 						}
 					},
 					"icon": {
@@ -362,7 +362,7 @@
 						},
 						"gap": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						}
 					},
 					"iconButton": {
@@ -377,7 +377,7 @@
 				"shared": {
 					"color": {
 						"$type": "color",
-						"$value": "{semantic.colors.text.stronger-inverse}"
+						"$value": "{semantic.colors.text.strongerInverse}"
 					},
 					"backgroundColor": {
 						"$type": "color",
@@ -385,7 +385,7 @@
 					},
 					"borderRadius": {
 						"$type": "dimension",
-						"$value": "{base.radius.corner-4-rem}"
+						"$value": "{base.radius.corner4Rem}"
 					},
 					"border": {
 						"$type": "border",
@@ -395,35 +395,35 @@
 							"style": "solid"
 						}
 					},
-					":hover": {
+					"hover": {
 						"backgroundColor": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.strong-hover}"
+							"$value": "{semantic.colors.fill.strongHover}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": {
-								"color": "{semantic.colors.fill.strong-hover}",
+								"color": "{semantic.colors.fill.strongHover}",
 								"width": "{semantic.sizing.border.default}",
 								"style": "solid"
 							}
 						}
 					},
-					":active": {
+					"active": {
 						"backgroundColor": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.strong-pressed}"
+							"$value": "{semantic.colors.fill.strongPressed}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": {
-								"color": "{semantic.colors.fill.strong-pressed}",
+								"color": "{semantic.colors.fill.strongPressed}",
 								"width": "{semantic.sizing.border.default}",
 								"style": "solid"
 							}
 						}
 					},
-					":disabled": {
+					"disabled": {
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.disabled}"
@@ -450,25 +450,25 @@
 					"padding": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.8-rem}"
+							"$value": "{base.spacing.8Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.8-rem}"
+							"$value": "{base.spacing.8Rem}"
 						},
 						"withIcon": {
 							"iconLeft": {
 								"left": {
 									"$type": "dimension",
-									"$value": "{base.spacing.4-rem}"
+									"$value": "{base.spacing.4Rem}"
 								}
 							}
 						}
@@ -476,15 +476,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-xs.font}"
+							"$value": "{semantic.typography.interactiveXs.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-xs.letterSpacing}"
+							"$value": "{semantic.typography.interactiveXs.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-xs.fontWidth}"
+							"$value": "{semantic.typography.interactiveXs.fontWidth}"
 						}
 					},
 					"icon": {
@@ -494,7 +494,7 @@
 						},
 						"gap": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						}
 					},
 					"iconButton": {
@@ -512,25 +512,25 @@
 					"padding": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.10-rem}"
+							"$value": "{base.spacing.10Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.10-rem}"
+							"$value": "{base.spacing.10Rem}"
 						},
 						"withIcon": {
 							"iconLeft": {
 								"left": {
 									"$type": "dimension",
-									"$value": "{base.spacing.8-rem}"
+									"$value": "{base.spacing.8Rem}"
 								}
 							}
 						}
@@ -538,15 +538,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-sm.font}"
+							"$value": "{semantic.typography.interactiveSm.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-sm.letterSpacing}"
+							"$value": "{semantic.typography.interactiveSm.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+							"$value": "{semantic.typography.interactiveSm.fontWidth}"
 						}
 					},
 					"icon": {
@@ -556,7 +556,7 @@
 						},
 						"gap": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						}
 					},
 					"iconButton": {
@@ -574,25 +574,25 @@
 					"padding": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.12Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.12Rem}"
 						},
 						"withIcon": {
 							"iconLeft": {
 								"left": {
 									"$type": "dimension",
-									"$value": "{base.spacing.8-rem}"
+									"$value": "{base.spacing.8Rem}"
 								}
 							}
 						}
@@ -600,15 +600,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-sm.font}"
+							"$value": "{semantic.typography.interactiveSm.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-sm.letterSpacing}"
+							"$value": "{semantic.typography.interactiveSm.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+							"$value": "{semantic.typography.interactiveSm.fontWidth}"
 						}
 					},
 					"icon": {
@@ -618,7 +618,7 @@
 						},
 						"gap": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						}
 					},
 					"iconButton": {
@@ -636,25 +636,25 @@
 					"padding": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.16Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.16Rem}"
 						},
 						"withIcon": {
 							"iconLeft": {
 								"left": {
 									"$type": "dimension",
-									"$value": "{base.spacing.12-rem}"
+									"$value": "{base.spacing.12Rem}"
 								}
 							}
 						}
@@ -662,15 +662,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-md.font}"
+							"$value": "{semantic.typography.interactiveMd.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-md.letterSpacing}"
+							"$value": "{semantic.typography.interactiveMd.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-md.fontWidth}"
+							"$value": "{semantic.typography.interactiveMd.fontWidth}"
 						}
 					},
 					"icon": {
@@ -680,7 +680,7 @@
 						},
 						"gap": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						}
 					},
 					"iconButton": {
@@ -703,7 +703,7 @@
 					},
 					"borderRadius": {
 						"$type": "dimension",
-						"$value": "{base.radius.corner-4-rem}"
+						"$value": "{base.radius.corner4Rem}"
 					},
 					"border": {
 						"$type": "border",
@@ -713,10 +713,10 @@
 							"style": "solid"
 						}
 					},
-					":hover": {
+					"hover": {
 						"backgroundColor": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.weak-hover}"
+							"$value": "{semantic.colors.fill.weakHover}"
 						},
 						"border": {
 							"$type": "border",
@@ -727,10 +727,10 @@
 							}
 						}
 					},
-					":active": {
+					"active": {
 						"backgroundColor": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.weak-pressed}"
+							"$value": "{semantic.colors.fill.weakPressed}"
 						},
 						"border": {
 							"$type": "border",
@@ -741,7 +741,7 @@
 							}
 						}
 					},
-					":disabled": {
+					"disabled": {
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.disabled}"
@@ -768,25 +768,25 @@
 					"padding": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.8-rem}"
+							"$value": "{base.spacing.8Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.8-rem}"
+							"$value": "{base.spacing.8Rem}"
 						},
 						"withIcon": {
 							"iconLeft": {
 								"left": {
 									"$type": "dimension",
-									"$value": "{base.spacing.4-rem}"
+									"$value": "{base.spacing.4Rem}"
 								}
 							}
 						}
@@ -794,15 +794,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-xs.font}"
+							"$value": "{semantic.typography.interactiveXs.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-xs.letterSpacing}"
+							"$value": "{semantic.typography.interactiveXs.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-xs.fontWidth}"
+							"$value": "{semantic.typography.interactiveXs.fontWidth}"
 						}
 					},
 					"icon": {
@@ -812,7 +812,7 @@
 						},
 						"gap": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						}
 					},
 					"iconButton": {
@@ -830,25 +830,25 @@
 					"padding": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.10-rem}"
+							"$value": "{base.spacing.10Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.10-rem}"
+							"$value": "{base.spacing.10Rem}"
 						},
 						"withIcon": {
 							"iconLeft": {
 								"left": {
 									"$type": "dimension",
-									"$value": "{base.spacing.8-rem}"
+									"$value": "{base.spacing.8Rem}"
 								}
 							}
 						}
@@ -856,15 +856,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-sm.font}"
+							"$value": "{semantic.typography.interactiveSm.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-sm.letterSpacing}"
+							"$value": "{semantic.typography.interactiveSm.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+							"$value": "{semantic.typography.interactiveSm.fontWidth}"
 						}
 					},
 					"icon": {
@@ -874,7 +874,7 @@
 						},
 						"gap": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						}
 					},
 					"iconButton": {
@@ -892,25 +892,25 @@
 					"padding": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.12Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.12Rem}"
 						},
 						"withIcon": {
 							"iconLeft": {
 								"left": {
 									"$type": "dimension",
-									"$value": "{base.spacing.8-rem}"
+									"$value": "{base.spacing.8Rem}"
 								}
 							}
 						}
@@ -918,15 +918,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-sm.font}"
+							"$value": "{semantic.typography.interactiveSm.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-sm.letterSpacing}"
+							"$value": "{semantic.typography.interactiveSm.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-sm.fontWidth}"
+							"$value": "{semantic.typography.interactiveSm.fontWidth}"
 						}
 					},
 					"icon": {
@@ -936,7 +936,7 @@
 						},
 						"gap": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						}
 					},
 					"iconButton": {
@@ -954,25 +954,25 @@
 					"padding": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.16Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.16Rem}"
 						},
 						"withIcon": {
 							"iconLeft": {
 								"left": {
 									"$type": "dimension",
-									"$value": "{base.spacing.12-rem}"
+									"$value": "{base.spacing.12Rem}"
 								}
 							}
 						}
@@ -980,15 +980,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactive-md.font}"
+							"$value": "{semantic.typography.interactiveMd.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactive-md.letterSpacing}"
+							"$value": "{semantic.typography.interactiveMd.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactive-md.fontWidth}"
+							"$value": "{semantic.typography.interactiveMd.fontWidth}"
 						}
 					},
 					"icon": {
@@ -998,7 +998,7 @@
 						},
 						"gap": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						}
 					},
 					"iconButton": {

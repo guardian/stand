@@ -66,11 +66,11 @@ export const componentJs = /* javascript */ `
 
 	const style = \`
 	display: \${componentAvatar.shared.display};
-	align-items: \${componentAvatar.shared["align-items"]};
-	justify-content: \${componentAvatar.shared["justify-content"]};
+	align-items: \${componentAvatar.shared.alignItems};
+	justify-content: \${componentAvatar.shared.justifyContent};
 	overflow: \${componentAvatar.shared.overflow};
-	flex-shrink: \${componentAvatar.shared["flex-shrink"]};
-	border-radius: \${componentAvatar.shared["border-radius"]};
+	flex-shrink: \${componentAvatar.shared.flexShrink};
+	border-radius: \${componentAvatar.shared.borderRadius};
 	background-color: \${componentAvatar.shared.color.blue.background};
 	width: \${componentAvatar.md.size};
 	height: \${componentAvatar.md.size};

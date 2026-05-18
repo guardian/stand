@@ -31,15 +31,15 @@
 			},
 			"borderRadius": {
 				"$type": "string",
-				"$value": "{base.radius.corner-2-rem}"
+				"$value": "{base.radius.corner2Rem}"
 			},
 			"paddingY": {
 				"$type": "dimension",
-				"$value": "2px"
+				"$value": "{base.spacing.2Px}"
 			},
 			"paddingX": {
 				"$type": "dimension",
-				"$value": "4px"
+				"$value": "{base.spacing.4Px}"
 			},
 			"boxSizing": {
 				"$type": "string",
@@ -51,7 +51,7 @@
 			},
 			"gap": {
 				"$type": "dimension",
-				"$value": "{base.spacing.4-px}"
+				"$value": "{base.spacing.4Px}"
 			},
 			"svg": {
 				"height": {
@@ -70,7 +70,7 @@
 				},
 				"size": {
 					"$type": "dimension",
-					"$value": "10px"
+					"$value": "{base.spacing.10Px}"
 				}
 			},
 			"color": {
@@ -80,7 +80,7 @@
 			"typography": {
 				"font": {
 					"$type": "typography",
-					"$value": "{semantic.typography.body-xs.font}"
+					"$value": "{semantic.typography.bodyXs.font}"
 				},
 				"lineHeight": {
 					"$type": "number",

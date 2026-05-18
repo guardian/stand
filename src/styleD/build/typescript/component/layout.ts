@@ -45,9 +45,9 @@ export const componentLayout = {
 		},
 	},
 	main: {
-		'max-width': '1584px',
-		'margin-left': 'auto',
-		'margin-right': 'auto',
+		maxWidth: '1584px',
+		marginLeft: 'auto',
+		marginRight: 'auto',
 	},
 };
 export type ComponentLayout = typeof componentLayout;

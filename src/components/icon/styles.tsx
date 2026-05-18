@@ -22,7 +22,7 @@ export const iconStyles = (
 ) => css`
 	display: ${theme.shared.display};
 	font-size: ${theme[size].size};
-	user-select: ${theme.shared['user-select']};
+	user-select: ${theme.shared.userSelect};
 	${fill ? `color: ${fill};` : ''}
 
 	${mode === 'svg'

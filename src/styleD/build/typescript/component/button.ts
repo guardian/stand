@@ -5,19 +5,19 @@
 export const componentButton = {
 	shared: {
 		display: 'inline-flex',
-		'-webkit-appearance': 'none',
-		'text-align': 'inherit',
-		'box-shadow': 'none',
+		webkitAppearance: 'none',
+		textAlign: 'inherit',
+		boxShadow: 'none',
 		cursor: 'pointer',
-		'justify-content': 'center',
-		'align-items': 'center',
-		'text-decoration': 'none',
-		':disabled': {
+		justifyContent: 'center',
+		alignItems: 'center',
+		textDecoration: 'none',
+		disabled: {
 			cursor: 'not-allowed',
 		},
-		':focus-visible': {
+		focusVisible: {
 			outline: '0.125rem solid #0072a9',
-			'outline-offset': '0.125rem',
+			outlineOffset: '0.125rem',
 		},
 	},
 	primary: {
@@ -26,15 +26,15 @@ export const componentButton = {
 			backgroundColor: '#0d4289',
 			borderRadius: '0.25rem',
 			border: '0.0625rem solid #0d4289',
-			':hover': {
+			hover: {
 				backgroundColor: '#092f62',
 				border: '0.0625rem solid #092f62',
 			},
-			':active': {
+			active: {
 				backgroundColor: '#061d3c',
 				border: '0.0625rem solid #061d3c',
 			},
-			':disabled': {
+			disabled: {
 				color: '#999999',
 				backgroundColor: '#dcdcdc',
 				border: '0.0625rem solid #dcdcdc',
@@ -151,15 +151,15 @@ export const componentButton = {
 			backgroundColor: '#545454',
 			borderRadius: '0.25rem',
 			border: '0.0625rem solid #545454',
-			':hover': {
+			hover: {
 				backgroundColor: '#333333',
 				border: '0.0625rem solid #333333',
 			},
-			':active': {
+			active: {
 				backgroundColor: '#121212',
 				border: '0.0625rem solid #121212',
 			},
-			':disabled': {
+			disabled: {
 				color: '#999999',
 				backgroundColor: '#dcdcdc',
 				border: '0.0625rem solid #dcdcdc',
@@ -276,15 +276,15 @@ export const componentButton = {
 			backgroundColor: 'none',
 			borderRadius: '0.25rem',
 			border: '0.0625rem solid #545454',
-			':hover': {
+			hover: {
 				backgroundColor: '#f6f6f6',
 				border: '0.0625rem solid #545454',
 			},
-			':active': {
+			active: {
 				backgroundColor: '#ededed',
 				border: '0.0625rem solid #545454',
 			},
-			':disabled': {
+			disabled: {
 				color: '#999999',
 				backgroundColor: 'none',
 				border: '0.0625rem solid #dcdcdc',

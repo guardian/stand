@@ -23,21 +23,21 @@ export const avatarStyles = (
 ): SerializedStyles => {
 	return css`
 		display: ${theme.shared.display};
-		align-items: ${theme.shared['align-items']};
-		justify-content: ${theme.shared['justify-content']};
+		align-items: ${theme.shared.alignItems};
+		justify-content: ${theme.shared.justifyContent};
 		overflow: ${theme.shared.overflow};
-		flex-shrink: ${theme.shared['flex-shrink']};
-		border-radius: ${theme.shared['border-radius']};
+		flex-shrink: ${theme.shared.flexShrink};
+		border-radius: ${theme.shared.borderRadius};
 		background-color: ${theme.shared.color[color].background};
 		width: ${theme[size].size};
 		height: ${theme[size].size};
 		border: ${theme.shared.color[color].border};
-		user-select: ${theme.shared['user-select']};
+		user-select: ${theme.shared.userSelect};
 		color: ${theme.shared.color[color].text};
 		${convertTypographyToEmotionStringStyle(theme[size].typography)}
 
 		&[data-avatar-context='interactive']:hover {
-			background-color: ${theme.shared.color[color][':hover'].background};
+			background-color: ${theme.shared.color[color].hover.background};
 
 			:has(> img) {
 				background-color: black;
@@ -49,7 +49,7 @@ export const avatarStyles = (
 		}
 
 		&[data-avatar-context='interactive']:active {
-			background-color: ${theme.shared.color[color][':active'].background};
+			background-color: ${theme.shared.color[color].active.background};
 
 			:has(> img) {
 				background-color: black;

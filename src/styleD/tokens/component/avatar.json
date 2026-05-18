@@ -10,19 +10,19 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.green-weak}"
+							"$value": "{semantic.colors.fill.greenWeak}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": "unset"
 						},
-						":hover": {
+						"hover": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.green.700}"
 							}
 						},
-						":active": {
+						"active": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.green.600}"
@@ -36,19 +36,19 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.blue-weak}"
+							"$value": "{semantic.colors.fill.blueWeak}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": "unset"
 						},
-						":hover": {
+						"hover": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.blue.700}"
 							}
 						},
-						":active": {
+						"active": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.blue.600}"
@@ -62,19 +62,19 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.red-weak}"
+							"$value": "{semantic.colors.fill.redWeak}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": "unset"
 						},
-						":hover": {
+						"hover": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.red.700}"
 							}
 						},
-						":active": {
+						"active": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.red.600}"
@@ -88,19 +88,19 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.cyan-weak}"
+							"$value": "{semantic.colors.fill.cyanWeak}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": "unset"
 						},
-						":hover": {
+						"hover": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.cyan.700}"
 							}
 						},
-						":active": {
+						"active": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.cyan.600}"
@@ -114,74 +114,74 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.teal-weak}"
+							"$value": "{semantic.colors.fill.tealWeak}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": "unset"
 						},
-						":hover": {
+						"hover": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.teal.700}"
 							}
 						},
-						":active": {
+						"active": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.teal.600}"
 							}
 						}
 					},
-					"cool-purple": {
+					"coolPurple": {
 						"text": {
 							"$type": "color",
-							"$value": "{semantic.colors.text.cool-purple}"
+							"$value": "{semantic.colors.text.coolPurple}"
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.cool-purple-weak}"
+							"$value": "{semantic.colors.fill.coolPurpleWeak}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": "unset"
 						},
-						":hover": {
+						"hover": {
 							"background": {
 								"$type": "color",
-								"$value": "{base.colors.cool-purple.700}"
+								"$value": "{base.colors.coolPurple.700}"
 							}
 						},
-						":active": {
+						"active": {
 							"background": {
 								"$type": "color",
-								"$value": "{base.colors.cool-purple.600}"
+								"$value": "{base.colors.coolPurple.600}"
 							}
 						}
 					},
-					"warm-purple": {
+					"warmPurple": {
 						"text": {
 							"$type": "color",
-							"$value": "{semantic.colors.text.warm-purple}"
+							"$value": "{semantic.colors.text.warmPurple}"
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.warm-purple-weak}"
+							"$value": "{semantic.colors.fill.warmPurpleWeak}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": "unset"
 						},
-						":hover": {
+						"hover": {
 							"background": {
 								"$type": "color",
-								"$value": "{base.colors.warm-purple.700}"
+								"$value": "{base.colors.warmPurple.700}"
 							}
 						},
-						":active": {
+						"active": {
 							"background": {
 								"$type": "color",
-								"$value": "{base.colors.warm-purple.600}"
+								"$value": "{base.colors.warmPurple.600}"
 							}
 						}
 					},
@@ -192,19 +192,19 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.magenta-weak}"
+							"$value": "{semantic.colors.fill.magentaWeak}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": "unset"
 						},
-						":hover": {
+						"hover": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.magenta.700}"
 							}
 						},
-						":active": {
+						"active": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.magenta.600}"
@@ -218,19 +218,19 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.orange-weak}"
+							"$value": "{semantic.colors.fill.orangeWeak}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": "unset"
 						},
-						":hover": {
+						"hover": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.orange.700}"
 							}
 						},
-						":active": {
+						"active": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.orange.600}"
@@ -244,19 +244,19 @@
 						},
 						"background": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.yellow-weak}"
+							"$value": "{semantic.colors.fill.yellowWeak}"
 						},
 						"border": {
 							"$type": "border",
 							"$value": "unset"
 						},
-						":hover": {
+						"hover": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.yellow.700}"
 							}
 						},
-						":active": {
+						"active": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.yellow.600}"
@@ -280,13 +280,13 @@
 								"style": "solid"
 							}
 						},
-						":hover": {
+						"hover": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.neutral.800}"
 							}
 						},
-						":active": {
+						"active": {
 							"background": {
 								"$type": "color",
 								"$value": "{base.colors.neutral.700}"
@@ -298,11 +298,11 @@
 					"$type": "string",
 					"$value": "inline-flex"
 				},
-				"align-items": {
+				"alignItems": {
 					"$type": "string",
 					"$value": "center"
 				},
-				"justify-content": {
+				"justifyContent": {
 					"$type": "string",
 					"$value": "center"
 				},
@@ -310,15 +310,15 @@
 					"$type": "string",
 					"$value": "hidden"
 				},
-				"flex-shrink": {
+				"flexShrink": {
 					"$type": "number",
 					"$value": "0"
 				},
-				"border-radius": {
+				"borderRadius": {
 					"$type": "dimension",
 					"$value": "50%"
 				},
-				"user-select": {
+				"userSelect": {
 					"$type": "string",
 					"$value": "none"
 				},
@@ -327,7 +327,7 @@
 						"$type": "string",
 						"$value": "fit-content"
 					},
-					":focus-visible": {
+					"focusVisible": {
 						"outline": {
 							"$type": "border",
 							"$value": {
@@ -336,12 +336,12 @@
 								"style": "solid"
 							}
 						},
-						"outline-offset": {
+						"outlineOffset": {
 							"$type": "dimension",
-							"$value": "{base.spacing.2-rem}"
+							"$value": "{base.spacing.2Rem}"
 						}
 					},
-					"text-decoration": {
+					"textDecoration": {
 						"$type": "string",
 						"$value": "none"
 					}
@@ -363,7 +363,7 @@
 						"$type": "string",
 						"$value": "pointer"
 					},
-					":disabled": {
+					"disabled": {
 						"cursor": {
 							"$type": "string",
 							"$value": "not-allowed"
@@ -374,40 +374,40 @@
 			"sm": {
 				"size": {
 					"$type": "dimension",
-					"$value": "{base.sizing.size-32-rem}"
+					"$value": "{base.sizing.size32Rem}"
 				},
 				"typography": {
 					"font": {
 						"$type": "typography",
-						"$value": "{semantic.typography.interactive-xs.font}"
+						"$value": "{semantic.typography.interactiveXs.font}"
 					},
 					"letterSpacing": {
 						"$type": "dimension",
-						"$value": "{semantic.typography.interactive-xs.letterSpacing}"
+						"$value": "{semantic.typography.interactiveXs.letterSpacing}"
 					},
 					"fontWidth": {
 						"$type": "number",
-						"$value": "{semantic.typography.interactive-xs.fontWidth}"
+						"$value": "{semantic.typography.interactiveXs.fontWidth}"
 					}
 				}
 			},
 			"md": {
 				"size": {
 					"$type": "dimension",
-					"$value": "{base.sizing.size-40-rem}"
+					"$value": "{base.sizing.size40Rem}"
 				},
 				"typography": {
 					"font": {
 						"$type": "typography",
-						"$value": "{semantic.typography.interactive-sm.font}"
+						"$value": "{semantic.typography.interactiveSm.font}"
 					},
 					"letterSpacing": {
 						"$type": "dimension",
-						"$value": "{semantic.typography.interactive-sm.letterSpacing}"
+						"$value": "{semantic.typography.interactiveSm.letterSpacing}"
 					},
 					"fontWidth": {
 						"$type": "number",
-						"$value": "{semantic.typography.interactive-sm.fontWidth}"
+						"$value": "{semantic.typography.interactiveSm.fontWidth}"
 					}
 				}
 			}

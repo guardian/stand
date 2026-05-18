@@ -74,7 +74,7 @@ export const WithTheme = {
 					color: 'rgba(255, 255, 255, 0.87)',
 					borderBottomStyle: 'none',
 					selectedColor: 'rgba(255, 255, 255, 0.87)',
-					selectedBackgroundColor: baseColors['cool-purple'][500],
+					selectedBackgroundColor: baseColors.coolPurple[500],
 				},
 			},
 		},

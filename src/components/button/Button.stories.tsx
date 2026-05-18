@@ -88,16 +88,16 @@ export const CustomTheme = {
 		theme: {
 			primary: {
 				shared: {
-					backgroundColor: baseColors['cool-purple'][200],
-					color: baseColors['cool-purple'][900],
-					border: `2px solid ${baseColors['cool-purple'][700]}`,
-					':hover': {
-						backgroundColor: baseColors['cool-purple'][300],
-						border: `2px solid ${baseColors['cool-purple'][700]}`,
+					backgroundColor: baseColors.coolPurple[200],
+					color: baseColors.coolPurple[900],
+					border: `2px solid ${baseColors.coolPurple[700]}`,
+					hover: {
+						backgroundColor: baseColors.coolPurple[300],
+						border: `2px solid ${baseColors.coolPurple[700]}`,
 					},
-					':active': {
-						backgroundColor: baseColors['cool-purple'][400],
-						border: `2px solid ${baseColors['cool-purple'][700]}`,
+					active: {
+						backgroundColor: baseColors.coolPurple[400],
+						border: `2px solid ${baseColors.coolPurple[700]}`,
 					},
 				},
 			},
@@ -115,7 +115,7 @@ export const CssOverrides = {
 			width: 100%;
 			text-transform: full-width;
 			font-variant: small-caps;
-			padding-inline: ${baseSpacing['24-rem']};
+			padding-inline: ${baseSpacing['24Rem']};
 		`,
 	},
 } satisfies Story;

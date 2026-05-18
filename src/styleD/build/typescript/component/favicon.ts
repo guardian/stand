@@ -9,9 +9,9 @@ export const componentFavicon = {
 	},
 	size: '2rem',
 	display: 'inline-flex',
-	'align-items': 'center',
-	'justify-content': 'center',
-	'user-select': 'none',
+	alignItems: 'center',
+	justifyContent: 'center',
+	userSelect: 'none',
 	typography: {
 		font: 'normal 700 1.25rem/1.15 GH Guardian Headline',
 		letterSpacing: '0rem',

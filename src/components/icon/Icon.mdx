@@ -203,10 +203,10 @@ import { baseSizing } from '@guardian/stand';
 const customTheme: Partial<IconTheme> = {
 	shared: {
 		display: 'block',
-		'user-select': 'all',
+		userSelect: 'all',
 	},
 	md: {
-		size: baseSizing['size-48-rem'],
+		size: baseSizing.size48Rem,
 	},
 };
 
@@ -227,9 +227,9 @@ import { baseColors, baseSpacing, semanticSizing } from '@guardian/stand';
 import { css } from '@emotion/react';
 
 const customStyles = css`
-	padding: ${baseSpacing['4-rem']};
+	padding: ${baseSpacing['4Rem']};
 	background-color: ${baseColors.yellow[400]};
-	border-radius: ${semanticSizing.border['extra-wide']};
+	border-radius: ${semanticSizing.border.extraWide};
 `;
 
 const Component = () => (

@@ -14,7 +14,7 @@ const sectionCss = css`
 		margin-bottom: 16px;
 		border-bottom: 2px solid ${semanticColors.border.strong};
 		padding-bottom: 8px;
-		${convertTypographyToEmotionStringStyle(semanticTypography['heading-md'])}
+		${convertTypographyToEmotionStringStyle(semanticTypography.headingMd)}
 	}
 `;
 
@@ -30,16 +30,16 @@ const tokenValueCss = css`
 `;
 
 const activeRowCss = css`
-	background: ${semanticColors.bg['raised-level-1']};
+	background: ${semanticColors.bg.raisedLevel1};
 `;
 
 const activeBadgeCss = css`
 	display: inline-block;
 	padding: 2px 8px;
 	border-radius: 2px;
-	background: ${semanticColors.fill['accent-strong']};
-	color: ${semanticColors.text['stronger-inverse']};
-	${convertTypographyToEmotionStringStyle(semanticTypography['heading-xs'])}
+	background: ${semanticColors.fill.accentStrong};
+	color: ${semanticColors.text.strongerInverse};
+	${convertTypographyToEmotionStringStyle(semanticTypography.headingXs)}
 `;
 
 const viewportWidthCss = css`
@@ -130,12 +130,12 @@ const demoLabelCss = css`
 
 const demoHeadingCss = css`
 	margin: 0 0 4px;
-	${convertTypographyToEmotionStringStyle(semanticTypography['heading-sm'])}
+	${convertTypographyToEmotionStringStyle(semanticTypography.headingSm)}
 `;
 
 const demoDescCss = css`
 	margin: 0;
-	${convertTypographyToEmotionStringStyle(semanticTypography['body-sm'])}
+	${convertTypographyToEmotionStringStyle(semanticTypography.bodySm)}
 	color: ${semanticColors.text.weak};
 `;
 
@@ -158,7 +158,7 @@ const fromGridCss = css`
 const fromCardCss = css`
 	padding: 16px;
 	border-radius: 4px;
-	background: ${semanticColors.bg['raised-level-1']};
+	background: ${semanticColors.bg.raisedLevel1};
 	border: 1px solid ${semanticColors.border.weak};
 	transition: background 0.2s;
 `;
@@ -180,12 +180,12 @@ export const FromDemo = () => (
 			{fromCardBreakpoints.map((bp) => {
 				const cardActiveCss = css`
 					${from[bp]} {
-						background: ${semanticColors.fill['accent-strong']};
-						border-color: ${semanticColors.fill['accent-strong']};
-						color: ${semanticColors.text['stronger-inverse']};
+						background: ${semanticColors.fill.accentStrong};
+						border-color: ${semanticColors.fill.accentStrong};
+						color: ${semanticColors.text.strongerInverse};
 
 						p {
-							color: ${semanticColors.text['stronger-inverse']};
+							color: ${semanticColors.text.strongerInverse};
 						}
 					}
 				`;
@@ -217,7 +217,7 @@ const untilBoxBaseCss = css`
 	padding: 20px 24px;
 	border-radius: 4px;
 	border: 1px solid ${semanticColors.border.weak};
-	background: ${semanticColors.bg['raised-level-1']};
+	background: ${semanticColors.bg.raisedLevel1};
 `;
 
 /**
@@ -237,12 +237,12 @@ export const UntilDemo = () => (
 				css={css`
 					${untilBoxBaseCss}
 					${until.md} {
-						background: ${semanticColors.fill['accent-strong']};
-						border-color: ${semanticColors.fill['accent-strong']};
-						color: ${semanticColors.text['stronger-inverse']};
+						background: ${semanticColors.fill.accentStrong};
+						border-color: ${semanticColors.fill.accentStrong};
+						color: ${semanticColors.text.strongerInverse};
 
 						p {
-							color: ${semanticColors.text['stronger-inverse']};
+							color: ${semanticColors.text.strongerInverse};
 						}
 					}
 				`}
@@ -256,12 +256,12 @@ export const UntilDemo = () => (
 				css={css`
 					${untilBoxBaseCss}
 					${until.lg} {
-						background: ${semanticColors.fill['accent-strong']};
-						border-color: ${semanticColors.fill['accent-strong']};
-						color: ${semanticColors.text['stronger-inverse']};
+						background: ${semanticColors.fill.accentStrong};
+						border-color: ${semanticColors.fill.accentStrong};
+						color: ${semanticColors.text.strongerInverse};
 
 						p {
-							color: ${semanticColors.text['stronger-inverse']};
+							color: ${semanticColors.text.strongerInverse};
 						}
 					}
 				`}
@@ -314,12 +314,12 @@ export const BetweenDemo = () => (
 					css={css`
 						${untilBoxBaseCss}
 						${between[a].and[b as Exclude<typeof a, typeof a>]} {
-							background: ${semanticColors.fill['accent-strong']};
-							border-color: ${semanticColors.fill['accent-strong']};
-							color: ${semanticColors.text['stronger-inverse']};
+							background: ${semanticColors.fill.accentStrong};
+							border-color: ${semanticColors.fill.accentStrong};
+							color: ${semanticColors.text.strongerInverse};
 
 							p {
-								color: ${semanticColors.text['stronger-inverse']};
+								color: ${semanticColors.text.strongerInverse};
 							}
 						}
 					`}
