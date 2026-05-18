@@ -4,7 +4,7 @@ import type { ComponentLayout } from '../../styleD/build/typescript/component/la
 import { componentLayout } from '../../styleD/build/typescript/component/layout';
 import { from } from '../../styleD/utils/semantic/mq';
 import type { DeepPartial, Prettify } from '../../util/types';
-import type { LayoutProps, SidebarProps } from './types';
+import type { MainProps, SidebarProps } from './types';
 
 export type LayoutTheme = Prettify<ComponentLayout['layout']>;
 export type PartialLayoutTheme = Prettify<DeepPartial<LayoutTheme>>;
@@ -13,6 +13,10 @@ export const defaultLayoutTheme: LayoutTheme = componentLayout['layout'];
 export type SidebarTheme = Prettify<ComponentLayout['sidebar']>;
 export type PartialSidebarTheme = Prettify<DeepPartial<SidebarTheme>>;
 export const defaultSidebarTheme: SidebarTheme = componentLayout['sidebar'];
+
+export type MainTheme = Prettify<ComponentLayout['main']>;
+export type PartialMainTheme = Prettify<DeepPartial<MainTheme>>;
+export const defaultMainTheme: MainTheme = componentLayout['main'];
 
 export const alertBannerLayoutStyles = (): SerializedStyles => {
 	return css`
@@ -33,17 +37,17 @@ export const sidebarLayoutStyles = (): SerializedStyles => {
 };
 
 export const mainLayoutStyles = (
-	theme: LayoutTheme,
-	{ fluid }: Required<Pick<LayoutProps, 'fluid'>>,
+	theme: MainTheme,
+	{ fluid }: Required<Pick<MainProps, 'fluid'>>,
 ): SerializedStyles => {
 	return css`
 		grid-area: main;
 		${fluid
 			? ''
 			: css`
-					max-width: ${theme.shared['max-width']};
-					margin-left: ${theme.shared['margin-left']};
-					margin-right: ${theme.shared['margin-right']};
+					max-width: ${theme['max-width']};
+					margin-left: ${theme['margin-left']};
+					margin-right: ${theme['margin-right']};
 				`}
 	`;
 };

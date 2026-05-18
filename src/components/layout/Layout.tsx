@@ -1,16 +1,9 @@
-import type { Interpolation, SerializedStyles } from '@emotion/react';
-import { css } from '@emotion/react';
-import React from 'react';
+import type React from 'react';
 import { mergeDeep } from '../../util/mergeDeep';
-import { AlertBanner } from '../alert-banner/AlertBanner';
-import type { AlertBannerProps } from '../alert-banner/types';
-import { Grid } from '../grid/Grid';
-import type { GridProps } from '../grid/types';
-import { TopBar } from '../topbar/TopBar';
-import type { TopBarProps } from '../topbar/types';
 import {
 	alertBannerLayoutStyles,
 	defaultLayoutTheme,
+	defaultMainTheme,
 	defaultSidebarTheme,
 	layoutStyles,
 	mainLayoutStyles,
@@ -18,16 +11,54 @@ import {
 	sidebarStyles,
 	topBarLayoutStyles,
 } from './styles';
-import type { LayoutProps, SidebarProps } from './types';
+import type {
+	LayoutProps,
+	LayoutSlotProps,
+	MainProps,
+	SidebarProps,
+} from './types';
 
 /**
- * Currently a WIP (Subject to change, but usable) sidebar that can be used in the Layout, it supports two different layout behaviors at the sm breakpoint,
- * either 'above-grid' which will place the sidebar above the grid content effectively making it a horizontal bar at the top of the page,
- * or 'hidden' which will hide the sidebar entirely at the sm breakpoint.
- *
- * The consumer can choose how to make the sidebar content accessible through other means (e.g. a collapsible menu in the TopBar) when using the 'hidden' option.
+ * Places children into the alert banner grid area of the Layout.
  */
-export function Sidebar({
+const LayoutAlertBanner = ({
+	as: Component = 'aside',
+	children,
+	cssOverrides,
+	...props
+}: LayoutSlotProps) => {
+	return (
+		<Component css={[alertBannerLayoutStyles(), cssOverrides]} {...props}>
+			{children}
+		</Component>
+	);
+};
+
+/**
+ * Places children into the top bar grid area of the Layout.
+ */
+const LayoutTopBar = ({
+	as: Component = 'nav',
+	children,
+	cssOverrides,
+	...props
+}: LayoutSlotProps) => {
+	return (
+		<Component css={[topBarLayoutStyles(), cssOverrides]} {...props}>
+			{children}
+		</Component>
+	);
+};
+
+/**
+ * Places children into the sidebar grid area of the Layout.
+ *
+ * Supports two layout behaviors at the sm breakpoint:
+ * - 'above-grid': places the sidebar above the grid content
+ * - 'hidden': hides the sidebar entirely (default)
+ */
+function LayoutSidebar({
+	as: Component = 'aside',
 	children,
 	layoutSmBreakpoint = 'hidden',
 	theme = {},
@@ -37,142 +68,92 @@ export function Sidebar({
 	const mergedTheme = mergeDeep(defaultSidebarTheme, theme);
 
 	return (
-		<aside
-			css={[sidebarStyles(mergedTheme, { layoutSmBreakpoint }), cssOverrides]}
+		<Component
+			css={[
+				sidebarLayoutStyles(),
+				sidebarStyles(mergedTheme, { layoutSmBreakpoint }),
+				cssOverrides,
+			]}
 			{...props}
 		>
 			{children}
-		</aside>
+		</Component>
 	);
 }
 
 /**
- * A layout component that defines a grid structure for the page, it has specific areas for an AlertBanner, TopBar, Sidebar and Grid content.
- *
- * The layout adjusts based on the defined breakpoints in the theme, allowing for responsive design.
- *
- * The Layout component will look through its children and place them in the correct grid area based on their type (AlertBanner, TopBar, Sidebar, Grid), it ignores any children that are not of these types.
- *
- * Consumers can customize the layout by providing their own themes and CSS overrides for each of the components.
+ * Places children into the main grid area of the Layout.
  */
-export function Layout({
+function LayoutMain({
+	as: Component = 'main',
 	children,
 	fluid = true,
+	theme = {},
+	cssOverrides,
+	...props
+}: MainProps) {
+	const mergedTheme = mergeDeep(defaultMainTheme, theme);
+
+	return (
+		<Component
+			css={[mainLayoutStyles(mergedTheme, { fluid }), cssOverrides]}
+			{...props}
+		>
+			{children}
+		</Component>
+	);
+}
+
+/**
+ * A layout component that defines a grid structure for the page.
+ *
+ * Use the compound components to place content in the correct grid areas:
+ * - `Layout.AlertBanner` – alert banner area
+ * - `Layout.TopBar` – top bar area
+ * - `Layout.Sidebar` – sidebar area
+ * - `Layout.Main` – main content area
+ *
+ * @example
+ * ```tsx
+ * <Layout>
+ *   <Layout.TopBar>
+ *     <TopBar>...</TopBar>
+ *   </Layout.TopBar>
+ *   <Layout.Sidebar layoutSmBreakpoint="above-grid">
+ *     <nav>...</nav>
+ *   </Layout.Sidebar>
+ *   <Layout.Main>
+ *     <Grid>...</Grid>
+ *   </Layout.Main>
+ * </Layout>
+ * ```
+ */
+function LayoutRoot({
+	children,
 	theme = {},
 	cssOverrides,
 	...props
 }: LayoutProps) {
 	const mergedTheme = mergeDeep(defaultLayoutTheme, theme);
 
-	let alertBanner: React.ReactElement | null = null;
-	let topBar: React.ReactElement | null = null;
-	let sidebar: React.ReactElement | null = null;
-	let main: React.ReactElement | null = null;
-
-	React.Children.forEach(children, (child) => {
-		if (!React.isValidElement(child)) {
-			return;
-		}
-
-		if (child.type === AlertBanner) {
-			const alertBannerChild = child as React.ReactElement<AlertBannerProps>;
-			const alertBannerCssOverrides = Array.isArray(
-				alertBannerChild.props.cssOverrides,
-			)
-				? alertBannerChild.props.cssOverrides
-				: alertBannerChild.props.cssOverrides
-					? [alertBannerChild.props.cssOverrides]
-					: [];
-			alertBanner ??= React.cloneElement(alertBannerChild, {
-				cssOverrides: [alertBannerLayoutStyles(), ...alertBannerCssOverrides],
-			});
-			return;
-		}
-
-		if (child.type === TopBar) {
-			const topBarChild = child as React.ReactElement<TopBarProps>;
-			const topBarCssOverrides = Array.isArray(topBarChild.props.cssOverrides)
-				? topBarChild.props.cssOverrides
-				: topBarChild.props.cssOverrides
-					? [topBarChild.props.cssOverrides]
-					: [];
-			topBar ??= React.cloneElement(topBarChild, {
-				cssOverrides: [topBarLayoutStyles(), ...topBarCssOverrides],
-			});
-			return;
-		}
-
-		if (child.type === Sidebar) {
-			const sidebarChild = child as React.ReactElement<SidebarProps>;
-			const sidebarCssOverrides = Array.isArray(sidebarChild.props.cssOverrides)
-				? sidebarChild.props.cssOverrides
-				: sidebarChild.props.cssOverrides
-					? [sidebarChild.props.cssOverrides]
-					: [];
-			sidebar ??= React.cloneElement(sidebarChild, {
-				cssOverrides: [sidebarLayoutStyles(), ...sidebarCssOverrides],
-			});
-			return;
-		}
-
-		if (child.type === Grid) {
-			const gridChild = child as React.ReactElement<GridProps>;
-			const gridCssOverrides = Array.isArray(gridChild.props.cssOverrides)
-				? gridChild.props.cssOverrides
-				: gridChild.props.cssOverrides
-					? [gridChild.props.cssOverrides]
-					: [];
-			main ??= React.cloneElement(gridChild, {
-				as: 'main',
-				cssOverrides: [
-					mainLayoutStyles(mergedTheme, { fluid }),
-					...gridCssOverrides,
-				],
-			});
-			return;
-		}
-
-		if (!main) {
-			// Other children that are not AlertBanner, TopBar, Sidebar or Grid should be assigned to the main area by default,
-			// allowing for flexibility in the types of content that can be placed in the layout without needing to wrap them in a Grid component.
-			// if child has cssOverrides, we need to merge them with the default main area styles, otherwise assign the main area styles directly to the css prop
-			type ChildWithCssProps = {
-				cssOverrides?: SerializedStyles | SerializedStyles[];
-				css?: Interpolation;
-			};
-
-			const childWithProps = child as React.ReactElement<ChildWithCssProps>;
-
-			if ('cssOverrides' in childWithProps.props) {
-				const childCssOverrides = Array.isArray(
-					childWithProps.props.cssOverrides,
-				)
-					? childWithProps.props.cssOverrides
-					: [childWithProps.props.cssOverrides ?? css``];
-
-				main ??= React.cloneElement(childWithProps, {
-					cssOverrides: [
-						mainLayoutStyles(mergedTheme, { fluid }),
-						...childCssOverrides,
-					],
-				});
-			} else {
-				main ??= React.cloneElement(childWithProps, {
-					css: [
-						mainLayoutStyles(mergedTheme, { fluid }),
-						childWithProps.props.css,
-					],
-				});
-			}
-		}
-	});
-
 	return (
 		<div css={[layoutStyles(mergedTheme), cssOverrides]} {...props}>
-			{alertBanner}
-			{topBar}
-			{sidebar}
-			{main}
+			{children}
 		</div>
 	);
 }
+
+interface LayoutCompound {
+	(props: LayoutProps): React.ReactElement;
+	AlertBanner: (props: LayoutSlotProps) => React.ReactElement;
+	TopBar: (props: LayoutSlotProps) => React.ReactElement;
+	Sidebar: (props: SidebarProps) => React.ReactElement;
+	Main: (props: MainProps) => React.ReactElement;
+}
+
+export const Layout: LayoutCompound = Object.assign(LayoutRoot, {
+	AlertBanner: LayoutAlertBanner,
+	TopBar: LayoutTopBar,
+	Sidebar: LayoutSidebar,
+	Main: LayoutMain,
+});

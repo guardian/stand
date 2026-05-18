@@ -16,9 +16,9 @@ import {
 import { TopBarItem } from '../topbar/topBarItem/TopBarItem';
 import { TopBarNavigation } from '../topbar/topBarNavigation/TopBarNavigation';
 import { TopBarToolName } from '../topbar/topBarToolName/TopBarToolName';
-import { Layout, Sidebar } from './Layout';
+import { Layout } from './Layout';
 
-const meta = {
+const meta: Meta<typeof Layout> = {
 	title: 'Stand/Tools Design System/Components/Layout',
 	component: Layout,
 	parameters: {},
@@ -243,17 +243,17 @@ const nonGridMainContentStyles = css`
 export const TopBarGrid = {
 	render: (args) => (
 		<Layout {...args}>
-			{TopBarExample}
-			{GridExample}
+			<Layout.TopBar>{TopBarExample}</Layout.TopBar>
+			<Layout.Main>{GridExample}</Layout.Main>
 		</Layout>
 	),
 } satisfies Story;
 
 export const TopBarGridFixed = {
 	render: (args) => (
-		<Layout fluid={false} {...args}>
-			{TopBarExample}
-			{GridExample}
+		<Layout {...args}>
+			<Layout.TopBar>{TopBarExample}</Layout.TopBar>
+			<Layout.Main fluid={false}>{GridExample}</Layout.Main>
 		</Layout>
 	),
 } satisfies Story;
@@ -261,11 +261,16 @@ export const TopBarGridFixed = {
 export const TopBarWithCustomMainContent = {
 	render: (args) => (
 		<Layout {...args}>
-			{TopBarExample}
-			<section css={nonGridMainContentStyles} aria-label="Custom main content">
-				<h2>Custom main content region</h2>
-				<p>This section is rendered without using the Grid component.</p>
-			</section>
+			<Layout.TopBar>{TopBarExample}</Layout.TopBar>
+			<Layout.Main>
+				<section
+					css={nonGridMainContentStyles}
+					aria-label="Custom main content"
+				>
+					<h2>Custom main content region</h2>
+					<p>This section is rendered without using the Grid component.</p>
+				</section>
+			</Layout.Main>
 		</Layout>
 	),
 } satisfies Story;
@@ -273,13 +278,13 @@ export const TopBarWithCustomMainContent = {
 export const TopBarGridSidebarHiddenSm = {
 	render: (args) => (
 		<Layout {...args}>
-			{TopBarExample}
-			<Sidebar layoutSmBreakpoint="hidden">
+			<Layout.TopBar>{TopBarExample}</Layout.TopBar>
+			<Layout.Sidebar layoutSmBreakpoint="hidden">
 				<div css={sidebarExampleStyles}>
 					<p>Sidebar content goes here</p>
 				</div>
-			</Sidebar>
-			{GridExample}
+			</Layout.Sidebar>
+			<Layout.Main>{GridExample}</Layout.Main>
 		</Layout>
 	),
 } satisfies Story;
@@ -287,13 +292,13 @@ export const TopBarGridSidebarHiddenSm = {
 export const TopBarGridSidebarAboveGridSm = {
 	render: (args) => (
 		<Layout {...args}>
-			{TopBarExample}
-			<Sidebar layoutSmBreakpoint="above-grid">
+			<Layout.TopBar>{TopBarExample}</Layout.TopBar>
+			<Layout.Sidebar layoutSmBreakpoint="above-grid">
 				<div css={sidebarExampleStyles}>
 					<p>Sidebar content goes here</p>
 				</div>
-			</Sidebar>
-			{GridExample}
+			</Layout.Sidebar>
+			<Layout.Main>{GridExample}</Layout.Main>
 		</Layout>
 	),
 } satisfies Story;
@@ -301,16 +306,18 @@ export const TopBarGridSidebarAboveGridSm = {
 export const AlertBannerTopBarGridSidebarAboveGridSm = {
 	render: (args) => (
 		<Layout {...args}>
-			<AlertBanner level="information" showIcon>
-				This is an information alert banner
-			</AlertBanner>
-			{TopBarExample}
-			<Sidebar layoutSmBreakpoint="above-grid">
+			<Layout.AlertBanner>
+				<AlertBanner level="information" showIcon>
+					This is an information alert banner
+				</AlertBanner>
+			</Layout.AlertBanner>
+			<Layout.TopBar>{TopBarExample}</Layout.TopBar>
+			<Layout.Sidebar layoutSmBreakpoint="above-grid">
 				<div css={sidebarExampleStyles}>
 					<p>Sidebar content goes here</p>
 				</div>
-			</Sidebar>
-			{GridExample}
+			</Layout.Sidebar>
+			<Layout.Main>{GridExample}</Layout.Main>
 		</Layout>
 	),
 } satisfies Story;
@@ -327,13 +334,13 @@ export const CustomTheme = {
 				},
 			}}
 		>
-			{TopBarExample}
-			<Sidebar layoutSmBreakpoint="above-grid">
+			<Layout.TopBar>{TopBarExample}</Layout.TopBar>
+			<Layout.Sidebar layoutSmBreakpoint="above-grid">
 				<div css={sidebarExampleStyles}>
 					<p>Sidebar content goes here</p>
 				</div>
-			</Sidebar>
-			{GridExample}
+			</Layout.Sidebar>
+			<Layout.Main>{GridExample}</Layout.Main>
 		</Layout>
 	),
 } satisfies Story;
@@ -348,13 +355,13 @@ export const CssOverrides = {
 				overflow: hidden;
 			`}
 		>
-			{TopBarExample}
-			<Sidebar layoutSmBreakpoint="above-grid">
+			<Layout.TopBar>{TopBarExample}</Layout.TopBar>
+			<Layout.Sidebar layoutSmBreakpoint="above-grid">
 				<div css={sidebarExampleStyles}>
 					<p>Sidebar content goes here</p>
 				</div>
-			</Sidebar>
-			{GridExample}
+			</Layout.Sidebar>
+			<Layout.Main>{GridExample}</Layout.Main>
 		</Layout>
 	),
 } satisfies Story;

@@ -8,9 +8,6 @@ export const componentLayout = {
 			display: 'grid',
 			minHeight: '100svh',
 			width: '100%',
-			'max-width': '1584px',
-			'margin-left': 'auto',
-			'margin-right': 'auto',
 		},
 		sm: {
 			gridTemplateAreas: "'alertbanner'\n'topbar'\n'sidebar'\n'main'",
@@ -46,6 +43,11 @@ export const componentLayout = {
 		lg: {
 			width: '280px',
 		},
+	},
+	main: {
+		'max-width': '1584px',
+		'margin-left': 'auto',
+		'margin-right': 'auto',
 	},
 };
 export type ComponentLayout = typeof componentLayout;
