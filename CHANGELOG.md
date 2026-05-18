@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.38
+
+### Patch Changes
+
+- 22f9cf4: Change the layout API to export wrapper components for the slots.
+
 ## 0.0.37
 
 ### Patch Changes
