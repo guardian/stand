@@ -12,7 +12,7 @@
 			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
-		"./avatar": {
+		"./Avatar": {
 			"types": "./dist/types/avatar.d.ts",
 			"import": "./dist/avatar.js",
 			"require": "./dist/avatar.cjs"
@@ -27,42 +27,42 @@
 			"import": "./dist/avatarButton.js",
 			"require": "./dist/avatarButton.cjs"
 		},
-		"./button": {
+		"./Button": {
 			"types": "./dist/types/button.d.ts",
 			"import": "./dist/button.js",
 			"require": "./dist/button.cjs"
 		},
-		"./link-button": {
+		"./LinkButton": {
 			"types": "./dist/types/link-button.d.ts",
 			"import": "./dist/link-button.js",
 			"require": "./dist/link-button.cjs"
 		},
-		"./icon-button": {
+		"./IconButton": {
 			"types": "./dist/types/icon-button.d.ts",
 			"import": "./dist/icon-button.js",
 			"require": "./dist/icon-button.cjs"
 		},
-		"./icon-link-button": {
+		"./IconLinkButton": {
 			"types": "./dist/types/icon-link-button.d.ts",
 			"import": "./dist/icon-link-button.js",
 			"require": "./dist/icon-link-button.cjs"
 		},
-		"./typography": {
+		"./Typography": {
 			"types": "./dist/types/typography.d.ts",
 			"import": "./dist/typography.js",
 			"require": "./dist/typography.cjs"
 		},
-		"./icon": {
+		"./Icon": {
 			"types": "./dist/types/icon.d.ts",
 			"import": "./dist/icon.js",
 			"require": "./dist/icon.cjs"
 		},
-		"./favicon": {
+		"./Favicon": {
 			"types": "./dist/types/favicon.d.ts",
 			"import": "./dist/favicon.js",
 			"require": "./dist/favicon.cjs"
 		},
-		"./menu": {
+		"./Menu": {
 			"types": "./dist/types/menu.d.ts",
 			"import": "./dist/menu.js",
 			"require": "./dist/menu.cjs"
@@ -72,90 +72,90 @@
 			"import": "./dist/TopBar.js",
 			"require": "./dist/TopBar.cjs"
 		},
-		"./form": {
+		"./Form": {
 			"types": "./dist/types/form.d.ts",
 			"import": "./dist/form.js",
 			"require": "./dist/form.cjs"
 		},
-		"./inline-message": {
+		"./InlineMessage": {
 			"types": "./dist/types/inline-message.d.ts",
 			"import": "./dist/inline-message.js",
 			"require": "./dist/inline-message.cjs"
 		},
-		"./select": {
+		"./Select": {
 			"types": "./dist/types/select.d.ts",
 			"import": "./dist/select.js",
 			"require": "./dist/select.cjs"
 		},
-		"./text-input": {
+		"./TextInput": {
 			"types": "./dist/types/text-input.d.ts",
 			"import": "./dist/text-input.js",
 			"require": "./dist/text-input.cjs"
 		},
-		"./radio-group": {
+		"./RadioGroup": {
 			"types": "./dist/types/radio-group.d.ts",
 			"import": "./dist/radio-group.js",
 			"require": "./dist/radio-group.cjs"
 		},
-		"./checkbox": {
+		"./Checkbox": {
 			"types": "./dist/types/checkbox.d.ts",
 			"import": "./dist/checkbox.js",
 			"require": "./dist/checkbox.cjs"
 		},
-		"./text-area": {
+		"./TextArea": {
 			"types": "./dist/types/text-area.d.ts",
 			"import": "./dist/text-area.js",
 			"require": "./dist/text-area.cjs"
 		},
-		"./alert-banner": {
+		"./AlertBanner": {
 			"types": "./dist/types/alert-banner.d.ts",
 			"import": "./dist/alert-banner.js",
 			"require": "./dist/alert-banner.cjs"
 		},
-		"./date-picker": {
+		"./DatePicker": {
 			"types": "./dist/types/date-picker.d.ts",
 			"import": "./dist/date-picker.js",
 			"require": "./dist/date-picker.cjs"
 		},
-		"./grid": {
+		"./Grid": {
 			"types": "./dist/types/grid.d.ts",
 			"import": "./dist/grid.js",
 			"require": "./dist/grid.cjs"
 		},
-		"./byline": {
+		"./Byline": {
 			"types": "./dist/types/byline.d.ts",
 			"import": "./dist/byline.js",
 			"require": "./dist/byline.cjs"
 		},
-		"./tag-picker": {
+		"./TagPicker": {
 			"types": "./dist/types/tag-picker.d.ts",
 			"import": "./dist/tag-picker.js",
 			"require": "./dist/tag-picker.cjs"
 		},
-		"./user-menu": {
+		"./UserMenu": {
 			"types": "./dist/types/user-menu.d.ts",
 			"import": "./dist/user-menu.js",
 			"require": "./dist/user-menu.cjs"
+		},
+		"./IntendedAudienceSignifier": {
+			"types": "./dist/types/intended-audience-signifier.d.ts",
+			"import": "./dist/intended-audience-signifier.js",
+			"require": "./dist/intended-audience-signifier.cjs"
+		},
+		"./Link": {
+			"types": "./dist/types/link.d.ts",
+			"import": "./dist/link.js",
+			"require": "./dist/link.cjs"
+		},
+		"./Layout": {
+			"types": "./dist/types/layout.d.ts",
+			"import": "./dist/layout.js",
+			"require": "./dist/layout.cjs"
 		},
 		"./utils": {
 			"types": "./dist/types/utils.d.ts",
 			"import": "./dist/utils.js",
 			"require": "./dist/utils.cjs"
-		},
-		"./intendedAudienceSignifier": {
-			"types": "./dist/types/intended-audience-signifier.d.ts",
-			"import": "./dist/intended-audience-signifier.js",
-			"require": "./dist/intended-audience-signifier.cjs"
-		},
-		"./link": {
-			"types": "./dist/types/link.d.ts",
-			"import": "./dist/link.js",
-			"require": "./dist/link.cjs"
-		},
-		"./layout": {
-			"types": "./dist/types/layout.d.ts",
-			"import": "./dist/layout.js",
-			"require": "./dist/layout.cjs"
 		},
 		"./fonts/OpenSans.css": "./dist/fonts/OpenSans.css",
 		"./fonts/MaterialSymbolsOutlined.css": "./dist/fonts/MaterialSymbolsOutlined.css",
@@ -203,7 +203,7 @@
 	"types": "./dist/types/index.d.ts",
 	"typesVersions": {
 		"*": {
-			"avatar": [
+			"Avatar": [
 				"./dist/types/avatar.d.ts"
 			],
 			"AvatarButton": [
@@ -212,82 +212,82 @@
 			"AvatarLink": [
 				"./dist/types/avatarLink.d.ts"
 			],
-			"button": [
+			"Button": [
 				"./dist/types/button.d.ts"
 			],
-			"link-button": [
+			"LinkButton": [
 				"./dist/types/link-button.d.ts"
 			],
-			"icon-button": [
+			"IconButton": [
 				"./dist/types/icon-button.d.ts"
 			],
-			"icon-link-button": [
+			"IconLinkButton": [
 				"./dist/types/icon-link-button.d.ts"
 			],
-			"typography": [
+			"Typography": [
 				"./dist/types/typography.d.ts"
 			],
-			"icon": [
+			"Icon": [
 				"./dist/types/icon.d.ts"
 			],
-			"favicon": [
+			"Favicon": [
 				"./dist/types/favicon.d.ts"
 			],
 			"TopBar": [
 				"./dist/types/TopBar.d.ts"
 			],
-			"byline": [
+			"Byline": [
 				"./dist/types/byline.d.ts"
 			],
-			"tag-picker": [
+			"TagPicker": [
 				"./dist/types/tag-picker.d.ts"
 			],
-			"user-menu": [
+			"UserMenu": [
 				"./dist/types/user-menu.d.ts"
 			],
 			"utils": [
 				"./dist/types/utils.d.ts"
 			],
-			"menu": [
+			"Menu": [
 				"./dist/types/menu.d.ts"
 			],
-			"form": [
+			"Form": [
 				"./dist/types/form.d.ts"
 			],
-			"inline-message": [
+			"InlineMessage": [
 				"./dist/types/inline-message.d.ts"
 			],
-			"select": [
+			"Select": [
 				"./dist/types/select.d.ts"
 			],
-			"text-input": [
+			"TextInput": [
 				"./dist/types/text-input.d.ts"
 			],
-			"radio-group": [
+			"RadioGroup": [
 				"./dist/types/radio-group.d.ts"
 			],
-			"checkbox": [
+			"Checkbox": [
 				"./dist/types/checkbox.d.ts"
 			],
-			"text-area": [
+			"TextArea": [
 				"./dist/types/text-area.d.ts"
 			],
-			"alert-banner": [
+			"AlertBanner": [
 				"./dist/types/alert-banner.d.ts"
 			],
-			"date-picker": [
+			"DatePicker": [
 				"./dist/types/date-picker.d.ts"
 			],
-			"intendedAudienceSignifier": [
+			"IntendedAudienceSignifier": [
 				"./dist/types/intended-audience-signifier.d.ts"
 			],
-			"link": [
+			"Link": [
 				"./dist/types/link.d.ts"
 			],
-			"grid": [
+			"Grid": [
 				"./dist/types/grid.d.ts"
 			],
-			"layout": [
+			"Layout": [
 				"./dist/types/layout.d.ts"
 			]
 		}
