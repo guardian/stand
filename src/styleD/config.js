@@ -92,7 +92,7 @@ const fileList = [
 	},
 	{
 		group: 'component',
-		component: 'TopBar',
+		component: 'topBar',
 	},
 	{
 		group: 'component',

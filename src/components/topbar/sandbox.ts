@@ -12,7 +12,7 @@ export const Component = () => (
 //Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the styles */
-@import '@guardian/stand/component/TopBar.css';
+@import '@guardian/stand/component/topBar.css';
 @import '@guardian/stand/component/favicon.css';
 
 .stand-top-bar {
@@ -73,8 +73,8 @@ export const componentHtml = /* html */ `
 
 // TopBar - Custom component - JS example
 export const componentJs = /* javascript */ `
-import { componentTopBar } from "@guardian/stand";
-import { componentFavicon } from "@guardian/stand";
+import { componentTopBar, componentFavicon } from "@guardian/stand";
+
 const style = \`
 	display: \${componentTopBar.display};
 	justify-content: \${componentTopBar.justifyContent};

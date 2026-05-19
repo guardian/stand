@@ -47,7 +47,7 @@ function TopBarSide({
 			items.push(
 				React.cloneElement(child as React.ReactElement<TopBarItemProps>, {
 					key: `${child.key}-${i}`,
-					theme: theme?.Item,
+					theme: theme?.item,
 					alignment,
 				}),
 			);
@@ -57,7 +57,7 @@ function TopBarSide({
 			items.push(
 				React.cloneElement(child as React.ReactElement<TopBarNavigationProps>, {
 					key: `${child.key}-${i}`,
-					theme: theme?.Navigation,
+					theme: theme?.navigation,
 					alignment,
 				}),
 			);
@@ -126,7 +126,7 @@ export function TopBar({
 		if (child.type === TopBarToolName) {
 			toolName ??= React.cloneElement(
 				child as React.ReactElement<TopBarToolNameProps>,
-				{ theme: mergedTheme.ToolName, collapseBelow: collapseBelow.toolName },
+				{ theme: mergedTheme.toolName, collapseBelow: collapseBelow.toolName },
 			);
 		}
 
@@ -139,7 +139,7 @@ export function TopBar({
 			child.type === AvatarButton
 		) {
 			avatar ??= (
-				<TopBarItem theme={mergedTheme.Item} alignment="right">
+				<TopBarItem theme={mergedTheme.item} alignment="right">
 					{child}
 				</TopBarItem>
 			);
@@ -178,7 +178,7 @@ export function TopBar({
 						React.cloneElement(
 							child as React.ReactElement<TopBarNavigationProps>,
 							{
-								theme: mergedTheme.Navigation,
+								theme: mergedTheme.navigation,
 								alignment: 'left',
 								_menuOpen: menuOpen,
 							},
@@ -189,7 +189,7 @@ export function TopBar({
 				if (child.type === TopBarItem) {
 					leftSideMenuItems.push(
 						React.cloneElement(child as React.ReactElement<TopBarItemProps>, {
-							theme: mergedTheme.Item,
+							theme: mergedTheme.item,
 							alignment: 'left',
 							_menuOpen: menuOpen,
 						}),
@@ -232,7 +232,7 @@ export function TopBar({
 							<TopBarItem
 								alignment="left"
 								size="sm"
-								theme={mergedTheme.Item}
+								theme={mergedTheme.item}
 								aria-label="Navigation Menu"
 							>
 								<Icon

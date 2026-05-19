@@ -183,7 +183,7 @@
 		"./component/icon.css": "./dist/styleD/build/css/component/icon.css",
 		"./component/favicon.css": "./dist/styleD/build/css/component/favicon.css",
 		"./component/menu.css": "./dist/styleD/build/css/component/menu.css",
-		"./component/TopBar.css": "./dist/styleD/build/css/component/TopBar.css",
+		"./component/topBar.css": "./dist/styleD/build/css/component/topBar.css",
 		"./component/form.css": "./dist/styleD/build/css/component/form.css",
 		"./component/inlineMessage.css": "./dist/styleD/build/css/component/inlineMessage.css",
 		"./component/select.css": "./dist/styleD/build/css/component/select.css",
