@@ -155,10 +155,10 @@ export const CustomTheme = {
 						backgroundColor: baseColors.cyan[200],
 					},
 				},
-				ToolName: {
+				toolName: {
 					color: semanticColors.text.strongerInverse,
 				},
-				Navigation: {
+				navigation: {
 					shared: {
 						_menuOpen: {
 							selected: {

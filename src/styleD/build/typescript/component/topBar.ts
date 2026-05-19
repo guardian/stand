@@ -36,7 +36,7 @@ export const componentTopBar = {
 			containerPadding: 0,
 		},
 	},
-	Item: {
+	item: {
 		display: 'flex',
 		alignItems: 'center',
 		height: '100%',
@@ -66,7 +66,7 @@ export const componentTopBar = {
 		},
 		border: '0.0625rem solid #cccccc',
 	},
-	Navigation: {
+	navigation: {
 		shared: {
 			display: 'inline-flex',
 			position: 'relative',
@@ -132,7 +132,7 @@ export const componentTopBar = {
 			},
 		},
 	},
-	ToolName: {
+	toolName: {
 		display: 'flex',
 		color: '#000000',
 		alignItems: 'center',

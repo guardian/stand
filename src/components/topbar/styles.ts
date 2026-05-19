@@ -1,7 +1,7 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentTopBar } from '../../styleD/build/typescript/component/TopBar';
-import { componentTopBar } from '../../styleD/build/typescript/component/TopBar';
+import type { ComponentTopBar } from '../../styleD/build/typescript/component/topBar';
+import { componentTopBar } from '../../styleD/build/typescript/component/topBar';
 import { type Breakpoint, from, until } from '../../styleD/utils/semantic/mq';
 import type { DeepPartial, Prettify } from '../../util/types';
 

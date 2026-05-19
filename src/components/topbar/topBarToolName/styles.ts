@@ -3,17 +3,17 @@ import { css } from '@emotion/react';
 import {
 	componentTopBar,
 	type ComponentTopBar,
-} from '../../..//styleD/build/typescript/component/TopBar';
+} from '../../../styleD/build/typescript/component/topBar';
 import type { DeepPartial, Prettify } from '../../../util/types';
 import { convertTypographyToEmotionStringStyle, until } from '../../../utils';
 import type { TopBarToolNameProps } from './types';
 
-export type TopBarToolNameTheme = Prettify<ComponentTopBar['ToolName']>;
+export type TopBarToolNameTheme = Prettify<ComponentTopBar['toolName']>;
 export type PartialTopBarToolNameTheme = Prettify<
 	DeepPartial<TopBarToolNameTheme>
 >;
 export const defaultToolNameTheme: TopBarToolNameTheme =
-	componentTopBar.ToolName;
+	componentTopBar.toolName;
 
 export const toolNameHoverLinkStyles = (
 	theme: TopBarToolNameTheme,

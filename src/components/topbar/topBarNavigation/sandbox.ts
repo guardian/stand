@@ -12,7 +12,7 @@ export const Component = () => (
 // TopBarNavigation - Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the topbarnavigation styles */
-@import '@guardian/stand/component/TopBar.css';
+@import '@guardian/stand/component/topBar.css';
 
 .stand-top-bar-navigation {
 	display: var(--component-top-bar-navigation-shared-display);

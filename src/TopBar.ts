@@ -10,11 +10,11 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/TopBar.css),
+ * If you only need the built CSS (./component/topBar.css),
  * you don't need to install these.
  */
-export { componentTopBar } from './styleD/build/typescript/component/TopBar';
-export type { ComponentTopBar } from './styleD/build/typescript/component/TopBar';
+export { componentTopBar } from './styleD/build/typescript/component/topBar';
+export type { ComponentTopBar } from './styleD/build/typescript/component/topBar';
 
 export { TopBarToolName } from './components/topbar/topBarToolName/TopBarToolName';
 export type { TopBarToolNameProps } from './components/topbar/topBarToolName/types';

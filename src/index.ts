@@ -54,8 +54,8 @@ export { componentTextArea } from './styleD/build/typescript/component/textArea'
 export type { ComponentTextArea } from './styleD/build/typescript/component/textArea';
 export { componentTextInput } from './styleD/build/typescript/component/textInput';
 export type { ComponentTextInput } from './styleD/build/typescript/component/textInput';
-export { componentTopBar } from './styleD/build/typescript/component/TopBar';
-export type { ComponentTopBar } from './styleD/build/typescript/component/TopBar';
+export { componentTopBar } from './styleD/build/typescript/component/topBar';
+export type { ComponentTopBar } from './styleD/build/typescript/component/topBar';
 export { componentTypography } from './styleD/build/typescript/component/typography';
 export type { ComponentTypography } from './styleD/build/typescript/component/typography';
 

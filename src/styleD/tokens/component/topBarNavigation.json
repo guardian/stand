@@ -1,7 +1,7 @@
 {
 	"component": {
-		"TopBar": {
-			"Navigation": {
+		"topBar": {
+			"navigation": {
 				"shared": {
 					"display": {
 						"$type": "string",
