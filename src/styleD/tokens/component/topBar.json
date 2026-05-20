@@ -1,6 +1,6 @@
 {
 	"component": {
-		"TopBar": {
+		"topBar": {
 			"backgroundColor": {
 				"$type": "color",
 				"$value": "{semantic.colors.bg.raisedLevel1}"

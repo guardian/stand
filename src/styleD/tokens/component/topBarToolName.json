@@ -1,7 +1,7 @@
 {
 	"component": {
-		"TopBar": {
-			"ToolName": {
+		"topBar": {
+			"toolName": {
 				"display": {
 					"$type": "string",
 					"$value": "flex"

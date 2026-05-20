@@ -1,0 +1,221 @@
+import { css } from '@emotion/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { baseColors } from '../../styleD/build/typescript/base/colors';
+import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
+import { semanticSizing } from '../../styleD/build/typescript/semantic/sizing';
+import { TextInput } from '../../TextInput';
+import { Avatar } from '../Avatar/Avatar';
+import { Button } from '../Button/Button';
+import { MenuItem, MenuSection } from '../Menu/Menu';
+import { TopBar, TopBarContainerLeft, TopBarContainerRight } from './TopBar';
+import { TopBarItem } from './TopBarItem/TopBarItem';
+import { TopBarNavigation } from './TopBarNavigation/TopBarNavigation';
+import { TopBarToolName } from './TopBarToolName/TopBarToolName';
+
+const meta = {
+	title: 'Stand/Tools Design System/Components/TopBar/Top Bar',
+	component: TopBar,
+	parameters: {},
+	args: {},
+} satisfies Meta<typeof TopBar>;
+
+type Story = StoryObj<typeof TopBar>;
+
+export default meta;
+
+export const Default = {
+	name: 'Default',
+	render: () => (
+		<TopBar>
+			<TopBarToolName name="Default" favicon={{ letter: 'D' }} />
+			<Avatar
+				src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg"
+				alt="Mahesh Makani"
+				size="sm"
+			/>
+		</TopBar>
+	),
+} satisfies Story;
+
+export const WithTopNavigation = {
+	render: () => (
+		<TopBar>
+			<TopBarToolName
+				name="Default"
+				favicon={{ letter: 'D' }}
+				href="#"
+				hoverText="Back to dashboard"
+				collapsedHoverText="Back"
+			/>
+			<TopBarContainerLeft>
+				<TopBarNavigation isSelected text="Navigation 1" href="#" />
+				<TopBarNavigation text="Navigation 2" href="#" />
+				<TopBarNavigation text="Navigation 3" href="#" />
+			</TopBarContainerLeft>
+			<Avatar
+				src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg"
+				alt="Mahesh Makani"
+				size="sm"
+			/>
+		</TopBar>
+	),
+} satisfies Story;
+
+export const WithButtons = {
+	render: () => (
+		<TopBar>
+			<TopBarToolName name="Default" favicon={{ letter: 'D' }} />
+			<TopBarContainerLeft>
+				<TopBarNavigation isSelected text="Navigation 1" href="#" />
+				<TopBarNavigation text="Navigation 2" href="#" />
+				<TopBarNavigation text="Navigation 3" href="#" />
+			</TopBarContainerLeft>
+			<TopBarContainerRight>
+				<TopBarItem>
+					<Button variant="primary">Button label</Button>
+				</TopBarItem>
+				<TopBarItem>
+					<Button variant="tertiary">Button label</Button>
+				</TopBarItem>
+			</TopBarContainerRight>
+			<Avatar
+				src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg"
+				alt="Mahesh Makani"
+				size="sm"
+			/>
+		</TopBar>
+	),
+} satisfies Story;
+
+export const WithButtonsMenuNavigation = {
+	render: () => (
+		<TopBar>
+			<TopBarToolName name="Default" favicon={{ letter: 'D' }} />
+			<TopBarContainerLeft>
+				<TopBarNavigation
+					text="Menu"
+					icon="file_upload"
+					menuChildren={
+						<MenuSection name="Menu section">
+							<MenuItem label="Menu item 1" />
+							<MenuItem label="Menu item 2" />
+						</MenuSection>
+					}
+				/>
+				<TopBarNavigation isSelected text="Current" href="#" />
+				<TopBarItem>
+					<Button variant="primary">Primary</Button>
+				</TopBarItem>
+				<TopBarNavigation text="Link" href="#" />
+			</TopBarContainerLeft>
+			<TopBarContainerRight>
+				<TopBarItem>
+					<TextInput
+						theme={{
+							shared: {
+								marginTop: '0',
+							},
+						}}
+						cssOverrides={css`
+							width: 100px;
+						`}
+						placeholder="Search"
+					/>
+				</TopBarItem>
+				<TopBarItem>
+					<Button variant="tertiary">Tertiary</Button>
+				</TopBarItem>
+			</TopBarContainerRight>
+			<Avatar
+				src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg"
+				alt="Mahesh Makani"
+				size="sm"
+			/>
+		</TopBar>
+	),
+} satisfies Story;
+
+export const CustomTheme = {
+	render: () => (
+		<TopBar
+			theme={{
+				backgroundColor: baseColors.cyan[200],
+				borderTop: `${semanticSizing.border.default} solid ${semanticColors.border.strong}`,
+				borderRight: `${semanticSizing.border.default} solid ${semanticColors.border.strong}`,
+				borderBottom: `${semanticSizing.border.default} solid ${semanticColors.border.weak}`,
+				borderLeft: `${semanticSizing.border.default} solid ${semanticColors.border.strong}`,
+
+				collapsedNavMenu: {
+					button: {
+						color: semanticColors.text.strongerInverse,
+						active: { backgroundColor: baseColors.cyan[100] },
+						hovered: { backgroundColor: baseColors.cyan[100] },
+					},
+					popover: {
+						backgroundColor: baseColors.cyan[200],
+					},
+				},
+				toolName: {
+					color: semanticColors.text.strongerInverse,
+				},
+				navigation: {
+					shared: {
+						_menuOpen: {
+							selected: {
+								backgroundColor: baseColors.cyan[100],
+							},
+						},
+					},
+					selected: {
+						color: semanticColors.text.strongerInverse,
+						borderBottom: `${semanticSizing.border.extraWide} solid ${semanticColors.border.selectedInverse}`,
+					},
+					unselected: {
+						color: semanticColors.text.strongerInverse,
+					},
+				},
+			}}
+		>
+			<TopBarToolName
+				name="Default"
+				favicon={{
+					letter: 'D',
+					theme: {
+						color: {
+							background: baseColors.cyan[100],
+							text: baseColors.cyan[900],
+						},
+					},
+				}}
+				href="#"
+				hoverText="Back to dashboard"
+				collapsedHoverText="Back"
+			/>
+			<TopBarContainerLeft>
+				<TopBarNavigation isSelected text="Navigation 1" href="#" />
+				<TopBarNavigation text="Navigation 2" href="#" />
+				<TopBarNavigation text="Navigation 3" href="#" />
+			</TopBarContainerLeft>
+			<Avatar
+				src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg"
+				alt="Mahesh Makani"
+				size="sm"
+			/>
+		</TopBar>
+	),
+} satisfies Story;
+
+export const CssOverrides = {
+	render: () => (
+		<TopBar
+			cssOverrides={css`
+				border: 4px solid ${baseColors.cyan['300']};
+			`}
+		>
+			<TopBarToolName name="CssOverrides" favicon={{ letter: 'C' }} />
+			<TopBarContainerLeft>
+				<TopBarItem>Top Bar</TopBarItem>
+			</TopBarContainerLeft>
+		</TopBar>
+	),
+} satisfies Story;

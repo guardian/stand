@@ -47,10 +47,10 @@ See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--
 <SandboxReact componentName={componentName} componentTsx={componentTsx} />
 
 ```tsx
-import { TemplateComponent } from '@guardian/stand/templateComponent';
+import { TemplateComponent } from '@guardian/stand/TemplateComponent';
 
 /* types, if required */
-import type { TemplateComponentProps, TemplateComponentTheme } from '@guardian/stand/templateComponent';
+import type { TemplateComponentProps, TemplateComponentTheme } from '@guardian/stand/TemplateComponent';
 
 /* Default */
 <TemplateComponent />
@@ -87,8 +87,8 @@ The `theme` prop allows you to override specific design tokens for the TemplateC
 <Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
-import type { TemplateComponentTheme } from '@guardian/stand/templateComponent';
-import { TemplateComponent } from '@guardian/stand/templateComponent';
+import type { TemplateComponentTheme } from '@guardian/stand/TemplateComponent';
+import { TemplateComponent } from '@guardian/stand/TemplateComponent';
 import { baseColors, baseSizing } from '@guardian/stand';
 
 const customTheme: TemplateComponentTheme = {
@@ -110,7 +110,7 @@ The `cssOverrides` prop allows you to pass custom CSS to the TemplateComponent c
 <Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
-import { TemplateComponent } from '@guardian/stand/templateComponent';
+import { TemplateComponent } from '@guardian/stand/TemplateComponent';
 import { baseColors, baseSizing, baseSpacing } from '@guardian/stand';
 import { css } from '@emotion/react';
 

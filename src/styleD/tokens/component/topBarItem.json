@@ -1,7 +1,7 @@
 {
 	"component": {
-		"TopBar": {
-			"Item": {
+		"topBar": {
+			"item": {
 				"display": {
 					"$type": "string",
 					"$value": "flex"
