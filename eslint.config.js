@@ -1,5 +1,6 @@
 import guardian from '@guardian/eslint-config';
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import checkFile from 'eslint-plugin-check-file';
 import storybook from 'eslint-plugin-storybook';
 
 export default [
@@ -16,4 +17,34 @@ export default [
 	...guardian.configs.jest,
 	...guardian.configs.react,
 	...storybook.configs['flat/recommended'],
+	{
+		files: ['./src/**/*.tsx'],
+		plugins: {
+			'check-file': checkFile,
+		},
+		rules: {
+			'check-file/folder-naming-convention': [
+				'error',
+				{
+					'src/components/*/': 'PASCAL_CASE',
+				},
+				{
+					errorMessage:
+						'The folder "{{ target }}" does not match the "{{ pattern }}" pattern.',
+				},
+			],
+			'check-file/filename-naming-convention': [
+				'error',
+				{
+					'src/**/*.{jsx,tsx}': 'PASCAL_CASE',
+					'src/**/*.{js,ts}': 'CAMEL_CASE',
+				},
+				{
+					ignoreMiddleExtensions: true,
+					errorMessage:
+						'The file "{{ target }}" does not match the "{{ pattern }}" pattern.',
+				},
+			],
+		},
+	},
 ];
