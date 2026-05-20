@@ -1,5 +1,13 @@
 # @guardian/stand
 
+## 0.0.39
+
+### Patch Changes
+
+- b425115: BREAKING: Standardise tokens and styles to use camelCase. May require some minor refactoring to pick up correct styles.
+- f3ad3aa: add aria label to IntendedAudienceSignifier
+- 6e97450: BREAKING: React components now use PascalCase e.g `import { AlertBanner } from '@guardian/stand/alert-banner';` -> `import { AlertBanner } from '@guardian/stand/AlertBanner';`. For css, everything is now camelCase (this only affects TopBar css), i.e `import '@guardian/stand/component/TopBar.css'` -> `import '@guardian/stand/component/topBar.css'`.
+
 ## 0.0.38
 
 ### Patch Changes
