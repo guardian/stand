@@ -56,11 +56,11 @@
 			"svg": {
 				"height": {
 					"$type": "dimension",
-					"$value": "unset"
+					"$value": "12px"
 				},
 				"width": {
 					"$type": "dimension",
-					"$value": "unset"
+					"$value": "16px"
 				}
 			},
 			"chevron": {

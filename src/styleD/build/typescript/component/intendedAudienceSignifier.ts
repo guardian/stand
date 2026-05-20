@@ -17,8 +17,8 @@ export const componentIntendedAudienceSignifier = {
 	width: 'fit-content',
 	gap: '4px',
 	svg: {
-		height: 'unset',
-		width: 'unset',
+		height: '12px',
+		width: '16px',
 	},
 	chevron: {
 		fill: '#545454',
