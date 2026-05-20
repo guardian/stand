@@ -27,19 +27,19 @@ const sourceIcons = {
 	Global: globeIcon,
 };
 
-const getSourceIconElement = (sourceTag: Source, audience: KnownAudience) => {
+const getSourceIconElement = (source: Source, audience: KnownAudience) => {
 	if (audience === 'Global') {
 		return globeIcon;
 	}
-	return sourceIcons[sourceTag];
+	return sourceIcons[source];
 };
 
 const getIntendedAudienceIconElement = (
-	sourceTag: Source,
+	source: Source,
 	audience: KnownAudience,
 ) => {
 	if (audience === 'Domestic for Domestic') {
-		return getSourceIconElement(sourceTag, audience);
+		return getSourceIconElement(source, audience);
 	}
 
 	if (audience === 'Global' || audience === 'Domestic For Global') {
@@ -48,6 +48,48 @@ const getIntendedAudienceIconElement = (
 
 	return sourceIcons[audience];
 };
+
+const getSourceDescription = (
+	source: Source,
+	audience: KnownAudience,
+): Source | 'Global' => {
+	switch (audience) {
+		case 'Global':
+			return 'Global';
+		case 'Domestic For Global':
+		case 'Domestic for Domestic':
+		case 'UK':
+		case 'US':
+		case 'AUS':
+			return source;
+	}
+};
+
+const getAudienceDescription = (
+	source: Source,
+	audience: KnownAudience,
+): Source | 'Global' | 'Domestic' => {
+	switch (audience) {
+		case 'Global':
+		case 'Domestic For Global':
+			return 'Global';
+		case 'Domestic for Domestic':
+			return 'Domestic';
+		case 'UK':
+		case 'US':
+		case 'AUS':
+			return audience === source ? 'Domestic' : audience;
+	}
+};
+
+const getSignifierDescription = (
+	source: Source,
+	audience: KnownAudience,
+): string => {
+	return `${getSourceDescription(source, audience)} article for ${getAudienceDescription(source, audience)} audience`;
+};
+
+const AUDIENCE_NOT_KNOWN_DESCRIPTION = 'Intended audience unknown';
 
 export function IntendedAudienceSignifier({
 	source,
@@ -65,6 +107,7 @@ export function IntendedAudienceSignifier({
 				{...props}
 				className={className}
 				css={[intendedAudienceSignifierStyles(mergedTheme), cssOverrides]}
+				aria-label={AUDIENCE_NOT_KNOWN_DESCRIPTION}
 			>
 				<span>Don&lsquo;t know</span>
 			</div>
@@ -75,11 +118,14 @@ export function IntendedAudienceSignifier({
 	const chevronIconStyles =
 		intendedAudienceSignifierChevronIconStyles(mergedTheme);
 
+	const description = getSignifierDescription(source, intendedAudience);
+
 	return (
 		<div
 			{...props}
 			className={className}
 			css={[intendedAudienceSignifierStyles(mergedTheme), cssOverrides]}
+			aria-label={description}
 		>
 			<div css={iconStyles}>
 				{getSourceIconElement(source, intendedAudience)}

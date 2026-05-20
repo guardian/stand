@@ -16,8 +16,8 @@
 	--component-intended-audience-signifier-box-sizing: border-box;
 	--component-intended-audience-signifier-width: fit-content;
 	--component-intended-audience-signifier-gap: 4px;
-	--component-intended-audience-signifier-svg-height: unset;
-	--component-intended-audience-signifier-svg-width: unset;
+	--component-intended-audience-signifier-svg-height: 12px;
+	--component-intended-audience-signifier-svg-width: 16px;
 	--component-intended-audience-signifier-chevron-fill: #545454;
 	--component-intended-audience-signifier-chevron-size: 10px;
 	--component-intended-audience-signifier-color: #545454;
