@@ -1,0 +1,19 @@
+/**
+ * Favicon component entry point
+ *
+ * Peer dependencies required to use these components:
+ * - `@emotion/react`
+ * - `react`
+ * - `react-dom`
+ * - `typescript`
+ *
+ * See the `peerDependencies` section of package.json for compatible versions.
+ *
+ * If you only need the built CSS (./component/favicon.css),
+ * you don't need to install these.
+ */
+export { Favicon } from './components/Favicon/Favicon';
+export type { FaviconProps } from './components/Favicon/types';
+export type { PartialFaviconTheme as FaviconTheme } from './components/Favicon/styles';
+export { componentFavicon } from './styleD/build/typescript/component/favicon';
+export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';
