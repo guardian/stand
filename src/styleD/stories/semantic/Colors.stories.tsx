@@ -1,5 +1,5 @@
 import { semanticColors } from '../../build/typescript/semantic/colors';
-import { ColorItem, ColorPalette } from '../base/storybookColorPalette';
+import { ColorItem, ColorPalette } from '../base/StorybookColorPalette';
 
 export const SemanticPalette = {
 	render: () => (

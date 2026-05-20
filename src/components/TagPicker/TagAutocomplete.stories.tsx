@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
-import { exampleTags } from './example-tags';
+import { exampleTags } from './exampleTags';
 import { TagAutocomplete } from './TagAutocomplete';
 import { TagTable } from './TagTable';
 import type { TagManagerObjectData, TagRow } from './types';

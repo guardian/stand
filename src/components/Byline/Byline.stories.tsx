@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { Byline } from './Byline';
-import { contributors } from './contributors-fixture';
+import { contributors } from './contributorsFixture';
 import type { TaggedContributor } from './lib';
 
 const searchContributors = (

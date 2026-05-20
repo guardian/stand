@@ -4,7 +4,7 @@ import {
 	colorSchemes as defaultColorSchemes,
 	fontFamilies as defaultFontFamilies,
 	textSizes as defaultTextSizes,
-} from './default-options';
+} from './defaultOptions';
 import type { Option } from './model';
 import { PreferenceRadioGroup } from './PreferenceRadioGroup';
 import { userMenuHeadingStyles, userMenuStyles } from './styles';

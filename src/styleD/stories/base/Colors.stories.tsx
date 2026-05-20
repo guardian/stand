@@ -1,5 +1,5 @@
 import { baseColors } from '../../build/typescript/base/colors';
-import { ColorItem, ColorPalette } from './storybookColorPalette';
+import { ColorItem, ColorPalette } from './StorybookColorPalette';
 
 export const BasePalette = {
 	render: () => (
