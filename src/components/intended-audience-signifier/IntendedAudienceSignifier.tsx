@@ -92,7 +92,6 @@ const AUDIENCE_NOT_KNOWN_DESCRIPTION = 'Intended audience unknown';
 export function IntendedAudienceSignifier({
 	source,
 	intendedAudience,
-	includeTitle,
 	theme = {},
 	cssOverrides,
 	className,
@@ -107,7 +106,6 @@ export function IntendedAudienceSignifier({
 				className={className}
 				css={[intendedAudienceSignifierStyles(mergedTheme), cssOverrides]}
 				aria-label={AUDIENCE_NOT_KNOWN_DESCRIPTION}
-				title={includeTitle ? AUDIENCE_NOT_KNOWN_DESCRIPTION : undefined}
 			>
 				<span>Don&lsquo;t know</span>
 			</div>
@@ -126,7 +124,6 @@ export function IntendedAudienceSignifier({
 			className={className}
 			css={[intendedAudienceSignifierStyles(mergedTheme), cssOverrides]}
 			aria-label={description}
-			title={includeTitle ? description : undefined}
 		>
 			<div css={iconStyles}>
 				{getSourceIconElement(source, intendedAudience)}

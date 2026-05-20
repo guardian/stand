@@ -1,26 +1,21 @@
 import { Meta, Story } from '@storybook/addon-docs/blocks';
 import IntendedAudienceSignifierStories, {
 	GlobalUKStory,
-	GlobalUKStoryTitleOn,
 	GlobalUSStory,
 	GlobalAUSStory,
 	UKAndUKStory,
 	USAndUSStory,
-	USAndUSStoryTitleOn,
 	AUSAndAUSStory,
 	UKAndGlobalStory,
 	USAndGlobalStory,
-	UKAndGlobalStoryTitleOn,
 	AUSAndGlobalStory,
 	UKAndGlobalStoryWithCustomTheme,
 	AUSAndGlobalWithCSSOverrides,
 	DontKnowStoryUK,
 	DontKnowStoryUS,
 	DontKnowStoryAUS,
-	DontKnowStoryAUSTitleOn,
 	UKAndUSStory,
 	USAndUKStory,
-	USAndUKStoryTitleOn,
 } from './IntendedAudienceSignifier.stories';
 import {
 	SandboxReact,
@@ -99,7 +94,6 @@ import type {
 | ------------------ | ----------------------------------------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `source`           | `Source`                                  | Yes      | N/A     | Icon key rendered on the left side of the chevron. Supported values: `UK`, `US`, `AUS` .                                                                                                                 |
 | `intendedAudience` | `IntendedAudience`                        | No       | N/A     | Icon key rendered on the right side of the chevron. If undefined, the "Don't Know" label will be displayed . Supported values: `domestic-for-domestic`,`domestic-for-global`,`global`,`UK`, `US`, `AUS`. |
-| `includeTitle`     | `boolean`                                 | No       | N/A     | whether to include a "title" attribute describing the source and audience.                                                                                                                               |
 | `theme`            | `Partial<IntendedAudienceSignifierTheme>` | No       | N/A     | Custom theme token overrides merged over the component defaults.                                                                                                                                         |
 | `cssOverrides`     | `SerializedStyles \| SerializedStyles[]`  | No       | N/A     | Additional Emotion CSS styles applied to the root element.                                                                                                                                               |
 | `className`        | `string`                                  | No       | N/A     | Additional class name(s) applied to the root element.                                                                                                                                                    |
@@ -109,10 +103,6 @@ import type {
 ### Global and Global UK
 
 <Story of={GlobalUKStory} />
-
-### Global and Global UK with title attribute
-
-<Story of={GlobalUKStoryTitleOn} />
 
 ### Global and Global US
 
@@ -130,10 +120,6 @@ import type {
 
 <Story of={USAndUSStory} />
 
-### US and US with title attribute
-
-<Story of={USAndUSStoryTitleOn} />
-
 ### AUS and AUS
 
 <Story of={AUSAndAUSStory} />
@@ -141,10 +127,6 @@ import type {
 ### UK and Global
 
 <Story of={UKAndGlobalStory} />
-
-### UK and Global with title attribute
-
-<Story of={UKAndGlobalStoryTitleOn} />
 
 ### US and Global
 
@@ -174,10 +156,6 @@ import type {
 
 <Story of={DontKnowStoryAUS} />
 
-### Don't Know Story AUS with title attribute
-
-<Story of={DontKnowStoryAUSTitleOn} />
-
 ### UK and US Story
 
 <Story of={UKAndUSStory} />
@@ -185,10 +163,6 @@ import type {
 ### US and UK Story
 
 <Story of={USAndUKStory} />
-
-### US and UK Story with title attribute
-
-<Story of={USAndUKStoryTitleOn} />
 
 ## Customisation
 
