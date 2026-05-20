@@ -36,8 +36,7 @@ export default [
 			'check-file/filename-naming-convention': [
 				'error',
 				{
-					'src/components/**/*.tsx': 'PASCAL_CASE',
-					'src/*/**/*.tsx': 'PASCAL_CASE',
+					'src/**/*.tsx': 'PASCAL_CASE',
 					'src/*/**/*.ts': 'CAMEL_CASE',
 					'src/!(index|utils).ts': 'PASCAL_CASE',
 				},
