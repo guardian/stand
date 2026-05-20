@@ -2,7 +2,7 @@
 export const componentName = 'TemplateComponent';
 
 // React sandbox example
-export const componentTsx = /* javascript */ `import { TemplateComponent } from '@guardian/stand/template-component';
+export const componentTsx = /* javascript */ `import { TemplateComponent } from '@guardian/stand/TemplateComponent';
 
 export const Component = () => (
 	<>
