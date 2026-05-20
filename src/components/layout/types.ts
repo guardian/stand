@@ -1,16 +1,28 @@
+import type { SerializedStyles } from '@emotion/react';
+import type React from 'react';
 import type { DefaultPropsWithChildren } from '../../util/types';
-import type { LayoutTheme, SidebarTheme } from './styles';
+import type { LayoutTheme, MainTheme, SidebarTheme } from './styles';
 
-export interface LayoutProps extends DefaultPropsWithChildren<LayoutTheme> {
+export type LayoutProps = DefaultPropsWithChildren<LayoutTheme>;
+
+export interface MainProps
+	extends
+		DefaultPropsWithChildren<MainTheme>,
+		React.HTMLAttributes<HTMLElement> {
 	/**
 	 * When `true`, the layout will take up the full width of its container, enabled by default.
 	 * When `false`, the layout will have a max-width of 1584px and be centered within its container.
 	 * This can be used to prevent the layout from becoming too stretched on very wide screens.
 	 */
 	fluid?: boolean;
+
+	as?: React.ElementType;
 }
 
-export interface SidebarProps extends DefaultPropsWithChildren<SidebarTheme> {
+export interface SidebarProps
+	extends
+		DefaultPropsWithChildren<SidebarTheme>,
+		React.HTMLAttributes<HTMLElement> {
 	/**
 	 * Defines the layout behavior of the sidebar at the sm breakpoint.
 	 *
@@ -19,4 +31,11 @@ export interface SidebarProps extends DefaultPropsWithChildren<SidebarTheme> {
 	 *
 	 */
 	layoutSmBreakpoint?: 'above-grid' | 'hidden';
+	as?: React.ElementType;
+}
+
+export interface LayoutSlotProps extends React.HTMLAttributes<HTMLElement> {
+	children?: React.ReactNode;
+	cssOverrides?: SerializedStyles | SerializedStyles[];
+	as?: React.ElementType;
 }

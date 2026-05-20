@@ -55,61 +55,86 @@ See [custom component build](#custom-component-build) for usage without React/Em
 
 ```tsx
 import { Grid, Item } from '@guardian/stand/grid';
-import { Layout, Sidebar } from '@guardian/stand/layout';
+import { AlertBanner } from '@guardian/stand/alert-banner';
+import { Layout } from '@guardian/stand/layout';
 import { TopBar, TopBarToolName } from '@guardian/stand/TopBar';
 
 <Layout>
-	<TopBar>
-		<TopBarToolName name="Layout Demo" favicon={{ letter: 'L' }} />
-	</TopBar>
-	<Sidebar layoutSmBreakpoint="above-grid">
+	<Layout.AlertBanner as="div" role="status" aria-live="polite">
+		<AlertBanner level="information">Layout banner message</AlertBanner>
+	</Layout.AlertBanner>
+	<Layout.TopBar>
+		<TopBar>
+			<TopBarToolName name="Layout Demo" favicon={{ letter: 'L' }} />
+		</TopBar>
+	</Layout.TopBar>
+	<Layout.Sidebar
+		as="nav"
+		aria-label="Secondary navigation"
+		layoutSmBreakpoint="above-grid"
+	>
 		<div style={{ padding: '8px' }}>Sidebar content</div>
-	</Sidebar>
-	<Grid>
-		<Item size={{ sm: 12, md: 8 }}>Main content</Item>
-		<Item size={{ sm: 12, md: 4 }}>Secondary content</Item>
-	</Grid>
+	</Layout.Sidebar>
+	<Layout.Main fluid={false}>
+		<Grid>
+			<Item size={{ sm: 12, md: 8 }}>Main content</Item>
+			<Item size={{ sm: 12, md: 4 }}>Secondary content</Item>
+		</Grid>
+	</Layout.Main>
 </Layout>;
 ```
 
 ## Composition
 
-`Layout` looks through its `children` and only renders the first direct child of each supported type:
+`Layout` uses explicit compound components to place content into grid regions:
 
-| Region       | Accepted child type                                                    |
-| ------------ | ---------------------------------------------------------------------- |
-| Alert banner | `AlertBanner`                                                          |
-| Top section  | `TopBar`                                                               |
-| Sidebar      | `Sidebar`                                                              |
-| Main content | `Grid` (preferred), or any other direct child if no `Grid` is provided |
+| Region       | Compound component   |
+| ------------ | -------------------- |
+| Alert banner | `Layout.AlertBanner` |
+| Top section  | `Layout.TopBar`      |
+| Sidebar      | `Layout.Sidebar`     |
+| Main content | `Layout.Main`        |
 
-If no `Grid` is provided, the first other direct child is placed in the main content region.
-
-Additional children that are not one of the supported types are ignored. Note that `Layout` only inspects direct children; nested children or those wrapped in a `React.Fragment` are not supported.
-
-This means you can compose the shell declaratively, and `Layout` will place each supported child in the correct grid area.
+Each slot is a thin wrapper that applies the correct grid-area styles and renders whatever you pass as children.
 
 ## Layout Props
 
-| Name           | Type                                     | Required | Default | Description                                                                        |
-| -------------- | ---------------------------------------- | -------- | ------- | ---------------------------------------------------------------------------------- |
-| `children`     | `React.ReactNode`                        | No       | N/A     | Direct children used to populate alert banner, top bar, sidebar, and main regions. |
-| `fluid`        | `boolean`                                | No       | `true`  | When `false`, constrains the main region to the theme max width and centers it.    |
-| `theme`        | `LayoutTheme`                            | No       | N/A     | Theme token overrides for layout grid structure across breakpoints.                |
-| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Custom CSS styles.                                                                 |
-| `className`    | `string`                                 | No       | N/A     | Additional class name(s).                                                          |
+| Name           | Type                                     | Required | Default | Description                                                                 |
+| -------------- | ---------------------------------------- | -------- | ------- | --------------------------------------------------------------------------- |
+| `children`     | `React.ReactNode`                        | No       | N/A     | Slot wrappers such as `Layout.TopBar`, `Layout.Sidebar`, and `Layout.Main`. |
+| `theme`        | `LayoutTheme`                            | No       | N/A     | Theme token overrides for layout grid structure across breakpoints.         |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Custom CSS styles.                                                          |
+| `className`    | `string`                                 | No       | N/A     | Additional class name(s).                                                   |
 
 ## Sidebar Props
 
-Use `Sidebar` as a child of `Layout` to fill the sidebar region.
+Use `Layout.Sidebar` to fill the sidebar region.
 
-| Name                 | Type                                     | Required | Default    | Description                               |
-| -------------------- | ---------------------------------------- | -------- | ---------- | ----------------------------------------- |
-| `children`           | `React.ReactNode`                        | No       | N/A        | Content to render inside the sidebar.     |
-| `layoutSmBreakpoint` | `'above-grid' \| 'hidden'`               | No       | `'hidden'` | Sidebar behavior at the `sm` breakpoint.  |
-| `theme`              | `SidebarTheme`                           | No       | N/A        | Theme token overrides for sidebar styles. |
-| `cssOverrides`       | `SerializedStyles \| SerializedStyles[]` | No       | N/A        | Custom CSS styles.                        |
-| `className`          | `string`                                 | No       | N/A        | Additional class name(s).                 |
+| Name                 | Type                                     | Required | Default    | Description                                                |
+| -------------------- | ---------------------------------------- | -------- | ---------- | ---------------------------------------------------------- |
+| `children`           | `React.ReactNode`                        | No       | N/A        | Content to render inside the sidebar.                      |
+| `layoutSmBreakpoint` | `'above-grid' \| 'hidden'`               | No       | `'hidden'` | Sidebar behavior at the `sm` breakpoint.                   |
+| `as`                 | `React.ElementType`                      | No       | `'aside'`  | Element or component used to render the sidebar container. |
+| `theme`              | `SidebarTheme`                           | No       | N/A        | Theme token overrides for sidebar styles.                  |
+| `cssOverrides`       | `SerializedStyles \| SerializedStyles[]` | No       | N/A        | Custom CSS styles.                                         |
+| `className`          | `string`                                 | No       | N/A        | Additional class name(s).                                  |
+
+`Layout.Sidebar` also forwards standard HTML attributes (for example `id`, `role`, `aria-*`, and `data-*`) to the rendered container.
+
+## Main Props
+
+Use `Layout.Main` for the primary page content region.
+
+| Name           | Type                                     | Required | Default  | Description                                                                      |
+| -------------- | ---------------------------------------- | -------- | -------- | -------------------------------------------------------------------------------- |
+| `children`     | `React.ReactNode`                        | No       | N/A      | Content to render in the main area (typically a `Grid`).                         |
+| `fluid`        | `boolean`                                | No       | `true`   | When `false`, constrains main width and centers content using main theme tokens. |
+| `as`           | `React.ElementType`                      | No       | `'main'` | Element or component used to render the main container.                          |
+| `theme`        | `MainTheme`                              | No       | N/A      | Theme token overrides for main region width and margins.                         |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A      | Custom CSS styles.                                                               |
+| `className`    | `string`                                 | No       | N/A      | Additional class name(s).                                                        |
+
+`Layout.Main` also forwards standard HTML attributes (for example `id`, `role`, `aria-*`, and `data-*`) to the rendered container.
 
 ### `layoutSmBreakpoint` behavior
 
@@ -132,7 +157,7 @@ Use this when you want the main content region constrained and centered on wide 
 
 ### Top bar with custom main content (no Grid)
 
-Use this when you want `Layout` to place a direct non-Grid child in the main content region.
+Use this when your `Layout.Main` region contains custom content instead of a `Grid`.
 
 <Canvas of={TopBarWithCustomMainContent} />
 
@@ -160,7 +185,7 @@ We recommend using the Layout component as provided, but it can be customised us
 
 ### Custom theme
 
-The `theme` prop allows you to override specific design tokens for the Layout component (for example grid templates at each breakpoint, and shared width constraints used when `fluid={false}`):
+The `theme` prop allows you to override specific design tokens for the Layout component (for example grid templates at each breakpoint):
 
 <Canvas of={CustomTheme} />
 

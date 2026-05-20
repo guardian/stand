@@ -14,18 +14,6 @@
 					"width": {
 						"$type": "dimension",
 						"$value": "100%"
-					},
-					"max-width": {
-						"$type": "dimension",
-						"$value": "{semantic.sizing.layout.max-width-px}"
-					},
-					"margin-left": {
-						"$type": "string",
-						"$value": "auto"
-					},
-					"margin-right": {
-						"$type": "string",
-						"$value": "auto"
 					}
 				},
 				"sm": {
@@ -101,6 +89,20 @@
 						"$type": "dimension",
 						"$value": "{semantic.sizing.sidebar.lg-px}"
 					}
+				}
+			},
+			"main": {
+				"max-width": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.layout.max-width-px}"
+				},
+				"margin-left": {
+					"$type": "string",
+					"$value": "auto"
+				},
+				"margin-right": {
+					"$type": "string",
+					"$value": "auto"
 				}
 			}
 		}
