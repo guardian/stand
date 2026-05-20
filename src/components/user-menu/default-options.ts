@@ -8,7 +8,7 @@ const textSizes: Option[] = [
 		label: 'Small',
 		description: 'Compact reading',
 		labelStyle: {
-			fontSize: baseTypography.size['12-px'],
+			fontSize: baseTypography.size['12Rem'],
 		},
 	},
 	{
@@ -16,7 +16,7 @@ const textSizes: Option[] = [
 		label: 'Medium',
 		description: 'Standard reading',
 		labelStyle: {
-			fontSize: baseTypography.size['16-px'],
+			fontSize: baseTypography.size['16Rem'],
 		},
 	},
 	{
@@ -24,7 +24,7 @@ const textSizes: Option[] = [
 		label: 'Large',
 		description: 'Comfortable reading',
 		labelStyle: {
-			fontSize: baseTypography.size['20-px'],
+			fontSize: baseTypography.size['20Rem'],
 		},
 	},
 ];
@@ -35,17 +35,17 @@ const fontFamilies: Option[] = [
 		label: 'Guardian Text Egyptian',
 		description: 'Classic Guardian Serif',
 		labelStyle: {
-			fontFamily: baseTypography.family['Guardian Text Egyptian'],
-			fontSize: baseTypography.size['20-px'],
+			fontFamily: baseTypography.family.guardianTextEgyptian,
+			fontSize: baseTypography.size['20Rem'],
 		},
 	},
 	{
 		id: 'open-sans-compact',
 		label: 'Open Sans Compact',
-		description: 'compact sans-Serif',
+		description: 'Compact Sans-Serif',
 		labelStyle: {
-			fontFamily: baseTypography.family['Open Sans Compact'],
-			fontSize: baseTypography.size['20-px'],
+			fontFamily: baseTypography.family.openSansCompact,
+			fontSize: baseTypography.size['20Rem'],
 		},
 	},
 	{
@@ -53,8 +53,8 @@ const fontFamilies: Option[] = [
 		label: 'Open Sans',
 		description: 'Sans-Serif',
 		labelStyle: {
-			fontFamily: baseTypography.family['Open Sans'],
-			fontSize: baseTypography.size['20-px'],
+			fontFamily: baseTypography.family.openSans,
+			fontSize: baseTypography.size['20Rem'],
 		},
 	},
 ];
@@ -64,7 +64,7 @@ const colorSchemes: Option[] = [
 		id: 'white',
 		buttonStyle: {
 			backgroundColor: 'white',
-			padding: baseSpacing['10-rem'],
+			padding: baseSpacing['10Rem'],
 		},
 		isDefault: true,
 	},
@@ -72,35 +72,35 @@ const colorSchemes: Option[] = [
 		id: 'cream',
 		buttonStyle: {
 			backgroundColor: 'antiquewhite',
-			padding: baseSpacing['10-rem'],
+			padding: baseSpacing['10Rem'],
 		},
 	},
 	{
 		id: 'green',
 		buttonStyle: {
 			backgroundColor: 'lightgreen',
-			padding: baseSpacing['10-rem'],
+			padding: baseSpacing['10Rem'],
 		},
 	},
 	{
 		id: 'pink',
 		buttonStyle: {
 			backgroundColor: 'pink',
-			padding: baseSpacing['10-rem'],
+			padding: baseSpacing['10Rem'],
 		},
 	},
 	{
 		id: 'blue',
 		buttonStyle: {
 			backgroundColor: 'skyblue',
-			padding: baseSpacing['10-rem'],
+			padding: baseSpacing['10Rem'],
 		},
 	},
 	{
 		id: 'orange',
 		buttonStyle: {
 			backgroundColor: 'orange',
-			padding: baseSpacing['10-rem'],
+			padding: baseSpacing['10Rem'],
 		},
 	},
 ];

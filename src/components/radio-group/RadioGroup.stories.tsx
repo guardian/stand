@@ -81,11 +81,11 @@ export const CustomTheme = {
 				theme={{
 					shared: {
 						radio: {
-							color: baseColors['warm-purple'][300],
+							color: baseColors.warmPurple[300],
 						},
 
 						indicator: {
-							border: `2px dashed ${baseColors['warm-purple'][100]}`,
+							border: `2px dashed ${baseColors.warmPurple[100]}`,
 						},
 					},
 				}}
@@ -108,8 +108,8 @@ export const CssOverrides = {
 				description="Optional contextual help text"
 				size="sm"
 				cssOverrides={css`
-					border: 2px solid ${baseColors['cool-purple'][700]};
-					background-color: ${baseColors['cool-purple'][900]};
+					border: 2px solid ${baseColors.coolPurple[700]};
+					background-color: ${baseColors.coolPurple[900]};
 				`}
 			>
 				<Radio value="Test">Option 1</Radio>

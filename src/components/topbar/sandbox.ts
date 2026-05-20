@@ -77,7 +77,7 @@ import { componentTopBar } from "@guardian/stand";
 import { componentFavicon } from "@guardian/stand";
 const style = \`
 	display: \${componentTopBar.display};
-	justify-content: \${componentTopBar['justify-content']};
+	justify-content: \${componentTopBar.justifyContent};
 	height: \${componentTopBar.height};
 	border: \${componentTopBar.border};
 \`;
@@ -87,7 +87,7 @@ const lhsStyle = \`
 \`;
 
 const toolNameStyle = \`display: \${componentTopBar.ToolName.display};
-	align-items: \${componentTopBar.ToolName['align-items']};
+	align-items: \${componentTopBar.ToolName.alignItems};
 	gap: \${componentTopBar.ToolName.gap};
 	font: \${componentTopBar.ToolName.typography.font};
 	letter-spacing: \${componentTopBar.ToolName.typography.letterSpacing};
@@ -97,19 +97,19 @@ const toolNameStyle = \`display: \${componentTopBar.ToolName.display};
 const faviconStyle = \`
 	background-color: \${componentFavicon.color.background};
 	display: \${componentFavicon.display};
-	align-items: \${componentFavicon['align-items']};
-	justify-content: \${componentFavicon['justify-content']};
+	align-items: \${componentFavicon.alignItems};
+	justify-content: \${componentFavicon.justifyContent};
 	width: \${componentFavicon.size};
 	height: \${componentFavicon.size};
 	user-select: \${componentFavicon.userSelect};
 	color: \${componentFavicon.color.text};
 	font: \${componentFavicon.typography.font};
 	letter-spacing: \${componentFavicon.typography.letterSpacing};
-	font-variation-settings: "wdth" \${componentFavicon.typography['font-width']};
+	font-variation-settings: "wdth" \${componentFavicon.typography.fontWidth};
 \`;
 
 const topBarItemStyle = \`display: \${componentTopBar.Item.display};
-	align-items: \${componentTopBar.Item['align-items']};
+	align-items: \${componentTopBar.Item.alignItems};
 	height: \${componentTopBar.Item.height};
 	padding: \${componentTopBar.Item.sm.padding.top} \${componentTopBar.Item.sm.padding.right} \${componentTopBar.Item.sm.padding.bottom} \${componentTopBar.Item.sm.padding.left};
 	border-right: \${componentTopBar.Item.border};

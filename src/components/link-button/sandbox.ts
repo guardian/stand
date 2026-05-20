@@ -183,94 +183,94 @@ export const componentJs = /* javascript */ `	// for ts/js
     	/* shared button styles for all variants */
     	.js-stand-button {
     		display: \${componentButton.shared.display};
-    		-webkit-appearance: \${componentButton.shared["-webkit-appearance"]};
-    		text-align: \${componentButton.shared["text-align"]};
-    		box-shadow: \${componentButton.shared["box-shadow"]};
-    		text-decoration: \${componentButton.shared["text-decoration"]};
+    		-webkit-appearance: \${componentButton.shared.webkitAppearance};
+    		text-align: \${componentButton.shared.textAlign};
+    		box-shadow: \${componentButton.shared.boxShadow};
+    		text-decoration: \${componentButton.shared.textDecoration};
     		cursor: \${componentButton.shared.cursor};
-    		justify-content: \${componentButton.shared["justify-content"]};
-    		align-items: \${componentButton.shared["align-items"]};
+    		justify-content: \${componentButton.shared.justifyContent};
+    		align-items: \${componentButton.shared.alignItems};
     	}
     	.js-stand-button:focus-visible {
-    		outline: \${componentButton.shared[":focus-visible"].outline};
-    		outline-offset: \${componentButton.shared[":focus-visible"]["outline-offset"]};
+    		outline: \${componentButton.shared.focusVisible.outline};
+    		outline-offset: \${componentButton.shared.focusVisible.outlineOffset};
     	}
     	.js-stand-button:disabled {
-    		cursor: \${componentButton.shared[":disabled"].cursor};
+    		cursor: \${componentButton.shared.disabled.cursor};
     	}
 
     	/* example setup of button/link button style using md size and emphasised primary variant */
     	.js-stand-button-primary {
-    		color: \${componentButton["primary"].shared.color};
-    		background: \${componentButton["primary"].shared.backgroundColor};
-    		height: \${componentButton["primary"].md.height};
-    		padding: \${componentButton["primary"].md.padding.top}
-    		\${componentButton["primary"].md.padding.right}
-    		\${componentButton["primary"].md.padding.bottom}
-    		\${componentButton["primary"].md.padding.left};
-    		font: \${componentButton["primary"].md.typography.font};
-    		letter-spacing: \${componentButton["primary"].md.typography.letterSpacing};
+    		color: \${componentButton.primary.shared.color};
+    		background: \${componentButton.primary.shared.backgroundColor};
+    		height: \${componentButton.primary.md.height};
+    		padding: \${componentButton.primary.md.padding.top}
+    		\${componentButton.primary.md.padding.right}
+    		\${componentButton.primary.md.padding.bottom}
+    		\${componentButton.primary.md.padding.left};
+    		font: \${componentButton.primary.md.typography.font};
+    		letter-spacing: \${componentButton.primary.md.typography.letterSpacing};
     		font-variation-settings: 'wdth'
-    		\${componentButton["primary"].md.typography.fontWidth};
-    		border: \${componentButton["primary"].shared.border};
-    		border-radius: \${componentButton["primary"].shared.borderRadius};
+    		\${componentButton.primary.md.typography.fontWidth};
+    		border: \${componentButton.primary.shared.border};
+    		border-radius: \${componentButton.primary.shared.borderRadius};
     	}
     	.js-stand-button-primary:hover {
-    		background: \${componentButton["primary"].shared[":hover"].backgroundColor};
-    		border: \${componentButton["primary"].shared[":hover"].border}
+    		background: \${componentButton.primary.shared.hover.backgroundColor};
+    		border: \${componentButton.primary.shared.hover.border}
     	}
     	.js-stand-button-primary:active {
-    		background: \${componentButton["primary"].shared[":active"].backgroundColor};
-    		border: \${componentButton["primary"].shared[":active"].border};
+    		background: \${componentButton.primary.shared.active.backgroundColor};
+    		border: \${componentButton.primary.shared.active.border};
     	}
     	.js-stand-button-primary:disabled, .js-stand-button-primary[data-disabled] {
-    		color: \${componentButton["primary"].shared[":disabled"].color};
-    		background: \${componentButton["primary"].shared[":disabled"].backgroundColor};
-    		border: \${componentButton["primary"].shared[":disabled"].border};
+    		color: \${componentButton.primary.shared.disabled.color};
+    		background: \${componentButton.primary.shared.disabled.backgroundColor};
+    		border: \${componentButton.primary.shared.disabled.border};
     	}
     	.js-stand-button-primary > .material-symbols {
-    		font-size: \${componentButton["primary"].md.icon.size}
+    		font-size: \${componentButton.primary.md.icon.size}
     	}
     	.js-stand-button-primary:has(> .material-symbols) {
-    		padding-left: \${componentButton["primary"].md.padding.withIcon.iconLeft.left};
-    		gap: \${componentButton["primary"].md.icon.gap};
+    		padding-left: \${componentButton.primary.md.padding.withIcon.iconLeft.left};
+    		gap: \${componentButton.primary.md.icon.gap};
     	}
 
     	/* example setup of button/link button style using md size and neutral secondary variant */
     	.js-stand-button-tertiary {
-    		color: \${componentButton["tertiary"].shared.color};
-    		background: \${componentButton["tertiary"].shared.backgroundColor};
-    		height: \${componentButton["tertiary"].md.height};
-    		padding: \${componentButton["tertiary"].md.padding.top}
-    		\${componentButton["tertiary"].md.padding.right}
-    		\${componentButton["tertiary"].md.padding.bottom}
-    		\${componentButton["tertiary"].md.padding.left};
-    		font: \${componentButton["tertiary"].md.typography.font};
-    		letter-spacing: \${componentButton["tertiary"].md.typography.letterSpacing};
+    		color: \${componentButton.tertiary.shared.color};
+    		background: \${componentButton.tertiary.shared.backgroundColor};
+    		height: \${componentButton.tertiary.md.height};
+    		padding: \${componentButton.tertiary.md.padding.top}
+    		\${componentButton.tertiary.md.padding.right}
+    		\${componentButton.tertiary.md.padding.bottom}
+    		\${componentButton.tertiary.md.padding.left};
+    		font: \${componentButton.tertiary.md.typography.font};
+    		letter-spacing: \${componentButton.tertiary.md.typography.letterSpacing};
     		font-variation-settings: 'wdth'
-    		\${componentButton["tertiary"].md.typography.fontWidth};
-    		border: \${componentButton["tertiary"].shared.border};
-    		border-radius: \${componentButton["tertiary"].shared.borderRadius};
+    		\${componentButton.tertiary.md.typography.fontWidth};
+    		border: \${componentButton.tertiary.shared.border};
+    		border-radius: \${componentButton.tertiary.shared.borderRadius};
     	}
     	.js-stand-button-tertiary:hover {
-    		background: \${componentButton["tertiary"].shared[":hover"].backgroundColor};
-    		border: \${componentButton["tertiary"].shared[":hover"].border};
+    		background: \${componentButton.tertiary.shared.hover.backgroundColor};
+    		border: \${componentButton.tertiary.shared.hover.border};
     	}
     	.js-stand-button-tertiary:active {
-    		background: \${componentButton["tertiary"].shared[":active"].backgroundColor};
-    		border: \${componentButton["tertiary"].shared[":active"].border};
+    		background: \${componentButton.tertiary.shared.active.backgroundColor};
+    		border: \${componentButton.tertiary.shared.active.border};
     	}
     	.js-stand-button-tertiary:disabled, .js-stand-button-tertiary[data-disabled] {
-    		color: \${componentButton["tertiary"].shared[":disabled"].color};
-    		background: \${componentButton["tertiary"].shared[":disabled"].backgroundColor};
-    		border: \${componentButton["tertiary"].shared[":disabled"].border};
+    		color: \${componentButton.tertiary.shared.disabled.color};
+    		background: \${componentButton.tertiary.shared.disabled.backgroundColor};
+    		border: \${componentButton.tertiary.shared.disabled.border};
     	}
     	.js-stand-button-tertiary > .material-symbols {
-    		font-size: \${componentButton["tertiary"].md.icon.size}
+    		font-size: \${componentButton.tertiary.md.icon.size}
     	}
     	.js-stand-button-tertiary:has(> .material-symbols) {
-    		padding-left: \${componentButton["tertiary"].md.padding.withIcon.iconLeft.left};
-    		gap: \${componentButton["tertiary"].md.icon.gap};
+    		padding-left: \${componentButton.tertiary.md.padding.withIcon.iconLeft.left};
+    		gap: \${componentButton.tertiary.md.icon.gap};
     	}
 
     \`);

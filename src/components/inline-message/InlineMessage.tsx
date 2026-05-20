@@ -53,7 +53,7 @@ export function InlineMessage({
 				</Icon>
 			)}
 			<Typography
-				variant="help-text-form-md"
+				variant="helpTextFormMd"
 				theme={{ color: mergedTheme[level].color }}
 			>
 				{children}

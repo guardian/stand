@@ -6,11 +6,11 @@
 					"$type": "string",
 					"$value": "flex"
 				},
-				"align-items": {
+				"alignItems": {
 					"$type": "string",
 					"$value": "center"
 				},
-				"justify-content": {
+				"justifyContent": {
 					"$type": "string",
 					"$value": "space-between"
 				},
@@ -21,7 +21,7 @@
 					},
 					"right": {
 						"$type": "dimension",
-						"$value": "{base.spacing.16-rem}"
+						"$value": "{base.spacing.16Rem}"
 					},
 					"bottom": {
 						"$type": "dimension",
@@ -29,7 +29,7 @@
 					},
 					"left": {
 						"$type": "dimension",
-						"$value": "{base.spacing.16-rem}"
+						"$value": "{base.spacing.16Rem}"
 					}
 				},
 				"width": {
@@ -45,13 +45,13 @@
 						"$type": "string",
 						"$value": "flex"
 					},
-					"justify-content": {
+					"justifyContent": {
 						"$type": "string",
 						"$value": "center"
 					},
 					"gap": {
 						"$type": "string",
-						"$value": "{base.spacing.8-rem}"
+						"$value": "{base.spacing.8Rem}"
 					},
 					"flex": {
 						"$type": "string",
@@ -61,7 +61,7 @@
 						"$type": "string",
 						"$value": "100%"
 					},
-					"align-items": {
+					"alignItems": {
 						"$type": "string",
 						"$value": "center"
 					},
@@ -72,15 +72,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.help-text-form-md.font}"
+							"$value": "{semantic.typography.helpTextFormMd.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.help-text-form-md.letterSpacing}"
+							"$value": "{semantic.typography.helpTextFormMd.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.help-text-form-md.fontWidth}"
+							"$value": "{semantic.typography.helpTextFormMd.fontWidth}"
 						}
 					},
 					"icon": {
@@ -92,27 +92,27 @@
 				}
 			},
 			"information": {
-				"background-color": {
+				"backgroundColor": {
 					"$type": "color",
-					"$value": "{semantic.colors.fill.information-weak}"
+					"$value": "{semantic.colors.fill.informationWeak}"
 				}
 			},
 			"success": {
-				"background-color": {
+				"backgroundColor": {
 					"$type": "color",
-					"$value": "{semantic.colors.fill.success-weak}"
+					"$value": "{semantic.colors.fill.successWeak}"
 				}
 			},
 			"warning": {
-				"background-color": {
+				"backgroundColor": {
 					"$type": "color",
-					"$value": "{semantic.colors.fill.warning-weak}"
+					"$value": "{semantic.colors.fill.warningWeak}"
 				}
 			},
 			"error": {
-				"background-color": {
+				"backgroundColor": {
 					"$type": "color",
-					"$value": "{semantic.colors.fill.error-weak}"
+					"$value": "{semantic.colors.fill.errorWeak}"
 				}
 			}
 		}

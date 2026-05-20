@@ -3,16 +3,16 @@
  */
 
 export const componentTopBar = {
-	'background-color': '#f6f6f6',
+	backgroundColor: '#f6f6f6',
 	display: 'flex',
 	height: '4rem',
-	'justify-content': 'flex-start',
-	'border-right': '0.0625rem solid #cccccc',
-	'border-top': '0.0625rem solid #cccccc',
-	'border-bottom': '0.0625rem solid #cccccc',
-	'border-left': '0.0625rem solid #cccccc',
+	justifyContent: 'flex-start',
+	borderRight: '0.0625rem solid #cccccc',
+	borderTop: '0.0625rem solid #cccccc',
+	borderBottom: '0.0625rem solid #cccccc',
+	borderLeft: '0.0625rem solid #cccccc',
 	spacer: {
-		'margin-left': 'auto',
+		marginLeft: 'auto',
 	},
 	collapsedNavMenu: {
 		button: {
@@ -23,14 +23,14 @@ export const componentTopBar = {
 			border: 'none',
 			cursor: 'pointer',
 			hovered: {
-				'background-color': '#ededed',
+				backgroundColor: '#ededed',
 			},
 			active: {
-				'background-color': '#ededed',
+				backgroundColor: '#ededed',
 			},
 		},
 		popover: {
-			'background-color': '#f6f6f6',
+			backgroundColor: '#f6f6f6',
 			border: '0.0625rem solid #cccccc',
 			offset: 1,
 			containerPadding: 0,
@@ -38,7 +38,7 @@ export const componentTopBar = {
 	},
 	Item: {
 		display: 'flex',
-		'align-items': 'center',
+		alignItems: 'center',
 		height: '100%',
 		sm: {
 			padding: {
@@ -70,11 +70,11 @@ export const componentTopBar = {
 		shared: {
 			display: 'inline-flex',
 			position: 'relative',
-			'align-items': 'center',
+			alignItems: 'center',
 			cursor: 'pointer',
-			'text-decoration': 'none',
+			textDecoration: 'none',
 			height: '100%',
-			':disabled': {
+			disabled: {
 				cursor: 'not-allowed',
 				color: '#999999',
 			},
@@ -84,17 +84,17 @@ export const componentTopBar = {
 				bottom: '0',
 				left: '1rem',
 			},
-			':focus-visible': {
+			focusVisible: {
 				outline: '0.125rem solid #0072a9',
-				'outline-offset': '-0.0625rem',
+				outlineOffset: '-0.0625rem',
 			},
-			'border-top': '0.5rem solid transparent',
+			borderTop: '0.5rem solid transparent',
 			divider: '0.0625rem solid #cccccc',
 			_menuOpen: {
 				width: '100%',
 				height: '64px',
 				selected: {
-					'background-color': '#ededed',
+					backgroundColor: '#ededed',
 				},
 			},
 		},
@@ -111,11 +111,11 @@ export const componentTopBar = {
 		},
 		selected: {
 			color: '#000000',
-			'border-bottom': '0.5rem solid #0072a9',
+			borderBottom: '0.5rem solid #0072a9',
 		},
 		unselected: {
 			color: '#545454',
-			'border-bottom': '0.5rem solid transparent',
+			borderBottom: '0.5rem solid transparent',
 		},
 		md: {
 			typography: {
@@ -135,8 +135,8 @@ export const componentTopBar = {
 	ToolName: {
 		display: 'flex',
 		color: '#000000',
-		'align-items': 'center',
-		gap: '8px',
+		alignItems: 'center',
+		gap: '0.5rem',
 		typography: {
 			font: 'normal 700 1.25rem/1.15 GH Guardian Headline',
 			letterSpacing: '0rem',
@@ -147,7 +147,7 @@ export const componentTopBar = {
 			height: '2rem',
 		},
 		subsection: {
-			gap: '2px',
+			gap: '0.125rem',
 			typography: {
 				font: 'normal 700 1rem/1.15 Open Sans',
 				letterSpacing: '-0.0125rem',
@@ -183,12 +183,12 @@ export const componentTopBar = {
 			},
 			focused: {
 				outline: '0.125rem solid #0072a9',
-				'outline-offset': '-0.125rem',
+				outlineOffset: '-0.125rem',
 			},
 			collapsed: {
 				paddingLeft: '0.25rem',
 				paddingRight: '0.25rem',
-				'justify-content': 'center',
+				justifyContent: 'center',
 			},
 		},
 	},

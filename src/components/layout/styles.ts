@@ -45,9 +45,9 @@ export const mainLayoutStyles = (
 		${fluid
 			? ''
 			: css`
-					max-width: ${theme['max-width']};
-					margin-left: ${theme['margin-left']};
-					margin-right: ${theme['margin-right']};
+					max-width: ${theme.maxWidth};
+					margin-left: ${theme.marginLeft};
+					margin-right: ${theme.marginRight};
 				`}
 	`;
 };

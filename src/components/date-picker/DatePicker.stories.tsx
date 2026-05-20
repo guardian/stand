@@ -95,7 +95,7 @@ export const CustomTheme = {
 		theme: {
 			picker: {
 				shared: {
-					border: `0.0625rem solid ${baseColors['cool-purple'][500]}`,
+					border: `0.0625rem solid ${baseColors.coolPurple[500]}`,
 					borderRadius: '0.5rem',
 				},
 			},

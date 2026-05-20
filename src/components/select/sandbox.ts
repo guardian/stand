@@ -102,7 +102,7 @@ sheet.replaceSync(\`
 
 .js-stand-select-container {
 	display: \${componentForm.input.shared.container.display};
-	flex-direction: \${componentForm.input.shared.container['flex-direction']};
+	flex-direction: \${componentForm.input.shared.container.flexDirection};
 	gap: \${componentForm.input.shared.container.gap};
 	width: \${componentForm.input.shared.container.width};
 }
@@ -148,7 +148,7 @@ sheet.replaceSync(\`
 
 	&:focus-visible {
 		outline: \${componentSelect.shared.button.focused.outline};
-		outline-offset: \${componentSelect.shared.button.focused['outline-offset']};
+		outline-offset: \${componentSelect.shared.button.focused.outlineOffset};
 	}
 
 	&:disabled {

@@ -189,7 +189,7 @@ sheet.replaceSync(\`
 	/* Popover container */
 	.js-stand-popover {
 		overflow: \${popover.shared.overflow};
-		max-width: \${popover.md['max-width']};
+		max-width: \${popover.md.maxWidth};
 		width: \${popover.md.width};
 		box-shadow: \${popover.shared.shadow};
 	}
@@ -197,17 +197,17 @@ sheet.replaceSync(\`
 	/* Menu list */
 	.js-stand-menu {
 		display: \${menu.shared.display};
-		flex-direction: \${menu.shared['flex-direction']};
-		background: \${menu.shared['background-color']};
+		flex-direction: \${menu.shared.flexDirection};
+		background: \${menu.shared.backgroundColor};
 		border: \${menu.shared.border};
 	}
 
 	/* Menu section header */
 	.js-stand-menu-section-header {
 		display: \${menuSection.header.shared.display};
-		align-items: \${menuSection.header.shared['align-items']};
+		align-items: \${menuSection.header.shared.alignItems};
 		height: \${menuSection.header.md.height};
-		background: \${menuSection.header.shared['background-color']};
+		background: \${menuSection.header.shared.backgroundColor};
 		padding: \${menuSection.header.shared.padding.top} \${menuSection.header.shared.padding.right} \${menuSection.header.shared.padding.bottom} \${menuSection.header.shared.padding.left};
 		font: \${menuSection.header.md.typography.font};
 		letter-spacing: \${menuSection.header.md.typography.letterSpacing};
@@ -217,53 +217,53 @@ sheet.replaceSync(\`
 	/* Menu item */
 	.js-stand-menu-item {
 		display: \${menuItem.shared.display};
-		grid-template-columns: \${menuItem.shared['grid-template-columns']};
-		grid-template-areas: \${menuItem.shared['grid-template-areas']};
+		grid-template-columns: \${menuItem.shared.gridTemplateColumns};
+		grid-template-areas: \${menuItem.shared.gridTemplateAreas};
 		gap: \${menuItem.shared.gap};
-		align-items: \${menuItem.shared['align-items']};
+		align-items: \${menuItem.shared.alignItems};
 		padding: \${menuItem.shared.padding.top} \${menuItem.shared.padding.right} \${menuItem.shared.padding.bottom} \${menuItem.shared.padding.left};
-		border-bottom: \${menuItem.shared['border-bottom']};
+		border-bottom: \${menuItem.shared.borderBottom};
 		cursor: pointer;
 	}
 	.js-stand-menu-item-with-description {
-		grid-template-areas: \${menuItem.shared['grid-template-areas-with-description']};
+		grid-template-areas: \${menuItem.shared.gridTemplateAreasWithDescription};
 	}
 	.js-stand-menu-item:last-child {
-		border-bottom: \${menuItem.shared[':last-child']['border-bottom']};
+		border-bottom: \${menuItem.shared.lastChild.borderBottom};
 	}
 	.js-stand-menu-item:hover {
-		background: \${menuItem.shared[':hover']['background-color']};
+		background: \${menuItem.shared.hover.backgroundColor};
 	}
 	.js-stand-menu-item:focus-visible {
-		outline: \${menuItem.shared[':focus-visible'].outline};
-		outline-offset: \${menuItem.shared[':focus-visible']['outline-offset']};
-		background: \${menuItem.shared[':hover']['background-color']};
+		outline: \${menuItem.shared.focusVisible.outline};
+		outline-offset: \${menuItem.shared.focusVisible.outlineOffset};
+		background: \${menuItem.shared.hover.backgroundColor};
 	}
 
 	.js-stand-menu-item-icon {
-		grid-area: \${menuItem.shared.icon['grid-area']};
-		align-self: \${menuItem.shared.icon['align-self']};
+		grid-area: \${menuItem.shared.icon.gridArea};
+		align-self: \${menuItem.shared.icon.alignSelf};
 		color: \${menuItem.shared.icon.color};
 		font-size: \${menuItem.md.icon.size};
-		line-height: \${menuItem.md.icon['line-height']};
+		line-height: \${menuItem.md.icon.lineHeight};
 	}
 	.js-stand-menu-item-label {
-		grid-area: \${menuItem.shared.label['grid-area']};
+		grid-area: \${menuItem.shared.label.gridArea};
 		color: \${menuItem.shared.label.color};
 		font: \${menuItem.shared.label.typography.font};
 		letter-spacing: \${menuItem.shared.label.typography.letterSpacing};
 		font-variation-settings: 'wdth' \${menuItem.shared.label.typography.fontWidth};
 	}
 	.js-stand-menu-item-description {
-		grid-area: \${menuItem.shared.description['grid-area']};
+		grid-area: \${menuItem.shared.description.gridArea};
 		color: \${menuItem.shared.description.color};
 		font: \${menuItem.shared.description.typography.font};
 		letter-spacing: \${menuItem.shared.description.typography.letterSpacing};
 		font-variation-settings: 'wdth' \${menuItem.shared.description.typography.fontWidth};
 	}
 	.js-stand-menu-item-aside {
-		grid-area: \${menuItem.shared.aside['grid-area']};
-		justify-self: \${menuItem.shared.aside['justify-self']};
+		grid-area: \${menuItem.shared.aside.gridArea};
+		justify-self: \${menuItem.shared.aside.justifySelf};
 		color: \${menuItem.shared.aside.color};
 		font: \${menuItem.shared.aside.typography.font};
 		letter-spacing: \${menuItem.shared.aside.typography.letterSpacing};
@@ -272,7 +272,7 @@ sheet.replaceSync(\`
 
 	/* Separator */
 	.js-stand-menu-separator {
-		background-color: \${menuSeparator.shared['background-color']};
+		background-color: \${menuSeparator.shared.backgroundColor};
 		height: \${menuSeparator.shared.height};
 		width: \${menuSeparator.shared.width};
 	}

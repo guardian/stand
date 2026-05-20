@@ -68,16 +68,16 @@ export const CustomTheme = {
 			letter: 'S',
 			theme: {
 				color: {
-					background: baseColors['cool-purple'][700],
+					background: baseColors.coolPurple[700],
 					text: baseColors.orange[300],
 				},
-				typography: semanticTypography['body-italic-lg'],
+				typography: semanticTypography.bodyItalicLg,
 			},
 		},
 		theme: {
-			typography: semanticTypography['article-body-bold-italic-md'],
+			typography: semanticTypography.articleBodyBoldItalicMd,
 			subsection: {
-				typography: semanticTypography['meta-compact-md'],
+				typography: semanticTypography.metaCompactMd,
 			},
 		},
 	},
@@ -91,10 +91,10 @@ export const CssOverrides = {
 			letter: 'S',
 		},
 		cssOverrides: css`
-			border: ${baseSizing['size-2-rem']} solid ${baseColors.red[500]};
+			border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
 			background-color: ${baseColors.orange[700]};
-			color: ${baseColors['warm-purple'][300]};
-			border-radius: ${baseRadius['corner-4-px']};
+			color: ${baseColors.warmPurple[300]};
+			border-radius: ${baseRadius.corner4Px};
 		`,
 	},
 } satisfies Story;

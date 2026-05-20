@@ -104,7 +104,7 @@ sheet.replaceSync(\`
   .js-stand-checkbox {
 	display: \${componentCheckbox.input.shared.display};
 	position: \${componentCheckbox.input.shared.position};
-	align-items: \${componentCheckbox.input.shared['align-items']};
+	align-items: \${componentCheckbox.input.shared.alignItems};
 	gap: \${componentCheckbox.input.shared.gap};
 	cursor: \${componentCheckbox.input.shared.cursor};
 	color: \${componentCheckbox.input.shared.color};
@@ -138,8 +138,8 @@ sheet.replaceSync(\`
 	/* component styles */
 	cursor: \${componentCheckbox.input.shared.cursor};
 	border: \${componentCheckbox.input.shared.indicator.border};
-	border-radius: \${componentCheckbox.input.shared.indicator['border-radius']};
-	accent-color: \${componentCheckbox.input.shared.indicator.selected['background-color']};
+	border-radius: \${componentCheckbox.input.shared.indicator.borderRadius};
+	accent-color: \${componentCheckbox.input.shared.indicator.selected.backgroundColor};
   }
 
   .js-stand-checkbox.md > .js-stand-checkbox-indicator {

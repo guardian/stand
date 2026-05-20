@@ -72,19 +72,19 @@ export const componentJs = /* javascript */ `	// for ts/js
 				color: \${componentTypography.color};
 			}
 			.js-stand-typography-heading-compact-xl {
-				font: \${semanticTypography['heading-compact-xl'].font};
-				letter-spacing: \${semanticTypography['heading-compact-xl'].letterSpacing};
-				font-variation-settings: "wdth" \${semanticTypography['heading-compact-xl'].fontWidth};
+				font: \${semanticTypography.headingCompactXl.font};
+				letter-spacing: \${semanticTypography.headingCompactXl.letterSpacing};
+				font-variation-settings: "wdth" \${semanticTypography.headingCompactXl.fontWidth};
 			}
 			.js-stand-typography-body-md {
-				font: \${semanticTypography['body-md'].font};
-				letter-spacing: \${semanticTypography['body-md'].letterSpacing};
-				font-variation-settings: "wdth" \${semanticTypography['body-md'].fontWidth};
+				font: \${semanticTypography.bodyMd.font};
+				letter-spacing: \${semanticTypography.bodyMd.letterSpacing};
+				font-variation-settings: "wdth" \${semanticTypography.bodyMd.fontWidth};
 			}
 			.js-stand-typography-body-italic-md {
-				font: \${semanticTypography['body-italic-md'].font};
-				letter-spacing: \${semanticTypography['body-italic-md'].letterSpacing};
-				font-variation-settings: "wdth" \${semanticTypography['body-italic-md'].fontWidth};
+				font: \${semanticTypography.bodyItalicMd.font};
+				letter-spacing: \${semanticTypography.bodyItalicMd.letterSpacing};
+				font-variation-settings: "wdth" \${semanticTypography.bodyItalicMd.fontWidth};
 			}
     	\`);
 

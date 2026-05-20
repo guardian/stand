@@ -23,7 +23,7 @@ export const toolNameHoverLinkStyles = (
 		${convertTypographyToEmotionStringStyle(theme.hoverLink.typography)}
 		background-color: ${theme.hoverLink.backgroundColor};
 		color: ${theme.hoverLink.color};
-		align-items: ${theme['align-items']};
+		align-items: ${theme.alignItems};
 		padding-left: ${theme.hoverLink.paddingLeft};
 		padding-right: ${theme.hoverLink.paddingRight};
 		display: ${theme.display};
@@ -36,7 +36,7 @@ export const toolNameHoverLinkStyles = (
 		${until[collapseBelow]} {
 			padding-left: ${theme.hoverLink.collapsed.paddingLeft};
 			padding-right: ${theme.hoverLink.collapsed.paddingRight};
-			justify-content: ${theme.hoverLink.collapsed['justify-content']};
+			justify-content: ${theme.hoverLink.collapsed.justifyContent};
 		}
 	`;
 };
@@ -82,7 +82,7 @@ export const toolNameLinkStyles = (
 
 		&[data-focus-visible] {
 			outline: ${theme.hoverLink.focused.outline};
-			outline-offset: ${theme.hoverLink.focused['outline-offset']};
+			outline-offset: ${theme.hoverLink.focused.outlineOffset};
 		}
 	`;
 };
@@ -92,7 +92,7 @@ export const toolNameStyles = (
 ): SerializedStyles => {
 	return css`
 		display: ${theme.display};
-		align-items: ${theme['align-items']};
+		align-items: ${theme.alignItems};
 		gap: ${theme.gap};
 		color: ${theme.color};
 	`;
@@ -129,7 +129,7 @@ export const subsectionStyles = (
 ): SerializedStyles => {
 	return css`
 		display: ${theme.display};
-		align-items: ${theme['align-items']};
+		align-items: ${theme.alignItems};
 		gap: ${theme.subsection.gap};
 		${until[collapseBelow]} {
 			display: none;

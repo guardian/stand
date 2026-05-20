@@ -10,12 +10,12 @@ import { convertTypographyToEmotionStringStyle } from '../../utils';
 export const tableStyles = css`
 	width: 100%;
 	border-collapse: collapse;
-	${convertTypographyToEmotionStringStyle(semanticTypography['body-sm'])}
+	${convertTypographyToEmotionStringStyle(semanticTypography.bodySm)}
 
 	th {
 		text-align: left;
-		${convertTypographyToEmotionStringStyle(semanticTypography['heading-sm'])}
-		padding: ${baseSpacing['12-rem']} ${baseSpacing['8-rem']};
+		${convertTypographyToEmotionStringStyle(semanticTypography.headingSm)}
+		padding: ${baseSpacing['12Rem']} ${baseSpacing['8Rem']};
 		border-bottom: ${semanticSizing.border.md} solid
 			${semanticColors.border.strong};
 		position: sticky;
@@ -24,13 +24,13 @@ export const tableStyles = css`
 	}
 
 	td {
-		padding: ${baseSpacing['12-rem']} ${baseSpacing['8-rem']};
+		padding: ${baseSpacing['12Rem']} ${baseSpacing['8Rem']};
 		border-bottom: ${semanticSizing.border.default} solid
 			${semanticColors.border.weak};
 		vertical-align: middle;
 	}
 
 	tr:hover {
-		background: ${semanticColors.bg['raised-level-1']};
+		background: ${semanticColors.bg.raisedLevel1};
 	}
 `;

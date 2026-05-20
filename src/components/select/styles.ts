@@ -39,7 +39,7 @@ export const listBoxItemStyles = (theme: SelectTheme): SerializedStyles => {
 
 		&[data-focus-visible] {
 			outline: ${theme.shared.option.focused.outline};
-			outline-offset: ${theme.shared.option.focused['outline-offset']};
+			outline-offset: ${theme.shared.option.focused.outlineOffset};
 			background-color: ${theme.shared.option.focused.backgroundColor};
 		}
 
@@ -89,7 +89,7 @@ export const buttonStyles = (
 
 		&[data-focus-visible] {
 			outline: ${theme.shared.button.focused.outline};
-			outline-offset: ${theme.shared.button.focused['outline-offset']};
+			outline-offset: ${theme.shared.button.focused.outlineOffset};
 		}
 
 		&[data-disabled] {

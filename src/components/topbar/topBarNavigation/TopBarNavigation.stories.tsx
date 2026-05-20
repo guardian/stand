@@ -141,7 +141,7 @@ export const CustomTheme = {
 		theme: {
 			selected: {
 				color: baseColors.blue[200],
-				'border-bottom': `1px solid ${baseColors['cool-purple'][700]}`,
+				borderBottom: `1px solid ${baseColors.coolPurple[700]}`,
 			},
 		},
 	},
@@ -153,8 +153,8 @@ export const CssOverrides = {
 		icon: 'file_upload',
 		isSelected: true,
 		cssOverrides: css`
-			background-color: ${semanticColors.fill['strong-hover']};
-			color: ${semanticColors.text['strong-inverse']};
+			background-color: ${semanticColors.fill.strongHover};
+			color: ${semanticColors.text.strongInverse};
 		`,
 	},
 } satisfies Story;

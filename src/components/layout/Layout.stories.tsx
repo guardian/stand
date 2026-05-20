@@ -54,7 +54,7 @@ const TopBarExample = (
 				<TextInput
 					theme={{
 						shared: {
-							'margin-top': '0',
+							marginTop: '0',
 						},
 					}}
 					cssOverrides={css`

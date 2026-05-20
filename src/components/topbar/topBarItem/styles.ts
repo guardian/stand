@@ -17,7 +17,7 @@ export const topBarItemStyles = (
 ): SerializedStyles => {
 	return css`
 		display: ${theme.display};
-		align-items: ${theme['align-items']};
+		align-items: ${theme.alignItems};
 		height: ${theme.height};
 		padding: ${theme[size].padding.top} ${theme[size].padding.right}
 			${theme[size].padding.bottom} ${theme[size].padding.left};

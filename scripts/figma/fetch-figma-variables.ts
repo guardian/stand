@@ -94,16 +94,16 @@ const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 /**
  * Recursively generates rem equivalents for all px-based dimension tokens in base foundations.
  *
- * For each token ending in `-px`, this function:
+ * For each token ending in `Px`, this function:
  * 1. Extracts the numeric px value from the token
  * 2. Converts it to rem by dividing by 16 (assuming 16px = 1rem base font size)
- * 3. Creates a new sibling token with `-rem` suffix
+ * 3. Creates a new sibling token with `Rem` suffix
  *
  * This dual-unit approach allows consumers to choose between px or rem units while
  * maintaining a single source of truth from Figma. Rem units are preferred for
  * accessibility and responsive design, as they respect user font size preferences.
  *
- * Example: `size-24-px: "24px"` → generates `size-24-rem: "1.5rem"`
+ * Example: `size24Px: "24px"` → generates `size24Rem: "1.5rem"`
  *
  * @param tokens - The base token collection to process (modified in place)
  */
@@ -115,9 +115,9 @@ const addRemTokens = (tokens: TokensFile): void => {
 			return;
 		}
 
-		// If this is a token ending in -px, create a -rem equivalent
+		// If this is a token ending in Px, create a Rem equivalent
 		if (
-			key.endsWith('-px') &&
+			key.endsWith('Px') &&
 			typeof value === 'object' &&
 			'$value' in value &&
 			typeof value.$value === 'string'
@@ -126,7 +126,7 @@ const addRemTokens = (tokens: TokensFile): void => {
 			if (pxMatch) {
 				const pxValue = parseFloat(pxMatch[1]!);
 				const remValue = pxValue / 16;
-				const remKey = key.replace(/-px$/, '-rem');
+				const remKey = key.replace(/Px$/, 'Rem');
 
 				// Add the rem token at the same level
 				(tokens as Record<string, Token>)[remKey] = {
@@ -255,7 +255,7 @@ void (async () => {
 		);
 	}
 
-	// Add rem equivalents for all -px tokens in base foundations
+	// Add rem equivalents for all Px tokens in base foundations
 	Object.values(foundations.base).forEach((collection) => {
 		addRemTokens(collection);
 	});

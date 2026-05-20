@@ -6,7 +6,7 @@
 					"$type": "string",
 					"$value": "inline-flex"
 				},
-				"user-select": {
+				"userSelect": {
 					"$type": "string",
 					"$value": "none"
 				}

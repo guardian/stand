@@ -20,13 +20,13 @@ export const avatarButtonStyles = (
 		cursor: ${theme.shared.button.cursor};
 		&[data-focus-visible],
 		&:focus-visible {
-			outline: ${theme.shared.link[':focus-visible'].outline};
-			outline-offset: ${theme.shared.link[':focus-visible']['outline-offset']};
-			border-radius: ${theme.shared['border-radius']};
+			outline: ${theme.shared.link.focusVisible.outline};
+			outline-offset: ${theme.shared.link.focusVisible.outlineOffset};
+			border-radius: ${theme.shared.borderRadius};
 		}
 		&[data-disabled],
 		&:disabled {
-			cursor: ${theme.shared.button[':disabled'].cursor};
+			cursor: ${theme.shared.button.disabled.cursor};
 		}
 	`;
 };

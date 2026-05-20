@@ -8,41 +8,41 @@
 				},
 				"text": {
 					"$type": "color",
-					"$value": "{semantic.colors.text.stronger-inverse}"
+					"$value": "{semantic.colors.text.strongerInverse}"
 				}
 			},
 			"size": {
 				"$type": "dimension",
-				"$value": "{base.sizing.size-32-rem}"
+				"$value": "{base.sizing.size32Rem}"
 			},
 			"display": {
 				"$type": "string",
 				"$value": "inline-flex"
 			},
-			"align-items": {
+			"alignItems": {
 				"$type": "string",
 				"$value": "center"
 			},
-			"justify-content": {
+			"justifyContent": {
 				"$type": "string",
 				"$value": "center"
 			},
-			"user-select": {
+			"userSelect": {
 				"$type": "string",
 				"$value": "none"
 			},
 			"typography": {
 				"font": {
 					"$type": "typography",
-					"$value": "{semantic.typography.title-md.font}"
+					"$value": "{semantic.typography.titleMd.font}"
 				},
 				"letterSpacing": {
 					"$type": "dimension",
-					"$value": "{semantic.typography.title-md.letterSpacing}"
+					"$value": "{semantic.typography.titleMd.letterSpacing}"
 				},
 				"fontWidth": {
 					"$type": "number",
-					"$value": "{semantic.typography.title-md.fontWidth}"
+					"$value": "{semantic.typography.titleMd.fontWidth}"
 				}
 			}
 		}

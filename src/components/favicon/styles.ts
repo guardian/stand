@@ -15,11 +15,11 @@ export const faviconStyles = (theme: FaviconTheme): SerializedStyles => {
 	return css`
 		background-color: ${theme.color.background};
 		display: ${theme.display};
-		align-items: ${theme['align-items']};
-		justify-content: ${theme['justify-content']};
+		align-items: ${theme.alignItems};
+		justify-content: ${theme.justifyContent};
 		width: ${theme.size};
 		height: ${theme.size};
-		user-select: ${theme['user-select']};
+		user-select: ${theme.userSelect};
 	`;
 };
 

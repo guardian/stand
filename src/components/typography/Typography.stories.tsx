@@ -7,7 +7,7 @@ const meta = {
 	parameters: {},
 	args: {
 		element: 'div',
-		variant: 'body-md',
+		variant: 'bodyMd',
 		children: 'Text',
 	},
 } satisfies Meta<typeof Typography>;
@@ -17,7 +17,7 @@ type Story = StoryObj<typeof Typography>;
 export const Body = {
 	args: {
 		element: 'div',
-		variant: 'body-md',
+		variant: 'bodyMd',
 		children: 'Body',
 	},
 } satisfies Story;
@@ -33,7 +33,7 @@ export const CustomTheme = {
 export const HeadingCompact = {
 	args: {
 		element: 'h1',
-		variant: 'heading-compact-2xl',
+		variant: 'headingCompact2Xl',
 		children: 'Heading Compact',
 	},
 } satisfies Story;
@@ -41,9 +41,9 @@ export const HeadingCompact = {
 export const Nested = {
 	render: () => {
 		return (
-			<Typography element="div" variant="body-md">
+			<Typography element="div" variant="bodyMd">
 				Some text, with{' '}
-				<Typography element="i" variant="body-italic-md">
+				<Typography element="i" variant="bodyItalicMd">
 					even more text
 				</Typography>
 			</Typography>

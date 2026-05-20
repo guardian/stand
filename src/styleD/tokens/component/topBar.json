@@ -1,9 +1,9 @@
 {
 	"component": {
 		"TopBar": {
-			"background-color": {
+			"backgroundColor": {
 				"$type": "color",
-				"$value": "{semantic.colors.bg.raised-level-1}"
+				"$value": "{semantic.colors.bg.raisedLevel1}"
 			},
 			"display": {
 				"$type": "string",
@@ -11,13 +11,13 @@
 			},
 			"height": {
 				"$type": "dimension",
-				"$value": "{base.spacing.64-rem}"
+				"$value": "{base.spacing.64Rem}"
 			},
-			"justify-content": {
+			"justifyContent": {
 				"$type": "string",
 				"$value": "flex-start"
 			},
-			"border-right": {
+			"borderRight": {
 				"$type": "border",
 				"$value": {
 					"color": "{semantic.colors.border.weak}",
@@ -25,7 +25,7 @@
 					"style": "solid"
 				}
 			},
-			"border-top": {
+			"borderTop": {
 				"$type": "border",
 				"$value": {
 					"color": "{semantic.colors.border.weak}",
@@ -33,7 +33,7 @@
 					"style": "solid"
 				}
 			},
-			"border-bottom": {
+			"borderBottom": {
 				"$type": "border",
 				"$value": {
 					"color": "{semantic.colors.border.weak}",
@@ -41,7 +41,7 @@
 					"style": "solid"
 				}
 			},
-			"border-left": {
+			"borderLeft": {
 				"$type": "border",
 				"$value": {
 					"color": "{semantic.colors.border.weak}",
@@ -50,7 +50,7 @@
 				}
 			},
 			"spacer": {
-				"margin-left": {
+				"marginLeft": {
 					"$type": "string",
 					"$value": "auto"
 				}
@@ -82,22 +82,22 @@
 						"$value": "pointer"
 					},
 					"hovered": {
-						"background-color": {
+						"backgroundColor": {
 							"$type": "color",
-							"$value": "{semantic.colors.bg.raised-level-2}"
+							"$value": "{semantic.colors.bg.raisedLevel2}"
 						}
 					},
 					"active": {
-						"background-color": {
+						"backgroundColor": {
 							"$type": "color",
-							"$value": "{semantic.colors.bg.raised-level-2}"
+							"$value": "{semantic.colors.bg.raisedLevel2}"
 						}
 					}
 				},
 				"popover": {
-					"background-color": {
+					"backgroundColor": {
 						"$type": "color",
-						"$value": "{semantic.colors.bg.raised-level-1}"
+						"$value": "{semantic.colors.bg.raisedLevel1}"
 					},
 					"border": {
 						"$type": "border",

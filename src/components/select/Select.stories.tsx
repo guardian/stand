@@ -54,8 +54,8 @@ export const CustomTheme = {
 		theme: {
 			shared: {
 				button: {
-					color: baseColors['cool-purple'][200],
-					backgroundColor: baseColors['cool-purple'][800],
+					color: baseColors.coolPurple[200],
+					backgroundColor: baseColors.coolPurple[800],
 				},
 			},
 		},

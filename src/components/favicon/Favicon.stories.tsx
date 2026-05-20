@@ -60,7 +60,7 @@ export const CustomTheme = {
 		letter: 'C',
 		theme: {
 			color: {
-				background: baseColors['cool-purple'][700],
+				background: baseColors.coolPurple[700],
 				text: baseColors.orange[300],
 			},
 		},
@@ -72,10 +72,10 @@ export const CssOverrides = {
 	args: {
 		letter: 'O',
 		cssOverrides: css`
-			border: ${baseSizing['size-2-rem']} solid ${baseColors.red[500]};
+			border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
 			background-color: ${baseColors.orange[700]};
-			color: ${baseColors['warm-purple'][300]};
-			border-radius: ${baseRadius['corner-4-px']};
+			color: ${baseColors.warmPurple[300]};
+			border-radius: ${baseRadius.corner4Px};
 		`,
 	},
 };

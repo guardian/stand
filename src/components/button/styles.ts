@@ -19,15 +19,15 @@ export const buttonStyles = (
 ): SerializedStyles => {
 	return css`
 		/* button/link button reset styles */
-		display: ${theme.shared['display']};
-		-webkit-appearance: ${theme.shared['-webkit-appearance']};
-		text-align: ${theme.shared['text-align']};
-		box-shadow: ${theme.shared['box-shadow']};
-		text-decoration: ${theme.shared['text-decoration']};
+		display: ${theme.shared.display};
+		-webkit-appearance: ${theme.shared.webkitAppearance};
+		text-align: ${theme.shared.textAlign};
+		box-shadow: ${theme.shared.boxShadow};
+		text-decoration: ${theme.shared.textDecoration};
 		/* button component styles */
 		cursor: ${theme.shared.cursor};
-		justify-content: ${theme.shared['justify-content']};
-		align-items: ${theme.shared['align-items']};
+		justify-content: ${theme.shared.justifyContent};
+		align-items: ${theme.shared.alignItems};
 		color: ${theme[variant].shared.color};
 		background: ${theme[variant].shared.backgroundColor};
 		height: ${theme[variant][size].height};
@@ -52,28 +52,28 @@ export const buttonStyles = (
 		`}
 
 		&[data-hovered], &:hover {
-			background: ${theme[variant].shared[':hover'].backgroundColor};
-			border: ${theme[variant].shared[':hover'].border};
+			background: ${theme[variant].shared.hover.backgroundColor};
+			border: ${theme[variant].shared.hover.border};
 		}
 
 		&[data-pressed],
 		&:active {
-			background: ${theme[variant].shared[':active'].backgroundColor};
-			border: ${theme[variant].shared[':active'].border};
+			background: ${theme[variant].shared.active.backgroundColor};
+			border: ${theme[variant].shared.active.border};
 		}
 
 		&[data-focus-visible],
 		&:focus-visible {
-			outline: ${theme.shared[':focus-visible'].outline};
-			outline-offset: ${theme.shared[':focus-visible']['outline-offset']};
+			outline: ${theme.shared.focusVisible.outline};
+			outline-offset: ${theme.shared.focusVisible.outlineOffset};
 		}
 
 		&[data-disabled],
 		&:disabled {
-			cursor: ${theme.shared[':disabled'].cursor};
-			color: ${theme[variant].shared[':disabled'].color};
-			background: ${theme[variant].shared[':disabled'].backgroundColor};
-			border: ${theme[variant].shared[':disabled'].border};
+			cursor: ${theme.shared.disabled.cursor};
+			color: ${theme[variant].shared.disabled.color};
+			background: ${theme[variant].shared.disabled.backgroundColor};
+			border: ${theme[variant].shared.disabled.border};
 		}
 	`;
 };

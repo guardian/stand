@@ -21,7 +21,7 @@ const tableCss = css`
 		font-weight: 700;
 		padding: 8px;
 		border-bottom: 2px solid ${semanticColors.border.strong};
-		background: ${semanticColors.bg['raised-level-1']};
+		background: ${semanticColors.bg.raisedLevel1};
 	}
 
 	td {
@@ -31,7 +31,7 @@ const tableCss = css`
 	}
 
 	tr:hover {
-		background: ${semanticColors.bg['raised-level-1']};
+		background: ${semanticColors.bg.raisedLevel1};
 	}
 `;
 
@@ -53,7 +53,7 @@ const visualizationCss = css`
 `;
 
 const radiusBoxCss = css`
-	background: ${semanticColors.bg['raised-level-2']};
+	background: ${semanticColors.bg.raisedLevel2};
 	border: 2px solid ${semanticColors.border.strong};
 	width: 64px;
 	height: 64px;
@@ -61,10 +61,10 @@ const radiusBoxCss = css`
 
 // Group by px and rem
 const pxTokens = Object.entries(baseRadius).filter(([key]) =>
-	key.endsWith('-px'),
+	key.endsWith('Px'),
 );
 const remTokens = Object.entries(baseRadius).filter(([key]) =>
-	key.endsWith('-rem'),
+	key.endsWith('Rem'),
 );
 
 export const Radius = () => (

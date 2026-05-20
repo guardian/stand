@@ -3,11 +3,11 @@
  */
 
 export const baseRadius = {
-	'corner-2-px': '2px',
-	'corner-4-px': '4px',
-	'corner-8-px': '8px',
-	'corner-2-rem': '0.125rem',
-	'corner-4-rem': '0.25rem',
-	'corner-8-rem': '0.5rem',
+	corner2Px: '2px',
+	corner4Px: '4px',
+	corner8Px: '8px',
+	corner2Rem: '0.125rem',
+	corner4Rem: '0.25rem',
+	corner8Rem: '0.5rem',
 } as const;
 export type BaseRadius = typeof baseRadius;

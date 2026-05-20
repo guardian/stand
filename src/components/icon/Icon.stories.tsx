@@ -129,10 +129,10 @@ export const CustomTheme = {
 		theme: {
 			shared: {
 				display: 'block',
-				'user-select': 'all',
+				userSelect: 'all',
 			},
 			md: {
-				size: baseSizing['size-48-rem'],
+				size: baseSizing.size48Rem,
 			},
 		},
 	},
@@ -145,9 +145,9 @@ export const CssOverrides = {
 		size: 'lg',
 		fill: baseColors.neutral[900],
 		cssOverrides: css`
-			padding: ${baseSpacing['4-rem']};
+			padding: ${baseSpacing['4Rem']};
 			background-color: ${baseColors.yellow[400]};
-			border-radius: ${semanticSizing.border['extra-wide']};
+			border-radius: ${semanticSizing.border.extraWide};
 		`,
 	},
 } satisfies Story;

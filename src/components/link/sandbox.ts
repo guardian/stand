@@ -59,9 +59,9 @@ export const componentJs = /* javascript */ `
 import { componentLink, semanticTypography } from "@guardian/stand";
 
 const semanticTypographyBodySm = \`
-		font: \${semanticTypography['body-sm'].font};
-		letter-spacing: \${semanticTypography['body-sm'].letterSpacing};
-		font-variation-settings: "wdth" \${semanticTypography['body-sm'].fontWidth};
+		font: \${semanticTypography.bodySm.font};
+		letter-spacing: \${semanticTypography.bodySm.letterSpacing};
+		font-variation-settings: "wdth" \${semanticTypography.bodySm.fontWidth};
 \`;
 
 const baseStyle = \`

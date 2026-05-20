@@ -82,7 +82,7 @@ export const componentJs = /* javascript */ `
 
 	const style = \`
 		display: \${componentTopBar.ToolName.display};
-		align-items: \${componentTopBar.ToolName["align-items"]};
+		align-items: \${componentTopBar.ToolName.alignItems};
 		gap: \${componentTopBar.ToolName.gap};
 		font: \${componentTopBar.ToolName.typography.font};
 		letter-spacing: \${componentTopBar.ToolName.typography.letterSpacing};
@@ -96,7 +96,7 @@ export const componentJs = /* javascript */ `
 
 	const subsectionStyle = \`
 		display: \${componentTopBar.ToolName.display};
-		align-items: \${componentTopBar.ToolName["align-items"]};
+		align-items: \${componentTopBar.ToolName.alignItems};
 		gap: \${componentTopBar.ToolName.subsection.gap};
 		font: \${componentTopBar.ToolName.subsection.typography.font};
 		letter-spacing: \${componentTopBar.ToolName.subsection.typography.letterSpacing};
@@ -106,11 +106,11 @@ export const componentJs = /* javascript */ `
 	const faviconStyle = \`
 		background-color: \${componentFavicon.color.background};
 		display: \${componentFavicon.display};
-		align-items: \${componentFavicon["align-items"]};
-		justify-content: \${componentFavicon["justify-content"]};
+		align-items: \${componentFavicon.alignItems};
+		justify-content: \${componentFavicon.justifyContent};
 		width: \${componentFavicon.size};
 		height: \${componentFavicon.size};
-		user-select: \${componentFavicon["user-select"]};
+		user-select: \${componentFavicon.userSelect};
 		color: \${componentFavicon.color.text};
 		font: \${componentFavicon.typography.font};
 		letter-spacing: \${componentFavicon.typography.letterSpacing};

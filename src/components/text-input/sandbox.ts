@@ -183,7 +183,7 @@ sheet.replaceSync(\`
 /* inline message styles - error */
 .js-stand-inline-message {
   display: \${componentInlineMessage.shared.display};
-  align-items: \${componentInlineMessage.shared['align-items']};
+  align-items: \${componentInlineMessage.shared.alignItems};
   gap: \${componentInlineMessage.shared.gap};
   font: \${componentInlineMessage.shared.typography.font};
   letter-spacing: \${componentInlineMessage.shared.typography.letterSpacing};
@@ -208,7 +208,7 @@ sheet.replaceSync(\`
 
 .js-stand-form-input-container {
 	display: \${componentForm.input.shared.container.display};
-	flex-direction: \${componentForm.input.shared.container['flex-direction']};
+	flex-direction: \${componentForm.input.shared.container.flexDirection};
 	gap: \${componentForm.input.shared.container.gap};
 	width: \${componentForm.input.shared.container.width};
 }
@@ -238,12 +238,12 @@ sheet.replaceSync(\`
 /* text input styles */
 
 .js-stand-text-input {
-	background-color: \${componentTextInput.shared['background-color']};
-	border-radius: \${componentTextInput.shared['border-radius']};
+	background-color: \${componentTextInput.shared.backgroundColor};
+	border-radius: \${componentTextInput.shared.borderRadius};
 	border: \${componentTextInput.shared.border};
 	color: \${componentTextInput.shared.color};
 	cursor: \${componentTextInput.shared.cursor};
-	margin-top: \${componentTextInput.shared['margin-top']};
+	margin-top: \${componentTextInput.shared.marginTop};
 	padding-top: \${componentTextInput.shared.padding.top};
 	padding-right: \${componentTextInput.shared.padding.right};
 	padding-bottom: \${componentTextInput.shared.padding.bottom};

@@ -5,7 +5,7 @@
 export const componentIcon = {
 	shared: {
 		display: 'inline-flex',
-		'user-select': 'none',
+		userSelect: 'none',
 	},
 	sm: {
 		size: '1.125rem',

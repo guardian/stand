@@ -7,11 +7,11 @@
 						"$type": "string",
 						"$value": "flex"
 					},
-					"flex-direction": {
+					"flexDirection": {
 						"$type": "string",
 						"$value": "column"
 					},
-					"background-color": {
+					"backgroundColor": {
 						"$type": "color",
 						"$value": "{semantic.colors.bg.base}"
 					},
@@ -32,7 +32,7 @@
 							"$type": "string",
 							"$value": "flex"
 						},
-						"align-items": {
+						"alignItems": {
 							"$type": "string",
 							"$value": "center"
 						},
@@ -43,7 +43,7 @@
 							},
 							"right": {
 								"$type": "dimension",
-								"$value": "{base.spacing.8-rem}"
+								"$value": "{base.spacing.8Rem}"
 							},
 							"bottom": {
 								"$type": "dimension",
@@ -51,12 +51,12 @@
 							},
 							"left": {
 								"$type": "dimension",
-								"$value": "{base.spacing.8-rem}"
+								"$value": "{base.spacing.8Rem}"
 							}
 						},
-						"background-color": {
+						"backgroundColor": {
 							"$type": "color",
-							"$value": "{semantic.colors.bg.raised-level-2}"
+							"$value": "{semantic.colors.bg.raisedLevel2}"
 						},
 						"color": {
 							"$type": "color",
@@ -71,15 +71,15 @@
 						"typography": {
 							"font": {
 								"$type": "typography",
-								"$value": "{semantic.typography.interactive-sm.font}"
+								"$value": "{semantic.typography.interactiveSm.font}"
 							},
 							"letterSpacing": {
 								"$type": "dimension",
-								"$value": "{semantic.typography.interactive-sm.letterSpacing}"
+								"$value": "{semantic.typography.interactiveSm.letterSpacing}"
 							},
 							"fontWidth": {
 								"$type": "number",
-								"$value": "{semantic.typography.interactive-sm.fontWidth}"
+								"$value": "{semantic.typography.interactiveSm.fontWidth}"
 							}
 						}
 					},
@@ -91,15 +91,15 @@
 						"typography": {
 							"font": {
 								"$type": "typography",
-								"$value": "{semantic.typography.interactive-md.font}"
+								"$value": "{semantic.typography.interactiveMd.font}"
 							},
 							"letterSpacing": {
 								"$type": "dimension",
-								"$value": "{semantic.typography.interactive-md.letterSpacing}"
+								"$value": "{semantic.typography.interactiveMd.letterSpacing}"
 							},
 							"fontWidth": {
 								"$type": "number",
-								"$value": "{semantic.typography.interactive-md.fontWidth}"
+								"$value": "{semantic.typography.interactiveMd.fontWidth}"
 							}
 						}
 					}
@@ -111,45 +111,45 @@
 						"$type": "string",
 						"$value": "grid"
 					},
-					"grid-template-areas": {
+					"gridTemplateAreas": {
 						"$type": "string",
-						"$value": "'{component.menu.menuItem.shared.icon.grid-area} {component.menu.menuItem.shared.label.grid-area} {component.menu.menuItem.shared.aside.grid-area}'"
+						"$value": "'{component.menu.menuItem.shared.icon.gridArea} {component.menu.menuItem.shared.label.gridArea} {component.menu.menuItem.shared.aside.gridArea}'"
 					},
-					"grid-template-areas-with-description": {
+					"gridTemplateAreasWithDescription": {
 						"$type": "string",
-						"$value": "'{component.menu.menuItem.shared.icon.grid-area} {component.menu.menuItem.shared.label.grid-area} {component.menu.menuItem.shared.aside.grid-area}' '. {component.menu.menuItem.shared.description.grid-area} .'"
+						"$value": "'{component.menu.menuItem.shared.icon.gridArea} {component.menu.menuItem.shared.label.gridArea} {component.menu.menuItem.shared.aside.gridArea}' '. {component.menu.menuItem.shared.description.gridArea} .'"
 					},
-					"grid-template-columns": {
+					"gridTemplateColumns": {
 						"$type": "string",
 						"$value": "auto 6fr 1fr"
 					},
 					"gap": {
 						"$type": "dimension",
-						"$value": "{base.spacing.4-rem}"
+						"$value": "{base.spacing.4Rem}"
 					},
-					"align-items": {
+					"alignItems": {
 						"$type": "string",
 						"$value": "center"
 					},
 					"padding": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.12Rem}"
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.16Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.12Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.16Rem}"
 						}
 					},
-					"border-bottom": {
+					"borderBottom": {
 						"$type": "border",
 						"$value": {
 							"color": "{semantic.colors.border.weak}",
@@ -157,16 +157,16 @@
 							"style": "solid"
 						}
 					},
-					"background-color": {
+					"backgroundColor": {
 						"$type": "color",
 						"$value": "{semantic.colors.fill.weak}"
 					},
 					"icon": {
-						"grid-area": {
+						"gridArea": {
 							"$type": "string",
 							"$value": "icon"
 						},
-						"align-self": {
+						"alignSelf": {
 							"$type": "string",
 							"$value": "start"
 						},
@@ -176,7 +176,7 @@
 						}
 					},
 					"label": {
-						"grid-area": {
+						"gridArea": {
 							"$type": "string",
 							"$value": "label"
 						},
@@ -187,20 +187,20 @@
 						"typography": {
 							"font": {
 								"$type": "typography",
-								"$value": "{semantic.typography.body-md.font}"
+								"$value": "{semantic.typography.bodyMd.font}"
 							},
 							"letterSpacing": {
 								"$type": "dimension",
-								"$value": "{semantic.typography.body-md.letterSpacing}"
+								"$value": "{semantic.typography.bodyMd.letterSpacing}"
 							},
 							"fontWidth": {
 								"$type": "number",
-								"$value": "{semantic.typography.body-md.fontWidth}"
+								"$value": "{semantic.typography.bodyMd.fontWidth}"
 							}
 						}
 					},
 					"description": {
-						"grid-area": {
+						"gridArea": {
 							"$type": "string",
 							"$value": "description"
 						},
@@ -211,28 +211,28 @@
 						"typography": {
 							"font": {
 								"$type": "typography",
-								"$value": "{semantic.typography.body-sm.font}"
+								"$value": "{semantic.typography.bodySm.font}"
 							},
 							"letterSpacing": {
 								"$type": "dimension",
-								"$value": "{semantic.typography.body-sm.letterSpacing}"
+								"$value": "{semantic.typography.bodySm.letterSpacing}"
 							},
 							"fontWidth": {
 								"$type": "number",
-								"$value": "{semantic.typography.body-sm.fontWidth}"
+								"$value": "{semantic.typography.bodySm.fontWidth}"
 							}
 						}
 					},
 					"aside": {
-						"grid-area": {
+						"gridArea": {
 							"$type": "string",
 							"$value": "aside"
 						},
-						"justify-self": {
+						"justifySelf": {
 							"$type": "string",
 							"$value": "end"
 						},
-						"align-self": {
+						"alignSelf": {
 							"$type": "string",
 							"$value": "start"
 						},
@@ -243,28 +243,28 @@
 						"typography": {
 							"font": {
 								"$type": "typography",
-								"$value": "{semantic.typography.body-md.font}"
+								"$value": "{semantic.typography.bodyMd.font}"
 							},
 							"letterSpacing": {
 								"$type": "dimension",
-								"$value": "{semantic.typography.body-md.letterSpacing}"
+								"$value": "{semantic.typography.bodyMd.letterSpacing}"
 							},
 							"fontWidth": {
 								"$type": "number",
-								"$value": "{semantic.typography.body-md.fontWidth}"
+								"$value": "{semantic.typography.bodyMd.fontWidth}"
 							}
 						}
 					},
-					":last-child": {
-						"border-bottom": {
+					"lastChild": {
+						"borderBottom": {
 							"$type": "border",
 							"$value": "none"
 						}
 					},
-					":hover": {
-						"background-color": {
+					"hover": {
+						"backgroundColor": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.weak-hover}"
+							"$value": "{semantic.colors.fill.weakHover}"
 						},
 						"outline": {
 							"$description": "Override outline focus styles on hover",
@@ -272,7 +272,7 @@
 							"$value": "none"
 						}
 					},
-					":focus-visible": {
+					"focusVisible": {
 						"outline": {
 							"$type": "border",
 							"$value": {
@@ -281,15 +281,15 @@
 								"style": "solid"
 							}
 						},
-						"outline-offset": {
+						"outlineOffset": {
 							"$type": "dimension",
 							"$value": "-{semantic.sizing.border.md}"
 						}
 					},
-					":pressed": {
-						"background-color": {
+					"pressed": {
+						"backgroundColor": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.weak-pressed}"
+							"$value": "{semantic.colors.fill.weakPressed}"
 						}
 					}
 				},
@@ -299,9 +299,9 @@
 							"$type": "dimension",
 							"$value": "{component.icon.sm.size}"
 						},
-						"line-height": {
+						"lineHeight": {
 							"$type": "dimension",
-							"$value": "{base.typography.line-height.normal}"
+							"$value": "{base.typography.lineHeight.normal}"
 						}
 					}
 				},
@@ -311,22 +311,22 @@
 							"$type": "dimension",
 							"$value": "{component.icon.md.size}"
 						},
-						"line-height": {
+						"lineHeight": {
 							"$type": "dimension",
-							"$value": "{base.typography.line-height.normal}"
+							"$value": "{base.typography.lineHeight.normal}"
 						}
 					}
 				}
 			},
 			"menuSeparator": {
 				"shared": {
-					"background-color": {
+					"backgroundColor": {
 						"$type": "color",
 						"$value": "{semantic.colors.border.weaker}"
 					},
 					"height": {
 						"$type": "dimension",
-						"$value": "{base.sizing.size-8-rem}"
+						"$value": "{base.sizing.size8Rem}"
 					},
 					"width": {
 						"$type": "dimension",
@@ -346,7 +346,7 @@
 					}
 				},
 				"sm": {
-					"max-width": {
+					"maxWidth": {
 						"$type": "dimension",
 						"$value": "200px"
 					},
@@ -356,7 +356,7 @@
 					}
 				},
 				"md": {
-					"max-width": {
+					"maxWidth": {
 						"$type": "dimension",
 						"$value": "320px"
 					},

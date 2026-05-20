@@ -9,10 +9,10 @@ export const componentAvatar = {
 				text: '#24491d',
 				background: '#cde4c9',
 				border: 'unset',
-				':hover': {
+				hover: {
 					background: '#aed2a6',
 				},
-				':active': {
+				active: {
 					background: '#8ec183',
 				},
 			},
@@ -20,10 +20,10 @@ export const componentAvatar = {
 				text: '#092f62',
 				background: '#c5d9f4',
 				border: 'unset',
-				':hover': {
+				hover: {
 					background: '#93b9ec',
 				},
-				':active': {
+				active: {
 					background: '#699ee5',
 				},
 			},
@@ -31,10 +31,10 @@ export const componentAvatar = {
 				text: '#65170e',
 				background: '#f5c6c0',
 				border: 'unset',
-				':hover': {
+				hover: {
 					background: '#eea198',
 				},
-				':active': {
+				active: {
 					background: '#e87c6f',
 				},
 			},
@@ -42,10 +42,10 @@ export const componentAvatar = {
 				text: '#00344e',
 				background: '#b8d8e7',
 				border: 'unset',
-				':hover': {
+				hover: {
 					background: '#8abed7',
 				},
-				':active': {
+				active: {
 					background: '#5ca5c8',
 				},
 			},
@@ -53,32 +53,32 @@ export const componentAvatar = {
 				text: '#0e2729',
 				background: '#c5dfe1',
 				border: 'unset',
-				':hover': {
+				hover: {
 					background: '#a0cace',
 				},
-				':active': {
+				active: {
 					background: '#7bb5bb',
 				},
 			},
-			'cool-purple': {
+			coolPurple: {
 				text: '#394069',
 				background: '#dbdff7',
 				border: 'unset',
-				':hover': {
+				hover: {
 					background: '#c3caf3',
 				},
-				':active': {
+				active: {
 					background: '#acb5ee',
 				},
 			},
-			'warm-purple': {
+			warmPurple: {
 				text: '#381350',
 				background: '#dac3e8',
 				border: 'unset',
-				':hover': {
+				hover: {
 					background: '#c29dd9',
 				},
-				':active': {
+				active: {
 					background: '#aa76cb',
 				},
 			},
@@ -86,10 +86,10 @@ export const componentAvatar = {
 				text: '#581734',
 				background: '#edc6d7',
 				border: 'unset',
-				':hover': {
+				hover: {
 					background: '#e2a1be',
 				},
-				':active': {
+				active: {
 					background: '#d67ca4',
 				},
 			},
@@ -97,10 +97,10 @@ export const componentAvatar = {
 				text: '#693c16',
 				background: '#fcddc6',
 				border: 'unset',
-				':hover': {
+				hover: {
 					background: '#fac7a1',
 				},
-				':active': {
+				active: {
 					background: '#f9b27c',
 				},
 			},
@@ -108,10 +108,10 @@ export const componentAvatar = {
 				text: '#5b4a0b',
 				background: '#fbeebf',
 				border: 'unset',
-				':hover': {
+				hover: {
 					background: '#f9e396',
 				},
-				':active': {
+				active: {
 					background: '#f6d86d',
 				},
 			},
@@ -119,35 +119,35 @@ export const componentAvatar = {
 				text: '#000000',
 				background: 'none',
 				border: '0.0625rem solid #8d8d8d',
-				':hover': {
+				hover: {
 					background: '#ededed',
 				},
-				':active': {
+				active: {
 					background: '#dcdcdc',
 				},
 			},
 		},
 		display: 'inline-flex',
-		'align-items': 'center',
-		'justify-content': 'center',
+		alignItems: 'center',
+		justifyContent: 'center',
 		overflow: 'hidden',
-		'flex-shrink': '0',
-		'border-radius': '50%',
-		'user-select': 'none',
+		flexShrink: '0',
+		borderRadius: '50%',
+		userSelect: 'none',
 		link: {
 			width: 'fit-content',
-			':focus-visible': {
+			focusVisible: {
 				outline: '0.125rem solid #0072a9',
-				'outline-offset': '0.125rem',
+				outlineOffset: '0.125rem',
 			},
-			'text-decoration': 'none',
+			textDecoration: 'none',
 		},
 		button: {
 			background: 'none',
 			border: 'none',
 			padding: '0',
 			cursor: 'pointer',
-			':disabled': {
+			disabled: {
 				cursor: 'not-allowed',
 			},
 		},

@@ -7,7 +7,7 @@ import type { LinkProps } from './types';
 
 export function Link({
 	children,
-	typography = 'body-sm',
+	typography = 'bodySm',
 	theme = {},
 	cssOverrides,
 	className,

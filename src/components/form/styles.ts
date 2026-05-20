@@ -15,7 +15,7 @@ export const formInputContainerStyles = (
 ): SerializedStyles => {
 	return css`
 		display: ${theme.shared.container.display};
-		flex-direction: ${theme.shared.container['flex-direction']};
+		flex-direction: ${theme.shared.container.flexDirection};
 		gap: ${theme.shared.container.gap};
 		width: ${theme.shared.container.width};
 	`;

@@ -5,7 +5,7 @@ import type { TypographyProps } from './types';
 
 export const Typography = ({
 	element = 'span',
-	variant = 'body-md',
+	variant = 'bodyMd',
 	children,
 	cssOverrides,
 	theme = {},

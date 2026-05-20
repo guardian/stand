@@ -117,8 +117,8 @@ const sheet = new CSSStyleSheet();
 sheet.replaceSync(\`
 	.js-stand-alert-banner {
 		display: \${componentAlertBanner.shared.display};
-		align-items: \${componentAlertBanner.shared['align-items']};
-		justify-content: \${componentAlertBanner.shared['justify-content']};
+		align-items: \${componentAlertBanner.shared.alignItems};
+		justify-content: \${componentAlertBanner.shared.justifyContent};
 		padding: \${componentAlertBanner.shared.padding.top}
 			\${componentAlertBanner.shared.padding.right}
 			\${componentAlertBanner.shared.padding.bottom}
@@ -129,11 +129,11 @@ sheet.replaceSync(\`
 
 	.js-stand-alert-banner-content {
 		display: \${componentAlertBanner.shared.content.display};
-		justify-content: \${componentAlertBanner.shared.content['justify-content']};
+		justify-content: \${componentAlertBanner.shared.content.justifyContent};
 		gap: \${componentAlertBanner.shared.content.gap};
 		flex: \${componentAlertBanner.shared.content.flex};
 		height: \${componentAlertBanner.shared.content.height};
-		align-items: \${componentAlertBanner.shared.content['align-items']};
+		align-items: \${componentAlertBanner.shared.content.alignItems};
 		color: \${componentAlertBanner.shared.content.color};
 		font: \${componentAlertBanner.shared.content.typography.font};
 		letter-spacing: \${componentAlertBanner.shared.content.typography.letterSpacing};
@@ -146,15 +146,15 @@ sheet.replaceSync(\`
 	}
 
 	.js-stand-alert-banner-information {
-		background-color: \${componentAlertBanner.information['background-color']};
+		background-color: \${componentAlertBanner.information.backgroundColor};
 	}
 
 	.js-stand-alert-banner-success {
-		background-color: \${componentAlertBanner.success['background-color']};
+		background-color: \${componentAlertBanner.success.backgroundColor};
 	}
 
 	.js-stand-alert-banner-error {
-		background-color: \${componentAlertBanner.error['background-color']};
+		background-color: \${componentAlertBanner.error.backgroundColor};
 	}
 
 	/* see IconButton for example of styling close button */

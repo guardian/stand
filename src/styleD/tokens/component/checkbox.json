@@ -13,9 +13,9 @@
 					},
 					"gap": {
 						"$type": "dimension",
-						"$value": "{base.spacing.8-rem}"
+						"$value": "{base.spacing.8Rem}"
 					},
-					"align-items": {
+					"alignItems": {
 						"$type": "string",
 						"$value": "flex-start"
 					},
@@ -32,15 +32,15 @@
 							"$type": "string",
 							"$value": "flex"
 						},
-						"align-items": {
+						"alignItems": {
 							"$type": "string",
 							"$value": "center"
 						},
-						"justify-content": {
+						"justifyContent": {
 							"$type": "string",
 							"$value": "center"
 						},
-						"flex-shrink": {
+						"flexShrink": {
 							"$type": "number",
 							"$value": 0
 						},
@@ -52,9 +52,9 @@
 								"style": "solid"
 							}
 						},
-						"border-radius": {
+						"borderRadius": {
 							"$type": "string",
-							"$value": "{base.radius.corner-4-rem}"
+							"$value": "{base.radius.corner4Rem}"
 						},
 						"transition": {
 							"$type": "string",
@@ -87,7 +87,7 @@
 							}
 						},
 						"selected": {
-							"background-color": {
+							"backgroundColor": {
 								"$type": "color",
 								"$value": "{semantic.colors.fill.selected}"
 							},
@@ -102,11 +102,11 @@
 							"svg": {
 								"fill": {
 									"$type": "color",
-									"$value": "{semantic.colors.text.stronger-inverse}"
+									"$value": "{semantic.colors.text.strongerInverse}"
 								}
 							}
 						},
-						":focus-visible": {
+						"focusVisible": {
 							"outline": {
 								"$type": "border",
 								"$value": {
@@ -115,15 +115,15 @@
 									"style": "solid"
 								}
 							},
-							"outline-offset": {
+							"outlineOffset": {
 								"$type": "dimension",
-								"$value": "{base.spacing.2-rem}"
+								"$value": "{base.spacing.2Rem}"
 							}
 						},
 						"error": {
-							"background-color": {
+							"backgroundColor": {
 								"$type": "color",
-								"$value": "{semantic.colors.fill.error-strong}"
+								"$value": "{semantic.colors.fill.errorStrong}"
 							},
 							"border": {
 								"$type": "border",
@@ -136,7 +136,7 @@
 						}
 					},
 					"label": {
-						"align-self": {
+						"alignSelf": {
 							"$type": "string",
 							"$value": "center"
 						}
@@ -160,7 +160,7 @@
 								}
 							},
 							"selected": {
-								"background-color": {
+								"backgroundColor": {
 									"$type": "color",
 									"$value": "{semantic.colors.fill.disabled}"
 								}
@@ -172,21 +172,21 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.label-form-inline-sm.font}"
+							"$value": "{semantic.typography.labelFormInlineSm.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.label-form-inline-sm.letterSpacing}"
+							"$value": "{semantic.typography.labelFormInlineSm.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.label-form-inline-sm.fontWidth}"
+							"$value": "{semantic.typography.labelFormInlineSm.fontWidth}"
 						}
 					},
 					"indicator": {
 						"size": {
 							"$type": "string",
-							"$value": "{base.sizing.size-20-rem}"
+							"$value": "{base.sizing.size20Rem}"
 						}
 					}
 				},
@@ -194,21 +194,21 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.label-form-inline-md.font}"
+							"$value": "{semantic.typography.labelFormInlineMd.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.label-form-inline-md.letterSpacing}"
+							"$value": "{semantic.typography.labelFormInlineMd.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.label-form-inline-md.fontWidth}"
+							"$value": "{semantic.typography.labelFormInlineMd.fontWidth}"
 						}
 					},
 					"indicator": {
 						"size": {
 							"$type": "string",
-							"$value": "{base.sizing.size-24-rem}"
+							"$value": "{base.sizing.size24Rem}"
 						}
 					}
 				}
@@ -219,7 +219,7 @@
 						"$type": "string",
 						"$value": "flex"
 					},
-					"flex-direction": {
+					"flexDirection": {
 						"$type": "string",
 						"$value": "column"
 					}
@@ -227,33 +227,33 @@
 				"sm": {
 					"gap": {
 						"$type": "dimension",
-						"$value": "{base.spacing.16-rem}"
+						"$value": "{base.spacing.16Rem}"
 					},
-					"margin-top": {
+					"marginTop": {
 						"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
 						"$type": "dimension",
-						"$value": "{base.spacing.8-rem}"
+						"$value": "{base.spacing.8Rem}"
 					},
-					"margin-bottom": {
+					"marginBottom": {
 						"$description": "spacing between the input itself and the following element (error) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
 						"$type": "dimension",
-						"$value": "{base.spacing.8-rem}"
+						"$value": "{base.spacing.8Rem}"
 					}
 				},
 				"md": {
 					"gap": {
 						"$type": "dimension",
-						"$value": "{base.spacing.20-rem}"
+						"$value": "{base.spacing.20Rem}"
 					},
-					"margin-top": {
+					"marginTop": {
 						"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
 						"$type": "dimension",
-						"$value": "{base.spacing.12-rem}"
+						"$value": "{base.spacing.12Rem}"
 					},
-					"margin-bottom": {
+					"marginBottom": {
 						"$description": "spacing between the input itself and the following element (error) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
 						"$type": "dimension",
-						"$value": "{base.spacing.12-rem}"
+						"$value": "{base.spacing.12Rem}"
 					}
 				}
 			}

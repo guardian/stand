@@ -55,7 +55,7 @@ const Fonts = css`
 
 const globalFont = {
 	color: '#292929',
-	...convertTypographyToEmotionObjectStyle(semanticTypography['body-sm']),
+	...convertTypographyToEmotionObjectStyle(semanticTypography.bodySm),
 };
 
 const globalStyles = css`

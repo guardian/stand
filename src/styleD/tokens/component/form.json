@@ -8,13 +8,13 @@
 							"$type": "string",
 							"$value": "flex"
 						},
-						"flex-direction": {
+						"flexDirection": {
 							"$type": "string",
 							"$value": "column"
 						},
 						"gap": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"width": {
 							"$type": "dimension",
@@ -41,15 +41,15 @@
 						"typography": {
 							"font": {
 								"$type": "typography",
-								"$value": "{semantic.typography.help-text-form-md.font}"
+								"$value": "{semantic.typography.helpTextFormMd.font}"
 							},
 							"letterSpacing": {
 								"$type": "dimension",
-								"$value": "{semantic.typography.help-text-form-md.letterSpacing}"
+								"$value": "{semantic.typography.helpTextFormMd.letterSpacing}"
 							},
 							"fontWidth": {
 								"$type": "number",
-								"$value": "{semantic.typography.help-text-form-md.fontWidth}"
+								"$value": "{semantic.typography.helpTextFormMd.fontWidth}"
 							}
 						},
 						"disabled": {
@@ -65,15 +65,15 @@
 						"typography": {
 							"font": {
 								"$type": "typography",
-								"$value": "{semantic.typography.label-form-sm.font}"
+								"$value": "{semantic.typography.labelFormSm.font}"
 							},
 							"letterSpacing": {
 								"$type": "typography",
-								"$value": "{semantic.typography.label-form-sm.letterSpacing}"
+								"$value": "{semantic.typography.labelFormSm.letterSpacing}"
 							},
 							"fontWidth": {
 								"$type": "typography",
-								"$value": "{semantic.typography.label-form-sm.fontWidth}"
+								"$value": "{semantic.typography.labelFormSm.fontWidth}"
 							}
 						}
 					}
@@ -83,15 +83,15 @@
 						"typography": {
 							"font": {
 								"$type": "typography",
-								"$value": "{semantic.typography.label-form-md.font}"
+								"$value": "{semantic.typography.labelFormMd.font}"
 							},
 							"letterSpacing": {
 								"$type": "typography",
-								"$value": "{semantic.typography.label-form-md.letterSpacing}"
+								"$value": "{semantic.typography.labelFormMd.letterSpacing}"
 							},
 							"fontWidth": {
 								"$type": "typography",
-								"$value": "{semantic.typography.label-form-md.fontWidth}"
+								"$value": "{semantic.typography.labelFormMd.fontWidth}"
 							}
 						}
 					}

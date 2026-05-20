@@ -16,13 +16,13 @@ export const textAreaStyles = (
 ): SerializedStyles => {
 	return css`
 		${convertTypographyToEmotionStringStyle(theme[size].typography)}
-		background-color: ${theme.shared['background-color']};
-		border-radius: ${theme.shared['border-radius']};
+		background-color: ${theme.shared.backgroundColor};
+		border-radius: ${theme.shared.borderRadius};
 		border: ${theme.shared.border};
 		color: ${theme.shared.color};
 		cursor: ${theme.shared.cursor};
 		height: ${theme.shared.height};
-		margin-top: ${theme.shared['margin-top']};
+		margin-top: ${theme.shared.marginTop};
 		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
 			${theme.shared.padding.bottom} ${theme.shared.padding.left};
 

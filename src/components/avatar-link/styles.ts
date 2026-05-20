@@ -15,11 +15,11 @@ export const avatarLinkStyles = (theme: AvatarLinkTheme): SerializedStyles => {
 
 		&[data-focus-visible],
 		&:focus-visible {
-			outline: ${theme.shared.link[':focus-visible'].outline};
-			outline-offset: ${theme.shared.link[':focus-visible']['outline-offset']};
-			border-radius: ${theme.shared['border-radius']};
+			outline: ${theme.shared.link.focusVisible.outline};
+			outline-offset: ${theme.shared.link.focusVisible.outlineOffset};
+			border-radius: ${theme.shared.borderRadius};
 		}
 
-		text-decoration: ${theme.shared.link['text-decoration']};
+		text-decoration: ${theme.shared.link.textDecoration};
 	`;
 };

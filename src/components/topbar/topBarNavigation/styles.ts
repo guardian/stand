@@ -22,7 +22,7 @@ export const topBarNavigationStyles = (
 	return css`
 		display: ${theme.shared.display};
 		position: ${theme.shared.position};
-		align-items: ${theme.shared['align-items']};
+		align-items: ${theme.shared.alignItems};
 		height: ${theme.shared.height};
 		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
 			${theme.shared.padding.bottom} ${theme.shared.padding.left};
@@ -37,58 +37,58 @@ export const topBarNavigationStyles = (
 
 		&[data-focus-visible],
 		&:focus-visible {
-			outline: ${theme.shared[':focus-visible'].outline};
-			outline-offset: ${theme.shared[':focus-visible']['outline-offset']};
+			outline: ${theme.shared.focusVisible.outline};
+			outline-offset: ${theme.shared.focusVisible.outlineOffset};
 		}
 
 		&[data-disabled] {
-			cursor: ${theme.shared[':disabled'].cursor};
-			color: ${theme.shared[':disabled'].color};
+			cursor: ${theme.shared.disabled.cursor};
+			color: ${theme.shared.disabled.color};
 		}
 
 		${_menuOpen
 			? css`
-					border-right: ${theme.shared['border-top']};
-					border-left: ${theme.unselected['border-bottom']};
+					border-right: ${theme.shared.borderTop};
+					border-left: ${theme.unselected.borderBottom};
 					width: 100%;
 
 					&[data-hovered],
 					&:hover {
-						border-left: ${theme.selected['border-bottom']};
+						border-left: ${theme.selected.borderBottom};
 					}
 
 					&[data-focus-visible],
 					&:focus-visible {
-						border-left: ${theme.selected['border-bottom']};
+						border-left: ${theme.selected.borderBottom};
 					}
 
 					${selected &&
 					`
-						border-left: ${theme.selected['border-bottom']};
-						background-color: ${theme.shared._menuOpen.selected['background-color']};
+						border-left: ${theme.selected.borderBottom};
+						background-color: ${theme.shared._menuOpen.selected.backgroundColor};
 					`}
 				`
 			: css`
-					border-top: ${theme.shared['border-top']};
-					border-bottom: ${theme.unselected['border-bottom']};
+					border-top: ${theme.shared.borderTop};
+					border-bottom: ${theme.unselected.borderBottom};
 
 					&[data-hovered],
 					&:hover {
-						border-bottom: ${theme.selected['border-bottom']};
+						border-bottom: ${theme.selected.borderBottom};
 					}
 
 					&[data-focus-visible],
 					&:focus-visible {
-						border-bottom: ${theme.selected['border-bottom']};
+						border-bottom: ${theme.selected.borderBottom};
 					}
 
 					${selected &&
 					`
-						border-bottom: ${theme.selected['border-bottom']};
+						border-bottom: ${theme.selected.borderBottom};
 					`}
 				`}
 
-		text-decoration: ${theme.shared['text-decoration']};
+		text-decoration: ${theme.shared.textDecoration};
 	`;
 };
 
