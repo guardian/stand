@@ -12,8 +12,8 @@ const TOKENS_PATH = './src/styleD/tokens/component';
 const SRC_COMPONENT_TEMPLATE_PATH = './src/templates/component';
 const TOKEN_TEMPATE_PATH = './src/templates/design-tokens';
 
-const componentFolder = (kebabCasedName: string) =>
-	`${SRC_COMPONENTS_PATH}/${kebabCasedName}`;
+const componentFolder = (pascalCasedName: string) =>
+	`${SRC_COMPONENTS_PATH}/${pascalCasedName}`;
 
 const rl = readline.createInterface({
 	input: process.stdin,
@@ -153,7 +153,7 @@ const run = async () => {
 		`ok! creating the scaffolding for ${names.kebabCase} (${names.pascalCase})...`,
 	);
 
-	await createFolder(componentFolder(names.kebabCase));
+	await createFolder(componentFolder(names.pascalCase));
 
 	const fileMap = await getComponentTemplateFileNameMap(names);
 
@@ -164,7 +164,7 @@ const run = async () => {
 					`${SRC_COMPONENT_TEMPLATE_PATH}/${templateFileName}`,
 				);
 				const contents = replaceName(srcComponentTemplateContents, names);
-				const destinationPath = `${componentFolder(names.kebabCase)}/${destinationFileName}`;
+				const destinationPath = `${componentFolder(names.pascalCase)}/${destinationFileName}`;
 				await writeFile(destinationPath, contents);
 				console.log('wrote:', destinationPath);
 			},
