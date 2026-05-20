@@ -3,24 +3,24 @@
  */
 
 :root {
-	--base-sizing-size-1-px: 1px;
-	--base-sizing-size-2-px: 2px;
-	--base-sizing-size-8-px: 8px;
-	--base-sizing-size-16-px: 16px;
-	--base-sizing-size-18-px: 18px;
-	--base-sizing-size-20-px: 20px;
-	--base-sizing-size-24-px: 24px;
-	--base-sizing-size-32-px: 32px;
-	--base-sizing-size-40-px: 40px;
-	--base-sizing-size-48-px: 48px;
-	--base-sizing-size-1-rem: 0.0625rem;
-	--base-sizing-size-2-rem: 0.125rem;
-	--base-sizing-size-8-rem: 0.5rem;
-	--base-sizing-size-16-rem: 1rem;
-	--base-sizing-size-18-rem: 1.125rem;
-	--base-sizing-size-20-rem: 1.25rem;
-	--base-sizing-size-24-rem: 1.5rem;
-	--base-sizing-size-32-rem: 2rem;
-	--base-sizing-size-40-rem: 2.5rem;
-	--base-sizing-size-48-rem: 3rem;
+	--base-sizing-size1-px: 1px;
+	--base-sizing-size2-px: 2px;
+	--base-sizing-size8-px: 8px;
+	--base-sizing-size16-px: 16px;
+	--base-sizing-size18-px: 18px;
+	--base-sizing-size20-px: 20px;
+	--base-sizing-size24-px: 24px;
+	--base-sizing-size32-px: 32px;
+	--base-sizing-size40-px: 40px;
+	--base-sizing-size48-px: 48px;
+	--base-sizing-size1-rem: 0.0625rem;
+	--base-sizing-size2-rem: 0.125rem;
+	--base-sizing-size8-rem: 0.5rem;
+	--base-sizing-size16-rem: 1rem;
+	--base-sizing-size18-rem: 1.125rem;
+	--base-sizing-size20-rem: 1.25rem;
+	--base-sizing-size24-rem: 1.5rem;
+	--base-sizing-size32-rem: 2rem;
+	--base-sizing-size40-rem: 2.5rem;
+	--base-sizing-size48-rem: 3rem;
 }

@@ -3,377 +3,377 @@
  */
 
 export const semanticTypography = {
-	'title-sm': {
+	titleSm: {
 		font: 'normal 700 1.125rem/1.15 GH Guardian Headline',
 		letterSpacing: '0rem',
 		fontWidth: 100,
 	},
-	'title-md': {
+	titleMd: {
 		font: 'normal 700 1.25rem/1.15 GH Guardian Headline',
 		letterSpacing: '0rem',
 		fontWidth: 100,
 	},
-	'title-lg': {
+	titleLg: {
 		font: 'normal 700 1.5rem/1.15 GH Guardian Headline',
 		letterSpacing: '0rem',
 		fontWidth: 100,
 	},
-	'title-xl': {
+	titleXl: {
 		font: 'normal 700 2rem/1.15 GH Guardian Headline',
 		letterSpacing: '0rem',
 		fontWidth: 100,
 	},
-	'heading-xs': {
+	headingXs: {
 		font: 'normal 700 0.75rem/1.15 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'heading-sm': {
+	headingSm: {
 		font: 'normal 700 0.875rem/1.15 Open Sans',
 		letterSpacing: '-0.0125rem',
 		fontWidth: 95,
 	},
-	'heading-md': {
+	headingMd: {
 		font: 'normal 700 1rem/1.15 Open Sans',
 		letterSpacing: '-0.03125rem',
 		fontWidth: 95,
 	},
-	'heading-lg': {
+	headingLg: {
 		font: 'normal 700 1.125rem/1.15 Open Sans',
 		letterSpacing: '-0.03125rem',
 		fontWidth: 95,
 	},
-	'heading-xl': {
+	headingXl: {
 		font: 'normal 700 1.25rem/1.15 Open Sans',
 		letterSpacing: '-0.03125rem',
 		fontWidth: 95,
 	},
-	'heading-2xl': {
+	heading2Xl: {
 		font: 'normal 700 1.5rem/1.15 Open Sans',
 		letterSpacing: '-0.0625rem',
 		fontWidth: 95,
 	},
-	'heading-compact-xs': {
+	headingCompactXs: {
 		font: 'normal 700 0.75rem/1.15 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'heading-compact-sm': {
+	headingCompactSm: {
 		font: 'normal 700 0.875rem/1.15 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'heading-compact-md': {
+	headingCompactMd: {
 		font: 'normal 700 1rem/1.15 Open Sans',
 		letterSpacing: '-0.0125rem',
 		fontWidth: 88,
 	},
-	'heading-compact-lg': {
+	headingCompactLg: {
 		font: 'normal 700 1.125rem/1.15 Open Sans',
 		letterSpacing: '-0.0125rem',
 		fontWidth: 88,
 	},
-	'heading-compact-xl': {
+	headingCompactXl: {
 		font: 'normal 700 1.25rem/1.15 Open Sans',
 		letterSpacing: '-0.03125rem',
 		fontWidth: 88,
 	},
-	'heading-compact-2xl': {
+	headingCompact2Xl: {
 		font: 'normal 700 1.5rem/1.15 Open Sans',
 		letterSpacing: '-0.03125rem',
 		fontWidth: 88,
 	},
-	'body-xs': {
+	bodyXs: {
 		font: 'normal 460 0.75rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-sm': {
+	bodySm: {
 		font: 'normal 460 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-md': {
+	bodyMd: {
 		font: 'normal 460 1rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-lg': {
+	bodyLg: {
 		font: 'normal 460 1.125rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-xl': {
+	bodyXl: {
 		font: 'normal 460 1.25rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-bold-xs': {
+	bodyBoldXs: {
 		font: 'normal 700 0.75rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-bold-sm': {
+	bodyBoldSm: {
 		font: 'normal 700 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-bold-md': {
+	bodyBoldMd: {
 		font: 'normal 700 1rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-bold-lg': {
+	bodyBoldLg: {
 		font: 'normal 700 1.125rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-bold-xl': {
+	bodyBoldXl: {
 		font: 'normal 700 1.25rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-italic-xs': {
+	bodyItalicXs: {
 		font: 'italic 460 0.75rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-italic-sm': {
+	bodyItalicSm: {
 		font: 'italic 460 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-italic-md': {
+	bodyItalicMd: {
 		font: 'italic 460 1rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-italic-lg': {
+	bodyItalicLg: {
 		font: 'italic 460 1.125rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-italic-xl': {
+	bodyItalicXl: {
 		font: 'italic 460 1.25rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-italic-bold-xs': {
+	bodyItalicBoldXs: {
 		font: 'italic 700 0.75rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-italic-bold-sm': {
+	bodyItalicBoldSm: {
 		font: 'italic 700 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-italic-bold-md': {
+	bodyItalicBoldMd: {
 		font: 'italic 700 1rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-italic-bold-lg': {
+	bodyItalicBoldLg: {
 		font: 'italic 700 1.125rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-italic-bold-xl': {
+	bodyItalicBoldXl: {
 		font: 'italic 700 1.25rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'body-compact-xs': {
+	bodyCompactXs: {
 		font: 'normal 460 0.75rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-sm': {
+	bodyCompactSm: {
 		font: 'normal 460 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-md': {
+	bodyCompactMd: {
 		font: 'normal 460 1rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-lg': {
+	bodyCompactLg: {
 		font: 'normal 460 1.125rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-xl': {
+	bodyCompactXl: {
 		font: 'normal 460 1.25rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-bold-xs': {
+	bodyCompactBoldXs: {
 		font: 'normal 700 0.75rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-bold-sm': {
+	bodyCompactBoldSm: {
 		font: 'normal 700 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-bold-md': {
+	bodyCompactBoldMd: {
 		font: 'normal 700 1rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-bold-lg': {
+	bodyCompactBoldLg: {
 		font: 'normal 700 1.125rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-bold-xl': {
+	bodyCompactBoldXl: {
 		font: 'normal 700 1.25rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-italic-xs': {
+	bodyCompactItalicXs: {
 		font: 'italic 460 0.75rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-italic-sm': {
+	bodyCompactItalicSm: {
 		font: 'italic 460 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-italic-md': {
+	bodyCompactItalicMd: {
 		font: 'italic 460 1rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-italic-lg': {
+	bodyCompactItalicLg: {
 		font: 'italic 460 1.125rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-italic-xl': {
+	bodyCompactItalicXl: {
 		font: 'italic 460 1.25rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-italic-bold-xs': {
+	bodyCompactItalicBoldXs: {
 		font: 'italic 700 0.75rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-italic-bold-sm': {
+	bodyCompactItalicBoldSm: {
 		font: 'italic 700 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-italic-bold-md': {
+	bodyCompactItalicBoldMd: {
 		font: 'italic 700 1rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-italic-bold-lg': {
+	bodyCompactItalicBoldLg: {
 		font: 'italic 700 1.125rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'body-compact-italic-bold-xl': {
+	bodyCompactItalicBoldXl: {
 		font: 'italic 700 1.25rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'meta-md': {
+	metaMd: {
 		font: 'normal 460 0.75rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'meta-compact-md': {
+	metaCompactMd: {
 		font: 'normal 460 0.75rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'article-body-md': {
+	articleBodyMd: {
 		font: 'normal 400 1rem/1.4 GuardianTextEgyptian',
 		letterSpacing: '0rem',
 		fontWidth: 100,
 	},
-	'article-body-bold-md': {
+	articleBodyBoldMd: {
 		font: 'normal 700 1rem/1.4 GuardianTextEgyptian',
 		letterSpacing: '0rem',
 		fontWidth: 100,
 	},
-	'article-body-italic-md': {
+	articleBodyItalicMd: {
 		font: 'italic 400 1rem/1.4 GuardianTextEgyptian',
 		letterSpacing: '0rem',
 		fontWidth: 100,
 	},
-	'article-body-bold-italic-md': {
+	articleBodyBoldItalicMd: {
 		font: 'italic 700 1rem/1.4 GuardianTextEgyptian',
 		letterSpacing: '0rem',
 		fontWidth: 100,
 	},
-	'interactive-xs': {
+	interactiveXs: {
 		font: 'normal 700 0.75rem/1 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'interactive-sm': {
+	interactiveSm: {
 		font: 'normal 700 0.875rem/1 Open Sans',
 		letterSpacing: '-0.0125rem',
 		fontWidth: 95,
 	},
-	'interactive-md': {
+	interactiveMd: {
 		font: 'normal 700 1rem/1 Open Sans',
 		letterSpacing: '-0.0125rem',
 		fontWidth: 95,
 	},
-	'label-form-sm': {
+	labelFormSm: {
 		font: 'normal 700 0.875rem/1.15 Open Sans',
 		letterSpacing: '-0.0125rem',
 		fontWidth: 95,
 	},
-	'label-form-md': {
+	labelFormMd: {
 		font: 'normal 700 1rem/1.15 Open Sans',
 		letterSpacing: '-0.03125rem',
 		fontWidth: 95,
 	},
-	'label-form-inline-sm': {
+	labelFormInlineSm: {
 		font: 'normal 460 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'label-form-inline-md': {
+	labelFormInlineMd: {
 		font: 'normal 460 1rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'label-form-compact-sm': {
+	labelFormCompactSm: {
 		font: 'normal 700 0.875rem/1.15 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'label-form-compact-md': {
+	labelFormCompactMd: {
 		font: 'normal 700 1rem/1.15 Open Sans',
 		letterSpacing: '-0.0125rem',
 		fontWidth: 88,
 	},
-	'label-form-inline-compact-sm': {
+	labelFormInlineCompactSm: {
 		font: 'normal 460 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'label-form-inline-compact-md': {
+	labelFormInlineCompactMd: {
 		font: 'normal 460 1rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,
 	},
-	'help-text-form-md': {
+	helpTextFormMd: {
 		font: 'normal 460 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 95,
 	},
-	'help-text-form-compact-md': {
+	helpTextFormCompactMd: {
 		font: 'normal 460 0.875rem/1.3 Open Sans',
 		letterSpacing: '0rem',
 		fontWidth: 88,

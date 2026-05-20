@@ -9,7 +9,7 @@
 				"hover": {
 					"backgroundColor": {
 						"$type": "color",
-						"$value": "{semantic.colors.fill.weak-hover}"
+						"$value": "{semantic.colors.fill.weakHover}"
 					},
 					"outline": {
 						"$description": "Override outline focus styles on hover",
@@ -20,7 +20,7 @@
 				"pressed": {
 					"backgroundColor": {
 						"$type": "color",
-						"$value": "{semantic.colors.fill.weak-pressed}"
+						"$value": "{semantic.colors.fill.weakPressed}"
 					}
 				},
 				"button": {
@@ -38,7 +38,7 @@
 					},
 					"marginTop": {
 						"$type": "dimension",
-						"$value": "{base.spacing.4-rem}"
+						"$value": "{base.spacing.4Rem}"
 					},
 					"backgroundColor": {
 						"$type": "color",
@@ -54,19 +54,19 @@
 					},
 					"borderRadius": {
 						"$type": "dimension",
-						"$value": "{base.radius.corner-4-rem}"
+						"$value": "{base.radius.corner4Rem}"
 					},
 					"height": {
 						"$type": "dimension",
-						"$value": "{base.sizing.size-40-rem}"
+						"$value": "{base.sizing.size40Rem}"
 					},
 					"paddingLeft": {
 						"$type": "dimension",
-						"$value": "{base.spacing.12-rem}"
+						"$value": "{base.spacing.12Rem}"
 					},
 					"paddingRight": {
 						"$type": "dimension",
-						"$value": "{base.spacing.4-rem}"
+						"$value": "{base.spacing.4Rem}"
 					},
 					"color": {
 						"$type": "color",
@@ -75,15 +75,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.body-md.font}"
+							"$value": "{semantic.typography.bodyMd.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.body-md.letterSpacing}"
+							"$value": "{semantic.typography.bodyMd.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.body-md.fontWidth}"
+							"$value": "{semantic.typography.bodyMd.fontWidth}"
 						}
 					},
 					"focused": {
@@ -95,9 +95,9 @@
 								"style": "solid"
 							}
 						},
-						"outline-offset": {
+						"outlineOffset": {
 							"$type": "dimension",
-							"$value": "{base.spacing.2-rem}"
+							"$value": "{base.spacing.2Rem}"
 						}
 					},
 					"disabled": {
@@ -136,19 +136,19 @@
 				"option": {
 					"paddingLeft": {
 						"$type": "dimension",
-						"$value": "{base.spacing.16-rem}"
+						"$value": "{base.spacing.16Rem}"
 					},
 					"paddingRight": {
 						"$type": "dimension",
-						"$value": "{base.spacing.16-rem}"
+						"$value": "{base.spacing.16Rem}"
 					},
 					"paddingTop": {
 						"$type": "dimension",
-						"$value": "{base.spacing.12-rem}"
+						"$value": "{base.spacing.12Rem}"
 					},
 					"paddingBottom": {
 						"$type": "dimension",
-						"$value": "{base.spacing.12-rem}"
+						"$value": "{base.spacing.12Rem}"
 					},
 					"focused": {
 						"outline": {
@@ -159,7 +159,7 @@
 								"style": "solid"
 							}
 						},
-						"outline-offset": {
+						"outlineOffset": {
 							"$type": "dimension",
 							"$value": "0"
 						},
@@ -173,15 +173,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.body-md.font}"
+							"$value": "{semantic.typography.bodyMd.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.body-md.letterSpacing}"
+							"$value": "{semantic.typography.bodyMd.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.body-md.fontWidth}"
+							"$value": "{semantic.typography.bodyMd.fontWidth}"
 						}
 					},
 					"border": {

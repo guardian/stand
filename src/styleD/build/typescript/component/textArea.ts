@@ -13,10 +13,10 @@ export const componentTextArea = {
 			left: '0.75rem',
 		},
 		height: '144px',
-		'margin-top': '0.5rem',
-		'border-radius': '0.25rem',
+		marginTop: '0.5rem',
+		borderRadius: '0.25rem',
 		border: '0.0625rem solid #545454',
-		'background-color': '#ffffff',
+		backgroundColor: '#ffffff',
 		placeholderColor: '#545454',
 		disabled: {
 			backgroundColor: '#ffffff',

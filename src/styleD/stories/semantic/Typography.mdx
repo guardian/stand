@@ -139,29 +139,24 @@ const stringStyleJS = css`
 	color: ${semanticcolors.text.strong};
 
 	/* (recommended) emotion string style usage helper function*/
-	${convertTypographyToEmotionStringStyle(
-		semanticTypography['body-compact-md'],
-	)}
+	${convertTypographyToEmotionStringStyle(semanticTypography.bodyCompactMd)}
 
 	/* or direct usage without helper function */
-    font: ${semanticTypography['body-compact-md'].font};
-	letter-spacing: ${semanticTypography['body-compact-md'].letterSpacing};
-	font-variation-settings: 'wdth'
-		${semanticTypography['body-compact-md'].fontWidth};
+    font: ${semanticTypography.bodyCompactMd.font};
+	letter-spacing: ${semanticTypography.bodyCompactMd.letterSpacing};
+	font-variation-settings: 'wdth' ${semanticTypography.bodyCompactMd.fontWidth};
 `;
 const objectStyleJS = {
 	// other styles e.g.
 	color: semanticcolors.text.strong,
 
 	// (recommended) emotion object style usage helper function
-	...convertTypographyToEmotionObjectStyle(
-		semanticTypography['body-compact-sm'],
-	),
+	...convertTypographyToEmotionObjectStyle(semanticTypography.bodyCompactSm),
 
 	// or direct usage without helper function
-	font: semanticTypography['body-compact-sm'].font,
-	letterSpacing: semanticTypography['body-compact-sm'].letterSpacing,
-	fontVariationSettings: `'wdth' ${semanticTypography['body-compact-sm'].fontWidth}`,
+	font: semanticTypography.bodyCompactSm.font,
+	letterSpacing: semanticTypography.bodyCompactSm.letterSpacing,
+	fontVariationSettings: `'wdth' ${semanticTypography.bodyCompactSm.fontWidth}`,
 };
 
 /* CSS usage */

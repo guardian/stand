@@ -17,7 +17,7 @@
 					},
 					"right": {
 						"$type": "dimension",
-						"$value": "{base.spacing.12-rem}"
+						"$value": "{base.spacing.12Rem}"
 					},
 					"bottom": {
 						"$type": "dimension",
@@ -25,17 +25,17 @@
 					},
 					"left": {
 						"$type": "dimension",
-						"$value": "{base.spacing.12-rem}"
+						"$value": "{base.spacing.12Rem}"
 					}
 				},
-				"margin-top": {
+				"marginTop": {
 					"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
 					"$type": "dimension",
-					"$value": "{base.spacing.8-rem}"
+					"$value": "{base.spacing.8Rem}"
 				},
-				"border-radius": {
+				"borderRadius": {
 					"$type": "dimension",
-					"$value": "{base.radius.corner-4-rem}"
+					"$value": "{base.radius.corner4Rem}"
 				},
 				"border": {
 					"$type": "border",
@@ -45,7 +45,7 @@
 						"style": "solid"
 					}
 				},
-				"background-color": {
+				"backgroundColor": {
 					"$type": "color",
 					"$value": "{semantic.colors.fill.weak}"
 				},
@@ -104,15 +104,15 @@
 				"typography": {
 					"font": {
 						"$type": "typography",
-						"$value": "{semantic.typography.body-sm.font}"
+						"$value": "{semantic.typography.bodySm.font}"
 					},
 					"letterSpacing": {
 						"$type": "typography",
-						"$value": "{semantic.typography.body-sm.letterSpacing}"
+						"$value": "{semantic.typography.bodySm.letterSpacing}"
 					},
 					"fontWidth": {
 						"$type": "typography",
-						"$value": "{semantic.typography.body-sm.fontWidth}"
+						"$value": "{semantic.typography.bodySm.fontWidth}"
 					}
 				}
 			},
@@ -124,15 +124,15 @@
 				"typography": {
 					"font": {
 						"$type": "typography",
-						"$value": "{semantic.typography.body-md.font}"
+						"$value": "{semantic.typography.bodyMd.font}"
 					},
 					"letterSpacing": {
 						"$type": "typography",
-						"$value": "{semantic.typography.body-md.letterSpacing}"
+						"$value": "{semantic.typography.bodyMd.letterSpacing}"
 					},
 					"fontWidth": {
 						"$type": "typography",
-						"$value": "{semantic.typography.body-md.fontWidth}"
+						"$value": "{semantic.typography.bodyMd.fontWidth}"
 					}
 				}
 			}

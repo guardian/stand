@@ -1,7 +1,7 @@
 {
 	"component": {
-		"TopBar": {
-			"ToolName": {
+		"topBar": {
+			"toolName": {
 				"display": {
 					"$type": "string",
 					"$value": "flex"
@@ -10,26 +10,26 @@
 					"$type": "color",
 					"$value": "{semantic.colors.text.strong}"
 				},
-				"align-items": {
+				"alignItems": {
 					"$type": "string",
 					"$value": "center"
 				},
 				"gap": {
 					"$type": "dimension",
-					"$value": "{base.spacing.8-px}"
+					"$value": "{base.spacing.8Rem}"
 				},
 				"typography": {
 					"font": {
 						"$type": "typography",
-						"$value": "{semantic.typography.title-md.font}"
+						"$value": "{semantic.typography.titleMd.font}"
 					},
 					"letterSpacing": {
 						"$type": "dimension",
-						"$value": "{semantic.typography.title-md.letterSpacing}"
+						"$value": "{semantic.typography.titleMd.letterSpacing}"
 					},
 					"fontWidth": {
 						"$type": "number",
-						"$value": "{semantic.typography.title-md.fontWidth}"
+						"$value": "{semantic.typography.titleMd.fontWidth}"
 					}
 				},
 				"divider": {
@@ -43,26 +43,26 @@
 					},
 					"height": {
 						"$type": "dimension",
-						"$value": "{base.sizing.size-32-rem}"
+						"$value": "{base.sizing.size32Rem}"
 					}
 				},
 				"subsection": {
 					"gap": {
 						"$type": "dimension",
-						"$value": "{base.spacing.2-px}"
+						"$value": "{base.spacing.2Rem}"
 					},
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.heading-compact-md.font}"
+							"$value": "{semantic.typography.headingCompactMd.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.heading-compact-md.letterSpacing}"
+							"$value": "{semantic.typography.headingCompactMd.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.heading-compact-md.fontWidth}"
+							"$value": "{semantic.typography.headingCompactMd.fontWidth}"
 						}
 					}
 				},
@@ -91,19 +91,19 @@
 				"hoverLink": {
 					"color": {
 						"$type": "color",
-						"$value": "{semantic.colors.text.stronger-inverse}"
+						"$value": "{semantic.colors.text.strongerInverse}"
 					},
 					"paddingLeft": {
 						"$type": "dimension",
-						"$value": "{base.spacing.20-rem}"
+						"$value": "{base.spacing.20Rem}"
 					},
 					"paddingRight": {
 						"$type": "dimension",
-						"$value": "{base.spacing.20-rem}"
+						"$value": "{base.spacing.20Rem}"
 					},
 					"backgroundColor": {
 						"$type": "color",
-						"$value": "{semantic.colors.fill.accent-strong-hover}"
+						"$value": "{semantic.colors.fill.accentStrongHover}"
 					},
 					"opacity": {
 						"$type": "number",
@@ -112,15 +112,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.body-bold-sm.font}"
+							"$value": "{semantic.typography.bodyBoldSm.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.body-bold-sm.letterSpacing}"
+							"$value": "{semantic.typography.bodyBoldSm.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.body-bold-sm.fontWidth}"
+							"$value": "{semantic.typography.bodyBoldSm.fontWidth}"
 						}
 					},
 					"position": {
@@ -144,7 +144,7 @@
 					"pressed": {
 						"backgroundColor": {
 							"$type": "color",
-							"$value": "{semantic.colors.fill.accent-strong-pressed}"
+							"$value": "{semantic.colors.fill.accentStrongPressed}"
 						}
 					},
 					"focused": {
@@ -156,21 +156,21 @@
 								"style": "solid"
 							}
 						},
-						"outline-offset": {
+						"outlineOffset": {
 							"$type": "dimension",
-							"$value": "-{base.spacing.2-rem}"
+							"$value": "-{base.spacing.2Rem}"
 						}
 					},
 					"collapsed": {
 						"paddingLeft": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
 						"paddingRight": {
 							"$type": "dimension",
-							"$value": "{base.spacing.4-rem}"
+							"$value": "{base.spacing.4Rem}"
 						},
-						"justify-content": {
+						"justifyContent": {
 							"$type": "string",
 							"$value": "center"
 						}

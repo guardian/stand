@@ -117,7 +117,7 @@ export const baseColors = {
 		'800': '#edc6d7',
 		'900': '#f9ebf1',
 	},
-	'warm-purple': {
+	warmPurple: {
 		'50': '#220b30',
 		'100': '#381350',
 		'200': '#4e1a6f',
@@ -129,7 +129,7 @@ export const baseColors = {
 		'800': '#dac3e8',
 		'900': '#f2eaf7',
 	},
-	'cool-purple': {
+	coolPurple: {
 		'50': '#232740',
 		'100': '#394069',
 		'200': '#485084',

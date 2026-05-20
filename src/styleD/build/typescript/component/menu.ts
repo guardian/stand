@@ -6,8 +6,8 @@ export const componentMenu = {
 	menu: {
 		shared: {
 			display: 'flex',
-			'flex-direction': 'column',
-			'background-color': '#ffffff',
+			flexDirection: 'column',
+			backgroundColor: '#ffffff',
 			border: '0.0625rem solid #cccccc',
 		},
 	},
@@ -15,14 +15,14 @@ export const componentMenu = {
 		header: {
 			shared: {
 				display: 'flex',
-				'align-items': 'center',
+				alignItems: 'center',
 				padding: {
 					top: '0',
 					right: '0.5rem',
 					bottom: '0',
 					left: '0.5rem',
 				},
-				'background-color': '#ededed',
+				backgroundColor: '#ededed',
 				color: '#000000',
 			},
 			sm: {
@@ -46,27 +46,26 @@ export const componentMenu = {
 	menuItem: {
 		shared: {
 			display: 'grid',
-			'grid-template-areas': "'icon label aside'",
-			'grid-template-areas-with-description':
-				"'icon label aside' '. description .'",
-			'grid-template-columns': 'auto 6fr 1fr',
+			gridTemplateAreas: "'icon label aside'",
+			gridTemplateAreasWithDescription: "'icon label aside' '. description .'",
+			gridTemplateColumns: 'auto 6fr 1fr',
 			gap: '0.25rem',
-			'align-items': 'center',
+			alignItems: 'center',
 			padding: {
 				top: '0.75rem',
 				right: '1rem',
 				bottom: '0.75rem',
 				left: '1rem',
 			},
-			'border-bottom': '0.0625rem solid #cccccc',
-			'background-color': '#ffffff',
+			borderBottom: '0.0625rem solid #cccccc',
+			backgroundColor: '#ffffff',
 			icon: {
-				'grid-area': 'icon',
-				'align-self': 'start',
+				gridArea: 'icon',
+				alignSelf: 'start',
 				color: '#545454',
 			},
 			label: {
-				'grid-area': 'label',
+				gridArea: 'label',
 				color: '#000000',
 				typography: {
 					font: 'normal 460 1rem/1.3 Open Sans',
@@ -75,7 +74,7 @@ export const componentMenu = {
 				},
 			},
 			description: {
-				'grid-area': 'description',
+				gridArea: 'description',
 				color: '#545454',
 				typography: {
 					font: 'normal 460 0.875rem/1.3 Open Sans',
@@ -84,9 +83,9 @@ export const componentMenu = {
 				},
 			},
 			aside: {
-				'grid-area': 'aside',
-				'justify-self': 'end',
-				'align-self': 'start',
+				gridArea: 'aside',
+				justifySelf: 'end',
+				alignSelf: 'start',
 				color: '#000000',
 				typography: {
 					font: 'normal 460 1rem/1.3 Open Sans',
@@ -94,37 +93,37 @@ export const componentMenu = {
 					fontWidth: 95,
 				},
 			},
-			':last-child': {
-				'border-bottom': 'none',
+			lastChild: {
+				borderBottom: 'none',
 			},
-			':hover': {
-				'background-color': '#f6f6f6',
+			hover: {
+				backgroundColor: '#f6f6f6',
 				outline: 'none',
 			},
-			':focus-visible': {
+			focusVisible: {
 				outline: '0.125rem solid #0072a9',
-				'outline-offset': '-0.125rem',
+				outlineOffset: '-0.125rem',
 			},
-			':pressed': {
-				'background-color': '#ededed',
+			pressed: {
+				backgroundColor: '#ededed',
 			},
 		},
 		sm: {
 			icon: {
 				size: '1.125rem',
-				'line-height': 1.3,
+				lineHeight: 1.3,
 			},
 		},
 		md: {
 			icon: {
 				size: '1.25rem',
-				'line-height': 1.3,
+				lineHeight: 1.3,
 			},
 		},
 	},
 	menuSeparator: {
 		shared: {
-			'background-color': '#ededed',
+			backgroundColor: '#ededed',
 			height: '0.5rem',
 			width: '100%',
 		},
@@ -135,11 +134,11 @@ export const componentMenu = {
 			shadow: '0 0.125rem 0.375rem 0 rgb(0% 0% 0% / 0.3)',
 		},
 		sm: {
-			'max-width': '200px',
+			maxWidth: '200px',
 			width: '100%',
 		},
 		md: {
-			'max-width': '320px',
+			maxWidth: '320px',
 			width: '100%',
 		},
 	},

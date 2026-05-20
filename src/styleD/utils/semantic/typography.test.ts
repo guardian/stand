@@ -9,9 +9,9 @@ const replaceNewLines = (str: string) => str.replace(/[\n\r\t]/g, '');
 describe('Typography Tokens', () => {
 	describe('convertTypographyToEmotionStringStyle', () => {
 		it('should convert semantic typography to emotion styles', () => {
-			const titleSmToken = semanticTypography['title-sm'];
-			const headingXlToken = semanticTypography['heading-xl'];
-			const bodyCompactLgToken = semanticTypography['body-compact-lg'];
+			const titleSmToken = semanticTypography.titleSm;
+			const headingXlToken = semanticTypography.headingXl;
+			const bodyCompactLgToken = semanticTypography.bodyCompactLg;
 
 			const titleSmStyles = convertTypographyToEmotionStringStyle(titleSmToken);
 			const headingXlStyles =
@@ -33,9 +33,9 @@ describe('Typography Tokens', () => {
 
 	describe('convertTypographyToEmotionObjectStyle', () => {
 		it('should convert semantic typography to emotion object styles', () => {
-			const titleSmToken = semanticTypography['title-sm'];
-			const headingXlToken = semanticTypography['heading-xl'];
-			const bodyCompactLgToken = semanticTypography['body-compact-lg'];
+			const titleSmToken = semanticTypography.titleSm;
+			const headingXlToken = semanticTypography.headingXl;
+			const bodyCompactLgToken = semanticTypography.bodyCompactLg;
 
 			const titleSmStyles = convertTypographyToEmotionObjectStyle(titleSmToken);
 			const headingXlStyles =

@@ -14,18 +14,6 @@
 					"width": {
 						"$type": "dimension",
 						"$value": "100%"
-					},
-					"max-width": {
-						"$type": "dimension",
-						"$value": "{semantic.sizing.layout.max-width-px}"
-					},
-					"margin-left": {
-						"$type": "string",
-						"$value": "auto"
-					},
-					"margin-right": {
-						"$type": "string",
-						"$value": "auto"
 					}
 				},
 				"sm": {
@@ -93,14 +81,28 @@
 					},
 					"width": {
 						"$type": "dimension",
-						"$value": "{semantic.sizing.sidebar.md-px}"
+						"$value": "{semantic.sizing.sidebar.mdPx}"
 					}
 				},
 				"lg": {
 					"width": {
 						"$type": "dimension",
-						"$value": "{semantic.sizing.sidebar.lg-px}"
+						"$value": "{semantic.sizing.sidebar.lgPx}"
 					}
+				}
+			},
+			"main": {
+				"maxWidth": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.layout.maxWidthPx}"
+				},
+				"marginLeft": {
+					"$type": "string",
+					"$value": "auto"
+				},
+				"marginRight": {
+					"$type": "string",
+					"$value": "auto"
 				}
 			}
 		}

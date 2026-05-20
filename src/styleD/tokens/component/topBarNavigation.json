@@ -1,7 +1,7 @@
 {
 	"component": {
-		"TopBar": {
-			"Navigation": {
+		"topBar": {
+			"navigation": {
 				"shared": {
 					"display": {
 						"$type": "string",
@@ -11,7 +11,7 @@
 						"$type": "string",
 						"$value": "relative"
 					},
-					"align-items": {
+					"alignItems": {
 						"$type": "string",
 						"$value": "center"
 					},
@@ -19,7 +19,7 @@
 						"$type": "string",
 						"$value": "pointer"
 					},
-					"text-decoration": {
+					"textDecoration": {
 						"$type": "string",
 						"$value": "none"
 					},
@@ -27,7 +27,7 @@
 						"$type": "dimension",
 						"$value": "100%"
 					},
-					":disabled": {
+					"disabled": {
 						"cursor": {
 							"$type": "string",
 							"$value": "not-allowed"
@@ -44,7 +44,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.16Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -52,10 +52,10 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.16Rem}"
 						}
 					},
-					":focus-visible": {
+					"focusVisible": {
 						"outline": {
 							"$type": "border",
 							"$value": {
@@ -64,16 +64,16 @@
 								"style": "solid"
 							}
 						},
-						"outline-offset": {
+						"outlineOffset": {
 							"$type": "dimension",
 							"$value": "-{semantic.sizing.border.default}"
 						}
 					},
-					"border-top": {
+					"borderTop": {
 						"$type": "border",
 						"$value": {
 							"color": "transparent",
-							"width": "{semantic.sizing.border.extra-wide}",
+							"width": "{semantic.sizing.border.extraWide}",
 							"style": "solid"
 						}
 					},
@@ -89,27 +89,27 @@
 						"width": { "$type": "dimension", "$value": "100%" },
 						"height": { "$type": "dimension", "$value": "64px" },
 						"selected": {
-							"background-color": {
+							"backgroundColor": {
 								"$type": "color",
-								"$value": "{semantic.colors.bg.raised-level-2}"
+								"$value": "{semantic.colors.bg.raisedLevel2}"
 							}
 						}
 					}
 				},
 				"text": {
 					"margin": {
-						"left": { "$type": "dimension", "$value": "{base.spacing.6-rem}" }
+						"left": { "$type": "dimension", "$value": "{base.spacing.6Rem}" }
 					}
 				},
 				"menuIndicator": {
 					"margin": {
 						"top": {
 							"$type": "dimension",
-							"$value": "{base.spacing.6-rem}"
+							"$value": "{base.spacing.6Rem}"
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.2-rem}"
+							"$value": "{base.spacing.2Rem}"
 						}
 					}
 				},
@@ -118,11 +118,11 @@
 						"$type": "color",
 						"$value": "{semantic.colors.text.strong}"
 					},
-					"border-bottom": {
+					"borderBottom": {
 						"$type": "border",
 						"$value": {
 							"color": "{semantic.colors.border.selected}",
-							"width": "{semantic.sizing.border.extra-wide}",
+							"width": "{semantic.sizing.border.extraWide}",
 							"style": "solid"
 						}
 					}
@@ -132,11 +132,11 @@
 						"$type": "color",
 						"$value": "{semantic.colors.text.weak}"
 					},
-					"border-bottom": {
+					"borderBottom": {
 						"$type": "border",
 						"$value": {
 							"color": "transparent",
-							"width": "{semantic.sizing.border.extra-wide}",
+							"width": "{semantic.sizing.border.extraWide}",
 							"style": "solid"
 						}
 					}
@@ -145,15 +145,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.heading-md.font}"
+							"$value": "{semantic.typography.headingMd.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.heading-md.letterSpacing}"
+							"$value": "{semantic.typography.headingMd.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.heading-md.fontWidth}"
+							"$value": "{semantic.typography.headingMd.fontWidth}"
 						}
 					}
 				},
@@ -161,15 +161,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.heading-sm.font}"
+							"$value": "{semantic.typography.headingSm.font}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.heading-sm.letterSpacing}"
+							"$value": "{semantic.typography.headingSm.letterSpacing}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.heading-sm.fontWidth}"
+							"$value": "{semantic.typography.headingSm.fontWidth}"
 						}
 					}
 				}

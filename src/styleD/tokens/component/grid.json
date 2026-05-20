@@ -34,11 +34,11 @@
 				},
 				"gap": {
 					"$type": "dimension",
-					"$value": "{semantic.grid.gutter.sm-px}"
+					"$value": "{semantic.grid.gutter.smPx}"
 				},
 				"padding": {
 					"$type": "dimension",
-					"$value": "{semantic.grid.margin.sm-px}"
+					"$value": "{semantic.grid.margin.smPx}"
 				}
 			},
 			"md": {
@@ -48,11 +48,11 @@
 				},
 				"gap": {
 					"$type": "dimension",
-					"$value": "{semantic.grid.gutter.md-px}"
+					"$value": "{semantic.grid.gutter.mdPx}"
 				},
 				"padding": {
 					"$type": "dimension",
-					"$value": "{semantic.grid.margin.md-px}"
+					"$value": "{semantic.grid.margin.mdPx}"
 				}
 			},
 			"lg": {
@@ -62,11 +62,11 @@
 				},
 				"gap": {
 					"$type": "dimension",
-					"$value": "{semantic.grid.gutter.lg-px}"
+					"$value": "{semantic.grid.gutter.lgPx}"
 				},
 				"padding": {
 					"$type": "dimension",
-					"$value": "{semantic.grid.margin.lg-px}"
+					"$value": "{semantic.grid.margin.lgPx}"
 				}
 			}
 		}

@@ -8,16 +8,16 @@ export const componentCheckbox = {
 			display: 'flex',
 			position: 'relative',
 			gap: '0.5rem',
-			'align-items': 'flex-start',
+			alignItems: 'flex-start',
 			color: '#000000',
 			cursor: 'pointer',
 			indicator: {
 				display: 'flex',
-				'align-items': 'center',
-				'justify-content': 'center',
-				'flex-shrink': 0,
+				alignItems: 'center',
+				justifyContent: 'center',
+				flexShrink: 0,
 				border: '0.0625rem solid #545454',
-				'border-radius': '0.25rem',
+				borderRadius: '0.25rem',
 				transition: 'all 200ms',
 				svg: {
 					fill: 'none',
@@ -31,23 +31,23 @@ export const componentCheckbox = {
 					height: '2px',
 				},
 				selected: {
-					'background-color': '#005d8b',
+					backgroundColor: '#005d8b',
 					border: '0.0625rem solid #0072a9',
 					svg: {
 						fill: '#ffffff',
 					},
 				},
-				':focus-visible': {
+				focusVisible: {
 					outline: '0.125rem solid #0072a9',
-					'outline-offset': '0.125rem',
+					outlineOffset: '0.125rem',
 				},
 				error: {
-					'background-color': '#b42a19',
+					backgroundColor: '#b42a19',
 					border: '0.0625rem solid #b42a19',
 				},
 			},
 			label: {
-				'align-self': 'center',
+				alignSelf: 'center',
 			},
 			disabled: {
 				color: '#999999',
@@ -55,7 +55,7 @@ export const componentCheckbox = {
 				indicator: {
 					border: '0.0625rem solid #dcdcdc',
 					selected: {
-						'background-color': '#dcdcdc',
+						backgroundColor: '#dcdcdc',
 					},
 				},
 			},
@@ -84,17 +84,17 @@ export const componentCheckbox = {
 	group: {
 		shared: {
 			display: 'flex',
-			'flex-direction': 'column',
+			flexDirection: 'column',
 		},
 		sm: {
 			gap: '1rem',
-			'margin-top': '0.5rem',
-			'margin-bottom': '0.5rem',
+			marginTop: '0.5rem',
+			marginBottom: '0.5rem',
 		},
 		md: {
 			gap: '1.25rem',
-			'margin-top': '0.75rem',
-			'margin-bottom': '0.75rem',
+			marginTop: '0.75rem',
+			marginBottom: '0.75rem',
 		},
 	},
 };

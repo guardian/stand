@@ -1,12 +1,12 @@
 {
 	"component": {
-		"TopBar": {
-			"Item": {
+		"topBar": {
+			"item": {
 				"display": {
 					"$type": "string",
 					"$value": "flex"
 				},
-				"align-items": {
+				"alignItems": {
 					"$type": "string",
 					"$value": "center"
 				},
@@ -22,7 +22,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.12Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -30,7 +30,7 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12-rem}"
+							"$value": "{base.spacing.12Rem}"
 						}
 					}
 				},
@@ -42,7 +42,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.16Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -50,7 +50,7 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.16-rem}"
+							"$value": "{base.spacing.16Rem}"
 						}
 					}
 				},
@@ -62,7 +62,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.24-rem}"
+							"$value": "{base.spacing.24Rem}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -70,7 +70,7 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.24-rem}"
+							"$value": "{base.spacing.24Rem}"
 						}
 					}
 				},

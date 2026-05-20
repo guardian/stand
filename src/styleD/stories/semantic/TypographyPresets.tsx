@@ -6,7 +6,7 @@ import { convertTypographyToEmotionStringStyle } from '../../utils/semantic/typo
 const tableCss = css`
 	width: 100%;
 	border-collapse: collapse;
-	${convertTypographyToEmotionStringStyle(semanticTypography['body-sm'])}
+	${convertTypographyToEmotionStringStyle(semanticTypography.bodySm)}
 
 	th {
 		text-align: left;
@@ -25,7 +25,7 @@ const tableCss = css`
 	}
 
 	tr:hover {
-		background: ${semanticColors.bg['raised-level-1']};
+		background: ${semanticColors.bg.raisedLevel1};
 	}
 `;
 

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/unbound-method -- playwright mount */
-import type { BylineModel } from '../src/byline';
-import { Byline } from '../src/components/byline/Byline';
+import type { BylineModel } from '../src/Byline';
+import { Byline } from '../src/components/Byline/Byline';
 import { BylineWithMockSearchContributors } from './byline.mock';
 import playwrightComponentTestReact from './playwrightImport';
 

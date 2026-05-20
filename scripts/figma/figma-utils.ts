@@ -6,6 +6,7 @@ import type {
 	VariableCodeSyntax,
 	VariableScope,
 } from '@figma/rest-api-spec';
+import { camelCase } from 'change-case';
 
 export interface Token {
 	/**
@@ -116,7 +117,13 @@ export function tokenValueFromVariable(
 		// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition -- needed for type narrowing
 		if ('type' in value && value.type === 'VARIABLE_ALIAS') {
 			const aliasedVariable = localVariables[value.id];
-			return `{${aliasedVariable!.name.replace(/\//g, '.')}}`;
+
+			const normalise = aliasedVariable!.name
+				.split('/')
+				.map((part) => camelCase(part, { mergeAmbiguousCharacters: true }))
+				.join('.');
+
+			return `{${normalise}}`;
 		} else if ('r' in value) {
 			return rgbToHex(value);
 		}
@@ -186,8 +193,13 @@ export function tokenFilesFromLocalVariables(
 					}
 					return groupName;
 				})();
-				obj![name] = obj![name] ?? {};
-				obj = obj![name] as TokensFile;
+
+				const normalise = camelCase(name, {
+					mergeAmbiguousCharacters: true,
+				});
+
+				obj![normalise] = obj![normalise] ?? {};
+				obj = obj![normalise] as TokensFile;
 			});
 
 			const token = {

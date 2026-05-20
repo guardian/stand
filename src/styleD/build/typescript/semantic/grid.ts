@@ -4,14 +4,14 @@
 
 export const semanticGrid = {
 	gutter: {
-		'lg-px': '16px',
-		'md-px': '16px',
-		'sm-px': '16px',
+		lgPx: '16px',
+		mdPx: '16px',
+		smPx: '16px',
 	},
 	margin: {
-		'lg-px': '24px',
-		'md-px': '24px',
-		'sm-px': '16px',
+		lgPx: '24px',
+		mdPx: '24px',
+		smPx: '16px',
 	},
 	columns: {
 		lg: 12,

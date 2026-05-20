@@ -6,10 +6,10 @@ export const componentInlineMessage = {
 	shared: {
 		display: 'inline-flex',
 		gap: '0.25rem',
-		'align-items': 'center',
+		alignItems: 'center',
 		icon: {
 			size: '1.25rem',
-			'align-self': 'flex-start',
+			alignSelf: 'flex-start',
 		},
 		typography: {
 			font: 'normal 460 0.875rem/1.3 Open Sans',

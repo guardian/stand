@@ -25,8 +25,9 @@
 	--semantic-colors-text-orange: #693c16;
 	--semantic-colors-text-yellow: #5b4a0b;
 	--semantic-colors-bg-base: #ffffff;
-	--semantic-colors-bg-raised-level-1: #f6f6f6;
-	--semantic-colors-bg-raised-level-2: #ededed;
+	--semantic-colors-bg-raised-level1: #f6f6f6;
+	--semantic-colors-bg-raised-level2: #ededed;
+	--semantic-colors-bg-raised-level3: #e6e6e6;
 	--semantic-colors-border-stronger: #545454;
 	--semantic-colors-border-strong: #8d8d8d;
 	--semantic-colors-border-weak: #cccccc;

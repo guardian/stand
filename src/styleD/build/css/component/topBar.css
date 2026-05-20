@@ -1,0 +1,119 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-top-bar-background-color: #f6f6f6;
+	--component-top-bar-display: flex;
+	--component-top-bar-height: 4rem;
+	--component-top-bar-justify-content: flex-start;
+	--component-top-bar-border-right: 0.0625rem solid #cccccc;
+	--component-top-bar-border-top: 0.0625rem solid #cccccc;
+	--component-top-bar-border-bottom: 0.0625rem solid #cccccc;
+	--component-top-bar-border-left: 0.0625rem solid #cccccc;
+	--component-top-bar-spacer-margin-left: auto;
+	--component-top-bar-collapsed-nav-menu-button-color: #000000;
+	--component-top-bar-collapsed-nav-menu-button-margin: 0;
+	--component-top-bar-collapsed-nav-menu-button-padding: 0;
+	--component-top-bar-collapsed-nav-menu-button-background: none;
+	--component-top-bar-collapsed-nav-menu-button-border: none;
+	--component-top-bar-collapsed-nav-menu-button-cursor: pointer;
+	--component-top-bar-collapsed-nav-menu-button-hovered-background-color: #ededed;
+	--component-top-bar-collapsed-nav-menu-button-active-background-color: #ededed;
+	--component-top-bar-collapsed-nav-menu-popover-background-color: #f6f6f6;
+	--component-top-bar-collapsed-nav-menu-popover-border: 0.0625rem solid #cccccc;
+	--component-top-bar-collapsed-nav-menu-popover-offset: 1; /** The additional offset applied along the main axis between the element and its anchor element. https://react-aria.adobe.com/Popover#popover */
+	--component-top-bar-collapsed-nav-menu-popover-container-padding: 0; /** The placement padding that should be applied between the element and its surrounding container. https://react-aria.adobe.com/Popover#popover */
+	--component-top-bar-item-display: flex;
+	--component-top-bar-item-align-items: center;
+	--component-top-bar-item-height: 100%;
+	--component-top-bar-item-sm-padding-top: 0;
+	--component-top-bar-item-sm-padding-right: 0.75rem;
+	--component-top-bar-item-sm-padding-bottom: 0;
+	--component-top-bar-item-sm-padding-left: 0.75rem;
+	--component-top-bar-item-md-padding-top: 0;
+	--component-top-bar-item-md-padding-right: 1rem;
+	--component-top-bar-item-md-padding-bottom: 0;
+	--component-top-bar-item-md-padding-left: 1rem;
+	--component-top-bar-item-lg-padding-top: 0;
+	--component-top-bar-item-lg-padding-right: 1.5rem;
+	--component-top-bar-item-lg-padding-bottom: 0;
+	--component-top-bar-item-lg-padding-left: 1.5rem;
+	--component-top-bar-item-border: 0.0625rem solid #cccccc;
+	--component-top-bar-navigation-shared-display: inline-flex;
+	--component-top-bar-navigation-shared-position: relative;
+	--component-top-bar-navigation-shared-align-items: center;
+	--component-top-bar-navigation-shared-cursor: pointer;
+	--component-top-bar-navigation-shared-text-decoration: none;
+	--component-top-bar-navigation-shared-height: 100%;
+	--component-top-bar-navigation-shared-disabled-cursor: not-allowed;
+	--component-top-bar-navigation-shared-disabled-color: #999999;
+	--component-top-bar-navigation-shared-padding-top: 0;
+	--component-top-bar-navigation-shared-padding-right: 1rem;
+	--component-top-bar-navigation-shared-padding-bottom: 0;
+	--component-top-bar-navigation-shared-padding-left: 1rem;
+	--component-top-bar-navigation-shared-focus-visible-outline: 0.125rem solid
+		#0072a9;
+	--component-top-bar-navigation-shared-focus-visible-outline-offset: -0.0625rem;
+	--component-top-bar-navigation-shared-border-top: 0.5rem solid transparent;
+	--component-top-bar-navigation-shared-divider: 0.0625rem solid #cccccc;
+	--component-top-bar-navigation-shared-menu-open-width: 100%;
+	--component-top-bar-navigation-shared-menu-open-height: 64px;
+	--component-top-bar-navigation-shared-menu-open-selected-background-color: #ededed;
+	--component-top-bar-navigation-text-margin-left: 0.375rem;
+	--component-top-bar-navigation-menu-indicator-margin-top: 0.375rem;
+	--component-top-bar-navigation-menu-indicator-margin-left: 0.125rem;
+	--component-top-bar-navigation-selected-color: #000000;
+	--component-top-bar-navigation-selected-border-bottom: 0.5rem solid #0072a9;
+	--component-top-bar-navigation-unselected-color: #545454;
+	--component-top-bar-navigation-unselected-border-bottom: 0.5rem solid
+		transparent;
+	--component-top-bar-navigation-md-typography-font: normal 700 1rem/1.15
+		'Open Sans';
+	--component-top-bar-navigation-md-typography-letter-spacing: -0.03125rem;
+	--component-top-bar-navigation-md-typography-font-width: 95;
+	--component-top-bar-navigation-sm-typography-font: normal 700 0.875rem/1.15
+		'Open Sans';
+	--component-top-bar-navigation-sm-typography-letter-spacing: -0.0125rem;
+	--component-top-bar-navigation-sm-typography-font-width: 95;
+	--component-top-bar-tool-name-display: flex;
+	--component-top-bar-tool-name-color: #000000;
+	--component-top-bar-tool-name-align-items: center;
+	--component-top-bar-tool-name-gap: 0.5rem;
+	--component-top-bar-tool-name-typography-font: normal 700 1.25rem/1.15
+		'GH Guardian Headline';
+	--component-top-bar-tool-name-typography-letter-spacing: 0;
+	--component-top-bar-tool-name-typography-font-width: 100;
+	--component-top-bar-tool-name-divider-border: 0.0625rem solid #cccccc;
+	--component-top-bar-tool-name-divider-height: 2rem;
+	--component-top-bar-tool-name-subsection-gap: 0.125rem;
+	--component-top-bar-tool-name-subsection-typography-font: normal 700 1rem/1.15
+		'Open Sans';
+	--component-top-bar-tool-name-subsection-typography-letter-spacing: -0.0125rem;
+	--component-top-bar-tool-name-subsection-typography-font-width: 88;
+	--component-top-bar-tool-name-link-text-decoration: none;
+	--component-top-bar-tool-name-link-color: unset;
+	--component-top-bar-tool-name-link-position: relative;
+	--component-top-bar-tool-name-link-width: 100%;
+	--component-top-bar-tool-name-link-height: 100%;
+	--component-top-bar-tool-name-hover-link-color: #ffffff;
+	--component-top-bar-tool-name-hover-link-padding-left: 1.25rem;
+	--component-top-bar-tool-name-hover-link-padding-right: 1.25rem;
+	--component-top-bar-tool-name-hover-link-background-color: #092f62;
+	--component-top-bar-tool-name-hover-link-opacity: 0;
+	--component-top-bar-tool-name-hover-link-typography-font: normal 700
+		0.875rem/1.3 'Open Sans';
+	--component-top-bar-tool-name-hover-link-typography-letter-spacing: 0;
+	--component-top-bar-tool-name-hover-link-typography-font-width: 95;
+	--component-top-bar-tool-name-hover-link-position: absolute;
+	--component-top-bar-tool-name-hover-link-width: 100%;
+	--component-top-bar-tool-name-hover-link-height: 100%;
+	--component-top-bar-tool-name-hover-link-hover-opacity: 1;
+	--component-top-bar-tool-name-hover-link-pressed-background-color: #061d3c;
+	--component-top-bar-tool-name-hover-link-focused-outline: 0.125rem solid
+		#0072a9;
+	--component-top-bar-tool-name-hover-link-focused-outline-offset: -0.125rem;
+	--component-top-bar-tool-name-hover-link-collapsed-padding-left: 0.25rem;
+	--component-top-bar-tool-name-hover-link-collapsed-padding-right: 0.25rem;
+	--component-top-bar-tool-name-hover-link-collapsed-justify-content: center;
+}
