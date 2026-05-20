@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
-import { exampleTags } from './example-tags';
+import { exampleTags } from './exampleTags';
 import { TagTable } from './TagTable';
 import type { TagManagerObjectData } from './types';
 

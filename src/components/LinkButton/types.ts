@@ -1,7 +1,7 @@
 import type { LinkProps as RACLinkProps } from 'react-aria-components';
 import type { DefaultProps } from '../../util/types';
 import type { IconProps } from '../Icon/types';
-import type { LinkButtonTheme } from './styles';
+import type { LinkButtonTheme } from './Styles';
 
 export interface LinkButtonProps
 	extends
