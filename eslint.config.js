@@ -18,7 +18,7 @@ export default [
 	...guardian.configs.react,
 	...storybook.configs['flat/recommended'],
 	{
-		files: ['./src/**/*.tsx'],
+		files: ['src/**/*.{ts,tsx}'],
 		plugins: {
 			'check-file': checkFile,
 		},
@@ -36,8 +36,10 @@ export default [
 			'check-file/filename-naming-convention': [
 				'error',
 				{
-					'src/**/*.{jsx,tsx}': 'PASCAL_CASE',
-					'src/**/*.{js,ts}': 'CAMEL_CASE',
+					'src/components/**/*.tsx': 'PASCAL_CASE',
+					'src/*/**/*.tsx': 'PASCAL_CASE',
+					'src/*/**/*.ts': 'CAMEL_CASE',
+					'src/!(index|utils).ts': 'PASCAL_CASE',
 				},
 				{
 					ignoreMiddleExtensions: true,
