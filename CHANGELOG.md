@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.40
+
+### Patch Changes
+
+- d81f980: Update dev dependencies
+
 ## 0.0.39
 
 ### Patch Changes
