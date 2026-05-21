@@ -18,6 +18,11 @@ export default defineConfig({
 	unbundle: true,
 	clean: true,
 	dts: true,
+	publint: true,
+	attw: {
+		profile: 'strict',
+		excludeEntrypoints: [/\.css$/],
+	},
 	copy: [
 		{ from: 'src/styleD/build/css/', to: 'dist/styleD/build/' },
 		{ from: 'src/fonts/*', to: 'dist/fonts/' },
