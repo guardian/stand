@@ -18,6 +18,7 @@ export default defineConfig({
 	unbundle: true,
 	clean: true,
 	dts: true,
+	publint: true,
 	copy: [
 		{ from: 'src/styleD/build/css/', to: 'dist/styleD/build/' },
 		{ from: 'src/fonts/*', to: 'dist/fonts/' },
