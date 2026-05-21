@@ -1,11 +1,14 @@
 import { readdirSync } from 'node:fs';
-import { basename, extname } from 'node:path';
+import { basename, extname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { defineConfig, type UserConfigExport } from 'tsdown';
 
+const srcDir = join(fileURLToPath(import.meta.url), '..', 'src');
+
 const entry = Object.fromEntries(
-	readdirSync('src')
+	readdirSync(srcDir)
 		.filter((file) => file.endsWith('.ts'))
-		.map((file) => [basename(file, extname(file)), `src/${file}`]),
+		.map((file) => [basename(file, extname(file)), join(srcDir, file)]),
 );
 
 console.log('Entry points:', entry);
@@ -24,8 +27,8 @@ export default defineConfig({
 		excludeEntrypoints: [/\.css$/],
 	},
 	copy: [
-		{ from: 'src/styleD/build/css/', to: 'dist/styleD/build/' },
-		{ from: 'src/fonts/*', to: 'dist/fonts/' },
-		{ from: 'src/util/reset.css', to: 'dist/util/css/' },
+		{ from: join(srcDir, 'styleD/build/css/'), to: 'dist/styleD/build/' },
+		{ from: join(srcDir, 'fonts/*'), to: 'dist/fonts/' },
+		{ from: join(srcDir, 'util/reset.css'), to: 'dist/util/css/' },
 	],
 }) as UserConfigExport;
