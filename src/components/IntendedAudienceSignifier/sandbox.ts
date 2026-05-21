@@ -16,7 +16,7 @@ export const Component = () => (
 		<IntendedAudienceSignifier source="US" target='global' />
 		<IntendedAudienceSignifier source="AUS" target='global' />
 		<IntendedAudienceSignifier source="UK" target='global' theme={{ color: '#c70000' }} />
-		<IntendedAudienceSignifier source="AUS" target='global' cssOverrides={{ border-color: '#0000FF',align-items: 'flex-end' }}/>
+		<IntendedAudienceSignifier source="AUS" target='global' cssOverrides={{ borderColor: '#0000FF',alignItems: 'flex-end' }}/>
 		<IntendedAudienceSignifier source="UK" />
 		<IntendedAudienceSignifier source="US" />
 		<IntendedAudienceSignifier source="AUS" />
@@ -51,7 +51,7 @@ export const componentCss = /* css */ `
 }
 
 .stand-intended-audience-signifier svg {
-	width: var(--component-intended-audience-signifier-svg-width):
+	width: var(--component-intended-audience-signifier-svg-width);
 	height: var(--component-intended-audience-signifier-svg-height);
 }
 
