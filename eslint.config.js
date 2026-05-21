@@ -48,4 +48,10 @@ export default [
 			],
 		},
 	},
+	{
+		files: ['*.config.ts', '*.config.js', '*.config.mjs'],
+		rules: {
+			'import/no-default-export': 'off',
+		},
+	},
 ];

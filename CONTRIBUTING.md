@@ -76,16 +76,7 @@ If you are adding or modifying design tokens:
    - Reference other tokens with `{path.to.token}` syntax (e.g. `"{base.colors.cyan.200}"`).
    - See `src/styleD/tokens/component/` for existing examples.
 
-2. **Register the token file** in `src/styleD/config.js` by adding to `fileList`:
-
-   ```js
-   {
-     group: 'component',
-     component: 'avatar',
-   },
-   ```
-
-3. **Run the style dictionary build** to regenerate the output files:
+2. **Run the style dictionary build** to regenerate the output files:
 
    ```sh
    pnpm run build-styled
@@ -95,13 +86,13 @@ If you are adding or modifying design tokens:
    - `src/styleD/build/css/component/<name>.css` – CSS custom properties
    - `src/styleD/build/typescript/component/<name>.ts` – typed JS/TS token object
 
-4. **Commit the generated files**: the build outputs in `src/styleD/build/` are committed to the repository and must be kept in sync with the token sources.
+3. **Commit the generated files**: the build outputs in `src/styleD/build/` are committed to the repository and must be kept in sync with the token sources.
 
 ## Exports
 
 Each component is published as its own **subpath export** (e.g. `@guardian/stand/avatar`) so that consumers only bundle what they use. When adding a new component, the following files must all be updated together:
 
-1. **Create `src/<component-name>.ts`**: the Rollup entry point and public API for the subpath. It should re-export the component, its props type, its theme type, and the style dictionary token variable/type:
+1. **Create `src/<component-name>.ts`**: the tsdown entry point and public API for the subpath. It should re-export the component, its props type, its theme type, and the style dictionary token variable/type:
 
    ```ts
    // use src/avatar.ts or another component as a template
@@ -112,20 +103,13 @@ Each component is published as its own **subpath export** (e.g. `@guardian/stand
    export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
    ```
 
-2. **Update `rollup.config.js`**: Add the new entry point to the `input` object so Rollup picks it up during the build:
-
-   ```js
-   // under the appropriate section (tools design system or editorial components)
-   avatar: 'src/avatar.ts',
-   ```
-
-3. **Update `package.json`**: Three separate sections must be updated:
+2. **Update `package.json`**: Three separate sections must be updated:
 
    **`exports`**: add the JS subpath and, if a CSS build exists, the CSS subpath:
 
    ```json
    "./avatar": {
-     "types": "./dist/types/avatar.d.ts",
+     "types": "./dist/avatar.d.ts",
      "import": "./dist/avatar.js",
      "require": "./dist/avatar.cjs"
    },
@@ -135,17 +119,17 @@ Each component is published as its own **subpath export** (e.g. `@guardian/stand
    **`typesVersions`**: Required for TypeScript consumers using `moduleResolution: node` (legacy):
 
    ```json
-   "avatar": ["./dist/types/avatar.d.ts"]
+   "avatar": ["./dist/avatar.d.ts"]
    ```
 
-4. **Update `src/index.ts`**: Add any token exports that should be available from the root `@guardian/stand` entry point (typically the style dictionary variable and its type):
+3. **Update `src/index.ts`**: Add any token exports that should be available from the root `@guardian/stand` entry point (typically the style dictionary variable and its type):
 
    ```ts
    export { componentAvatar } from './styleD/build/typescript/component/avatar';
    export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
    ```
 
-5. **Check the build**: Run `pnpm run build` and verify that the new component's JS and CSS files are generated in `dist/` and that the exports are correct.
+4. **Check the build**: Run `pnpm run build` and verify that the new component's JS and CSS files are generated in `dist/` and that the exports are correct.
 
 ## Testing
 

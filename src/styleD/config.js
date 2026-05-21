@@ -1,165 +1,41 @@
 /* eslint-disable import/no-default-export -- style dictionary way */
 
+import { readdirSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { camelCase, pascalCase } from 'change-case';
 import { fileHeader, minifyDictionary } from 'style-dictionary/utils';
 
 /**
  * @name fileList
  *
- * List of token files to generate based on the component and group
- * which correspond to the 1st and 2nd level of the token JSON structure.
- *
- * When adding new tokens to the design system, make sure to add the corresponding
- * entry here so that Style Dictionary generates the appropriate output files.
+ * Automatically generated from the top two levels of each token JSON file
+ * under the `tokens/` directory. Each unique `{ group, component }` pair
+ * found across all files is included exactly once.
  *
  * @type {{group: string, component: string}[]}
  */
-const fileList = [
-	/** design system base/foundations tokens */
-	{
-		group: 'base',
-		component: 'colors',
-	},
-	{
-		group: 'base',
-		component: 'typography',
-	},
-	{
-		group: 'base',
-		component: 'spacing',
-	},
-	{
-		group: 'base',
-		component: 'radius',
-	},
-	{
-		group: 'base',
-		component: 'sizing',
-	},
-	/** design system semantic tokens */
-	{
-		group: 'semantic',
-		component: 'colors',
-	},
-	{
-		group: 'semantic',
-		component: 'typography',
-	},
-	{
-		group: 'semantic',
-		component: 'sizing',
-	},
-	{
-		group: 'semantic',
-		component: 'shadow',
-	},
-	{
-		group: 'semantic',
-		component: 'breakpoints',
-	},
-	{
-		group: 'semantic',
-		component: 'grid',
-	},
-	/** design system components */
-	{
-		group: 'component',
-		component: 'avatar',
-	},
-	{
-		group: 'component',
-		component: 'button',
-	},
-	{
-		group: 'component',
-		component: 'typography',
-	},
-	{
-		group: 'component',
-		component: 'icon',
-	},
-	{
-		group: 'component',
-		component: 'intendedAudienceSignifier',
-	},
-	{
-		group: 'component',
-		component: 'favicon',
-	},
-	{
-		group: 'component',
-		component: 'menu',
-	},
-	{
-		group: 'component',
-		component: 'topBar',
-	},
-	{
-		group: 'component',
-		component: 'form',
-	},
-	{
-		group: 'component',
-		component: 'inlineMessage',
-	},
-	{
-		group: 'component',
-		component: 'select',
-	},
-	{
-		group: 'component',
-		component: 'textInput',
-	},
-	{
-		group: 'component',
-		component: 'radioGroup',
-	},
-	{
-		group: 'component',
-		component: 'checkbox',
-	},
-	{
-		group: 'component',
-		component: 'textArea',
-	},
-	{
-		group: 'component',
-		component: 'alertBanner',
-	},
-	{
-		group: 'component',
-		component: 'link',
-	},
-	{
-		group: 'component',
-		component: 'datePicker',
-	},
-	{
-		group: 'component',
-		component: 'grid',
-	},
-	{
-		group: 'component',
-		component: 'layout',
-	},
-	/** editorial components */
-	{
-		group: 'component',
-		component: 'byline',
-	},
-	{
-		group: 'component',
-		component: 'autocomplete',
-	},
-	{
-		group: 'component',
-		component: 'tagTable',
-	},
-	{
-		group: 'component',
-		component: 'userMenu',
-	},
-];
+const tokenDir = fileURLToPath(new URL('./tokens', import.meta.url));
+const seen = new Set();
+const fileList = /** @type {{group: string, component: string}[]} */ ([]);
+
+for (const rel of readdirSync(tokenDir, { recursive: true })) {
+	if (!String(rel).endsWith('.json')) {
+		continue;
+	}
+	const json = JSON.parse(readFileSync(join(tokenDir, String(rel)), 'utf8'));
+	for (const [group, components] of Object.entries(json)) {
+		for (const component of Object.keys(/** @type {object} */ (components))) {
+			const key = `${group}/${component}`;
+			if (!seen.has(key)) {
+				seen.add(key);
+				fileList.push({ group, component });
+			}
+		}
+	}
+}
+
+console.log('Discovered token groups and components:', fileList);
 
 /**
  * @param {{group: string, component: string}[]} fileList
