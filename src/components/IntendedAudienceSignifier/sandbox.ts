@@ -6,22 +6,22 @@ export const componentTsx = /* javascript */ `import { IntendedAudienceSignifier
 
 export const Component = () => (
 	<>
-		<IntendedAudienceSignifier source="UK" intendedAudience='global' />
-		<IntendedAudienceSignifier source="US" intendedAudience='global' />
-		<IntendedAudienceSignifier source="AUS" intendedAudience='global' />
-		<IntendedAudienceSignifier source="UK" intendedAudience='domestic-for-domestic' />
-		<IntendedAudienceSignifier source="US" intendedAudience='domestic-for-domestic' />
-		<IntendedAudienceSignifier source="AUS" intendedAudience='domestic-for-domestic' />
-		<IntendedAudienceSignifier source="UK" intendedAudience='domestic-for-global' />
-		<IntendedAudienceSignifier source="US" intendedAudience='domestic-for-global' />
-		<IntendedAudienceSignifier source="AUS" intendedAudience='domestic-for-global' />
-		<IntendedAudienceSignifier source="UK" intendedAudience='domestic-for-global' theme={{ color: '#c70000' }} />
-		<IntendedAudienceSignifier source="AUS" intendedAudience='global' cssOverrides={{ border-color: '#0000FF',align-items: 'flex-end' }}/>
+		<IntendedAudienceSignifier source="UK" target='global' />
+		<IntendedAudienceSignifier source="US" target='global' />
+		<IntendedAudienceSignifier source="AUS" target='global' />
+		<IntendedAudienceSignifier source="UK" target='UK' />
+		<IntendedAudienceSignifier source="US" target='US' />
+		<IntendedAudienceSignifier source="AUS" target='AUS' />
+		<IntendedAudienceSignifier source="UK" target='global' />
+		<IntendedAudienceSignifier source="US" target='global' />
+		<IntendedAudienceSignifier source="AUS" target='global' />
+		<IntendedAudienceSignifier source="UK" target='global' theme={{ color: '#c70000' }} />
+		<IntendedAudienceSignifier source="AUS" target='global' cssOverrides={{ border-color: '#0000FF',align-items: 'flex-end' }}/>
 		<IntendedAudienceSignifier source="UK" />
 		<IntendedAudienceSignifier source="US" />
 		<IntendedAudienceSignifier source="AUS" />
-		<IntendedAudienceSignifier source="UK" intendedAudience='US' />
-		<IntendedAudienceSignifier source="US" intendedAudience='UK' />
+		<IntendedAudienceSignifier source="UK" target='US' />
+		<IntendedAudienceSignifier source="US" target='UK' />
 	</>
 );
 `;

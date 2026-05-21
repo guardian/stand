@@ -13,54 +13,41 @@ type Story = StoryObj<typeof IntendedAudienceSignifier>;
 
 export default meta;
 
-export const GlobalUKStory = {
-	name: 'GlobalUK',
-	args: { source: 'UK', intendedAudience: 'global' },
+export const DomesticForGlobalUk = {
+	name: 'DomesticForGlobalUk',
+	args: { source: 'UK', target: 'global' },
 } satisfies Story;
 
-export const GlobalUSStory = {
-	name: 'GlobalUS',
-	args: { source: 'US', intendedAudience: 'global' },
+export const DomesticForGlobalUs = {
+	name: 'DomesticForGlobalUs',
+	args: { source: 'US', target: 'global' },
 } satisfies Story;
 
-export const GlobalAUSStory = {
-	name: 'GlobalAUS',
-	args: { source: 'AUS', intendedAudience: 'global' },
+export const DomesticForGlobalAus = {
+	name: 'DomesticForGlobalAus',
+	args: { source: 'AUS', target: 'global' },
 } satisfies Story;
 
-export const UKAndUKStory = {
-	name: 'UKandUK',
-	args: { source: 'UK', intendedAudience: 'domestic-for-domestic' },
+export const DomesticForDomesticUk = {
+	name: 'DomesticForDomesticUk',
+	args: { source: 'UK', target: 'UK' },
 } satisfies Story;
 
-export const USAndUSStory = {
-	name: 'USandUS',
-	args: { source: 'US', intendedAudience: 'domestic-for-domestic' },
+export const DomesticForDomesticUs = {
+	name: 'DomesticForDomesticUs',
+	args: { source: 'US', target: 'US' },
 } satisfies Story;
 
-export const AUSAndAUSStory = {
-	name: 'AUSandAUS',
-	args: { source: 'AUS', intendedAudience: 'domestic-for-domestic' },
+export const DomesticForDomesticAus = {
+	name: 'DomesticForDomesticAus',
+	args: { source: 'AUS', target: 'AUS' },
 } satisfies Story;
 
-export const UKAndGlobalStory = {
-	name: 'UKandGlobal',
-	args: { source: 'UK', intendedAudience: 'domestic-for-global' },
-} satisfies Story;
-
-export const USAndGlobalStory = {
-	name: 'USandGlobal',
+export const GlobalForGlobal = {
+	name: 'GlobalForGlobal',
 	args: {
-		source: 'US',
-		intendedAudience: 'domestic-for-global',
-	},
-} satisfies Story;
-
-export const AUSAndGlobalStory = {
-	name: 'AUSandGlobal',
-	args: {
-		source: 'AUS',
-		intendedAudience: 'domestic-for-global',
+		source: 'global',
+		target: 'global',
 	},
 } satisfies Story;
 
@@ -68,7 +55,7 @@ export const UKAndGlobalStoryWithCustomTheme = {
 	name: 'UKandGlobalWithCustomTheme',
 	args: {
 		source: 'UK',
-		intendedAudience: 'domestic-for-global',
+		target: 'global',
 		theme: {
 			borderRadius: '20%',
 			borderStyle: 'inset',
@@ -87,7 +74,7 @@ export const AUSAndGlobalWithCSSOverrides = {
 	name: 'AUSAndGlobalWithCSSOverrides',
 	args: {
 		source: 'AUS',
-		intendedAudience: 'domestic-for-global',
+		target: 'global',
 		cssOverrides: css`
 			border-color: #0000ffff;
 			background-color: pink;
@@ -95,29 +82,19 @@ export const AUSAndGlobalWithCSSOverrides = {
 	},
 } satisfies Story;
 
-export const DontKnowStoryUK = {
-	name: 'DontKnowUK',
-	args: { source: 'UK' },
-} satisfies Story;
-
-export const DontKnowStoryUS = {
-	name: 'DontKnowUS',
-	args: { source: 'US' },
-} satisfies Story;
-
-export const DontKnowStoryAUS = {
-	name: 'DontKnowAUS',
-	args: { source: 'AUS' },
+export const DontKnowStory = {
+	name: 'DontKnow',
+	args: {},
 } satisfies Story;
 
 export const UKAndUSStory = {
 	name: 'UKAndUSStory',
-	args: { source: 'UK', intendedAudience: 'US' },
+	args: { source: 'UK', target: 'US' },
 } satisfies Story;
 
 export const USAndUKStory = {
 	name: 'USAndUKStory',
-	args: { source: 'US', intendedAudience: 'UK' },
+	args: { source: 'US', target: 'UK' },
 } satisfies Story;
 
 const largeIconTheme = {
@@ -141,14 +118,14 @@ export const DontKnowStoryAUSLargeIconTheme = {
 
 export const UKAndUSStoryLargeIconTheme = {
 	name: 'UKAndUSStoryLargeIconTheme',
-	args: { source: 'UK', intendedAudience: 'US', theme: largeIconTheme },
+	args: { source: 'UK', target: 'US', theme: largeIconTheme },
 } satisfies Story;
 
 export const GlobalUSStoryLargeIconTheme = {
 	name: 'GlobalUSStoryLargeIconTheme',
 	args: {
 		source: 'US',
-		intendedAudience: 'domestic-for-global',
+		target: 'global',
 		theme: largeIconTheme,
 	},
 } satisfies Story;
