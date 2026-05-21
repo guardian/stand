@@ -1,8 +1,8 @@
-import type { MaterialSymbol } from '../../fonts/material-symbols-types';
+import type { MaterialSymbol } from '../../fonts/materialSymbolsTypes';
 import type { DefaultPropsWithChildren } from '../../util/types';
-import type { IconTheme } from './styles';
+import type { IconTheme } from './Styles';
 
-export type { MaterialSymbol } from '../../fonts/material-symbols-types';
+export type { MaterialSymbol } from '../../fonts/materialSymbolsTypes';
 
 export interface IconProps extends DefaultPropsWithChildren<
 	IconTheme,

@@ -22,6 +22,6 @@
  */
 export { Icon } from './components/Icon/Icon';
 export type { IconProps } from './components/Icon/types';
-export type { PartialIconTheme as IconTheme } from './components/Icon/styles';
+export type { PartialIconTheme as IconTheme } from './components/Icon/Styles';
 export { componentIcon } from './styleD/build/typescript/component/icon';
 export type { ComponentIcon } from './styleD/build/typescript/component/icon';
