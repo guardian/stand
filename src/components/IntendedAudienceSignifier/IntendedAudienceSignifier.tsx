@@ -19,7 +19,7 @@ const icons = {
 	US: usFlag,
 	AUS: auFlag,
 	global: globeIcon,
-} satisfies Record<SourceOrTarget, unknown>;
+};
 
 const getSourceDescription = (source: SourceOrTarget) => {
 	switch (source) {
