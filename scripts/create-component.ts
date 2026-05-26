@@ -183,14 +183,11 @@ const run = async () => {
 	console.log(
 		`component ${names.pascalCase} generated. To make it available in storybook:`,
 	);
-	console.log(
-		' - add your component to the fileList in ./src/styleD/config.js',
-	);
 	console.log(' - run `pnpm run build-styled`');
 
-	// TODO - add the component name to the config.js file and run Style dictionary.
+	// TODO - run Style dictionary.
 	// TODO - add index file to ./src/{name}
-	// TODO - add a checklist to publish the component to npm, adding a changelog, updating rollup config, package json and src/index.ts.
+	// TODO - add a checklist to publish the component to npm, adding a changelog, package json and src/index.ts.
 };
 
 void run();

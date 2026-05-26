@@ -125,7 +125,7 @@ The [Design Tokens](https://www.w3.org/community/design-tokens/) specification p
 
 The project uses [Style Dictionary](https://styledictionary.com/) to manage design tokens.
 
-Tokens are defined in `src/styleD/tokens/`, the generated outputs live in `src/styleD/build/`, and both are committed to the repository. During the package build, Rollup copies the build outputs into `dist/styleD/build/` for publishing.
+Tokens are defined in `src/styleD/tokens/`, the generated outputs live in `src/styleD/build/`, and both are committed to the repository. During the package build, tsdown copies the build outputs into `dist/styleD/build/` for publishing.
 
 Most foundation tokens are generated from Figma variables, see `scripts/figma/README.md` for details.
 

@@ -20,7 +20,8 @@
 		"src/styleD/**/*",
 		"jest-setup-after-env.ts",
 		"playwright-ct.config.ts",
-		"scripts"
+		"scripts",
+		"tsdown.config.ts"
 	],
 	"exclude": ["node_modules", "dist"]
 }
