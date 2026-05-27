@@ -103,6 +103,42 @@
 				"marginRight": {
 					"$type": "string",
 					"$value": "auto"
+				},
+				"sm": {
+					"padding": {
+						"top": {
+							"$type": "dimension",
+							"$value": "{semantic.grid.margin.topSmPx}"
+						},
+						"bottom": {
+							"$type": "dimension",
+							"$value": "{semantic.grid.margin.bottomSmPx}"
+						}
+					}
+				},
+				"md": {
+					"padding": {
+						"top": {
+							"$type": "dimension",
+							"$value": "{semantic.grid.margin.topMdPx}"
+						},
+						"bottom": {
+							"$type": "dimension",
+							"$value": "{semantic.grid.margin.bottomMdPx}"
+						}
+					}
+				},
+				"lg": {
+					"padding": {
+						"top": {
+							"$type": "dimension",
+							"$value": "{semantic.grid.margin.topLgPx}"
+						},
+						"bottom": {
+							"$type": "dimension",
+							"$value": "{semantic.grid.margin.bottomLgPx}"
+						}
+					}
 				}
 			}
 		}

@@ -9,6 +9,12 @@
 	--semantic-grid-margin-lg-px: 24px;
 	--semantic-grid-margin-md-px: 24px;
 	--semantic-grid-margin-sm-px: 16px;
+	--semantic-grid-margin-top-lg-px: 48px;
+	--semantic-grid-margin-top-md-px: 28px;
+	--semantic-grid-margin-top-sm-px: 24px;
+	--semantic-grid-margin-bottom-lg-px: 64px;
+	--semantic-grid-margin-bottom-md-px: 64px;
+	--semantic-grid-margin-bottom-sm-px: 64px;
 	--semantic-grid-columns-lg: 12;
 	--semantic-grid-columns-md: 12;
 	--semantic-grid-columns-sm: 12;

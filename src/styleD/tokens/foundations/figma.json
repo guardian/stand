@@ -1255,61 +1255,105 @@
 				"successStrong": {
 					"$type": "color",
 					"$value": "{base.colors.green.200}"
+				},
+				"neutralWeak": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.800}"
 				}
+			}
+		},
+		"spacing": {
+			"stackXxs": {
+				"$type": "dimension",
+				"$value": "{base.spacing.4Rem}"
+			},
+			"stackXs": {
+				"$type": "dimension",
+				"$value": "{base.spacing.8Rem}"
+			},
+			"stackSm": {
+				"$type": "dimension",
+				"$value": "{base.spacing.12Rem}"
+			},
+			"stackMd": {
+				"$type": "dimension",
+				"$value": "{base.spacing.16Rem}"
+			},
+			"stackLg": {
+				"$type": "dimension",
+				"$value": "{base.spacing.32Rem}"
+			},
+			"stackXl": {
+				"$type": "dimension",
+				"$value": "{base.spacing.40Rem}"
+			}
+		},
+		"radius": {
+			"cornerXs": {
+				"$type": "dimension",
+				"$value": "{base.radius.corner2Rem}"
+			},
+			"cornerSm": {
+				"$type": "dimension",
+				"$value": "{base.radius.corner4Rem}"
+			},
+			"cornerMd": {
+				"$type": "dimension",
+				"$value": "{base.radius.corner8Rem}"
 			}
 		},
 		"sizing": {
 			"height": {
 				"xxxs": {
-					"$type": "number",
+					"$type": "dimension",
 					"$value": "{base.sizing.size18Rem}"
 				},
 				"xxs": {
-					"$type": "number",
+					"$type": "dimension",
 					"$value": "{base.sizing.size20Rem}"
 				},
 				"xs": {
-					"$type": "number",
+					"$type": "dimension",
 					"$value": "{base.sizing.size24Rem}"
 				},
 				"sm": {
-					"$type": "number",
+					"$type": "dimension",
 					"$value": "{base.sizing.size32Rem}"
 				},
 				"md": {
-					"$type": "number",
+					"$type": "dimension",
 					"$value": "{base.sizing.size40Rem}"
 				},
 				"lg": {
-					"$type": "number",
+					"$type": "dimension",
 					"$value": "{base.sizing.size48Rem}"
 				}
 			},
 			"icon": {
 				"sm": {
-					"$type": "number",
+					"$type": "dimension",
 					"$value": "{base.sizing.size18Rem}"
 				},
 				"md": {
-					"$type": "number",
+					"$type": "dimension",
 					"$value": "{base.sizing.size20Rem}"
 				},
 				"lg": {
-					"$type": "number",
+					"$type": "dimension",
 					"$value": "{base.sizing.size24Rem}"
 				}
 			},
 			"border": {
 				"default": {
-					"$type": "number",
+					"$type": "dimension",
 					"$value": "{base.sizing.size1Rem}"
 				},
 				"md": {
-					"$type": "number",
+					"$type": "dimension",
 					"$value": "{base.sizing.size2Rem}"
 				},
 				"extraWide": {
-					"$type": "number",
+					"$type": "dimension",
 					"$value": "{base.sizing.size8Rem}"
 				}
 			},
@@ -1357,6 +1401,30 @@
 				"smPx": {
 					"$type": "dimension",
 					"$value": "16px"
+				},
+				"topLgPx": {
+					"$type": "dimension",
+					"$value": "48px"
+				},
+				"topMdPx": {
+					"$type": "dimension",
+					"$value": "28px"
+				},
+				"topSmPx": {
+					"$type": "dimension",
+					"$value": "24px"
+				},
+				"bottomLgPx": {
+					"$type": "dimension",
+					"$value": "64px"
+				},
+				"bottomMdPx": {
+					"$type": "dimension",
+					"$value": "64px"
+				},
+				"bottomSmPx": {
+					"$type": "dimension",
+					"$value": "64px"
 				}
 			},
 			"columns": {

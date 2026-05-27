@@ -323,6 +323,8 @@
 		"./semantic/typography.css": "./dist/styleD/build/css/semantic/typography.css",
 		"./semantic/sizing.css": "./dist/styleD/build/css/semantic/sizing.css",
 		"./semantic/shadow.css": "./dist/styleD/build/css/semantic/shadow.css",
+		"./semantic/spacing.css": "./dist/styleD/build/css/semantic/spacing.css",
+		"./semantic/radius.css": "./dist/styleD/build/css/semantic/radius.css",
 		"./component/byline.css": "./dist/styleD/build/css/component/byline.css",
 		"./component/autocomplete.css": "./dist/styleD/build/css/component/autocomplete.css",
 		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css",

@@ -27,4 +27,10 @@
 	--component-layout-main-max-width: 1584px;
 	--component-layout-main-margin-left: auto;
 	--component-layout-main-margin-right: auto;
+	--component-layout-main-sm-padding-top: 24px;
+	--component-layout-main-sm-padding-bottom: 64px;
+	--component-layout-main-md-padding-top: 28px;
+	--component-layout-main-md-padding-bottom: 64px;
+	--component-layout-main-lg-padding-top: 48px;
+	--component-layout-main-lg-padding-bottom: 64px;
 }

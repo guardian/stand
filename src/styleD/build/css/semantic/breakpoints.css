@@ -3,7 +3,7 @@
  */
 
 :root {
-	--semantic-breakpoints-sm: 0;
+	--semantic-breakpoints-sm: 0px;
 	--semantic-breakpoints-md: 830px;
 	--semantic-breakpoints-lg: 1056px;
 }

@@ -48,6 +48,24 @@ export const componentLayout = {
 		maxWidth: '1584px',
 		marginLeft: 'auto',
 		marginRight: 'auto',
+		sm: {
+			padding: {
+				top: '24px',
+				bottom: '64px',
+			},
+		},
+		md: {
+			padding: {
+				top: '28px',
+				bottom: '64px',
+			},
+		},
+		lg: {
+			padding: {
+				top: '48px',
+				bottom: '64px',
+			},
+		},
 	},
 };
 export type ComponentLayout = typeof componentLayout;

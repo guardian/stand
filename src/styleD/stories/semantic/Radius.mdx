@@ -1,0 +1,42 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import RadiusStories, { Radius } from './Radius.stories.tsx';
+
+<Meta of={RadiusStories} />
+
+# Semantic - Radius
+
+This palette represents the semantic border-radius tokens available in the design system, and their intended usage.
+
+Semantic radius tokens provide consistent corner rounding across components, from subtle rounding on small elements to more pronounced curves on larger surfaces.
+
+## Example usage
+
+```ts
+import { css } from '@emotion/react';
+import { semanticRadius } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/semantic/radius.css'; // CSS usage
+
+const stringStyle = css`
+	border-radius: ${semanticRadius.cornerMd}; /* JS/TS usage */
+	border-radius: var(--semantic-radius-corner-md); /* CSS usage */
+`;
+
+const objectStyle = {
+	borderRadius: semanticRadius.cornerSm /* JS/TS usage */,
+};
+```
+
+## When to use semantic radius
+
+Use semantic radius tokens when:
+
+- **`cornerXs`**
+  - Fine details such as badges, tags, or small chips where only a hint of rounding is desired.
+- **`cornerSm`**
+  - Input fields, checkboxes, and other small interactive controls.
+- **`cornerMd`**
+  - Cards, panels, modals, and other larger surface containers.
+
+## Radius tokens
+
+<Canvas layout="padded" of={Radius} />
