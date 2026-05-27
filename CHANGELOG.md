@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.42
+
+### Patch Changes
+
+- 23877a8: change props for intendedAudienceSignifier
+
 ## 0.0.41
 
 ### Patch Changes
