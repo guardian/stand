@@ -6,6 +6,7 @@ import SelectStories, {
 	WithHelpText,
 	CustomTheme,
 	CssOverrides,
+	RenderWithAsterisk,
 } from './Select.stories';
 import {
 	SandboxReact,
@@ -62,15 +63,16 @@ import type { SelectProps, SelectTheme } from '@guardian/stand/Select';
 
 ## Props
 
-| Name                 | Type               | Required | Default | Description                                                               |
-| -------------------- | ------------------ | -------- | ------- | ------------------------------------------------------------------------- |
-| `label`              | `string`           | Yes      | N/A     | A label.                                                                  |
-| `contextualHelpText` | `string`           | No       | N/A     | Optional contextual help text.                                            |
-| `errorMessage`       | `string`           | Yes      | N/A     | A validation error message.                                               |
-| `children`           | `React.ReactNode`  | No       | N/A     | Options to render in the dropdown, only `Option` components are accepted. |
-| `theme`              | `SelectTheme`      | No       | N/A     | Custom theme overrides.                                                   |
-| `cssOverrides`       | `SerializedStyles` | No       | N/A     | Custom CSS styles.                                                        |
-| `className`          | `string`           | No       | N/A     | Additional class name(s).                                                 |
+| Name                 | Type                           | Required | Default | Description                                                                                                                                                                                                     |
+| -------------------- | ------------------------------ | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `label`              | `string`                       | Yes      | N/A     | Visible label rendered above the select. Also used as the accessible name for the input.                                                                                                                        |
+| `renderLabel`        | `(label: string) => ReactNode` | No       | N/A     | Custom render function for the label. Receives the `label` string and returns a ReactNode for visual enhancement (e.g. adding a required indicator). `label` must still be provided as it drives accessibility. |
+| `contextualHelpText` | `string`                       | No       | N/A     | Optional contextual help text.                                                                                                                                                                                  |
+| `errorMessage`       | `string`                       | Yes      | N/A     | A validation error message.                                                                                                                                                                                     |
+| `children`           | `React.ReactNode`              | No       | N/A     | Options to render in the dropdown, only `Option` components are accepted.                                                                                                                                       |
+| `theme`              | `SelectTheme`                  | No       | N/A     | Custom theme overrides.                                                                                                                                                                                         |
+| `cssOverrides`       | `SerializedStyles`             | No       | N/A     | Custom CSS styles.                                                                                                                                                                                              |
+| `className`          | `string`                       | No       | N/A     | Additional class name(s).                                                                                                                                                                                       |
 
 `Select` also accepts all props from the underlying [React Aria `Select` component](https://react-aria.adobe.com/Select).
 
@@ -91,6 +93,10 @@ import type { SelectProps, SelectTheme } from '@guardian/stand/Select';
 ### With Help Text
 
 <Canvas layout="padded" of={WithHelpText} />
+
+### With Custom Rendered Label
+
+<Canvas layout="padded" of={RenderWithAsterisk} />
 
 ## Customisation
 

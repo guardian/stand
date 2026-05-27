@@ -8,6 +8,7 @@ import DatePickerStories, {
 	Invalid,
 	CustomTheme,
 	CssOverrides,
+	RenderWithAsterisk,
 } from './DatePicker.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
@@ -85,25 +86,26 @@ import type {
 
 ## Props
 
-| Name                      | Type                                       | Required | Default | Description                                                                                                                                        |
-| ------------------------- | ------------------------------------------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `label`                   | `string`                                   | No       | N/A     | Visible label rendered above the date input.                                                                                                       |
-| `description`             | `string`                                   | No       | N/A     | Helper text rendered below the label.                                                                                                              |
-| `error`                   | `string`                                   | No       | N/A     | Validation error message; displayed when `isInvalid` is `true`.                                                                                    |
-| `isInvalid`               | `boolean`                                  | No       | `false` | Marks the field as invalid and applies error border styling.                                                                                       |
-| `isDisabled`              | `boolean`                                  | No       | `false` | Disables interaction and applies disabled styling.                                                                                                 |
-| `useMonthTextInput`       | `boolean`                                  | No       | `true`  | When `true`, the month segment displays full month names (e.g. "April") and supports typing the first letters of a month name to select it.        |
-| `locale`                  | `string`                                   | No       | `en-GB` | Locale used for formatting. See [Intl.Locale docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale).  |
-| `minValue`                | `DateValue`                                | No       | N/A     | The minimum selectable date.                                                                                                                       |
-| `maxValue`                | `DateValue`                                | No       | N/A     | The maximum selectable date.                                                                                                                       |
-| `value`                   | `DateValue`                                | No       | N/A     | The controlled selected date value.                                                                                                                |
-| `defaultValue`            | `DateValue`                                | No       | N/A     | The default (uncontrolled) selected date value.                                                                                                    |
-| `onChange`                | `(value: DateValue \| null) => void`       | No       | N/A     | Callback fired when the selected date changes.                                                                                                     |
-| `theme`                   | `DatePickerTheme` (partial)                | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                            |
-| `formInputContainerTheme` | `FormInputContainerTheme` (partial)        | No       | N/A     | Override Stand tokens for the wrapping label and description container.                                                                            |
-| `cssOverrides`            | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                         |
-| `className`               | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria DatePicker element.                                                                           |
-| `...props`                | `ReactAria DatePicker` props               | No       | N/A     | All other props from `react-aria-components` [`DatePicker`](https://react-aria.adobe.com/DatePicker) (e.g. `autoFocus`, `isOpen`, `onOpenChange`). |
+| Name                      | Type                                       | Required | Default | Description                                                                                                                                                                                                     |
+| ------------------------- | ------------------------------------------ | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `label`                   | `string`                                   | No       | N/A     | Visible label rendered above the date input. Also used as the accessible name for the input.                                                                                                                    |
+| `renderLabel`             | `(label: string) => ReactNode`             | No       | N/A     | Custom render function for the label. Receives the `label` string and returns a ReactNode for visual enhancement (e.g. adding a required indicator). `label` must still be provided as it drives accessibility. |
+| `description`             | `string`                                   | No       | N/A     | Helper text rendered below the label.                                                                                                                                                                           |
+| `error`                   | `string`                                   | No       | N/A     | Validation error message; displayed when `isInvalid` is `true`.                                                                                                                                                 |
+| `isInvalid`               | `boolean`                                  | No       | `false` | Marks the field as invalid and applies error border styling.                                                                                                                                                    |
+| `isDisabled`              | `boolean`                                  | No       | `false` | Disables interaction and applies disabled styling.                                                                                                                                                              |
+| `useMonthTextInput`       | `boolean`                                  | No       | `true`  | When `true`, the month segment displays full month names (e.g. "April") and supports typing the first letters of a month name to select it.                                                                     |
+| `locale`                  | `string`                                   | No       | `en-GB` | Locale used for formatting. See [Intl.Locale docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale).                                                               |
+| `minValue`                | `DateValue`                                | No       | N/A     | The minimum selectable date.                                                                                                                                                                                    |
+| `maxValue`                | `DateValue`                                | No       | N/A     | The maximum selectable date.                                                                                                                                                                                    |
+| `value`                   | `DateValue`                                | No       | N/A     | The controlled selected date value.                                                                                                                                                                             |
+| `defaultValue`            | `DateValue`                                | No       | N/A     | The default (uncontrolled) selected date value.                                                                                                                                                                 |
+| `onChange`                | `(value: DateValue \| null) => void`       | No       | N/A     | Callback fired when the selected date changes.                                                                                                                                                                  |
+| `theme`                   | `DatePickerTheme` (partial)                | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                                                                                         |
+| `formInputContainerTheme` | `FormInputContainerTheme` (partial)        | No       | N/A     | Override Stand tokens for the wrapping label and description container.                                                                                                                                         |
+| `cssOverrides`            | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                                                                      |
+| `className`               | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria DatePicker element.                                                                                                                                        |
+| `...props`                | `ReactAria DatePicker` props               | No       | N/A     | All other props from `react-aria-components` [`DatePicker`](https://react-aria.adobe.com/DatePicker) (e.g. `autoFocus`, `isOpen`, `onOpenChange`).                                                              |
 
 Note: `granularity` and `hideTimeZone` are fixed internally and cannot be overridden. Use a separate TimePicker component if time selection is required.
 
@@ -134,6 +136,10 @@ Reverts the month segment to React Aria's default numeric month behaviour:
 ### Invalid
 
 <Canvas layout="padded" of={Invalid} />
+
+### With Custom Rendered Label
+
+<Canvas layout="padded" of={RenderWithAsterisk} />
 
 ## Customisation
 

@@ -72,3 +72,15 @@ export const CssOverrides = {
 		`,
 	},
 } satisfies Story;
+
+const Asterisk = ({ label }: { label: string }) => (
+	<span>
+		{label} <span style={{ color: 'red', marginLeft: 4 }}>*</span>
+	</span>
+);
+
+export const RenderWithAsterisk = {
+	args: {
+		renderLabel: (label) => <Asterisk label={label} />,
+	},
+} satisfies Story;

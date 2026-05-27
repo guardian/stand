@@ -6,6 +6,7 @@ import RadioGroupStories, {
 	SizeSmall,
 	CustomTheme,
 	CssOverrides,
+	RenderWithAsterisk,
 } from './RadioGroup.stories';
 import {
 	SandboxReact,
@@ -71,19 +72,20 @@ import type {
 
 ### RadioGroup
 
-| Name           | Type                         | Required | Default | Description                                                                                                                                 |
-| -------------- | ---------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| `size`         | `'md'` \| `'sm'`             | No       | `'md'`  | Controls the input height and typography.                                                                                                   |
-| `label`        | `string`                     | No       | N/A     | Visible label rendered above the input.                                                                                                     |
-| `description`  | `string`                     | No       | N/A     | Helper text rendered below the label.                                                                                                       |
-| `error`        | `string`                     | No       | N/A     | Validation error message; displayed when `isInvalid` is `true`.                                                                             |
-| `isInvalid`    | `boolean`                    | No       | `false` | Marks the field as invalid and applies error border styling.                                                                                |
-| `isDisabled`   | `boolean`                    | No       | `false` | Disables interaction and applies disabled styling.                                                                                          |
-| `children`     | `React.ReactNode`            | No       | N/A     | Content to render inside the component. Only children of type `Radio` will be rendered.                                                     |
-| `theme`        | `RadioGroupTheme`            | No       | N/A     | Custom theme overrides.                                                                                                                     |
-| `cssOverrides` | `SerializedStyles`           | No       | N/A     | Custom CSS styles.                                                                                                                          |
-| `className`    | `string`                     | No       | N/A     | Additional class name(s).                                                                                                                   |
-| `...props`     | `ReactAria RadioGroup` props | No       | N/A     | All other props from `react-aria-components` [React Aria `RadioGroup`](https://react-aria.adobe.com/RadioGroup) (e.g. `value`, `onChange`). |
+| Name           | Type                           | Required | Default | Description                                                                                                                                                                                                     |
+| -------------- | ------------------------------ | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `size`         | `'md'` \| `'sm'`               | No       | `'md'`  | Controls the input height and typography.                                                                                                                                                                       |
+| `label`        | `string`                       | No       | N/A     | Visible label rendered above the input. Also used as the accessible name for the input.                                                                                                                         |
+| `renderLabel`  | `(label: string) => ReactNode` | No       | N/A     | Custom render function for the label. Receives the `label` string and returns a ReactNode for visual enhancement (e.g. adding a required indicator). `label` must still be provided as it drives accessibility. |
+| `description`  | `string`                       | No       | N/A     | Helper text rendered below the label.                                                                                                                                                                           |
+| `error`        | `string`                       | No       | N/A     | Validation error message; displayed when `isInvalid` is `true`.                                                                                                                                                 |
+| `isInvalid`    | `boolean`                      | No       | `false` | Marks the field as invalid and applies error border styling.                                                                                                                                                    |
+| `isDisabled`   | `boolean`                      | No       | `false` | Disables interaction and applies disabled styling.                                                                                                                                                              |
+| `children`     | `React.ReactNode`              | No       | N/A     | Content to render inside the component. Only children of type `Radio` will be rendered.                                                                                                                         |
+| `theme`        | `RadioGroupTheme`              | No       | N/A     | Custom theme overrides.                                                                                                                                                                                         |
+| `cssOverrides` | `SerializedStyles`             | No       | N/A     | Custom CSS styles.                                                                                                                                                                                              |
+| `className`    | `string`                       | No       | N/A     | Additional class name(s).                                                                                                                                                                                       |
+| `...props`     | `ReactAria RadioGroup` props   | No       | N/A     | All other props from `react-aria-components` [React Aria `RadioGroup`](https://react-aria.adobe.com/RadioGroup) (e.g. `value`, `onChange`).                                                                     |
 
 ### Radio
 
@@ -119,6 +121,10 @@ When composing a set of options you do not need to provide any of these props ex
 ### Size Small
 
 <Canvas layout="padded" of={SizeSmall} />
+
+### With Custom Rendered Label
+
+<Canvas layout="padded" of={RenderWithAsterisk} />
 
 ## Customisation
 

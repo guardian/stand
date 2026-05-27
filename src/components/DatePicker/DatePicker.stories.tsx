@@ -114,3 +114,17 @@ export const CssOverrides = {
 		`,
 	},
 } satisfies Story;
+
+const Asterisk = ({ label }: { label: string }) => (
+	<span>
+		{label} <span style={{ color: 'red', marginLeft: 4 }}>*</span>
+	</span>
+);
+
+export const RenderWithAsterisk = {
+	args: {
+		label: 'Select a date',
+		description: 'Please select a date from the calendar.',
+		renderLabel: (label) => <Asterisk label={label} />,
+	},
+} satisfies Story;

@@ -19,9 +19,18 @@ export type FormInputContainerDefaultProps<
 		 */
 		size?: keyof Omit<ComponentTheme, 'shared'>;
 		/**
-		 * The label text for the form field
+		 * The label text for the form field. Also used as the accessible name for the input.
 		 */
 		label?: string;
+		/**
+		 * Custom render function for the label. Receives the `label` string and returns a ReactNode.
+		 * Use this to add icons, badges, or other visual enhancements alongside the label text.
+		 *
+		 * Note: `label` must still be provided as it drives accessibility (aria-labelledby/htmlFor).
+		 * Ensure `renderLabel` output includes the label text visually so sighted and
+		 * non-sighted users have a consistent experience.
+		 */
+		renderLabel?: (label: string) => ReactNode;
 		/**
 		 * The description text for the form field
 		 */
