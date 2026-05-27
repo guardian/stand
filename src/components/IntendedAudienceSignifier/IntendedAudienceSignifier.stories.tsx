@@ -87,13 +87,6 @@ export const DontKnowStory = {
 	args: {},
 } satisfies Story;
 
-export const CustomUnsetTextStory = {
-	name: 'CustomUnsetText',
-	args: {
-		textWhenUnset: 'Not set',
-	},
-} satisfies Story;
-
 export const UKAndUSStory = {
 	name: 'UKAndUSStory',
 	args: { source: 'UK', target: 'US' },

@@ -86,14 +86,13 @@ import type {
 
 ## Props
 
-| Name            | Type                                      | Required | Default      | Description                                                      |
-| --------------- | ----------------------------------------- | -------- | ------------ | ---------------------------------------------------------------- |
-| `source`        | `'global' \| 'UK' \| 'US' \| 'AUS'`.      | Yes      | N/A          | Icon key rendered on the left side of the chevron.               |
-| `target`        | `'global' \| 'UK' \| 'US' \| 'AUS'`       | No       | N/A          | Icon key rendered on the right side of the chevron.              |
-| `textWhenUnset` | `string`                                  | No       | "Don‘t know" | The text to display if either `source` or `target` is undefined  |
-| `theme`         | `Partial<IntendedAudienceSignifierTheme>` | No       | N/A          | Custom theme token overrides merged over the component defaults. |
-| `cssOverrides`  | `SerializedStyles \| SerializedStyles[]`  | No       | N/A          | Additional Emotion CSS styles applied to the root element.       |
-| `className`     | `string`                                  | No       | N/A          | Additional class name(s) applied to the root element.            |
+| Name           | Type                                      | Required | Default | Description                                                                                                 |
+| -------------- | ----------------------------------------- | -------- | ------- | ----------------------------------------------------------------------------------------------------------- |
+| `source`       | `'global' \| 'UK' \| 'US' \| 'AUS'`.      | Yes      | N/A     | Icon key rendered on the left side of the chevron. If undefined, the "Don't Know" label will be displayed.  |
+| `target`       | `'global' \| 'UK' \| 'US' \| 'AUS'`       | No       | N/A     | Icon key rendered on the right side of the chevron. If undefined, the "Don't Know" label will be displayed. |
+| `theme`        | `Partial<IntendedAudienceSignifierTheme>` | No       | N/A     | Custom theme token overrides merged over the component defaults.                                            |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]`  | No       | N/A     | Additional Emotion CSS styles applied to the root element.                                                  |
+| `className`    | `string`                                  | No       | N/A     | Additional class name(s) applied to the root element.                                                       |
 
 ## Stories
 
@@ -112,10 +111,6 @@ import type {
 ### Don't Know Story
 
 <Story of={DontKnowStory} />
-
-### Unset with custom text
-
-<Story of={CustomUnsetTextStory} />
 
 ### Global for Global Story
 

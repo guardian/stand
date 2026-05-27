@@ -60,7 +60,6 @@ const getSignifierDescription = (
 export function IntendedAudienceSignifier({
 	source,
 	target,
-	textWhenUnset = 'Don‘t know',
 	theme = {},
 	cssOverrides,
 	className,
@@ -86,7 +85,7 @@ export function IntendedAudienceSignifier({
 					<div css={iconStyles}>{icons[target]}</div>
 				</>
 			) : (
-				<span>{textWhenUnset}</span>
+				<span>Don&lsquo;t know</span>
 			)}
 		</div>
 	);
