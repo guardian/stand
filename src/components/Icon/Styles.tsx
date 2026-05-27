@@ -9,7 +9,7 @@ export type PartialIconTheme = Prettify<DeepPartial<IconTheme>>;
 
 export const defaultIconTheme: IconTheme = componentIcon;
 
-export const iconStyles = (
+export const IconStyles = (
 	theme: IconTheme,
 	{
 		size,
