@@ -119,7 +119,7 @@ export const CssOverrides = {
 	},
 } satisfies Story;
 
-const Asterisk = ({ label }: { label: string }) => (
+const LabelWithAsterisk = ({ label }: { label: string }) => (
 	<span>
 		{label} <span style={{ color: 'red', marginLeft: 4 }}>*</span>
 	</span>
@@ -131,7 +131,7 @@ export const RenderWithAsterisk = {
 			<RadioGroup
 				label="Label"
 				description="Optional contextual help text"
-				renderLabel={(label) => <Asterisk label={label} />}
+				renderLabel={(label) => <LabelWithAsterisk label={label} />}
 			>
 				<Radio value="Test">Option 1</Radio>
 				<Radio value="Test2">Option 2</Radio>

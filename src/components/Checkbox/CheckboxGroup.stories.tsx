@@ -225,7 +225,7 @@ export const CssOverrides = {
 	),
 } satisfies Story;
 
-const Asterisk = ({ label }: { label: string }) => (
+const LabelWithAsterisk = ({ label }: { label: string }) => (
 	<span>
 		{label} <span style={{ color: 'red', marginLeft: 4 }}>*</span>
 	</span>
@@ -235,7 +235,7 @@ export const RenderWithAsterisk = {
 	args: {
 		label: 'Checkbox Group',
 		description: 'This is a description for the checkbox group.',
-		renderLabel: (label) => <Asterisk label={label} />,
+		renderLabel: (label) => <LabelWithAsterisk label={label} />,
 	},
 	render: (args) => (
 		<CheckboxGroup {...args}>

@@ -104,7 +104,7 @@ export const SizeSmall = {
 	},
 } satisfies Story;
 
-const Asterisk = ({ label }: { label: string }) => (
+const LabelWithAsterisk = ({ label }: { label: string }) => (
 	<span>
 		{label} <span style={{ color: 'red', marginLeft: 4 }}>*</span>
 	</span>
@@ -115,6 +115,6 @@ export const RenderWithAsterisk = {
 		size: 'md',
 		label: 'Label',
 		description: 'This is a description for the text area.',
-		renderLabel: (label) => <Asterisk label={label} />,
+		renderLabel: (label) => <LabelWithAsterisk label={label} />,
 	},
 } satisfies Story;

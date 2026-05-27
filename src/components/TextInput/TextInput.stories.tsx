@@ -113,7 +113,7 @@ export const WithPlaceholderDisabled = {
 	},
 } satisfies Story;
 
-const Asterisk = ({ label }: { label: string }) => (
+const LabelWithAsterisk = ({ label }: { label: string }) => (
 	<span>
 		{label} <span style={{ color: 'red', marginLeft: 4 }}>*</span>
 	</span>
@@ -124,6 +124,6 @@ export const RenderWithAsterisk = {
 		size: 'md',
 		label: 'Label',
 		description: 'This is a description for the text input.',
-		renderLabel: (label) => <Asterisk label={label} />,
+		renderLabel: (label) => <LabelWithAsterisk label={label} />,
 	},
 } satisfies Story;
