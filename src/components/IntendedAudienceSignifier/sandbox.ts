@@ -6,22 +6,22 @@ export const componentTsx = /* javascript */ `import { IntendedAudienceSignifier
 
 export const Component = () => (
 	<>
-		<IntendedAudienceSignifier source="UK" intendedAudience='Global' />
-		<IntendedAudienceSignifier source="US" intendedAudience='Global' />
-		<IntendedAudienceSignifier source="AUS" intendedAudience='Global' />
-		<IntendedAudienceSignifier source="UK" intendedAudience='Domestic for Domestic' />
-		<IntendedAudienceSignifier source="US" intendedAudience='Domestic for Domestic' />
-		<IntendedAudienceSignifier source="AUS" intendedAudience='Domestic for Domestic' />
-		<IntendedAudienceSignifier source="UK" intendedAudience='Domestic For Global' />
-		<IntendedAudienceSignifier source="US" intendedAudience='Domestic For Global' />
-		<IntendedAudienceSignifier source="AUS" intendedAudience='Domestic For Global' />
-		<IntendedAudienceSignifier source="UK" intendedAudience='Domestic For Global' theme={{ color: '#c70000' }} />
-		<IntendedAudienceSignifier source="AUS" intendedAudience='Global' cssOverrides={{ border-color: '#0000FF',align-items: 'flex-end' }}/>
-		<IntendedAudienceSignifier source="UK" intendedAudience="Don't know" />
-		<IntendedAudienceSignifier source="US" intendedAudience="Don't know" />
-		<IntendedAudienceSignifier source="AUS" intendedAudience="Don't know" />
-		<IntendedAudienceSignifier source="UK" intendedAudience='US' />
-		<IntendedAudienceSignifier source="US" intendedAudience='UK' />
+		<IntendedAudienceSignifier source="UK" target='global' />
+		<IntendedAudienceSignifier source="US" target='global' />
+		<IntendedAudienceSignifier source="AUS" target='global' />
+		<IntendedAudienceSignifier source="UK" target='UK' />
+		<IntendedAudienceSignifier source="US" target='US' />
+		<IntendedAudienceSignifier source="AUS" target='AUS' />
+		<IntendedAudienceSignifier source="UK" target='global' />
+		<IntendedAudienceSignifier source="US" target='global' />
+		<IntendedAudienceSignifier source="AUS" target='global' />
+		<IntendedAudienceSignifier source="UK" target='global' theme={{ color: '#c70000' }} />
+		<IntendedAudienceSignifier source="AUS" target='global' cssOverrides={{ borderColor: '#0000FF',alignItems: 'flex-end' }}/>
+		<IntendedAudienceSignifier source="UK" />
+		<IntendedAudienceSignifier source="US" />
+		<IntendedAudienceSignifier source="AUS" />
+		<IntendedAudienceSignifier source="UK" target='US' />
+		<IntendedAudienceSignifier source="US" target='UK' />
 	</>
 );
 `;
@@ -51,7 +51,7 @@ export const componentCss = /* css */ `
 }
 
 .stand-intended-audience-signifier svg {
-	width: var(--component-intended-audience-signifier-svg-width):
+	width: var(--component-intended-audience-signifier-svg-width);
 	height: var(--component-intended-audience-signifier-svg-height);
 }
 
