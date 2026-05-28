@@ -88,6 +88,8 @@ function LayoutMain({
 	as: Component = 'main',
 	children,
 	fluid = true,
+	paddingTop = true,
+	paddingBottom = true,
 	theme = {},
 	cssOverrides,
 	...props
@@ -96,7 +98,10 @@ function LayoutMain({
 
 	return (
 		<Component
-			css={[mainLayoutStyles(mergedTheme, { fluid }), cssOverrides]}
+			css={[
+				mainLayoutStyles(mergedTheme, { fluid, paddingTop, paddingBottom }),
+				cssOverrides,
+			]}
 			{...props}
 		>
 			{children}

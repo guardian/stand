@@ -258,6 +258,28 @@ export const TopBarGridFixed = {
 	),
 } satisfies Story;
 
+export const TopBarGridNoPadding = {
+	render: (args) => (
+		<Layout {...args}>
+			<Layout.TopBar>{TopBarExample}</Layout.TopBar>
+			<Layout.Main paddingTop={false} paddingBottom={false}>
+				{GridExample}
+			</Layout.Main>
+		</Layout>
+	),
+} satisfies Story;
+
+export const TopBarGridFixedNoPadding = {
+	render: (args) => (
+		<Layout {...args}>
+			<Layout.TopBar>{TopBarExample}</Layout.TopBar>
+			<Layout.Main fluid={false} paddingTop={false} paddingBottom={false}>
+				{GridExample}
+			</Layout.Main>
+		</Layout>
+	),
+} satisfies Story;
+
 export const TopBarWithCustomMainContent = {
 	render: (args) => (
 		<Layout {...args}>

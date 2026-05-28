@@ -87,3 +87,7 @@ export { semanticShadow } from './styleD/build/typescript/semantic/shadow';
 export type { SemanticShadow } from './styleD/build/typescript/semantic/shadow';
 export { semanticBreakpoints } from './styleD/build/typescript/semantic/breakpoints';
 export type { SemanticBreakpoints } from './styleD/build/typescript/semantic/breakpoints';
+export { semanticRadius } from './styleD/build/typescript/semantic/radius';
+export type { SemanticRadius } from './styleD/build/typescript/semantic/radius';
+export { semanticSpacing } from './styleD/build/typescript/semantic/spacing';
+export type { SemanticSpacing } from './styleD/build/typescript/semantic/spacing';
