@@ -12,52 +12,19 @@ import {
 	intendedAudienceSignifierIconStyles,
 	intendedAudienceSignifierStyles,
 } from './styles';
-import type {
-	IntendedAudience,
-	IntendedAudienceSignifierProps,
-	Source,
-} from './types';
+import type { IntendedAudienceSignifierProps, SourceOrTarget } from './types';
 
-type KnownAudience = Exclude<IntendedAudience, "Don't know">;
-
-const sourceIcons = {
+const icons = {
 	UK: ukFlag,
 	US: usFlag,
 	AUS: auFlag,
-	Global: globeIcon,
+	global: globeIcon,
 };
 
-const getSourceIconElement = (source: Source, audience: KnownAudience) => {
-	if (audience === 'Global') {
-		return globeIcon;
-	}
-	return sourceIcons[source];
-};
-
-const getIntendedAudienceIconElement = (
-	source: Source,
-	audience: KnownAudience,
-) => {
-	if (audience === 'Domestic for Domestic') {
-		return getSourceIconElement(source, audience);
-	}
-
-	if (audience === 'Global' || audience === 'Domestic For Global') {
-		return globeIcon;
-	}
-
-	return sourceIcons[audience];
-};
-
-const getSourceDescription = (
-	source: Source,
-	audience: KnownAudience,
-): Source | 'Global' => {
-	switch (audience) {
-		case 'Global':
+const getSourceDescription = (source: SourceOrTarget) => {
+	switch (source) {
+		case 'global':
 			return 'Global';
-		case 'Domestic For Global':
-		case 'Domestic for Domestic':
 		case 'UK':
 		case 'US':
 		case 'AUS':
@@ -65,60 +32,44 @@ const getSourceDescription = (
 	}
 };
 
-const getAudienceDescription = (
-	source: Source,
-	audience: KnownAudience,
-): Source | 'Global' | 'Domestic' => {
-	switch (audience) {
-		case 'Global':
-		case 'Domestic For Global':
+const getTargetDescription = (
+	source: SourceOrTarget,
+	target: SourceOrTarget,
+): SourceOrTarget | 'Global' | 'Domestic' => {
+	switch (target) {
+		case 'global':
 			return 'Global';
-		case 'Domestic for Domestic':
-			return 'Domestic';
 		case 'UK':
 		case 'US':
 		case 'AUS':
-			return audience === source ? 'Domestic' : audience;
+			return target === source ? 'Domestic' : target;
 	}
 };
 
-const getSignifierDescription = (
-	source: Source,
-	audience: KnownAudience,
-): string => {
-	return `${getSourceDescription(source, audience)} article for ${getAudienceDescription(source, audience)} audience`;
-};
-
 const AUDIENCE_NOT_KNOWN_DESCRIPTION = 'Intended audience unknown';
+const getSignifierDescription = (
+	source?: SourceOrTarget,
+	target?: SourceOrTarget,
+): string => {
+	if (!source || !target) {
+		return AUDIENCE_NOT_KNOWN_DESCRIPTION;
+	}
+	return `${getSourceDescription(source)} article for ${getTargetDescription(source, target)} audience`;
+};
 
 export function IntendedAudienceSignifier({
 	source,
-	intendedAudience,
+	target,
 	theme = {},
 	cssOverrides,
 	className,
 	...props
 }: IntendedAudienceSignifierProps) {
 	const mergedTheme = mergeDeep(defaultIntendedAudienceSignifierTheme, theme);
-
-	if (intendedAudience === "Don't know") {
-		return (
-			<div
-				{...props}
-				className={className}
-				css={[intendedAudienceSignifierStyles(mergedTheme), cssOverrides]}
-				aria-label={AUDIENCE_NOT_KNOWN_DESCRIPTION}
-			>
-				<span>Don&lsquo;t know</span>
-			</div>
-		);
-	}
-
+	const description = getSignifierDescription(source, target);
 	const iconStyles = intendedAudienceSignifierIconStyles(mergedTheme);
 	const chevronIconStyles =
 		intendedAudienceSignifierChevronIconStyles(mergedTheme);
-
-	const description = getSignifierDescription(source, intendedAudience);
 
 	return (
 		<div
@@ -127,13 +78,15 @@ export function IntendedAudienceSignifier({
 			css={[intendedAudienceSignifierStyles(mergedTheme), cssOverrides]}
 			aria-label={description}
 		>
-			<div css={iconStyles}>
-				{getSourceIconElement(source, intendedAudience)}
-			</div>
-			<div css={chevronIconStyles}>{DoubleChevronRightSvg}</div>
-			<div css={iconStyles}>
-				{getIntendedAudienceIconElement(source, intendedAudience)}
-			</div>
+			{target && source ? (
+				<>
+					<div css={iconStyles}>{icons[source]}</div>
+					<div css={chevronIconStyles}>{DoubleChevronRightSvg}</div>
+					<div css={iconStyles}>{icons[target]}</div>
+				</>
+			) : (
+				<span>Don&lsquo;t know</span>
+			)}
 		</div>
 	);
 }

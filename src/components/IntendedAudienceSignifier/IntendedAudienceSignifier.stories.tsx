@@ -13,54 +13,41 @@ type Story = StoryObj<typeof IntendedAudienceSignifier>;
 
 export default meta;
 
-export const GlobalUKStory = {
-	name: 'GlobalUK',
-	args: { source: 'UK', intendedAudience: 'Global' },
+export const DomesticForGlobalUk = {
+	name: 'DomesticForGlobalUk',
+	args: { source: 'UK', target: 'global' },
 } satisfies Story;
 
-export const GlobalUSStory = {
-	name: 'GlobalUS',
-	args: { source: 'US', intendedAudience: 'Global' },
+export const DomesticForGlobalUs = {
+	name: 'DomesticForGlobalUs',
+	args: { source: 'US', target: 'global' },
 } satisfies Story;
 
-export const GlobalAUSStory = {
-	name: 'GlobalAUS',
-	args: { source: 'AUS', intendedAudience: 'Global' },
+export const DomesticForGlobalAus = {
+	name: 'DomesticForGlobalAus',
+	args: { source: 'AUS', target: 'global' },
 } satisfies Story;
 
-export const UKAndUKStory = {
-	name: 'UKandUK',
-	args: { source: 'UK', intendedAudience: 'Domestic for Domestic' },
+export const DomesticForDomesticUk = {
+	name: 'DomesticForDomesticUk',
+	args: { source: 'UK', target: 'UK' },
 } satisfies Story;
 
-export const USAndUSStory = {
-	name: 'USandUS',
-	args: { source: 'US', intendedAudience: 'Domestic for Domestic' },
+export const DomesticForDomesticUs = {
+	name: 'DomesticForDomesticUs',
+	args: { source: 'US', target: 'US' },
 } satisfies Story;
 
-export const AUSAndAUSStory = {
-	name: 'AUSandAUS',
-	args: { source: 'AUS', intendedAudience: 'Domestic for Domestic' },
+export const DomesticForDomesticAus = {
+	name: 'DomesticForDomesticAus',
+	args: { source: 'AUS', target: 'AUS' },
 } satisfies Story;
 
-export const UKAndGlobalStory = {
-	name: 'UKandGlobal',
-	args: { source: 'UK', intendedAudience: 'Domestic For Global' },
-} satisfies Story;
-
-export const USAndGlobalStory = {
-	name: 'USandGlobal',
+export const GlobalForGlobal = {
+	name: 'GlobalForGlobal',
 	args: {
-		source: 'US',
-		intendedAudience: 'Domestic For Global',
-	},
-} satisfies Story;
-
-export const AUSAndGlobalStory = {
-	name: 'AUSandGlobal',
-	args: {
-		source: 'AUS',
-		intendedAudience: 'Domestic For Global',
+		source: 'global',
+		target: 'global',
 	},
 } satisfies Story;
 
@@ -68,7 +55,7 @@ export const UKAndGlobalStoryWithCustomTheme = {
 	name: 'UKandGlobalWithCustomTheme',
 	args: {
 		source: 'UK',
-		intendedAudience: 'Domestic For Global',
+		target: 'global',
 		theme: {
 			borderRadius: '20%',
 			borderStyle: 'inset',
@@ -87,7 +74,7 @@ export const AUSAndGlobalWithCSSOverrides = {
 	name: 'AUSAndGlobalWithCSSOverrides',
 	args: {
 		source: 'AUS',
-		intendedAudience: 'Domestic For Global',
+		target: 'global',
 		cssOverrides: css`
 			border-color: #0000ffff;
 			background-color: pink;
@@ -95,29 +82,19 @@ export const AUSAndGlobalWithCSSOverrides = {
 	},
 } satisfies Story;
 
-export const DontKnowStoryUK = {
-	name: 'DontKnowUK',
-	args: { source: 'UK', intendedAudience: "Don't know" },
-} satisfies Story;
-
-export const DontKnowStoryUS = {
-	name: 'DontKnowUS',
-	args: { source: 'US', intendedAudience: "Don't know" },
-} satisfies Story;
-
-export const DontKnowStoryAUS = {
-	name: 'DontKnowAUS',
-	args: { source: 'AUS', intendedAudience: "Don't know" },
+export const DontKnowStory = {
+	name: 'DontKnow',
+	args: {},
 } satisfies Story;
 
 export const UKAndUSStory = {
 	name: 'UKAndUSStory',
-	args: { source: 'UK', intendedAudience: 'US' },
+	args: { source: 'UK', target: 'US' },
 } satisfies Story;
 
 export const USAndUKStory = {
 	name: 'USAndUKStory',
-	args: { source: 'US', intendedAudience: 'UK' },
+	args: { source: 'US', target: 'UK' },
 } satisfies Story;
 
 const largeIconTheme = {
@@ -135,21 +112,20 @@ export const DontKnowStoryAUSLargeIconTheme = {
 	name: 'DontKnowStoryAUSLargeIconTheme',
 	args: {
 		source: 'AUS',
-		intendedAudience: "Don't know",
 		theme: largeIconTheme,
 	},
 } satisfies Story;
 
 export const UKAndUSStoryLargeIconTheme = {
 	name: 'UKAndUSStoryLargeIconTheme',
-	args: { source: 'UK', intendedAudience: 'US', theme: largeIconTheme },
+	args: { source: 'UK', target: 'US', theme: largeIconTheme },
 } satisfies Story;
 
 export const GlobalUSStoryLargeIconTheme = {
 	name: 'GlobalUSStoryLargeIconTheme',
 	args: {
 		source: 'US',
-		intendedAudience: 'Domestic For Global',
+		target: 'global',
 		theme: largeIconTheme,
 	},
 } satisfies Story;

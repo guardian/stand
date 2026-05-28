@@ -4,7 +4,7 @@ import {
 } from 'react-aria-components';
 import { mergeDeep } from '../../util/mergeDeep';
 import { Icon } from '../Icon/Icon';
-import { defaultLinkButtonTheme, linkButtonStyles } from './styles';
+import { defaultLinkButtonTheme, linkButtonStyles } from './Styles';
 import type { LinkButtonProps } from './types';
 
 export function LinkButton({
