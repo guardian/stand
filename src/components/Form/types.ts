@@ -19,9 +19,15 @@ export type FormInputContainerDefaultProps<
 		 */
 		size?: keyof Omit<ComponentTheme, 'shared'>;
 		/**
-		 * The label text for the form field
+		 * The label text for the form field.
 		 */
 		label?: string;
+		/**
+		 * Custom render function for the label. Receives the `label` string and returns a ReactNode.
+		 * Use this to add icons, badges, or other visual enhancements alongside the label text.
+		 *
+		 */
+		renderLabel?: (label: string) => ReactNode;
 		/**
 		 * The description text for the form field
 		 */
