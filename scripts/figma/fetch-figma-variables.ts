@@ -2,6 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import type { GetLocalVariablesResponse } from '@figma/rest-api-spec';
+import { camelCase } from 'change-case';
 import * as prettier from 'prettier';
 import type { Token, TokensFile } from './figma-utils';
 import { spacingTokens, tokenFilesFromLocalVariables } from './figma-utils';
@@ -142,7 +143,7 @@ const addRemTokens = (tokens: TokensFile): void => {
  * Recursively updates semantic tokens to reference base tokens with proper suffixes and types.
  *
  * For spacing tokens (identified via spacingTokens prefixes), this function:
- * 1. Appends `-rem` to the base token reference to use rem units instead of px
+ * 1. Appends `Rem` to the base token reference to use rem units instead of px
  * 2. Changes the `$type` from `number` to `dimension` to match the W3C Design Tokens spec
  *
  * This transformation is necessary because Figma variables use `number` type for dimensions,
@@ -178,16 +179,26 @@ const updateTokenReferences = (
 			const refMatch = value.$value.match(/^\{([^}]+)\}$/);
 			if (refMatch) {
 				const refPath = refMatch[1]!;
-				const isSpacingToken = spacingTokens.some((token) =>
-					refPath.includes(token.prefix),
+				const spacingToken = spacingTokens.find((token) =>
+					refPath.includes(
+						camelCase(token.prefix, { mergeAmbiguousCharacters: true }),
+					),
 				);
+				const isSpacingToken = !!spacingToken;
 
 				if (isSpacingToken) {
+					const updatedRefPath = refPath.replace(
+						camelCase(spacingToken.prefix, { mergeAmbiguousCharacters: true }),
+						camelCase(spacingToken.replacement ?? spacingToken.prefix, {
+							mergeAmbiguousCharacters: true,
+						}),
+					);
+
 					// Update to reference -rem variant and change $type to dimension
 					updated[key] = {
 						...value,
 						$type: 'dimension',
-						$value: `{base.${fileName}.${refPath}-rem}`,
+						$value: `{base.${fileName}.${updatedRefPath}Rem}`,
 					};
 				} else {
 					updated[key] = {

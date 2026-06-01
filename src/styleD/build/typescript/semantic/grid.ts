@@ -12,6 +12,12 @@ export const semanticGrid = {
 		lgPx: '24px',
 		mdPx: '24px',
 		smPx: '16px',
+		topLgPx: '48px',
+		topMdPx: '28px',
+		topSmPx: '24px',
+		bottomLgPx: '64px',
+		bottomMdPx: '64px',
+		bottomSmPx: '64px',
 	},
 	columns: {
 		lg: 12,

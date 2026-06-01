@@ -5,22 +5,22 @@
 :root {
 	--semantic-typography-title-sm-font: normal 700 1.125rem/1.15
 		'GH Guardian Headline';
-	--semantic-typography-title-sm-letter-spacing: 0;
+	--semantic-typography-title-sm-letter-spacing: 0rem;
 	--semantic-typography-title-sm-font-width: 100;
 	--semantic-typography-title-md-font: normal 700 1.25rem/1.15
 		'GH Guardian Headline';
-	--semantic-typography-title-md-letter-spacing: 0;
+	--semantic-typography-title-md-letter-spacing: 0rem;
 	--semantic-typography-title-md-font-width: 100;
 	--semantic-typography-title-lg-font: normal 700 1.5rem/1.15
 		'GH Guardian Headline';
-	--semantic-typography-title-lg-letter-spacing: 0;
+	--semantic-typography-title-lg-letter-spacing: 0rem;
 	--semantic-typography-title-lg-font-width: 100;
 	--semantic-typography-title-xl-font: normal 700 2rem/1.15
 		'GH Guardian Headline';
-	--semantic-typography-title-xl-letter-spacing: 0;
+	--semantic-typography-title-xl-letter-spacing: 0rem;
 	--semantic-typography-title-xl-font-width: 100;
 	--semantic-typography-heading-xs-font: normal 700 0.75rem/1.15 'Open Sans';
-	--semantic-typography-heading-xs-letter-spacing: 0;
+	--semantic-typography-heading-xs-letter-spacing: 0rem;
 	--semantic-typography-heading-xs-font-width: 95;
 	--semantic-typography-heading-sm-font: normal 700 0.875rem/1.15 'Open Sans';
 	--semantic-typography-heading-sm-letter-spacing: -0.0125rem;
@@ -39,11 +39,11 @@
 	--semantic-typography-heading2-xl-font-width: 95;
 	--semantic-typography-heading-compact-xs-font: normal 700 0.75rem/1.15
 		'Open Sans';
-	--semantic-typography-heading-compact-xs-letter-spacing: 0;
+	--semantic-typography-heading-compact-xs-letter-spacing: 0rem;
 	--semantic-typography-heading-compact-xs-font-width: 88;
 	--semantic-typography-heading-compact-sm-font: normal 700 0.875rem/1.15
 		'Open Sans';
-	--semantic-typography-heading-compact-sm-letter-spacing: 0;
+	--semantic-typography-heading-compact-sm-letter-spacing: 0rem;
 	--semantic-typography-heading-compact-sm-font-width: 88;
 	--semantic-typography-heading-compact-md-font: normal 700 1rem/1.15
 		'Open Sans';
@@ -62,171 +62,171 @@
 	--semantic-typography-heading-compact2-xl-letter-spacing: -0.03125rem;
 	--semantic-typography-heading-compact2-xl-font-width: 88;
 	--semantic-typography-body-xs-font: normal 460 0.75rem/1.3 'Open Sans';
-	--semantic-typography-body-xs-letter-spacing: 0;
+	--semantic-typography-body-xs-letter-spacing: 0rem;
 	--semantic-typography-body-xs-font-width: 95;
 	--semantic-typography-body-sm-font: normal 460 0.875rem/1.3 'Open Sans';
-	--semantic-typography-body-sm-letter-spacing: 0;
+	--semantic-typography-body-sm-letter-spacing: 0rem;
 	--semantic-typography-body-sm-font-width: 95;
 	--semantic-typography-body-md-font: normal 460 1rem/1.3 'Open Sans';
-	--semantic-typography-body-md-letter-spacing: 0;
+	--semantic-typography-body-md-letter-spacing: 0rem;
 	--semantic-typography-body-md-font-width: 95;
 	--semantic-typography-body-lg-font: normal 460 1.125rem/1.3 'Open Sans';
-	--semantic-typography-body-lg-letter-spacing: 0;
+	--semantic-typography-body-lg-letter-spacing: 0rem;
 	--semantic-typography-body-lg-font-width: 95;
 	--semantic-typography-body-xl-font: normal 460 1.25rem/1.3 'Open Sans';
-	--semantic-typography-body-xl-letter-spacing: 0;
+	--semantic-typography-body-xl-letter-spacing: 0rem;
 	--semantic-typography-body-xl-font-width: 95;
 	--semantic-typography-body-bold-xs-font: normal 700 0.75rem/1.3 'Open Sans';
-	--semantic-typography-body-bold-xs-letter-spacing: 0;
+	--semantic-typography-body-bold-xs-letter-spacing: 0rem;
 	--semantic-typography-body-bold-xs-font-width: 95;
 	--semantic-typography-body-bold-sm-font: normal 700 0.875rem/1.3 'Open Sans';
-	--semantic-typography-body-bold-sm-letter-spacing: 0;
+	--semantic-typography-body-bold-sm-letter-spacing: 0rem;
 	--semantic-typography-body-bold-sm-font-width: 95;
 	--semantic-typography-body-bold-md-font: normal 700 1rem/1.3 'Open Sans';
-	--semantic-typography-body-bold-md-letter-spacing: 0;
+	--semantic-typography-body-bold-md-letter-spacing: 0rem;
 	--semantic-typography-body-bold-md-font-width: 95;
 	--semantic-typography-body-bold-lg-font: normal 700 1.125rem/1.3 'Open Sans';
-	--semantic-typography-body-bold-lg-letter-spacing: 0;
+	--semantic-typography-body-bold-lg-letter-spacing: 0rem;
 	--semantic-typography-body-bold-lg-font-width: 95;
 	--semantic-typography-body-bold-xl-font: normal 700 1.25rem/1.3 'Open Sans';
-	--semantic-typography-body-bold-xl-letter-spacing: 0;
+	--semantic-typography-body-bold-xl-letter-spacing: 0rem;
 	--semantic-typography-body-bold-xl-font-width: 95;
 	--semantic-typography-body-italic-xs-font: italic 460 0.75rem/1.3 'Open Sans';
-	--semantic-typography-body-italic-xs-letter-spacing: 0;
+	--semantic-typography-body-italic-xs-letter-spacing: 0rem;
 	--semantic-typography-body-italic-xs-font-width: 95;
 	--semantic-typography-body-italic-sm-font: italic 460 0.875rem/1.3 'Open Sans';
-	--semantic-typography-body-italic-sm-letter-spacing: 0;
+	--semantic-typography-body-italic-sm-letter-spacing: 0rem;
 	--semantic-typography-body-italic-sm-font-width: 95;
 	--semantic-typography-body-italic-md-font: italic 460 1rem/1.3 'Open Sans';
-	--semantic-typography-body-italic-md-letter-spacing: 0;
+	--semantic-typography-body-italic-md-letter-spacing: 0rem;
 	--semantic-typography-body-italic-md-font-width: 95;
 	--semantic-typography-body-italic-lg-font: italic 460 1.125rem/1.3 'Open Sans';
-	--semantic-typography-body-italic-lg-letter-spacing: 0;
+	--semantic-typography-body-italic-lg-letter-spacing: 0rem;
 	--semantic-typography-body-italic-lg-font-width: 95;
 	--semantic-typography-body-italic-xl-font: italic 460 1.25rem/1.3 'Open Sans';
-	--semantic-typography-body-italic-xl-letter-spacing: 0;
+	--semantic-typography-body-italic-xl-letter-spacing: 0rem;
 	--semantic-typography-body-italic-xl-font-width: 95;
 	--semantic-typography-body-italic-bold-xs-font: italic 700 0.75rem/1.3
 		'Open Sans';
-	--semantic-typography-body-italic-bold-xs-letter-spacing: 0;
+	--semantic-typography-body-italic-bold-xs-letter-spacing: 0rem;
 	--semantic-typography-body-italic-bold-xs-font-width: 95;
 	--semantic-typography-body-italic-bold-sm-font: italic 700 0.875rem/1.3
 		'Open Sans';
-	--semantic-typography-body-italic-bold-sm-letter-spacing: 0;
+	--semantic-typography-body-italic-bold-sm-letter-spacing: 0rem;
 	--semantic-typography-body-italic-bold-sm-font-width: 95;
 	--semantic-typography-body-italic-bold-md-font: italic 700 1rem/1.3
 		'Open Sans';
-	--semantic-typography-body-italic-bold-md-letter-spacing: 0;
+	--semantic-typography-body-italic-bold-md-letter-spacing: 0rem;
 	--semantic-typography-body-italic-bold-md-font-width: 95;
 	--semantic-typography-body-italic-bold-lg-font: italic 700 1.125rem/1.3
 		'Open Sans';
-	--semantic-typography-body-italic-bold-lg-letter-spacing: 0;
+	--semantic-typography-body-italic-bold-lg-letter-spacing: 0rem;
 	--semantic-typography-body-italic-bold-lg-font-width: 95;
 	--semantic-typography-body-italic-bold-xl-font: italic 700 1.25rem/1.3
 		'Open Sans';
-	--semantic-typography-body-italic-bold-xl-letter-spacing: 0;
+	--semantic-typography-body-italic-bold-xl-letter-spacing: 0rem;
 	--semantic-typography-body-italic-bold-xl-font-width: 95;
 	--semantic-typography-body-compact-xs-font: normal 460 0.75rem/1.3 'Open Sans';
-	--semantic-typography-body-compact-xs-letter-spacing: 0;
+	--semantic-typography-body-compact-xs-letter-spacing: 0rem;
 	--semantic-typography-body-compact-xs-font-width: 88;
 	--semantic-typography-body-compact-sm-font: normal 460 0.875rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-sm-letter-spacing: 0;
+	--semantic-typography-body-compact-sm-letter-spacing: 0rem;
 	--semantic-typography-body-compact-sm-font-width: 88;
 	--semantic-typography-body-compact-md-font: normal 460 1rem/1.3 'Open Sans';
-	--semantic-typography-body-compact-md-letter-spacing: 0;
+	--semantic-typography-body-compact-md-letter-spacing: 0rem;
 	--semantic-typography-body-compact-md-font-width: 88;
 	--semantic-typography-body-compact-lg-font: normal 460 1.125rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-lg-letter-spacing: 0;
+	--semantic-typography-body-compact-lg-letter-spacing: 0rem;
 	--semantic-typography-body-compact-lg-font-width: 88;
 	--semantic-typography-body-compact-xl-font: normal 460 1.25rem/1.3 'Open Sans';
-	--semantic-typography-body-compact-xl-letter-spacing: 0;
+	--semantic-typography-body-compact-xl-letter-spacing: 0rem;
 	--semantic-typography-body-compact-xl-font-width: 88;
 	--semantic-typography-body-compact-bold-xs-font: normal 700 0.75rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-bold-xs-letter-spacing: 0;
+	--semantic-typography-body-compact-bold-xs-letter-spacing: 0rem;
 	--semantic-typography-body-compact-bold-xs-font-width: 88;
 	--semantic-typography-body-compact-bold-sm-font: normal 700 0.875rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-bold-sm-letter-spacing: 0;
+	--semantic-typography-body-compact-bold-sm-letter-spacing: 0rem;
 	--semantic-typography-body-compact-bold-sm-font-width: 88;
 	--semantic-typography-body-compact-bold-md-font: normal 700 1rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-bold-md-letter-spacing: 0;
+	--semantic-typography-body-compact-bold-md-letter-spacing: 0rem;
 	--semantic-typography-body-compact-bold-md-font-width: 88;
 	--semantic-typography-body-compact-bold-lg-font: normal 700 1.125rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-bold-lg-letter-spacing: 0;
+	--semantic-typography-body-compact-bold-lg-letter-spacing: 0rem;
 	--semantic-typography-body-compact-bold-lg-font-width: 88;
 	--semantic-typography-body-compact-bold-xl-font: normal 700 1.25rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-bold-xl-letter-spacing: 0;
+	--semantic-typography-body-compact-bold-xl-letter-spacing: 0rem;
 	--semantic-typography-body-compact-bold-xl-font-width: 88;
 	--semantic-typography-body-compact-italic-xs-font: italic 460 0.75rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-italic-xs-letter-spacing: 0;
+	--semantic-typography-body-compact-italic-xs-letter-spacing: 0rem;
 	--semantic-typography-body-compact-italic-xs-font-width: 88;
 	--semantic-typography-body-compact-italic-sm-font: italic 460 0.875rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-italic-sm-letter-spacing: 0;
+	--semantic-typography-body-compact-italic-sm-letter-spacing: 0rem;
 	--semantic-typography-body-compact-italic-sm-font-width: 88;
 	--semantic-typography-body-compact-italic-md-font: italic 460 1rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-italic-md-letter-spacing: 0;
+	--semantic-typography-body-compact-italic-md-letter-spacing: 0rem;
 	--semantic-typography-body-compact-italic-md-font-width: 88;
 	--semantic-typography-body-compact-italic-lg-font: italic 460 1.125rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-italic-lg-letter-spacing: 0;
+	--semantic-typography-body-compact-italic-lg-letter-spacing: 0rem;
 	--semantic-typography-body-compact-italic-lg-font-width: 88;
 	--semantic-typography-body-compact-italic-xl-font: italic 460 1.25rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-italic-xl-letter-spacing: 0;
+	--semantic-typography-body-compact-italic-xl-letter-spacing: 0rem;
 	--semantic-typography-body-compact-italic-xl-font-width: 88;
 	--semantic-typography-body-compact-italic-bold-xs-font: italic 700 0.75rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-italic-bold-xs-letter-spacing: 0;
+	--semantic-typography-body-compact-italic-bold-xs-letter-spacing: 0rem;
 	--semantic-typography-body-compact-italic-bold-xs-font-width: 88;
 	--semantic-typography-body-compact-italic-bold-sm-font: italic 700
 		0.875rem/1.3 'Open Sans';
-	--semantic-typography-body-compact-italic-bold-sm-letter-spacing: 0;
+	--semantic-typography-body-compact-italic-bold-sm-letter-spacing: 0rem;
 	--semantic-typography-body-compact-italic-bold-sm-font-width: 88;
 	--semantic-typography-body-compact-italic-bold-md-font: italic 700 1rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-italic-bold-md-letter-spacing: 0;
+	--semantic-typography-body-compact-italic-bold-md-letter-spacing: 0rem;
 	--semantic-typography-body-compact-italic-bold-md-font-width: 88;
 	--semantic-typography-body-compact-italic-bold-lg-font: italic 700
 		1.125rem/1.3 'Open Sans';
-	--semantic-typography-body-compact-italic-bold-lg-letter-spacing: 0;
+	--semantic-typography-body-compact-italic-bold-lg-letter-spacing: 0rem;
 	--semantic-typography-body-compact-italic-bold-lg-font-width: 88;
 	--semantic-typography-body-compact-italic-bold-xl-font: italic 700 1.25rem/1.3
 		'Open Sans';
-	--semantic-typography-body-compact-italic-bold-xl-letter-spacing: 0;
+	--semantic-typography-body-compact-italic-bold-xl-letter-spacing: 0rem;
 	--semantic-typography-body-compact-italic-bold-xl-font-width: 88;
 	--semantic-typography-meta-md-font: normal 460 0.75rem/1.3 'Open Sans';
-	--semantic-typography-meta-md-letter-spacing: 0;
+	--semantic-typography-meta-md-letter-spacing: 0rem;
 	--semantic-typography-meta-md-font-width: 95;
 	--semantic-typography-meta-compact-md-font: normal 460 0.75rem/1.3 'Open Sans';
-	--semantic-typography-meta-compact-md-letter-spacing: 0;
+	--semantic-typography-meta-compact-md-letter-spacing: 0rem;
 	--semantic-typography-meta-compact-md-font-width: 88;
 	--semantic-typography-article-body-md-font: normal 400 1rem/1.4
 		GuardianTextEgyptian;
-	--semantic-typography-article-body-md-letter-spacing: 0;
+	--semantic-typography-article-body-md-letter-spacing: 0rem;
 	--semantic-typography-article-body-md-font-width: 100;
 	--semantic-typography-article-body-bold-md-font: normal 700 1rem/1.4
 		GuardianTextEgyptian;
-	--semantic-typography-article-body-bold-md-letter-spacing: 0;
+	--semantic-typography-article-body-bold-md-letter-spacing: 0rem;
 	--semantic-typography-article-body-bold-md-font-width: 100;
 	--semantic-typography-article-body-italic-md-font: italic 400 1rem/1.4
 		GuardianTextEgyptian;
-	--semantic-typography-article-body-italic-md-letter-spacing: 0;
+	--semantic-typography-article-body-italic-md-letter-spacing: 0rem;
 	--semantic-typography-article-body-italic-md-font-width: 100;
 	--semantic-typography-article-body-bold-italic-md-font: italic 700 1rem/1.4
 		GuardianTextEgyptian;
-	--semantic-typography-article-body-bold-italic-md-letter-spacing: 0;
+	--semantic-typography-article-body-bold-italic-md-letter-spacing: 0rem;
 	--semantic-typography-article-body-bold-italic-md-font-width: 100;
 	--semantic-typography-interactive-xs-font: normal 700 0.75rem/1 'Open Sans';
-	--semantic-typography-interactive-xs-letter-spacing: 0;
+	--semantic-typography-interactive-xs-letter-spacing: 0rem;
 	--semantic-typography-interactive-xs-font-width: 95;
 	--semantic-typography-interactive-sm-font: normal 700 0.875rem/1 'Open Sans';
 	--semantic-typography-interactive-sm-letter-spacing: -0.0125rem;
@@ -242,15 +242,15 @@
 	--semantic-typography-label-form-md-font-width: 95;
 	--semantic-typography-label-form-inline-sm-font: normal 460 0.875rem/1.3
 		'Open Sans';
-	--semantic-typography-label-form-inline-sm-letter-spacing: 0;
+	--semantic-typography-label-form-inline-sm-letter-spacing: 0rem;
 	--semantic-typography-label-form-inline-sm-font-width: 95;
 	--semantic-typography-label-form-inline-md-font: normal 460 1rem/1.3
 		'Open Sans';
-	--semantic-typography-label-form-inline-md-letter-spacing: 0;
+	--semantic-typography-label-form-inline-md-letter-spacing: 0rem;
 	--semantic-typography-label-form-inline-md-font-width: 95;
 	--semantic-typography-label-form-compact-sm-font: normal 700 0.875rem/1.15
 		'Open Sans';
-	--semantic-typography-label-form-compact-sm-letter-spacing: 0;
+	--semantic-typography-label-form-compact-sm-letter-spacing: 0rem;
 	--semantic-typography-label-form-compact-sm-font-width: 88;
 	--semantic-typography-label-form-compact-md-font: normal 700 1rem/1.15
 		'Open Sans';
@@ -258,18 +258,18 @@
 	--semantic-typography-label-form-compact-md-font-width: 88;
 	--semantic-typography-label-form-inline-compact-sm-font: normal 460
 		0.875rem/1.3 'Open Sans';
-	--semantic-typography-label-form-inline-compact-sm-letter-spacing: 0;
+	--semantic-typography-label-form-inline-compact-sm-letter-spacing: 0rem;
 	--semantic-typography-label-form-inline-compact-sm-font-width: 88;
 	--semantic-typography-label-form-inline-compact-md-font: normal 460 1rem/1.3
 		'Open Sans';
-	--semantic-typography-label-form-inline-compact-md-letter-spacing: 0;
+	--semantic-typography-label-form-inline-compact-md-letter-spacing: 0rem;
 	--semantic-typography-label-form-inline-compact-md-font-width: 88;
 	--semantic-typography-help-text-form-md-font: normal 460 0.875rem/1.3
 		'Open Sans';
-	--semantic-typography-help-text-form-md-letter-spacing: 0;
+	--semantic-typography-help-text-form-md-letter-spacing: 0rem;
 	--semantic-typography-help-text-form-md-font-width: 95;
 	--semantic-typography-help-text-form-compact-md-font: normal 460 0.875rem/1.3
 		'Open Sans';
-	--semantic-typography-help-text-form-compact-md-letter-spacing: 0;
+	--semantic-typography-help-text-form-compact-md-letter-spacing: 0rem;
 	--semantic-typography-help-text-form-compact-md-font-width: 88;
 }

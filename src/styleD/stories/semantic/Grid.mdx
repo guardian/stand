@@ -1,0 +1,45 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import GridStories, { Grid } from './Grid.stories.tsx';
+
+<Meta of={GridStories} />
+
+# Semantic - Grid
+
+This palette represents the semantic grid tokens available in the design system, and their intended usage.
+
+Semantic grid tokens define the gutter widths, outer margins, and column counts used to construct consistent layout grids across breakpoints. They underpin the spacing and alignment of every page layout.
+
+## Use the Grid component instead
+
+In most cases you should reach for the [`Grid`](/story/stand-components-grid--docs) component rather than consuming these tokens directly. The component encodes the correct gutter, margin, and column values for each breakpoint and handles the responsive behaviour for you.
+
+```tsx
+import { Grid, GridItem } from '@guardian/stand';
+
+const MyLayout = () => (
+	<Grid>
+		<GridItem span={{ sm: 12, md: 6, lg: 4 }}>
+			<p>Content here</p>
+		</GridItem>
+	</Grid>
+);
+```
+
+## When to use the tokens directly
+
+Only consume `semanticGrid` tokens directly when you need to build a custom layout container that cannot use the `Grid` component, for example, a custom wrapper that must still align its inner content to the grid.
+
+```ts
+import { css } from '@emotion/react';
+import { semanticGrid } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/semantic/grid.css'; // CSS usage
+
+const layoutCss = css`
+	padding-left: ${semanticGrid.margin.lgPx}; /* JS/TS usage */
+	padding-left: var(--semantic-grid-margin-lg-px); /* CSS usage */
+`;
+```
+
+## Grid tokens
+
+<Canvas layout="padded" of={Grid} />

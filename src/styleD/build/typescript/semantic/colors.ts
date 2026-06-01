@@ -79,6 +79,7 @@ export const semanticColors = {
 		errorStrong: '#b42a19',
 		successWeak: '#cde4c9',
 		successStrong: '#326528',
+		neutralWeak: '#ededed',
 	},
 };
 export type SemanticColors = typeof semanticColors;

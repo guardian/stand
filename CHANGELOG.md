@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.43
+
+### Patch Changes
+
+- c340b29: add additional semantic tokens for grid, radius, and spacing
+
 ## 0.0.42
 
 ### Patch Changes

@@ -1,0 +1,44 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import SpacingStories, { Spacing } from './Spacing.stories.tsx';
+
+<Meta of={SpacingStories} />
+
+# Semantic - Spacing
+
+This palette represents the semantic spacing tokens available in the design system, and their intended usage.
+
+Semantic spacing tokens provide a consistent scale for vertical rhythm and stacking gaps between elements. Using these tokens ensures that spacing decisions are meaningful and aligned with the design system's scale rather than arbitrary values.
+
+## Example usage
+
+```ts
+import { css } from '@emotion/react';
+import { semanticSpacing } from '@guardian/stand'; // JS/TS usage
+import '@guardian/stand/semantic/spacing.css'; // CSS usage
+
+const stringStyle = css`
+	margin-bottom: ${semanticSpacing.stackMd}; /* JS/TS usage */
+	margin-bottom: var(--semantic-spacing-stack-md); /* CSS usage */
+`;
+
+const objectStyle = {
+	marginBottom: semanticSpacing.stackSm /* JS/TS usage */,
+};
+```
+
+## When to use semantic spacing
+
+Use semantic spacing tokens when:
+
+- **`stackXxs` / `stackXs`**
+  - Tight spacing between closely related elements such as a label and its input, or an icon and its label.
+- **`stackSm`**
+  - Spacing between list items or inline elements within a component.
+- **`stackMd`**
+  - Standard gap between independent components or sections within a view.
+- **`stackLg` / `stackXl`**
+  - Generous whitespace between major page sections or groups of content.
+
+## Spacing tokens
+
+<Canvas layout="padded" of={Spacing} />

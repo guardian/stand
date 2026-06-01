@@ -188,7 +188,7 @@ export function tokenFilesFromLocalVariables(
 							return `${groupName.replace(
 								token.prefix,
 								token.replacement ?? token.prefix, // if no replacement is specified, keep the original prefix
-							)}-px`;
+							)}${collection.name.toLowerCase() !== 'semantic' ? '-px' : ''}`;
 						}
 					}
 					return groupName;

@@ -15,6 +15,16 @@ export interface MainProps
 	 * This can be used to prevent the layout from becoming too stretched on very wide screens.
 	 */
 	fluid?: boolean;
+	/**
+	 * When `true`, applies vertical padding to the main content area.
+	 * This is enabled by default and can be disabled when the consumer wants to handle vertical spacing themselves
+	 */
+	paddingTop?: boolean;
+	/**
+	 * When `true`, applies bottom padding to the main content area.
+	 * This is enabled by default, and can be disabled when the consumer wants to handle vertical spacing themselves
+	 */
+	paddingBottom?: boolean;
 
 	as?: React.ElementType;
 }
