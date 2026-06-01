@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { exampleTags } from './exampleTags';
 import { TagAutocomplete } from './TagAutocomplete';
 import { TagTable } from './TagTable';
@@ -39,31 +39,44 @@ const mappedExampleTags: TagManagerObjectRow[] = exampleTags.map((tag) => ({
 	id: tag.id,
 }));
 
+const tagMatching =
+	(tag: TagManagerObjectRow) => (existingTag: TagManagerObjectRow) =>
+		existingTag.path === tag.path;
+
 export const TagPicker = {
 	render: () => {
 		const [selectedTags, setSelectedTags] = useState<TagManagerObjectRow[]>([]);
-
 		const [options, setOptions] = useState<TagManagerObjectRow[]>([]);
 		const [value, setValue] = useState('');
-		const onTextInputChange = (inputText: string) => {
-			setValue(inputText);
-			if (inputText === '') {
-				setOptions([]);
-				return;
-			}
 
-			if (inputText === '*') {
-				setOptions(mappedExampleTags);
-				return;
-			}
+		const onTextInputChange = useCallback(
+			(inputText: string) => {
+				setValue(inputText);
+				if (inputText === '') {
+					setOptions([]);
+					return;
+				}
 
-			// Simple filtering against mappedExampleTags
-			const filteredItems = mappedExampleTags.filter((t) =>
-				t.name.toLowerCase().includes(inputText.toLowerCase()),
-			);
+				if (inputText === '*') {
+					setOptions(
+						mappedExampleTags.filter(
+							(tag) => !selectedTags.some(tagMatching(tag)),
+						),
+					);
+					return;
+				}
 
-			return setOptions(filteredItems);
-		};
+				// Simple filtering against mappedExampleTags
+				const filteredItems = mappedExampleTags.filter(
+					(tag) =>
+						tag.name.toLowerCase().includes(inputText.toLowerCase()) &&
+						!selectedTags.some(tagMatching(tag)),
+				);
+
+				return setOptions(filteredItems);
+			},
+			[selectedTags],
+		);
 
 		return (
 			<>
@@ -78,6 +91,9 @@ export const TagPicker = {
 						label="Tags"
 						addTag={(tag) =>
 							setSelectedTags((tags) => {
+								if (tags.some(tagMatching(tag))) {
+									return tags;
+								}
 								return [...tags, tag];
 							})
 						}
