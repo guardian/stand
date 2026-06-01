@@ -25,7 +25,7 @@ export type FormInputContainerDefaultProps<
 		/**
 		 * Custom render function for the label. Receives the `label` string and returns a ReactNode.
 		 * Use this to add icons, badges, or other visual enhancements alongside the label text.
-		 *
+		 * Ensure the returned node still includes the label text so the field remains accessible.
 		 */
 		renderLabel?: (label: string) => ReactNode;
 		/**
