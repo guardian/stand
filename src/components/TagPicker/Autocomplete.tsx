@@ -1,6 +1,6 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ReactElement } from 'react';
+import { type ReactElement, useState } from 'react';
 import {
 	Collection,
 	ComboBox,
@@ -155,6 +155,9 @@ export function Autocomplete<
 	cssOverrides,
 	addFirstOnEnter,
 }: AutocompleteProps<T>) {
+	const [hoveredItemId, setHoveredItemId] = useState<string | number>();
+	const [upOrDownKeyPressed, setUpOrDownKeyPressed] = useState(false);
+	const listBoxIsInUse = upOrDownKeyPressed || !!hoveredItemId;
 	return (
 		<div
 			css={[
@@ -167,7 +170,10 @@ export function Autocomplete<
 			<ComboBox
 				aria-label={label}
 				inputValue={value}
-				onInputChange={onTextInputChange}
+				onInputChange={(value) => {
+					setUpOrDownKeyPressed(false);
+					onTextInputChange(value);
+				}}
 				onChange={(key) => {
 					const tag = options.find((t) => t.id === key);
 					if (tag) {
@@ -189,9 +195,12 @@ export function Autocomplete<
 					onKeyDown={
 						addFirstOnEnter
 							? (event) => {
+									if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+										setUpOrDownKeyPressed(true);
+									}
 									if (event.key === 'Enter') {
 										const [firstOption] = options;
-										if (firstOption) {
+										if (firstOption && !listBoxIsInUse) {
 											addSelection(firstOption);
 										}
 									}
@@ -222,6 +231,14 @@ export function Autocomplete<
 									css={listboxItemStyles(theme)}
 									value={item}
 									key={item.id}
+									onHoverChange={(isHovering) => {
+										setHoveredItemId((current) => {
+											if (isHovering) {
+												return item.id;
+											}
+											return current === item.id ? undefined : current;
+										});
+									}}
 								>
 									{item.name}
 								</ListBoxItem>
