@@ -153,6 +153,7 @@ export function TagAutocomplete<T extends Tag = Tag>({
 			value={value}
 			data-testid={dataTestId}
 			loadingIcon={loadingIcon}
+			addFirstOnEnter={true}
 			theme={theme}
 			cssOverrides={cssOverrides}
 		/>

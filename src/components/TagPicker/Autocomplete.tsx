@@ -46,6 +46,8 @@ export interface AutocompleteProps<
 	'data-testid'?: string;
 	/** `loadingIcon` - Icon used to show loading happening in the dropdown */
 	loadingIcon?: ReactElement;
+	//** `addFirstOnEnter` - Whether to add the first option when the user hits the "Enter" key */
+	addFirstOnEnter?: boolean;
 	/** `theme` - Used to customise the look and feel of the Autocomplete component */
 	theme?: DeepPartial<ComponentAutocomplete>;
 	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
@@ -151,6 +153,7 @@ export function Autocomplete<
 	loadingIcon,
 	theme,
 	cssOverrides,
+	addFirstOnEnter,
 }: AutocompleteProps<T>) {
 	return (
 		<div
@@ -183,6 +186,18 @@ export function Autocomplete<
 					placeholder={placeholder}
 					disabled={disabled}
 					data-testid={dataTestId}
+					onKeyDown={
+						addFirstOnEnter
+							? (event) => {
+									if (event.key === 'Enter') {
+										const [firstOption] = options;
+										if (firstOption) {
+											addSelection(firstOption);
+										}
+									}
+								}
+							: undefined
+					}
 				/>
 				<Popover
 					placement="bottom"
