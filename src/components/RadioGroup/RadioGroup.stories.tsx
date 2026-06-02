@@ -118,3 +118,24 @@ export const CssOverrides = {
 		);
 	},
 } satisfies Story;
+
+const LabelWithAsterisk = ({ label }: { label: string }) => (
+	<span>
+		{label} <span style={{ color: 'red', marginLeft: 4 }}>*</span>
+	</span>
+);
+
+export const RenderWithAsterisk = {
+	render: () => {
+		return (
+			<RadioGroup
+				label="Label"
+				description="Optional contextual help text"
+				renderLabel={(label) => <LabelWithAsterisk label={label} />}
+			>
+				<Radio value="Test">Option 1</Radio>
+				<Radio value="Test2">Option 2</Radio>
+			</RadioGroup>
+		);
+	},
+} satisfies Story;

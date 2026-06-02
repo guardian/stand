@@ -19,6 +19,7 @@ export function FormInputContainer<C extends AllowedContainer>({
 	as: Component,
 	size = 'md',
 	label,
+	renderLabel,
 	description,
 	error,
 	isDisabled = false,
@@ -48,7 +49,7 @@ export function FormInputContainer<C extends AllowedContainer>({
 		>
 			{label && (
 				<Label css={formInputLabelStyles(mergedTheme, { size, isDisabled })}>
-					{label}
+					{renderLabel ? renderLabel(label) : label}
 				</Label>
 			)}
 			{description && (

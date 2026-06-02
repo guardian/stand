@@ -12,6 +12,7 @@ import CheckboxGroupStories, {
 	SingleOptionErrorSmall,
 	CustomTheme,
 	CssOverrides,
+	RenderWithAsterisk,
 } from './CheckboxGroup.stories';
 import {
 	SandboxReact,
@@ -91,20 +92,21 @@ const Example = () => (
 
 See [React Aria `CheckboxGroup`](https://react-aria.adobe.com/CheckboxGroup) props for the full API, plus the additional props listed below.
 
-| Name                      | Type                                       | Required | Default | Description                                                                              |
-| ------------------------- | ------------------------------------------ | -------- | ------- | ---------------------------------------------------------------------------------------- |
-| `label`                   | `string`                                   | No       | N/A     | Visible label rendered above the group.                                                  |
-| `description`             | `string`                                   | No       | N/A     | Helper text rendered below the label.                                                    |
-| `error`                   | `string`                                   | No       | N/A     | Group-level validation error message; displayed when `isInvalid` is `true` on the group. |
-| `size`                    | `'md'` \| `'sm'`                           | No       | `'md'`  | Controls spacing and is forwarded to all child `Checkbox` components.                    |
-| `isInvalid`               | `boolean`                                  | No       | `false` | Marks the entire group as invalid and displays the `error` message.                      |
-| `isDisabled`              | `boolean`                                  | No       | `false` | Disables all child checkboxes.                                                           |
-| `children`                | `React.ReactElement<CheckboxProps>[]`      | No       | N/A     | Only `Checkbox` components are accepted; other elements are silently ignored.            |
-| `theme`                   | `CheckboxTheme['group']` (partial)         | No       | N/A     | Override Stand tokens for the group container; merged over the default theme.            |
-| `formInputContainerTheme` | `FormInputContainerTheme` (partial)        | No       | N/A     | Override Stand tokens for the wrapping label and description container.                  |
-| `cssOverrides`            | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.               |
-| `className`               | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria CheckboxGroup element.              |
-| `...props`                | `ReactAria CheckboxGroup` props            | No       | N/A     | All other props from `react-aria-components` `CheckboxGroup` (e.g. `value`, `onChange`). |
+| Name                      | Type                                       | Required | Default | Description                                                                                                      |
+| ------------------------- | ------------------------------------------ | -------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
+| `label`                   | `string`                                   | No       | N/A     | Visible label rendered above the group.                                                                          |
+| `renderLabel`             | `(label: string) => ReactNode`             | No       | N/A     | Custom render function for the label. Receives the `label` string and returns a ReactNode for visual enhancement |
+| `description`             | `string`                                   | No       | N/A     | Helper text rendered below the label.                                                                            |
+| `error`                   | `string`                                   | No       | N/A     | Group-level validation error message; displayed when `isInvalid` is `true` on the group.                         |
+| `size`                    | `'md'` \| `'sm'`                           | No       | `'md'`  | Controls spacing and is forwarded to all child `Checkbox` components.                                            |
+| `isInvalid`               | `boolean`                                  | No       | `false` | Marks the entire group as invalid and displays the `error` message.                                              |
+| `isDisabled`              | `boolean`                                  | No       | `false` | Disables all child checkboxes.                                                                                   |
+| `children`                | `React.ReactElement<CheckboxProps>[]`      | No       | N/A     | Only `Checkbox` components are accepted; other elements are silently ignored.                                    |
+| `theme`                   | `CheckboxTheme['group']` (partial)         | No       | N/A     | Override Stand tokens for the group container; merged over the default theme.                                    |
+| `formInputContainerTheme` | `FormInputContainerTheme` (partial)        | No       | N/A     | Override Stand tokens for the wrapping label and description container.                                          |
+| `cssOverrides`            | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                       |
+| `className`               | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria CheckboxGroup element.                                      |
+| `...props`                | `ReactAria CheckboxGroup` props            | No       | N/A     | All other props from `react-aria-components` `CheckboxGroup` (e.g. `value`, `onChange`).                         |
 
 > **Note:** `size` is automatically forwarded to every child `Checkbox` — you do not need to set it on individual checkboxes. Individual checkboxes can still set `isInvalid` independently to mark a single option as invalid without invalidating the whole group.
 
@@ -149,6 +151,10 @@ See [React Aria `CheckboxGroup`](https://react-aria.adobe.com/CheckboxGroup) pro
 ### Small — Single Option Error
 
 <Canvas layout="padded" of={SingleOptionErrorSmall} />
+
+### With Custom Rendered Label
+
+<Canvas layout="padded" of={RenderWithAsterisk} />
 
 ## Customisation
 

@@ -10,6 +10,7 @@ import TextAreaStories, {
 	WithPlaceholder,
 	WithPlaceholderDisabled,
 	SizeSmall,
+	RenderWithAsterisk,
 } from './TextArea.stories';
 import {
 	SandboxReact,
@@ -65,6 +66,7 @@ const Example = () => <TextArea size="sm" label="Description" />;
 | ------------------------- | ----------------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | `size`                    | `'md'` \| `'sm'`                    | No       | `'md'`  | Controls the input typography size.                                                                                                         |
 | `label`                   | `string`                            | No       | N/A     | Visible label rendered above the input.                                                                                                     |
+| `renderLabel`             | `(label: string) => ReactNode`      | No       | N/A     | Custom render function for the label. Receives the `label` string and returns a ReactNode for visual enhancement                            |
 | `description`             | `string`                            | No       | N/A     | Helper text rendered below the label.                                                                                                       |
 | `error`                   | `string`                            | No       | N/A     | Validation error message; displayed when `isInvalid` is `true`.                                                                             |
 | `isInvalid`               | `boolean`                           | No       | `false` | Marks the field as invalid and applies error border styling.                                                                                |
@@ -117,6 +119,10 @@ const Example = () => <TextArea size="sm" label="Description" />;
 ### With Placeholder
 
 <Canvas layout="padded" of={WithPlaceholder} />
+
+### With Custom Rendered Label
+
+<Canvas layout="padded" of={RenderWithAsterisk} />
 
 ## Customisation
 
