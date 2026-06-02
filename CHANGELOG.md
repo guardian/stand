@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.44
+
+### Patch Changes
+
+- 5844d9e: Add new prop 'renderLabel' to form components to render a custom label.
+  This is to allow the label to be rendered with links or tooltips, which is not possible with the default string label prop.
+
 ## 0.0.43
 
 ### Patch Changes
