@@ -1,5 +1,5 @@
 ---
-'@guardian/stand': minor
+'@guardian/stand': patch
 ---
 
 Add new prop 'renderLabel' to form components to render a custom label.
