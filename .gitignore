@@ -3,6 +3,7 @@ dist/
 *.log
 .DS_Store
 .idea
+.vscode
 
 # Storybook
 storybook-static/

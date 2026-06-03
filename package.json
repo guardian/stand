@@ -478,6 +478,7 @@
 		"@internationalized/date": "3.12.1",
 		"@material-design-icons/svg": "0.14.15",
 		"@playwright/experimental-ct-react17": "1.60.0",
+		"@storybook/addon-a11y": "10.4.0",
 		"@storybook/addon-docs": "10.4.0",
 		"@storybook/addon-themes": "10.4.0",
 		"@storybook/react-vite": "10.4.0",

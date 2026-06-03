@@ -30,7 +30,7 @@ import {
 
 # IntendedAudienceSignifier
 
-The IntendedAudienceSignifier component is a visual indicator of the intended audience for a piece of content. It's value is determined by the Production Office assigned to an article and the readership level intended for that.The component is primarily to be used in Composer and Workflow to help content creators and global editors understand the intended audience for a piece of content at a glance.
+The IntendedAudienceSignifier component is a visual indicator of the intended audience for a piece of content. It's value is determined by the Production Office assigned to an article and the readership level intended for that. The component is primarily to be used in tools such as Composer and Workflow to help content creators and global editors understand the intended audience for a piece of content at a glance.
 
 ## When to use
 
@@ -64,32 +64,44 @@ import type {
 	IntendedAudienceSignifierTheme,
 } from '@guardian/stand/IntendedAudienceSignifier';
 
-	<IntendedAudienceSignifier source="UK" target='global' />
-	<IntendedAudienceSignifier source="US" target='global' />
-	<IntendedAudienceSignifier source="AUS" target='global' />
-	<IntendedAudienceSignifier source="UK" target='UK' />
-	<IntendedAudienceSignifier source="US" target='US' />
-	<IntendedAudienceSignifier source="AUS" target='AUS' />
-	<IntendedAudienceSignifier source="UK" target='global' />
-	<IntendedAudienceSignifier source="US" target='global' />
-	<IntendedAudienceSignifier source="AUS" target='global' />
-	<IntendedAudienceSignifier source="UK" target='global' theme={{ color: '#c70000' }} />
-	<IntendedAudienceSignifier source="AUS" target='global' cssOverrides={{ border-color: '#0000FF',align-items: 'flex-end' }}/>
-	<IntendedAudienceSignifier source="UK" />
-	<IntendedAudienceSignifier source="US" />
-	<IntendedAudienceSignifier source="AUS" />
-	<IntendedAudienceSignifier source="UK" target='US' />
-	<IntendedAudienceSignifier source="US" target='UK' />
+	<IntendedAudienceSignifier source="uk" target="global" />
+	<IntendedAudienceSignifier source="us" target="global" />
+	<IntendedAudienceSignifier source="aus" target="global" />
+	<IntendedAudienceSignifier source="uk" target="uk" />
+	<IntendedAudienceSignifier source="us" target="us" />
+	<IntendedAudienceSignifier source="aus" target="au" />
+	<IntendedAudienceSignifier source="uk" target="global" />
+	<IntendedAudienceSignifier source="us" target="global" />
+	<IntendedAudienceSignifier source="aus" target="global" />
+	<IntendedAudienceSignifier source="uk" target="global" theme={{ color: '#c70000' }} />
+	<IntendedAudienceSignifier source="aus" target="global" cssOverrides={{ borderColor: '#0000FF',alignItems: 'flex-end' }}/>
+	<IntendedAudienceSignifier source="uk" />
+	<IntendedAudienceSignifier source="us" />
+	<IntendedAudienceSignifier source="aus" />
+	<IntendedAudienceSignifier source="uk" target="us" />
+	<IntendedAudienceSignifier source="us" target="uk" />
+```
 
+Or, you can use the `mapTagsToSourceAndTarget()` utility function to determine the source and target from tracking tags:
 
+```tsx
+import {
+	IntendedAudienceSignifier,
+	mapTagsToSourceAndTarget,
+} from '@guardian/stand/IntendedAudienceSignifier';
+
+const audienceTags = fetchAudienceTagsSomehow();
+const [source, target] = mapTagsToSourceAndTarget(audienceTags);
+
+<IntendedAudienceSignifier source={source} target={target} />;
 ```
 
 ## Props
 
 | Name           | Type                                      | Required | Default | Description                                                                                                 |
 | -------------- | ----------------------------------------- | -------- | ------- | ----------------------------------------------------------------------------------------------------------- |
-| `source`       | `'global' \| 'UK' \| 'US' \| 'AUS'`.      | Yes      | N/A     | Icon key rendered on the left side of the chevron. If undefined, the "Don't Know" label will be displayed.  |
-| `target`       | `'global' \| 'UK' \| 'US' \| 'AUS'`       | No       | N/A     | Icon key rendered on the right side of the chevron. If undefined, the "Don't Know" label will be displayed. |
+| `source`       | `'global' \| 'uk' \| 'us' \| 'au'`.       | No       | N/A     | Icon key rendered on the left side of the chevron. If undefined, the "Don't Know" label will be displayed.  |
+| `target`       | `'global' \| 'uk' \| 'us' \| 'au'`        | No       | N/A     | Icon key rendered on the right side of the chevron. If undefined, the "Don't Know" label will be displayed. |
 | `theme`        | `Partial<IntendedAudienceSignifierTheme>` | No       | N/A     | Custom theme token overrides merged over the component defaults.                                            |
 | `cssOverrides` | `SerializedStyles \| SerializedStyles[]`  | No       | N/A     | Additional Emotion CSS styles applied to the root element.                                                  |
 | `className`    | `string`                                  | No       | N/A     | Additional class name(s) applied to the root element.                                                       |
@@ -146,7 +158,7 @@ const customTheme: Partial<IntendedAudienceSignifierTheme> = {
 };
 
 const Component = () => (
-	<IntendedAudienceSignifier source="UK" target="global" theme={customTheme} />
+	<IntendedAudienceSignifier source="uk" target="global" theme={customTheme} />
 );
 ```
 
@@ -165,8 +177,8 @@ const customStyles = css`
 
 const Component = () => (
 	<IntendedAudienceSignifier
-		source="UK"
-		target="US"
+		source="uk"
+		target="us"
 		cssOverrides={customStyles}
 	/>
 );
