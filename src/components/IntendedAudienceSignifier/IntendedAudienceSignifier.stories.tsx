@@ -15,32 +15,32 @@ export default meta;
 
 export const DomesticForGlobalUk = {
 	name: 'DomesticForGlobalUk',
-	args: { source: 'UK', target: 'global' },
+	args: { source: 'uk', target: 'global' },
 } satisfies Story;
 
 export const DomesticForGlobalUs = {
 	name: 'DomesticForGlobalUs',
-	args: { source: 'US', target: 'global' },
+	args: { source: 'us', target: 'global' },
 } satisfies Story;
 
 export const DomesticForGlobalAus = {
 	name: 'DomesticForGlobalAus',
-	args: { source: 'AUS', target: 'global' },
+	args: { source: 'au', target: 'global' },
 } satisfies Story;
 
 export const DomesticForDomesticUk = {
 	name: 'DomesticForDomesticUk',
-	args: { source: 'UK', target: 'UK' },
+	args: { source: 'uk', target: 'uk' },
 } satisfies Story;
 
 export const DomesticForDomesticUs = {
 	name: 'DomesticForDomesticUs',
-	args: { source: 'US', target: 'US' },
+	args: { source: 'us', target: 'us' },
 } satisfies Story;
 
 export const DomesticForDomesticAus = {
 	name: 'DomesticForDomesticAus',
-	args: { source: 'AUS', target: 'AUS' },
+	args: { source: 'au', target: 'au' },
 } satisfies Story;
 
 export const GlobalForGlobal = {
@@ -54,7 +54,7 @@ export const GlobalForGlobal = {
 export const UKAndGlobalStoryWithCustomTheme = {
 	name: 'UKandGlobalWithCustomTheme',
 	args: {
-		source: 'UK',
+		source: 'uk',
 		target: 'global',
 		theme: {
 			borderRadius: '20%',
@@ -73,7 +73,7 @@ export const UKAndGlobalStoryWithCustomTheme = {
 export const AUSAndGlobalWithCSSOverrides = {
 	name: 'AUSAndGlobalWithCSSOverrides',
 	args: {
-		source: 'AUS',
+		source: 'au',
 		target: 'global',
 		cssOverrides: css`
 			border-color: #0000ffff;
@@ -89,12 +89,12 @@ export const DontKnowStory = {
 
 export const UKAndUSStory = {
 	name: 'UKAndUSStory',
-	args: { source: 'UK', target: 'US' },
+	args: { source: 'uk', target: 'us' },
 } satisfies Story;
 
 export const USAndUKStory = {
 	name: 'USAndUKStory',
-	args: { source: 'US', target: 'UK' },
+	args: { source: 'us', target: 'uk' },
 } satisfies Story;
 
 const largeIconTheme = {
@@ -111,20 +111,20 @@ const largeIconTheme = {
 export const DontKnowStoryAUSLargeIconTheme = {
 	name: 'DontKnowStoryAUSLargeIconTheme',
 	args: {
-		source: 'AUS',
+		source: 'au',
 		theme: largeIconTheme,
 	},
 } satisfies Story;
 
 export const UKAndUSStoryLargeIconTheme = {
 	name: 'UKAndUSStoryLargeIconTheme',
-	args: { source: 'UK', target: 'US', theme: largeIconTheme },
+	args: { source: 'uk', target: 'us', theme: largeIconTheme },
 } satisfies Story;
 
 export const GlobalUSStoryLargeIconTheme = {
 	name: 'GlobalUSStoryLargeIconTheme',
 	args: {
-		source: 'US',
+		source: 'us',
 		target: 'global',
 		theme: largeIconTheme,
 	},
