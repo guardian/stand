@@ -39,6 +39,26 @@ const mappedExampleTags: TagManagerObjectRow[] = exampleTags.map((tag) => ({
 	id: tag.id,
 }));
 
+// Approximates the tagmanager API's search behaviour.
+const simulateSearch = (inputText: string): TagManagerObjectRow[] => {
+	if (inputText === '') {
+		return [];
+	}
+
+	if (inputText.includes('*')) {
+		const startsWithQueryPatternRegExp = new RegExp(
+			'^' + inputText.toLowerCase().split('*').join('.*'),
+		);
+		return mappedExampleTags.filter((tag) =>
+			startsWithQueryPatternRegExp.test(tag.name.toLowerCase()),
+		);
+	}
+
+	return mappedExampleTags.filter((tag) =>
+		tag.name.toLowerCase().startsWith(inputText.toLowerCase()),
+	);
+};
+
 const tagMatching =
 	(tag: TagManagerObjectRow) => (existingTag: TagManagerObjectRow) =>
 		existingTag.path === tag.path;
@@ -52,28 +72,10 @@ export const TagPicker = {
 		const onTextInputChange = useCallback(
 			(inputText: string) => {
 				setValue(inputText);
-				if (inputText === '') {
-					setOptions([]);
-					return;
-				}
-
-				if (inputText === '*') {
-					setOptions(
-						mappedExampleTags.filter(
-							(tag) => !selectedTags.some(tagMatching(tag)),
-						),
-					);
-					return;
-				}
-
-				// Simple filtering against mappedExampleTags
-				const filteredItems = mappedExampleTags.filter(
-					(tag) =>
-						tag.name.toLowerCase().includes(inputText.toLowerCase()) &&
-						!selectedTags.some(tagMatching(tag)),
+				const searchResults = simulateSearch(inputText);
+				return setOptions(
+					searchResults.filter((tag) => !selectedTags.some(tagMatching(tag))),
 				);
-
-				return setOptions(filteredItems);
 			},
 			[selectedTags],
 		);
@@ -89,14 +91,15 @@ export const TagPicker = {
 						onTextInputChange={onTextInputChange}
 						options={options}
 						label="Tags"
-						addTag={(tag) =>
+						addTag={(tag) => {
 							setSelectedTags((tags) => {
 								if (tags.some(tagMatching(tag))) {
 									return tags;
 								}
 								return [...tags, tag];
-							})
-						}
+							});
+							setValue('');
+						}}
 						loading={false}
 						placeholder={''}
 						disabled={false}
