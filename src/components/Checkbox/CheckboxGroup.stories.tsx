@@ -224,3 +224,24 @@ export const CssOverrides = {
 		</CheckboxGroup>
 	),
 } satisfies Story;
+
+const LabelWithAsterisk = ({ label }: { label: string }) => (
+	<span>
+		{label} <span style={{ color: 'red', marginLeft: 4 }}>*</span>
+	</span>
+);
+
+export const RenderWithAsterisk = {
+	args: {
+		label: 'Checkbox Group',
+		description: 'This is a description for the checkbox group.',
+		renderLabel: (label) => <LabelWithAsterisk label={label} />,
+	},
+	render: (args) => (
+		<CheckboxGroup {...args}>
+			<Checkbox value="option1">Option 1</Checkbox>
+			<Checkbox value="option2">Option 2</Checkbox>
+			<Checkbox value="option3">Option 3</Checkbox>
+		</CheckboxGroup>
+	),
+} satisfies Story;

@@ -8,6 +8,7 @@ import DatePickerStories, {
 	Invalid,
 	CustomTheme,
 	CssOverrides,
+	RenderWithAsterisk,
 } from './DatePicker.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
@@ -88,6 +89,7 @@ import type {
 | Name                      | Type                                       | Required | Default | Description                                                                                                                                        |
 | ------------------------- | ------------------------------------------ | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `label`                   | `string`                                   | No       | N/A     | Visible label rendered above the date input.                                                                                                       |
+| `renderLabel`             | `(label: string) => ReactNode`             | No       | N/A     | Custom render function for the label. Receives the `label` string and returns a ReactNode for visual enhancement                                   |
 | `description`             | `string`                                   | No       | N/A     | Helper text rendered below the label.                                                                                                              |
 | `error`                   | `string`                                   | No       | N/A     | Validation error message; displayed when `isInvalid` is `true`.                                                                                    |
 | `isInvalid`               | `boolean`                                  | No       | `false` | Marks the field as invalid and applies error border styling.                                                                                       |
@@ -134,6 +136,10 @@ Reverts the month segment to React Aria's default numeric month behaviour:
 ### Invalid
 
 <Canvas layout="padded" of={Invalid} />
+
+### With Custom Rendered Label
+
+<Canvas layout="padded" of={RenderWithAsterisk} />
 
 ## Customisation
 
