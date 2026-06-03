@@ -1,7 +1,7 @@
 import type { DefaultProps } from '../../util/types';
 import type { IntendedAudienceSignifierTheme } from './styles';
 
-export type SourceOrTarget = 'global' | 'UK' | 'US' | 'AUS';
+export type SourceOrTarget = 'global' | 'uk' | 'us' | 'au';
 
 export interface IntendedAudienceSignifierProps extends DefaultProps<IntendedAudienceSignifierTheme> {
 	source?: SourceOrTarget;
