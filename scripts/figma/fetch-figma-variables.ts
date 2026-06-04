@@ -112,7 +112,7 @@ const addRemTokens = (tokens: TokensFile): void => {
 	Object.entries(tokens).forEach(([key, value]) => {
 		// If this is a token group (has nested properties), recurse
 		if (typeof value === 'object' && !('$value' in value)) {
-			addRemTokens(value as TokensFile);
+			addRemTokens(value);
 			return;
 		}
 
@@ -163,10 +163,10 @@ const updateTokenReferences = (
 	Object.entries(tokens).forEach(([key, value]) => {
 		// If this is a token group (has nested properties), recurse
 		if (typeof value === 'object' && !('$value' in value)) {
-			updated[key] = updateTokenReferences(
-				value as TokensFile,
-				fileName,
-			) as Record<string, Token>;
+			updated[key] = updateTokenReferences(value, fileName) as Record<
+				string,
+				Token
+			>;
 			return;
 		}
 

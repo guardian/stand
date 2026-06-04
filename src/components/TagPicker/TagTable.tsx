@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect -- allow set state in effect for TagTable */
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import { type ReactElement, useEffect, useRef, useState } from 'react';

@@ -140,7 +140,7 @@ function DateSegment(props: RACDateSegmentProps) {
 			// Clear the buffer after inactivity so the next keypress starts fresh
 			clearTimerRef.current = setTimeout(() => {
 				bufferRef.current = '';
-			}, CLEAR_BUFFER_DELAY_MS) as unknown as ReturnType<typeof setTimeout>;
+			}, CLEAR_BUFFER_DELAY_MS);
 		};
 
 		// Use native listener in capture phase so it fires before React Aria's handlers
