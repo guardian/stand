@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { exampleTags } from './exampleTags';
 import { TagAutocomplete } from './TagAutocomplete';
 import { TagTable } from './TagTable';
@@ -39,31 +39,46 @@ const mappedExampleTags: TagManagerObjectRow[] = exampleTags.map((tag) => ({
 	id: tag.id,
 }));
 
+// Approximates the tagmanager API's search behaviour.
+const simulateSearch = (inputText: string): TagManagerObjectRow[] => {
+	if (inputText === '') {
+		return [];
+	}
+
+	if (inputText.includes('*')) {
+		const startsWithQueryPatternRegExp = new RegExp(
+			'^' + inputText.toLowerCase().split('*').join('.*'),
+		);
+		return mappedExampleTags.filter((tag) =>
+			startsWithQueryPatternRegExp.test(tag.name.toLowerCase()),
+		);
+	}
+
+	return mappedExampleTags.filter((tag) =>
+		tag.name.toLowerCase().startsWith(inputText.toLowerCase()),
+	);
+};
+
+const tagMatching =
+	(tag: TagManagerObjectRow) => (existingTag: TagManagerObjectRow) =>
+		existingTag.path === tag.path;
+
 export const TagPicker = {
 	render: () => {
 		const [selectedTags, setSelectedTags] = useState<TagManagerObjectRow[]>([]);
-
 		const [options, setOptions] = useState<TagManagerObjectRow[]>([]);
 		const [value, setValue] = useState('');
-		const onTextInputChange = (inputText: string) => {
-			setValue(inputText);
-			if (inputText === '') {
-				setOptions([]);
-				return;
-			}
 
-			if (inputText === '*') {
-				setOptions(mappedExampleTags);
-				return;
-			}
-
-			// Simple filtering against mappedExampleTags
-			const filteredItems = mappedExampleTags.filter((t) =>
-				t.name.toLowerCase().includes(inputText.toLowerCase()),
-			);
-
-			return setOptions(filteredItems);
-		};
+		const onTextInputChange = useCallback(
+			(inputText: string) => {
+				setValue(inputText);
+				const searchResults = simulateSearch(inputText);
+				return setOptions(
+					searchResults.filter((tag) => !selectedTags.some(tagMatching(tag))),
+				);
+			},
+			[selectedTags],
+		);
 
 		return (
 			<>
@@ -76,11 +91,15 @@ export const TagPicker = {
 						onTextInputChange={onTextInputChange}
 						options={options}
 						label="Tags"
-						addTag={(tag) =>
+						addTag={(tag) => {
 							setSelectedTags((tags) => {
+								if (tags.some(tagMatching(tag))) {
+									return tags;
+								}
 								return [...tags, tag];
-							})
-						}
+							});
+							setValue('');
+						}}
 						loading={false}
 						placeholder={''}
 						disabled={false}

@@ -1,6 +1,6 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ReactElement } from 'react';
+import { type ReactElement, useState } from 'react';
 import {
 	Collection,
 	ComboBox,
@@ -46,6 +46,8 @@ export interface AutocompleteProps<
 	'data-testid'?: string;
 	/** `loadingIcon` - Icon used to show loading happening in the dropdown */
 	loadingIcon?: ReactElement;
+	//** `addFirstOnEnter` - Whether to add the first option when the user hits the "Enter" key */
+	addFirstOnEnter?: boolean;
 	/** `theme` - Used to customise the look and feel of the Autocomplete component */
 	theme?: DeepPartial<ComponentAutocomplete>;
 	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
@@ -151,7 +153,11 @@ export function Autocomplete<
 	loadingIcon,
 	theme,
 	cssOverrides,
+	addFirstOnEnter,
 }: AutocompleteProps<T>) {
+	const [hoveredItemId, setHoveredItemId] = useState<string | number>();
+	const [upOrDownKeyPressed, setUpOrDownKeyPressed] = useState(false);
+	const listBoxIsInUse = upOrDownKeyPressed || !!hoveredItemId;
 	return (
 		<div
 			css={[
@@ -164,7 +170,10 @@ export function Autocomplete<
 			<ComboBox
 				aria-label={label}
 				inputValue={value}
-				onInputChange={onTextInputChange}
+				onInputChange={(value) => {
+					setUpOrDownKeyPressed(false);
+					onTextInputChange(value);
+				}}
 				onChange={(key) => {
 					const tag = options.find((t) => t.id === key);
 					if (tag) {
@@ -183,6 +192,21 @@ export function Autocomplete<
 					placeholder={placeholder}
 					disabled={disabled}
 					data-testid={dataTestId}
+					onKeyDown={
+						addFirstOnEnter
+							? (event) => {
+									if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+										setUpOrDownKeyPressed(true);
+									}
+									if (event.key === 'Enter') {
+										const [firstOption] = options;
+										if (firstOption && !listBoxIsInUse) {
+											addSelection(firstOption);
+										}
+									}
+								}
+							: undefined
+					}
 				/>
 				<Popover
 					placement="bottom"
@@ -207,6 +231,14 @@ export function Autocomplete<
 									css={listboxItemStyles(theme)}
 									value={item}
 									key={item.id}
+									onHoverChange={(isHovering) => {
+										setHoveredItemId((current) => {
+											if (isHovering) {
+												return item.id;
+											}
+											return current === item.id ? undefined : current;
+										});
+									}}
 								>
 									{item.name}
 								</ListBoxItem>
