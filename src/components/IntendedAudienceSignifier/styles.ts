@@ -18,7 +18,6 @@ export const intendedAudienceSignifierStyles = (
 	justify-content: ${theme.justifyContent};
 	align-items: ${theme.alignItems};
 	color: ${theme.color};
-	font: ${theme.typography.font};
 	line-height: ${theme.typography.lineHeight};
 	border-width: ${theme.borderWidth};
 	border-style: ${theme.borderStyle};

@@ -103,9 +103,6 @@ const largeIconTheme = {
 		height: '28px',
 	},
 	paddingY: '4px',
-	typography: {
-		font: "normal 460 28px/1.3 'Open Sans'",
-	},
 };
 
 export const DontKnowStoryAUSLargeIconTheme = {
@@ -113,12 +110,19 @@ export const DontKnowStoryAUSLargeIconTheme = {
 	args: {
 		source: 'au',
 		theme: largeIconTheme,
+		cssOverrides: css`
+			font-size: 28px;
+		`,
 	},
 } satisfies Story;
 
 export const UKAndUSStoryLargeIconTheme = {
 	name: 'UKAndUSStoryLargeIconTheme',
-	args: { source: 'uk', target: 'us', theme: largeIconTheme },
+	args: {
+		source: 'uk',
+		target: 'us',
+		theme: largeIconTheme,
+	},
 } satisfies Story;
 
 export const GlobalUSStoryLargeIconTheme = {
