@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.45
+
+### Patch Changes
+
+- 36920eb: Autocomplete supports enter to add first option
+
 ## 0.0.44
 
 ### Patch Changes
