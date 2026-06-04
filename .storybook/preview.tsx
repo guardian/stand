@@ -1,11 +1,17 @@
+/**
+ * Be careful what you import here (and in other Storybook config files)!
+ *
+ * If Chromatic detects changes to this file's dependencies, this will force
+ * all snapshots to be recaptured
+ *
+ * See https://www.chromatic.com/docs/turbosnap/troubleshooting/#changedstorybookfiles
+ */
 import { Global } from '@emotion/react';
 import { css } from '@emotion/react';
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react-vite';
-import {
-	semanticTypography,
-} from '../src';
-import { convertTypographyToEmotionObjectStyle } from '../src/utils';
+import { semanticTypography } from '../src/styleD/build/typescript/semantic/typography';
+import { convertTypographyToEmotionObjectStyle } from '../src/styleD/utils/semantic/typography';
 import '../src/util/reset.css';
 
 const Fonts = css`
