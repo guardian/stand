@@ -19,39 +19,45 @@ const usTrackingTag: Tag = {
 describe('mapTagsToSourceAndTarget', () => {
 	it('should map tags into props that can be used by the signifier component', () => {
 		// Domestic
-		expect(mapTagsToSourceAndTarget([auTrackingTag])).toEqual(['au', 'au']);
-		expect(mapTagsToSourceAndTarget([ukTrackingTag])).toEqual(['uk', 'uk']);
-		expect(mapTagsToSourceAndTarget([usTrackingTag])).toEqual(['us', 'us']);
+		expect(mapTagsToSourceAndTarget([auTrackingTag])).toEqual({
+			source: 'au',
+			target: 'au',
+		});
+		expect(mapTagsToSourceAndTarget([ukTrackingTag])).toEqual({
+			source: 'uk',
+			target: 'uk',
+		});
+		expect(mapTagsToSourceAndTarget([usTrackingTag])).toEqual({
+			source: 'us',
+			target: 'us',
+		});
 
 		// Global
-		expect(mapTagsToSourceAndTarget([globalTrackingTag])).toEqual([
-			'global',
-			'global',
-		]);
+		expect(mapTagsToSourceAndTarget([globalTrackingTag])).toEqual({
+			source: 'global',
+			target: 'global',
+		});
 
 		// Domestic to global
 		expect(
 			mapTagsToSourceAndTarget([auTrackingTag, globalTrackingTag]),
-		).toEqual(['au', 'global']);
+		).toEqual({ source: 'au', target: 'global' });
 		expect(
 			mapTagsToSourceAndTarget([globalTrackingTag, ukTrackingTag]),
-		).toEqual(['uk', 'global']);
+		).toEqual({ source: 'uk', target: 'global' });
 		expect(
 			mapTagsToSourceAndTarget([usTrackingTag, globalTrackingTag]),
-		).toEqual(['us', 'global']);
+		).toEqual({ source: 'us', target: 'global' });
 
 		// No tags
-		expect(mapTagsToSourceAndTarget([])).toEqual([undefined, undefined]);
+		expect(mapTagsToSourceAndTarget([])).toBeUndefined();
 
 		// No audience tags
-		expect(mapTagsToSourceAndTarget([{ path: 'wat' }])).toEqual([
-			undefined,
-			undefined,
-		]);
+		expect(mapTagsToSourceAndTarget([{ path: 'wat' }])).toBeUndefined();
 
 		// Unrecognised audience tags
 		expect(
 			mapTagsToSourceAndTarget([{ path: '/tracking/audience/wat' }]),
-		).toEqual([undefined, undefined]);
+		).toBeUndefined();
 	});
 });

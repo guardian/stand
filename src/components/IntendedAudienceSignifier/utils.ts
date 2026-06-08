@@ -6,28 +6,26 @@ export interface Tag {
 	path?: string;
 }
 
-type SourceOrTargetResult = SourceOrTarget | undefined;
-
 export const mapTagsToSourceAndTarget = (
 	tags: Tag[],
-): [SourceOrTargetResult, SourceOrTargetResult] => {
+): { source: SourceOrTarget; target: SourceOrTarget } | undefined => {
 	const domesticAudienceTag = tags.find((tag) =>
 		/tracking\/audience\/(au|us|uk)/.test(tag.path ?? ''),
 	);
-	const domesticAudience = domesticAudienceTag?.path
-		?.split('/')
-		.at(-1) as SourceOrTargetResult;
+	const domesticAudience = domesticAudienceTag?.path?.split('/').at(-1) as
+		| SourceOrTarget
+		| undefined;
 	const isGlobal = !!tags.find(
 		(tag) => tag.path === 'tracking/audience/global',
 	);
 
 	if (domesticAudience && !isGlobal) {
-		return [domesticAudience, domesticAudience];
+		return { source: domesticAudience, target: domesticAudience };
 	} else if (domesticAudience && isGlobal) {
-		return [domesticAudience, 'global'];
+		return { source: domesticAudience, target: 'global' };
 	} else if (!domesticAudience && isGlobal) {
-		return ['global', 'global'];
+		return { source: 'global', target: 'global' };
 	}
 
-	return [undefined, undefined];
+	return undefined;
 };

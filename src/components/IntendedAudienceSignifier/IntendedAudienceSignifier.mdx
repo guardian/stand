@@ -91,9 +91,8 @@ import {
 } from '@guardian/stand/IntendedAudienceSignifier';
 
 const audienceTags = fetchAudienceTagsSomehow();
-const [source, target] = mapTagsToSourceAndTarget(audienceTags);
 
-<IntendedAudienceSignifier source={source} target={target} />;
+<IntendedAudienceSignifier ...mapTagsToSourceAndTarget(audienceTags) />;
 ```
 
 ## Props
