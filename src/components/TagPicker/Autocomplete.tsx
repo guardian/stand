@@ -1,5 +1,6 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
+import type { ReactNode } from 'react';
 import { type ReactElement, useState } from 'react';
 import {
 	Collection,
@@ -10,10 +11,13 @@ import {
 	ListBoxLoadMoreItem,
 	Popover,
 } from 'react-aria-components';
+import type { IconProps } from '../../Icon';
+import { Icon } from '../../Icon';
 import type { ComponentAutocomplete } from '../../styleD/build/typescript/component/autocomplete';
 import type { DeepPartial } from '../../util/types';
 import {
 	autocompleteInputStyles,
+	iconStyles,
 	listboxInfoStyles,
 	listboxItemStyles,
 	listboxStyles,
@@ -52,6 +56,15 @@ export interface AutocompleteProps<
 	theme?: DeepPartial<ComponentAutocomplete>;
 	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
 	cssOverrides?: SerializedStyles;
+
+	/** An icon to render to the right of the input */
+	icon?: ReactNode;
+
+	/**
+	 * Alternative to using the `icon` prop for rendering a Material Symbol icons on the right of the input
+	 * you can use the `symbol` prop to specify the icon by its symbol name.
+	 */
+	symbol?: IconProps['symbol'];
 }
 
 /**
@@ -154,10 +167,19 @@ export function Autocomplete<
 	theme,
 	cssOverrides,
 	addFirstOnEnter,
+	symbol,
+	icon,
 }: AutocompleteProps<T>) {
 	const [hoveredItemId, setHoveredItemId] = useState<string | number>();
 	const [upOrDownKeyPressed, setUpOrDownKeyPressed] = useState(false);
 	const listBoxIsInUse = upOrDownKeyPressed || !!hoveredItemId;
+
+	const iconContent = icon ? (
+		<Icon css={iconStyles(theme)}>{icon}</Icon>
+	) : symbol ? (
+		<Icon symbol={symbol} css={iconStyles(theme)} />
+	) : null;
+
 	return (
 		<div
 			css={[
@@ -188,7 +210,7 @@ export function Autocomplete<
 				shouldFocusWrap
 			>
 				<Input
-					css={autocompleteInputStyles(theme)}
+					css={autocompleteInputStyles(!!iconContent, theme)}
 					placeholder={placeholder}
 					disabled={disabled}
 					data-testid={dataTestId}
@@ -253,6 +275,7 @@ export function Autocomplete<
 						</ListBoxLoadMoreItem>
 					</ListBox>
 				</Popover>
+				{iconContent}
 			</ComboBox>
 		</div>
 	);

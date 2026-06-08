@@ -12,6 +12,7 @@ import { mergeDeep } from '../../util/mergeDeep';
 import type { DeepPartial } from '../../util/types';
 
 export const autocompleteInputStyles = (
+	hasIcon: boolean,
 	partialTheme: DeepPartial<ComponentAutocomplete> = {},
 ): SerializedStyles => {
 	const theme = mergeDeep(componentAutocomplete, partialTheme);
@@ -25,6 +26,11 @@ export const autocompleteInputStyles = (
 		border-color: ${theme.input.borderColor};
 		border-width: ${theme.input.borderWidth};
 		border-style: ${theme.input.borderStyle};
+		${hasIcon &&
+		`
+		padding-right: calc(${theme.icon.paddingX} + ${theme.icon.size} + ${theme.icon.paddingX});
+		min-height: calc(${theme.icon.size});
+		`}
 
 		&[data-disabled] {
 			background-color: ${theme.input.disabledBackgroundColor};
@@ -236,5 +242,21 @@ export const tagTableTypeBadgeStyles = (
 		padding: ${theme.typeBadge.paddingY} ${theme.typeBadge.paddingX};
 		font-size: ${theme.typeBadge.fontSize};
 		font-weight: ${theme.typeBadge.fontWeight};
+	`;
+};
+
+export const iconStyles = (
+	partialTheme: DeepPartial<ComponentAutocomplete> = {},
+): SerializedStyles => {
+	const theme = mergeDeep(componentAutocomplete, partialTheme);
+
+	return css`
+		pointer-events: none;
+		position: absolute;
+		right: ${theme.icon.paddingX};
+		color: ${theme.icon.color};
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: ${theme.icon.size};
 	`;
 };
