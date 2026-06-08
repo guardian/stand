@@ -26,6 +26,7 @@ export function TagSelectWithTypes<T extends Tag = Tag>({
 	symbol = 'search',
 	label = 'tags',
 	placeholder = 'search tags',
+	disabled,
 	...tagAutocompleteProps
 }: TagSelectWithTypes<T>) {
 	const [queryText, setQueryText] = useState('');
@@ -56,6 +57,7 @@ export function TagSelectWithTypes<T extends Tag = Tag>({
 					symbol={symbol}
 					label={label}
 					placeholder={placeholder}
+					disabled={disabled}
 				/>
 			</div>
 			<div
@@ -68,6 +70,7 @@ export function TagSelectWithTypes<T extends Tag = Tag>({
 				}}
 			>
 				<Select
+					isDisabled={disabled}
 					aria-label="select tag type"
 					value={tagType}
 					placeholder="tag type"

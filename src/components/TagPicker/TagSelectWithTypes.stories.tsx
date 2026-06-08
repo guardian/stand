@@ -7,20 +7,14 @@ import {
 	typeOptions,
 } from './storybookUtils';
 import { TagSelectWithTypes } from './TagSelectWithTypes';
-import { TagTable } from './TagTable';
 
 const meta: Meta<typeof TagSelectWithTypes> = {
 	title: 'Stand/Editorial Components/TagPicker/TagSelectWithTypes',
 	component: TagSelectWithTypes,
-};
-
-export default meta;
-
-type Story = StoryObj<typeof TagSelectWithTypes>;
-
-export const Default: Story = {
-	args: {},
-	render: () => {
+	args: {
+		tagTypes: typeOptions,
+	},
+	render: (args) => {
 		const [selectedTags, setSelectedTags] = useState<TagManagerObjectRow[]>([]);
 		const [options, setOptions] = useState<TagManagerObjectRow[]>([]);
 		const [isLoadingResults, setIsLoadingResults] = useState(false);
@@ -42,25 +36,49 @@ export const Default: Story = {
 		);
 
 		return (
-			<>
-				<TagSelectWithTypes
-					addTag={(tag) => {
-						setSelectedTags((tags) => {
-							if (tags.some(tagMatching(tag))) {
-								return tags;
-							}
-							return [...tags, tag];
-						});
-					}}
-					search={search}
-					disabled={false}
-					options={options}
-					tagTypes={typeOptions}
-					loading={isLoadingResults}
-				/>
-
-				<TagTable rows={selectedTags} />
-			</>
+			<TagSelectWithTypes
+				{...args}
+				addTag={(tag) => {
+					setSelectedTags((tags) => {
+						if (tags.some(tagMatching(tag))) {
+							return tags;
+						}
+						return [...tags, tag];
+					});
+				}}
+				search={search}
+				options={options}
+				loading={isLoadingResults}
+			/>
 		);
+	},
+};
+
+export default meta;
+
+type Story = StoryObj<typeof TagSelectWithTypes>;
+
+export const Default: Story = {};
+
+export const Disabled: Story = {
+	args: {
+		disabled: true,
+	},
+};
+
+export const CustomIcon: Story = {
+	args: {
+		icon: (
+			<svg
+				viewBox="0 0 18 18"
+				xmlns="http://www.w3.org/2000/svg"
+				role="presentation"
+			>
+				<path
+					fill="blue"
+					d="M 6.5,0 A 6.5,6.5 0 0 0 0,6.5 6.5,6.5 0 0 0 6.5,13 6.5,6.5 0 0 0 9.90625,12.027344 L 15.878906,18 18,15.878906 12.027344,9.90625 A 6.5,6.5 0 0 0 13,6.5 6.5,6.5 0 0 0 6.5,0 Z m 0,2 A 4.5,4.5 0 0 1 11,6.5 4.5,4.5 0 0 1 6.5,11 4.5,4.5 0 0 1 2,6.5 4.5,4.5 0 0 1 6.5,2 Z"
+				></path>
+			</svg>
+		),
 	},
 };

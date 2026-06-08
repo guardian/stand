@@ -76,9 +76,6 @@ export const TagPicker = {
 						disabled={false}
 						value={value}
 					/>
-					<select>
-						<option>All tags</option>
-					</select>
 				</div>
 				<TagTable rows={selectedTags} filterRows={() => true} />
 			</>
@@ -142,9 +139,6 @@ export const Async = {
 						disabled={false}
 						value={value}
 					/>
-					<select>
-						<option>All tags</option>
-					</select>
 				</div>
 				<div>Some content below</div>
 			</>
