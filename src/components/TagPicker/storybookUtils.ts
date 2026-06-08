@@ -66,3 +66,21 @@ export const typeOptions = [
 ].map((type) => ({
 	value: type,
 }));
+
+export const proposeWithoutRationalBasis = (
+	selectedTags: TagManagerObjectRow[],
+): TagManagerObjectRow[] => {
+	if (selectedTags.length === 0) {
+		return [];
+	}
+
+	if (selectedTags.length === 1) {
+		return mappedExampleTags
+			.filter((tag) => ['world'].includes(tag.slug))
+			.filter((proposedTag) => !selectedTags.some(tagMatching(proposedTag)));
+	}
+
+	return mappedExampleTags
+		.filter((tag) => ['we-love', 'bolivia', 'world'].includes(tag.slug))
+		.filter((proposedTag) => !selectedTags.some(tagMatching(proposedTag)));
+};
