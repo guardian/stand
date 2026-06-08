@@ -6,7 +6,7 @@ import type { DeepPartial } from '../../util/types';
 import { Autocomplete } from './Autocomplete';
 import type { Tag } from './types';
 
-interface TagAutocompleteProps<T extends Tag = Tag> {
+export interface TagAutocompleteProps<T extends Tag = Tag> {
 	/** `addTag` - Function called when an option is picked from the dropdown */
 	addTag: (tag: T) => void;
 	/** `loading` - Whether the component is loading options for the dropdown */

@@ -32,7 +32,7 @@ export interface TagTableProps<R extends Row> {
 	/** `rows` - The collection of rows */
 	rows: R[];
 	/** `filterRows` - Function to filter rows from `rows` prop from appearing in the table */
-	filterRows: (row: R) => boolean;
+	filterRows?: (row: R) => boolean;
 	/** `heading` - The table heading */
 	heading?: string;
 	/** `showTagType` - Whether to show tags' type in table */
@@ -179,7 +179,7 @@ export function TagTable<R extends Row>({
 		setLocalRows([...rows]);
 	}, [rows]);
 
-	const filtered = localRows.filter(filterRows);
+	const filtered = filterRows ? localRows.filter(filterRows) : [...localRows];
 
 	const { dragAndDropHooks } = useDragAndDrop<R>({
 		getItems: (_keys, items) => {
