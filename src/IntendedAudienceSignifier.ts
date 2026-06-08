@@ -17,3 +17,4 @@ export type { IntendedAudienceSignifierProps } from './components/IntendedAudien
 export type { IntendedAudienceSignifierTheme } from './components/IntendedAudienceSignifier/styles';
 export { componentIntendedAudienceSignifier } from './styleD/build/typescript/component/intendedAudienceSignifier';
 export type { ComponentIntendedAudienceSignifier } from './styleD/build/typescript/component/intendedAudienceSignifier';
+export { mapTagsToSourceAndTarget } from './components/IntendedAudienceSignifier/utils';
