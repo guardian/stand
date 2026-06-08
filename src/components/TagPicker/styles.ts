@@ -119,6 +119,7 @@ export const tagTableCellStyles = (
 
 export const tagTableRowStyles = (
 	canDrag: boolean,
+	highlightFirstRow: boolean,
 	partialTheme: DeepPartial<ComponentTagTable> = {},
 ): SerializedStyles => {
 	const theme = mergeDeep(componentTagTable, partialTheme);
@@ -139,7 +140,7 @@ export const tagTableRowStyles = (
 				opacity: 1;
 			}
 		}
-		${canDrag &&
+		${highlightFirstRow &&
 		`:first-of-type {
                     background-color: ${theme.row.firstRowBackgroundColor};
 

@@ -41,6 +41,8 @@ export interface TagTableProps<R extends Row> {
 	showTagSectionName?: boolean;
 	/** `removeAction` - Function called when the Remove button is pressed on a row */
 	removeAction?: (tag: R) => void;
+	/** `highlightFirstRow` - Whether to highlight the first row ("leading tag") */
+	highlightFirstRow?: boolean;
 	/** `addAction` - Function called when the Add button is pressed on a row */
 	addAction?: (tag: R) => void;
 	/** `onReorder` - Function called when a re-ordering of rows through drag and drop is performed */
@@ -155,6 +157,7 @@ export function TagTable<R extends Row>({
 	heading,
 	showTagType,
 	showTagSectionName,
+	highlightFirstRow = false,
 	removeAction: removeTag,
 	addAction: addTag,
 	onReorder,
@@ -248,7 +251,7 @@ export function TagTable<R extends Row>({
 					{(item) => (
 						<Row
 							id={rowToTag(item).id}
-							css={rowStyles(canDrag, theme)}
+							css={rowStyles(canDrag, highlightFirstRow, theme)}
 							key={rowToTag(item).id}
 							textValue={rowToTag(item).name}
 						>
