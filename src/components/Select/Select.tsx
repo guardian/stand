@@ -19,10 +19,14 @@ import {
 } from './styles';
 import type { ListBoxProps, OptionProps, SelectProps } from './types';
 
-export function Option({ children, theme = {} }: OptionProps) {
+export function Option({ children, theme = {}, value, id }: OptionProps) {
 	const mergedTheme = mergeDeep(defaultSelectTheme, theme);
 	return (
-		<ReactAriaListBoxItem css={listBoxItemStyles(mergedTheme)}>
+		<ReactAriaListBoxItem
+			css={listBoxItemStyles(mergedTheme)}
+			value={value}
+			id={id}
+		>
 			{children}
 		</ReactAriaListBoxItem>
 	);
