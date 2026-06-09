@@ -124,12 +124,6 @@ export const ReadOnly: Story = {
 	},
 };
 
-export const WithChildren: Story = {
-	args: {
-		children: <p>Custom content can be added here</p>,
-	},
-};
-
 export const Offline: Story = {
 	args: {
 		offline: true,

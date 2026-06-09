@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import { Button } from '../../Button';
 import { TagSelectWithTypes } from './TagSelectWithTypes';
 import type { TagTableProps } from './TagTable';
@@ -24,8 +23,6 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	canRemove: TagTableProps<T>['canRemove'];
 	removeAction: TagTableProps<T>['removeAction'];
 	removeIcon: TagTableProps<T>['removeIcon'];
-
-	children?: ReactNode;
 };
 
 export function TagPicker<T extends TagRow = TagRow>({
@@ -50,14 +47,12 @@ export function TagPicker<T extends TagRow = TagRow>({
 
 	// proposed tag table
 	proposedTags,
-
-	children,
 }: TagPickerProps<T>) {
 	const showBackupListWhenOffline =
 		!readOnly && offlineBackupTags && offlineBackupTags.length > 0;
 
 	return (
-		<div>
+		<>
 			<TagSelectWithTypes
 				search={search}
 				addTag={addTag}
@@ -120,8 +115,6 @@ export function TagPicker<T extends TagRow = TagRow>({
 					data-testid="proposed-tags-table"
 				/>
 			)}
-
-			{children}
-		</div>
+		</>
 	);
 }
