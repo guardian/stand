@@ -1,3 +1,4 @@
+import type { ReactElement } from 'react';
 import { Button } from '../../Button';
 import { TagSelectWithTypes } from './TagSelectWithTypes';
 import type { TagTableProps } from './TagTable';
@@ -24,7 +25,8 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	tagTypes: FilterOption[];
 	offlineBackupTags?: T[];
 	canRemove: TagTableProps<T>['canRemove'];
-	removeIcon: TagTableProps<T>['removeIcon'];
+	removeIcon: ReactElement;
+	searchIcon?: ReactElement;
 };
 
 function filterOutSelectedTags<T extends TagRow = TagRow>(
@@ -60,6 +62,8 @@ export function TagPicker<T extends TagRow = TagRow>({
 	removeIcon,
 	highlightLeadingTag,
 
+	searchIcon,
+
 	// proposed tag table
 	proposedTags,
 }: TagPickerProps<T>) {
@@ -75,6 +79,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 	return (
 		<>
 			<TagSelectWithTypes
+				icon={searchIcon}
 				search={onSearch}
 				addTag={addTag}
 				options={options}
