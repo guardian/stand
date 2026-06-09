@@ -6,6 +6,14 @@
 					"$type": "dimension",
 					"$value": "100%"
 				},
+				"offset": {
+					"$type": "number",
+					"$value": 8
+				},
+				"containerPadding": {
+					"$type": "number",
+					"$value": 0
+				},
 				"hover": {
 					"backgroundColor": {
 						"$type": "color",

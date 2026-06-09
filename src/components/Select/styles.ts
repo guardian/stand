@@ -10,9 +10,10 @@ export type PartialSelectTheme = Prettify<DeepPartial<SelectTheme>>;
 
 export const defaultSelectTheme: SelectTheme = componentSelect;
 
-export const popoverStyles = (theme: SelectTheme): SerializedStyles => {
+export const popoverStyles = (): SerializedStyles => {
 	return css`
-		width: ${theme.shared.width};
+		/* width must be determined by the react-aria popover --trigger-width variable */
+		width: var(--trigger-width);
 	`;
 };
 
