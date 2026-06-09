@@ -1,0 +1,16 @@
+{
+	"component": {
+		"tagPicker": {
+			"shared": {
+				"width": {
+					"$type": "dimension",
+					"$value": "100%"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "15px"
+				}
+			}
+		}
+	}
+}

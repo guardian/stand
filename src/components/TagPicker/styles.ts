@@ -1,5 +1,7 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
+import type { ComponentTagPicker } from '../../styleD/build//typescript/component/tagPicker';
+import { componentTagPicker } from '../../styleD/build//typescript/component/tagPicker';
 import {
 	type ComponentAutocomplete,
 	componentAutocomplete,
@@ -260,5 +262,18 @@ export const iconStyles = (
 		top: 50%;
 		transform: translateY(-50%);
 		font-size: ${theme.icon.size};
+	`;
+};
+
+export const tagPickerStyles = (
+	partialTheme: DeepPartial<ComponentTagPicker> = {},
+): SerializedStyles => {
+	const theme = mergeDeep(componentTagPicker, partialTheme);
+
+	return css`
+		display: flex;
+		flex-direction: column;
+		width: ${theme.shared.width};
+		gap: ${theme.shared.gap};
 	`;
 };

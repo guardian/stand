@@ -1,5 +1,11 @@
+import type { SerializedStyles } from '@emotion/react';
 import type { ReactElement } from 'react';
 import { Button } from '../../Button';
+import type { ComponentSelect } from '../../Select';
+import type { ComponentTagPicker } from '../../styleD/build/typescript/component/tagPicker';
+import type { ComponentAutocomplete, ComponentTagTable } from '../../TagPicker';
+import type { DeepPartial } from '../../util/types';
+import { tagPickerStyles } from './styles';
 import { TagSelectWithTypes } from './TagSelectWithTypes';
 import type { TagTableProps } from './TagTable';
 import { TagTable } from './TagTable';
@@ -27,6 +33,16 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	canRemove: TagTableProps<T>['canRemove'];
 	removeIcon: ReactElement;
 	searchIcon?: ReactElement;
+
+	tagTableTheme?: DeepPartial<ComponentTagTable>;
+	proposedTagTableTheme?: DeepPartial<ComponentTagTable>;
+	autoCompleteTheme?: DeepPartial<ComponentAutocomplete>;
+	selectTheme?: DeepPartial<ComponentSelect>;
+
+	/** `theme` - Used to customise the look and feel of the TagTable component */
+	theme?: DeepPartial<ComponentTagPicker>;
+	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
+	cssOverrides?: SerializedStyles;
 };
 
 function filterOutSelectedTags<T extends TagRow = TagRow>(
@@ -61,11 +77,19 @@ export function TagPicker<T extends TagRow = TagRow>({
 	removeTag,
 	removeIcon,
 	highlightLeadingTag,
+	tagTableTheme,
 
 	searchIcon,
 
 	// proposed tag table
 	proposedTags,
+	proposedTagTableTheme,
+	selectTheme,
+
+	autoCompleteTheme,
+
+	theme,
+	cssOverrides,
 }: TagPickerProps<T>) {
 	const showBackupListWhenOffline =
 		!readOnly && offlineBackupTags && offlineBackupTags.length > 0;
@@ -77,7 +101,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 	);
 
 	return (
-		<>
+		<div css={[tagPickerStyles(theme), cssOverrides]}>
 			<TagSelectWithTypes
 				icon={searchIcon}
 				search={onSearch}
@@ -89,6 +113,8 @@ export function TagPicker<T extends TagRow = TagRow>({
 				label={searchLabel}
 				placeholder={searchPlaceholder}
 				data-testid="tag-picker-search-input"
+				autoCompleteTheme={autoCompleteTheme}
+				selectTheme={selectTheme}
 			/>
 
 			{offline && (
@@ -131,11 +157,13 @@ export function TagPicker<T extends TagRow = TagRow>({
 				showTagType
 				showTagSectionName
 				removeIcon={removeIcon}
+				theme={tagTableTheme}
 			/>
 
 			{!readOnly && (
 				<TagTable
 					heading={'Proposed Tags'}
+					theme={proposedTagTableTheme}
 					filterRows={filterRows}
 					showTagType
 					showTagSectionName
@@ -144,6 +172,6 @@ export function TagPicker<T extends TagRow = TagRow>({
 					data-testid="proposed-tags-table"
 				/>
 			)}
-		</>
+		</div>
 	);
 }

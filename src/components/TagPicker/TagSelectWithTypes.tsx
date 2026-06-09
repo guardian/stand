@@ -1,6 +1,9 @@
 import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
+import type { ComponentSelect } from '../../Select';
 import { Option, Select } from '../../Select';
+import type { ComponentAutocomplete } from '../../TagPicker';
+import type { DeepPartial } from '../../util/types';
 import { TagAutocomplete, type TagAutocompleteProps } from './TagAutocomplete';
 import type { FilterOption, Tag } from './types';
 
@@ -9,6 +12,8 @@ type TagSelectWithTypes<T extends Tag = Tag> = {
 	tagTypes: FilterOption[];
 	label?: string;
 	placeholder?: string;
+	autoCompleteTheme?: DeepPartial<ComponentAutocomplete>;
+	selectTheme?: DeepPartial<ComponentSelect>;
 } & Omit<
 	TagAutocompleteProps<T>,
 	| 'onTextInputChange'
@@ -27,6 +32,8 @@ export function TagSelectWithTypes<T extends Tag = Tag>({
 	label = 'tags',
 	placeholder = 'search tags',
 	disabled,
+	autoCompleteTheme,
+	selectTheme,
 	...tagAutocompleteProps
 }: TagSelectWithTypes<T>) {
 	const [queryText, setQueryText] = useState('');
@@ -58,6 +65,7 @@ export function TagSelectWithTypes<T extends Tag = Tag>({
 					label={label}
 					placeholder={placeholder}
 					disabled={disabled}
+					theme={autoCompleteTheme}
 				/>
 			</div>
 			<div
@@ -82,6 +90,7 @@ export function TagSelectWithTypes<T extends Tag = Tag>({
 						}
 						setFilterValue(selection.toString());
 					}}
+					theme={selectTheme}
 				>
 					{tagTypes.map((data, index) => (
 						<Option value={data} key={index} id={data.filter}>

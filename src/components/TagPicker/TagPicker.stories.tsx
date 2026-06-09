@@ -25,8 +25,6 @@ const meta: Meta<StoryArgs> = {
 	args: {
 		// default props
 		tagTypes: allTagTypeFilters,
-		canRemove: (tag) => tag.type !== 'Tone',
-		removeIcon: <Icon symbol="delete" />,
 
 		// story options
 		intialTags: mappedExampleTags.filter((tag) =>
@@ -110,6 +108,12 @@ const meta: Meta<StoryArgs> = {
 
 export default meta;
 export const Default: Story = {};
+
+export const WithRemoveIcon: Story = {
+	args: {
+		removeIcon: <Icon symbol="delete" />,
+	},
+};
 
 export const CannotRemoveKeywords: Story = {
 	args: {
@@ -251,5 +255,75 @@ export const ComposerContentTagPicker: Story = {
 			tag.type !== 'Content Type' &&
 			!tag.path.startsWith('campaign/callout') &&
 			!(isLiveblog && tag.path.startsWith('tone/minutebyminute')),
+	},
+	decorators: [
+		(Story) => {
+			return (
+				<section
+					css={{
+						width: 670,
+						padding: '15px 30px 30px',
+					}}
+				>
+					<div
+						css={{
+							fontWeight: 700,
+							marginBottom: 10,
+						}}
+					>
+						Tags
+					</div>
+					<Story />
+				</section>
+			);
+		},
+	],
+};
+
+export const WithTheme: Story = {
+	args: {
+		theme: {
+			shared: {
+				width: '600px',
+				gap: '2rem',
+			},
+		},
+
+		autoCompleteTheme: {
+			input: {
+				backgroundColor: 'pink',
+				borderColor: 'crimson',
+				borderWidth: '3px',
+			},
+		},
+
+		selectTheme: {
+			shared: {
+				button: {
+					backgroundColor: 'pink',
+					border: '3px solid crimson',
+				},
+			},
+		},
+
+		tagTableTheme: {
+			row: {
+				backgroundColor: 'pink',
+				backgroundHoverColor: 'red',
+			},
+			cell: {
+				borderBetweenCells: {
+					borderColor: 'crimson',
+					borderStyle: 'groove',
+					borderWidth: '4px',
+				},
+			},
+		},
+
+		proposedTagTableTheme: {
+			heading: {
+				backgroundColor: 'pink',
+			},
+		},
 	},
 };
