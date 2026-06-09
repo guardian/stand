@@ -104,6 +104,7 @@ export const tagTableCellStyles = (
 
 	return css`
 		padding: ${theme.cell.paddingY} ${theme.cell.paddingX};
+		vertical-align: middle;
 
 		:first-of-type {
 			padding-left: ${theme.cell.firstCellPaddingLeft};
