@@ -9,7 +9,11 @@ import type { SelectTheme } from './styles';
 
 export interface OptionProps
 	extends
-		DefaultPropsWithChildren<SelectTheme, RACListBoxItemProps['className']>,
+		DefaultPropsWithChildren<
+			SelectTheme,
+			RACListBoxItemProps['className'],
+			string
+		>,
 		Omit<RACListBoxItemProps, 'children'> {}
 
 export interface ListBoxProps
