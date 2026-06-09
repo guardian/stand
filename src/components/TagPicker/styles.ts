@@ -277,3 +277,14 @@ export const tagPickerStyles = (
 		gap: ${theme.shared.gap};
 	`;
 };
+
+export const tagSelectWithTypesStyles = (
+	partialTheme: DeepPartial<ComponentTagPicker> = {},
+): SerializedStyles => {
+	const theme = mergeDeep(componentTagPicker, partialTheme);
+
+	return css`
+		display: flex;
+		gap: ${theme.shared.gap};
+	`;
+};

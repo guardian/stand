@@ -119,6 +119,8 @@ export function TagPicker<T extends TagRow = TagRow>({
 				label={searchLabel}
 				placeholder={searchPlaceholder}
 				data-testid="tag-picker-search-input"
+				symbol="search"
+				theme={theme}
 				autoCompleteTheme={autoCompleteTheme}
 				selectTheme={selectTheme}
 			/>
