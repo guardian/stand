@@ -74,6 +74,8 @@ export function TagSelectWithTypes<T extends Tag = Tag>({
 					aria-label="select tag type"
 					value={filterValue}
 					placeholder="tag type"
+					placement="bottom"
+					shouldFlip={false}
 					onChange={(selection) => {
 						if (Array.isArray(selection) || selection === null) {
 							return;

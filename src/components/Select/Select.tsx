@@ -60,6 +60,8 @@ function ListBox({ children, theme = {} }: ListBoxProps) {
 export function Select({
 	isInvalid,
 	theme = {},
+	placement,
+	shouldFlip,
 	children,
 	...props
 }: SelectProps) {
@@ -76,7 +78,11 @@ export function Select({
 				<SelectValue />
 				<Icon symbol="keyboard_arrow_down" size="lg" />
 			</Button>
-			<Popover css={popoverStyles(mergedTheme)}>
+			<Popover
+				css={popoverStyles(mergedTheme)}
+				placement={placement}
+				shouldFlip={shouldFlip}
+			>
 				<ListBox>{children}</ListBox>
 			</Popover>
 		</FormInputContainer>

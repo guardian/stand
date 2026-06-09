@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { Option, Select } from './Select';
 
-const meta = {
+const meta: Meta<typeof Select> = {
 	title: 'Stand/Tools Design System/Components/Select',
 	component: Select,
 	parameters: {},
@@ -16,7 +16,7 @@ const meta = {
 			</Select>
 		);
 	},
-} satisfies Meta<typeof Select>;
+};
 
 type Story = StoryObj<typeof Select>;
 
