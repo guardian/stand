@@ -47,6 +47,9 @@ importers:
       '@playwright/experimental-ct-react17':
         specifier: 1.60.0
         version: 1.60.0(@types/node@24.10.1)(lightningcss@1.32.0)(tsx@4.20.6)(vite@8.0.13(@types/node@24.10.1)(esbuild@0.27.7)(tsx@4.20.6)(yaml@2.9.0))(yaml@2.9.0)
+      '@storybook/addon-a11y':
+        specifier: 10.4.0
+        version: 10.4.0(storybook@10.4.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@testing-library/dom@10.4.1)(@types/react@17.0.76)(prettier@3.8.3)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))
       '@storybook/addon-docs':
         specifier: 10.4.0
         version: 10.4.0(@types/react-dom@17.0.25)(@types/react@17.0.76)(esbuild@0.27.7)(rollup@4.60.4)(storybook@10.4.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@testing-library/dom@10.4.1)(@types/react@17.0.76)(prettier@3.8.3)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(vite@8.0.13(@types/node@24.10.1)(esbuild@0.27.7)(tsx@4.20.6)(yaml@2.9.0))
@@ -2552,6 +2555,11 @@ packages:
 
   '@stitches/core@1.2.8':
     resolution: {integrity: sha512-Gfkvwk9o9kE9r9XNBmJRfV8zONvXThnm1tcuojL04Uy5uRyqg93DC83lDebl0rocZCfKSjUv+fWYtMQmEDJldg==}
+
+  '@storybook/addon-a11y@10.4.0':
+    resolution: {integrity: sha512-N1QRmh+PMe5O81KDf8oPDv/csdLAmDCRCYLByukqdUXpTNlcULHDFUJNXl00/rFpbt7PbOZqzRzs72JJt6nWPA==}
+    peerDependencies:
+      storybook: ^10.4.0
 
   '@storybook/addon-docs@10.4.0':
     resolution: {integrity: sha512-HJNvYGx/c3jjVwibnmbDgCZMYPI6xGUDjJSRi5CG0G9tpeoeijPo318f5N84RyYWK8LheHUrDN3Jv2UfVv8zwQ==}
@@ -9325,6 +9333,12 @@ snapshots:
       '@sinonjs/commons': 3.0.1
 
   '@stitches/core@1.2.8': {}
+
+  '@storybook/addon-a11y@10.4.0(storybook@10.4.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@testing-library/dom@10.4.1)(@types/react@17.0.76)(prettier@3.8.3)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))':
+    dependencies:
+      '@storybook/global': 5.0.0
+      axe-core: 4.11.1
+      storybook: 10.4.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@testing-library/dom@10.4.1)(@types/react@17.0.76)(prettier@3.8.3)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
 
   '@storybook/addon-docs@10.4.0(@types/react-dom@17.0.25)(@types/react@17.0.76)(esbuild@0.27.7)(rollup@4.60.4)(storybook@10.4.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@testing-library/dom@10.4.1)(@types/react@17.0.76)(prettier@3.8.3)(react-dom@17.0.2(react@17.0.2))(react@17.0.2))(vite@8.0.13(@types/node@24.10.1)(esbuild@0.27.7)(tsx@4.20.6)(yaml@2.9.0))':
     dependencies:
