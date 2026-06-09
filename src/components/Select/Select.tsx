@@ -75,7 +75,11 @@ export function Select({
 				<SelectValue />
 				<Icon symbol="keyboard_arrow_down" size="lg" />
 			</Button>
-			<Popover css={popoverStyles(mergedTheme)}>
+			<Popover
+				css={popoverStyles()}
+				offset={mergedTheme.shared.offset}
+				containerPadding={mergedTheme.shared.containerPadding}
+			>
 				<ListBox>{children}</ListBox>
 			</Popover>
 		</FormInputContainer>
