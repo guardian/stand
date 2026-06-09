@@ -2,11 +2,11 @@ import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
 import { Option, Select } from '../../Select';
 import { TagAutocomplete, type TagAutocompleteProps } from './TagAutocomplete';
-import type { Tag } from './types';
+import type { FilterOption, Tag } from './types';
 
 type TagSelectWithTypes<T extends Tag = Tag> = {
-	search: { (queryText: string, tagType?: string): void };
-	tagTypes: Array<{ value: string; name?: string }>;
+	search: { (queryText: string, filterValue?: string): void };
+	tagTypes: FilterOption[];
 	label?: string;
 	placeholder?: string;
 } & Omit<
@@ -30,13 +30,13 @@ export function TagSelectWithTypes<T extends Tag = Tag>({
 	...tagAutocompleteProps
 }: TagSelectWithTypes<T>) {
 	const [queryText, setQueryText] = useState('');
-	const [tagType, setTagType] = useState('');
+	const [filterValue, setFilterValue] = useState(tagTypes[0]?.filter ?? '');
 
 	useEffect(() => {
 		if (queryText && queryText.length > 0) {
-			search(queryText, tagType.length === 0 ? undefined : tagType);
+			search(queryText, filterValue.length === 0 ? undefined : filterValue);
 		}
-	}, [tagType, queryText, search]);
+	}, [filterValue, queryText, search]);
 
 	return (
 		<div
@@ -70,24 +70,20 @@ export function TagSelectWithTypes<T extends Tag = Tag>({
 				}}
 			>
 				<Select
-					isDisabled={disabled}
+					isDisabled={disabled || tagTypes.length == 1}
 					aria-label="select tag type"
-					value={tagType}
+					value={filterValue}
 					placeholder="tag type"
 					onChange={(selection) => {
-						if (Array.isArray(selection)) {
+						if (Array.isArray(selection) || selection === null) {
 							return;
 						}
-						if (selection === null) {
-							return setTagType('');
-						}
-						setTagType(selection.toString());
+						setFilterValue(selection.toString());
 					}}
 				>
-					<Option id="">any</Option>
 					{tagTypes.map((data, index) => (
-						<Option value={data} key={index} id={data.value}>
-							{data.name ?? data.value}
+						<Option value={data} key={index} id={data.filter}>
+							{data.label}
 						</Option>
 					))}
 				</Select>

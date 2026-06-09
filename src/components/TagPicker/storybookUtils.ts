@@ -1,5 +1,5 @@
 import { exampleTags } from './exampleTags';
-import type { TagManagerObjectData, TagRow } from './types';
+import type { FilterOption, TagManagerObjectData, TagRow } from './types';
 
 export type TagManagerObjectRow = TagManagerObjectData & TagRow;
 
@@ -16,15 +16,16 @@ export const mappedExampleTags: TagManagerObjectRow[] = exampleTags.map(
 // Approximates the tagmanager API's search behaviour.
 export const simulateSearch = (
 	inputText: string,
-	tagType?: string,
+	tagTypeFilter?: string,
 ): TagManagerObjectRow[] => {
 	if (inputText === '') {
 		return [];
 	}
 
-	const tagMatchingType = tagType
-		? mappedExampleTags.filter(
-				(tag) => tag.type.toLowerCase() === tagType.toLowerCase(),
+	const allowedTagTypes = tagTypeFilter?.toLowerCase().split(',');
+	const tagMatchingType = allowedTagTypes
+		? mappedExampleTags.filter((tag) =>
+				allowedTagTypes.includes(tag.type.toLowerCase()),
 			)
 		: mappedExampleTags;
 
@@ -47,25 +48,30 @@ const waitFor = (delay: number) =>
 
 export const simulateSearchAsyncSearch = async (
 	inputText: string,
-	tagType?: string,
+	tagTypeFilter?: string,
 ): Promise<TagManagerObjectRow[]> => {
 	await waitFor(500);
-	return simulateSearch(inputText, tagType);
+	return simulateSearch(inputText, tagTypeFilter);
 };
 
 export const tagMatching =
 	(tag: TagManagerObjectRow) => (existingTag: TagManagerObjectRow) =>
 		existingTag.path === tag.path;
 
-export const typeOptions = [
-	'Topic',
-	'Series',
-	'Tone',
-	'Keyword',
-	'PaidContent',
-].map((type) => ({
-	value: type,
-}));
+export const allTagTypeFilters: FilterOption[] = [
+	{ filter: '', label: 'All' },
+	{ filter: 'Blog', label: 'Blog - DEPRECATED' },
+	{ filter: 'Campaign', label: 'Campaign' },
+	{ filter: 'ContentType', label: 'Content Type' },
+	{ filter: 'Contributor', label: 'Contributor' },
+	{ filter: 'NewspaperBook', label: 'Newspaper Book' },
+	{ filter: 'NewspaperBookSection', label: 'Newspaper Book Section' },
+	{ filter: 'Publication', label: 'Publication' },
+	{ filter: 'Series', label: 'Series' },
+	{ filter: 'Tone', label: 'Tone' },
+	{ filter: 'Topic', label: 'Topic' },
+	{ filter: 'Tracking', label: 'Tracking' },
+];
 
 export const proposeWithoutRationalBasis = (
 	selectedTags: TagManagerObjectRow[],
@@ -75,12 +81,10 @@ export const proposeWithoutRationalBasis = (
 	}
 
 	if (selectedTags.length === 1) {
-		return mappedExampleTags
-			.filter((tag) => ['world'].includes(tag.slug))
-			.filter((proposedTag) => !selectedTags.some(tagMatching(proposedTag)));
+		return mappedExampleTags.filter((tag) => ['world'].includes(tag.slug));
 	}
 
-	return mappedExampleTags
-		.filter((tag) => ['we-love', 'bolivia', 'world'].includes(tag.slug))
-		.filter((proposedTag) => !selectedTags.some(tagMatching(proposedTag)));
+	return mappedExampleTags.filter((tag) =>
+		['we-love', 'bolivia', 'world'].includes(tag.slug),
+	);
 };

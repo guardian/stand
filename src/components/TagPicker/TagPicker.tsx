@@ -2,33 +2,47 @@ import { Button } from '../../Button';
 import { TagSelectWithTypes } from './TagSelectWithTypes';
 import type { TagTableProps } from './TagTable';
 import { TagTable } from './TagTable';
-import type { TagRow } from './types';
+import type { FilterOption, TagRow } from './types';
 
 export type TagPickerProps<T extends TagRow = TagRow> = {
-	tags: T[];
-	search: { (queryText: string, tagType?: string): void };
-	tagTypes: Array<{ value: string; name?: string }>;
-
 	addTag: (tag: T) => void;
 	loading: boolean;
+	offline?: boolean;
+	onReorder: TagTableProps<T>['onReorder'];
+	onSearch: { (queryText: string, tagTypeFilter?: string): void };
 	options: T[];
 	proposedTags: T[];
-	readOnly: boolean;
-
-	offline?: boolean;
+	readOnly?: boolean;
+	removeTag: TagTableProps<T>['removeAction'];
 	retryConnection?: () => void;
-	offlineBackupTags?: T[];
+	tags: T[];
 
-	onReorder: TagTableProps<T>['onReorder'];
+	highlightLeadingTag?: boolean;
+	searchPlaceholder?: string;
+	searchLabel?: string;
+	filterRows?: { (tag: T): boolean };
+	tagTypes: FilterOption[];
+	offlineBackupTags?: T[];
 	canRemove: TagTableProps<T>['canRemove'];
-	removeAction: TagTableProps<T>['removeAction'];
 	removeIcon: TagTableProps<T>['removeIcon'];
 };
 
+function filterOutSelectedTags<T extends TagRow = TagRow>(
+	tagList: T[],
+	selectedTags: T[],
+) {
+	const selectedTagIds = selectedTags.map(({ id }) => id);
+	return tagList.filter(({ id }) => !selectedTagIds.includes(id));
+}
+
 export function TagPicker<T extends TagRow = TagRow>({
 	tags,
-	search,
+	onSearch,
 	tagTypes,
+	filterRows,
+
+	searchLabel = 'Search for tags',
+	searchPlaceholder = 'Search for tags',
 
 	addTag,
 	loading,
@@ -42,8 +56,9 @@ export function TagPicker<T extends TagRow = TagRow>({
 	// selected tag table
 	onReorder,
 	canRemove,
-	removeAction,
+	removeTag,
 	removeIcon,
+	highlightLeadingTag,
 
 	// proposed tag table
 	proposedTags,
@@ -51,27 +66,24 @@ export function TagPicker<T extends TagRow = TagRow>({
 	const showBackupListWhenOffline =
 		!readOnly && offlineBackupTags && offlineBackupTags.length > 0;
 
+	const proposedTagsWithoutSelected = filterOutSelectedTags(proposedTags, tags);
+	const backupTagsWithoutSelected = filterOutSelectedTags(
+		offlineBackupTags ?? [],
+		tags,
+	);
+
 	return (
 		<>
 			<TagSelectWithTypes
-				search={search}
+				search={onSearch}
 				addTag={addTag}
 				options={options}
 				loading={loading}
 				tagTypes={tagTypes}
 				disabled={readOnly || offline}
-			/>
-
-			<TagTable
-				rows={tags}
-				highlightFirstRow
-				showTagType
-				showTagSectionName
-				canRemove={canRemove}
-				removeAction={readOnly ? undefined : removeAction}
-				removeIcon={removeIcon}
-				onReorder={readOnly ? undefined : onReorder}
-				data-testid="selected-tags-table"
+				label={searchLabel}
+				placeholder={searchPlaceholder}
+				data-testid="tag-picker-search-input"
 			/>
 
 			{offline && (
@@ -96,21 +108,33 @@ export function TagPicker<T extends TagRow = TagRow>({
 							heading="Offline backup tags"
 							showTagType
 							showTagSectionName
-							rows={offlineBackupTags.filter(
-								(backupTag) => !tags.some((tag) => tag.id === backupTag.id),
-							)}
+							rows={backupTagsWithoutSelected}
 							addAction={addTag}
 						/>
 					)}
 				</div>
 			)}
 
+			<TagTable
+				rows={tags}
+				canRemove={canRemove}
+				removeAction={readOnly ? undefined : removeTag}
+				filterRows={filterRows}
+				onReorder={readOnly ? undefined : onReorder}
+				data-testid="selected-tags-table"
+				highlightFirstRow={highlightLeadingTag}
+				showTagType
+				showTagSectionName
+				removeIcon={removeIcon}
+			/>
+
 			{!readOnly && (
 				<TagTable
-					heading={'Proposed tags'}
+					heading={'Proposed Tags'}
+					filterRows={filterRows}
 					showTagType
 					showTagSectionName
-					rows={proposedTags}
+					rows={proposedTagsWithoutSelected}
 					addAction={addTag}
 					data-testid="proposed-tags-table"
 				/>

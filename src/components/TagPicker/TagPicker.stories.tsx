@@ -4,11 +4,11 @@ import { useCallback, useState } from 'react';
 import { Icon } from '../Icon/Icon';
 import type { TagManagerObjectRow } from './storybookUtils';
 import {
+	allTagTypeFilters,
 	mappedExampleTags,
 	proposeWithoutRationalBasis,
 	simulateSearchAsyncSearch,
 	tagMatching,
-	typeOptions,
 } from './storybookUtils';
 import { TagPicker } from './TagPicker';
 
@@ -24,7 +24,7 @@ const meta: Meta<StoryArgs> = {
 	component: TagPicker,
 	args: {
 		// default props
-		tagTypes: typeOptions,
+		tagTypes: allTagTypeFilters,
 		canRemove: (tag) => tag.type !== 'Tone',
 		removeIcon: <Icon symbol="delete" />,
 
@@ -54,9 +54,9 @@ const meta: Meta<StoryArgs> = {
 		const [isLoadingResults, setIsLoadingResults] = useState(false);
 
 		const search = useCallback(
-			(queryText: string, tagType?: string) => {
+			(queryText: string, tagTypeFilter?: string) => {
 				setIsLoadingResults(true);
-				void simulateSearchAsyncSearch(queryText, tagType)
+				void simulateSearchAsyncSearch(queryText, tagTypeFilter)
 					.then((searchResults) => {
 						setOptions(
 							searchResults.filter(
@@ -98,8 +98,8 @@ const meta: Meta<StoryArgs> = {
 				tags={selectedTags}
 				addTag={addTag}
 				onReorder={(tags) => setSelectedTags(tags)}
-				removeAction={removeTag}
-				search={search}
+				removeTag={removeTag}
+				onSearch={search}
 				options={options}
 				loading={isLoadingResults}
 				proposedTags={proposedTags}
@@ -110,6 +110,23 @@ const meta: Meta<StoryArgs> = {
 
 export default meta;
 export const Default: Story = {};
+
+export const CannotRemoveKeywords: Story = {
+	args: {
+		canRemove: (tag) => tag.type !== 'Keyword',
+	},
+};
+
+export const ContributorSearch: Story = {
+	args: {
+		intialProposedTags: [],
+		intialTags: mappedExampleTags
+			.filter((tag) => tag.type === 'Contributor')
+			.slice(0, 2),
+		getProposals: undefined,
+		tagTypes: [{ label: 'Contributor', filter: 'contributor' }],
+	},
+};
 
 export const NoProposals: Story = {
 	args: {
@@ -181,5 +198,34 @@ export const OfflineWithRetryFunctionAndBackups: Story = {
 			['lifeandstyle', 'chicken'].includes(tag.slug),
 		),
 		intialProposedTags: [],
+	},
+};
+
+// hard coding for the sake of reflecting the current composer logic in the example story code
+const isLiveblog = true as boolean;
+
+export const ComposerContentTagPicker: Story = {
+	args: {
+		tagTypes: [
+			{
+				label: 'All tags',
+				filter: 'keyword,tone,series,blog,paidContent,campaign',
+			},
+			{ label: 'Keyword', filter: 'keyword' },
+			{ label: 'Tone', filter: 'tone' },
+			{ label: 'Series', filter: 'series' },
+			{ label: 'Blog', filter: 'blog' },
+			{ label: 'Paid content', filter: 'paidContent' },
+			{ label: 'Campaign', filter: 'campaign' },
+		],
+
+		highlightLeadingTag: true,
+		searchPlaceholder: "Search internal tags (add '*' to match any text)",
+		searchLabel: 'Search for tags',
+		filterRows: (tag) => tag.type !== 'Tracking',
+		canRemove: (tag) =>
+			tag.type !== 'Content Type' &&
+			!tag.path.startsWith('campaign/callout') &&
+			!(isLiveblog && tag.path.startsWith('tone/minutebyminute')),
 	},
 };

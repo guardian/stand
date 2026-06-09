@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useCallback, useState } from 'react';
 import type { TagManagerObjectRow } from './storybookUtils';
 import {
+	allTagTypeFilters,
 	simulateSearchAsyncSearch,
 	tagMatching,
-	typeOptions,
 } from './storybookUtils';
 import { TagSelectWithTypes } from './TagSelectWithTypes';
 
@@ -12,7 +12,7 @@ const meta: Meta<typeof TagSelectWithTypes> = {
 	title: 'Stand/Editorial Components/TagPicker/TagSelectWithTypes',
 	component: TagSelectWithTypes,
 	args: {
-		tagTypes: typeOptions,
+		tagTypes: allTagTypeFilters,
 	},
 	render: (args) => {
 		const [selectedTags, setSelectedTags] = useState<TagManagerObjectRow[]>([]);
@@ -20,9 +20,9 @@ const meta: Meta<typeof TagSelectWithTypes> = {
 		const [isLoadingResults, setIsLoadingResults] = useState(false);
 
 		const search = useCallback(
-			(queryText: string, tagType?: string) => {
+			(queryText: string, tagTypeFilter?: string) => {
 				setIsLoadingResults(true);
-				void simulateSearchAsyncSearch(queryText, tagType)
+				void simulateSearchAsyncSearch(queryText, tagTypeFilter)
 					.then((searchResults) => {
 						return setOptions(
 							searchResults.filter(
