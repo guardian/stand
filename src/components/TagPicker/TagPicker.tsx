@@ -39,6 +39,9 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	autoCompleteTheme?: DeepPartial<ComponentAutocomplete>;
 	selectTheme?: DeepPartial<ComponentSelect>;
 
+	showTagType?: boolean;
+	showTagSectionName?: boolean;
+
 	/** `theme` - Used to customise the look and feel of the TagTable component */
 	theme?: DeepPartial<ComponentTagPicker>;
 	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
@@ -83,10 +86,13 @@ export function TagPicker<T extends TagRow = TagRow>({
 
 	// proposed tag table
 	proposedTags,
+
 	proposedTagTableTheme,
 	selectTheme,
-
 	autoCompleteTheme,
+
+	showTagSectionName,
+	showTagType,
 
 	theme,
 	cssOverrides,
@@ -137,8 +143,8 @@ export function TagPicker<T extends TagRow = TagRow>({
 					{showBackupListWhenOffline && (
 						<TagTable
 							heading="Offline backup tags"
-							showTagType
-							showTagSectionName
+							showTagType={showTagType}
+							showTagSectionName={showTagSectionName}
 							rows={backupTagsWithoutSelected}
 							addAction={addTag}
 						/>
@@ -154,8 +160,8 @@ export function TagPicker<T extends TagRow = TagRow>({
 				onReorder={readOnly ? undefined : onReorder}
 				data-testid="selected-tags-table"
 				highlightFirstRow={highlightLeadingTag}
-				showTagType
-				showTagSectionName
+				showTagType={showTagType}
+				showTagSectionName={showTagSectionName}
 				removeIcon={removeIcon}
 				theme={tagTableTheme}
 			/>
@@ -165,8 +171,8 @@ export function TagPicker<T extends TagRow = TagRow>({
 					heading={'Proposed Tags'}
 					theme={proposedTagTableTheme}
 					filterRows={filterRows}
-					showTagType
-					showTagSectionName
+					showTagType={showTagType}
+					showTagSectionName={showTagSectionName}
 					rows={proposedTagsWithoutSelected}
 					addAction={addTag}
 					data-testid="proposed-tags-table"

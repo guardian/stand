@@ -121,6 +121,13 @@ export const CannotRemoveKeywords: Story = {
 	},
 };
 
+export const WithTypesAndSectionNames: Story = {
+	args: {
+		showTagSectionName: true,
+		showTagType: true,
+	},
+};
+
 export const ContributorSearch: Story = {
 	args: {
 		intialProposedTags: [],
@@ -247,6 +254,8 @@ export const ComposerContentTagPicker: Story = {
 				</g>
 			</svg>
 		),
+		showTagSectionName: true,
+		showTagType: true,
 		highlightLeadingTag: true,
 		searchPlaceholder: "Search internal tags (add '*' to match any text)",
 		searchLabel: 'Search for tags',
