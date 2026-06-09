@@ -58,6 +58,14 @@ export const WithTypeAndSection: Story = {
 	},
 } satisfies Story;
 
+export const WithTypeAndSectionAndHighlterFirstRow: Story = {
+	args: {
+		showTagType: true,
+		showTagSectionName: true,
+		highlightFirstRow: true,
+	},
+} satisfies Story;
+
 export const WithReorder: Story = {
 	render: (args) => {
 		const [tags, setTags] = useState(args.rows);

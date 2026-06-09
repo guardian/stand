@@ -293,7 +293,97 @@ const badgersTag: TagManagerObject = {
 	contributorInformation: null,
 };
 
+const contributorTags: TagManagerObject[] = [
+	{
+		id: 58095,
+		type: 'Contributor',
+		internalName: 'A Bongo',
+		externalName: 'A Bongo',
+		slug: 'a-bongo',
+		section: globalSection,
+		externalReferences: [],
+		path: 'profile/a-bongo',
+		parents: [],
+		contributorInformation: {
+			bylineImage: {
+				imageId: '414694847',
+				assets: [
+					{
+						imageUrl:
+							'https://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/8/9/1376052373243/Bongo-antelope-003.jpg',
+						width: 140,
+						height: 140,
+						mimeType: 'image/',
+					},
+				],
+			},
+		},
+	},
+	{
+		id: 73726,
+		path: 'profile/a--nonymous',
+		type: 'Contributor',
+		internalName: 'A. Nonymous',
+		externalName: 'A. Nonymous',
+		slug: 'a--nonymous',
+		section: globalSection,
+		parents: [],
+		externalReferences: [],
+		contributorInformation: {},
+	},
+	{
+		id: 49210,
+		type: 'Contributor',
+		internalName: 'Secret Social Worker',
+		externalName: 'Secret Social Worker',
+		slug: 'secret-social-worker',
+		section: {
+			id: 281,
+			name: 'Global',
+			pathPrefix: 'global',
+			sectionTagId: 14821,
+			slug: 'global',
+		},
+		parents: [],
+		externalReferences: [],
+		path: 'profile/secret-social-worker',
+		contributorInformation: {},
+	},
+	{
+		id: 66923,
+		type: 'Contributor',
+		internalName: 'A firefighter',
+		externalName: 'A firefighter',
+		slug: 'a-firefighter',
+		section: {
+			id: 281,
+			name: 'Global',
+			pathPrefix: 'global',
+			sectionTagId: 14821,
+			slug: 'global',
+		},
+		parents: [],
+		externalReferences: [],
+		path: 'profile/a-firefighter',
+		contributorInformation: {
+			bylineImage: {
+				imageId: '449610814',
+				assets: [
+					{
+						imageUrl:
+							'https://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/10/13/1413210327324/Male-silhouette-003.jpg',
+						width: 140,
+						height: 140,
+						mimeType: 'image/',
+					},
+				],
+			},
+		},
+	},
+];
+
 export const exampleTags: TagManagerObject[] = [
+	...contributorTags,
 	chickenTag,
 	riceTag,
 	boliviaTag,

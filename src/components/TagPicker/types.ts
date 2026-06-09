@@ -69,3 +69,8 @@ export type TagManagerObject = {
 };
 
 export type TagManagerObjectData = TagRow & TagManagerObject;
+
+export interface FilterOption {
+	label: string;
+	filter: string;
+}

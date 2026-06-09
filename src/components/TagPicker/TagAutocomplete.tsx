@@ -1,11 +1,12 @@
 import type { SerializedStyles } from '@emotion/react';
-import type { ReactElement } from 'react';
+import type { ReactElement, ReactNode } from 'react';
+import type { IconProps } from 'src/Icon';
 import type { ComponentAutocomplete } from '../../styleD/build/typescript/component/autocomplete';
 import type { DeepPartial } from '../../util/types';
 import { Autocomplete } from './Autocomplete';
 import type { Tag } from './types';
 
-interface TagAutocompleteProps<T extends Tag = Tag> {
+export interface TagAutocompleteProps<T extends Tag = Tag> {
 	/** `addTag` - Function called when an option is picked from the dropdown */
 	addTag: (tag: T) => void;
 	/** `loading` - Whether the component is loading options for the dropdown */
@@ -25,6 +26,16 @@ interface TagAutocompleteProps<T extends Tag = Tag> {
 	'data-testid'?: string;
 	/** `loadingIcon` - Icon used to show loading happening in the dropdown */
 	loadingIcon?: ReactElement;
+
+	/** An icon to render to the right of the input */
+	icon?: ReactNode;
+
+	/**
+	 * Alternative to using the `icon` prop for rendering a Material Symbol icons on the right of the input
+	 * you can use the `symbol` prop to specify the icon by its symbol name.
+	 */
+	symbol?: IconProps['symbol'];
+
 	/** `theme` - Used to customise the look and feel of the TagAutocomplete component */
 	theme?: DeepPartial<ComponentAutocomplete>;
 	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
@@ -140,6 +151,8 @@ export function TagAutocomplete<T extends Tag = Tag>({
 	loadingIcon,
 	theme,
 	cssOverrides,
+	symbol,
+	icon,
 }: TagAutocompleteProps<T>) {
 	return (
 		<Autocomplete<T>
@@ -154,6 +167,8 @@ export function TagAutocomplete<T extends Tag = Tag>({
 			data-testid={dataTestId}
 			loadingIcon={loadingIcon}
 			addFirstOnEnter={true}
+			symbol={symbol}
+			icon={icon}
 			theme={theme}
 			cssOverrides={cssOverrides}
 		/>
