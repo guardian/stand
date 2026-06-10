@@ -31,6 +31,20 @@
 					"$value": "11px"
 				}
 			},
+			"icon": {
+				"size": {
+					"$type": "dimension",
+					"$value": "20px"
+				},
+				"paddingX": {
+					"$type": "dimension",
+					"$value": "4px"
+				},
+				"color": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.600}"
+				}
+			},
 			"listbox": {
 				"borderWidth": {
 					"$type": "dimension",

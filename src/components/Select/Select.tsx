@@ -19,10 +19,14 @@ import {
 } from './styles';
 import type { ListBoxProps, OptionProps, SelectProps } from './types';
 
-export function Option({ children, theme = {} }: OptionProps) {
+export function Option({ children, theme = {}, value, id }: OptionProps) {
 	const mergedTheme = mergeDeep(defaultSelectTheme, theme);
 	return (
-		<ReactAriaListBoxItem css={listBoxItemStyles(mergedTheme)}>
+		<ReactAriaListBoxItem
+			css={listBoxItemStyles(mergedTheme)}
+			value={value}
+			id={id}
+		>
 			{children}
 		</ReactAriaListBoxItem>
 	);
@@ -56,6 +60,8 @@ function ListBox({ children, theme = {} }: ListBoxProps) {
 export function Select({
 	isInvalid,
 	theme = {},
+	placement,
+	shouldFlip,
 	children,
 	...props
 }: SelectProps) {
@@ -72,7 +78,11 @@ export function Select({
 				<SelectValue />
 				<Icon symbol="keyboard_arrow_down" size="lg" />
 			</Button>
-			<Popover css={popoverStyles(mergedTheme)}>
+			<Popover
+				css={popoverStyles(mergedTheme)}
+				placement={placement}
+				shouldFlip={shouldFlip}
+			>
 				<ListBox>{children}</ListBox>
 			</Popover>
 		</FormInputContainer>
