@@ -15,46 +15,51 @@ import {
 import type { IntendedAudienceSignifierProps, SourceOrTarget } from './types';
 
 const icons = {
-	UK: ukFlag,
-	US: usFlag,
-	AUS: auFlag,
+	uk: ukFlag,
+	us: usFlag,
+	au: auFlag,
 	global: globeIcon,
 };
 
-const getSourceDescription = (source: SourceOrTarget) => {
-	switch (source) {
-		case 'global':
-			return 'Global';
-		case 'UK':
-		case 'US':
-		case 'AUS':
-			return source;
-	}
+type Description =
+	| 'Global'
+	| 'Domestic'
+	| 'United Kingdom'
+	| 'United States'
+	| 'Australia';
+
+const descriptionMap: Record<SourceOrTarget, Description> = {
+	global: 'Global',
+	uk: 'United Kingdom',
+	us: 'United States',
+	au: 'Australia',
 };
+
+const getSourceDescription = (source: SourceOrTarget) => descriptionMap[source];
 
 const getTargetDescription = (
 	source: SourceOrTarget,
 	target: SourceOrTarget,
-): SourceOrTarget | 'Global' | 'Domestic' => {
+): Description => {
 	switch (target) {
 		case 'global':
 			return 'Global';
-		case 'UK':
-		case 'US':
-		case 'AUS':
-			return target === source ? 'Domestic' : target;
+		case 'uk':
+		case 'us':
+		case 'au':
+			return target === source ? 'Domestic' : descriptionMap[source];
 	}
 };
 
 const AUDIENCE_NOT_KNOWN_DESCRIPTION = 'Intended audience unknown';
-const getSignifierDescription = (
+const getSignifierTitle = (
 	source?: SourceOrTarget,
 	target?: SourceOrTarget,
 ): string => {
 	if (!source || !target) {
 		return AUDIENCE_NOT_KNOWN_DESCRIPTION;
 	}
-	return `${getSourceDescription(source)} article for ${getTargetDescription(source, target)} audience`;
+	return `${getSourceDescription(source)} for ${getTargetDescription(source, target)} audience`;
 };
 
 export function IntendedAudienceSignifier({
@@ -66,7 +71,7 @@ export function IntendedAudienceSignifier({
 	...props
 }: IntendedAudienceSignifierProps) {
 	const mergedTheme = mergeDeep(defaultIntendedAudienceSignifierTheme, theme);
-	const description = getSignifierDescription(source, target);
+	const title = getSignifierTitle(source, target);
 	const iconStyles = intendedAudienceSignifierIconStyles(mergedTheme);
 	const chevronIconStyles =
 		intendedAudienceSignifierChevronIconStyles(mergedTheme);
@@ -76,7 +81,7 @@ export function IntendedAudienceSignifier({
 			{...props}
 			className={className}
 			css={[intendedAudienceSignifierStyles(mergedTheme), cssOverrides]}
-			aria-label={description}
+			title={title}
 		>
 			{target && source ? (
 				<>

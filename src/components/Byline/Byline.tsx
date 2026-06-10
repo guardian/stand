@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect -- allow set state in effect for byline */
 import {
 	createInvisiblesPlugin,
 	nbSpace,

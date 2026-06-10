@@ -1,5 +1,28 @@
 # @guardian/stand
 
+## 0.0.47
+
+### Patch Changes
+
+- 15a5788: Allow downstream projects to install Prosemirror packages that match same major version
+
+## 0.0.46
+
+### Patch Changes
+
+- 9cbdb96: Update peer deps compatible range for `react-aria-components` to `>= 1.13.0 <= 1.18.0`
+- f0b6538: Source / target props for IntendedAudience now match with expected values in tag paths
+
+  Font has been removed from IntendedAudienceSignifierTheme
+
+  Also added mapTagsToSourceAndTarget() utility function
+
+## 0.0.45
+
+### Patch Changes
+
+- 36920eb: Autocomplete supports enter to add first option
+
 ## 0.0.44
 
 ### Patch Changes

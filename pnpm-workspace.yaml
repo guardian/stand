@@ -1,0 +1,6 @@
+allowBuilds:
+  es5-ext: false
+  esbuild: false
+  unrs-resolver: false
+overrides:
+  minimatch: ^10.2.3
