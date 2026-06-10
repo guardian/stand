@@ -278,6 +278,17 @@ export const tagPickerStyles = (
 	`;
 };
 
+export const offlineSectionStyles = (
+	partialTheme: DeepPartial<ComponentTagPicker> = {},
+): SerializedStyles => {
+	const theme = mergeDeep(componentTagPicker, partialTheme);
+	return css`
+		display: flex;
+		flex-direction: column;
+		gap: ${theme.offlineSection.gap};
+	`;
+};
+
 export const tagSelectWithTypesStyles = (
 	partialTheme: DeepPartial<ComponentTagPicker> = {},
 ): SerializedStyles => {

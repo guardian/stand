@@ -10,6 +10,16 @@
 					"$type": "dimension",
 					"$value": "15px"
 				}
+			},
+			"offlineSection": {
+				"justifyContent": {
+					"$type": "string",
+					"$value": "flex-start"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "4px"
+				}
 			}
 		}
 	}

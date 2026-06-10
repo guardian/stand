@@ -1,11 +1,12 @@
-import type { SerializedStyles } from '@emotion/react';
+import { css, type SerializedStyles } from '@emotion/react';
 import type { ReactElement } from 'react';
 import { Button } from '../../Button';
 import type { ComponentSelect } from '../../Select';
 import type { ComponentTagPicker } from '../../styleD/build/typescript/component/tagPicker';
 import type { ComponentAutocomplete, ComponentTagTable } from '../../TagPicker';
 import type { DeepPartial } from '../../util/types';
-import { tagPickerStyles } from './styles';
+import { InlineMessage } from '../InlineMessage/InlineMessage';
+import { offlineSectionStyles, tagPickerStyles } from './styles';
 import { TagSelectWithTypes } from './TagSelectWithTypes';
 import { TagTable } from './TagTable';
 import type { FilterOption, TagRow } from './types';
@@ -145,32 +146,41 @@ export function TagPicker<T extends TagRow = TagRow>({
 				selectTheme={selectTheme}
 			/>
 
-			{/* to DO - style the offline bit */}
 			{offline && (
-				<div>
-					<span>
+				<div css={offlineSectionStyles(theme)}>
+					<InlineMessage level="error">
 						Unfortunately, we can&apos;t fetch tag information.{' '}
 						{showBackupListWhenOffline && 'Choose from the following tags'}
 						{showBackupListWhenOffline && retryConnection && <> or </>}
 						{retryConnection && (
 							<Button
-								size="sm"
+								size="xs"
 								variant="secondary"
 								onClick={() => retryConnection()}
 							>
-								Retry connection
+								Retry
 							</Button>
 						)}
-					</span>
+					</InlineMessage>
 
 					{showBackupListWhenOffline && (
-						<TagTable
-							heading="Offline backup tags"
-							showTagType={showTagType}
-							showTagSectionName={showTagSectionName}
-							rows={backupTagsWithoutSelected}
-							addAction={addTag}
-						/>
+						<>
+							{backupTagsWithoutSelected.map((tag, index) => (
+								<Button
+									key={index}
+									onClick={() => addTag(tag)}
+									variant="tertiary"
+									size="sm"
+									cssOverrides={css({
+										justifyContent:
+											theme?.offlineSection?.justifyContent ?? 'flex-start',
+									})}
+									aria-label={`Add ${tag.name}`}
+								>
+									{tag.name}
+								</Button>
+							))}
+						</>
 					)}
 				</div>
 			)}
