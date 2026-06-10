@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.47
+
+### Patch Changes
+
+- 15a5788: Allow downstream projects to install Prosemirror packages that match same major version
+
 ## 0.0.46
 
 ### Patch Changes
