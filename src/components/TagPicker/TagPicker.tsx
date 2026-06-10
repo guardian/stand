@@ -130,7 +130,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 		<div css={[tagPickerStyles(theme), cssOverrides]}>
 			<TagSelectWithTypes
 				icon={searchIcon}
-				search={onSearch}
+				onSearch={onSearch}
 				addTag={addTag}
 				options={optionsWithoutSelected}
 				loading={loading}

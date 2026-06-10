@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { ComponentSelect } from '../../Select';
 import { Option, Select } from '../../Select';
 import type { ComponentTagPicker } from '../../styleD/build/typescript/component/tagPicker';
@@ -9,7 +9,7 @@ import { TagAutocomplete, type TagAutocompleteProps } from './TagAutocomplete';
 import type { FilterOption, Tag } from './types';
 
 type TagSelectWithTypes<T extends Tag = Tag> = {
-	search: { (queryText: string, filterValue?: string): void };
+	onSearch: { (queryText: string, filterValue?: string): void };
 	tagTypes: FilterOption[];
 	theme?: DeepPartial<ComponentTagPicker>;
 	autoCompleteTheme?: DeepPartial<ComponentAutocomplete>;
@@ -36,7 +36,7 @@ const modifySelectTheme = (
 
 export function TagSelectWithTypes<T extends Tag = Tag>({
 	addTag,
-	search,
+	onSearch,
 	tagTypes,
 	disabled,
 	theme,
@@ -47,11 +47,22 @@ export function TagSelectWithTypes<T extends Tag = Tag>({
 	const [queryText, setQueryText] = useState('');
 	const [filterValue, setFilterValue] = useState(tagTypes[0]?.filter ?? '');
 
+	// the onSearch function may not be a stable callback
+	// use a ref so changes to onSearch do not trigger the
+	// effect that calls it.
+	const onSearchRef = useRef(onSearch);
+	useEffect(() => {
+		onSearchRef.current = onSearch;
+	}, [onSearch]);
+
 	useEffect(() => {
 		if (queryText && queryText.length > 0) {
-			search(queryText, filterValue.length === 0 ? undefined : filterValue);
+			onSearchRef.current(
+				queryText,
+				filterValue.length === 0 ? undefined : filterValue,
+			);
 		}
-	}, [filterValue, queryText, search]);
+	}, [filterValue, queryText]);
 
 	return (
 		<div css={tagSelectWithTypesStyles(theme)}>
