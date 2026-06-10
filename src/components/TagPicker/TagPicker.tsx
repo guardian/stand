@@ -18,7 +18,7 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	/** `offline` - Whether the component has failed to fetch a list of options, indicating either that the service is offline or cannot be reached */
 	offline?: boolean;
 	/** `onReorder -  Function called when a selected tag is moved in the tag table */
-	onReorder: (tags: T[]) => void;
+	onReorder?: (tags: T[]) => void;
 	/** `onReorder -  Function called the user enters a query or selects a tag type filter */
 	onSearch: (queryText: string, tagTypeFilter?: string) => void;
 	/** `options` - The list of options shown in the dropdown */
@@ -45,7 +45,7 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	highlightLeadingTag?: boolean;
 	searchPlaceholder?: string;
 	searchLabel?: string;
-	removeIcon: ReactElement;
+	removeIcon?: ReactElement;
 	searchIcon?: ReactElement;
 	showTagType?: boolean;
 	showTagSectionName?: boolean;
@@ -122,13 +122,17 @@ export function TagPicker<T extends TagRow = TagRow>({
 	const showBackupListWhenOffline =
 		!readOnly && offlineBackupTags && backupTagsWithoutSelected.length > 0;
 
+	const optionsWithoutSelected = options.filter(
+		({ id }) => !selectedTagIds.includes(id),
+	);
+
 	return (
 		<div css={[tagPickerStyles(theme), cssOverrides]}>
 			<TagSelectWithTypes
 				icon={searchIcon}
 				search={onSearch}
 				addTag={addTag}
-				options={options}
+				options={optionsWithoutSelected}
 				loading={loading}
 				tagTypes={tagTypes}
 				disabled={readOnly || offline}
@@ -141,6 +145,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 				selectTheme={selectTheme}
 			/>
 
+			{/* to DO - style the offline bit */}
 			{offline && (
 				<div>
 					<span>
