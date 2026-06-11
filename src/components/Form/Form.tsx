@@ -18,6 +18,7 @@ type AllowedContainerProps = ComponentPropsWithRef<
 export function FormInputContainer<C extends AllowedContainer>({
 	as: Component,
 	size = 'md',
+	fluid = false,
 	label,
 	renderLabel,
 	description,
@@ -43,7 +44,7 @@ export function FormInputContainer<C extends AllowedContainer>({
 
 	return (
 		<Tag
-			css={[formInputContainerStyles(mergedTheme), cssOverrides]}
+			css={[formInputContainerStyles(mergedTheme, { fluid }), cssOverrides]}
 			isDisabled={isDisabled}
 			{...(props as AllowedContainerProps)}
 		>

@@ -19,6 +19,10 @@ export type FormInputContainerDefaultProps<
 		 */
 		size?: keyof Omit<ComponentTheme, 'shared'>;
 		/**
+		 * Whether the form input should take up the full width of its container. Defaults to false, which applies a max-width to the input for better readability.
+		 */
+		fluid?: boolean;
+		/**
 		 * The label text for the form field.
 		 */
 		label?: string;

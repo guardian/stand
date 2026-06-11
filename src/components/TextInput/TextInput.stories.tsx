@@ -17,6 +17,13 @@ export const Default = {
 	args: {},
 } satisfies Story;
 
+export const Fluid = {
+	name: 'Fluid - md size',
+	args: {
+		fluid: true,
+	},
+} satisfies Story;
+
 export const WithLabelAndDescription = {
 	name: 'With Label and Description - md size',
 	args: {
