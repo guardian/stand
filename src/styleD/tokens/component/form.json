@@ -19,6 +19,10 @@
 						"width": {
 							"$type": "dimension",
 							"$value": "100%"
+						},
+						"maxWidth": {
+							"$type": "dimension",
+							"$value": "{semantic.sizing.input.maxWidthPx}"
 						}
 					},
 					"label": {

@@ -7,6 +7,7 @@
 	--component-form-input-shared-container-flex-direction: column;
 	--component-form-input-shared-container-gap: 0.25rem;
 	--component-form-input-shared-container-width: 100%;
+	--component-form-input-shared-container-max-width: 450px;
 	--component-form-input-shared-label-color: #000000;
 	--component-form-input-shared-label-disabled-color: #999999;
 	--component-form-input-shared-description-color: #545454;

@@ -10,6 +10,7 @@ export const componentForm = {
 				flexDirection: 'column',
 				gap: '0.25rem',
 				width: '100%',
+				maxWidth: '450px',
 			},
 			label: {
 				color: '#000000',

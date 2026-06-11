@@ -26,6 +26,22 @@ export const Default = {
 	},
 } satisfies Story;
 
+export const Fluid = {
+	name: 'Fluid - size md',
+	render: () => {
+		return (
+			<RadioGroup
+				label="Label"
+				description="Optional contextual help text"
+				fluid
+			>
+				<Radio value="Test">Option 1</Radio>
+				<Radio value="Test2">Option 2</Radio>
+			</RadioGroup>
+		);
+	},
+} satisfies Story;
+
 export const IsInvalid = {
 	render: () => {
 		return (

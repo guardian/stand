@@ -26,6 +26,18 @@ export const Default = {
 	},
 } satisfies Story;
 
+export const Fluid = {
+	name: 'Fluid',
+	args: {
+		label: 'Select a date',
+		description: 'Please select a date from the calendar',
+		fluid: true,
+		onChange: (value) => {
+			console.log('Selected date:', value);
+		},
+	},
+} satisfies Story;
+
 export const UseMonthTextInputFalse = {
 	name: 'useMonthTextInput - false',
 	args: {
