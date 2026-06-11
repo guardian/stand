@@ -28,7 +28,7 @@ export default meta;
 
 export const Default = {} satisfies Story;
 
-export const WithIdProp = {
+export const WithIdProp: Story = {
 	render: (args) => (
 		<Select
 			{...args}
@@ -39,7 +39,7 @@ export const WithIdProp = {
 			<Option id="option-3">Option 3</Option>
 		</Select>
 	),
-} satisfies Story;
+};
 
 export const Disabled = {
 	args: {
