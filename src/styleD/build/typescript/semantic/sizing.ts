@@ -28,5 +28,8 @@ export const semanticSizing = {
 	layout: {
 		maxWidthPx: '1584px',
 	},
+	input: {
+		maxWidthPx: '450px',
+	},
 };
 export type SemanticSizing = typeof semanticSizing;

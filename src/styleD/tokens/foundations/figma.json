@@ -1075,6 +1075,22 @@
 				"raisedLevel3": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.750}"
+				},
+				"baseInverse": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.0}"
+				},
+				"raisedLevel1Inverse": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.100}"
+				},
+				"raisedLevel2Inverse": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.200}"
+				},
+				"raisedLevel3Inverse": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.300}"
 				}
 			},
 			"border": {
@@ -1371,6 +1387,12 @@
 				"maxWidthPx": {
 					"$type": "dimension",
 					"$value": "1584px"
+				}
+			},
+			"input": {
+				"maxWidthPx": {
+					"$type": "dimension",
+					"$value": "450px"
 				}
 			}
 		},
