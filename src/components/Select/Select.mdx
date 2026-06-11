@@ -7,6 +7,7 @@ import SelectStories, {
 	CustomTheme,
 	CssOverrides,
 	RenderWithAsterisk,
+	WithIdProp,
 } from './Select.stories';
 import {
 	SandboxReact,
@@ -53,11 +54,30 @@ See [custom component build](#custom-component-build) for usage without React/Em
 import { Option, Select } from '@guardian/stand/Select';
 
 /* types, if required */
-import type { SelectProps, SelectTheme } from '@guardian/stand/Select';
+import type {
+	SelectProps,
+	OptionProps,
+	SelectTheme,
+} from '@guardian/stand/Select';
 
-<Select label="label">
+// `id` prop as the selection value
+<Select
+	label="Select"
+	onChange={(value) => console.log('Selected value:', value)}
+>
+	<Option id="opt-1">Option 1</Option>
+	<Option id="opt-2">Option 2</Option>
+	<Option id="opt-3">Option 3</Option>
+</Select>;
+
+// `children` as the selection value
+<Select
+	label="Select"
+	onChange={(value) => console.log('Selected value:', value)}
+>
 	<Option>Option 1</Option>
 	<Option>Option 2</Option>
+	<Option>Option 3</Option>
 </Select>;
 ```
 
@@ -73,6 +93,31 @@ import type { SelectProps, SelectTheme } from '@guardian/stand/Select';
 | `theme`              | `SelectTheme`                  | No       | N/A     | Custom theme overrides.                                                                                          |
 | `cssOverrides`       | `SerializedStyles`             | No       | N/A     | Custom CSS styles.                                                                                               |
 | `className`          | `string`                       | No       | N/A     | Additional class name(s).                                                                                        |
+
+## Option props
+
+| Name       | Type          | Required | Default | Description                                                                                                                                                          |
+| ---------- | ------------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children` | `string`      | Yes      | N/A     | The visible label for the option. Also used as the selection value if `id` is not provided.                                                                          |
+| `id`       | `string`      | No       | N/A     | An explicit identifier for the option. Used as the selection value when provided; falls back to `children`. This is the React Aria default way of setting the value. |
+| `theme`    | `SelectTheme` | No       | N/A     | Custom theme overrides scoped to this option.                                                                                                                        |
+
+### Setting the selection value
+
+When an option is selected, React Aria emits the option's `id` as the value. Stand resolves this in priority order:
+
+1. **`id` prop** - use this when you need an explicit identifier that differs from the display label.
+2. **`children`** - when `id` is not provided, the text content is used as the value.
+
+```tsx
+// 1. id prop — onChange receives "option-1"
+<Option id="option-1">Option 1</Option>
+
+// 2. children fallback — onChange receives "Option 1"
+<Option>Option 1</Option>
+```
+
+> **Note:** `children` must be a `string`. Passing JSX nodes is not supported because the value must be serialisable.
 
 `Select` also accepts all props from the underlying [React Aria `Select` component](https://react-aria.adobe.com/Select).
 
@@ -97,6 +142,10 @@ import type { SelectProps, SelectTheme } from '@guardian/stand/Select';
 ### With Custom Rendered Label
 
 <Canvas layout="padded" of={RenderWithAsterisk} />
+
+### With Id Prop
+
+<Canvas layout="padded" of={WithIdProp} />
 
 ## Customisation
 

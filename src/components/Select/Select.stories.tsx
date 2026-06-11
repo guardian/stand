@@ -10,9 +10,13 @@ const meta: Meta<typeof Select> = {
 	args: { label: 'Select' },
 	render: (args) => {
 		return (
-			<Select {...args}>
+			<Select
+				{...args}
+				onChange={(value) => console.log('Selected value:', value)}
+			>
 				<Option>Option 1</Option>
 				<Option>Option 2</Option>
+				<Option>Option 3</Option>
 			</Select>
 		);
 	},
@@ -23,6 +27,19 @@ type Story = StoryObj<typeof Select>;
 export default meta;
 
 export const Default = {} satisfies Story;
+
+export const WithIdProp = {
+	render: (args) => (
+		<Select
+			{...args}
+			onChange={(value) => console.log('Selected value:', value)}
+		>
+			<Option id="option-1">Option 1</Option>
+			<Option id="option-2">Option 2</Option>
+			<Option id="option-3">Option 3</Option>
+		</Select>
+	),
+} satisfies Story;
 
 export const Disabled = {
 	args: {

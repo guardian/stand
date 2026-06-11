@@ -19,13 +19,14 @@ import {
 } from './styles';
 import type { ListBoxProps, OptionProps, SelectProps } from './types';
 
-export function Option({ children, theme = {}, value, id }: OptionProps) {
+export function Option({ children, theme = {}, id, ...props }: OptionProps) {
 	const mergedTheme = mergeDeep(defaultSelectTheme, theme);
+	const resolvedId = id ?? children;
 	return (
 		<ReactAriaListBoxItem
 			css={listBoxItemStyles(mergedTheme)}
-			value={value}
-			id={id}
+			id={resolvedId}
+			{...props}
 		>
 			{children}
 		</ReactAriaListBoxItem>
@@ -36,17 +37,15 @@ function ListBox({ children, theme = {} }: ListBoxProps) {
 	const mergedTheme = mergeDeep(defaultSelectTheme, theme);
 	const items: React.ReactElement[] = [];
 
-	React.Children.forEach(children, (child, i) => {
+	React.Children.forEach(children, (child, index) => {
 		if (!React.isValidElement(child)) {
 			return;
 		}
 
 		if (child.type === Option) {
-			items.push(
-				React.cloneElement(child as React.ReactElement<OptionProps>, {
-					key: `${child.key}-${i}`,
-				}),
-			);
+			const optionChild = child as React.ReactElement<OptionProps>;
+			const key = `${optionChild.props.id ?? optionChild.props.children}-${index}`;
+			items.push(React.cloneElement(optionChild, { key }));
 		}
 	});
 
@@ -79,9 +78,11 @@ export function Select({
 				<Icon symbol="keyboard_arrow_down" size="lg" />
 			</Button>
 			<Popover
-				css={popoverStyles(mergedTheme)}
+				css={popoverStyles()}
 				placement={placement}
 				shouldFlip={shouldFlip}
+				offset={mergedTheme.shared.offset}
+				containerPadding={mergedTheme.shared.containerPadding}
 			>
 				<ListBox>{children}</ListBox>
 			</Popover>
