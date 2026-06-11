@@ -1,9 +1,12 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
+import type { ComponentTagPicker } from '../../styleD/build//typescript/component/tagPicker';
+import { componentTagPicker } from '../../styleD/build//typescript/component/tagPicker';
 import {
 	type ComponentAutocomplete,
 	componentAutocomplete,
 } from '../../styleD/build/typescript/component/autocomplete';
+import type { ComponentSelect } from '../../styleD/build/typescript/component/select';
 import {
 	type ComponentTagTable,
 	componentTagTable,
@@ -12,6 +15,7 @@ import { mergeDeep } from '../../util/mergeDeep';
 import type { DeepPartial } from '../../util/types';
 
 export const autocompleteInputStyles = (
+	hasIcon: boolean,
 	partialTheme: DeepPartial<ComponentAutocomplete> = {},
 ): SerializedStyles => {
 	const theme = mergeDeep(componentAutocomplete, partialTheme);
@@ -25,6 +29,11 @@ export const autocompleteInputStyles = (
 		border-color: ${theme.input.borderColor};
 		border-width: ${theme.input.borderWidth};
 		border-style: ${theme.input.borderStyle};
+		${hasIcon &&
+		`
+		padding-right: calc(${theme.icon.paddingX} + ${theme.icon.size} + ${theme.icon.paddingX});
+		min-height: calc(${theme.icon.size});
+		`}
 
 		&[data-disabled] {
 			background-color: ${theme.input.disabledBackgroundColor};
@@ -98,6 +107,7 @@ export const tagTableCellStyles = (
 
 	return css`
 		padding: ${theme.cell.paddingY} ${theme.cell.paddingX};
+		vertical-align: middle;
 
 		:first-of-type {
 			padding-left: ${theme.cell.firstCellPaddingLeft};
@@ -113,6 +123,7 @@ export const tagTableCellStyles = (
 
 export const tagTableRowStyles = (
 	canDrag: boolean,
+	highlightFirstRow: boolean,
 	partialTheme: DeepPartial<ComponentTagTable> = {},
 ): SerializedStyles => {
 	const theme = mergeDeep(componentTagTable, partialTheme);
@@ -133,7 +144,7 @@ export const tagTableRowStyles = (
 				opacity: 1;
 			}
 		}
-		${canDrag &&
+		${highlightFirstRow &&
 		`:first-of-type {
                     background-color: ${theme.row.firstRowBackgroundColor};
 
@@ -237,4 +248,85 @@ export const tagTableTypeBadgeStyles = (
 		font-size: ${theme.typeBadge.fontSize};
 		font-weight: ${theme.typeBadge.fontWeight};
 	`;
+};
+
+export const iconStyles = (
+	partialTheme: DeepPartial<ComponentAutocomplete> = {},
+): SerializedStyles => {
+	const theme = mergeDeep(componentAutocomplete, partialTheme);
+
+	return css`
+		pointer-events: none;
+		position: absolute;
+		right: ${theme.icon.paddingX};
+		color: ${theme.icon.color};
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: ${theme.icon.size};
+	`;
+};
+
+export const tagPickerStyles = (
+	partialTheme: DeepPartial<ComponentTagPicker> = {},
+): SerializedStyles => {
+	const theme = mergeDeep(componentTagPicker, partialTheme);
+
+	return css`
+		display: flex;
+		flex-direction: column;
+		width: ${theme.shared.width};
+		gap: ${theme.shared.gap};
+	`;
+};
+
+export const offlineSectionStyles = (
+	partialTheme: DeepPartial<ComponentTagPicker> = {},
+): SerializedStyles => {
+	const theme = mergeDeep(componentTagPicker, partialTheme);
+	return css`
+		display: flex;
+		flex-direction: column;
+		gap: ${theme.offlineSection.gap};
+	`;
+};
+
+export const tagSearchWithFilterStyles = (
+	partialTheme: DeepPartial<ComponentTagPicker> = {},
+): SerializedStyles => {
+	const theme = mergeDeep(componentTagPicker, partialTheme);
+
+	return css`
+		display: flex;
+		gap: ${theme.shared.gap};
+	`;
+};
+
+export const filterSelectCssOverrides = (
+	partialTheme: DeepPartial<ComponentTagPicker> = {},
+): SerializedStyles => {
+	const theme = mergeDeep(componentTagPicker, partialTheme);
+
+	return css`
+		flex-basis: ${theme.select.flexBasis};
+		display: flex;
+		button {
+			height: 100%;
+		}
+	`;
+};
+
+export const modifyFilterSelectTheme = (
+	selectTheme: DeepPartial<ComponentSelect>,
+): DeepPartial<ComponentSelect> => {
+	return mergeDeep(
+		{
+			shared: {
+				width: undefined,
+				button: {
+					marginTop: '0',
+				},
+			},
+		},
+		selectTheme,
+	);
 };

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { Option, Select } from './Select';
 
-const meta = {
+const meta: Meta<typeof Select> = {
 	title: 'Stand/Tools Design System/Components/Select',
 	component: Select,
 	parameters: {},
@@ -20,7 +20,7 @@ const meta = {
 			</Select>
 		);
 	},
-} satisfies Meta<typeof Select>;
+};
 
 type Story = StoryObj<typeof Select>;
 
@@ -28,7 +28,7 @@ export default meta;
 
 export const Default = {} satisfies Story;
 
-export const WithIdProp = {
+export const WithIdProp: Story = {
 	render: (args) => (
 		<Select
 			{...args}
@@ -39,7 +39,7 @@ export const WithIdProp = {
 			<Option id="option-3">Option 3</Option>
 		</Select>
 	),
-} satisfies Story;
+};
 
 export const Disabled = {
 	args: {
@@ -73,6 +73,17 @@ export const CustomTheme = {
 				button: {
 					color: baseColors.coolPurple[200],
 					backgroundColor: baseColors.coolPurple[800],
+					typography: {
+						font: 'normal 700 1rem/1.3 monospace',
+					},
+				},
+				listBox: {
+					typography: {
+						font: 'normal 460 1rem/1.3 cursive',
+					},
+				},
+				option: {
+					paddingLeft: '3rem',
 				},
 			},
 		},

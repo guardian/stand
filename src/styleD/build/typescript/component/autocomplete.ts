@@ -12,6 +12,11 @@ export const componentAutocomplete = {
 		borderColor: '#8d8d8d',
 		padding: '11px',
 	},
+	icon: {
+		size: '20px',
+		paddingX: '4px',
+		color: '#bababa',
+	},
 	listbox: {
 		borderWidth: '1px',
 		borderStyle: 'solid',

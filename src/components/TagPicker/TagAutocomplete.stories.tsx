@@ -1,12 +1,15 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useCallback, useEffect, useState } from 'react';
-import { exampleTags } from './exampleTags';
+import type { TagManagerObjectRow } from './storybookUtils';
+import {
+	mappedExampleTags,
+	simulateSearch,
+	tagMatching,
+} from './storybookUtils';
 import { TagAutocomplete } from './TagAutocomplete';
 import { TagTable } from './TagTable';
-import type { TagManagerObjectData, TagRow } from './types';
-
-type TagManagerObjectRow = TagManagerObjectData & TagRow;
+import type { TagManagerObjectData } from './types';
 
 const meta = {
 	title: 'Stand/Editorial Components/TagPicker/TagAutocomplete',
@@ -30,38 +33,6 @@ export const Default = {} satisfies Story;
 export const Disabled = {
 	args: { disabled: true },
 } satisfies Story;
-
-const mappedExampleTags: TagManagerObjectRow[] = exampleTags.map((tag) => ({
-	...tag,
-	type: tag.type || 'Unknown',
-	sectionName: tag.section.name || 'Unknown',
-	name: tag.internalName || 'Unknown',
-	id: tag.id,
-}));
-
-// Approximates the tagmanager API's search behaviour.
-const simulateSearch = (inputText: string): TagManagerObjectRow[] => {
-	if (inputText === '') {
-		return [];
-	}
-
-	if (inputText.includes('*')) {
-		const startsWithQueryPatternRegExp = new RegExp(
-			'^' + inputText.toLowerCase().split('*').join('.*'),
-		);
-		return mappedExampleTags.filter((tag) =>
-			startsWithQueryPatternRegExp.test(tag.name.toLowerCase()),
-		);
-	}
-
-	return mappedExampleTags.filter((tag) =>
-		tag.name.toLowerCase().startsWith(inputText.toLowerCase()),
-	);
-};
-
-const tagMatching =
-	(tag: TagManagerObjectRow) => (existingTag: TagManagerObjectRow) =>
-		existingTag.path === tag.path;
 
 export const TagPicker = {
 	render: () => {
@@ -105,9 +76,6 @@ export const TagPicker = {
 						disabled={false}
 						value={value}
 					/>
-					<select>
-						<option>All tags</option>
-					</select>
 				</div>
 				<TagTable rows={selectedTags} filterRows={() => true} />
 			</>
@@ -171,9 +139,6 @@ export const Async = {
 						disabled={false}
 						value={value}
 					/>
-					<select>
-						<option>All tags</option>
-					</select>
 				</div>
 				<div>Some content below</div>
 			</>
