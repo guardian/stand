@@ -84,7 +84,7 @@ export function Select({
 				offset={mergedTheme.shared.offset}
 				containerPadding={mergedTheme.shared.containerPadding}
 			>
-				<ListBox>{children}</ListBox>
+				<ListBox theme={mergedTheme}>{children}</ListBox>
 			</Popover>
 		</FormInputContainer>
 	);
