@@ -10,6 +10,9 @@
 	--component-autocomplete-input-border-style: solid;
 	--component-autocomplete-input-border-color: #8d8d8d;
 	--component-autocomplete-input-padding: 11px;
+	--component-autocomplete-icon-size: 20px;
+	--component-autocomplete-icon-padding-x: 4px;
+	--component-autocomplete-icon-color: #bababa;
 	--component-autocomplete-listbox-border-width: 1px;
 	--component-autocomplete-listbox-border-style: solid;
 	--component-autocomplete-listbox-border-color: #8d8d8d;

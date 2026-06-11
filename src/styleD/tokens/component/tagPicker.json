@@ -1,0 +1,32 @@
+{
+	"component": {
+		"tagPicker": {
+			"shared": {
+				"width": {
+					"$type": "dimension",
+					"$value": "100%"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "15px"
+				}
+			},
+			"select": {
+				"flexBasis": {
+					"$type": "dimension",
+					"$value": "25%"
+				}
+			},
+			"offlineSection": {
+				"justifyContent": {
+					"$type": "string",
+					"$value": "flex-start"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "4px"
+				}
+			}
+		}
+	}
+}
