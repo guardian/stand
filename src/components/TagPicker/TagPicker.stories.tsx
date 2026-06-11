@@ -24,9 +24,6 @@ const meta: Meta<StoryArgs> = {
 	title: 'Stand/Editorial Components/TagPicker/TagPicker',
 	component: TagPicker,
 	args: {
-		// default props
-		tagTypes: allTagTypeFilters,
-
 		// story options
 		intialTags: mappedExampleTags.filter((tag) =>
 			[
@@ -53,9 +50,9 @@ const meta: Meta<StoryArgs> = {
 		const [isLoadingResults, setIsLoadingResults] = useState(false);
 
 		const search = useCallback(
-			(queryText: string, tagTypeFilter?: string) => {
+			(queryText: string, filterValue?: string) => {
 				setIsLoadingResults(true);
-				void simulateSearchAsyncSearch(queryText, tagTypeFilter)
+				void simulateSearchAsyncSearch(queryText, filterValue)
 					.then((searchResults) => {
 						setOptions(
 							searchResults.filter(
@@ -110,6 +107,12 @@ const meta: Meta<StoryArgs> = {
 export default meta;
 export const Default: Story = {};
 
+export const WithTypeFilters: Story = {
+	args: {
+		filterOptions: allTagTypeFilters,
+	},
+};
+
 export const WithRemoveIcon: Story = {
 	args: {
 		removeIcon: <Icon symbol="delete" />,
@@ -118,6 +121,8 @@ export const WithRemoveIcon: Story = {
 
 export const CannotRemoveKeywords: Story = {
 	args: {
+		filterOptions: allTagTypeFilters,
+		showTagType: true,
 		canRemove: (tag) => tag.type !== 'Keyword',
 	},
 };
@@ -136,7 +141,7 @@ export const ContributorSearch: Story = {
 			.filter((tag) => tag.type === 'Contributor')
 			.slice(0, 2),
 		getProposals: undefined,
-		tagTypes: [{ label: 'Contributor', filter: 'contributor' }],
+		filterOptions: [{ label: 'Contributor', filter: 'contributor' }],
 	},
 };
 
@@ -166,6 +171,7 @@ export const Offline: Story = {
 export const OfflineWithRetryFunction: Story = {
 	args: {
 		offline: true,
+		filterOptions: allTagTypeFilters,
 		retryConnection: () => {},
 		intialTags: mappedExampleTags.filter((tag) =>
 			['lifeandstyle', 'chicken'].includes(tag.slug),
@@ -177,6 +183,7 @@ export const OfflineWithRetryFunction: Story = {
 export const OfflineWithBackups: Story = {
 	args: {
 		offline: true,
+		filterOptions: allTagTypeFilters,
 		offlineBackupTags: mappedExampleTags.filter((tag) =>
 			[
 				'tone/reviews',
@@ -196,6 +203,7 @@ export const OfflineWithBackups: Story = {
 export const OfflineWithRetryFunctionAndBackups: Story = {
 	args: {
 		offline: true,
+		filterOptions: allTagTypeFilters,
 		offlineBackupTags: mappedExampleTags.filter((tag) =>
 			[
 				'tone/reviews',
@@ -218,7 +226,7 @@ const isLiveblog = true as boolean;
 
 export const ComposerContentTagPicker: Story = {
 	args: {
-		tagTypes: [
+		filterOptions: [
 			{
 				label: 'All tags',
 				filter: 'keyword,tone,series,blog,paidContent,campaign',

@@ -13,7 +13,8 @@ export const mappedExampleTags: TagManagerObjectRow[] = exampleTags.map(
 	}),
 );
 
-// Approximates the tagmanager API's search behaviour.
+// Approximates the tagmanager API's search behaviour, using the
+// input text as the query param and filter value as the type param
 export const simulateSearch = (
 	inputText: string,
 	tagTypeFilter?: string,

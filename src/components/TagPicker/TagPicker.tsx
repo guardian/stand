@@ -7,7 +7,7 @@ import type { ComponentAutocomplete, ComponentTagTable } from '../../TagPicker';
 import type { DeepPartial } from '../../util/types';
 import { InlineMessage } from '../InlineMessage/InlineMessage';
 import { offlineSectionStyles, tagPickerStyles } from './styles';
-import { TagSelectWithTypes } from './TagSelectWithTypes';
+import { TagSearchWithFilters } from './TagSearchWithFilters';
 import { TagTable } from './TagTable';
 import type { FilterOption, TagRow } from './types';
 
@@ -20,13 +20,13 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	offline?: boolean;
 	/** `onReorder -  Function called when a selected tag is moved in the tag table */
 	onReorder?: (tags: T[]) => void;
-	/** `onReorder -  Function called the user enters a query or selects a tag type filter */
-	onSearch: (queryText: string, tagTypeFilter?: string) => void;
+	/** `onReorder -  Function called the user enters a query or selects a filter value */
+	onSearch: (queryText: string, filterValue?: string) => void;
 	/** `options` - The list of options shown in the dropdown */
 	options: T[];
 	/** `proposedTags` - A list of "proposed tags" that the user can add */
 	proposedTags: T[];
-	/** `readOnly` - Whether the interactions modifying the list of tags shoudl be prevented */
+	/** `readOnly` - Whether the interactions modifying the list of tags should be disabled */
 	readOnly?: boolean;
 	/** `addTag` - Function called when a tag is removed from selected tags list */
 	removeTag: (tag: T) => void;
@@ -38,8 +38,8 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	canRemove?: (tag: T) => boolean;
 	/** `filterRows -  A filter function that determines if the tag should be excluded from the selected and proposed tag tables  */
 	filterRows?: (tag: T) => boolean;
-	/** `tagTypes` - the list of options for filtering the search by tag type */
-	tagTypes: FilterOption[];
+	/** `filterOptions` - the list of options for setting the filter value (second argument of `onSearch`). If omitted, or has only one member, the Select input is not rendered. */
+	filterOptions?: FilterOption[];
 	/** `offlineBackupTags` - A list of tags that the user can select if the service is offline */
 	offlineBackupTags?: T[];
 
@@ -95,7 +95,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 	tags,
 	canRemove,
 	filterRows,
-	tagTypes,
+	filterOptions,
 	offlineBackupTags,
 
 	highlightLeadingTag,
@@ -129,13 +129,13 @@ export function TagPicker<T extends TagRow = TagRow>({
 
 	return (
 		<div css={[tagPickerStyles(theme), cssOverrides]}>
-			<TagSelectWithTypes
+			<TagSearchWithFilters
 				icon={searchIcon}
 				onSearch={onSearch}
 				addTag={addTag}
 				options={optionsWithoutSelected}
 				loading={loading}
-				tagTypes={tagTypes}
+				filterOptions={filterOptions}
 				disabled={readOnly || offline}
 				label={searchLabel}
 				placeholder={searchPlaceholder}
