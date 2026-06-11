@@ -1,5 +1,13 @@
 # @guardian/stand
 
+## 0.0.48
+
+### Patch Changes
+
+- 3101d52: `Select`/`Option`: Fix popover alignment, now uses correct offset and padding
+  `Select`/`Option`: Fix popover width to match the select trigger width
+- 58b5049: `Select`/`Option`: Fix selection value
+
 ## 0.0.47
 
 ### Patch Changes
