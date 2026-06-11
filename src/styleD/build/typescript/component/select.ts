@@ -5,6 +5,8 @@
 export const componentSelect = {
 	shared: {
 		width: '100%',
+		offset: 8,
+		containerPadding: 0,
 		hover: {
 			backgroundColor: '#f6f6f6',
 			outline: 'none',

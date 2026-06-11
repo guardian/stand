@@ -5,10 +5,24 @@ export const componentName = 'Select';
 export const componentTsx = /* javascript */ `import { Option, Select } from '@guardian/stand/Select';
 
 export const Component = () => (
-	<Select label="Select">
-		<Option>Option 1</Option>
-		<Option>Option 2</Option>
-	</Select>
+	<>
+		<div className="container">
+			<p><code>id</code> prop as the selection value</p>
+			<Select label="Select" onChange={(value) => console.log('Selected value:', value)}>
+				<Option id="opt-1">Option 1</Option>
+				<Option id="opt-2">Option 2</Option>
+				<Option id="opt-3">Option 3</Option>
+			</Select>
+		</div>
+		<div className="container">
+			<p><code>children</code> as the selection value</p>
+			<Select label="Select" onChange={(value) => console.log('Selected value:', value)}>
+				<Option>Option 1</Option>
+				<Option>Option 2</Option>
+				<Option>Option 3</Option>
+			</Select>
+		</div>
+	</>
 );
 `;
 
