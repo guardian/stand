@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { ComponentProps } from 'react';
 import { useCallback, useState } from 'react';
@@ -311,6 +312,9 @@ export const WithTheme: Story = {
 				button: {
 					backgroundColor: 'pink',
 					border: '3px solid crimson',
+					typography: {
+						font: 'italic 1.2rem fantasy',
+					},
 				},
 			},
 		},
@@ -334,5 +338,24 @@ export const WithTheme: Story = {
 				backgroundColor: 'pink',
 			},
 		},
+	},
+};
+
+export const WithCssOverrides: Story = {
+	args: {
+		cssOverrides: css({
+			borderTop: '4px dashed lavender',
+			borderBottom: '4px dashed lavender',
+			padding: 5,
+			fontFamily: 'cursive',
+			'button, input': {
+				fontFamily: 'cursive',
+			},
+
+			td: {
+				backgroundColor: 'lavenderblush',
+				border: '2px solid lavender',
+			},
+		}),
 	},
 };

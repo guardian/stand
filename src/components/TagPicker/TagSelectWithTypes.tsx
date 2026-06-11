@@ -1,8 +1,10 @@
+import { css } from '@emotion/react';
 import { useEffect, useRef, useState } from 'react';
 import type { ComponentSelect } from '../../Select';
 import { Option, Select } from '../../Select';
 import type { ComponentTagPicker } from '../../styleD/build/typescript/component/tagPicker';
 import type { ComponentAutocomplete } from '../../TagPicker';
+import { mergeDeep } from '../../util/mergeDeep';
 import type { DeepPartial } from '../../util/types';
 import { tagSelectWithTypesStyles } from './styles';
 import { TagAutocomplete, type TagAutocompleteProps } from './TagAutocomplete';
@@ -22,16 +24,17 @@ type TagSelectWithTypes<T extends Tag = Tag> = {
 const modifySelectTheme = (
 	selectTheme: DeepPartial<ComponentSelect>,
 ): DeepPartial<ComponentSelect> => {
-	return {
-		...selectTheme,
-		shared: {
-			...(selectTheme.shared ?? {}),
-			width: undefined,
-			button: {
-				marginTop: '0',
+	return mergeDeep(
+		{
+			shared: {
+				width: undefined,
+				button: {
+					marginTop: '0',
+				},
 			},
 		},
-	};
+		selectTheme,
+	);
 };
 
 export function TagSelectWithTypes<T extends Tag = Tag>({
@@ -66,42 +69,44 @@ export function TagSelectWithTypes<T extends Tag = Tag>({
 
 	return (
 		<div css={tagSelectWithTypesStyles(theme)}>
-			<div css={{ flex: 3 }}>
-				<TagAutocomplete
-					onTextInputChange={setQueryText}
-					addTag={(tag) => {
-						addTag(tag);
-						setQueryText('');
-					}}
-					value={queryText}
-					{...tagAutocompleteProps}
-					disabled={disabled}
-					theme={autoCompleteTheme}
-				/>
-			</div>
-			<div css={{ flex: 1 }}>
-				<Select
-					isDisabled={disabled || tagTypes.length == 1}
-					aria-label="select tag type"
-					value={filterValue}
-					placeholder="tag type"
-					placement="bottom right"
-					shouldFlip={false}
-					onChange={(selection) => {
-						if (Array.isArray(selection) || selection === null) {
-							return;
-						}
-						setFilterValue(selection.toString());
-					}}
-					theme={modifySelectTheme(selectTheme)}
-				>
-					{tagTypes.map((data, index) => (
-						<Option value={data} key={index} id={data.filter}>
-							{data.label}
-						</Option>
-					))}
-				</Select>
-			</div>
+			<TagAutocomplete
+				cssOverrides={css({ flex: 3 })}
+				onTextInputChange={setQueryText}
+				addTag={(tag) => {
+					addTag(tag);
+					setQueryText('');
+				}}
+				value={queryText}
+				{...tagAutocompleteProps}
+				disabled={disabled}
+				theme={autoCompleteTheme}
+			/>
+			<Select
+				cssOverrides={css({
+					flex: 1,
+					display: 'flex',
+					button: { height: '100%' },
+				})}
+				isDisabled={disabled || tagTypes.length == 1}
+				aria-label="select tag type"
+				value={filterValue}
+				placeholder="tag type"
+				placement="bottom right"
+				shouldFlip={false}
+				onChange={(selection) => {
+					if (Array.isArray(selection) || selection === null) {
+						return;
+					}
+					setFilterValue(selection.toString());
+				}}
+				theme={modifySelectTheme(selectTheme)}
+			>
+				{tagTypes.map((data, index) => (
+					<Option value={data} key={index} id={data.filter}>
+						{data.label}
+					</Option>
+				))}
+			</Select>
 		</div>
 	);
 }
