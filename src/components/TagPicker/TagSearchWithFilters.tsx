@@ -4,9 +4,12 @@ import type { ComponentSelect } from '../../Select';
 import { Option, Select } from '../../Select';
 import type { ComponentTagPicker } from '../../styleD/build/typescript/component/tagPicker';
 import type { ComponentAutocomplete } from '../../TagPicker';
-import { mergeDeep } from '../../util/mergeDeep';
 import type { DeepPartial } from '../../util/types';
-import { tagSelectWithTypesStyles } from './styles';
+import {
+	filterSelectCssOverrides,
+	modifyFilterSelectTheme,
+	tagSearchWithFilterStyles,
+} from './styles';
 import { TagAutocomplete, type TagAutocompleteProps } from './TagAutocomplete';
 import type { FilterOption, Tag } from './types';
 
@@ -20,22 +23,6 @@ type TagSearchWithFiltersProps<T extends Tag = Tag> = {
 	TagAutocompleteProps<T>,
 	'onTextInputChange' | 'value' | 'theme' | 'cssOverrides'
 >;
-
-const modifySelectTheme = (
-	selectTheme: DeepPartial<ComponentSelect>,
-): DeepPartial<ComponentSelect> => {
-	return mergeDeep(
-		{
-			shared: {
-				width: undefined,
-				button: {
-					marginTop: '0',
-				},
-			},
-		},
-		selectTheme,
-	);
-};
 
 export function TagSearchWithFilters<T extends Tag = Tag>({
 	addTag,
@@ -72,9 +59,9 @@ export function TagSearchWithFilters<T extends Tag = Tag>({
 	const shouldRenderSelect = filterOptions && filterOptions.length > 1;
 
 	return (
-		<div css={tagSelectWithTypesStyles(theme)}>
+		<div css={tagSearchWithFilterStyles(theme)}>
 			<TagAutocomplete
-				cssOverrides={css({ flex: 3 })}
+				cssOverrides={css({ flex: 1 })}
 				onTextInputChange={setQueryText}
 				addTag={(tag) => {
 					addTag(tag);
@@ -87,11 +74,8 @@ export function TagSearchWithFilters<T extends Tag = Tag>({
 			/>
 			{shouldRenderSelect && (
 				<Select
-					cssOverrides={css({
-						flex: 1,
-						display: 'flex',
-						button: { height: '100%' },
-					})}
+					theme={modifyFilterSelectTheme(selectTheme)}
+					cssOverrides={filterSelectCssOverrides(theme)}
 					isDisabled={disabled}
 					value={filterValue}
 					placement="bottom right"
@@ -102,7 +86,6 @@ export function TagSearchWithFilters<T extends Tag = Tag>({
 						}
 						setFilterValue(selection.toString());
 					}}
-					theme={modifySelectTheme(selectTheme)}
 				>
 					{filterOptions.map((data, index) => (
 						<Option value={data} key={index} id={data.filter}>

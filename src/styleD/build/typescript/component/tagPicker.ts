@@ -7,6 +7,9 @@ export const componentTagPicker = {
 		width: '100%',
 		gap: '15px',
 	},
+	select: {
+		flexBasis: '25%',
+	},
 	offlineSection: {
 		justifyContent: 'flex-start',
 		gap: '4px',

@@ -5,6 +5,7 @@
 :root {
 	--component-tag-picker-shared-width: 100%;
 	--component-tag-picker-shared-gap: 15px;
+	--component-tag-picker-select-flex-basis: 25%;
 	--component-tag-picker-offline-section-justify-content: flex-start;
 	--component-tag-picker-offline-section-gap: 4px;
 }

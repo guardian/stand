@@ -11,6 +11,12 @@
 					"$value": "15px"
 				}
 			},
+			"select": {
+				"flexBasis": {
+					"$type": "dimension",
+					"$value": "25%"
+				}
+			},
 			"offlineSection": {
 				"justifyContent": {
 					"$type": "string",

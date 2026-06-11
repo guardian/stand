@@ -300,10 +300,15 @@ export const ComposerContentTagPicker: Story = {
 
 export const WithTheme: Story = {
 	args: {
+		filterOptions: allTagTypeFilters,
+
 		theme: {
 			shared: {
-				width: '600px',
-				gap: '2rem',
+				width: '800px',
+				gap: '.25rem',
+			},
+			select: {
+				flexBasis: '300px',
 			},
 		},
 
@@ -321,7 +326,7 @@ export const WithTheme: Story = {
 					backgroundColor: 'pink',
 					border: '3px solid crimson',
 					typography: {
-						font: 'italic 1.2rem fantasy',
+						font: 'italic 1rem fantasy',
 					},
 				},
 			},
@@ -344,6 +349,10 @@ export const WithTheme: Story = {
 		proposedTagTableTheme: {
 			heading: {
 				backgroundColor: 'pink',
+			},
+			row: {
+				backgroundColor: 'lightblue',
+				backgroundHoverColor: 'lightblue',
 			},
 		},
 	},

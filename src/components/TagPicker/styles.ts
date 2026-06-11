@@ -6,6 +6,7 @@ import {
 	type ComponentAutocomplete,
 	componentAutocomplete,
 } from '../../styleD/build/typescript/component/autocomplete';
+import type { ComponentSelect } from '../../styleD/build/typescript/component/select';
 import {
 	type ComponentTagTable,
 	componentTagTable,
@@ -289,7 +290,7 @@ export const offlineSectionStyles = (
 	`;
 };
 
-export const tagSelectWithTypesStyles = (
+export const tagSearchWithFilterStyles = (
 	partialTheme: DeepPartial<ComponentTagPicker> = {},
 ): SerializedStyles => {
 	const theme = mergeDeep(componentTagPicker, partialTheme);
@@ -298,4 +299,34 @@ export const tagSelectWithTypesStyles = (
 		display: flex;
 		gap: ${theme.shared.gap};
 	`;
+};
+
+export const filterSelectCssOverrides = (
+	partialTheme: DeepPartial<ComponentTagPicker> = {},
+): SerializedStyles => {
+	const theme = mergeDeep(componentTagPicker, partialTheme);
+
+	return css`
+		flex-basis: ${theme.select.flexBasis};
+		display: flex;
+		button {
+			height: 100%;
+		}
+	`;
+};
+
+export const modifyFilterSelectTheme = (
+	selectTheme: DeepPartial<ComponentSelect>,
+): DeepPartial<ComponentSelect> => {
+	return mergeDeep(
+		{
+			shared: {
+				width: undefined,
+				button: {
+					marginTop: '0',
+				},
+			},
+		},
+		selectTheme,
+	);
 };
