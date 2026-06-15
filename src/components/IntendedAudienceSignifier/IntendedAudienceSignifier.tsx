@@ -35,22 +35,6 @@ const descriptionMap: Record<SourceOrTarget, Description> = {
 	au: 'Australia',
 };
 
-const getSourceDescription = (source: SourceOrTarget) => descriptionMap[source];
-
-const getTargetDescription = (
-	source: SourceOrTarget,
-	target: SourceOrTarget,
-): Description => {
-	switch (target) {
-		case 'global':
-			return 'Global';
-		case 'uk':
-		case 'us':
-		case 'au':
-			return target === source ? 'Domestic' : descriptionMap[source];
-	}
-};
-
 const AUDIENCE_NOT_KNOWN_DESCRIPTION = 'Intended audience unknown';
 const getSignifierTitle = (
 	source?: SourceOrTarget,
@@ -59,7 +43,10 @@ const getSignifierTitle = (
 	if (!source || !target) {
 		return AUDIENCE_NOT_KNOWN_DESCRIPTION;
 	}
-	return `${getSourceDescription(source)} for ${getTargetDescription(source, target)} audience`;
+	if (source === target) {
+		return `${descriptionMap[source]} audience`;
+	}
+	return `${descriptionMap[source]} for ${descriptionMap[target]} audience`;
 };
 
 export function IntendedAudienceSignifier({
