@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.50
+
+### Patch Changes
+
+- acfd083: Adjust title of intended audience signifier to be simpler when source and target are the same
+
 ## 0.0.49
 
 ### Patch Changes
