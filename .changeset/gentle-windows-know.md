@@ -2,4 +2,5 @@
 '@guardian/stand': patch
 ---
 
-add opinated TagPicker component
+- add opinated TagPicker component
+- remove the TagAutocomplete

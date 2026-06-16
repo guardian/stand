@@ -132,7 +132,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 			<TagSearchWithFilters
 				icon={searchIcon}
 				onSearch={onSearch}
-				addTag={addTag}
+				addSelection={addTag}
 				options={optionsWithoutSelected}
 				loading={loading}
 				filterOptions={filterOptions}

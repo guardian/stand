@@ -2,15 +2,16 @@ import { css } from '@emotion/react';
 import { useEffect, useRef, useState } from 'react';
 import type { ComponentSelect } from '../../Select';
 import { Option, Select } from '../../Select';
+import type { ComponentAutocomplete } from '../../styleD/build/typescript/component/autocomplete';
 import type { ComponentTagPicker } from '../../styleD/build/typescript/component/tagPicker';
-import type { ComponentAutocomplete } from '../../TagPicker';
 import type { DeepPartial } from '../../util/types';
+import type { AutocompleteProps } from './Autocomplete';
+import { Autocomplete } from './Autocomplete';
 import {
 	filterSelectCssOverrides,
 	modifyFilterSelectTheme,
 	tagSearchWithFilterStyles,
 } from './styles';
-import { TagAutocomplete, type TagAutocompleteProps } from './TagAutocomplete';
 import type { FilterOption, Tag } from './types';
 
 type TagSearchWithFiltersProps<T extends Tag = Tag> = {
@@ -20,12 +21,12 @@ type TagSearchWithFiltersProps<T extends Tag = Tag> = {
 	autoCompleteTheme?: DeepPartial<ComponentAutocomplete>;
 	selectTheme?: DeepPartial<ComponentSelect>;
 } & Omit<
-	TagAutocompleteProps<T>,
+	AutocompleteProps<T>,
 	'onTextInputChange' | 'value' | 'theme' | 'cssOverrides'
 >;
 
 export function TagSearchWithFilters<T extends Tag = Tag>({
-	addTag,
+	addSelection,
 	onSearch,
 	filterOptions,
 	disabled,
@@ -60,17 +61,18 @@ export function TagSearchWithFilters<T extends Tag = Tag>({
 
 	return (
 		<div css={tagSearchWithFilterStyles(theme)}>
-			<TagAutocomplete
+			<Autocomplete
 				cssOverrides={css({ flex: 1 })}
 				onTextInputChange={setQueryText}
-				addTag={(tag) => {
-					addTag(tag);
+				addSelection={(tag) => {
+					addSelection(tag);
 					setQueryText('');
 				}}
 				value={queryText}
 				{...tagAutocompleteProps}
 				disabled={disabled}
 				theme={autoCompleteTheme}
+				addFirstOnEnter={true}
 			/>
 			{shouldRenderSelect && (
 				<Select
