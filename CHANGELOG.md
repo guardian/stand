@@ -1,5 +1,22 @@
 # @guardian/stand
 
+## 0.0.50
+
+### Patch Changes
+
+- acfd083: Adjust title of intended audience signifier to be simpler when source and target are the same
+
+## 0.0.49
+
+### Patch Changes
+
+- df5a35c: - BREAKING: Form input components, e.g. Select, TextArea, TextInput etc., now set a max width of 450px by default. To use previous behaviour, i.e fluid (100% container) width, apply the `fluid` prop on the corresponding input field
+- c7f8b00: pass the theme for the Select down to the listbox
+- 3b66378: - Add new design tokens
+  - Colours
+  - Semantic max width for input fields
+  - Properly remove typography from IntendedAudienceSignifier
+
 ## 0.0.48
 
 ### Patch Changes

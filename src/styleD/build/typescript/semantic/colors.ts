@@ -31,6 +31,10 @@ export const semanticColors = {
 		raisedLevel1: '#f6f6f6',
 		raisedLevel2: '#ededed',
 		raisedLevel3: '#e6e6e6',
+		baseInverse: '#000000',
+		raisedLevel1Inverse: '#333333',
+		raisedLevel2Inverse: '#545454',
+		raisedLevel3Inverse: '#666666',
 	},
 	border: {
 		stronger: '#545454',

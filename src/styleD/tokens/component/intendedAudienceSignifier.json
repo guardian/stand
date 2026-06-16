@@ -78,10 +78,6 @@
 				"$value": "{semantic.colors.text.weak}"
 			},
 			"typography": {
-				"font": {
-					"$type": "typography",
-					"$value": "{semantic.typography.bodyXs.font}"
-				},
 				"lineHeight": {
 					"$type": "number",
 					"$value": "1"

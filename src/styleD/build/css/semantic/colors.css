@@ -28,6 +28,10 @@
 	--semantic-colors-bg-raised-level1: #f6f6f6;
 	--semantic-colors-bg-raised-level2: #ededed;
 	--semantic-colors-bg-raised-level3: #e6e6e6;
+	--semantic-colors-bg-base-inverse: #000000;
+	--semantic-colors-bg-raised-level1-inverse: #333333;
+	--semantic-colors-bg-raised-level2-inverse: #545454;
+	--semantic-colors-bg-raised-level3-inverse: #666666;
 	--semantic-colors-border-stronger: #545454;
 	--semantic-colors-border-strong: #8d8d8d;
 	--semantic-colors-border-weak: #cccccc;

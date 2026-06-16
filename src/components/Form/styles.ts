@@ -4,6 +4,7 @@ import type { ComponentForm } from '../../styleD/build/typescript/component/form
 import { componentForm } from '../../styleD/build/typescript/component/form';
 import type { Prettify } from '../../util/types';
 import { convertTypographyToEmotionStringStyle } from '../../utils';
+import type { FormInputContainerDefaultProps } from './types';
 
 export type FormInputContainerTheme = Prettify<ComponentForm['input']>;
 
@@ -12,12 +13,17 @@ export const defaultFormInputContainerTheme: FormInputContainerTheme =
 
 export const formInputContainerStyles = (
 	theme: FormInputContainerTheme,
+	{ fluid }: FormInputContainerDefaultProps<{ className?: unknown }, unknown>,
 ): SerializedStyles => {
 	return css`
 		display: ${theme.shared.container.display};
 		flex-direction: ${theme.shared.container.flexDirection};
 		gap: ${theme.shared.container.gap};
 		width: ${theme.shared.container.width};
+		${!fluid &&
+		css`
+			max-width: ${theme.shared.container.maxWidth};
+		`}
 	`;
 };
 

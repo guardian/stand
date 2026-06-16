@@ -28,6 +28,12 @@ export default meta;
 
 export const Default = {} satisfies Story;
 
+export const Fluid = {
+	args: {
+		fluid: true,
+	},
+} satisfies Story;
+
 export const WithIdProp: Story = {
 	render: (args) => (
 		<Select
