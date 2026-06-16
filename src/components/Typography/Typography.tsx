@@ -1,4 +1,4 @@
-import { jsx } from '@emotion/react';
+import { Text as ReactAriaText } from 'react-aria-components';
 import { mergeDeep } from '../../util/mergeDeep';
 import { defaultTypographyTheme, typographyStyles } from './styles';
 import type { TypographyProps } from './types';
@@ -13,12 +13,13 @@ export const Typography = ({
 }: TypographyProps) => {
 	const mergedTheme = mergeDeep(defaultTypographyTheme, theme);
 
-	return jsx(
-		element,
-		{
-			css: [typographyStyles(mergedTheme, { variant }), cssOverrides],
-			...props,
-		},
-		children,
+	return (
+		<ReactAriaText
+			elementType={element}
+			css={[typographyStyles(mergedTheme, { variant }), cssOverrides]}
+			{...props}
+		>
+			{children}
+		</ReactAriaText>
 	);
 };
