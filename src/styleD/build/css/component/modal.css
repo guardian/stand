@@ -1,0 +1,51 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-modal-overlay-position: absolute;
+	--component-modal-overlay-top: 0;
+	--component-modal-overlay-left: 0;
+	--component-modal-overlay-width: 100%;
+	--component-modal-overlay-height: 100%;
+	--component-modal-overlay-background-color: rgba(0, 0, 0, 0.4);
+	--component-modal-overlay-overflow: clip;
+	--component-modal-overlay-z-index: 100;
+	--component-modal-modal-position: sticky;
+	--component-modal-modal-max-height: 90%;
+	--component-modal-modal-top: 50%;
+	--component-modal-modal-margin-left: 50svw;
+	--component-modal-modal-translate: -50% -50%;
+	--component-modal-modal-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+	--component-modal-modal-border-radius: 0.5rem;
+	--component-modal-modal-width: max-content;
+	--component-modal-modal-max-width: min(484px, 90svw);
+	--component-modal-modal-background-color: #ffffff;
+	--component-modal-modal-padding-top: 1rem;
+	--component-modal-modal-padding-bottom: 2rem;
+	--component-modal-modal-padding-left: 2rem;
+	--component-modal-modal-padding-right: 2rem;
+	--component-modal-dialog-container-display: grid;
+	--component-modal-dialog-container-grid-template-areas: 'dismiss' 'title'
+		'children' 'ctas';
+	--component-modal-dialog-container-grid-template-columns: 1fr;
+	--component-modal-dialog-container-grid-template-rows: auto auto 1fr auto;
+	--component-modal-dialog-dismiss-grid-area: dismiss;
+	--component-modal-dialog-dismiss-margin-left: auto;
+	--component-modal-dialog-dismiss-margin-bottom: 1rem;
+	--component-modal-dialog-dismiss-border: none;
+	--component-modal-dialog-dismiss-height: 1rem;
+	--component-modal-dialog-dismiss-width: 1rem;
+	--component-modal-dialog-dismiss-hovered-background: none;
+	--component-modal-dialog-dismiss-hovered-border: none;
+	--component-modal-dialog-title-grid-area: title;
+	--component-modal-dialog-title-margin-bottom: 1rem;
+	--component-modal-dialog-children-grid-area: children;
+	--component-modal-dialog-children-margin-bottom: 2.5rem;
+	--component-modal-dialog-ctas-grid-area: ctas;
+	--component-modal-dialog-ctas-display: flex;
+	--component-modal-dialog-ctas-flex-direction: column;
+	--component-modal-dialog-ctas-gap: 1rem;
+	--component-modal-dialog-ctas-justify-content: flex-end;
+	--component-modal-dialog-ctas-md-flex-direction: row;
+}

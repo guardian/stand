@@ -6,6 +6,7 @@
  * - `react`
  * - `react-dom`
  * - `typescript`
+ * - `react-aria-components`
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
