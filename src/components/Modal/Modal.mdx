@@ -1,0 +1,285 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import ModalStories, {
+	Default,
+	Controlled,
+	CustomTheme,
+	CssOverrides,
+} from './Modal.stories';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
+
+<Meta of={ModalStories} />
+
+# Modal
+
+A React Aria powered modal overlay that blocks interaction with elements outside it. Built on `ModalOverlay` + `Modal` + `Dialog` from `react-aria-components`. See React Aria guidance in their [Modal docs](https://react-aria.adobe.com/Modal).
+
+## When to use
+
+- Confirming destructive or irreversible actions (e.g. discard changes, delete item)
+- Blocking flows that require a decision before continuing
+- Presenting a focused form or prompt that must be acknowledged before the user can return to the page
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [Icon component](?path=/docs/stand-tools-design-system-components-icon--docs#installing-icons) for more on installing icons.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Button } from '@guardian/stand/Button';
+import { Dialog, DialogTrigger, Modal } from '@guardian/stand/Modal';
+
+/* types, if required */
+import type {
+	DialogProps,
+	DialogTriggerProps,
+	ModalProps,
+} from '@guardian/stand/Modal';
+
+/* Trigger-controlled modal */
+const Example = () => (
+	<DialogTrigger>
+		<Button>Open Modal</Button>
+		<Modal>
+			<Dialog>
+				<Dialog.Dismiss />
+				<Dialog.Header element="h2" variant="headingMd">
+					Are you sure?
+				</Dialog.Header>
+				<Dialog.Content>This action cannot be undone.</Dialog.Content>
+				<Dialog.Buttons>
+					<Button variant="tertiary" slot="close">
+						Cancel
+					</Button>
+					<Button>Confirm</Button>
+				</Dialog.Buttons>
+			</Dialog>
+		</Modal>
+	</DialogTrigger>
+);
+
+/* Programmatically controlled modal */
+const Controlled = () => {
+	const [isOpen, setIsOpen] = React.useState(false);
+	return (
+		<>
+			<Button onPress={() => setIsOpen(true)}>Open Modal</Button>
+			<Modal isOpen={isOpen} onOpenChange={setIsOpen}>
+				<Dialog>
+					<Dialog.Header>Confirm action</Dialog.Header>
+					<Dialog.Content>Are you sure you want to continue?</Dialog.Content>
+					<Dialog.Buttons>
+						<Button variant="tertiary" slot="close">
+							Cancel
+						</Button>
+						<Button onPress={() => setIsOpen(false)}>Confirm</Button>
+					</Dialog.Buttons>
+				</Dialog>
+			</Modal>
+		</>
+	);
+};
+```
+
+## Props
+
+### `Modal`
+
+Wraps React Aria's `ModalOverlay` + `Modal`. All `ModalOverlay` props are accepted.
+
+| Name                           | Type                            | Required | Default | Description                                                                                    |
+| ------------------------------ | ------------------------------- | -------- | ------- | ---------------------------------------------------------------------------------------------- |
+| `children`                     | `ReactNode`                     | No       | N/A     | Content of the modal, typically a `Dialog`.                                                    |
+| `isOpen`                       | `boolean`                       | No       | N/A     | Controlled open state. Use together with `onOpenChange` to control the modal programmatically. |
+| `onOpenChange`                 | `(isOpen: boolean) => void`     | No       | N/A     | Callback fired when the modal open state changes.                                              |
+| `isDismissable`                | `boolean`                       | No       | `false` | Whether clicking outside the modal closes it.                                                  |
+| `isKeyboardDismissDisabled`    | `boolean`                       | No       | `false` | Whether pressing Escape should be prevented from closing the modal.                            |
+| `shouldCloseOnInteractOutside` | `(element: Element) => boolean` | No       | N/A     | Fine-grained control over which outside interactions dismiss the modal.                        |
+| `theme`                        | `ModalTheme` (partial)          | No       | N/A     | Override Stand design tokens for the modal overlay; merged over the default theme.             |
+| `className`                    | `string`                        | No       | N/A     | Additional class name forwarded to the root overlay element.                                   |
+| `...props`                     | `ReactAria ModalOverlay` props  | No       | N/A     | All other props from `react-aria-components` `ModalOverlay`.                                   |
+
+### `DialogTrigger`
+
+Wraps React Aria's `DialogTrigger`. Expects a pressable trigger element and a `Modal` as children.
+
+| Name       | Type                            | Required | Default | Description                                                   |
+| ---------- | ------------------------------- | -------- | ------- | ------------------------------------------------------------- |
+| `children` | `ReactNode`                     | Yes      | N/A     | A trigger element (e.g. `Button`) followed by a `Modal`.      |
+| `...props` | `ReactAria DialogTrigger` props | No       | N/A     | All other props from `react-aria-components` `DialogTrigger`. |
+
+### `Dialog`
+
+A compound component rendered inside `Modal`. Only `Dialog.Dismiss`, `Dialog.Header`, `Dialog.Content`, and `Dialog.Buttons` children are rendered. Other children (including render-prop `children`) are ignored.
+
+| Name       | Type                     | Required | Default | Description                                                            |
+| ---------- | ------------------------ | -------- | ------- | ---------------------------------------------------------------------- |
+| `children` | `ReactNode`              | No       | N/A     | `Dialog.Dismiss`, `Dialog.Header`, `Dialog.Content`, `Dialog.Buttons`. |
+| `...props` | `ReactAria Dialog` props | No       | N/A     | All other props from `react-aria-components` `Dialog`.                 |
+
+### `Dialog.Header`
+
+Renders a `Typography` element with `slot="title"`. Accepts all `TypographyProps`.
+
+| Name       | Type                          | Required | Default       | Description                                  |
+| ---------- | ----------------------------- | -------- | ------------- | -------------------------------------------- |
+| `variant`  | `TypographyVariant`           | No       | `'headingLg'` | Typography variant applied to the heading.   |
+| `element`  | `string`                      | No       | `'h2'`        | HTML element rendered for the heading.       |
+| `theme`    | `PartialDialogTheme['title']` | No       | N/A           | Override design tokens for the heading area. |
+| `...props` | `TypographyProps`             | No       | N/A           | All other `Typography` props.                |
+
+### `Dialog.Dismiss`
+
+Renders the close (`×`) `IconButton` with `slot="close"`. Must be placed explicitly as a child of `Dialog`. Accepts all `IconButtonProps` except `theme`, which is replaced with the local dialog dismiss theme.
+
+| Name           | Type                                         | Required | Default         | Description                                                 |
+| -------------- | -------------------------------------------- | -------- | --------------- | ----------------------------------------------------------- |
+| `theme`        | `PartialDialogTheme['dismiss']`              | No       | N/A             | Override design tokens for the dismiss button.              |
+| `ariaLabel`    | `string`                                     | No       | `'Close Modal'` | Accessible label for the button.                            |
+| `size`         | `'xsm'` \| `'sm'` \| `'md'` \| `'lg'`        | No       | `'lg'`          | Size variant of the icon button.                            |
+| `variant`      | `'primary'` \| `'secondary'` \| `'tertiary'` | No       | `'tertiary'`    | Visual variant of the icon button.                          |
+| `symbol`       | `MaterialSymbol`                             | No       | `'close'`       | Material symbol icon name.                                  |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`   | No       | N/A             | Emotion CSS overrides.                                      |
+| `...props`     | `IconButtonProps`                            | No       | N/A             | All other `IconButtonProps` (e.g. `onPress`, `isDisabled`). |
+
+### `Dialog.Content`
+
+The main body area of the dialog.
+
+| Name           | Type                                       | Required | Default | Description                                  |
+| -------------- | ------------------------------------------ | -------- | ------- | -------------------------------------------- |
+| `children`     | `ReactNode`                                | No       | N/A     | Content of the dialog body.                  |
+| `theme`        | `PartialDialogTheme['children']`           | No       | N/A     | Override design tokens for the content area. |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Emotion CSS overrides for the area.          |
+
+### `Dialog.Buttons`
+
+The action area of the dialog. Only `Button`, `AvatarButton`, and `IconButton` children are rendered — other children are filtered out.
+
+Use `slot="close"` on any button to have React Aria automatically close the modal when it is pressed.
+
+| Name           | Type                                       | Required | Default | Description                                         |
+| -------------- | ------------------------------------------ | -------- | ------- | --------------------------------------------------- |
+| `children`     | `ReactNode`                                | No       | N/A     | `Button`, `AvatarButton`, or `IconButton` elements. |
+| `theme`        | `PartialDialogTheme['ctas']`               | No       | N/A     | Override design tokens for the buttons area.        |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Emotion CSS overrides for the area.                 |
+
+## Stories
+
+### Default (trigger-controlled)
+
+<Canvas layout="padded" of={Default} />
+
+### Controlled
+
+<Canvas layout="padded" of={Controlled} />
+
+## Customisation
+
+We recommend using the Modal component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens. `Modal` and `Dialog` accept a `theme` for their own tokens, while `Dialog.Dismiss`, `Dialog.Header`, `Dialog.Content`, and `Dialog.Buttons` each accept their own `theme` prop for finer-grained control:
+
+```tsx
+import { Button } from '@guardian/stand/Button';
+import type {
+	PartialDialogTheme,
+	PartialModalTheme,
+} from '@guardian/stand/Modal';
+import { Dialog, DialogTrigger, Modal } from '@guardian/stand/Modal';
+
+const modalTheme: PartialModalTheme = {
+	overlay: {
+		backgroundColor: 'rgba(150, 50, 150, 0.5)',
+	},
+	modal: {
+		backgroundColor: '#fff',
+	},
+};
+
+const contentTheme: PartialDialogTheme['children'] = {
+	marginBottom: '1rem',
+};
+
+const buttonsTheme: PartialDialogTheme['ctas'] = {
+	gap: '1rem',
+	justifyContent: 'flex-start',
+};
+
+const Component = () => (
+	<DialogTrigger>
+		<Button>Open Modal</Button>
+		<Modal theme={modalTheme}>
+			<Dialog>
+				<Dialog.Dismiss />
+				<Dialog.Header>Confirm action</Dialog.Header>
+				<Dialog.Content theme={contentTheme}>
+					Are you sure you want to continue?
+				</Dialog.Content>
+				<Dialog.Buttons theme={buttonsTheme}>
+					<Button variant="tertiary" slot="close">
+						Cancel
+					</Button>
+					<Button>Confirm</Button>
+				</Dialog.Buttons>
+			</Dialog>
+		</Modal>
+	</DialogTrigger>
+);
+```
+
+<Canvas layout="padded" of={CustomTheme} />
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the Modal or Dialog component:
+
+```tsx
+import { css } from '@emotion/react';
+import { Button } from '@guardian/stand/Button';
+import { Dialog, DialogTrigger, Modal } from '@guardian/stand/Modal';
+
+const modalStyles = css`
+	// custom styles here
+	border: 2px solid red;
+`;
+
+const Component = () => (
+	<DialogTrigger>
+		<Button>Open Modal</Button>
+		<Modal cssOverrides={modalStyles}>
+			<Dialog>
+				<Dialog.Header>Confirm action</Dialog.Header>
+				<Dialog.Content>Are you sure you want to continue?</Dialog.Content>
+				<Dialog.Buttons>
+					<Button variant="tertiary" slot="close">
+						Cancel
+					</Button>
+					<Button>Confirm</Button>
+				</Dialog.Buttons>
+			</Dialog>
+		</Modal>
+	</DialogTrigger>
+);
+```
+
+<Canvas layout="padded" of={CssOverrides} />
+
+## Custom Component Build
+
+Due to the interactive functionality of the Modal component (focus trapping, scroll locking, keyboard dismissal, accessibility roles), it is only available as a React component with Emotion for styling.
+
+If you want to use a modal in a non-React environment, you would need to build a custom version using vanilla JavaScript and CSS, which requires significant effort to replicate the accessibility and interaction features of this component. We recommend using the provided React component where possible.
