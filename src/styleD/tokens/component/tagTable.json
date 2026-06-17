@@ -94,7 +94,7 @@
 			"addButton": {
 				"color": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.900}"
+					"$value": "{semantic.colors.text.strongerInverse}"
 				},
 				"paddingX": {
 					"$type": "dimension",
@@ -106,11 +106,11 @@
 				},
 				"backgroundColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.400}"
+					"$value": "{semantic.colors.fill.strong}"
 				},
 				"backgroundHoverColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.200}"
+					"$value": "{semantic.colors.fill.strongHover}"
 				},
 				"fontWeight": {
 					"$type": "number",
