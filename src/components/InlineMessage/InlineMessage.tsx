@@ -17,6 +17,7 @@ export function InlineMessage({
 	theme = {},
 	cssOverrides,
 	className,
+	slot,
 	...props
 }: InlineMessageProps) {
 	const mergedTheme = mergeDeep(defaultInlineMessageTheme, theme);
@@ -55,6 +56,7 @@ export function InlineMessage({
 			<Typography
 				variant="helpTextFormMd"
 				theme={{ color: mergedTheme[level].color }}
+				slot={slot}
 			>
 				{children}
 			</Typography>

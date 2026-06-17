@@ -1,0 +1,204 @@
+{
+	"component": {
+		"modal": {
+			"overlay": {
+				"position": {
+					"$type": "string",
+					"$value": "absolute"
+				},
+				"top": {
+					"$type": "number",
+					"$value": 0
+				},
+				"left": {
+					"$type": "number",
+					"$value": 0
+				},
+				"width": {
+					"$type": "dimension",
+					"$value": "100%"
+				},
+				"height": {
+					"$type": "dimension",
+					"$value": "100%"
+				},
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "rgba(0, 0, 0, 0.4)"
+				},
+				"overflow": {
+					"$type": "string",
+					"$value": "clip"
+				},
+				"zIndex": {
+					"$type": "number",
+					"$value": 100
+				}
+			},
+			"modal": {
+				"position": {
+					"$type": "string",
+					"$value": "sticky"
+				},
+				"maxHeight": {
+					"$type": "dimension",
+					"$value": "90%"
+				},
+				"top": {
+					"$type": "dimension",
+					"$value": "50%"
+				},
+				"marginLeft": {
+					"$type": "dimension",
+					"$value": "50svw"
+				},
+				"translate": {
+					"$type": "string",
+					"$value": "-50% -50%"
+				},
+				"boxShadow": {
+					"$type": "string",
+					"$value": "0 2px 6px 0 rgba(0, 0, 0, 0.30)"
+				},
+				"borderRadius": {
+					"$type": "dimension",
+					"$value": "{semantic.radius.cornerMd}"
+				},
+				"width": {
+					"$type": "string",
+					"$value": "max-content"
+				},
+				"maxWidth": {
+					"$type": "string",
+					"$value": "min(484px, 90svw)"
+				},
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.bg.base}"
+				},
+				"padding": {
+					"top": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackMd}"
+					},
+					"bottom": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackLg}"
+					},
+					"left": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackLg}"
+					},
+					"right": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackLg}"
+					}
+				}
+			},
+			"dialog": {
+				"container": {
+					"display": {
+						"$type": "string",
+						"$value": "grid"
+					},
+					"gridTemplateAreas": {
+						"$type": "string",
+						"$value": "'dismiss' 'title' 'children' 'ctas'"
+					},
+					"gridTemplateColumns": {
+						"$type": "string",
+						"$value": "1fr"
+					},
+					"gridTemplateRows": {
+						"$type": "string",
+						"$value": "auto auto 1fr auto"
+					}
+				},
+				"dismiss": {
+					"gridArea": {
+						"$type": "string",
+						"$value": "dismiss"
+					},
+					"marginLeft": {
+						"$type": "dimension",
+						"$value": "auto"
+					},
+					"marginBottom": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackMd}"
+					},
+					"border": {
+						"$type": "string",
+						"$value": "none"
+					},
+					"height": {
+						"$type": "dimension",
+						"$value": "{base.sizing.size16Rem}"
+					},
+					"width": {
+						"$type": "dimension",
+						"$value": "{base.sizing.size16Rem}"
+					},
+					"hovered": {
+						"background": {
+							"$type": "string",
+							"$value": "none"
+						},
+						"border": {
+							"$type": "string",
+							"$value": "none"
+						}
+					}
+				},
+				"title": {
+					"gridArea": {
+						"$type": "string",
+						"$value": "title"
+					},
+					"marginBottom": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackMd}"
+					}
+				},
+				"children": {
+					"gridArea": {
+						"$type": "string",
+						"$value": "children"
+					},
+					"marginBottom": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackXl}"
+					}
+				},
+				"ctas": {
+					"gridArea": {
+						"$type": "string",
+						"$value": "ctas"
+					},
+					"display": {
+						"$type": "string",
+						"$value": "flex"
+					},
+					"flexDirection": {
+						"$type": "string",
+						"$value": "column"
+					},
+					"gap": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackMd}"
+					},
+					"justifyContent": {
+						"$type": "string",
+						"$value": "flex-end"
+					},
+					"md": {
+						"flexDirection": {
+							"$type": "string",
+							"$value": "row"
+						}
+					}
+				}
+			}
+		}
+	}
+}
