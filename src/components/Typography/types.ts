@@ -1,10 +1,14 @@
+import type { TextProps as ReactAriaTextProps } from 'react-aria-components';
 import type { SemanticTypography } from '../../styleD/build/typescript/semantic/typography';
-import type { DefaultPropsWithChildren } from '../../util/types';
+import type { DefaultProps } from '../../util/types';
 import type { TypographyTheme } from './styles';
 
 export type TypographyVariant = keyof SemanticTypography;
 
-export interface TypographyProps extends DefaultPropsWithChildren<TypographyTheme> {
+export interface TypographyProps
+	extends
+		DefaultProps<TypographyTheme, ReactAriaTextProps['className']>,
+		Omit<ReactAriaTextProps, 'elementType' | 'className'> {
 	/**
 	 * HTML element to render with font applied to
 	 */

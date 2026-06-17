@@ -40,6 +40,8 @@ export { componentInlineMessage } from './styleD/build/typescript/component/inli
 export type { ComponentInlineMessage } from './styleD/build/typescript/component/inlineMessage';
 export { componentMenu } from './styleD/build/typescript/component/menu';
 export type { ComponentMenu } from './styleD/build/typescript/component/menu';
+export { componentModal } from './styleD/build/typescript/component/modal';
+export type { ComponentModal } from './styleD/build/typescript/component/modal';
 export { componentLayout } from './styleD/build/typescript/component/layout';
 export type { ComponentLayout } from './styleD/build/typescript/component/layout';
 export { componentLink } from './styleD/build/typescript/component/link';
