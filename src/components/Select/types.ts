@@ -24,7 +24,7 @@ export interface ListBoxProps
 
 export type SelectProps = FormInputContainerDefaultProps<
 	RACSelectProps<object, 'single' | 'multiple'> & {
-		/**x
+		/**
 		 * The placement of the options container element with respect to select input.
 		 * @default
 		 * 'bottom'
