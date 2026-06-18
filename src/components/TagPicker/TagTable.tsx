@@ -33,7 +33,7 @@ export interface TagTableProps<R extends Row> {
 	/** `rows` - The collection of rows */
 	rows: R[];
 	/** `filterRows` - Function to filter rows from `rows` prop from appearing in the table */
-	filterRows: (row: R) => boolean;
+	filterRows?: (row: R) => boolean;
 	/** `heading` - The table heading */
 	heading?: string;
 	/** `showTagType` - Whether to show tags' type in table */
@@ -42,6 +42,8 @@ export interface TagTableProps<R extends Row> {
 	showTagSectionName?: boolean;
 	/** `removeAction` - Function called when the Remove button is pressed on a row */
 	removeAction?: (tag: R) => void;
+	/** `highlightFirstRow` - Whether to highlight the first row ("leading tag") */
+	highlightFirstRow?: boolean;
 	/** `addAction` - Function called when the Add button is pressed on a row */
 	addAction?: (tag: R) => void;
 	/** `onReorder` - Function called when a re-ordering of rows through drag and drop is performed */
@@ -80,37 +82,13 @@ const defaultCanRemove = () => true;
  *
  * ## Usage
  *
- * *Example with TagAutocomplete and TagTable combined:*
+ * *Example with TagTable:*
  *
  * ```tsx
- * import { TagAutocomplete, TagTable } from '@guardian/stand';
+ * import { TagTable } from '@guardian/stand';
  *
- * const Component = () => {
- *   const [selectedTags, setSelectedTags] = useState<
- *     TagManagerObjectData[] // TagManagerObjectData is an internal type representing a Tag
- *   >([]);
-
- *   const [options, setOptions] = useState<TagManagerObjectData[]>([]);
- *   const [value, setValue] = useState('');
- *   const onChange = (inputText: string) => {
- *     setValue(inputText);
- *     if (inputText === '') {
- *       setOptions([]);
- *       return;
- *     }
- *
- *     if (inputText === '*') {
- *       setOptions(exampleTags); // exampleTags is an array of Tags
- *       return;
- *     }
- *
- *     // Simple filtering against exampleTags
- *     const filteredItems = exampleTags.filter((t) =>
- *       t.internalName.toLowerCase().includes(inputText.toLowerCase()),
- *     );
- *     return setOptions(filteredItems);
- *   };
-
+ *  // TagManagerObjectData is an internal type representing a Tag
+ * const Component = ({selectedTags}:{selectedTags:TagManagerObjectData[]}) => {
  *   return (
  *     <>
  *       <div
@@ -118,25 +96,10 @@ const defaultCanRemove = () => true;
  *             display: flex;
  *         `}
  *       >
- *         <TagAutocomplete
- *           onChange={onChange}
- *           options={options}
- *           label="Tags"
- *           addTag={(tag) =>
- *               setSelectedTags((tags) => {
- *                   return [...tags, tag];
- *               })
- *           }
- *           loading={false}
- *           placeholder={''}
- *           disabled={false}
- *           value={value}
- *         />
- *         <select>
- *            option>All tags</option>
- *         </select>
- *       </div>
  *       <TagTable rows={selectedTags} filterRows={() => true} />
+ * 		<div>
+ * 			there are {selectedTags.length} tags.
+ * 		</div>
  *     </>
  *   );
  * };
@@ -156,6 +119,7 @@ export function TagTable<R extends Row>({
 	heading,
 	showTagType,
 	showTagSectionName,
+	highlightFirstRow = false,
 	removeAction: removeTag,
 	addAction: addTag,
 	onReorder,
@@ -180,7 +144,7 @@ export function TagTable<R extends Row>({
 		setLocalRows([...rows]);
 	}, [rows]);
 
-	const filtered = localRows.filter(filterRows);
+	const filtered = filterRows ? localRows.filter(filterRows) : [...localRows];
 
 	const { dragAndDropHooks } = useDragAndDrop<R>({
 		getItems: (_keys, items) => {
@@ -249,7 +213,7 @@ export function TagTable<R extends Row>({
 					{(item) => (
 						<Row
 							id={rowToTag(item).id}
-							css={rowStyles(canDrag, theme)}
+							css={rowStyles(canDrag, highlightFirstRow, theme)}
 							key={rowToTag(item).id}
 							textValue={rowToTag(item).name}
 						>

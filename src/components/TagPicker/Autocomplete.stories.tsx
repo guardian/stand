@@ -91,6 +91,7 @@ export const FruitPicker = {
 					placeholder={''}
 					disabled={false}
 					value={value}
+					symbol="nutrition"
 				/>
 				<ul
 					css={css`

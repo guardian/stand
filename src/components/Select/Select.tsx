@@ -59,6 +59,8 @@ function ListBox({ children, theme = {} }: ListBoxProps) {
 export function Select({
 	isInvalid,
 	theme = {},
+	placement,
+	shouldFlip,
 	children,
 	...props
 }: SelectProps) {
@@ -77,6 +79,8 @@ export function Select({
 			</Button>
 			<Popover
 				css={popoverStyles()}
+				placement={placement}
+				shouldFlip={shouldFlip}
 				offset={mergedTheme.shared.offset}
 				containerPadding={mergedTheme.shared.containerPadding}
 			>

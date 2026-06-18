@@ -84,16 +84,18 @@ import type {
 
 ## Props
 
-| Name                 | Type                           | Required | Default | Description                                                                                                      |
-| -------------------- | ------------------------------ | -------- | ------- | ---------------------------------------------------------------------------------------------------------------- |
-| `label`              | `string`                       | Yes      | N/A     | Visible label rendered above the select.                                                                         |
-| `renderLabel`        | `(label: string) => ReactNode` | No       | N/A     | Custom render function for the label. Receives the `label` string and returns a ReactNode for visual enhancement |
-| `contextualHelpText` | `string`                       | No       | N/A     | Optional contextual help text.                                                                                   |
-| `errorMessage`       | `string`                       | Yes      | N/A     | A validation error message.                                                                                      |
-| `children`           | `React.ReactNode`              | No       | N/A     | Options to render in the dropdown, only `Option` components are accepted.                                        |
-| `theme`              | `SelectTheme`                  | No       | N/A     | Custom theme overrides.                                                                                          |
-| `cssOverrides`       | `SerializedStyles`             | No       | N/A     | Custom CSS styles.                                                                                               |
-| `className`          | `string`                       | No       | N/A     | Additional class name(s).                                                                                        |
+| Name                 | Type                           | Required | Default | Description                                                                                                                                                           |
+| -------------------- | ------------------------------ | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `label`              | `string`                       | Yes      | N/A     | Visible label rendered above the select.                                                                                                                              |
+| `renderLabel`        | `(label: string) => ReactNode` | No       | N/A     | Custom render function for the label. Receives the `label` string and returns a ReactNode for visual enhancement                                                      |
+| `contextualHelpText` | `string`                       | No       | N/A     | Optional contextual help text.                                                                                                                                        |
+| `errorMessage`       | `string`                       | Yes      | N/A     | A validation error message.                                                                                                                                           |
+| `placement`          | `Placement`                    | No       | N/A     | The placement of the options container element with respect to select input.                                                                                          |
+| `shouldFlip`         | `boolean`                      | No       | N/A     | Whether the element options container element flip its orientation (e.g. top to bottom or left to right) when there is insufficient room for it to render completely. |
+| `children`           | `React.ReactNode`              | No       | N/A     | Options to render in the dropdown, only `Option` components are accepted.                                                                                             |
+| `theme`              | `SelectTheme`                  | No       | N/A     | Custom theme overrides.                                                                                                                                               |
+| `cssOverrides`       | `SerializedStyles`             | No       | N/A     | Custom CSS styles.                                                                                                                                                    |
+| `className`          | `string`                       | No       | N/A     | Additional class name(s).                                                                                                                                             |
 
 ## Option props
 

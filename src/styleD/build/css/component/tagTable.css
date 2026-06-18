@@ -26,8 +26,8 @@
 	--component-tag-table-add-button-color: #ffffff;
 	--component-tag-table-add-button-padding-x: 10px;
 	--component-tag-table-add-button-padding-y: 0px;
-	--component-tag-table-add-button-background-color: #8d8d8d;
-	--component-tag-table-add-button-background-hover-color: #545454;
+	--component-tag-table-add-button-background-color: #545454;
+	--component-tag-table-add-button-background-hover-color: #333333;
 	--component-tag-table-add-button-font-weight: 400;
 	--component-tag-table-add-button-font-size: 13px;
 	--component-tag-table-type-badge-color: #000000;
