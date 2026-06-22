@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.52
+
+### Patch Changes
+
+- 6887e50: Add `Modal` component
+- fce23c5: Update `Typography` component to be based on react-aria-components `Text` component for better compatibility with other react aria based components. This change also adds `react-aria-components` as a peer dependency to the component.
+
 ## 0.0.51
 
 ### Patch Changes
