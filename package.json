@@ -297,6 +297,16 @@
 				"default": "./dist/Layout.cjs"
 			}
 		},
+		"./Modal": {
+			"import": {
+				"types": "./dist/Modal.d.ts",
+				"default": "./dist/Modal.js"
+			},
+			"require": {
+				"types": "./dist/Modal.d.cts",
+				"default": "./dist/Modal.cjs"
+			}
+		},
 		"./utils": {
 			"import": {
 				"types": "./dist/utils.d.ts",
@@ -348,7 +358,8 @@
 		"./component/intendedAudienceSignifier.css": "./dist/styleD/build/css/component/intendedAudienceSignifier.css",
 		"./component/link.css": "./dist/styleD/build/css/component/link.css",
 		"./component/grid.css": "./dist/styleD/build/css/component/grid.css",
-		"./component/layout.css": "./dist/styleD/build/css/component/layout.css"
+		"./component/layout.css": "./dist/styleD/build/css/component/layout.css",
+		"./component/modal.css": "./dist/styleD/build/css/component/modal.css"
 	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
@@ -441,6 +452,9 @@
 			],
 			"Layout": [
 				"./dist/Layout.d.ts"
+			],
+			"Modal": [
+				"./dist/Modal.d.ts"
 			]
 		}
 	},

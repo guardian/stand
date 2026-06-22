@@ -1,5 +1,6 @@
 import type { DefaultPropsWithChildren } from '../../util/types';
 import type { IconProps } from '../Icon/types';
+import type { TypographyProps } from '../Typography/types';
 import type { InlineMessageTheme } from './styles';
 
 export interface InlineMessageProps extends DefaultPropsWithChildren<InlineMessageTheme> {
@@ -19,4 +20,8 @@ export interface InlineMessageProps extends DefaultPropsWithChildren<InlineMessa
 	 * Passed to the Icon component, so can be either a string (for material symbols) or an SVG element.
 	 */
 	icon?: IconProps['symbol'] | Exclude<IconProps['children'], string>;
+	/**
+	 * Optional prop to specify the slot for the Typography component, allowing for better accessibility and semantic structure.
+	 */
+	slot?: TypographyProps['slot'];
 }

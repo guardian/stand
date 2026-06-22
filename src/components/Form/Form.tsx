@@ -61,7 +61,9 @@ export function FormInputContainer<C extends AllowedContainer>({
 			{children}
 			{error && (
 				<FieldError>
-					<InlineMessage level="error">{error}</InlineMessage>
+					<InlineMessage level="error" slot="errorMessage">
+						{error}
+					</InlineMessage>
 				</FieldError>
 			)}
 		</Tag>
