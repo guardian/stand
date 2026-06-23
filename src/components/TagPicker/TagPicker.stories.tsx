@@ -16,6 +16,7 @@ import { TagPicker } from './TagPicker';
 type StoryArgs = ComponentProps<typeof TagPicker<TagManagerObjectRow>> & {
 	intialTags: TagManagerObjectRow[];
 	intialProposedTags: TagManagerObjectRow[];
+	searchWillFail: boolean;
 	getProposals?: { (tags: TagManagerObjectRow[]): TagManagerObjectRow[] };
 };
 type Story = StoryObj<StoryArgs>;
@@ -40,34 +41,40 @@ const meta: Meta<StoryArgs> = {
 		getProposals: proposeWithoutRationalBasis,
 	},
 	render: (args) => {
-		const [selectedTags, setSelectedTags] = useState<TagManagerObjectRow[]>(
-			args.intialTags,
-		);
-		const [proposedTags, setProposedTags] = useState<TagManagerObjectRow[]>(
-			args.intialProposedTags,
-		);
+		const { searchWillFail, getProposals, intialProposedTags, intialTags } =
+			args;
+
+		const [selectedTags, setSelectedTags] =
+			useState<TagManagerObjectRow[]>(intialTags);
+		const [proposedTags, setProposedTags] =
+			useState<TagManagerObjectRow[]>(intialProposedTags);
 		const [options, setOptions] = useState<TagManagerObjectRow[]>([]);
 		const [isLoadingResults, setIsLoadingResults] = useState(false);
+		const [isOffline, setIsOffline] = useState(false);
 
 		const search = useCallback(
 			(queryText: string, filterValue?: string) => {
 				setIsLoadingResults(true);
 				void simulateSearchAsyncSearch(queryText, filterValue)
 					.then((searchResults) => {
-						setOptions(
-							searchResults.filter(
-								(tag) => !selectedTags.some(tagMatching(tag)),
-							),
-						);
+						if (searchWillFail) {
+							setIsOffline(true);
+						} else {
+							setOptions(
+								searchResults.filter(
+									(tag) => !selectedTags.some(tagMatching(tag)),
+								),
+							);
+						}
 					})
 					.finally(() => setIsLoadingResults(false));
 			},
-			[selectedTags],
+			[selectedTags, searchWillFail],
 		);
 
 		const updateProposedTags = (selectedTags: TagManagerObjectRow[]) => {
-			if (args.getProposals) {
-				setProposedTags(args.getProposals(selectedTags));
+			if (getProposals) {
+				setProposedTags(getProposals(selectedTags));
 			}
 		};
 
@@ -91,6 +98,7 @@ const meta: Meta<StoryArgs> = {
 		return (
 			<TagPicker
 				{...args}
+				offline={isOffline || args.offline}
 				tags={selectedTags}
 				addTag={addTag}
 				onReorder={(tags) => setSelectedTags(tags)}
@@ -218,6 +226,14 @@ export const OfflineWithRetryFunctionAndBackups: Story = {
 			['lifeandstyle', 'chicken'].includes(tag.slug),
 		),
 		intialProposedTags: [],
+	},
+};
+
+export const WithFailingSearch: Story = {
+	args: {
+		...OfflineWithRetryFunctionAndBackups.args,
+		offline: false,
+		searchWillFail: true,
 	},
 };
 
