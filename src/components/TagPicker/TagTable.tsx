@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/set-state-in-effect -- allow set state in effect for TagTable */
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
+import type { ReactNode } from 'react';
 import { type ReactElement, useEffect, useRef, useState } from 'react';
 import {
 	Button,
@@ -18,9 +19,12 @@ import {
 	tagTableAddButtonStyles as addButtonStyles,
 	tagTableCellStyles as cellStyles,
 	tagTableDragButtonStyles as dragButtonStyles,
-	tagTableHeadingStyles as headingStyles,
+	tagTableHeaderStyles as headerStyles,
+	tagTableHeadingStyles as headingStyle,
 	tagTableRemoveButtonStyles as removeButtonStyles,
 	tagTableRowStyles as rowStyles,
+	tagTableSubHeadingStyles as subHeadingStyle,
+	tagTableHeaderTextStyles,
 	tagTableStyles,
 	tagTableTypeBadgeStyles as typeBadgeStyles,
 } from './styles';
@@ -36,6 +40,8 @@ export interface TagTableProps<R extends Row> {
 	filterRows?: (row: R) => boolean;
 	/** `heading` - The table heading */
 	heading?: string;
+	/** `subHeading` - The table subHeading */
+	subHeading?: string;
 	/** `showTagType` - Whether to show tags' type in table */
 	showTagType?: boolean;
 	/** `showTagSectionName` - Whether to show tags' section name in table */
@@ -55,6 +61,8 @@ export interface TagTableProps<R extends Row> {
 	removeIcon?: ReactElement;
 	/** `gripIcon` - Icon to indicate that a row can be dragged, used in the accessible drag button */
 	gripIcon?: ReactElement;
+	/** `headerContent` - the content to render in the table's header. */
+	headerContent?: ReactNode;
 	/** `theme` - Used to customise the look and feel of the TagTable component */
 	theme?: DeepPartial<ComponentTagTable>;
 	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
@@ -117,6 +125,7 @@ export function TagTable<R extends Row>({
 	rows,
 	filterRows,
 	heading,
+	subHeading,
 	showTagType,
 	showTagSectionName,
 	highlightFirstRow = false,
@@ -127,6 +136,7 @@ export function TagTable<R extends Row>({
 	'data-testid': dataTestId,
 	removeIcon,
 	gripIcon,
+	headerContent,
 	theme,
 	cssOverrides,
 }: TagTableProps<R>) {
@@ -194,7 +204,20 @@ export function TagTable<R extends Row>({
 
 	return (
 		<div css={cssOverrides}>
-			{heading && <div css={headingStyles(theme)}>{heading}</div>}
+			{(!!heading || !!subHeading || !!headerContent) && (
+				<div css={headerStyles(theme)}>
+					{!!heading ||
+						(!!subHeading && (
+							<div css={tagTableHeaderTextStyles(theme)}>
+								{heading && <span css={headingStyle(theme)}>{heading}</span>}
+								{subHeading && (
+									<span css={subHeadingStyle(theme)}>{subHeading}</span>
+								)}
+							</div>
+						))}
+					{headerContent}
+				</div>
+			)}
 			<Table
 				css={tagTableStyles(!!removeTag, theme)}
 				aria-label="Tag Table"

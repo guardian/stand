@@ -87,16 +87,53 @@ export const listboxInfoStyles = (
 	`;
 };
 
+export const tagTableHeaderStyles = (
+	partialTheme: DeepPartial<ComponentTagTable> = {},
+): SerializedStyles => {
+	const theme = mergeDeep(componentTagTable, partialTheme);
+
+	return css`
+		background-color: ${theme.header.backgroundColor};
+		padding: ${theme.header.paddingTop} ${theme.header.paddingRight}
+			${theme.header.paddingBottom} ${theme.header.paddingLeft};
+		display: flex;
+		gap: ${theme.header.gap};
+		justify-content: space-between;
+		align-items: center;
+	`;
+};
+
+export const tagTableHeaderTextStyles = (
+	partialTheme: DeepPartial<ComponentTagTable> = {},
+): SerializedStyles => {
+	const theme = mergeDeep(componentTagTable, partialTheme);
+
+	return css`
+		display: flex;
+		flex-direction: column;
+		gap: ${theme.header.gap};
+	`;
+};
+
 export const tagTableHeadingStyles = (
 	partialTheme: DeepPartial<ComponentTagTable> = {},
 ): SerializedStyles => {
 	const theme = mergeDeep(componentTagTable, partialTheme);
 
 	return css`
-		background-color: ${theme.heading.backgroundColor};
 		font-weight: ${theme.heading.fontWeight};
-		padding: ${theme.heading.paddingTop} ${theme.heading.paddingRight}
-			${theme.heading.paddingBottom} ${theme.heading.paddingLeft};
+		font-size: ${theme.heading.fontSize};
+	`;
+};
+
+export const tagTableSubHeadingStyles = (
+	partialTheme: DeepPartial<ComponentTagTable> = {},
+): SerializedStyles => {
+	const theme = mergeDeep(componentTagTable, partialTheme);
+
+	return css`
+		font-weight: ${theme.subHeading.fontWeight};
+		font-size: ${theme.subHeading.fontSize};
 	`;
 };
 

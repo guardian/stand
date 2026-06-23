@@ -282,6 +282,8 @@ export const ComposerContentTagPicker: Story = {
 		showTagSectionName: true,
 		showTagType: true,
 		highlightLeadingTag: true,
+		proposedTagsHeading: 'Related keyword tags',
+		proposedTagsSubHeading: 'Based on selected tags',
 		searchPlaceholder: "Search internal tags (add '*' to match any text)",
 		searchLabel: 'Search for tags',
 		filterRows: (tag) => tag.type !== 'Tracking',
@@ -317,6 +319,8 @@ export const ComposerContentTagPicker: Story = {
 export const WithTheme: Story = {
 	args: {
 		filterOptions: allTagTypeFilters,
+
+		proposedTagsSubHeading: 'based on some criteria',
 
 		theme: {
 			shared: {
@@ -363,8 +367,16 @@ export const WithTheme: Story = {
 		},
 
 		proposedTagTableTheme: {
-			heading: {
+			header: {
 				backgroundColor: 'pink',
+			},
+			heading: {
+				fontWeight: 100,
+				fontSize: '1.5rem',
+			},
+			subHeading: {
+				fontWeight: 600,
+				fontSize: '1.25rem',
 			},
 			row: {
 				backgroundColor: 'lightblue',

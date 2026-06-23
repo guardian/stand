@@ -3,12 +3,16 @@
  */
 
 :root {
-	--component-tag-table-heading-background-color: #dcdcdc;
+	--component-tag-table-header-background-color: #dcdcdc;
+	--component-tag-table-header-padding-top: 3px;
+	--component-tag-table-header-padding-right: 5px;
+	--component-tag-table-header-padding-bottom: 3px;
+	--component-tag-table-header-padding-left: 12px;
+	--component-tag-table-header-gap: 4px;
 	--component-tag-table-heading-font-weight: 700;
-	--component-tag-table-heading-padding-top: 3px;
-	--component-tag-table-heading-padding-right: 5px;
-	--component-tag-table-heading-padding-bottom: 3px;
-	--component-tag-table-heading-padding-left: 12px;
+	--component-tag-table-heading-font-size: 14px;
+	--component-tag-table-sub-heading-font-weight: 400;
+	--component-tag-table-sub-heading-font-size: 12px;
 	--component-tag-table-cell-padding-x: 5px;
 	--component-tag-table-cell-padding-y: 3px;
 	--component-tag-table-cell-first-cell-padding-left: 12px;

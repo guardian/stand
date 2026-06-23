@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
+import { Button } from '../Button/Button';
 import { exampleTags } from './exampleTags';
 import { TagTable } from './TagTable';
 import type { TagManagerObjectData } from './types';
@@ -27,8 +28,6 @@ const getHandleRemove = (
 	setTags: React.Dispatch<React.SetStateAction<TagManagerObjectData[]>>,
 ) => {
 	return (tag: TagManagerObjectData) => {
-		console.log('Remove tag:', tag);
-
 		const index = tags.findIndex((t) => t.id === tag.id);
 		if (index !== -1) {
 			tags.splice(index, 1);
@@ -44,6 +43,27 @@ export const WithType: Story = {
 		showTagType: true,
 	},
 } satisfies Story;
+
+export const WithHeadingAndSubHeading: Story = {
+	args: {
+		heading: 'Some Tags',
+		subHeading: 'Picked for some reason',
+	},
+};
+
+export const WithHeadingAndSubHeadingAndHeadingContent: Story = {
+	args: {
+		heading: 'Some Tags',
+		subHeading: 'Picked for some reason',
+		headerContent: <Button size="sm">Take some action</Button>,
+	},
+};
+
+export const WithHeadingContent: Story = {
+	args: {
+		headerContent: <Button size="sm">Take some action</Button>,
+	},
+};
 
 export const WithSection: Story = {
 	args: {

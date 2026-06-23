@@ -25,7 +25,7 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	/** `options` - The list of options shown in the dropdown */
 	options: T[];
 	/** `proposedTags` - A list of "proposed tags" that the user can add */
-	proposedTags: T[];
+	proposedTags?: T[];
 	/** `readOnly` - Whether the interactions modifying the list of tags should be disabled */
 	readOnly?: boolean;
 	/** `addTag` - Function called when a tag is removed from selected tags list */
@@ -50,6 +50,9 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	searchIcon?: ReactElement;
 	showTagType?: boolean;
 	showTagSectionName?: boolean;
+
+	proposedTagsHeading?: string;
+	proposedTagsSubHeading?: string;
 
 	/** `theme` - Used to customise the look and feel of the TagPicker component */
 	theme?: DeepPartial<ComponentTagPicker>;
@@ -106,6 +109,9 @@ export function TagPicker<T extends TagRow = TagRow>({
 	showTagType,
 	showTagSectionName,
 
+	proposedTagsHeading,
+	proposedTagsSubHeading,
+
 	theme,
 	tagTableTheme,
 	proposedTagTableTheme,
@@ -114,9 +120,8 @@ export function TagPicker<T extends TagRow = TagRow>({
 	cssOverrides,
 }: TagPickerProps<T>) {
 	const selectedTagIds = tags.map(({ id }) => id);
-	const proposedTagsWithoutSelected = proposedTags.filter(
-		({ id }) => !selectedTagIds.includes(id),
-	);
+	const proposedTagsWithoutSelected =
+		proposedTags?.filter(({ id }) => !selectedTagIds.includes(id)) ?? [];
 	const backupTagsWithoutSelected =
 		offlineBackupTags?.filter(({ id }) => !selectedTagIds.includes(id)) ?? [];
 
@@ -199,9 +204,10 @@ export function TagPicker<T extends TagRow = TagRow>({
 				theme={tagTableTheme}
 			/>
 
-			{!readOnly && (
+			{!!proposedTags && !readOnly && (
 				<TagTable
-					heading={'Proposed Tags'}
+					heading={proposedTagsHeading ?? 'Proposed Tags'}
+					subHeading={proposedTagsSubHeading}
 					theme={proposedTagTableTheme}
 					filterRows={filterRows}
 					showTagType={showTagType}
