@@ -14,7 +14,7 @@
  * you don't need to install these.
  */
 export { Autocomplete } from './components/TagPicker/Autocomplete';
-export { TagTable } from './components/TagPicker/TagTable';
+export { TagTable } from './components/TagTable/TagTable';
 export { TagPicker } from './components/TagPicker/TagPicker';
 export { componentAutocomplete } from './styleD/build/typescript/component/autocomplete';
 export type { ComponentAutocomplete } from './styleD/build/typescript/component/autocomplete';

@@ -15,6 +15,7 @@ import {
 } from 'react-aria-components';
 import type { ComponentTagTable } from '../../styleD/build/typescript/component/tagTable';
 import type { DeepPartial } from '../../util/types';
+import type { TagRow } from '../TagPicker/types';
 import {
 	tagTableAddButtonStyles as addButtonStyles,
 	tagTableCellStyles as cellStyles,
@@ -28,7 +29,6 @@ import {
 	tagTableStyles,
 	tagTableTypeBadgeStyles as typeBadgeStyles,
 } from './styles';
-import type { TagRow } from './types';
 
 type Row = TagRow | { tag: TagRow };
 const rowToTag = (row: Row): TagRow => ('tag' in row ? row.tag : row);
@@ -206,15 +206,14 @@ export function TagTable<R extends Row>({
 		<div css={cssOverrides}>
 			{(!!heading || !!subHeading || !!headerContent) && (
 				<div css={headerStyles(theme)}>
-					{!!heading ||
-						(!!subHeading && (
-							<div css={tagTableHeaderTextStyles(theme)}>
-								{heading && <span css={headingStyle(theme)}>{heading}</span>}
-								{subHeading && (
-									<span css={subHeadingStyle(theme)}>{subHeading}</span>
-								)}
-							</div>
-						))}
+					{(!!heading || !!subHeading) && (
+						<div css={tagTableHeaderTextStyles(theme)}>
+							{heading && <span css={headingStyle(theme)}>{heading}</span>}
+							{subHeading && (
+								<span css={subHeadingStyle(theme)}>{subHeading}</span>
+							)}
+						</div>
+					)}
 					{headerContent}
 				</div>
 			)}

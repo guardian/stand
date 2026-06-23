@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { Button } from '../Button/Button';
-import { exampleTags } from './exampleTags';
+import { exampleTags } from '../TagPicker/exampleTags';
+import type { TagManagerObjectData } from '../TagPicker/types';
 import { TagTable } from './TagTable';
-import type { TagManagerObjectData } from './types';
 
 const meta = {
 	title: 'Stand/Editorial Components/TagPicker/TagTable',

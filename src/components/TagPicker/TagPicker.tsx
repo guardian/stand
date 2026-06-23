@@ -6,9 +6,9 @@ import type { ComponentTagPicker } from '../../styleD/build/typescript/component
 import type { ComponentAutocomplete, ComponentTagTable } from '../../TagPicker';
 import type { DeepPartial } from '../../util/types';
 import { InlineMessage } from '../InlineMessage/InlineMessage';
+import { TagTable } from '../TagTable/TagTable';
 import { offlineSectionStyles, tagPickerStyles } from './styles';
 import { TagSearchWithFilters } from './TagSearchWithFilters';
-import { TagTable } from './TagTable';
 import type { FilterOption, TagRow } from './types';
 
 export type TagPickerProps<T extends TagRow = TagRow> = {
