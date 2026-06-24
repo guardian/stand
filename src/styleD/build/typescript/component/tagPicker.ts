@@ -7,6 +7,9 @@ export const componentTagPicker = {
 		width: '100%',
 		gap: '15px',
 	},
+	search: {
+		width: '100%',
+	},
 	select: {
 		flexBasis: '25%',
 	},
