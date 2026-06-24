@@ -143,6 +143,7 @@ export const tagSearchWithFilterStyles = (
 	const theme = mergeDeep(componentTagPicker, partialTheme);
 
 	return css`
+		width: ${theme.search.width};
 		display: flex;
 		gap: ${theme.shared.gap};
 	`;

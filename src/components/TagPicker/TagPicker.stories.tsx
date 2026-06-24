@@ -142,17 +142,6 @@ export const WithTypesAndSectionNames: Story = {
 	},
 };
 
-export const ContributorSearch: Story = {
-	args: {
-		intialProposedTags: [],
-		intialTags: mappedExampleTags
-			.filter((tag) => tag.type === 'Contributor')
-			.slice(0, 2),
-		getProposals: undefined,
-		filterOptions: [{ label: 'Contributor', filter: 'contributor' }],
-	},
-};
-
 export const NoProposals: Story = {
 	args: {
 		intialProposedTags: [],
@@ -235,6 +224,36 @@ export const WithFailingSearch: Story = {
 		offline: false,
 		searchWillFail: true,
 	},
+};
+
+export const ContributorSearch: Story = {
+	args: {
+		intialProposedTags: [],
+		intialTags: mappedExampleTags
+			.filter((tag) => tag.type === 'Contributor')
+			.slice(0, 2),
+		getProposals: undefined,
+		filterOptions: [{ label: 'Contributor', filter: 'contributor' }],
+		theme: {
+			search: {
+				width: '70%',
+			},
+		},
+	},
+	decorators: [
+		(Story) => {
+			return (
+				<section
+					css={{
+						width: 670,
+						padding: '15px 30px 30px',
+					}}
+				>
+					<Story />
+				</section>
+			);
+		},
+	],
 };
 
 // hard coding for the sake of reflecting the current composer logic in the example story code

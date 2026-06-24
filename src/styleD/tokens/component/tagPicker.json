@@ -11,6 +11,12 @@
 					"$value": "15px"
 				}
 			},
+			"search": {
+				"width": {
+					"$type": "dimension",
+					"$value": "100%"
+				}
+			},
 			"select": {
 				"flexBasis": {
 					"$type": "dimension",
