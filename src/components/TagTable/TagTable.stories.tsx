@@ -166,4 +166,117 @@ export const WithFilter: Story = {
 	},
 } satisfies Story;
 
+export const WithCustomAction: Story = {
+	args: {
+		showTagType: true,
+		showTagSectionName: true,
+		renderCustomControl(tag) {
+			return (
+				<Button
+					size="xs"
+					aria-label={`see metrics for ${tag.internalName}`}
+					onClick={() => alert(`${tag.internalName} has good metrics`)}
+				>
+					<Icon symbol="vital_signs" />
+				</Button>
+			);
+		},
+	},
+};
+
+export const KeywordSuggesterEmpty: Story = {
+	args: {
+		renderWhenEmpty: true,
+		heading: (
+			<span css={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+				Keyword Tag suggestions
+				<span
+					css={{
+						display: 'inline-flex',
+						backgroundColor: 'black',
+						color: 'white',
+						padding: 3,
+						borderRadius: '50%',
+						alignSelf: 'flex-start',
+						lineHeight: 1,
+						width: 14,
+						height: 14,
+						justifyContent: 'center',
+						alignItems: 'center',
+						fontSize: 10,
+						cursor: 'pointer',
+					}}
+				>
+					i
+				</span>
+			</span>
+		),
+		addAction: () => {},
+		renderCustomControl: (tag) => {
+			return (
+				<Button
+					variant="tertiary"
+					size="xs"
+					aria-label={`Report issue with suggestion: "${tag.internalName}"`}
+					onClick={() => {
+						alert(`flagging ${tag.internalName}`);
+					}}
+				>
+					<Icon symbol="flag" />
+				</Button>
+			);
+		},
+		showTagSectionName: true,
+		showTagType: true,
+		subHeading: 'keyword suggestions based on article content',
+
+		headerContent: <Button size="sm">Suggest Keywords</Button>,
+		rows: [],
+	},
+	decorators: (Story) => {
+		return (
+			<>
+				<Story />
+				<div
+					css={{
+						display: 'flex',
+						justifyContent: 'center',
+						margin: '0 auto',
+					}}
+				>
+					<div css={{ textAlign: 'center' }}>
+						<div>
+							This tool uses AI to give recommendations. Remember you can search
+							and add your own keyword tags.
+						</div>
+						<div>
+							<a href="#">
+								Report an issue or give feedback{' '}
+								<Icon size="sm" symbol="open_in_new" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</>
+		);
+	},
+};
+
+export const KeywordSuggesterPopulated: Story = {
+	args: {
+		...KeywordSuggesterEmpty.args,
+
+		headerContent: <Button size="sm">Refresh Keywords</Button>,
+		rows: exampleTags
+			.filter((tag) => tag.type == 'Keyword')
+			.slice(0, 3)
+			.map((tag) => ({
+				...tag,
+				name: tag.internalName,
+				sectionName: tag.section.name,
+			})),
+	},
+	decorators: KeywordSuggesterEmpty.decorators,
+};
+
 export default meta;

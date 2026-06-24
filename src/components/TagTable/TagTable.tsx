@@ -38,6 +38,8 @@ export interface TagTableProps<R extends Row> {
 	rows: R[];
 	/** `filterRows` - Function to filter rows from `rows` prop from appearing in the table */
 	filterRows?: (row: R) => boolean;
+	/** `renderWhenEmpty` - Whether to render the header and the empty table if there are no rows to display after filtering */
+	renderWhenEmpty?: boolean;
 	/** `heading` - The table heading */
 	heading?: ReactNode;
 	/** `subHeading` - The table subHeading */
@@ -61,6 +63,10 @@ export interface TagTableProps<R extends Row> {
 	removeIcon?: ReactElement;
 	/** `gripIcon` - Icon to indicate that a row can be dragged, used in the accessible drag button */
 	gripIcon?: ReactElement;
+	/** `renderCustomControl` - Function to render a custom component in the tag row */
+	renderCustomControl?: (tag: R) => ReactNode;
+	/** `customActionDescription` - a string of the verb describing what the custom action does eg "Flag" */
+	customActionDescription?: string;
 	/** `headerContent` - the content to render in the table's header. */
 	headerContent?: ReactNode;
 	/** `theme` - Used to customise the look and feel of the TagTable component */
@@ -136,6 +142,8 @@ export function TagTable<R extends Row>({
 	'data-testid': dataTestId,
 	removeIcon,
 	gripIcon,
+	renderCustomControl,
+	renderWhenEmpty,
 	headerContent,
 	theme,
 	cssOverrides,
@@ -198,7 +206,7 @@ export function TagTable<R extends Row>({
 		},
 	});
 
-	if (filtered.length === 0) {
+	if (filtered.length === 0 && !renderWhenEmpty) {
 		return null;
 	}
 
@@ -227,6 +235,7 @@ export function TagTable<R extends Row>({
 					{onReorder && <Column></Column>}
 					{showTagType && <Column>Type</Column>}
 					<Column isRowHeader>Name</Column>
+					{renderCustomControl && <Column></Column>}
 					{showTagSectionName && <Column>Section</Column>}
 					{removeTag && <Column></Column>}
 					{addTag && <Column></Column>}
@@ -276,6 +285,19 @@ export function TagTable<R extends Row>({
 							>
 								{rowToTag(item).name}
 							</Cell>
+							{renderCustomControl && (
+								<Cell
+									css={[
+										cellStyles(theme),
+										css`
+											text-align: center;
+											width: 10%;
+										`,
+									]}
+								>
+									{renderCustomControl(item)}
+								</Cell>
+							)}
 							{showTagSectionName && (
 								<Cell
 									css={[
