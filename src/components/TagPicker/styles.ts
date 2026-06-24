@@ -25,14 +25,28 @@ export const autocompleteInputStyles = (
 		border-color: ${theme.input.borderColor};
 		border-width: ${theme.input.borderWidth};
 		border-style: ${theme.input.borderStyle};
+		border-radius: ${theme.input.borderRadius};
+
 		${hasIcon &&
 		`
 		padding-right: calc(${theme.icon.paddingX} + ${theme.icon.size} + ${theme.icon.paddingX});
 		min-height: calc(${theme.icon.size});
 		`}
 
+		&[data-hovered] {
+			background-color: ${theme.input.hover.backgroundColor};
+		}
+
+		&[data-focus-visible] {
+			outline: ${theme.input.focused.outline};
+			outline-offset: ${theme.input.focused.outlineOffset};
+		}
+
 		&[data-disabled] {
-			background-color: ${theme.input.disabledBackgroundColor};
+			cursor: ${theme.input.disabled.cursor};
+			background-color: ${theme.input.disabled.backgroundColor};
+			color: ${theme.input.disabled.color};
+			border: ${theme.input.disabled.border};
 		}
 	`;
 };
