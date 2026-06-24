@@ -3,4 +3,3 @@
 ---
 
 add enhancements to tag picker and tag table
-make tagTable importable
