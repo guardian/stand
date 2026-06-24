@@ -1,6 +1,8 @@
+import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { Button } from '../Button/Button';
+import { Icon } from '../Icon/Icon';
 import { exampleTags } from '../TagPicker/exampleTags';
 import type { TagManagerObjectData } from '../TagPicker/types';
 import { TagTable } from './TagTable';
@@ -51,7 +53,25 @@ export const WithHeadingAndSubHeading: Story = {
 	},
 };
 
-export const WithHeadingAndSubHeadingAndHeadingContent: Story = {
+export const WithCustomHeader: Story = {
+	args: {
+		heading: (
+			<span css={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+				Some Tags
+				<Icon
+					cssOverrides={css({
+						backgroundColor: 'skyblue',
+						borderRadius: '50%',
+					})}
+					symbol="info_i"
+					size="sm"
+				/>
+			</span>
+		),
+	},
+};
+
+export const WithHeadingAndSubHeadingAndHeaderContent: Story = {
 	args: {
 		heading: 'Some Tags',
 		subHeading: 'Picked for some reason',
@@ -59,7 +79,7 @@ export const WithHeadingAndSubHeadingAndHeadingContent: Story = {
 	},
 };
 
-export const WithHeadingContent: Story = {
+export const WithHeaderContent: Story = {
 	args: {
 		headerContent: <Button size="sm">Take some action</Button>,
 	},

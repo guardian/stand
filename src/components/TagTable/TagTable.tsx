@@ -39,7 +39,7 @@ export interface TagTableProps<R extends Row> {
 	/** `filterRows` - Function to filter rows from `rows` prop from appearing in the table */
 	filterRows?: (row: R) => boolean;
 	/** `heading` - The table heading */
-	heading?: string;
+	heading?: ReactNode;
 	/** `subHeading` - The table subHeading */
 	subHeading?: string;
 	/** `showTagType` - Whether to show tags' type in table */

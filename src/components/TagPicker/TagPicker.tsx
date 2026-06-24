@@ -1,5 +1,5 @@
 import { css, type SerializedStyles } from '@emotion/react';
-import type { ReactElement } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import { Button } from '../../Button';
 import type { ComponentSelect } from '../../Select';
 import type { ComponentTagPicker } from '../../styleD/build/typescript/component/tagPicker';
@@ -51,7 +51,7 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	showTagType?: boolean;
 	showTagSectionName?: boolean;
 
-	proposedTagsHeading?: string;
+	proposedTagsHeading?: ReactNode;
 	proposedTagsSubHeading?: string;
 
 	/** `theme` - Used to customise the look and feel of the TagPicker component */
