@@ -113,7 +113,7 @@ export const tagTableRowStyles = (
 };
 
 export const tagTableStyles = (
-	canRemoveTag: boolean,
+	highlightFirstRow: boolean,
 	partialTheme: DeepPartial<ComponentTagTable> = {},
 ): SerializedStyles => {
 	const theme = mergeDeep(componentTagTable, partialTheme);
@@ -125,7 +125,7 @@ export const tagTableStyles = (
 		.react-aria-DropIndicator[data-drop-target] {
 			height: ${theme.row.height};
 
-			${canRemoveTag
+			${highlightFirstRow
 				? `&:first-child {
 						background-color: ${theme.row.firstRowBackgroundColor};
 					}`

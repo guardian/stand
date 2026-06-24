@@ -42,6 +42,8 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	filterOptions?: FilterOption[];
 	/** `offlineBackupTags` - A list of tags that the user can select if the service is offline */
 	offlineBackupTags?: T[];
+	/** `gripIcon` - Icon to indicate that a row can be dragged, used in the accessible drag button */
+	gripIcon?: ReactElement;
 
 	/** `testid` - the test id for the Tag picker, defaults to "tag-picker". Is used as a prefix for test id's on the sub components eg:
 	 *   - "tag-picker-search-input"
@@ -119,6 +121,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 
 	proposedTagsHeading,
 	proposedTagsSubHeading,
+	gripIcon,
 
 	theme,
 	tagTableTheme,
@@ -214,6 +217,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 				showTagSectionName={showTagSectionName}
 				removeIcon={removeIcon}
 				theme={tagTableTheme}
+				gripIcon={gripIcon}
 			/>
 
 			{!!proposedTags && !readOnly && (

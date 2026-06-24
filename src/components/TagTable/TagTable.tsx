@@ -141,7 +141,7 @@ export function TagTable<R extends Row>({
 	canRemove = defaultCanRemove,
 	'data-testid': dataTestId,
 	removeIcon,
-	gripIcon,
+	gripIcon = <span>⣿</span>,
 	renderCustomControl,
 	renderWhenEmpty,
 	headerContent,
@@ -226,7 +226,7 @@ export function TagTable<R extends Row>({
 				</div>
 			)}
 			<Table
-				css={tagTableStyles(!!removeTag, theme)}
+				css={tagTableStyles(!!highlightFirstRow, theme)}
 				aria-label="Tag Table"
 				data-testid={dataTestId}
 				dragAndDropHooks={onReorder && dragAndDropHooks}
