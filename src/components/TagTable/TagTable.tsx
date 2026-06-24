@@ -253,6 +253,7 @@ export function TagTable<R extends Row>({
 									css={[
 										css`
 											width: 1%;
+											vertical-align: middle;
 										`,
 									]}
 								>

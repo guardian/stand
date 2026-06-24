@@ -179,8 +179,7 @@ export const tagTableAddButtonStyles = (
 export const tagTableDragButtonStyles = css`
 	background: none;
 	border: none;
-	padding: 0;
-	padding-left: 5px;
+	padding: 5px;
 	margin: 0;
 	display: flex;
 	align-items: center;
