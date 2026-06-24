@@ -20,9 +20,10 @@ type TagSearchWithFiltersProps<T extends Tag = Tag> = {
 	theme?: DeepPartial<ComponentTagPicker>;
 	autoCompleteTheme?: DeepPartial<ComponentAutocomplete>;
 	selectTheme?: DeepPartial<ComponentSelect>;
+	testIdPrefix?: string;
 } & Omit<
 	AutocompleteProps<T>,
-	'onTextInputChange' | 'value' | 'theme' | 'cssOverrides'
+	'onTextInputChange' | 'value' | 'theme' | 'cssOverrides' | 'data-testid'
 >;
 
 export function TagSearchWithFilters<T extends Tag = Tag>({
@@ -33,6 +34,7 @@ export function TagSearchWithFilters<T extends Tag = Tag>({
 	theme,
 	autoCompleteTheme,
 	selectTheme = {},
+	testIdPrefix = 'tag-search',
 	...tagAutocompleteProps
 }: TagSearchWithFiltersProps<T>) {
 	const [queryText, setQueryText] = useState('');
@@ -62,14 +64,15 @@ export function TagSearchWithFilters<T extends Tag = Tag>({
 	return (
 		<div css={tagSearchWithFilterStyles(theme)}>
 			<Autocomplete
+				{...tagAutocompleteProps}
 				cssOverrides={css({ flex: 1 })}
 				onTextInputChange={setQueryText}
 				addSelection={(tag) => {
 					addSelection(tag);
 					setQueryText('');
 				}}
+				data-testid={`${testIdPrefix}-search-input`}
 				value={queryText}
-				{...tagAutocompleteProps}
 				disabled={disabled}
 				theme={autoCompleteTheme}
 				addFirstOnEnter={true}
@@ -82,6 +85,7 @@ export function TagSearchWithFilters<T extends Tag = Tag>({
 					value={filterValue}
 					placement="bottom right"
 					shouldFlip={false}
+					data-testid={`${testIdPrefix}-filter-select`}
 					onChange={(selection) => {
 						if (Array.isArray(selection) || selection === null) {
 							return;

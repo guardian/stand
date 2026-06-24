@@ -43,6 +43,14 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	/** `offlineBackupTags` - A list of tags that the user can select if the service is offline */
 	offlineBackupTags?: T[];
 
+	/** `testid` - the test id for the Tag picker, defaults to "tag-picker". Is used as a prefix for test id's on the sub components eg:
+	 *   - "tag-picker-search-input"
+	 *   - "tag-picker-filter-select"
+	 *   - "tag-picker-offline"
+	 *   - "tag-picker-selected-tags-table"
+	 *   - "tag-picker-proposed-tags-table" */
+	testId?: string;
+
 	highlightLeadingTag?: boolean;
 	searchPlaceholder?: string;
 	searchLabel?: string;
@@ -118,6 +126,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 	autoCompleteTheme,
 	selectTheme,
 	cssOverrides,
+	testId = 'tag-picker',
 }: TagPickerProps<T>) {
 	const selectedTagIds = tags.map(({ id }) => id);
 	const proposedTagsWithoutSelected =
@@ -133,7 +142,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 	);
 
 	return (
-		<div css={[tagPickerStyles(theme), cssOverrides]}>
+		<div css={[tagPickerStyles(theme), cssOverrides]} data-testid={testId}>
 			<TagSearchWithFilters
 				icon={searchIcon}
 				onSearch={onSearch}
@@ -144,7 +153,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 				disabled={readOnly || offline}
 				label={searchLabel}
 				placeholder={searchPlaceholder}
-				data-testid="tag-picker-search-input"
+				testIdPrefix={testId}
 				symbol="search"
 				theme={theme}
 				autoCompleteTheme={autoCompleteTheme}
@@ -152,7 +161,10 @@ export function TagPicker<T extends TagRow = TagRow>({
 			/>
 
 			{offline && (
-				<div css={offlineSectionStyles(theme)}>
+				<div
+					css={offlineSectionStyles(theme)}
+					data-testid={`${testId}-offline`}
+				>
 					<InlineMessage level="error">
 						Unfortunately, we can&apos;t fetch tag information.{' '}
 						{showBackupListWhenOffline && 'Choose from the following tags'}
@@ -196,7 +208,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 				removeAction={readOnly ? undefined : removeTag}
 				filterRows={filterRows}
 				onReorder={readOnly ? undefined : onReorder}
-				data-testid="selected-tags-table"
+				data-testid={`${testId}-selected-tags-table`}
 				highlightFirstRow={highlightLeadingTag}
 				showTagType={showTagType}
 				showTagSectionName={showTagSectionName}
@@ -214,7 +226,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 					showTagSectionName={showTagSectionName}
 					rows={proposedTagsWithoutSelected}
 					addAction={addTag}
-					data-testid="proposed-tags-table"
+					data-testid={`${testId}-proposed-tags-table`}
 				/>
 			)}
 		</div>
