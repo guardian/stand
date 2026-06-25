@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.53
+
+### Patch Changes
+
+- cba8453: Fix: `TopBarNavigation` should only have margin-left applied on text when there is also an icon present
+
 ## 0.0.52
 
 ### Patch Changes
