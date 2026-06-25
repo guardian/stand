@@ -79,6 +79,7 @@ export function TagSearchWithFilters<T extends Tag = Tag>({
 			/>
 			{shouldRenderSelect && (
 				<Select
+					aria-label="tag filter options"
 					theme={modifyFilterSelectTheme(selectTheme)}
 					cssOverrides={filterSelectCssOverrides(theme)}
 					isDisabled={disabled}
