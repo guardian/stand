@@ -58,6 +58,7 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	searchLabel?: string;
 	removeIcon?: ReactElement;
 	searchIcon?: ReactElement;
+	loadingIcon?: ReactElement;
 	showTagType?: boolean;
 	showTagSectionName?: boolean;
 
@@ -116,6 +117,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 	searchLabel = 'Search for tags',
 	removeIcon,
 	searchIcon,
+	loadingIcon,
 	showTagType,
 	showTagSectionName,
 
@@ -161,6 +163,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 				theme={theme}
 				autoCompleteTheme={autoCompleteTheme}
 				selectTheme={selectTheme}
+				loadingIcon={loadingIcon}
 			/>
 
 			{offline && (
