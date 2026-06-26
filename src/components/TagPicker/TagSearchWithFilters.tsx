@@ -51,12 +51,10 @@ export function TagSearchWithFilters<T extends Tag = Tag>({
 	}, [onSearch]);
 
 	useEffect(() => {
-		if (queryText && queryText.length > 0) {
-			onSearchRef.current(
-				queryText,
-				filterValue && filterValue.length > 0 ? filterValue : undefined,
-			);
-		}
+		onSearchRef.current(
+			queryText,
+			filterValue && filterValue.length > 0 ? filterValue : undefined,
+		);
 	}, [filterValue, queryText]);
 
 	const shouldRenderSelect = filterOptions && filterOptions.length > 1;

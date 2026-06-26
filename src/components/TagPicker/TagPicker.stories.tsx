@@ -54,6 +54,11 @@ const meta: Meta<StoryArgs> = {
 
 		const search = useCallback(
 			(queryText: string, filterValue?: string) => {
+				if (queryText.length === 0) {
+					setIsLoadingResults(false);
+					setOptions([]);
+					return;
+				}
 				setIsLoadingResults(true);
 				void simulateSearchAsyncSearch(queryText, filterValue)
 					.then((searchResults) => {
