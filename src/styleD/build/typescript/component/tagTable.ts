@@ -3,13 +3,21 @@
  */
 
 export const componentTagTable = {
-	heading: {
+	header: {
 		backgroundColor: '#dcdcdc',
-		fontWeight: 700,
 		paddingTop: '3px',
 		paddingRight: '5px',
 		paddingBottom: '3px',
 		paddingLeft: '12px',
+		gap: '4px',
+	},
+	heading: {
+		fontWeight: 700,
+		fontSize: '14px',
+	},
+	subHeading: {
+		fontWeight: 400,
+		fontSize: '12px',
 	},
 	cell: {
 		paddingX: '5px',
