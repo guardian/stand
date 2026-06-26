@@ -59,7 +59,11 @@ export function TopBarNavigation({
 								{...props}
 							>
 								<Icon size={iconSize}>{icon}</Icon>
-								<span css={topBarNavigationTextStyles(mergedTheme)}>
+								<span
+									css={topBarNavigationTextStyles(mergedTheme, {
+										hasIcon: !!icon,
+									})}
+								>
 									{text}
 								</span>
 								<div css={topBarMenuIndicatorStyles(mergedTheme)}>
@@ -84,7 +88,11 @@ export function TopBarNavigation({
 					{...props}
 				>
 					<Icon size={iconSize}>{icon}</Icon>
-					<span css={topBarNavigationTextStyles(mergedTheme)}>{text}</span>
+					<span
+						css={topBarNavigationTextStyles(mergedTheme, { hasIcon: !!icon })}
+					>
+						{text}
+					</span>
 				</Link>
 			)}
 		</div>

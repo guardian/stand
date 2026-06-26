@@ -110,8 +110,9 @@ export const topBarNavigationDividerStyles = (
 
 export const topBarNavigationTextStyles = (
 	theme: TopBarNavigationTheme,
+	{ hasIcon }: { hasIcon: boolean },
 ): SerializedStyles => css`
-	margin-left: ${theme.text.margin.left};
+	${hasIcon && `margin-left: ${theme.text.margin.left};`}
 `;
 
 export const topBarNavigationTypographyStyles = (
