@@ -16,6 +16,7 @@ import { TagPicker } from './TagPicker';
 type StoryArgs = ComponentProps<typeof TagPicker<TagManagerObjectRow>> & {
 	intialTags: TagManagerObjectRow[];
 	intialProposedTags: TagManagerObjectRow[];
+	searchWillFail: boolean;
 	getProposals?: { (tags: TagManagerObjectRow[]): TagManagerObjectRow[] };
 };
 type Story = StoryObj<StoryArgs>;
@@ -40,34 +41,45 @@ const meta: Meta<StoryArgs> = {
 		getProposals: proposeWithoutRationalBasis,
 	},
 	render: (args) => {
-		const [selectedTags, setSelectedTags] = useState<TagManagerObjectRow[]>(
-			args.intialTags,
-		);
-		const [proposedTags, setProposedTags] = useState<TagManagerObjectRow[]>(
-			args.intialProposedTags,
-		);
+		const { searchWillFail, getProposals, intialProposedTags, intialTags } =
+			args;
+
+		const [selectedTags, setSelectedTags] =
+			useState<TagManagerObjectRow[]>(intialTags);
+		const [proposedTags, setProposedTags] =
+			useState<TagManagerObjectRow[]>(intialProposedTags);
 		const [options, setOptions] = useState<TagManagerObjectRow[]>([]);
 		const [isLoadingResults, setIsLoadingResults] = useState(false);
+		const [isOffline, setIsOffline] = useState(false);
 
 		const search = useCallback(
 			(queryText: string, filterValue?: string) => {
+				if (queryText.length === 0) {
+					setIsLoadingResults(false);
+					setOptions([]);
+					return;
+				}
 				setIsLoadingResults(true);
 				void simulateSearchAsyncSearch(queryText, filterValue)
 					.then((searchResults) => {
-						setOptions(
-							searchResults.filter(
-								(tag) => !selectedTags.some(tagMatching(tag)),
-							),
-						);
+						if (searchWillFail) {
+							setIsOffline(true);
+						} else {
+							setOptions(
+								searchResults.filter(
+									(tag) => !selectedTags.some(tagMatching(tag)),
+								),
+							);
+						}
 					})
 					.finally(() => setIsLoadingResults(false));
 			},
-			[selectedTags],
+			[selectedTags, searchWillFail],
 		);
 
 		const updateProposedTags = (selectedTags: TagManagerObjectRow[]) => {
-			if (args.getProposals) {
-				setProposedTags(args.getProposals(selectedTags));
+			if (getProposals) {
+				setProposedTags(getProposals(selectedTags));
 			}
 		};
 
@@ -91,6 +103,7 @@ const meta: Meta<StoryArgs> = {
 		return (
 			<TagPicker
 				{...args}
+				offline={isOffline || args.offline}
 				tags={selectedTags}
 				addTag={addTag}
 				onReorder={(tags) => setSelectedTags(tags)}
@@ -131,17 +144,6 @@ export const WithTypesAndSectionNames: Story = {
 	args: {
 		showTagSectionName: true,
 		showTagType: true,
-	},
-};
-
-export const ContributorSearch: Story = {
-	args: {
-		intialProposedTags: [],
-		intialTags: mappedExampleTags
-			.filter((tag) => tag.type === 'Contributor')
-			.slice(0, 2),
-		getProposals: undefined,
-		filterOptions: [{ label: 'Contributor', filter: 'contributor' }],
 	},
 };
 
@@ -221,6 +223,44 @@ export const OfflineWithRetryFunctionAndBackups: Story = {
 	},
 };
 
+export const WithFailingSearch: Story = {
+	args: {
+		...OfflineWithRetryFunctionAndBackups.args,
+		offline: false,
+		searchWillFail: true,
+	},
+};
+
+export const ContributorSearch: Story = {
+	args: {
+		intialProposedTags: [],
+		intialTags: mappedExampleTags
+			.filter((tag) => tag.type === 'Contributor')
+			.slice(0, 2),
+		getProposals: undefined,
+		filterOptions: [{ label: 'Contributor', filter: 'contributor' }],
+		theme: {
+			search: {
+				width: '70%',
+			},
+		},
+	},
+	decorators: [
+		(Story) => {
+			return (
+				<section
+					css={{
+						width: 670,
+						padding: '15px 30px 30px',
+					}}
+				>
+					<Story />
+				</section>
+			);
+		},
+	],
+};
+
 // hard coding for the sake of reflecting the current composer logic in the example story code
 const isLiveblog = true as boolean;
 
@@ -266,6 +306,8 @@ export const ComposerContentTagPicker: Story = {
 		showTagSectionName: true,
 		showTagType: true,
 		highlightLeadingTag: true,
+		proposedTagsHeading: 'Related keyword tags',
+		proposedTagsSubHeading: 'Based on selected tags',
 		searchPlaceholder: "Search internal tags (add '*' to match any text)",
 		searchLabel: 'Search for tags',
 		filterRows: (tag) => tag.type !== 'Tracking',
@@ -301,6 +343,8 @@ export const ComposerContentTagPicker: Story = {
 export const WithTheme: Story = {
 	args: {
 		filterOptions: allTagTypeFilters,
+
+		proposedTagsSubHeading: 'based on some criteria',
 
 		theme: {
 			shared: {
@@ -347,8 +391,16 @@ export const WithTheme: Story = {
 		},
 
 		proposedTagTableTheme: {
-			heading: {
+			header: {
 				backgroundColor: 'pink',
+			},
+			heading: {
+				fontWeight: 100,
+				fontSize: '1.5rem',
+			},
+			subHeading: {
+				fontWeight: 600,
+				fontSize: '1.25rem',
 			},
 			row: {
 				backgroundColor: 'lightblue',

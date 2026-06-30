@@ -8,15 +8,11 @@
 				},
 				"backgroundColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.900}"
-				},
-				"disabledBackgroundColor": {
-					"$type": "color",
-					"$value": "{base.colors.neutral.700}"
+					"$value": "{semantic.colors.fill.weak}"
 				},
 				"borderWidth": {
 					"$type": "dimension",
-					"$value": "1px"
+					"$value": "{semantic.sizing.border.default}"
 				},
 				"borderStyle": {
 					"$type": "strokeStyle",
@@ -24,11 +20,57 @@
 				},
 				"borderColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.400}"
+					"$value": "{semantic.colors.border.stronger}"
 				},
 				"padding": {
 					"$type": "dimension",
-					"$value": "11px"
+					"$value": "{base.spacing.12Rem}"
+				},
+				"borderRadius": {
+					"$type": "dimension",
+					"$value": "{base.radius.corner4Rem}"
+				},
+				"hover": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.weakHover}"
+					}
+				},
+				"focused": {
+					"outline": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.focused}",
+							"width": "{semantic.sizing.border.md}",
+							"style": "solid"
+						}
+					},
+					"outlineOffset": {
+						"$type": "dimension",
+						"$value": "{base.spacing.2Rem}"
+					}
+				},
+				"disabled": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.weak}"
+					},
+					"cursor": {
+						"$type": "string",
+						"$value": "not-allowed"
+					},
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.disabled}"
+					},
+					"border": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.disabled}",
+							"width": "{semantic.sizing.border.default}",
+							"style": "solid"
+						}
+					}
 				}
 			},
 			"icon": {
@@ -48,7 +90,7 @@
 			"listbox": {
 				"borderWidth": {
 					"$type": "dimension",
-					"$value": "1px"
+					"$value": "{semantic.sizing.border.default}"
 				},
 				"borderStyle": {
 					"$type": "strokeStyle",
@@ -56,7 +98,7 @@
 				},
 				"borderColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.400}"
+					"$value": "{semantic.colors.border.stronger}"
 				},
 				"paddingY": {
 					"$type": "dimension",
@@ -68,7 +110,7 @@
 				},
 				"backgroundColor": {
 					"$type": "color",
-					"$value": "{base.colors.neutral.900}"
+					"$value": "{semantic.colors.fill.weak}"
 				},
 				"item": {
 					"paddingY": {
@@ -81,11 +123,11 @@
 					},
 					"backgroundHoverColor": {
 						"$type": "color",
-						"$value": "{base.colors.neutral.800}"
+						"$value": "{semantic.colors.fill.neutralWeak}"
 					},
 					"backgroundFocusedColor": {
 						"$type": "color",
-						"$value": "{base.colors.neutral.800}"
+						"$value": "{semantic.colors.fill.neutralWeak}"
 					},
 					"color": {
 						"$type": "color",

@@ -6,11 +6,24 @@ export const componentAutocomplete = {
 	input: {
 		color: '#000000',
 		backgroundColor: '#ffffff',
-		disabledBackgroundColor: '#dcdcdc',
-		borderWidth: '1px',
+		borderWidth: '0.0625rem',
 		borderStyle: 'solid',
-		borderColor: '#8d8d8d',
-		padding: '11px',
+		borderColor: '#545454',
+		padding: '0.75rem',
+		borderRadius: '0.25rem',
+		hover: {
+			backgroundColor: '#f6f6f6',
+		},
+		focused: {
+			outline: '0.125rem solid #0072a9',
+			outlineOffset: '0.125rem',
+		},
+		disabled: {
+			backgroundColor: '#ffffff',
+			cursor: 'not-allowed',
+			color: '#999999',
+			border: '0.0625rem solid #dcdcdc',
+		},
 	},
 	icon: {
 		size: '20px',
@@ -18,9 +31,9 @@ export const componentAutocomplete = {
 		color: '#bababa',
 	},
 	listbox: {
-		borderWidth: '1px',
+		borderWidth: '0.0625rem',
 		borderStyle: 'solid',
-		borderColor: '#8d8d8d',
+		borderColor: '#545454',
 		paddingY: '8px',
 		paddingX: '0px',
 		backgroundColor: '#ffffff',
