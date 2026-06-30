@@ -60,7 +60,7 @@
 	--semantic-colors-fill-green-weak: #cde4c9;
 	--semantic-colors-fill-blue-weak: #c5d9f4;
 	--semantic-colors-fill-red-weak: #f5c6c0;
-	--semantic-colors-fill-cyan-weak: #b8d8e7;
+	--semantic-colors-fill-cyan-weak: #c5dfec;
 	--semantic-colors-fill-teal-weak: #c5dfe1;
 	--semantic-colors-fill-cool-purple-weak: #dbdff7;
 	--semantic-colors-fill-warm-purple-weak: #dac3e8;
@@ -68,6 +68,11 @@
 	--semantic-colors-fill-orange-weak: #fcddc6;
 	--semantic-colors-fill-yellow-weak: #fbeebf;
 	--semantic-colors-fill-selected: #005d8b;
+	--semantic-colors-fill-selected-weak: #c5dfec;
+	--semantic-colors-fill-selected-hover-weak: #c5dfec;
+	--semantic-colors-fill-selected-pressed-weak: #8abed7;
+	--semantic-colors-fill-selected-hover-strong: #8abed7;
+	--semantic-colors-fill-selected-pressed-strong: #5ca5c8;
 	--semantic-colors-fill-draft-strong: #f1c21b;
 	--semantic-colors-fill-live-weak: #aed2a6;
 	--semantic-colors-fill-warning-weak: #fbeebf;

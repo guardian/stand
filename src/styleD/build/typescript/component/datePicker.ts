@@ -124,7 +124,7 @@ export const componentDatePicker = {
 						backgroundColor: '#ededed',
 					},
 					selected: {
-						backgroundColor: '#b8d8e7',
+						backgroundColor: '#c5dfec',
 					},
 					focusVisible: {
 						outline: '0.125rem solid #0072a9',
@@ -170,7 +170,7 @@ export const componentDatePicker = {
 					backgroundColor: '#ededed',
 				},
 				selected: {
-					backgroundColor: '#b8d8e7',
+					backgroundColor: '#c5dfec',
 				},
 				focusVisible: {
 					outline: '0.125rem solid #0072a9',

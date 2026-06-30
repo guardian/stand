@@ -89,7 +89,7 @@
 	--component-date-picker-calendar-header-shared-button-aspect-ratio: 1;
 	--component-date-picker-calendar-header-shared-button-hovered-background-color: #f6f6f6;
 	--component-date-picker-calendar-header-shared-button-pressed-background-color: #ededed;
-	--component-date-picker-calendar-header-shared-button-selected-background-color: #b8d8e7;
+	--component-date-picker-calendar-header-shared-button-selected-background-color: #c5dfec;
 	--component-date-picker-calendar-header-shared-button-focus-visible-outline: 0.125rem
 		solid #0072a9;
 	--component-date-picker-calendar-header-shared-button-disabled-cursor: not-allowed;
@@ -112,7 +112,7 @@
 	--component-date-picker-calendar-cell-shared-outside-month-display: none;
 	--component-date-picker-calendar-cell-shared-hovered-background-color: #f6f6f6;
 	--component-date-picker-calendar-cell-shared-pressed-background-color: #ededed;
-	--component-date-picker-calendar-cell-shared-selected-background-color: #b8d8e7;
+	--component-date-picker-calendar-cell-shared-selected-background-color: #c5dfec;
 	--component-date-picker-calendar-cell-shared-focus-visible-outline: 0.125rem
 		solid #0072a9;
 	--component-date-picker-calendar-cell-shared-disabled-cursor: not-allowed;
