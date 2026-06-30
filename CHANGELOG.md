@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.54
+
+### Patch Changes
+
+- 77ada78: add enhancements to tag picker and tag table
+
 ## 0.0.53
 
 ### Patch Changes
