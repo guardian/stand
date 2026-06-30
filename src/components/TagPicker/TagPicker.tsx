@@ -1,14 +1,14 @@
 import { css, type SerializedStyles } from '@emotion/react';
-import type { ReactElement } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 import { Button } from '../../Button';
 import type { ComponentSelect } from '../../Select';
 import type { ComponentTagPicker } from '../../styleD/build/typescript/component/tagPicker';
 import type { ComponentAutocomplete, ComponentTagTable } from '../../TagPicker';
 import type { DeepPartial } from '../../util/types';
 import { InlineMessage } from '../InlineMessage/InlineMessage';
+import { TagTable } from '../TagTable/TagTable';
 import { offlineSectionStyles, tagPickerStyles } from './styles';
 import { TagSearchWithFilters } from './TagSearchWithFilters';
-import { TagTable } from './TagTable';
 import type { FilterOption, TagRow } from './types';
 
 export type TagPickerProps<T extends TagRow = TagRow> = {
@@ -25,7 +25,7 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	/** `options` - The list of options shown in the dropdown */
 	options: T[];
 	/** `proposedTags` - A list of "proposed tags" that the user can add */
-	proposedTags: T[];
+	proposedTags?: T[];
 	/** `readOnly` - Whether the interactions modifying the list of tags should be disabled */
 	readOnly?: boolean;
 	/** `addTag` - Function called when a tag is removed from selected tags list */
@@ -42,14 +42,28 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	filterOptions?: FilterOption[];
 	/** `offlineBackupTags` - A list of tags that the user can select if the service is offline */
 	offlineBackupTags?: T[];
+	/** `gripIcon` - Icon to indicate that a row can be dragged, used in the accessible drag button */
+	gripIcon?: ReactElement;
+
+	/** `testid` - the test id for the Tag picker, defaults to "tag-picker". Is used as a prefix for test id's on the sub components eg:
+	 *   - "tag-picker-search-input"
+	 *   - "tag-picker-filter-select"
+	 *   - "tag-picker-offline"
+	 *   - "tag-picker-selected-tags-table"
+	 *   - "tag-picker-proposed-tags-table" */
+	testId?: string;
 
 	highlightLeadingTag?: boolean;
 	searchPlaceholder?: string;
 	searchLabel?: string;
 	removeIcon?: ReactElement;
 	searchIcon?: ReactElement;
+	loadingIcon?: ReactElement;
 	showTagType?: boolean;
 	showTagSectionName?: boolean;
+
+	proposedTagsHeading?: ReactNode;
+	proposedTagsSubHeading?: string;
 
 	/** `theme` - Used to customise the look and feel of the TagPicker component */
 	theme?: DeepPartial<ComponentTagPicker>;
@@ -103,8 +117,13 @@ export function TagPicker<T extends TagRow = TagRow>({
 	searchLabel = 'Search for tags',
 	removeIcon,
 	searchIcon,
+	loadingIcon,
 	showTagType,
 	showTagSectionName,
+
+	proposedTagsHeading,
+	proposedTagsSubHeading,
+	gripIcon,
 
 	theme,
 	tagTableTheme,
@@ -112,11 +131,11 @@ export function TagPicker<T extends TagRow = TagRow>({
 	autoCompleteTheme,
 	selectTheme,
 	cssOverrides,
+	testId = 'tag-picker',
 }: TagPickerProps<T>) {
 	const selectedTagIds = tags.map(({ id }) => id);
-	const proposedTagsWithoutSelected = proposedTags.filter(
-		({ id }) => !selectedTagIds.includes(id),
-	);
+	const proposedTagsWithoutSelected =
+		proposedTags?.filter(({ id }) => !selectedTagIds.includes(id)) ?? [];
 	const backupTagsWithoutSelected =
 		offlineBackupTags?.filter(({ id }) => !selectedTagIds.includes(id)) ?? [];
 
@@ -128,7 +147,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 	);
 
 	return (
-		<div css={[tagPickerStyles(theme), cssOverrides]}>
+		<div css={[tagPickerStyles(theme), cssOverrides]} data-testid={testId}>
 			<TagSearchWithFilters
 				icon={searchIcon}
 				onSearch={onSearch}
@@ -139,15 +158,19 @@ export function TagPicker<T extends TagRow = TagRow>({
 				disabled={readOnly || offline}
 				label={searchLabel}
 				placeholder={searchPlaceholder}
-				data-testid="tag-picker-search-input"
+				testIdPrefix={testId}
 				symbol="search"
 				theme={theme}
 				autoCompleteTheme={autoCompleteTheme}
 				selectTheme={selectTheme}
+				loadingIcon={loadingIcon}
 			/>
 
 			{offline && (
-				<div css={offlineSectionStyles(theme)}>
+				<div
+					css={offlineSectionStyles(theme)}
+					data-testid={`${testId}-offline`}
+				>
 					<InlineMessage level="error">
 						Unfortunately, we can&apos;t fetch tag information.{' '}
 						{showBackupListWhenOffline && 'Choose from the following tags'}
@@ -191,24 +214,26 @@ export function TagPicker<T extends TagRow = TagRow>({
 				removeAction={readOnly ? undefined : removeTag}
 				filterRows={filterRows}
 				onReorder={readOnly ? undefined : onReorder}
-				data-testid="selected-tags-table"
+				data-testid={`${testId}-selected-tags-table`}
 				highlightFirstRow={highlightLeadingTag}
 				showTagType={showTagType}
 				showTagSectionName={showTagSectionName}
 				removeIcon={removeIcon}
 				theme={tagTableTheme}
+				gripIcon={gripIcon}
 			/>
 
-			{!readOnly && (
+			{!!proposedTags && !readOnly && (
 				<TagTable
-					heading={'Proposed Tags'}
+					heading={proposedTagsHeading ?? 'Proposed Tags'}
+					subHeading={proposedTagsSubHeading}
 					theme={proposedTagTableTheme}
 					filterRows={filterRows}
 					showTagType={showTagType}
 					showTagSectionName={showTagSectionName}
 					rows={proposedTagsWithoutSelected}
 					addAction={addTag}
-					data-testid="proposed-tags-table"
+					data-testid={`${testId}-proposed-tags-table`}
 				/>
 			)}
 		</div>

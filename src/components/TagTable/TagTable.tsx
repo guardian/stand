@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/set-state-in-effect -- allow set state in effect for TagTable */
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
+import type { ReactNode } from 'react';
 import { type ReactElement, useEffect, useRef, useState } from 'react';
 import {
 	Button,
@@ -14,17 +15,20 @@ import {
 } from 'react-aria-components';
 import type { ComponentTagTable } from '../../styleD/build/typescript/component/tagTable';
 import type { DeepPartial } from '../../util/types';
+import type { TagRow } from '../TagPicker/types';
 import {
 	tagTableAddButtonStyles as addButtonStyles,
 	tagTableCellStyles as cellStyles,
 	tagTableDragButtonStyles as dragButtonStyles,
-	tagTableHeadingStyles as headingStyles,
+	tagTableHeaderStyles as headerStyles,
+	tagTableHeadingStyles as headingStyle,
 	tagTableRemoveButtonStyles as removeButtonStyles,
 	tagTableRowStyles as rowStyles,
+	tagTableSubHeadingStyles as subHeadingStyle,
+	tagTableHeaderTextStyles,
 	tagTableStyles,
 	tagTableTypeBadgeStyles as typeBadgeStyles,
 } from './styles';
-import type { TagRow } from './types';
 
 type Row = TagRow | { tag: TagRow };
 const rowToTag = (row: Row): TagRow => ('tag' in row ? row.tag : row);
@@ -34,8 +38,12 @@ export interface TagTableProps<R extends Row> {
 	rows: R[];
 	/** `filterRows` - Function to filter rows from `rows` prop from appearing in the table */
 	filterRows?: (row: R) => boolean;
+	/** `renderWhenEmpty` - Whether to render the header and the empty table if there are no rows to display after filtering */
+	renderWhenEmpty?: boolean;
 	/** `heading` - The table heading */
-	heading?: string;
+	heading?: ReactNode;
+	/** `subHeading` - The table subHeading */
+	subHeading?: string;
 	/** `showTagType` - Whether to show tags' type in table */
 	showTagType?: boolean;
 	/** `showTagSectionName` - Whether to show tags' section name in table */
@@ -55,6 +63,12 @@ export interface TagTableProps<R extends Row> {
 	removeIcon?: ReactElement;
 	/** `gripIcon` - Icon to indicate that a row can be dragged, used in the accessible drag button */
 	gripIcon?: ReactElement;
+	/** `renderCustomControl` - Function to render a custom component in the tag row */
+	renderCustomControl?: (tag: R) => ReactNode;
+	/** `customActionDescription` - a string of the verb describing what the custom action does eg "Flag" */
+	customActionDescription?: string;
+	/** `headerContent` - the content to render in the table's header. */
+	headerContent?: ReactNode;
 	/** `theme` - Used to customise the look and feel of the TagTable component */
 	theme?: DeepPartial<ComponentTagTable>;
 	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
@@ -117,6 +131,7 @@ export function TagTable<R extends Row>({
 	rows,
 	filterRows,
 	heading,
+	subHeading,
 	showTagType,
 	showTagSectionName,
 	highlightFirstRow = false,
@@ -126,7 +141,10 @@ export function TagTable<R extends Row>({
 	canRemove = defaultCanRemove,
 	'data-testid': dataTestId,
 	removeIcon,
-	gripIcon,
+	gripIcon = <span>⣿</span>,
+	renderCustomControl,
+	renderWhenEmpty,
+	headerContent,
 	theme,
 	cssOverrides,
 }: TagTableProps<R>) {
@@ -188,15 +206,27 @@ export function TagTable<R extends Row>({
 		},
 	});
 
-	if (filtered.length === 0) {
+	if (filtered.length === 0 && !renderWhenEmpty) {
 		return null;
 	}
 
 	return (
 		<div css={cssOverrides}>
-			{heading && <div css={headingStyles(theme)}>{heading}</div>}
+			{(!!heading || !!subHeading || !!headerContent) && (
+				<div css={headerStyles(theme)}>
+					{(!!heading || !!subHeading) && (
+						<div css={tagTableHeaderTextStyles(theme)}>
+							{heading && <span css={headingStyle(theme)}>{heading}</span>}
+							{subHeading && (
+								<span css={subHeadingStyle(theme)}>{subHeading}</span>
+							)}
+						</div>
+					)}
+					{headerContent}
+				</div>
+			)}
 			<Table
-				css={tagTableStyles(!!removeTag, theme)}
+				css={tagTableStyles(!!highlightFirstRow, theme)}
 				aria-label="Tag Table"
 				data-testid={dataTestId}
 				dragAndDropHooks={onReorder && dragAndDropHooks}
@@ -205,6 +235,7 @@ export function TagTable<R extends Row>({
 					{onReorder && <Column></Column>}
 					{showTagType && <Column>Type</Column>}
 					<Column isRowHeader>Name</Column>
+					{renderCustomControl && <Column></Column>}
 					{showTagSectionName && <Column>Section</Column>}
 					{removeTag && <Column></Column>}
 					{addTag && <Column></Column>}
@@ -222,6 +253,7 @@ export function TagTable<R extends Row>({
 									css={[
 										css`
 											width: 1%;
+											vertical-align: middle;
 										`,
 									]}
 								>
@@ -254,6 +286,19 @@ export function TagTable<R extends Row>({
 							>
 								{rowToTag(item).name}
 							</Cell>
+							{renderCustomControl && (
+								<Cell
+									css={[
+										cellStyles(theme),
+										css`
+											text-align: center;
+											width: 10%;
+										`,
+									]}
+								>
+									{renderCustomControl(item)}
+								</Cell>
+							)}
 							{showTagSectionName && (
 								<Cell
 									css={[

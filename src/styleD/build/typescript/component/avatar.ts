@@ -40,7 +40,7 @@ export const componentAvatar = {
 			},
 			cyan: {
 				text: '#00344e',
-				background: '#b8d8e7',
+				background: '#c5dfec',
 				border: 'unset',
 				hover: {
 					background: '#8abed7',

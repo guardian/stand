@@ -1,14 +1,10 @@
 {
 	"component": {
 		"tagTable": {
-			"heading": {
+			"header": {
 				"backgroundColor": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.700}"
-				},
-				"fontWeight": {
-					"$type": "number",
-					"$value": 700
 				},
 				"paddingTop": {
 					"$type": "dimension",
@@ -25,6 +21,30 @@
 				"paddingLeft": {
 					"$type": "dimension",
 					"$value": "12px"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "4px"
+				}
+			},
+			"heading": {
+				"fontWeight": {
+					"$type": "number",
+					"$value": 700
+				},
+				"fontSize": {
+					"$type": "dimension",
+					"$value": "{base.typography.size.14Px}"
+				}
+			},
+			"subHeading": {
+				"fontWeight": {
+					"$type": "number",
+					"$value": 400
+				},
+				"fontSize": {
+					"$type": "dimension",
+					"$value": "{base.typography.size.12Px}"
 				}
 			},
 			"cell": {

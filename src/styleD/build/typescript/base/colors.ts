@@ -54,7 +54,7 @@ export const baseColors = {
 		'500': '#2e8bb8',
 		'600': '#5ca5c8',
 		'700': '#8abed7',
-		'800': '#b8d8e7',
+		'800': '#c5dfec',
 		'900': '#e6f1f6',
 	},
 	teal: {

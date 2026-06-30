@@ -197,9 +197,9 @@ export function Autocomplete<
 					onTextInputChange(value);
 				}}
 				onChange={(key) => {
-					const tag = options.find((t) => t.id === key);
-					if (tag) {
-						addSelection(tag);
+					const option = options.find((t) => t.id === key);
+					if (option) {
+						addSelection(option);
 						onTextInputChange('');
 					}
 				}}
