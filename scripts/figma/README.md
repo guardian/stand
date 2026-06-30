@@ -13,3 +13,7 @@ First, get a Figma [token](https://help.figma.com/hc/en-us/articles/808570377115
 ## After running the script
 
 Push the branch to remote, then manually check the PR to make sure that only the changes you/designers expect to see are present in the PR. Remove and/or revert any unexpected changes spotted during the manual check before merging the branch into main and creating a new release.
+
+Once you are happy that all the new changes in Figma have been captured, run the style dictionary build command to regenerate the output files: `pnpm run build-styled`
+
+After the PR has been approved you can merge and create a changeset for the new release using the `npx changeset` command. Consult with colleagues on whether the Figma style changes require a major (N.x.x), minor (x.N.x) or bugfix (x.x.N) version update.
