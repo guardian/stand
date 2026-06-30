@@ -31,5 +31,8 @@ export const semanticSizing = {
 	input: {
 		maxWidthPx: '450px',
 	},
+	floatingUi: {
+		maxWidthPx: '200px',
+	},
 };
 export type SemanticSizing = typeof semanticSizing;
