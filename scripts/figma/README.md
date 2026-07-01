@@ -12,7 +12,13 @@ First, get a Figma [token](https://help.figma.com/hc/en-us/articles/808570377115
 
 ## After running the script
 
-Push the branch to remote, then manually check the PR to make sure that only the changes you/designers expect to see are present in the PR. Remove and/or revert any unexpected changes spotted during the manual check before merging the branch into main and creating a new release.
+Manually check the changes to the files to make sure that only the changes you/designers expect to see are present in the PR. Remove and/or revert any unexpected changes spotted during the manual check.
+
+Run `pnpm run build-styled` to build the design tokens. This should also (but not always) error if there are unexpected changed. Check that the newly built files are as expected.
+
+Make sure to also run `npx changeset` to create a changesets release file for a version bump.
+
+Push the branch to remote and create a PR. Have another developer review and check before merging the branch into main and creating a new release.
 
 Once you are happy that all the new changes in Figma have been captured, run the style dictionary build command to regenerate the output files: `pnpm run build-styled`
 
