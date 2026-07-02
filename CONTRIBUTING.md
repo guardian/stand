@@ -65,6 +65,8 @@ All new components must:
 There is a cli script available to generate the the src files needed for a new component:
 `pnpm run create-component`
 
+**Note:** Separate words in the component name with spaces rather than camel or Pascal casing as this conversion happens automatically when the files are created. eg. 'alert banner'. If you supply a pre-cased name the created files will not be properly cased.
+
 The script does not add the component to the package - follow the steps in the [Exports](#exports) section below for that.
 
 ## Style Dictionary - Design Tokens
