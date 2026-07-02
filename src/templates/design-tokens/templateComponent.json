@@ -4,7 +4,7 @@
 			"color": {
 				"background": {
 					"$type": "color",
-					"$value": "{semantic.colors.fill.green-weak}"
+					"$value": "{semantic.colors.fill.greenWeak}"
 				},
 				"text": {
 					"$type": "color",
