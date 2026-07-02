@@ -136,7 +136,7 @@ const run = async () => {
 
 	console.log('existing components', existingFolders);
 
-	const input = await getInput('What is your new component called?');
+	const input = await getInput('What is your new component called? ');
 	const names = {
 		kebabCase: toKebabCase(input),
 		pascalCase: toPascalCase(input),
