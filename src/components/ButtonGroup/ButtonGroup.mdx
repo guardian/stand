@@ -1,0 +1,149 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import ButtonGroupStories, {
+	Default,
+	CustomMessage,
+	CustomTheme,
+	CssOverrides,
+} from './ButtonGroup.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={ButtonGroupStories} />
+
+# ButtonGroup
+
+The ButtonGroup component [[enter description of purpose]].
+
+## When to use
+
+- [[use case]]
+- [[use case]]
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--docs#installing-icons) for more on installing icons.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { ButtonGroup } from '@guardian/stand/ButtonGroup';
+
+/* types, if required */
+import type { ButtonGroupProps, ButtonGroupTheme } from '@guardian/stand/ButtonGroup';
+
+/* Default */
+<ButtonGroup />
+
+/* Custom */
+<ButtonGroup message="hi" />
+
+```
+
+## Props
+
+| Name           | Type               | Required | Default       | Description                                   |
+| -------------- | ------------------ | -------- | ------------- | --------------------------------------------- |
+| `message`      | `string`           | No       | "hello world" | string to render in the ButtonGroup.          |
+| `theme`        | `ButtonGroupTheme` | No       | N/A           | Custom theme overrides for the ButtonGroup.   |
+| `cssOverrides` | `SerializedStyles` | No       | N/A           | Custom CSS styles for the ButtonGroup.        |
+| `className`    | `string`           | No       | N/A           | Additional class name(s) for the ButtonGroup. |
+
+## Stories
+
+<Canvas layout="padded" of={Default} />
+<Canvas layout="padded" of={CustomMessage} />
+<Canvas layout="padded" of={CustomTheme} />
+<Canvas layout="padded" of={CssOverrides} />
+
+## Customisation
+
+We recommend using the ButtonGroup component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the ButtonGroup component:
+
+<Canvas layout="padded" of={CustomTheme} />
+
+```tsx
+import type { ButtonGroupTheme } from '@guardian/stand/ButtonGroup';
+import { ButtonGroup } from '@guardian/stand/ButtonGroup';
+import { baseColors, baseSizing } from '@guardian/stand';
+
+const customTheme: ButtonGroupTheme = {
+	color: {
+		blue: {
+			background: baseColors.coolPurple[700],
+			text: baseColors.orange[300],
+		},
+	},
+};
+
+const Component = () => <ButtonGroup letter="C" theme={customTheme} />;
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the ButtonGroup component, if the theme prop is not sufficient:
+
+<Canvas layout="padded" of={CssOverrides} />
+
+```tsx
+import { ButtonGroup } from '@guardian/stand/ButtonGroup';
+import { baseColors, baseSizing, baseSpacing } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
+	background-color: ${baseColors.orange[700]};
+	color: ${baseColors.warmPurple[300]};
+	border-radius: ${baseRadius.corner4Px};
+`;
+
+const Component = () => <ButtonGroup letter="O" cssOverrides={customStyles} />;
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom ButtonGroup component using the styles defined in the `ButtonGroupTheme` type.
+
+You will however be responsible for any additional functionality on top of the styles, for example image loading, image fallback, accessibility etc.
+
+See "Custom Component" heading under the "ButtonGroup" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-forked-j8cjhy)
+
+**`css`**
+
+You can import the ButtonGroup styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentButtonGroup` variable and the `ComponentButtonGroup` type to define your custom styles in TypeScript/JavaScript:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />

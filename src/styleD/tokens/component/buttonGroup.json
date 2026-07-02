@@ -1,0 +1,10 @@
+{
+	"component": {
+		"buttonGroup": {
+			"gap": {
+				"$type": "dimension",
+				"$value": "{semantic.spacing.stackMd}"
+			}
+		}
+	}
+}
