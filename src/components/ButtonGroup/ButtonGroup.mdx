@@ -1,7 +1,8 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import ButtonGroupStories, {
 	Default,
-	CustomMessage,
+	Small,
+	MultipleButtons,
 	CustomTheme,
 	CssOverrides,
 } from './ButtonGroup.stories';
@@ -22,12 +23,11 @@ import {
 
 # ButtonGroup
 
-The ButtonGroup component [[enter description of purpose]].
+The ButtonGroup component is used to lay out groups of buttons responsively with consistent spacing applied between them. By default buttons are positioned side by side with their content determining size. On mobile buttons are stacked vertically and displayed full width.
 
 ## When to use
 
-- [[use case]]
-- [[use case]]
+- When you need to present multiple actions to the user (eg. within a modal or form)
 
 ## Peer dependencies
 
@@ -40,39 +40,39 @@ See the `peerDependencies` section of `package.json` for compatible versions.
 
 See [custom component build](#custom-component-build) for usage without React/Emotion.
 
-See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--docs#installing-icons) for more on installing icons.
-
 ## Example usage
 
 <SandboxReact componentName={componentName} componentTsx={componentTsx} />
 
 ```tsx
 import { ButtonGroup } from '@guardian/stand/ButtonGroup';
+import type {
+	ButtonGroupProps,
+	ButtonGroupTheme,
+} from '@guardian/stand/ButtonGroup';
 
-/* types, if required */
-import type { ButtonGroupProps, ButtonGroupTheme } from '@guardian/stand/ButtonGroup';
-
-/* Default */
-<ButtonGroup />
-
-/* Custom */
-<ButtonGroup message="hi" />
-
+const Example = () => (
+	<ButtonGroup size="lg">
+		<Button variant="tertiary">Stay on this step</Button>
+		<Button>Discard changes and skip</Button>
+	</ButtonGroup>
+);
 ```
 
 ## Props
 
-| Name           | Type               | Required | Default       | Description                                   |
-| -------------- | ------------------ | -------- | ------------- | --------------------------------------------- |
-| `message`      | `string`           | No       | "hello world" | string to render in the ButtonGroup.          |
-| `theme`        | `ButtonGroupTheme` | No       | N/A           | Custom theme overrides for the ButtonGroup.   |
-| `cssOverrides` | `SerializedStyles` | No       | N/A           | Custom CSS styles for the ButtonGroup.        |
-| `className`    | `string`           | No       | N/A           | Additional class name(s) for the ButtonGroup. |
+| Name           | Type                                 | Required | Default | Description                                    |
+| -------------- | ------------------------------------ | -------- | ------- | ---------------------------------------------- | --- |
+| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'` | No       | `'md'`  | Sets the size of the buttons within the group. |     |
+| `theme`        | `ButtonGroupTheme`                   | No       | N/A     | Custom theme overrides for the ButtonGroup.    |
+| `cssOverrides` | `SerializedStyles`                   | No       | N/A     | Custom CSS styles for the ButtonGroup.         |
+| `className`    | `string`                             | No       | N/A     | Additional class name(s) for the ButtonGroup.  |
 
 ## Stories
 
 <Canvas layout="padded" of={Default} />
-<Canvas layout="padded" of={CustomMessage} />
+<Canvas layout="padded" of={Small} />
+<Canvas layout="padded" of={MultipleButtons} />
 <Canvas layout="padded" of={CustomTheme} />
 <Canvas layout="padded" of={CssOverrides} />
 
