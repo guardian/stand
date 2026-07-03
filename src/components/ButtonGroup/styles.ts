@@ -18,7 +18,6 @@ export const buttonGroupStyles = (
 		display: flex;
 		flex-direction: column;
 		gap: ${theme.gap};
-
 		${from.md} {
 			flex-direction: row;
 		}
