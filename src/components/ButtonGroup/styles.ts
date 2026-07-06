@@ -15,12 +15,13 @@ export const buttonGroupStyles = (
 	theme: ButtonGroupTheme,
 ): SerializedStyles => {
 	return css`
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
+		display: ${theme.display};
+		flex-direction: ${theme.flexDirection};
+		flex-wrap: ${theme.flexWrap};
 		gap: ${theme.gap};
+		justify-content: ${theme.justifyContent};
 		${from.md} {
-			flex-direction: row;
+			flex-direction: ${theme.md.flexDirection};
 		}
 	`;
 };

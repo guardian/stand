@@ -5,15 +5,11 @@ export const componentName = 'ButtonGroup';
 export const componentTsx = /* javascript */ `import { ButtonGroup } from '@guardian/stand/ButtonGroup';
 
 export const Component = () => (
-	<>
-		{/* default example */}
-		<ButtonGroup />
-
-		{/* custom message example */}
-		<ButtonGroup message="hi there" />
-
+	<ButtonGroup>
+		<Button variant="tertiary">Stay on this step</Button>
+		<Button>Discard changes and skip</Button>
+	</ButtonGroup>
 );
-
 `;
 
 // Custom component - CSS example
