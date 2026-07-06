@@ -17,6 +17,7 @@ export const buttonGroupStyles = (
 	return css`
 		display: flex;
 		flex-direction: column;
+		flex-wrap: wrap;
 		gap: ${theme.gap};
 		${from.md} {
 			flex-direction: row;
