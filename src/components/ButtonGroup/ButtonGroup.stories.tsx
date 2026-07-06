@@ -4,6 +4,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { baseSizing } from '../../styleD/build/typescript/base/sizing';
 import { baseSpacing } from '../../styleD/build/typescript/base/spacing';
+import { semanticSpacing } from '../../styleD/build/typescript/semantic/spacing';
 import { Button } from '../Button/Button';
 import { ButtonGroup } from './ButtonGroup';
 
@@ -48,7 +49,7 @@ export const MultipleButtons = {
 export const CustomTheme = {
 	args: {
 		theme: {
-			gap: '2rem',
+			gap: semanticSpacing['stackLg'],
 		},
 	},
 } satisfies Story;

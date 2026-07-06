@@ -89,18 +89,18 @@ The `theme` prop allows you to override specific design tokens for the ButtonGro
 ```tsx
 import type { ButtonGroupTheme } from '@guardian/stand/ButtonGroup';
 import { ButtonGroup } from '@guardian/stand/ButtonGroup';
-import { baseColors, baseSizing } from '@guardian/stand';
+import { semanticSpacing } from '@guardian/stand';
 
 const customTheme: ButtonGroupTheme = {
-	color: {
-		blue: {
-			background: baseColors.coolPurple[700],
-			text: baseColors.orange[300],
-		},
-	},
+	gap: semanticSpacing['stackLg'],
 };
 
-const Component = () => <ButtonGroup letter="C" theme={customTheme} />;
+const Component = () => (
+	<ButtonGroup theme={customTheme}>
+		;<Button variant="tertiary">Stay on this step</Button>
+		<Button>Discard changes and skip</Button>
+	</ButtonGroup>
+);
 ```
 
 ### CSS overrides
@@ -116,12 +116,16 @@ import { css } from '@emotion/react';
 
 const customStyles = css`
 	border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
-	background-color: ${baseColors.orange[700]};
-	color: ${baseColors.warmPurple[300]};
-	border-radius: ${baseRadius.corner4Px};
+	margin: ${baseSpacing['8Rem']};
+	padding: ${baseSpacing['8Rem']};
 `;
 
-const Component = () => <ButtonGroup letter="O" cssOverrides={customStyles} />;
+const Component = () => (
+	<ButtonGroup cssOverrides={customStyles}>
+		;<Button variant="tertiary">Stay on this step</Button>
+		<Button>Discard changes and skip</Button>
+	</ButtonGroup>
+);
 ```
 
 ## Custom Component Build
