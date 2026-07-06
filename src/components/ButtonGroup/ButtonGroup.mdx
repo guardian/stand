@@ -92,12 +92,13 @@ import { ButtonGroup } from '@guardian/stand/ButtonGroup';
 import { semanticSpacing } from '@guardian/stand';
 
 const customTheme: ButtonGroupTheme = {
-	gap: semanticSpacing['stackLg'],
+	gap: semanticSpacing['stackXs'],
+	justifyContent: 'flex-end',
 };
 
 const Component = () => (
 	<ButtonGroup theme={customTheme}>
-		;<Button variant="tertiary">Stay on this step</Button>
+		<Button variant="tertiary">Stay on this step</Button>
 		<Button>Discard changes and skip</Button>
 	</ButtonGroup>
 );
@@ -122,7 +123,7 @@ const customStyles = css`
 
 const Component = () => (
 	<ButtonGroup cssOverrides={customStyles}>
-		;<Button variant="tertiary">Stay on this step</Button>
+		<Button variant="tertiary">Stay on this step</Button>
 		<Button>Discard changes and skip</Button>
 	</ButtonGroup>
 );

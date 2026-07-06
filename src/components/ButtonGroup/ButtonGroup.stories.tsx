@@ -49,7 +49,8 @@ export const MultipleButtons = {
 export const CustomTheme = {
 	args: {
 		theme: {
-			gap: semanticSpacing['stackLg'],
+			gap: semanticSpacing['stackXs'],
+			justifyContent: 'flex-end',
 		},
 	},
 } satisfies Story;
