@@ -317,6 +317,16 @@
 				"default": "./dist/Modal.cjs"
 			}
 		},
+		"./Tabs": {
+			"import": {
+				"types": "./dist/Tabs.d.ts",
+				"default": "./dist/Tabs.js"
+			},
+			"require": {
+				"types": "./dist/Tabs.d.cts",
+				"default": "./dist/Tabs.cjs"
+			}
+		},
 		"./utils": {
 			"import": {
 				"types": "./dist/utils.d.ts",
@@ -370,7 +380,8 @@
 		"./component/link.css": "./dist/styleD/build/css/component/link.css",
 		"./component/grid.css": "./dist/styleD/build/css/component/grid.css",
 		"./component/layout.css": "./dist/styleD/build/css/component/layout.css",
-		"./component/modal.css": "./dist/styleD/build/css/component/modal.css"
+		"./component/modal.css": "./dist/styleD/build/css/component/modal.css",
+		"./component/tabs.css": "./dist/styleD/build/css/component/tabs.css"
 	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
@@ -469,6 +480,9 @@
 			],
 			"Modal": [
 				"./dist/Modal.d.ts"
+			],
+			"Tabs": [
+				"./dist/Tabs.d.ts"
 			]
 		}
 	},
