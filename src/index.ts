@@ -60,6 +60,8 @@ export { componentTopBar } from './styleD/build/typescript/component/topBar';
 export type { ComponentTopBar } from './styleD/build/typescript/component/topBar';
 export { componentTypography } from './styleD/build/typescript/component/typography';
 export type { ComponentTypography } from './styleD/build/typescript/component/typography';
+export { componentTabs } from './styleD/build/typescript/component/tabs';
+export type { ComponentTabs } from './styleD/build/typescript/component/tabs';
 
 /**
  * style dictionary exports - base
