@@ -57,6 +57,16 @@
 				"default": "./dist/Button.cjs"
 			}
 		},
+		"./ButtonGroup": {
+			"import": {
+				"types": "./dist/ButtonGroup.d.ts",
+				"default": "./dist/ButtonGroup.js"
+			},
+			"require": {
+				"types": "./dist/ButtonGroup.d.cts",
+				"default": "./dist/ButtonGroup.cjs"
+			}
+		},
 		"./LinkButton": {
 			"import": {
 				"types": "./dist/LinkButton.d.ts",
@@ -341,6 +351,7 @@
 		"./component/userMenu.css": "./dist/styleD/build/css/component/userMenu.css",
 		"./component/avatar.css": "./dist/styleD/build/css/component/avatar.css",
 		"./component/button.css": "./dist/styleD/build/css/component/button.css",
+		"./component/buttonGroup.css": "./dist/styleD/build/css/component/buttonGroup.css",
 		"./component/typography.css": "./dist/styleD/build/css/component/typography.css",
 		"./component/icon.css": "./dist/styleD/build/css/component/icon.css",
 		"./component/favicon.css": "./dist/styleD/build/css/component/favicon.css",
@@ -377,6 +388,9 @@
 			],
 			"Button": [
 				"./dist/Button.d.ts"
+			],
+			"ButtonGroup": [
+				"./dist/ButtonGroup.d.ts"
 			],
 			"LinkButton": [
 				"./dist/LinkButton.d.ts"

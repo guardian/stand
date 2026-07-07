@@ -24,6 +24,8 @@ export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
 export { componentButton } from './styleD/build/typescript/component/button';
 export type { ComponentButton } from './styleD/build/typescript/component/button';
+export { componentButtonGroup } from './styleD/build/typescript/component/buttonGroup';
+export type { ComponentButtonGroup } from './styleD/build/typescript/component/buttonGroup';
 export { componentCheckbox } from './styleD/build/typescript/component/checkbox';
 export type { ComponentCheckbox } from './styleD/build/typescript/component/checkbox';
 export { componentFavicon } from './styleD/build/typescript/component/favicon';
