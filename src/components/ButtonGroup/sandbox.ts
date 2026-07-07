@@ -75,6 +75,7 @@ export const componentCss = /* css */ `@import '@guardian/stand/component/button
 		flex-direction: var(--component-button-group-flex-direction);
 		flex-wrap: var(--component-button-group-flex-wrap);
 		gap: var(--component-button-group-gap);
+		width: var(--component-button-group-width);
 		justify-content: var(--component-button-group-justify-content);
 }
 
@@ -150,6 +151,7 @@ sheet.replaceSync(\`
 		flex-direction: \${componentButtonGroup.flexDirection};
 		flex-wrap: \${componentButtonGroup.flexWrap};
 		gap: \${componentButtonGroup.gap};
+		width: \${componentButtonGroup.width};
 		justify-content: \${componentButtonGroup.justifyContent};
 	}
 

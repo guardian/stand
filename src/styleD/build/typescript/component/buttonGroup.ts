@@ -7,6 +7,7 @@ export const componentButtonGroup = {
 	flexDirection: 'column',
 	flexWrap: 'wrap',
 	gap: '1rem',
+	width: '100%',
 	justifyContent: 'flex-start',
 	md: {
 		flexDirection: 'row',

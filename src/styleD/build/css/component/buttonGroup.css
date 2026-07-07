@@ -7,6 +7,7 @@
 	--component-button-group-flex-direction: column;
 	--component-button-group-flex-wrap: wrap;
 	--component-button-group-gap: 1rem;
+	--component-button-group-width: 100%;
 	--component-button-group-justify-content: flex-start;
 	--component-button-group-md-flex-direction: row;
 }

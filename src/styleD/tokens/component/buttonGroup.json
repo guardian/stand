@@ -17,6 +17,10 @@
 				"$type": "dimension",
 				"$value": "{semantic.spacing.stackMd}"
 			},
+			"width": {
+				"$type": "string",
+				"$value": "100%"
+			},
 			"justifyContent": {
 				"$type": "string",
 				"$value": "flex-start"
