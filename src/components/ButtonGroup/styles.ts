@@ -19,6 +19,7 @@ export const buttonGroupStyles = (
 		flex-direction: ${theme.flexDirection};
 		flex-wrap: ${theme.flexWrap};
 		gap: ${theme.gap};
+		width: ${theme.width};
 		justify-content: ${theme.justifyContent};
 		${from.md} {
 			flex-direction: ${theme.md.flexDirection};
