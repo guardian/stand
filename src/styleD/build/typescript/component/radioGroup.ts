@@ -7,7 +7,14 @@ export const componentRadioGroup = {
 		marginTop: '0.5rem',
 		marginBottom: '0.5rem',
 		display: 'flex',
-		flexDirection: 'column',
+		orientation: {
+			vertical: {
+				flexDirection: 'column',
+			},
+			horizontal: {
+				flexDirection: 'row',
+			},
+		},
 		radio: {
 			color: '#000000',
 			disabled: {
