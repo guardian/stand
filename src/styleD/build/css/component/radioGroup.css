@@ -6,7 +6,8 @@
 	--component-radio-group-shared-margin-top: 0.5rem; /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
 	--component-radio-group-shared-margin-bottom: 0.5rem; /** spacing between the input itself and the next element (error text) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
 	--component-radio-group-shared-display: flex;
-	--component-radio-group-shared-flex-direction: column;
+	--component-radio-group-shared-orientation-vertical-flex-direction: column;
+	--component-radio-group-shared-orientation-horizontal-flex-direction: row;
 	--component-radio-group-shared-radio-color: #000000;
 	--component-radio-group-shared-radio-disabled-color: #999999;
 	--component-radio-group-shared-radio-display: flex;
