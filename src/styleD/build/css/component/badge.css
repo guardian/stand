@@ -3,6 +3,49 @@
  */
 
 :root {
-	--component-badge-color-background: #cde4c9;
-	--component-badge-color-text: #ff69b4;
+	--component-badge-size-medium-display: inline-flex;
+	--component-badge-size-medium-align-items: center;
+	--component-badge-size-medium-justify-content: center;
+	--component-badge-size-medium-padding-top: 4px;
+	--component-badge-size-medium-padding-right: 12px;
+	--component-badge-size-medium-padding-bottom: 4px;
+	--component-badge-size-medium-padding-left: 12px;
+	--component-badge-size-medium-typography-font: normal 700 1rem/1.15
+		'Open Sans';
+	--component-badge-size-medium-typography-letter-spacing: -0.03125rem;
+	--component-badge-size-medium-typography-font-width: 95;
+	--component-badge-size-small-display: inline-flex;
+	--component-badge-size-small-align-items: center;
+	--component-badge-size-small-justify-content: center;
+	--component-badge-size-small-padding-top: 4px;
+	--component-badge-size-small-padding-right: 8px;
+	--component-badge-size-small-padding-bottom: 4px;
+	--component-badge-size-small-padding-left: 8px;
+	--component-badge-size-small-typography-font: normal 700 0.875rem/1.15
+		'Open Sans';
+	--component-badge-size-small-typography-letter-spacing: -0.0125rem;
+	--component-badge-size-small-typography-font-width: 95;
+	--component-badge-size-x-small-display: inline-flex;
+	--component-badge-size-x-small-align-items: center;
+	--component-badge-size-x-small-justify-content: center;
+	--component-badge-size-x-small-padding-top: 1px;
+	--component-badge-size-x-small-padding-right: 6px;
+	--component-badge-size-x-small-padding-bottom: 3px;
+	--component-badge-size-x-small-padding-left: 6px;
+	--component-badge-size-x-small-typography-font: normal 700 0.75rem/1.15
+		'Open Sans';
+	--component-badge-size-x-small-typography-letter-spacing: 0rem;
+	--component-badge-size-x-small-typography-font-width: 95;
+	--component-badge-color-green-bg-background: #aed2a6;
+	--component-badge-color-green-bg-color: #24491d;
+	--component-badge-color-yellow-bg-background: #f1c21b;
+	--component-badge-color-yellow-bg-color: #000000;
+	--component-badge-color-grey-bg-background: #dcdcdc;
+	--component-badge-color-grey-bg-color: #000000;
+	--component-badge-color-orange-bg-background: #fcddc6;
+	--component-badge-color-orange-bg-color: #000000;
+	--component-badge-color-purple-bg-background: #dac3e8;
+	--component-badge-color-purple-bg-color: #000000;
+	--component-badge-color-red-bg-background: #f5c6c0;
+	--component-badge-color-red-bg-color: #000000;
 }
