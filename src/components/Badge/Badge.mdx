@@ -1,0 +1,149 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import BadgeStories, {
+	Default,
+	CustomMessage,
+	CustomTheme,
+	CssOverrides,
+} from './Badge.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={BadgeStories} />
+
+# Badge
+
+The Badge component [[enter description of purpose]].
+
+## When to use
+
+- [[use case]]
+- [[use case]]
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--docs#installing-icons) for more on installing icons.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Badge } from '@guardian/stand/Badge';
+
+/* types, if required */
+import type { BadgeProps, BadgeTheme } from '@guardian/stand/Badge';
+
+/* Default */
+<Badge />
+
+/* Custom */
+<Badge message="hi" />
+
+```
+
+## Props
+
+| Name           | Type               | Required | Default       | Description                             |
+| -------------- | ------------------ | -------- | ------------- | --------------------------------------- |
+| `message`      | `string`           | No       | "hello world" | string to render in the Badge.          |
+| `theme`        | `BadgeTheme`       | No       | N/A           | Custom theme overrides for the Badge.   |
+| `cssOverrides` | `SerializedStyles` | No       | N/A           | Custom CSS styles for the Badge.        |
+| `className`    | `string`           | No       | N/A           | Additional class name(s) for the Badge. |
+
+## Stories
+
+<Canvas layout="padded" of={Default} />
+<Canvas layout="padded" of={CustomMessage} />
+<Canvas layout="padded" of={CustomTheme} />
+<Canvas layout="padded" of={CssOverrides} />
+
+## Customisation
+
+We recommend using the Badge component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the Badge component:
+
+<Canvas layout="padded" of={CustomTheme} />
+
+```tsx
+import type { BadgeTheme } from '@guardian/stand/Badge';
+import { Badge } from '@guardian/stand/Badge';
+import { baseColors, baseSizing } from '@guardian/stand';
+
+const customTheme: BadgeTheme = {
+	color: {
+		blue: {
+			background: baseColors.coolPurple[700],
+			text: baseColors.orange[300],
+		},
+	},
+};
+
+const Component = () => <Badge letter="C" theme={customTheme} />;
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the Badge component, if the theme prop is not sufficient:
+
+<Canvas layout="padded" of={CssOverrides} />
+
+```tsx
+import { Badge } from '@guardian/stand/Badge';
+import { baseColors, baseSizing, baseSpacing } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
+	background-color: ${baseColors.orange[700]};
+	color: ${baseColors.warmPurple[300]};
+	border-radius: ${baseRadius.corner4Px};
+`;
+
+const Component = () => <Badge letter="O" cssOverrides={customStyles} />;
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom Badge component using the styles defined in the `BadgeTheme` type.
+
+You will however be responsible for any additional functionality on top of the styles, for example image loading, image fallback, accessibility etc.
+
+See "Custom Component" heading under the "Badge" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-forked-j8cjhy)
+
+**`css`**
+
+You can import the Badge styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentBadge` variable and the `ComponentBadge` type to define your custom styles in TypeScript/JavaScript:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
