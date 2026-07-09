@@ -7,8 +7,7 @@ export const Badge = (props: BadgeProps) => {
 
 	return (
 		<div css={[badgeStyles(mergedTheme), props.cssOverrides]}>
-			<p>template component</p>
-			<p>{props.message ?? 'hello world'}</p>
+			{props.message}
 		</div>
 	);
 };

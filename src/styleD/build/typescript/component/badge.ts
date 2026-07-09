@@ -4,7 +4,7 @@
 
 export const componentBadge = {
 	size: {
-		medium: {
+		md: {
 			display: 'inline-flex',
 			alignItems: 'center',
 			justifyContent: 'center',
@@ -20,7 +20,7 @@ export const componentBadge = {
 				fontWidth: 95,
 			},
 		},
-		small: {
+		sm: {
 			display: 'inline-flex',
 			alignItems: 'center',
 			justifyContent: 'center',
@@ -36,7 +36,7 @@ export const componentBadge = {
 				fontWidth: 95,
 			},
 		},
-		xSmall: {
+		xs: {
 			display: 'inline-flex',
 			alignItems: 'center',
 			justifyContent: 'center',
@@ -54,27 +54,27 @@ export const componentBadge = {
 		},
 	},
 	color: {
-		greenBg: {
+		green: {
 			background: '#aed2a6',
 			color: '#24491d',
 		},
-		yellowBg: {
+		yellow: {
 			background: '#f1c21b',
 			color: '#000000',
 		},
-		greyBg: {
+		grey: {
 			background: '#dcdcdc',
 			color: '#000000',
 		},
-		orangeBg: {
+		orange: {
 			background: '#fcddc6',
 			color: '#000000',
 		},
-		purpleBg: {
+		warmPurple: {
 			background: '#dac3e8',
 			color: '#000000',
 		},
-		redBg: {
+		red: {
 			background: '#f5c6c0',
 			color: '#000000',
 		},
