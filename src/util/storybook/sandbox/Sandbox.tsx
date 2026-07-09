@@ -41,7 +41,7 @@ const PackageJson = `
 		"@internationalized/date": "3.12.1",
 		"react": "19.2.4",
 		"react-dom": "19.2.4",
-		"react-aria-components": "1.13.0"
+		"react-aria-components": "1.14.0"
 	},
 	"devDependencies": {
 		"@types/react": "19.2.10",
