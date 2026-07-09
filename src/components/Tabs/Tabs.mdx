@@ -1,0 +1,280 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import TabsStories, {
+	Default,
+	Vertical,
+	TabDisabled,
+	TabWithIcon,
+	DefaultSmall,
+} from './Tabs.stories';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
+
+<Meta of={TabsStories} />
+
+# Tabs
+
+A React Aria powered tabs component that follows Stand design and accessibility defaults. It supports horizontal and vertical orientations, disabled tabs, icons, and two sizes. See React Aria guidance in their [Tabs docs](https://react-aria.adobe.com/Tabs).
+
+## When to use
+
+- Organising related content into distinct sections within the same page area
+- Allowing users to switch between views without a full page navigation
+- Grouping settings, filters, or content categories that share the same context
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact
+	flowColumn
+	componentName={componentName}
+	componentTsx={componentTsx}
+/>
+
+```tsx
+import { Tabs } from '@guardian/stand/Tabs';
+import type { TabsProps, TabsTheme, TabTheme } from '@guardian/stand/Tabs';
+
+const Example = () => (
+	<Tabs>
+		<Tabs.TabList aria-label="Example tabs">
+			<Tabs.Tab id="tab1">Tab 1</Tabs.Tab>
+			<Tabs.Tab id="tab2" icon="raven">
+				Tab 2
+			</Tabs.Tab>
+			<Tabs.Tab id="tab3" isDisabled>
+				Tab 3
+			</Tabs.Tab>
+		</Tabs.TabList>
+		<Tabs.TabPanels>
+			<Tabs.TabPanel id="tab1">Content for Tab 1</Tabs.TabPanel>
+			<Tabs.TabPanel id="tab2">Content for Tab 2</Tabs.TabPanel>
+			<Tabs.TabPanel id="tab3">Content for Tab 3</Tabs.TabPanel>
+		</Tabs.TabPanels>
+	</Tabs>
+);
+
+// Vertical orientation
+const VerticalExample = () => (
+	<Tabs orientation="vertical">
+		<Tabs.TabList aria-label="Settings">
+			<Tabs.Tab id="general">General</Tabs.Tab>
+			<Tabs.Tab id="appearance">Appearance</Tabs.Tab>
+			<Tabs.Tab id="notifications">Notifications</Tabs.Tab>
+		</Tabs.TabList>
+		<Tabs.TabPanels>
+			<Tabs.TabPanel id="general">General settings</Tabs.TabPanel>
+			<Tabs.TabPanel id="appearance">Appearance settings</Tabs.TabPanel>
+			<Tabs.TabPanel id="notifications">Notification settings</Tabs.TabPanel>
+		</Tabs.TabPanels>
+	</Tabs>
+);
+
+// Tabs with icons
+const WithIconsExample = () => (
+	<Tabs>
+		<Tabs.TabList aria-label="Navigation">
+			<Tabs.Tab id="home" icon="home">
+				Home
+			</Tabs.Tab>
+			<Tabs.Tab id="settings" icon="settings">
+				Settings
+			</Tabs.Tab>
+			<Tabs.Tab id="profile" icon="person">
+				Profile
+			</Tabs.Tab>
+		</Tabs.TabList>
+		<Tabs.TabPanels>
+			<Tabs.TabPanel id="home">Home content</Tabs.TabPanel>
+			<Tabs.TabPanel id="settings">Settings content</Tabs.TabPanel>
+			<Tabs.TabPanel id="profile">Profile content</Tabs.TabPanel>
+		</Tabs.TabPanels>
+	</Tabs>
+);
+```
+
+## Props
+
+`Tabs` is a compound component. Use the sub-components (`Tabs.TabList`, `Tabs.Tab`, `Tabs.TabPanels`, `Tabs.TabPanel`) to compose the full tab structure. Each `Tab` `id` must match its corresponding `TabPanel` `id`.
+
+### `Tabs`
+
+The root container. Manages tab selection state and passes `orientation` and `size` down to `Tabs.TabList` and `Tabs.Tab` automatically.
+
+| Name                 | Type                                       | Required | Default        | Description                                                                                                                                                          |
+| -------------------- | ------------------------------------------ | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`           | `React.ReactNode`                          | Yes      | N/A            | Must contain a `Tabs.TabList` and a `Tabs.TabPanels`.                                                                                                                |
+| `orientation`        | `'horizontal'` \| `'vertical'`             | No       | `'horizontal'` | Layout direction of the tab list relative to the panels.                                                                                                             |
+| `size`               | `'sm'` \| `'md'`                           | No       | `'md'`         | Controls the size of all tabs. Passed down to `Tabs.Tab` automatically — set this on `Tabs` rather than on individual `Tabs.Tab` components.                         |
+| `defaultSelectedKey` | `Key`                                      | No       | N/A            | The initially selected tab (uncontrolled). Corresponds to a `Tab` `id`.                                                                                              |
+| `selectedKey`        | `Key`                                      | No       | N/A            | The currently selected tab (controlled). Corresponds to a `Tab` `id`.                                                                                                |
+| `onSelectionChange`  | `(key: Key) => void`                       | No       | N/A            | Called when the selected tab changes.                                                                                                                                |
+| `keyboardActivation` | `'automatic'` \| `'manual'`                | No       | `'automatic'`  | Whether tabs are activated on focus or require an explicit press.                                                                                                    |
+| `isDisabled`         | `boolean`                                  | No       | `false`        | Disables all tabs.                                                                                                                                                   |
+| `theme`              | `TabsTheme` (partial)                      | No       | N/A            | Override Stand tokens for this instance; merged over the default theme.                                                                                              |
+| `cssOverrides`       | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A            | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                           |
+| `className`          | `string`                                   | No       | N/A            | Optional class name forwarded to the root element.                                                                                                                   |
+| `...props`           | `ReactAria Tabs` props                     | No       | N/A            | All other props from `react-aria-components` `Tabs` (e.g. `aria-label`, `aria-labelledby`). See the [React Aria `Tabs` API](https://react-aria.adobe.com/Tabs#tabs). |
+
+### `Tabs.TabList`
+
+The container for the tab triggers. Renders a `role="tablist"` element and accepts only `Tabs.Tab` children.
+
+| Name           | Type                                       | Required | Default        | Description                                                                                                                                                                           |
+| -------------- | ------------------------------------------ | -------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`     | `React.ReactNode`                          | Yes      | N/A            | Must contain one or more `Tabs.Tab` components.                                                                                                                                       |
+| `orientation`  | `'horizontal'` \| `'vertical'`             | No       | `'horizontal'` | Inherited from the parent `Tabs`; no need to set manually.                                                                                                                            |
+| `size`         | `'sm'` \| `'md'`                           | No       | `'md'`         | Inherited from the parent `Tabs`; no need to set manually.                                                                                                                            |
+| `theme`        | `TabListTheme` (partial)                   | No       | N/A            | Override Stand tokens for this instance; merged over the default theme.                                                                                                               |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A            | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                                            |
+| `className`    | `string`                                   | No       | N/A            | Optional class name forwarded to the tab list element.                                                                                                                                |
+| `...props`     | `ReactAria TabList` props                  | No       | N/A            | All other props from `react-aria-components` `TabList` (e.g. `aria-label`, `items` for dynamic lists). See the [React Aria `TabList` API](https://react-aria.adobe.com/Tabs#tablist). |
+
+### `Tabs.Tab`
+
+An individual tab trigger. Its `id` must correspond to the `id` of its paired `Tabs.TabPanel`.
+
+| Name           | Type                                                              | Required | Default | Description                                                                                                                                                                                                                                                          |
+| -------------- | ----------------------------------------------------------------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`           | `Key`                                                             | Yes      | N/A     | Unique identifier for this tab. Must match the `id` of the corresponding `Tabs.TabPanel`.                                                                                                                                                                            |
+| `children`     | `React.ReactNode`                                                 | Yes      | N/A     | Label content for the tab.                                                                                                                                                                                                                                           |
+| `size`         | `'sm'` \| `'md'`                                                  | No       | `'md'`  | Inherited from the parent `Tabs` via `Tabs.TabList`; no need to set manually. Set `size` on the root `Tabs` instead.                                                                                                                                                 |
+| `icon`         | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>` | No       | N/A     | Icon rendered before the label. Accepts a `MaterialSymbol` name or a non-string `ReactNode` (e.g. an SVG). Icon size is `lg` for `md` tabs and `sm` for `sm` tabs. See ["Installing Icons"](/docs/stand-tools-design-system-components-icon--docs#installing-icons). |
+| `isDisabled`   | `boolean`                                                         | No       | `false` | Disables this individual tab.                                                                                                                                                                                                                                        |
+| `theme`        | `TabTheme` (partial)                                              | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                                                                                                                                              |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`                        | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                                                                                                                           |
+| `className`    | `string`                                                          | No       | N/A     | Optional class name forwarded to the tab element.                                                                                                                                                                                                                    |
+| `...props`     | `ReactAria Tab` props                                             | No       | N/A     | All other props from `react-aria-components` `Tab` (e.g. `href` for link tabs, `onPress`). See the [React Aria `Tab` API](https://react-aria.adobe.com/Tabs#tab).                                                                                                    |
+
+### `Tabs.TabPanels`
+
+The container for all tab panels. Accepts only `Tabs.TabPanel` children and handles panel visibility in sync with the selected tab.
+
+| Name           | Type                                       | Required | Default        | Description                                                                                                                                  |
+| -------------- | ------------------------------------------ | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`     | `React.ReactNode`                          | Yes      | N/A            | Must contain one or more `Tabs.TabPanel` components.                                                                                         |
+| `orientation`  | `'horizontal'` \| `'vertical'`             | No       | `'horizontal'` | Inherited from the parent `Tabs`; no need to set manually.                                                                                   |
+| `size`         | `'sm'` \| `'md'`                           | No       | `'md'`         | Inherited from the parent `Tabs`; no need to set manually.                                                                                   |
+| `theme`        | `TabPanelsTheme` (partial)                 | No       | N/A            | Override Stand tokens for this instance; merged over the default theme.                                                                      |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A            | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                   |
+| `className`    | `string`                                   | No       | N/A            | Optional class name forwarded to the panels container element.                                                                               |
+| `...props`     | `ReactAria TabPanels` props                | No       | N/A            | All other props from `react-aria-components` `TabPanels`. See the [React Aria `TabPanels` API](https://react-aria.adobe.com/Tabs#tabpanels). |
+
+### `Tabs.TabPanel`
+
+The content region for a single tab. Hidden when its corresponding `Tabs.Tab` is not selected. Its `id` must match the `id` of the associated `Tabs.Tab`.
+
+| Name           | Type                                       | Required | Default | Description                                                                                                                                                         |
+| -------------- | ------------------------------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`           | `Key`                                      | Yes      | N/A     | Must match the `id` of the corresponding `Tabs.Tab`.                                                                                                                |
+| `children`     | `React.ReactNode`                          | Yes      | N/A     | Content to display when this panel's tab is selected.                                                                                                               |
+| `theme`        | `TabPanelTheme` (partial)                  | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                                             |
+| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                          |
+| `className`    | `string`                                   | No       | N/A     | Optional class name forwarded to the panel element.                                                                                                                 |
+| `...props`     | `ReactAria TabPanel` props                 | No       | N/A     | All other props from `react-aria-components` `TabPanel` (e.g. `shouldForceMount`). See the [React Aria `TabPanel` API](https://react-aria.adobe.com/Tabs#tabpanel). |
+
+## Stories
+
+### Default
+
+<Canvas layout="padded" of={Default} />
+
+### Vertical
+
+<Canvas layout="padded" of={Vertical} />
+
+### Disabled tab
+
+<Canvas layout="padded" of={TabDisabled} />
+
+### With icon
+
+<Canvas layout="padded" of={TabWithIcon} />
+
+### Small size
+
+<Canvas layout="padded" of={DefaultSmall} />
+
+## Customisation
+
+We recommend using the default theme. When needed, use the `theme` or `cssOverrides` props on any sub-component.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens. Each sub-component has its own theme type:
+
+```tsx
+import type { TabsTheme, TabTheme } from '@guardian/stand/Tabs';
+import { Tabs } from '@guardian/stand/Tabs';
+import { baseColors } from '@guardian/stand';
+
+const tabTheme: Partial<TabTheme> = {
+	shared: {
+		color: baseColors.coolPurple[700],
+		selected: {
+			border: {
+				background: baseColors.coolPurple[700],
+			},
+		},
+	},
+};
+
+const Component = () => (
+	<Tabs>
+		<Tabs.TabList>
+			<Tabs.Tab id="tab1" theme={tabTheme}>
+				Tab 1
+			</Tabs.Tab>
+			<Tabs.Tab id="tab2" theme={tabTheme}>
+				Tab 2
+			</Tabs.Tab>
+		</Tabs.TabList>
+		<Tabs.TabPanels>
+			<Tabs.TabPanel id="tab1">Content for Tab 1</Tabs.TabPanel>
+			<Tabs.TabPanel id="tab2">Content for Tab 2</Tabs.TabPanel>
+		</Tabs.TabPanels>
+	</Tabs>
+);
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom Emotion CSS to any sub-component:
+
+```tsx
+import { Tabs } from '@guardian/stand/Tabs';
+import { css } from '@emotion/react';
+
+const tabListStyles = css`
+	border-bottom: 2px solid hotpink;
+`;
+
+const Component = () => (
+	<Tabs>
+		<Tabs.TabList cssOverrides={tabListStyles}>
+			<Tabs.Tab id="tab1">Tab 1</Tabs.Tab>
+			<Tabs.Tab id="tab2">Tab 2</Tabs.Tab>
+		</Tabs.TabList>
+		<Tabs.TabPanels>
+			<Tabs.TabPanel id="tab1">Content for Tab 1</Tabs.TabPanel>
+			<Tabs.TabPanel id="tab2">Content for Tab 2</Tabs.TabPanel>
+		</Tabs.TabPanels>
+	</Tabs>
+);
+```
+
+## Custom Component Build
+
+Due to the interactive functionality of the Tabs component (keyboard navigation, tab panels, accessibility), it is only available as a React component with Emotion for styling.
+
+If you want to use tabs in a non-React environment, you would need to build a custom version using vanilla JavaScript and CSS, which requires significant effort to replicate the accessibility and interaction features of this component. We recommend using the provided React component where possible.

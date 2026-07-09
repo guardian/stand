@@ -1,0 +1,13 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-button-group-display: flex;
+	--component-button-group-flex-direction: column;
+	--component-button-group-flex-wrap: wrap;
+	--component-button-group-gap: 1rem;
+	--component-button-group-width: 100%;
+	--component-button-group-justify-content: flex-start;
+	--component-button-group-md-flex-direction: row;
+}
