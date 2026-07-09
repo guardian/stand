@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.57
+
+### Patch Changes
+
+- 2825eda: Add Tabs component
+- ccc9804: BREAKING: update `react-aria-components` peer dependency range from `>= 1.13.0 <= 1.18.0` to `>= 1.14.0 <= 1.19.0`
+
 ## 0.0.56
 
 ### Patch Changes
