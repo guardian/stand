@@ -2,14 +2,11 @@ import {
 	css,
 	type SerializedStyles,
 } from '@emotion/react';
-
 import {
 	componentBadge,
 	type ComponentBadge,
 } from '../../styleD/build/typescript/component/badge';
-
 import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
-
 import type { DeepPartial, Prettify } from '../../util/types';
 import type { BadgeProps } from './types';
 

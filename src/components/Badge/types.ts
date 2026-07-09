@@ -2,7 +2,6 @@ import {
 	type ComponentBadge,
 	componentBadge,
 } from '../../styleD/build/typescript/component/badge';
-
 import type { DefaultProps } from '../../util/types';
 import type { BadgeTheme } from './styles';
 
