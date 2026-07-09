@@ -1,0 +1,36 @@
+{
+	"component": {
+		"buttonGroup": {
+			"display": {
+				"$type": "string",
+				"$value": "flex"
+			},
+			"flexDirection": {
+				"$type": "string",
+				"$value": "column"
+			},
+			"flexWrap": {
+				"$type": "string",
+				"$value": "wrap"
+			},
+			"gap": {
+				"$type": "dimension",
+				"$value": "{semantic.spacing.stackMd}"
+			},
+			"width": {
+				"$type": "string",
+				"$value": "100%"
+			},
+			"justifyContent": {
+				"$type": "string",
+				"$value": "flex-start"
+			},
+			"md": {
+				"flexDirection": {
+					"$type": "string",
+					"$value": "row"
+				}
+			}
+		}
+	}
+}
