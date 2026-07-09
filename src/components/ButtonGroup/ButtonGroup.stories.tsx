@@ -30,22 +30,6 @@ export const Small = {
 	args: { size: 'sm' },
 } satisfies Story;
 
-export const MultipleButtons = {
-	args: { size: 'lg' },
-	render: (args) => (
-		<ButtonGroup {...args}>
-			<Button>Button one</Button>
-			<Button>Button two</Button>
-			<Button>Button three</Button>
-			<Button>Button four</Button>
-			<Button>Button five</Button>
-			<Button>Button six</Button>
-			<Button>Button seven</Button>
-			<Button>Button eight</Button>
-		</ButtonGroup>
-	),
-} satisfies Story;
-
 export const CustomTheme = {
 	args: {
 		theme: {
