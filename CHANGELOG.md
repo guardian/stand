@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.56
+
+### Patch Changes
+
+- 487126c: Add `ButtonGroup` component
+
 ## 0.0.55
 
 ### Patch Changes
