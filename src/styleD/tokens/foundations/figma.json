@@ -1018,6 +1018,10 @@
 					"$type": "color",
 					"$value": "{base.colors.neutral.500}"
 				},
+				"link": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.200}"
+				},
 				"green": {
 					"$type": "color",
 					"$value": "{base.colors.green.100}"
@@ -1279,6 +1283,10 @@
 				"errorWeak": {
 					"$type": "color",
 					"$value": "{base.colors.red.800}"
+				},
+				"errorWeaker": {
+					"$type": "color",
+					"$value": "{base.colors.red.900}"
 				},
 				"errorStrong": {
 					"$type": "color",
