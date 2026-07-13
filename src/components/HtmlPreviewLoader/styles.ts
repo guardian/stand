@@ -23,6 +23,7 @@ export const htmlPreviewLoaderStyles = (
 		padding-bottom: ${theme.paddingBottom};
 		padding-left: ${theme.paddingLeft};
 		padding-right: ${theme.paddingRight};
+		position: relative;
 	`;
 };
 
@@ -35,10 +36,9 @@ export const headerStyles = (): SerializedStyles => {
 	`;
 };
 
-export const previewFrameStyle = (
-	{ previewFrame }: HtmlPreviewLoaderTheme,
-	isLoading: boolean,
-): SerializedStyles => {
+export const previewFrameStyle = ({
+	previewFrame,
+}: HtmlPreviewLoaderTheme): SerializedStyles => {
 	return css`
 		border-color: ${previewFrame.borderColor};
 		border-style: ${previewFrame.borderStyle};
@@ -48,8 +48,6 @@ export const previewFrameStyle = (
 		padding-bottom: ${previewFrame.paddingBottom};
 		padding-left: ${previewFrame.paddingLeft};
 		padding-right: ${previewFrame.paddingRight};
-		${isLoading ? 'backdrop-filter: blur(3px);' : ''}
-		transition: backdrop-filter 0.25s;
 		width: 100%;
 		display: flex;
 		justify-content: center;

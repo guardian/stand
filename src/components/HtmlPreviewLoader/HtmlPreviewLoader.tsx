@@ -1,24 +1,9 @@
 import { useEffect, useState } from 'react';
-import { mergeDeep } from '../../util/mergeDeep';
 import { HtmlPreview } from './HtmlPreview';
-import {
-	defaultHtmlPreviewLoaderTheme,
-	htmlPreviewLoaderStyles,
-} from './styles';
 import type { HtmlPreviewLoaderProps } from './types';
 
 export const HtmlPreviewLoader = (props: HtmlPreviewLoaderProps) => {
-	const mergedTheme = mergeDeep(
-		defaultHtmlPreviewLoaderTheme,
-		props.theme ?? {},
-	);
-	const {
-		fetchHtml,
-		minHeight = 600,
-		title,
-		widthOptions,
-		defaultWidth,
-	} = props;
+	const { fetchHtml, ...rest } = props;
 
 	const [html, setHtml] = useState<string>();
 	const [error, setError] = useState<unknown>();
@@ -34,17 +19,11 @@ export const HtmlPreviewLoader = (props: HtmlPreviewLoaderProps) => {
 	}, [fetchHtml]);
 
 	return (
-		<div css={[htmlPreviewLoaderStyles(mergedTheme), props.cssOverrides]}>
-			<HtmlPreview
-				title={title}
-				theme={mergedTheme}
-				html={html}
-				isLoading={isLoading}
-				minHeight={minHeight}
-				errorMessage={error ? 'failed to load preview' : undefined}
-				widthOptions={widthOptions}
-				defaultWidth={defaultWidth}
-			/>
-		</div>
+		<HtmlPreview
+			html={html}
+			isLoading={isLoading}
+			errorMessage={error ? 'failed to load preview' : undefined}
+			{...rest}
+		/>
 	);
 };

@@ -1,28 +1,18 @@
 import { css, keyframes } from '@emotion/react';
-import type { CSSProperties, ReactNode } from 'react';
 import { useState } from 'react';
+import { mergeDeep } from '../../util/mergeDeep';
+import { AlertBanner } from '../AlertBanner/AlertBanner';
 import { Icon } from '../Icon/Icon';
-import { InlineMessage } from '../InlineMessage/InlineMessage';
 import { Radio, RadioGroup } from '../RadioGroup/RadioGroup';
 import { Typography } from '../Typography/Typography';
 import {
+	defaultHtmlPreviewLoaderTheme,
 	headerStyles,
-	type HtmlPreviewLoaderTheme,
+	htmlPreviewLoaderStyles,
 	loadingIconStyle,
 	previewFrameStyle,
 } from './styles';
-
-interface Props {
-	title: ReactNode;
-	html?: string;
-	minHeight: number;
-	isLoading?: boolean;
-	errorMessage?: string;
-	theme: HtmlPreviewLoaderTheme;
-	frameBackground?: CSSProperties['background'];
-	widthOptions?: number[];
-	defaultWidth?: number;
-}
+import type { HtmlPreviewProps } from './types';
 
 const spin = keyframes({
 	from: { transform: 'rotate(0deg)' },
@@ -46,22 +36,21 @@ const defaultWidthOptions = [320, 375, 425, 650];
 export const HtmlPreview = ({
 	html,
 	title,
-	minHeight,
+	minHeight = 600,
 	isLoading = false,
 	errorMessage,
 	theme,
 	frameBackground = 'white',
 	defaultWidth = 425,
 	widthOptions = defaultWidthOptions,
-}: Props) => {
+	cssOverrides,
+}: HtmlPreviewProps) => {
+	const mergedTheme = mergeDeep(defaultHtmlPreviewLoaderTheme, theme ?? {});
+
 	const [frameWidth, setFrameWidth] = useState(defaultWidth);
 
 	return (
-		<div
-			css={{
-				position: 'relative',
-			}}
-		>
+		<div css={[htmlPreviewLoaderStyles(mergedTheme), cssOverrides]}>
 			<header css={headerStyles()}>
 				{typeof title === 'string' ? (
 					<Typography variant="titleMd">{title}</Typography>
@@ -103,7 +92,7 @@ export const HtmlPreview = ({
 
 			<div
 				css={[
-					previewFrameStyle(theme, isLoading),
+					previewFrameStyle(mergedTheme),
 					{
 						minHeight: minHeight,
 					},
@@ -116,6 +105,9 @@ export const HtmlPreview = ({
 							maxWidth: frameWidth,
 							border: 'none',
 							background: frameBackground,
+							filter: isLoading || errorMessage ? 'blur(3px)' : undefined,
+							transition: 'filter 0.25s',
+							pointerEvents: isLoading || errorMessage ? 'none' : undefined,
 						}}
 						title="preview"
 						srcDoc={html}
@@ -126,7 +118,7 @@ export const HtmlPreview = ({
 			{isLoading && (
 				<div css={styles.centre}>
 					<Icon
-						css={loadingIconStyle(theme)}
+						css={loadingIconStyle(mergedTheme)}
 						symbol="progress_activity"
 						cssOverrides={styles.spinAnimation}
 					/>
@@ -135,7 +127,9 @@ export const HtmlPreview = ({
 
 			{errorMessage && (
 				<div css={styles.centre}>
-					<InlineMessage level="error">{errorMessage}</InlineMessage>
+					<AlertBanner showIcon={true} level="error">
+						{errorMessage}
+					</AlertBanner>
 				</div>
 			)}
 		</div>

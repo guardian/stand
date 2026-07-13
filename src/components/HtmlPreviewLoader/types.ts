@@ -1,11 +1,23 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import type { DefaultProps } from '../../util/types';
 import type { HtmlPreviewLoaderTheme } from './styles';
 
-export type HtmlPreviewLoaderProps = DefaultProps<HtmlPreviewLoaderTheme> & {
-	fetchHtml: { (): Promise<string> };
+type CommonProps = {
 	minHeight?: number;
 	title: ReactNode;
 	widthOptions?: number[];
 	defaultWidth?: number;
+	frameBackground?: CSSProperties['background'];
 };
+
+export type HtmlPreviewLoaderProps = DefaultProps<HtmlPreviewLoaderTheme> &
+	CommonProps & {
+		fetchHtml: { (): Promise<string> };
+	};
+
+export type HtmlPreviewProps = DefaultProps<HtmlPreviewLoaderTheme> &
+	CommonProps & {
+		html?: string;
+		isLoading?: boolean;
+		errorMessage?: string;
+	};
