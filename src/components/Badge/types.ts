@@ -1,15 +1,12 @@
-import { 
-	type ComponentBadge,
-	componentBadge,
-} from '../../styleD/build/typescript/component/badge';
+import { componentBadge } from '../../styleD/build/typescript/component/badge';
 import type { DefaultProps } from '../../util/types';
 import type { BadgeTheme } from './styles';
 
-export type BadgeColors = keyof ComponentBadge['color'];
-export type BadgeSizes = keyof ComponentBadge['size'];
+export type BadgeColors = keyof typeof componentBadge.color;
+export type BadgeSizes = keyof typeof componentBadge.size;
 
-export const badgeColors: BadgeColors[] = Object.keys(componentBadge.color);
-export const badgeSizes: BadgeSizes[] = Object.keys(componentBadge.size);
+export const badgeColors = Object.keys(componentBadge.color) as BadgeColors[];
+export const badgeSizes = Object.keys(componentBadge.size) as BadgeSizes[];
 
 export interface BadgeProps extends DefaultProps<BadgeTheme> {
 	/**
@@ -20,4 +17,4 @@ export interface BadgeProps extends DefaultProps<BadgeTheme> {
 	 * Color variant of the badge
 	 */
 	color?: BadgeColors;
-};
+}
