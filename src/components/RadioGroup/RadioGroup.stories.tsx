@@ -106,6 +106,23 @@ export const SizeSmall = {
 	},
 } satisfies Story;
 
+export const HorizontalSizeSmall = {
+	name: 'Horizontal - size sm',
+	render: () => {
+		return (
+			<RadioGroup
+				label="Label"
+				description="Optional contextual help text"
+				orientation="horizontal"
+				size="sm"
+			>
+				<Radio value="Test">Option 1</Radio>
+				<Radio value="Test2">Option 2</Radio>
+			</RadioGroup>
+		);
+	},
+} satisfies Story;
+
 export const CustomTheme = {
 	render: () => {
 		return (
