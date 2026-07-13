@@ -8,6 +8,7 @@ type CommonProps = {
 	widthOptions?: number[];
 	defaultWidth?: number;
 	frameBackground?: CSSProperties['background'];
+	allowReloading?: boolean;
 };
 
 export type HtmlPreviewLoaderProps = DefaultProps<HtmlPreviewLoaderTheme> &
@@ -20,4 +21,5 @@ export type HtmlPreviewProps = DefaultProps<HtmlPreviewLoaderTheme> &
 		html?: string;
 		isLoading?: boolean;
 		errorMessage?: string;
+		attemptLoad?: { (): void };
 	};

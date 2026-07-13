@@ -51,6 +51,17 @@ export const previewFrameStyle = ({
 		width: 100%;
 		display: flex;
 		justify-content: center;
+		position: relative;
+	`;
+};
+
+export const reloadButtonStyle = ({
+	previewFrame,
+}: HtmlPreviewLoaderTheme): SerializedStyles => {
+	return css`
+		position: absolute;
+		bottom: ${previewFrame.paddingBottom};
+		right: ${previewFrame.paddingRight};
 	`;
 };
 

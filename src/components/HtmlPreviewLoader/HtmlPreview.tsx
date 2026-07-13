@@ -2,6 +2,7 @@ import { css, keyframes } from '@emotion/react';
 import { useState } from 'react';
 import { mergeDeep } from '../../util/mergeDeep';
 import { AlertBanner } from '../AlertBanner/AlertBanner';
+import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
 import { Radio, RadioGroup } from '../RadioGroup/RadioGroup';
 import { Typography } from '../Typography/Typography';
@@ -11,6 +12,7 @@ import {
 	htmlPreviewLoaderStyles,
 	loadingIconStyle,
 	previewFrameStyle,
+	reloadButtonStyle,
 } from './styles';
 import type { HtmlPreviewProps } from './types';
 
@@ -35,19 +37,20 @@ const defaultWidthOptions = [320, 375, 425, 650];
 
 export const HtmlPreview = ({
 	html,
-	title,
-	minHeight = 600,
 	isLoading = false,
 	errorMessage,
-	theme,
-	frameBackground = 'white',
-	defaultWidth = 425,
+	attemptLoad,
+	minHeight = 600,
+	title,
 	widthOptions = defaultWidthOptions,
+	defaultWidth = 425,
+	frameBackground = 'white',
 	cssOverrides,
+	theme,
 }: HtmlPreviewProps) => {
 	const mergedTheme = mergeDeep(defaultHtmlPreviewLoaderTheme, theme ?? {});
-
 	const [frameWidth, setFrameWidth] = useState(defaultWidth);
+	const showReloadButton = !errorMessage && !isLoading && !!attemptLoad;
 
 	return (
 		<div css={[htmlPreviewLoaderStyles(mergedTheme), cssOverrides]}>
@@ -113,6 +116,19 @@ export const HtmlPreview = ({
 						srcDoc={html}
 					/>
 				)}
+
+				{showReloadButton && (
+					<div css={reloadButtonStyle(mergedTheme)}>
+						<Button
+							icon="refresh"
+							size="md"
+							variant="primary"
+							onClick={attemptLoad}
+						>
+							reload
+						</Button>
+					</div>
+				)}
 			</div>
 
 			{isLoading && (
@@ -128,7 +144,25 @@ export const HtmlPreview = ({
 			{errorMessage && (
 				<div css={styles.centre}>
 					<AlertBanner showIcon={true} level="error">
-						{errorMessage}
+						<div
+							css={{
+								display: 'flex',
+								gap: 10,
+								alignItems: 'center',
+							}}
+						>
+							{errorMessage}
+							{attemptLoad && (
+								<Button
+									icon="refresh"
+									size="sm"
+									variant="secondary"
+									onClick={attemptLoad}
+								>
+									retry
+								</Button>
+							)}
+						</div>
 					</AlertBanner>
 				</div>
 			)}

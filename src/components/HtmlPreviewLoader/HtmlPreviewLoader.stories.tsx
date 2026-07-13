@@ -12,17 +12,33 @@ const meta = {
 
 type Story = StoryObj<typeof HtmlPreviewLoader>;
 
-const fetchBreakingNewsHtml = () => {
+const delay = (ms = 1000) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const fetchBreakingNewsHtml = async () => {
+	await delay();
 	return Promise.resolve(BreakingNewsAustralia_Red_2_email);
 };
-const fetchArticleHtml = () => {
+const fetchArticleHtml = async () => {
+	await delay();
 	return Promise.resolve(articleEmail);
+};
+const failToFetch = async () => {
+	await delay();
+	return Promise.reject(new Error('Could not fetch preview'));
 };
 
 export const Default = {
 	args: {
 		title: 'html preview',
 		fetchHtml: fetchBreakingNewsHtml,
+	},
+} satisfies Story;
+
+export const WithReloadButton = {
+	args: {
+		title: 'html preview',
+		fetchHtml: fetchBreakingNewsHtml,
+		allowReloading: true,
 	},
 } satisfies Story;
 
@@ -67,11 +83,7 @@ export const Loading = {
 export const WithError = {
 	args: {
 		title: 'html preview that fails',
-		fetchHtml: () => {
-			return new Promise<string>((_, reject) => {
-				reject(new Error('Could not fetch preview'));
-			});
-		},
+		fetchHtml: failToFetch,
 	},
 } satisfies Story;
 
