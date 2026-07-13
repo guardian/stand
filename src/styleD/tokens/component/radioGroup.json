@@ -16,9 +16,19 @@
 					"$type": "string",
 					"$value": "flex"
 				},
-				"flexDirection": {
-					"$type": "string",
-					"$value": "column"
+				"orientation": {
+					"vertical": {
+						"flexDirection": {
+							"$type": "string",
+							"$value": "column"
+						}
+					},
+					"horizontal": {
+						"flexDirection": {
+							"$type": "string",
+							"$value": "row"
+						}
+					}
 				},
 				"radio": {
 					"color": {
