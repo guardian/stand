@@ -6,4 +6,6 @@ export type HtmlPreviewLoaderProps = DefaultProps<HtmlPreviewLoaderTheme> & {
 	fetchHtml: { (): Promise<string> };
 	minHeight?: number;
 	title: ReactNode;
+	widthOptions?: number[];
+	defaultWidth?: number;
 };

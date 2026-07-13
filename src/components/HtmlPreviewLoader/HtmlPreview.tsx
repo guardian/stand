@@ -20,6 +20,8 @@ interface Props {
 	errorMessage?: string;
 	theme: HtmlPreviewLoaderTheme;
 	frameBackground?: CSSProperties['background'];
+	widthOptions?: number[];
+	defaultWidth?: number;
 }
 
 const spin = keyframes({
@@ -39,7 +41,7 @@ const styles = {
 	}),
 };
 
-const widthOptions = [320, 375, 425, 650] as const;
+const defaultWidthOptions = [320, 375, 425, 650];
 
 export const HtmlPreview = ({
 	html,
@@ -49,8 +51,10 @@ export const HtmlPreview = ({
 	errorMessage,
 	theme,
 	frameBackground = 'white',
+	defaultWidth = 425,
+	widthOptions = defaultWidthOptions,
 }: Props) => {
-	const [frameWidth, setFrameWidth] = useState(425);
+	const [frameWidth, setFrameWidth] = useState(defaultWidth);
 
 	return (
 		<div
@@ -64,35 +68,37 @@ export const HtmlPreview = ({
 				) : (
 					title
 				)}
-				<RadioGroup
-					size="sm"
-					label="width"
-					orientation="horizontal"
-					theme={{
-						shared: {
-							flexDirection: 'row',
-						},
-					}}
-					formInputContainerTheme={{
-						shared: {
-							container: {
-								width: 'unset',
+				{widthOptions.length > 0 && (
+					<RadioGroup
+						size="sm"
+						label="width"
+						orientation="horizontal"
+						theme={{
+							shared: {
 								flexDirection: 'row',
 							},
-						},
-					}}
-					cssOverrides={css({
-						alignItems: 'center',
-					})}
-					value={String(frameWidth)}
-					onChange={(value) => setFrameWidth(Number(value))}
-				>
-					{widthOptions.map((width) => (
-						<Radio key={width} value={String(width)}>
-							{width}px
-						</Radio>
-					))}
-				</RadioGroup>
+						}}
+						formInputContainerTheme={{
+							shared: {
+								container: {
+									width: 'unset',
+									flexDirection: 'row',
+								},
+							},
+						}}
+						cssOverrides={css({
+							alignItems: 'center',
+						})}
+						value={String(frameWidth)}
+						onChange={(value) => setFrameWidth(Number(value))}
+					>
+						{widthOptions.map((width, index) => (
+							<Radio key={index} value={String(width)}>
+								{width}px
+							</Radio>
+						))}
+					</RadioGroup>
+				)}
 			</header>
 
 			<div

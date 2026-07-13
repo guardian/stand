@@ -26,6 +26,24 @@ export const Default = {
 	},
 } satisfies Story;
 
+export const WithCustomWidthOptions = {
+	args: {
+		title: 'html preview',
+		fetchHtml: fetchBreakingNewsHtml,
+		widthOptions: [200, 400],
+		defaultWidth: 400,
+	},
+} satisfies Story;
+
+export const WithoutWidthOptions = {
+	args: {
+		title: 'html preview',
+		fetchHtml: fetchBreakingNewsHtml,
+		widthOptions: [],
+		defaultWidth: 500,
+	},
+} satisfies Story;
+
 export const CustomTitleMarkup = {
 	args: {
 		title: (
@@ -64,9 +82,12 @@ export const CustomTheme = {
 		theme: {
 			shared: {
 				color: {
-					background: 'blue',
-					text: 'lime',
+					background: 'skyblue',
 				},
+			},
+			paddingBottom: '20px',
+			previewFrame: {
+				backgroundColor: 'lime',
 			},
 		},
 	},

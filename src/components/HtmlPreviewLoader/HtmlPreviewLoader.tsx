@@ -12,7 +12,13 @@ export const HtmlPreviewLoader = (props: HtmlPreviewLoaderProps) => {
 		defaultHtmlPreviewLoaderTheme,
 		props.theme ?? {},
 	);
-	const { fetchHtml, minHeight = 600, title } = props;
+	const {
+		fetchHtml,
+		minHeight = 600,
+		title,
+		widthOptions,
+		defaultWidth,
+	} = props;
 
 	const [html, setHtml] = useState<string>();
 	const [error, setError] = useState<unknown>();
@@ -36,6 +42,8 @@ export const HtmlPreviewLoader = (props: HtmlPreviewLoaderProps) => {
 				isLoading={isLoading}
 				minHeight={minHeight}
 				errorMessage={error ? 'failed to load preview' : undefined}
+				widthOptions={widthOptions}
+				defaultWidth={defaultWidth}
 			/>
 		</div>
 	);
