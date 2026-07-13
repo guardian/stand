@@ -1,0 +1,151 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import HtmlPreviewLoaderStories, {
+	Default,
+	CustomMessage,
+	CustomTheme,
+	CssOverrides,
+} from './HtmlPreviewLoader.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={HtmlPreviewLoaderStories} />
+
+# HtmlPreviewLoader
+
+The HtmlPreviewLoader component [[enter description of purpose]].
+
+## When to use
+
+- [[use case]]
+- [[use case]]
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--docs#installing-icons) for more on installing icons.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { HtmlPreviewLoader } from '@guardian/stand/HtmlPreviewLoader';
+
+/* types, if required */
+import type { HtmlPreviewLoaderProps, HtmlPreviewLoaderTheme } from '@guardian/stand/HtmlPreviewLoader';
+
+/* Default */
+<HtmlPreviewLoader />
+
+/* Custom */
+<HtmlPreviewLoader message="hi" />
+
+```
+
+## Props
+
+| Name           | Type                     | Required | Default       | Description                                         |
+| -------------- | ------------------------ | -------- | ------------- | --------------------------------------------------- |
+| `message`      | `string`                 | No       | "hello world" | string to render in the HtmlPreviewLoader.          |
+| `theme`        | `HtmlPreviewLoaderTheme` | No       | N/A           | Custom theme overrides for the HtmlPreviewLoader.   |
+| `cssOverrides` | `SerializedStyles`       | No       | N/A           | Custom CSS styles for the HtmlPreviewLoader.        |
+| `className`    | `string`                 | No       | N/A           | Additional class name(s) for the HtmlPreviewLoader. |
+
+## Stories
+
+<Canvas layout="padded" of={Default} />
+<Canvas layout="padded" of={CustomMessage} />
+<Canvas layout="padded" of={CustomTheme} />
+<Canvas layout="padded" of={CssOverrides} />
+
+## Customisation
+
+We recommend using the HtmlPreviewLoader component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the HtmlPreviewLoader component:
+
+<Canvas layout="padded" of={CustomTheme} />
+
+```tsx
+import type { HtmlPreviewLoaderTheme } from '@guardian/stand/HtmlPreviewLoader';
+import { HtmlPreviewLoader } from '@guardian/stand/HtmlPreviewLoader';
+import { baseColors, baseSizing } from '@guardian/stand';
+
+const customTheme: HtmlPreviewLoaderTheme = {
+	color: {
+		blue: {
+			background: baseColors.coolPurple[700],
+			text: baseColors.orange[300],
+		},
+	},
+};
+
+const Component = () => <HtmlPreviewLoader letter="C" theme={customTheme} />;
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the HtmlPreviewLoader component, if the theme prop is not sufficient:
+
+<Canvas layout="padded" of={CssOverrides} />
+
+```tsx
+import { HtmlPreviewLoader } from '@guardian/stand/HtmlPreviewLoader';
+import { baseColors, baseSizing, baseSpacing } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
+	background-color: ${baseColors.orange[700]};
+	color: ${baseColors.warmPurple[300]};
+	border-radius: ${baseRadius.corner4Px};
+`;
+
+const Component = () => (
+	<HtmlPreviewLoader letter="O" cssOverrides={customStyles} />
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom HtmlPreviewLoader component using the styles defined in the `HtmlPreviewLoaderTheme` type.
+
+You will however be responsible for any additional functionality on top of the styles, for example image loading, image fallback, accessibility etc.
+
+See "Custom Component" heading under the "HtmlPreviewLoader" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-forked-j8cjhy)
+
+**`css`**
+
+You can import the HtmlPreviewLoader styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentHtmlPreviewLoader` variable and the `ComponentHtmlPreviewLoader` type to define your custom styles in TypeScript/JavaScript:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
