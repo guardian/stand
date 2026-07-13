@@ -9,7 +9,7 @@
 	--component-text-input-shared-padding-right: 0.75rem;
 	--component-text-input-shared-padding-bottom: 0;
 	--component-text-input-shared-padding-left: 0.75rem;
-	--component-text-input-shared-margin-top: 0.5rem; /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
+	--component-text-input-shared-margin-top: 0.25rem; /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 8px, then margin-top should be 4px */
 	--component-text-input-shared-border-radius: 0.25rem;
 	--component-text-input-shared-border: 0.0625rem solid #545454;
 	--component-text-input-shared-background-color: #ffffff;
