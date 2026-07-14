@@ -12,14 +12,22 @@ export const defaultRadioGroupTheme: RadioGroupTheme = componentRadioGroup;
 
 export const radioGroupStyles = (
 	theme: RadioGroupTheme,
-	{ size }: Required<Pick<RadioGroupProps, 'size'>>,
+	{
+		size,
+		orientation,
+	}: Required<Pick<RadioGroupProps, 'size' | 'orientation'>>,
 ): SerializedStyles => {
 	return css`
 		display: ${theme.shared.display};
-		flex-direction: ${theme.shared.flexDirection};
+		flex-direction: ${theme.shared.orientation.vertical.flexDirection};
 		gap: ${theme[size].gap};
 		margin-top: ${theme.shared.marginTop};
 		margin-bottom: ${theme.shared.marginBottom};
+
+		${orientation === 'horizontal' &&
+		css`
+			flex-direction: ${theme.shared.orientation.horizontal.flexDirection};
+		`}
 	`;
 };
 

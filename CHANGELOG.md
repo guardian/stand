@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.58
+
+### Patch Changes
+
+- 494e4ee: Add `orientation` prop to `RadioGroup`
+
 ## 0.0.57
 
 ### Patch Changes

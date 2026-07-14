@@ -48,7 +48,7 @@ export const componentCss = /* css */ `
 
 .stand-radio-group {
 	display: var(--component-radio-group-shared-display);
-	flex-direction: var(--component-radio-group-shared-flex-direction);
+	flex-direction: var(--component-radio-group-shared-orientation-vertical-flex-direction);
 	gap: var(--component-radio-group-md-gap);
 	margin-top: var(--component-radio-group-shared-margin-top);
 	margin-bottom: var(--component-radio-group-shared-margin-bottom);
@@ -133,7 +133,7 @@ sheet.replaceSync(\`
 
 .stand-radio-group {
 	display: \${componentRadioGroup.shared.display};
-	flex-direction: \${componentRadioGroup.shared.flexDirection};
+	flex-direction: \${componentRadioGroup.shared.orientation.vertical.flexDirection};
 	gap: \${componentRadioGroup.md.gap};
 	margin-top: \${componentRadioGroup.shared.marginTop};
 	margin-bottom: \${componentRadioGroup.shared.marginBottom};

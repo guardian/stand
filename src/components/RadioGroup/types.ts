@@ -16,6 +16,11 @@ export interface RadioProps
 		DefaultProps<RadioGroupTheme, RACRadioProps['className']>,
 		RACRadioProps {
 	size?: keyof Omit<RadioGroupTheme, 'shared'>;
+	/**
+	 * Orientation of the radio buttons. Can be either 'horizontal' or 'vertical'.
+	 * @default 'vertical'
+	 */
+	orientation?: 'horizontal' | 'vertical';
 	/** Whether the input value is invalid. */
 	isInvalid?: boolean;
 }
