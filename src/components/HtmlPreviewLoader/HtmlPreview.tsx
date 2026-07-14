@@ -65,11 +65,6 @@ export const HtmlPreview = ({
 						size="sm"
 						label="width"
 						orientation="horizontal"
-						theme={{
-							shared: {
-								flexDirection: 'row',
-							},
-						}}
 						formInputContainerTheme={{
 							shared: {
 								container: {
