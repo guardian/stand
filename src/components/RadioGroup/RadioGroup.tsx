@@ -16,6 +16,7 @@ import type { RadioGroupProps, RadioProps } from './types';
 
 export function RadioGroup({
 	size = 'md',
+	orientation = 'vertical',
 	isInvalid = false,
 	theme = {},
 	children,
@@ -46,7 +47,9 @@ export function RadioGroup({
 			isInvalid={isInvalid}
 			{...props}
 		>
-			<div css={radioGroupStyles(mergedTheme, { size })}>{radios}</div>
+			<div css={radioGroupStyles(mergedTheme, { size, orientation })}>
+				{radios}
+			</div>
 		</FormInputContainer>
 	);
 }
