@@ -1,14 +1,28 @@
-import { mergeDeep } from '../../util/mergeDeep';
-import { defaultTooltipTheme, tooltipStyles } from './styles';
-import type { TooltipProps } from './types';
+import {
+	Button as ReactAriaButton,
+	Tooltip as ReactAriaTooltip,
+	TooltipTrigger as ReactAriaTooltipTrigger,
+} from 'react-aria-components';
+// import { mergeDeep } from '../../util/mergeDeep';
+import { Icon } from '../Icon/Icon';
+import {
+	// defaultTooltipTheme,
+	tooltipStyles,
+	tooltipTriggerStyles,
+} from './styles';
+// import type { TooltipProps } from './types';
 
-export const Tooltip = (props: TooltipProps) => {
-	const mergedTheme = mergeDeep(defaultTooltipTheme, props.theme ?? {});
+export const Tooltip = () => {
+	// const mergedTheme = mergeDeep(defaultTooltipTheme, props.theme ?? {});
 
 	return (
-		<div css={[tooltipStyles(mergedTheme), props.cssOverrides]}>
-			<p>template component</p>
-			<p>{props.message ?? 'hello world'}</p>
-		</div>
+		<ReactAriaTooltipTrigger delay={0}>
+			<ReactAriaButton css={tooltipTriggerStyles}>
+				<Icon size="sm" symbol="question_mark" />
+			</ReactAriaButton>
+			<ReactAriaTooltip css={tooltipStyles} placement="end">
+				Tooltip text
+			</ReactAriaTooltip>
+		</ReactAriaTooltipTrigger>
 	);
 };
