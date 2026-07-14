@@ -47,6 +47,16 @@
 				"default": "./dist/AvatarButton.cjs"
 			}
 		},
+		"./Badge": {
+			"import": {
+				"types": "./dist/Badge.d.ts",
+				"default": "./dist/Badge.js"
+			},
+			"require": {
+				"types": "./dist/Badge.d.cts",
+				"default": "./dist/Badge.cjs"
+			}
+		},
 		"./Button": {
 			"import": {
 				"types": "./dist/Button.d.ts",
@@ -396,6 +406,9 @@
 			],
 			"AvatarLink": [
 				"./dist/AvatarLink.d.ts"
+			],
+			"Badge": [
+				"./dist/Badge.d.ts"
 			],
 			"Button": [
 				"./dist/Button.d.ts"

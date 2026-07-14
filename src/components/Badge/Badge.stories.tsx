@@ -1,44 +1,41 @@
 // import { css } from '@emotion/react';
-// import type { Meta, StoryObj } from '@storybook/react-vite';
-// import { Badge } from './Badge';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { Badge } from './Badge';
 
-// const meta = {
-// 	title: 'Stand/Tools Design System/Components/Badge',
-// 	component: Badge,
-// 	parameters: {},
-// } satisfies Meta<typeof Badge>;
+const meta = {
+	title: 'Stand/Tools Design System/Components/Badge',
+	component: Badge,
+	parameters: {},
+} satisfies Meta<typeof Badge>;
 
-// type Story = StoryObj<typeof Badge>;
+type Story = StoryObj<typeof Badge>;
 
-// export const Default = {
-// 	args: {},
-// } satisfies Story;
+export const Default = {
+	args: {
+		size: 'md',
+		color: 'green',
+	},
+} satisfies Story;
 
-// export const CustomMessage = {
-// 	args: {
-// 		message: 'hi there',
-// 	},
-// } satisfies Story;
+export const CustomMessage = {
+	args: {
+		size: 'md',
+		color: 'green',
+	},
+} satisfies Story;
 
-// export const CustomTheme = {
-// 	args: {
-// 		theme: {
-// 			color: {
-// 				background: 'blue',
-// 				text: 'lime',
-// 			},
-// 		},
-// 	},
-// } satisfies Story;
+export const CustomTheme = {
+	args: {
+		size: 'md',
+		color: 'green',
+	},
+} satisfies Story;
 
-// export const CssOverrides = {
-// 	args: {
-// 		cssOverrides: css({
-// 			color: 'red',
-// 			border: '4px dotted black',
-// 			padding: 5,
-// 		}),
-// 	},
-// } satisfies Story;
+export const CssOverrides = {
+	args: {
+		size: 'md',
+		color: 'green',
+	},
+} satisfies Story;
 
-// export default meta;
+export default meta;
