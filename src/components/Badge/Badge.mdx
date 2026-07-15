@@ -1,7 +1,6 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import BadgeStories, {
-	Default,
-	CustomMessage,
+	BadgeTable,
 	CustomTheme,
 	CssOverrides,
 } from './Badge.stories';
@@ -53,28 +52,29 @@ import { Badge } from '@guardian/stand/Badge';
 import type { BadgeProps, BadgeTheme } from '@guardian/stand/Badge';
 
 /* Default */
-<Badge />
-
-/* Custom */
-<Badge message="hi" />
-
+<Badge color="green" size="md">
+	This is a badge
+</Badge>;
 ```
 
 ## Props
 
-| Name           | Type               | Required | Default       | Description                             |
-| -------------- | ------------------ | -------- | ------------- | --------------------------------------- |
-| `message`      | `string`           | No       | "hello world" | string to render in the Badge.          |
-| `theme`        | `BadgeTheme`       | No       | N/A           | Custom theme overrides for the Badge.   |
-| `cssOverrides` | `SerializedStyles` | No       | N/A           | Custom CSS styles for the Badge.        |
-| `className`    | `string`           | No       | N/A           | Additional class name(s) for the Badge. |
+| Name           | Type               | Required | Default | Description                             |
+| -------------- | ------------------ | -------- | ------- | --------------------------------------- |
+| `theme`        | `BadgeTheme`       | No       | N/A     | Custom theme overrides for the Badge.   |
+| `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles for the Badge.        |
+| `className`    | `string`           | No       | N/A     | Additional class name(s) for the Badge. |
+
+**`size` and `color`**
+
+- Sizes: `xs`, `sm`, `md`
+- Variants: `green`, `yellow`, `grey`, `orange`, `warmPurple`, `red`
 
 ## Stories
 
-<Canvas layout="padded" of={Default} />
-<Canvas layout="padded" of={CustomMessage} />
-<Canvas layout="padded" of={CustomTheme} />
-<Canvas layout="padded" of={CssOverrides} />
+### All colors and sizes
+
+<Canvas layout="padded" of={BadgeTable} />
 
 ## Customisation
 
@@ -92,15 +92,11 @@ import { Badge } from '@guardian/stand/Badge';
 import { baseColors, baseSizing } from '@guardian/stand';
 
 const customTheme: BadgeTheme = {
-	color: {
-		blue: {
-			background: baseColors.coolPurple[700],
-			text: baseColors.orange[300],
-		},
-	},
+	color: baseColors.coolPurple[700],
+	size: baseSizing.size32Rem,
 };
 
-const Component = () => <Badge letter="C" theme={customTheme} />;
+const Component = () => <Badge theme={customTheme}>Customised Badge</Badge>;
 ```
 
 ### CSS overrides
@@ -111,7 +107,7 @@ The `cssOverrides` prop allows you to pass custom CSS to the Badge component, if
 
 ```tsx
 import { Badge } from '@guardian/stand/Badge';
-import { baseColors, baseSizing, baseSpacing } from '@guardian/stand';
+import { baseColors, baseSizing, baseRadius } from '@guardian/stand';
 import { css } from '@emotion/react';
 
 const customStyles = css`
@@ -121,7 +117,9 @@ const customStyles = css`
 	border-radius: ${baseRadius.corner4Px};
 `;
 
-const Component = () => <Badge letter="O" cssOverrides={customStyles} />;
+const Component = () => (
+	<Badge cssOverrides={customStyles}>Overridden Badge</Badge>
+);
 ```
 
 ## Custom Component Build
