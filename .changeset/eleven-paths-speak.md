@@ -3,4 +3,4 @@
 ---
 
 add html preview loader
-add skills fiels for component docs
+add skills files for component docs

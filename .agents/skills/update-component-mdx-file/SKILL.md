@@ -12,6 +12,7 @@ Populate or update an MDX document so it explains how to use a component, mirror
 ## Required approach
 
 - Follow the same document structure and headings as the reference component docs, especially the patterns used in existing component docs such as src/components/Favicon/Favicon.mdx, src/components/Button/Button.mdx, and src/components/Avatar/Avatar.mdx.
+- If the component is based on [React Aria](https://react-aria.adobe.com/getting-started), then also include a link to the React Aria docs for that component e.g. https://react-aria.adobe.com/Button for the Button component
 - Use the same high-level sections in order:
   1. Overview/introductory description
   2. When to use
@@ -36,6 +37,7 @@ Populate or update an MDX document so it explains how to use a component, mirror
 - If the meaning or purpose of a prop cannot be confidently inferred, leave the Description cell blank rather than guessing.
 - If the prop is clearly optional or required, reflect that in the Required column using wording such as "No", "Yes", or "Conditional".
 - Use the component's TypeScript props interface or type definitions to populate the Type column accurately.
+- If the component is based on [React Aria](https://react-aria.adobe.com/getting-started), then also include a link to the React Aria docs for that component API for additional props/prop information e.g. https://react-aria.adobe.com/Button#api for the Button component API
 
 ## Content expectations
 

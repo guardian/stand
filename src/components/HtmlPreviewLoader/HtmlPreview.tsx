@@ -45,12 +45,14 @@ export const HtmlPreview = ({
 	widthOptions = defaultWidthOptions,
 	defaultWidth = 425,
 	frameBackground = 'white',
+	allowReloading = false,
 	cssOverrides,
 	theme,
 }: HtmlPreviewProps) => {
 	const mergedTheme = mergeDeep(defaultHtmlPreviewLoaderTheme, theme ?? {});
 	const [frameWidth, setFrameWidth] = useState(defaultWidth);
-	const showReloadButton = !errorMessage && !isLoading && !!attemptLoad;
+	const showReloadButton =
+		allowReloading && !errorMessage && !isLoading && !!attemptLoad;
 
 	return (
 		<div css={[htmlPreviewLoaderStyles(mergedTheme), cssOverrides]}>
@@ -98,6 +100,7 @@ export const HtmlPreview = ({
 			>
 				{html && (
 					<iframe
+						sandbox=""
 						style={{
 							minWidth: frameWidth,
 							maxWidth: frameWidth,
@@ -118,7 +121,7 @@ export const HtmlPreview = ({
 							icon="refresh"
 							size="md"
 							variant="primary"
-							onClick={attemptLoad}
+							onPress={attemptLoad}
 						>
 							reload
 						</Button>
@@ -152,7 +155,7 @@ export const HtmlPreview = ({
 									icon="refresh"
 									size="sm"
 									variant="secondary"
-									onClick={attemptLoad}
+											onPress={attemptLoad}
 								>
 									retry
 								</Button>
