@@ -1,0 +1,202 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import HtmlPreviewLoaderStories, {
+	Default,
+	WithReloadButton,
+	WithCustomWidthOptions,
+	WithoutWidthOptions,
+	CustomTitleMarkup,
+	Loading,
+	WithError,
+	CustomTheme,
+	CssOverrides,
+} from './HtmlPreviewLoader.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={HtmlPreviewLoaderStories} />
+
+# HtmlPreviewLoader
+
+The HtmlPreviewLoader component fetches HTML markup, renders it inside an iframe-based preview frame, and surfaces loading, error, and reload states while the preview is being prepared. It is useful for rendering email or document markup in a controlled preview surface.
+
+## When to use
+
+- When you need to preview HTML content such as email templates or document markup in the UI.
+- When the preview content is loaded asynchronously and should show loading or error feedback.
+- When the preview should support width switching and an optional reload affordance.
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { HtmlPreviewLoader } from '@guardian/stand/HtmlPreviewLoader';
+
+const fetchHtml = async () => {
+	return '<div>Preview content</div>';
+};
+
+export const Component = () => (
+	<HtmlPreviewLoader
+		fetchHtml={fetchHtml}
+		title="Preview"
+		allowReloading
+		widthOptions={[200, 400]}
+		defaultWidth={400}
+	/>
+);
+```
+
+## Props
+
+| Name              | Type                          | Required | Default                | Description                                                               |
+| ----------------- | ----------------------------- | -------- | ---------------------- | ------------------------------------------------------------------------- |
+| `fetchHtml`       | `{ (): Promise<string> }`     | Yes      | N/A                    | Function that resolves to the HTML string to render in the preview frame. |
+| `title`           | `ReactNode`                   | Yes      | N/A                    | Title content shown above the preview.                                    |
+| `minHeight`       | `number`                      | No       | `600`                  | Minimum height of the preview frame in pixels.                            |
+| `widthOptions`    | `number[]`                    | No       | `[320, 375, 425, 650]` | Available frame widths shown in the width selector.                       |
+| `defaultWidth`    | `number`                      | No       | `425`                  | Initial width used for the preview frame.                                 |
+| `frameBackground` | `CSSProperties['background']` | No       | `'white'`              | Background applied to the iframe.                                         |
+| `allowReloading`  | `boolean`                     | No       | `false`                | Shows a reload button when the preview can be refreshed.                  |
+| `theme`           | `HtmlPreviewLoaderTheme`      | No       | `undefined`            | Theme overrides for the HtmlPreviewLoader.                                |
+| `cssOverrides`    | `SerializedStyles`            | No       | `undefined`            | Custom CSS styles applied to the wrapper.                                 |
+| `className`       | `string`                      | No       | `undefined`            | Additional class name(s) for the HtmlPreviewLoader.                       |
+
+## Stories
+
+### Default
+
+<Canvas layout="padded" of={Default} />
+
+### Reload button
+
+<Canvas layout="padded" of={WithReloadButton} />
+
+### Custom width options
+
+<Canvas layout="padded" of={WithCustomWidthOptions} />
+
+### Without width options
+
+<Canvas layout="padded" of={WithoutWidthOptions} />
+
+### Custom title markup
+
+<Canvas layout="padded" of={CustomTitleMarkup} />
+
+### Loading state
+
+<Canvas layout="padded" of={Loading} />
+
+### Error state
+
+<Canvas layout="padded" of={WithError} />
+
+### Custom theme
+
+<Canvas layout="padded" of={CustomTheme} />
+
+### CSS overrides
+
+<Canvas layout="padded" of={CssOverrides} />
+
+## Customisation
+
+We recommend using the HtmlPreviewLoader component as provided, but it can be customised with the `theme` or `cssOverrides` props when the default styling needs to be adjusted.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the HtmlPreviewLoader component:
+
+```tsx
+import type { HtmlPreviewLoaderTheme } from '@guardian/stand/HtmlPreviewLoader';
+import { HtmlPreviewLoader } from '@guardian/stand/HtmlPreviewLoader';
+import { baseColors } from '@guardian/stand';
+
+const customTheme: HtmlPreviewLoaderTheme = {
+	shared: {
+		color: {
+			background: baseColors.coolPurple[700],
+		},
+	},
+	paddingBottom: '20px',
+	previewFrame: {
+		backgroundColor: 'lime',
+	},
+};
+
+const Component = () => (
+	<HtmlPreviewLoader
+		fetchHtml={async () => '<div>Preview</div>'}
+		title="Preview"
+		theme={customTheme}
+	/>
+);
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the HtmlPreviewLoader component when the theme prop is not sufficient:
+
+```tsx
+import { HtmlPreviewLoader } from '@guardian/stand/HtmlPreviewLoader';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	border: 4px dotted black;
+	padding: 5px;
+	color: red;
+`;
+
+const Component = () => (
+	<HtmlPreviewLoader
+		fetchHtml={async () => '<div>Preview</div>'}
+		title="Preview"
+		cssOverrides={customStyles}
+	/>
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom HtmlPreviewLoader component using the styles defined in the `HtmlPreviewLoaderTheme` type.
+
+You will still need to implement any additional functionality on top of the styles, such as loading states, error handling, and accessibility.
+
+**`css`**
+
+You can import the HtmlPreviewLoader styles as CSS from the package, but your build process must support importing CSS from `node_modules`/`package.json`:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentHtmlPreviewLoader` variable and the `ComponentHtmlPreviewLoader` type to define your custom styles in TypeScript/JavaScript:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
