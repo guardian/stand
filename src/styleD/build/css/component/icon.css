@@ -5,6 +5,7 @@
 :root {
 	--component-icon-shared-display: inline-flex;
 	--component-icon-shared-user-select: none;
+	--component-icon-xs-size: 0.875rem;
 	--component-icon-sm-size: 1.125rem;
 	--component-icon-md-size: 1.25rem;
 	--component-icon-lg-size: 1.5rem;

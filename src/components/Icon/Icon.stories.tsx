@@ -29,7 +29,7 @@ const HomeSvg = () => (
 	</svg>
 );
 
-const sizes = ['sm', 'md', 'lg'] as const;
+const sizes = ['xs', 'sm', 'md', 'lg'] as const;
 export const IconTable = {
 	name: 'Icons',
 	render: () => (
@@ -50,6 +50,10 @@ export const IconTable = {
 				<tr>
 					<td>Material Symbols (font icons)</td>
 					<td>
+						<Icon size="xs" symbol="home"></Icon>
+						<Icon size="xs" fill={baseColors.magenta[400]} symbol="home"></Icon>
+					</td>
+					<td>
 						<Icon size="sm" symbol="home"></Icon>
 						<Icon size="sm" fill={baseColors.magenta[400]} symbol="home"></Icon>
 					</td>
@@ -64,6 +68,14 @@ export const IconTable = {
 				</tr>
 				<tr>
 					<td>Material Icons (svg icons)</td>
+					<td>
+						<Icon size="xs">
+							<HomeIcon />
+						</Icon>
+						<Icon size="xs" fill={baseColors.magenta[400]}>
+							<HomeIcon />
+						</Icon>
+					</td>
 					<td>
 						<Icon size="sm">
 							<HomeIcon />
@@ -91,6 +103,14 @@ export const IconTable = {
 				</tr>
 				<tr>
 					<td>Custom SVG icon component</td>
+					<td>
+						<Icon size="xs">
+							<HomeSvg />
+						</Icon>
+						<Icon size="xs" fill={baseColors.magenta[400]}>
+							<HomeSvg />
+						</Icon>
+					</td>
 					<td>
 						<Icon size="sm">
 							<HomeSvg />

@@ -11,6 +11,12 @@
 					"$value": "none"
 				}
 			},
+			"xs": {
+				"size": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.icon.xs}"
+				}
+			},
 			"sm": {
 				"size": {
 					"$type": "dimension",
