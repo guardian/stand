@@ -1,5 +1,5 @@
 import type { SerializedStyles } from '@emotion/react';
-import { css } from '@emotion/react';
+import { css, keyframes } from '@emotion/react';
 import {
 	componentHtmlPreviewLoader,
 	type ComponentHtmlPreviewLoader,
@@ -55,6 +55,19 @@ export const previewFrameStyle = ({
 	`;
 };
 
+export const iframeStyle = (isNotLoaded: boolean): SerializedStyles => {
+	return css`
+		border: none;
+		transition: 'filter 0.25s';
+		${isNotLoaded
+			? `
+			filter: blur(3px);
+			pointer-events: none;	
+		`
+			: ''}
+	`;
+};
+
 export const reloadButtonStyle = ({
 	previewFrame,
 }: HtmlPreviewLoaderTheme): SerializedStyles => {
@@ -71,5 +84,33 @@ export const loadingIconStyle = ({
 	return css`
 		font-size: ${loadingIcon.size};
 		color: ${loadingIcon.color};
+	`;
+};
+
+export const spinAnimationStyle = (): SerializedStyles => {
+	const spin = keyframes({
+		from: { transform: 'rotate(0deg)' },
+		to: { transform: 'rotate(360deg)' },
+	});
+
+	return css`
+		animation: ${spin} 1s linear infinite;
+	`;
+};
+
+export const centeredStyle = (): SerializedStyles => {
+	return css`
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+	`;
+};
+
+export const alertBannerContentsStyle = (): SerializedStyles => {
+	return css`
+		display: flex;
+		gap: 10;
+		align-items: center;
 	`;
 };

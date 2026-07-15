@@ -1,4 +1,4 @@
-import { css, keyframes } from '@emotion/react';
+import { css } from '@emotion/react';
 import { useState } from 'react';
 import { mergeDeep } from '../../util/mergeDeep';
 import { AlertBanner } from '../AlertBanner/AlertBanner';
@@ -7,31 +7,18 @@ import { Icon } from '../Icon/Icon';
 import { Radio, RadioGroup } from '../RadioGroup/RadioGroup';
 import { Typography } from '../Typography/Typography';
 import {
+	alertBannerContentsStyle,
+	centeredStyle,
 	defaultHtmlPreviewLoaderTheme,
 	headerStyles,
 	htmlPreviewLoaderStyles,
+	iframeStyle,
 	loadingIconStyle,
 	previewFrameStyle,
 	reloadButtonStyle,
+	spinAnimationStyle,
 } from './styles';
 import type { HtmlPreviewProps } from './types';
-
-const spin = keyframes({
-	from: { transform: 'rotate(0deg)' },
-	to: { transform: 'rotate(360deg)' },
-});
-
-const styles = {
-	centre: css({
-		position: 'absolute',
-		top: '50%',
-		left: '50%',
-		transform: 'translateX(-50%)',
-	}),
-	spinAnimation: css({
-		animation: `${spin} 1s linear infinite`,
-	}),
-};
 
 const defaultWidthOptions = [320, 375, 425, 650];
 
@@ -104,12 +91,9 @@ export const HtmlPreview = ({
 						style={{
 							minWidth: frameWidth,
 							maxWidth: frameWidth,
-							border: 'none',
 							background: frameBackground,
-							filter: isLoading || errorMessage ? 'blur(3px)' : undefined,
-							transition: 'filter 0.25s',
-							pointerEvents: isLoading || errorMessage ? 'none' : undefined,
 						}}
+						css={iframeStyle(isLoading || !!errorMessage)}
 						title="preview"
 						srcDoc={html}
 					/>
@@ -130,25 +114,19 @@ export const HtmlPreview = ({
 			</div>
 
 			{isLoading && (
-				<div css={styles.centre}>
+				<div css={centeredStyle()}>
 					<Icon
 						css={loadingIconStyle(mergedTheme)}
 						symbol="progress_activity"
-						cssOverrides={styles.spinAnimation}
+						cssOverrides={spinAnimationStyle()}
 					/>
 				</div>
 			)}
 
 			{errorMessage && (
-				<div css={styles.centre}>
+				<div css={centeredStyle()}>
 					<AlertBanner showIcon={true} level="error">
-						<div
-							css={{
-								display: 'flex',
-								gap: 10,
-								alignItems: 'center',
-							}}
-						>
+						<div css={alertBannerContentsStyle()}>
 							{errorMessage}
 							{attemptLoad && (
 								<Button
