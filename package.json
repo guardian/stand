@@ -327,6 +327,16 @@
 				"default": "./dist/Tabs.cjs"
 			}
 		},
+		"./HtmlPreviewLoader": {
+			"import": {
+				"types": "./dist/HtmlPreviewLoader.d.ts",
+				"default": "./dist/HtmlPreviewLoader.js"
+			},
+			"require": {
+				"types": "./dist/HtmlPreviewLoader.d.cts",
+				"default": "./dist/HtmlPreviewLoader.cjs"
+			}
+		},
 		"./utils": {
 			"import": {
 				"types": "./dist/utils.d.ts",

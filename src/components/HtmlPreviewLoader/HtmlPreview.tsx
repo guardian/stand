@@ -155,7 +155,7 @@ export const HtmlPreview = ({
 									icon="refresh"
 									size="sm"
 									variant="secondary"
-											onPress={attemptLoad}
+									onPress={attemptLoad}
 								>
 									retry
 								</Button>
