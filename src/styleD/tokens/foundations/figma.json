@@ -598,17 +598,17 @@
 				}
 			},
 			"weight": {
-				"guardianTextEgyptian": {
-					"normal": {
-						"$type": "fontWeight",
-						"$value": 400
-					},
+				"guardianHeadline": {
 					"bold": {
 						"$type": "fontWeight",
 						"$value": 700
 					}
 				},
-				"guardianHeadline": {
+				"guardianTextEgyptian": {
+					"normal": {
+						"$type": "fontWeight",
+						"$value": 400
+					},
 					"bold": {
 						"$type": "fontWeight",
 						"$value": 700
