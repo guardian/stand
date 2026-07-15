@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.59
+
+### Patch Changes
+
+- 50e15bd: Updates design tokens to add `semantic.colors.text.link` and `semantic.colors.fill.errorWeaker`
+- 8c2c589: Reduces top margin of `TextInput` and `TextArea` to make consistent with `Select` component
+
 ## 0.0.58
 
 ### Patch Changes
