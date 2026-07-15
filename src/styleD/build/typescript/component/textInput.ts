@@ -12,7 +12,7 @@ export const componentTextInput = {
 			bottom: '0',
 			left: '0.75rem',
 		},
-		marginTop: '0.5rem',
+		marginTop: '0.25rem',
 		borderRadius: '0.25rem',
 		border: '0.0625rem solid #545454',
 		backgroundColor: '#ffffff',

@@ -29,9 +29,9 @@
 					}
 				},
 				"marginTop": {
-					"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
+					"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 8px, then margin-top should be 4px",
 					"$type": "dimension",
-					"$value": "{base.spacing.8Rem}"
+					"$value": "{base.spacing.4Rem}"
 				},
 				"borderRadius": {
 					"$type": "dimension",
