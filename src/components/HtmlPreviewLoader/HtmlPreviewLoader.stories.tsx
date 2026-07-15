@@ -108,11 +108,12 @@ export const CustomTheme = {
 export const CssOverrides = {
 	args: {
 		fetchHtml: fetchBreakingNewsHtml,
-		cssOverrides: css({
-			color: 'red',
-			border: '4px dotted black',
-			padding: 5,
-		}),
+		cssOverrides: css`
+			margin: 0 auto;
+			max-width: 700px;
+			border: 4px dotted black;
+			padding: 5px;
+		`,
 	},
 } satisfies Story;
 
