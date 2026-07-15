@@ -27,13 +27,13 @@ import {
 
 # HtmlPreviewLoader
 
-The HtmlPreviewLoader component renders an HTML preview inside a framed container and handles loading, error, and reload states while a preview is fetched asynchronously.
+The HtmlPreviewLoader component fetches HTML markup, renders it inside an iframe-based preview frame, and surfaces loading, error, and reload states while the preview is being prepared. It is useful for rendering email or document markup in a controlled preview surface.
 
 ## When to use
 
-- When you need to show a rendered HTML email or document preview in a UI.
-- When the preview content is loaded asynchronously and should provide clear loading or error feedback.
-- When you want a preview with configurable frame widths and an optional reload control.
+- When you need to preview HTML content such as email templates or document markup in the UI.
+- When the preview content is loaded asynchronously and should show loading or error feedback.
+- When the preview should support width switching and an optional reload affordance.
 
 ## Peer dependencies
 
@@ -42,11 +42,10 @@ The HtmlPreviewLoader component renders an HTML preview inside a framed containe
 - `react-dom`
 - `react-aria-components`
 - `typescript`
-  See the `peerDependencies` section of `package.json` for compatible versions.
+
+See the `peerDependencies` section of `package.json` for compatible versions.
 
 See [custom component build](#custom-component-build) for usage without React/Emotion.
-
-See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--docs#installing-icons) for more on installing icons.
 
 ## Example usage
 
@@ -60,24 +59,30 @@ const fetchHtml = async () => {
 };
 
 export const Component = () => (
-	<HtmlPreviewLoader fetchHtml={fetchHtml} title="Preview" />
+	<HtmlPreviewLoader
+		fetchHtml={fetchHtml}
+		title="Preview"
+		allowReloading
+		widthOptions={[200, 400]}
+		defaultWidth={400}
+	/>
 );
 ```
 
 ## Props
 
-| Name              | Type                          | Required | Default | Description                                                |
-| ----------------- | ----------------------------- | -------- | ------- | ---------------------------------------------------------- |
-| `fetchHtml`       | `{ (): Promise<string> }`     | Yes      | N/A     | Function used to load the HTML preview content.            |
-| `title`           | `ReactNode`                   | Yes      | N/A     | Title content shown above the preview.                     |
-| `minHeight`       | `number`                      | No       | N/A     | Minimum height of the preview area.                        |
-| `widthOptions`    | `number[]`                    | No       | N/A     | Available preview frame widths to choose from.             |
-| `defaultWidth`    | `number`                      | No       | N/A     | Initial preview frame width.                               |
-| `frameBackground` | `CSSProperties['background']` | No       | N/A     | Background applied to the preview frame.                   |
-| `allowReloading`  | `boolean`                     | No       | N/A     | Enables a reload button when the preview can be refreshed. |
-| `theme`           | `HtmlPreviewLoaderTheme`      | No       | N/A     | Custom theme overrides for the HtmlPreviewLoader.          |
-| `cssOverrides`    | `SerializedStyles`            | No       | N/A     | Custom CSS styles for the HtmlPreviewLoader.               |
-| `className`       | `string`                      | No       | N/A     | Additional class name(s) for the HtmlPreviewLoader.        |
+| Name              | Type                          | Required | Default                | Description                                                               |
+| ----------------- | ----------------------------- | -------- | ---------------------- | ------------------------------------------------------------------------- |
+| `fetchHtml`       | `{ (): Promise<string> }`     | Yes      | N/A                    | Function that resolves to the HTML string to render in the preview frame. |
+| `title`           | `ReactNode`                   | Yes      | N/A                    | Title content shown above the preview.                                    |
+| `minHeight`       | `number`                      | No       | `600`                  | Minimum height of the preview frame in pixels.                            |
+| `widthOptions`    | `number[]`                    | No       | `[320, 375, 425, 650]` | Available frame widths shown in the width selector.                       |
+| `defaultWidth`    | `number`                      | No       | `425`                  | Initial width used for the preview frame.                                 |
+| `frameBackground` | `CSSProperties['background']` | No       | `'white'`              | Background applied to the iframe.                                         |
+| `allowReloading`  | `boolean`                     | No       | `false`                | Shows a reload button when the preview can be refreshed.                  |
+| `theme`           | `HtmlPreviewLoaderTheme`      | No       | `undefined`            | Theme overrides for the HtmlPreviewLoader.                                |
+| `cssOverrides`    | `SerializedStyles`            | No       | `undefined`            | Custom CSS styles applied to the wrapper.                                 |
+| `className`       | `string`                      | No       | `undefined`            | Additional class name(s) for the HtmlPreviewLoader.                       |
 
 ## Stories
 
@@ -109,15 +114,21 @@ export const Component = () => (
 
 <Canvas layout="padded" of={WithError} />
 
+### Custom theme
+
+<Canvas layout="padded" of={CustomTheme} />
+
+### CSS overrides
+
+<Canvas layout="padded" of={CssOverrides} />
+
 ## Customisation
 
-We recommend using the HtmlPreviewLoader component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the HtmlPreviewLoader component as provided, but it can be customised with the `theme` or `cssOverrides` props when the default styling needs to be adjusted.
 
 ### Custom theme
 
 The `theme` prop allows you to override specific design tokens for the HtmlPreviewLoader component:
-
-<Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import type { HtmlPreviewLoaderTheme } from '@guardian/stand/HtmlPreviewLoader';
@@ -147,9 +158,7 @@ const Component = () => (
 
 ### CSS overrides
 
-The `cssOverrides` prop allows you to pass custom CSS to the HtmlPreviewLoader component, if the theme prop is not sufficient:
-
-<Canvas layout="padded" of={CssOverrides} />
+The `cssOverrides` prop allows you to pass custom CSS to the HtmlPreviewLoader component when the theme prop is not sufficient:
 
 ```tsx
 import { HtmlPreviewLoader } from '@guardian/stand/HtmlPreviewLoader';
@@ -174,13 +183,11 @@ const Component = () => (
 
 If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom HtmlPreviewLoader component using the styles defined in the `HtmlPreviewLoaderTheme` type.
 
-You will however be responsible for any additional functionality on top of the styles, for example loading states, error handling and accessibility.
-
-See "Custom Component" heading under the "HtmlPreviewLoader" component on [codesandbox.io](https://codesandbox.io/p/sandbox/guardian-stand-components-forked-j8cjhy)
+You will still need to implement any additional functionality on top of the styles, such as loading states, error handling, and accessibility.
 
 **`css`**
 
-You can import the HtmlPreviewLoader styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+You can import the HtmlPreviewLoader styles as CSS from the package, but your build process must support importing CSS from `node_modules`/`package.json`:
 
 <SandboxCss
 	componentName={componentName}
