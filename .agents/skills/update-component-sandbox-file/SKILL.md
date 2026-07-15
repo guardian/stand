@@ -61,6 +61,8 @@ Populate or update a sandbox.ts file so it exports stringified example code for 
 - Prefer comments that explain which example is being shown.
 - Use imports and class names that are consistent with the component's package and existing docs examples.
 - Do not invent props or APIs that are not present in the component implementation or stories.
+- Verify that any CSS custom properties used in the CSS example actually exist in the generated component stylesheet, and that each property is assigned to the correct CSS property.
+- Verify that any JavaScript example values correspond to the generated token exports from the component's TypeScript build output and use the correct property names.
 - If the component does not support a meaningful no-React example, omit or simplify the HTML/CSS/JS sections rather than forcing an unrealistic example.
 
 ## Formatting

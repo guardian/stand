@@ -30,17 +30,23 @@ export const Component = () => (
 export const componentCss = /* css */ `@import '@guardian/stand/component/htmlPreviewLoader.css';
 
 .stand-html-preview-loader {
-	display: var(--component-html-preview-loader-display);
-	flex-direction: var(--component-html-preview-loader-flex-direction);
-	gap: var(--component-html-preview-loader-gap);
-	padding: var(--component-html-preview-loader-padding);
-	background: var(--component-html-preview-loader-color-background);
-	color: var(--component-html-preview-loader-color-text);
+	padding-top: var(--component-html-preview-loader-padding-top);
+	padding-right: var(--component-html-preview-loader-padding-right);
+	padding-bottom: var(--component-html-preview-loader-padding-bottom);
+	padding-left: var(--component-html-preview-loader-padding-left);
+	background: var(--component-html-preview-loader-shared-color-background);
+	color: var(--component-html-preview-loader-shared-color-text);
 }
 
 .stand-html-preview-loader__frame {
-	border: var(--component-html-preview-loader-preview-frame-border);
 	background: var(--component-html-preview-loader-preview-frame-background-color);
+	border-width: var(--component-html-preview-loader-preview-frame-border-width);
+	border-style: var(--component-html-preview-loader-preview-frame-border-style);
+	border-color: var(--component-html-preview-loader-preview-frame-border-color);
+	padding-top: var(--component-html-preview-loader-preview-frame-padding-top);
+	padding-right: var(--component-html-preview-loader-preview-frame-padding-right);
+	padding-bottom: var(--component-html-preview-loader-preview-frame-padding-bottom);
+	padding-left: var(--component-html-preview-loader-preview-frame-padding-left);
 }
 `;
 
@@ -55,17 +61,23 @@ export const componentHtml = /* html */ `<div class="stand-html-preview-loader">
 export const componentJs = /* javascript */ `import { componentHtmlPreviewLoader } from '@guardian/stand';
 
 const styles = \`
-	display: \${componentHtmlPreviewLoader.display};
-	flex-direction: \${componentHtmlPreviewLoader.flexDirection};
-	gap: \${componentHtmlPreviewLoader.gap};
-	padding: \${componentHtmlPreviewLoader.padding};
-	background: \${componentHtmlPreviewLoader.color.background};
-	color: \${componentHtmlPreviewLoader.color.text};
+	padding-top: \${componentHtmlPreviewLoader.paddingTop};
+	padding-right: \${componentHtmlPreviewLoader.paddingRight};
+	padding-bottom: \${componentHtmlPreviewLoader.paddingBottom};
+	padding-left: \${componentHtmlPreviewLoader.paddingLeft};
+	background: \${componentHtmlPreviewLoader.shared.color.background};
+	color: \${componentHtmlPreviewLoader.shared.color.text};
 \`;
 
 const frameStyles = \`
-	border: \${componentHtmlPreviewLoader.previewFrame.border};
 	background: \${componentHtmlPreviewLoader.previewFrame.backgroundColor};
+	border-width: \${componentHtmlPreviewLoader.previewFrame.borderWidth};
+	border-style: \${componentHtmlPreviewLoader.previewFrame.borderStyle};
+	border-color: \${componentHtmlPreviewLoader.previewFrame.borderColor};
+	padding-top: \${componentHtmlPreviewLoader.previewFrame.paddingTop};
+	padding-right: \${componentHtmlPreviewLoader.previewFrame.paddingRight};
+	padding-bottom: \${componentHtmlPreviewLoader.previewFrame.paddingBottom};
+	padding-left: \${componentHtmlPreviewLoader.previewFrame.paddingLeft};
 \`;
 
 document.getElementById('app').innerHTML = \`
