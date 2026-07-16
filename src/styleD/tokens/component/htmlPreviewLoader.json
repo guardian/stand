@@ -1,0 +1,78 @@
+{
+	"component": {
+		"htmlPreviewLoader": {
+			"paddingTop": {
+				"$type": "dimension",
+				"$value": "0px"
+			},
+			"paddingRight": {
+				"$type": "dimension",
+				"$value": "{base.spacing.8Rem}"
+			},
+			"paddingBottom": {
+				"$type": "dimension",
+				"$value": "0px"
+			},
+			"paddingLeft": {
+				"$type": "dimension",
+				"$value": "{base.spacing.8Rem}"
+			},
+			"shared": {
+				"color": {
+					"background": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.weak}"
+					},
+					"text": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.strong}"
+					}
+				}
+			},
+			"previewFrame": {
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.neutralWeak}"
+				},
+				"borderWidth": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.border.default}"
+				},
+				"borderStyle": {
+					"$type": "strokeStyle",
+					"$value": "solid"
+				},
+				"borderColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.border.stronger}"
+				},
+				"paddingTop": {
+					"$type": "dimension",
+					"$value": "{base.spacing.8Rem}"
+				},
+				"paddingRight": {
+					"$type": "dimension",
+					"$value": "{base.spacing.8Rem}"
+				},
+				"paddingBottom": {
+					"$type": "dimension",
+					"$value": "{base.spacing.8Rem}"
+				},
+				"paddingLeft": {
+					"$type": "dimension",
+					"$value": "{base.spacing.8Rem}"
+				}
+			},
+			"loadingIcon": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.border.strong}"
+				},
+				"size": {
+					"$type": "dimension",
+					"$value": "{base.spacing.48Rem}"
+				}
+			}
+		}
+	}
+}
