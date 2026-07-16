@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.60
+
+### Patch Changes
+
+- 10c8079: add html preview loader
+  add skills files for component docs
+
 ## 0.0.59
 
 ### Patch Changes
