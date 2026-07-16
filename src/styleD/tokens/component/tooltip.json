@@ -3,14 +3,12 @@
 		"tooltip": {
 			"shared": {
 				"color": {
-					"background": {
-						"$type": "color",
-						"$value": "{semantic.colors.fill.informationWeak}"
-					},
-					"text": {
-						"$type": "color",
-						"$value": "{semantic.colors.text.strong}"
-					}
+					"$type": "color",
+					"$value": "{semantic.colors.text.strong}"
+				},
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.informationWeak}"
 				}
 			},
 			"trigger": {

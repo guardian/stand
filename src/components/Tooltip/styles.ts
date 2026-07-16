@@ -22,14 +22,14 @@ export const tooltipTriggerStyles = (
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
-	color: ${theme.shared.color.text};
-	background-color: ${theme.shared.color.background};
+	color: ${theme.shared.color};
+	background-color: ${theme.shared.backgroundColor};
 `;
 
 export const tooltipStyles = (theme: TooltipTheme): SerializedStyles => css`
 	padding: ${theme.tooltip.padding};
 	max-width: ${theme.tooltip.maxWidth};
-	background-color: ${theme.shared.color.background};
+	background-color: ${theme.shared.backgroundColor};
 	border-radius: ${theme.tooltip.borderRadius};
 	filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.15));
 
@@ -63,5 +63,5 @@ export const tooltipArrowStyles = (
 	theme: TooltipTheme,
 ): SerializedStyles => css`
 	display: block;
-	fill: ${theme.shared.color.background};
+	fill: ${theme.shared.backgroundColor};
 `;

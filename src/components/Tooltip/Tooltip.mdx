@@ -1,7 +1,9 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import TooltipStories, {
 	Default,
-	CustomMessage,
+	PlacementStart,
+	PlacementTop,
+	PlacementBottom,
 	CustomTheme,
 	CssOverrides,
 } from './Tooltip.stories';
@@ -35,6 +37,7 @@ The Tooltip component [[enter description of purpose]].
 - `react`
 - `react-dom`
 - `typescript`
+- `react-aria-components`
 
 See the `peerDependencies` section of `package.json` for compatible versions.
 
@@ -72,9 +75,9 @@ import type { TooltipProps, TooltipTheme } from '@guardian/stand/Tooltip';
 ## Stories
 
 <Canvas layout="padded" of={Default} />
-<Canvas layout="padded" of={CustomMessage} />
-<Canvas layout="padded" of={CustomTheme} />
-<Canvas layout="padded" of={CssOverrides} />
+<Canvas layout="padded" of={PlacementStart} />
+<Canvas layout="padded" of={PlacementTop} />
+<Canvas layout="padded" of={PlacementBottom} />
 
 ## Customisation
 
