@@ -901,6 +901,10 @@
 				"$type": "dimension",
 				"$value": "8px"
 			},
+			"size14Px": {
+				"$type": "dimension",
+				"$value": "14px"
+			},
 			"size16Px": {
 				"$type": "dimension",
 				"$value": "16px"
@@ -940,6 +944,10 @@
 			"size8Rem": {
 				"$type": "dimension",
 				"$value": "0.5rem"
+			},
+			"size14Rem": {
+				"$type": "dimension",
+				"$value": "0.875rem"
 			},
 			"size16Rem": {
 				"$type": "dimension",
@@ -1374,6 +1382,10 @@
 				}
 			},
 			"icon": {
+				"xs": {
+					"$type": "dimension",
+					"$value": "{base.sizing.size14Rem}"
+				},
 				"sm": {
 					"$type": "dimension",
 					"$value": "{base.sizing.size18Rem}"
