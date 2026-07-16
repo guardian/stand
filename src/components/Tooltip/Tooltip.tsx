@@ -38,7 +38,7 @@ export const Tooltip = ({
 				<TooltipArrow theme={mergedTheme} />
 				<Typography
 					variant="metaMd"
-					theme={{ color: mergedTheme.shared.color.text }}
+					theme={{ color: mergedTheme.shared.color }}
 				>
 					{children}
 				</Typography>
@@ -53,6 +53,7 @@ const TooltipArrow = ({ theme }: { theme: TooltipTheme }) => (
 			xmlns="http://www.w3.org/2000/svg"
 			width="9"
 			height="14"
+			viewBox="0 0 9 14"
 			css={tooltipArrowStyles(theme)}
 		>
 			<path d="M0 6.928 9 0v13.856z" />

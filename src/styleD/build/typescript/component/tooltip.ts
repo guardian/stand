@@ -4,10 +4,8 @@
 
 export const componentTooltip = {
 	shared: {
-		color: {
-			background: '#e8f0fb',
-			text: '#000000',
-		},
+		color: '#000000',
+		backgroundColor: '#e8f0fb',
 	},
 	trigger: {
 		size: '1.25rem',

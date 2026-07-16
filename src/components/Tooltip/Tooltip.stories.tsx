@@ -1,5 +1,7 @@
-// import { css } from '@emotion/react';
+import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { baseColors } from '../../styleD/build/typescript/base/colors';
+import { semanticRadius } from '../../styleD/build/typescript/semantic/radius';
 import { Tooltip } from './Tooltip';
 
 const meta = {
@@ -38,25 +40,35 @@ export const PlacementBottom = {
 	},
 } satisfies Story;
 
-// export const CustomTheme = {
-// 	args: {
-// 		theme: {
-// 			color: {
-// 				background: 'blue',
-// 				text: 'lime',
-// 			},
-// 		},
-// 	},
-// } satisfies Story;
+export const CustomTheme = {
+	args: {
+		theme: {
+			shared: {
+				color: baseColors.orange[900],
+				backgroundColor: baseColors.orange[50],
+			},
+			tooltip: {
+				borderRadius: semanticRadius.cornerMd,
+			},
+		},
+	},
+} satisfies Story;
 
-// export const CssOverrides = {
-// 	args: {
-// 		cssOverrides: css({
-// 			color: 'red',
-// 			border: '4px dotted black',
-// 			padding: 5,
-// 		}),
-// 	},
-// } satisfies Story;
+export const CssOverrides = {
+	args: {
+		cssOverrides: css(css`
+			span {
+				font-size: 1.25rem;
+			}
+			&[data-placement='right'] {
+				margin-left: 1.5rem;
+			}
+			svg {
+				width: 18px;
+				height: 28px;
+			}
+		`),
+	},
+} satisfies Story;
 
 export default meta;
