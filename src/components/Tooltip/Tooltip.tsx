@@ -4,7 +4,6 @@ import {
 	Tooltip as ReactAriaTooltip,
 	TooltipTrigger as ReactAriaTooltipTrigger,
 } from 'react-aria-components';
-import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
 import { mergeDeep } from '../../util/mergeDeep';
 import { Icon } from '../Icon/Icon';
 import { Typography } from '../Typography/Typography';
@@ -12,6 +11,7 @@ import {
 	defaultTooltipTheme,
 	tooltipArrowStyles,
 	tooltipStyles,
+	type TooltipTheme,
 	tooltipTriggerStyles,
 } from './styles';
 import type { TooltipProps } from './types';
@@ -35,19 +35,10 @@ export const Tooltip = ({
 				placement={placement}
 				className={className}
 			>
-				<ReactAriaOverlayArrow>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="9"
-						height="14"
-						css={tooltipArrowStyles(mergedTheme)}
-					>
-						<path d="M0 6.928 9 0v13.856z" />
-					</svg>
-				</ReactAriaOverlayArrow>
+				<TooltipArrow theme={mergedTheme} />
 				<Typography
 					variant="metaMd"
-					theme={{ color: semanticColors.text.strong }}
+					theme={{ color: mergedTheme.shared.color.text }}
 				>
 					{children}
 				</Typography>
@@ -55,3 +46,16 @@ export const Tooltip = ({
 		</ReactAriaTooltipTrigger>
 	);
 };
+
+const TooltipArrow = ({ theme }: { theme: TooltipTheme }) => (
+	<ReactAriaOverlayArrow>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="9"
+			height="14"
+			css={tooltipArrowStyles(theme)}
+		>
+			<path d="M0 6.928 9 0v13.856z" />
+		</svg>
+	</ReactAriaOverlayArrow>
+);

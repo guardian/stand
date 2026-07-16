@@ -3,6 +3,11 @@
  */
 
 :root {
-	--component-tooltip-color-background: #e8f0fb;
-	--component-tooltip-color-text: #000000;
+	--component-tooltip-shared-color-background: #e8f0fb;
+	--component-tooltip-shared-color-text: #000000;
+	--component-tooltip-trigger-size: 1.25rem;
+	--component-tooltip-tooltip-offset: 1rem;
+	--component-tooltip-tooltip-padding: 1rem;
+	--component-tooltip-tooltip-max-width: 26ch;
+	--component-tooltip-tooltip-border-radius: 0.25rem;
 }
