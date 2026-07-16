@@ -5,20 +5,38 @@ import { Tooltip } from './Tooltip';
 const meta = {
 	title: 'Stand/Tools Design System/Components/Tooltip',
 	component: Tooltip,
-	parameters: { layout: 'centered' },
+	args: {
+		children:
+			'Which region (AUS, UK, US or EUR) is the newsletter targeted at?',
+	},
+	parameters: {
+		layout: 'centered',
+	},
 } satisfies Meta<typeof Tooltip>;
 
 type Story = StoryObj<typeof Tooltip>;
 
 export const Default = {
-	args: {},
+	name: 'Default - Placement End',
 } satisfies Story;
 
-// export const CustomMessage = {
-// 	args: {
-// 		message: 'hi there',
-// 	},
-// } satisfies Story;
+export const PlacementStart = {
+	args: {
+		placement: 'start',
+	},
+} satisfies Story;
+
+export const PlacementTop = {
+	args: {
+		placement: 'top',
+	},
+} satisfies Story;
+
+export const PlacementBottom = {
+	args: {
+		placement: 'bottom',
+	},
+} satisfies Story;
 
 // export const CustomTheme = {
 // 	args: {
