@@ -4,11 +4,11 @@
 			"color": {
 				"background": {
 					"$type": "color",
-					"$value": "{semantic.colors.fill.greenWeak}"
+					"$value": "{semantic.colors.fill.informationWeak}"
 				},
 				"text": {
 					"$type": "color",
-					"$value": "hotpink"
+					"$value": "{semantic.colors.text.strong}"
 				}
 			}
 		}

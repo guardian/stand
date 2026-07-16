@@ -4,8 +4,8 @@
 
 export const componentTooltip = {
 	color: {
-		background: '#cde4c9',
-		text: '#ff69b4',
+		background: '#e8f0fb',
+		text: '#000000',
 	},
 };
 export type ComponentTooltip = typeof componentTooltip;
