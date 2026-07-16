@@ -1,11 +1,9 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import { baseSpacing } from '../../styleD/build/typescript/base/spacing';
 import {
 	componentTooltip,
 	type ComponentTooltip,
 } from '../../styleD/build/typescript/component/tooltip';
-import { semanticRadius } from '../../styleD/build/typescript/semantic/radius';
 import type { DeepPartial, Prettify } from '../../util/types';
 
 export type TooltipTheme = Prettify<ComponentTooltip>;
@@ -19,42 +17,42 @@ export const tooltipTriggerStyles = (
 	appearance: none;
 	border: none;
 	padding: 0;
-	width: 20px;
-	height: 20px;
+	width: ${theme.trigger.size};
+	height: ${theme.trigger.size};
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
-	color: ${theme.color.text};
-	background-color: ${theme.color.background};
+	color: ${theme.shared.color.text};
+	background-color: ${theme.shared.color.background};
 `;
 
 export const tooltipStyles = (theme: TooltipTheme): SerializedStyles => css`
-	padding: ${baseSpacing['12Rem']};
-	max-width: 26ch;
-	background-color: ${theme.color.background};
-	border-radius: ${semanticRadius.cornerSm};
+	padding: ${theme.tooltip.padding};
+	max-width: ${theme.tooltip.maxWidth};
+	background-color: ${theme.shared.color.background};
+	border-radius: ${theme.tooltip.borderRadius};
 	filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.15));
 
 	&[data-placement='top'] {
-		margin-bottom: ${baseSpacing['16Rem']};
+		margin-bottom: ${theme.tooltip.offset};
 		svg {
 			transform: rotate(-90deg) translateX(3px);
 		}
 	}
 
 	&[data-placement='bottom'] {
-		margin-top: ${baseSpacing['16Rem']};
+		margin-top: ${theme.tooltip.offset};
 		svg {
 			transform: rotate(90deg) translateX(3px);
 		}
 	}
 
 	&[data-placement='right'] {
-		margin-left: ${baseSpacing['16Rem']};
+		margin-left: ${theme.tooltip.offset};
 	}
 
 	&[data-placement='left'] {
-		margin-right: ${baseSpacing['16Rem']};
+		margin-right: ${theme.tooltip.offset};
 		svg {
 			transform: rotate(180deg);
 		}
@@ -65,5 +63,5 @@ export const tooltipArrowStyles = (
 	theme: TooltipTheme,
 ): SerializedStyles => css`
 	display: block;
-	fill: ${theme.color.background};
+	fill: ${theme.shared.color.background};
 `;
