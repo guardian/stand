@@ -24,12 +24,12 @@ import {
 
 # Tooltip
 
-The Tooltip component [[enter description of purpose]].
+Displays contextual help or information when the trigger element is hovered or focused.
 
 ## When to use
 
-- [[use case]]
-- [[use case]]
+- To present additional information about a UI element or option
+- To provide guidance or context without cluttering the interface
 
 ## Peer dependencies
 
@@ -43,34 +43,26 @@ See the `peerDependencies` section of `package.json` for compatible versions.
 
 See [custom component build](#custom-component-build) for usage without React/Emotion.
 
-See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--docs#installing-icons) for more on installing icons.
-
 ## Example usage
 
 <SandboxReact componentName={componentName} componentTsx={componentTsx} />
 
 ```tsx
 import { Tooltip } from '@guardian/stand/Tooltip';
-
 /* types, if required */
 import type { TooltipProps, TooltipTheme } from '@guardian/stand/Tooltip';
 
-/* Default */
-<Tooltip />
-
-/* Custom */
-<Tooltip message="hi" />
-
+const Example = () => <Tooltip placement="top">Tooltip text</Tooltip>;
 ```
 
 ## Props
 
-| Name           | Type               | Required | Default       | Description                               |
-| -------------- | ------------------ | -------- | ------------- | ----------------------------------------- |
-| `message`      | `string`           | No       | "hello world" | string to render in the Tooltip.          |
-| `theme`        | `TooltipTheme`     | No       | N/A           | Custom theme overrides for the Tooltip.   |
-| `cssOverrides` | `SerializedStyles` | No       | N/A           | Custom CSS styles for the Tooltip.        |
-| `className`    | `string`           | No       | N/A           | Additional class name(s) for the Tooltip. |
+| Name           | Type                                          | Required | Default | Description                               |
+| -------------- | --------------------------------------------- | -------- | ------- | ----------------------------------------- |
+| `placement`    | `'top'` \| `'bottom'` \| `'start'` \| `'end'` | No       | 'end'   | Position of tooltip relative to trigger.  |
+| `theme`        | `TooltipTheme`                                | No       | N/A     | Custom theme overrides for the Tooltip.   |
+| `cssOverrides` | `SerializedStyles`                            | No       | N/A     | Custom CSS styles for the Tooltip.        |
+| `className`    | `string`                                      | No       | N/A     | Additional class name(s) for the Tooltip. |
 
 ## Stories
 
@@ -92,18 +84,21 @@ The `theme` prop allows you to override specific design tokens for the Tooltip c
 ```tsx
 import type { TooltipTheme } from '@guardian/stand/Tooltip';
 import { Tooltip } from '@guardian/stand/Tooltip';
-import { baseColors, baseSizing } from '@guardian/stand';
+import { baseColors, semanticRadius } from '@guardian/stand';
 
 const customTheme: TooltipTheme = {
 	color: {
-		blue: {
-			background: baseColors.coolPurple[700],
-			text: baseColors.orange[300],
+		shared: {
+			color: baseColors.orange[900],
+			backgroundColor: baseColors.orange[50],
+		},
+		tooltip: {
+			borderRadius: semanticRadius.cornerMd,
 		},
 	},
 };
 
-const Component = () => <Tooltip letter="C" theme={customTheme} />;
+const Component = () => <Tooltip theme={customTheme}>Tooltip text</Tooltip>;
 ```
 
 ### CSS overrides
@@ -114,17 +109,24 @@ The `cssOverrides` prop allows you to pass custom CSS to the Tooltip component, 
 
 ```tsx
 import { Tooltip } from '@guardian/stand/Tooltip';
-import { baseColors, baseSizing, baseSpacing } from '@guardian/stand';
 import { css } from '@emotion/react';
 
 const customStyles = css`
-	border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
-	background-color: ${baseColors.orange[700]};
-	color: ${baseColors.warmPurple[300]};
-	border-radius: ${baseRadius.corner4Px};
+	span {
+		font-size: 1.25rem;
+	}
+	&[data-placement='right'] {
+		margin-left: 1.5rem;
+	}
+	svg {
+		width: 18px;
+		height: 28px;
+	}
 `;
 
-const Component = () => <Tooltip letter="O" cssOverrides={customStyles} />;
+const Component = () => (
+	<Tooltip cssOverrides={customStyles}>Tooltip text</Tooltip>
+);
 ```
 
 ## Custom Component Build
