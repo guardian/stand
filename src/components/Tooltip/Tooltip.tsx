@@ -26,7 +26,7 @@ export const Tooltip = ({
 }: TooltipProps) => {
 	const mergedTheme = mergeDeep(defaultTooltipTheme, theme);
 	return (
-		<ReactAriaTooltipTrigger delay={0} closeDelay={50000} {...props}>
+		<ReactAriaTooltipTrigger delay={0} closeDelay={0} {...props}>
 			<ReactAriaButton
 				aria-label="Information"
 				css={tooltipTriggerStyles(mergedTheme)}
