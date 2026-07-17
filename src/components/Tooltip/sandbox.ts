@@ -5,15 +5,10 @@ export const componentName = 'Tooltip';
 export const componentTsx = /* javascript */ `import { Tooltip } from '@guardian/stand/Tooltip';
 
 export const Component = () => (
-	<>
-		{/* default example */}
-		<Tooltip />
-
-		{/* custom message example */}
-		<Tooltip message="hi there" />
-
+	<Tooltip placement="top">
+		Tooltip text
+	</Tooltip>
 );
-
 `;
 
 // Custom component - CSS example
