@@ -337,6 +337,16 @@
 				"default": "./dist/HtmlPreviewLoader.cjs"
 			}
 		},
+		"./Tooltip": {
+			"import": {
+				"types": "./dist/Tooltip.d.ts",
+				"default": "./dist/Tooltip.js"
+			},
+			"require": {
+				"types": "./dist/Tooltip.d.cts",
+				"default": "./dist/Tooltip.cjs"
+			}
+		},
 		"./utils": {
 			"import": {
 				"types": "./dist/utils.d.ts",
@@ -391,7 +401,8 @@
 		"./component/grid.css": "./dist/styleD/build/css/component/grid.css",
 		"./component/layout.css": "./dist/styleD/build/css/component/layout.css",
 		"./component/modal.css": "./dist/styleD/build/css/component/modal.css",
-		"./component/tabs.css": "./dist/styleD/build/css/component/tabs.css"
+		"./component/tabs.css": "./dist/styleD/build/css/component/tabs.css",
+		"./component/tooltip.css": "./dist/styleD/build/css/component/tooltip.css"
 	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
@@ -493,6 +504,9 @@
 			],
 			"Tabs": [
 				"./dist/Tabs.d.ts"
+			],
+			"Tooltip": [
+				"./dist/Tooltip.d.ts"
 			]
 		}
 	},
