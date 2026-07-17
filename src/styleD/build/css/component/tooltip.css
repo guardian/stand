@@ -1,0 +1,13 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-tooltip-shared-color: #000000;
+	--component-tooltip-shared-background-color: #e8f0fb;
+	--component-tooltip-trigger-size: 1.25rem;
+	--component-tooltip-tooltip-offset: 1rem;
+	--component-tooltip-tooltip-padding: 1rem;
+	--component-tooltip-tooltip-max-width: 26ch;
+	--component-tooltip-tooltip-border-radius: 0.25rem;
+}
