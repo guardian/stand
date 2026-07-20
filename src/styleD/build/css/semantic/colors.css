@@ -69,11 +69,12 @@
 	--semantic-colors-fill-orange-weak: #fcddc6;
 	--semantic-colors-fill-yellow-weak: #fbeebf;
 	--semantic-colors-fill-selected: #005d8b;
+	--semantic-colors-fill-selected-weaker: #e6f1f6;
 	--semantic-colors-fill-selected-weak: #c5dfec;
-	--semantic-colors-fill-selected-hover-weak: #c5dfec;
-	--semantic-colors-fill-selected-pressed-weak: #8abed7;
-	--semantic-colors-fill-selected-hover-strong: #8abed7;
-	--semantic-colors-fill-selected-pressed-strong: #5ca5c8;
+	--semantic-colors-fill-selected-hover-weaker: #c5dfec;
+	--semantic-colors-fill-selected-hover-weak: #8abed7;
+	--semantic-colors-fill-selected-pressed-weaker: #8abed7;
+	--semantic-colors-fill-selected-pressed-weak: #5ca5c8;
 	--semantic-colors-fill-draft-strong: #f1c21b;
 	--semantic-colors-fill-live-weak: #aed2a6;
 	--semantic-colors-fill-warning-weak: #fbeebf;

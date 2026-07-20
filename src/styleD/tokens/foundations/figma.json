@@ -1252,23 +1252,27 @@
 					"$type": "color",
 					"$value": "{base.colors.cyan.300}"
 				},
+				"selectedWeaker": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.900}"
+				},
 				"selectedWeak": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.800}"
+				},
+				"selectedHoverWeaker": {
 					"$type": "color",
 					"$value": "{base.colors.cyan.800}"
 				},
 				"selectedHoverWeak": {
 					"$type": "color",
-					"$value": "{base.colors.cyan.800}"
+					"$value": "{base.colors.cyan.700}"
+				},
+				"selectedPressedWeaker": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.700}"
 				},
 				"selectedPressedWeak": {
-					"$type": "color",
-					"$value": "{base.colors.cyan.700}"
-				},
-				"selectedHoverStrong": {
-					"$type": "color",
-					"$value": "{base.colors.cyan.700}"
-				},
-				"selectedPressedStrong": {
 					"$type": "color",
 					"$value": "{base.colors.cyan.600}"
 				},
