@@ -22,17 +22,19 @@ export const topBarItemStyles = (
 		padding: ${theme[size].padding.top} ${theme[size].padding.right}
 			${theme[size].padding.bottom} ${theme[size].padding.left};
 
-		${_menuOpen
-			? css`
-					height: 64px;
-					justify-content: center;
-					border-bottom: ${theme.border};
-				`
-			: css`
-					${alignment === 'left'
-						? 'border-right'
-						: 'border-left'}: ${theme.border};
-					${alignment === 'right' && 'margin-left: auto'};
-				`}
+		${
+			_menuOpen
+				? css`
+						height: 64px;
+						justify-content: center;
+						border-bottom: ${theme.border};
+					`
+				: css`
+						${
+							alignment === 'left' ? 'border-right' : 'border-left'
+						}: ${theme.border};
+						${alignment === 'right' && 'margin-left: auto'};
+					`
+		}
 	`;
 };

@@ -39,6 +39,4 @@ interface FaviconWithImage extends DefaultProps<FaviconTheme> {
 }
 
 export type FaviconProps =
-	| FaviconWithLetter
-	| FaviconWithIcon
-	| FaviconWithImage;
+	FaviconWithLetter | FaviconWithIcon | FaviconWithImage;

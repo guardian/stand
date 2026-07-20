@@ -20,10 +20,12 @@ export const formInputContainerStyles = (
 		flex-direction: ${theme.shared.container.flexDirection};
 		gap: ${theme.shared.container.gap};
 		width: ${theme.shared.container.width};
-		${!fluid &&
-		css`
-			max-width: ${theme.shared.container.maxWidth};
-		`}
+		${
+			!fluid &&
+			css`
+				max-width: ${theme.shared.container.maxWidth};
+			`
+		}
 	`;
 };
 
@@ -41,10 +43,12 @@ export const formInputLabelStyles = (
 		color: ${theme.shared.label.color};
 		${convertTypographyToEmotionStringStyle(theme[size].label.typography)}
 
-		${isDisabled &&
-		css`
-			color: ${theme.shared.label.disabled.color};
-		`}
+		${
+			isDisabled &&
+			css`
+				color: ${theme.shared.label.disabled.color};
+			`
+		}
 	`;
 };
 
@@ -61,9 +65,11 @@ export const formInputDescriptionStyles = (
 		${convertTypographyToEmotionStringStyle(
 			theme.shared.description.typography,
 		)}
-		${isDisabled &&
-		css`
-			color: ${theme.shared.description.disabled.color};
-		`}
+		${
+			isDisabled &&
+			css`
+				color: ${theme.shared.description.disabled.color};
+			`
+		}
 	`;
 };

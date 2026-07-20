@@ -32,19 +32,23 @@ export const topBarContainerStyles = (
 	return css`
 		display: ${theme.display};
 
-		${collapseBelow &&
-		css`
-			${until[collapseBelow]} {
-				display: none;
-			}
-		`}
+		${
+			collapseBelow &&
+			css`
+				${until[collapseBelow]} {
+					display: none;
+				}
+			`
+		}
 
-		${showUntil &&
-		css`
-			${from[showUntil]} {
-				display: none;
-			}
-		`}
+		${
+			showUntil &&
+			css`
+				${from[showUntil]} {
+					display: none;
+				}
+			`
+		}
 	`;
 };
 
@@ -66,14 +70,17 @@ export const topBarCollapsedNavMenuButtonStyles = (
 		cursor: ${theme.collapsedNavMenu.button.cursor};
 
 		&[data-hovered] {
-			background-color: ${theme.collapsedNavMenu.button.hovered
-				.backgroundColor};
+			background-color: ${
+				theme.collapsedNavMenu.button.hovered.backgroundColor
+			};
 		}
 
-		${menuOpen &&
-		css`
-			background-color: ${theme.collapsedNavMenu.button.active.backgroundColor};
-		`}
+		${
+			menuOpen &&
+			css`
+				background-color: ${theme.collapsedNavMenu.button.active.backgroundColor};
+			`
+		}
 	`;
 };
 

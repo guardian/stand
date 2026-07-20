@@ -46,43 +46,49 @@ export const mainLayoutStyles = (
 ): SerializedStyles => {
 	return css`
 		grid-area: main;
-		${fluid
-			? ''
-			: css`
-					max-width: ${theme.maxWidth};
-					margin-left: ${theme.marginLeft};
-					margin-right: ${theme.marginRight};
-				`}
-		${paddingTop
-			? css`
-					${from.sm} {
-						padding-top: ${theme.sm.padding.top};
-					}
+		${
+			fluid
+				? ''
+				: css`
+						max-width: ${theme.maxWidth};
+						margin-left: ${theme.marginLeft};
+						margin-right: ${theme.marginRight};
+					`
+		}
+		${
+			paddingTop
+				? css`
+						${from.sm} {
+							padding-top: ${theme.sm.padding.top};
+						}
 
-					${from.md} {
-						padding-top: ${theme.md.padding.top};
-					}
+						${from.md} {
+							padding-top: ${theme.md.padding.top};
+						}
 
-					${from.lg} {
-						padding-top: ${theme.lg.padding.top};
-					}
-				`
-			: ''}
-		${paddingBottom
-			? css`
-					${from.sm} {
-						padding-bottom: ${theme.sm.padding.bottom};
-					}
+						${from.lg} {
+							padding-top: ${theme.lg.padding.top};
+						}
+					`
+				: ''
+		}
+		${
+			paddingBottom
+				? css`
+						${from.sm} {
+							padding-bottom: ${theme.sm.padding.bottom};
+						}
 
-					${from.md} {
-						padding-bottom: ${theme.md.padding.bottom};
-					}
+						${from.md} {
+							padding-bottom: ${theme.md.padding.bottom};
+						}
 
-					${from.lg} {
-						padding-bottom: ${theme.lg.padding.bottom};
-					}
-				`
-			: ''}
+						${from.lg} {
+							padding-bottom: ${theme.lg.padding.bottom};
+						}
+					`
+				: ''
+		}
 	`;
 };
 

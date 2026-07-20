@@ -40,12 +40,16 @@ export const checkboxStyles = (
 		}
 
 		svg {
-			width: ${isIndeterminate
-				? theme.input.shared.indicator.indeterminate.width
-				: theme.input.shared.indicator.check.width};
-			height: ${isIndeterminate
-				? theme.input.shared.indicator.indeterminate.height
-				: theme.input.shared.indicator.check.height};
+			width: ${
+				isIndeterminate
+					? theme.input.shared.indicator.indeterminate.width
+					: theme.input.shared.indicator.check.width
+			};
+			height: ${
+				isIndeterminate
+					? theme.input.shared.indicator.indeterminate.height
+					: theme.input.shared.indicator.check.height
+			};
 			fill: ${theme.input.shared.indicator.svg.fill};
 			transition: ${theme.input.shared.indicator.transition};
 		}
@@ -53,8 +57,9 @@ export const checkboxStyles = (
 		&[data-focus-visible] {
 			.checkbox-indicator {
 				outline: ${theme.input.shared.indicator.focusVisible.outline};
-				outline-offset: ${theme.input.shared.indicator.focusVisible
-					.outlineOffset};
+				outline-offset: ${
+					theme.input.shared.indicator.focusVisible.outlineOffset
+				};
 			}
 		}
 
@@ -62,8 +67,9 @@ export const checkboxStyles = (
 		&[data-indeterminate] {
 			.checkbox-indicator {
 				border: ${theme.input.shared.indicator.selected.border};
-				background-color: ${theme.input.shared.indicator.selected
-					.backgroundColor};
+				background-color: ${
+					theme.input.shared.indicator.selected.backgroundColor
+				};
 			}
 
 			& svg {
@@ -82,8 +88,9 @@ export const checkboxStyles = (
 			&[data-selected],
 			&[data-indeterminate] {
 				.checkbox-indicator {
-					background-color: ${theme.input.shared.disabled.indicator.selected
-						.backgroundColor};
+					background-color: ${
+						theme.input.shared.disabled.indicator.selected.backgroundColor
+					};
 				}
 			}
 		}
@@ -119,9 +126,11 @@ export const checkboxGroupStyles = (
 		flex-direction: ${theme.group.shared.flexDirection};
 		gap: ${theme.group[size].gap};
 		margin-top: ${theme.group[size].marginTop};
-		${hasError &&
-		css`
-			margin-bottom: ${theme.group[size].marginBottom};
-		`}
+		${
+			hasError &&
+			css`
+				margin-bottom: ${theme.group[size].marginBottom};
+			`
+		}
 	`;
 };

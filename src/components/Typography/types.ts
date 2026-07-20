@@ -13,17 +13,7 @@ export interface TypographyProps
 	 * HTML element to render with font applied to
 	 */
 	element?:
-		| 'div'
-		| 'span'
-		| 'p'
-		| 'b'
-		| 'i'
-		| 'h1'
-		| 'h2'
-		| 'h3'
-		| 'h4'
-		| 'h5'
-		| 'h6';
+		'div' | 'span' | 'p' | 'b' | 'i' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 	/**
 	 * Font variant to apply as a CSS style to the element
 	 */

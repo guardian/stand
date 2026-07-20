@@ -39,17 +39,21 @@ export const buttonStyles = (
 		border: ${theme[variant].shared.border};
 		border-radius: ${theme[variant].shared.borderRadius};
 
-		${hasIcon &&
-		css`
-			padding-left: ${theme[variant][size].padding.withIcon.iconLeft.left};
-			gap: ${theme[variant][size].icon.gap};
-		`}
+		${
+			hasIcon &&
+			css`
+				padding-left: ${theme[variant][size].padding.withIcon.iconLeft.left};
+				gap: ${theme[variant][size].icon.gap};
+			`
+		}
 
-		${isIconButton &&
-		css`
-			width: ${theme[variant][size].iconButton.width};
-			padding: 0;
-		`}
+		${
+			isIconButton &&
+			css`
+				width: ${theme[variant][size].iconButton.width};
+				padding: 0;
+			`
+		}
 
 		&[data-hovered], &:hover {
 			background: ${theme[variant].shared.hover.backgroundColor};

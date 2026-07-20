@@ -31,8 +31,7 @@ export interface Token {
 }
 
 export type TokenOrTokenGroup =
-	| Token
-	| (Record<string, Token> & { $type?: never; $value?: never });
+	Token | (Record<string, Token> & { $type?: never; $value?: never });
 
 const Dimensions = ['px', 'em', 'rem'] as const;
 

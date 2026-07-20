@@ -24,10 +24,12 @@ export const radioGroupStyles = (
 		margin-top: ${theme.shared.marginTop};
 		margin-bottom: ${theme.shared.marginBottom};
 
-		${orientation === 'horizontal' &&
-		css`
-			flex-direction: ${theme.shared.orientation.horizontal.flexDirection};
-		`}
+		${
+			orientation === 'horizontal' &&
+			css`
+				flex-direction: ${theme.shared.orientation.horizontal.flexDirection};
+			`
+		}
 	`;
 };
 
@@ -54,8 +56,9 @@ export const radioStyles = (
 			border: ${theme.shared.indicator.selected.disabled.border};
 
 			::after {
-				background-color: ${theme.shared.indicator.selected.disabled.after
-					.backgroundColor};
+				background-color: ${
+					theme.shared.indicator.selected.disabled.after.backgroundColor
+				};
 				scale: ${theme.shared.indicator.selected.after.scale};
 			}
 		}
@@ -66,14 +69,18 @@ export const radioStyles = (
 		}
 
 		&[data-selected] :first-of-type {
-			border: ${isInvalid
-				? theme.shared.indicator.selected.invalid.border
-				: theme.shared.indicator.selected.border};
+			border: ${
+				isInvalid
+					? theme.shared.indicator.selected.invalid.border
+					: theme.shared.indicator.selected.border
+			};
 
 			::after {
-				background-color: ${isInvalid
-					? theme.shared.indicator.invalid.after.backgroundColor
-					: theme.shared.indicator.selected.after.backgroundColor};
+				background-color: ${
+					isInvalid
+						? theme.shared.indicator.invalid.after.backgroundColor
+						: theme.shared.indicator.selected.after.backgroundColor
+				};
 				scale: ${theme.shared.indicator.selected.after.scale};
 			}
 		}
@@ -89,9 +96,11 @@ export const radioIndicatorStyles = (
 		width: ${theme[size].indicator.width};
 		height: ${theme[size].indicator.height};
 		border-radius: ${theme.shared.indicator.borderRadius};
-		border: ${isInvalid
-			? theme.shared.indicator.invalid.border
-			: theme.shared.indicator.border};
+		border: ${
+			isInvalid
+				? theme.shared.indicator.invalid.border
+				: theme.shared.indicator.border
+		};
 
 		&::after {
 			content: '';

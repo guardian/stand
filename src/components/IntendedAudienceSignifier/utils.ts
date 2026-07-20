@@ -13,8 +13,7 @@ export const mapTagsToSourceAndTarget = (
 		/tracking\/audience\/(au|us|uk)/.test(tag.path ?? ''),
 	);
 	const domesticAudience = domesticAudienceTag?.path?.split('/').at(-1) as
-		| SourceOrTarget
-		| undefined;
+		SourceOrTarget | undefined;
 	const isGlobal = !!tags.find(
 		(tag) => tag.path === 'tracking/audience/global',
 	);

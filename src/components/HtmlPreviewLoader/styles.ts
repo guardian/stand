@@ -59,12 +59,14 @@ export const iframeStyle = (isNotLoaded: boolean): SerializedStyles => {
 	return css`
 		border: none;
 		transition: 'filter 0.25s';
-		${isNotLoaded
-			? `
+		${
+			isNotLoaded
+				? `
 			filter: blur(3px);
 			pointer-events: none;	
 		`
-			: ''}
+				: ''
+		}
 	`;
 };
 
