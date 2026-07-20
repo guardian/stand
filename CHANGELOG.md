@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.61
+
+### Patch Changes
+
+- 90af947: Fix HtmlPreviewLoader `node10` export
+
 ## 0.0.60
 
 ### Patch Changes
