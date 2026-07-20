@@ -1,0 +1,22 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-html-preview-loader-padding-top: 0px;
+	--component-html-preview-loader-padding-right: 0.5rem;
+	--component-html-preview-loader-padding-bottom: 0px;
+	--component-html-preview-loader-padding-left: 0.5rem;
+	--component-html-preview-loader-shared-color-background: #ffffff;
+	--component-html-preview-loader-shared-color-text: #000000;
+	--component-html-preview-loader-preview-frame-background-color: #ededed;
+	--component-html-preview-loader-preview-frame-border-width: 0.0625rem;
+	--component-html-preview-loader-preview-frame-border-style: solid;
+	--component-html-preview-loader-preview-frame-border-color: #545454;
+	--component-html-preview-loader-preview-frame-padding-top: 0.5rem;
+	--component-html-preview-loader-preview-frame-padding-right: 0.5rem;
+	--component-html-preview-loader-preview-frame-padding-bottom: 0.5rem;
+	--component-html-preview-loader-preview-frame-padding-left: 0.5rem;
+	--component-html-preview-loader-loading-icon-color: #8d8d8d;
+	--component-html-preview-loader-loading-icon-size: 3rem;
+}

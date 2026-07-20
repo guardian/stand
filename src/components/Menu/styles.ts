@@ -51,9 +51,11 @@ export const menuItemStyles = (
 ): SerializedStyles => css`
 	display: ${theme.shared.display};
 	grid-template-columns: ${theme.shared.gridTemplateColumns};
-	grid-template-areas: ${description
-		? theme.shared.gridTemplateAreasWithDescription
-		: theme.shared.gridTemplateAreas};
+	grid-template-areas: ${
+		description
+			? theme.shared.gridTemplateAreasWithDescription
+			: theme.shared.gridTemplateAreas
+	};
 	gap: ${theme.shared.gap};
 	align-items: ${theme.shared.alignItems};
 	padding: ${theme.shared.padding.top} ${theme.shared.padding.right}

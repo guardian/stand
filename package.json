@@ -1,6 +1,6 @@
 {
 	"name": "@guardian/stand",
-	"version": "0.0.58",
+	"version": "0.0.60",
 	"repository": {
 		"url": "https://github.com/guardian/stand"
 	},
@@ -337,6 +337,16 @@
 				"default": "./dist/Tabs.cjs"
 			}
 		},
+		"./HtmlPreviewLoader": {
+			"import": {
+				"types": "./dist/HtmlPreviewLoader.d.ts",
+				"default": "./dist/HtmlPreviewLoader.js"
+			},
+			"require": {
+				"types": "./dist/HtmlPreviewLoader.d.cts",
+				"default": "./dist/HtmlPreviewLoader.cjs"
+			}
+		},
 		"./utils": {
 			"import": {
 				"types": "./dist/utils.d.ts",
@@ -496,6 +506,9 @@
 			],
 			"Tabs": [
 				"./dist/Tabs.d.ts"
+			],
+			"HtmlPreviewLoader": [
+				"./dist/HtmlPreviewLoader.d.ts"
 			]
 		}
 	},
@@ -521,37 +534,37 @@
 		"tsc": "tsc"
 	},
 	"devDependencies": {
-		"@arethetypeswrong/core": "0.18.3",
-		"@changesets/cli": "2.31.0",
+		"@arethetypeswrong/core": "0.18.5",
+		"@changesets/cli": "2.31.1",
 		"@codesandbox/sandpack-react": "2.20.0",
 		"@emotion/react": "11.11.4",
-		"@figma/rest-api-spec": "0.40.0",
+		"@figma/rest-api-spec": "0.41.0",
 		"@guardian/eslint-config": "15.0.0",
 		"@guardian/prettier": "10.0.0",
 		"@guardian/prosemirror-invisibles": "3.1.1",
 		"@guardian/tsconfig": "1.0.1",
 		"@internationalized/date": "3.12.1",
 		"@material-design-icons/svg": "0.14.15",
-		"@playwright/experimental-ct-react17": "1.60.0",
-		"@storybook/addon-a11y": "10.4.2",
-		"@storybook/addon-docs": "10.4.2",
-		"@storybook/addon-themes": "10.4.2",
-		"@storybook/react-vite": "10.4.2",
+		"@playwright/experimental-ct-react17": "1.61.1",
+		"@storybook/addon-a11y": "10.5.2",
+		"@storybook/addon-docs": "10.5.2",
+		"@storybook/addon-themes": "10.5.2",
+		"@storybook/react-vite": "10.5.2",
 		"@testing-library/jest-dom": "6.9.1",
-		"@tsdown/css": "0.22.2",
+		"@tsdown/css": "0.22.9",
 		"@types/jest": "30.0.0",
 		"@types/node": "24.10.1",
 		"@types/react": "17.0.76",
 		"@types/react-dom": "17.0.25",
 		"change-case": "5.4.4",
 		"eslint": "9.39.3",
-		"eslint-plugin-check-file": "3.3.1",
-		"eslint-plugin-storybook": "10.4.2",
+		"eslint-plugin-check-file": "3.3.2",
+		"eslint-plugin-storybook": "10.5.2",
 		"husky": "9.1.7",
 		"jest": "30.4.2",
 		"jest-environment-jsdom": "30.4.1",
-		"lint-staged": "17.0.7",
-		"prettier": "3.8.3",
+		"lint-staged": "17.1.0",
+		"prettier": "3.9.5",
 		"prosemirror-dropcursor": "1.8.2",
 		"prosemirror-history": "1.4.1",
 		"prosemirror-keymap": "1.2.2",
@@ -565,13 +578,13 @@
 		"remark-gfm": "4.0.1",
 		"rimraf": "6.1.3",
 		"sort-package-json": "4.0.0",
-		"storybook": "10.4.2",
-		"style-dictionary": "5.4.4",
+		"storybook": "10.5.2",
+		"style-dictionary": "5.5.0",
 		"ts-jest": "29.4.11",
-		"tsdown": "0.22.2",
+		"tsdown": "0.22.9",
 		"tslib": "2.8.1",
 		"typescript": "5.1.3",
-		"vite": "8.0.16",
+		"vite": "8.1.5",
 		"vite-plugin-svgr": "5.2.0"
 	},
 	"peerDependencies": {
@@ -630,7 +643,7 @@
 			"optional": true
 		}
 	},
-	"packageManager": "pnpm@11.5.2+sha512.71c631e382066efc25625d5cf029075de07b61b37f6e27350fbd84b1bda5864c8c1967adc280776b45c30a715c0359a3be08fef42d5bb09e2b99029979692916",
+	"packageManager": "pnpm@11.15.1+sha512.81350b07e53c9538a02f1f2303b4290fa2d7be04e56e2a970c4cc4b417dc761de196edabd49d55c7dc9580db81007c44143e4e3d7e462b3000d23c255122d065",
 	"//exports": "Each component has its own entry point for optimal tree-shaking. Main entry point only includes design tokens and utilities. New components/foundations should follow the same pattern.",
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here."
 }

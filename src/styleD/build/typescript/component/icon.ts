@@ -7,6 +7,9 @@ export const componentIcon = {
 		display: 'inline-flex',
 		userSelect: 'none',
 	},
+	xs: {
+		size: '0.875rem',
+	},
 	sm: {
 		size: '1.125rem',
 	},

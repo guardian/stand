@@ -146,21 +146,22 @@ const CustomIcon = () => (
 
 ## Props
 
-| Name           | Type                            | Required    | Default | Description                                                                                                                                                 |
-| -------------- | ------------------------------- | ----------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `symbol`       | `MaterialSymbol`                | Conditional | N/A     | Name of the Material Symbol to display (e.g., "home", "add"). Uses the `MaterialSymbol` type for type safety. Alternative to providing the icon as a child. |
-| `children`     | `ReactNode` \| `MaterialSymbol` | Conditional | N/A     | Icon content - either a Material Symbol name (typed as `MaterialSymbol`), an SVG component (ReactNode), or left empty if using `symbol`.                    |
-| `size`         | `'sm'` \| `'md'` \| `'lg'`      | No          | `'md'`  | Controls the icon dimensions.                                                                                                                               |
-| `fill`         | `string`                        | No          | N/A     | Fill/color of the icon. Default is to inherit from text color or icon defaults.                                                                             |
-| `alt`          | `string`                        | Conditional | N/A     | Alternative text for screen readers. Required if the icon conveys meaning on its own. Omit for decorative icons alongside text.                             |
-| `theme`        | `IconTheme` (partial)           | No          | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                                     |
-| `cssOverrides` | `SerializedStyles`              | No          | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                  |
-| `className`    | `string`                        | No          | N/A     | Additional class name(s) for the icon. For Material Symbols, combines with `material-symbols`.                                                              |
+| Name           | Type                                | Required    | Default | Description                                                                                                                                                 |
+| -------------- | ----------------------------------- | ----------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `symbol`       | `MaterialSymbol`                    | Conditional | N/A     | Name of the Material Symbol to display (e.g., "home", "add"). Uses the `MaterialSymbol` type for type safety. Alternative to providing the icon as a child. |
+| `children`     | `ReactNode` \| `MaterialSymbol`     | Conditional | N/A     | Icon content - either a Material Symbol name (typed as `MaterialSymbol`), an SVG component (ReactNode), or left empty if using `symbol`.                    |
+| `size`         | `'xs'` \|`'sm'` \| `'md'` \| `'lg'` | No          | `'md'`  | Controls the icon dimensions.                                                                                                                               |
+| `fill`         | `string`                            | No          | N/A     | Fill/color of the icon. Default is to inherit from text color or icon defaults.                                                                             |
+| `alt`          | `string`                            | Conditional | N/A     | Alternative text for screen readers. Required if the icon conveys meaning on its own. Omit for decorative icons alongside text.                             |
+| `theme`        | `IconTheme` (partial)               | No          | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                                     |
+| `cssOverrides` | `SerializedStyles`                  | No          | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                  |
+| `className`    | `string`                            | No          | N/A     | Additional class name(s) for the icon. For Material Symbols, combines with `material-symbols`.                                                              |
 
 **`size`**
 
-The icon supports three sizes:
+The icon supports four sizes:
 
+- `xs` (extra small): 14px
 - `sm` (small): 18px
 - `md` (medium): 20px
 - `lg` (large): 24px

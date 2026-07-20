@@ -123,18 +123,21 @@ export const calendarHeaderStyles = (
 			aspect-ratio: ${theme.calendar.header.shared.button.aspectRatio};
 
 			&[data-hovered] {
-				background-color: ${theme.calendar.header.shared.button.hovered
-					.backgroundColor};
+				background-color: ${
+					theme.calendar.header.shared.button.hovered.backgroundColor
+				};
 			}
 
 			&[data-pressed] {
-				background-color: ${theme.calendar.header.shared.button.pressed
-					.backgroundColor};
+				background-color: ${
+					theme.calendar.header.shared.button.pressed.backgroundColor
+				};
 			}
 
 			&[data-selected] {
-				background-color: ${theme.calendar.header.shared.button.selected
-					.backgroundColor};
+				background-color: ${
+					theme.calendar.header.shared.button.selected.backgroundColor
+				};
 			}
 
 			&[data-focus-visible] {

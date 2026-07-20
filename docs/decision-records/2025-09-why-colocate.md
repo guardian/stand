@@ -4,7 +4,7 @@ Date: September 2025
 
 ## Status
 
-~Accepted~
+~~Accepted~~
 
 Revoked, superseded by [ADR](2026-02-relocation.md)
 

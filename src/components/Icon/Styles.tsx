@@ -25,13 +25,15 @@ export const IconStyles = (
 	user-select: ${theme.shared.userSelect};
 	${fill ? `color: ${fill};` : ''}
 
-	${mode === 'svg'
-		? `
+	${
+		mode === 'svg'
+			? `
 		& > svg {
 			width: ${theme[size].size};
 			height: ${theme[size].size};
             ${fill ? `fill: ${fill};` : ''}
 		}
 	`
-		: ''}
+			: ''
+	}
 `;

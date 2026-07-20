@@ -901,6 +901,10 @@
 				"$type": "dimension",
 				"$value": "8px"
 			},
+			"size14Px": {
+				"$type": "dimension",
+				"$value": "14px"
+			},
 			"size16Px": {
 				"$type": "dimension",
 				"$value": "16px"
@@ -940,6 +944,10 @@
 			"size8Rem": {
 				"$type": "dimension",
 				"$value": "0.5rem"
+			},
+			"size14Rem": {
+				"$type": "dimension",
+				"$value": "0.875rem"
 			},
 			"size16Rem": {
 				"$type": "dimension",
@@ -1017,6 +1025,10 @@
 				"disabled": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.500}"
+				},
+				"link": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.200}"
 				},
 				"green": {
 					"$type": "color",
@@ -1280,6 +1292,10 @@
 					"$type": "color",
 					"$value": "{base.colors.red.800}"
 				},
+				"errorWeaker": {
+					"$type": "color",
+					"$value": "{base.colors.red.900}"
+				},
 				"errorStrong": {
 					"$type": "color",
 					"$value": "{base.colors.red.300}"
@@ -1366,6 +1382,10 @@
 				}
 			},
 			"icon": {
+				"xs": {
+					"$type": "dimension",
+					"$value": "{base.sizing.size14Rem}"
+				},
 				"sm": {
 					"$type": "dimension",
 					"$value": "{base.sizing.size18Rem}"

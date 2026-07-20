@@ -13,7 +13,7 @@ export const componentTextArea = {
 			left: '0.75rem',
 		},
 		height: '144px',
-		marginTop: '0.5rem',
+		marginTop: '0.25rem',
 		borderRadius: '0.25rem',
 		border: '0.0625rem solid #545454',
 		backgroundColor: '#ffffff',

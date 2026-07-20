@@ -45,9 +45,11 @@ export const textInputStyles = (
 			outline: ${theme.shared.focused.outline};
 		}
 
-		${isInvalid &&
-		css`
-			border: ${theme.shared.error.border};
-		`}
+		${
+			isInvalid &&
+			css`
+				border: ${theme.shared.error.border};
+			`
+		}
 	`;
 };

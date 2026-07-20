@@ -101,14 +101,16 @@ export const tagTableRowStyles = (
 				opacity: 1;
 			}
 		}
-		${highlightFirstRow &&
-		`:first-of-type {
+		${
+			highlightFirstRow &&
+			`:first-of-type {
                     background-color: ${theme.row.firstRowBackgroundColor};
 
                     :hover {
                         background-color: ${theme.row.firstRowBackgroundHoverColor};
                     }
-                }`}
+                }`
+		}
 	`;
 };
 
@@ -125,11 +127,13 @@ export const tagTableStyles = (
 		.react-aria-DropIndicator[data-drop-target] {
 			height: ${theme.row.height};
 
-			${highlightFirstRow
-				? `&:first-child {
+			${
+				highlightFirstRow
+					? `&:first-child {
 						background-color: ${theme.row.firstRowBackgroundColor};
 					}`
-				: ''}
+					: ''
+			}
 		}
 	`;
 };

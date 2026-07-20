@@ -53,10 +53,12 @@ export const tabStyles = (
 		align-items: ${theme.shared.alignItems};
 		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
 			${theme.shared.padding.bottom} ${theme.shared.padding.left};
-		${hasIcon &&
-		css`
-			padding-right: ${theme.shared.padding.withIcon.right};
-		`}
+		${
+			hasIcon &&
+			css`
+				padding-right: ${theme.shared.padding.withIcon.right};
+			`
+		}
 		color: ${theme.shared.color};
 		${convertTypographyToEmotionStringStyle(theme[size].typography)}
 
@@ -84,48 +86,54 @@ export const tabStyles = (
 			background: ${theme.shared.selected.border.background};
 		}
 
-		${orientation === 'horizontal' &&
-		css`
-			border-right: ${theme.shared.border};
-
-			&:first-child {
-				border-left: ${theme.shared.border};
-			}
-
-			&::after {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				height: ${theme.shared.selected.border.size};
-				background: transparent;
-			}
-		`}
-
-		${orientation === 'vertical' &&
-		css`
-			border-bottom: ${theme.shared.border};
-			padding-right: ${theme.shared.padding.verticalRight};
-			${hasIcon &&
+		${
+			orientation === 'horizontal' &&
 			css`
-				padding-right: ${theme.shared.padding.withIcon.verticalRight};
-			`}
+				border-right: ${theme.shared.border};
 
-			&:first-child {
-				border-top: ${theme.shared.border};
-			}
+				&:first-child {
+					border-left: ${theme.shared.border};
+				}
 
-			&::after {
-				content: '';
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				right: 0;
-				width: ${theme.shared.selected.border.size};
-				background: transparent;
-			}
-		`}
+				&::after {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: ${theme.shared.selected.border.size};
+					background: transparent;
+				}
+			`
+		}
+
+		${
+			orientation === 'vertical' &&
+			css`
+				border-bottom: ${theme.shared.border};
+				padding-right: ${theme.shared.padding.verticalRight};
+				${
+					hasIcon &&
+					css`
+						padding-right: ${theme.shared.padding.withIcon.verticalRight};
+					`
+				}
+
+				&:first-child {
+					border-top: ${theme.shared.border};
+				}
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					right: 0;
+					width: ${theme.shared.selected.border.size};
+					background: transparent;
+				}
+			`
+		}
 	`;
 };
 
