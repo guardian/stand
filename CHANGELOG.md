@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.62
+
+### Patch Changes
+
+- 1c3a483: Add `Tooltip` component
+
 ## 0.0.61
 
 ### Patch Changes
