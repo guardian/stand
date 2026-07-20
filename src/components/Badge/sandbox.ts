@@ -17,17 +17,18 @@ export const componentCss = /* css */ `
 
 /* example setup of badge style */
 .stand-badge {
-	background-color: var(--component-badge-color-background);
-	display: var(--component-badge-display);
-	align-items: var(--component-badge-align-items);
-	justify-content: var(--component-badge-justify-content);
-	width: var(--component-badge-size);
-	height: var(--component-badge-size);
-	user-select: var(--component-badge-user-select);
-	color: var(--component-badge-color-text);
-	font: var(--component-badge-typography-font);
-	letter-spacing: var(--component-badge-typography-letter-spacing);
-	font-variation-settings: "wdth" var(--component-badge-typography-font-width);
+	display: var(--component-badge-size-md-display);
+	align-items: var(--component-badge-size-md-align-items);
+	justify-content: var(--component-badge-size-md-justify-content);
+	padding-top: var(--component-badge-size-md-padding-top);
+	padding-right: var(--component-badge-size-md-padding-right);
+	padding-bottom: var(--component-badge-size-md-padding-bottom);
+	padding-left: var(--component-badge-size-md-padding-left);
+	font: var(--component-badge-size-md-typography-font);
+	letter-spacing: var(--component-badge-size-md-typography-letter-spacing);
+	font-width: var(--component-badge-size-md-typography-font-width);
+	background: var(--component-badge-color-green-background);
+	color: var(--component-badge-color-green-color);
 }
 `;
 
@@ -37,30 +38,29 @@ export const componentHtml = /* html */ `<div class="container">
 `;
 
 // Custom component - JS example
-export const componentJs = /* javascript */ `	// for ts/js
-		import { componentBadge, componentIcon } from "@guardian/stand";
+export const componentJs = /* javascript */ `
+// for ts/js
+import { componentBadge } from "@guardian/stand";
 
 const badgeStyles = \`
-    background-color: \${componentBadge.color.background};
-    display: \${componentBadge.display};
-    align-items: \${componentBadge["align-items"]};
-    justify-content: \${componentBadge["justify-content"]};
-    width: \${componentBadge.size};
-    height: \${componentBadge.size};
-    user-select: \${componentBadge["user-select"]};
-\`;
-
-const typographyStyle = \`
-    color: \${componentBadge.color.text};
-    font: \${componentBadge.typography.font};
-    letter-spacing: \${componentBadge.typography.letterSpacing};
-    font-variation-settings: 'wdth' \${componentBadge.typography.fontWidth};
+	display: \${componentBadge.size.md.display};
+	align-items: \${componentBadge.size.md.alignItems};
+	justify-content: \${componentBadge.size.md.justifyContent};
+	padding-top: \${componentBadge.size.md.padding.top};
+	padding-right: \${componentBadge.size.md.padding.right};
+	padding-bottom: \${componentBadge.size.md.padding.bottom};
+	padding-left: \${componentBadge.size.md.padding.left};
+	font: \${componentBadge.size.md.typography.font};
+	letter-spacing: \${componentBadge.size.md.typography.letterSpacing};
+	font-width: \${componentBadge.size.md.typography.fontWidth};
+	background: \${componentBadge.color.green.background};
+	color: \${componentBadge.color.green.color};
 \`;
 
 // e.g. adding to DOM using vanilla JS styles
 document.getElementById("app").innerHTML = \`
 <div class="container">
-  <div style="\${badgeStyles}\${typographyStyle}">This too will pass</div>
+  <div style="\${badgeStyles}">This too shall pass</div>
 </div>
 \`;
 `;

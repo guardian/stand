@@ -1,6 +1,6 @@
-// import { css } from '@emotion/react';
+import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-// import { baseColors, baseSpacing } from '../..';
+// import { baseColors, baseSizing } from '../..';
 import { tableStyles } from '../../util/storybook/styles';
 import { Badge } from './Badge';
 
@@ -76,41 +76,41 @@ export const BadgeTable = {
 
 export const CustomTheme = {
 	name: 'custom theme',
-	args: {
-		// children: 'Custom Themed Button',
-		// variant: 'primary',
-		// size: 'md',
-		// theme: {
-		// 	primary: {
-		// 		shared: {
-		// 			backgroundColor: baseColors.coolPurple[200],
-		// 			color: baseColors.coolPurple[900],
-		// 			border: `2px solid ${baseColors.coolPurple[700]}`,
-		// 			hover: {
-		// 				backgroundColor: baseColors.coolPurple[300],
-		// 				border: `2px solid ${baseColors.coolPurple[700]}`,
-		// 			},
-		// 			active: {
-		// 				backgroundColor: baseColors.coolPurple[400],
-		// 				border: `2px solid ${baseColors.coolPurple[700]}`,
-		// 			},
-		// 		},
-		// 	},
-		// },
-	},
+	// 	theme: {
+	// 		size: {
+	// 			md: {
+	// 				// display: 'inline-flex',
+	// 				// alignItems: 'center',
+	// 				// justifyContent: 'center',
+	// 				// padding: {
+	// 				// 	top: '4px',
+	// 				// 	right: '12px',
+	// 				// 	bottom: '4px',
+	// 				// 	left: '12px',
+	// 				// },
+	// 				// typography: {
+	// 				// 	font: 'normal 700 1rem/1.15 Open Sans',
+	// 				// 	letterSpacing: '-0.03125rem',
+	// 				// 	fontWidth: 95,
+	// 				// },
+	// 				fontSize: baseSizing.size48Rem,
+	// 			},
+	// 		color: {
+	// 			green: {
+	// 				color: baseColors.coolPurple[900],
+	// 			}
+	// 		}
+	// 	},
+	// },
 } satisfies Story;
 
 export const CssOverrides = {
 	name: 'cssOverrides',
 	args: {
-		// children: 'CSSOverrides Button',
-		// variant: 'primary',
-		// size: 'md',
-		// cssOverrides: css`
-		// 	width: 100%;
-		// 	text-transform: full-width;
-		// 	font-variant: small-caps;
-		// 	padding-inline: ${baseSpacing['24Rem']};
-		// `,
+		size: 'md',
+		color: 'green',
+		cssOverrides: css`
+			font-variant: small-caps;
+		`,
 	},
 } satisfies Story;
