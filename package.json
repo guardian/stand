@@ -535,6 +535,7 @@
 		"@storybook/addon-themes": "10.4.2",
 		"@storybook/react-vite": "10.4.2",
 		"@testing-library/jest-dom": "6.9.1",
+		"@tfk-samf/figma-to-dtcg": "^0.4.4",
 		"@tsdown/css": "0.22.2",
 		"@types/jest": "30.0.0",
 		"@types/node": "24.10.1",
