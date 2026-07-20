@@ -26,9 +26,9 @@ export const topBarNavigationStyles = (
 		height: ${theme.shared.height};
 		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
 			${theme.shared.padding.bottom} ${theme.shared.padding.left};
-		color: ${selected
-			? `${theme.selected.color}`
-			: `${theme.unselected.color}`};
+		color: ${
+			selected ? `${theme.selected.color}` : `${theme.unselected.color}`
+		};
 
 		&[data-hovered],
 		&:hover {
@@ -46,47 +46,53 @@ export const topBarNavigationStyles = (
 			color: ${theme.shared.disabled.color};
 		}
 
-		${_menuOpen
-			? css`
-					border-right: ${theme.shared.borderTop};
-					border-left: ${theme.unselected.borderBottom};
-					width: 100%;
+		${
+			_menuOpen
+				? css`
+						border-right: ${theme.shared.borderTop};
+						border-left: ${theme.unselected.borderBottom};
+						width: 100%;
 
-					&[data-hovered],
-					&:hover {
-						border-left: ${theme.selected.borderBottom};
-					}
+						&[data-hovered],
+						&:hover {
+							border-left: ${theme.selected.borderBottom};
+						}
 
-					&[data-focus-visible],
-					&:focus-visible {
-						border-left: ${theme.selected.borderBottom};
-					}
+						&[data-focus-visible],
+						&:focus-visible {
+							border-left: ${theme.selected.borderBottom};
+						}
 
-					${selected &&
-					`
+						${
+							selected &&
+							`
 						border-left: ${theme.selected.borderBottom};
 						background-color: ${theme.shared._menuOpen.selected.backgroundColor};
-					`}
-				`
-			: css`
-					border-top: ${theme.shared.borderTop};
-					border-bottom: ${theme.unselected.borderBottom};
-
-					&[data-hovered],
-					&:hover {
-						border-bottom: ${theme.selected.borderBottom};
-					}
-
-					&[data-focus-visible],
-					&:focus-visible {
-						border-bottom: ${theme.selected.borderBottom};
-					}
-
-					${selected &&
 					`
+						}
+					`
+				: css`
+						border-top: ${theme.shared.borderTop};
+						border-bottom: ${theme.unselected.borderBottom};
+
+						&[data-hovered],
+						&:hover {
+							border-bottom: ${theme.selected.borderBottom};
+						}
+
+						&[data-focus-visible],
+						&:focus-visible {
+							border-bottom: ${theme.selected.borderBottom};
+						}
+
+						${
+							selected &&
+							`
 						border-bottom: ${theme.selected.borderBottom};
-					`}
-				`}
+					`
+						}
+					`
+		}
 
 		text-decoration: ${theme.shared.textDecoration};
 	`;
@@ -97,15 +103,18 @@ export const topBarNavigationDividerStyles = (
 	{ alignment }: Required<Pick<TopBarNavigationProps, 'alignment'>>,
 	_menuOpen?: boolean,
 ): SerializedStyles => css`
-	${_menuOpen
-		? css`
-				height: ${theme.shared._menuOpen.height};
-				border-bottom: ${theme.shared.divider};
-			`
-		: css`
-				${alignment === 'left' ? 'border-right' : 'border-left'}: ${theme.shared
-					.divider};
-			`}
+	${
+		_menuOpen
+			? css`
+					height: ${theme.shared._menuOpen.height};
+					border-bottom: ${theme.shared.divider};
+				`
+			: css`
+					${alignment === 'left' ? 'border-right' : 'border-left'}: ${
+						theme.shared.divider
+					};
+				`
+	}
 `;
 
 export const topBarNavigationTextStyles = (

@@ -77,9 +77,11 @@ export const Typography = () => (
 										line-height: ${baseTypography.lineHeight.normal};
 										letter-spacing: ${baseTypography.letterSpacing.defaultRem};
 										font-variation-settings: 'wdth'
-											${baseTypography.width[
-												name as keyof typeof baseTypography.width
-											]};
+											${
+												baseTypography.width[
+													name as keyof typeof baseTypography.width
+												]
+											};
 									`}
 									contentEditable
 								>
@@ -156,19 +158,24 @@ export const Typography = () => (
 									<td css={sampleCss}>
 										<span
 											css={css`
-												font-family: '${baseTypography.family[
-													familyName as keyof typeof baseTypography.family
-												]}';
+												font-family: '${
+													baseTypography.family[
+														familyName as keyof typeof baseTypography.family
+													]
+												}';
 												font-weight: ${weightValue};
 												font-size: ${baseTypography.size['18Rem']};
 												font-style: ${baseTypography.style.normal};
 												line-height: ${baseTypography.lineHeight.normal};
-												letter-spacing: ${baseTypography.letterSpacing
-													.defaultRem};
+												letter-spacing: ${
+													baseTypography.letterSpacing.defaultRem
+												};
 												font-variation-settings: 'wdth'
-													${baseTypography.width[
-														familyName as keyof typeof baseTypography.width
-													]};
+													${
+														baseTypography.width[
+															familyName as keyof typeof baseTypography.width
+														]
+													};
 											`}
 											contentEditable
 										>
@@ -201,9 +208,11 @@ export const Typography = () => (
 							<td css={sampleCss}>
 								<span
 									css={css`
-										font-family: '${baseTypography.family[
-											name as keyof typeof baseTypography.family
-										]}';
+										font-family: '${
+											baseTypography.family[
+												name as keyof typeof baseTypography.family
+											]
+										}';
 										font-weight: ${baseTypography.weight.openSans.normal};
 										font-size: ${baseTypography.size['18Rem']};
 										font-style: ${baseTypography.style.normal};

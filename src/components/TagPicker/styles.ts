@@ -27,11 +27,13 @@ export const autocompleteInputStyles = (
 		border-style: ${theme.input.borderStyle};
 		border-radius: ${theme.input.borderRadius};
 
-		${hasIcon &&
-		`
+		${
+			hasIcon &&
+			`
 		padding-right: calc(${theme.icon.paddingX} + ${theme.icon.size} + ${theme.icon.paddingX});
 		min-height: calc(${theme.icon.size});
-		`}
+		`
+		}
 
 		&[data-hovered] {
 			background-color: ${theme.input.hover.backgroundColor};
