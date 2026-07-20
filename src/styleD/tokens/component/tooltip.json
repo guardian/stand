@@ -1,0 +1,40 @@
+{
+	"component": {
+		"tooltip": {
+			"shared": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.strong}"
+				},
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.informationWeak}"
+				}
+			},
+			"trigger": {
+				"size": {
+					"$type": "dimension",
+					"$value": "{base.spacing.20Rem}"
+				}
+			},
+			"tooltip": {
+				"offset": {
+					"$type": "dimension",
+					"$value": "{base.spacing.16Rem}"
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": "{base.spacing.16Rem}"
+				},
+				"maxWidth": {
+					"$type": "dimension",
+					"$value": "26ch"
+				},
+				"borderRadius": {
+					"$type": "dimension",
+					"$value": "{semantic.radius.cornerSm}"
+				}
+			}
+		}
+	}
+}
