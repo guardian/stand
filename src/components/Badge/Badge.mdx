@@ -21,12 +21,12 @@ import {
 
 # Badge
 
-The Badge component [[enter description of purpose]].
+The Badge component displays a short label used to indicate a status or category.
 
 ## When to use
 
-- [[use case]]
-- [[use case]]
+- Indicate a status - Live, Draft, Published
+- Display a short category label - Internal
 
 ## Peer dependencies
 
@@ -87,11 +87,23 @@ The `theme` prop allows you to override specific design tokens for the Badge com
 ```tsx
 import type { BadgeTheme } from '@guardian/stand/Badge';
 import { Badge } from '@guardian/stand/Badge';
-import { baseColors, baseSizing } from '@guardian/stand';
+import { baseColors, baseSpacing } from '@guardian/stand';
 
 const customTheme: BadgeTheme = {
-	color: baseColors.coolPurple[700],
-	size: baseSizing.size32Rem,
+	color: {
+		green: {
+			background: baseColors.coolPurple[200],
+			color: baseColors.coolPurple[900],
+		},
+	},
+	size: {
+		md: {
+			padding: {
+				left: baseSpacing['16Px'],
+				right: baseSpacing['16Px'],
+			},
+		},
+	},
 };
 
 const Component = () => <Badge theme={customTheme}>Customised Badge</Badge>;
