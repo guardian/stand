@@ -13,11 +13,11 @@ export const Badge = ({
 	const mergedTheme = mergeDeep(defaultBadgeTheme, theme);
 
 	return (
-		<div
+		<span
 			css={[badgeStyles(mergedTheme, { color, size }), cssOverrides]}
 			{...props}
 		>
 			{children}
-		</div>
+		</span>
 	);
 };
