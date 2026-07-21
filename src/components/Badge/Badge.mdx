@@ -57,11 +57,14 @@ import type { BadgeProps, BadgeTheme } from '@guardian/stand/Badge';
 
 ## Props
 
-| Name           | Type               | Required | Default | Description                             |
-| -------------- | ------------------ | -------- | ------- | --------------------------------------- |
-| `theme`        | `BadgeTheme`       | No       | N/A     | Custom theme overrides for the Badge.   |
-| `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles for the Badge.        |
-| `className`    | `string`           | No       | N/A     | Additional class name(s) for the Badge. |
+| Name           | Type                 | Required | Default   | Description                            |
+| -------------- | -------------------- | -------- | --------- | -------------------------------------- |
+| `size`         | (see variants below) | No       | `'md'`    | Size variant of the badge              |
+| `color`        | (see variants below) | No       | `'green'` | Color variant of the badge             |
+| `theme`        | `BadgeTheme`         | No       | N/A       | Custom theme overrides for the Badge   |
+| `cssOverrides` | `SerializedStyles`   | No       | N/A       | Custom CSS styles for the Badge        |
+| `className`    | `string`             | No       | N/A       | Additional class name(s) for the Badge |
+| `children`     | `React.ReactNode`    | No       | N/A       | Content to render inside the badge     |
 
 **`size` and `color`**
 

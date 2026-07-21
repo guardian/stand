@@ -43,7 +43,7 @@
 							"$value": "{semantic.typography.headingMd.letterSpacing}"
 						},
 						"fontWidth": {
-							"$type": "dimension",
+							"$type": "number",
 							"$value": "{semantic.typography.headingMd.fontWidth}"
 						}
 					}
@@ -89,7 +89,7 @@
 							"$value": "{semantic.typography.headingSm.letterSpacing}"
 						},
 						"fontWidth": {
-							"$type": "dimension",
+							"$type": "number",
 							"$value": "{semantic.typography.headingSm.fontWidth}"
 						}
 					}
@@ -135,7 +135,7 @@
 							"$value": "{semantic.typography.headingXs.letterSpacing}"
 						},
 						"fontWidth": {
-							"$type": "dimension",
+							"$type": "number",
 							"$value": "{semantic.typography.headingXs.fontWidth}"
 						}
 					}
