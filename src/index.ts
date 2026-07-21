@@ -66,6 +66,8 @@ export { componentTypography } from './styleD/build/typescript/component/typogra
 export type { ComponentTypography } from './styleD/build/typescript/component/typography';
 export { componentTabs } from './styleD/build/typescript/component/tabs';
 export type { ComponentTabs } from './styleD/build/typescript/component/tabs';
+export { componentSidebarStepperNavigation } from './styleD/build/typescript/component/sidebarStepperNavigation';
+export type { ComponentSidebarStepperNavigation } from './styleD/build/typescript/component/sidebarStepperNavigation';
 
 /**
  * style dictionary exports - base

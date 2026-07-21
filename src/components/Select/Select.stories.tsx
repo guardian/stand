@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
 import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { Option, Select } from './Select';
 
@@ -27,6 +28,28 @@ type Story = StoryObj<typeof Select>;
 export default meta;
 
 export const Default = {} satisfies Story;
+
+export const Controlled: Story = {
+	render: (args) => {
+		const [value, setValue] = useState('option-1');
+
+		return (
+			<Select
+				{...args}
+				value={value}
+				onChange={(nextValue) => {
+					if (typeof nextValue === 'string') {
+						setValue(nextValue);
+					}
+				}}
+			>
+				<Option id="option-1">Option 1</Option>
+				<Option id="option-2">Option 2</Option>
+				<Option id="option-3">Option 3</Option>
+			</Select>
+		);
+	},
+};
 
 export const Fluid = {
 	args: {
