@@ -1,0 +1,169 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import SidebarStepperNavigationStories, {
+	Default,
+	Linear,
+	WithStatuses,
+} from './SidebarStepperNavigation.stories';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
+
+<Meta of={SidebarStepperNavigationStories} />
+
+# Sidebar Stepper Navigation
+
+A React Aria powered sidebar navigation for multi-step workflows. It shows the current step, completion status, and only enables navigation when the workflow allows it. On smaller screens, it collapses behind a toggle.
+
+## When to use
+
+- Guiding users through a multi-step form or workflow
+- Displaying step completion state alongside navigation
+- Allowing controlled non-linear navigation between eligible steps
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { SidebarStepperNavigation } from '@guardian/stand/SidebarStepperNavigation';
+
+const stepNavConfig = {
+	isNonLinear: true,
+	steps: [
+		{
+			id: 'details',
+			label: 'Details',
+			canSkipFrom: true,
+			canSkipTo: true,
+			stepStatus: 'complete',
+		},
+		{ id: 'review', label: 'Review', canSkipTo: true },
+	],
+};
+
+<SidebarStepperNavigation
+	currentStepId="details"
+	stepNavConfig={stepNavConfig}
+	onPress={(stepId) => console.log(stepId)}
+/>;
+```
+
+### Using with Layout
+
+Place the component inside `Layout.Sidebar` for a complete multi-step page shell. Use `layoutSmBreakpoint="above-grid"` so the stepper's mobile disclosure is available above the main content.
+
+```tsx
+import { Layout } from '@guardian/stand/Layout';
+import { SidebarStepperNavigation } from '@guardian/stand/SidebarStepperNavigation';
+
+<Layout>
+	<Layout.Sidebar layoutSmBreakpoint="above-grid">
+		<SidebarStepperNavigation
+			currentStepId={currentStepId}
+			stepNavConfig={stepNavConfig}
+			onPress={setCurrentStepId}
+		/>
+	</Layout.Sidebar>
+	<Layout.Main>{/* selected step content */}</Layout.Main>
+</Layout>;
+```
+
+## Props
+
+| Name            | Type                                      | Required | Default   | Description                                                        |
+| --------------- | ----------------------------------------- | -------- | --------- | ------------------------------------------------------------------ |
+| `currentStepId` | `string`                                  | No       | N/A       | Identifier of the current step.                                    |
+| `stepNavConfig` | `StepNavConfig`                           | Yes      | N/A       | Steps and whether the workflow permits non-linear navigation.      |
+| `onPress`       | `(stepId: string) => void`                | Yes      | N/A       | Called when an eligible step is pressed.                           |
+| `stepNavTitle`  | `string`                                  | No       | `'Steps'` | Accessible navigation label and mobile toggle title.               |
+| `theme`         | `SidebarStepperNavigationTheme` (partial) | No       | N/A       | Overrides the generated component design tokens for this instance. |
+| `cssOverrides`  | `SerializedStyles \| SerializedStyles[]`  | No       | N/A       | Emotion styles applied to the navigation element.                  |
+
+### `StepNavConfig`
+
+| Name          | Type            | Required | Default | Description                                              |
+| ------------- | --------------- | -------- | ------- | -------------------------------------------------------- |
+| `steps`       | `StepNavStep[]` | Yes      | N/A     | Ordered workflow steps.                                  |
+| `isNonLinear` | `boolean`       | Yes      | N/A     | Enables navigation when the current and target allow it. |
+
+### `StepNavStep`
+
+| Name           | Type         | Required | Default | Description                                                            |
+| -------------- | ------------ | -------- | ------- | ---------------------------------------------------------------------- |
+| `id`           | `string`     | Yes      | N/A     | Unique step identifier.                                                |
+| `label`        | `string`     | No       | `id`    | Visible step label.                                                    |
+| `parentStepId` | `string`     | No       | N/A     | Parent top-level step; child steps are not listed separately.          |
+| `canSkipTo`    | `boolean`    | No       | `false` | Allows navigation to this step in a non-linear workflow.               |
+| `canSkipFrom`  | `boolean`    | No       | `false` | Allows navigation away from the current step in a non-linear workflow. |
+| `stepStatus`   | `StepStatus` | No       | N/A     | Completion status shown for the step.                                  |
+| `stepVisible`  | `boolean`    | No       | `true`  | Whether a top-level step is rendered in the navigation.                |
+
+## Stories
+
+### Default
+
+<Canvas layout="padded" of={Default} />
+
+### With statuses
+
+<Canvas layout="padded" of={WithStatuses} />
+
+### Linear
+
+<Canvas layout="padded" of={Linear} />
+
+## Customisation
+
+The component uses generated Style Dictionary tokens. Use `theme` for token overrides and `cssOverrides` for instance-specific layout changes.
+
+### Theme
+
+```tsx
+import {
+	SidebarStepperNavigation,
+	type SidebarStepperNavigationTheme,
+} from '@guardian/stand/SidebarStepperNavigation';
+import { baseColors } from '@guardian/stand';
+
+const theme: SidebarStepperNavigationTheme = {
+	stepNumber: {
+		shared: {
+			backgroundColor: baseColors.coolPurple[700],
+		},
+	},
+};
+
+<SidebarStepperNavigation
+	/* other required props */
+	theme={theme}
+/>;
+```
+
+The generated CSS custom properties are available from:
+
+```ts
+import '@guardian/stand/component/sidebarStepperNavigation.css';
+```
+
+### CSS overrides
+
+```tsx
+import { css } from '@emotion/react';
+import { SidebarStepperNavigation } from '@guardian/stand/SidebarStepperNavigation';
+
+<SidebarStepperNavigation
+	/* other required props */
+	cssOverrides={css`
+		min-width: 18rem;
+	`}
+/>;
+```

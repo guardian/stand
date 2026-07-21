@@ -1,0 +1,175 @@
+{
+	"component": {
+		"sidebarStepperNavigation": {
+			"mobileToggle": {
+				"shared": {
+					"border": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.weak}",
+							"width": "{base.sizing.size2Rem}",
+							"style": "solid"
+						}
+					},
+					"display": { "$type": "string", "$value": "flex" },
+					"alignItems": { "$type": "string", "$value": "center" },
+					"justifyContent": {
+						"$type": "string",
+						"$value": "space-between"
+					},
+					"height": {
+						"$type": "dimension",
+						"$value": "{base.spacing.72Rem}"
+					},
+					"paddingInline": {
+						"$type": "dimension",
+						"$value": "{base.spacing.16Rem}"
+					},
+					"width": { "$type": "string", "$value": "100%" },
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.bg.raisedLevel1}"
+					},
+					"hovered": {
+						"backgroundColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.bg.raisedLevel2}"
+						}
+					},
+					"pressed": {
+						"backgroundColor": {
+							"$type": "color",
+							"$value": "{base.colors.neutral.750}"
+						}
+					}
+				}
+			},
+			"navigation": {
+				"shared": {
+					"border": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.strong}",
+							"width": "{semantic.sizing.border.default}",
+							"style": "solid"
+						}
+					},
+					"flexDirection": { "$type": "string", "$value": "column" },
+					"height": { "$type": "string", "$value": "100%" }
+				}
+			},
+			"statusRow": {
+				"shared": {
+					"display": { "$type": "string", "$value": "flex" },
+					"gap": { "$type": "dimension", "$value": "{base.spacing.6Rem}" },
+					"alignItems": { "$type": "string", "$value": "center" },
+					"text": {
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.weak}"
+						},
+						"disabledColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.disabled}"
+						}
+					},
+					"icon": {
+						"size": {
+							"$type": "dimension",
+							"$value": "{base.sizing.size16Rem}"
+						},
+						"optionalColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.successInverse}"
+						},
+						"completeColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.success}"
+						},
+						"incompleteColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.error}"
+						}
+					}
+				}
+			},
+			"step": {
+				"shared": {
+					"height": {
+						"$type": "dimension",
+						"$value": "{base.spacing.72Rem}"
+					},
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{base.colors.neutral.900}"
+					},
+					"currentBackgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.bg.raisedLevel1}"
+					},
+					"cursor": { "$type": "string", "$value": "pointer" },
+					"disabledCursor": { "$type": "string", "$value": "default" },
+					"border": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.weak}",
+							"width": "{semantic.sizing.border.default}",
+							"style": "solid"
+						}
+					},
+					"text": {
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.strong}"
+						},
+						"disabledColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.disabled}"
+						},
+						"inverseColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.strongerInverse}"
+						}
+					},
+					"numberColumnWidth": {
+						"$type": "dimension",
+						"$value": "{base.spacing.32Rem}"
+					}
+				}
+			},
+			"stepNumber": {
+				"shared": {
+					"height": { "$type": "string", "$value": "100%" },
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.selected}"
+					},
+					"display": { "$type": "string", "$value": "flex" },
+					"alignItems": { "$type": "string", "$value": "center" },
+					"justifyContent": {
+						"$type": "string",
+						"$value": "center"
+					}
+				}
+			},
+			"stepContent": {
+				"shared": {
+					"display": { "$type": "string", "$value": "flex" },
+					"flexDirection": { "$type": "string", "$value": "column" },
+					"justifyContent": {
+						"$type": "string",
+						"$value": "center"
+					},
+					"gap": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackXxs}"
+					},
+					"marginLeft": {
+						"$type": "dimension",
+						"$value": "{base.spacing.12Rem}"
+					}
+				}
+			}
+		}
+	}
+}
