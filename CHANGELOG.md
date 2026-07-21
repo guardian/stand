@@ -1,5 +1,39 @@
 # @guardian/stand
 
+## 0.0.63
+
+### Patch Changes
+
+- 433b909: Updates to design tokens.
+
+  Added:
+
+  - `semantic.colors.fill.selectedWeaker`
+  - `semantic.colors.fill.selectedHoverWeaker`
+  - `semantic.colors.fill.selectedPressedWeaker`
+
+  Removed:
+
+  - `semantic.colors.fill.selectedHoverStrong`
+  - `semantic.colors.fill.selectedPressedStrong`
+
+  Updated:
+
+  - `semantic.colors.fill.selectedHoverWeak`
+  - `semantic.colors.fill.selectedPressedWeak`
+
+## 0.0.62
+
+### Patch Changes
+
+- 1c3a483: Add `Tooltip` component
+
+## 0.0.61
+
+### Patch Changes
+
+- 90af947: Fix HtmlPreviewLoader `node10` export
+
 ## 0.0.60
 
 ### Patch Changes

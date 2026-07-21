@@ -1,0 +1,126 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import TooltipStories, {
+	Default,
+	PlacementStart,
+	PlacementTop,
+	PlacementBottom,
+	CustomTheme,
+	CssOverrides,
+} from './Tooltip.stories';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+Displays contextual help or information when the trigger element is hovered or focused.
+
+## When to use
+
+- To present additional information about a UI element or option
+- To provide guidance or context without cluttering the interface
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+- `react-aria-components`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Tooltip } from '@guardian/stand/Tooltip';
+/* types, if required */
+import type { TooltipProps, TooltipTheme } from '@guardian/stand/Tooltip';
+
+const Example = () => <Tooltip placement="end">Tooltip text</Tooltip>;
+```
+
+## Props
+
+| Name           | Type                                          | Required | Default | Description                               |
+| -------------- | --------------------------------------------- | -------- | ------- | ----------------------------------------- |
+| `placement`    | `'top'` \| `'bottom'` \| `'start'` \| `'end'` | No       | 'end'   | Position of tooltip relative to trigger.  |
+| `theme`        | `TooltipTheme`                                | No       | N/A     | Custom theme overrides for the Tooltip.   |
+| `cssOverrides` | `SerializedStyles`                            | No       | N/A     | Custom CSS styles for the Tooltip.        |
+| `className`    | `string`                                      | No       | N/A     | Additional class name(s) for the Tooltip. |
+
+## Stories
+
+<Canvas layout="padded" of={Default} />
+<Canvas layout="padded" of={PlacementStart} />
+<Canvas layout="padded" of={PlacementTop} />
+<Canvas layout="padded" of={PlacementBottom} />
+
+## Customisation
+
+We recommend using the Tooltip component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the Tooltip component:
+
+<Canvas layout="padded" of={CustomTheme} />
+
+```tsx
+import type { TooltipTheme } from '@guardian/stand/Tooltip';
+import { Tooltip } from '@guardian/stand/Tooltip';
+import { baseColors, semanticRadius } from '@guardian/stand';
+
+const customTheme: TooltipTheme = {
+	color: {
+		shared: {
+			color: baseColors.orange[900],
+			backgroundColor: baseColors.orange[50],
+		},
+		tooltip: {
+			borderRadius: semanticRadius.cornerMd,
+		},
+	},
+};
+
+const Component = () => <Tooltip theme={customTheme}>Tooltip text</Tooltip>;
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the Tooltip component, if the theme prop is not sufficient:
+
+<Canvas layout="padded" of={CssOverrides} />
+
+```tsx
+import { Tooltip } from '@guardian/stand/Tooltip';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	span {
+		font-size: 1.25rem;
+	}
+	&[data-placement='right'] {
+		margin-left: 1.5rem;
+	}
+	svg {
+		width: 18px;
+		height: 28px;
+	}
+`;
+
+const Component = () => (
+	<Tooltip cssOverrides={customStyles}>Tooltip text</Tooltip>
+);
+```
+
+## Custom Component Build
+
+Due to the interactive functionality of the Tooltip component it is only available as a React component with Emotion for styling.
+
+If you want to use a tooltip in a non-React environment you would need to build a custom version using vanilla JavaScript and CSS, which may require significant effort to replicate the functionality of this component. We recommend using the provided React component where possible.

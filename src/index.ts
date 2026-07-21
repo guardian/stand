@@ -60,6 +60,8 @@ export { componentTextArea } from './styleD/build/typescript/component/textArea'
 export type { ComponentTextArea } from './styleD/build/typescript/component/textArea';
 export { componentTextInput } from './styleD/build/typescript/component/textInput';
 export type { ComponentTextInput } from './styleD/build/typescript/component/textInput';
+export { componentTooltip } from './styleD/build/typescript/component/tooltip';
+export type { ComponentTooltip } from './styleD/build/typescript/component/tooltip';
 export { componentTopBar } from './styleD/build/typescript/component/topBar';
 export type { ComponentTopBar } from './styleD/build/typescript/component/topBar';
 export { componentTypography } from './styleD/build/typescript/component/typography';
