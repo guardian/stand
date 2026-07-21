@@ -3,7 +3,7 @@
  */
 
 :root {
-	--component-badge-size-md-display: flex;
+	--component-badge-size-md-display: inline-flex;
 	--component-badge-size-md-align-items: center;
 	--component-badge-size-md-justify-content: center;
 	--component-badge-size-md-padding-top: 4px;
@@ -13,7 +13,7 @@
 	--component-badge-size-md-typography-font: normal 700 1rem/1.15 'Open Sans';
 	--component-badge-size-md-typography-letter-spacing: -0.03125rem;
 	--component-badge-size-md-typography-font-width: 95;
-	--component-badge-size-sm-display: flex;
+	--component-badge-size-sm-display: inline-flex;
 	--component-badge-size-sm-align-items: center;
 	--component-badge-size-sm-justify-content: center;
 	--component-badge-size-sm-padding-top: 4px;
@@ -24,7 +24,7 @@
 		'Open Sans';
 	--component-badge-size-sm-typography-letter-spacing: -0.0125rem;
 	--component-badge-size-sm-typography-font-width: 95;
-	--component-badge-size-xs-display: flex;
+	--component-badge-size-xs-display: inline-flex;
 	--component-badge-size-xs-align-items: center;
 	--component-badge-size-xs-justify-content: center;
 	--component-badge-size-xs-padding-top: 1px;

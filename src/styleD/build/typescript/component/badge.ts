@@ -5,7 +5,7 @@
 export const componentBadge = {
 	size: {
 		md: {
-			display: 'flex',
+			display: 'inline-flex',
 			alignItems: 'center',
 			justifyContent: 'center',
 			padding: {
@@ -21,7 +21,7 @@ export const componentBadge = {
 			},
 		},
 		sm: {
-			display: 'flex',
+			display: 'inline-flex',
 			alignItems: 'center',
 			justifyContent: 'center',
 			padding: {
@@ -37,7 +37,7 @@ export const componentBadge = {
 			},
 		},
 		xs: {
-			display: 'flex',
+			display: 'inline-flex',
 			alignItems: 'center',
 			justifyContent: 'center',
 			padding: {
