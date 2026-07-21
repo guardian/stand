@@ -99,8 +99,8 @@ const customTheme: BadgeTheme = {
 	size: {
 		md: {
 			padding: {
-				left: baseSpacing['16Px'],
-				right: baseSpacing['16Px'],
+				left: baseSpacing['8Px'],
+				right: baseSpacing['40Px'],
 			},
 		},
 	},
@@ -117,14 +117,12 @@ The `cssOverrides` prop allows you to pass custom CSS to the Badge component, if
 
 ```tsx
 import { Badge } from '@guardian/stand/Badge';
-import { baseColors, baseSizing, baseRadius } from '@guardian/stand';
+import { baseRadius } from '@guardian/stand';
 import { css } from '@emotion/react';
 
 const customStyles = css`
-	border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
-	background-color: ${baseColors.orange[700]};
-	color: ${baseColors.warmPurple[300]};
-	border-radius: ${baseRadius.corner4Px};
+	font-variant: small-caps;
+	border-radius: ${baseRadius.corner8Px};
 `;
 
 const Component = () => (

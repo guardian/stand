@@ -56,7 +56,7 @@ const badgeStyles = \`
 	padding-left: \${componentBadge.size.md.padding.left};
 	font: \${componentBadge.size.md.typography.font};
 	letter-spacing: \${componentBadge.size.md.typography.letterSpacing};
-	font-variation-settings: "wdth" var(--component-badge-size-md-typography-font-width);
+	font-variation-settings: "wdth" \${componentBadge.size.md.typography.fontWidth};
 	background: \${componentBadge.color.green.background};
 	color: \${componentBadge.color.green.color};
 \`;

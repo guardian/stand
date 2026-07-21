@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-// import { baseColors, baseSizing } from '../..';
+import { baseColors, baseRadius, baseSpacing } from '../..';
 import { tableStyles } from '../../util/storybook/styles';
 import { Badge } from './Badge';
 
@@ -62,7 +62,7 @@ export const BadgeTable = {
 							{sizes.map((size) => (
 								<td key={`${color}-${size}-enabled`}>
 									<Badge color={color} size={size}>
-										Badge Label
+										Badge text
 									</Badge>
 								</td>
 							))}
@@ -74,34 +74,31 @@ export const BadgeTable = {
 	),
 } satisfies Story;
 
+const customThemeParams = {
+	color: {
+		green: {
+			background: baseColors.coolPurple[200],
+			color: baseColors.coolPurple[900],
+		},
+	},
+	size: {
+		md: {
+			padding: {
+				left: baseSpacing['8Px'],
+				right: baseSpacing['40Px'],
+			},
+		},
+	},
+};
+
 export const CustomTheme = {
 	name: 'custom theme',
-	// 	theme: {
-	// 		size: {
-	// 			md: {
-	// 				// display: 'inline-flex',
-	// 				// alignItems: 'center',
-	// 				// justifyContent: 'center',
-	// 				// padding: {
-	// 				// 	top: '4px',
-	// 				// 	right: '12px',
-	// 				// 	bottom: '4px',
-	// 				// 	left: '12px',
-	// 				// },
-	// 				// typography: {
-	// 				// 	font: 'normal 700 1rem/1.15 Open Sans',
-	// 				// 	letterSpacing: '-0.03125rem',
-	// 				// 	fontWidth: 95,
-	// 				// },
-	// 				fontSize: baseSizing.size48Rem,
-	// 			},
-	// 		color: {
-	// 			green: {
-	// 				color: baseColors.coolPurple[900],
-	// 			}
-	// 		}
-	// 	},
-	// },
+	args: {
+		size: 'md',
+		color: 'green',
+		theme: customThemeParams,
+		children: 'Custom theme badge',
+	},
 } satisfies Story;
 
 export const CssOverrides = {
@@ -111,6 +108,8 @@ export const CssOverrides = {
 		color: 'green',
 		cssOverrides: css`
 			font-variant: small-caps;
+			border-radius: ${baseRadius.corner8Px};
 		`,
+		children: 'CSS Override Badge',
 	},
 } satisfies Story;
