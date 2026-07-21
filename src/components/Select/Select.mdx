@@ -1,6 +1,7 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import SelectStories, {
 	Default,
+	Controlled,
 	Fluid,
 	Disabled,
 	WithError,
@@ -52,6 +53,7 @@ See [custom component build](#custom-component-build) for usage without React/Em
 <SandboxReact componentName={componentName} componentTsx={componentTsx} />
 
 ```tsx
+import { useState } from 'react';
 import { Option, Select } from '@guardian/stand/Select';
 
 /* types, if required */
@@ -61,25 +63,17 @@ import type {
 	SelectTheme,
 } from '@guardian/stand/Select';
 
-// `id` prop as the selection value
-<Select
-	label="Select"
-	onChange={(value) => console.log('Selected value:', value)}
->
-	<Option id="opt-1">Option 1</Option>
-	<Option id="opt-2">Option 2</Option>
-	<Option id="opt-3">Option 3</Option>
-</Select>;
+const Component = () => {
+	const [value, setValue] = useState('opt-1');
 
-// `children` as the selection value
-<Select
-	label="Select"
-	onChange={(value) => console.log('Selected value:', value)}
->
-	<Option>Option 1</Option>
-	<Option>Option 2</Option>
-	<Option>Option 3</Option>
-</Select>;
+	return (
+		<Select label="Select" value={value} onChange={setValue}>
+			<Option id="opt-1">Option 1</Option>
+			<Option id="opt-2">Option 2</Option>
+			<Option id="opt-3">Option 3</Option>
+		</Select>
+	);
+};
 ```
 
 ## Props
@@ -90,6 +84,9 @@ import type {
 | `renderLabel`        | `(label: string) => ReactNode` | No       | N/A     | Custom render function for the label. Receives the `label` string and returns a ReactNode for visual enhancement                                                      |
 | `contextualHelpText` | `string`                       | No       | N/A     | Optional contextual help text.                                                                                                                                        |
 | `errorMessage`       | `string`                       | Yes      | N/A     | A validation error message.                                                                                                                                           |
+| `value`              | `Key \| null`                  | No       | N/A     | The controlled selection value. Use with `onChange`.                                                                                                                  |
+| `onChange`           | `(value: Key \| null) => void` | No       | N/A     | Called when the selected value changes.                                                                                                                               |
+| `selectedKey`        | `Key \| null`                  | No       | N/A     | Deprecated. Use `value` instead.                                                                                                                                      |
 | `placement`          | `Placement`                    | No       | N/A     | The placement of the options container element with respect to select input.                                                                                          |
 | `shouldFlip`         | `boolean`                      | No       | N/A     | Whether the element options container element flip its orientation (e.g. top to bottom or left to right) when there is insufficient room for it to render completely. |
 | `children`           | `React.ReactNode`              | No       | N/A     | Options to render in the dropdown, only `Option` components are accepted.                                                                                             |
@@ -129,6 +126,10 @@ When an option is selected, React Aria emits the option's `id` as the value. Sta
 ### Default
 
 <Canvas layout="padded" of={Default} />
+
+### Controlled
+
+<Canvas layout="padded" of={Controlled} />
 
 ### Fluid
 
