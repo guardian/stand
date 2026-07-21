@@ -37,7 +37,7 @@ export const componentCss = /* css */ `
 `;
 
 export const componentHtml = /* html */ `<div class="container">
-	<div class="stand-badge">I wonder where this will turn up</div>
+	<div class="stand-badge">Vanilla CSS Badge</div>
 </div>
 `;
 
@@ -47,6 +47,8 @@ export const componentJs = /* javascript */ `
 import { componentBadge } from "@guardian/stand";
 
 const badgeStyles = \`
+	background: \${componentBadge.color.green.background};
+	color: \${componentBadge.color.green.color};
 	display: \${componentBadge.size.md.display};
 	align-items: \${componentBadge.size.md.alignItems};
 	justify-content: \${componentBadge.size.md.justifyContent};
@@ -56,15 +58,14 @@ const badgeStyles = \`
 	padding-left: \${componentBadge.size.md.padding.left};
 	font: \${componentBadge.size.md.typography.font};
 	letter-spacing: \${componentBadge.size.md.typography.letterSpacing};
-	font-variation-settings: "wdth" \${componentBadge.size.md.typography.fontWidth};
-	background: \${componentBadge.color.green.background};
-	color: \${componentBadge.color.green.color};
+	font-variation-settings: 'wdth' 
+	\${componentBadge.size.md.typography.fontWidth};
 \`;
 
 // e.g. adding to DOM using vanilla JS styles
 document.getElementById("app").innerHTML = \`
 <div class="container">
-  <div style="\${badgeStyles}">This too shall pass</div>
+  <div style="\${badgeStyles}">Vanilla JS Badge</div>
 </div>
 \`;
 `;
