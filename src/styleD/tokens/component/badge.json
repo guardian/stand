@@ -5,7 +5,7 @@
 				"md": {
 					"display": {
 						"$type": "string",
-						"$value": "inline-flex"
+						"$value": "flex"
 					},
 					"alignItems": {
 						"$type": "string",
@@ -51,7 +51,7 @@
 				"sm": {
 					"display": {
 						"$type": "string",
-						"$value": "inline-flex"
+						"$value": "flex"
 					},
 					"alignItems": {
 						"$type": "string",
@@ -97,7 +97,7 @@
 				"xs": {
 					"display": {
 						"$type": "string",
-						"$value": "inline-flex"
+						"$value": "flex"
 					},
 					"alignItems": {
 						"$type": "string",
