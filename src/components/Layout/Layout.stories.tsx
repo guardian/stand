@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { useState } from 'react';
 import { semanticSizing } from '../../styleD/build/typescript/semantic/sizing';
 import { from } from '../../styleD/utils/semantic/mq';
 import { AlertBanner } from '../AlertBanner/AlertBanner';
@@ -7,6 +8,12 @@ import { Avatar } from '../Avatar/Avatar';
 import { Button } from '../Button/Button';
 import { Grid, Item } from '../Grid/Grid';
 import { MenuItem, MenuSection } from '../Menu/Menu';
+import { Option, Select } from '../Select/Select';
+import { SidebarStepperNavigation } from '../SidebarStepperNavigation/SidebarStepperNavigation';
+import type {
+	StepNavConfig,
+	StepStatus,
+} from '../SidebarStepperNavigation/types';
 import { TextInput } from '../TextInput/TextInput';
 import {
 	TopBar,
@@ -240,6 +247,143 @@ const nonGridMainContentStyles = css`
 	min-height: 30svh;
 `;
 
+const workflowControlsStyles = css`
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 16px;
+`;
+
+const sidebarStepperNavigationConfig: StepNavConfig = {
+	isNonLinear: true,
+	steps: [
+		{
+			id: 'details',
+			label: 'Details',
+			canSkipFrom: true,
+			canSkipTo: true,
+			stepStatus: 'complete',
+		},
+		{
+			id: 'audience',
+			label: 'Audience',
+			canSkipFrom: true,
+			canSkipTo: true,
+			stepStatus: 'complete',
+		},
+		{
+			id: 'settings',
+			label: 'Settings',
+			canSkipFrom: true,
+			canSkipTo: true,
+			stepStatus: 'incomplete',
+		},
+		{
+			id: 'preview',
+			label: 'Preview',
+			canSkipFrom: true,
+			canSkipTo: true,
+			stepStatus: 'optional',
+		},
+		{
+			id: 'review',
+			label: 'Review',
+			canSkipTo: true,
+			stepStatus: 'incomplete',
+		},
+		{
+			id: 'submit',
+			label: 'Submit',
+			canSkipTo: false,
+			stepStatus: 'optional',
+		},
+	],
+};
+
+function LayoutWithSidebarStepperNavigation() {
+	const [currentStepId, setCurrentStepId] = useState('details');
+	const [stepStatuses, setStepStatuses] = useState<Record<string, StepStatus>>(
+		() =>
+			Object.fromEntries(
+				sidebarStepperNavigationConfig.steps.map((step) => [
+					step.id,
+					step.stepStatus ?? 'no-fields',
+				]),
+			),
+	);
+	const stepNavConfig = {
+		...sidebarStepperNavigationConfig,
+		steps: sidebarStepperNavigationConfig.steps.map((step) => ({
+			...step,
+			stepStatus: stepStatuses[step.id],
+		})),
+	};
+	const currentStepIndex = stepNavConfig.steps.findIndex(
+		(step) => step.id === currentStepId,
+	);
+	const currentStep = stepNavConfig.steps[currentStepIndex];
+	const previousStep = stepNavConfig.steps[currentStepIndex - 1];
+	const nextStep = stepNavConfig.steps[currentStepIndex + 1];
+
+	return (
+		<Layout>
+			<Layout.TopBar>{TopBarExample}</Layout.TopBar>
+			<Layout.Sidebar layoutSmBreakpoint="above-grid">
+				<SidebarStepperNavigation
+					currentStepId={currentStepId}
+					stepNavConfig={stepNavConfig}
+					onPress={setCurrentStepId}
+				/>
+			</Layout.Sidebar>
+			<Layout.Main paddingTop={false} paddingBottom={false}>
+				<section
+					css={nonGridMainContentStyles}
+					aria-label="Current workflow step"
+				>
+					<h2>{currentStep?.label}</h2>
+					<p>Content for the selected workflow step.</p>
+					<div css={workflowControlsStyles}>
+						{currentStep && (
+							<Select
+								label="Step status"
+								selectedKey={currentStep.stepStatus}
+								onChange={(stepStatus) => {
+									if (typeof stepStatus !== 'string') {
+										return;
+									}
+
+									setStepStatuses((statuses) => ({
+										...statuses,
+										[currentStep.id]: stepStatus as StepStatus,
+									}));
+								}}
+							>
+								<Option id="complete">Complete</Option>
+								<Option id="incomplete">Incomplete</Option>
+								<Option id="optional">Optional</Option>
+								<Option id="no-fields">No fields</Option>
+							</Select>
+						)}
+						<Button
+							variant="secondary"
+							isDisabled={!previousStep}
+							onPress={() => previousStep && setCurrentStepId(previousStep.id)}
+						>
+							Previous
+						</Button>
+						<Button
+							isDisabled={!nextStep}
+							onPress={() => nextStep && setCurrentStepId(nextStep.id)}
+						>
+							Next
+						</Button>
+					</div>
+				</section>
+			</Layout.Main>
+		</Layout>
+	);
+}
+
 export const TopBarGrid = {
 	render: (args) => (
 		<Layout {...args}>
@@ -323,6 +467,10 @@ export const TopBarGridSidebarAboveGridSm = {
 			<Layout.Main>{GridExample}</Layout.Main>
 		</Layout>
 	),
+} satisfies Story;
+
+export const SidebarStepperNavigationInLayout = {
+	render: () => <LayoutWithSidebarStepperNavigation />,
 } satisfies Story;
 
 export const AlertBannerTopBarGridSidebarAboveGridSm = {

@@ -1,0 +1,51 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-border: 0.125rem
+		solid #cccccc;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-display: flex;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-align-items: center;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-justify-content: space-between;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-height: 4.5rem;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-padding-inline: 1rem;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-width: 100%;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-background-color: #f6f6f6;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-hovered-background-color: #ededed;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-pressed-background-color: #e6e6e6;
+	--component-sidebar-stepper-navigation-navigation-shared-border: 0.0625rem
+		solid #8d8d8d;
+	--component-sidebar-stepper-navigation-navigation-shared-flex-direction: column;
+	--component-sidebar-stepper-navigation-navigation-shared-height: 100%;
+	--component-sidebar-stepper-navigation-status-row-shared-display: flex;
+	--component-sidebar-stepper-navigation-status-row-shared-gap: 0.375rem;
+	--component-sidebar-stepper-navigation-status-row-shared-align-items: center;
+	--component-sidebar-stepper-navigation-status-row-shared-text-color: #545454;
+	--component-sidebar-stepper-navigation-status-row-shared-text-disabled-color: #999999;
+	--component-sidebar-stepper-navigation-status-row-shared-icon-size: 1rem;
+	--component-sidebar-stepper-navigation-status-row-shared-icon-optional-color: #cde4c9;
+	--component-sidebar-stepper-navigation-status-row-shared-icon-complete-color: #326528;
+	--component-sidebar-stepper-navigation-status-row-shared-icon-incomplete-color: #8c2113;
+	--component-sidebar-stepper-navigation-step-shared-height: 4.5rem;
+	--component-sidebar-stepper-navigation-step-shared-background-color: #ffffff;
+	--component-sidebar-stepper-navigation-step-shared-current-background-color: #f6f6f6;
+	--component-sidebar-stepper-navigation-step-shared-cursor: pointer;
+	--component-sidebar-stepper-navigation-step-shared-disabled-cursor: default;
+	--component-sidebar-stepper-navigation-step-shared-border: 0.0625rem solid
+		#cccccc;
+	--component-sidebar-stepper-navigation-step-shared-text-color: #000000;
+	--component-sidebar-stepper-navigation-step-shared-text-disabled-color: #999999;
+	--component-sidebar-stepper-navigation-step-shared-text-inverse-color: #ffffff;
+	--component-sidebar-stepper-navigation-step-shared-number-column-width: 2rem;
+	--component-sidebar-stepper-navigation-step-number-shared-height: 100%;
+	--component-sidebar-stepper-navigation-step-number-shared-background-color: #005d8b;
+	--component-sidebar-stepper-navigation-step-number-shared-display: flex;
+	--component-sidebar-stepper-navigation-step-number-shared-align-items: center;
+	--component-sidebar-stepper-navigation-step-number-shared-justify-content: center;
+	--component-sidebar-stepper-navigation-step-content-shared-display: flex;
+	--component-sidebar-stepper-navigation-step-content-shared-flex-direction: column;
+	--component-sidebar-stepper-navigation-step-content-shared-justify-content: center;
+	--component-sidebar-stepper-navigation-step-content-shared-gap: 0.25rem;
+	--component-sidebar-stepper-navigation-step-content-shared-margin-left: 0.75rem;
+}
