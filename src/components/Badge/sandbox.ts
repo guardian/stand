@@ -5,8 +5,12 @@ export const componentName = 'Badge';
 export const componentTsx = /* javascript */ `import { Badge } from '@guardian/stand/Badge';
 
 export const Component = () => (
-	{/* default example */}
-	<Badge color="green" size="md">This is a badge</Badge>
+	<>
+		{/* default example */}
+		<Badge color="green" size="md">
+			This is a badge
+		</Badge>
+	</>
 );
 `;
 
@@ -26,7 +30,7 @@ export const componentCss = /* css */ `
 	padding-left: var(--component-badge-size-md-padding-left);
 	font: var(--component-badge-size-md-typography-font);
 	letter-spacing: var(--component-badge-size-md-typography-letter-spacing);
-	font-width: var(--component-badge-size-md-typography-font-width);
+	font-variation-settings: "wdth" var(--component-badge-size-md-typography-font-width);
 	background: var(--component-badge-color-green-background);
 	color: var(--component-badge-color-green-color);
 }
@@ -52,7 +56,7 @@ const badgeStyles = \`
 	padding-left: \${componentBadge.size.md.padding.left};
 	font: \${componentBadge.size.md.typography.font};
 	letter-spacing: \${componentBadge.size.md.typography.letterSpacing};
-	font-width: \${componentBadge.size.md.typography.fontWidth};
+	font-variation-settings: "wdth" var(--component-badge-size-md-typography-font-width);
 	background: \${componentBadge.color.green.background};
 	color: \${componentBadge.color.green.color};
 \`;

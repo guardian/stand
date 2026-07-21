@@ -8,12 +8,15 @@ export const Badge = ({
 	theme = {},
 	cssOverrides,
 	children,
-	// ...props
+	...props
 }: BadgeProps) => {
 	const mergedTheme = mergeDeep(defaultBadgeTheme, theme);
 
 	return (
-		<div css={[badgeStyles(mergedTheme, { color, size }), cssOverrides]}>
+		<div
+			css={[badgeStyles(mergedTheme, { color, size }), cssOverrides]}
+			{...props}
+		>
 			{children}
 		</div>
 	);
