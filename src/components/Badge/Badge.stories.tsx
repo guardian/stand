@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { baseColors, baseRadius, baseSpacing } from '../..';
 import { tableStyles } from '../../util/storybook/styles';
 import { Badge } from './Badge';
+import { badgeColors, badgeSizes } from './types';
 
 const meta = {
 	title: 'Stand/Tools Design System/Components/Badge',
@@ -16,16 +17,6 @@ const meta = {
 type Story = StoryObj<typeof Badge>;
 
 export default meta;
-
-const colors = [
-	'green',
-	'yellow',
-	'grey',
-	'orange',
-	'warmPurple',
-	'red',
-] as const;
-const sizes = ['xs', 'sm', 'md'] as const;
 
 export const BadgeTable = {
 	name: 'Badge Colors and Sizes',
@@ -43,7 +34,7 @@ export const BadgeTable = {
 					<th>
 						<code>color</code> / <code>size</code>
 					</th>
-					{sizes.map((size) => (
+					{badgeSizes.map((size) => (
 						<th key={size}>
 							<code style={{ fontFamily: 'monospace' }}>{size}</code>
 						</th>
@@ -51,7 +42,7 @@ export const BadgeTable = {
 				</tr>
 			</thead>
 			<tbody>
-				{colors.map((color) => (
+				{badgeColors.map((color) => (
 					<>
 						<tr key={`${color}`}>
 							<td>
@@ -59,7 +50,7 @@ export const BadgeTable = {
 									{color}
 								</code>
 							</td>
-							{sizes.map((size) => (
+							{badgeSizes.map((size) => (
 								<td key={`${color}-${size}-enabled`}>
 									<Badge color={color} size={size}>
 										Badge text
