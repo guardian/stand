@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors, baseRadius, baseSpacing } from '../..';
+import { baseColors, baseSpacing } from '../..';
 import { tableStyles } from '../../util/storybook/styles';
 import { Badge } from './Badge';
 import { badgeColors, badgeSizes } from './types';
@@ -99,7 +99,6 @@ export const CssOverrides = {
 		color: 'green',
 		cssOverrides: css`
 			font-variant: small-caps;
-			border-radius: ${baseRadius.corner8Px};
 		`,
 		children: 'CSS Override Badge',
 	},
