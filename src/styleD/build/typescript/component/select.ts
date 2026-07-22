@@ -22,15 +22,9 @@ export const componentSelect = {
 			backgroundColor: '#ffffff',
 			border: '0.0625rem solid #545454',
 			borderRadius: '0.25rem',
-			height: '2.5rem',
 			paddingLeft: '0.75rem',
 			paddingRight: '0.25rem',
 			color: '#545454',
-			typography: {
-				font: 'normal 460 1rem/1.3 Open Sans',
-				letterSpacing: '0rem',
-				fontWidth: 95,
-			},
 			focused: {
 				outline: '0.125rem solid #0072a9',
 				outlineOffset: '0.125rem',
@@ -57,14 +51,25 @@ export const componentSelect = {
 			},
 		},
 		listBox: {
-			typography: {
-				font: 'normal 460 1rem/1.3 Open Sans',
-				letterSpacing: '0rem',
-				fontWidth: 95,
-			},
 			border: '0.0625rem solid #cccccc',
 			backgroundColor: '#ffffff',
 			shadow: '0 0.125rem 0.375rem 0 rgb(0% 0% 0% / 0.3)',
+		},
+	},
+	sm: {
+		height: '2rem',
+		typography: {
+			font: 'normal 460 0.875rem/1.3 Open Sans',
+			letterSpacing: '0rem',
+			fontWidth: 95,
+		},
+	},
+	md: {
+		height: '2.5rem',
+		typography: {
+			font: 'normal 460 1rem/1.3 Open Sans',
+			letterSpacing: '0rem',
+			fontWidth: 95,
 		},
 	},
 };
