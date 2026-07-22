@@ -35,15 +35,15 @@
 	--component-badge-size-xs-typography-letter-spacing: 0rem;
 	--component-badge-size-xs-typography-font-width: 95;
 	--component-badge-color-green-background: #aed2a6;
-	--component-badge-color-green-color: #24491d;
+	--component-badge-color-green-color: #000000;
 	--component-badge-color-yellow-background: #f1c21b;
 	--component-badge-color-yellow-color: #000000;
 	--component-badge-color-grey-background: #dcdcdc;
 	--component-badge-color-grey-color: #000000;
-	--component-badge-color-orange-background: #fcddc6;
+	--component-badge-color-orange-background: #fac7a1;
 	--component-badge-color-orange-color: #000000;
 	--component-badge-color-warm-purple-background: #dac3e8;
 	--component-badge-color-warm-purple-color: #000000;
-	--component-badge-color-red-background: #f5c6c0;
+	--component-badge-color-red-background: #eea198;
 	--component-badge-color-red-color: #000000;
 }

@@ -56,7 +56,7 @@ export const componentBadge = {
 	color: {
 		green: {
 			background: '#aed2a6',
-			color: '#24491d',
+			color: '#000000',
 		},
 		yellow: {
 			background: '#f1c21b',
@@ -67,7 +67,7 @@ export const componentBadge = {
 			color: '#000000',
 		},
 		orange: {
-			background: '#fcddc6',
+			background: '#fac7a1',
 			color: '#000000',
 		},
 		warmPurple: {
@@ -75,7 +75,7 @@ export const componentBadge = {
 			color: '#000000',
 		},
 		red: {
-			background: '#f5c6c0',
+			background: '#eea198',
 			color: '#000000',
 		},
 	},

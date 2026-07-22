@@ -149,7 +149,7 @@
 					},
 					"color": {
 						"$type": "color",
-						"$value": "{semantic.colors.text.green}"
+						"$value": "{semantic.colors.text.strong}"
 					}
 				},
 				"yellow": {
@@ -175,7 +175,7 @@
 				"orange": {
 					"background": {
 						"$type": "color",
-						"$value": "{semantic.colors.fill.orangeWeak}"
+						"$value": "{semantic.colors.fill.orangeMedium}"
 					},
 					"color": {
 						"$type": "color",
@@ -195,7 +195,7 @@
 				"red": {
 					"background": {
 						"$type": "color",
-						"$value": "{semantic.colors.fill.redWeak}"
+						"$value": "{semantic.colors.fill.errorMedium}"
 					},
 					"color": {
 						"$type": "color",
