@@ -47,6 +47,16 @@
 				"default": "./dist/AvatarButton.cjs"
 			}
 		},
+		"./Badge": {
+			"import": {
+				"types": "./dist/Badge.d.ts",
+				"default": "./dist/Badge.js"
+			},
+			"require": {
+				"types": "./dist/Badge.d.cts",
+				"default": "./dist/Badge.cjs"
+			}
+		},
 		"./Button": {
 			"import": {
 				"types": "./dist/Button.d.ts",
@@ -380,6 +390,7 @@
 		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css",
 		"./component/userMenu.css": "./dist/styleD/build/css/component/userMenu.css",
 		"./component/avatar.css": "./dist/styleD/build/css/component/avatar.css",
+		"./component/badge.css": "./dist/styleD/build/css/component/badge.css",
 		"./component/button.css": "./dist/styleD/build/css/component/button.css",
 		"./component/buttonGroup.css": "./dist/styleD/build/css/component/buttonGroup.css",
 		"./component/typography.css": "./dist/styleD/build/css/component/typography.css",
@@ -417,6 +428,9 @@
 			],
 			"AvatarLink": [
 				"./dist/AvatarLink.d.ts"
+			],
+			"Badge": [
+				"./dist/Badge.d.ts"
 			],
 			"Button": [
 				"./dist/Button.d.ts"

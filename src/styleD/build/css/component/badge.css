@@ -1,0 +1,49 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-badge-size-md-display: inline-flex;
+	--component-badge-size-md-align-items: center;
+	--component-badge-size-md-justify-content: center;
+	--component-badge-size-md-padding-top: 4px;
+	--component-badge-size-md-padding-right: 12px;
+	--component-badge-size-md-padding-bottom: 4px;
+	--component-badge-size-md-padding-left: 12px;
+	--component-badge-size-md-typography-font: normal 700 1rem/1.15 'Open Sans';
+	--component-badge-size-md-typography-letter-spacing: -0.03125rem;
+	--component-badge-size-md-typography-font-width: 95;
+	--component-badge-size-sm-display: inline-flex;
+	--component-badge-size-sm-align-items: center;
+	--component-badge-size-sm-justify-content: center;
+	--component-badge-size-sm-padding-top: 4px;
+	--component-badge-size-sm-padding-right: 8px;
+	--component-badge-size-sm-padding-bottom: 4px;
+	--component-badge-size-sm-padding-left: 8px;
+	--component-badge-size-sm-typography-font: normal 700 0.875rem/1.15
+		'Open Sans';
+	--component-badge-size-sm-typography-letter-spacing: -0.0125rem;
+	--component-badge-size-sm-typography-font-width: 95;
+	--component-badge-size-xs-display: inline-flex;
+	--component-badge-size-xs-align-items: center;
+	--component-badge-size-xs-justify-content: center;
+	--component-badge-size-xs-padding-top: 1px;
+	--component-badge-size-xs-padding-right: 6px;
+	--component-badge-size-xs-padding-bottom: 3px;
+	--component-badge-size-xs-padding-left: 6px;
+	--component-badge-size-xs-typography-font: normal 700 0.75rem/1.15 'Open Sans';
+	--component-badge-size-xs-typography-letter-spacing: 0rem;
+	--component-badge-size-xs-typography-font-width: 95;
+	--component-badge-color-green-background: #aed2a6;
+	--component-badge-color-green-color: #000000;
+	--component-badge-color-yellow-background: #f1c21b;
+	--component-badge-color-yellow-color: #000000;
+	--component-badge-color-grey-background: #dcdcdc;
+	--component-badge-color-grey-color: #000000;
+	--component-badge-color-orange-background: #fac7a1;
+	--component-badge-color-orange-color: #000000;
+	--component-badge-color-warm-purple-background: #dac3e8;
+	--component-badge-color-warm-purple-color: #000000;
+	--component-badge-color-red-background: #eea198;
+	--component-badge-color-red-color: #000000;
+}
