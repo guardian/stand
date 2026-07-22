@@ -64,10 +64,6 @@
 						"$type": "dimension",
 						"$value": "{base.radius.corner4Rem}"
 					},
-					"height": {
-						"$type": "dimension",
-						"$value": "{base.sizing.size40Rem}"
-					},
 					"paddingLeft": {
 						"$type": "dimension",
 						"$value": "{base.spacing.12Rem}"
@@ -79,20 +75,6 @@
 					"color": {
 						"$type": "color",
 						"$value": "{semantic.colors.text.weak}"
-					},
-					"typography": {
-						"font": {
-							"$type": "typography",
-							"$value": "{semantic.typography.bodyMd.font}"
-						},
-						"letterSpacing": {
-							"$type": "dimension",
-							"$value": "{semantic.typography.bodyMd.letterSpacing}"
-						},
-						"fontWidth": {
-							"$type": "number",
-							"$value": "{semantic.typography.bodyMd.fontWidth}"
-						}
 					},
 					"focused": {
 						"outline": {
@@ -178,20 +160,6 @@
 					}
 				},
 				"listBox": {
-					"typography": {
-						"font": {
-							"$type": "typography",
-							"$value": "{semantic.typography.bodyMd.font}"
-						},
-						"letterSpacing": {
-							"$type": "dimension",
-							"$value": "{semantic.typography.bodyMd.letterSpacing}"
-						},
-						"fontWidth": {
-							"$type": "number",
-							"$value": "{semantic.typography.bodyMd.fontWidth}"
-						}
-					},
 					"border": {
 						"$type": "border",
 						"$value": {
@@ -207,6 +175,46 @@
 					"shadow": {
 						"$type": "shadow",
 						"$value": "{semantic.shadow.raised}"
+					}
+				}
+			},
+			"sm": {
+				"height": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.sm}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodySm.font}"
+					},
+					"letterSpacing": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodySm.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodySm.fontWidth}"
+					}
+				}
+			},
+			"md": {
+				"height": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.md}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodyMd.font}"
+					},
+					"letterSpacing": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodyMd.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodyMd.fontWidth}"
 					}
 				}
 			}

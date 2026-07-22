@@ -26,11 +26,21 @@ type Story = StoryObj<typeof Select>;
 
 export default meta;
 
-export const Default = {} satisfies Story;
+export const Default = {
+	name: 'Default - md',
+	args: {},
+} satisfies Story;
 
 export const Fluid = {
 	args: {
 		fluid: true,
+	},
+} satisfies Story;
+
+export const Small = {
+	name: 'Small - sm',
+	args: {
+		size: 'sm',
 	},
 } satisfies Story;
 
@@ -79,17 +89,14 @@ export const CustomTheme = {
 				button: {
 					color: baseColors.coolPurple[200],
 					backgroundColor: baseColors.coolPurple[800],
-					typography: {
-						font: 'normal 700 1rem/1.3 monospace',
-					},
-				},
-				listBox: {
-					typography: {
-						font: 'normal 460 1rem/1.3 cursive',
-					},
 				},
 				option: {
 					paddingLeft: '3rem',
+				},
+			},
+			md: {
+				typography: {
+					font: 'normal 700 1rem/1.3 monospace',
 				},
 			},
 		},
