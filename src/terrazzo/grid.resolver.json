@@ -1,0 +1,234 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/resolver.json",
+  "version": "2025.10",
+  "resolutionOrder": [
+    {
+      "$ref": "#/sets/semantic"
+    }
+  ],
+  "sets": {
+    "semantic": {
+      "sources": [
+        {
+          "columns": {
+            "sm": {
+              "$type": "dimension",
+              "$value": {
+                "value": 12,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "columns/sm",
+                  "id": "VariableID:151:295",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            },
+            "md": {
+              "$type": "dimension",
+              "$value": {
+                "value": 12,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "columns/md",
+                  "id": "VariableID:151:294",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            },
+            "lg": {
+              "$type": "dimension",
+              "$value": {
+                "value": 12,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "columns/lg",
+                  "id": "VariableID:151:14",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            }
+          },
+          "gutter": {
+            "mdPx": {
+              "$type": "dimension",
+              "$value": {
+                "value": 16,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "gutter/md-px",
+                  "id": "VariableID:151:305",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            },
+            "lgPx": {
+              "$type": "dimension",
+              "$value": {
+                "value": 16,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "gutter/lg-px",
+                  "id": "VariableID:151:304",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            },
+            "smPx": {
+              "$type": "dimension",
+              "$value": {
+                "value": 16,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "gutter/sm-px",
+                  "id": "VariableID:151:306",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            }
+          },
+          "margin": {
+            "bottomLgPx": {
+              "$type": "dimension",
+              "$value": {
+                "value": 64,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "margin/bottom-lg-px",
+                  "id": "VariableID:182:2586",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            },
+            "topLgPx": {
+              "$type": "dimension",
+              "$value": {
+                "value": 48,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "margin/top-lg-px",
+                  "id": "VariableID:182:321",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            },
+            "topSmPx": {
+              "$type": "dimension",
+              "$value": {
+                "value": 24,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "margin/top-sm-px",
+                  "id": "VariableID:182:2585",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            },
+            "topMdPx": {
+              "$type": "dimension",
+              "$value": {
+                "value": 28,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "margin/top-md-px",
+                  "id": "VariableID:182:2584",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            },
+            "bottomMdPx": {
+              "$type": "dimension",
+              "$value": {
+                "value": 64,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "margin/bottom-md-px",
+                  "id": "VariableID:182:2587",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            },
+            "bottomSmPx": {
+              "$type": "dimension",
+              "$value": {
+                "value": 64,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "margin/bottom-sm-px",
+                  "id": "VariableID:182:2588",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            },
+            "lgPx": {
+              "$type": "dimension",
+              "$value": {
+                "value": 24,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "margin/lg-px",
+                  "id": "VariableID:151:307",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            },
+            "smPx": {
+              "$type": "dimension",
+              "$value": {
+                "value": 16,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "margin/sm-px",
+                  "id": "VariableID:151:309",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            },
+            "mdPx": {
+              "$type": "dimension",
+              "$value": {
+                "value": 24,
+                "unit": "px"
+              },
+              "$extensions": {
+                "figma.com": {
+                  "name": "margin/md-px",
+                  "id": "VariableID:151:308",
+                  "variableCollectionId": "VariableCollectionId:7:57422"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "modifiers": {}
+}

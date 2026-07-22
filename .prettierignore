@@ -6,3 +6,4 @@ test-results
 .storybook
 storybook-static
 CHANGELOG.md
+src/terrazzo/
