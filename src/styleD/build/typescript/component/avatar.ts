@@ -106,7 +106,7 @@ export const componentAvatar = {
 			},
 			yellow: {
 				text: '#5b4a0b',
-				background: '#fbeebf',
+				background: '#ffedac',
 				border: 'unset',
 				hover: {
 					background: '#f9e396',

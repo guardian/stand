@@ -90,7 +90,7 @@ export const baseColors = {
 		'500': '#f4cd44',
 		'600': '#f6d86d',
 		'700': '#f9e396',
-		'800': '#fbeebf',
+		'800': '#ffedac',
 		'900': '#fef9e8',
 	},
 	orange: {
