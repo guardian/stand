@@ -20,7 +20,9 @@ export interface OptionProps
 export interface ListBoxProps
 	extends
 		DefaultPropsWithChildren<SelectTheme, RACListBoxProps<object>['className']>,
-		Omit<RACListBoxProps<object>, 'children'> {}
+		Omit<RACListBoxProps<object>, 'children'> {
+	size: keyof Omit<SelectTheme, 'shared'>;
+}
 
 export type SelectProps = FormInputContainerDefaultProps<
 	RACSelectProps<object, 'single' | 'multiple'> & {
