@@ -312,7 +312,7 @@
 				},
 				"800": {
 					"$type": "color",
-					"$value": "#fbeebf"
+					"$value": "#ffedac"
 				},
 				"900": {
 					"$type": "color",
@@ -598,17 +598,17 @@
 				}
 			},
 			"weight": {
-				"guardianHeadline": {
-					"bold": {
-						"$type": "fontWeight",
-						"$value": 700
-					}
-				},
 				"guardianTextEgyptian": {
 					"normal": {
 						"$type": "fontWeight",
 						"$value": 400
 					},
+					"bold": {
+						"$type": "fontWeight",
+						"$value": 700
+					}
+				},
+				"guardianHeadline": {
 					"bold": {
 						"$type": "fontWeight",
 						"$value": 700
@@ -1244,6 +1244,10 @@
 					"$type": "color",
 					"$value": "{base.colors.orange.800}"
 				},
+				"orangeMedium": {
+					"$type": "color",
+					"$value": "{base.colors.orange.700}"
+				},
 				"yellowWeak": {
 					"$type": "color",
 					"$value": "{base.colors.yellow.800}"
@@ -1292,13 +1296,17 @@
 					"$type": "color",
 					"$value": "{base.colors.blue.900}"
 				},
+				"errorWeaker": {
+					"$type": "color",
+					"$value": "{base.colors.red.900}"
+				},
 				"errorWeak": {
 					"$type": "color",
 					"$value": "{base.colors.red.800}"
 				},
-				"errorWeaker": {
+				"errorMedium": {
 					"$type": "color",
-					"$value": "{base.colors.red.900}"
+					"$value": "{base.colors.red.700}"
 				},
 				"errorStrong": {
 					"$type": "color",

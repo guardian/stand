@@ -67,7 +67,8 @@
 	--semantic-colors-fill-warm-purple-weak: #dac3e8;
 	--semantic-colors-fill-magenta-weak: #edc6d7;
 	--semantic-colors-fill-orange-weak: #fcddc6;
-	--semantic-colors-fill-yellow-weak: #fbeebf;
+	--semantic-colors-fill-orange-medium: #fac7a1;
+	--semantic-colors-fill-yellow-weak: #ffedac;
 	--semantic-colors-fill-selected: #005d8b;
 	--semantic-colors-fill-selected-weaker: #e6f1f6;
 	--semantic-colors-fill-selected-weak: #c5dfec;
@@ -77,10 +78,11 @@
 	--semantic-colors-fill-selected-pressed-weak: #5ca5c8;
 	--semantic-colors-fill-draft-strong: #f1c21b;
 	--semantic-colors-fill-live-weak: #aed2a6;
-	--semantic-colors-fill-warning-weak: #fbeebf;
+	--semantic-colors-fill-warning-weak: #ffedac;
 	--semantic-colors-fill-information-weak: #e8f0fb;
-	--semantic-colors-fill-error-weak: #f5c6c0;
 	--semantic-colors-fill-error-weaker: #fbebe9;
+	--semantic-colors-fill-error-weak: #f5c6c0;
+	--semantic-colors-fill-error-medium: #eea198;
 	--semantic-colors-fill-error-strong: #b42a19;
 	--semantic-colors-fill-success-weak: #cde4c9;
 	--semantic-colors-fill-success-strong: #326528;
