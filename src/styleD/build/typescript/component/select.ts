@@ -24,7 +24,7 @@ export const componentSelect = {
 			borderRadius: '0.25rem',
 			paddingLeft: '0.75rem',
 			paddingRight: '0.25rem',
-			color: '#545454',
+			color: '#000000',
 			focused: {
 				outline: '0.125rem solid #0072a9',
 				outlineOffset: '0.125rem',

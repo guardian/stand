@@ -74,7 +74,7 @@
 					},
 					"color": {
 						"$type": "color",
-						"$value": "{semantic.colors.text.weak}"
+						"$value": "{semantic.colors.text.strong}"
 					},
 					"focused": {
 						"outline": {
