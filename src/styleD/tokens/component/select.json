@@ -189,11 +189,11 @@
 						"$value": "{semantic.typography.bodySm.font}"
 					},
 					"letterSpacing": {
-						"$type": "typography",
+						"$type": "dimension",
 						"$value": "{semantic.typography.bodySm.letterSpacing}"
 					},
 					"fontWidth": {
-						"$type": "typography",
+						"$type": "number",
 						"$value": "{semantic.typography.bodySm.fontWidth}"
 					}
 				}
@@ -209,11 +209,11 @@
 						"$value": "{semantic.typography.bodyMd.font}"
 					},
 					"letterSpacing": {
-						"$type": "typography",
+						"$type": "dimension",
 						"$value": "{semantic.typography.bodyMd.letterSpacing}"
 					},
 					"fontWidth": {
-						"$type": "typography",
+						"$type": "number",
 						"$value": "{semantic.typography.bodyMd.fontWidth}"
 					}
 				}
