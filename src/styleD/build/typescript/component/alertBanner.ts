@@ -40,7 +40,7 @@ export const componentAlertBanner = {
 		backgroundColor: '#cde4c9',
 	},
 	warning: {
-		backgroundColor: '#fbeebf',
+		backgroundColor: '#ffedac',
 	},
 	error: {
 		backgroundColor: '#f5c6c0',
