@@ -84,12 +84,19 @@ export const buttonStyles = (
 		${convertTypographyToEmotionStringStyle(theme[size].typography)}
 		color: ${theme.shared.button.color};
 
+		svg {
+			transition: ${theme.shared.transition};
+		}
+
 		&[data-hovered] {
 			background-color: ${theme.shared.hover.backgroundColor};
 		}
 
 		&[data-pressed] {
 			background-color: ${theme.shared.pressed.backgroundColor};
+			svg {
+				transform: rotate(180deg);
+			}
 		}
 
 		&[data-focus-visible] {

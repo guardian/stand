@@ -6,6 +6,7 @@ export const componentSelect = {
 	shared: {
 		width: '100%',
 		offset: 8,
+		transition: 'transform 200ms',
 		containerPadding: 0,
 		hover: {
 			backgroundColor: '#f6f6f6',

@@ -5,6 +5,7 @@
 :root {
 	--component-select-shared-width: 100%;
 	--component-select-shared-offset: 8;
+	--component-select-shared-transition: transform 200ms;
 	--component-select-shared-container-padding: 0;
 	--component-select-shared-hover-background-color: #f6f6f6;
 	--component-select-shared-hover-outline: none; /** Override outline focus styles on hover */
