@@ -369,9 +369,11 @@ export const WithTheme: Story = {
 				button: {
 					backgroundColor: 'pink',
 					border: '3px solid crimson',
-					typography: {
-						font: 'italic 1rem fantasy',
-					},
+				},
+			},
+			md: {
+				typography: {
+					font: 'italic 1rem fantasy',
 				},
 			},
 		},

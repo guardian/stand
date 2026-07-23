@@ -33,7 +33,7 @@ export function Option({ children, theme = {}, id, ...props }: OptionProps) {
 	);
 }
 
-function ListBox({ children, theme = {} }: ListBoxProps) {
+function ListBox({ children, size, theme = {} }: ListBoxProps) {
 	const mergedTheme = mergeDeep(defaultSelectTheme, theme);
 	const items: React.ReactElement[] = [];
 
@@ -50,14 +50,15 @@ function ListBox({ children, theme = {} }: ListBoxProps) {
 	});
 
 	return (
-		<ReactAriaListBox css={listBoxStyles(mergedTheme)}>
+		<ReactAriaListBox css={listBoxStyles(mergedTheme, { size })}>
 			{items}
 		</ReactAriaListBox>
 	);
 }
 
 export function Select({
-	isInvalid,
+	size = 'md',
+	isInvalid = false,
 	theme = {},
 	placement,
 	shouldFlip,
@@ -69,13 +70,22 @@ export function Select({
 	return (
 		<FormInputContainer
 			as={ReactAriaSelect}
+			size={size}
 			isInvalid={isInvalid}
 			{...props}
-			size="md" // Select doesn't support size prop, so we set it to a default value to avoid passing it down
 		>
-			<Button css={buttonStyles(mergedTheme, isInvalid)}>
+			<Button css={buttonStyles(mergedTheme, { size, isInvalid })}>
 				<SelectValue />
-				<Icon symbol="keyboard_arrow_down" size="lg" />
+				<Icon size="lg">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+					>
+						<path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
+					</svg>
+				</Icon>
 			</Button>
 			<Popover
 				css={popoverStyles()}
@@ -84,7 +94,9 @@ export function Select({
 				offset={mergedTheme.shared.offset}
 				containerPadding={mergedTheme.shared.containerPadding}
 			>
-				<ListBox theme={mergedTheme}>{children}</ListBox>
+				<ListBox size={size} theme={mergedTheme}>
+					{children}
+				</ListBox>
 			</Popover>
 		</FormInputContainer>
 	);

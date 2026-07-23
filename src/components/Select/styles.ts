@@ -4,6 +4,7 @@ import type { ComponentSelect } from '../../styleD/build/typescript/component/se
 import { componentSelect } from '../../styleD/build/typescript/component/select';
 import type { DeepPartial, Prettify } from '../../util/types';
 import { convertTypographyToEmotionStringStyle } from '../../utils';
+import type { ListBoxProps, SelectProps } from './types';
 
 export type SelectTheme = Prettify<ComponentSelect>;
 export type PartialSelectTheme = Prettify<DeepPartial<SelectTheme>>;
@@ -51,9 +52,12 @@ export const listBoxItemStyles = (theme: SelectTheme): SerializedStyles => {
 	`;
 };
 
-export const listBoxStyles = (theme: SelectTheme): SerializedStyles => {
+export const listBoxStyles = (
+	theme: SelectTheme,
+	{ size }: { size: ListBoxProps['size'] },
+): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(theme.shared.listBox.typography)}
+		${convertTypographyToEmotionStringStyle(theme[size].typography)}
 		background-color: ${theme.shared.listBox.backgroundColor};
 		border: ${theme.shared.listBox.border};
 		box-shadow: ${theme.shared.listBox.shadow};
@@ -64,7 +68,7 @@ export const listBoxStyles = (theme: SelectTheme): SerializedStyles => {
 
 export const buttonStyles = (
 	theme: SelectTheme,
-	isInvalid?: boolean,
+	{ size, isInvalid }: Required<Pick<SelectProps, 'size' | 'isInvalid'>>,
 ): SerializedStyles => {
 	return css`
 		display: ${theme.shared.button.display};
@@ -73,12 +77,16 @@ export const buttonStyles = (
 		background-color: ${theme.shared.button.backgroundColor};
 		border: ${theme.shared.button.border};
 		border-radius: ${theme.shared.button.borderRadius};
-		height: ${theme.shared.button.height};
+		height: ${theme[size].height};
 		padding-left: ${theme.shared.button.paddingLeft};
 		padding-right: ${theme.shared.button.paddingRight};
 		margin-top: ${theme.shared.button.marginTop};
-		${convertTypographyToEmotionStringStyle(theme.shared.button.typography)}
+		${convertTypographyToEmotionStringStyle(theme[size].typography)}
 		color: ${theme.shared.button.color};
+
+		svg {
+			transition: ${theme.shared.transition};
+		}
 
 		&[data-hovered] {
 			background-color: ${theme.shared.hover.backgroundColor};
@@ -86,6 +94,9 @@ export const buttonStyles = (
 
 		&[data-pressed] {
 			background-color: ${theme.shared.pressed.backgroundColor};
+			svg {
+				transform: rotate(180deg);
+			}
 		}
 
 		&[data-focus-visible] {

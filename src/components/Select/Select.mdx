@@ -2,6 +2,7 @@ import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import SelectStories, {
 	Default,
 	Fluid,
+	Small,
 	Disabled,
 	WithError,
 	WithHelpText,
@@ -86,6 +87,7 @@ import type {
 
 | Name                 | Type                           | Required | Default | Description                                                                                                                                                           |
 | -------------------- | ------------------------------ | -------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `size`               | `'md'` \| `'sm'`               | No       | `'md'`  | Controls button height and typography.                                                                                                                                |
 | `label`              | `string`                       | Yes      | N/A     | Visible label rendered above the select.                                                                                                                              |
 | `renderLabel`        | `(label: string) => ReactNode` | No       | N/A     | Custom render function for the label. Receives the `label` string and returns a ReactNode for visual enhancement                                                      |
 | `contextualHelpText` | `string`                       | No       | N/A     | Optional contextual help text.                                                                                                                                        |
@@ -133,6 +135,10 @@ When an option is selected, React Aria emits the option's `id` as the value. Sta
 ### Fluid
 
 <Canvas layout="padded" of={Fluid} />
+
+### Small
+
+<Canvas layout="padded" of={Small} />
 
 ### Disabled
 

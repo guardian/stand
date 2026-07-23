@@ -60,16 +60,15 @@ export const componentCss = /* css */ `
 		background-color: var(--component-select-shared-button-background-color);
 		border: var(--component-select-shared-button-border);
 		border-radius: var(--component-select-shared-button-border-radius);
-		height: var(--component-select-shared-button-height);
+		height: var(--component-select-md-height);
 		padding-left: var(--component-select-shared-button-padding-left);
 		padding-right: var(--component-select-shared-button-padding-right);
 		margin-top: var(--component-select-shared-button-margin-top);
 		color: var(--component-select-shared-button-color);
 
-		font: var(--component-select-shared-button-body-md-typography-font);
-		letter-spacing: var(--component-select-shared-button-body-md-typography-letter-spacing);
-		font-variation-settings: "wdth" var(--component-select-shared-button-body-md-typography-font-width);
-
+		font: var(--component-select-md-typography-font);
+		letter-spacing: var(--component-select-md-typography-letter-spacing);
+		font-variation-settings: "wdth" var(--component-select-md-typography-font-width);
 
 		&:hover {
 			background: var(--component-select-shared-hover-background-color);
@@ -142,15 +141,15 @@ sheet.replaceSync(\`
 	background-color: \${componentSelect.shared.button.backgroundColor};
 	border: \${componentSelect.shared.button.border};
 	border-radius: \${componentSelect.shared.button.borderRadius};
-	height: \${componentSelect.shared.button.height};
+	height: \${componentSelect.md.height};
 	padding-left: \${componentSelect.shared.button.paddingLeft};
 	padding-right: \${componentSelect.shared.button.paddingRight};
 	margin-top: \${componentSelect.shared.button.marginTop};
 	color: \${componentSelect.shared.button.color};
 
-	font: \${componentSelect.shared.button.typography.font};
-	letter-spacing: \${componentSelect.shared.button.typography.letterSpacing};
-	font-variation-settings: "wdth" \${componentSelect.shared.button.typography.fontWidth};
+	font: \${componentSelect.md.typography.font};
+	letter-spacing: \${componentSelect.md.typography.letterSpacing};
+	font-variation-settings: "wdth" \${componentSelect.md.typography.fontWidth};
 
 	&:hover {
 		background: \${componentSelect.shared.hover.backgroundColor};
