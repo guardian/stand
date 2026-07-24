@@ -253,7 +253,7 @@ sheet.replaceSync(\`
 // update the document with the sheet
 document.adoptedStyleSheets.push(sheet);
 
-// modify the dom with the button components using the generated stylesheet
+// modify the dom with the search input components using the generated stylesheet
 document.getElementById("app").innerHTML = \`
 <div class="container flow-column">
 	<div class="js-stand-form-input-container md">
