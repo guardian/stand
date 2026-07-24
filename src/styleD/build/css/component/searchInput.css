@@ -3,6 +3,30 @@
  */
 
 :root {
-	--component-search-input-color-background: #cde4c9;
-	--component-search-input-color-text: #ff69b4;
+	--component-search-input-shared-color: #000000;
+	--component-search-input-shared-cursor: text;
+	--component-search-input-shared-padding-top: 0;
+	--component-search-input-shared-padding-right: 0.75rem;
+	--component-search-input-shared-padding-bottom: 0;
+	--component-search-input-shared-padding-left: 0.75rem;
+	--component-search-input-shared-margin-top: 0.25rem; /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 8px, then margin-top should be 4px */
+	--component-search-input-shared-border-radius: 0.25rem;
+	--component-search-input-shared-border: 0.0625rem solid #545454;
+	--component-search-input-shared-background-color: #ffffff;
+	--component-search-input-shared-placeholder-color: #545454;
+	--component-search-input-shared-disabled-background-color: #ffffff;
+	--component-search-input-shared-disabled-cursor: not-allowed;
+	--component-search-input-shared-disabled-color: #999999;
+	--component-search-input-shared-disabled-border: 0.0625rem solid #dcdcdc;
+	--component-search-input-shared-focused-outline: 0.125rem auto #0072a9;
+	--component-search-input-shared-error-border: 0.0625rem solid #b42a19;
+	--component-search-input-sm-height: 2rem;
+	--component-search-input-sm-typography-font: normal 460 0.875rem/1.3
+		'Open Sans';
+	--component-search-input-sm-typography-letter-spacing: 0rem;
+	--component-search-input-sm-typography-font-width: 95;
+	--component-search-input-md-height: 2.5rem;
+	--component-search-input-md-typography-font: normal 460 1rem/1.3 'Open Sans';
+	--component-search-input-md-typography-letter-spacing: 0rem;
+	--component-search-input-md-typography-font-width: 95;
 }

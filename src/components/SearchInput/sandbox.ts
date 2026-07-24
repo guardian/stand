@@ -1,129 +1,316 @@
 // Component Name
 export const componentName = 'SearchInput';
 
-// React sandbox example
+// SearchInput - React sandbox example
 export const componentTsx = /* javascript */ `import { SearchInput } from '@guardian/stand/SearchInput';
 
 export const Component = () => (
 	<>
-		{/* default example */}
-		<SearchInput />
+		<SearchInput
+			label="Name"
+			description="This is a description for the search input."
+		/>
 
-		{/* custom message example */}
-		<SearchInput message="hi there" />
+		<SearchInput
+			size="sm"
+			label="Username"
+			isInvalid
+			defaultValue="guardian_user"
+			error="Username is already taken"
+		/>
 
+		<SearchInput
+			label="Password"
+			description="Showing a different type"
+			type="password"
+		/>
+
+		<SearchInput label="Notes" isDisabled defaultValue="Read only content" />
+	</>
 );
-
 `;
 
-// Custom component - CSS example
+// SearchInput - Custom component - CSS example
 export const componentCss = /* css */ `
-/* import the searchInput styles */
+/* import the search input, form, inline message styles */
+@import '@guardian/stand/component/inlineMessage.css';
+@import '@guardian/stand/component/form.css';
 @import '@guardian/stand/component/searchInput.css';
-/* import the icon styles if using the icon variant of the searchInput component */
-@import "@guardian/stand/component/icon.css";
 
-/* example setup of searchInput style */
+/* inline message styles - error */
+.stand-inline-message {
+  display: var(--component-inline-message-shared-display);
+  align-items: var(--component-inline-message-shared-align-items);
+  gap: var(--component-inline-message-shared-gap);
+  font: var(--component-inline-message-shared-typography-font);
+  letter-spacing: var(
+    --component-inline-message-shared-typography-letter-spacing
+  );
+  font-variation-settings: "wdth"
+    var(--component-inline-message-shared-typography-font-width);
+}
+
+.stand-inline-message > .material-symbols {
+  font-size: var(--component-inline-message-shared-icon-size);
+}
+
+.stand-inline-message > svg {
+  width: var(--component-inline-message-shared-icon-size);
+  height: var(--component-inline-message-shared-icon-size);
+}
+
+.stand-inline-message-error {
+  color: var(--component-inline-message-error-color);
+  fill: var(--component-inline-message-error-color);
+}
+
+/* form input container styles */
+
+.stand-form-input-container {
+	display: var(--component-form-input-shared-container-display);
+	flex-direction: var(--component-form-input-shared-container-flex-direction);
+	gap: var(--component-form-input-shared-container-gap);
+	width: var(--component-form-input-shared-container-width);
+}
+
+.stand-form-input-container > label {
+	color: var(--component-form-input-shared-label-color);
+	font: var(--component-form-input-md-label-typography-font);
+	letter-spacing: var(--component-form-input-md-label-typography-letter-spacing);
+	font-variation-settings: "wdth" var(--component-form-input-md-label-typography-font-width);
+}
+
+.stand-form-input-container[data-disabled] > label {
+	color: var(--component-form-input-shared-label-disabled-color);
+}
+
+.stand-form-input-container > span.description {
+	color: var(--component-form-input-shared-description-color);
+	font: var(--component-form-input-shared-description-typography-font);
+	letter-spacing: var(--component-form-input-shared-description-typography-letter-spacing);
+	font-variation-settings: "wdth" var(--component-form-input-shared-description-typography-font-width);
+}
+
+.stand-form-input-container[data-disabled] > span.description {
+	color: var(--component-form-input-shared-description-disabled-color);
+}
+
+/* search input styles */
+
 .stand-search-input {
-	background-color: var(--component-search-input-color-background);
-	display: var(--component-search-input-display);
-	align-items: var(--component-search-input-align-items);
-	justify-content: var(--component-search-input-justify-content);
-	width: var(--component-search-input-size);
-	height: var(--component-search-input-size);
-	user-select: var(--component-search-input-user-select);
-	color: var(--component-search-input-color-text);
-	font: var(--component-search-input-typography-font);
-	letter-spacing: var(--component-search-input-typography-letter-spacing);
-	font-variation-settings: "wdth" var(--component-search-input-typography-font-width);
+	background-color: var(--component-search-input-shared-background-color);
+	border-radius: var(--component-search-input-shared-border-radius);
+	border: var(--component-search-input-shared-border);
+	color: var(--component-search-input-shared-color);
+	cursor: var(--component-search-input-shared-cursor);
+	margin-top: var(--component-search-input-shared-margin-top);
+	padding-top: var(--component-search-input-shared-padding-top);
+	padding-right: var(--component-search-input-shared-padding-right);
+	padding-bottom: var(--component-search-input-shared-padding-bottom);
+	padding-left: var(--component-search-input-shared-padding-left);
 }
 
-.stand-search-input-icon {
-	display: var(--component-icon-shared-display);
-	user-select: var(--component-icon-shared-user-select);
-	font-size: var(--component-icon-md-size);
+.stand-search-input[disabled] {
+	background-color: var(--component-search-input-shared-disabled-background-color);
+	border: var(--component-search-input-shared-disabled-border);
+	color: var(--component-search-input-shared-disabled-color);
+	cursor: var(--component-search-input-shared-disabled-cursor);
 }
 
-.stand-search-input-icon-color-svg > svg {
-	width: var(--component-icon-md-size);
-	height: var(--component-icon-md-size);
-	fill: var(--component-search-input-color-text);
+.stand-search-input[data-invalid] {
+	border: var(--component-search-input-shared-error-border);
 }
 
-/* example setup for searchInput image */
-.stand-search-input > img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.stand-search-input.md {
+	height: var(--component-search-input-md-height);
+	font: var(--component-search-input-md-typography-font);
+	letter-spacing: var(--component-search-input-md-typography-letter-spacing);
+	font-variation-settings: "wdth" var(--component-search-input-md-typography-font-width);
+}
+
+.stand-search-input.sm {
+	height: var(--component-search-input-sm-height);
+	font: var(--component-search-input-sm-typography-font);
+	letter-spacing: var(--component-search-input-sm-typography-letter-spacing);
+	font-variation-settings: "wdth" var(--component-search-input-sm-typography-font-width);
 }
 `;
 
-export const componentHtml = /* html */ `<div class="container">
-	<div class="stand-search-input">C</div>
-    <div class="stand-search-input">
-		<span class="material-symbols stand-search-input-icon">raven</span>
-    </div>
-    <div class="stand-search-input">
-        <span class="stand-search-input-icon stand-search-input-icon-color-svg"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></span>
-    </div>
-    <div class="stand-search-input">
-    	<img src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg" alt="Mahesh Makani" />
-    </div>
+export const componentHtml = /* html */ `<div class="container flow-column">
+	<div class="stand-form-input-container md">search
+		<label for="name">Name</label>
+		<span class="description">This is a description for the text input.</span>
+		<input id="name" class="stand-search-input md" type="text" />
+	</div>
+	<div class="stand-form-input-container sm">
+		<label for="username">Username</label>
+		<input
+			id="username"
+			class="stand-search-input sm"
+			type="text"
+			value="guardian_user"
+			data-invalid
+		/>
+		<span class="stand-inline-message stand-inline-message-error"><span class="material-symbols">warning</span> Username is already taken</span>
+	</div>
+	<div class="stand-form-input-container md">
+		<label for="password">Password</label>
+		<span class="description">Showing a different type</span>
+		<input id="password" class="stand-search-input md" type="password" />
+	</div>
+	<div class="stand-form-input-container md" data-disabled>
+		<label for="notes">Notes</label>
+		<input
+			id="notes"
+			class="stand-search-input md"
+			type="text"
+			value="Read only content"
+			disabled
+		/>
+	</div>
 </div>
 `;
 
-// Custom component - JS example
-export const componentJs = /* javascript */ `	// for ts/js
-		import { componentSearchInput, componentIcon } from "@guardian/stand";
+// SearchInput - Custom component - JS example
+export const componentJs = /* javascript */ `
+import { componentSearchInput, componentForm, componentInlineMessage } from "@guardian/stand";
 
-const searchInputStyles = \`
-    background-color: \${componentSearchInput.color.background};
-    display: \${componentSearchInput.display};
-    align-items: \${componentSearchInput["align-items"]};
-    justify-content: \${componentSearchInput["justify-content"]};
-    width: \${componentSearchInput.size};
-    height: \${componentSearchInput.size};
-    user-select: \${componentSearchInput["user-select"]};
-\`;
+// example of creating a stylesheet in js
+const sheet = new CSSStyleSheet();
 
-const typographyStyle = \`
-    color: \${componentSearchInput.color.text};
-    font: \${componentSearchInput.typography.font};
-    letter-spacing: \${componentSearchInput.typography.letterSpacing};
-    font-variation-settings: 'wdth' \${componentSearchInput.typography.fontWidth};
-\`;
+// apply the rules to the sheet
+sheet.replaceSync(\`
+/* inline message styles - error */
+.js-stand-inline-message {
+  display: \${componentInlineMessage.shared.display};
+  align-items: \${componentInlineMessage.shared.alignItems};
+  gap: \${componentInlineMessage.shared.gap};
+  font: \${componentInlineMessage.shared.typography.font};
+  letter-spacing: \${componentInlineMessage.shared.typography.letterSpacing};
+  font-variation-settings: "wdth" \${componentInlineMessage.shared.typography.fontWidth};
+}
 
-const imgStyle = \`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-\`;
+.js-stand-inline-message > .material-symbols {
+  font-size: \${componentInlineMessage.shared.icon.size};
+}
 
-const iconStyles = \`
-  display: \${componentIcon.shared.display};
-  user-select: \${componentIcon.shared["user-select"]};
-  font-size: \${componentIcon.md.size};
-  color: \${componentSearchInput.color.text};
-\`;
+.js-stand-inline-message > svg {
+  width: \${componentInlineMessage.shared.icon.size};
+  height: \${componentInlineMessage.shared.icon.size};
+}
 
-const iconSvgStyles = \`
-  width: \${componentIcon.md.size};
-  height: \${componentIcon.md.size};
-  fill:  \${componentSearchInput.color.text};
-\`;
+.js-stand-inline-message-error {
+  color: \${componentInlineMessage.error.color};
+  fill: \${componentInlineMessage.error.color};
+}
 
-// e.g. adding to DOM using vanilla JS styles
+/* form input container styles */
+
+.js-stand-form-input-container {
+	display: \${componentForm.input.shared.container.display};
+	flex-direction: \${componentForm.input.shared.container.flexDirection};
+	gap: \${componentForm.input.shared.container.gap};
+	width: \${componentForm.input.shared.container.width};
+}
+
+.js-stand-form-input-container > label {
+	color: \${componentForm.input.shared.label.color};
+	font: \${componentForm.input.md.label.typography.font};
+	letter-spacing: \${componentForm.input.md.label.typography.letterSpacing};
+	font-variation-settings: "wdth" \${componentForm.input.md.label.typography.fontWidth};
+}
+
+.js-stand-form-input-container[data-disabled] > label {
+	color: \${componentForm.input.shared.label.disabled.color};
+}
+
+.js-stand-form-input-container > span.description {
+	color: \${componentForm.input.shared.description.color};
+	font: \${componentForm.input.shared.description.typography.font};
+	letter-spacing: \${componentForm.input.shared.description.typography.letterSpacing};
+	font-variation-settings: "wdth" \${componentForm.input.shared.description.typography.fontWidth};
+}
+
+.js-stand-form-input-container[data-disabled] > span.description {
+	color: \${componentForm.input.shared.description.disabled.color};
+}
+
+/* search input styles */
+
+.js-stand-search-input {
+	background-color: \${componentSearchInput.shared.backgroundColor};
+	border-radius: \${componentSearchInput.shared.borderRadius};
+	border: \${componentSearchInput.shared.border};
+	color: \${componentSearchInput.shared.color};
+	cursor: \${componentSearchInput.shared.cursor};
+	margin-top: \${componentSearchInput.shared.marginTop};
+	padding-top: \${componentSearchInput.shared.padding.top};
+	padding-right: \${componentSearchInput.shared.padding.right};
+	padding-bottom: \${componentSearchInput.shared.padding.bottom};
+	padding-left: \${componentSearchInput.shared.padding.left};
+}
+
+.js-stand-search-input[disabled] {
+	background-color: \${componentSearchInput.shared.disabled.backgroundColor};
+	border: \${componentSearchInput.shared.disabled.border};
+	color: \${componentSearchInput.shared.disabled.color};
+	cursor: \${componentSearchInput.shared.disabled.cursor};
+}
+
+.js-stand-search-input[data-invalid] {
+	border: \${componentSearchInput.shared.errorBorder};
+}
+
+.js-stand-search-input.md {
+	height: \${componentSearchInput.md.height};
+	font: \${componentSearchInput.md.typography.font};
+	letter-spacing: \${componentSearchInput.md.typography.letterSpacing};
+	font-variation-settings: "wdth" \${componentSearchInput.md.typography.fontWidth};
+}
+
+.js-stand-search-input.sm {
+	height: \${componentSearchInput.sm.height};
+	font: \${componentSearchInput.sm.typography.font};
+	letter-spacing: \${componentSearchInput.sm.typography.letterSpacing};
+	font-variation-settings: "wdth" \${componentSearchInput.sm.typography.fontWidth};
+}
+\`);
+
+// update the document with the sheet
+document.adoptedStyleSheets.push(sheet);
+
+// modify the dom with the button components using the generated stylesheet
 document.getElementById("app").innerHTML = \`
-<div class="container">
-  <div style="\${searchInputStyles}\${typographyStyle}">C</div>
-  <div style="\${searchInputStyles}">
-	<span class="material-symbols" style="\${iconStyles}">raven</span>
-  </div>
-  <div style="\${searchInputStyles}">
-    <span class="material-symbols" style="\${iconStyles}"><svg style="\${iconSvgStyles}" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></span>
-  </div>
-  <div style="\${searchInputStyles}">
-    <img style="\${imgStyle}" src="https://uploads.guimcode.co.uk/2026/01/27/f85e2e477ce54f4c3b671faa5cd21673aa9f8072fddb5d70a73e6038dc812eec.jpg" alt="Mahesh Makani" />
-  </div>
+<div class="container flow-column">
+	<div class="js-stand-form-input-container md">
+		<label for="name">Name</label>
+		<span class="description">This is a description for the search input.</span>
+		<input id="name" class="js-stand-search-input md" type="text" />
+	</div>
+	<div class="js-stand-form-input-container sm">
+		<label for="username">Username</label>
+		<input
+			id="username"
+			class="js-stand-search-input sm"
+			type="text"
+		/>
+		<span class="js-stand-inline-message js-stand-inline-message-error"><span class="material-symbols">warning</span> Username is already taken</span>
+	</div>
+	<div class="js-stand-form-input-container md">
+		<label for="password">Password</label>
+		<span class="description">Showing a different type</span>
+		<input id="password" class="js-stand-search-input md" type="password" />
+	</div>
+	<div class="js-stand-form-input-container md" data-disabled>
+		<label for="notes">Notes</label>
+		<input
+			id="notes"
+			class="js-stand-search-input md"
+			type="text"
+			value="Read only content"
+			disabled
+		 />
+	</div>
+</div>
 \`;
 `;

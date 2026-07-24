@@ -1,9 +1,16 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import SearchInputStories, {
 	Default,
-	CustomMessage,
-	CustomTheme,
-	CssOverrides,
+	Fluid,
+	WithLabelAndDescription,
+	WithLabelValueAndDescription,
+	WithLabelValueDescriptionAndError,
+	WithLabelOnly,
+	WithDescriptionOnly,
+	SmallSize,
+	Disabled,
+	WithTypePassword,
+	RenderWithAsterisk,
 } from './SearchInput.stories';
 import {
 	SandboxReact,
@@ -22,59 +29,127 @@ import {
 
 # SearchInput
 
-The SearchInput component [[enter description of purpose]].
+A search input component built on [React Aria `SearchField`](https://react-aria.adobe.com/SearchField) component, see their documentation for the API.
+
+It provides a labelled, accessible search field with support for descriptions, validation errors, two sizes, and a disabled state.
 
 ## When to use
 
-- [[use case]]
-- [[use case]]
+- Within a form to collect a single line of free-text input from the user, or a specific type of input such as an email address/password (with appropriate `type` prop).
+- Whenever an accessible, labelled search field is needed that aligns with Stand tokens
 
 ## Peer dependencies
 
 - `@emotion/react`
 - `react`
 - `react-dom`
+- `react-aria-components`
 - `typescript`
 
 See the `peerDependencies` section of `package.json` for compatible versions.
 
 See [custom component build](#custom-component-build) for usage without React/Emotion.
 
-See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--docs#installing-icons) for more on installing icons.
-
 ## Example usage
 
-<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+<SandboxReact
+	flowColumn
+	componentName={componentName}
+	componentTsx={componentTsx}
+/>
 
 ```tsx
 import { SearchInput } from '@guardian/stand/SearchInput';
 
 /* types, if required */
-import type { SearchInputProps, SearchInputTheme } from '@guardian/stand/SearchInput';
+import type {
+	SearchInputProps,
+	SearchInputTheme,
+} from '@guardian/stand/SearchInput';
 
-/* Default */
-<SearchInput />
+const Example = () => (
+	<>
+		<SearchInput
+			label="Name"
+			description="This is a description for the search input."
+		/>
 
-/* Custom */
-<SearchInput message="hi" />
+		<SearchInput
+			size="sm"
+			label="Username"
+			isInvalid
+			error="Username is already taken."
+			defaultValue="guardian_user"
+		/>
 
+		<SearchInput label="Notes" isDisabled placeholder="Read only content" />
+	</>
+);
 ```
 
 ## Props
 
-| Name           | Type               | Required | Default       | Description                                   |
-| -------------- | ------------------ | -------- | ------------- | --------------------------------------------- |
-| `message`      | `string`           | No       | "hello world" | string to render in the SearchInput.          |
-| `theme`        | `SearchInputTheme` | No       | N/A           | Custom theme overrides for the SearchInput.   |
-| `cssOverrides` | `SerializedStyles` | No       | N/A           | Custom CSS styles for the SearchInput.        |
-| `className`    | `string`           | No       | N/A           | Additional class name(s) for the SearchInput. |
+| Name                      | Type                                       | Required | Default | Description                                                                                                                                     |
+| ------------------------- | ------------------------------------------ | -------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `size`                    | `'md'` \| `'sm'`                           | No       | `'md'`  | Controls the input height and typography.                                                                                                       |
+| `label`                   | `string`                                   | No       | N/A     | Visible label rendered above the input.                                                                                                         |
+| `renderLabel`             | `(label: string) => ReactNode`             | No       | N/A     | Custom render function for the label. Receives the `label` string and returns a ReactNode for visual enhancement                                |
+| `description`             | `string`                                   | No       | N/A     | Helper text rendered below the label.                                                                                                           |
+| `error`                   | `string`                                   | No       | N/A     | Validation error message; displayed when `isInvalid` is `true`.                                                                                 |
+| `isInvalid`               | `boolean`                                  | No       | `false` | Marks the field as invalid and applies error border styling.                                                                                    |
+| `isDisabled`              | `boolean`                                  | No       | `false` | Disables interaction and applies disabled styling.                                                                                              |
+| `theme`                   | `SearchInputTheme` (partial)               | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                         |
+| `placeholder`             | `string`                                   | No       | N/A     | Temporary text that occupies the search input when it is empty.                                                                                 |
+| `formInputContainerTheme` | `FormInputContainerTheme` (partial)        | No       | N/A     | Override Stand tokens for the wrapping label and description container.                                                                         |
+| `cssOverrides`            | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                      |
+| `className`               | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria SearchField element.                                                                       |
+| `...props`                | `ReactAria SearchField` props              | No       | N/A     | All other props from `react-aria-components` [`SearchField`](https://react-aria.adobe.com/SearchField) (e.g. `value`, `onChange`, `autoFocus`). |
 
 ## Stories
 
+### Default
+
 <Canvas layout="padded" of={Default} />
-<Canvas layout="padded" of={CustomMessage} />
-<Canvas layout="padded" of={CustomTheme} />
-<Canvas layout="padded" of={CssOverrides} />
+
+### Fluid
+
+<Canvas layout="padded" of={Fluid} />
+
+### With Label and Description
+
+<Canvas layout="padded" of={WithLabelAndDescription} />
+
+### With Label, Value and Description
+
+<Canvas layout="padded" of={WithLabelValueAndDescription} />
+
+### With Label, Value, Description and Error
+
+<Canvas layout="padded" of={WithLabelValueDescriptionAndError} />
+
+### With Label Only
+
+<Canvas layout="padded" of={WithLabelOnly} />
+
+### With Description Only
+
+<Canvas layout="padded" of={WithDescriptionOnly} />
+
+### Small Size
+
+<Canvas layout="padded" of={SmallSize} />
+
+### Disabled
+
+<Canvas layout="padded" of={Disabled} />
+
+### With Type Password
+
+<Canvas layout="padded" of={WithTypePassword} />
+
+### With Custom Rendered Label
+
+<Canvas layout="padded" of={RenderWithAsterisk} />
 
 ## Customisation
 
@@ -84,55 +159,48 @@ We recommend using the SearchInput component as provided, but it can be customis
 
 The `theme` prop allows you to override specific design tokens for the SearchInput component:
 
-<Canvas layout="padded" of={CustomTheme} />
-
 ```tsx
 import type { SearchInputTheme } from '@guardian/stand/SearchInput';
 import { SearchInput } from '@guardian/stand/SearchInput';
-import { baseColors, baseSizing } from '@guardian/stand';
+import { baseColors } from '@guardian/stand';
 
-const customTheme: SearchInputTheme = {
-	color: {
-		blue: {
-			background: baseColors.coolPurple[700],
-			text: baseColors.orange[300],
+const customTheme: Partial<SearchInputTheme> = {
+	shared: {
+		border: `0.0625rem solid ${baseColors.coolPurple[500]}`,
+		borderRadius: '0.5rem',
+		error: {
+			border: `0.0625rem solid ${baseColors.red[500]}`,
 		},
 	},
 };
 
-const Component = () => <SearchInput letter="C" theme={customTheme} />;
+const Component = () => <SearchInput label="Email" theme={customTheme} />;
 ```
 
 ### CSS overrides
 
-The `cssOverrides` prop allows you to pass custom CSS to the SearchInput component, if the theme prop is not sufficient:
-
-<Canvas layout="padded" of={CssOverrides} />
+The `cssOverrides` prop allows you to pass custom CSS to the SearchInput component:
 
 ```tsx
 import { SearchInput } from '@guardian/stand/SearchInput';
-import { baseColors, baseSizing, baseSpacing } from '@guardian/stand';
 import { css } from '@emotion/react';
 
-const customStyles = css`
-	border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
-	background-color: ${baseColors.orange[700]};
-	color: ${baseColors.warmPurple[300]};
-	border-radius: ${baseRadius.corner4Px};
-`;
+const customStyles = css\`
+	font-style: italic;
+\`;
 
-const Component = () => <SearchInput letter="O" cssOverrides={customStyles} />;
+const Component = () => (
+	<SearchInput label="Notes" cssOverrides={customStyles} />
+);
 ```
 
 ## Custom Component Build
 
-If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom SearchInput component using the styles defined in the `SearchInputTheme` type.
-
-You will however be responsible for any additional functionality on top of the styles, for example image loading, image fallback, accessibility etc.
+If you're not using React/Emotion, you can create a custom SearchInput component using the styles defined in the `SearchInputTheme` type. You will be responsible for any additional functionality on top of the styles, for example accessibility, focus management, and interaction states.
 
 **`css`**
 
-You can import the SearchInput styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+You can import the SearchInput styles as CSS from the package:
 
 <SandboxCss
 	componentName={componentName}
@@ -142,6 +210,6 @@ You can import the SearchInput styles as CSS from the package, make sure that yo
 
 **TypeScript/JavaScript**
 
-Use the `componentSearchInput` variable and the `ComponentSearchInput` type to define your custom styles in TypeScript/JavaScript:
+Use the `componentSearchInput` variable and the `ComponentSearchInput` type:
 
 <SandboxJs componentName={componentName} componentJs={componentJs} />

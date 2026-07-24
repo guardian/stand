@@ -1,14 +1,139 @@
 {
 	"component": {
 		"searchInput": {
-			"color": {
-				"background": {
+			"shared": {
+				"color": {
 					"$type": "color",
-					"$value": "{semantic.colors.fill.greenWeak}"
+					"$value": "{semantic.colors.text.strong}"
 				},
-				"text": {
+				"cursor": {
+					"$type": "string",
+					"$value": "text"
+				},
+				"padding": {
+					"top": {
+						"$type": "dimension",
+						"$value": "0"
+					},
+					"right": {
+						"$type": "dimension",
+						"$value": "{base.spacing.12Rem}"
+					},
+					"bottom": {
+						"$type": "dimension",
+						"$value": "0"
+					},
+					"left": {
+						"$type": "dimension",
+						"$value": "{base.spacing.12Rem}"
+					}
+				},
+				"marginTop": {
+					"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 8px, then margin-top should be 4px",
+					"$type": "dimension",
+					"$value": "{base.spacing.4Rem}"
+				},
+				"borderRadius": {
+					"$type": "dimension",
+					"$value": "{base.radius.corner4Rem}"
+				},
+				"border": {
+					"$type": "border",
+					"$value": {
+						"color": "{semantic.colors.border.stronger}",
+						"width": "{semantic.sizing.border.default}",
+						"style": "solid"
+					}
+				},
+				"backgroundColor": {
 					"$type": "color",
-					"$value": "hotpink"
+					"$value": "{semantic.colors.fill.weak}"
+				},
+				"placeholderColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.weak}"
+				},
+				"disabled": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.weak}"
+					},
+					"cursor": {
+						"$type": "string",
+						"$value": "not-allowed"
+					},
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.disabled}"
+					},
+					"border": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.disabled}",
+							"width": "{semantic.sizing.border.default}",
+							"style": "solid"
+						}
+					}
+				},
+				"focused": {
+					"outline": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.focused}",
+							"width": "{semantic.sizing.border.md}",
+							"style": "auto"
+						}
+					}
+				},
+				"error": {
+					"border": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.error}",
+							"width": "{semantic.sizing.border.default}",
+							"style": "solid"
+						}
+					}
+				}
+			},
+			"sm": {
+				"height": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.sm}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodySm.font}"
+					},
+					"letterSpacing": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodySm.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodySm.fontWidth}"
+					}
+				}
+			},
+			"md": {
+				"height": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.md}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodyMd.font}"
+					},
+					"letterSpacing": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodyMd.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodyMd.fontWidth}"
+					}
 				}
 			}
 		}
