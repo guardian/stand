@@ -1,0 +1,16 @@
+{
+	"component": {
+		"pickerIframeModal": {
+			"color": {
+				"background": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.greenWeak}"
+				},
+				"text": {
+					"$type": "color",
+					"$value": "hotpink"
+				}
+			}
+		}
+	}
+}
