@@ -138,35 +138,9 @@ export const componentCss = /* css */ `
 
 export const componentHtml = /* html */ `<div class="container flow-column">
 	<div class="stand-form-input-container md">search
-		<label for="name">Name</label>
-		<span class="description">This is a description for the text input.</span>
-		<input id="name" class="stand-search-input md" type="text" />
-	</div>
-	<div class="stand-form-input-container sm">
-		<label for="username">Username</label>
-		<input
-			id="username"
-			class="stand-search-input sm"
-			type="text"
-			value="guardian_user"
-			data-invalid
-		/>
-		<span class="stand-inline-message stand-inline-message-error"><span class="material-symbols">warning</span> Username is already taken</span>
-	</div>
-	<div class="stand-form-input-container md">
-		<label for="password">Password</label>
-		<span class="description">Showing a different type</span>
-		<input id="password" class="stand-search-input md" type="password" />
-	</div>
-	<div class="stand-form-input-container md" data-disabled>
-		<label for="notes">Notes</label>
-		<input
-			id="notes"
-			class="stand-search-input md"
-			type="text"
-			value="Read only content"
-			disabled
-		/>
+		<label for="search-one">Search for</label>
+		<span class="description">This is a description for the search input.</span>
+		<input id="search-one" class="stand-search-input md" type="text" />
 	</div>
 </div>
 `;
@@ -258,7 +232,7 @@ sheet.replaceSync(\`
 }
 
 .js-stand-search-input[data-invalid] {
-	border: \${componentSearchInput.shared.errorBorder};
+	border: \${componentSearchInput.shared.error.border};
 }
 
 .js-stand-search-input.md {
