@@ -177,6 +177,16 @@
 				"default": "./dist/Select.cjs"
 			}
 		},
+		"./SearchInput": {
+			"import": {
+				"types": "./dist/SearchInput.d.ts",
+				"default": "./dist/SearchInput.js"
+			},
+			"require": {
+				"types": "./dist/SearchInput.d.cts",
+				"default": "./dist/SearchInput.cjs"
+			}
+		},
 		"./TextInput": {
 			"import": {
 				"types": "./dist/TextInput.d.ts",
@@ -390,6 +400,7 @@
 		"./component/form.css": "./dist/styleD/build/css/component/form.css",
 		"./component/inlineMessage.css": "./dist/styleD/build/css/component/inlineMessage.css",
 		"./component/select.css": "./dist/styleD/build/css/component/select.css",
+		"./component/searchInput.css": "./dist/styleD/build/css/component/searchInput.css",
 		"./component/textInput.css": "./dist/styleD/build/css/component/textInput.css",
 		"./component/radioGroup.css": "./dist/styleD/build/css/component/radioGroup.css",
 		"./component/checkbox.css": "./dist/styleD/build/css/component/checkbox.css",
@@ -468,6 +479,9 @@
 			],
 			"Select": [
 				"./dist/Select.d.ts"
+			],
+			"SearchInput": [
+				"./dist/SearchInput.d.ts"
 			],
 			"TextInput": [
 				"./dist/TextInput.d.ts"
