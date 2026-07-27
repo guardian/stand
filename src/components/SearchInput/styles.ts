@@ -26,6 +26,10 @@ export const searchInputStyles = (
 		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
 			${theme.shared.padding.bottom} ${theme.shared.padding.left};
 
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
 		::placeholder {
 			color: ${theme.shared.placeholderColor};
 		}
@@ -50,6 +54,54 @@ export const searchInputStyles = (
 			css`
 				border: ${theme.shared.error.border};
 			`
+		}
+
+		&:focus-within {
+			outline: ${theme.shared.focused.outline};
+		}
+
+		& input {
+			${convertTypographyToEmotionStringStyle(theme[size].typography)}
+			background-color: transparent;
+			border-radius: 0;
+			border: 0;
+			color: ${theme.shared.color};
+			cursor: ${theme.shared.cursor};
+			height: ${theme[size].height};
+			margin: 0;
+			padding: 0;
+			width: 100%;
+
+			::placeholder {
+				color: ${theme.shared.placeholderColor};
+			}
+
+			&[data-disabled] {
+				color: ${theme.shared.disabled.color};
+				cursor: ${theme.shared.disabled.cursor};
+
+				::placeholder {
+					color: ${theme.shared.disabled.color};
+				}
+			}
+
+			&[data-focused] {
+				outline: none;
+			}
+		}
+
+		& svg {
+			padding-right: 8px;
+			width: 24px;
+			stroke: ${theme.shared.color};
+			fill: none;
+			stroke-width: 2;
+			stroke-linecap: round;
+			stroke-linejoin: round;
+
+			&[data-disabled] {
+				stroke: ${theme.shared.disabled.color};
+			}
 		}
 	`;
 };

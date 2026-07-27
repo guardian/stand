@@ -23,10 +23,19 @@ export function SearchInput({
 			isInvalid={isInvalid}
 			{...props}
 		>
-			<ReactAriaInput
-				placeholder={placeholder}
-				css={searchInputStyles(mergedTheme, { size, isInvalid })}
-			/>
+			<div css={searchInputStyles(mergedTheme, { size, isInvalid })}>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="18"
+					height="18"
+					viewBox="0 0 24 24"
+					aria-hidden="true"
+				>
+					<path d="m21 21-4.34-4.34"></path>
+					<circle cx="11" cy="11" r="8"></circle>
+				</svg>
+				<ReactAriaInput placeholder={placeholder} />
+			</div>
 		</FormInputContainer>
 	);
 }

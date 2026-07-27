@@ -9,7 +9,6 @@ import SearchInputStories, {
 	WithDescriptionOnly,
 	SmallSize,
 	Disabled,
-	WithTypePassword,
 	RenderWithAsterisk,
 } from './SearchInput.stories';
 import {
@@ -35,7 +34,7 @@ It provides a labelled, accessible search field with support for descriptions, v
 
 ## When to use
 
-- Within a form to collect a single line of free-text input from the user, or a specific type of input such as an email address/password (with appropriate `type` prop).
+- Allow a user to input text to be used as part of a search function
 - Whenever an accessible, labelled search field is needed that aligns with Stand tokens
 
 ## Peer dependencies
@@ -142,10 +141,6 @@ const Example = () => (
 ### Disabled
 
 <Canvas layout="padded" of={Disabled} />
-
-### With Type Password
-
-<Canvas layout="padded" of={WithTypePassword} />
 
 ### With Custom Rendered Label
 

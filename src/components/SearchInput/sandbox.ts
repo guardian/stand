@@ -7,25 +7,23 @@ export const componentTsx = /* javascript */ `import { SearchInput } from '@guar
 export const Component = () => (
 	<>
 		<SearchInput
-			label="Name"
+			label="Medium search"
 			description="This is a description for the search input."
 		/>
 
 		<SearchInput
 			size="sm"
-			label="Username"
+			label="Small search"
 			isInvalid
 			defaultValue="guardian_user"
-			error="Username is already taken"
+			error="This is an error message"
 		/>
 
-		<SearchInput
-			label="Password"
-			description="Showing a different type"
-			type="password"
+		<SearchInput 
+			label="Disabled search"
+			isDisabled
+			defaultValue="This search is disabled"
 		/>
-
-		<SearchInput label="Notes" isDisabled defaultValue="Read only content" />
 	</>
 );
 `;
@@ -257,33 +255,9 @@ document.adoptedStyleSheets.push(sheet);
 document.getElementById("app").innerHTML = \`
 <div class="container flow-column">
 	<div class="js-stand-form-input-container md">
-		<label for="name">Name</label>
-		<span class="description">This is a description for the search input.</span>
-		<input id="name" class="js-stand-search-input md" type="text" />
-	</div>
-	<div class="js-stand-form-input-container sm">
-		<label for="username">Username</label>
-		<input
-			id="username"
-			class="js-stand-search-input sm"
-			type="text"
-		/>
-		<span class="js-stand-inline-message js-stand-inline-message-error"><span class="material-symbols">warning</span> Username is already taken</span>
-	</div>
-	<div class="js-stand-form-input-container md">
-		<label for="password">Password</label>
-		<span class="description">Showing a different type</span>
-		<input id="password" class="js-stand-search-input md" type="password" />
-	</div>
-	<div class="js-stand-form-input-container md" data-disabled>
-		<label for="notes">Notes</label>
-		<input
-			id="notes"
-			class="js-stand-search-input md"
-			type="text"
-			value="Read only content"
-			disabled
-		 />
+		<label for="search-box">Search</label>
+		<span class="description">This is a description for the search input</span>
+		<input id="search-box" class="js-stand-search-input md" type="text" />
 	</div>
 </div>
 \`;

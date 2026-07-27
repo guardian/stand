@@ -91,16 +91,6 @@ export const Disabled = {
 	},
 } satisfies Story;
 
-export const WithTypePassword = {
-	name: 'With Type Password',
-	args: {
-		size: 'md',
-		label: 'Password',
-		description: 'Please enter your password.',
-		type: 'password',
-	},
-} satisfies Story;
-
 export const WithPlaceholder = {
 	args: {
 		size: 'md',
