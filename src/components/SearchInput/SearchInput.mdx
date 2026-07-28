@@ -69,19 +69,23 @@ import type {
 const Example = () => (
 	<>
 		<SearchInput
-			label="Name"
+			label="Medium search"
 			description="This is a description for the search input."
 		/>
 
 		<SearchInput
 			size="sm"
-			label="Username"
+			label="Small search"
 			isInvalid
-			error="Username is already taken."
 			defaultValue="guardian_user"
+			error="This is an error message"
 		/>
 
-		<SearchInput label="Notes" isDisabled placeholder="Read only content" />
+		<SearchInput
+			label="Disabled search"
+			isDisabled
+			defaultValue="This search is disabled"
+		/>
 	</>
 );
 ```

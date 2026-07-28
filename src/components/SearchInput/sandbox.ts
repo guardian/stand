@@ -11,6 +11,8 @@ export const Component = () => (
 			description="This is a description for the search input."
 		/>
 
+		<div>&nbsp;</div>
+
 		<SearchInput
 			size="sm"
 			label="Small search"
@@ -18,6 +20,8 @@ export const Component = () => (
 			defaultValue="guardian_user"
 			error="This is an error message"
 		/>
+
+		<div>&nbsp;</div>
 
 		<SearchInput 
 			label="Disabled search"

@@ -34,32 +34,6 @@ export const searchInputStyles = (
 			color: ${theme.shared.placeholderColor};
 		}
 
-		&[data-disabled] {
-			background-color: ${theme.shared.disabled.backgroundColor};
-			border: ${theme.shared.disabled.border};
-			color: ${theme.shared.disabled.color};
-			cursor: ${theme.shared.disabled.cursor};
-
-			::placeholder {
-				color: ${theme.shared.disabled.color};
-			}
-		}
-
-		&[data-focused] {
-			outline: ${theme.shared.focused.outline};
-		}
-
-		${
-			isInvalid &&
-			css`
-				border: ${theme.shared.error.border};
-			`
-		}
-
-		&:focus-within {
-			outline: ${theme.shared.focused.outline};
-		}
-
 		& input {
 			${convertTypographyToEmotionStringStyle(theme[size].typography)}
 			background-color: transparent;
@@ -98,8 +72,30 @@ export const searchInputStyles = (
 			stroke-width: 2;
 			stroke-linecap: round;
 			stroke-linejoin: round;
+		}
 
-			&[data-disabled] {
+		&:focus-within {
+			outline: ${theme.shared.focused.outline};
+		}
+
+		${
+			isInvalid &&
+			css`
+				border: ${theme.shared.error.border};
+			`
+		}
+
+		&:has(:disabled) {
+			background-color: ${theme.shared.disabled.backgroundColor};
+			border: ${theme.shared.disabled.border};
+			color: ${theme.shared.disabled.color};
+			cursor: ${theme.shared.disabled.cursor};
+
+			::placeholder {
+				color: ${theme.shared.disabled.color};
+			}
+
+			& svg {
 				stroke: ${theme.shared.disabled.color};
 			}
 		}
