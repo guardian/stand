@@ -3,6 +3,7 @@ import {
 	CheckboxGroup as RACCheckboxGroup,
 	DatePicker as RACDatePicker,
 	RadioGroup as RACRadioGroup,
+	SearchField as RACSearchField,
 	Select as RACSelect,
 	TextField as RACTextField,
 } from 'react-aria-components';
@@ -59,6 +60,7 @@ export type FormInputContainerDefaultProps<
  */
 export const ALLOWED_FORM_CONTAINERS = [
 	RACTextField,
+	RACSearchField,
 	RACSelect,
 	RACRadioGroup,
 	RACCheckboxGroup,

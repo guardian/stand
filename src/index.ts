@@ -56,6 +56,8 @@ export { componentSelect } from './styleD/build/typescript/component/select';
 export type { ComponentSelect } from './styleD/build/typescript/component/select';
 export { componentTextArea } from './styleD/build/typescript/component/textArea';
 export type { ComponentTextArea } from './styleD/build/typescript/component/textArea';
+export { componentSearchInput } from './styleD/build/typescript/component/searchInput';
+export type { ComponentSearchInput } from './styleD/build/typescript/component/searchInput';
 export { componentTextInput } from './styleD/build/typescript/component/textInput';
 export type { ComponentTextInput } from './styleD/build/typescript/component/textInput';
 export { componentTooltip } from './styleD/build/typescript/component/tooltip';
