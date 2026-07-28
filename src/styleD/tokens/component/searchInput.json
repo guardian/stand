@@ -101,6 +101,10 @@
 					"$type": "dimension",
 					"$value": "{semantic.sizing.height.sm}"
 				},
+				"iconMarginRight": {
+					"$type": "dimension",
+					"$value": "6px"
+				},
 				"typography": {
 					"font": {
 						"$type": "typography",
@@ -120,6 +124,10 @@
 				"height": {
 					"$type": "dimension",
 					"$value": "{semantic.sizing.height.md}"
+				},
+				"iconMarginRight": {
+					"$type": "dimension",
+					"$value": "8px"
 				},
 				"typography": {
 					"font": {

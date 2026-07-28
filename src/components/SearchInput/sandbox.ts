@@ -33,6 +33,7 @@ export const Component = () => (
 `;
 
 // SearchInput - Custom component - CSS example
+// THIS CODE NEEDS TO BE UPDATED
 export const componentCss = /* css */ `
 /* import the search input, form, inline message styles */
 @import '@guardian/stand/component/inlineMessage.css';
@@ -139,7 +140,7 @@ export const componentCss = /* css */ `
 `;
 
 export const componentHtml = /* html */ `<div class="container flow-column">
-	<div class="stand-form-input-container md">search
+	<div class="stand-form-input-container md">
 		<label for="search-one">Search for</label>
 		<span class="description">This is a description for the search input.</span>
 		<input id="search-one" class="stand-search-input md" type="text" />
@@ -149,6 +150,8 @@ export const componentHtml = /* html */ `<div class="container flow-column">
 
 // SearchInput - Custom component - JS example
 export const componentJs = /* javascript */ `
+// THIS CODE NEEDS TO BE UPDATED
+
 import { componentSearchInput, componentForm, componentInlineMessage } from "@guardian/stand";
 
 // example of creating a stylesheet in js
@@ -261,7 +264,9 @@ document.getElementById("app").innerHTML = \`
 	<div class="js-stand-form-input-container md">
 		<label for="search-box">Search</label>
 		<span class="description">This is a description for the search input</span>
-		<input id="search-box" class="js-stand-search-input md" type="text" />
+		<div>
+			<input id="search-box" class="js-stand-search-input md" type="text" />
+		</div>
 	</div>
 </div>
 \`;

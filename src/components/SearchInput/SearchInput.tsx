@@ -4,6 +4,7 @@ import {
 } from 'react-aria-components';
 import { mergeDeep } from '../../util/mergeDeep';
 import { FormInputContainer } from '../Form/Form';
+import { Icon } from '../Icon/Icon';
 import { defaultSearchInputTheme, searchInputStyles } from './styles';
 import type { SearchInputProps } from './types';
 
@@ -24,16 +25,7 @@ export function SearchInput({
 			{...props}
 		>
 			<div css={searchInputStyles(mergedTheme, { size, isInvalid })}>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					width="18"
-					height="18"
-					viewBox="0 0 24 24"
-					aria-hidden="true"
-				>
-					<path d="m21 21-4.34-4.34"></path>
-					<circle cx="11" cy="11" r="8"></circle>
-				</svg>
+				<Icon size={size} symbol="search" className="search-icon"></Icon>
 				<ReactAriaInput placeholder={placeholder} />
 			</div>
 		</FormInputContainer>

@@ -26,7 +26,7 @@ export const searchInputStyles = (
 		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
 			${theme.shared.padding.bottom} ${theme.shared.padding.left};
 
-		display: flex;
+		display: inline-flex;
 		justify-content: flex-start;
 		align-items: center;
 
@@ -64,14 +64,8 @@ export const searchInputStyles = (
 			}
 		}
 
-		& svg {
-			padding-right: 8px;
-			width: 24px;
-			stroke: ${theme.shared.color};
-			fill: none;
-			stroke-width: 2;
-			stroke-linecap: round;
-			stroke-linejoin: round;
+		& .search-icon {
+			margin-right: 8px;
 		}
 
 		&:focus-within {

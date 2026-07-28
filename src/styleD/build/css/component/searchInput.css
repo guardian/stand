@@ -21,11 +21,13 @@
 	--component-search-input-shared-focused-outline: 0.125rem auto #0072a9;
 	--component-search-input-shared-error-border: 0.0625rem solid #b42a19;
 	--component-search-input-sm-height: 2rem;
+	--component-search-input-sm-icon-margin-right: 6px;
 	--component-search-input-sm-typography-font: normal 460 0.875rem/1.3
 		'Open Sans';
 	--component-search-input-sm-typography-letter-spacing: 0rem;
 	--component-search-input-sm-typography-font-width: 95;
 	--component-search-input-md-height: 2.5rem;
+	--component-search-input-md-icon-margin-right: 8px;
 	--component-search-input-md-typography-font: normal 460 1rem/1.3 'Open Sans';
 	--component-search-input-md-typography-letter-spacing: 0rem;
 	--component-search-input-md-typography-font-width: 95;

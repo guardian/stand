@@ -32,6 +32,7 @@ export const componentSearchInput = {
 	},
 	sm: {
 		height: '2rem',
+		iconMarginRight: '6px',
 		typography: {
 			font: 'normal 460 0.875rem/1.3 Open Sans',
 			letterSpacing: '0rem',
@@ -40,6 +41,7 @@ export const componentSearchInput = {
 	},
 	md: {
 		height: '2.5rem',
+		iconMarginRight: '8px',
 		typography: {
 			font: 'normal 460 1rem/1.3 Open Sans',
 			letterSpacing: '0rem',
