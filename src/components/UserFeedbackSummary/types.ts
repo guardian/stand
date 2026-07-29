@@ -5,11 +5,11 @@ import type { UserFeedbackSummaryTheme } from './styles';
 export type UserFeedbackSummaryProps =
 	DefaultPropsWithChildren<UserFeedbackSummaryTheme> & {
 		/**
-		 * The severity level of the message, which determines its styling.
+		 * The severity level of the message which determines its styling.
 		 * This is a required prop.
 		 * Levels: 'error', 'warning', 'success', 'information'
 		 */
-		level: 'error' | 'warning' | 'success' | 'information'; //keyof Omit<UserFeedbackSummaryTheme, 'shared'>;
+		level: keyof Omit<UserFeedbackSummaryTheme, 'shared'>;
 		/**
 		 * Title of feedback summary message. This is a required prop.
 		 */
@@ -19,9 +19,8 @@ export type UserFeedbackSummaryProps =
 		 */
 		hideIcon?: boolean;
 		/**
-		 * Override the default icon for the message by providing a custom icon, for example when not using material symbols.
-		 * This can be either a string (for material symbols) or an SVG element.
-		 * Passed to the Icon component, so can be either a string (for material symbols) or an SVG element.
+		 * Override the default icon for the message by providing a custom icon.
+		 * This can be either a string (for Material Symbols) or an SVG element.
 		 */
 		icon?: IconProps['symbol'] | Exclude<IconProps['children'], string>;
 	};
