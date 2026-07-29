@@ -5,6 +5,7 @@ import type { BadgeProps } from './types';
 export const Badge = ({
 	size = 'md',
 	color = 'green',
+	weight = 'strong',
 	theme = {},
 	cssOverrides,
 	children,
@@ -14,7 +15,7 @@ export const Badge = ({
 
 	return (
 		<span
-			css={[badgeStyles(mergedTheme, { color, size }), cssOverrides]}
+			css={[badgeStyles(mergedTheme, { color, size, weight }), cssOverrides]}
 			{...props}
 		>
 			{children}

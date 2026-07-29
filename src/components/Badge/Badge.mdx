@@ -57,14 +57,15 @@ import type { BadgeProps, BadgeTheme } from '@guardian/stand/Badge';
 
 ## Props
 
-| Name           | Type                                                     | Required | Default | Description                            |
-| -------------- | -------------------------------------------------------- | -------- | ------- | -------------------------------------- |
-| `size`         | `xs`, `sm`, `md`                                         | No       | `md`    | Size variant of the badge              |
-| `color`        | `green`, `yellow`, `grey`, `orange`, `warmPurple`, `red` | No       | `green` | Color variant of the badge             |
-| `theme`        | `BadgeTheme`                                             | No       | N/A     | Custom theme overrides for the Badge   |
-| `cssOverrides` | `SerializedStyles`                                       | No       | N/A     | Custom CSS styles for the Badge        |
-| `className`    | `string`                                                 | No       | N/A     | Additional class name(s) for the Badge |
-| `children`     | `React.ReactNode`                                        | No       | N/A     | Content to render inside the badge     |
+| Name           | Type                                                     | Required | Default  | Description                            |
+| -------------- | -------------------------------------------------------- | -------- | -------- | -------------------------------------- |
+| `size`         | `xs`, `sm`, `md`                                         | No       | `md`     | Size variant of the badge              |
+| `color`        | `green`, `yellow`, `grey`, `orange`, `warmPurple`, `red` | No       | `green`  | Color variant of the badge             |
+| `weight`       | `strong`, `light`                                        | No       | `strong` | Weight variant of the badge            |
+| `theme`        | `BadgeTheme`                                             | No       | N/A      | Custom theme overrides for the Badge   |
+| `cssOverrides` | `SerializedStyles`                                       | No       | N/A      | Custom CSS styles for the Badge        |
+| `className`    | `string`                                                 | No       | N/A      | Additional class name(s) for the Badge |
+| `children`     | `React.ReactNode`                                        | No       | N/A      | Content to render inside the badge     |
 
 ## Stories
 
@@ -90,8 +91,12 @@ import { baseColors, baseSpacing } from '@guardian/stand';
 const customTheme: BadgeTheme = {
 	color: {
 		green: {
-			background: baseColors.coolPurple[200],
-			color: baseColors.coolPurple[900],
+			weight: {
+				strong: {
+					background: baseColors.coolPurple[200],
+					color: baseColors.coolPurple[900],
+				},
+			},
 		},
 	},
 	size: {
@@ -104,7 +109,7 @@ const customTheme: BadgeTheme = {
 	},
 };
 
-const Component = () => <Badge theme={customTheme}>Customised Badge</Badge>;
+const Component = () => <Badge theme={customTheme}>Custom theme badge</Badge>;
 ```
 
 ### CSS overrides
@@ -115,7 +120,6 @@ The `cssOverrides` prop allows you to pass custom CSS to the Badge component, if
 
 ```tsx
 import { Badge } from '@guardian/stand/Badge';
-import { baseRadius } from '@guardian/stand';
 import { css } from '@emotion/react';
 
 const customStyles = css`
@@ -123,7 +127,7 @@ const customStyles = css`
 `;
 
 const Component = () => (
-	<Badge cssOverrides={customStyles}>Overridden Badge</Badge>
+	<Badge cssOverrides={customStyles}>CSS Override Badge</Badge>
 );
 ```
 

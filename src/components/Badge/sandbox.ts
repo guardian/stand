@@ -7,8 +7,13 @@ export const componentTsx = /* javascript */ `import { Badge } from '@guardian/s
 export const Component = () => (
 	<>
 		{/* default example */}
-		<Badge color="green" size="md">
-			This is a badge
+		<Badge color="green" size="md" weight="strong">
+			This is the default badge
+		</Badge>
+
+		{/* styled example */}
+		<Badge color="red" weight="light">
+			This is a lightweight red badge
 		</Badge>
 	</>
 );
@@ -21,18 +26,18 @@ export const componentCss = /* css */ `
 
 /* example setup of badge style */
 .stand-badge {
-	display: var(--component-badge-size-md-display);
-	align-items: var(--component-badge-size-md-align-items);
-	justify-content: var(--component-badge-size-md-justify-content);
+	display: var(--component-badge-shared-display);
+	align-items: var(--component-badge-shared-align-items);
+	justify-content: var(--component-badge-shared-justify-content);
 	padding-top: var(--component-badge-size-md-padding-top);
 	padding-right: var(--component-badge-size-md-padding-right);
 	padding-bottom: var(--component-badge-size-md-padding-bottom);
 	padding-left: var(--component-badge-size-md-padding-left);
-	font: var(--component-badge-size-md-typography-font);
-	letter-spacing: var(--component-badge-size-md-typography-letter-spacing);
-	font-variation-settings: "wdth" var(--component-badge-size-md-typography-font-width);
-	background: var(--component-badge-color-green-background);
-	color: var(--component-badge-color-green-color);
+	font: var(--component-badge-size-md-weight-strong-typography-font);
+	letter-spacing: var(--component-badge-size-md-weight-strong-typography-letter-spacing);
+	font-variation-settings: "wdth" var(--component-badge-size-md-weight-strong-typography-font-width);
+	background: var(--component-badge-color-green-weight-strong-background);
+	color: var(--component-badge-color-green-weight-strong-color);
 }
 `;
 
@@ -47,19 +52,19 @@ export const componentJs = /* javascript */ `
 import { componentBadge } from "@guardian/stand";
 
 const badgeStyles = \`
-	background: \${componentBadge.color.green.background};
-	color: \${componentBadge.color.green.color};
-	display: \${componentBadge.size.md.display};
-	align-items: \${componentBadge.size.md.alignItems};
-	justify-content: \${componentBadge.size.md.justifyContent};
+	background: \${componentBadge.color.green.weight.strong.background};
+	color: \${componentBadge.color.green.weight.strong.color};
+	display: \${componentBadge.shared.display};
+	align-items: \${componentBadge.shared.alignItems};
+	justify-content: \${componentBadge.shared.justifyContent};
 	padding-top: \${componentBadge.size.md.padding.top};
 	padding-right: \${componentBadge.size.md.padding.right};
 	padding-bottom: \${componentBadge.size.md.padding.bottom};
 	padding-left: \${componentBadge.size.md.padding.left};
-	font: \${componentBadge.size.md.typography.font};
-	letter-spacing: \${componentBadge.size.md.typography.letterSpacing};
+	font: \${componentBadge.size.md.weight.strong.typography.font};
+	letter-spacing: \${componentBadge.size.md.weight.strong.typography.letterSpacing};
 	font-variation-settings: 'wdth' 
-	\${componentBadge.size.md.typography.fontWidth};
+	\${componentBadge.size.md.weight.strong.typography.fontWidth};
 \`;
 
 // e.g. adding to DOM using vanilla JS styles
