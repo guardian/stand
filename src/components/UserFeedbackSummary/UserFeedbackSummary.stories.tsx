@@ -1,4 +1,6 @@
+import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { UserFeedbackSummary } from './UserFeedbackSummary';
 
 const meta = {
@@ -73,5 +75,31 @@ export const CustomIcon = {
 		),
 	},
 } satisfies Story;
+
+export const CustomTheme = {
+	args: {
+		level: 'information',
+		title: 'Message with custom theme',
+		children: 'Additional help text can be provided here',
+		theme: {
+			information: {
+				color: baseColors.orange[400],
+				borderColor: baseColors.orange[500],
+			},
+		},
+	},
+};
+
+export const CssOverrides = {
+	args: {
+		level: 'error',
+		title: 'Message with CSS overrides',
+		children: 'Additional help text can be provided here',
+		cssOverrides: css`
+			background-color: ${baseColors.red[900]};
+			border-radius: 8px;
+		`,
+	},
+};
 
 export default meta;
