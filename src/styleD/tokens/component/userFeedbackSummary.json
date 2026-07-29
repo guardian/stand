@@ -1,14 +1,82 @@
 {
 	"component": {
 		"userFeedbackSummary": {
-			"color": {
-				"background": {
+			"shared": {
+				"color": {
 					"$type": "color",
-					"$value": "{semantic.colors.fill.greenWeak}"
+					"$value": "{semantic.colors.text.strong}"
 				},
-				"text": {
+				"gap": {
+					"$type": "dimension",
+					"$value": "{base.spacing.4Rem}"
+				},
+				"paddingTop": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12Rem}"
+				},
+				"paddingRight": {
+					"$type": "dimension",
+					"$value": "{base.spacing.16Rem}"
+				},
+				"paddingBottom": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12Rem}"
+				},
+				"paddingLeft": {
+					"$type": "dimension",
+					"$value": "{base.spacing.8Rem}"
+				},
+				"maxWidth": {
+					"$type": "dimension",
+					"$value": "46ch"
+				},
+				"borderWidth": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.border.default}"
+				},
+				"borderStyle": {
+					"$type": "string",
+					"$value": "solid"
+				}
+			},
+			"error": {
+				"color": {
 					"$type": "color",
-					"$value": "hotpink"
+					"$value": "{semantic.colors.text.error}"
+				},
+				"borderColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.border.error}"
+				}
+			},
+			"warning": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.orange}"
+				},
+				"borderColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.border.warning}"
+				}
+			},
+			"success": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.success}"
+				},
+				"borderColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.border.success}"
+				}
+			},
+			"information": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.blue}"
+				},
+				"borderColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.border.information}"
 				}
 			}
 		}

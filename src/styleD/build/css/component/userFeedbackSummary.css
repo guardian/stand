@@ -3,6 +3,21 @@
  */
 
 :root {
-	--component-user-feedback-summary-color-background: #cde4c9;
-	--component-user-feedback-summary-color-text: #ff69b4;
+	--component-user-feedback-summary-shared-color: #000000;
+	--component-user-feedback-summary-shared-gap: 0.25rem;
+	--component-user-feedback-summary-shared-padding-top: 0.75rem;
+	--component-user-feedback-summary-shared-padding-right: 1rem;
+	--component-user-feedback-summary-shared-padding-bottom: 0.75rem;
+	--component-user-feedback-summary-shared-padding-left: 0.5rem;
+	--component-user-feedback-summary-shared-max-width: 46ch;
+	--component-user-feedback-summary-shared-border-width: 0.0625rem;
+	--component-user-feedback-summary-shared-border-style: solid;
+	--component-user-feedback-summary-error-color: #8c2113;
+	--component-user-feedback-summary-error-border-color: #b42a19;
+	--component-user-feedback-summary-warning-color: #693c16;
+	--component-user-feedback-summary-warning-border-color: #9a7c11;
+	--component-user-feedback-summary-success-color: #326528;
+	--component-user-feedback-summary-success-border-color: #408233;
+	--component-user-feedback-summary-information-color: #092f62;
+	--component-user-feedback-summary-information-border-color: #1054af;
 }

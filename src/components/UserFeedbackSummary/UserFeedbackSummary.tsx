@@ -4,7 +4,7 @@ import { Icon } from '../Icon/Icon';
 import { Typography } from '../Typography/Typography';
 import {
 	defaultUserFeedbackSummaryTheme,
-	messageStyles,
+	textLayoutStyles,
 	userFeedbackSummaryStyles,
 } from './styles';
 import type { UserFeedbackSummaryProps } from './types';
@@ -41,14 +41,30 @@ export const UserFeedbackSummary = ({
 
 	return (
 		<div
-			css={[userFeedbackSummaryStyles(mergedTheme), cssOverrides]}
+			css={[userFeedbackSummaryStyles(mergedTheme, { level }), cssOverrides]}
 			className={className}
 			{...props}
 		>
-			{!hideIcon && <Icon size="md">{determinedIcon}</Icon>}
-			<div css={messageStyles(mergedTheme)}>
-				<Typography variant="bodyBoldSm">{title}</Typography>
-				{children && <Typography variant="bodySm">{children}</Typography>}
+			{!hideIcon && (
+				<Icon size="md" fill={mergedTheme[level].color}>
+					{determinedIcon}
+				</Icon>
+			)}
+			<div css={textLayoutStyles}>
+				<Typography
+					variant="bodyBoldSm"
+					theme={{ color: mergedTheme[level].color }}
+				>
+					{title}
+				</Typography>
+				{children && (
+					<Typography
+						variant="bodySm"
+						theme={{ color: mergedTheme.shared.color }}
+					>
+						{children}
+					</Typography>
+				)}
 			</div>
 		</div>
 	);

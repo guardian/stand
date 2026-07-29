@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars -- component under development, theme not yet defined */
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import { baseSizing } from '../../styleD/build/typescript/base/sizing';
@@ -7,8 +6,8 @@ import {
 	componentUserFeedbackSummary,
 	type ComponentUserFeedbackSummary,
 } from '../../styleD/build/typescript/component/userFeedbackSummary';
-import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
 import type { DeepPartial, Prettify } from '../../util/types';
+import type { UserFeedbackSummaryProps } from './types';
 
 export type UserFeedbackSummaryTheme = Prettify<ComponentUserFeedbackSummary>;
 export type PartialUserFeedbackSummaryTheme = Prettify<
@@ -19,25 +18,25 @@ export const defaultUserFeedbackSummaryTheme: UserFeedbackSummaryTheme =
 
 export const userFeedbackSummaryStyles = (
 	theme: UserFeedbackSummaryTheme,
+	{ level }: Required<Pick<UserFeedbackSummaryProps, 'level'>>,
 ): SerializedStyles => {
 	return css`
 		display: flex;
-		gap: ${baseSpacing['4Rem']};
-		color: ${semanticColors.text.error};
-		border: 1px solid ${semanticColors.border.error};
-		padding: ${baseSpacing['12Rem']} ${baseSpacing['16Rem']}
-			${baseSpacing['12Rem']} ${baseSpacing['8Rem']};
-		max-width: 46ch;
+		gap: ${theme.shared.gap};
+		border-width: ${theme.shared.borderWidth};
+		border-style: ${theme.shared.borderStyle};
+		border-color: ${theme[level].borderColor};
+		padding-top: ${theme.shared.paddingTop};
+		padding-right: ${theme.shared.paddingRight};
+		padding-bottom: ${theme.shared.paddingBottom};
+		padding-left: ${theme.shared.paddingLeft};
+		max-width: ${theme.shared.maxWidth};
 	`;
 };
 
-export const messageStyles = (
-	theme: UserFeedbackSummaryTheme,
-): SerializedStyles => {
-	return css`
-		display: flex;
-		flex-direction: column;
-		gap: ${baseSpacing['4Rem']};
-		margin-top: ${baseSizing['size1Rem']};
-	`;
-};
+export const textLayoutStyles = css`
+	display: flex;
+	flex-direction: column;
+	gap: ${baseSpacing['4Rem']};
+	margin-top: ${baseSizing['size1Rem']};
+`;

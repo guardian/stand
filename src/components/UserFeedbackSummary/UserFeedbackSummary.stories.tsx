@@ -59,7 +59,7 @@ export const NoHelpText = {
 
 export const CustomIcon = {
 	args: {
-		level: 'information',
+		level: 'success',
 		title: 'User feedback with custom icon',
 		children: 'Additional help text can be provided here',
 		icon: (
