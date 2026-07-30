@@ -66,6 +66,8 @@ export { componentTypography } from './styleD/build/typescript/component/typogra
 export type { ComponentTypography } from './styleD/build/typescript/component/typography';
 export { componentTabs } from './styleD/build/typescript/component/tabs';
 export type { ComponentTabs } from './styleD/build/typescript/component/tabs';
+export { componentUserFeedbackSummary } from './styleD/build/typescript/component/userFeedbackSummary';
+export type { ComponentUserFeedbackSummary } from './styleD/build/typescript/component/userFeedbackSummary';
 
 /**
  * style dictionary exports - base

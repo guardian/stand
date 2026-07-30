@@ -1,0 +1,177 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import UserFeedbackSummaryStories, {
+	Error,
+	Warning,
+	Success,
+	Information,
+	HiddenIcon,
+	NoHelpText,
+	CustomIcon,
+	CustomTheme,
+	CssOverrides,
+} from './UserFeedbackSummary.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={UserFeedbackSummaryStories} />
+
+# UserFeedbackSummary
+
+An inline component used to display contextual user feedback messages. It pairs an icon with a short summary message and optional supporting help text.
+
+## When to use
+
+- To give the user inline feedback following an action
+- To surface contextual status information close to the relevant UI element
+- To provide feedback that requires additional help or context
+- To provide feedback that is more visually prominent than an `InlineMessage`
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--docs#installing-icons) for more on installing icons.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { UserFeedbackSummary } from '@guardian/stand/UserFeedbackSummary';
+
+/* types, if required */
+import type {
+	UserFeedbackSummaryProps,
+	UserFeedbackSummaryTheme
+} from '@guardian/stand/UserFeedbackSummary';
+
+<UserFeedbackSummary level="error" title="Please select an audience segment">
+	Additional help text can be provided here
+</UserFeedbackSummary>
+
+<UserFeedbackSummary level="success" title="Email newsletter sent" />
+```
+
+## Props
+
+| Name           | Type                                                 | Required | Default | Description                                                              |
+| -------------- | ---------------------------------------------------- | -------- | ------- | ------------------------------------------------------------------------ |
+| `level`        | `'error' \| 'warning' \| 'success' \| 'information'` | Yes      | N/A     | The severity level of the message which determines its styling and icon. |
+| `title`        | `string`                                             | Yes      | N/A     | Title of the feedback summary message.                                   |
+| `children`     | `React.ReactNode`                                    | No       | N/A     | Optional descriptive help text rendered below the title.                 |
+| `hideIcon`     | `boolean`                                            | No       | `false` | Hides the default icon associated with the message level.                |
+| `icon`         | `string \| SVGElement`                               | No       | N/A     | Override the default icon with a custom Material Symbol or SVG element.  |
+| `theme`        | `Partial<UserFeedbackSummaryTheme>`                  | No       | N/A     | Custom theme overrides for design tokens.                                |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]`             | No       | N/A     | Custom Emotion CSS styles applied to the root element.                   |
+| `className`    | `string`                                             | No       | N/A     | Additional class name(s) applied to the root element.                    |
+
+## Stories
+
+<Canvas layout="padded" of={Error} />
+<Canvas layout="padded" of={Warning} />
+<Canvas layout="padded" of={Success} />
+<Canvas layout="padded" of={Information} />
+<Canvas layout="padded" of={HiddenIcon} />
+<Canvas layout="padded" of={NoHelpText} />
+<Canvas layout="padded" of={CustomIcon} />
+<Canvas layout="padded" of={CustomTheme} />
+<Canvas layout="padded" of={CssOverrides} />
+
+## Customisation
+
+We recommend using the UserFeedbackSummary component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the UserFeedbackSummary component:
+
+<Canvas layout="padded" of={CustomTheme} />
+
+```tsx
+import type { UserFeedbackSummaryTheme } from '@guardian/stand/UserFeedbackSummary';
+import { UserFeedbackSummary } from '@guardian/stand/UserFeedbackSummary';
+import { baseColors } from '@guardian/stand';
+
+const customTheme: Partial<UserFeedbackSummaryTheme> = {
+	information: {
+		color: baseColors.orange[400],
+		borderColor: baseColors.orange[500],
+	},
+};
+
+const Component = () => (
+	<UserFeedbackSummary
+		level="information"
+		title="User feedback with custom theme"
+		theme={customTheme}
+	>
+		Additional help text can be provided here
+	</UserFeedbackSummary>
+);
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the UserFeedbackSummary component:
+
+<Canvas layout="padded" of={CssOverrides} />
+
+```tsx
+import { UserFeedbackSummary } from '@guardian/stand/UserFeedbackSummary';
+import { baseColors } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	background-color: ${baseColors.red[900]};
+	border-radius: 8px;
+`;
+
+const Component = () => (
+	<UserFeedbackSummary
+		level="error"
+		title="User feedback with CSS overrides"
+		cssOverrides={customStyles}
+	>
+		Additional help text can be provided here
+	</UserFeedbackSummary>
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom UserFeedbackSummary component using the styles defined in the `UserFeedbackSummaryTheme` type.
+
+You will however be responsible for any additional functionality on top of the styles, for example icon rendering, level-based styling, and accessibility.
+
+**`css`**
+
+You can import the UserFeedbackSummary styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentUserFeedbackSummary` variable and the `ComponentUserFeedbackSummary` type to define your custom styles in TypeScript/JavaScript:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
