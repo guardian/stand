@@ -79,7 +79,7 @@ export const CustomIcon = {
 export const CustomTheme = {
 	args: {
 		level: 'information',
-		title: 'Message with custom theme',
+		title: 'User feedback with custom theme',
 		children: 'Additional help text can be provided here',
 		theme: {
 			information: {
@@ -93,7 +93,7 @@ export const CustomTheme = {
 export const CssOverrides = {
 	args: {
 		level: 'error',
-		title: 'Message with CSS overrides',
+		title: 'User feedback with CSS overrides',
 		children: 'Additional help text can be provided here',
 		cssOverrides: css`
 			background-color: ${baseColors.red[900]};

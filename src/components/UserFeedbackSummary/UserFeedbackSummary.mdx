@@ -1,7 +1,12 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import UserFeedbackSummaryStories, {
-	Default,
-	CustomMessage,
+	Error,
+	Warning,
+	Success,
+	Information,
+	HiddenIcon,
+	NoHelpText,
+	CustomIcon,
 	CustomTheme,
 	CssOverrides,
 } from './UserFeedbackSummary.stories';
@@ -22,12 +27,14 @@ import {
 
 # UserFeedbackSummary
 
-The UserFeedbackSummary component [[enter description of purpose]].
+An inline component used to display contextual user feedback messages. It pairs an icon with a short summary message and optional supporting help text.
 
 ## When to use
 
-- [[use case]]
-- [[use case]]
+- To give the user inline feedback following an action
+- To surface contextual status information close to the relevant UI element
+- To provide feedback that requires additional help or context
+- To provide feedback that is more visually prominent than an `InlineMessage`
 
 ## Peer dependencies
 
@@ -50,29 +57,40 @@ See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--
 import { UserFeedbackSummary } from '@guardian/stand/UserFeedbackSummary';
 
 /* types, if required */
-import type { UserFeedbackSummaryProps, UserFeedbackSummaryTheme } from '@guardian/stand/UserFeedbackSummary';
+import type {
+	UserFeedbackSummaryProps,
+	UserFeedbackSummaryTheme
+} from '@guardian/stand/UserFeedbackSummary';
 
-/* Default */
-<UserFeedbackSummary />
+<UserFeedbackSummary level="error" title="Please select an audience segment">
+	Additional help text can be provided here
+</UserFeedbackSummary>
 
-/* Custom */
-<UserFeedbackSummary message="hi" />
-
+<UserFeedbackSummary level="success" title="Email newsletter sent" />
 ```
 
 ## Props
 
-| Name           | Type                       | Required | Default       | Description                                           |
-| -------------- | -------------------------- | -------- | ------------- | ----------------------------------------------------- |
-| `message`      | `string`                   | No       | "hello world" | string to render in the UserFeedbackSummary.          |
-| `theme`        | `UserFeedbackSummaryTheme` | No       | N/A           | Custom theme overrides for the UserFeedbackSummary.   |
-| `cssOverrides` | `SerializedStyles`         | No       | N/A           | Custom CSS styles for the UserFeedbackSummary.        |
-| `className`    | `string`                   | No       | N/A           | Additional class name(s) for the UserFeedbackSummary. |
+| Name           | Type                                                 | Required | Default | Description                                                              |
+| -------------- | ---------------------------------------------------- | -------- | ------- | ------------------------------------------------------------------------ |
+| `level`        | `'error' \| 'warning' \| 'success' \| 'information'` | Yes      | N/A     | The severity level of the message which determines its styling and icon. |
+| `title`        | `string`                                             | Yes      | N/A     | Title of the feedback summary message.                                   |
+| `children`     | `React.ReactNode`                                    | No       | N/A     | Optional descriptive help text rendered below the title.                 |
+| `hideIcon`     | `boolean`                                            | No       | `false` | Hides the default icon associated with the message level.                |
+| `icon`         | `string \| SVGElement`                               | No       | N/A     | Override the default icon with a custom Material Symbol or SVG element.  |
+| `theme`        | `Partial<UserFeedbackSummaryTheme>`                  | No       | N/A     | Custom theme overrides for design tokens.                                |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]`             | No       | N/A     | Custom Emotion CSS styles applied to the root element.                   |
+| `className`    | `string`                                             | No       | N/A     | Additional class name(s) applied to the root element.                    |
 
 ## Stories
 
-<Canvas layout="padded" of={Default} />
-<Canvas layout="padded" of={CustomMessage} />
+<Canvas layout="padded" of={Error} />
+<Canvas layout="padded" of={Warning} />
+<Canvas layout="padded" of={Success} />
+<Canvas layout="padded" of={Information} />
+<Canvas layout="padded" of={HiddenIcon} />
+<Canvas layout="padded" of={NoHelpText} />
+<Canvas layout="padded" of={CustomIcon} />
 <Canvas layout="padded" of={CustomTheme} />
 <Canvas layout="padded" of={CssOverrides} />
 
@@ -89,40 +107,50 @@ The `theme` prop allows you to override specific design tokens for the UserFeedb
 ```tsx
 import type { UserFeedbackSummaryTheme } from '@guardian/stand/UserFeedbackSummary';
 import { UserFeedbackSummary } from '@guardian/stand/UserFeedbackSummary';
-import { baseColors, baseSizing } from '@guardian/stand';
+import { baseColors } from '@guardian/stand';
 
-const customTheme: UserFeedbackSummaryTheme = {
-	color: {
-		blue: {
-			background: baseColors.coolPurple[700],
-			text: baseColors.orange[300],
-		},
+const customTheme: Partial<UserFeedbackSummaryTheme> = {
+	information: {
+		color: baseColors.orange[400],
+		borderColor: baseColors.orange[500],
 	},
 };
 
-const Component = () => <UserFeedbackSummary letter="C" theme={customTheme} />;
+const Component = () => (
+	<UserFeedbackSummary
+		level="information"
+		title="User feedback with custom theme"
+		theme={customTheme}
+	>
+		Additional help text can be provided here
+	</UserFeedbackSummary>
+);
 ```
 
 ### CSS overrides
 
-The `cssOverrides` prop allows you to pass custom CSS to the UserFeedbackSummary component, if the theme prop is not sufficient:
+The `cssOverrides` prop allows you to pass custom CSS to the UserFeedbackSummary component:
 
 <Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
 import { UserFeedbackSummary } from '@guardian/stand/UserFeedbackSummary';
-import { baseColors, baseSizing, baseSpacing } from '@guardian/stand';
+import { baseColors } from '@guardian/stand';
 import { css } from '@emotion/react';
 
 const customStyles = css`
-	border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
-	background-color: ${baseColors.orange[700]};
-	color: ${baseColors.warmPurple[300]};
-	border-radius: ${baseRadius.corner4Px};
+	background-color: ${baseColors.red[900]};
+	border-radius: 8px;
 `;
 
 const Component = () => (
-	<UserFeedbackSummary letter="O" cssOverrides={customStyles} />
+	<UserFeedbackSummary
+		level="error"
+		title="User feedback with CSS overrides"
+		cssOverrides={customStyles}
+	>
+		Additional help text can be provided here
+	</UserFeedbackSummary>
 );
 ```
 
@@ -130,7 +158,7 @@ const Component = () => (
 
 If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom UserFeedbackSummary component using the styles defined in the `UserFeedbackSummaryTheme` type.
 
-You will however be responsible for any additional functionality on top of the styles, for example image loading, image fallback, accessibility etc.
+You will however be responsible for any additional functionality on top of the styles, for example icon rendering, level-based styling, and accessibility.
 
 **`css`**
 
