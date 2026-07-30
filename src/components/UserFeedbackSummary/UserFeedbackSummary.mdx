@@ -51,7 +51,11 @@ See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--
 
 ## Example usage
 
-<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+<SandboxReact
+	componentName={componentName}
+	componentTsx={componentTsx}
+	flowColumn
+/>
 
 ```tsx
 import { UserFeedbackSummary } from '@guardian/stand/UserFeedbackSummary';
@@ -158,9 +162,9 @@ const Component = () => (
 
 If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom UserFeedbackSummary component using the styles defined in the `UserFeedbackSummaryTheme` type.
 
-You will however be responsible for any additional functionality on top of the styles, for example icon rendering, level-based styling, and accessibility.
+You will however be responsible for any additional functionality on top of the styles.
 
-**`css`**
+### CSS
 
 You can import the UserFeedbackSummary styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
 
@@ -170,7 +174,7 @@ You can import the UserFeedbackSummary styles as CSS from the package, make sure
 	componentCss={componentCss}
 />
 
-**TypeScript/JavaScript**
+### TypeScript / JavaScript
 
 Use the `componentUserFeedbackSummary` variable and the `ComponentUserFeedbackSummary` type to define your custom styles in TypeScript/JavaScript:
 

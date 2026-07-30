@@ -6,39 +6,35 @@ export const componentTsx = /* javascript */ `import { UserFeedbackSummary } fro
 
 export const Component = () => (
 	<>
-		{/* error example */}
 		<UserFeedbackSummary level="error" title="Please select an audience segment">
 			Additional help text can be provided here
 		</UserFeedbackSummary>
 
-		{/* warning example */}
 		<UserFeedbackSummary level="warning" title="46 characters or fewer preferred">
 			Additional help text can be provided here
 		</UserFeedbackSummary>
 
-		{/* success example */}
 		<UserFeedbackSummary level="success" title="Email newsletter sent" />
 
-		{/* information example */}
 		<UserFeedbackSummary level="information" title="Your session will expire soon">
 			Additional help text can be provided here
 		</UserFeedbackSummary>
 
-		{/* hidden icon example */}
 		<UserFeedbackSummary level="information" title="User feedback without icon" hideIcon>
 			Additional help text can be provided here
 		</UserFeedbackSummary>
 	</>
 );
-
 `;
 
 // Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the user feedback summary styles */
 @import '@guardian/stand/component/userFeedbackSummary.css';
-/* import the icon styles if using icons */
 @import "@guardian/stand/component/icon.css";
+@import '@guardian/stand/semantic/typography.css';
+@import '@guardian/stand/base/spacing.css';
+@import '@guardian/stand/base/sizing.css';
 
 /* example setup of user feedback summary style */
 .stand-user-feedback-summary {
@@ -53,60 +49,56 @@ export const componentCss = /* css */ `
 	max-width: var(--component-user-feedback-summary-shared-max-width);
 }
 
-/* level-specific border colours */
-.stand-user-feedback-summary--error {
-	border-color: var(--component-user-feedback-summary-error-border-color);
+.stand-user-feedback-summary__icon {
+	display:  var(--component-icon-shared-display);
+	font-size: var(--component-icon-md-size);
 }
 
-.stand-user-feedback-summary--warning {
-	border-color: var(--component-user-feedback-summary-warning-border-color);
+.stand-user-feedback-summary__text {
+	display: flex;
+	flex-direction: column;
+	gap: var(--base-spacing-4-rem);
+	margin-top: var(--base-sizing-size1-rem);
+}
+
+.stand-user-feedback-summary__title {
+	font: var(--semantic-typography-body-bold-sm-font);
+	letter-spacing: var(--semantic-typography-body-bold-sm-letter-spacing);
+	font-variation-settings: "wdth" var(--semantic-typography-body-bold-sm-font-width);
+}
+
+.stand-user-feedback-summary__help {
+	color: var(--component-user-feedback-summary-shared-color);
+	font: var(--semantic-typography-body-sm-font);
+	letter-spacing: var(--semantic-typography-body-sm-letter-spacing);
+	font-variation-settings: "wdth" var(--semantic-typography-body-sm-font-width);
+}
+
+.stand-user-feedback-summary--error {
+	border-color: var(--component-user-feedback-summary-error-border-color);
+	.stand-user-feedback-summary__icon,
+	.stand-user-feedback-summary__title {
+		color: var(--component-user-feedback-summary-error-color);
+	}
 }
 
 .stand-user-feedback-summary--success {
 	border-color: var(--component-user-feedback-summary-success-border-color);
-}
-
-.stand-user-feedback-summary--information {
-	border-color: var(--component-user-feedback-summary-information-border-color);
-}
-
-/* level-specific text/icon colours */
-.stand-user-feedback-summary--error .stand-user-feedback-summary__title,
-.stand-user-feedback-summary--error .stand-user-feedback-summary__icon {
-	color: var(--component-user-feedback-summary-error-color);
-}
-
-.stand-user-feedback-summary--warning .stand-user-feedback-summary__title,
-.stand-user-feedback-summary--warning .stand-user-feedback-summary__icon {
-	color: var(--component-user-feedback-summary-warning-color);
-}
-
-.stand-user-feedback-summary--success .stand-user-feedback-summary__title,
-.stand-user-feedback-summary--success .stand-user-feedback-summary__icon {
-	color: var(--component-user-feedback-summary-success-color);
-}
-
-.stand-user-feedback-summary--information .stand-user-feedback-summary__title,
-.stand-user-feedback-summary--information .stand-user-feedback-summary__icon {
-	color: var(--component-user-feedback-summary-information-color);
-}
-
-/* body text colour */
-.stand-user-feedback-summary__body {
-	color: var(--component-user-feedback-summary-shared-color);
+	.stand-user-feedback-summary__icon,
+	.stand-user-feedback-summary__title {
+		color: var(--component-user-feedback-summary-success-color);
+	}
 }
 `;
 
-export const componentHtml = /* html */ `<!-- error level -->
+export const componentHtml = /* html */ `
 <div class="stand-user-feedback-summary stand-user-feedback-summary--error">
 	<span class="material-symbols stand-user-feedback-summary__icon">warning</span>
 	<div class="stand-user-feedback-summary__text">
-		<strong class="stand-user-feedback-summary__title">Please select an audience segment</strong>
-		<span class="stand-user-feedback-summary__body">Additional help text can be provided here</span>
+		<span class="stand-user-feedback-summary__title">Please select an audience segment</span>
+		<span class="stand-user-feedback-summary__help">Additional help text can be provided here</span>
 	</div>
 </div>
-
-<!-- success level -->
 <div class="stand-user-feedback-summary stand-user-feedback-summary--success">
 	<span class="material-symbols stand-user-feedback-summary__icon">sentiment_satisfied_alt</span>
 	<div class="stand-user-feedback-summary__text">
@@ -116,44 +108,86 @@ export const componentHtml = /* html */ `<!-- error level -->
 `;
 
 // Custom component - JS example
-export const componentJs = /* javascript */ `import { componentUserFeedbackSummary } from "@guardian/stand";
+export const componentJs = /* javascript */ `import {
+	componentUserFeedbackSummary,
+	componentIcon,
+	semanticTypography,
+	baseSpacing,
+	baseSizing
+} from "@guardian/stand";
 
-// Shared layout styles
-const containerStyles = \`
-	display: flex;
-	gap: \${componentUserFeedbackSummary.shared.gap};
-	border-width: \${componentUserFeedbackSummary.shared.borderWidth};
-	border-style: \${componentUserFeedbackSummary.shared.borderStyle};
-	padding-top: \${componentUserFeedbackSummary.shared.paddingTop};
-	padding-right: \${componentUserFeedbackSummary.shared.paddingRight};
-	padding-bottom: \${componentUserFeedbackSummary.shared.paddingBottom};
-	padding-left: \${componentUserFeedbackSummary.shared.paddingLeft};
-	max-width: \${componentUserFeedbackSummary.shared.maxWidth};
-\`;
+const sheet = new CSSStyleSheet();
 
-// Level-specific styles
-const errorBorderColor = componentUserFeedbackSummary.error.borderColor;
-const errorColor = componentUserFeedbackSummary.error.color;
+sheet.replaceSync(\`
+	.js-stand-user-feedback-summary {
+		display: flex;
+		gap: \${componentUserFeedbackSummary.shared.gap};
+		border-width: \${componentUserFeedbackSummary.shared.borderWidth};
+		border-style: \${componentUserFeedbackSummary.shared.borderStyle};
+		padding-top: \${componentUserFeedbackSummary.shared.paddingTop};
+		padding-right: \${componentUserFeedbackSummary.shared.paddingRight};
+		padding-bottom: \${componentUserFeedbackSummary.shared.paddingBottom};
+		padding-left: \${componentUserFeedbackSummary.shared.paddingLeft};
+		max-width: \${componentUserFeedbackSummary.shared.maxWidth};
+	}
 
-const successBorderColor = componentUserFeedbackSummary.success.borderColor;
-const successColor = componentUserFeedbackSummary.success.color;
+	.js-stand-user-feedback-summary__icon {
+		display: \${componentIcon.shared.display};
+		font-size: \${componentIcon.md.size};
+	}
 
-// Body text colour
-const bodyColor = componentUserFeedbackSummary.shared.color;
+	.js-stand-user-feedback-summary__text {
+		display: flex;
+		flex-direction: column;
+		gap: \${baseSpacing['4Rem']};
+		margin-top: \${baseSizing['size1Rem']};
+	}
+
+	.js-stand-user-feedback-summary__title {
+		font: \${semanticTypography.bodyBoldSm.font};
+		letter-spacing: \${semanticTypography.bodyBoldSm.letterSpacing};
+		font-variation-settings: "wdth" \${semanticTypography.bodyBoldSm.fontWidth};
+	}
+
+	.js-stand-user-feedback-summary__help {
+		color: \${componentUserFeedbackSummary.shared.color};
+		font: \${semanticTypography.bodySm.font};
+		letter-spacing: \${semanticTypography.bodySm.letterSpacing};
+		font-variation-settings: "wdth" \${semanticTypography.bodySm.fontWidth};
+	}
+
+	.js-stand-user-feedback-summary--error {
+		border-color: \${componentUserFeedbackSummary.error.borderColor};
+		.js-stand-user-feedback-summary__icon,
+		.js-stand-user-feedback-summary__title {
+			color: \${componentUserFeedbackSummary.error.color};
+		}
+	}
+
+	.js-stand-user-feedback-summary--success {
+		border-color: \${componentUserFeedbackSummary.success.borderColor};
+		.js-stand-user-feedback-summary__icon,
+		.js-stand-user-feedback-summary__title {
+			color: \${componentUserFeedbackSummary.success.color};
+		}
+	}
+\`);
+
+document.adoptedStyleSheets.push(sheet);
 
 // e.g. adding to DOM using vanilla JS styles
 document.getElementById("app").innerHTML = \`
-<div style="\${containerStyles} border-color: \${errorBorderColor};">
-	<span class="material-symbols" style="color: \${errorColor};">warning</span>
-	<div>
-		<strong style="color: \${errorColor};">Please select an audience segment</strong>
-		<p style="color: \${bodyColor};">Additional help text can be provided here</p>
+<div class="js-stand-user-feedback-summary js-stand-user-feedback-summary--error">
+	<span class="material-symbols js-stand-user-feedback-summary__icon">warning</span>
+	<div class="js-stand-user-feedback-summary__text">
+		<span class="js-stand-user-feedback-summary__title">Please select an audience segment</span>
+		<span class="js-stand-user-feedback-summary__help">Additional help text can be provided here</span>
 	</div>
 </div>
-<div style="\${containerStyles} border-color: \${successBorderColor};">
-	<span class="material-symbols" style="color: \${successColor};">sentiment_satisfied_alt</span>
-	<div>
-		<strong style="color: \${successColor};">Email newsletter sent</strong>
+<div class="js-stand-user-feedback-summary js-stand-user-feedback-summary--success">
+	<span class="material-symbols js-stand-user-feedback-summary__icon">sentiment_satisfied_alt</span>
+	<div class="js-stand-user-feedback-summary__text">
+		<strong class="js-stand-user-feedback-summary__title">Email newsletter sent</strong>
 	</div>
 </div>
 \`;
