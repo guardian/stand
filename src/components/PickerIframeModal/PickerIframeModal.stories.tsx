@@ -39,6 +39,13 @@ export const Default = {
 	},
 } satisfies Story;
 
+export const WithOwnTabButton = {
+	args: {
+		title: 'With new tab button',
+		showOpenInNewTabButton: true,
+	},
+} satisfies Story;
+
 export const CustomModalTheme = {
 	args: {
 		title: 'CustomModalTheme',

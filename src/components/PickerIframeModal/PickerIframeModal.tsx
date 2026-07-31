@@ -31,6 +31,7 @@ export function PickerIframeModal<DataType>({
 	closeModal,
 	closeAfterHandling = true,
 	cssOverrides,
+	showOpenInNewTabButton,
 	modalTheme = {
 		modal: {
 			width: '800px',
@@ -110,9 +111,11 @@ export function PickerIframeModal<DataType>({
 				<Dialog.Header theme={mergedDialogTheme.title}>
 					<div css={headerContentsStyles(mergedTheme)}>
 						{title}
-						<LinkButton href={href} target="_blank" icon="open_in_new">
-							Open standalone page
-						</LinkButton>
+						{showOpenInNewTabButton && (
+							<LinkButton href={href} target="_blank" icon="open_in_new">
+								Open standalone page
+							</LinkButton>
+						)}
 					</div>
 				</Dialog.Header>
 				<Dialog.Content theme={mergedDialogTheme.children}>

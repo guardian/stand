@@ -13,4 +13,5 @@ export type PickerIframeModalProps<DataType> =
 		closeAfterHandling?: boolean;
 		modalTheme?: DeepPartial<ModalTheme>;
 		dialogTheme?: DeepPartial<DialogTheme>;
+		showOpenInNewTabButton?: boolean;
 	};
