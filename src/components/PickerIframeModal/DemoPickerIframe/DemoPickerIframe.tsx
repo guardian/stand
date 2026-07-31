@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Button } from '../../Button';
-import type { IconButtonProps } from '../../IconButton';
-import { IconButton } from '../../IconButton';
-import { semanticSpacing } from '../../styleD/build/typescript/semantic/spacing';
-import { Typography } from '../../Typography';
+import { Button } from '../../../Button';
+import type { IconButtonProps } from '../../../IconButton';
+import { IconButton } from '../../../IconButton';
+import { semanticSpacing } from '../../../styleD/build/typescript/semantic/spacing';
+import { Typography } from '../../../Typography';
 
 const PostButton = ({
 	symbol,

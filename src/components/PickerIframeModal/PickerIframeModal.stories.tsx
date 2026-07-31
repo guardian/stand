@@ -8,7 +8,7 @@ import { Typography } from '../Typography/Typography';
 import { PickerIframeModal } from './PickerIframeModal';
 
 const meta = {
-	title: 'Stand/Tools Design System/Components/PickerIframeModal',
+	title: 'Stand/Editorial Components/PickerIframeModal',
 	component: PickerIframeModal,
 	parameters: {},
 	args: {
@@ -31,7 +31,7 @@ type Story = StoryObj<typeof PickerIframeModal>;
 type DemoPickerDataType = { symbol: string };
 
 const DEMO_IFRAME_PATH =
-	'/iframe.html?id=stand-tools-design-system-components-demopickeriframe--default&viewMode=story';
+	'/iframe.html?id=stand-editorial-components-pickeriframemodal-demopickeriframe--default&viewMode=story';
 
 export const Default = {
 	args: {
