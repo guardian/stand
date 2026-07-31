@@ -2,18 +2,42 @@
 export const componentName = 'PickerIframeModal';
 
 // React sandbox example
-export const componentTsx = /* javascript */ `import { PickerIframeModal } from '@guardian/stand/PickerIframeModal';
+export const componentTsx = /* javascript */ `import { useState } from 'react';
+import { PickerIframeModal } from '@guardian/stand/PickerIframeModal';
 
-export const Component = () => (
-	<>
-		{/* default example */}
-		<PickerIframeModal />
+export const Component = () => {
+	const [href, setHref] = useState('https://example.com/picker');
+	const [selection, setSelection] = useState('');
 
-		{/* custom message example */}
-		<PickerIframeModal message="hi there" />
-
-);
-
+	return (
+		<>
+			<button onClick={() => setHref('https://example.com/picker')}>
+				Open picker
+			</button>
+			<PickerIframeModal
+				title="Pick a food"
+				href={href}
+				validate={(messageData) => {
+					if (
+						messageData &&
+						typeof messageData === 'object' &&
+						'symbol' in messageData &&
+						typeof messageData.symbol === 'string'
+					) {
+						return { data: messageData.symbol };
+					}
+					return { data: undefined };
+				}}
+				handleData={(data) => {
+					setSelection(data);
+				}}
+				closeModal={() => setHref(undefined)}
+				showOpenInNewTabButton
+			/>
+			<div>{selection || 'No selection yet'}</div>
+		</>
+	);
+};
 `;
 
 // Custom component - CSS example

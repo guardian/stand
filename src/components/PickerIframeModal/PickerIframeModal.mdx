@@ -1,33 +1,29 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import PickerIframeModalStories, {
 	Default,
-	CustomMessage,
+	WithOwnTabButton,
+	CustomModalTheme,
+	CustomDialogTheme,
 	CustomTheme,
 	CssOverrides,
+	InteractiveExample,
 } from './PickerIframeModal.stories';
-import {
-	SandboxReact,
-	SandboxCss,
-	SandboxJs,
-} from '../../util/storybook/sandbox/Sandbox';
-import {
-	componentName,
-	componentCss,
-	componentHtml,
-	componentJs,
-	componentTsx,
-} from './sandbox';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
 
 <Meta of={PickerIframeModalStories} />
 
 # PickerIframeModal
 
-The PickerIframeModal component [[enter description of purpose]].
+The `PickerIframeModal` renders an iframe inside a modal dialog and listens for `postMessage` events from that iframe. After validating the payload, it calls `handleData` and optionally closes itself.
+
+This is useful for launching a third-party selection flow and returning a structured choice back into the host application.
 
 ## When to use
 
-- [[use case]]
-- [[use case]]
+- Opening a selection flow hosted in another page or service
+- Passing a user choice back from an external picker into the application
+- Requiring a modal wrapper while the user completes a decision in a child view
 
 ## Peer dependencies
 
@@ -38,112 +34,158 @@ The PickerIframeModal component [[enter description of purpose]].
 
 See the `peerDependencies` section of `package.json` for compatible versions.
 
-See [custom component build](#custom-component-build) for usage without React/Emotion.
-
-See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--docs#installing-icons) for more on installing icons.
-
 ## Example usage
 
 <SandboxReact componentName={componentName} componentTsx={componentTsx} />
 
 ```tsx
+import { useState } from 'react';
 import { PickerIframeModal } from '@guardian/stand/PickerIframeModal';
 
-/* types, if required */
-import type { PickerIframeModalProps, PickerIframeModalTheme } from '@guardian/stand/PickerIframeModal';
+const Example = () => {
+	const [href, setHref] = useState<string | undefined>(undefined);
+	const [selection, setSelection] = useState<string | undefined>();
 
-/* Default */
-<PickerIframeModal />
+	return (
+		<>
+			<button onClick={() => setHref('https://example.com/image-picker')}>
+				Open picker
+			</button>
 
-/* Custom */
-<PickerIframeModal message="hi" />
+			<PickerIframeModal
+				title="Image picker"
+				href={href}
+				validate={(messageData) => {
+					if (
+						messageData &&
+						typeof messageData === 'object' &&
+						'imageId' in messageData &&
+						typeof messageData.imageId === 'string'
+					) {
+						return { data: messageData.imageId };
+					}
+					return { data: undefined };
+				}}
+				handleData={(data) => {
+					setSelection(data);
+				}}
+				closeModal={() => setHref(undefined)}
+				showOpenInNewTabButton
+			/>
 
+			<div>{selection ?? 'No selection yet'}</div>
+		</>
+	);
+};
 ```
 
 ## Props
 
-| Name           | Type                     | Required | Default       | Description                                         |
-| -------------- | ------------------------ | -------- | ------------- | --------------------------------------------------- |
-| `message`      | `string`                 | No       | "hello world" | string to render in the PickerIframeModal.          |
-| `theme`        | `PickerIframeModalTheme` | No       | N/A           | Custom theme overrides for the PickerIframeModal.   |
-| `cssOverrides` | `SerializedStyles`       | No       | N/A           | Custom CSS styles for the PickerIframeModal.        |
-| `className`    | `string`                 | No       | N/A           | Additional class name(s) for the PickerIframeModal. |
+| Name                     | Type                                            | Required | Default | Description                                                                                      |
+| ------------------------ | ----------------------------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------ |
+| `title`                  | `ReactNode`                                     | Yes      | N/A     | Header content shown in the modal title area.                                                    |
+| `closeModal`             | `() => void`                                    | Yes      | N/A     | Callback used to close the modal after a valid message is handled or when the user dismisses it. |
+| `href`                   | `string`                                        | No       | N/A     | URL of the iframe to load. If undefined, the modal stays closed.                                 |
+| `validate`               | `(messageData: unknown) => { data?: DataType }` | Yes      | N/A     | Validates a `postMessage` payload and returns parsed data.                                       |
+| `handleData`             | `(data: DataType) => void`                      | Yes      | N/A     | Callback invoked with the validated message payload.                                             |
+| `closeAfterHandling`     | `boolean`                                       | No       | `true`  | Whether the modal closes immediately after `handleData` is called.                               |
+| `modalTheme`             | `DeepPartial<ModalTheme>`                       | No       | N/A     | Overrides for the outer modal size, spacing, and overlay styling.                                |
+| `dialogTheme`            | `DeepPartial<DialogTheme>`                      | No       | N/A     | Overrides for dialog spacing, title, dismiss button, and content styling.                        |
+| `showOpenInNewTabButton` | `boolean`                                       | No       | `false` | Shows a link button to open the iframe URL in a new tab.                                         |
+| `theme`                  | `DeepPartial<PickerIframeModalTheme>`           | No       | N/A     | Overrides for the iframe and container spacing tokens.                                           |
+| `cssOverrides`           | `SerializedStyles \| SerializedStyles[]`        | No       | N/A     | Emotion overrides for the modal root.                                                            |
+| `className`              | `string`                                        | No       | N/A     | Optional class name forwarded through the default props contract.                                |
 
 ## Stories
 
+### Default
+
 <Canvas layout="padded" of={Default} />
-<Canvas layout="padded" of={CustomMessage} />
+
+### New tab button
+
+<Canvas layout="padded" of={WithOwnTabButton} />
+
+### Custom modal theme
+
+<Canvas layout="padded" of={CustomModalTheme} />
+
+### Custom dialog theme
+
+<Canvas layout="padded" of={CustomDialogTheme} />
+
+### Custom iframe theme
+
 <Canvas layout="padded" of={CustomTheme} />
-<Canvas layout="padded" of={CssOverrides} />
-
-## Customisation
-
-We recommend using the PickerIframeModal component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
-
-### Custom theme
-
-The `theme` prop allows you to override specific design tokens for the PickerIframeModal component:
-
-<Canvas layout="padded" of={CustomTheme} />
-
-```tsx
-import type { PickerIframeModalTheme } from '@guardian/stand/PickerIframeModal';
-import { PickerIframeModal } from '@guardian/stand/PickerIframeModal';
-import { baseColors, baseSizing } from '@guardian/stand';
-
-const customTheme: PickerIframeModalTheme = {
-	color: {
-		blue: {
-			background: baseColors.coolPurple[700],
-			text: baseColors.orange[300],
-		},
-	},
-};
-
-const Component = () => <PickerIframeModal letter="C" theme={customTheme} />;
-```
 
 ### CSS overrides
 
-The `cssOverrides` prop allows you to pass custom CSS to the PickerIframeModal component, if the theme prop is not sufficient:
-
 <Canvas layout="padded" of={CssOverrides} />
+
+### Interactive example
+
+<Canvas layout="padded" of={InteractiveExample} />
+
+## Customisation
+
+We recommend using the component as provided, but it can be customised with `modalTheme`, `dialogTheme`, `theme`, and `cssOverrides`.
+
+### Custom theme
+
+The `theme` prop lets you override the size and spacing of the iframe itself:
 
 ```tsx
 import { PickerIframeModal } from '@guardian/stand/PickerIframeModal';
-import { baseColors, baseSizing, baseSpacing } from '@guardian/stand';
-import { css } from '@emotion/react';
 
-const customStyles = css`
-	border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
-	background-color: ${baseColors.orange[700]};
-	color: ${baseColors.warmPurple[300]};
-	border-radius: ${baseRadius.corner4Px};
-`;
-
-const Component = () => (
-	<PickerIframeModal letter="O" cssOverrides={customStyles} />
+const Example = () => (
+	<PickerIframeModal
+		title="Choose an option"
+		href="https://example.com/picker"
+		validate={(messageData) => ({ data: undefined })}
+		handleData={() => {}}
+		closeModal={() => {}}
+		theme={{
+			iframe: {
+				width: '50%',
+				height: '800px',
+				margin: {
+					left: 'auto',
+					right: 'auto',
+				},
+			},
+		}}
+	/>
 );
 ```
 
-## Custom Component Build
+### Modal and dialog customisation
 
-If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom PickerIframeModal component using the styles defined in the `PickerIframeModalTheme` type.
+Use `modalTheme` and `dialogTheme` to control the modal shell and its inner layout:
 
-You will however be responsible for any additional functionality on top of the styles, for example image loading, image fallback, accessibility etc.
+```tsx
+import { PickerIframeModal } from '@guardian/stand/PickerIframeModal';
 
-**`css`**
-
-You can import the PickerIframeModal styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
-
-<SandboxCss
-	componentName={componentName}
-	componentHtml={componentHtml}
-	componentCss={componentCss}
-/>
-
-**TypeScript/JavaScript**
-
-Use the `componentPickerIframeModal` variable and the `ComponentPickerIframeModal` type to define your custom styles in TypeScript/JavaScript:
-
-<SandboxJs componentName={componentName} componentJs={componentJs} />
+const Example = () => (
+	<PickerIframeModal
+		title="Choose an option"
+		href="https://example.com/picker"
+		validate={(messageData) => ({ data: undefined })}
+		handleData={() => {}}
+		closeModal={() => {}}
+		modalTheme={{
+			modal: {
+				width: '600px',
+				maxWidth: '60vw',
+			},
+		}}
+		dialogTheme={{
+			title: {
+				marginBottom: '1rem',
+			},
+			children: {
+				marginBottom: '0',
+			},
+		}}
+	/>
+);
+```
