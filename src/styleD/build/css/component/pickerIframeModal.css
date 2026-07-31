@@ -3,6 +3,19 @@
  */
 
 :root {
-	--component-picker-iframe-modal-color-background: #cde4c9;
-	--component-picker-iframe-modal-color-text: #ff69b4;
+	--component-picker-iframe-modal-iframe-width: 100%;
+	--component-picker-iframe-modal-iframe-height: 600px;
+	--component-picker-iframe-modal-iframe-max-height: 70vh;
+	--component-picker-iframe-modal-iframe-background-color: unset;
+	--component-picker-iframe-modal-iframe-margin-top: 0;
+	--component-picker-iframe-modal-iframe-margin-right: 0;
+	--component-picker-iframe-modal-iframe-margin-bottom: 0;
+	--component-picker-iframe-modal-iframe-margin-left: 0;
+	--component-picker-iframe-modal-iframe-container-padding-top: 0;
+	--component-picker-iframe-modal-iframe-container-padding-right: 0;
+	--component-picker-iframe-modal-iframe-container-padding-bottom: 0;
+	--component-picker-iframe-modal-iframe-container-padding-left: 0;
+	--component-picker-iframe-modal-header-contents-display: flex;
+	--component-picker-iframe-modal-header-contents-align-items: center;
+	--component-picker-iframe-modal-header-contents-justify-content: space-between;
 }

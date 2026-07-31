@@ -1,14 +1,74 @@
 {
 	"component": {
 		"pickerIframeModal": {
-			"color": {
-				"background": {
-					"$type": "color",
-					"$value": "{semantic.colors.fill.greenWeak}"
+			"iframe": {
+				"width": {
+					"$type": "string",
+					"$value": "100%"
 				},
-				"text": {
-					"$type": "color",
-					"$value": "hotpink"
+				"height": {
+					"$type": "dimension",
+					"$value": "600px"
+				},
+				"maxHeight": {
+					"$type": "string",
+					"$value": "70vh"
+				},
+				"backgroundColor": {
+					"$type": "string",
+					"$value": "unset"
+				},
+				"margin": {
+					"top": {
+						"$type": "string",
+						"$value": "0"
+					},
+					"right": {
+						"$type": "string",
+						"$value": "0"
+					},
+					"bottom": {
+						"$type": "string",
+						"$value": "0"
+					},
+					"left": {
+						"$type": "string",
+						"$value": "0"
+					}
+				}
+			},
+			"iframeContainer": {
+				"padding": {
+					"top": {
+						"$type": "string",
+						"$value": "0"
+					},
+					"right": {
+						"$type": "string",
+						"$value": "0"
+					},
+					"bottom": {
+						"$type": "string",
+						"$value": "0"
+					},
+					"left": {
+						"$type": "string",
+						"$value": "0"
+					}
+				}
+			},
+			"headerContents": {
+				"display": {
+					"$type": "string",
+					"$value": "flex"
+				},
+				"alignItems": {
+					"$type": "string",
+					"$value": "center"
+				},
+				"justifyContent": {
+					"$type": "string",
+					"$value": "space-between"
 				}
 			}
 		}

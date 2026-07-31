@@ -1,6 +1,8 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
+import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
+import { semanticSpacing } from '../../styleD/build/typescript/semantic/spacing';
 import { Button } from '../Button/Button';
 import { Typography } from '../Typography/Typography';
 import { PickerIframeModal } from './PickerIframeModal';
@@ -37,13 +39,63 @@ export const Default = {
 	},
 } satisfies Story;
 
+export const CustomModalTheme = {
+	args: {
+		title: 'CustomModalTheme',
+		modalTheme: {
+			modal: {
+				width: '600px',
+				maxWidth: '60vw',
+				backgroundColor: semanticColors.fill.tealWeak,
+				boxShadow: '16px 8px 6px 6px rgba(0, 0, 0, 0.50)',
+				padding: {
+					bottom: semanticSpacing.stackSm,
+				},
+			},
+			overlay: {
+				backgroundColor: 'rgba(0, 255, 0, 0.10)',
+			},
+		},
+	},
+} satisfies Story;
+
+export const CustomDialogTheme = {
+	args: {
+		title: 'CustomDialogTheme',
+		dialogTheme: {
+			title: {
+				marginBottom: semanticSpacing.stackXl,
+			},
+			children: {
+				marginBottom: semanticSpacing.stackXl,
+			},
+			dismiss: {
+				border: `4px solid ${semanticColors.border.weak}`,
+				hovered: {
+					border: `4px solid ${semanticColors.border.selected}`,
+				},
+			},
+		},
+	},
+} satisfies Story;
+
 export const CustomTheme = {
 	args: {
 		title: 'CustomTheme',
 		theme: {
-			color: {
-				background: 'blue',
-				text: 'lime',
+			iframe: {
+				width: '50%',
+				height: '800px',
+				backgroundColor: semanticColors.fill.tealWeak,
+				margin: {
+					left: 'auto',
+					right: 'auto',
+				},
+			},
+			iframeContainer: {
+				padding: {
+					bottom: semanticSpacing.stackMd,
+				},
 			},
 		},
 	},
@@ -53,9 +105,10 @@ export const CssOverrides = {
 	args: {
 		title: 'CssOverrides',
 		cssOverrides: css({
-			color: 'red',
-			border: '4px dotted black',
-			padding: 5,
+			border: '8px dotted black',
+			background: 'repeating-linear-gradient(45deg, yellow, skyblue 100px)',
+			borderTopLeftRadius: 50,
+			borderBottomRightRadius: 50,
 		}),
 	},
 } satisfies Story;
@@ -72,7 +125,7 @@ export const InteractiveExample = {
 					<Typography variant="heading2Xl" element="h2">
 						Pick food
 					</Typography>
-					<div css={{ display: 'flex', justifyContent: 'space-between' }}>
+					<div css={{ display: 'flex', gap: semanticSpacing.stackXl }}>
 						<Button onPress={() => setHref(absoluteHref)}>Open modal</Button>
 						<div>
 							<Typography variant="bodyBoldXl">

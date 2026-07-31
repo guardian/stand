@@ -1,6 +1,14 @@
 import { useCallback, useEffect, useState } from 'react';
+import { mergeDeep } from '../../util/mergeDeep';
 import { LinkButton } from '../LinkButton/LinkButton';
 import { Dialog, Modal } from '../Modal/Modal';
+import { defaultDialogTheme, defaultModalTheme } from '../Modal/styles';
+import {
+	defaultPickerIframeModalTheme,
+	headerContentsStyles,
+	iframeContainerStyle,
+	iframeStyles,
+} from './styles';
 import type { PickerIframeModalProps } from './types';
 
 const safeGetOrigin = (href: string | undefined) => {
@@ -15,15 +23,30 @@ const safeGetOrigin = (href: string | undefined) => {
 };
 
 export function PickerIframeModal<DataType>({
-	// theme,
+	theme = {},
 	title,
 	href,
 	validate,
 	handleData,
 	closeModal,
 	closeAfterHandling = true,
+	cssOverrides,
+	modalTheme = {
+		modal: {
+			width: '800px',
+			maxWidth: '80vw',
+			maxHeight: '80vh',
+		},
+	},
+	dialogTheme = {
+		children: {
+			marginBottom: '0',
+		},
+	},
 }: PickerIframeModalProps<DataType>) {
-	// const mergedTheme = mergeDeep(defaultPickerIframeModalTheme, theme ?? {});
+	const mergedTheme = mergeDeep(defaultPickerIframeModalTheme, theme);
+	const mergedModalTheme = mergeDeep(defaultModalTheme, modalTheme);
+	const mergedDialogTheme = mergeDeep(defaultDialogTheme, dialogTheme);
 
 	const [iframeRef, setIframeRef] = useState<HTMLIFrameElement | null>(null);
 	const expectedOrigin = safeGetOrigin(href);
@@ -76,36 +99,30 @@ export function PickerIframeModal<DataType>({
 					closeModal();
 				}
 			}}
-			theme={{
-				modal: { maxWidth: '90vw', maxHeight: '90vh', width: '1000px' },
-			}}
+			theme={mergedModalTheme}
+			cssOverrides={cssOverrides}
 		>
-			<Dialog theme={{}}>
-				<Dialog.Dismiss theme={{}} ariaLabel="Close Modal" />
-				<Dialog.Header element="h2" variant="headingMd">
-					<div
-						css={{
-							display: 'flex',
-							alignItems: 'center',
-							justifyContent: 'space-between',
-						}}
-					>
+			<Dialog theme={mergedDialogTheme.container}>
+				<Dialog.Dismiss
+					theme={mergedDialogTheme.dismiss}
+					ariaLabel="Close Modal"
+				/>
+				<Dialog.Header theme={mergedDialogTheme.title}>
+					<div css={headerContentsStyles(mergedTheme)}>
 						{title}
-						<LinkButton href={href} target="_blank">
+						<LinkButton href={href} target="_blank" icon="open_in_new">
 							Open standalone page
 						</LinkButton>
 					</div>
 				</Dialog.Header>
-				<Dialog.Content theme={{}}>
-					<iframe
-						ref={setIframeRef}
-						src={href}
-						css={{
-							width: '100%',
-							maxHeight: '70vh',
-							height: 600,
-						}}
-					/>
+				<Dialog.Content theme={mergedDialogTheme.children}>
+					<div css={iframeContainerStyle(mergedTheme)}>
+						<iframe
+							ref={setIframeRef}
+							src={href}
+							css={iframeStyles(mergedTheme)}
+						/>
+					</div>
 				</Dialog.Content>
 			</Dialog>
 		</Modal>

@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Button } from '../../Button';
 import type { IconButtonProps } from '../../IconButton';
 import { IconButton } from '../../IconButton';
-import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
 import { semanticSpacing } from '../../styleD/build/typescript/semantic/spacing';
 import { Typography } from '../../Typography';
 
@@ -33,7 +32,6 @@ export const DemoPickerIframe = () => {
 	return (
 		<div
 			css={{
-				backgroundColor: semanticColors.fill.coolPurpleWeak,
 				height: '100vh',
 				padding: semanticSpacing.stackMd,
 				display: 'flex',
