@@ -139,12 +139,12 @@ The `cssOverrides` prop allows you to pass custom CSS to the UserFeedbackSummary
 
 ```tsx
 import { UserFeedbackSummary } from '@guardian/stand/UserFeedbackSummary';
-import { baseColors } from '@guardian/stand';
+import { baseColor, baseSpacing } from '@guardian/stand';
 import { css } from '@emotion/react';
 
 const customStyles = css`
+	padding: ${baseSpacing['6Rem']};
 	background-color: ${baseColors.red[900]};
-	border-radius: 8px;
 `;
 
 const Component = () => (

@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { baseColors } from '../../styleD/build/typescript/base/colors';
+import { baseSpacing } from '../../styleD/build/typescript/base/spacing';
 import { UserFeedbackSummary } from './UserFeedbackSummary';
 
 const meta = {
@@ -96,8 +97,8 @@ export const CssOverrides = {
 		title: 'User feedback with CSS overrides',
 		children: 'Additional help text can be provided here',
 		cssOverrides: css`
+			padding: ${baseSpacing['6Rem']};
 			background-color: ${baseColors.red[900]};
-			border-radius: 8px;
 		`,
 	},
 };
