@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.64
+
+### Patch Changes
+
+- 2d1a2ea: Add `UserFeedbackSummary` component
+- 622180a: Updates to design tokens issued in 22 July 2026
+
 ## 0.0.63
 
 ### Patch Changes
