@@ -41,6 +41,9 @@
 	--semantic-colors-border-disabled: #dcdcdc;
 	--semantic-colors-border-accent: #0d4289;
 	--semantic-colors-border-error: #b42a19;
+	--semantic-colors-border-success: #408233;
+	--semantic-colors-border-warning: #9a7c11;
+	--semantic-colors-border-information: #1054af;
 	--semantic-colors-border-focused: #0072a9;
 	--semantic-colors-border-selected: #0072a9;
 	--semantic-colors-border-selected-inverse: #8abed7;
