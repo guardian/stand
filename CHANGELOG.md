@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.66
+
+### Patch Changes
+
+- 6f24c77: Adds the Badge component to Stand
+
 ## 0.0.65
 
 ### Patch Changes
