@@ -10,10 +10,6 @@
 					"$type": "number",
 					"$value": 8
 				},
-				"transition": {
-					"$type": "string",
-					"$value": "transform 200ms"
-				},
 				"containerPadding": {
 					"$type": "number",
 					"$value": 0
