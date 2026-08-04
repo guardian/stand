@@ -1,0 +1,69 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-badge-shared-display: inline-flex;
+	--component-badge-shared-align-items: center;
+	--component-badge-shared-justify-content: center;
+	--component-badge-size-md-padding-top: 4px;
+	--component-badge-size-md-padding-right: 12px;
+	--component-badge-size-md-padding-bottom: 4px;
+	--component-badge-size-md-padding-left: 12px;
+	--component-badge-size-md-weight-strong-typography-font: normal 700 1rem/1.15
+		'Open Sans';
+	--component-badge-size-md-weight-strong-typography-letter-spacing: -0.03125rem;
+	--component-badge-size-md-weight-strong-typography-font-width: 95;
+	--component-badge-size-md-weight-light-typography-font: normal 460 1rem/1.3
+		'Open Sans';
+	--component-badge-size-md-weight-light-typography-letter-spacing: 0rem;
+	--component-badge-size-md-weight-light-typography-font-width: 95;
+	--component-badge-size-sm-padding-top: 4px;
+	--component-badge-size-sm-padding-right: 8px;
+	--component-badge-size-sm-padding-bottom: 4px;
+	--component-badge-size-sm-padding-left: 8px;
+	--component-badge-size-sm-weight-strong-typography-font: normal 700
+		0.875rem/1.15 'Open Sans';
+	--component-badge-size-sm-weight-strong-typography-letter-spacing: -0.0125rem;
+	--component-badge-size-sm-weight-strong-typography-font-width: 95;
+	--component-badge-size-sm-weight-light-typography-font: normal 460
+		0.875rem/1.3 'Open Sans';
+	--component-badge-size-sm-weight-light-typography-letter-spacing: 0rem;
+	--component-badge-size-sm-weight-light-typography-font-width: 95;
+	--component-badge-size-xs-padding-top: 1px;
+	--component-badge-size-xs-padding-right: 6px;
+	--component-badge-size-xs-padding-bottom: 3px;
+	--component-badge-size-xs-padding-left: 6px;
+	--component-badge-size-xs-weight-strong-typography-font: normal 700
+		0.75rem/1.15 'Open Sans';
+	--component-badge-size-xs-weight-strong-typography-letter-spacing: 0rem;
+	--component-badge-size-xs-weight-strong-typography-font-width: 95;
+	--component-badge-size-xs-weight-light-typography-font: normal 460 0.75rem/1.3
+		'Open Sans';
+	--component-badge-size-xs-weight-light-typography-letter-spacing: 0rem;
+	--component-badge-size-xs-weight-light-typography-font-width: 95;
+	--component-badge-color-green-weight-strong-background: #aed2a6;
+	--component-badge-color-green-weight-strong-color: #000000;
+	--component-badge-color-green-weight-light-background: #cde4c9;
+	--component-badge-color-green-weight-light-color: #24491d;
+	--component-badge-color-yellow-weight-strong-background: #f1c21b;
+	--component-badge-color-yellow-weight-strong-color: #000000;
+	--component-badge-color-yellow-weight-light-background: #ffedac;
+	--component-badge-color-yellow-weight-light-color: #5b4a0b;
+	--component-badge-color-grey-weight-strong-background: #dcdcdc;
+	--component-badge-color-grey-weight-strong-color: #000000;
+	--component-badge-color-grey-weight-light-background: #dcdcdc;
+	--component-badge-color-grey-weight-light-color: #000000;
+	--component-badge-color-orange-weight-strong-background: #fac7a1;
+	--component-badge-color-orange-weight-strong-color: #000000;
+	--component-badge-color-orange-weight-light-background: #fcddc6;
+	--component-badge-color-orange-weight-light-color: #693c16;
+	--component-badge-color-warm-purple-weight-strong-background: #dac3e8;
+	--component-badge-color-warm-purple-weight-strong-color: #000000;
+	--component-badge-color-warm-purple-weight-light-background: #dac3e8;
+	--component-badge-color-warm-purple-weight-light-color: #381350;
+	--component-badge-color-red-weight-strong-background: #eea198;
+	--component-badge-color-red-weight-strong-color: #000000;
+	--component-badge-color-red-weight-light-background: #f5c6c0;
+	--component-badge-color-red-weight-light-color: #65170e;
+}
