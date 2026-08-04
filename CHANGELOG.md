@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.65
+
+### Patch Changes
+
+- 502e9d6: Add `size` prop and small variant to `Select` component
+
 ## 0.0.64
 
 ### Patch Changes
