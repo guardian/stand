@@ -70,6 +70,8 @@ export { componentTabs } from './styleD/build/typescript/component/tabs';
 export type { ComponentTabs } from './styleD/build/typescript/component/tabs';
 export { componentUserFeedbackSummary } from './styleD/build/typescript/component/userFeedbackSummary';
 export type { ComponentUserFeedbackSummary } from './styleD/build/typescript/component/userFeedbackSummary';
+export { componentSidebarStepperNavigation } from './styleD/build/typescript/component/sidebarStepperNavigation';
+export type { ComponentSidebarStepperNavigation } from './styleD/build/typescript/component/sidebarStepperNavigation';
 
 /**
  * style dictionary exports - base

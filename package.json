@@ -277,6 +277,16 @@
 				"default": "./dist/TagPicker.cjs"
 			}
 		},
+		"./SidebarStepperNavigation": {
+			"import": {
+				"types": "./dist/SidebarStepperNavigation.d.ts",
+				"default": "./dist/SidebarStepperNavigation.js"
+			},
+			"require": {
+				"types": "./dist/SidebarStepperNavigation.d.cts",
+				"default": "./dist/SidebarStepperNavigation.cjs"
+			}
+		},
 		"./UserMenu": {
 			"import": {
 				"types": "./dist/UserMenu.d.ts",
@@ -424,7 +434,8 @@
 		"./component/modal.css": "./dist/styleD/build/css/component/modal.css",
 		"./component/tabs.css": "./dist/styleD/build/css/component/tabs.css",
 		"./component/tooltip.css": "./dist/styleD/build/css/component/tooltip.css",
-		"./component/userFeedbackSummary.css": "./dist/styleD/build/css/component/userFeedbackSummary.css"
+		"./component/userFeedbackSummary.css": "./dist/styleD/build/css/component/userFeedbackSummary.css",
+		"./component/sidebarStepperNavigation.css": "./dist/styleD/build/css/component/sidebarStepperNavigation.css"
 	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
@@ -475,6 +486,9 @@
 			],
 			"TagPicker": [
 				"./dist/TagPicker.d.ts"
+			],
+			"SidebarStepperNavigation": [
+				"./dist/SidebarStepperNavigation.d.ts"
 			],
 			"UserMenu": [
 				"./dist/UserMenu.d.ts"
