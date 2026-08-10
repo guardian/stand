@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.67
+
+### Patch Changes
+
+- 0a00eb2: Add React Aria 1.20.0 to peer dependency range
+- a0082b4: Add `SidebarStepperNavigation` for presenting and navigating multi-step workflows
+
 ## 0.0.66
 
 ### Patch Changes
