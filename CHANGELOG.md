@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.68
+
+### Patch Changes
+
+- dcaa35a: Fix - `Typography` - Allow `element` prop to be any string, also inherit autocomplete list from `JSX.IntrinsicElements`
+
 ## 0.0.67
 
 ### Patch Changes
