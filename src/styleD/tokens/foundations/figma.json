@@ -1138,6 +1138,18 @@
 					"$type": "color",
 					"$value": "{base.colors.red.300}"
 				},
+				"success": {
+					"$type": "color",
+					"$value": "{base.colors.green.300}"
+				},
+				"warning": {
+					"$type": "color",
+					"$value": "{base.colors.yellow.200}"
+				},
+				"information": {
+					"$type": "color",
+					"$value": "{base.colors.blue.300}"
+				},
 				"focused": {
 					"$type": "color",
 					"$value": "{base.colors.cyan.400}"

@@ -1,5 +1,37 @@
 # @guardian/stand
 
+## 0.0.68
+
+### Patch Changes
+
+- dcaa35a: Fix - `Typography` - Allow `element` prop to be any string, also inherit autocomplete list from `JSX.IntrinsicElements`
+
+## 0.0.67
+
+### Patch Changes
+
+- 0a00eb2: Add React Aria 1.20.0 to peer dependency range
+- a0082b4: Add `SidebarStepperNavigation` for presenting and navigating multi-step workflows
+
+## 0.0.66
+
+### Patch Changes
+
+- 6f24c77: Adds the Badge component to Stand
+
+## 0.0.65
+
+### Patch Changes
+
+- 502e9d6: Add `size` prop and small variant to `Select` component
+
+## 0.0.64
+
+### Patch Changes
+
+- 2d1a2ea: Add `UserFeedbackSummary` component
+- 622180a: Updates to design tokens issued in 22 July 2026
+
 ## 0.0.63
 
 ### Patch Changes

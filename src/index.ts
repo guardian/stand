@@ -22,6 +22,8 @@ export type { ComponentIntendedAudienceSignifier } from './styleD/build/typescri
  */
 export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
+export { componentBadge } from './styleD/build/typescript/component/badge';
+export type { ComponentBadge } from './styleD/build/typescript/component/badge';
 export { componentButton } from './styleD/build/typescript/component/button';
 export type { ComponentButton } from './styleD/build/typescript/component/button';
 export { componentButtonGroup } from './styleD/build/typescript/component/buttonGroup';
@@ -66,6 +68,10 @@ export { componentTypography } from './styleD/build/typescript/component/typogra
 export type { ComponentTypography } from './styleD/build/typescript/component/typography';
 export { componentTabs } from './styleD/build/typescript/component/tabs';
 export type { ComponentTabs } from './styleD/build/typescript/component/tabs';
+export { componentUserFeedbackSummary } from './styleD/build/typescript/component/userFeedbackSummary';
+export type { ComponentUserFeedbackSummary } from './styleD/build/typescript/component/userFeedbackSummary';
+export { componentSidebarStepperNavigation } from './styleD/build/typescript/component/sidebarStepperNavigation';
+export type { ComponentSidebarStepperNavigation } from './styleD/build/typescript/component/sidebarStepperNavigation';
 
 /**
  * style dictionary exports - base
