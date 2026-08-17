@@ -10,7 +10,9 @@ const meta = {
 type Story = StoryObj<typeof TextListInput>;
 
 export const Default = {
-	args: {},
+	args: {
+		label: 'Text list input',
+	},
 } satisfies Story;
 
 export default meta;
