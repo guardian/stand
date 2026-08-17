@@ -3,6 +3,13 @@
  */
 
 :root {
-	--component-text-list-input-color-background: #ffffff;
-	--component-text-list-input-color-text: #000000;
+	--component-text-list-input-label-color: #000000;
+	--component-text-list-input-label-gap: 0.5rem;
+	--component-text-list-input-label-typography-font: normal 700 1rem/1.15
+		'Open Sans';
+	--component-text-list-input-label-typography-letter-spacing: -0.03125rem;
+	--component-text-list-input-label-typography-font-width: 95;
+	--component-text-list-input-column-gap: 1rem;
+	--component-text-list-input-column-margin-top: 0.5rem;
+	--component-text-list-input-row-gap: 0.5rem;
 }

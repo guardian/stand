@@ -4,9 +4,6 @@ import {
 	componentTextListInput,
 	type ComponentTextListInput,
 } from '../../styleD/build/typescript/component/textListInput';
-import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
-import { semanticSpacing } from '../../styleD/build/typescript/semantic/spacing';
-import { semanticTypography } from '../../styleD/build/typescript/semantic/typography';
 import type { DeepPartial, Prettify } from '../../util/types';
 import { convertTypographyToEmotionStringStyle } from '../../utils';
 
@@ -17,32 +14,29 @@ export type PartialTextListInputTheme = Prettify<
 export const defaultTextListInputTheme: TextListInputTheme =
 	componentTextListInput;
 
-export const textListInputStyles = (
-	theme: TextListInputTheme,
-): SerializedStyles => {
+export const labelStyles = (theme: TextListInputTheme): SerializedStyles => {
 	return css`
-		background-color: ${theme.color.background};
-		color: ${theme.color.text};
+		display: flex;
+		align-items: center;
+		gap: ${theme.label.gap};
+		color: ${theme.label.color};
+		${convertTypographyToEmotionStringStyle(theme.label.typography)}
 	`;
 };
 
-export const labelStyles = css`
-	display: flex;
-	align-items: center;
-	gap: ${semanticSpacing.stackXs};
-	color: ${semanticColors.text.strong};
-	${convertTypographyToEmotionStringStyle(semanticTypography.labelFormMd)}
-`;
+export const columnStyles = (theme: TextListInputTheme): SerializedStyles => {
+	return css`
+		display: flex;
+		flex-direction: column;
+		gap: ${theme.column.gap};
+		margin-top: ${theme.column.marginTop};
+	`;
+};
 
-export const layoutStyles = css`
-	display: flex;
-	flex-direction: column;
-	gap: ${semanticSpacing.stackMd};
-	margin-top: ${semanticSpacing.stackXs};
-`;
-
-export const inputStyles = css`
-	display: flex;
-	align-items: center;
-	gap: ${semanticSpacing.stackXs};
-`;
+export const rowStyles = (theme: TextListInputTheme): SerializedStyles => {
+	return css`
+		display: flex;
+		align-items: center;
+		gap: ${theme.row.gap};
+	`;
+};

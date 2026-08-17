@@ -1,14 +1,44 @@
 {
 	"component": {
 		"textListInput": {
-			"color": {
-				"background": {
-					"$type": "color",
-					"$value": "{semantic.colors.bg.base}"
-				},
-				"text": {
+			"label": {
+				"color": {
 					"$type": "color",
 					"$value": "{semantic.colors.text.strong}"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackXs}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.labelFormMd.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.labelFormMd.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.labelFormMd.fontWidth}"
+					}
+				}
+			},
+			"column": {
+				"gap": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackMd}"
+				},
+				"marginTop": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackXs}"
+				}
+			},
+			"row": {
+				"gap": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackXs}"
 				}
 			}
 		}

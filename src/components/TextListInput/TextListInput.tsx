@@ -5,11 +5,10 @@ import { IconButton } from '../IconButton/IconButton';
 import type { PartialTextInputTheme } from '../TextInput/styles';
 import { TextInput } from '../TextInput/TextInput';
 import {
+	columnStyles,
 	defaultTextListInputTheme,
-	inputStyles,
 	labelStyles,
-	layoutStyles,
-	textListInputStyles,
+	rowStyles,
 } from './styles';
 import type { TextListInputProps } from './types';
 
@@ -19,25 +18,28 @@ const textInputTheme: PartialTextInputTheme = {
 	},
 };
 
-export const TextListInput = (props: TextListInputProps) => {
-	const mergedTheme = mergeDeep(defaultTextListInputTheme, props.theme ?? {});
+export const TextListInput = ({
+	theme = {},
+	cssOverrides,
+}: TextListInputProps) => {
+	const mergedTheme = mergeDeep(defaultTextListInputTheme, theme);
 
 	return (
-		<fieldset css={[textListInputStyles(mergedTheme), props.cssOverrides]}>
-			<legend css={labelStyles}>
+		<fieldset css={cssOverrides}>
+			<legend css={labelStyles(mergedTheme)}>
 				Text input list{' '}
 				<Badge color="grey" size="xs">
 					2 items
 				</Badge>
 			</legend>
-			<div css={layoutStyles}>
-				<div css={inputStyles}>
+			<div css={columnStyles(mergedTheme)}>
+				<div css={rowStyles(mergedTheme)}>
 					<TextInput theme={textInputTheme} />
 					<IconButton variant="tertiary" size="md" ariaLabel="Remove item">
 						remove_circle_outline
 					</IconButton>
 				</div>
-				<div css={inputStyles}>
+				<div css={rowStyles(mergedTheme)}>
 					<TextInput theme={textInputTheme} />
 					<IconButton variant="tertiary" size="md" ariaLabel="Remove item">
 						remove_circle_outline
