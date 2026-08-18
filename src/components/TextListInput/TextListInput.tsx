@@ -21,23 +21,48 @@ const textInputTheme: PartialTextInputTheme = {
 
 type TextListItem = {
 	id: string;
+	value: string;
 };
 
 export const TextListInput = ({
 	label,
+	onChange,
 	theme = {},
 	cssOverrides,
 }: TextListInputProps) => {
 	const [textListItems, setTextListItems] = useState<TextListItem[]>([]);
 
-	const addItem = () =>
-		setTextListItems([...textListItems, { id: crypto.randomUUID() }]);
+	const addItem = () => {
+		setTextListItems([
+			...textListItems,
+			{ id: crypto.randomUUID(), value: '' },
+		]);
+		callOnChange();
+	};
+
 	const removeItem = (id: string) => {
-		setTextListItems((prevTextListItems) =>
-			prevTextListItems.filter((item) => {
+		setTextListItems((currentItems) =>
+			currentItems.filter((item) => {
 				return item.id !== id;
 			}),
 		);
+		callOnChange();
+	};
+
+	const updateValue = (id: string, value: string) => {
+		setTextListItems((currentItems) =>
+			currentItems.map((item) => {
+				if (item.id === id) {
+					return { ...item, value };
+				}
+				return item;
+			}),
+		);
+		callOnChange();
+	};
+
+	const callOnChange = () => {
+		onChange(textListItems.map((item) => item.value));
 	};
 
 	const mergedTheme = mergeDeep(defaultTextListInputTheme, theme);
@@ -55,7 +80,12 @@ export const TextListInput = ({
 			<div css={columnStyles(mergedTheme)}>
 				{textListItems.map((item) => (
 					<div css={rowStyles(mergedTheme)} key={item.id}>
-						<TextInput theme={textInputTheme} />
+						<TextInput
+							theme={textInputTheme}
+							value={item.value}
+							aria-label={`${label} item`}
+							onChange={(value) => updateValue(item.id, value)}
+						/>
 						<IconButton
 							variant="tertiary"
 							size="md"

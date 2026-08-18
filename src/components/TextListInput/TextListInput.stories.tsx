@@ -11,7 +11,10 @@ type Story = StoryObj<typeof TextListInput>;
 
 export const Default = {
 	args: {
-		label: 'Text list input',
+		label: 'Link list subheading',
+		onChange: (values) => {
+			console.log('Text list values: ', values);
+		},
 	},
 } satisfies Story;
 

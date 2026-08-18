@@ -33,6 +33,6 @@ export const columnStyles = (
 
 export const rowStyles = (theme: TextListInputTheme): SerializedStyles => css`
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	gap: ${theme.row.gap};
 `;
