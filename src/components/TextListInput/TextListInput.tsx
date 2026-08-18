@@ -10,7 +10,6 @@ import {
 	defaultTextListInputTheme,
 	labelStyles,
 	rowStyles,
-	type TextListInputTheme,
 } from './styles';
 import type { TextListInputProps } from './types';
 
@@ -20,16 +19,28 @@ const textInputTheme: PartialTextInputTheme = {
 	},
 };
 
+type TextListItem = {
+	id: string;
+};
+
 export const TextListInput = ({
 	label,
 	theme = {},
 	cssOverrides,
 }: TextListInputProps) => {
+	const [textListItems, setTextListItems] = useState<TextListItem[]>([]);
+
+	const addItem = () =>
+		setTextListItems([...textListItems, { id: crypto.randomUUID() }]);
+	const removeItem = (id: string) => {
+		setTextListItems((prevTextListItems) =>
+			prevTextListItems.filter((item) => {
+				return item.id !== id;
+			}),
+		);
+	};
+
 	const mergedTheme = mergeDeep(defaultTextListInputTheme, theme);
-
-	const [textListItems, setTextListItems] = useState<string[]>([]);
-
-	const addItem = () => setTextListItems([...textListItems, 'new']);
 
 	return (
 		<fieldset css={cssOverrides}>
@@ -37,13 +48,23 @@ export const TextListInput = ({
 				{label}
 				{textListItems.length > 0 && (
 					<Badge color="grey" size="xs">
-						{textListItems.length} item{textListItems.length === 1 ? '' : 's'}
+						{textListItems.length} item{textListItems.length > 1 ? 's' : ''}
 					</Badge>
 				)}
 			</legend>
 			<div css={columnStyles(mergedTheme)}>
-				{textListItems.map((_, index) => (
-					<TextListItem theme={mergedTheme} key={index} />
+				{textListItems.map((item) => (
+					<div css={rowStyles(mergedTheme)} key={item.id}>
+						<TextInput theme={textInputTheme} />
+						<IconButton
+							variant="tertiary"
+							size="md"
+							ariaLabel="Remove item"
+							onClick={() => removeItem(item.id)}
+						>
+							remove_circle_outline
+						</IconButton>
+					</div>
 				))}
 				<div>
 					<Button variant="tertiary" size="xs" icon="add" onClick={addItem}>
@@ -54,12 +75,3 @@ export const TextListInput = ({
 		</fieldset>
 	);
 };
-
-const TextListItem = ({ theme }: { theme: TextListInputTheme }) => (
-	<div css={rowStyles(theme)}>
-		<TextInput theme={textInputTheme} />
-		<IconButton variant="tertiary" size="md" ariaLabel="Remove item">
-			remove_circle_outline
-		</IconButton>
-	</div>
-);

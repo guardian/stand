@@ -14,29 +14,25 @@ export type PartialTextListInputTheme = Prettify<
 export const defaultTextListInputTheme: TextListInputTheme =
 	componentTextListInput;
 
-export const labelStyles = (theme: TextListInputTheme): SerializedStyles => {
-	return css`
-		display: flex;
-		align-items: center;
-		gap: ${theme.label.gap};
-		color: ${theme.label.color};
-		${convertTypographyToEmotionStringStyle(theme.label.typography)}
-	`;
-};
+export const labelStyles = (theme: TextListInputTheme): SerializedStyles => css`
+	display: flex;
+	align-items: center;
+	gap: ${theme.label.gap};
+	color: ${theme.label.color};
+	${convertTypographyToEmotionStringStyle(theme.label.typography)}
+`;
 
-export const columnStyles = (theme: TextListInputTheme): SerializedStyles => {
-	return css`
-		display: flex;
-		flex-direction: column;
-		gap: ${theme.column.gap};
-		margin-top: ${theme.column.marginTop};
-	`;
-};
+export const columnStyles = (
+	theme: TextListInputTheme,
+): SerializedStyles => css`
+	display: flex;
+	flex-direction: column;
+	gap: ${theme.column.gap};
+	margin-top: ${theme.column.marginTop};
+`;
 
-export const rowStyles = (theme: TextListInputTheme): SerializedStyles => {
-	return css`
-		display: flex;
-		align-items: center;
-		gap: ${theme.row.gap};
-	`;
-};
+export const rowStyles = (theme: TextListInputTheme): SerializedStyles => css`
+	display: flex;
+	align-items: center;
+	gap: ${theme.row.gap};
+`;
