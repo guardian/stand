@@ -1,4 +1,8 @@
+import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { baseColors } from '../../styleD/build/typescript/base/colors';
+import { baseSizing } from '../../styleD/build/typescript/base/sizing';
+import { semanticSpacing } from '../../styleD/build/typescript/semantic/spacing';
 import { TextListInput } from './TextListInput';
 
 const meta = {
@@ -36,6 +40,38 @@ export const WithErrorMessage = {
 		onChange: (values) => {
 			console.log('Text list values: ', values);
 		},
+	},
+} satisfies Story;
+
+export const CustomTheme = {
+	args: {
+		label: 'Text list',
+		initialData: ['Item 1', 'Item 2'],
+		theme: {
+			label: {
+				color: baseColors.orange[200],
+			},
+			row: {
+				gap: semanticSpacing['stackXxs'],
+			},
+			column: {
+				gap: semanticSpacing['stackXxs'],
+			},
+		},
+	},
+} satisfies Story;
+
+export const CssOverrides = {
+	args: {
+		label: 'Text list',
+		initialData: ['Item 1', 'Item 2'],
+		cssOverrides: css`
+			input,
+			button {
+				color: ${baseColors.blue[200]};
+				border: ${baseSizing.size1Rem} solid ${baseColors.blue[600]};
+			}
+		`,
 	},
 } satisfies Story;
 
