@@ -3,7 +3,7 @@ import { mergeDeep } from '../../util/mergeDeep';
 import { Badge } from '../Badge/Badge';
 import { Button } from '../Button/Button';
 import { IconButton } from '../IconButton/IconButton';
-import type { PartialTextInputTheme } from '../TextInput/styles';
+import { InlineMessage } from '../InlineMessage/InlineMessage';
 import { TextInput } from '../TextInput/TextInput';
 import {
 	columnStyles,
@@ -13,12 +13,6 @@ import {
 } from './styles';
 import type { TextListInputProps } from './types';
 
-const textInputTheme: PartialTextInputTheme = {
-	shared: {
-		marginTop: '0',
-	},
-};
-
 type TextListItem = {
 	id: string;
 	value: string;
@@ -27,6 +21,7 @@ type TextListItem = {
 export const TextListInput = ({
 	label,
 	initialData = [],
+	errorMessage,
 	onChange,
 	theme = {},
 	cssOverrides,
@@ -84,10 +79,14 @@ export const TextListInput = ({
 				{textListItems.map((item) => (
 					<div css={rowStyles(mergedTheme)} key={item.id}>
 						<TextInput
-							theme={textInputTheme}
 							value={item.value}
 							aria-label={`${label} item`}
 							onChange={(value) => updateValue(item.id, value)}
+							theme={{
+								shared: {
+									marginTop: '0',
+								},
+							}}
 						/>
 						<IconButton
 							variant="tertiary"
@@ -99,6 +98,9 @@ export const TextListInput = ({
 						</IconButton>
 					</div>
 				))}
+				{errorMessage && (
+					<InlineMessage level="error">{errorMessage}</InlineMessage>
+				)}
 				<div>
 					<Button variant="tertiary" size="xs" icon="add" onClick={addItem}>
 						Add new item

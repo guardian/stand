@@ -13,7 +13,7 @@ export type TextListInputProps = DefaultProps<TextListInputTheme> & {
 	/**
 	 * Error message to display below text list (optional)
 	 */
-	error?: string;
+	errorMessage?: string;
 	/**
 	 * Function called when values of text inputs changes
 	 */
