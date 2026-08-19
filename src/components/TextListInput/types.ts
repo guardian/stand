@@ -7,6 +7,14 @@ export type TextListInputProps = DefaultProps<TextListInputTheme> & {
 	 */
 	label: string;
 	/**
+	 * Initial data to populate text list with (optional)
+	 */
+	initialData?: string[];
+	/**
+	 * Error message to display below text list (optional)
+	 */
+	error?: string;
+	/**
 	 * Function called when values of text inputs changes
 	 */
 	onChange: (values: string[]) => void;

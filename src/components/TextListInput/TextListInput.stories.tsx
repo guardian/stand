@@ -9,9 +9,19 @@ const meta = {
 
 type Story = StoryObj<typeof TextListInput>;
 
-export const Default = {
+export const Empty = {
 	args: {
 		label: 'Link list subheading',
+		onChange: (values) => {
+			console.log('Text list values: ', values);
+		},
+	},
+} satisfies Story;
+
+export const WithInitialData = {
+	args: {
+		label: 'Link list subheading',
+		initialData: ['Item 1', 'Item 2', 'Item 3'],
 		onChange: (values) => {
 			console.log('Text list values: ', values);
 		},

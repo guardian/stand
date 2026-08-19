@@ -26,11 +26,14 @@ type TextListItem = {
 
 export const TextListInput = ({
 	label,
+	initialData = [],
 	onChange,
 	theme = {},
 	cssOverrides,
 }: TextListInputProps) => {
-	const [textListItems, setTextListItems] = useState<TextListItem[]>([]);
+	const [textListItems, setTextListItems] = useState<TextListItem[]>(
+		initialData.map((value) => ({ id: crypto.randomUUID(), value })),
+	);
 
 	const addItem = () => {
 		setTextListItems([
