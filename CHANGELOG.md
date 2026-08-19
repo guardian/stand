@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.69
+
+### Patch Changes
+
+- 4a59ead: Support TypeScript 6
+
 ## 0.0.68
 
 ### Patch Changes

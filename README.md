@@ -115,7 +115,7 @@ The following steps are for **developing the Stand library itself**.
    pnpm test:e2e             # end-to-end tests (Playwright)
    pnpm test:react-matrix    # compatibility matrix tests (see Compatibility)
    pnpm tsc                  # TypeScript type checking
-    pnpm tsc6                 # TypeScript 6 type checking
+   pnpm tsc6                 # TypeScript 6 type checking
    pnpm lint                 # lint (pnpm lint:fix to auto-fix)
    pnpm format:check         # formatting check (pnpm format:fix to auto-fix)
    ```
