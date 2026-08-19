@@ -13,11 +13,6 @@ import {
 } from './styles';
 import type { TextListInputProps } from './types';
 
-type TextListItem = {
-	id: string;
-	value: string;
-};
-
 export const TextListInput = ({
 	label,
 	initialData = [],
@@ -26,41 +21,26 @@ export const TextListInput = ({
 	theme = {},
 	cssOverrides,
 }: TextListInputProps) => {
-	const [textListItems, setTextListItems] = useState<TextListItem[]>(
-		initialData.map((value) => ({ id: crypto.randomUUID(), value })),
-	);
+	const [textListItems, setTextListItems] = useState<string[]>(initialData);
 
 	const addItem = () => {
-		setTextListItems([
-			...textListItems,
-			{ id: crypto.randomUUID(), value: '' },
-		]);
-		callOnChange();
+		const newItems = [...textListItems, ''];
+		setTextListItems(newItems);
+		onChange(newItems);
 	};
 
-	const removeItem = (id: string) => {
-		setTextListItems((currentItems) =>
-			currentItems.filter((item) => {
-				return item.id !== id;
-			}),
-		);
-		callOnChange();
+	const removeItem = (index: number) => {
+		const newItems = [...textListItems];
+		newItems.splice(index, 1);
+		setTextListItems(newItems);
+		onChange(newItems);
 	};
 
-	const updateValue = (id: string, value: string) => {
-		setTextListItems((currentItems) =>
-			currentItems.map((item) => {
-				if (item.id === id) {
-					return { ...item, value };
-				}
-				return item;
-			}),
-		);
-		callOnChange();
-	};
-
-	const callOnChange = () => {
-		onChange(textListItems.map((item) => item.value));
+	const updateValue = (index: number, value: string) => {
+		const newItems = [...textListItems];
+		newItems[index] = value;
+		setTextListItems(newItems);
+		onChange(newItems);
 	};
 
 	const mergedTheme = mergeDeep(defaultTextListInputTheme, theme);
@@ -76,12 +56,12 @@ export const TextListInput = ({
 				)}
 			</legend>
 			<div css={columnStyles(mergedTheme)}>
-				{textListItems.map((item) => (
-					<div css={rowStyles(mergedTheme)} key={item.id}>
+				{textListItems.map((item, index) => (
+					<div css={rowStyles(mergedTheme)} key={index}>
 						<TextInput
-							value={item.value}
+							value={item}
 							aria-label={`${label} item`}
-							onChange={(value) => updateValue(item.id, value)}
+							onChange={(value) => updateValue(index, value)}
 							theme={{
 								shared: {
 									marginTop: '0',
@@ -92,7 +72,7 @@ export const TextListInput = ({
 							variant="tertiary"
 							size="md"
 							ariaLabel="Remove item"
-							onClick={() => removeItem(item.id)}
+							onClick={() => removeItem(index)}
 						>
 							remove_circle_outline
 						</IconButton>
