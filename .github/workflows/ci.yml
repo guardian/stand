@@ -17,6 +17,8 @@ jobs:
         include:
           - name: Type check
             run: pnpm tsc
+          - name: Type check (TypeScript 6)
+            run: pnpm tsc6
           - name: Lint
             run: pnpm lint
           - name: Format check

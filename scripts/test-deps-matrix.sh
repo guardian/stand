@@ -141,7 +141,15 @@ for rv in $REACT_VERSIONS; do
 
 			# Installing deps
 			echo "-- Installing deps - React $REACT_MAJOR_VERSION, @emotion/react $ev, TypeScript $tv, react-aria-components $racv"
-			pnpm add -D react@"$rv" react-dom@"$rv" @emotion/react@"$ev" @types/react@"^$TYPES_VERSION" @types/react-dom@"^$TYPES_VERSION" typescript@"$tv" react-aria-components@"$racv"
+			pnpm add -D react@"$rv" react-dom@"$rv" @emotion/react@"$ev" @types/react@"^$TYPES_VERSION" @types/react-dom@"^$TYPES_VERSION" react-aria-components@"$racv"
+			TS_MAJOR_VERSION=${tv%%.*}
+			if [ "$TS_MAJOR_VERSION" = "6" ]; then
+				pnpm add -D @typescript/typescript6@"$tv"
+				TYPECHECK_COMMAND="pnpm tsc6"
+			else
+				pnpm add -D typescript@"$tv"
+				TYPECHECK_COMMAND="pnpm tsc"
+			fi
 
 			# if PLAYWRIGHT_CT_REACT_18 = true then remove @playwright/experimental-ct-react17 and install @playwright/experimental-ct-react
 			if [ "$PLAYWRIGHT_CT_REACT_18" = true ]; then
@@ -162,7 +170,7 @@ for rv in $REACT_VERSIONS; do
 			BUILD_STATUS=ok
 
 			echo "-- Type check"
-			if ! pnpm tsc --project tsconfig.check.json; then
+			if ! $TYPECHECK_COMMAND --project tsconfig.check.json; then
 				echo "Type check failed for React $REACT_MAJOR_VERSION Emotion $ev TS $tv" >&2
 				TYPECHECK_STATUS=fail
 			fi

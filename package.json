@@ -574,7 +574,8 @@
 		"test:e2e": "playwright test -c playwright-ct.config.ts",
 		"test:react-matrix": "./scripts/test-deps-matrix.sh",
 		"test:setup-e2e": "playwright install --with-deps",
-		"tsc": "tsc"
+		"tsc": "tsc",
+		"tsc6": "tsc6"
 	},
 	"devDependencies": {
 		"@arethetypeswrong/core": "0.18.5",
@@ -582,10 +583,10 @@
 		"@codesandbox/sandpack-react": "2.20.0",
 		"@emotion/react": "11.11.4",
 		"@figma/rest-api-spec": "0.41.0",
-		"@guardian/eslint-config": "15.0.0",
-		"@guardian/prettier": "10.0.0",
+		"@guardian/eslint-config": "16.0.0",
+		"@guardian/prettier": "11.0.0",
 		"@guardian/prosemirror-invisibles": "3.1.1",
-		"@guardian/tsconfig": "1.0.1",
+		"@guardian/tsconfig": "2.0.0",
 		"@internationalized/date": "3.12.1",
 		"@material-design-icons/svg": "0.14.15",
 		"@playwright/experimental-ct-react17": "1.62.1",
@@ -600,6 +601,7 @@
 		"@types/node": "24.10.1",
 		"@types/react": "17.0.76",
 		"@types/react-dom": "17.0.25",
+		"@typescript/typescript6": "6.0.2",
 		"change-case": "5.4.4",
 		"eslint": "9.39.3",
 		"eslint-plugin-check-file": "3.3.2",
@@ -644,7 +646,7 @@
 		"react": "^17.0.2 || ^18.0.0 || ^19.0.0",
 		"react-aria-components": ">= 1.14.0 <= 1.20.0",
 		"react-dom": "^17.0.2 || ^18.0.0 || ^19.0.0",
-		"typescript": ">=5.0.0 <=5.9.3"
+		"typescript": ">=5.0.0 <7.0.0"
 	},
 	"peerDependenciesMeta": {
 		"@emotion/react": {
