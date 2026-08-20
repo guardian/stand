@@ -1,46 +1,36 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import TextListInputStories, {
-	Default,
-	CustomMessage,
+	Empty,
+	WithInitialData,
+	WithErrorMessage,
 	CustomTheme,
 	CssOverrides,
 } from './TextListInput.stories';
-import {
-	SandboxReact,
-	SandboxCss,
-	SandboxJs,
-} from '../../util/storybook/sandbox/Sandbox';
-import {
-	componentName,
-	componentCss,
-	componentHtml,
-	componentJs,
-	componentTsx,
-} from './sandbox';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
 
 <Meta of={TextListInputStories} />
 
 # TextListInput
 
-The TextListInput component [[enter description of purpose]].
+A wrapper component that displays a list of `TextInput` components to allow entry of multiple text strings. Inputs can be removed and new ones added as required by the user.
 
 ## When to use
 
-- [[use case]]
-- [[use case]]
+- Collecting a variable length list of text values
+- Editing an existing list of text values
 
 ## Peer dependencies
 
 - `@emotion/react`
 - `react`
 - `react-dom`
+- `react-aria-components`
 - `typescript`
 
 See the `peerDependencies` section of `package.json` for compatible versions.
 
 See [custom component build](#custom-component-build) for usage without React/Emotion.
-
-See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--docs#installing-icons) for more on installing icons.
 
 ## Example usage
 
@@ -49,31 +39,47 @@ See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--
 ```tsx
 import { TextListInput } from '@guardian/stand/TextListInput';
 
-/* types, if required */
-import type { TextListInputProps, TextListInputTheme } from '@guardian/stand/TextListInput';
-
-/* Default */
-<TextListInput />
-
-/* Custom */
-<TextListInput message="hi" />
-
+const Example = () => (
+	<TextListInput
+		label="Text list"
+		initialData={['Item 1', 'Item 2']}
+		onChange={(values) => console.log('Text list values: ', values);}
+	/>
+);
 ```
 
 ## Props
 
-| Name           | Type                 | Required | Default       | Description                                     |
-| -------------- | -------------------- | -------- | ------------- | ----------------------------------------------- |
-| `message`      | `string`             | No       | "hello world" | string to render in the TextListInput.          |
-| `theme`        | `TextListInputTheme` | No       | N/A           | Custom theme overrides for the TextListInput.   |
-| `cssOverrides` | `SerializedStyles`   | No       | N/A           | Custom CSS styles for the TextListInput.        |
-| `className`    | `string`             | No       | N/A           | Additional class name(s) for the TextListInput. |
+| Name           | Type                         | Required | Default | Description                                                                                |
+| -------------- | ---------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------ |
+| `label`        | `string`                     | Yes      | N/A     | Label for the group of text inputs.                                                        |
+| `initialData`  | `string[]`                   | No       | `[]`    | Array of values to populate the list when the component is first rendered.                 |
+| `errorMessage` | `string`                     | No       | N/A     | Optional error message displayed below the list.                                           |
+| `onChange`     | `(values: string[]) => void` | Yes      | N/A     | Called with the complete array of text strings when an item is added, removed, or updated. |
+| `theme`        | `TextListInputTheme`         | No       | `{}`    | Custom theme overrides for the TextListInput.                                              |
+| `cssOverrides` | `SerializedStyles`           | No       | N/A     | Custom CSS styles for the TextListInput.                                                   |
+| `className`    | `string`                     | No       | N/A     | Additional class name(s) for the TextListInput.                                            |
 
 ## Stories
 
-<Canvas layout="padded" of={Default} />
-<Canvas layout="padded" of={CustomMessage} />
+### Empty
+
+<Canvas layout="padded" of={Empty} />
+
+### With initial data
+
+<Canvas layout="padded" of={WithInitialData} />
+
+### With error message
+
+<Canvas layout="padded" of={WithErrorMessage} />
+
+### Custom theme
+
 <Canvas layout="padded" of={CustomTheme} />
+
+### CSS overrides
+
 <Canvas layout="padded" of={CssOverrides} />
 
 ## Customisation
@@ -87,20 +93,24 @@ The `theme` prop allows you to override specific design tokens for the TextListI
 <Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
-import type { TextListInputTheme } from '@guardian/stand/TextListInput';
-import { TextListInput } from '@guardian/stand/TextListInput';
-import { baseColors, baseSizing } from '@guardian/stand';
+import { baseColors, semanticSpacing } from '@guardian/stand';
+import {
+	type PartialTextListInputTheme,
+	TextListInput,
+} from '@guardian/stand/TextListInput';
 
-const customTheme: TextListInputTheme = {
-	color: {
-		blue: {
-			background: baseColors.coolPurple[700],
-			text: baseColors.orange[300],
-		},
+const customTheme: PartialTextListInputTheme = {
+	label: {
+		color: baseColors.orange[200],
+	},
+	row: {
+		gap: semanticSpacing.stackXxs,
 	},
 };
 
-const Component = () => <TextListInput letter="C" theme={customTheme} />;
+const Component = () => (
+	<TextListInput label="Text list" theme={customTheme} onChange={() => {}} />
+);
 ```
 
 ### CSS overrides
@@ -110,40 +120,29 @@ The `cssOverrides` prop allows you to pass custom CSS to the TextListInput compo
 <Canvas layout="padded" of={CssOverrides} />
 
 ```tsx
-import { TextListInput } from '@guardian/stand/TextListInput';
-import { baseColors, baseSizing, baseSpacing } from '@guardian/stand';
 import { css } from '@emotion/react';
+import { baseColors, baseSizing } from '@guardian/stand';
+import { TextListInput } from '@guardian/stand/TextListInput';
 
 const customStyles = css`
-	border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
-	background-color: ${baseColors.orange[700]};
-	color: ${baseColors.warmPurple[300]};
-	border-radius: ${baseRadius.corner4Px};
+	input,
+	button {
+		color: ${baseColors.blue[200]};
+		border: ${baseSizing.size1Rem} solid ${baseColors.blue[600]};
+	}
 `;
 
 const Component = () => (
-	<TextListInput letter="O" cssOverrides={customStyles} />
+	<TextListInput
+		label="Text list"
+		cssOverrides={customStyles}
+		onChange={() => {}}
+	/>
 );
 ```
 
 ## Custom Component Build
 
-If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom TextListInput component using the styles defined in the `TextListInputTheme` type.
+Due to the interactive functionality of the TextListInput component it is only available as a React component with Emotion for styling.
 
-You will however be responsible for any additional functionality on top of the styles, for example image loading, image fallback, accessibility etc.
-
-**`css`**
-
-You can import the TextListInput styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
-
-<SandboxCss
-	componentName={componentName}
-	componentHtml={componentHtml}
-	componentCss={componentCss}
-/>
-
-**TypeScript/JavaScript**
-
-Use the `componentTextListInput` variable and the `ComponentTextListInput` type to define your custom styles in TypeScript/JavaScript:
-
-<SandboxJs componentName={componentName} componentJs={componentJs} />
+If you want to use the component in a non-React environment you would need to build a custom version using vanilla JavaScript and CSS, which may require significant effort to replicate the functionality of this component. We recommend using the provided React component where possible.
