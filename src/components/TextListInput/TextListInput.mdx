@@ -1,0 +1,148 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import TextListInputStories, {
+	Empty,
+	WithInitialData,
+	WithErrorMessage,
+	CustomTheme,
+	CssOverrides,
+} from './TextListInput.stories';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
+
+<Meta of={TextListInputStories} />
+
+# TextListInput
+
+A wrapper component that displays a list of `TextInput` components to allow entry of multiple text strings. Inputs can be removed and new ones added as required by the user.
+
+## When to use
+
+- Collecting a variable length list of text values
+- Editing an existing list of text values
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { TextListInput } from '@guardian/stand/TextListInput';
+
+const Example = () => (
+	<TextListInput
+		label="Text list"
+		initialData={['Item 1', 'Item 2']}
+		onChange={(values) => console.log('Text list values: ', values);}
+	/>
+);
+```
+
+## Props
+
+| Name           | Type                         | Required | Default | Description                                                                                |
+| -------------- | ---------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------ |
+| `label`        | `string`                     | Yes      | N/A     | Label for the group of text inputs.                                                        |
+| `initialData`  | `string[]`                   | No       | `[]`    | Array of values to populate the list when the component is first rendered.                 |
+| `errorMessage` | `string`                     | No       | N/A     | Optional error message displayed below the list.                                           |
+| `onChange`     | `(values: string[]) => void` | Yes      | N/A     | Called with the complete array of text strings when an item is added, removed, or updated. |
+| `theme`        | `TextListInputTheme`         | No       | `{}`    | Custom theme overrides for the TextListInput.                                              |
+| `cssOverrides` | `SerializedStyles`           | No       | N/A     | Custom CSS styles for the TextListInput.                                                   |
+| `className`    | `string`                     | No       | N/A     | Additional class name(s) for the TextListInput.                                            |
+
+## Stories
+
+### Empty
+
+<Canvas layout="padded" of={Empty} />
+
+### With initial data
+
+<Canvas layout="padded" of={WithInitialData} />
+
+### With error message
+
+<Canvas layout="padded" of={WithErrorMessage} />
+
+### Custom theme
+
+<Canvas layout="padded" of={CustomTheme} />
+
+### CSS overrides
+
+<Canvas layout="padded" of={CssOverrides} />
+
+## Customisation
+
+We recommend using the TextListInput component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the TextListInput component:
+
+<Canvas layout="padded" of={CustomTheme} />
+
+```tsx
+import { baseColors, semanticSpacing } from '@guardian/stand';
+import {
+	type PartialTextListInputTheme,
+	TextListInput,
+} from '@guardian/stand/TextListInput';
+
+const customTheme: PartialTextListInputTheme = {
+	label: {
+		color: baseColors.orange[200],
+	},
+	row: {
+		gap: semanticSpacing.stackXxs,
+	},
+};
+
+const Component = () => (
+	<TextListInput label="Text list" theme={customTheme} onChange={() => {}} />
+);
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the TextListInput component, if the theme prop is not sufficient:
+
+<Canvas layout="padded" of={CssOverrides} />
+
+```tsx
+import { css } from '@emotion/react';
+import { baseColors, baseSizing } from '@guardian/stand';
+import { TextListInput } from '@guardian/stand/TextListInput';
+
+const customStyles = css`
+	input,
+	button {
+		color: ${baseColors.blue[200]};
+		border: ${baseSizing.size1Rem} solid ${baseColors.blue[600]};
+	}
+`;
+
+const Component = () => (
+	<TextListInput
+		label="Text list"
+		cssOverrides={customStyles}
+		onChange={() => {}}
+	/>
+);
+```
+
+## Custom Component Build
+
+Due to the interactive functionality of the TextListInput component it is only available as a React component with Emotion for styling.
+
+If you want to use the component in a non-React environment you would need to build a custom version using vanilla JavaScript and CSS, which may require significant effort to replicate the functionality of this component. We recommend using the provided React component where possible.
