@@ -72,6 +72,8 @@ export { componentUserFeedbackSummary } from './styleD/build/typescript/componen
 export type { ComponentUserFeedbackSummary } from './styleD/build/typescript/component/userFeedbackSummary';
 export { componentSidebarStepperNavigation } from './styleD/build/typescript/component/sidebarStepperNavigation';
 export type { ComponentSidebarStepperNavigation } from './styleD/build/typescript/component/sidebarStepperNavigation';
+export { componentTextListInput } from './styleD/build/typescript/component/textListInput';
+export type { ComponentTextListInput } from './styleD/build/typescript/component/textListInput';
 
 /**
  * style dictionary exports - base
