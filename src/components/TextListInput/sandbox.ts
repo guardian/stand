@@ -9,14 +9,14 @@ export const Component = () => (
 		{/* default example */}
 		<TextListInput
 			label="Text list"
-			onChange={(values) => console.log('Text list values: ', values);}
+			onChange={(values) => console.log('Text list values: ', values)}
 		/>
 
 		{/* with initial item data */}
 		<TextListInput
 			label="Text list"
 			initialData={['Item 1', 'Item 2']}
-			onChange={(values) => console.log('Text list values: ', values);}
+			onChange={(values) => console.log('Text list values: ', values)}
 		/>
 	</>
 );

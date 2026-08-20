@@ -34,7 +34,11 @@ See [custom component build](#custom-component-build) for usage without React/Em
 
 ## Example usage
 
-<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+<SandboxReact
+	componentName={componentName}
+	componentTsx={componentTsx}
+	flowColumn={true}
+/>
 
 ```tsx
 import { TextListInput } from '@guardian/stand/TextListInput';
@@ -43,7 +47,7 @@ const Example = () => (
 	<TextListInput
 		label="Text list"
 		initialData={['Item 1', 'Item 2']}
-		onChange={(values) => console.log('Text list values: ', values);}
+		onChange={(values) => console.log('Text list values: ', values)}
 	/>
 );
 ```
