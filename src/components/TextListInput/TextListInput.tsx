@@ -75,7 +75,7 @@ export const TextListInput = ({
 							ariaLabel="Remove item"
 							onClick={() => removeItem(index)}
 						>
-							remove_circle_outline
+							remove
 						</IconButton>
 					</div>
 				))}
