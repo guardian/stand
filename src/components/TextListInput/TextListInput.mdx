@@ -1,7 +1,9 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import TextListInputStories, {
 	Empty,
-	WithInitialData,
+	WithInitialDataMedium,
+	WithInitialDataSmall,
+	WithPlaceholder,
 	WithErrorMessage,
 	CustomTheme,
 	CssOverrides,
@@ -57,7 +59,8 @@ const Example = () => (
 | Name           | Type                         | Required | Default | Description                                                                                |
 | -------------- | ---------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------ |
 | `label`        | `string`                     | Yes      | N/A     | Label for the group of text inputs.                                                        |
-| `initialData`  | `string[]`                   | No       | `[]`    | Array of values to populate the list when the component is first rendered.                 |
+| `size`         | `'sm'` \| `'md'`             | No       | `'md'`  | Controls size of text inputs.                                                              |
+| `placeholder`  | `string`                     | No       | N/A     | Optional placeholder text displayed in empty text inputs.                                  |
 | `errorMessage` | `string`                     | No       | N/A     | Optional error message displayed below the list.                                           |
 | `onChange`     | `(values: string[]) => void` | Yes      | N/A     | Called with the complete array of text strings when an item is added, removed, or updated. |
 | `theme`        | `TextListInputTheme`         | No       | `{}`    | Custom theme overrides for the TextListInput.                                              |
@@ -70,9 +73,17 @@ const Example = () => (
 
 <Canvas layout="padded" of={Empty} />
 
-### With initial data
+### With initial data - medium
 
-<Canvas layout="padded" of={WithInitialData} />
+<Canvas layout="padded" of={WithInitialDataMedium} />
+
+### With initial data - small
+
+<Canvas layout="padded" of={WithInitialDataSmall} />
+
+### With placeholder
+
+<Canvas layout="padded" of={WithPlaceholder} />
 
 ### With error message
 

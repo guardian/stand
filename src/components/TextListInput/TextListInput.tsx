@@ -15,6 +15,8 @@ import type { TextListInputProps } from './types';
 
 export const TextListInput = ({
 	label,
+	size = 'md',
+	placeholder,
 	initialData = [],
 	errorMessage,
 	onChange,
@@ -45,7 +47,6 @@ export const TextListInput = ({
 	};
 
 	const mergedTheme = mergeDeep(defaultTextListInputTheme, theme);
-
 	return (
 		<fieldset css={cssOverrides} className={className}>
 			<legend css={labelStyles(mergedTheme)}>
@@ -61,17 +62,15 @@ export const TextListInput = ({
 					<div css={rowStyles(mergedTheme)} key={index}>
 						<TextInput
 							value={item}
+							size={size}
+							placeholder={placeholder}
 							aria-label={`${label} item`}
 							onChange={(value) => updateValue(index, value)}
-							theme={{
-								shared: {
-									marginTop: '0',
-								},
-							}}
+							theme={{ shared: { marginTop: '0' } }}
 						/>
 						<IconButton
 							variant="tertiary"
-							size="md"
+							size={size}
 							ariaLabel="Remove item"
 							onClick={() => removeItem(index)}
 						>

@@ -22,10 +22,33 @@ export const Empty = {
 	},
 } satisfies Story;
 
-export const WithInitialData = {
+export const WithInitialDataMedium = {
+	name: 'With Initial Data - md',
 	args: {
 		label: 'Text list',
 		initialData: ['Item 1', 'Item 2', 'Item 3'],
+		onChange: (values) => {
+			console.log('Text list values: ', values);
+		},
+	},
+} satisfies Story;
+
+export const WithInitialDataSmall = {
+	name: 'With Initial Data - sm',
+	args: {
+		label: 'Text list',
+		size: 'sm',
+		initialData: ['Item 1', 'Item 2', 'Item 3'],
+		onChange: (values) => {
+			console.log('Text list values: ', values);
+		},
+	},
+} satisfies Story;
+
+export const WithPlaceholder = {
+	args: {
+		label: 'Text list',
+		placeholder: 'Placeholder text',
 		onChange: (values) => {
 			console.log('Text list values: ', values);
 		},
