@@ -1,59 +1,70 @@
 import type { SerializedStyles } from '@emotion/react';
-import type { HTMLAttributes, ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import type {
+	CellProps as RACCellProps,
+	ColumnProps as RACColumnProps,
+	RowProps as RACRowProps,
+	TableBodyProps as RACTableBodyProps,
+	TableHeaderProps as RACTableHeaderProps,
+	TableProps as RACTableProps,
+} from 'react-aria-components';
 import type { Breakpoint } from '../../styleD/utils/semantic/mq';
+import type { DeepPartial } from '../../util/types';
+import type { TableTheme } from './styles';
 
-export interface TableProps extends Omit<
-	HTMLAttributes<HTMLDivElement>,
-	'children'
-> {
-	/** Accessible name for the table. Use `aria-labelledby` instead when a visible heading exists. */
-	'aria-label'?: string;
-	/** CSS grid track definition shared by the header and rows. */
-	columns: string;
-	/** CSS grid track definition used below `compactAt`. */
-	mobileColumns?: string;
-	/** Breakpoint below which the table uses its compact layout. */
-	compactAt?: Breakpoint;
-	children: ReactNode;
-	cssOverrides?: SerializedStyles;
+export type ResponsiveTableValue<T> = Partial<Record<Breakpoint, T>>;
+
+interface TableStyleProps {
+	theme?: DeepPartial<TableTheme>;
+	cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
-export interface TableSectionProps extends Omit<
-	HTMLAttributes<HTMLDivElement>,
-	'children'
-> {
-	children: ReactNode;
-	cssOverrides?: SerializedStyles;
+export interface TableProps
+	extends Omit<RACTableProps, 'children' | 'className'>, TableStyleProps {
+	/** CSS grid tracks for each responsive breakpoint. Values cascade upward. */
+	columns: ResponsiveTableValue<string>;
+	/** Breakpoint at which the visible column header is restored. */
+	headerVisibleFrom?: Breakpoint;
+	children?: ReactNode;
+	className?: RACTableProps['className'];
 }
 
-export interface TableRowProps extends Omit<
-	HTMLAttributes<HTMLDivElement>,
-	'children'
-> {
-	children: ReactNode;
-	cssOverrides?: SerializedStyles;
+export interface TableHeaderProps<T extends object = object>
+	extends
+		Omit<RACTableHeaderProps<T>, 'children' | 'className'>,
+		TableStyleProps {
+	children?: RACTableHeaderProps<T>['children'];
+	className?: RACTableHeaderProps<T>['className'];
 }
 
-export interface TableColumnHeaderProps extends Omit<
-	HTMLAttributes<HTMLDivElement>,
-	'children'
-> {
-	children: ReactNode;
-	cssOverrides?: SerializedStyles;
+export interface TableBodyProps<T extends object = object>
+	extends
+		Omit<RACTableBodyProps<T>, 'children' | 'className'>,
+		TableStyleProps {
+	children?: RACTableBodyProps<T>['children'];
+	className?: RACTableBodyProps<T>['className'];
 }
 
-export interface TableCellProps extends Omit<
-	HTMLAttributes<HTMLDivElement>,
-	'children'
-> {
-	children: ReactNode;
-	/** Visible label shown before the cell content in the compact layout. */
-	mobileLabel?: ReactNode;
-	/** CSS `grid-column` value applied in the compact layout. */
-	mobileGridColumn?: string;
-	/** Removes this cell visually and from the accessibility tree in compact layouts. */
-	hideOnMobile?: boolean;
-	/** Marks the cell as the identifying header for its row. */
-	isRowHeader?: boolean;
-	cssOverrides?: SerializedStyles;
+export interface TableRowProps<T extends object = object>
+	extends Omit<RACRowProps<T>, 'children' | 'className'>, TableStyleProps {
+	children?: RACRowProps<T>['children'];
+	className?: RACRowProps<T>['className'];
+}
+
+export interface TableColumnHeaderProps
+	extends Omit<RACColumnProps, 'children' | 'className'>, TableStyleProps {
+	children?: RACColumnProps['children'];
+	className?: RACColumnProps['className'];
+}
+
+export interface TableCellProps
+	extends Omit<RACCellProps, 'children' | 'className'>, TableStyleProps {
+	children?: RACCellProps['children'];
+	/** Visual label shown while the column header is visually hidden. */
+	compactLabel?: ReactNode;
+	/** Responsive CSS `grid-column` placement. */
+	gridColumn?: ResponsiveTableValue<string>;
+	/** Responsive CSS `grid-row` placement. */
+	gridRow?: ResponsiveTableValue<string>;
+	className?: RACCellProps['className'];
 }

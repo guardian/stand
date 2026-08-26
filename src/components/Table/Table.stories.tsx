@@ -1,5 +1,7 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { baseSpacing } from '../../styleD/build/typescript/base/spacing';
+import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
 import { Badge } from '../Badge/Badge';
 import { Icon } from '../Icon/Icon';
 import { Link } from '../Link/Link';
@@ -51,15 +53,16 @@ const alerts = [
 
 const alertCellStyles = css`
 	display: grid;
-	grid-template-columns: 56px minmax(0, 1fr);
-	gap: 10px;
+	grid-template-columns: ${baseSpacing['48Px']} minmax(0, 1fr);
+	gap: ${baseSpacing['12Px']};
 	align-items: center;
+	align-self: start;
 `;
 
 const alertImageStyles = css`
 	display: block;
-	width: 56px;
-	height: 42px;
+	width: ${baseSpacing['48Px']};
+	height: ${baseSpacing['40Px']};
 	object-fit: cover;
 `;
 
@@ -67,24 +70,24 @@ const alertTextStyles = css`
 	display: flex;
 	min-width: 0;
 	flex-direction: column;
-	gap: 2px;
+	gap: ${baseSpacing['2Px']};
 `;
 
 const metadataStyles = css`
 	display: flex;
 	align-items: center;
-	gap: 4px;
-	color: #545454;
+	gap: ${baseSpacing['4Px']};
+	color: ${semanticColors.text.weak};
 `;
 
 const regionsStyles = css`
 	display: flex;
 	flex-wrap: wrap;
-	gap: 4px;
+	gap: ${baseSpacing['4Px']};
 `;
 
 const meta = {
-	title: 'Stand/Tools Design System/Components/Table',
+	title: 'Stand/Editorial Components/Table',
 	component: Table,
 	parameters: {
 		layout: 'padded',
@@ -100,11 +103,15 @@ export const SentAlerts = {
 	render: () => (
 		<Table
 			aria-label="Sent alerts"
-			columns="minmax(280px, 2.4fr) 64px minmax(180px, 1.3fr) minmax(120px, 1fr) 180px 72px"
-			mobileColumns="minmax(0, 1fr) auto"
+			columns={{
+				sm: 'minmax(0, 1fr)',
+				md: 'minmax(0, 1.1fr) minmax(260px, 0.9fr)',
+				lg: 'minmax(280px, 2.4fr) 64px minmax(180px, 1.3fr) minmax(120px, 1fr) 180px 72px',
+			}}
+			headerVisibleFrom="lg"
 		>
 			<TableHeader>
-				<TableColumnHeader>Sent alerts</TableColumnHeader>
+				<TableColumnHeader isRowHeader>Sent alerts</TableColumnHeader>
 				<TableColumnHeader>Sent from</TableColumnHeader>
 				<TableColumnHeader>Sent by</TableColumnHeader>
 				<TableColumnHeader>Sent to</TableColumnHeader>
@@ -113,10 +120,10 @@ export const SentAlerts = {
 			</TableHeader>
 			<TableBody>
 				{alerts.map((alert) => (
-					<TableRow key={alert.id}>
+					<TableRow key={alert.id} id={alert.id}>
 						<TableCell
-							isRowHeader
-							mobileGridColumn="1 / -1"
+							gridColumn={{ sm: '1', md: '1', lg: '1' }}
+							gridRow={{ md: '1 / span 5', lg: 'auto' }}
 							cssOverrides={alertCellStyles}
 						>
 							<img src={alert.image} alt="" css={alertImageStyles} />
@@ -130,9 +137,25 @@ export const SentAlerts = {
 								</Typography>
 							</div>
 						</TableCell>
-						<TableCell hideOnMobile>{alert.sentFrom}</TableCell>
-						<TableCell hideOnMobile>{alert.sentBy}</TableCell>
-						<TableCell mobileLabel="Sent to: ">
+						<TableCell
+							compactLabel="Sent from: "
+							gridColumn={{ md: '2', lg: '2' }}
+							gridRow={{ md: '1', lg: 'auto' }}
+						>
+							{alert.sentFrom}
+						</TableCell>
+						<TableCell
+							compactLabel="Sent by: "
+							gridColumn={{ md: '2', lg: '3' }}
+							gridRow={{ md: '2', lg: 'auto' }}
+						>
+							{alert.sentBy}
+						</TableCell>
+						<TableCell
+							compactLabel="Sent to: "
+							gridColumn={{ md: '2', lg: '4' }}
+							gridRow={{ md: '3', lg: 'auto' }}
+						>
 							<span css={regionsStyles}>
 								{alert.regions.map((region) => (
 									<span key={region} aria-label={region} role="img">
@@ -147,8 +170,18 @@ export const SentAlerts = {
 								))}
 							</span>
 						</TableCell>
-						<TableCell mobileLabel="Sent: ">{alert.sentAt}</TableCell>
-						<TableCell mobileGridColumn="2" mobileLabel="Status: ">
+						<TableCell
+							compactLabel="Sent time: "
+							gridColumn={{ md: '2', lg: '5' }}
+							gridRow={{ md: '4', lg: 'auto' }}
+						>
+							{alert.sentAt}
+						</TableCell>
+						<TableCell
+							compactLabel="Status: "
+							gridColumn={{ md: '2', lg: '6' }}
+							gridRow={{ md: '5', lg: 'auto' }}
+						>
 							<Badge color="green" size="sm" weight="light">
 								Sent
 							</Badge>
@@ -165,20 +198,22 @@ export const CustomLayout = {
 	render: () => (
 		<Table
 			aria-label="People"
-			columns="minmax(160px, 2fr) 1fr auto"
-			mobileColumns="1fr auto"
-			compactAt="lg"
+			columns={{
+				sm: '1fr',
+				md: '1fr auto',
+				lg: 'minmax(160px, 2fr) 1fr auto',
+			}}
 		>
 			<TableHeader>
-				<TableColumnHeader>Name</TableColumnHeader>
+				<TableColumnHeader isRowHeader>Name</TableColumnHeader>
 				<TableColumnHeader>Team</TableColumnHeader>
 				<TableColumnHeader>Status</TableColumnHeader>
 			</TableHeader>
 			<TableBody>
-				<TableRow>
-					<TableCell isRowHeader>Alex Smith</TableCell>
-					<TableCell mobileLabel="Team: ">Editorial tools</TableCell>
-					<TableCell mobileLabel="Status: ">Active</TableCell>
+				<TableRow id="alex-smith">
+					<TableCell>Alex Smith</TableCell>
+					<TableCell compactLabel="Team: ">Editorial tools</TableCell>
+					<TableCell compactLabel="Status: ">Active</TableCell>
 				</TableRow>
 			</TableBody>
 		</Table>
