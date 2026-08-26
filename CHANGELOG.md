@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.70
+
+### Patch Changes
+
+- 8ea936c: Add `TextListInput` component
+
 ## 0.0.69
 
 ### Patch Changes
