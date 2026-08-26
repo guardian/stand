@@ -257,6 +257,16 @@
 				"default": "./dist/Grid.cjs"
 			}
 		},
+		"./Table": {
+			"import": {
+				"types": "./dist/Table.d.ts",
+				"default": "./dist/Table.js"
+			},
+			"require": {
+				"types": "./dist/Table.d.cts",
+				"default": "./dist/Table.cjs"
+			}
+		},
 		"./Byline": {
 			"import": {
 				"types": "./dist/Byline.d.ts",
@@ -545,6 +555,9 @@
 			],
 			"Grid": [
 				"./dist/Grid.d.ts"
+			],
+			"Table": [
+				"./dist/Table.d.ts"
 			],
 			"Layout": [
 				"./dist/Layout.d.ts"

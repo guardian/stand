@@ -1,0 +1,111 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import TableStories, { CustomLayout, SentAlerts } from './Table.stories';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
+
+<Meta of={TableStories} />
+
+# Table
+
+Table is a composable, responsive data-table primitive. It renders `div` elements with ARIA table semantics and uses CSS Grid so cell content and responsive placement remain under the consumer's control.
+
+## When to use
+
+- To compare structured data across consistent columns.
+- When rows need richer content than a native table layout can easily accommodate.
+- When secondary columns should be hidden or repositioned in a compact mobile layout.
+
+Do not use Table for a general page layout or a list that has no meaningful column relationships.
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import {
+	Table,
+	TableBody,
+	TableCell,
+	TableColumnHeader,
+	TableHeader,
+	TableRow,
+} from '@guardian/stand/Table';
+
+<Table
+	aria-label="People"
+	columns="minmax(160px, 2fr) 1fr auto"
+	mobileColumns="1fr auto"
+>
+	<TableHeader>
+		<TableColumnHeader>Name</TableColumnHeader>
+		<TableColumnHeader>Team</TableColumnHeader>
+		<TableColumnHeader>Status</TableColumnHeader>
+	</TableHeader>
+	<TableBody>
+		<TableRow>
+			<TableCell isRowHeader>Alex Smith</TableCell>
+			<TableCell mobileLabel="Team: ">Editorial tools</TableCell>
+			<TableCell mobileLabel="Status: ">Active</TableCell>
+		</TableRow>
+	</TableBody>
+</Table>;
+```
+
+Give every table an accessible name with `aria-label` or `aria-labelledby`. Keep cells in the same DOM order as their column headers, even when `mobileGridColumn` or CSS overrides reposition them visually. Use `isRowHeader` on the cell that identifies each row.
+
+## Table Props
+
+| Name            | Type                   | Required | Default                 | Description                                               |
+| --------------- | ---------------------- | -------- | ----------------------- | --------------------------------------------------------- |
+| `children`      | `ReactNode`            | Yes      | N/A                     | Header and body composition.                              |
+| `columns`       | `string`               | Yes      | N/A                     | CSS grid track definition shared by desktop rows.         |
+| `mobileColumns` | `string`               | No       | `'minmax(0, 1fr) auto'` | CSS grid track definition used in compact mode.           |
+| `compactAt`     | `'sm' \| 'md' \| 'lg'` | No       | `'md'`                  | Breakpoint below which the compact layout is used.        |
+| `aria-label`    | `string`               | No       | N/A                     | Accessible name when `aria-labelledby` is not used.       |
+| `cssOverrides`  | `SerializedStyles`     | No       | N/A                     | Emotion styles applied after the component's base styles. |
+
+The table also accepts standard `HTMLAttributes<HTMLDivElement>`.
+
+## TableCell Props
+
+| Name               | Type               | Required | Default | Description                                                          |
+| ------------------ | ------------------ | -------- | ------- | -------------------------------------------------------------------- |
+| `children`         | `ReactNode`        | Yes      | N/A     | Cell content.                                                        |
+| `isRowHeader`      | `boolean`          | No       | `false` | Exposes the cell as the identifying header for its row.              |
+| `mobileLabel`      | `ReactNode`        | No       | N/A     | Visual label shown only in compact mode and hidden from AT.          |
+| `mobileGridColumn` | `string`           | No       | N/A     | CSS `grid-column` value used in compact mode.                        |
+| `hideOnMobile`     | `boolean`          | No       | `false` | Removes the cell visually and from the accessibility tree on mobile. |
+| `cssOverrides`     | `SerializedStyles` | No       | N/A     | Emotion styles applied after the component's base styles.            |
+
+`TableHeader`, `TableBody`, `TableRow`, and `TableColumnHeader` accept `children`, `cssOverrides`, and the standard attributes for a `div`.
+
+## Stories
+
+### Sent alerts
+
+The sent-alerts example composes Stand links, typography, icons, and badges inside cells. Resize the canvas to see secondary sender fields removed and remaining fields reflow into two compact columns.
+
+<Canvas of={SentAlerts} />
+
+### Custom layout
+
+<Canvas of={CustomLayout} />
+
+## Customisation
+
+Use `columns` and `mobileColumns` for the shared track definitions. Use `mobileGridColumn` for simple compact placement and `cssOverrides` for content-specific alignment, spacing, or grid areas.
+
+The component intentionally does not prescribe a data model, column count, or cell content. Existing Stand components can be composed inside any cell.
+
+## Custom Component Build
+
+Table currently relies on React and Emotion for its responsive styles and does not provide a generated standalone CSS build. For a non-React implementation, preserve the same `table`, `rowgroup`, `row`, `columnheader`, `rowheader`, and `cell` ARIA structure and keep the DOM order aligned with the header order.
