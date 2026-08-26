@@ -377,6 +377,16 @@
 				"default": "./dist/UserFeedbackSummary.cjs"
 			}
 		},
+		"./TextListInput": {
+			"import": {
+				"types": "./dist/TextListInput.d.ts",
+				"default": "./dist/TextListInput.js"
+			},
+			"require": {
+				"types": "./dist/TextListInput.d.cts",
+				"default": "./dist/TextListInput.cjs"
+			}
+		},
 		"./utils": {
 			"import": {
 				"types": "./dist/utils.d.ts",
@@ -435,7 +445,8 @@
 		"./component/tabs.css": "./dist/styleD/build/css/component/tabs.css",
 		"./component/tooltip.css": "./dist/styleD/build/css/component/tooltip.css",
 		"./component/userFeedbackSummary.css": "./dist/styleD/build/css/component/userFeedbackSummary.css",
-		"./component/sidebarStepperNavigation.css": "./dist/styleD/build/css/component/sidebarStepperNavigation.css"
+		"./component/sidebarStepperNavigation.css": "./dist/styleD/build/css/component/sidebarStepperNavigation.css",
+		"./component/textListInput.css": "./dist/styleD/build/css/component/textListInput.css"
 	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
@@ -552,6 +563,9 @@
 			],
 			"UserFeedbackSummary": [
 				"./dist/UserFeedbackSummary.d.ts"
+			],
+			"TextListInput": [
+				"./dist/TextListInput.d.ts"
 			]
 		}
 	},
