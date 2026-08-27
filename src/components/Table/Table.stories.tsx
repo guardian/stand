@@ -5,6 +5,7 @@ import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
 import { Badge } from '../Badge/Badge';
 import { Icon } from '../Icon/Icon';
 import { Link } from '../Link/Link';
+import { Tooltip } from '../Tooltip/Tooltip';
 import { Typography } from '../Typography/Typography';
 import {
 	Table,
@@ -86,6 +87,17 @@ const regionsStyles = css`
 	gap: ${baseSpacing['4Px']};
 `;
 
+const valueWithTooltipStyles = css`
+	display: flex;
+	align-items: center;
+	gap: ${baseSpacing['4Px']};
+`;
+
+const constrainedTableStyles = css`
+	max-width: 40rem;
+	margin-inline: auto;
+`;
+
 const meta = {
 	title: 'Stand/Editorial Components/Table',
 	component: Table,
@@ -126,6 +138,71 @@ export const Default = {
 			aria-label="People"
 			columns={{ sm: 'minmax(120px, 2fr) minmax(100px, 1fr) auto' }}
 			headerVisibleFrom="sm"
+		>
+			<TableHeader>
+				<TableColumnHeader isRowHeader>Name</TableColumnHeader>
+				<TableColumnHeader>Team</TableColumnHeader>
+				<TableColumnHeader>Status</TableColumnHeader>
+			</TableHeader>
+			<TableBody>
+				{people.map((person) => (
+					<TableRow key={person.id} id={person.id}>
+						<TableCell>{person.name}</TableCell>
+						<TableCell>{person.team}</TableCell>
+						<TableCell>{person.status}</TableCell>
+					</TableRow>
+				))}
+			</TableBody>
+		</Table>
+	),
+} satisfies Story;
+
+export const CustomTheme = {
+	name: 'Custom theme',
+	render: () => (
+		<Table
+			aria-label="People"
+			columns={{ sm: 'minmax(120px, 2fr) minmax(100px, 1fr) auto' }}
+			headerVisibleFrom="sm"
+			theme={{
+				table: {
+					border: `1px solid ${semanticColors.border.information}`,
+				},
+				header: {
+					backgroundColor: semanticColors.fill.informationWeak,
+					border: `1px solid ${semanticColors.border.information}`,
+				},
+				row: {
+					hoverBackgroundColor: semanticColors.fill.selectedWeaker,
+				},
+			}}
+		>
+			<TableHeader>
+				<TableColumnHeader isRowHeader>Name</TableColumnHeader>
+				<TableColumnHeader>Team</TableColumnHeader>
+				<TableColumnHeader>Status</TableColumnHeader>
+			</TableHeader>
+			<TableBody>
+				{people.map((person) => (
+					<TableRow key={person.id} id={person.id}>
+						<TableCell>{person.name}</TableCell>
+						<TableCell>{person.team}</TableCell>
+						<TableCell>{person.status}</TableCell>
+					</TableRow>
+				))}
+			</TableBody>
+		</Table>
+	),
+} satisfies Story;
+
+export const CssOverrides = {
+	name: 'CSS overrides',
+	render: () => (
+		<Table
+			aria-label="People"
+			columns={{ sm: 'minmax(120px, 2fr) minmax(100px, 1fr) auto' }}
+			headerVisibleFrom="sm"
+			cssOverrides={constrainedTableStyles}
 		>
 			<TableHeader>
 				<TableColumnHeader isRowHeader>Name</TableColumnHeader>
@@ -212,8 +289,55 @@ export const TwoColumnsOnMobile = {
 	),
 } satisfies Story;
 
-export const SentAlerts = {
-	name: 'Sent alerts',
+export const TooltipsInCells = {
+	name: 'Tooltips in cells',
+	render: () => (
+		<Table
+			aria-label="Publishing status"
+			columns={{
+				sm: 'minmax(0, 1fr)',
+				md: 'minmax(140px, 2fr) minmax(120px, 1fr) auto',
+			}}
+			headerVisibleFrom="md"
+		>
+			<TableHeader>
+				<TableColumnHeader isRowHeader>Article</TableColumnHeader>
+				<TableColumnHeader>Owner</TableColumnHeader>
+				<TableColumnHeader>Status</TableColumnHeader>
+			</TableHeader>
+			<TableBody>
+				<TableRow id="morning-briefing">
+					<TableCell>Morning briefing</TableCell>
+					<TableCell compactLabel="Owner: ">News desk</TableCell>
+					<TableCell compactLabel="Status: ">
+						<span css={valueWithTooltipStyles}>
+							Ready
+							<Tooltip placement="start">
+								All required fields are complete and the article can be
+								published.
+							</Tooltip>
+						</span>
+					</TableCell>
+				</TableRow>
+				<TableRow id="evening-briefing">
+					<TableCell>Evening briefing</TableCell>
+					<TableCell compactLabel="Owner: ">Audience team</TableCell>
+					<TableCell compactLabel="Status: ">
+						<span css={valueWithTooltipStyles}>
+							In review
+							<Tooltip placement="start">
+								An editor is reviewing this article before publication.
+							</Tooltip>
+						</span>
+					</TableCell>
+				</TableRow>
+			</TableBody>
+		</Table>
+	),
+} satisfies Story;
+
+export const RealWorldExample = {
+	name: 'Real world example',
 	render: () => (
 		<Table
 			aria-label="Sent alerts"
@@ -302,33 +426,6 @@ export const SentAlerts = {
 						</TableCell>
 					</TableRow>
 				))}
-			</TableBody>
-		</Table>
-	),
-} satisfies Story;
-
-export const CustomLayout = {
-	name: 'Single row',
-	render: () => (
-		<Table
-			aria-label="People"
-			columns={{
-				sm: '1fr',
-				md: '1fr auto',
-				lg: 'minmax(160px, 2fr) 1fr auto',
-			}}
-		>
-			<TableHeader>
-				<TableColumnHeader isRowHeader>Name</TableColumnHeader>
-				<TableColumnHeader>Team</TableColumnHeader>
-				<TableColumnHeader>Status</TableColumnHeader>
-			</TableHeader>
-			<TableBody>
-				<TableRow id="alex-smith">
-					<TableCell>Alex Smith</TableCell>
-					<TableCell compactLabel="Team: ">Editorial tools</TableCell>
-					<TableCell compactLabel="Status: ">Active</TableCell>
-				</TableRow>
 			</TableBody>
 		</Table>
 	),

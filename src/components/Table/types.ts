@@ -19,6 +19,10 @@ interface TableStyleProps {
 	cssOverrides?: SerializedStyles | SerializedStyles[];
 }
 
+interface TableCssOverridesProps {
+	cssOverrides?: SerializedStyles | SerializedStyles[];
+}
+
 export interface TableProps
 	extends Omit<RACTableProps, 'children' | 'className'>, TableStyleProps {
 	/** CSS grid tracks for each responsive breakpoint. Values cascade upward. */
@@ -40,7 +44,7 @@ export interface TableHeaderProps<T extends object = object>
 export interface TableBodyProps<T extends object = object>
 	extends
 		Omit<RACTableBodyProps<T>, 'children' | 'className'>,
-		TableStyleProps {
+		TableCssOverridesProps {
 	children?: RACTableBodyProps<T>['children'];
 	className?: RACTableBodyProps<T>['className'];
 }
