@@ -43,7 +43,8 @@ export const Pagination = ({
 	const mergedTheme = mergeDeep(defaultPaginationTheme, theme ?? {});
 	const mergedLabels = { ...defaultLabels, ...labels };
 
-	const totalPages = getTotalPages(totalItems, pageSize);
+	const safePageSize = Math.max(1, pageSize);
+	const totalPages = getTotalPages(totalItems, safePageSize);
 	const page = clamp(currentPage, 1, totalPages);
 
 	const items = getPageRange({
@@ -55,15 +56,15 @@ export const Pagination = ({
 
 	const goTo = (next: number) => onPageChange(clamp(next, 1, totalPages));
 
-	const startItem = totalItems === 0 ? 0 : (page - 1) * pageSize + 1;
-	const endItem = Math.min(page * pageSize, totalItems);
+	const startItem = totalItems === 0 ? 0 : (page - 1) * safePageSize + 1;
+	const endItem = Math.min(page * safePageSize, totalItems);
 
 	const summary = renderSummary
 		? renderSummary({
 				currentPage: page,
 				totalPages,
 				totalItems,
-				pageSize,
+				pageSize: safePageSize,
 				startItem,
 				endItem,
 			})
