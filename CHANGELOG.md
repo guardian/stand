@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.71
+
+### Patch Changes
+
+- 8fb8e10: Add the accessible, responsive Table component with React Aria semantics, composable CSS Grid layouts, design tokens, and rounded corners.
+
 ## 0.0.70
 
 ### Patch Changes
