@@ -101,7 +101,7 @@ export const Pagination = ({
 							<ReactAriaButton
 								aria-label={mergedLabels.page(item)}
 								aria-current={isCurrent ? 'page' : undefined}
-								onPress={() => goTo(item)}
+								onPress={() => !isCurrent && goTo(item)}
 								css={itemStyles(mergedTheme, isCurrent)}
 							>
 								{item}
