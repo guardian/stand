@@ -1,5 +1,11 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
-import TableStories, { CustomLayout, SentAlerts } from './Table.stories';
+import TableStories, {
+	CustomLayout,
+	Default,
+	SentAlerts,
+	StackedOnMobile,
+	TwoColumnsOnMobile,
+} from './Table.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
 
@@ -94,13 +100,31 @@ Table also accepts React Aria `TableProps`, including selection, sorting, row ac
 
 ## Stories
 
+### Standard
+
+Use a visible header at every breakpoint when the table remains readable without changing its column structure.
+
+<Canvas of={Default} />
+
+### Stacked on mobile
+
+At small widths, each row becomes a single-column summary and compact labels identify values whose column headers are visually hidden.
+
+<Canvas of={StackedOnMobile} />
+
+### Two columns on mobile
+
+Cells can span or occupy specific responsive tracks while their DOM order and header relationships remain unchanged.
+
+<Canvas of={TwoColumnsOnMobile} />
+
 ### Sent alerts
 
 The sent-alerts example composes Stand links, typography, icons, and badges inside cells. Below `830px` rows stack into one column, from `830px` through `1055px` the alert summary and metadata split into two columns, and from `1056px` the visible six-column table is restored.
 
 <Canvas of={SentAlerts} />
 
-### Custom layout
+### Single row
 
 <Canvas of={CustomLayout} />
 

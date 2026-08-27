@@ -7,6 +7,7 @@
 	--component-table-table-color: #000000;
 	--component-table-table-background-color: #ffffff;
 	--component-table-table-border: 0.0625rem solid #cccccc;
+	--component-table-table-border-radius: 0.25rem;
 	--component-table-table-focus-visible-outline: 0.125rem solid #0072a9;
 	--component-table-table-focus-visible-outline-offset: -0.0625rem;
 	--component-table-header-background-color: #ededed;

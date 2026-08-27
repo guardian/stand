@@ -62,8 +62,10 @@ export const tableStyles = (theme: TableTheme): SerializedStyles => css`
 	box-sizing: border-box;
 	width: ${theme.table.width};
 	border: ${theme.table.border};
+	border-radius: ${theme.table.borderRadius};
 	border-collapse: collapse;
 	border-spacing: 0;
+	overflow: hidden;
 	background-color: ${theme.table.backgroundColor};
 	color: ${theme.table.color};
 	outline: none;

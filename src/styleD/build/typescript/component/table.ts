@@ -8,6 +8,7 @@ export const componentTable = {
 		color: '#000000',
 		backgroundColor: '#ffffff',
 		border: '0.0625rem solid #cccccc',
+		borderRadius: '0.25rem',
 		focusVisible: {
 			outline: '0.125rem solid #0072a9',
 			outlineOffset: '-0.0625rem',

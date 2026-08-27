@@ -98,6 +98,120 @@ type Story = StoryObj<typeof Table>;
 
 export default meta;
 
+const people = [
+	{
+		id: 'alex-smith',
+		name: 'Alex Smith',
+		team: 'Editorial tools',
+		status: 'Active',
+	},
+	{
+		id: 'sam-jones',
+		name: 'Sam Jones',
+		team: 'Newsroom systems',
+		status: 'Active',
+	},
+	{
+		id: 'morgan-lee',
+		name: 'Morgan Lee',
+		team: 'Digital publishing',
+		status: 'Away',
+	},
+];
+
+export const Default = {
+	name: 'Standard',
+	render: () => (
+		<Table
+			aria-label="People"
+			columns={{ sm: 'minmax(120px, 2fr) minmax(100px, 1fr) auto' }}
+			headerVisibleFrom="sm"
+		>
+			<TableHeader>
+				<TableColumnHeader isRowHeader>Name</TableColumnHeader>
+				<TableColumnHeader>Team</TableColumnHeader>
+				<TableColumnHeader>Status</TableColumnHeader>
+			</TableHeader>
+			<TableBody>
+				{people.map((person) => (
+					<TableRow key={person.id} id={person.id}>
+						<TableCell>{person.name}</TableCell>
+						<TableCell>{person.team}</TableCell>
+						<TableCell>{person.status}</TableCell>
+					</TableRow>
+				))}
+			</TableBody>
+		</Table>
+	),
+} satisfies Story;
+
+export const StackedOnMobile = {
+	name: 'Stacked on mobile',
+	render: () => (
+		<Table
+			aria-label="People"
+			columns={{
+				sm: 'minmax(0, 1fr)',
+				md: 'minmax(160px, 2fr) minmax(140px, 1fr) auto',
+			}}
+			headerVisibleFrom="md"
+		>
+			<TableHeader>
+				<TableColumnHeader isRowHeader>Name</TableColumnHeader>
+				<TableColumnHeader>Team</TableColumnHeader>
+				<TableColumnHeader>Status</TableColumnHeader>
+			</TableHeader>
+			<TableBody>
+				{people.map((person) => (
+					<TableRow key={person.id} id={person.id}>
+						<TableCell>{person.name}</TableCell>
+						<TableCell compactLabel="Team: ">{person.team}</TableCell>
+						<TableCell compactLabel="Status: ">{person.status}</TableCell>
+					</TableRow>
+				))}
+			</TableBody>
+		</Table>
+	),
+} satisfies Story;
+
+export const TwoColumnsOnMobile = {
+	name: 'Two columns on mobile',
+	render: () => (
+		<Table
+			aria-label="People"
+			columns={{
+				sm: 'minmax(0, 1fr) auto',
+				md: 'minmax(160px, 2fr) minmax(140px, 1fr) auto',
+			}}
+			headerVisibleFrom="md"
+		>
+			<TableHeader>
+				<TableColumnHeader isRowHeader>Name</TableColumnHeader>
+				<TableColumnHeader>Team</TableColumnHeader>
+				<TableColumnHeader>Status</TableColumnHeader>
+			</TableHeader>
+			<TableBody>
+				{people.map((person) => (
+					<TableRow key={person.id} id={person.id}>
+						<TableCell gridColumn={{ sm: '1 / -1', md: '1' }}>
+							{person.name}
+						</TableCell>
+						<TableCell compactLabel="Team: " gridColumn={{ sm: '1', md: '2' }}>
+							{person.team}
+						</TableCell>
+						<TableCell
+							compactLabel="Status: "
+							gridColumn={{ sm: '2', md: '3' }}
+						>
+							{person.status}
+						</TableCell>
+					</TableRow>
+				))}
+			</TableBody>
+		</Table>
+	),
+} satisfies Story;
+
 export const SentAlerts = {
 	name: 'Sent alerts',
 	render: () => (
@@ -194,7 +308,7 @@ export const SentAlerts = {
 } satisfies Story;
 
 export const CustomLayout = {
-	name: 'Custom layout',
+	name: 'Single row',
 	render: () => (
 		<Table
 			aria-label="People"
