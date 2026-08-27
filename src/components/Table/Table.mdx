@@ -1,0 +1,203 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import TableStories, {
+	CssOverrides,
+	CustomTheme,
+	Default,
+	RealWorldExample,
+	StackedOnMobile,
+	TooltipsInCells,
+	TwoColumnsOnMobile,
+} from './Table.stories';
+
+<Meta of={TableStories} />
+
+# Table
+
+Table is a composable, responsive data-table built on [React Aria Table](https://react-aria.adobe.com/Table). React Aria provides collection semantics, keyboard navigation, row headers, selection, and sorting, while Stand uses CSS Grid to support table, split, and stacked layouts at its responsive breakpoints.
+
+## When to use
+
+- To compare structured data across consistent columns.
+- When rows need richer content than a conventional table layout can accommodate.
+- When the same data must reflow into split or stacked layouts on narrower screens.
+
+Do not use Table for a general page layout or a list with no meaningful column relationships.
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+## Example usage
+
+<Canvas of={Default} />
+
+```tsx
+import {
+	Table,
+	TableBody,
+	TableCell,
+	TableColumnHeader,
+	TableHeader,
+	TableRow,
+} from '@guardian/stand/Table';
+
+<Table
+	aria-label="People"
+	columns={{
+		sm: '1fr',
+		md: '1fr auto',
+		lg: 'minmax(160px, 2fr) 1fr auto',
+	}}
+>
+	<TableHeader>
+		<TableColumnHeader isRowHeader>Name</TableColumnHeader>
+		<TableColumnHeader>Team</TableColumnHeader>
+		<TableColumnHeader>Status</TableColumnHeader>
+	</TableHeader>
+	<TableBody>
+		<TableRow id="alex-smith">
+			<TableCell>Alex Smith</TableCell>
+			<TableCell compactLabel="Team: ">Editorial tools</TableCell>
+			<TableCell compactLabel="Status: ">Active</TableCell>
+		</TableRow>
+	</TableBody>
+</Table>;
+```
+
+Give every table an accessible name with `aria-label` or `aria-labelledby`. Keep cells in the same DOM order as their column headers, even when responsive placement changes their visual position. Set `isRowHeader` on the `TableColumnHeader` that identifies each row.
+
+## Table Props
+
+| Name                | Type                                     | Required | Default | Description                                                |
+| ------------------- | ---------------------------------------- | -------- | ------- | ---------------------------------------------------------- |
+| `children`          | `ReactNode`                              | No       | N/A     | Header and body composition.                               |
+| `columns`           | `Partial<Record<Breakpoint, string>>`    | Yes      | N/A     | CSS Grid tracks by breakpoint. Values cascade upward.      |
+| `headerVisibleFrom` | `'sm' \| 'md' \| 'lg'`                   | No       | `'lg'`  | Breakpoint at which the visible column header is restored. |
+| `aria-label`        | `string`                                 | No       | N/A     | Accessible name when `aria-labelledby` is not used.        |
+| `theme`             | `TableTheme`                             | No       | N/A     | Deeply partial override of generated Table design tokens.  |
+| `cssOverrides`      | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Emotion styles applied after the component's base styles.  |
+
+Table also accepts React Aria `TableProps`, including selection, sorting, row actions, and drag-and-drop hooks.
+
+## TableCell Props
+
+| Name           | Type                                     | Required | Default | Description                                                         |
+| -------------- | ---------------------------------------- | -------- | ------- | ------------------------------------------------------------------- |
+| `children`     | `ReactNode`                              | No       | N/A     | Cell content.                                                       |
+| `compactLabel` | `ReactNode`                              | No       | N/A     | Visual label shown while the real column header is visually hidden. |
+| `gridColumn`   | `Partial<Record<Breakpoint, string>>`    | No       | N/A     | Responsive CSS `grid-column` placement.                             |
+| `gridRow`      | `Partial<Record<Breakpoint, string>>`    | No       | N/A     | Responsive CSS `grid-row` placement.                                |
+| `theme`        | `TableTheme`                             | No       | N/A     | Deeply partial local token override.                                |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Emotion styles applied after the component's base styles.           |
+
+`TableHeader`, `TableRow`, and `TableColumnHeader` expose their corresponding React Aria props plus local `theme` and `cssOverrides` props. `TableBody` exposes its React Aria props and `cssOverrides`; it has no visual tokens of its own to theme.
+
+## Stories
+
+### Stacked on mobile
+
+At small widths, each row becomes a single-column summary and compact labels identify values whose column headers are visually hidden.
+
+<Canvas of={StackedOnMobile} />
+
+### Two columns on mobile
+
+Cells can span or occupy specific responsive tracks while their DOM order and header relationships remain unchanged.
+
+<Canvas of={TwoColumnsOnMobile} />
+
+### Tooltips in cells
+
+Stand components, including focusable tooltip triggers, can be composed directly inside a cell without additional Table props.
+
+<Canvas of={TooltipsInCells} />
+
+### Real world example
+
+This sent-alerts example composes Stand links, typography, icons, and badges inside cells. Below `830px` rows stack into one column, from `830px` through `1055px` the alert summary and metadata split into two columns, and from `1056px` the visible six-column table is restored.
+
+<Canvas of={RealWorldExample} />
+
+## Customisation
+
+The default appearance is deliberately neutral: a white background, grayscale text, borders, header, and hover state, plus a 4px corner radius. The focus outline uses the semantic focus colour so keyboard focus remains visible.
+
+Choose the narrowest customization API that fits the change:
+
+| API                                                     | Use it for                                                             |
+| ------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `columns`, `headerVisibleFrom`, `gridColumn`, `gridRow` | Responsive table structure and cell placement.                         |
+| `theme`                                                 | Reusable visual decisions represented by Table design tokens.          |
+| `cssOverrides`                                          | One-off CSS, layout constraints, or styles outside the token contract. |
+| `children`                                              | Composing content and other Stand components inside cells.             |
+
+### Custom theme
+
+`theme` is a deeply partial object, so only the values being changed are required. A theme on `Table` cascades to its header, rows, column headers, and cells. A theme passed to one of those child components overrides the inherited values for that component only.
+
+<Canvas of={CustomTheme} />
+
+```tsx
+import { semanticColors } from '@guardian/stand';
+import { Table } from '@guardian/stand/Table';
+import type { TableTheme } from '@guardian/stand/Table';
+
+const customTheme: TableTheme = {
+	table: {
+		border: `1px solid ${semanticColors.border.information}`,
+	},
+	header: {
+		backgroundColor: semanticColors.fill.informationWeak,
+		border: `1px solid ${semanticColors.border.information}`,
+	},
+	row: {
+		hoverBackgroundColor: semanticColors.fill.selectedWeaker,
+	},
+};
+
+<Table aria-label="People" theme={customTheme} columns={{ sm: '2fr 1fr auto' }}>
+	{/* Header and body */}
+</Table>;
+```
+
+The complete token groups are `table`, `header`, `row`, `cell`, `columnHeader`, and `compactLabel`. Import `componentTable` from `@guardian/stand/Table` to inspect the resolved defaults. Prefer semantic Stand tokens when creating a shared theme.
+
+### CSS overrides
+
+`cssOverrides` is applied after the default styles. It is available on every Table component, including `TableBody`, and accepts one Emotion `SerializedStyles` value or an array.
+
+<Canvas of={CssOverrides} />
+
+```tsx
+import { css } from '@emotion/react';
+import { Table } from '@guardian/stand/Table';
+
+const constrainedTableStyles = css`
+	max-width: 40rem;
+	margin-inline: auto;
+`;
+
+<Table
+	aria-label="People"
+	columns={{ sm: '2fr 1fr auto' }}
+	cssOverrides={constrainedTableStyles}
+>
+	{/* Header and body */}
+</Table>;
+```
+
+Use `columns` for shared breakpoint track definitions and `gridColumn` or `gridRow` for responsive cell placement rather than recreating those rules in `cssOverrides`.
+
+The component intentionally does not prescribe a data model, column count, or cell content. Existing Stand components can be composed inside any cell.
+
+Column resizing and virtualization should not be combined with responsive grid layouts without additional testing because they apply their own layout behavior.
+
+## Custom Component Build
+
+Table relies on React Aria for its collection and interaction behavior. Generated CSS custom properties are available from `@guardian/stand/component/table.css`, and resolved TypeScript values are exported as `componentTable` from `@guardian/stand/Table`. A non-React implementation must provide its own table semantics, keyboard behavior, and responsive layout.
