@@ -1,0 +1,199 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import PaginationStories, {
+	Default,
+	MiddlePage,
+	LastPage,
+	FewPages,
+	WiderSiblingWindow,
+	WithoutSummary,
+	CustomSummary,
+	CustomItemSize,
+	CollapsesOnSmallScreens,
+} from './Pagination.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={PaginationStories} />
+
+# Pagination
+
+The Pagination component lets users navigate through a large, paginated set of results. It renders previous/next controls, a windowed list of page numbers (with ellipses for truncated ranges) and an optional results summary.
+
+It is API-agnostic: it is controlled via `currentPage` and reports navigation through `onPageChange`, so consumers wire in their own data fetching and state.
+
+## When to use
+
+- To page through a large collection of results that is split into fixed-size pages.
+- When users benefit from jumping to specific pages as well as stepping forwards and backwards.
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+See [Icon component](?path=/docs/stand-editorial-design-system-components-icon--docs#installing-icons) for more on installing icons.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { useState } from 'react';
+import { Pagination } from '@guardian/stand/Pagination';
+
+/* types, if required */
+import type {
+	PaginationProps,
+	PaginationTheme,
+} from '@guardian/stand/Pagination';
+
+const Example = () => {
+	const [currentPage, setCurrentPage] = useState(1);
+
+	return (
+		<Pagination
+			currentPage={currentPage}
+			pageSize={20}
+			totalItems={400}
+			onPageChange={setCurrentPage}
+		/>
+	);
+};
+```
+
+## Props
+
+| Name            | Type                                         | Required | Default | Description                                                                                         |
+| --------------- | -------------------------------------------- | -------- | ------- | --------------------------------------------------------------------------------------------------- |
+| `currentPage`   | `number`                                     | Yes      | N/A     | The currently active page (1-based).                                                                |
+| `totalItems`    | `number`                                     | Yes      | N/A     | Total number of items across all pages.                                                             |
+| `pageSize`      | `number`                                     | Yes      | N/A     | Number of items per page. Used to derive the total page count.                                      |
+| `onPageChange`  | `(page: number) => void`                     | Yes      | N/A     | Called with the requested page when the user navigates.                                             |
+| `siblingCount`  | `number`                                     | No       | `1`     | Number of page buttons to show either side of the current page.                                     |
+| `boundaryCount` | `number`                                     | No       | `1`     | Number of page buttons to always show at the start and end.                                         |
+| `showSummary`   | `boolean`                                    | No       | `true`  | Whether to render the results summary.                                                              |
+| `renderSummary` | `(info: PaginationSummaryInfo) => ReactNode` | No       | N/A     | Render prop to customise the results summary text.                                                  |
+| `collapseBelow` | `Breakpoint` (`'sm' \| 'md' \| 'lg'`)        | No       | `'md'`  | Below this breakpoint the page list + summary collapse to a compact prev/next + "Page X of Y" view. |
+| `labels`        | `PaginationLabels`                           | No       | N/A     | Overrides for the accessible labels (nav, previous, next, page, status).                            |
+| `theme`         | `PaginationTheme`                            | No       | N/A     | Custom theme overrides for the Pagination.                                                          |
+| `cssOverrides`  | `SerializedStyles`                           | No       | N/A     | Custom CSS styles for the Pagination.                                                               |
+| `className`     | `string`                                     | No       | N/A     | Additional class name(s) for the Pagination.                                                        |
+
+## Stories
+
+<Canvas layout="padded" of={Default} />
+<Canvas layout="padded" of={MiddlePage} />
+<Canvas layout="padded" of={LastPage} />
+<Canvas layout="padded" of={FewPages} />
+<Canvas layout="padded" of={WiderSiblingWindow} />
+<Canvas layout="padded" of={WithoutSummary} />
+<Canvas layout="padded" of={CustomSummary} />
+<Canvas layout="padded" of={CustomItemSize} />
+<Canvas layout="padded" of={CollapsesOnSmallScreens} />
+
+## Responsive behaviour
+
+On narrow screens a full page-number list would overflow horizontally. To avoid this, below the `collapseBelow` breakpoint (default `md`) the page-number list and results summary are hidden and replaced with a compact previous/next + "Page X of Y" control. This is handled with CSS media queries, so it also works in the CSS-only build. Set `collapseBelow` to `'sm'`, `'md'`, or `'lg'` to control where the switch happens, and use `labels.status` to customise the compact text.
+
+## Accessibility
+
+- The component renders a `<nav>` landmark with an accessible label (`labels.nav`).
+- The current page is marked with `aria-current="page"`.
+- Previous/next controls are disabled at the boundaries and expose accessible labels.
+- Page buttons and controls are fully keyboard operable.
+
+## Customisation
+
+We recommend using the Pagination component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+
+### Custom theme
+
+The `theme` prop allows you to override specific design tokens for the Pagination component. It accepts a deep-partial of `PaginationTheme`, so you only need to provide the tokens you want to change:
+
+```tsx
+import type { PaginationTheme } from '@guardian/stand/Pagination';
+import { Pagination } from '@guardian/stand/Pagination';
+import { baseColors } from '@guardian/stand';
+
+const customTheme: PaginationTheme = {
+	item: {
+		current: {
+			backgroundColor: baseColors.coolPurple[400],
+			borderColor: baseColors.coolPurple[400],
+		},
+	},
+};
+
+const Component = () => (
+	<Pagination
+		currentPage={1}
+		pageSize={20}
+		totalItems={400}
+		onPageChange={() => {}}
+		theme={customTheme}
+	/>
+);
+```
+
+### CSS overrides
+
+The `cssOverrides` prop allows you to pass custom CSS to the Pagination component's root `nav`, if the theme prop is not sufficient:
+
+```tsx
+import { Pagination } from '@guardian/stand/Pagination';
+import { baseSpacing } from '@guardian/stand';
+import { css } from '@emotion/react';
+
+const customStyles = css`
+	gap: ${baseSpacing.spacing8Px};
+`;
+
+const Component = () => (
+	<Pagination
+		currentPage={1}
+		pageSize={20}
+		totalItems={400}
+		onPageChange={() => {}}
+		cssOverrides={customStyles}
+	/>
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, or `@guardian/stand` is not compatible with your project, you can create a custom Pagination component using the styles defined in the `PaginationTheme` type.
+
+You will however be responsible for any additional functionality on top of the styles, for example page-range calculation, navigation and accessibility.
+
+**`css`**
+
+You can import the Pagination styles as CSS from the package, make sure that your build process supports importing CSS from `node_modules`/`package.json`:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentPagination` variable and the `ComponentPagination` type to define your custom styles in TypeScript/JavaScript:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
