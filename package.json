@@ -217,6 +217,16 @@
 				"default": "./dist/Checkbox.cjs"
 			}
 		},
+		"./ToggleSwitch": {
+			"import": {
+				"types": "./dist/ToggleSwitch.d.ts",
+				"default": "./dist/ToggleSwitch.js"
+			},
+			"require": {
+				"types": "./dist/ToggleSwitch.d.cts",
+				"default": "./dist/ToggleSwitch.cjs"
+			}
+		},
 		"./TextArea": {
 			"import": {
 				"types": "./dist/TextArea.d.ts",
@@ -444,6 +454,7 @@
 		"./component/textInput.css": "./dist/styleD/build/css/component/textInput.css",
 		"./component/radioGroup.css": "./dist/styleD/build/css/component/radioGroup.css",
 		"./component/checkbox.css": "./dist/styleD/build/css/component/checkbox.css",
+		"./component/toggleSwitch.css": "./dist/styleD/build/css/component/toggleSwitch.css",
 		"./component/textArea.css": "./dist/styleD/build/css/component/textArea.css",
 		"./component/alertBanner.css": "./dist/styleD/build/css/component/alertBanner.css",
 		"./component/datePicker.css": "./dist/styleD/build/css/component/datePicker.css",
@@ -538,6 +549,9 @@
 			],
 			"Checkbox": [
 				"./dist/Checkbox.d.ts"
+			],
+			"ToggleSwitch": [
+				"./dist/ToggleSwitch.d.ts"
 			],
 			"TextArea": [
 				"./dist/TextArea.d.ts"
