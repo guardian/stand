@@ -1,5 +1,6 @@
 import { createContext, useContext } from 'react';
 import {
+	composeRenderProps,
 	Cell as RACCell,
 	Column as RACColumn,
 	Row as RACRow,
@@ -154,15 +155,19 @@ export function TableCell({
 			css={[tableCellStyles(mergedTheme, gridColumn, gridRow), cssOverrides]}
 			{...props}
 		>
-			{compactLabel && (
-				<span
-					css={compactLabelStyles(mergedTheme, context.headerVisibleFrom)}
-					aria-hidden="true"
-				>
-					{compactLabel}
-				</span>
-			)}
-			{children}
+			{composeRenderProps(children, (children) => (
+				<>
+					{compactLabel && (
+						<span
+							css={compactLabelStyles(mergedTheme, context.headerVisibleFrom)}
+							aria-hidden="true"
+						>
+							{compactLabel}
+						</span>
+					)}
+					{children}
+				</>
+			))}
 		</RACCell>
 	);
 }
