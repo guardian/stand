@@ -257,6 +257,16 @@
 				"default": "./dist/Grid.cjs"
 			}
 		},
+		"./Table": {
+			"import": {
+				"types": "./dist/Table.d.ts",
+				"default": "./dist/Table.js"
+			},
+			"require": {
+				"types": "./dist/Table.d.cts",
+				"default": "./dist/Table.cjs"
+			}
+		},
 		"./Byline": {
 			"import": {
 				"types": "./dist/Byline.d.ts",
@@ -440,6 +450,7 @@
 		"./component/intendedAudienceSignifier.css": "./dist/styleD/build/css/component/intendedAudienceSignifier.css",
 		"./component/link.css": "./dist/styleD/build/css/component/link.css",
 		"./component/grid.css": "./dist/styleD/build/css/component/grid.css",
+		"./component/table.css": "./dist/styleD/build/css/component/table.css",
 		"./component/layout.css": "./dist/styleD/build/css/component/layout.css",
 		"./component/modal.css": "./dist/styleD/build/css/component/modal.css",
 		"./component/tabs.css": "./dist/styleD/build/css/component/tabs.css",
@@ -545,6 +556,9 @@
 			],
 			"Grid": [
 				"./dist/Grid.d.ts"
+			],
+			"Table": [
+				"./dist/Table.d.ts"
 			],
 			"Layout": [
 				"./dist/Layout.d.ts"

@@ -1,0 +1,31 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-table-table-width: 100%;
+	--component-table-table-color: #000000;
+	--component-table-table-background-color: #ffffff;
+	--component-table-table-border: 0.0625rem solid #cccccc;
+	--component-table-table-border-radius: 0.25rem;
+	--component-table-header-background-color: #ededed;
+	--component-table-header-border: 0.0625rem solid #cccccc;
+	--component-table-row-background-color: #ffffff;
+	--component-table-row-hover-background-color: #f6f6f6;
+	--component-table-row-border: 0.0625rem solid #cccccc;
+	--component-table-row-focus-visible-outline: 0.125rem solid #0072a9;
+	--component-table-row-focus-visible-outline-offset: -0.0625rem;
+	--component-table-cell-padding-block: 0.5rem;
+	--component-table-cell-padding-inline: 0.75rem;
+	--component-table-cell-font: normal 460 0.875rem/1.3 'Open Sans';
+	--component-table-cell-letter-spacing: 0rem;
+	--component-table-cell-font-width: 95;
+	--component-table-column-header-font: normal 700 0.75rem/1.15 'Open Sans';
+	--component-table-column-header-letter-spacing: 0rem;
+	--component-table-column-header-font-width: 95;
+	--component-table-compact-label-color: #545454;
+	--component-table-compact-label-gap: 0.25rem;
+	--component-table-compact-label-font: normal 460 0.75rem/1.3 'Open Sans';
+	--component-table-compact-label-letter-spacing: 0rem;
+	--component-table-compact-label-font-width: 95;
+}
