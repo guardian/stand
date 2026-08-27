@@ -34,7 +34,7 @@ export const Pagination = ({
 	boundaryCount = 1,
 	showSummary = true,
 	renderSummary,
-	collapseBelow = 'sm',
+	collapseBelow = 'md',
 	labels,
 	theme,
 	cssOverrides,

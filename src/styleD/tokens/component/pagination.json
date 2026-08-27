@@ -12,7 +12,7 @@
 				},
 				"gap": {
 					"$type": "dimension",
-					"$value": "{base.spacing.4Px}"
+					"$value": "{base.spacing.6Px}"
 				}
 			},
 			"summary": {
@@ -42,7 +42,7 @@
 			"ellipsis": {
 				"minWidth": {
 					"$type": "dimension",
-					"$value": "{semantic.sizing.height.xs}"
+					"$value": "{base.spacing.12Px}"
 				},
 				"color": {
 					"$type": "color",

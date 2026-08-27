@@ -6,7 +6,7 @@ export const componentPagination = {
 	shared: {
 		display: 'flex',
 		alignItems: 'center',
-		gap: '4px',
+		gap: '6px',
 	},
 	summary: {
 		color: '#545454',
@@ -18,7 +18,7 @@ export const componentPagination = {
 		},
 	},
 	ellipsis: {
-		minWidth: '1.5rem',
+		minWidth: '0.75rem',
 		color: '#545454',
 	},
 	item: {

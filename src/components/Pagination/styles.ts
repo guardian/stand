@@ -47,9 +47,10 @@ export const itemStyles = (
 		align-items: center;
 		justify-content: center;
 		box-sizing: border-box;
+		width: ${item.minWidth};
 		min-width: ${item.minWidth};
 		height: ${item.height};
-		padding: 0 ${item.paddingX};
+		padding: 0;
 		border-radius: ${item.borderRadius};
 		border: ${item.borderWidth} ${item.borderStyle}
 			${isCurrent ? item.current.borderColor : item.borderColor};
@@ -85,15 +86,19 @@ export const itemStyles = (
 };
 
 export const ellipsisStyles = (theme: PaginationTheme): SerializedStyles => css`
+	box-sizing: border-box;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
+	width: ${theme.ellipsis.minWidth};
 	min-width: ${theme.ellipsis.minWidth};
+	height: ${theme.item.height};
 	color: ${theme.ellipsis.color};
 `;
 
 // Keeps the prev/next arrows square and in step with the page-button item sizing.
 export const arrowStyles = (theme: PaginationTheme): SerializedStyles => css`
+	box-sizing: border-box;
 	width: ${theme.item.height};
 	min-width: ${theme.item.height};
 	height: ${theme.item.height};
