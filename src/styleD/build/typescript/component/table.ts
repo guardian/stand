@@ -26,21 +26,27 @@ export const componentTable = {
 	cell: {
 		paddingBlock: '0.5rem',
 		paddingInline: '0.75rem',
-		font: 'normal 460 0.875rem/1.3 Open Sans',
-		letterSpacing: '0rem',
-		fontWidth: 95,
+		typography: {
+			font: 'normal 460 0.875rem/1.3 Open Sans',
+			letterSpacing: '0rem',
+			fontWidth: 95,
+		},
 	},
 	columnHeader: {
-		font: 'normal 700 0.75rem/1.15 Open Sans',
-		letterSpacing: '0rem',
-		fontWidth: 95,
+		typography: {
+			font: 'normal 700 0.75rem/1.15 Open Sans',
+			letterSpacing: '0rem',
+			fontWidth: 95,
+		},
 	},
 	compactLabel: {
 		color: '#545454',
 		gap: '0.25rem',
-		font: 'normal 460 0.75rem/1.3 Open Sans',
-		letterSpacing: '0rem',
-		fontWidth: 95,
+		typography: {
+			font: 'normal 460 0.75rem/1.3 Open Sans',
+			letterSpacing: '0rem',
+			fontWidth: 95,
+		},
 	},
 };
 export type ComponentTable = typeof componentTable;

@@ -19,21 +19,15 @@ import {
 	tableRowStyles,
 	tableStyles,
 } from './styles';
-import type { TableTheme } from './styles';
 import type {
 	TableBodyProps,
 	TableCellProps,
 	TableColumnHeaderProps,
+	TableContextValue,
 	TableHeaderProps,
 	TableProps,
 	TableRowProps,
 } from './types';
-
-interface TableContextValue {
-	columns: TableProps['columns'];
-	headerVisibleFrom: NonNullable<TableProps['headerVisibleFrom']>;
-	theme: TableTheme;
-}
 
 const TableContext = createContext<TableContextValue>({
 	columns: { sm: 'minmax(0, 1fr)' },

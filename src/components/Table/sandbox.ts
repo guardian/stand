@@ -35,8 +35,3 @@ export const Component = () => (
 	</Table>
 );
 `;
-
-// Table design tokens for custom styling.
-export const componentCss = /* css */ `@import '@guardian/stand/component/table.css';`;
-export const componentHtml = '';
-export const componentJs = '';

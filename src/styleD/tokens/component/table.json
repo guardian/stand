@@ -82,31 +82,35 @@
 					"$type": "dimension",
 					"$value": "{base.spacing.12Rem}"
 				},
-				"font": {
-					"$type": "typography",
-					"$value": "{semantic.typography.bodySm.font}"
-				},
-				"letterSpacing": {
-					"$type": "dimension",
-					"$value": "{semantic.typography.bodySm.letterSpacing}"
-				},
-				"fontWidth": {
-					"$type": "dimension",
-					"$value": "{semantic.typography.bodySm.fontWidth}"
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodySm.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.bodySm.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.bodySm.fontWidth}"
+					}
 				}
 			},
 			"columnHeader": {
-				"font": {
-					"$type": "typography",
-					"$value": "{semantic.typography.headingXs.font}"
-				},
-				"letterSpacing": {
-					"$type": "dimension",
-					"$value": "{semantic.typography.headingXs.letterSpacing}"
-				},
-				"fontWidth": {
-					"$type": "dimension",
-					"$value": "{semantic.typography.headingXs.fontWidth}"
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.headingXs.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.headingXs.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.headingXs.fontWidth}"
+					}
 				}
 			},
 			"compactLabel": {
@@ -118,17 +122,19 @@
 					"$type": "dimension",
 					"$value": "{base.spacing.4Rem}"
 				},
-				"font": {
-					"$type": "typography",
-					"$value": "{semantic.typography.bodyXs.font}"
-				},
-				"letterSpacing": {
-					"$type": "dimension",
-					"$value": "{semantic.typography.bodyXs.letterSpacing}"
-				},
-				"fontWidth": {
-					"$type": "dimension",
-					"$value": "{semantic.typography.bodyXs.fontWidth}"
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodyXs.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.bodyXs.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.bodyXs.fontWidth}"
+					}
 				}
 			}
 		}

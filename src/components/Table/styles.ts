@@ -6,6 +6,7 @@ import {
 } from '../../styleD/build/typescript/component/table';
 import { from, until } from '../../styleD/utils/semantic/mq';
 import type { Breakpoint } from '../../styleD/utils/semantic/mq';
+import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../util/types';
 
 export type TableTheme = Prettify<ComponentTable>;
@@ -129,9 +130,8 @@ export const tableColumnHeaderStyles = (
 ): SerializedStyles => css`
 	min-width: 0;
 	padding: ${theme.cell.paddingBlock} ${theme.cell.paddingInline};
-	font: ${theme.columnHeader.font};
-	font-stretch: ${theme.columnHeader.fontWidth}%;
-	letter-spacing: ${theme.columnHeader.letterSpacing};
+	${convertTypographyToEmotionStringStyle(theme.columnHeader.typography)}
+
 	text-align: left;
 `;
 
@@ -178,9 +178,7 @@ export const tableCellStyles = (
 	box-sizing: border-box;
 	overflow-wrap: anywhere;
 	padding: ${theme.cell.paddingBlock} ${theme.cell.paddingInline};
-	font: ${theme.cell.font};
-	font-stretch: ${theme.cell.fontWidth}%;
-	letter-spacing: ${theme.cell.letterSpacing};
+	${convertTypographyToEmotionStringStyle(theme.cell.typography)}
 	${responsivePlacementStyles(gridColumn, gridRow)}
 `;
 
@@ -191,9 +189,7 @@ export const compactLabelStyles = (
 	display: inline;
 	margin-right: ${theme.compactLabel.gap};
 	color: ${theme.compactLabel.color};
-	font: ${theme.compactLabel.font};
-	font-stretch: ${theme.compactLabel.fontWidth}%;
-	letter-spacing: ${theme.compactLabel.letterSpacing};
+	${convertTypographyToEmotionStringStyle(theme.compactLabel.typography)}
 
 	${from[headerVisibleFrom]} {
 		display: none;
