@@ -68,12 +68,6 @@ export const tableStyles = (theme: TableTheme): SerializedStyles => css`
 	overflow: hidden;
 	background-color: ${theme.table.backgroundColor};
 	color: ${theme.table.color};
-	outline: none;
-
-	&[data-focus-visible] {
-		outline: ${theme.table.focusVisible.outline};
-		outline-offset: ${theme.table.focusVisible.outlineOffset};
-	}
 `;
 
 export const tableHeaderStyles = (
@@ -114,6 +108,7 @@ export const tableRowStyles = (
 	align-items: center;
 	background-color: ${theme.row.backgroundColor};
 	border-bottom: ${theme.row.border};
+	outline: none;
 
 	&:last-child {
 		border-bottom: 0;
@@ -121,6 +116,11 @@ export const tableRowStyles = (
 
 	&[data-hovered] {
 		background-color: ${theme.row.hoverBackgroundColor};
+	}
+
+	&[data-focus-visible] {
+		outline: ${theme.row.focusVisible.outline};
+		outline-offset: ${theme.row.focusVisible.outlineOffset};
 	}
 `;
 

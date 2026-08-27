@@ -25,20 +25,6 @@
 				"borderRadius": {
 					"$type": "dimension",
 					"$value": "{semantic.radius.cornerSm}"
-				},
-				"focusVisible": {
-					"outline": {
-						"$type": "border",
-						"$value": {
-							"color": "{semantic.colors.border.focused}",
-							"width": "{semantic.sizing.border.md}",
-							"style": "solid"
-						}
-					},
-					"outlineOffset": {
-						"$type": "dimension",
-						"$value": "-{semantic.sizing.border.default}"
-					}
 				}
 			},
 			"header": {
@@ -70,6 +56,20 @@
 						"color": "{semantic.colors.border.weak}",
 						"width": "{semantic.sizing.border.default}",
 						"style": "solid"
+					}
+				},
+				"focusVisible": {
+					"outline": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.focused}",
+							"width": "{semantic.sizing.border.md}",
+							"style": "solid"
+						}
+					},
+					"outlineOffset": {
+						"$type": "dimension",
+						"$value": "-{semantic.sizing.border.default}"
 					}
 				}
 			},

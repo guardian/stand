@@ -9,10 +9,6 @@ export const componentTable = {
 		backgroundColor: '#ffffff',
 		border: '0.0625rem solid #cccccc',
 		borderRadius: '0.25rem',
-		focusVisible: {
-			outline: '0.125rem solid #0072a9',
-			outlineOffset: '-0.0625rem',
-		},
 	},
 	header: {
 		backgroundColor: '#ededed',
@@ -22,6 +18,10 @@ export const componentTable = {
 		backgroundColor: '#ffffff',
 		hoverBackgroundColor: '#f6f6f6',
 		border: '0.0625rem solid #cccccc',
+		focusVisible: {
+			outline: '0.125rem solid #0072a9',
+			outlineOffset: '-0.0625rem',
+		},
 	},
 	cell: {
 		paddingBlock: '0.5rem',
