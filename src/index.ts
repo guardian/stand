@@ -36,6 +36,8 @@ export { componentDatePicker } from './styleD/build/typescript/component/datePic
 export type { ComponentDatePicker } from './styleD/build/typescript/component/datePicker';
 export { componentGrid } from './styleD/build/typescript/component/grid';
 export type { ComponentGrid } from './styleD/build/typescript/component/grid';
+export { componentTable } from './styleD/build/typescript/component/table';
+export type { ComponentTable } from './styleD/build/typescript/component/table';
 export { componentForm } from './styleD/build/typescript/component/form';
 export type { ComponentForm } from './styleD/build/typescript/component/form';
 export { componentIcon } from './styleD/build/typescript/component/icon';
