@@ -24,6 +24,8 @@ export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
 export { componentBadge } from './styleD/build/typescript/component/badge';
 export type { ComponentBadge } from './styleD/build/typescript/component/badge';
+export { componentPagination } from './styleD/build/typescript/component/pagination';
+export type { ComponentPagination } from './styleD/build/typescript/component/pagination';
 export { componentButton } from './styleD/build/typescript/component/button';
 export type { ComponentButton } from './styleD/build/typescript/component/button';
 export { componentButtonGroup } from './styleD/build/typescript/component/buttonGroup';
