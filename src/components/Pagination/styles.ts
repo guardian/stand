@@ -49,7 +49,7 @@ export const itemStyles = (
 		box-sizing: border-box;
 		min-width: ${item.minWidth};
 		height: ${item.height};
-		padding: ${item.paddingX};
+		padding: ${item.paddingY} ${item.paddingX};
 		border-radius: ${item.borderRadius};
 		border: ${item.borderWidth} ${item.borderStyle}
 			${isCurrent ? item.current.borderColor : item.borderColor};
