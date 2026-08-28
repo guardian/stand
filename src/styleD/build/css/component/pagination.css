@@ -1,0 +1,50 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-pagination-shared-display: flex;
+	--component-pagination-shared-align-items: center;
+	--component-pagination-shared-gap: 6px;
+	--component-pagination-shared-margin: 0;
+	--component-pagination-shared-padding: 0;
+	--component-pagination-summary-color: #545454;
+	--component-pagination-summary-margin-left: 12px;
+	--component-pagination-summary-typography-font: normal 460 0.875rem/1.3
+		'Open Sans';
+	--component-pagination-summary-typography-letter-spacing: 0rem;
+	--component-pagination-summary-typography-font-width: 95;
+	--component-pagination-ellipsis-min-width: 12px;
+	--component-pagination-ellipsis-color: #545454;
+	--component-pagination-item-min-width: 1.5rem;
+	--component-pagination-item-height: 1.5rem;
+	--component-pagination-item-padding-x: 8px;
+	--component-pagination-item-border-radius: 0.25rem;
+	--component-pagination-item-border-width: 0.0625rem;
+	--component-pagination-item-border-style: solid;
+	--component-pagination-item-cursor: pointer;
+	--component-pagination-item-color: #000000;
+	--component-pagination-item-background-color: #ffffff;
+	--component-pagination-item-border-color: #cccccc;
+	--component-pagination-item-typography-font: normal 460 0.875rem/1.3
+		'Open Sans';
+	--component-pagination-item-typography-letter-spacing: 0rem;
+	--component-pagination-item-typography-font-width: 95;
+	--component-pagination-item-hover-background-color: #f6f6f6;
+	--component-pagination-item-hover-border-color: #cccccc;
+	--component-pagination-item-active-background-color: #ededed;
+	--component-pagination-item-current-color: #ffffff;
+	--component-pagination-item-current-background-color: #005d8b;
+	--component-pagination-item-current-border-color: #0072a9;
+	--component-pagination-item-current-typography-font: normal 700 0.875rem/1.15
+		'Open Sans';
+	--component-pagination-item-current-typography-letter-spacing: -0.0125rem;
+	--component-pagination-item-current-typography-font-width: 95;
+	--component-pagination-item-disabled-color: #999999;
+	--component-pagination-item-disabled-background-color: #dcdcdc;
+	--component-pagination-item-disabled-border-color: #dcdcdc;
+	--component-pagination-item-disabled-cursor: not-allowed;
+	--component-pagination-item-focus-visible-outline-color: #0072a9;
+	--component-pagination-item-focus-visible-outline-width: 0.125rem;
+	--component-pagination-item-focus-visible-outline-offset: 2px;
+}
