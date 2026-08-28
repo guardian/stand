@@ -47,10 +47,9 @@ export const itemStyles = (
 		align-items: center;
 		justify-content: center;
 		box-sizing: border-box;
-		width: ${item.minWidth};
 		min-width: ${item.minWidth};
 		height: ${item.height};
-		padding: 0;
+		padding: ${item.paddingX};
 		border-radius: ${item.borderRadius};
 		border: ${item.borderWidth} ${item.borderStyle}
 			${isCurrent ? item.current.borderColor : item.borderColor};

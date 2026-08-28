@@ -12,7 +12,7 @@
 		'Open Sans';
 	--component-pagination-summary-typography-letter-spacing: 0rem;
 	--component-pagination-summary-typography-font-width: 95;
-	--component-pagination-ellipsis-min-width: 12px;
+	--component-pagination-ellipsis-min-width: 0.75rem;
 	--component-pagination-ellipsis-color: #545454;
 	--component-pagination-item-min-width: 1.5rem;
 	--component-pagination-item-height: 1.5rem;

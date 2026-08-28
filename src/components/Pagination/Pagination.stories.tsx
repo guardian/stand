@@ -1,14 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Pagination } from './Pagination';
 import type { PaginationProps } from './types';
 
 const ControlledPagination = (props: Omit<PaginationProps, 'onPageChange'>) => {
 	const [currentPage, setCurrentPage] = useState(props.currentPage);
-
-	useEffect(() => {
-		setCurrentPage(props.currentPage);
-	}, [props.currentPage]);
 
 	return (
 		<Pagination
@@ -28,7 +24,8 @@ const meta = {
 		pageSize: 20,
 		totalItems: 400,
 	},
-	render: (args) => <ControlledPagination {...args} />,
+	// key resets the wrapper's local page state when the currentPage control changes
+	render: (args) => <ControlledPagination key={args.currentPage} {...args} />,
 } satisfies Meta<typeof Pagination>;
 
 type Story = StoryObj<typeof Pagination>;
