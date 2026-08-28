@@ -68,7 +68,12 @@
 				},
 				"paddingX": {
 					"$type": "dimension",
-					"$value": "{base.spacing.8Px}"
+					"$value": "{base.spacing.2Px}"
+				},
+				"paddingY": {
+					"$type": "dimension",
+					"$value": "0",
+					"$description": "0 because the item has a fixed height and flex-centers its content; vertical padding would only shrink the content box"
 				},
 				"borderRadius": {
 					"$type": "dimension",

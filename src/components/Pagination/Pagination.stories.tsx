@@ -100,4 +100,12 @@ export const CollapsesOnSmallScreens = {
 	},
 } satisfies Story;
 
+// 110 pages (2200 items / 20 per page) to show three-digit page numbers.
+export const ManyPages = {
+	args: {
+		currentPage: 105,
+		totalItems: 2200,
+	},
+} satisfies Story;
+
 export default meta;
