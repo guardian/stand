@@ -19,6 +19,7 @@
 	--component-pagination-item-min-width: 1.5rem;
 	--component-pagination-item-height: 1.5rem;
 	--component-pagination-item-padding-x: 2px;
+	--component-pagination-item-padding-y: 0; /** 0 because the item has a fixed height and flex-centers its content; vertical padding would only shrink the content box */
 	--component-pagination-item-border-radius: 0.25rem;
 	--component-pagination-item-border-width: 0.0625rem;
 	--component-pagination-item-border-style: solid;

@@ -26,8 +26,8 @@ export const componentPagination = {
 	item: {
 		minWidth: '1.5rem',
 		height: '1.5rem',
-		paddingY: '0px',
 		paddingX: '2px',
+		paddingY: '0',
 		borderRadius: '0.25rem',
 		borderWidth: '0.0625rem',
 		borderStyle: 'solid',
