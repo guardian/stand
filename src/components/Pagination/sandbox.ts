@@ -74,6 +74,11 @@ export const componentCss = /* css */ `
 	font: var(--component-pagination-item-current-typography-font);
 }
 
+/* constrain the prev/next arrow icons to the small icon size */
+.stand-pagination-item .material-symbols {
+	font-size: var(--component-icon-sm-size);
+}
+
 .stand-pagination-ellipsis {
 	display: inline-flex;
 	align-items: center;
