@@ -1,0 +1,194 @@
+{
+	"component": {
+		"pagination": {
+			"shared": {
+				"display": {
+					"$type": "string",
+					"$value": "flex"
+				},
+				"alignItems": {
+					"$type": "string",
+					"$value": "center"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{base.spacing.6Px}"
+				},
+				"margin": {
+					"$type": "dimension",
+					"$value": "0"
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": "0"
+				}
+			},
+			"summary": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.weak}"
+				},
+				"marginLeft": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12Px}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodySm.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.bodySm.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.bodySm.fontWidth}"
+					}
+				}
+			},
+			"ellipsis": {
+				"minWidth": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12Px}"
+				},
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.weak}"
+				}
+			},
+			"item": {
+				"minWidth": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.xs}"
+				},
+				"height": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.xs}"
+				},
+				"paddingX": {
+					"$type": "dimension",
+					"$value": "{base.spacing.8Px}"
+				},
+				"borderRadius": {
+					"$type": "dimension",
+					"$value": "{semantic.radius.cornerSm}"
+				},
+				"borderWidth": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.border.default}"
+				},
+				"borderStyle": {
+					"$type": "string",
+					"$value": "solid"
+				},
+				"cursor": {
+					"$type": "string",
+					"$value": "pointer"
+				},
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.strong}"
+				},
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.weak}"
+				},
+				"borderColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.border.weak}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodySm.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.bodySm.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.bodySm.fontWidth}"
+					}
+				},
+				"hover": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.weakHover}"
+					},
+					"borderColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.weak}"
+					}
+				},
+				"active": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.weakPressed}"
+					}
+				},
+				"current": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.strongerInverse}"
+					},
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.selected}"
+					},
+					"borderColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.selected}"
+					},
+					"typography": {
+						"font": {
+							"$type": "typography",
+							"$value": "{semantic.typography.headingSm.font}"
+						},
+						"letterSpacing": {
+							"$type": "dimension",
+							"$value": "{semantic.typography.headingSm.letterSpacing}"
+						},
+						"fontWidth": {
+							"$type": "number",
+							"$value": "{semantic.typography.headingSm.fontWidth}"
+						}
+					}
+				},
+				"disabled": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.disabled}"
+					},
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.disabled}"
+					},
+					"borderColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.disabled}"
+					},
+					"cursor": {
+						"$type": "string",
+						"$value": "not-allowed"
+					}
+				},
+				"focusVisible": {
+					"outlineColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.focused}"
+					},
+					"outlineWidth": {
+						"$type": "dimension",
+						"$value": "{semantic.sizing.border.md}"
+					},
+					"outlineOffset": {
+						"$type": "dimension",
+						"$value": "{base.spacing.2Px}"
+					}
+				}
+			}
+		}
+	}
+}
