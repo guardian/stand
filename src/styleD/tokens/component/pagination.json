@@ -13,6 +13,14 @@
 				"gap": {
 					"$type": "dimension",
 					"$value": "{base.spacing.6Px}"
+				},
+				"margin": {
+					"$type": "dimension",
+					"$value": "0"
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": "0"
 				}
 			},
 			"summary": {
