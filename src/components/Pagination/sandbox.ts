@@ -117,20 +117,18 @@ export const componentHtml = /* html */ `<nav class="stand-pagination" aria-labe
 // Custom component - JS example
 export const componentJs = /* javascript */ `import { componentPagination, componentIcon } from "@guardian/stand";
 
-const p = componentPagination;
-
 const navStyles = \`
-	display: \${p.shared.display};
-	align-items: \${p.shared.alignItems};
-	gap: \${p.shared.gap};
+	display: \${componentPagination.shared.display};
+	align-items: \${componentPagination.shared.alignItems};
+	gap: \${componentPagination.shared.gap};
 \`;
 
 const listStyles = \`
-	display: \${p.shared.display};
-	align-items: \${p.shared.alignItems};
-	gap: \${p.shared.gap};
-	margin: \${p.shared.margin};
-	padding: \${p.shared.padding};
+	display: \${componentPagination.shared.display};
+	align-items: \${componentPagination.shared.alignItems};
+	gap: \${componentPagination.shared.gap};
+	margin: \${componentPagination.shared.margin};
+	padding: \${componentPagination.shared.padding};
 	list-style: none;
 \`;
 
@@ -139,36 +137,36 @@ const itemStyles = \`
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	min-width: \${p.item.minWidth};
-	height: \${p.item.height};
-	padding: 0 \${p.item.paddingX};
-	border-radius: \${p.item.borderRadius};
-	border: \${p.item.borderWidth} \${p.item.borderStyle} \${p.item.borderColor};
-	background-color: \${p.item.backgroundColor};
-	color: \${p.item.color};
-	cursor: \${p.item.cursor};
-	font: \${p.item.typography.font};
+	min-width: \${componentPagination.item.minWidth};
+	height: \${componentPagination.item.height};
+	padding: 0 \${componentPagination.item.paddingX};
+	border-radius: \${componentPagination.item.borderRadius};
+	border: \${componentPagination.item.borderWidth} \${componentPagination.item.borderStyle} \${componentPagination.item.borderColor};
+	background-color: \${componentPagination.item.backgroundColor};
+	color: \${componentPagination.item.color};
+	cursor: \${componentPagination.item.cursor};
+	font: \${componentPagination.item.typography.font};
 \`;
 
 const currentItemStyles = itemStyles + \`
-	background-color: \${p.item.current.backgroundColor};
-	border-color: \${p.item.current.borderColor};
-	color: \${p.item.current.color};
-	font: \${p.item.current.typography.font};
+	background-color: \${componentPagination.item.current.backgroundColor};
+	border-color: \${componentPagination.item.current.borderColor};
+	color: \${componentPagination.item.current.color};
+	font: \${componentPagination.item.current.typography.font};
 \`;
 
 const ellipsisStyles = \`
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	min-width: \${p.ellipsis.minWidth};
-	color: \${p.ellipsis.color};
+	min-width: \${componentPagination.ellipsis.minWidth};
+	color: \${componentPagination.ellipsis.color};
 \`;
 
 const summaryStyles = \`
-	margin-left: \${p.summary.marginLeft};
-	color: \${p.summary.color};
-	font: \${p.summary.typography.font};
+	margin-left: \${componentPagination.summary.marginLeft};
+	color: \${componentPagination.summary.color};
+	font: \${componentPagination.summary.typography.font};
 \`;
 
 // keep the prev/next arrow glyphs at the small icon size
