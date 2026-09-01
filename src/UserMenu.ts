@@ -14,5 +14,6 @@
  * you don't need to install these.
  */
 export { UserMenu } from './components/UserMenu/UserMenu';
+export type { PartialUserMenuTheme as UserMenuTheme } from './components/UserMenu/theme';
 export { componentUserMenu } from './styleD/build/typescript/component/userMenu';
 export type { ComponentUserMenu } from './styleD/build/typescript/component/userMenu';

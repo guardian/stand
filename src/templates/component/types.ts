@@ -1,6 +1,7 @@
 import type { DefaultProps } from '../../util/types';
-import type { TemplateComponentTheme } from './styles';
+import type { PartialTemplateComponentTheme } from './styles';
 
-export type TemplateComponentProps = DefaultProps<TemplateComponentTheme> & {
-	message?: string;
-};
+export type TemplateComponentProps =
+	DefaultProps<PartialTemplateComponentTheme> & {
+		message?: string;
+	};

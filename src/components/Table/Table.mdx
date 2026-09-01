@@ -8,6 +8,8 @@ import TableStories, {
 	TooltipsInCells,
 	TwoColumnsOnMobile,
 } from './Table.stories';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
 
 <Meta of={TableStories} />
 
@@ -34,6 +36,8 @@ Do not use Table for a general page layout or a list with no meaningful column r
 See the `peerDependencies` section of `package.json` for compatible versions.
 
 ## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
 
 <Canvas of={Default} />
 
