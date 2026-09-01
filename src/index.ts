@@ -30,6 +30,8 @@ export { componentButtonGroup } from './styleD/build/typescript/component/button
 export type { ComponentButtonGroup } from './styleD/build/typescript/component/buttonGroup';
 export { componentCheckbox } from './styleD/build/typescript/component/checkbox';
 export type { ComponentCheckbox } from './styleD/build/typescript/component/checkbox';
+export { componentToggleSwitch } from './styleD/build/typescript/component/toggleSwitch';
+export type { ComponentToggleSwitch } from './styleD/build/typescript/component/toggleSwitch';
 export { componentFavicon } from './styleD/build/typescript/component/favicon';
 export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';
 export { componentDatePicker } from './styleD/build/typescript/component/datePicker';

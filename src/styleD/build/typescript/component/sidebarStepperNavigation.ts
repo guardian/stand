@@ -64,7 +64,7 @@ export const componentSidebarStepperNavigation = {
 	stepNumber: {
 		shared: {
 			height: '100%',
-			backgroundColor: '#005d8b',
+			backgroundColor: '#0072a9',
 			display: 'flex',
 			alignItems: 'center',
 			justifyContent: 'center',
