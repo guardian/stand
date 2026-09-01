@@ -14,7 +14,13 @@
  */
 export { Grid } from './components/Grid/Grid';
 export { Item } from './components/Grid/Grid';
-export type { GridProps, ItemProps } from './components/Grid/types';
+export type {
+	GridOffsetValue,
+	GridProps,
+	GridSizeValue,
+	ItemProps,
+	ResponsiveGridValue,
+} from './components/Grid/types';
 export type { PartialGridTheme as GridTheme } from './components/Grid/styles';
 export { componentGrid } from './styleD/build/typescript/component/grid';
 export type { ComponentGrid } from './styleD/build/typescript/component/grid';

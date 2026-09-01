@@ -21,6 +21,8 @@ jobs:
             run: pnpm tsc6
           - name: Lint
             run: pnpm lint
+          - name: Knip
+            run: pnpm knip
           - name: Format check
             run: pnpm format:check
           - name: Unit tests

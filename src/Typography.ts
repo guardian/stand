@@ -14,7 +14,11 @@
  * you don't need to install these.
  */
 export { Typography } from './components/Typography/Typography';
-export type { TypographyProps } from './components/Typography/types';
+export type {
+	TypographyElement,
+	TypographyProps,
+	TypographyVariant,
+} from './components/Typography/types';
 export type { PartialTypographyTheme as TypographyTheme } from './components/Typography/styles';
 export { componentTypography } from './styleD/build/typescript/component/typography';
 export type { ComponentTypography } from './styleD/build/typescript/component/typography';

@@ -1,12 +1,11 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
 import { componentUserMenu } from '../../styleD/build/typescript/component/userMenu';
 import { mergeDeep } from '../../util/mergeDeep';
-import type { DeepPartial } from '../../util/types';
+import type { PartialUserMenuTheme } from './theme';
 
 export const userMenuStyles = (
-	partialTheme: DeepPartial<ComponentUserMenu> = {},
+	partialTheme: PartialUserMenuTheme = {},
 ): SerializedStyles => {
 	const { container } = mergeDeep(componentUserMenu, partialTheme);
 
@@ -23,7 +22,7 @@ export const userMenuStyles = (
 };
 
 export const userMenuHeadingStyles = (
-	partialTheme: DeepPartial<ComponentUserMenu> = {},
+	partialTheme: PartialUserMenuTheme = {},
 ): SerializedStyles => {
 	const { heading } = mergeDeep(componentUserMenu, partialTheme);
 
@@ -39,7 +38,7 @@ export const userMenuHeadingStyles = (
 };
 
 export const toggleButtonStackedGroupStyles = (
-	partialTheme: DeepPartial<ComponentUserMenu> = {},
+	partialTheme: PartialUserMenuTheme = {},
 ): SerializedStyles => {
 	const { toggleButton } = mergeDeep(componentUserMenu, partialTheme);
 	return css`
@@ -50,7 +49,7 @@ export const toggleButtonStackedGroupStyles = (
 };
 
 export const radioGroupLabelStyles = (
-	partialTheme: DeepPartial<ComponentUserMenu> = {},
+	partialTheme: PartialUserMenuTheme = {},
 ): SerializedStyles => {
 	const { label } = mergeDeep(componentUserMenu, partialTheme);
 
@@ -66,7 +65,7 @@ export const radioGroupLabelStyles = (
 };
 
 export const toggleButtonRowsGroupStyles = (
-	partialTheme: DeepPartial<ComponentUserMenu> = {},
+	partialTheme: PartialUserMenuTheme = {},
 ): SerializedStyles => {
 	const { toggleButton } = mergeDeep(componentUserMenu, partialTheme);
 	return css`
@@ -79,7 +78,7 @@ export const toggleButtonRowsGroupStyles = (
 };
 
 export const toggleButtonStyles = (
-	partialTheme: DeepPartial<ComponentUserMenu> = {},
+	partialTheme: PartialUserMenuTheme = {},
 ): SerializedStyles => {
 	const { toggleButton } = mergeDeep(componentUserMenu, partialTheme);
 
