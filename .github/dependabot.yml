@@ -1,0 +1,48 @@
+version: 2
+updates:
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    rebase-strategy: 'auto'
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      time: '09:00'
+      day: 'monday'
+    open-pull-requests-limit: 10
+    rebase-strategy: 'auto'
+    groups:
+      eslint:
+        patterns:
+          - '*eslint*'
+      jest:
+        patterns:
+          - '*jest*'
+      storybook:
+        patterns:
+          - '@storybook*'
+          - 'storybook'
+      guardian:
+        patterns:
+          - '@guardian*'
+      tsdown:
+        patterns:
+          - '*tsdown*'
+    ignore:
+      # don't update peerDependencies - these should be updated manually when needed
+      # this list should be kept in sync with the peerDependencies in package.json
+      - dependency-name: '@emotion/react'
+      - dependency-name: '@guardian/prosemirror-invisibles'
+      - dependency-name: '@internationalized/date'
+      - dependency-name: prosemirror-dropcursor
+      - dependency-name: prosemirror-history
+      - dependency-name: prosemirror-keymap
+      - dependency-name: prosemirror-model
+      - dependency-name: prosemirror-state
+      - dependency-name: prosemirror-view
+      - dependency-name: react
+      - dependency-name: react-aria-components
+      - dependency-name: react-dom
+      - dependency-name: typescript
