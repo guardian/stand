@@ -1,6 +1,6 @@
 import type { CSSProperties, ReactNode } from 'react';
 import type { DefaultProps } from '../../util/types';
-import type { HtmlPreviewLoaderTheme } from './styles';
+import type { PartialHtmlPreviewLoaderTheme } from './styles';
 
 type CommonProps = {
 	minHeight?: number;
@@ -11,12 +11,13 @@ type CommonProps = {
 	allowReloading?: boolean;
 };
 
-export type HtmlPreviewLoaderProps = DefaultProps<HtmlPreviewLoaderTheme> &
-	CommonProps & {
-		fetchHtml: { (): Promise<string> };
-	};
+export type HtmlPreviewLoaderProps =
+	DefaultProps<PartialHtmlPreviewLoaderTheme> &
+		CommonProps & {
+			fetchHtml: { (): Promise<string> };
+		};
 
-export type HtmlPreviewProps = DefaultProps<HtmlPreviewLoaderTheme> &
+export type HtmlPreviewProps = DefaultProps<PartialHtmlPreviewLoaderTheme> &
 	CommonProps & {
 		html?: string;
 		isLoading?: boolean;
