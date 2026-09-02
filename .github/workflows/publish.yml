@@ -48,13 +48,11 @@ jobs:
           pnpm run build
 
       - name: Release
-        uses: changesets/action@6a0a831ff30acef54f2c6aa1cbbc1096b066edaf # v1.7.0
+        uses: changesets/action@8488615a623b1b9c987934bb89eae8af6a946ac1 # v2.1.1
         id: publish-canary
         with:
-          # currently, you have to tag releases in git to get the action output to appear
-          # https://github.com/changesets/action/issues/141
-          # publish: pnpm changeset publish --no-git-tag --tag canary
-          publish: pnpm changeset publish --tag canary
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          publish-script: pnpm changeset publish --tag canary
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -63,7 +61,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const publishedPackages = ${{ steps.publish-canary.outputs.publishedPackages }};
+            const publishedPackages = ${{ steps.publish-canary.outputs['published-packages'] }};
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
@@ -122,11 +120,24 @@ jobs:
           git config user.email "gu-changesets-release-pr[bot]@users.noreply.github.com"
       - name: Create Release Pull Request or Publish to npm
         id: changesets
-        uses: changesets/action@6a0a831ff30acef54f2c6aa1cbbc1096b066edaf # v1.7.0
+        uses: changesets/action@8488615a623b1b9c987934bb89eae8af6a946ac1 # v2.1.1
         with:
-          publish: pnpm changeset publish
-          title: '🦋 Release package updates'
-          commit: 'Bump package versions'
-          setupGitUser: false
+          github-token: ${{ steps.app-token.outputs.token }}
+          publish-script: pnpm changeset publish
+          pr-title: '🦋 Release package updates'
+          commit-message: 'Bump package versions'
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+
+      - name: Label release pull request
+        if: steps.changesets.outputs.pr-number != ''
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: Number('${{ steps.changesets.outputs.pr-number }}'),
+              labels: ['dependencies', 'run_chromatic'],
+            });
