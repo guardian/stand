@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.73
+
+### Patch Changes
+
+- e983622: Correcting exports for a number of components, non breaking
+- 59572c4: Add pagination component
+
 ## 0.0.72
 
 ### Patch Changes
