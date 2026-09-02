@@ -49,7 +49,7 @@ export const componentPagination = {
 		},
 		current: {
 			color: '#ffffff',
-			backgroundColor: '#005d8b',
+			backgroundColor: '#0072a9',
 			borderColor: '#0072a9',
 			typography: {
 				font: 'normal 700 0.875rem/1.15 Open Sans',
