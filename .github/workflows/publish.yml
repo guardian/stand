@@ -128,3 +128,16 @@ jobs:
           commit-message: 'Bump package versions'
         env:
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+
+      - name: Label release pull request
+        if: steps.changesets.outputs.pr-number != ''
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          github-token: ${{ steps.app-token.outputs.token }}
+          script: |
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: Number('${{ steps.changesets.outputs.pr-number }}'),
+              labels: ['dependencies', 'run_chromatic'],
+            });
