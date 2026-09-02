@@ -655,7 +655,7 @@
 		"@testing-library/jest-dom": "7.0.1",
 		"@tsdown/css": "0.22.14",
 		"@types/jest": "30.0.0",
-		"@types/node": "24.10.1",
+		"@types/node": "26.4.0",
 		"@types/react": "17.0.76",
 		"@types/react-dom": "17.0.25",
 		"@typescript/typescript6": "6.0.2",
