@@ -660,7 +660,7 @@
 		"@types/react-dom": "17.0.25",
 		"@typescript/typescript6": "6.0.2",
 		"change-case": "5.4.4",
-		"eslint": "9.39.3",
+		"eslint": "10.9.1",
 		"eslint-plugin-check-file": "3.3.2",
 		"eslint-plugin-storybook": "10.5.10",
 		"husky": "9.1.7",
