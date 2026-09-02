@@ -57,6 +57,16 @@
 				"default": "./dist/Badge.cjs"
 			}
 		},
+		"./Pagination": {
+			"import": {
+				"types": "./dist/Pagination.d.ts",
+				"default": "./dist/Pagination.js"
+			},
+			"require": {
+				"types": "./dist/Pagination.d.cts",
+				"default": "./dist/Pagination.cjs"
+			}
+		},
 		"./Button": {
 			"import": {
 				"types": "./dist/Button.d.ts",
@@ -441,6 +451,7 @@
 		"./component/userMenu.css": "./dist/styleD/build/css/component/userMenu.css",
 		"./component/avatar.css": "./dist/styleD/build/css/component/avatar.css",
 		"./component/badge.css": "./dist/styleD/build/css/component/badge.css",
+		"./component/pagination.css": "./dist/styleD/build/css/component/pagination.css",
 		"./component/button.css": "./dist/styleD/build/css/component/button.css",
 		"./component/buttonGroup.css": "./dist/styleD/build/css/component/buttonGroup.css",
 		"./component/typography.css": "./dist/styleD/build/css/component/typography.css",
@@ -486,6 +497,9 @@
 			],
 			"Badge": [
 				"./dist/Badge.d.ts"
+			],
+			"Pagination": [
+				"./dist/Pagination.d.ts"
 			],
 			"Button": [
 				"./dist/Button.d.ts"
