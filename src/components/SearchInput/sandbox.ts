@@ -28,19 +28,22 @@ export const Component = () => (
 			isDisabled
 			defaultValue="This search is disabled"
 		/>
+
+		<div>&nbsp;</div>
 	</>
 );
 `;
 
 // SearchInput - Custom component - CSS example
-// THIS CODE NEEDS TO BE UPDATED
 export const componentCss = /* css */ `
-/* import the search input, form, inline message styles */
+/* import the search input, form, inline message and icon styles */
 @import '@guardian/stand/component/inlineMessage.css';
 @import '@guardian/stand/component/form.css';
 @import '@guardian/stand/component/searchInput.css';
+@import '@guardian/stand/component/icon.css';
 
-/* inline message styles - error */
+/* inline message styles - for the error message */
+
 .stand-inline-message {
   display: var(--component-inline-message-shared-display);
   align-items: var(--component-inline-message-shared-align-items);
@@ -76,6 +79,8 @@ export const componentCss = /* css */ `
 	width: var(--component-form-input-shared-container-width);
 }
 
+/* form label styles */
+
 .stand-form-input-container > label {
 	color: var(--component-form-input-shared-label-color);
 	font: var(--component-form-input-md-label-typography-font);
@@ -87,20 +92,22 @@ export const componentCss = /* css */ `
 	color: var(--component-form-input-shared-label-disabled-color);
 }
 
-.stand-form-input-container > span.description {
+/* form description styles */
+
+.stand-form-input-container > div.description {
 	color: var(--component-form-input-shared-description-color);
 	font: var(--component-form-input-shared-description-typography-font);
 	letter-spacing: var(--component-form-input-shared-description-typography-letter-spacing);
 	font-variation-settings: "wdth" var(--component-form-input-shared-description-typography-font-width);
 }
 
-.stand-form-input-container[data-disabled] > span.description {
+.stand-form-input-container[data-disabled] > div.description {
 	color: var(--component-form-input-shared-description-disabled-color);
 }
 
 /* search input styles */
 
-.stand-search-input {
+.stand-search-field-container {
 	background-color: var(--component-search-input-shared-background-color);
 	border-radius: var(--component-search-input-shared-border-radius);
 	border: var(--component-search-input-shared-border);
@@ -113,25 +120,25 @@ export const componentCss = /* css */ `
 	padding-left: var(--component-search-input-shared-padding-left);
 }
 
-.stand-search-input[disabled] {
+.stand-search-field-container[disabled] {
 	background-color: var(--component-search-input-shared-disabled-background-color);
 	border: var(--component-search-input-shared-disabled-border);
 	color: var(--component-search-input-shared-disabled-color);
 	cursor: var(--component-search-input-shared-disabled-cursor);
 }
 
-.stand-search-input[data-invalid] {
+.stand-search-field-container[data-invalid] {
 	border: var(--component-search-input-shared-error-border);
 }
 
-.stand-search-input.md {
+.stand-search-field-container.md {
 	height: var(--component-search-input-md-height);
 	font: var(--component-search-input-md-typography-font);
 	letter-spacing: var(--component-search-input-md-typography-letter-spacing);
 	font-variation-settings: "wdth" var(--component-search-input-md-typography-font-width);
 }
 
-.stand-search-input.sm {
+.stand-search-field-container.sm {
 	height: var(--component-search-input-sm-height);
 	font: var(--component-search-input-sm-typography-font);
 	letter-spacing: var(--component-search-input-sm-typography-letter-spacing);
@@ -139,19 +146,33 @@ export const componentCss = /* css */ `
 }
 `;
 
-export const componentHtml = /* html */ `<div class="container flow-column">
-	<div class="stand-form-input-container md">
-		<label for="search-one">Search for</label>
-		<span class="description">This is a description for the search input.</span>
-		<input id="search-one" class="stand-search-input md" type="text" />
-	</div>
+export const componentHtml = /* html */ `
+<!--This code assumes we are using material-symbols icons -->
+<div class="container flow-column">
+  <div class="stand-form-input-container">
+    <label for="search-field-1">Label</label>
+    <div class="description">This is a description for the search input.</div>
+    <div class="stand-search-field-container md">
+      <span class="material-symbols search-icon" aria-hidden="true">Search</span>
+      <input 
+        type="search"
+        aria-invalid="true"
+        tabindex="0"
+        id="search-field-1"
+        data-invalid="true"
+        value="Pretend that this search term creates an error"
+      >
+    </div>
+    <div class="stand-inline-message stand-inline-message-error">
+      <span class="material-symbols warning-icon" aria-hidden="true">warning</span>
+      <span>This is an error message.</span>
+    </div>
+  </div>
 </div>
 `;
 
 // SearchInput - Custom component - JS example
 export const componentJs = /* javascript */ `
-// THIS CODE NEEDS TO BE UPDATED
-
 import { componentSearchInput, componentForm, componentInlineMessage } from "@guardian/stand";
 
 // example of creating a stylesheet in js
@@ -261,13 +282,27 @@ document.adoptedStyleSheets.push(sheet);
 // modify the dom with the search input components using the generated stylesheet
 document.getElementById("app").innerHTML = \`
 <div class="container flow-column">
-	<div class="js-stand-form-input-container md">
-		<label for="search-box">Search</label>
-		<span class="description">This is a description for the search input</span>
-		<div>
-			<input id="search-box" class="js-stand-search-input md" type="text" />
-		</div>
-	</div>
+  <div class="stand-form-input-container md">
+    <label for="search-field-1">Label</label>
+    <div class="description">This is a description for the search input.</div>
+    <div class="search-field-container">
+      <span class="material-symbols search-icon" aria-hidden="true">search</span>
+      <input 
+        type="search"
+        aria-invalid="true"
+        tabindex="0"
+        id="search-field-1"
+        data-invalid="true"
+        value="Pretend that this search term creates an error"
+      >
+    </div>
+    <span class="error-message">
+      <div class="error-message-container">
+        <span class="material-symbols warning-icon" aria-hidden="true">warning</span>
+        <span class="eror-message-details">This is an error message.</span>
+      </div>
+    </span>
+  </div>
 </div>
 \`;
 `;
