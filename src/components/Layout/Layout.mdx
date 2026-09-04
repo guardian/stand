@@ -8,6 +8,7 @@ import LayoutStories, {
 	TopBarWithCustomMainContent,
 	TopBarGridSidebarHiddenSm,
 	TopBarGridSidebarAboveGridSm,
+	SidebarStepperNavigationInLayout,
 } from './Layout.stories';
 import {
 	SandboxReact,
@@ -121,6 +122,26 @@ Use `Layout.Sidebar` to fill the sidebar region.
 
 `Layout.Sidebar` also forwards standard HTML attributes (for example `id`, `role`, `aria-*`, and `data-*`) to the rendered container.
 
+### Sidebar stepper navigation
+
+Use `SidebarStepperNavigation` as the child of `Layout.Sidebar` for multi-step workflows. Set `layoutSmBreakpoint="above-grid"` so the stepper's mobile disclosure remains available above the main content.
+
+```tsx
+import { Layout } from '@guardian/stand/Layout';
+import { SidebarStepperNavigation } from '@guardian/stand/SidebarStepperNavigation';
+
+<Layout>
+	<Layout.Sidebar layoutSmBreakpoint="above-grid">
+		<SidebarStepperNavigation
+			currentStepId="details"
+			stepNavConfig={stepNavConfig}
+			onPress={setCurrentStepId}
+		/>
+	</Layout.Sidebar>
+	<Layout.Main>{/* selected step content */}</Layout.Main>
+</Layout>;
+```
+
 ## Main Props
 
 Use `Layout.Main` for the primary page content region.
@@ -172,6 +193,12 @@ Use this when sidebar content is optional on small screens and surfaced elsewher
 Use this when sidebar content should remain visible on small screens but switch to a horizontal section.
 
 <Canvas of={TopBarGridSidebarAboveGridSm} />
+
+### Sidebar stepper navigation
+
+Use this for a multi-step workflow that needs sidebar navigation on desktop and a disclosure control above the main content on smaller screens.
+
+<Canvas of={SidebarStepperNavigationInLayout} />
 
 ### Alert banner, top bar, grid and sidebar layout with sidebar above the grid at sm breakpoint
 

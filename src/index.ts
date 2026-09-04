@@ -22,18 +22,26 @@ export type { ComponentIntendedAudienceSignifier } from './styleD/build/typescri
  */
 export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
+export { componentBadge } from './styleD/build/typescript/component/badge';
+export type { ComponentBadge } from './styleD/build/typescript/component/badge';
+export { componentPagination } from './styleD/build/typescript/component/pagination';
+export type { ComponentPagination } from './styleD/build/typescript/component/pagination';
 export { componentButton } from './styleD/build/typescript/component/button';
 export type { ComponentButton } from './styleD/build/typescript/component/button';
 export { componentButtonGroup } from './styleD/build/typescript/component/buttonGroup';
 export type { ComponentButtonGroup } from './styleD/build/typescript/component/buttonGroup';
 export { componentCheckbox } from './styleD/build/typescript/component/checkbox';
 export type { ComponentCheckbox } from './styleD/build/typescript/component/checkbox';
+export { componentToggleSwitch } from './styleD/build/typescript/component/toggleSwitch';
+export type { ComponentToggleSwitch } from './styleD/build/typescript/component/toggleSwitch';
 export { componentFavicon } from './styleD/build/typescript/component/favicon';
 export type { ComponentFavicon } from './styleD/build/typescript/component/favicon';
 export { componentDatePicker } from './styleD/build/typescript/component/datePicker';
 export type { ComponentDatePicker } from './styleD/build/typescript/component/datePicker';
 export { componentGrid } from './styleD/build/typescript/component/grid';
 export type { ComponentGrid } from './styleD/build/typescript/component/grid';
+export { componentTable } from './styleD/build/typescript/component/table';
+export type { ComponentTable } from './styleD/build/typescript/component/table';
 export { componentForm } from './styleD/build/typescript/component/form';
 export type { ComponentForm } from './styleD/build/typescript/component/form';
 export { componentIcon } from './styleD/build/typescript/component/icon';
@@ -68,6 +76,12 @@ export { componentTypography } from './styleD/build/typescript/component/typogra
 export type { ComponentTypography } from './styleD/build/typescript/component/typography';
 export { componentTabs } from './styleD/build/typescript/component/tabs';
 export type { ComponentTabs } from './styleD/build/typescript/component/tabs';
+export { componentUserFeedbackSummary } from './styleD/build/typescript/component/userFeedbackSummary';
+export type { ComponentUserFeedbackSummary } from './styleD/build/typescript/component/userFeedbackSummary';
+export { componentSidebarStepperNavigation } from './styleD/build/typescript/component/sidebarStepperNavigation';
+export type { ComponentSidebarStepperNavigation } from './styleD/build/typescript/component/sidebarStepperNavigation';
+export { componentTextListInput } from './styleD/build/typescript/component/textListInput';
+export type { ComponentTextListInput } from './styleD/build/typescript/component/textListInput';
 
 /**
  * style dictionary exports - base

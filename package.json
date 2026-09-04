@@ -1,6 +1,6 @@
 {
 	"name": "@guardian/stand",
-	"version": "0.0.63",
+	"version": "0.0.73",
 	"repository": {
 		"url": "https://github.com/guardian/stand"
 	},
@@ -45,6 +45,26 @@
 			"require": {
 				"types": "./dist/AvatarButton.d.cts",
 				"default": "./dist/AvatarButton.cjs"
+			}
+		},
+		"./Badge": {
+			"import": {
+				"types": "./dist/Badge.d.ts",
+				"default": "./dist/Badge.js"
+			},
+			"require": {
+				"types": "./dist/Badge.d.cts",
+				"default": "./dist/Badge.cjs"
+			}
+		},
+		"./Pagination": {
+			"import": {
+				"types": "./dist/Pagination.d.ts",
+				"default": "./dist/Pagination.js"
+			},
+			"require": {
+				"types": "./dist/Pagination.d.cts",
+				"default": "./dist/Pagination.cjs"
 			}
 		},
 		"./Button": {
@@ -217,6 +237,16 @@
 				"default": "./dist/Checkbox.cjs"
 			}
 		},
+		"./ToggleSwitch": {
+			"import": {
+				"types": "./dist/ToggleSwitch.d.ts",
+				"default": "./dist/ToggleSwitch.js"
+			},
+			"require": {
+				"types": "./dist/ToggleSwitch.d.cts",
+				"default": "./dist/ToggleSwitch.cjs"
+			}
+		},
 		"./TextArea": {
 			"import": {
 				"types": "./dist/TextArea.d.ts",
@@ -257,6 +287,16 @@
 				"default": "./dist/Grid.cjs"
 			}
 		},
+		"./Table": {
+			"import": {
+				"types": "./dist/Table.d.ts",
+				"default": "./dist/Table.js"
+			},
+			"require": {
+				"types": "./dist/Table.d.cts",
+				"default": "./dist/Table.cjs"
+			}
+		},
 		"./Byline": {
 			"import": {
 				"types": "./dist/Byline.d.ts",
@@ -275,6 +315,16 @@
 			"require": {
 				"types": "./dist/TagPicker.d.cts",
 				"default": "./dist/TagPicker.cjs"
+			}
+		},
+		"./SidebarStepperNavigation": {
+			"import": {
+				"types": "./dist/SidebarStepperNavigation.d.ts",
+				"default": "./dist/SidebarStepperNavigation.js"
+			},
+			"require": {
+				"types": "./dist/SidebarStepperNavigation.d.cts",
+				"default": "./dist/SidebarStepperNavigation.cjs"
 			}
 		},
 		"./UserMenu": {
@@ -357,6 +407,26 @@
 				"default": "./dist/Tooltip.cjs"
 			}
 		},
+		"./UserFeedbackSummary": {
+			"import": {
+				"types": "./dist/UserFeedbackSummary.d.ts",
+				"default": "./dist/UserFeedbackSummary.js"
+			},
+			"require": {
+				"types": "./dist/UserFeedbackSummary.d.cts",
+				"default": "./dist/UserFeedbackSummary.cjs"
+			}
+		},
+		"./TextListInput": {
+			"import": {
+				"types": "./dist/TextListInput.d.ts",
+				"default": "./dist/TextListInput.js"
+			},
+			"require": {
+				"types": "./dist/TextListInput.d.cts",
+				"default": "./dist/TextListInput.cjs"
+			}
+		},
 		"./utils": {
 			"import": {
 				"types": "./dist/utils.d.ts",
@@ -390,6 +460,8 @@
 		"./component/tagTable.css": "./dist/styleD/build/css/component/tagTable.css",
 		"./component/userMenu.css": "./dist/styleD/build/css/component/userMenu.css",
 		"./component/avatar.css": "./dist/styleD/build/css/component/avatar.css",
+		"./component/badge.css": "./dist/styleD/build/css/component/badge.css",
+		"./component/pagination.css": "./dist/styleD/build/css/component/pagination.css",
 		"./component/button.css": "./dist/styleD/build/css/component/button.css",
 		"./component/buttonGroup.css": "./dist/styleD/build/css/component/buttonGroup.css",
 		"./component/typography.css": "./dist/styleD/build/css/component/typography.css",
@@ -404,16 +476,21 @@
 		"./component/textInput.css": "./dist/styleD/build/css/component/textInput.css",
 		"./component/radioGroup.css": "./dist/styleD/build/css/component/radioGroup.css",
 		"./component/checkbox.css": "./dist/styleD/build/css/component/checkbox.css",
+		"./component/toggleSwitch.css": "./dist/styleD/build/css/component/toggleSwitch.css",
 		"./component/textArea.css": "./dist/styleD/build/css/component/textArea.css",
 		"./component/alertBanner.css": "./dist/styleD/build/css/component/alertBanner.css",
 		"./component/datePicker.css": "./dist/styleD/build/css/component/datePicker.css",
 		"./component/intendedAudienceSignifier.css": "./dist/styleD/build/css/component/intendedAudienceSignifier.css",
 		"./component/link.css": "./dist/styleD/build/css/component/link.css",
 		"./component/grid.css": "./dist/styleD/build/css/component/grid.css",
+		"./component/table.css": "./dist/styleD/build/css/component/table.css",
 		"./component/layout.css": "./dist/styleD/build/css/component/layout.css",
 		"./component/modal.css": "./dist/styleD/build/css/component/modal.css",
 		"./component/tabs.css": "./dist/styleD/build/css/component/tabs.css",
-		"./component/tooltip.css": "./dist/styleD/build/css/component/tooltip.css"
+		"./component/tooltip.css": "./dist/styleD/build/css/component/tooltip.css",
+		"./component/userFeedbackSummary.css": "./dist/styleD/build/css/component/userFeedbackSummary.css",
+		"./component/sidebarStepperNavigation.css": "./dist/styleD/build/css/component/sidebarStepperNavigation.css",
+		"./component/textListInput.css": "./dist/styleD/build/css/component/textListInput.css"
 	},
 	"main": "./dist/index.cjs",
 	"module": "./dist/index.js",
@@ -428,6 +505,12 @@
 			],
 			"AvatarLink": [
 				"./dist/AvatarLink.d.ts"
+			],
+			"Badge": [
+				"./dist/Badge.d.ts"
+			],
+			"Pagination": [
+				"./dist/Pagination.d.ts"
 			],
 			"Button": [
 				"./dist/Button.d.ts"
@@ -462,6 +545,9 @@
 			"TagPicker": [
 				"./dist/TagPicker.d.ts"
 			],
+			"SidebarStepperNavigation": [
+				"./dist/SidebarStepperNavigation.d.ts"
+			],
 			"UserMenu": [
 				"./dist/UserMenu.d.ts"
 			],
@@ -492,6 +578,9 @@
 			"Checkbox": [
 				"./dist/Checkbox.d.ts"
 			],
+			"ToggleSwitch": [
+				"./dist/ToggleSwitch.d.ts"
+			],
 			"TextArea": [
 				"./dist/TextArea.d.ts"
 			],
@@ -510,6 +599,9 @@
 			"Grid": [
 				"./dist/Grid.d.ts"
 			],
+			"Table": [
+				"./dist/Table.d.ts"
+			],
 			"Layout": [
 				"./dist/Layout.d.ts"
 			],
@@ -524,6 +616,12 @@
 			],
 			"Tooltip": [
 				"./dist/Tooltip.d.ts"
+			],
+			"UserFeedbackSummary": [
+				"./dist/UserFeedbackSummary.d.ts"
+			],
+			"TextListInput": [
+				"./dist/TextListInput.d.ts"
 			]
 		}
 	},
@@ -537,6 +635,7 @@
 		"create-component": "npx ts-node ./scripts/create-component.ts",
 		"format:check": "prettier --check .",
 		"format:fix": "prettier --write .",
+		"knip": "knip",
 		"lint": "eslint . --ext .ts,.tsx",
 		"lint:fix": "eslint --fix . --ext .ts,.tsx",
 		"lint:staged": "lint-staged",
@@ -546,60 +645,63 @@
 		"test:e2e": "playwright test -c playwright-ct.config.ts",
 		"test:react-matrix": "./scripts/test-deps-matrix.sh",
 		"test:setup-e2e": "playwright install --with-deps",
-		"tsc": "tsc"
+		"tsc": "tsc",
+		"tsc6": "tsc6"
 	},
 	"devDependencies": {
 		"@arethetypeswrong/core": "0.18.5",
-		"@changesets/cli": "2.31.1",
+		"@changesets/cli": "3.0.1",
 		"@codesandbox/sandpack-react": "2.20.0",
 		"@emotion/react": "11.11.4",
-		"@figma/rest-api-spec": "0.41.0",
-		"@guardian/eslint-config": "15.0.0",
-		"@guardian/prettier": "10.0.0",
+		"@figma/rest-api-spec": "0.42.0",
+		"@guardian/eslint-config": "16.0.0",
+		"@guardian/prettier": "11.0.0",
 		"@guardian/prosemirror-invisibles": "3.1.1",
-		"@guardian/tsconfig": "1.0.1",
+		"@guardian/tsconfig": "2.0.0",
 		"@internationalized/date": "3.12.1",
 		"@material-design-icons/svg": "0.14.15",
-		"@playwright/experimental-ct-react17": "1.61.1",
-		"@storybook/addon-a11y": "10.5.2",
-		"@storybook/addon-docs": "10.5.2",
-		"@storybook/addon-themes": "10.5.2",
-		"@storybook/react-vite": "10.5.2",
-		"@testing-library/jest-dom": "6.9.1",
-		"@tsdown/css": "0.22.9",
+		"@playwright/experimental-ct-react17": "1.62.1",
+		"@storybook/addon-a11y": "10.5.10",
+		"@storybook/addon-docs": "10.5.10",
+		"@storybook/addon-themes": "10.5.10",
+		"@storybook/react-vite": "10.5.10",
+		"@testing-library/dom": "^10.4.1",
+		"@testing-library/jest-dom": "7.0.1",
+		"@tsdown/css": "0.22.14",
 		"@types/jest": "30.0.0",
 		"@types/node": "24.10.1",
 		"@types/react": "17.0.76",
 		"@types/react-dom": "17.0.25",
+		"@typescript/typescript6": "6.0.2",
 		"change-case": "5.4.4",
 		"eslint": "9.39.3",
 		"eslint-plugin-check-file": "3.3.2",
-		"eslint-plugin-storybook": "10.5.2",
+		"eslint-plugin-storybook": "10.5.10",
 		"husky": "9.1.7",
-		"jest": "30.4.2",
-		"jest-environment-jsdom": "30.4.1",
-		"lint-staged": "17.1.0",
-		"prettier": "3.9.5",
+		"jest": "30.5.0",
+		"jest-environment-jsdom": "30.5.0",
+		"knip": "^6.33.0",
+		"lint-staged": "17.4.1",
+		"prettier": "3.9.6",
 		"prosemirror-dropcursor": "1.8.2",
 		"prosemirror-history": "1.4.1",
 		"prosemirror-keymap": "1.2.2",
 		"prosemirror-model": "1.25.0",
 		"prosemirror-state": "1.4.3",
 		"prosemirror-view": "1.37.2",
-		"publint": "0.3.21",
+		"publint": "0.3.24",
 		"react": "17.0.2",
 		"react-aria-components": "1.14.0",
 		"react-dom": "17.0.2",
 		"remark-gfm": "4.0.1",
-		"rimraf": "6.1.3",
 		"sort-package-json": "4.0.0",
-		"storybook": "10.5.2",
-		"style-dictionary": "5.5.0",
-		"ts-jest": "29.4.11",
-		"tsdown": "0.22.9",
+		"storybook": "10.5.10",
+		"style-dictionary": "5.5.2",
+		"ts-jest": "29.4.12",
+		"tsdown": "0.22.14",
 		"tslib": "2.8.1",
 		"typescript": "5.1.3",
-		"vite": "8.1.5",
+		"vite": "8.2.2",
 		"vite-plugin-svgr": "5.2.0"
 	},
 	"peerDependencies": {
@@ -613,9 +715,9 @@
 		"prosemirror-state": "^1.4.3",
 		"prosemirror-view": "^1.37.2",
 		"react": "^17.0.2 || ^18.0.0 || ^19.0.0",
-		"react-aria-components": ">= 1.14.0 <= 1.19.0",
+		"react-aria-components": ">= 1.14.0 <= 1.20.0",
 		"react-dom": "^17.0.2 || ^18.0.0 || ^19.0.0",
-		"typescript": ">=5.0.0 <=5.9.3"
+		"typescript": ">=5.0.0 <7.0.0"
 	},
 	"peerDependenciesMeta": {
 		"@emotion/react": {
@@ -658,7 +760,7 @@
 			"optional": true
 		}
 	},
-	"packageManager": "pnpm@11.15.1+sha512.81350b07e53c9538a02f1f2303b4290fa2d7be04e56e2a970c4cc4b417dc761de196edabd49d55c7dc9580db81007c44143e4e3d7e462b3000d23c255122d065",
+	"packageManager": "pnpm@11.21.0+sha512.521705bce689924eac72f5a3587122f362689ef6571e55ba80076fd637c11132ecffada26fad4ea79c485bfddbfd3d5a2a5b05805a77e893de71ec8a6cca3bb1",
 	"//exports": "Each component has its own entry point for optimal tree-shaking. Main entry point only includes design tokens and utilities. New components/foundations should follow the same pattern.",
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here."
 }

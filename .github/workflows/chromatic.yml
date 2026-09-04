@@ -21,7 +21,7 @@ jobs:
     if: contains(github.event.pull_request.labels.*.name, 'run_chromatic')  ||  github.ref == 'refs/heads/main'
 
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
           # See https://www.chromatic.com/docs/github-actions/#recommended-configuration-for-build-events
@@ -31,9 +31,9 @@ jobs:
           CHROMATIC_SHA: ${{ github.event.pull_request.head.sha || github.ref }}
           CHROMATIC_SLUG: ${{ github.repository }}
       - name: Setup pnpm - Stand Component Library
-        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6.0.10
       - name: Setup Node.js - Stand Component Library
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version-file: '.nvmrc'
           cache: pnpm
@@ -45,7 +45,7 @@ jobs:
           pnpm run build-storybook
 
       - name: Chromatic - Stand Component Library
-        uses: chromaui/action@93712e37669f856c4828136f9cb535dbfa60b50c # v15.1.1
+        uses: chromaui/action@2a0b63f30233c48591844a46d451b9cf68128186 # v18.7.2
         with:
           projectToken: ${{ secrets.STAND_CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
