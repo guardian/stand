@@ -69,16 +69,22 @@ export const tileContentStyles = (
 	flex: 1;
 `;
 
-export const tileTextStyles = (): SerializedStyles => css`
+export const tileTextStyles = (theme: TileTheme): SerializedStyles => css`
+	color: ${theme.shared.color};
 	display: flex;
 	align-items: center;
 	min-width: 0;
 	gap: 0.5rem;
 `;
 
-export const tileTitleStyles = (): SerializedStyles => css`
+export const tileTitleStyles = (theme: TileTheme): SerializedStyles => css`
 	display: block;
 	line-height: 1.2;
+	color: ${theme.shared.color};
+
+	[data-disabled] & {
+		color: ${theme.shared.disabled.color};
+	}
 `;
 
 export const tileDescriptionStyles = (
@@ -89,11 +95,15 @@ export const tileDescriptionStyles = (
 	line-height: 1.2;
 	min-width: 0;
 	flex: 1;
+
+	[data-disabled] & {
+		color: ${theme.shared.disabled.color};
+	}
 `;
 
 export const tileBottomRowStyles = (): SerializedStyles => css`
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	justify-content: space-between;
 	gap: 0.5rem;
 	min-width: 0;
@@ -103,10 +113,18 @@ export const tileArrowStyles = (theme: TileTheme): SerializedStyles => css`
 	color: ${theme.shared.arrowColor};
 	flex-shrink: 0;
 	margin-left: auto;
+
+	[data-disabled] & {
+		color: ${theme.shared.disabled.color};
+	}
 `;
 
 export const tileIconStyles = (theme: TileTheme): SerializedStyles => css`
-	color: ${theme.shared.arrowColor};
+	color: ${theme.shared.color};
 	flex-shrink: 0;
-	margin-left: 0.5rem;
+	margin-right: 0.25rem;
+
+	[data-disabled] & {
+		color: ${theme.shared.disabled.color};
+	}
 `;

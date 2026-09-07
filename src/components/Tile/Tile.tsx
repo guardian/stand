@@ -8,6 +8,7 @@ import {
 	tileBottomRowStyles,
 	tileContentStyles,
 	tileDescriptionStyles,
+	tileIconStyles,
 	tileStyles,
 	tileTextStyles,
 	tileTitleStyles,
@@ -34,9 +35,17 @@ export function Tile({
 			css={[tileStyles(mergedTheme, { size }), cssOverrides]}
 		>
 			<div css={tileContentStyles(mergedTheme, { size })}>
-				<div css={tileTextStyles()}>
-					{icon && <Icon size={size}>{icon}</Icon>}
-					<Typography variant={typography} cssOverrides={tileTitleStyles()}>
+				<div css={tileTextStyles(mergedTheme)}>
+					{icon && (
+						<Icon size={size} cssOverrides={tileIconStyles(mergedTheme)}>
+							{icon}
+						</Icon>
+					)}
+					<Typography
+						variant={typography}
+						theme={{ color: mergedTheme.shared.color }}
+						cssOverrides={tileTitleStyles(mergedTheme)}
+					>
 						{children}
 					</Typography>
 				</div>

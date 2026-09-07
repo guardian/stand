@@ -40,6 +40,29 @@ export const ExtraSmall = {
 	},
 } satisfies Story;
 
+export const AllSizes = {
+	render: () => (
+		<div
+			css={css`
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+				max-width: 48rem;
+			`}
+		>
+			<Tile href="#" description="Extra small" size="xs">
+				XSmall
+			</Tile>
+			<Tile href="#" description="Small" size="sm">
+				Small
+			</Tile>
+			<Tile href="#" description="Medium" size="md">
+				Medium
+			</Tile>
+		</div>
+	),
+} satisfies Story;
+
 export const WithCustomIcon = {
 	args: {
 		href: '#',
@@ -65,25 +88,22 @@ export const WithDifferentBackgroundColor = {
 	},
 } satisfies Story;
 
-export const AllSizes = {
-	render: () => (
-		<div
-			css={css`
-				display: flex;
-				flex-direction: column;
-				gap: 1rem;
-				max-width: 48rem;
-			`}
-		>
-			<Tile href="#" description="Extra small" size="xs">
-				XSmall
-			</Tile>
-			<Tile href="#" description="Small" size="sm">
-				Small
-			</Tile>
-			<Tile href="#" description="Medium" size="md">
-				Medium
-			</Tile>
-		</div>
-	),
+export const WithALinkAdded = {
+	args: {
+		href: 'https://www.guardian.co.uk',
+		children: 'Title text with a link',
+		description: 'Description text with a link',
+		size: 'md',
+	},
+} satisfies Story;
+
+export const IsTileDisabled = {
+	args: {
+		href: '#',
+		children: 'Title text',
+		description: 'Description text',
+		icon: 'mail',
+		size: 'md',
+		isDisabled: true,
+	},
 } satisfies Story;
