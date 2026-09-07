@@ -636,7 +636,7 @@
 	},
 	"devDependencies": {
 		"@arethetypeswrong/core": "0.18.5",
-		"@changesets/cli": "3.0.1",
+		"@changesets/cli": "3.0.2",
 		"@codesandbox/sandpack-react": "2.20.0",
 		"@emotion/react": "11.11.4",
 		"@figma/rest-api-spec": "0.42.0",
