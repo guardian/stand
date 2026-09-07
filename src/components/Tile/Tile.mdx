@@ -1,0 +1,152 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import TileStories, {
+	Default,
+	WithCustomIcon,
+	RowLayout,
+} from './Tile.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={TileStories} />
+
+# Tile
+
+A clickable card-style link for navigation to related destinations. It includes a leading icon, title text, optional description, and a trailing arrow. The component is built with [React Aria Link](https://react-aria.adobe.com/Link).
+
+## When to use
+
+- To present link destinations with richer context than a plain text link
+- To display tile grids/lists of related pages or actions
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Tile } from '@guardian/stand/Tile';
+
+/* types, if required */
+import type {
+	TileProps,
+	TileTheme,
+} from '@guardian/stand/Tile';
+
+<Tile href="#" description="Description text">
+	Title text
+</Tile>
+
+<Tile href="#" icon="workspaces" size="sm">
+	Workspace
+</Tile>
+```
+
+## Props
+
+| Name           | Type                                                            | Required | Default             | Description                                                                                                                                                                                                                               |
+| -------------- | --------------------------------------------------------------- | -------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`     | `React.ReactNode`                                               | No       | N/A                 | Tile title/content rendered in the main text area.                                                                                                                                                                                        |
+| `description`  | `React.ReactNode`                                               | No       | N/A                 | Optional supporting text shown below the title.                                                                                                                                                                                           |
+| `icon`         | `IconProps['symbol'] \| Exclude<IconProps['children'], string>` | No       | `'account_balance'` | Leading icon shown before the title. Accepts a Material Symbol name or non-string React node (for example an SVG). See [Installing Icons](/docs/stand-tools-design-system-components-icon--docs#installing-icons) for icon setup details. |
+| `size`         | `'sm' \| 'md'`                                                  | No       | `'md'`              | Controls tile height, spacing, and typography scale.                                                                                                                                                                                      |
+| `theme`        | `TileTheme` (partial)                                           | No       | N/A                 | Override component tokens for this instance.                                                                                                                                                                                              |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]`                        | No       | N/A                 | Additional Emotion styles for low-level visual adjustments.                                                                                                                                                                               |
+| `className`    | `string`                                                        | No       | N/A                 | Optional class name forwarded to the root React Aria link.                                                                                                                                                                                |
+| `...props`     | `React Aria Link` props                                         | No       | N/A                 | Supports link props such as `href`, `target`, `rel`, `isDisabled`, and event handlers. See [React Aria Link API](https://react-aria.adobe.com/Link#api).                                                                                  |
+
+## Stories
+
+### Default
+
+<Canvas layout="padded" of={Default} />
+
+### With custom icon
+
+<Canvas layout="padded" of={WithCustomIcon} />
+
+### Row layout
+
+<Canvas layout="padded" of={RowLayout} />
+
+## Customisation
+
+Use `theme` for token-level updates and `cssOverrides` for one-off styles.
+
+```tsx
+import { css } from '@emotion/react';
+import { Tile } from '@guardian/stand/Tile';
+import type { TileTheme } from '@guardian/stand/Tile';
+
+const customTheme: Partial<TileTheme> = {
+	shared: {
+		borderColor: '#bdbdbd',
+		hover: {
+			backgroundColor: '#ededed',
+			borderColor: '#999999',
+		},
+	},
+};
+
+const customStyles = css`
+	width: 100%;
+	max-width: 28rem;
+`;
+
+const Component = () => (
+	<Tile
+		href="#"
+	>
+		Title text
+	</Tile>
+
+	<Tile
+		href="#"
+		description="Description text"
+		theme={customTheme}
+		cssOverrides={customStyles}
+	>
+		Title text
+	</Tile>
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom Tile component using the styles defined in the `TileTheme` type.
+
+**`css`**
+
+You can import Tile styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentTile` variable and the `ComponentTile` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />

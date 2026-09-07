@@ -247,6 +247,16 @@
 				"default": "./dist/TextArea.cjs"
 			}
 		},
+		"./Tile": {
+			"import": {
+				"types": "./dist/Tile.d.ts",
+				"default": "./dist/Tile.js"
+			},
+			"require": {
+				"types": "./dist/Tile.d.cts",
+				"default": "./dist/Tile.cjs"
+			}
+		},
 		"./AlertBanner": {
 			"import": {
 				"types": "./dist/AlertBanner.d.ts",
@@ -569,6 +579,9 @@
 			],
 			"TextArea": [
 				"./dist/TextArea.d.ts"
+			],
+			"Tile": [
+				"./dist/Tile.d.ts"
 			],
 			"AlertBanner": [
 				"./dist/AlertBanner.d.ts"
