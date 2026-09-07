@@ -32,6 +32,8 @@ export const tileStyles = (
 	width: ${theme[size].width};
 	max-width: ${theme.shared.maxWidth};
 	box-sizing: border-box;
+	font: inherit;
+	text-align: left;
 
 	&[data-hovered] {
 		background-color: ${theme.shared.hover.backgroundColor};
@@ -39,6 +41,11 @@ export const tileStyles = (
 	}
 
 	&[data-pressed] {
+		background-color: ${theme.shared.pressed.backgroundColor};
+		border-color: ${theme.shared.pressed.borderColor};
+	}
+
+	&[data-selected] {
 		background-color: ${theme.shared.pressed.backgroundColor};
 		border-color: ${theme.shared.pressed.borderColor};
 	}

@@ -1,8 +1,9 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import TileStories, {
-	Default,
+	DefaultMedium,
+	Selectable,
+	MultiSelect,
 	WithCustomIcon,
-	RowLayout,
 } from './Tile.stories';
 import {
 	SandboxReact,
@@ -21,12 +22,13 @@ import {
 
 # Tile
 
-A clickable card-style link for navigation to related destinations. It includes a leading icon, title text, optional description, and a trailing arrow. The component is built with [React Aria Link](https://react-aria.adobe.com/Link).
+A card-style control with clickable, single-select, and multi-select modes. It includes a leading icon, title text, optional description, and a mode-specific trailing indicator. The component uses [React Aria Link](https://react-aria.adobe.com/Link) and [Button](https://react-aria.adobe.com/Button).
 
 ## When to use
 
 - To present link destinations with richer context than a plain text link
-- To display tile grids/lists of related pages or actions
+- To present an action as a prominent tile
+- To let users choose one or more options from a collection of tiles
 
 ## Peer dependencies
 
@@ -45,49 +47,69 @@ See [custom component build](#custom-component-build) for usage without React/Em
 <SandboxReact componentName={componentName} componentTsx={componentTsx} />
 
 ```tsx
+import { useState } from 'react';
 import { Tile } from '@guardian/stand/Tile';
 
 /* types, if required */
-import type {
-	TileProps,
-	TileTheme,
-} from '@guardian/stand/Tile';
+import type { TileProps, TileTheme } from '@guardian/stand/Tile';
 
-<Tile href="#" description="Description text">
-	Title text
-</Tile>
+const Example = () => {
+	const [selected, setSelected] = useState(false);
 
-<Tile href="#" icon="workspaces" size="sm">
-	Workspace
-</Tile>
+	return (
+		<>
+			<Tile href="#" description="Description text">
+				Title text
+			</Tile>
+
+			<Tile
+				interactionMode="multi-select"
+				value="news"
+				isSelected={selected}
+				onSelectionChange={(_value, isSelected) => setSelected(isSelected)}
+			>
+				News
+			</Tile>
+		</>
+	);
+};
 ```
 
 ## Props
 
-| Name           | Type                                                            | Required | Default             | Description                                                                                                                                                                                                                               |
-| -------------- | --------------------------------------------------------------- | -------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `children`     | `React.ReactNode`                                               | No       | N/A                 | Tile title/content rendered in the main text area.                                                                                                                                                                                        |
-| `description`  | `React.ReactNode`                                               | No       | N/A                 | Optional supporting text shown below the title.                                                                                                                                                                                           |
-| `icon`         | `IconProps['symbol'] \| Exclude<IconProps['children'], string>` | No       | `'account_balance'` | Leading icon shown before the title. Accepts a Material Symbol name or non-string React node (for example an SVG). See [Installing Icons](/docs/stand-tools-design-system-components-icon--docs#installing-icons) for icon setup details. |
-| `size`         | `'sm' \| 'md'`                                                  | No       | `'md'`              | Controls tile height, spacing, and typography scale.                                                                                                                                                                                      |
-| `theme`        | `TileTheme` (partial)                                           | No       | N/A                 | Override component tokens for this instance.                                                                                                                                                                                              |
-| `cssOverrides` | `SerializedStyles \| SerializedStyles[]`                        | No       | N/A                 | Additional Emotion styles for low-level visual adjustments.                                                                                                                                                                               |
-| `className`    | `string`                                                        | No       | N/A                 | Optional class name forwarded to the root React Aria link.                                                                                                                                                                                |
-| `...props`     | `React Aria Link` props                                         | No       | N/A                 | Supports link props such as `href`, `target`, `rel`, `isDisabled`, and event handlers. See [React Aria Link API](https://react-aria.adobe.com/Link#api).                                                                                  |
+| Name                | Type                                                                    | Required    | Default             | Description                                                                                                                                                                                                                               |
+| ------------------- | ----------------------------------------------------------------------- | ----------- | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `interactionMode`   | `'clickable' \| 'selectable' \| 'multi-select'`                         | No          | `'clickable'`       | Determines whether the tile navigates/performs an action or participates in selection.                                                                                                                                                    |
+| `href`              | `string`                                                                | Conditional | N/A                 | Required when a clickable tile uses the default link element.                                                                                                                                                                             |
+| `children`          | `React.ReactNode`                                                       | No          | N/A                 | Tile title/content rendered in the main text area.                                                                                                                                                                                        |
+| `description`       | `React.ReactNode`                                                       | No          | N/A                 | Optional supporting text shown below the title.                                                                                                                                                                                           |
+| `icon`              | `IconProps['symbol'] \| Exclude<IconProps['children'], string>`         | No          | `'account_balance'` | Leading icon shown before the title. Accepts a Material Symbol name or non-string React node (for example an SVG). See [Installing Icons](/docs/stand-tools-design-system-components-icon--docs#installing-icons) for icon setup details. |
+| `size`              | `'xs' \| 'sm' \| 'md'`                                                  | No          | `'md'`              | Controls tile dimensions and spacing.                                                                                                                                                                                                     |
+| `value`             | `string`                                                                | Conditional | N/A                 | Required for selectable and multi-select tiles. Identifies the selected option.                                                                                                                                                           |
+| `isSelected`        | `boolean`                                                               | Conditional | N/A                 | Required for selectable and multi-select tiles. The controlled selected state.                                                                                                                                                            |
+| `onSelectionChange` | `(value: string) => void \| (value: string, selected: boolean) => void` | Conditional | N/A                 | Required in selection modes. Multi-select mode also supplies the next selected state.                                                                                                                                                     |
+| `theme`             | `TileTheme` (partial)                                                   | No          | N/A                 | Override component tokens for this instance.                                                                                                                                                                                              |
+| `cssOverrides`      | `SerializedStyles \| SerializedStyles[]`                                | No          | N/A                 | Additional Emotion styles for low-level visual adjustments.                                                                                                                                                                               |
+| `className`         | `string`                                                                | No          | N/A                 | Optional class name forwarded to the root React Aria control.                                                                                                                                                                             |
+| `...props`          | React Aria `Link` or `Button` props                                     | No          | N/A                 | Props depend on the selected mode. See the React Aria [Link](https://react-aria.adobe.com/Link#api) and [Button](https://react-aria.adobe.com/Button#api) APIs.                                                                           |
 
 ## Stories
 
 ### Default
 
-<Canvas layout="padded" of={Default} />
+<Canvas layout="padded" of={DefaultMedium} />
 
 ### With custom icon
 
 <Canvas layout="padded" of={WithCustomIcon} />
 
-### Row layout
+### Selectable
 
-<Canvas layout="padded" of={RowLayout} />
+<Canvas layout="padded" of={Selectable} />
+
+### Multi-select
+
+<Canvas layout="padded" of={MultiSelect} />
 
 ## Customisation
 
