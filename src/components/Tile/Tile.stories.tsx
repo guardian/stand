@@ -12,11 +12,30 @@ type Story = StoryObj<typeof Tile>;
 
 export default meta;
 
-export const Default = {
+export const DefaultMedium = {
 	args: {
 		href: '#',
 		children: 'Title text',
 		description: 'Description text',
+		size: 'md',
+	},
+} satisfies Story;
+
+export const Small = {
+	args: {
+		href: '#',
+		children: 'Title text',
+		description: 'Description text',
+		size: 'sm',
+	},
+} satisfies Story;
+
+export const ExtraSmall = {
+	args: {
+		href: '#',
+		children: 'Title text',
+		description: 'Description text',
+		size: 'xs',
 	},
 } satisfies Story;
 
@@ -26,23 +45,29 @@ export const WithCustomIcon = {
 		children: 'Title text',
 		description: 'Description text',
 		icon: 'mail',
+		size: 'md',
 	},
 } satisfies Story;
 
-export const RowLayout = {
+export const AllSizes = {
 	render: () => (
 		<div
 			css={css`
 				display: flex;
-				gap: 0.25rem;
+				flex-direction: column;
+				gap: 1rem;
 				max-width: 48rem;
 			`}
 		>
-			{Array.from({ length: 3 }).map((_, index) => (
-				<Tile key={index} href="#" description="Description text">
-					Title text
-				</Tile>
-			))}
+			<Tile href="#" description="Extra small" size="xs">
+				XSmall
+			</Tile>
+			<Tile href="#" description="Small" size="sm">
+				Small
+			</Tile>
+			<Tile href="#" description="Medium" size="md">
+				Medium
+			</Tile>
 		</div>
 	),
 } satisfies Story;

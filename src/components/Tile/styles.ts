@@ -29,7 +29,7 @@ export const tileStyles = (
 	color: ${theme.shared.color};
 	text-decoration: ${theme.shared.textDecoration};
 	cursor: ${theme.shared.cursor};
-	width: ${theme.shared.width};
+	width: ${theme[size].width};
 	max-width: ${theme.shared.maxWidth};
 	box-sizing: border-box;
 
@@ -61,10 +61,12 @@ export const tileContentStyles = (
 	{ size }: { size: TileSize },
 ): SerializedStyles => css`
 	display: flex;
+	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
 	gap: ${theme[size].gap};
 	min-width: 0;
+	flex: 1;
 `;
 
 export const tileTextStyles = (): SerializedStyles => css`
@@ -90,4 +92,10 @@ export const tileDescriptionStyles = (
 export const tileArrowStyles = (theme: TileTheme): SerializedStyles => css`
 	color: ${theme.shared.arrowColor};
 	flex-shrink: 0;
+`;
+
+export const tileIconStyles = (theme: TileTheme): SerializedStyles => css`
+	color: ${theme.shared.arrowColor};
+	flex-shrink: 0;
+	margin-left: 0.5rem;
 `;

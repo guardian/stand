@@ -26,8 +26,6 @@ export function Tile({
 	...props
 }: TileProps) {
 	const mergedTheme = mergeDeep(defaultTileTheme, theme);
-	const iconSize = size === 'sm' ? 'sm' : size;
-
 	return (
 		<ReactAriaLink
 			{...props}
@@ -36,7 +34,7 @@ export function Tile({
 		>
 			<div css={tileContentStyles(mergedTheme, { size })}>
 				<div css={tileTextStyles()}>
-					{icon && <Icon size={iconSize}>{icon}</Icon>}
+					{icon && <Icon size={size}>{icon}</Icon>}
 					<Typography variant={typography} cssOverrides={tileTitleStyles()}>
 						{children}
 					</Typography>
@@ -44,7 +42,7 @@ export function Tile({
 
 				<Icon
 					symbol="arrow_forward"
-					size={iconSize}
+					size={size}
 					cssOverrides={tileArrowStyles(mergedTheme)}
 				/>
 			</div>
