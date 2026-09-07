@@ -64,6 +64,15 @@ export const AllSizes = {
 	),
 } satisfies Story;
 
+export const WithoutDescription = {
+	args: {
+		href: '#',
+		children: 'Title text only,no description',
+		icon: 'owl',
+		size: 'md',
+	},
+} satisfies Story;
+
 export const WithCustomIcon = {
 	args: {
 		href: '#',
@@ -129,6 +138,7 @@ function SelectableExample() {
 					isSelected={selectedValue === value}
 					onSelectionChange={setSelectedValue}
 					description={`Select the ${value} option`}
+					icon={value === 'editorial' ? 'editor_choice' : 'business_center'}
 				>
 					{value === 'editorial' ? 'Editorial' : 'Commercial'}
 				</Tile>
@@ -177,6 +187,7 @@ function MultiSelectExample() {
 						});
 					}}
 					description={`Include ${value}`}
+					icon={value === 'news' ? 'breaking_news' : 'sports_football'}
 				>
 					{value === 'news' ? 'News' : 'Sport'}
 				</Tile>

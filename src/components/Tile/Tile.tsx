@@ -67,6 +67,7 @@ function TileContent({
 	theme,
 }: TileContentProps) {
 	const indicator = getTileIndicator(interactionMode, isSelected);
+	const hasDescription = Boolean(description);
 
 	return (
 		<>
@@ -85,24 +86,35 @@ function TileContent({
 						{children}
 					</Typography>
 				</div>
+				{interactionMode !== 'clickable' && (
+					<Icon
+						symbol={indicator}
+						size={size}
+						cssOverrides={tileArrowStyles(theme)}
+					/>
+				)}
 			</div>
 
-			<div css={tileBottomRowStyles()}>
-				{description && (
-					<Typography
-						variant={descriptionTypography}
-						theme={{ color: theme.shared.descriptionColor }}
-						cssOverrides={tileDescriptionStyles(theme)}
-					>
-						{description}
-					</Typography>
-				)}
-				<Icon
-					symbol={indicator}
-					size={size}
-					cssOverrides={tileArrowStyles(theme)}
-				/>
-			</div>
+			{(hasDescription || interactionMode === 'clickable') && (
+				<div css={tileBottomRowStyles()}>
+					{description && (
+						<Typography
+							variant={descriptionTypography}
+							theme={{ color: theme.shared.descriptionColor }}
+							cssOverrides={tileDescriptionStyles(theme)}
+						>
+							{description}
+						</Typography>
+					)}
+					{interactionMode === 'clickable' && (
+						<Icon
+							symbol={indicator}
+							size={size}
+							cssOverrides={tileArrowStyles(theme)}
+						/>
+					)}
+				</div>
+			)}
 		</>
 	);
 }
