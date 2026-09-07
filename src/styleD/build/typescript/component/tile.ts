@@ -23,17 +23,17 @@ export const componentTile = {
 			outlineOffset: '2px',
 		},
 		hover: {
-			backgroundColor: '#f5f5f5',
-			borderColor: '#b3b3b3',
+			backgroundColor: '#f6f6f6',
+			borderColor: '#8d8d8d',
 		},
 		pressed: {
-			backgroundColor: '#e8e8e8',
-			borderColor: '#808080',
+			backgroundColor: '#ededed',
+			borderColor: '#8d8d8d',
 		},
 		disabled: {
-			backgroundColor: '#f5f5f5',
+			backgroundColor: '#ffffff',
 			color: '#999999',
-			borderColor: '#d8d8d8',
+			borderColor: '#dcdcdc',
 			cursor: 'not-allowed',
 		},
 	},

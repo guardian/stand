@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { Tile } from './Tile';
 
 const meta = {
@@ -46,6 +47,21 @@ export const WithCustomIcon = {
 		description: 'Description text',
 		icon: 'mail',
 		size: 'md',
+	},
+} satisfies Story;
+
+export const WithDifferentBackgroundColor = {
+	args: {
+		href: '#',
+		children: 'Title text',
+		description: 'Description text',
+		icon: 'mail',
+		size: 'md',
+		theme: {
+			shared: {
+				backgroundColor: baseColors.magenta[900],
+			},
+		},
 	},
 } satisfies Story;
 

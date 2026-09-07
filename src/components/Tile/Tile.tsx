@@ -5,6 +5,7 @@ import { Typography } from '../Typography/Typography';
 import {
 	defaultTileTheme,
 	tileArrowStyles,
+	tileBottomRowStyles,
 	tileContentStyles,
 	tileDescriptionStyles,
 	tileStyles,
@@ -39,23 +40,24 @@ export function Tile({
 						{children}
 					</Typography>
 				</div>
+			</div>
 
+			<div css={tileBottomRowStyles()}>
+				{description && (
+					<Typography
+						variant={descriptionTypography}
+						theme={{ color: mergedTheme.shared.descriptionColor }}
+						cssOverrides={tileDescriptionStyles(mergedTheme)}
+					>
+						{description}
+					</Typography>
+				)}
 				<Icon
 					symbol="arrow_forward"
 					size={size}
 					cssOverrides={tileArrowStyles(mergedTheme)}
 				/>
 			</div>
-
-			{description && (
-				<Typography
-					variant={descriptionTypography}
-					theme={{ color: mergedTheme.shared.descriptionColor }}
-					cssOverrides={tileDescriptionStyles(mergedTheme)}
-				>
-					{description}
-				</Typography>
-			)}
 		</ReactAriaLink>
 	);
 }

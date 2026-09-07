@@ -87,11 +87,22 @@ export const tileDescriptionStyles = (
 	color: ${theme.shared.descriptionColor};
 	display: block;
 	line-height: 1.2;
+	min-width: 0;
+	flex: 1;
+`;
+
+export const tileBottomRowStyles = (): SerializedStyles => css`
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 0.5rem;
+	min-width: 0;
 `;
 
 export const tileArrowStyles = (theme: TileTheme): SerializedStyles => css`
 	color: ${theme.shared.arrowColor};
 	flex-shrink: 0;
+	margin-left: auto;
 `;
 
 export const tileIconStyles = (theme: TileTheme): SerializedStyles => css`
