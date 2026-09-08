@@ -2,6 +2,7 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentTile } from '../../styleD/build/typescript/component/tile';
 import { componentTile } from '../../styleD/build/typescript/component/tile';
+import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
 import type { DeepPartial, Prettify } from '../../util/types';
 
 export type TileTheme = Prettify<ComponentTile>;
@@ -53,6 +54,48 @@ export const tileStyles = (
 	&[data-focus-visible] {
 		outline: ${theme.shared.focusVisible.outline};
 		outline-offset: ${theme.shared.focusVisible.outlineOffset};
+	}
+
+	&[data-disabled] {
+		color: ${theme.shared.disabled.color};
+		border-color: ${theme.shared.disabled.borderColor};
+		background-color: ${theme.shared.disabled.backgroundColor};
+		cursor: ${theme.shared.disabled.cursor};
+	}
+`;
+
+export const selectableTileStyles = (
+	theme: TileTheme,
+	{ size }: { size: TileSize },
+): SerializedStyles => css`
+	${tileStyles(theme, { size })}
+
+	&[data-hovered] {
+		background-color: ${semanticColors.fill.unselectedHoverWeaker};
+		border-color: ${theme.shared.hover.borderColor};
+	}
+
+	&[data-pressed] {
+		background-color: ${semanticColors.fill.unselectedPressedWeaker};
+		border-color: ${theme.shared.pressed.borderColor};
+	}
+
+	&[data-selected] {
+		background-color: ${semanticColors.fill.selectedWeaker};
+		border-color: ${theme.shared.pressed.borderColor};
+	}
+
+	&[data-focus-visible] {
+		background-color: ${semanticColors.fill.unselectedWeaker};
+		border-color: ${theme.shared.pressed.borderColor};
+	}
+
+	&[data-selected][data-hovered] {
+		background-color: ${semanticColors.fill.selectedHoverWeaker};
+	}
+
+	&[data-selected][data-pressed] {
+		background-color: ${semanticColors.fill.selectedPressedWeaker};
 	}
 
 	&[data-disabled] {

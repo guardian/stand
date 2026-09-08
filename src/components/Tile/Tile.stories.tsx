@@ -83,6 +83,16 @@ export const WithCustomIcon = {
 	},
 } satisfies Story;
 
+export const WithoutIcon = {
+	args: {
+		href: '#',
+		children: 'Title text',
+		description: 'Description text',
+		icon: '',
+		size: 'md',
+	},
+} satisfies Story;
+
 export const WithDifferentBackgroundColor = {
 	args: {
 		href: '#',
@@ -130,7 +140,7 @@ function SelectableExample() {
 				gap: 1rem;
 			`}
 		>
-			{['editorial', 'commercial'].map((value) => (
+			{['editorial', 'commercial', 'digital'].map((value) => (
 				<Tile
 					key={value}
 					interactionMode="selectable"
@@ -138,9 +148,19 @@ function SelectableExample() {
 					isSelected={selectedValue === value}
 					onSelectionChange={setSelectedValue}
 					description={`Select the ${value} option`}
-					icon={value === 'editorial' ? 'editor_choice' : 'business_center'}
+					icon={
+						value === 'editorial'
+							? 'editor_choice'
+							: value === 'commercial'
+								? 'business_center'
+								: 'computer'
+					}
 				>
-					{value === 'editorial' ? 'Editorial' : 'Commercial'}
+					{value === 'editorial'
+						? 'Editorial'
+						: value === 'commercial'
+							? 'Commercial'
+							: 'Digital'}
 				</Tile>
 			))}
 		</div>
@@ -169,7 +189,7 @@ function MultiSelectExample() {
 				gap: 1rem;
 			`}
 		>
-			{['news', 'sport'].map((value) => (
+			{['news', 'sport', 'science'].map((value) => (
 				<Tile
 					key={value}
 					interactionMode="multi-select"
@@ -187,9 +207,15 @@ function MultiSelectExample() {
 						});
 					}}
 					description={`Include ${value}`}
-					icon={value === 'news' ? 'breaking_news' : 'sports_football'}
+					icon={
+						value === 'news'
+							? 'breaking_news'
+							: value === 'sport'
+								? 'sports_football'
+								: 'science'
+					}
 				>
-					{value === 'news' ? 'News' : 'Sport'}
+					{value === 'news' ? 'News' : value === 'sport' ? 'Sport' : 'Science'}
 				</Tile>
 			))}
 		</div>
@@ -215,5 +241,25 @@ export const SelectedDisabled = {
 		children: 'News',
 		description: 'Selected and unavailable',
 		isDisabled: true,
+	},
+} satisfies Story;
+
+export const MultiSelectTileSelectedWithColor = {
+	args: {
+		interactionMode: 'multi-select',
+		value: 'news',
+		isSelected: true,
+		onSelectionChange: () => undefined,
+		children: 'News',
+		icon: 'breaking_news',
+		description: 'Selected with a custom background',
+		cssOverrides: css`
+			&[data-selected] {
+				background-color: ${baseColors.magenta[900]};
+			}
+			&[data-hovered][data-selected] {
+				background-color: ${baseColors.magenta[700]};
+			}
+		`,
 	},
 } satisfies Story;

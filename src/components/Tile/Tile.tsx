@@ -7,6 +7,7 @@ import { Icon } from '../Icon/Icon';
 import { Typography } from '../Typography/Typography';
 import {
 	defaultTileTheme,
+	selectableTileStyles,
 	tileArrowStyles,
 	tileBottomRowStyles,
 	tileContentStyles,
@@ -188,7 +189,7 @@ function SelectionTile(props: SelectableTileProps | MultiSelectTileProps) {
 			aria-pressed={isSelected}
 			data-selected={isSelected || undefined}
 			onPress={handlePress}
-			css={[tileStyles(mergedTheme, { size }), cssOverrides]}
+			css={[selectableTileStyles(mergedTheme, { size }), cssOverrides]}
 		>
 			<TileContent
 				{...{
