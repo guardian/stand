@@ -4,10 +4,9 @@ import type { ComponentTile } from '../../styleD/build/typescript/component/tile
 import { componentTile } from '../../styleD/build/typescript/component/tile';
 import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
 import { until } from '../../styleD/utils/semantic/mq';
-import type { DeepPartial, Prettify } from '../../util/types';
+import type { Prettify } from '../../util/types';
 
 export type TileTheme = Prettify<ComponentTile>;
-export type PartialTileTheme = Prettify<DeepPartial<TileTheme>>;
 
 export const defaultTileTheme: TileTheme = componentTile;
 
