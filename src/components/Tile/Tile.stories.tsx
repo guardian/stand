@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { baseColors } from '../../styleD/build/typescript/base/colors';
+import { until } from '../../styleD/utils/semantic/mq';
 import { Tile } from './Tile';
 
 const meta = {
@@ -125,6 +126,30 @@ export const IsTileDisabled = {
 		size: 'md',
 		isDisabled: true,
 	},
+} satisfies Story;
+
+export const RowLayout = {
+	render: () => (
+		<div
+			css={css`
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.25rem;
+				width: 100%;
+				max-width: 48rem;
+
+				${until.md} {
+					flex-direction: column;
+				}
+			`}
+		>
+			{Array.from({ length: 5 }).map((_, index) => (
+				<Tile key={index} href="#" description="Description text">
+					Title text
+				</Tile>
+			))}
+		</div>
+	),
 } satisfies Story;
 
 function SelectableExample() {

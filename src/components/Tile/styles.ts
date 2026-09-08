@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import type { ComponentTile } from '../../styleD/build/typescript/component/tile';
 import { componentTile } from '../../styleD/build/typescript/component/tile';
 import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
+import { until } from '../../styleD/utils/semantic/mq';
 import type { DeepPartial, Prettify } from '../../util/types';
 
 export type TileTheme = Prettify<ComponentTile>;
@@ -35,6 +36,10 @@ export const tileStyles = (
 	box-sizing: border-box;
 	font: inherit;
 	text-align: left;
+
+	${until.md} {
+		width: 100%;
+	}
 
 	&[data-hovered] {
 		background-color: ${theme.shared.hover.backgroundColor};
