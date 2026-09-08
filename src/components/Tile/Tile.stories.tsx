@@ -68,7 +68,6 @@ export const WithoutDescription = {
 	args: {
 		href: '#',
 		children: 'Title text only,no description',
-		icon: 'owl',
 		size: 'md',
 	},
 } satisfies Story;
@@ -177,6 +176,37 @@ export const Selectable = {
 	render: () => <SelectableExample />,
 } satisfies Story;
 
+export const SelectableDisabled = {
+	args: {
+		interactionMode: 'selectable',
+		value: 'editorial',
+		isSelected: true,
+		onSelectionChange: () => undefined,
+		children: 'Editorial',
+		description: 'Unavailable',
+		isDisabled: true,
+	},
+} satisfies Story;
+
+export const SelectableWithColor = {
+	args: {
+		interactionMode: 'selectable',
+		value: 'editorial',
+		isSelected: true,
+		onSelectionChange: () => undefined,
+		children: 'Editorial',
+		description: 'Unavailable',
+		cssOverrides: css`
+			&[data-selected] {
+				background-color: ${baseColors.magenta[900]};
+			}
+			&[data-hovered][data-selected] {
+				background-color: ${baseColors.magenta[700]};
+			}
+		`,
+	},
+} satisfies Story;
+
 function MultiSelectExample() {
 	const [selectedValues, setSelectedValues] = useState(() => new Set(['news']));
 
@@ -232,7 +262,7 @@ export const MultiSelect = {
 	render: () => <MultiSelectExample />,
 } satisfies Story;
 
-export const SelectedDisabled = {
+export const MultiSelectDisabled = {
 	args: {
 		interactionMode: 'multi-select',
 		value: 'news',

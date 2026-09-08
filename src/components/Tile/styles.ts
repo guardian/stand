@@ -92,10 +92,17 @@ export const selectableTileStyles = (
 
 	&[data-selected][data-hovered] {
 		background-color: ${semanticColors.fill.selectedHoverWeaker};
+		border-color: ${theme.shared.pressed.borderColor};
 	}
 
 	&[data-selected][data-pressed] {
 		background-color: ${semanticColors.fill.selectedPressedWeaker};
+		border-color: ${theme.shared.pressed.borderColor};
+	}
+
+	&[data-selected][data-focus-visible] {
+		background-color: ${semanticColors.fill.selectedWeaker};
+		border-color: ${theme.shared.pressed.borderColor};
 	}
 
 	&[data-disabled] {
