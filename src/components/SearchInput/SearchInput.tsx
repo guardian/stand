@@ -17,6 +17,19 @@ export function SearchInput({
 }: SearchInputProps) {
 	const mergedTheme = mergeDeep(defaultSearchInputTheme, theme);
 
+	const increaseIconSize = (s: 'xs' | 'sm' | 'md' | 'lg' | undefined) => {
+		if (s === 'xs') {
+			return 'sm';
+		}
+		if (s === 'sm') {
+			return 'md';
+		}
+		if (s === 'md') {
+			return 'lg';
+		}
+		return s;
+	};
+
 	return (
 		<FormInputContainer
 			as={RACSearchField}
@@ -25,7 +38,11 @@ export function SearchInput({
 			{...props}
 		>
 			<div css={searchInputStyles(mergedTheme, { size, isInvalid })}>
-				<Icon size={size} symbol="search" className="search-icon"></Icon>
+				<Icon
+					size={increaseIconSize(size)}
+					symbol="search"
+					className="search-icon"
+				></Icon>
 				<ReactAriaInput placeholder={placeholder} />
 			</div>
 		</FormInputContainer>
