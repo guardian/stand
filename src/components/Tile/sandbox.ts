@@ -19,9 +19,8 @@ export const Component = () => (
 
 // Custom component - CSS example
 export const componentCss = /* css */ `
-/* import clickable tile styles */
-@import '@guardian/stand/component/clickableTile.css';
-
+/* import tile styles */
+@import '@guardian/stand/component/tile.css';
 .stand-clickable-tile {
 	display: inline-flex;
 	align-items: center;
@@ -95,7 +94,7 @@ const clickableTileStyles = [
 	'align-items: ' + tile.shared.alignItems + ';',
 	'justify-content: ' + tile.shared.justifyContent + ';',
 	'min-height: ' + tile.md.minHeight + ';',
-	'width: ' + tile.shared.width + ';',
+	'width: ' + tile.md.width + ';',
 	'padding: ' + tile.md.paddingY + ' ' + tile.md.paddingX + ';',
 	'border: ' +
 		tile.shared.borderWidth +

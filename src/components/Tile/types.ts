@@ -20,8 +20,8 @@ interface TileBaseProps extends DefaultPropsWithChildren<TileTheme> {
 	 */
 	description?: React.ReactNode;
 	/**
-	 * to change the typography of the link, you can pass a variant from semanticTypography.
-	 * By default, it is set to "body-bold-sm".
+	 * Title typography variant.
+	 * @default 'bodyBoldSm'
 	 */
 	typography?: TypographyVariant;
 	/**
@@ -32,7 +32,7 @@ interface TileBaseProps extends DefaultPropsWithChildren<TileTheme> {
 	/**
 	 * Optional leading icon rendered before the title.
 	 */
-	icon?: IconProps['symbol'] | Exclude<IconProps['children'], string>;
+	icon?: IconProps['symbol'] | '' | Exclude<IconProps['children'], string>;
 }
 
 export type ClickableTileProps = TileBaseProps &

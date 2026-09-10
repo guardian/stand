@@ -68,7 +68,7 @@ export const AllSizes = {
 export const WithoutDescription = {
 	args: {
 		href: '#',
-		children: 'Title text only,no description',
+		children: 'Title text only, no description',
 		size: 'md',
 	},
 } satisfies Story;
