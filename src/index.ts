@@ -16,6 +16,8 @@ export { componentUserMenu } from './styleD/build/typescript/component/userMenu'
 export type { ComponentUserMenu } from './styleD/build/typescript/component/userMenu';
 export { componentIntendedAudienceSignifier } from './styleD/build/typescript/component/intendedAudienceSignifier';
 export type { ComponentIntendedAudienceSignifier } from './styleD/build/typescript/component/intendedAudienceSignifier';
+export { componentTile } from './styleD/build/typescript/component/tile';
+export type { ComponentTile } from './styleD/build/typescript/component/tile';
 
 /**
  * design system components tokens exports

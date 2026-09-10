@@ -1,0 +1,255 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import TileStories, {
+	AllSizes,
+	DefaultMedium,
+	IsTileDisabled,
+	MultiSelect,
+	MultiSelectDisabled,
+	MultiSelectTileSelectedWithColor,
+	RowLayout,
+	Selectable,
+	SelectableDisabled,
+	SelectableWithColor,
+	WithDifferentBackgroundColor,
+	WithCustomIcon,
+	WithoutDescription,
+	WithoutIcon,
+} from './Tile.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={TileStories} />
+
+# Tile
+
+A card-style control with clickable, single-select, and multi-select modes. It includes a leading icon, title text, optional description, and a mode-specific indicator. Clickable Tiles show an arrow in the bottom-right; selection Tiles show a radio or checkbox indicator in the top-right. The component uses [React Aria Link](https://react-aria.adobe.com/Link) and [Button](https://react-aria.adobe.com/Button).
+
+## When to use
+
+- To present link destinations with richer context than a plain text link
+- To let users choose one option from a collection of selectable Tiles
+- To let users choose multiple options from a collection of multi-select Tiles
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { useState } from 'react';
+import { Tile } from '@guardian/stand/Tile';
+
+/* types, if required */
+import type { TileProps, TileTheme } from '@guardian/stand/Tile';
+
+const Example = () => {
+	const [department, setDepartment] = useState('editorial');
+	const [sections, setSections] = useState(() => new Set<string>());
+
+	return (
+		<>
+			<Tile href="/news" description="Read the latest stories">
+				News
+			</Tile>
+
+			<Tile
+				interactionMode="selectable"
+				value="editorial"
+				isSelected={department === 'editorial'}
+				onSelectionChange={setDepartment}
+			>
+				Editorial
+			</Tile>
+
+			<Tile
+				interactionMode="multi-select"
+				value="sport"
+				isSelected={sections.has('sport')}
+				onSelectionChange={(value, isSelected) => {
+					setSections((current) => {
+						const next = new Set(current);
+						if (isSelected) {
+							next.add(value);
+						} else {
+							next.delete(value);
+						}
+						return next;
+					});
+				}}
+			>
+				Sport
+			</Tile>
+		</>
+	);
+};
+```
+
+Selection is controlled. Supply `isSelected` and update the parent state in `onSelectionChange`. Selection Tiles expose their state with `aria-pressed`; place related Tiles in a labelled group.
+
+## Props
+
+| Name                    | Type                                                                      | Required    | Default             | Description                                                                                                                                                                                  |
+| ----------------------- | ------------------------------------------------------------------------- | ----------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `interactionMode`       | `'clickable' \| 'selectable' \| 'multi-select'`                           | No          | `'clickable'`       | Determines whether the Tile navigates or participates in single or multiple selection.                                                                                                       |
+| `href`                  | `string`                                                                  | Conditional | N/A                 | Required in clickable mode. Not accepted in selection modes.                                                                                                                                 |
+| `children`              | `React.ReactNode`                                                         | No          | N/A                 | Tile title/content rendered in the main text area.                                                                                                                                           |
+| `description`           | `React.ReactNode`                                                         | No          | N/A                 | Optional supporting text shown below the title.                                                                                                                                              |
+| `icon`                  | `IconProps['symbol'] \| '' \| Exclude<IconProps['children'], string>`    | No          | `'account_balance'` | Leading icon shown before the title. Pass an empty string to omit it. See [Installing Icons](/docs/stand-tools-design-system-components-icon--docs#installing-icons) for icon setup details. |
+| `size`                  | `'xs' \| 'sm' \| 'md'`                                                    | No          | `'md'`              | Controls Tile dimensions and spacing. Tiles fill their container below the semantic `md` breakpoint and use the selected size-token width at `md` and above.                                 |
+| `typography`            | `TypographyVariant`                                                       | No          | `'bodyBoldSm'`      | Typography variant used for the title.                                                                                                                                                       |
+| `descriptionTypography` | `TypographyVariant`                                                       | No          | `'bodySm'`          | Typography variant used for the description.                                                                                                                                                 |
+| `value`                 | `string`                                                                  | Conditional | N/A                 | Required in selection modes. Identifies the option passed to `onSelectionChange`.                                                                                                            |
+| `isSelected`            | `boolean`                                                                 | Conditional | N/A                 | Required in selection modes. Controls the selected state.                                                                                                                                    |
+| `onSelectionChange`     | `(value: string) => void \| (value: string, isSelected: boolean) => void` | Conditional | N/A                 | Required in selection modes. Multi-select mode also supplies the next selected state.                                                                                                        |
+| `isDisabled`            | `boolean`                                                                 | No          | `false`             | Disables interaction and applies disabled styling.                                                                                                                                           |
+| `theme`                 | `DeepPartial<TileTheme>`                                                  | No          | N/A                 | Overrides component tokens for this instance.                                                                                                                                                |
+| `cssOverrides`          | `SerializedStyles \| SerializedStyles[]`                                  | No          | N/A                 | Adds Emotion styles for low-level visual adjustments. Use state selectors such as `[data-selected]` when overriding interaction states.                                                      |
+| `className`             | `string`                                                                  | No          | N/A                 | Optional class name forwarded to the root React Aria control.                                                                                                                                |
+| `...props`              | React Aria `Link` or `Button` props                                       | No          | N/A                 | Clickable mode accepts React Aria [Link props](https://react-aria.adobe.com/Link#api); selection modes accept [Button props](https://react-aria.adobe.com/Button#api).                       |
+
+## Stories
+
+### Default
+
+<Canvas layout="padded" of={DefaultMedium} />
+
+### Sizes
+
+<Canvas layout="padded" of={AllSizes} />
+
+### Responsive row layout
+
+Tiles fill the available container width below the semantic `md` breakpoint. At `md` and above, they use their selected size-token width and can be arranged in wrapping rows.
+
+<Canvas layout="padded" of={RowLayout} />
+
+### Content variants
+
+<Canvas layout="padded" of={WithoutDescription} />
+
+<Canvas layout="padded" of={WithCustomIcon} />
+
+<Canvas layout="padded" of={WithoutIcon} />
+
+### Custom background
+
+<Canvas layout="padded" of={WithDifferentBackgroundColor} />
+
+### Disabled clickable Tile
+
+<Canvas layout="padded" of={IsTileDisabled} />
+
+### Selectable
+
+<Canvas layout="padded" of={Selectable} />
+
+<Canvas layout="padded" of={SelectableDisabled} />
+
+<Canvas layout="padded" of={SelectableWithColor} />
+
+### Multi-select
+
+<Canvas layout="padded" of={MultiSelect} />
+
+<Canvas layout="padded" of={MultiSelectDisabled} />
+
+<Canvas layout="padded" of={MultiSelectTileSelectedWithColor} />
+
+## Customisation
+
+Use `theme` for token-level updates and `cssOverrides` for one-off styles.
+
+```tsx
+import { css } from '@emotion/react';
+import { Tile } from '@guardian/stand/Tile';
+import type { TileProps } from '@guardian/stand/Tile';
+
+const customTheme: NonNullable<TileProps['theme']> = {
+	shared: {
+		borderColor: '#bdbdbd',
+		hover: {
+			backgroundColor: '#ededed',
+			borderColor: '#999999',
+		},
+	},
+};
+
+const customStyles = css`
+	width: 100%;
+	max-width: 28rem;
+`;
+
+const selectedStyles = css`
+	&[data-selected] {
+		background-color: #f9ebf1;
+	}
+
+	&[data-hovered][data-selected] {
+		background-color: #edc6d7;
+	}
+`;
+
+const Component = () => (
+	<>
+		<Tile
+			href="#"
+			description="Description text"
+			theme={customTheme}
+			cssOverrides={customStyles}
+		>
+			Title text
+		</Tile>
+
+		<Tile
+			interactionMode="multi-select"
+			value="news"
+			isSelected
+			onSelectionChange={() => undefined}
+			cssOverrides={selectedStyles}
+		>
+			News
+		</Tile>
+	</>
+);
+```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom Tile component using the styles defined in the `TileTheme` type.
+
+**`css`**
+
+You can import Tile styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `componentTile` variable and the `ComponentTile` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
