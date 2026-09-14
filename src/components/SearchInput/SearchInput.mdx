@@ -16,13 +16,7 @@ import {
 	SandboxCss,
 	SandboxJs,
 } from '../../util/storybook/sandbox/Sandbox';
-import {
-	componentName,
-	componentCss,
-	componentHtml,
-	componentJs,
-	componentTsx,
-} from './sandbox';
+import { componentName, componentTsx } from './sandbox';
 
 <Meta of={SearchInputStories} />
 
@@ -195,20 +189,6 @@ const Component = () => (
 
 ## Custom Component Build
 
-If you're not using React/Emotion, you can create a custom SearchInput component using the styles defined in the `SearchInputTheme` type. You will be responsible for any additional functionality on top of the styles, for example accessibility, focus management, and interaction states.
+The SearchInput component is only available as a React component with Emotion for styling.
 
-**`css`**
-
-You can import the SearchInput styles as CSS from the package:
-
-<SandboxCss
-	componentName={componentName}
-	componentHtml={componentHtml}
-	componentCss={componentCss}
-/>
-
-**TypeScript/JavaScript**
-
-Use the `componentSearchInput` variable and the `ComponentSearchInput` type:
-
-<SandboxJs componentName={componentName} componentJs={componentJs} />
+If you want to use a date picker in a non-React environment, you would need to build a custom version using vanilla JavaScript and CSS, which requires significant effort to replicate the accessibility and interaction features of this component. We recommend using the provided React component where possible.
