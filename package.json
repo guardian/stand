@@ -669,7 +669,7 @@
 		"@testing-library/jest-dom": "7.0.1",
 		"@tsdown/css": "0.23.0",
 		"@types/jest": "30.0.0",
-		"@types/node": "24.10.1",
+		"@types/node": "24.13.4",
 		"@types/react": "17.0.76",
 		"@types/react-dom": "17.0.25",
 		"@typescript/typescript6": "6.0.2",
@@ -680,7 +680,7 @@
 		"husky": "9.1.7",
 		"jest": "30.5.1",
 		"jest-environment-jsdom": "30.5.1",
-		"knip": "^6.33.0",
+		"knip": "^6.35.1",
 		"lint-staged": "17.4.1",
 		"prettier": "3.9.6",
 		"prosemirror-dropcursor": "1.8.2",
@@ -696,7 +696,7 @@
 		"remark-gfm": "4.0.1",
 		"sort-package-json": "4.0.0",
 		"storybook": "10.6.0",
-		"style-dictionary": "5.5.2",
+		"style-dictionary": "5.5.3",
 		"ts-jest": "29.4.12",
 		"tsdown": "0.23.0",
 		"tslib": "2.8.1",
@@ -760,7 +760,7 @@
 			"optional": true
 		}
 	},
-	"packageManager": "pnpm@11.21.0+sha512.521705bce689924eac72f5a3587122f362689ef6571e55ba80076fd637c11132ecffada26fad4ea79c485bfddbfd3d5a2a5b05805a77e893de71ec8a6cca3bb1",
+	"packageManager": "pnpm@12.4.1+sha512.2e81e399d73fe8390dab25e06aa788ab7a5908248d2f5a370f82b481147a6a7a367bf8048f9a6fdb6460f21a66f0542dedb8b94ca2c8723596741920b1656d4c",
 	"//exports": "Each component has its own entry point for optimal tree-shaking. Main entry point only includes design tokens and utilities. New components/foundations should follow the same pattern.",
 	"//typesVersions": "Provides backward compatibility for TypeScript moduleResolution: node - maps subpath imports to correct type definition files. When adding new components with their own entry points, ensure to add them here."
 }
