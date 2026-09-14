@@ -17,28 +17,13 @@ import {
 	tileTextStyles,
 	tileTitleStyles,
 } from './styles';
-import type { TileTheme } from './styles';
 import type {
 	ClickableTileProps,
-	MultiSelectTileProps,
-	SelectableTileProps,
+	SelectionTileProps,
+	TileContentProps,
 	TileInteractionMode,
 	TileProps,
 } from './types';
-
-type TileContentProps = Pick<
-	TileProps,
-	| 'children'
-	| 'description'
-	| 'descriptionTypography'
-	| 'icon'
-	| 'size'
-	| 'typography'
-> & {
-	interactionMode: TileInteractionMode;
-	isSelected?: boolean;
-	theme: TileTheme;
-};
 
 function getTileIndicator(
 	interactionMode: TileInteractionMode,
@@ -121,7 +106,6 @@ function TileContent({
 }
 
 function ClickableLinkTile({
-	interactionMode: _interactionMode,
 	theme = {},
 	cssOverrides,
 	children,
@@ -132,7 +116,6 @@ function ClickableLinkTile({
 	size = 'md',
 	...props
 }: ClickableTileProps) {
-	void _interactionMode;
 	const mergedTheme = mergeDeep(defaultTileTheme, theme);
 
 	return (
@@ -157,20 +140,20 @@ function ClickableLinkTile({
 }
 
 function SelectionTile({
-		interactionMode,
-		value,
-		isSelected,
-		onSelectionChange,
-		theme = {},
-		cssOverrides,
-		children,
-		description,
-		typography,
-		descriptionTypography,
-		icon,
-		size = 'md',
-		...buttonProps
-	}: SelectableTileProps | MultiSelectTileProps) {
+	interactionMode,
+	value,
+	isSelected,
+	onSelectionChange,
+	theme = {},
+	cssOverrides,
+	children,
+	description,
+	typography,
+	descriptionTypography,
+	icon,
+	size = 'md',
+	...buttonProps
+}: SelectionTileProps) {
 	const mergedTheme = mergeDeep(defaultTileTheme, theme);
 	const handlePress = () => {
 		if (interactionMode === 'selectable') {
@@ -208,12 +191,9 @@ function SelectionTile({
 }
 
 export function Tile(props: TileProps) {
-	if (
-		props.interactionMode === 'selectable' ||
-		props.interactionMode === 'multi-select'
-	) {
-		return <SelectionTile {...props} />;
-	}
-
-	return <ClickableLinkTile {...props} />;
+	return typeof props.href === 'string' ? (
+		<ClickableLinkTile {...props} />
+	) : (
+		<SelectionTile {...props} />
+	);
 }

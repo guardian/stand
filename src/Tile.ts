@@ -17,10 +17,11 @@ export { Tile } from './components/Tile/Tile';
 export type {
 	ClickableTileProps,
 	MultiSelectTileProps,
+	SelectionTileProps,
 	SelectableTileProps,
 	TileInteractionMode,
 	TileProps,
 } from './components/Tile/types';
-export type { PartialTileTheme as TileTheme } from './components/Tile/styles';
+export type { PartialTileTheme, TileTheme } from './components/Tile/styles';
 export { componentTile } from './styleD/build/typescript/component/tile';
 export type { ComponentTile } from './styleD/build/typescript/component/tile';

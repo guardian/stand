@@ -11,6 +11,11 @@ export type TileInteractionMode = 'clickable' | 'selectable' | 'multi-select';
 
 interface TileBaseProps extends DefaultPropsWithChildren<TileTheme> {
 	/**
+	 * The interaction behavior of the Tile.
+	 * @default 'clickable'
+	 */
+	interactionMode?: TileInteractionMode;
+	/**
 	 * Size variant of the tile.
 	 * @default 'md'
 	 */
@@ -37,32 +42,55 @@ interface TileBaseProps extends DefaultPropsWithChildren<TileTheme> {
 
 export type ClickableTileProps = TileBaseProps &
 	Omit<RACLinkProps, 'children' | 'href'> & {
+		interactionMode?: Extract<TileInteractionMode, 'clickable'>;
 		href: string;
 	};
 
-export type SelectableTileProps = TileBaseProps &
+type SelectionTileBaseProps = TileBaseProps &
 	Omit<RACButtonProps, 'children' | 'onPress' | 'value'> & {
-		interactionMode: Extract<TileInteractionMode, 'selectable'>;
-		/** Value passed to onSelectionChange when this tile is selected. */
+		/** Value identifying this Tile in a selection. */
 		value: string;
 		/** Whether this tile is currently selected. */
 		isSelected: boolean;
-		/** Called when the tile is selected. */
-		onSelectionChange: (value: string) => void;
 		href?: never;
 	};
 
-export type MultiSelectTileProps = TileBaseProps &
-	Omit<RACButtonProps, 'children' | 'onPress' | 'value'> & {
-		interactionMode: Extract<TileInteractionMode, 'multi-select'>;
-		/** Value identifying this tile in a multi-selection. */
-		value: string;
-		/** Whether this tile is currently selected. */
-		isSelected: boolean;
-		/** Called with the next selected state when the tile is pressed. */
-		onSelectionChange: (value: string, isSelected: boolean) => void;
-		href?: never;
-	};
+export type SelectionTileProps = SelectionTileBaseProps &
+	(
+		| {
+				interactionMode: Extract<TileInteractionMode, 'selectable'>;
+				/** Called when this Tile is selected. */
+				onSelectionChange: (value: string) => void;
+		  }
+		| {
+				interactionMode: Extract<TileInteractionMode, 'multi-select'>;
+				/** Called with the next selected state when this Tile is pressed. */
+				onSelectionChange: (value: string, isSelected: boolean) => void;
+		  }
+	);
 
-export type TileProps =
-	ClickableTileProps | SelectableTileProps | MultiSelectTileProps;
+export type SelectableTileProps = Extract<
+	SelectionTileProps,
+	{ interactionMode: 'selectable' }
+>;
+
+export type MultiSelectTileProps = Extract<
+	SelectionTileProps,
+	{ interactionMode: 'multi-select' }
+>;
+
+export type TileProps = ClickableTileProps | SelectionTileProps;
+
+export type TileContentProps = Pick<
+	TileProps,
+	| 'children'
+	| 'description'
+	| 'descriptionTypography'
+	| 'icon'
+	| 'size'
+	| 'typography'
+> & {
+	interactionMode: TileInteractionMode;
+	isSelected?: boolean;
+	theme: TileTheme;
+};
