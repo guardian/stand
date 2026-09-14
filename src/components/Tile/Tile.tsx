@@ -190,8 +190,12 @@ function SelectionTile({
 	);
 }
 
+function isClickableTile(props: TileProps): props is ClickableTileProps {
+	return typeof (props as ClickableTileProps).href === 'string';
+}
+
 export function Tile(props: TileProps) {
-	return typeof props.href === 'string' ? (
+	return isClickableTile(props) ? (
 		<ClickableLinkTile {...props} />
 	) : (
 		<SelectionTile {...props} />

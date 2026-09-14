@@ -52,7 +52,6 @@ type SelectionTileBaseProps = TileBaseProps &
 		value: string;
 		/** Whether this tile is currently selected. */
 		isSelected: boolean;
-		href?: never;
 	};
 
 export type SelectionTileProps = SelectionTileBaseProps &
