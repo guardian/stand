@@ -1,0 +1,47 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-tile-shared-display: inline-flex;
+	--component-tile-shared-flex-direction: column;
+	--component-tile-shared-align-items: center;
+	--component-tile-shared-justify-content: space-between;
+	--component-tile-shared-gap: 0.5rem;
+	--component-tile-shared-border-width: 0.0625rem;
+	--component-tile-shared-border-style: solid;
+	--component-tile-shared-border-color: #8d8d8d;
+	--component-tile-shared-border-radius: 0.25rem;
+	--component-tile-shared-background-color: #ffffff;
+	--component-tile-shared-color: #000000;
+	--component-tile-shared-text-decoration: none;
+	--component-tile-shared-cursor: pointer;
+	--component-tile-shared-max-width: 100%;
+	--component-tile-shared-description-color: #666666;
+	--component-tile-shared-arrow-color: #000000;
+	--component-tile-shared-focus-visible-outline: 0.125rem solid #0072a9;
+	--component-tile-shared-focus-visible-outline-offset: 0.125rem;
+	--component-tile-shared-hover-background-color: #f6f6f6;
+	--component-tile-shared-hover-border-color: #8d8d8d;
+	--component-tile-shared-pressed-background-color: #ededed;
+	--component-tile-shared-pressed-border-color: #8d8d8d;
+	--component-tile-shared-disabled-background-color: #ffffff;
+	--component-tile-shared-disabled-color: #999999;
+	--component-tile-shared-disabled-border-color: #dcdcdc;
+	--component-tile-shared-disabled-cursor: not-allowed;
+	--component-tile-xs-width: 180px;
+	--component-tile-xs-min-height: 56px;
+	--component-tile-xs-padding-x: 0.75rem;
+	--component-tile-xs-padding-y: 0.5rem;
+	--component-tile-xs-gap: 0.75rem;
+	--component-tile-sm-width: 280px;
+	--component-tile-sm-min-height: 74px;
+	--component-tile-sm-padding-x: 1rem;
+	--component-tile-sm-padding-y: 0.75rem;
+	--component-tile-sm-gap: 0.75rem;
+	--component-tile-md-width: 360px;
+	--component-tile-md-min-height: 89px;
+	--component-tile-md-padding-x: 1rem;
+	--component-tile-md-padding-y: 0.75rem;
+	--component-tile-md-gap: 1rem;
+}

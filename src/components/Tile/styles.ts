@@ -17,10 +17,10 @@ export const tileStyles = (
 	{ size }: { size: TileSize },
 ): SerializedStyles => css`
 	display: ${theme.shared.display};
-	flex-direction: column;
-	align-items: stretch;
-	justify-content: flex-start;
-	gap: calc(${theme[size].gap} / 2);
+	flex-direction: ${theme.shared.flexDirection};
+	align-items: ${theme.shared.alignItems};
+	justify-content: ${theme.shared.justifyContent};
+	gap: ${theme.shared.gap};
 	min-height: ${theme[size].minHeight};
 	padding: ${theme[size].paddingY} ${theme[size].paddingX};
 	border: ${theme.shared.borderWidth} ${theme.shared.borderStyle}
@@ -126,8 +126,8 @@ export const tileContentStyles = (
 	align-items: center;
 	justify-content: space-between;
 	gap: ${theme[size].gap};
+	width: 100%;
 	min-width: 0;
-	flex: 1;
 `;
 
 export const tileTextStyles = (theme: TileTheme): SerializedStyles => css`
@@ -167,6 +167,7 @@ export const tileBottomRowStyles = (): SerializedStyles => css`
 	align-items: center;
 	justify-content: space-between;
 	gap: 0.5rem;
+	width: 100%;
 	min-width: 0;
 `;
 

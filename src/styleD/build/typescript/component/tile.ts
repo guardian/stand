@@ -5,12 +5,14 @@
 export const componentTile = {
 	shared: {
 		display: 'inline-flex',
+		flexDirection: 'column',
 		alignItems: 'center',
 		justifyContent: 'space-between',
-		borderWidth: '1px',
+		gap: '0.5rem',
+		borderWidth: '0.0625rem',
 		borderStyle: 'solid',
-		borderColor: '#d8d8d8',
-		borderRadius: '4px',
+		borderColor: '#8d8d8d',
+		borderRadius: '0.25rem',
 		backgroundColor: '#ffffff',
 		color: '#000000',
 		textDecoration: 'none',
@@ -19,8 +21,8 @@ export const componentTile = {
 		descriptionColor: '#666666',
 		arrowColor: '#000000',
 		focusVisible: {
-			outline: '2px solid #0072a9',
-			outlineOffset: '2px',
+			outline: '0.125rem solid #0072a9',
+			outlineOffset: '0.125rem',
 		},
 		hover: {
 			backgroundColor: '#f6f6f6',
@@ -40,23 +42,23 @@ export const componentTile = {
 	xs: {
 		width: '180px',
 		minHeight: '56px',
-		paddingX: '12px',
-		paddingY: '8px',
-		gap: '12px',
+		paddingX: '0.75rem',
+		paddingY: '0.5rem',
+		gap: '0.75rem',
 	},
 	sm: {
 		width: '280px',
 		minHeight: '74px',
-		paddingX: '16px',
-		paddingY: '12px',
-		gap: '12px',
+		paddingX: '1rem',
+		paddingY: '0.75rem',
+		gap: '0.75rem',
 	},
 	md: {
 		width: '360px',
 		minHeight: '89px',
-		paddingX: '16px',
-		paddingY: '12px',
-		gap: '16px',
+		paddingX: '1rem',
+		paddingY: '0.75rem',
+		gap: '1rem',
 	},
 };
 export type ComponentTile = typeof componentTile;
