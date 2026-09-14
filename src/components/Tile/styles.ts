@@ -7,7 +7,7 @@ import { until } from '../../styleD/utils/semantic/mq';
 import type { Prettify } from '../../util/types';
 
 export type TileTheme = Prettify<ComponentTile>;
-
+export type PartialAvatarTheme = Prettify<DeepPartial<AvatarTheme>>;
 export const defaultTileTheme: TileTheme = componentTile;
 
 type TileSize = keyof Omit<TileTheme, 'shared'>;

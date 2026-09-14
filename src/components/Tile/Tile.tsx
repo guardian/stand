@@ -156,8 +156,7 @@ function ClickableLinkTile({
 	);
 }
 
-function SelectionTile(props: SelectableTileProps | MultiSelectTileProps) {
-	const {
+function SelectionTile({
 		interactionMode,
 		value,
 		isSelected,
@@ -171,7 +170,7 @@ function SelectionTile(props: SelectableTileProps | MultiSelectTileProps) {
 		icon,
 		size = 'md',
 		...buttonProps
-	} = props;
+	}: SelectableTileProps | MultiSelectTileProps) {
 	const mergedTheme = mergeDeep(defaultTileTheme, theme);
 	const handlePress = () => {
 		if (interactionMode === 'selectable') {
