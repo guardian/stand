@@ -176,7 +176,7 @@ export const tileArrowStyles = (theme: TileTheme): SerializedStyles => css`
 	margin-left: auto;
 
 	[data-disabled] & {
-		color: ${theme.shared.tileArrow.shared.disabled};
+		color: ${theme.shared.tileArrow.shared.disabled.color};
 	}
 `;
 
@@ -186,6 +186,6 @@ export const tileIconStyles = (theme: TileTheme): SerializedStyles => css`
 	margin-right: 0.25rem;
 
 	[data-disabled] & {
-		color: ${theme.shared.tileIcon.shared.disabled};
+		color: ${theme.shared.tileIcon.shared.disabled.color};
 	}
 `;
