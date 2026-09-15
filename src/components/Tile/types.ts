@@ -42,7 +42,6 @@ interface TileBaseProps extends DefaultPropsWithChildren<TileTheme> {
 
 export type ClickableTileProps = TileBaseProps &
 	Omit<RACLinkProps, 'children' | 'href'> & {
-		interactionMode?: Extract<TileInteractionMode, 'clickable'>;
 		href: string;
 	};
 

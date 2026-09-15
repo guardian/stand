@@ -477,6 +477,7 @@
 		"./component/checkbox.css": "./dist/styleD/build/css/component/checkbox.css",
 		"./component/toggleSwitch.css": "./dist/styleD/build/css/component/toggleSwitch.css",
 		"./component/textArea.css": "./dist/styleD/build/css/component/textArea.css",
+		"./component/tile.css": "./dist/styleD/build/css/component/tile.css",
 		"./component/alertBanner.css": "./dist/styleD/build/css/component/alertBanner.css",
 		"./component/datePicker.css": "./dist/styleD/build/css/component/datePicker.css",
 		"./component/intendedAudienceSignifier.css": "./dist/styleD/build/css/component/intendedAudienceSignifier.css",

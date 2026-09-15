@@ -38,6 +38,52 @@ export const componentTile = {
 			borderColor: '#dcdcdc',
 			cursor: 'not-allowed',
 		},
+		selectableTile: {
+			shared: {
+				backgroundColor: '#ffffff',
+				hover: {
+					backgroundColor: '#e6f1f6',
+				},
+				pressed: {
+					backgroundColor: '#c5dfec',
+				},
+				selected: {
+					backgroundColor: '#e6f1f6',
+					hover: {
+						backgroundColor: '#c5dfec',
+					},
+					pressed: {
+						backgroundColor: '#8abed7',
+					},
+					focusVisible: {
+						backgroundColor: '#e6f1f6',
+					},
+				},
+				focusVisible: {
+					backgroundColor: '#ffffff',
+				},
+			},
+		},
+		tileIcon: {
+			shared: {
+				flexShrink: 0,
+				marginRight: '0.25rem',
+				color: '#000000',
+				disabled: {
+					color: '#999999',
+				},
+			},
+		},
+		tileArrow: {
+			shared: {
+				color: '#000000',
+				disabled: {
+					color: '#999999',
+				},
+				flexShrink: 0,
+				marginLeft: 'auto',
+			},
+		},
 	},
 	xs: {
 		width: '180px',

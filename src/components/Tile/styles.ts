@@ -2,7 +2,6 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentTile } from '../../styleD/build/typescript/component/tile';
 import { componentTile } from '../../styleD/build/typescript/component/tile';
-import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
 import { until } from '../../styleD/utils/semantic/mq';
 import type { DeepPartial, Prettify } from '../../util/types';
 
@@ -75,37 +74,37 @@ export const selectableTileStyles = (
 	${tileStyles(theme, { size })}
 
 	&[data-hovered] {
-		background-color: ${semanticColors.fill.unselectedHoverWeaker};
+		background-color: ${theme.shared.selectableTile.shared.hover.backgroundColor};
 		border-color: ${theme.shared.hover.borderColor};
 	}
 
 	&[data-pressed] {
-		background-color: ${semanticColors.fill.unselectedPressedWeaker};
+		background-color: ${theme.shared.selectableTile.shared.pressed.backgroundColor};
 		border-color: ${theme.shared.pressed.borderColor};
 	}
 
 	&[data-selected] {
-		background-color: ${semanticColors.fill.selectedWeaker};
+		background-color: ${theme.shared.selectableTile.shared.selected.backgroundColor};
 		border-color: ${theme.shared.pressed.borderColor};
 	}
 
 	&[data-focus-visible] {
-		background-color: ${semanticColors.fill.unselectedWeaker};
+		background-color: ${theme.shared.selectableTile.shared.focusVisible.backgroundColor};
 		border-color: ${theme.shared.pressed.borderColor};
 	}
 
 	&[data-selected][data-hovered] {
-		background-color: ${semanticColors.fill.selectedHoverWeaker};
+		background-color: ${theme.shared.selectableTile.shared.selected.hover.backgroundColor};
 		border-color: ${theme.shared.pressed.borderColor};
 	}
 
 	&[data-selected][data-pressed] {
-		background-color: ${semanticColors.fill.selectedPressedWeaker};
+		background-color: ${theme.shared.selectableTile.shared.selected.pressed.backgroundColor};
 		border-color: ${theme.shared.pressed.borderColor};
 	}
 
 	&[data-selected][data-focus-visible] {
-		background-color: ${semanticColors.fill.selectedWeaker};
+		background-color: ${theme.shared.selectableTile.shared.selected.focusVisible.backgroundColor};
 		border-color: ${theme.shared.pressed.borderColor};
 	}
 
@@ -172,21 +171,21 @@ export const tileBottomRowStyles = (): SerializedStyles => css`
 `;
 
 export const tileArrowStyles = (theme: TileTheme): SerializedStyles => css`
-	color: ${theme.shared.arrowColor};
+	color: ${theme.shared.tileArrow.shared.color};
 	flex-shrink: 0;
 	margin-left: auto;
 
 	[data-disabled] & {
-		color: ${theme.shared.disabled.color};
+		color: ${theme.shared.tileArrow.shared.disabled};
 	}
 `;
 
 export const tileIconStyles = (theme: TileTheme): SerializedStyles => css`
-	color: ${theme.shared.color};
+	color: ${theme.shared.tileIcon.shared.color};
 	flex-shrink: 0;
 	margin-right: 0.25rem;
 
 	[data-disabled] & {
-		color: ${theme.shared.disabled.color};
+		color: ${theme.shared.tileIcon.shared.disabled};
 	}
 `;

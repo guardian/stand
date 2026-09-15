@@ -117,6 +117,100 @@
 						"$type": "string",
 						"$value": "not-allowed"
 					}
+				},
+				"selectableTile": {
+					"shared": {
+						"backgroundColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.fill.unselectedWeaker}"
+						},
+						"hover": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.unselectedHoverWeaker}"
+							}
+						},
+						"pressed": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.unselectedPressedWeaker}"
+							}
+						},
+						"selected": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.selectedWeaker}"
+							},
+							"hover": {
+								"backgroundColor": {
+									"$type": "color",
+									"$value": "{semantic.colors.fill.selectedHoverWeaker}"
+								}
+							},
+							"pressed": {
+								"backgroundColor": {
+									"$type": "color",
+									"$value": "{semantic.colors.fill.selectedPressedWeaker}"
+								}
+							},
+							"focusVisible": {
+								"backgroundColor": {
+									"$type": "color",
+									"$value": "{semantic.colors.fill.selectedWeaker}"
+								}
+							}
+						},
+						"focusVisible": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.unselectedWeaker}"
+							}
+						}
+					}
+				},
+				"tileIcon": {
+					"shared": {
+						"flexShrink": {
+							"$type": "number",
+							"$value": 0
+						},
+						"marginRight": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4Rem}"
+						},
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.strong}"
+						},
+						"disabled": {
+							"color": {
+								"$type": "color",
+								"$value": "{semantic.colors.text.disabled}"
+							}
+						}
+					}
+				},
+				"tileArrow": {
+					"shared": {
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.strong}"
+						},
+						"disabled": {
+							"color": {
+								"$type": "color",
+								"$value": "{semantic.colors.text.disabled}"
+							}
+						},
+						"flexShrink": {
+							"$type": "number",
+							"$value": 0
+						},
+						"marginLeft": {
+							"$type": "string",
+							"$value": "auto"
+						}
+					}
 				}
 			},
 			"xs": {
