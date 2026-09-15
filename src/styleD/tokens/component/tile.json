@@ -1,0 +1,284 @@
+{
+	"component": {
+		"tile": {
+			"shared": {
+				"display": {
+					"$type": "string",
+					"$value": "inline-flex"
+				},
+				"flexDirection": {
+					"$type": "string",
+					"$value": "column"
+				},
+				"alignItems": {
+					"$type": "string",
+					"$value": "center"
+				},
+				"justifyContent": {
+					"$type": "string",
+					"$value": "space-between"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackXs}"
+				},
+				"borderWidth": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.border.default}"
+				},
+				"borderStyle": {
+					"$type": "strokeStyle",
+					"$value": "solid"
+				},
+				"borderColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.border.strong}"
+				},
+				"borderRadius": {
+					"$type": "dimension",
+					"$value": "{semantic.radius.cornerSm}"
+				},
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.bg.base}"
+				},
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.strong}"
+				},
+				"textDecoration": {
+					"$type": "string",
+					"$value": "none"
+				},
+				"cursor": {
+					"$type": "string",
+					"$value": "pointer"
+				},
+				"maxWidth": {
+					"$type": "dimension",
+					"$value": "100%"
+				},
+				"descriptionColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.300}"
+				},
+				"arrowColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.strong}"
+				},
+				"focusVisible": {
+					"outline": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.focused}",
+							"width": "{semantic.sizing.border.md}",
+							"style": "solid"
+						}
+					},
+					"outlineOffset": {
+						"$type": "dimension",
+						"$value": "{semantic.sizing.border.md}"
+					}
+				},
+				"hover": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.bg.raisedLevel1}"
+					},
+					"borderColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.strong}"
+					}
+				},
+				"pressed": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.bg.raisedLevel2}"
+					},
+					"borderColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.strong}"
+					}
+				},
+				"disabled": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.bg.base}"
+					},
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.disabled}"
+					},
+					"borderColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.disabled}"
+					},
+					"cursor": {
+						"$type": "string",
+						"$value": "not-allowed"
+					}
+				},
+				"selectableTile": {
+					"shared": {
+						"backgroundColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.fill.unselectedWeaker}"
+						},
+						"hover": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.unselectedHoverWeaker}"
+							}
+						},
+						"pressed": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.unselectedPressedWeaker}"
+							}
+						},
+						"selected": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.selectedWeaker}"
+							},
+							"hover": {
+								"backgroundColor": {
+									"$type": "color",
+									"$value": "{semantic.colors.fill.selectedHoverWeaker}"
+								}
+							},
+							"pressed": {
+								"backgroundColor": {
+									"$type": "color",
+									"$value": "{semantic.colors.fill.selectedPressedWeaker}"
+								}
+							},
+							"focusVisible": {
+								"backgroundColor": {
+									"$type": "color",
+									"$value": "{semantic.colors.fill.selectedWeaker}"
+								}
+							}
+						},
+						"focusVisible": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.unselectedWeaker}"
+							}
+						}
+					}
+				},
+				"tileIcon": {
+					"shared": {
+						"flexShrink": {
+							"$type": "number",
+							"$value": 0
+						},
+						"marginRight": {
+							"$type": "dimension",
+							"$value": "{base.spacing.4Rem}"
+						},
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.strong}"
+						},
+						"disabled": {
+							"color": {
+								"$type": "color",
+								"$value": "{semantic.colors.text.disabled}"
+							}
+						}
+					}
+				},
+				"tileArrow": {
+					"shared": {
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.strong}"
+						},
+						"disabled": {
+							"color": {
+								"$type": "color",
+								"$value": "{semantic.colors.text.disabled}"
+							}
+						},
+						"flexShrink": {
+							"$type": "number",
+							"$value": 0
+						},
+						"marginLeft": {
+							"$type": "string",
+							"$value": "auto"
+						}
+					}
+				}
+			},
+			"xs": {
+				"width": {
+					"$type": "dimension",
+					"$value": "180px"
+				},
+				"minHeight": {
+					"$type": "dimension",
+					"$value": "56px"
+				},
+				"paddingX": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12Rem}"
+				},
+				"paddingY": {
+					"$type": "dimension",
+					"$value": "{base.spacing.8Rem}"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12Rem}"
+				}
+			},
+			"sm": {
+				"width": {
+					"$type": "dimension",
+					"$value": "280px"
+				},
+				"minHeight": {
+					"$type": "dimension",
+					"$value": "74px"
+				},
+				"paddingX": {
+					"$type": "dimension",
+					"$value": "{base.spacing.16Rem}"
+				},
+				"paddingY": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12Rem}"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12Rem}"
+				}
+			},
+			"md": {
+				"width": {
+					"$type": "dimension",
+					"$value": "360px"
+				},
+				"minHeight": {
+					"$type": "dimension",
+					"$value": "89px"
+				},
+				"paddingX": {
+					"$type": "dimension",
+					"$value": "{base.spacing.16Rem}"
+				},
+				"paddingY": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12Rem}"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{base.spacing.16Rem}"
+				}
+			}
+		}
+	}
+}
