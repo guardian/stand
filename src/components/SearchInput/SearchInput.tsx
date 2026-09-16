@@ -8,17 +8,11 @@ import { Icon } from '../Icon/Icon';
 import { defaultSearchInputTheme, searchInputStyles } from './styles';
 import type { SearchInputProps } from './types';
 
-const increaseIconSize = (s: 'xs' | 'sm' | 'md' | 'lg' | undefined) => {
-	if (s === 'xs') {
-		return 'sm';
-	}
+const increaseIconSize = (s: SearchInputProps['size']) => {
 	if (s === 'sm') {
 		return 'md';
 	}
-	if (s === 'md') {
-		return 'lg';
-	}
-	return s;
+	return 'lg';
 };
 
 export function SearchInput({
