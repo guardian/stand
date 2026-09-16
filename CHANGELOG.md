@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.74
+
+### Patch Changes
+
+- a2e3e00: add tile component
+
 ## 0.0.73
 
 ### Patch Changes
