@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.75
+
+### Patch Changes
+
+- 56bb7f7: Add SearchInput component
+
 ## 0.0.74
 
 ### Patch Changes
