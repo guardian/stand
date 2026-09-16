@@ -15,6 +15,6 @@
  */
 export { SearchInput } from './components/SearchInput/SearchInput';
 export type { SearchInputProps } from './components/SearchInput/types';
-export type { SearchInputTheme } from './components/SearchInput/styles';
+export type { PartialSearchInputTheme as SearchInputTheme } from './components/SearchInput/styles';
 export { componentSearchInput } from './styleD/build/typescript/component/searchInput';
 export type { ComponentSearchInput } from './styleD/build/typescript/component/searchInput';

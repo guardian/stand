@@ -2,11 +2,14 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentSearchInput } from '../../styleD/build/typescript/component/searchInput';
 import { componentSearchInput } from '../../styleD/build/typescript/component/searchInput';
-import type { Prettify } from '../../util/types';
+import type { DeepPartial, Prettify } from '../../util/types';
 import { convertTypographyToEmotionStringStyle } from '../../utils';
 import type { SearchInputProps } from './types';
 
 export type SearchInputTheme = Prettify<ComponentSearchInput>;
+export type PartialSearchInputTheme = Prettify<
+	DeepPartial<ComponentSearchInput>
+>;
 
 export const defaultSearchInputTheme: SearchInputTheme = componentSearchInput;
 

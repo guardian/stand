@@ -8,6 +8,19 @@ import { Icon } from '../Icon/Icon';
 import { defaultSearchInputTheme, searchInputStyles } from './styles';
 import type { SearchInputProps } from './types';
 
+const increaseIconSize = (s: 'xs' | 'sm' | 'md' | 'lg' | undefined) => {
+	if (s === 'xs') {
+		return 'sm';
+	}
+	if (s === 'sm') {
+		return 'md';
+	}
+	if (s === 'md') {
+		return 'lg';
+	}
+	return s;
+};
+
 export function SearchInput({
 	size = 'md',
 	isInvalid = false,
@@ -16,19 +29,6 @@ export function SearchInput({
 	...props
 }: SearchInputProps) {
 	const mergedTheme = mergeDeep(defaultSearchInputTheme, theme);
-
-	const increaseIconSize = (s: 'xs' | 'sm' | 'md' | 'lg' | undefined) => {
-		if (s === 'xs') {
-			return 'sm';
-		}
-		if (s === 'sm') {
-			return 'md';
-		}
-		if (s === 'md') {
-			return 'lg';
-		}
-		return s;
-	};
 
 	return (
 		<FormInputContainer
