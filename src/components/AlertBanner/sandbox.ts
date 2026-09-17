@@ -56,7 +56,22 @@ export const componentCss = /* css */ `
 
 .stand-alert-banner-content > .material-symbols {
 	font-size: 1rem;
-	color: var(--component-alert-banner-shared-content-icon-color);
+}
+
+.stand-alert-banner-information .material-symbols {
+	color: var(--component-alert-banner-information-icon-color);
+}
+
+.stand-alert-banner-success .material-symbols {
+	color: var(--component-alert-banner-success-icon-color);
+}
+
+.stand-alert-banner-warning .material-symbols {
+	color: var(--component-alert-banner-warning-icon-color);
+}
+
+.stand-alert-banner-error .material-symbols {
+	color: var(--component-alert-banner-error-icon-color);
 }
 
 .stand-alert-banner-information {
@@ -142,7 +157,22 @@ sheet.replaceSync(\`
 
 	.js-stand-alert-banner-content > .material-symbols {
 		font-size: 1rem;
-		color: \${componentAlertBanner.shared.content.icon.color};
+	}
+
+	.js-stand-alert-banner-information .material-symbols {
+		color: \${componentAlertBanner.information.icon.color};
+	}
+
+	.js-stand-alert-banner-success .material-symbols {
+		color: \${componentAlertBanner.success.icon.color};
+	}
+
+	.js-stand-alert-banner-warning .material-symbols {
+		color: \${componentAlertBanner.warning.icon.color};
+	}
+
+	.js-stand-alert-banner-error .material-symbols {
+		color: \${componentAlertBanner.error.icon.color};
 	}
 
 	.js-stand-alert-banner-information {
