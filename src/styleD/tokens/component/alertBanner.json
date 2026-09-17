@@ -82,12 +82,6 @@
 							"$type": "dimension",
 							"$value": "{semantic.typography.helpTextFormMd.fontWidth}"
 						}
-					},
-					"icon": {
-						"color": {
-							"$type": "color",
-							"$value": "{semantic.colors.text.weak}"
-						}
 					}
 				}
 			},
@@ -95,24 +89,48 @@
 				"backgroundColor": {
 					"$type": "color",
 					"$value": "{semantic.colors.fill.informationWeak}"
+				},
+				"icon": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.information}"
+					}
 				}
 			},
 			"success": {
 				"backgroundColor": {
 					"$type": "color",
 					"$value": "{semantic.colors.fill.successWeak}"
+				},
+				"icon": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.success}"
+					}
 				}
 			},
 			"warning": {
 				"backgroundColor": {
 					"$type": "color",
 					"$value": "{semantic.colors.fill.warningWeak}"
+				},
+				"icon": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.warning}"
+					}
 				}
 			},
 			"error": {
 				"backgroundColor": {
 					"$type": "color",
 					"$value": "{semantic.colors.fill.errorWeak}"
+				},
+				"icon": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.error}"
+					}
 				}
 			}
 		}
