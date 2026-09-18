@@ -24,7 +24,7 @@
 						},
 						"right": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12Px}"
+							"$value": "{base.spacing.10Px}"
 						},
 						"bottom": {
 							"$type": "dimension",
@@ -32,7 +32,7 @@
 						},
 						"left": {
 							"$type": "dimension",
-							"$value": "{base.spacing.12Px}"
+							"$value": "{base.spacing.10Px}"
 						}
 					},
 					"weight": {
