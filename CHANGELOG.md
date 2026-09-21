@@ -1,5 +1,12 @@
 # @guardian/stand
 
+## 0.0.76
+
+### Patch Changes
+
+- 9cda521: Update AlertBanner icon colors
+- 86443cc: Update padding for the md size Button component
+
 ## 0.0.75
 
 ### Patch Changes
