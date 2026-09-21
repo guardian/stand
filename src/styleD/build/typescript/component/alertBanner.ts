@@ -28,22 +28,31 @@ export const componentAlertBanner = {
 				letterSpacing: '0rem',
 				fontWidth: 95,
 			},
-			icon: {
-				color: '#545454',
-			},
 		},
 	},
 	information: {
 		backgroundColor: '#e8f0fb',
+		icon: {
+			color: '#00344e',
+		},
 	},
 	success: {
 		backgroundColor: '#cde4c9',
+		icon: {
+			color: '#326528',
+		},
 	},
 	warning: {
 		backgroundColor: '#ffedac',
+		icon: {
+			color: '#433608',
+		},
 	},
 	error: {
 		backgroundColor: '#f5c6c0',
+		icon: {
+			color: '#8c2113',
+		},
 	},
 };
 export type ComponentAlertBanner = typeof componentAlertBanner;

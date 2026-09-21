@@ -49,7 +49,7 @@ export function AlertBanner({
 		>
 			<div css={alertBannerContentStyles(mergedTheme)}>
 				{showIcon && (
-					<Icon size="md" fill={mergedTheme.shared.content.icon.color}>
+					<Icon size="md" fill={mergedTheme[level].icon.color}>
 						{determinedIcon}
 					</Icon>
 				)}
