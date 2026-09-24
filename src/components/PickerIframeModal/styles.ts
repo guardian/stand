@@ -55,3 +55,10 @@ export const headerContentsStyles = (
 		justify-content: ${justifyContent};
 	`;
 };
+
+export const newTabContainerStyles = (): SerializedStyles => {
+	return css`
+		display: flex;
+		justify-content: flex-end;
+	`;
+};

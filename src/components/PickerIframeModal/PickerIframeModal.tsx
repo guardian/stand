@@ -8,6 +8,7 @@ import {
 	headerContentsStyles,
 	iframeContainerStyle,
 	iframeStyles,
+	newTabContainerStyles,
 } from './styles';
 import type { PickerIframeModalProps } from './types';
 
@@ -36,7 +37,6 @@ export function PickerIframeModal<DataType>({
 		modal: {
 			width: '800px',
 			maxWidth: '80vw',
-			maxHeight: '80vh',
 		},
 	},
 	dialogTheme = {
@@ -109,16 +109,16 @@ export function PickerIframeModal<DataType>({
 					ariaLabel="Close Modal"
 				/>
 				<Dialog.Header theme={mergedDialogTheme.title}>
-					<div css={headerContentsStyles(mergedTheme)}>
-						{title}
-						{showOpenInNewTabButton && (
+					<div css={headerContentsStyles(mergedTheme)}>{title}</div>
+				</Dialog.Header>
+				<Dialog.Content theme={mergedDialogTheme.children}>
+					{showOpenInNewTabButton && (
+						<div css={newTabContainerStyles()}>
 							<LinkButton href={href} target="_blank" icon="open_in_new">
 								Open standalone page
 							</LinkButton>
-						)}
-					</div>
-				</Dialog.Header>
-				<Dialog.Content theme={mergedDialogTheme.children}>
+						</div>
+					)}
 					<div css={iframeContainerStyle(mergedTheme)}>
 						<iframe
 							ref={setIframeRef}
