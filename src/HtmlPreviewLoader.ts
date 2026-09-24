@@ -15,5 +15,10 @@
  */
 export { HtmlPreviewLoader } from './components/HtmlPreviewLoader/HtmlPreviewLoader';
 export { HtmlPreview } from './components/HtmlPreviewLoader/HtmlPreview';
+export type { PartialHtmlPreviewLoaderTheme as HtmlPreviewLoaderTheme } from './components/HtmlPreviewLoader/styles';
+export type {
+	HtmlPreviewLoaderProps,
+	HtmlPreviewProps,
+} from './components/HtmlPreviewLoader/types';
 export { componentHtmlPreviewLoader } from './styleD/build/typescript/component/htmlPreviewLoader';
 export type { ComponentHtmlPreviewLoader } from './styleD/build/typescript/component/htmlPreviewLoader';

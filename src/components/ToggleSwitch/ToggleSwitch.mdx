@@ -1,0 +1,142 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import ToggleSwitchStories, {
+	Default,
+	Selected,
+	WithDescription,
+	Disabled,
+	DisabledSelected,
+	Small,
+	SmallWithDescription,
+	SmallSelected,
+	SmallDisabled,
+	SmallDisabledSelected,
+} from './ToggleSwitch.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={ToggleSwitchStories} />
+
+# ToggleSwitch
+
+A switch component built on [React Aria](https://react-aria.adobe.com/Switch). It supports small and medium sizes, selected and disabled states, and an optional inline label.
+
+## When to use
+
+- To let users turn a single setting on or off immediately
+- To represent a binary preference where the current state is visible
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+See [custom component build](#custom-component-build) for usage without React/Emotion.
+
+## Example usage
+
+<SandboxReact
+	componentName={componentName}
+	componentTsx={componentTsx}
+	flowColumn
+/>
+
+```tsx
+import { ToggleSwitch } from '@guardian/stand/ToggleSwitch';
+
+const Example = () => (
+	<ToggleSwitch description="App has an access to your camera" defaultSelected>
+		Camera access
+	</ToggleSwitch>
+);
+```
+
+## Props
+
+See [React Aria `Switch` props](https://react-aria.adobe.com/Switch#api) for the full API, plus the additional props listed below.
+
+| Name              | Type                                       | Required | Default | Description                                        |
+| ----------------- | ------------------------------------------ | -------- | ------- | -------------------------------------------------- |
+| `children`        | `React.ReactNode`                          | No       | N/A     | Label content rendered beside the switch.          |
+| `description`     | `React.ReactNode`                          | No       | N/A     | Supporting text rendered below the label.          |
+| `size`            | `'md'` \| `'sm'`                           | No       | `'md'`  | Controls the switch and label size.                |
+| `isSelected`      | `boolean`                                  | No       | N/A     | Controlled selected state.                         |
+| `defaultSelected` | `boolean`                                  | No       | N/A     | Default selected state for uncontrolled use.       |
+| `isDisabled`      | `boolean`                                  | No       | `false` | Disables interaction and applies disabled styling. |
+| `theme`           | `ToggleSwitchTheme` (partial)              | No       | N/A     | Override Stand tokens for this instance.           |
+| `cssOverrides`    | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level Emotion override.                        |
+| `...props`        | `React Aria Switch` props                  | No       | N/A     | Other props such as `onChange` and `autoFocus`.    |
+
+## Stories
+
+### Default
+
+<Canvas layout="padded" of={Default} />
+
+### Selected
+
+<Canvas layout="padded" of={Selected} />
+
+### With Description
+
+<Canvas layout="padded" of={WithDescription} />
+
+### Disabled
+
+<Canvas layout="padded" of={Disabled} />
+
+### Disabled Selected
+
+<Canvas layout="padded" of={DisabledSelected} />
+
+### Small
+
+<Canvas layout="padded" of={Small} />
+
+### Small With Description
+
+<Canvas layout="padded" of={SmallWithDescription} />
+
+### Small Selected
+
+<Canvas layout="padded" of={SmallSelected} />
+
+### Small Disabled
+
+<Canvas layout="padded" of={SmallDisabled} />
+
+### Small Disabled Selected
+
+<Canvas layout="padded" of={SmallDisabledSelected} />
+
+## Customisation
+
+Use the `theme` prop to override ToggleSwitch tokens, or `cssOverrides` for low-level Emotion overrides.
+
+## Custom Component Build
+
+Import the generated ToggleSwitch CSS tokens and use them to style a native checkbox control.
+
+You will however be responsible for any additional functionality on top of the styles, for example accessibility, focus management, interaction states etc.
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />

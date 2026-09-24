@@ -1264,19 +1264,55 @@
 					"$type": "color",
 					"$value": "{base.colors.yellow.800}"
 				},
-				"selected": {
+				"unselectedStrong": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.900}"
+				},
+				"unselectedHoverStrong": {
 					"$type": "color",
 					"$value": "{base.colors.cyan.300}"
+				},
+				"unselectedPressedStrong": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.200}"
+				},
+				"selectedStrong": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.400}"
+				},
+				"selectedHoverStrong": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.200}"
+				},
+				"selectedPressedStrong": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.100}"
 				},
 				"selectedWeaker": {
 					"$type": "color",
 					"$value": "{base.colors.cyan.900}"
 				},
-				"selectedWeak": {
+				"selectedHoverWeaker": {
 					"$type": "color",
 					"$value": "{base.colors.cyan.800}"
 				},
-				"selectedHoverWeaker": {
+				"selectedPressedWeaker": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.700}"
+				},
+				"unselectedWeaker": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.900}"
+				},
+				"unselectedHoverWeaker": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.900}"
+				},
+				"unselectedPressedWeaker": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.800}"
+				},
+				"selectedWeak": {
 					"$type": "color",
 					"$value": "{base.colors.cyan.800}"
 				},
@@ -1284,13 +1320,21 @@
 					"$type": "color",
 					"$value": "{base.colors.cyan.700}"
 				},
-				"selectedPressedWeaker": {
-					"$type": "color",
-					"$value": "{base.colors.cyan.700}"
-				},
 				"selectedPressedWeak": {
 					"$type": "color",
 					"$value": "{base.colors.cyan.600}"
+				},
+				"unselectedWeak": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.900}"
+				},
+				"unselectedHoverWeak": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.800}"
+				},
+				"unselectedPressedWeak": {
+					"$type": "color",
+					"$value": "{base.colors.cyan.700}"
 				},
 				"draftStrong": {
 					"$type": "color",
@@ -1335,6 +1379,10 @@
 				"neutralWeak": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.800}"
+				},
+				"neutralMedium": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.300}"
 				}
 			}
 		},
@@ -1380,6 +1428,10 @@
 		},
 		"sizing": {
 			"height": {
+				"xxxxs": {
+					"$type": "dimension",
+					"$value": "{base.sizing.size16Rem}"
+				},
 				"xxxs": {
 					"$type": "dimension",
 					"$value": "{base.sizing.size18Rem}"

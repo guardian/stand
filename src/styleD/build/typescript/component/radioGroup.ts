@@ -49,7 +49,7 @@ export const componentRadioGroup = {
 			},
 			selected: {
 				after: {
-					backgroundColor: '#005d8b',
+					backgroundColor: '#0072a9',
 					scale: 0.6,
 				},
 				border: '0.125rem solid #0072a9',

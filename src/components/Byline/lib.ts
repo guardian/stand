@@ -82,7 +82,7 @@ function refocusEditor(viewRef: React.MutableRefObject<EditorView | null>) {
 }
 
 // Function overloads to enforce type safety
-export function insertChip(
+function insertChip(
 	text: string,
 	from: number,
 	to: number,
@@ -91,7 +91,7 @@ export function insertChip(
 	path?: string,
 	meta?: unknown,
 ): Command;
-export function insertChip(
+function insertChip(
 	text: string,
 	from: number,
 	to: number,
@@ -99,7 +99,7 @@ export function insertChip(
 	tagId?: undefined,
 	meta?: undefined,
 ): Command;
-export function insertChip(
+function insertChip(
 	text: string,
 	from: number,
 	to: number,

@@ -1,4 +1,4 @@
-import playwrightComponentTestReact from 'playwright/playwrightImport';
+import playwrightComponentTestReact from './playwright/playwrightImport';
 
 const { defineConfig, devices } = playwrightComponentTestReact;
 

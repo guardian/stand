@@ -2,12 +2,12 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentTextInput } from '../../styleD/build/typescript/component/textInput';
 import { componentTextInput } from '../../styleD/build/typescript/component/textInput';
-import type { Prettify } from '../../util/types';
+import type { DeepPartial, Prettify } from '../../util/types';
 import { convertTypographyToEmotionStringStyle } from '../../utils';
 import type { TextInputProps } from './types';
 
 export type TextInputTheme = Prettify<ComponentTextInput>;
-
+export type PartialTextInputTheme = Prettify<DeepPartial<ComponentTextInput>>;
 export const defaultTextInputTheme: TextInputTheme = componentTextInput;
 
 export const textInputStyles = (

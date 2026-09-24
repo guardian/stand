@@ -1,5 +1,62 @@
 # @guardian/stand
 
+## 0.0.76
+
+### Patch Changes
+
+- 9cda521: Update AlertBanner icon colors
+- 86443cc: Update padding for the md size Button component
+
+## 0.0.75
+
+### Patch Changes
+
+- 56bb7f7: Add SearchInput component
+
+## 0.0.74
+
+### Patch Changes
+
+- a2e3e00: add tile component
+
+## 0.0.73
+
+### Patch Changes
+
+- e983622: Correcting exports for a number of components, non breaking
+- 59572c4: Add pagination component
+
+## 0.0.72
+
+### Patch Changes
+
+- 7a9fbfc: Add `ToggleSwitch` component
+- 991eb6b: BREAKING: Update semantic tokens, naming changed:
+
+  - `{semantic.colors.fill.selected}` -> `{semantic.colors.fill.selectedStrong}`
+    - Color has also been updated from `{base.colors.cyan.300}` to `{base.colors.cyan.400}`
+
+  Added a number of semantic colour tokens.
+  Added `{semantic.sizing.height.xxxxs}`.
+
+## 0.0.71
+
+### Patch Changes
+
+- 8fb8e10: Add the accessible, responsive Table component with React Aria semantics, composable CSS Grid layouts, design tokens, and rounded corners.
+
+## 0.0.70
+
+### Patch Changes
+
+- 8ea936c: Add `TextListInput` component
+
+## 0.0.69
+
+### Patch Changes
+
+- 4a59ead: Support TypeScript 6
+
 ## 0.0.68
 
 ### Patch Changes

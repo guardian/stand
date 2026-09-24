@@ -142,7 +142,7 @@
 					"height": { "$type": "string", "$value": "100%" },
 					"backgroundColor": {
 						"$type": "color",
-						"$value": "{semantic.colors.fill.selected}"
+						"$value": "{semantic.colors.fill.selectedStrong}"
 					},
 					"display": { "$type": "string", "$value": "flex" },
 					"alignItems": { "$type": "string", "$value": "center" },

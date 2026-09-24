@@ -115,6 +115,7 @@ The following steps are for **developing the Stand library itself**.
    pnpm test:e2e             # end-to-end tests (Playwright)
    pnpm test:react-matrix    # compatibility matrix tests (see Compatibility)
    pnpm tsc                  # TypeScript type checking
+   pnpm tsc6                 # TypeScript 6 type checking
    pnpm lint                 # lint (pnpm lint:fix to auto-fix)
    pnpm format:check         # formatting check (pnpm format:fix to auto-fix)
    ```
@@ -146,7 +147,7 @@ Version sets for matrix testing live in `./scripts/deps-matrix-versions.json`. T
 1. Explicit env var (e.g. `REACT_VERSIONS="18.0.0 19.0.0"`)
 2. Value from `deps-matrix-versions.json`
 
-All three variables (`REACT_VERSIONS`, `EMOTION_VERSIONS`, `TS_VERSIONS`) must be defined after loading; otherwise the script exits with an error.
+All four variables (`REACT_VERSIONS`, `EMOTION_VERSIONS`, `TS_VERSIONS`, `RAC_VERSIONS`) must be defined after loading; otherwise the script exits with an error.
 
 Matrix generation in CI uses the same JSON file in the workflow `../.github/workflows/stand-component-library-deps-matrix.yml` to ensure consistency.
 

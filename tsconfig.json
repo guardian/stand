@@ -1,6 +1,7 @@
 {
 	"extends": "@guardian/tsconfig/tsconfig.json",
 	"compilerOptions": {
+		"rootDir": "./",
 		"outDir": "dist/types",
 		"emitDeclarationOnly": true,
 		"declaration": true,
@@ -8,10 +9,10 @@
 		"importHelpers": true,
 		"isolatedModules": true,
 		"skipLibCheck": true,
-		"baseUrl": "./",
 		"jsx": "react-jsx",
 		"jsxImportSource": "@emotion/react",
-		"lib": ["dom", "es2022"]
+		"lib": ["dom", "es2022"],
+		"types": ["jest", "node"]
 	},
 	"include": [
 		"src/**/*",

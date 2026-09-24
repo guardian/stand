@@ -31,7 +31,7 @@ export const componentCheckbox = {
 					height: '2px',
 				},
 				selected: {
-					backgroundColor: '#005d8b',
+					backgroundColor: '#0072a9',
 					border: '0.0625rem solid #0072a9',
 					svg: {
 						fill: '#ffffff',

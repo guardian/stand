@@ -15,6 +15,6 @@
  */
 export { TextInput } from './components/TextInput/TextInput';
 export type { TextInputProps } from './components/TextInput/types';
-export type { TextInputTheme } from './components/TextInput/styles';
+export type { PartialTextInputTheme as TextInputTheme } from './components/TextInput/styles';
 export { componentTextInput } from './styleD/build/typescript/component/textInput';
 export type { ComponentTextInput } from './styleD/build/typescript/component/textInput';

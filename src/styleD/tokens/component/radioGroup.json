@@ -133,7 +133,7 @@
 						"after": {
 							"backgroundColor": {
 								"$type": "color",
-								"$value": "{semantic.colors.fill.selected}"
+								"$value": "{semantic.colors.fill.selectedStrong}"
 							},
 							"scale": {
 								"$type": "number",

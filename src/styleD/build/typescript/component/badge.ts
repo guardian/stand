@@ -12,9 +12,9 @@ export const componentBadge = {
 		md: {
 			padding: {
 				top: '4px',
-				right: '12px',
+				right: '10px',
 				bottom: '4px',
-				left: '12px',
+				left: '10px',
 			},
 			weight: {
 				strong: {

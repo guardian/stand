@@ -14,6 +14,6 @@
  */
 export { AlertBanner } from './components/AlertBanner/AlertBanner';
 export type { AlertBannerProps } from './components/AlertBanner/types';
-export type { AlertBannerTheme } from './components/AlertBanner/styles';
+export type { PartialAlertBannerTheme as AlertBannerTheme } from './components/AlertBanner/styles';
 export { componentAlertBanner } from './styleD/build/typescript/component/alertBanner';
 export type { ComponentAlertBanner } from './styleD/build/typescript/component/alertBanner';
