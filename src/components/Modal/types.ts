@@ -1,6 +1,7 @@
 import type {
 	DialogProps as ReactAriaDialogProps,
 	DialogTriggerProps as ReactAriaDialogTriggerProps,
+	HeadingProps as ReactAriaHeadingProps,
 	ModalOverlayProps as ReactAriaModalProps,
 } from 'react-aria-components';
 import type {
@@ -9,7 +10,7 @@ import type {
 	DefaultPropsWithChildren,
 } from '../../util/types';
 import type { IconButtonProps } from '../IconButton/types';
-import type { TypographyProps } from '../Typography/types';
+import type { TypographyVariant } from '../Typography/types';
 import type { DialogTheme, ModalTheme } from './styles';
 
 export type ModalProps = DefaultProps<
@@ -23,9 +24,22 @@ export type DialogProps = DefaultProps<
 	ReactAriaDialogProps['className']
 > &
 	ReactAriaDialogProps;
-export type DialogHeaderProps = Omit<TypographyProps, 'theme'> & {
-	theme?: DeepPartial<DialogTheme['title']>;
-};
+export type DialogHeaderElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
+export type DialogHeaderProps = DefaultProps<
+	DialogTheme['title'],
+	ReactAriaHeadingProps['className']
+> &
+	Omit<ReactAriaHeadingProps, 'slot' | 'level' | 'className'> & {
+		/**
+		 * Heading element to render
+		 */
+		element?: DialogHeaderElement;
+		/**
+		 * Font variant to apply as a CSS style to the heading
+		 */
+		variant?: TypographyVariant;
+	};
 export type DialogButtonsProps = DefaultPropsWithChildren<DialogTheme['ctas']>;
 export type DialogContentProps = DefaultPropsWithChildren<
 	DialogTheme['children']

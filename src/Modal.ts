@@ -17,6 +17,7 @@ export { Dialog, DialogTrigger, Modal } from './components/Modal/Modal';
 export type {
 	DialogButtonsProps,
 	DialogContentProps,
+	DialogHeaderElement,
 	DialogHeaderProps,
 	DialogProps,
 	DialogTriggerProps,

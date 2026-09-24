@@ -2,6 +2,7 @@ import React from 'react';
 import {
 	Dialog as ReactAriaDialog,
 	DialogTrigger as ReactAriaDialogTrigger,
+	Heading as ReactAriaHeading,
 	Modal as ReactAriaModal,
 	ModalOverlay as ReactAriaModalOverlay,
 } from 'react-aria-components';
@@ -9,7 +10,7 @@ import { mergeDeep } from '../../util/mergeDeep';
 import { AvatarButton } from '../AvatarButton/AvatarButton';
 import { Button } from '../Button/Button';
 import { IconButton } from '../IconButton/IconButton';
-import { Typography } from '../Typography/Typography';
+import { defaultTypographyTheme, typographyStyles } from '../Typography/styles';
 import {
 	defaultDialogTheme,
 	defaultModalTheme,
@@ -98,11 +99,14 @@ const DialogHeader = ({
 }: DialogHeaderProps) => {
 	const mergedTheme = mergeDeep(defaultDialogTheme.title, theme);
 	return (
-		<Typography
+		<ReactAriaHeading
+			{...props}
+			// Set after the spread so consumers can't override them.
+			// slot="title" makes the heading label the Dialog.
 			slot="title"
-			variant={variant}
-			element={element}
-			cssOverrides={[
+			level={Number(element[1])}
+			css={[
+				typographyStyles(defaultTypographyTheme, { variant }),
 				dialogHeadingStyles(mergedTheme),
 				...(cssOverrides == null
 					? []
@@ -110,7 +114,6 @@ const DialogHeader = ({
 						? cssOverrides
 						: [cssOverrides]),
 			]}
-			{...props}
 		/>
 	);
 };
