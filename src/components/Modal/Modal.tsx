@@ -1,9 +1,11 @@
 import React from 'react';
 import {
+	HeadingContext,
 	Dialog as ReactAriaDialog,
 	DialogTrigger as ReactAriaDialogTrigger,
 	Modal as ReactAriaModal,
 	ModalOverlay as ReactAriaModalOverlay,
+	useSlottedContext,
 } from 'react-aria-components';
 import { mergeDeep } from '../../util/mergeDeep';
 import { AvatarButton } from '../AvatarButton/AvatarButton';
@@ -97,9 +99,14 @@ const DialogHeader = ({
 	...props
 }: DialogHeaderProps) => {
 	const mergedTheme = mergeDeep(defaultDialogTheme.title, theme);
+	// Read the title id from the Dialog's HeadingContext instead of passing
+	// slot="title" to Typography (a RAC <Text>). TextContext has no "title" slot
+	// from react-aria-components 1.20, and it never labelled the dialog before.
+	// Unlike RAC <Heading>, this lets `element` stay any element.
+	const { id: titleId } = useSlottedContext(HeadingContext, 'title') ?? {};
 	return (
 		<Typography
-			slot="title"
+			id={titleId}
 			variant={variant}
 			element={element}
 			cssOverrides={[
