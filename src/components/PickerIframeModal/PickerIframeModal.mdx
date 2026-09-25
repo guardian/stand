@@ -9,7 +9,13 @@ import PickerIframeModalStories, {
 	InteractiveExample,
 } from './PickerIframeModal.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
-import { componentName, componentTsx } from './sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
 
 <Meta of={PickerIframeModalStories} />
 
@@ -189,3 +195,23 @@ const Example = () => (
 	/>
 );
 ```
+
+## Custom Component Build
+
+If you're not using React/Emotion, you can create a custom PickerIframeModal component using the styles defined in the `PickerIframeModalTheme` type.
+
+**`css`**
+
+You can import the PickerIframeModal styles as CSS from the package:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+**TypeScript/JavaScript**
+
+Use the `pickerIframeModal` variable and the `PickerIframeModal` type:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
