@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 import { mergeDeep } from '../../util/mergeDeep';
 import { LinkButton } from '../LinkButton/LinkButton';
 import { Dialog, Modal } from '../Modal/Modal';
@@ -51,20 +51,11 @@ export function PickerIframeModal<DataType>({
 	const mergedModalTheme = mergeDeep(defaultModalTheme, modalTheme);
 	const mergedDialogTheme = mergeDeep(defaultDialogTheme, dialogTheme);
 
-	const [iframeRef, setIframeRef] = useState<HTMLIFrameElement | null>(null);
 	const expectedOrigin = safeGetOrigin(href);
 
 	const messageHandler = useCallback(
 		(message: MessageEvent) => {
 			if (!expectedOrigin || message.origin !== expectedOrigin) {
-				return;
-			}
-
-			if (!(
-				message.source &&
-				'document' in message.source &&
-				iframeRef?.contentDocument === message.source.document
-			)) {
 				return;
 			}
 
@@ -77,14 +68,7 @@ export function PickerIframeModal<DataType>({
 				}
 			}
 		},
-		[
-			expectedOrigin,
-			iframeRef?.contentDocument,
-			validate,
-			handleData,
-			closeAfterHandling,
-			closeModal,
-		],
+		[expectedOrigin, validate, handleData, closeAfterHandling, closeModal],
 	);
 
 	useEffect(() => {
@@ -122,11 +106,7 @@ export function PickerIframeModal<DataType>({
 						</div>
 					)}
 					<div css={iframeContainerStyle(mergedTheme)}>
-						<iframe
-							ref={setIframeRef}
-							src={href}
-							css={iframeStyles(mergedTheme)}
-						/>
+						<iframe src={href} css={iframeStyles(mergedTheme)} />
 					</div>
 				</Dialog.Content>
 			</Dialog>
