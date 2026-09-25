@@ -4,9 +4,12 @@ import {
 	componentPickerIframeModal,
 	type ComponentPickerIframeModal,
 } from '../../styleD/build/typescript/component/pickerIframeModal';
-import type { Prettify } from '../../util/types';
+import type { DeepPartial, Prettify } from '../../util/types';
 
 export type PickerIframeModalTheme = Prettify<ComponentPickerIframeModal>;
+export type PartialPickerIframeModalTheme = Prettify<
+	DeepPartial<PickerIframeModalTheme>
+>;
 export const defaultPickerIframeModalTheme: PickerIframeModalTheme =
 	componentPickerIframeModal;
 
