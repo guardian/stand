@@ -51,6 +51,7 @@ export const CustomModalTheme = {
 		title: 'CustomModalTheme',
 		modalTheme: {
 			modal: {
+				position: 'absolute',
 				width: '600px',
 				maxWidth: '60vw',
 				backgroundColor: semanticColors.fill.tealWeak,
@@ -60,6 +61,7 @@ export const CustomModalTheme = {
 				},
 			},
 			overlay: {
+				position: 'fixed',
 				backgroundColor: 'rgba(0, 255, 0, 0.10)',
 			},
 		},
@@ -78,6 +80,7 @@ export const CustomDialogTheme = {
 			},
 			dismiss: {
 				border: `4px solid ${semanticColors.border.weak}`,
+				height: semanticSpacing.stackXl,
 				hovered: {
 					border: `4px solid ${semanticColors.border.selected}`,
 				},

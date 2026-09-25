@@ -34,9 +34,11 @@ export function PickerIframeModal<DataType>({
 	cssOverrides,
 	showOpenInNewTabButton,
 	modalTheme = {
+		overlay: { position: 'fixed' },
 		modal: {
 			width: '800px',
 			maxWidth: '80vw',
+			position: 'absolute',
 		},
 	},
 	dialogTheme = {
