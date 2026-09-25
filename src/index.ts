@@ -18,6 +18,8 @@ export { componentIntendedAudienceSignifier } from './styleD/build/typescript/co
 export type { ComponentIntendedAudienceSignifier } from './styleD/build/typescript/component/intendedAudienceSignifier';
 export { componentTile } from './styleD/build/typescript/component/tile';
 export type { ComponentTile } from './styleD/build/typescript/component/tile';
+export { componentPickerIframeModal } from './styleD/build/typescript/component/pickerIframeModal';
+export type { ComponentPickerIframeModal } from './styleD/build/typescript/component/pickerIframeModal';
 
 /**
  * design system components tokens exports
