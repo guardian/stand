@@ -667,7 +667,7 @@
 		"@changesets/cli": "3.0.3",
 		"@codesandbox/sandpack-react": "2.20.0",
 		"@emotion/react": "11.11.4",
-		"@figma/rest-api-spec": "0.42.0",
+		"@figma/rest-api-spec": "0.43.0",
 		"@guardian/eslint-config": "16.0.0",
 		"@guardian/prettier": "11.0.0",
 		"@guardian/prosemirror-invisibles": "3.1.1",
