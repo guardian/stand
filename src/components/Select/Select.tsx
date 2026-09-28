@@ -38,7 +38,9 @@ export function Option({ children, theme = {}, id, ...props }: OptionProps) {
 		>
 			{({ isSelected, selectionMode }) => {
 				return selectionMode === 'multiple' ? (
-					<Checkbox isSelected={isSelected}>{children}</Checkbox>
+					<Checkbox isSelected={isSelected} isReadOnly excludeFromTabOrder>
+						{children}
+					</Checkbox>
 				) : (
 					children
 				);
