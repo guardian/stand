@@ -2,7 +2,6 @@ import { useCallback, useEffect } from 'react';
 import { mergeDeep } from '../../util/mergeDeep';
 import { LinkButton } from '../LinkButton/LinkButton';
 import { Dialog, Modal } from '../Modal/Modal';
-import { defaultDialogTheme, defaultModalTheme } from '../Modal/styles';
 import {
 	defaultPickerIframeModalTheme,
 	headerContentsStyles,
@@ -48,8 +47,6 @@ export function PickerIframeModal<DataType>({
 	},
 }: PickerIframeModalProps<DataType>) {
 	const mergedTheme = mergeDeep(defaultPickerIframeModalTheme, theme);
-	const mergedModalTheme = mergeDeep(defaultModalTheme, modalTheme);
-	const mergedDialogTheme = mergeDeep(defaultDialogTheme, dialogTheme);
 
 	const expectedOrigin = safeGetOrigin(href);
 
@@ -86,18 +83,15 @@ export function PickerIframeModal<DataType>({
 					closeModal();
 				}
 			}}
-			theme={mergedModalTheme}
+			theme={modalTheme}
 			cssOverrides={cssOverrides}
 		>
-			<Dialog theme={mergedDialogTheme.container}>
-				<Dialog.Dismiss
-					theme={mergedDialogTheme.dismiss}
-					ariaLabel="Close Modal"
-				/>
-				<Dialog.Header theme={mergedDialogTheme.title}>
+			<Dialog theme={dialogTheme.container}>
+				<Dialog.Dismiss theme={dialogTheme.dismiss} ariaLabel="Close Modal" />
+				<Dialog.Header theme={dialogTheme.title}>
 					<div css={headerContentsStyles(mergedTheme)}>{title}</div>
 				</Dialog.Header>
-				<Dialog.Content theme={mergedDialogTheme.children}>
+				<Dialog.Content theme={dialogTheme.children}>
 					{showOpenInNewTabButton && (
 						<div css={newTabContainerStyles()}>
 							<LinkButton href={href} target="_blank" icon="open_in_new">

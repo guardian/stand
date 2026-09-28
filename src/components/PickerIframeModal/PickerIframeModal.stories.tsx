@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
+import { semanticSizing } from '../../styleD/build/typescript/semantic/sizing';
 import { semanticSpacing } from '../../styleD/build/typescript/semantic/spacing';
 import { Button } from '../Button/Button';
 import { Typography } from '../Typography/Typography';
@@ -70,19 +71,20 @@ export const CustomModalTheme = {
 
 export const CustomDialogTheme = {
 	args: {
-		title: 'CustomDialogTheme',
+		title: 'Custom Dialog Theme Story',
 		dialogTheme: {
 			title: {
+				gridArea: 'ctas',
 				marginBottom: semanticSpacing.stackXl,
 			},
 			children: {
 				marginBottom: semanticSpacing.stackXl,
 			},
 			dismiss: {
-				border: `4px solid ${semanticColors.border.weak}`,
+				border: `${semanticSizing.border.extraWide} solid ${semanticColors.border.weak}`,
 				height: semanticSpacing.stackXl,
 				hovered: {
-					border: `4px solid ${semanticColors.border.selected}`,
+					border: `${semanticSizing.border.extraWide} solid ${semanticColors.border.selected}`,
 				},
 			},
 		},
