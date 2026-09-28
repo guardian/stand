@@ -2,16 +2,18 @@ version: 2
 updates:
   - package-ecosystem: 'github-actions'
     directory: '/'
+    labels: ['dependencies', 'run_chromatic']
     schedule:
       interval: 'daily'
     rebase-strategy: 'auto'
   - package-ecosystem: 'npm'
     directory: '/'
+    labels: ['dependencies', 'run_chromatic']
     schedule:
       interval: 'weekly'
       time: '09:00'
       day: 'monday'
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 15
     rebase-strategy: 'auto'
     groups:
       eslint:
