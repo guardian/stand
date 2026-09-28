@@ -1,0 +1,148 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import ToastStories, {
+	CustomTheme,
+	Dismissible,
+	WithAdditionalInformation,
+	WithIcons,
+	WithoutMedia,
+	WithThumbnails,
+} from './Toast.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={ToastStories} />
+
+# Toast
+
+A compact surface for announcing timely, non-blocking updates. Toast is built on [React Aria Toast](https://react-aria.adobe.com/Toast), which manages announcements, focus restoration, dismissal timers, and keyboard access to the notification region.
+
+## When to use
+
+- To confirm that an action completed
+- To announce an update without interrupting the user's workflow
+- To communicate error, warning, success, or informational status
+
+Use an AlertBanner for persistent page-level information and an InlineMessage for feedback attached to a specific control.
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { Button } from '@guardian/stand/Button';
+import { ToastRegion, toastQueue } from '@guardian/stand/Toast';
+
+export const App = () => (
+	<>
+		<Button
+			onPress={() =>
+				toastQueue.add(
+					{
+						level: 'success',
+						title: 'Changes saved',
+						subject: 'Your updates are now available.',
+						showIcon: true,
+					},
+					{ timeout: 5000 },
+				)
+			}
+		>
+			Save
+		</Button>
+		<ToastRegion />
+	</>
+);
+```
+
+Render `ToastRegion` once near the root of the application. Add notifications from anywhere with `toastQueue.add`. Use a timeout of at least five seconds, and only auto-dismiss information that is available elsewhere.
+
+## Props
+
+`ToastRegion` supports the [React Aria ToastRegion API](https://react-aria.adobe.com/Toast#toastregion), plus these props:
+
+| Name         | Type                           | Required | Default      | Description                                        |
+| ------------ | ------------------------------ | -------- | ------------ | -------------------------------------------------- |
+| `queue`      | `ToastQueue<ToastContent>`     | No       | `toastQueue` | Queue displayed by the region.                     |
+| `toastProps` | `Omit<ToastProps, 'toast'>`    | No       | N/A          | Props applied to every toast rendered in a region. |
+| `className`  | `string \| (values) => string` | No       | N/A          | Class name applied to the notification region.     |
+
+Content passed to `toastQueue.add` has these properties:
+
+| Name                 | Type                                                            | Required | Default | Description                                                    |
+| -------------------- | --------------------------------------------------------------- | -------- | ------- | -------------------------------------------------------------- |
+| `level`              | `'error' \| 'warning' \| 'success' \| 'information'`            | Yes      | N/A     | Semantic level controlling the colors and default icon.        |
+| `title`              | `React.ReactNode`                                               | Yes      | N/A     | Short notification summary.                                    |
+| `subject`            | `React.ReactNode`                                               | Yes      | N/A     | Main notification message.                                     |
+| `additionalInfo`     | `React.ReactNode`                                               | No       | N/A     | Supporting information displayed after the subject.            |
+| `thumbnail`          | `React.ReactNode`                                               | No       | N/A     | Leading 4rem square thumbnail. Takes precedence over the icon. |
+| `showIcon`           | `boolean`                                                       | No       | `false` | Displays the icon associated with the semantic level.          |
+| `icon`               | `IconProps['symbol'] \| Exclude<IconProps['children'], string>` | No       | Level   | Replaces the icon associated with the level.                   |
+| `dismissButtonProps` | `Partial<IconButtonProps>`                                      | No       | N/A     | Props for the dismiss button.                                  |
+
+`toastProps` supports the [React Aria Toast API](https://react-aria.adobe.com/Toast#toast), plus `theme` and `cssOverrides` for visual customization.
+
+The region is fixed 20px from the top-right of the viewport. On narrow screens, its width contracts to preserve 20px space on both sides.
+
+## Stories
+
+### With icons
+
+<Canvas layout="padded" of={WithIcons} />
+
+### With thumbnails
+
+<Canvas layout="padded" of={WithThumbnails} />
+
+### Without media
+
+<Canvas layout="padded" of={WithoutMedia} />
+
+### With additional information
+
+<Canvas layout="padded" of={WithAdditionalInformation} />
+
+### Dismissible
+
+<Canvas layout="padded" of={Dismissible} />
+
+## Customisation
+
+Use `toastProps.theme` for token-level changes and `toastProps.cssOverrides` for one-off layout adjustments.
+
+<Canvas layout="padded" of={CustomTheme} />
+
+## Custom Component Build
+
+The Toast tokens are available as CSS custom properties and TypeScript values for use without React or Emotion.
+
+<SandboxCss
+	componentName={componentName}
+	componentCss={componentCss}
+	componentHtml={componentHtml}
+/>
+
+<SandboxJs
+	componentName={componentName}
+	componentJs={componentJs}
+	componentHtml={componentHtml}
+/>
