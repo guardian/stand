@@ -139,7 +139,7 @@ export const MultiSelect = {
 	},
 };
 
-export const TextElisions = {
+export const TextElision = {
 	args: {
 		selectionMode: 'multiple',
 		children: [
