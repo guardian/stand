@@ -9,13 +9,7 @@ import PickerIframeModalStories, {
 	InteractiveExample,
 } from './PickerIframeModal.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
-import {
-	componentName,
-	componentCss,
-	componentHtml,
-	componentJs,
-	componentTsx,
-} from './sandbox';
+import { componentName, componentTsx } from './sandbox';
 
 <Meta of={PickerIframeModalStories} />
 
@@ -102,68 +96,6 @@ const Example = () => {
 | `cssOverrides`           | `SerializedStyles \| SerializedStyles[]`        | No       | N/A     | Emotion overrides for the modal root.                                                            |
 | `className`              | `string`                                        | No       | N/A     | Optional class name forwarded through the default props contract.                                |
 
-## Stories
-
-### Default
-
-<Canvas layout="padded" of={Default} />
-
-### New tab button
-
-<Canvas layout="padded" of={WithOwnTabButton} />
-
-### Custom modal theme
-
-<Canvas layout="padded" of={CustomModalTheme} />
-
-### Custom dialog theme
-
-<Canvas layout="padded" of={CustomDialogTheme} />
-
-### Custom iframe theme
-
-<Canvas layout="padded" of={CustomTheme} />
-
-### CSS overrides
-
-<Canvas layout="padded" of={CssOverrides} />
-
-### Interactive example
-
-<Canvas layout="padded" of={InteractiveExample} />
-
-## Customisation
-
-We recommend using the component as provided, but it can be customised with `modalTheme`, `dialogTheme`, `theme`, and `cssOverrides`.
-
-### Custom theme
-
-The `theme` prop lets you override the size and spacing of the iframe itself:
-
-```tsx
-import { PickerIframeModal } from '@guardian/stand/PickerIframeModal';
-
-const Example = () => (
-	<PickerIframeModal
-		title="Choose an option"
-		href="https://example.com/picker"
-		validate={(messageData) => ({ data: undefined })}
-		handleData={() => {}}
-		closeModal={() => {}}
-		theme={{
-			iframe: {
-				width: '50%',
-				height: '800px',
-				margin: {
-					left: 'auto',
-					right: 'auto',
-				},
-			},
-		}}
-	/>
-);
-```
-
 ### Modal and dialog customisation
 
 Use `modalTheme` and `dialogTheme` to control the modal shell and its inner layout:
@@ -198,20 +130,6 @@ const Example = () => (
 
 ## Custom Component Build
 
-If you're not using React/Emotion, you can create a custom PickerIframeModal component using the styles defined in the `PickerIframeModalTheme` type.
+Due to the interactive functionality of the Modal component (focus trapping, scroll locking, keyboard dismissal, accessibility roles), it is only available as a React component with Emotion for styling.
 
-**`css`**
-
-You can import the PickerIframeModal styles as CSS from the package:
-
-<SandboxCss
-	componentName={componentName}
-	componentHtml={componentHtml}
-	componentCss={componentCss}
-/>
-
-**TypeScript/JavaScript**
-
-Use the `pickerIframeModal` variable and the `PickerIframeModal` type:
-
-<SandboxJs componentName={componentName} componentJs={componentJs} />
+If you want to use a modal in a non-React environment, you would need to build a custom version using vanilla JavaScript and CSS, which requires significant effort to replicate the accessibility and interaction features of this component. We recommend using the provided React component where possible.
