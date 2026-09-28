@@ -112,7 +112,17 @@ export function Select({
 							</span>
 						));
 
-						return Array.from(intersperse(texts, <span>,&nbsp;</span>));
+						const last = texts.pop();
+						const elements = Array.from(
+							intersperse(texts, <span>,&nbsp;</span>),
+						);
+						if (last) {
+							if (elements.length > 0) {
+								elements.push(<span>&nbsp;and&nbsp;</span>);
+							}
+							elements.push(last);
+						}
+						return elements;
 					}}
 				</SelectValue>
 				<Icon css={iconStyles()} symbol="keyboard_arrow_down" size="lg" />
