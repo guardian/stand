@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import React from 'react';
 import {
 	Button,
@@ -38,7 +39,14 @@ export function Option({ children, theme = {}, id, ...props }: OptionProps) {
 		>
 			{({ isSelected, selectionMode }) => {
 				return selectionMode === 'multiple' ? (
-					<Checkbox isSelected={isSelected} isReadOnly excludeFromTabOrder>
+					<Checkbox
+						isSelected={isSelected}
+						isReadOnly
+						excludeFromTabOrder
+						cssOverrides={css`
+							cursor: auto;
+						`}
+					>
 						{children}
 					</Checkbox>
 				) : (
