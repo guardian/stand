@@ -12,6 +12,7 @@ import {
 	defaultToastTheme,
 	toastAdditionalInfoStyles,
 	toastContentStyles,
+	toastDescriptionStyles,
 	toastDismissStyles,
 	toastIconStyles,
 	toastMediaStyles,
@@ -104,14 +105,17 @@ export function Toast({
 				<ReactAriaText slot="title" css={toastTitleStyles(mergedTheme)}>
 					{title}
 				</ReactAriaText>
-				<ReactAriaText slot="description" css={toastSubjectStyles(mergedTheme)}>
-					{subject}
+				<ReactAriaText
+					slot="description"
+					css={toastDescriptionStyles(mergedTheme)}
+				>
+					<span css={toastSubjectStyles(mergedTheme)}>{subject}</span>
+					{additionalInfo !== undefined && additionalInfo !== null ? (
+						<span css={toastAdditionalInfoStyles(mergedTheme)}>
+							{additionalInfo}
+						</span>
+					) : null}
 				</ReactAriaText>
-				{additionalInfo ? (
-					<ReactAriaText css={toastAdditionalInfoStyles(mergedTheme)}>
-						{additionalInfo}
-					</ReactAriaText>
-				) : null}
 			</ReactAriaToastContent>
 			<IconButton
 				slot="close"

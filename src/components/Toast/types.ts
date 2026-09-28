@@ -32,11 +32,12 @@ export interface ToastContent {
 	 */
 	thumbnail?: React.ReactNode;
 	/**
-	 * Displays the icon associated with the semantic variant.
+	 * Displays the icon associated with the semantic level.
 	 */
 	showIcon?: boolean;
 	/**
-	 * Optional replacement for the semantic level icon.
+	 * Optional replacement for the semantic level icon. Supports a Material Symbol
+	 * name or an SVG element, matching the Icon component API.
 	 */
 	icon?: IconProps['symbol'] | Exclude<IconProps['children'], string>;
 	/**

@@ -59,6 +59,14 @@ export const toastTitleStyles = (theme: ToastTheme): SerializedStyles => css`
 	${convertTypographyToEmotionStringStyle(theme.shared.content.titleTypography)}
 `;
 
+export const toastDescriptionStyles = (
+	theme: ToastTheme,
+): SerializedStyles => css`
+	display: ${theme.shared.content.display};
+	flex-direction: ${theme.shared.content.flexDirection};
+	gap: ${theme.shared.content.gap};
+`;
+
 export const toastSubjectStyles = (theme: ToastTheme): SerializedStyles => css`
 	${convertTypographyToEmotionStringStyle(
 		theme.shared.content.subjectTypography,
