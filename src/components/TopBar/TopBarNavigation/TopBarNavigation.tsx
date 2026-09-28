@@ -35,8 +35,7 @@ export function TopBarNavigation({
 	const iconSize = size === 'md' ? 'lg' : 'sm';
 
 	return (
-		<nav
-			aria-label="Top bar navigation"
+		<div
 			css={topBarNavigationDividerStyles(mergedTheme, { alignment }, _menuOpen)}
 		>
 			{menuChildren ? (
@@ -96,6 +95,6 @@ export function TopBarNavigation({
 					</span>
 				</Link>
 			)}
-		</nav>
+		</div>
 	);
 }
