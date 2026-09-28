@@ -251,19 +251,20 @@ export function TopBar({
 							}
 							shouldFlip={false}
 						>
-							{leftSideMenuItems}
+							<nav aria-label="Top bar menu">{leftSideMenuItems}</nav>
 						</ReactAriaPopover>
 					</ReactAriaDialogTrigger>
 				</div>
 			)}
 			<div css={topBarContainerStyles(mergedTheme)}>{toolName}</div>
-			<div
+			<nav
+				aria-label="Top bar"
 				css={topBarContainerStyles(mergedTheme, {
 					collapseBelow: collapseBelow.containerLeft,
 				})}
 			>
 				{leftSide}
-			</div>
+			</nav>
 			{/* RHS - topBarSpacerStyles pushes content to the right */}
 			<div
 				css={[
