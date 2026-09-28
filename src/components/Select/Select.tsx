@@ -7,7 +7,9 @@ import {
 	Select as ReactAriaSelect,
 	SelectValue,
 } from 'react-aria-components';
+import { intersperse } from '../../util/intersperse';
 import { mergeDeep } from '../../util/mergeDeep';
+import { Checkbox } from '../Checkbox/Checkbox';
 import { FormInputContainer } from '../Form/Form';
 import { Icon } from '../Icon/Icon';
 import {
@@ -17,19 +19,33 @@ import {
 	listBoxItemStyles,
 	listBoxStyles,
 	popoverStyles,
+	valueItemStyles,
+	valueListStyles,
 } from './styles';
 import type { ListBoxProps, OptionProps, SelectProps } from './types';
 
 export function Option({ children, theme = {}, id, ...props }: OptionProps) {
 	const mergedTheme = mergeDeep(defaultSelectTheme, theme);
 	const resolvedId = id ?? children;
+
+	let resolvedTextValue = props.textValue;
+	const childText = typeof children === 'string' ? children : undefined;
+	resolvedTextValue ??= childText;
+
 	return (
 		<ReactAriaListBoxItem
 			css={listBoxItemStyles(mergedTheme)}
 			id={resolvedId}
+			textValue={resolvedTextValue}
 			{...props}
 		>
-			{children}
+			{({ isSelected, selectionMode }) => {
+				return selectionMode === 'multiple' ? (
+					<Checkbox isSelected={isSelected}>{children}</Checkbox>
+				) : (
+					children
+				);
+			}}
 		</ReactAriaListBoxItem>
 	);
 }
@@ -76,7 +92,17 @@ export function Select({
 			{...props}
 		>
 			<Button css={buttonStyles(mergedTheme, { size, isInvalid })}>
-				<SelectValue />
+				<SelectValue css={valueListStyles()}>
+					{({ state }) => {
+						const texts = state.selectedItems.map(({ textValue, key }) => (
+							<span key={key} css={valueItemStyles()}>
+								{textValue}
+							</span>
+						));
+
+						return Array.from(intersperse(texts, <span>,&nbsp;</span>));
+					}}
+				</SelectValue>
 				<Icon css={iconStyles()} symbol="keyboard_arrow_down" size="lg" />
 			</Button>
 			<Popover

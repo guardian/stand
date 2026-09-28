@@ -115,3 +115,25 @@ export const iconStyles = (): SerializedStyles => {
 		}
 	`;
 };
+
+export const valueListStyles = (): SerializedStyles => {
+	return css`
+		display: inline-flex;
+		overflow: hidden;
+
+		/* Allow shrinking below intrinisic width of children */
+		min-width: 0;
+	`;
+};
+
+export const valueItemStyles = (): SerializedStyles => {
+	return css`
+		/* Elide text */
+		text-wrap: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+
+		/* Always show first few characters, even when elided */
+		min-width: 4ch;
+	`;
+};
