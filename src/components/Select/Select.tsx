@@ -27,10 +27,7 @@ import type { ListBoxProps, OptionProps, SelectProps } from './types';
 export function Option({ children, theme = {}, id, ...props }: OptionProps) {
 	const mergedTheme = mergeDeep(defaultSelectTheme, theme);
 	const resolvedId = id ?? children;
-
-	let resolvedTextValue = props.textValue;
-	const childText = typeof children === 'string' ? children : undefined;
-	resolvedTextValue ??= childText;
+	const resolvedTextValue = props.textValue ?? children;
 
 	return (
 		<ReactAriaListBoxItem
@@ -93,7 +90,12 @@ export function Select({
 		>
 			<Button css={buttonStyles(mergedTheme, { size, isInvalid })}>
 				<SelectValue css={valueListStyles()}>
-					{({ state }) => {
+					{({ state, defaultChildren }) => {
+						if (state.selectedItems.length === 0) {
+							// For placeholder
+							return defaultChildren;
+						}
+
 						const texts = state.selectedItems.map(({ textValue, key }) => (
 							<span key={key} css={valueItemStyles()}>
 								{textValue}
