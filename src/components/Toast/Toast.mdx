@@ -1,17 +1,7 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import ToastStories, { Interactive } from './Toast.stories';
-import {
-	SandboxReact,
-	SandboxCss,
-	SandboxJs,
-} from '../../util/storybook/sandbox/Sandbox';
-import {
-	componentName,
-	componentCss,
-	componentHtml,
-	componentJs,
-	componentTsx,
-} from './sandbox';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
 
 <Meta of={ToastStories} />
 
@@ -110,16 +100,6 @@ Use `toastProps.theme` for token-level changes and `toastProps.cssOverrides` for
 
 ## Custom Component Build
 
-The Toast tokens are available as CSS custom properties and TypeScript values for use without React or Emotion.
+Due to the interactive functionality of the Toast component (queue management, accessible announcements, focus restoration, dismissal timers, and keyboard access), it is only available as a React component with Emotion for styling.
 
-<SandboxCss
-	componentName={componentName}
-	componentCss={componentCss}
-	componentHtml={componentHtml}
-/>
-
-<SandboxJs
-	componentName={componentName}
-	componentJs={componentJs}
-	componentHtml={componentHtml}
-/>
+Replicating this behaviour in a non-React environment requires a custom implementation of these accessibility and interaction features. We recommend using the provided React component where possible.
