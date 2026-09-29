@@ -437,6 +437,16 @@
 				"default": "./dist/TextListInput.cjs"
 			}
 		},
+		"./PickerIframeModal": {
+			"import": {
+				"types": "./dist/PickerIframeModal.d.ts",
+				"default": "./dist/PickerIframeModal.js"
+			},
+			"require": {
+				"types": "./dist/PickerIframeModal.d.cts",
+				"default": "./dist/PickerIframeModal.cjs"
+			}
+		},
 		"./utils": {
 			"import": {
 				"types": "./dist/utils.d.ts",
