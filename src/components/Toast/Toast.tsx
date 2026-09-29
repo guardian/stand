@@ -38,13 +38,16 @@ const defaultIcons: Record<ToastLevel, NonNullable<ToastContent['icon']>> = {
 	information: 'info',
 };
 
+const mergeToastTheme = (theme: ToastProps['theme']) =>
+	mergeDeep(structuredClone(defaultToastTheme), theme ?? {});
+
 export function ToastRegion({
 	queue = toastQueue,
 	toastProps,
 	className,
 	...props
 }: ToastRegionProps) {
-	const mergedTheme = mergeDeep(defaultToastTheme, toastProps?.theme ?? {});
+	const mergedTheme = mergeToastTheme(toastProps?.theme);
 
 	return (
 		<ReactAriaToastRegion
@@ -65,7 +68,7 @@ export function Toast({
 	className,
 	...props
 }: ToastProps) {
-	const mergedTheme = mergeDeep(defaultToastTheme, theme);
+	const mergedTheme = mergeToastTheme(theme);
 	const {
 		level,
 		title,

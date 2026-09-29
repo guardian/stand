@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
-import { expect, userEvent, within } from 'storybook/test';
+import { expect, userEvent, waitFor, within } from 'storybook/test';
 import { Button } from '../Button/Button';
 import { ToastQueue, ToastRegion } from './Toast';
 import type { ToastContent, ToastLevel, ToastProps } from './types';
@@ -58,6 +58,48 @@ const InteractiveToastExample = () => {
 				Trigger toast
 			</Button>
 			<ToastRegion queue={queue} />
+		</>
+	);
+};
+
+const ThemeIsolationExample = () => {
+	const [hasCustomTheme, setHasCustomTheme] = useState(true);
+	const [queue] = useState(() => new ToastQueue<ToastContent>());
+
+	useEffect(() => {
+		const key = queue.add({
+			level: 'information',
+			title: 'New information available',
+			subject: 'There has been an update since your last visit.',
+		});
+		return () => {
+			queue.close(key);
+		};
+	}, [queue]);
+
+	return (
+		<>
+			<Button onPress={() => setHasCustomTheme((value) => !value)}>
+				Use {hasCustomTheme ? 'default' : 'custom'} theme
+			</Button>
+			<ToastRegion
+				queue={queue}
+				toastProps={
+					hasCustomTheme
+						? {
+								theme: {
+									information: {
+										backgroundColor: '#e8f0fb',
+										accentColor: '#1054af',
+									},
+								},
+								cssOverrides: css`
+									border-left-width: 0.5rem;
+								`,
+							}
+						: undefined
+				}
+			/>
 		</>
 	);
 };
@@ -168,26 +210,18 @@ export const Dismissible: Story = {
 	},
 };
 
-export const CustomTheme = {
-	render: () => (
-		<ToastExample
-			contents={[
-				{
-					...levelContent.information,
-					level: 'information',
-				},
-			]}
-			toastProps={{
-				theme: {
-					information: {
-						backgroundColor: '#e8f0fb',
-						accentColor: '#1054af',
-					},
-				},
-				cssOverrides: css`
-					border-left-width: 0.5rem;
-				`,
-			}}
-		/>
-	),
+export const CustomTheme: Story = {
+	render: () => <ThemeIsolationExample />,
+	play: async ({ canvasElement }) => {
+		const page = within(canvasElement.ownerDocument.body);
+		const toast = await page.findByRole('alertdialog');
+		const customAccent = getComputedStyle(toast).borderLeftColor;
+
+		await userEvent.click(
+			page.getByRole('button', { name: 'Use default theme' }),
+		);
+		await waitFor(() =>
+			expect(getComputedStyle(toast).borderLeftColor).not.toBe(customAccent),
+		);
+	},
 } satisfies Story;
