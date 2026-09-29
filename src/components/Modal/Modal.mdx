@@ -130,14 +130,14 @@ A compound component rendered inside `Modal`. Only `Dialog.Dismiss`, `Dialog.Hea
 
 ### `Dialog.Header`
 
-Renders a `Typography` element with `slot="title"`. Accepts all `TypographyProps`.
+Renders a `react-aria-components` `Heading` with `slot="title"`, which labels the dialog for assistive technology. Accepts all `Heading` props except `slot` and `level` (use `element` instead).
 
-| Name       | Type                          | Required | Default       | Description                                  |
-| ---------- | ----------------------------- | -------- | ------------- | -------------------------------------------- |
-| `variant`  | `TypographyVariant`           | No       | `'headingLg'` | Typography variant applied to the heading.   |
-| `element`  | `string`                      | No       | `'h2'`        | HTML element rendered for the heading.       |
-| `theme`    | `PartialDialogTheme['title']` | No       | N/A           | Override design tokens for the heading area. |
-| `...props` | `TypographyProps`             | No       | N/A           | All other `Typography` props.                |
+| Name       | Type                          | Required | Default       | Description                                        |
+| ---------- | ----------------------------- | -------- | ------------- | -------------------------------------------------- |
+| `variant`  | `TypographyVariant`           | No       | `'headingLg'` | Typography variant applied to the heading.         |
+| `element`  | `'h1'` \| … \| `'h6'`         | No       | `'h2'`        | Heading element rendered.                          |
+| `theme`    | `PartialDialogTheme['title']` | No       | N/A           | Override design tokens for the heading area.       |
+| `...props` | `ReactAria Heading` props     | No       | N/A           | All other `react-aria-components` `Heading` props. |
 
 ### `Dialog.Dismiss`
 

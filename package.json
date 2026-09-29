@@ -1,6 +1,6 @@
 {
 	"name": "@guardian/stand",
-	"version": "0.0.76",
+	"version": "0.0.78",
 	"repository": {
 		"url": "https://github.com/guardian/stand"
 	},
@@ -445,6 +445,16 @@
 			"require": {
 				"types": "./dist/TextListInput.d.cts",
 				"default": "./dist/TextListInput.cjs"
+			}
+		},
+		"./PickerIframeModal": {
+			"import": {
+				"types": "./dist/PickerIframeModal.d.ts",
+				"default": "./dist/PickerIframeModal.js"
+			},
+			"require": {
+				"types": "./dist/PickerIframeModal.d.cts",
+				"default": "./dist/PickerIframeModal.cjs"
 			}
 		},
 		"./utils": {

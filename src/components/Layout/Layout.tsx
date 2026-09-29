@@ -38,7 +38,7 @@ const LayoutAlertBanner = ({
  * Places children into the top bar grid area of the Layout.
  */
 const LayoutTopBar = ({
-	as: Component = 'nav',
+	as: Component = 'header',
 	children,
 	cssOverrides,
 	...props

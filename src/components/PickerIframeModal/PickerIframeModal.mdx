@@ -1,0 +1,135 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import PickerIframeModalStories, {
+	Default,
+	WithOwnTabButton,
+	CustomModalTheme,
+	CustomDialogTheme,
+	CustomTheme,
+	CssOverrides,
+	InteractiveExample,
+} from './PickerIframeModal.stories';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
+
+<Meta of={PickerIframeModalStories} />
+
+# PickerIframeModal
+
+The `PickerIframeModal` renders an iframe inside a modal dialog and listens for `postMessage` events from that iframe. After validating the payload, it calls `handleData` and optionally closes itself.
+
+This is useful for launching a third-party selection flow and returning a structured choice back into the host application.
+
+## When to use
+
+- Opening a selection flow hosted in another page or service
+- Passing a user choice back from an external picker into the application
+- Requiring a modal wrapper while the user completes a decision in a child view
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import { useState } from 'react';
+import { PickerIframeModal } from '@guardian/stand/PickerIframeModal';
+
+const Example = () => {
+	const [href, setHref] = useState<string | undefined>(undefined);
+	const [selection, setSelection] = useState<string | undefined>();
+
+	return (
+		<>
+			<button onClick={() => setHref('https://example.com/image-picker')}>
+				Open picker
+			</button>
+
+			<PickerIframeModal
+				title="Image picker"
+				href={href}
+				validate={(messageData) => {
+					if (
+						messageData &&
+						typeof messageData === 'object' &&
+						'imageId' in messageData &&
+						typeof messageData.imageId === 'string'
+					) {
+						return { data: messageData.imageId };
+					}
+					return { data: undefined };
+				}}
+				handleData={(data) => {
+					setSelection(data);
+				}}
+				closeModal={() => setHref(undefined)}
+				showOpenInNewTabButton
+			/>
+
+			<div>{selection ?? 'No selection yet'}</div>
+		</>
+	);
+};
+```
+
+## Props
+
+| Name                     | Type                                            | Required | Default | Description                                                                                      |
+| ------------------------ | ----------------------------------------------- | -------- | ------- | ------------------------------------------------------------------------------------------------ |
+| `title`                  | `ReactNode`                                     | Yes      | N/A     | Header content shown in the modal title area.                                                    |
+| `closeModal`             | `() => void`                                    | Yes      | N/A     | Callback used to close the modal after a valid message is handled or when the user dismisses it. |
+| `href`                   | `string`                                        | No       | N/A     | URL of the iframe to load. If undefined, the modal stays closed.                                 |
+| `validate`               | `(messageData: unknown) => { data?: DataType }` | Yes      | N/A     | Validates a `postMessage` payload and returns parsed data.                                       |
+| `handleData`             | `(data: DataType) => void`                      | Yes      | N/A     | Callback invoked with the validated message payload.                                             |
+| `closeAfterHandling`     | `boolean`                                       | No       | `true`  | Whether the modal closes immediately after `handleData` is called.                               |
+| `modalTheme`             | `DeepPartial<ModalTheme>`                       | No       | N/A     | Overrides for the outer modal size, spacing, and overlay styling.                                |
+| `dialogTheme`            | `DeepPartial<DialogTheme>`                      | No       | N/A     | Overrides for dialog spacing, title, dismiss button, and content styling.                        |
+| `showOpenInNewTabButton` | `boolean`                                       | No       | `false` | Shows a link button to open the iframe URL in a new tab.                                         |
+| `theme`                  | `DeepPartial<PickerIframeModalTheme>`           | No       | N/A     | Overrides for the iframe and container spacing tokens.                                           |
+| `cssOverrides`           | `SerializedStyles \| SerializedStyles[]`        | No       | N/A     | Emotion overrides for the modal root.                                                            |
+| `className`              | `string`                                        | No       | N/A     | Optional class name forwarded through the default props contract.                                |
+
+### Modal and dialog customisation
+
+Use `modalTheme` and `dialogTheme` to control the modal shell and its inner layout:
+
+```tsx
+import { PickerIframeModal } from '@guardian/stand/PickerIframeModal';
+
+const Example = () => (
+	<PickerIframeModal
+		title="Choose an option"
+		href="https://example.com/picker"
+		validate={(messageData) => ({ data: undefined })}
+		handleData={() => {}}
+		closeModal={() => {}}
+		modalTheme={{
+			modal: {
+				width: '600px',
+				maxWidth: '60vw',
+			},
+		}}
+		dialogTheme={{
+			title: {
+				marginBottom: '1rem',
+			},
+			children: {
+				marginBottom: '0',
+			},
+		}}
+	/>
+);
+```
+
+## Custom Component Build
+
+Due to the interactive functionality of the Modal component (focus trapping, scroll locking, keyboard dismissal, accessibility roles), it is only available as a React component with Emotion for styling.
+
+If you want to use a modal in a non-React environment, you would need to build a custom version using vanilla JavaScript and CSS, which requires significant effort to replicate the accessibility and interaction features of this component. We recommend using the provided React component where possible.

@@ -1,5 +1,18 @@
 # @guardian/stand
 
+## 0.0.78
+
+### Patch Changes
+
+- acc31d6: add picker iframe
+- d061c0a: Fix `Dialog.Header` crashing with react-aria-components 1.20.0 ("Invalid slot "title""). `Dialog.Header` now renders a react-aria-components `Heading` with `slot="title"`, so it also provides the dialog's accessible name on all supported react-aria-components versions. `element` is now restricted to `h1`–`h6`, and props are now `Heading` props rather than `Typography` props.
+
+## 0.0.77
+
+### Patch Changes
+
+- 1c30e19: Fix TopBar and Layout landmarks by changing LayoutTopBar to default to a <header> element, and wrapping navigation links in dedicated <nav> elements with distinct ARIA labels for desktop and mobile.
+
 ## 0.0.76
 
 ### Patch Changes

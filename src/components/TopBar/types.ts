@@ -10,4 +10,9 @@ export type TopBarProps = DefaultPropsWithChildren<TopBarTheme> & {
 		toolName?: Breakpoint;
 		containerLeft?: Breakpoint;
 	};
+	/**
+	 * Accessible label for the main navigation landmarks.
+	 * Default: 'Top bar'
+	 */
+	navAriaLabel?: string;
 };
