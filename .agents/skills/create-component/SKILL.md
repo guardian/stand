@@ -90,7 +90,7 @@ For example, a request for a ToggleSwitch based on the React Aria Switch compone
    - Ensure the MDX peer dependency section matches the implementation import chain.
 
 9. Validate sandbox examples in Storybook when the canary workflow is available:
-   - If the branch can publish a canary and npm access is available, apply the repository's canary label (`Run Canaries` / `🐥 Canaries`) to publish the branch snapshot to npm.
+   - If the branch can publish a canary and npm access is available, apply the repository's `🐥 Canaries` label to publish the branch snapshot to npm.
    - Start Storybook against the snapshot:
 
      ```sh

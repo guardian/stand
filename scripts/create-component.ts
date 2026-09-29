@@ -130,7 +130,7 @@ const printPublishChecklist = (names: NameSet): void => {
 		` - Review src/${names.pascalCase}.ts and add it to package.json exports and typesVersions`,
 	);
 	console.log(
-		` - Export component${names.pascalCase} from src/index.ts if it should be available from the root entry point`,
+		` - Export component${names.pascalCase} and Component${names.pascalCase} from src/index.ts if they should be available from the root entry point`,
 	);
 	console.log(' - Add component documentation, stories, and sandbox examples');
 	console.log(
