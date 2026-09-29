@@ -4,9 +4,12 @@ import {
 	componentTemplateComponent,
 	type ComponentTemplateComponent,
 } from '../../styleD/build/typescript/component/templateComponent';
-import type { Prettify } from '../../util/types';
+import type { DeepPartial, Prettify } from '../../util/types';
 
 export type TemplateComponentTheme = Prettify<ComponentTemplateComponent>;
+export type PartialTemplateComponentTheme = Prettify<
+	DeepPartial<ComponentTemplateComponent>
+>;
 export const defaultTemplateComponentTheme: TemplateComponentTheme =
 	componentTemplateComponent;
 
