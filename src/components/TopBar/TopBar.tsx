@@ -104,6 +104,7 @@ export function TopBar({
 	theme = {},
 	cssOverrides,
 	className,
+	navAriaLabel = 'Top bar',
 	...props
 }: TopBarProps) {
 	const [menuOpen, setMenuOpen] = React.useState(false);
@@ -213,7 +214,8 @@ export function TopBar({
 		>
 			{/* LHS */}
 			{leftSideMenuItems.length > 0 && (
-				<div
+				<nav
+					aria-label={navAriaLabel}
 					css={topBarContainerStyles(mergedTheme, {
 						showUntil: collapseBelow.containerLeft,
 					})}
@@ -254,16 +256,17 @@ export function TopBar({
 							{leftSideMenuItems}
 						</ReactAriaPopover>
 					</ReactAriaDialogTrigger>
-				</div>
+				</nav>
 			)}
 			<div css={topBarContainerStyles(mergedTheme)}>{toolName}</div>
-			<div
+			<nav
+				aria-label={navAriaLabel}
 				css={topBarContainerStyles(mergedTheme, {
 					collapseBelow: collapseBelow.containerLeft,
 				})}
 			>
 				{leftSide}
-			</div>
+			</nav>
 			{/* RHS - topBarSpacerStyles pushes content to the right */}
 			<div
 				css={[
