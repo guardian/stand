@@ -267,6 +267,16 @@
 				"default": "./dist/Tile.cjs"
 			}
 		},
+		"./Toast": {
+			"import": {
+				"types": "./dist/Toast.d.ts",
+				"default": "./dist/Toast.js"
+			},
+			"require": {
+				"types": "./dist/Toast.d.cts",
+				"default": "./dist/Toast.cjs"
+			}
+		},
 		"./AlertBanner": {
 			"import": {
 				"types": "./dist/AlertBanner.d.ts",
@@ -499,6 +509,7 @@
 		"./component/toggleSwitch.css": "./dist/styleD/build/css/component/toggleSwitch.css",
 		"./component/textArea.css": "./dist/styleD/build/css/component/textArea.css",
 		"./component/tile.css": "./dist/styleD/build/css/component/tile.css",
+		"./component/toast.css": "./dist/styleD/build/css/component/toast.css",
 		"./component/alertBanner.css": "./dist/styleD/build/css/component/alertBanner.css",
 		"./component/datePicker.css": "./dist/styleD/build/css/component/datePicker.css",
 		"./component/intendedAudienceSignifier.css": "./dist/styleD/build/css/component/intendedAudienceSignifier.css",
@@ -607,6 +618,9 @@
 			],
 			"Tile": [
 				"./dist/Tile.d.ts"
+			],
+			"Toast": [
+				"./dist/Toast.d.ts"
 			],
 			"AlertBanner": [
 				"./dist/AlertBanner.d.ts"
