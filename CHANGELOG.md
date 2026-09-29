@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.79
+
+### Patch Changes
+
+- 0277702: Add an accessible Toast component for non-blocking notifications, with semantic levels, structured content, optional icons or thumbnails, queue-based dismissal, and design-token exports.
+
 ## 0.0.78
 
 ### Patch Changes
