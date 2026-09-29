@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.0.80
+
+### Patch Changes
+
+- de32885: Add multi-select support to the <Select /> component
+
 ## 0.0.79
 
 ### Patch Changes
