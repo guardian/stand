@@ -115,3 +115,32 @@ export const iconStyles = (): SerializedStyles => {
 		}
 	`;
 };
+
+export const valueListStyles = (): SerializedStyles => {
+	return css`
+		display: inline-flex;
+		overflow: hidden;
+
+		/* Allow shrinking below intrinisic width of children */
+		min-width: 0;
+	`;
+};
+
+export const valueItemStyles = (): SerializedStyles => {
+	return css`
+		/* Elide text */
+		text-wrap: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+
+		/** Minimum width of an elided text snippet. Text naturally shorter than this won't be elided */
+		--elided-text-snippet-min-width: 4ch;
+
+		/* Always show first few characters, even when elided */
+		min-width: min(var(--elided-text-snippet-min-width), min-content);
+		max-width: min-content;
+
+		/* Prefer to elide longer pieces of text first */
+		flex: 1 1 var(--elided-text-snippet-min-width);
+	`;
+};
