@@ -1,0 +1,210 @@
+{
+	"component": {
+		"toast": {
+			"region": {
+				"position": {
+					"$type": "string",
+					"$value": "fixed"
+				},
+				"right": {
+					"$type": "dimension",
+					"$value": "{base.spacing.20Rem}"
+				},
+				"top": {
+					"$type": "dimension",
+					"$value": "{base.spacing.20Rem}"
+				},
+				"zIndex": {
+					"$type": "number",
+					"$value": 1000
+				},
+				"display": {
+					"$type": "string",
+					"$value": "flex"
+				},
+				"flexDirection": {
+					"$type": "string",
+					"$value": "column"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackSm}"
+				},
+				"outline": {
+					"$type": "string",
+					"$value": "none"
+				}
+			},
+			"shared": {
+				"display": {
+					"$type": "string",
+					"$value": "grid"
+				},
+				"alignItems": {
+					"$type": "string",
+					"$value": "start"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackSm}"
+				},
+				"width": {
+					"$type": "dimension",
+					"$value": "100%"
+				},
+				"maxWidth": {
+					"$type": "dimension",
+					"$value": "26.25rem"
+				},
+				"padding": {
+					"top": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackSm}"
+					},
+					"right": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackSm}"
+					},
+					"bottom": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackSm}"
+					},
+					"left": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackSm}"
+					}
+				},
+				"borderWidth": {
+					"$type": "dimension",
+					"$value": "0px"
+				},
+				"accentBorderWidth": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.border.md}"
+				},
+				"borderStyle": {
+					"$type": "strokeStyle",
+					"$value": "solid"
+				},
+				"borderRadius": {
+					"$type": "dimension",
+					"$value": "{semantic.radius.cornerSm}"
+				},
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.strong}"
+				},
+				"shadow": {
+					"$type": "shadow",
+					"$value": "{semantic.shadow.raised}"
+				},
+				"content": {
+					"display": {
+						"$type": "string",
+						"$value": "flex"
+					},
+					"flexDirection": {
+						"$type": "string",
+						"$value": "column"
+					},
+					"gap": {
+						"$type": "dimension",
+						"$value": "{semantic.spacing.stackXxs}"
+					},
+					"titleTypography": {
+						"font": {
+							"$type": "typography",
+							"$value": "{semantic.typography.headingSm.font}"
+						},
+						"letterSpacing": {
+							"$type": "dimension",
+							"$value": "{semantic.typography.headingSm.letterSpacing}"
+						},
+						"fontWidth": {
+							"$type": "number",
+							"$value": "{semantic.typography.headingSm.fontWidth}"
+						}
+					},
+					"subjectTypography": {
+						"font": {
+							"$type": "typography",
+							"$value": "{semantic.typography.bodySm.font}"
+						},
+						"letterSpacing": {
+							"$type": "dimension",
+							"$value": "{semantic.typography.bodySm.letterSpacing}"
+						},
+						"fontWidth": {
+							"$type": "number",
+							"$value": "{semantic.typography.bodySm.fontWidth}"
+						}
+					},
+					"additionalInfoTypography": {
+						"font": {
+							"$type": "typography",
+							"$value": "{semantic.typography.bodyXs.font}"
+						},
+						"letterSpacing": {
+							"$type": "dimension",
+							"$value": "{semantic.typography.bodyXs.letterSpacing}"
+						},
+						"fontWidth": {
+							"$type": "number",
+							"$value": "{semantic.typography.bodyXs.fontWidth}"
+						}
+					}
+				},
+				"media": {
+					"size": {
+						"$type": "dimension",
+						"$value": "4rem"
+					},
+					"borderRadius": {
+						"$type": "dimension",
+						"$value": "{semantic.radius.cornerXs}"
+					}
+				}
+			},
+			"information": {
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.informationWeak}"
+				},
+				"accentColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.information}"
+				}
+			},
+			"success": {
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.successWeak}"
+				},
+				"accentColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.success}"
+				}
+			},
+			"warning": {
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.warningWeak}"
+				},
+				"accentColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.warning}"
+				}
+			},
+			"error": {
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.errorWeak}"
+				},
+				"accentColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.error}"
+				}
+			}
+		}
+	}
+}
