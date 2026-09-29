@@ -1,5 +1,11 @@
 # @guardian/stand
 
+## 0.1.0
+
+### Minor Changes
+
+- 1c30e19: Fix TopBar and Layout landmarks by changing LayoutTopBar to default to a <header> element, and wrapping navigation links in dedicated <nav> elements with distinct ARIA labels for desktop and mobile.
+
 ## 0.0.76
 
 ### Patch Changes
