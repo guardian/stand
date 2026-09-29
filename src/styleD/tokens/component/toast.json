@@ -8,11 +8,11 @@
 				},
 				"right": {
 					"$type": "dimension",
-					"$value": "1.25rem"
+					"$value": "{base.spacing.20Rem}"
 				},
 				"top": {
 					"$type": "dimension",
-					"$value": "1.25rem"
+					"$value": "{base.spacing.20Rem}"
 				},
 				"zIndex": {
 					"$type": "number",
