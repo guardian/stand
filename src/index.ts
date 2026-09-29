@@ -60,6 +60,8 @@ export { componentLink } from './styleD/build/typescript/component/link';
 export type { ComponentLink } from './styleD/build/typescript/component/link';
 export { componentAlertBanner } from './styleD/build/typescript/component/alertBanner';
 export type { ComponentAlertBanner } from './styleD/build/typescript/component/alertBanner';
+export { componentToast } from './styleD/build/typescript/component/toast';
+export type { ComponentToast } from './styleD/build/typescript/component/toast';
 export { componentRadioGroup } from './styleD/build/typescript/component/radioGroup';
 export type { ComponentRadioGroup } from './styleD/build/typescript/component/radioGroup';
 export { componentSelect } from './styleD/build/typescript/component/select';
