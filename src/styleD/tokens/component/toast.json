@@ -80,7 +80,7 @@
 				},
 				"accentBorderWidth": {
 					"$type": "dimension",
-					"$value": "0.125rem"
+					"$value": "{semantic.sizing.border.md}"
 				},
 				"borderStyle": {
 					"$type": "strokeStyle",
