@@ -1,12 +1,5 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
-import ToastStories, {
-	CustomTheme,
-	Dismissible,
-	WithAdditionalInformation,
-	WithIcons,
-	WithoutMedia,
-	WithThumbnails,
-} from './Toast.stories';
+import ToastStories, { Interactive } from './Toast.stories';
 import {
 	SandboxReact,
 	SandboxCss,
@@ -107,31 +100,13 @@ The region is fixed 20px from the top-right of the viewport. On narrow screens, 
 
 ## Stories
 
-### With icons
+### Interactive
 
-<Canvas layout="padded" of={WithIcons} />
-
-### With thumbnails
-
-<Canvas layout="padded" of={WithThumbnails} />
-
-### Without media
-
-<Canvas layout="padded" of={WithoutMedia} />
-
-### With additional information
-
-<Canvas layout="padded" of={WithAdditionalInformation} />
-
-### Dismissible
-
-<Canvas layout="padded" of={Dismissible} />
+<Canvas layout="padded" of={Interactive} />
 
 ## Customisation
 
 Use `toastProps.theme` for token-level changes and `toastProps.cssOverrides` for one-off layout adjustments.
-
-<Canvas layout="padded" of={CustomTheme} />
 
 ## Custom Component Build
 

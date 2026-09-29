@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useEffect, useState } from 'react';
 import { expect, userEvent, within } from 'storybook/test';
+import { Button } from '../Button/Button';
 import { ToastQueue, ToastRegion } from './Toast';
 import type { ToastContent, ToastLevel, ToastProps } from './types';
 
@@ -31,6 +32,34 @@ const ToastExample = ({
 	}, [contents, queue]);
 
 	return <ToastRegion queue={queue} toastProps={toastProps} />;
+};
+
+const InteractiveToastExample = () => {
+	const [queue] = useState(
+		() => new ToastQueue<ToastContent>({ maxVisibleToasts: 1 }),
+	);
+
+	return (
+		<>
+			<Button
+				onPress={() => {
+					queue.clear();
+					queue.add(
+						{
+							level: 'success',
+							title: 'Changes saved',
+							subject: 'Your updates are now available.',
+							showIcon: true,
+						},
+						{ timeout: 5000 },
+					);
+				}}
+			>
+				Trigger toast
+			</Button>
+			<ToastRegion queue={queue} />
+		</>
+	);
 };
 
 const levelContent: Record<ToastLevel, Omit<ToastContent, 'level'>> = {
@@ -72,6 +101,10 @@ const plainContents = levels.map(([level, content]) => ({
 	...content,
 	level,
 }));
+
+export const Interactive = {
+	render: () => <InteractiveToastExample />,
+} satisfies Story;
 
 export const WithIcons = {
 	render: () => <ToastExample contents={iconContents} />,

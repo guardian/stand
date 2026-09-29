@@ -30,7 +30,7 @@ export const componentToast = {
 		borderStyle: 'solid',
 		borderRadius: '0.25rem',
 		color: '#000000',
-		shadow: '0px 2px 6px 0px rgb(0% 0% 0% / 0.3)',
+		shadow: '0 0.125rem 0.375rem 0 rgb(0% 0% 0% / 0.3)',
 		content: {
 			display: 'flex',
 			flexDirection: 'column',
