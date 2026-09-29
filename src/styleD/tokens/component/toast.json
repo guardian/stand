@@ -96,17 +96,7 @@
 				},
 				"shadow": {
 					"$type": "shadow",
-					"$value": {
-						"color": {
-							"colorSpace": "srgb",
-							"components": [0, 0, 0],
-							"alpha": 0.3
-						},
-						"offsetX": "0px",
-						"offsetY": "2px",
-						"blur": "6px",
-						"spread": "0px"
-					}
+					"$value": "{semantic.shadow.raised}"
 				},
 				"content": {
 					"display": {
