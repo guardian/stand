@@ -133,7 +133,14 @@ export const valueItemStyles = (): SerializedStyles => {
 		text-overflow: ellipsis;
 		overflow: hidden;
 
+		/** Minimum width of an elided text snippet. Text naturally shorter than this won't be elided */
+		--elided-text-snippet-min-width: 4ch;
+
 		/* Always show first few characters, even when elided */
-		min-width: 4ch;
+		min-width: min(var(--elided-text-snippet-min-width), min-content);
+		max-width: min-content;
+
+		/* Prefer to elide longer pieces of text first */
+		flex: 1 1 var(--elided-text-snippet-min-width);
 	`;
 };
