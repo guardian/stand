@@ -661,6 +661,9 @@
 			],
 			"TextListInput": [
 				"./dist/TextListInput.d.ts"
+			],
+			"PickerIframeModal": [
+				"./dist/PickerIframeModal.d.ts"
 			]
 		}
 	},
