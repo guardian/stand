@@ -28,6 +28,8 @@ The following guidelines apply to all components:
 
 Components for the Tools Design System should also:
 
+- Be verified by the design systems team before being treated as part of the supported design system.
+
 - **Follow the design system foundations**
   - Use the established design tokens (base, semantic, and component-level) rather than hard-coded values.
   - Prefer [semantic tokens over base tokens](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-semantic-color--docs) wherever possible.
@@ -39,6 +41,8 @@ Components for the Tools Design System should also:
 ### Editorial Components
 
 Editorial components should also:
+
+- Be shared across tools but not yet fully verified or battle-tested by the design systems team, or be shared components that do not fit the design system foundations. A component should not be placed here only because it is used by an editorial tool.
 
 - **Component-focused**
   - Focus on shared UI components that could be reused across multiple (2+) Guardian tools.
@@ -62,12 +66,19 @@ All new components must:
   - Update the component list in the relevant introduction page ([Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs)).
 - Be accessible (see below).
 
-There is a cli script available to generate the the src files needed for a new component:
-`pnpm run create-component`
+### Scaffold a component
+
+Use the component generator to create the initial source files and component token file:
+
+```sh
+pnpm run create-component
+```
+
+When prompted, enter the component name in words, for example `alert banner`. The generator creates the component folder, React component templates, Storybook documentation and stories, sandbox, design-token file, and the public `src/AlertBanner.ts` entrypoint. It also runs Style Dictionary and prints the remaining publication checklist.
 
 **Note:** Separate words in the component name with spaces rather than camel or Pascal casing as this conversion happens automatically when the files are created. eg. 'alert banner'. If you supply a pre-cased name the created files will not be properly cased.
 
-The script does not add the component to the package - follow the steps in the [Exports](#exports) section below for that.
+The script does not add the component to the package exports or root token exports. Follow the steps in the [Exports](#exports) section and complete the checklist printed by the generator.
 
 ## Style Dictionary - Design Tokens
 
@@ -80,49 +91,55 @@ If you are adding or modifying design tokens:
 
 2. **Run the style dictionary build** to regenerate the output files:
 
-   ```sh
-   pnpm run build-styled
-   ```
+```sh
+pnpm run build-styled
+```
 
-   This produces:
-   - `src/styleD/build/css/component/<name>.css` – CSS custom properties
-   - `src/styleD/build/typescript/component/<name>.ts` – typed JS/TS token object
+This produces:
+
+- `src/styleD/build/css/component/<name>.css` – CSS custom properties
+- `src/styleD/build/typescript/component/<name>.ts` – typed JS/TS token object
 
 3. **Commit the generated files**: the build outputs in `src/styleD/build/` are committed to the repository and must be kept in sync with the token sources.
 
 ## Exports
 
-Each component is published as its own **subpath export** (e.g. `@guardian/stand/avatar`) so that consumers only bundle what they use. When adding a new component, the following files must all be updated together:
+Each component is published as its own **subpath export** (e.g. `@guardian/stand/Avatar`) so that consumers only bundle what they use. When adding a new component, the following files must all be updated together:
 
 1. **Create `src/<component-name>.ts`**: the tsdown entry point and public API for the subpath. It should re-export the component, its props type, its theme type, and the style dictionary token variable/type:
 
-   ```ts
-   // use src/avatar.ts or another component as a template
-   export { Avatar } from './components/avatar/Avatar';
-   export type { AvatarProps } from './components/avatar/types';
-   export type { AvatarTheme } from './components/avatar/styles';
-   export { componentAvatar } from './styleD/build/typescript/component/avatar';
-   export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
-   ```
+```ts
+// use src/Avatar.ts or another component as a template
+export { Avatar } from './components/Avatar/Avatar';
+export type { AvatarProps } from './components/Avatar/types';
+export type { PartialAvatarTheme as AvatarTheme } from './components/Avatar/styles';
+export { componentAvatar } from './styleD/build/typescript/component/avatar';
+export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
+```
 
 2. **Update `package.json`**: Three separate sections must be updated:
 
    **`exports`**: add the JS subpath and, if a CSS build exists, the CSS subpath:
 
    ```json
-   "./avatar": {
-     "types": "./dist/avatar.d.ts",
-     "import": "./dist/avatar.js",
-     "require": "./dist/avatar.cjs"
+   "./Avatar": {
+     "import": {
+       "types": "./dist/Avatar.d.ts",
+       "default": "./dist/Avatar.js"
+     },
+     "require": {
+       "types": "./dist/Avatar.d.cts",
+       "default": "./dist/Avatar.cjs"
+     }
    },
    "./component/avatar.css": "./dist/styleD/build/css/component/avatar.css"
    ```
 
-   **`typesVersions`**: Required for TypeScript consumers using `moduleResolution: node` (legacy):
+**`typesVersions`**: Required for TypeScript consumers using `moduleResolution: node` (legacy):
 
-   ```json
-   "avatar": ["./dist/avatar.d.ts"]
-   ```
+```json
+"Avatar": ["./dist/Avatar.d.ts"]
+```
 
 3. **Update `src/index.ts`**: Add any token exports that should be available from the root `@guardian/stand` entry point (typically the style dictionary variable and its type):
 
@@ -146,6 +163,25 @@ Each component is published as its own **subpath export** (e.g. `@guardian/stand
 
 - Ensure that your component works in another project when you build it e.g. using canaries (add the `🐥 Canaries` label to a PR with a changeset to do this), using `pnpm link`, or using the `file:` dependency in `package.json`
 
+### Testing sandboxes locally
+
+It is worth testing sandbox examples locally in Storybook first to make sure the React, CSS, and JavaScript playground/sandbox examples render correctly.
+
+To do this, first release a canary version of the branch by applying the `🐥 Canaries` label to the PR. This publishes a snapshot version to npm and leaves a comment on the PR with the snapshot version. Then run Storybook locally against that canary:
+
+```sh
+STORYBOOK_SANDBOX_STAND_VERSION=<version> pnpm run storybook
+
+# e.g.
+# STORYBOOK_SANDBOX_STAND_VERSION=0.0.0-canary-20260827105140 pnpm run storybook
+```
+
+The Storybook documentation will load each sandbox against that version of Stand, allowing you to test the examples.
+
+For CSS and JavaScript examples, test the styling and check that it looks reasonably similar to the React version. Their functionality does not need to be tested.
+
+If setting up a sandbox for the CSS or JavaScript example is too complicated, leave a note explaining that it is not easily possible. The [Modal documentation](https://github.com/guardian/stand/blob/main/src/components/Modal/Modal.mdx?rgh-link-date=2026-09-29T07%3A30%3A53Z#custom-component-build) is an example where the sandbox is missing for the CSS/JavaScript build. If a sandbox is not easily possible, remove the HTML/CSS/JavaScript example from the sandbox file and keep only the React example.
+
 ## Accessibility
 
 - Follow the [Source accessibility guidelines](https://github.com/guardian/csnx/blob/main/docs/source/contributing.md#accessibility).
@@ -159,6 +195,8 @@ Each component is published as its own **subpath export** (e.g. `@guardian/stand
   - **Patch**: bug fixes and backwards-compatible changes.
   - **Minor**: backwards-compatible new features.
   - **Major**: breaking changes.
+    - This includes removing or renaming a public export, changing a public type incompatibly, altering required peer dependencies, or otherwise requiring consumer changes.
+    - Breaking changes should include migration guidance in the changelog or release notes.
 
 - Run `npx changeset` to create a changeset when you make changes that should be included in a release.
   - Follow the prompts to describe your changes and select the appropriate version bump (patch, minor, major).

@@ -53,11 +53,18 @@ Depending on your project setup, you may also need to install [peer dependencies
 
 **My project uses React, Emotion, and TypeScript:**
 
-See the `peerDependencies` in `package.json` for compatible versions and install them.
+Alongside React, Emotion and TypeScript, most projects will also need [`react-aria-components`](https://react-aria.adobe.com/), which many Stand components are built on:
 
-If you're using the Tools Design System, you may also want to install the compatible version of [`react-aria-components`](https://react-aria.adobe.com/).
+```bash
+pnpm add react-aria-components
+```
 
-For specific Editorial Components, check the documentation for each component for additional dependencies.
+A few components need extra dependencies:
+
+- **DatePicker**: `@internationalized/date`
+- **Byline**: `prosemirror-model`, `prosemirror-state`, `prosemirror-view`, `prosemirror-keymap`, `prosemirror-history`, `prosemirror-dropcursor` and `@guardian/prosemirror-invisibles`
+
+Compatible version ranges are listed under [`peerDependencies`](package.json) in `package.json`.
 
 **My project doesn't (or can't) use React, Emotion, or TypeScript:**
 
@@ -66,6 +73,63 @@ You can still use design tokens and styles from the Tools Design System. Import 
 **My project doesn't use JavaScript at all:**
 
 You can import CSS variables from the package, provided your build process supports importing CSS from `node_modules`. See the "Custom Component Build" section in each component's documentation.
+
+### Fonts
+
+Most applications only need **Open Sans** and **Guardian Headline**. Load **Guardian Text Egyptian** too if you use the `article-body-*` typography tokens.
+
+Open Sans is hosted on the Guardian CDN. You can load it with CSS `@import`, an HTML `<link>`, or from the package if your bundler supports CSS imports:
+
+```css
+@import url('https://assets.guim.co.uk/fonts/open-sans/OpenSans.css');
+```
+
+```html
+<link
+	rel="stylesheet"
+	href="https://assets.guim.co.uk/fonts/open-sans/OpenSans.css"
+/>
+```
+
+```ts
+import '@guardian/stand/fonts/OpenSans.css';
+```
+
+The design system only uses the bold (700) weight of Guardian Headline:
+
+```css
+@font-face {
+	font-family: 'GH Guardian Headline';
+	src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/full-not-hinted/GHGuardianHeadline-Bold.woff2')
+		format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+```
+
+For the Guardian Text Egyptian `@font-face` declarations and other options, see the [Semantic Typography](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-semantic-typography--docs) documentation and the [guardian/fonts](https://github.com/guardian/fonts) repo.
+
+### Icons
+
+Components that take a `symbol` or string `icon` prop use the [Material Symbols](https://developers.google.com/fonts/docs/material_symbols) font, which is hosted on the Guardian CDN. We recommend the Outlined style:
+
+```css
+@import url('https://assets.guim.co.uk/fonts/material-symbols/MaterialSymbolsOutlined.css');
+```
+
+```html
+<link
+	rel="stylesheet"
+	href="https://assets.guim.co.uk/fonts/material-symbols/MaterialSymbolsOutlined.css"
+/>
+```
+
+```ts
+import '@guardian/stand/fonts/MaterialSymbolsOutlined.css';
+```
+
+Rounded and Sharp styles are also available. For those, and for using SVG icons instead, see the [Icon](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-components-icon--docs) documentation.
 
 ## Usage
 

@@ -1,0 +1,21 @@
+/**
+ * TemplateComponent component entry point
+ *
+ * Peer dependencies required to use these components:
+ * - `@emotion/react`
+ * - `react`
+ * - `react-dom`
+ * - `react-aria-components`
+ * - `typescript`
+ * TODO: Verify these peer dependencies before release, then remove this line.
+ *
+ * See the `peerDependencies` section of package.json for compatible versions.
+ *
+ * If you only need the built CSS (./component/templateComponent.css),
+ * you don't need to install these.
+ */
+export { TemplateComponent } from './components/TemplateComponent/TemplateComponent';
+export type { TemplateComponentProps } from './components/TemplateComponent/types';
+export type { PartialTemplateComponentTheme as TemplateComponentTheme } from './components/TemplateComponent/styles';
+export { componentTemplateComponent } from './styleD/build/typescript/component/templateComponent';
+export type { ComponentTemplateComponent } from './styleD/build/typescript/component/templateComponent';

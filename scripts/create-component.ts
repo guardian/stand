@@ -1,5 +1,7 @@
+import { execFile } from 'node:child_process';
 import fs from 'node:fs';
 import readline from 'node:readline';
+import { promisify } from 'node:util';
 
 type NameSet = {
 	kebabCase: string;
@@ -11,6 +13,7 @@ const SRC_COMPONENTS_PATH = './src/components';
 const TOKENS_PATH = './src/styleD/tokens/component';
 const SRC_COMPONENT_TEMPLATE_PATH = './src/templates/component';
 const TOKEN_TEMPATE_PATH = './src/templates/design-tokens';
+const execFileAsync = promisify(execFile);
 
 const componentFolder = (pascalCasedName: string) =>
 	`${SRC_COMPONENTS_PATH}/${pascalCasedName}`;
@@ -102,15 +105,49 @@ const writeFile = async (
 	});
 };
 
+const runStyleDictionary = async (): Promise<void> => {
+	console.log('running Style Dictionary...');
+	await execFileAsync('pnpm', ['run', 'build-styled']);
+};
+
+const printPublishChecklist = (names: NameSet): void => {
+	console.log(
+		`Component ${names.pascalCase} is ready for the following publish steps:`,
+	);
+	console.log(
+		' - Complete the component implementation, including interaction behavior and accessibility states',
+	);
+	console.log(
+		' - Use a matching React Aria Components primitive when this component represents a valid React Aria pattern',
+	);
+	console.log(
+		` - Define and review component design tokens in src/styleD/tokens/component/${names.camelCase}.json`,
+	);
+	console.log(
+		' - Confirm the generated CSS and TypeScript token outputs are correct after running Style Dictionary',
+	);
+	console.log(
+		` - Review src/${names.pascalCase}.ts and add it to package.json exports and typesVersions`,
+	);
+	console.log(
+		` - Export component${names.pascalCase} and Component${names.pascalCase} from src/index.ts if they should be available from the root entry point`,
+	);
+	console.log(' - Add component documentation, stories, and sandbox examples');
+	console.log(
+		' - Add a changeset with `pnpm changeset` to generate the changelog entry',
+	);
+	console.log(' - Run `pnpm build`, `pnpm tsc`, `pnpm lint`, and `pnpm test`');
+};
+
 const getComponentTemplateFileNameMap = async (names: NameSet) => {
 	const templateFileNames = await getDirContents(SRC_COMPONENT_TEMPLATE_PATH);
 	const map: Record<string, string> = {};
 	templateFileNames.forEach(
 		(fileName) =>
-			(map[fileName] = fileName.replace(
-				/TemplateComponent/g,
-				names.pascalCase,
-			)),
+			(map[fileName] =
+				fileName === 'TemplateComponent.entry.ts.template'
+					? `${names.pascalCase}.ts`
+					: fileName.replace(/TemplateComponent/g, names.pascalCase)),
 	);
 	return map;
 };
@@ -164,7 +201,10 @@ const run = async () => {
 					`${SRC_COMPONENT_TEMPLATE_PATH}/${templateFileName}`,
 				);
 				const contents = replaceName(srcComponentTemplateContents, names);
-				const destinationPath = `${componentFolder(names.pascalCase)}/${destinationFileName}`;
+				const destinationPath =
+					templateFileName === 'TemplateComponent.entry.ts.template'
+						? `./src/${destinationFileName}`
+						: `${componentFolder(names.pascalCase)}/${destinationFileName}`;
 				await writeFile(destinationPath, contents);
 				console.log('wrote:', destinationPath);
 			},
@@ -180,14 +220,8 @@ const run = async () => {
 	await writeFile(tokenFilePath, tokenContents);
 	console.log('wrote:', tokenFilePath);
 
-	console.log(
-		`component ${names.pascalCase} generated. To make it available in storybook:`,
-	);
-	console.log(' - run `pnpm run build-styled`');
-
-	// TODO - run Style dictionary.
-	// TODO - add index file to ./src/{name}
-	// TODO - add a checklist to publish the component to npm, adding a changelog, package json and src/index.ts.
+	await runStyleDictionary();
+	printPublishChecklist(names);
 };
 
 void run();
