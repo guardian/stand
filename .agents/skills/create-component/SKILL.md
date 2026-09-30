@@ -89,23 +89,24 @@ For example, a request for a ToggleSwitch based on the React Aria Switch compone
    - Add the component to the relevant Storybook introduction page.
    - Ensure the MDX peer dependency section matches the implementation import chain.
 
-9. Validate sandbox examples in Storybook when the canary workflow is available:
-   - If the branch can publish a canary and npm access is available, apply the repository's `🐥 Canaries` label to publish the branch snapshot to npm.
-   - Start Storybook against the snapshot:
+9. Prepare the release:
+   - Add a Changeset with `pnpm changeset` describing the user-facing change.
+   - Review the generated changelog entry and migration implications.
+   - Run the relevant Storybook, unit, E2E, typecheck, lint, formatting, build, and Knip checks.
 
-     ```sh
-     STORYBOOK_SANDBOX_STAND_VERSION=<version> pnpm run storybook
-     ```
+10. Validate sandbox examples in Storybook when the canary workflow is available:
 
-   - Confirm React, CSS, and JavaScript examples render. For CSS and JavaScript examples, check styling similarity to the React version; functionality is not required.
-   - If the canary workflow or local npm access is unavailable, do not block the component on local sandbox verification. Use the available Storybook or CI checks instead and document the limitation in the PR.
-   - If a CSS or JavaScript sandbox is impractical, document that limitation and keep only the React example rather than adding an unrealistic example.
+- The Changeset from the release preparation step is required before publishing a canary; the canary workflow needs it to create the snapshot version.
+- If the branch can publish a canary and npm access is available, apply the repository's `🐥 Canaries` label to publish the branch snapshot to npm.
+- Start Storybook against the snapshot:
 
-10. Prepare the release:
+  ```sh
+  STORYBOOK_SANDBOX_STAND_VERSION=<version> pnpm run storybook
+  ```
 
-- Add a Changeset with `pnpm changeset` describing the user-facing change.
-- Review the generated changelog entry and migration implications.
-- Run the relevant Storybook, unit, E2E, typecheck, lint, formatting, build, and Knip checks.
+- Confirm React, CSS, and JavaScript examples render. For CSS and JavaScript examples, check styling similarity to the React version; functionality is not required.
+- If the canary workflow or local npm access is unavailable, do not block the component on local sandbox verification. Use the available Storybook or CI checks instead and document the limitation in the PR.
+- If a CSS or JavaScript sandbox is impractical, document that limitation and keep only the React example rather than adding an unrealistic example.
 
 ## Validation checklist
 
