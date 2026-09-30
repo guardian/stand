@@ -123,9 +123,14 @@ export type { ComponentAvatar } from './styleD/build/typescript/component/avatar
 
    ```json
    "./Avatar": {
-     "types": "./dist/Avatar.d.ts",
-     "import": "./dist/Avatar.js",
-     "require": "./dist/Avatar.cjs"
+     "import": {
+       "types": "./dist/Avatar.d.ts",
+       "default": "./dist/Avatar.js"
+     },
+     "require": {
+       "types": "./dist/Avatar.d.cts",
+       "default": "./dist/Avatar.cjs"
+     }
    },
    "./component/avatar.css": "./dist/styleD/build/css/component/avatar.css"
    ```
