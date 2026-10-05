@@ -290,8 +290,8 @@ importers:
         specifier: 1.37.2
         version: 1.37.2
       publint:
-        specifier: 0.3.24
-        version: 0.3.24
+        specifier: 0.3.25
+        version: 0.3.25
       react:
         specifier: 17.0.2
         version: 17.0.2
@@ -318,7 +318,7 @@ importers:
         version: 29.4.14(@babel/core@7.29.7(supports-color@8.1.1))(@jest/transform@30.5.1(supports-color@8.1.1))(@jest/types@30.5.1)(babel-jest@30.5.1(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(esbuild@0.28.2)(jest-util@30.5.1)(jest@30.5.2(@types/node@24.13.6)(babel-plugin-macros@3.1.0)(supports-color@8.1.1))(typescript@5.1.3)
       tsdown:
         specifier: 0.23.0
-        version: 0.23.0(@arethetypeswrong/core@0.18.5)(@tsdown/css@0.23.0)(oxc-resolver@11.24.2)(publint@0.3.24)(tsx@4.20.6)(typescript@5.1.3)
+        version: 0.23.0(@arethetypeswrong/core@0.18.5)(@tsdown/css@0.23.0)(oxc-resolver@11.24.2)(publint@0.3.25)(tsx@4.20.6)(typescript@5.1.3)
       tslib:
         specifier: 2.8.1
         version: 2.8.1
@@ -5984,8 +5984,8 @@ packages:
   prosemirror-view@1.37.2:
     resolution: {integrity: sha512-ApcyrfV/cRcaL65on7TQcfWElwLyOgIjnIynfAuV+fIdlpbSvSWRwfuPaH7T5mo4AbO/FID29qOtjiDIKGWyog==}
 
-  publint@0.3.24:
-    resolution: {integrity: sha512-9zS56KrKBoqi5Qt8h92uMP8TTM9AYZSgnmCo4u2priMqkOZvQnTsziZ2p5LJ2ywbYkAjoCDp2jda9u4cgFefIw==}
+  publint@0.3.25:
+    resolution: {integrity: sha512-WMMbn/d7JqRlfXQL/JUI4n5skC8cJ5WVr8/wT5mmiYWkUdENkZr1I5rgs2+dQPVRgoJd+JRYtB46MTsuDylw9g==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -6472,10 +6472,6 @@ packages:
 
   tinycolor2@1.6.0:
     resolution: {integrity: sha512-XPaBkWQJdsf3pLKJV9p4qN/S+fm2Oj8AIPo1BTUhg5oxkvm9+SVEGFdhyOz7tTdUTfvxMiAs4sp6/eZO2Ew+pw==}
-
-  tinyexec@1.3.0:
-    resolution: {integrity: sha512-QKAl9m8gWWGHV8jZcPeym6j+XULi6tOf1mT83WYJ4Lk2ytW/uwAWkrP0uFsdoYMdueVJ0qs26wZ+23xeB4ibNQ==}
-    engines: {node: '>=18'}
 
   tinyexec@1.3.1:
     resolution: {integrity: sha512-GCvB3aoys96IuDFBMcTB46JOR6mdMtAToqwiW8JlWhsoh1mhHi/xn9ss/Dg7N555GiJyEt2qzoG/NHCwM6h1EA==}
@@ -8792,7 +8788,7 @@ snapshots:
 
   '@publint/pack@0.1.7':
     dependencies:
-      tinyexec: 1.3.0
+      tinyexec: 1.3.1
 
   '@quansync/fs@1.0.0':
     dependencies:
@@ -10314,7 +10310,7 @@ snapshots:
       lightningcss: 1.33.0
       postcss-load-config: 6.0.1(jiti@2.7.0)(postcss@8.5.26)(tsx@4.20.6)(yaml@2.9.0)
       rolldown: 1.2.7
-      tsdown: 0.23.0(@arethetypeswrong/core@0.18.5)(@tsdown/css@0.23.0)(oxc-resolver@11.24.2)(publint@0.3.24)(tsx@4.20.6)(typescript@5.1.3)
+      tsdown: 0.23.0(@arethetypeswrong/core@0.18.5)(@tsdown/css@0.23.0)(oxc-resolver@11.24.2)(publint@0.3.25)(tsx@4.20.6)(typescript@5.1.3)
     optionalDependencies:
       postcss: 8.5.26
     transitivePeerDependencies:
@@ -13521,7 +13517,7 @@ snapshots:
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.10.4
 
-  publint@0.3.24:
+  publint@0.3.25:
     dependencies:
       '@publint/pack': 0.1.7
       package-manager-detector: 1.8.0
@@ -14263,8 +14259,6 @@ snapshots:
 
   tinycolor2@1.6.0: {}
 
-  tinyexec@1.3.0: {}
-
   tinyexec@1.3.1: {}
 
   tinyglobby@0.2.17:
@@ -14335,7 +14329,7 @@ snapshots:
       minimist: 1.2.8
       strip-bom: 3.0.0
 
-  tsdown@0.23.0(@arethetypeswrong/core@0.18.5)(@tsdown/css@0.23.0)(oxc-resolver@11.24.2)(publint@0.3.24)(tsx@4.20.6)(typescript@5.1.3):
+  tsdown@0.23.0(@arethetypeswrong/core@0.18.5)(@tsdown/css@0.23.0)(oxc-resolver@11.24.2)(publint@0.3.25)(tsx@4.20.6)(typescript@5.1.3):
     dependencies:
       cac: 7.0.0
       defu: 6.1.7
@@ -14354,7 +14348,7 @@ snapshots:
     optionalDependencies:
       '@arethetypeswrong/core': 0.18.5
       '@tsdown/css': 0.23.0(jiti@2.7.0)(postcss@8.5.26)(tsdown@0.23.0)(tsx@4.20.6)(yaml@2.9.0)
-      publint: 0.3.24
+      publint: 0.3.25
       tsx: 4.20.6
       typescript: 5.1.3
     transitivePeerDependencies:
