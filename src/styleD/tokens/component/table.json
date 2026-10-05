@@ -102,10 +102,6 @@
 					"$type": "dimension",
 					"$value": "{semantic.sizing.height.lg}"
 				},
-				"paddingBlock": {
-					"$type": "dimension",
-					"$value": "{base.spacing.8Rem}"
-				},
 				"typography": {
 					"font": {
 						"$type": "typography",
@@ -118,20 +114,6 @@
 					"fontWidth": {
 						"$type": "number",
 						"$value": "{semantic.typography.bodyBoldSm.fontWidth}"
-					}
-				},
-				"regularTypography": {
-					"font": {
-						"$type": "typography",
-						"$value": "{semantic.typography.bodySm.font}"
-					},
-					"letterSpacing": {
-						"$type": "dimension",
-						"$value": "{semantic.typography.bodySm.letterSpacing}"
-					},
-					"fontWidth": {
-						"$type": "number",
-						"$value": "{semantic.typography.bodySm.fontWidth}"
 					}
 				}
 			},

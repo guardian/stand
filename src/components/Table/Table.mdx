@@ -1,6 +1,5 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import TableStories, {
-	BoldFirstColumnHeader,
 	CssOverrides,
 	CustomTheme,
 	Default,
@@ -84,7 +83,6 @@ Give every table an accessible name with `aria-label` or `aria-labelledby`. Keep
 | `children`          | `ReactNode`                              | No       | N/A     | Header and body composition.                               |
 | `columns`           | `Partial<Record<Breakpoint, string>>`    | Yes      | N/A     | CSS Grid tracks by breakpoint. Values cascade upward.      |
 | `headerVisibleFrom` | `'sm' \| 'md' \| 'lg'`                   | No       | `'lg'`  | Breakpoint at which the visible column header is restored. |
-| `boldColumnHeaders` | `'all' \| 'first'`                       | No       | `'all'` | Bold every column header, or only the first.               |
 | `aria-label`        | `string`                                 | No       | N/A     | Accessible name when `aria-labelledby` is not used.        |
 | `theme`             | `TableTheme`                             | No       | N/A     | Deeply partial override of generated Table design tokens.  |
 | `cssOverrides`      | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Emotion styles applied after the component's base styles.  |
@@ -105,16 +103,6 @@ Table also accepts React Aria `TableProps`, including selection, sorting, row ac
 `TableHeader`, `TableRow`, and `TableColumnHeader` expose their corresponding React Aria props plus local `theme` and `cssOverrides` props. `TableBody` exposes its React Aria props and `cssOverrides`; it has no visual tokens of its own to theme.
 
 ## Stories
-
-### Bold first column header
-
-By default every column header is bold. Set `boldColumnHeaders="first"` to bold only the first column header, typically the row header, and show the remaining headers at regular weight.
-
-"First" means the first `TableColumnHeader` in DOM order. If the table renders a selection checkbox or drag-handle column before the row header, that column is the one shown in bold; use `cssOverrides` on individual column headers if you need different emphasis.
-
-Header weights come from the `columnHeader.typography` (bold) and `columnHeader.regularTypography` tokens, so both can be adjusted with `theme`.
-
-<Canvas of={BoldFirstColumnHeader} />
 
 ### Stacked on mobile
 
