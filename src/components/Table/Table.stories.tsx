@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { baseSpacing } from '../../styleD/build/typescript/base/spacing';
 import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
+import { semanticTypography } from '../../styleD/build/typescript/semantic/typography';
 import { Badge } from '../Badge/Badge';
 import { Icon } from '../Icon/Icon';
 import { Link } from '../Link/Link';
@@ -143,6 +144,40 @@ export const Default = {
 				<TableColumnHeader isRowHeader>Name</TableColumnHeader>
 				<TableColumnHeader>Team</TableColumnHeader>
 				<TableColumnHeader>Status</TableColumnHeader>
+			</TableHeader>
+			<TableBody>
+				{people.map((person) => (
+					<TableRow key={person.id} id={person.id}>
+						<TableCell>{person.name}</TableCell>
+						<TableCell>{person.team}</TableCell>
+						<TableCell>{person.status}</TableCell>
+					</TableRow>
+				))}
+			</TableBody>
+		</Table>
+	),
+} satisfies Story;
+
+const regularColumnHeaderTheme = {
+	columnHeader: { typography: semanticTypography.bodySm },
+};
+
+export const BoldFirstColumnHeader = {
+	name: 'Bold first column header',
+	render: () => (
+		<Table
+			aria-label="People"
+			columns={{ sm: 'minmax(120px, 2fr) minmax(100px, 1fr) auto' }}
+			headerVisibleFrom="sm"
+		>
+			<TableHeader>
+				<TableColumnHeader isRowHeader>Name</TableColumnHeader>
+				<TableColumnHeader theme={regularColumnHeaderTheme}>
+					Team
+				</TableColumnHeader>
+				<TableColumnHeader theme={regularColumnHeaderTheme}>
+					Status
+				</TableColumnHeader>
 			</TableHeader>
 			<TableBody>
 				{people.map((person) => (

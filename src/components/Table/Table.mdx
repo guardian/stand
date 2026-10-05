@@ -1,5 +1,6 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import TableStories, {
+	BoldFirstColumnHeader,
 	CssOverrides,
 	CustomTheme,
 	Default,
@@ -103,6 +104,26 @@ Table also accepts React Aria `TableProps`, including selection, sorting, row ac
 `TableHeader`, `TableRow`, and `TableColumnHeader` expose their corresponding React Aria props plus local `theme` and `cssOverrides` props. `TableBody` exposes its React Aria props and `cssOverrides`; it has no visual tokens of its own to theme.
 
 ## Stories
+
+### Bold first column header
+
+Column headers are bold by default. To bold only some headers, pass a local `theme` to the `TableColumnHeader`s that should be regular weight.
+
+```tsx
+import { semanticTypography } from '@guardian/stand';
+
+const regularColumnHeaderTheme = {
+	columnHeader: { typography: semanticTypography.bodySm },
+};
+
+<TableHeader>
+	<TableColumnHeader isRowHeader>Name</TableColumnHeader>
+	<TableColumnHeader theme={regularColumnHeaderTheme}>Team</TableColumnHeader>
+	<TableColumnHeader theme={regularColumnHeaderTheme}>Status</TableColumnHeader>
+</TableHeader>;
+```
+
+<Canvas of={BoldFirstColumnHeader} />
 
 ### Stacked on mobile
 
