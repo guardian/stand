@@ -33,8 +33,15 @@ export const componentTable = {
 		},
 	},
 	columnHeader: {
+		minHeight: '3rem',
+		paddingBlock: '0.5rem',
 		typography: {
-			font: 'normal 700 0.75rem/1.15 Open Sans',
+			font: 'normal 700 0.875rem/1.3 Open Sans',
+			letterSpacing: '0rem',
+			fontWidth: 95,
+		},
+		regularTypography: {
+			font: 'normal 460 0.875rem/1.3 Open Sans',
 			letterSpacing: '0rem',
 			fontWidth: 95,
 		},

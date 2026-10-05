@@ -9,7 +9,7 @@ import type {
 } from 'react-aria-components';
 import type { Breakpoint } from '../../styleD/utils/semantic/mq';
 import type { DefaultPropsWithChildren } from '../../util/types';
-import type { TableTheme } from './styles';
+import type { BoldColumnHeaders, TableTheme } from './styles';
 
 export type ResponsiveTableValue<T> = Partial<Record<Breakpoint, T>>;
 
@@ -21,11 +21,17 @@ export interface TableProps
 	columns: ResponsiveTableValue<string>;
 	/** Breakpoint at which the visible column header is restored. */
 	headerVisibleFrom?: Breakpoint;
+	/**
+	 * Whether all column headers are bold, or only the first in DOM order.
+	 * With `'first'`, a selection or drag-handle column rendered first is the one that is bold.
+	 */
+	boldColumnHeaders?: BoldColumnHeaders;
 }
 
 export interface TableContextValue {
 	columns: TableProps['columns'];
 	headerVisibleFrom: NonNullable<TableProps['headerVisibleFrom']>;
+	boldColumnHeaders: BoldColumnHeaders;
 	theme: TableTheme;
 }
 

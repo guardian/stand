@@ -32,12 +32,14 @@ import type {
 const TableContext = createContext<TableContextValue>({
 	columns: { sm: 'minmax(0, 1fr)' },
 	headerVisibleFrom: 'lg',
+	boldColumnHeaders: 'all',
 	theme: defaultTableTheme,
 });
 
 export function Table({
 	columns,
 	headerVisibleFrom = 'lg',
+	boldColumnHeaders = 'all',
 	theme = {},
 	cssOverrides,
 	children,
@@ -47,7 +49,12 @@ export function Table({
 
 	return (
 		<TableContext.Provider
-			value={{ columns, headerVisibleFrom, theme: mergedTheme }}
+			value={{
+				columns,
+				headerVisibleFrom,
+				boldColumnHeaders,
+				theme: mergedTheme,
+			}}
 		>
 			<RACTable css={[tableStyles(mergedTheme), cssOverrides]} {...props}>
 				{children}
@@ -124,7 +131,10 @@ export function TableColumnHeader({
 
 	return (
 		<RACColumn
-			css={[tableColumnHeaderStyles(mergedTheme), cssOverrides]}
+			css={[
+				tableColumnHeaderStyles(mergedTheme, context.boldColumnHeaders),
+				cssOverrides,
+			]}
 			{...props}
 		>
 			{children}

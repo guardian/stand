@@ -98,18 +98,40 @@
 				}
 			},
 			"columnHeader": {
+				"minHeight": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.lg}"
+				},
+				"paddingBlock": {
+					"$type": "dimension",
+					"$value": "{base.spacing.8Rem}"
+				},
 				"typography": {
 					"font": {
 						"$type": "typography",
-						"$value": "{semantic.typography.headingXs.font}"
+						"$value": "{semantic.typography.bodyBoldSm.font}"
 					},
 					"letterSpacing": {
 						"$type": "dimension",
-						"$value": "{semantic.typography.headingXs.letterSpacing}"
+						"$value": "{semantic.typography.bodyBoldSm.letterSpacing}"
 					},
 					"fontWidth": {
 						"$type": "number",
-						"$value": "{semantic.typography.headingXs.fontWidth}"
+						"$value": "{semantic.typography.bodyBoldSm.fontWidth}"
+					}
+				},
+				"regularTypography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodySm.font}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.bodySm.letterSpacing}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.bodySm.fontWidth}"
 					}
 				}
 			},

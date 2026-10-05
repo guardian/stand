@@ -27,6 +27,9 @@ export type {
 	TableProps,
 	TableRowProps,
 } from './components/Table/types';
-export type { PartialTableTheme as TableTheme } from './components/Table/styles';
+export type {
+	BoldColumnHeaders,
+	PartialTableTheme as TableTheme,
+} from './components/Table/styles';
 export { componentTable } from './styleD/build/typescript/component/table';
 export type { ComponentTable } from './styleD/build/typescript/component/table';
