@@ -12,6 +12,7 @@ import type { DeepPartial, Prettify } from '../../util/types';
 export type TableTheme = Prettify<ComponentTable>;
 export type PartialTableTheme = Prettify<DeepPartial<TableTheme>>;
 export type ResponsiveTableValue<T> = Partial<Record<Breakpoint, T>>;
+export type TableColumnHeaderWeight = 'bold' | 'regular';
 
 export const defaultTableTheme: TableTheme = componentTable;
 
@@ -127,13 +128,18 @@ export const tableRowStyles = (
 
 export const tableColumnHeaderStyles = (
 	theme: TableTheme,
+	weight: TableColumnHeaderWeight,
 ): SerializedStyles => css`
 	min-width: 0;
 	box-sizing: border-box;
 	min-height: ${theme.columnHeader.minHeight};
 	align-content: center;
 	padding: ${theme.cell.paddingBlock} ${theme.cell.paddingInline};
-	${convertTypographyToEmotionStringStyle(theme.columnHeader.typography)}
+	${convertTypographyToEmotionStringStyle(
+		weight === 'regular'
+			? theme.columnHeader.regularTypography
+			: theme.columnHeader.typography,
+	)}
 
 	text-align: left;
 `;

@@ -114,6 +114,7 @@ export function TableRow<T extends object = object>({
 }
 
 export function TableColumnHeader({
+	weight = 'bold',
 	theme = {},
 	cssOverrides,
 	children,
@@ -124,7 +125,7 @@ export function TableColumnHeader({
 
 	return (
 		<RACColumn
-			css={[tableColumnHeaderStyles(mergedTheme), cssOverrides]}
+			css={[tableColumnHeaderStyles(mergedTheme, weight), cssOverrides]}
 			{...props}
 		>
 			{children}
