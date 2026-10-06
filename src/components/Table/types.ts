@@ -9,7 +9,7 @@ import type {
 } from 'react-aria-components';
 import type { Breakpoint } from '../../styleD/utils/semantic/mq';
 import type { DefaultPropsWithChildren } from '../../util/types';
-import type { TableTheme } from './styles';
+import type { TableColumnHeaderWeight, TableTheme } from './styles';
 
 export type ResponsiveTableValue<T> = Partial<Record<Breakpoint, T>>;
 
@@ -58,7 +58,10 @@ export interface TableRowProps<T extends object = object>
 export interface TableColumnHeaderProps
 	extends
 		DefaultPropsWithChildren<TableTheme, undefined, RACColumnProps['children']>,
-		Omit<RACColumnProps, 'children' | 'className'> {}
+		Omit<RACColumnProps, 'children' | 'className'> {
+	/** Font weight of the column header. */
+	weight?: TableColumnHeaderWeight;
+}
 
 export interface TableCellProps
 	extends

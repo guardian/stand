@@ -39,6 +39,11 @@ export const componentTable = {
 			letterSpacing: '0rem',
 			fontWidth: 95,
 		},
+		regularTypography: {
+			font: 'normal 460 0.875rem/1.3 Open Sans',
+			letterSpacing: '0rem',
+			fontWidth: 95,
+		},
 	},
 	compactLabel: {
 		color: '#545454',

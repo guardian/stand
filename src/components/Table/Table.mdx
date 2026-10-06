@@ -1,5 +1,6 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import TableStories, {
+	BoldFirstColumnHeader,
 	CssOverrides,
 	CustomTheme,
 	Default,
@@ -100,9 +101,34 @@ Table also accepts React Aria `TableProps`, including selection, sorting, row ac
 | `theme`        | `TableTheme`                             | No       | N/A     | Deeply partial local token override.                                |
 | `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Emotion styles applied after the component's base styles.           |
 
+## TableColumnHeader Props
+
+| Name           | Type                                     | Required | Default  | Description                                               |
+| -------------- | ---------------------------------------- | -------- | -------- | --------------------------------------------------------- |
+| `children`     | `ReactNode`                              | No       | N/A      | Header content.                                           |
+| `weight`       | `'bold' \| 'regular'`                    | No       | `'bold'` | Font weight of the column header.                         |
+| `theme`        | `TableTheme`                             | No       | N/A      | Deeply partial local token override.                      |
+| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A      | Emotion styles applied after the component's base styles. |
+
 `TableHeader`, `TableRow`, and `TableColumnHeader` expose their corresponding React Aria props plus local `theme` and `cssOverrides` props. `TableBody` exposes its React Aria props and `cssOverrides`; it has no visual tokens of its own to theme.
 
 ## Stories
+
+### Bold first column header
+
+Column headers are bold by default. Set `weight="regular"` on any `TableColumnHeader` that should be regular weight.
+
+```tsx
+<TableHeader>
+	<TableColumnHeader isRowHeader>Name</TableColumnHeader>
+	<TableColumnHeader weight="regular">Team</TableColumnHeader>
+	<TableColumnHeader weight="regular">Status</TableColumnHeader>
+</TableHeader>
+```
+
+Bold and regular header typography come from the `columnHeader.typography` and `columnHeader.regularTypography` tokens, so both can be adjusted with `theme`.
+
+<Canvas of={BoldFirstColumnHeader} />
 
 ### Stacked on mobile
 

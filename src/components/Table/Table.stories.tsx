@@ -157,6 +157,32 @@ export const Default = {
 	),
 } satisfies Story;
 
+export const BoldFirstColumnHeader = {
+	name: 'Bold first column header',
+	render: () => (
+		<Table
+			aria-label="People"
+			columns={{ sm: 'minmax(120px, 2fr) minmax(100px, 1fr) auto' }}
+			headerVisibleFrom="sm"
+		>
+			<TableHeader>
+				<TableColumnHeader isRowHeader>Name</TableColumnHeader>
+				<TableColumnHeader weight="regular">Team</TableColumnHeader>
+				<TableColumnHeader weight="regular">Status</TableColumnHeader>
+			</TableHeader>
+			<TableBody>
+				{people.map((person) => (
+					<TableRow key={person.id} id={person.id}>
+						<TableCell>{person.name}</TableCell>
+						<TableCell>{person.team}</TableCell>
+						<TableCell>{person.status}</TableCell>
+					</TableRow>
+				))}
+			</TableBody>
+		</Table>
+	),
+} satisfies Story;
+
 export const CustomTheme = {
 	name: 'Custom theme',
 	render: () => (
