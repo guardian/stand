@@ -129,6 +129,9 @@ export const tableColumnHeaderStyles = (
 	theme: TableTheme,
 ): SerializedStyles => css`
 	min-width: 0;
+	box-sizing: border-box;
+	min-height: ${theme.columnHeader.minHeight};
+	align-content: center;
 	padding: ${theme.cell.paddingBlock} ${theme.cell.paddingInline};
 	${convertTypographyToEmotionStringStyle(theme.columnHeader.typography)}
 
