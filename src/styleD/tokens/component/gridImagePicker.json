@@ -1,0 +1,38 @@
+{
+	"component": {
+		"gridImagePicker": {
+			"container": {
+				"background": {
+					"$type": "color",
+					"$value": "none"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackMd}"
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackMd}"
+				}
+			},
+			"imagePreview": {
+				"background": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.neutralWeak}"
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackXs}"
+				},
+				"maxWidth": {
+					"$type": "dimension",
+					"$value": "150px"
+				},
+				"maxHeight": {
+					"$type": "dimension",
+					"$value": "100px"
+				}
+			}
+		}
+	}
+}
