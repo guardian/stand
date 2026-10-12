@@ -82,7 +82,7 @@ export const searchInputStyles = (
 			`
 		}
 
-		&:has(:disabled) {
+		[data-disabled] & {
 			background-color: ${theme.shared.disabled.backgroundColor};
 			border: ${theme.shared.disabled.border};
 			color: ${theme.shared.disabled.color};

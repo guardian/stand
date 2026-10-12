@@ -9,5 +9,8 @@ export default {
 	transform: {
 		...tsJestTransformCfg,
 	},
+	moduleNameMapper: {
+		'\\.css\\?inline$': '<rootDir>/src/util/cssInlineStub.ts',
+	},
 	modulePathIgnorePatterns: ['playwright'],
 };

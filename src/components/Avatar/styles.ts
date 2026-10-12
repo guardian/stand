@@ -39,7 +39,7 @@ export const avatarStyles = (
 		&[data-avatar-context='interactive']:hover {
 			background-color: ${theme.shared.color[color].hover.background};
 
-			:has(> img) {
+			&[data-has-image] {
 				background-color: black;
 			}
 
@@ -51,7 +51,7 @@ export const avatarStyles = (
 		&[data-avatar-context='interactive']:active {
 			background-color: ${theme.shared.color[color].active.background};
 
-			:has(> img) {
+			&[data-has-image] {
 				background-color: black;
 			}
 

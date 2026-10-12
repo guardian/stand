@@ -50,6 +50,7 @@ export function Avatar({
 				`Avatar ${displayInitials ? `with initials ${displayInitials}` : ''}`
 			}
 			title={alt ?? displayInitials}
+			data-has-image={showImage ? '' : undefined}
 			{...props}
 		>
 			{showImage ? (
