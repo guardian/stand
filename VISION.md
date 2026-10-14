@@ -16,6 +16,7 @@ Each component defines when designers and engineers should use it. Its behaviour
 
 ### KPIs:
 
+- Collaborative design - design and engineer colleagues can work closely together to implement new components and update existing components quickly
 - User feedback - from engineers and end users
 - New UI is built using Stand
 - Existing UI migrated to use Stand
