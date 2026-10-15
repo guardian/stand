@@ -9,7 +9,7 @@ import { Typography } from '../Typography/Typography';
 import { PickerIframeModal } from './PickerIframeModal';
 
 const meta = {
-	title: 'Stand/Editorial Components/PickerIframeModal',
+	title: 'Stand/Sharable non-Design System Components/PickerIframeModal',
 	component: PickerIframeModal,
 	parameters: {},
 	args: {

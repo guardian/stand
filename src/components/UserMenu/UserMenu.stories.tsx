@@ -4,7 +4,7 @@ import type { UserMenuProps } from './UserMenu';
 import { UserMenu } from './UserMenu';
 
 const meta = {
-	title: 'Stand/Editorial Components/UserMenu',
+	title: 'Stand/Sharable non-Design System Components/UserMenu',
 	component: UserMenu,
 	args: {
 		feedBacklink: '/',

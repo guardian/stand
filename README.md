@@ -9,10 +9,10 @@ Any tool should be able to make use of the components as an npm package, [`@guar
 This library is split into two main sections:
 
 - [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs)
-  - The core design system and components used across the Guardian's internal tools.
+  - The core design system foundations and collection of components used across the Guardian's internal tools.
   - e.g. Colour, Typography, Buttons, Forms, etc.
-- [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs)
-  - A collection of highly specific components shared across a smaller number of tools.
+- [Sharable non-Design System Components](https://guardian.github.io/stand/?path=/docs/stand-sharable-non-design-system-components-introduction--docs)
+  - A collection of highly specific components that can be shared across tools, but don't need to fit the design system or be verified by the design systems team.
   - e.g. Byline editor, Tag picker, etc.
 
 Currently maintained by the P&E DevX E2E team, but open to contributions from anyone in the company. Do reach out for help or to get involved!
@@ -133,7 +133,7 @@ Rounded and Sharp styles are also available. For those, and for using SVG icons 
 
 ## Usage
 
-See the [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) and [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs) documentation for details.
+See the [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) and [Sharable non-Design System Components](https://guardian.github.io/stand/?path=/docs/stand-sharable-non-design-system-components-introduction--docs) documentation for details.
 
 ## Contributing
 
@@ -141,7 +141,7 @@ See the [Contributing guidelines](https://guardian.github.io/stand/?path=/docs/c
 
 ## Getting Started
 
-> If you are looking to **use Stand in your project**, see the [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs) documentation for installation and usage instructions.
+> If you are looking to **use Stand in your project**, see the [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Sharable non-Design System Components](https://guardian.github.io/stand/?path=/docs/stand-sharable-non-design-system-components-introduction--docs) documentation for installation and usage instructions.
 
 The following steps are for **developing the Stand library itself**.
 
@@ -242,7 +242,7 @@ Matrix generation in CI uses the same JSON file in the workflow `../.github/work
 - [Getting Started](https://guardian.github.io/stand/?path=/docs/getting-started--docs)
 - [Contributing](https://guardian.github.io/stand/?path=/docs/contributing--docs)
 - [Tools Design System Introduction](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs)
-- [Editorial Components Introduction](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs)
+- [Sharable non-Design System Components Introduction](https://guardian.github.io/stand/?path=/docs/stand-sharable-non-design-system-components-introduction--docs)
 - [Style Dictionary](https://guardian.github.io/stand/?path=/docs/style-dictionary--docs)
 - [Architecture Decision Records](https://guardian.github.io/stand/?path=/docs/architecture-decision-records--docs)
 - [Changelog](https://guardian.github.io/stand/?path=/docs/changelog--docs)

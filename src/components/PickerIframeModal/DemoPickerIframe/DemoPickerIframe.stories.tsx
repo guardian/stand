@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { DemoPickerIframe } from './DemoPickerIframe';
 
 const meta = {
-	title: 'Stand/Editorial Components/PickerIframeModal/DemoPickerIframe',
+	title:
+		'Stand/Sharable non-Design System Components/PickerIframeModal/DemoPickerIframe',
 	component: DemoPickerIframe,
 	parameters: {},
 } satisfies Meta<typeof DemoPickerIframe>;

@@ -8,7 +8,7 @@ import type { TagManagerObjectData } from '../TagPicker/types';
 import { TagTable } from './TagTable';
 
 const meta = {
-	title: 'Stand/Editorial Components/TagPicker/TagTable',
+	title: 'Stand/Sharable non-Design System Components/TagPicker/TagTable',
 	component: TagTable<TagManagerObjectData>,
 	args: {
 		rows: exampleTags.map((tag) => ({
