@@ -13,7 +13,7 @@ Create a complete, publishable component contribution rather than stopping at th
 
 Before scaffolding, ask the user for any missing context needed to make the component correctly:
 
-- Component name, purpose, intended users, and whether it belongs in the Tools Design System or Editorial Components. Use the Tools Design System category only for components verified by the design systems team. Use Editorial Components for shared components that do not fit the design system foundations or have not yet been fully verified and battle-tested by the design systems team.
+- Component name, purpose, intended users, and whether it belongs in the Tools Design System or Sharable non-Design System Components. Use the Tools Design System category only for components verified by the design systems team. Use Sharable non-Design System Components for shared components that do not fit the design system foundations or have not yet been fully verified and battle-tested by the design systems team.
 - A Figma URL or node reference for the design, if one exists.
 - The relevant React Aria component or API link, if the component maps to a React Aria pattern.
 - Required sizes, states, variants, labels, icons, and interaction behavior.
@@ -31,7 +31,7 @@ Routine work within the new component's generated files, its documented tokens, 
 
 1. Read the repository guidance before making changes:
    - Read `README.md` for installation, compatibility, token, and development commands.
-   - Read `CONTRIBUTING.md` for Tools Design System versus Editorial Components boundaries, generator follow-up steps, exports, accessibility, sandbox testing, and release requirements.
+   - Read `CONTRIBUTING.md` for Tools Design System versus Sharable non-Design System Components boundaries, generator follow-up steps, exports, accessibility, sandbox testing, and release requirements.
    - Treat both documents as the current repository conventions and reconcile any component-specific request with them before proceeding.
 
 2. Run the generator:

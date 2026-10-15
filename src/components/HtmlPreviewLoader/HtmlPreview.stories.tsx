@@ -3,7 +3,7 @@ import { articleEmail } from './fixtures/article';
 import { HtmlPreview } from './HtmlPreview';
 
 const meta = {
-	title: 'Stand/Tools Design System/Components/HtmlPreview',
+	title: 'Stand/Sharable non-Design System Components/Components/HtmlPreview',
 	component: HtmlPreview,
 	parameters: {},
 } satisfies Meta<typeof HtmlPreview>;

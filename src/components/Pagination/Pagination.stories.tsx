@@ -16,7 +16,7 @@ const ControlledPagination = (props: Omit<PaginationProps, 'onPageChange'>) => {
 };
 
 const meta = {
-	title: 'Stand/Editorial Components/Pagination',
+	title: 'Stand/Sharable non-Design System Components/Pagination',
 	component: Pagination,
 	parameters: {},
 	args: {

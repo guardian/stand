@@ -1,0 +1,54 @@
+import { Meta, Markdown } from '@storybook/addon-docs/blocks';
+
+export const editorialStories = Object.values(
+	import.meta.glob('../../src/components/**/*.stories.tsx', {
+		eager: true,
+		query: '?raw',
+		import: 'default',
+	}),
+)
+	.map(
+		(content) =>
+			content.match(
+				/title:\s*['"]Stand\/Sharable non-Design System Components\/([^'"]+)['"]/,
+			)?.[1],
+	)
+	.filter(Boolean)
+	.sort()
+	.map((subPath) => ({
+		label: subPath.split('/').join(' / '),
+		slug: `stand-sharable-non-design-system-components-${subPath
+			.toLowerCase()
+			.replace(/[^a-z0-9]+/g, '-')
+			.replace(/^-|-$/g, '')}`,
+	}));
+
+<Meta title="Stand/Sharable non-Design System Components/Introduction" />
+
+# `@guardian/stand` - Sharable non-Design System Components
+
+Shareable non design system components are components that are not part of the core design system but are still intended to be reused across multiple tools within the Guardian.
+
+Components in this folder may follow the [Tools Design System](/docs/stand-tools-design-system-introduction--docs) guidelines, but are not strictly required to do so.
+
+Components in this folder also don't have to be verified by the design system team.
+
+All components are built with TypeScript, React, and Emotion, and are API-agnostic, they expose props so that consumers can wire in their own data and behaviour.
+
+Focus on components that could be reused across multiple (2+) Guardian tools, and shared utility functions, hooks, or methods if they directly support such components. Components should not directly interact with external systems or APIs; they should remain as self-contained and reusable as possible. Instead expose props or hooks that allow consumers to integrate with external systems as needed.
+
+The tl;dr is to add a component to this section if you're not sure where it should go.
+
+---
+
+Use the links below to navigate to the documentation for each component, and see the [Getting Started documentation](/docs/getting-started--docs) for more information on how to use them in your project. See the [Contributing guidelines](/docs/contributing--docs) if you'd like to contribute.
+
+---
+
+## Components
+
+<Markdown>
+	{editorialStories
+		.map(({ label, slug }) => `- [${label}](/story/${slug}--default)`)
+		.join('\n')}
+</Markdown>
