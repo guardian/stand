@@ -28,6 +28,10 @@ export const componentUserMenu = {
 		textAlign: 'left',
 	},
 	toggleButton: {
+		focusVisible: {
+			outline: '0.125rem solid #0000ff',
+			outlineOffset: '0.0625rem',
+		},
 		baseBackgroundColor: '#ededed',
 		disabledBackgroundColor: '#dcdcdc',
 		baseBorderColor: '#dcdcdc',

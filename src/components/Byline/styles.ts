@@ -26,7 +26,7 @@ export const bylineEditorStyles = (
 
 		/* ProseMirror styles from prosemirror-view/styles/prosemirror.css */
 		.ProseMirror {
-			padding: 4px 4px;
+			padding: ${theme.editorPadding} ${theme.editorPadding};
 			word-wrap: break-word;
 			white-space: pre-wrap;
 			white-space: break-spaces;
@@ -126,7 +126,7 @@ export const bylineEditorStyles = (
 		.invisible__selected-marker {
 			position: absolute;
 			caret-color: inherit;
-			background-color: #dcdcdc;
+			background-color: ${theme.selectedMarkerBackgroundColor};
 			display: inline-block;
 			font-weight: 400;
 			font-style: normal;
@@ -139,15 +139,15 @@ export const bylineEditorStyles = (
 		}
 
 		.ProseMirror-focused .invisible__selected-marker {
-			background-color: #b4d9ff;
+			background-color: ${theme.focusedSelectedMarkerBackgroundColor};
 		}
 
 		.ProseMirror-focused .invisible--is-selected::before {
-			background-color: #b4d8ff;
+			background-color: ${theme.focusedSelectedInvisibleBackgroundColor};
 		}
 
 		.invisible--is-selected::before {
-			background-color: #dcdcdc;
+			background-color: ${theme.selectedMarkerBackgroundColor};
 		}
 
 		.invisible--space:before {
@@ -191,13 +191,13 @@ export const bylineEditorStyles = (
 
 			span {
 				cursor: pointer;
-				margin-left: 5px;
+				margin-left: ${theme.chip.labelMarginLeft};
 			}
 		}
 
 		/* Leave space between subsequent chips */
 		chip + chip {
-			margin-left: 3px;
+			margin-left: ${theme.chip.marginLeft};
 		}
 
 		.placeholder {
@@ -244,7 +244,7 @@ export const dropdownLiStyles = (
 	const theme = mergeDeep(componentByline['dropdown'], partialTheme);
 	return css`
 		cursor: pointer;
-		padding: 5px;
+		padding: ${theme.li.padding};
 		border-bottom-color: ${theme.li.borderBottomColor};
 		border-bottom-width: ${theme.li.borderBottomWidth};
 		border-bottom-style: ${theme.li.borderBottomStyle};
@@ -263,7 +263,7 @@ export const selectedDropdownLiStyles = (
 };
 
 export const previewStyles = css`
-	margin-top: 5px;
+	margin-top: ${componentByline.previewMarginTop};
 	white-space: pre-wrap;
 `;
 

@@ -10,6 +10,11 @@
 	--component-byline-border-width: 1px;
 	--component-byline-border-style: solid;
 	--component-byline-line-height: 1.8;
+	--component-byline-editor-padding: 4px;
+	--component-byline-selected-marker-background-color: #dcdcdc;
+	--component-byline-focused-selected-marker-background-color: #b4d9ff;
+	--component-byline-focused-selected-invisible-background-color: #b4d8ff;
+	--component-byline-preview-margin-top: 5px;
 	--component-byline-chip-color: #000000;
 	--component-byline-chip-border-color: #dcdcdc;
 	--component-byline-chip-border-width: 1px;
@@ -17,6 +22,8 @@
 	--component-byline-chip-border-radius: 8px;
 	--component-byline-chip-padding-x: 4px;
 	--component-byline-chip-padding-y: 2px;
+	--component-byline-chip-label-margin-left: 5px;
+	--component-byline-chip-margin-left: 3px;
 	--component-byline-chip-selected-border-color: #c5d9f4;
 	--component-byline-chip-tagged-background-color: #dcdcdc;
 	--component-byline-chip-untagged-color: #000000;
@@ -24,6 +31,7 @@
 	--component-byline-dropdown-border-width: 1px;
 	--component-byline-dropdown-border-style: solid;
 	--component-byline-dropdown-background-color: #ffffff;
+	--component-byline-dropdown-li-padding: 5px;
 	--component-byline-dropdown-li-color: #000000;
 	--component-byline-dropdown-li-border-bottom-color: #cccccc;
 	--component-byline-dropdown-li-border-bottom-width: 1px;

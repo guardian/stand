@@ -80,6 +80,20 @@
 				}
 			},
 			"toggleButton": {
+				"focusVisible": {
+					"outline": {
+						"$type": "border",
+						"$value": {
+							"color": "#0000ff",
+							"width": "{semantic.sizing.border.md}",
+							"style": "solid"
+						}
+					},
+					"outlineOffset": {
+						"$type": "dimension",
+						"$value": "{semantic.sizing.border.default}"
+					}
+				},
 				"baseBackgroundColor": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.800}"
