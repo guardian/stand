@@ -3,6 +3,7 @@
  */
 
 :root {
+	--component-tag-table-drag-button-padding: 5px;
 	--component-tag-table-add-button-background-color: #545454;
 	--component-tag-table-add-button-background-hover-color: #333333;
 	--component-tag-table-add-button-color: #ffffff;

@@ -1,5 +1,6 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
+import { baseSpacing } from '../../styleD/build/typescript/base/spacing';
 import type { ComponentSearchInput } from '../../styleD/build/typescript/component/searchInput';
 import { componentSearchInput } from '../../styleD/build/typescript/component/searchInput';
 import type { DeepPartial, Prettify } from '../../util/types';
@@ -68,7 +69,7 @@ export const searchInputStyles = (
 		}
 
 		& .search-icon {
-			margin-right: 8px;
+			margin-right: ${baseSpacing['8Px']};
 		}
 
 		&:focus-within {

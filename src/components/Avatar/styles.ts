@@ -1,5 +1,6 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
+import { baseColors } from '../../styleD/build/typescript/base/colors';
 import type { ComponentAvatar } from '../../styleD/build/typescript/component/avatar';
 import { componentAvatar } from '../../styleD/build/typescript/component/avatar';
 import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
@@ -40,7 +41,7 @@ export const avatarStyles = (
 			background-color: ${theme.shared.color[color].hover.background};
 
 			:has(> img) {
-				background-color: black;
+				background-color: ${baseColors.neutral[0]};
 			}
 
 			img {
@@ -52,7 +53,7 @@ export const avatarStyles = (
 			background-color: ${theme.shared.color[color].active.background};
 
 			:has(> img) {
-				background-color: black;
+				background-color: ${baseColors.neutral[0]};
 			}
 
 			img {
