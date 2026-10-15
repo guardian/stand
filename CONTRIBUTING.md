@@ -21,7 +21,7 @@ The following guidelines apply to all components:
   - Consumers must be able to easily customise appearance via Emotion `cssOverrides` or their own theming.
   - Each component should define its own design tokens, which are used to generate both CSS custom properties and typed TypeScript/JavaScript exports.
   - ESLint rejects hard-coded colours and non-zero spacing lengths in Emotion `css` templates, inline style objects passed to `css`, and JSX `css`/`style` objects in component source. Use theme/design tokens instead. Zero, percentages, `auto`, `transparent`, and `currentColor` are allowed. Stories, tests, sandbox examples, and token definitions/generated outputs are excluded. Deliberate exceptions need an ESLint suppression with an explanation; existing violations are errors too.
-  - Run the design-token rule tests with `node --test scripts/eslint/testDesignTokens.js`.
+  - The design-token rule tests in `scripts/eslint/designTokens.test.js` run with the standard `pnpm test` command or directly with `pnpm test:eslint`.
 
 - **Performance**
   - Follow general React good practices (e.g. avoid unnecessary re-renders).
