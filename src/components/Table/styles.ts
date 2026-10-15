@@ -46,6 +46,7 @@ const gridTemplateStyles = (
 	}
 `;
 
+/* eslint-disable design-tokens/no-hardcoded-spacing -- The -1px margin is part of the visually-hidden accessibility technique, not design spacing. */
 const visuallyHiddenStyles = css`
 	position: absolute;
 	width: 1px;
@@ -57,6 +58,7 @@ const visuallyHiddenStyles = css`
 	white-space: nowrap;
 	border: 0;
 `;
+/* eslint-enable design-tokens/no-hardcoded-spacing */
 
 export const tableStyles = (theme: TableTheme): SerializedStyles => css`
 	display: block;

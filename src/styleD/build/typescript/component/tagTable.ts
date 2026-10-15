@@ -3,6 +3,9 @@
  */
 
 export const componentTagTable = {
+	dragButton: {
+		padding: '5px',
+	},
 	header: {
 		backgroundColor: '#dcdcdc',
 		paddingTop: '3px',
