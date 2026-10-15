@@ -3,32 +3,32 @@
  */
 
 export const componentUserFeedbackSummary = {
-	shared: {
-		color: '#000000',
-		gap: '0.25rem',
-		paddingTop: '0.75rem',
-		paddingRight: '1rem',
-		paddingBottom: '0.75rem',
-		paddingLeft: '0.5rem',
-		maxWidth: '46ch',
-		borderWidth: '0.0625rem',
-		borderStyle: 'solid',
-	},
 	error: {
-		color: '#8c2113',
 		borderColor: '#b42a19',
-	},
-	warning: {
-		color: '#693c16',
-		borderColor: '#9a7c11',
-	},
-	success: {
-		color: '#326528',
-		borderColor: '#408233',
+		color: '#8c2113',
 	},
 	information: {
-		color: '#092f62',
 		borderColor: '#1054af',
+		color: '#092f62',
+	},
+	shared: {
+		borderStyle: 'solid',
+		borderWidth: '0.0625rem',
+		color: '#000000',
+		gap: '0.25rem',
+		maxWidth: '46ch',
+		paddingBottom: '0.75rem',
+		paddingLeft: '0.5rem',
+		paddingRight: '1rem',
+		paddingTop: '0.75rem',
+	},
+	success: {
+		borderColor: '#408233',
+		color: '#326528',
+	},
+	warning: {
+		borderColor: '#9a7c11',
+		color: '#693c16',
 	},
 };
 export type ComponentUserFeedbackSummary = typeof componentUserFeedbackSummary;

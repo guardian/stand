@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { sortEntriesByValue } from '../../../util/storybook/sort';
 import { tableStyles } from '../../../util/storybook/styles';
 import { semanticColors } from '../../build/typescript/semantic/colors';
 import { semanticSizing } from '../../build/typescript/semantic/sizing';
@@ -60,28 +61,30 @@ const renderSizingCategory = (
 				</tr>
 			</thead>
 			<tbody>
-				{Object.entries(categoryTokens).map(([name, value]) => (
-					<tr key={name}>
-						<td css={tokenNameCss}>
-							{categoryName}.{name}
-						</td>
-						<td css={tokenValueCss}>{value}</td>
-						<td>
-							<div css={visualizationCss}>
-								<div
-									css={css`
-										${sizingBoxCss}
-										width: ${value};
-										height: ${value};
-									`}
-								/>
-								<span css={tokenValueCss}>
-									{value} × {value}
-								</span>
-							</div>
-						</td>
-					</tr>
-				))}
+				{sortEntriesByValue(Object.entries(categoryTokens)).map(
+					([name, value]) => (
+						<tr key={name}>
+							<td css={tokenNameCss}>
+								{categoryName}.{name}
+							</td>
+							<td css={tokenValueCss}>{value}</td>
+							<td>
+								<div css={visualizationCss}>
+									<div
+										css={css`
+											${sizingBoxCss}
+											width: ${value};
+											height: ${value};
+										`}
+									/>
+									<span css={tokenValueCss}>
+										{value} × {value}
+									</span>
+								</div>
+							</td>
+						</tr>
+					),
+				)}
 			</tbody>
 		</table>
 	</div>

@@ -3,11 +3,11 @@
  */
 
 export const semanticSpacing = {
-	stackXxs: '0.25rem',
-	stackXs: '0.5rem',
-	stackSm: '0.75rem',
-	stackMd: '1rem',
 	stackLg: '2rem',
+	stackMd: '1rem',
+	stackSm: '0.75rem',
 	stackXl: '2.5rem',
+	stackXs: '0.5rem',
+	stackXxs: '0.25rem',
 };
 export type SemanticSpacing = typeof semanticSpacing;

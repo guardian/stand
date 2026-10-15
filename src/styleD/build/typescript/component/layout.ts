@@ -4,6 +4,18 @@
 
 export const componentLayout = {
 	layout: {
+		lg: {
+			gridTemplateAreas:
+				"'alertbanner alertbanner'\n'topbar topbar'\n'sidebar main'",
+			gridTemplateColumns: 'min-content 1fr',
+			gridTemplateRows: 'min-content min-content 1fr',
+		},
+		md: {
+			gridTemplateAreas:
+				"'alertbanner alertbanner'\n'topbar topbar'\n'sidebar main'",
+			gridTemplateColumns: 'min-content 1fr',
+			gridTemplateRows: 'min-content min-content 1fr',
+		},
 		shared: {
 			display: 'grid',
 			minHeight: '100svh',
@@ -14,56 +26,44 @@ export const componentLayout = {
 			gridTemplateColumns: '1fr',
 			gridTemplateRows: 'min-content min-content min-content 1fr',
 		},
-		md: {
-			gridTemplateAreas:
-				"'alertbanner alertbanner'\n'topbar topbar'\n'sidebar main'",
-			gridTemplateColumns: 'min-content 1fr',
-			gridTemplateRows: 'min-content min-content 1fr',
-		},
+	},
+	main: {
 		lg: {
-			gridTemplateAreas:
-				"'alertbanner alertbanner'\n'topbar topbar'\n'sidebar main'",
-			gridTemplateColumns: 'min-content 1fr',
-			gridTemplateRows: 'min-content min-content 1fr',
+			padding: {
+				bottom: '64px',
+				top: '48px',
+			},
+		},
+		marginLeft: 'auto',
+		marginRight: 'auto',
+		maxWidth: '1584px',
+		md: {
+			padding: {
+				bottom: '64px',
+				top: '28px',
+			},
+		},
+		sm: {
+			padding: {
+				bottom: '64px',
+				top: '24px',
+			},
 		},
 	},
 	sidebar: {
-		sm: {
-			hidden: {
-				display: 'none',
-			},
-			aboveGrid: {
-				display: 'block',
-			},
+		lg: {
+			width: '280px',
 		},
 		md: {
 			display: 'block',
 			width: '200px',
 		},
-		lg: {
-			width: '280px',
-		},
-	},
-	main: {
-		maxWidth: '1584px',
-		marginLeft: 'auto',
-		marginRight: 'auto',
 		sm: {
-			padding: {
-				top: '24px',
-				bottom: '64px',
+			aboveGrid: {
+				display: 'block',
 			},
-		},
-		md: {
-			padding: {
-				top: '28px',
-				bottom: '64px',
-			},
-		},
-		lg: {
-			padding: {
-				top: '48px',
-				bottom: '64px',
+			hidden: {
+				display: 'none',
 			},
 		},
 	},

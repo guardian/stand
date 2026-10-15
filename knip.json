@@ -1,5 +1,10 @@
 {
 	"$schema": "https://unpkg.com/knip@6/schema.json",
-	"entry": ["src/*.ts", "scripts/**/*.ts", "src/styleD/*.js"],
+	"entry": [
+		"src/*.ts",
+		"scripts/**/*.ts",
+		"src/styleD/*.js",
+		"src/tokens/*.js"
+	],
 	"ignore": ["src/templates/component/styles.ts"]
 }

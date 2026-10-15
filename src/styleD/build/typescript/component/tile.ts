@@ -3,44 +3,53 @@
  */
 
 export const componentTile = {
+	md: {
+		gap: '1rem',
+		minHeight: '89px',
+		paddingX: '1rem',
+		paddingY: '0.75rem',
+		width: '360px',
+	},
 	shared: {
-		display: 'inline-flex',
-		flexDirection: 'column',
 		alignItems: 'center',
-		justifyContent: 'space-between',
-		gap: '0.5rem',
-		borderWidth: '0.0625rem',
-		borderStyle: 'solid',
+		arrowColor: '#000000',
+		backgroundColor: '#ffffff',
 		borderColor: '#8d8d8d',
 		borderRadius: '0.25rem',
-		backgroundColor: '#ffffff',
+		borderStyle: 'solid',
+		borderWidth: '0.0625rem',
 		color: '#000000',
-		textDecoration: 'none',
 		cursor: 'pointer',
-		maxWidth: '100%',
 		descriptionColor: '#666666',
-		arrowColor: '#000000',
+		disabled: {
+			backgroundColor: '#ffffff',
+			borderColor: '#dcdcdc',
+			color: '#999999',
+			cursor: 'not-allowed',
+		},
+		display: 'inline-flex',
+		flexDirection: 'column',
 		focusVisible: {
 			outline: '0.125rem solid #0072a9',
 			outlineOffset: '0.125rem',
 		},
+		gap: '0.5rem',
 		hover: {
 			backgroundColor: '#f6f6f6',
 			borderColor: '#8d8d8d',
 		},
+		justifyContent: 'space-between',
+		maxWidth: '100%',
 		pressed: {
 			backgroundColor: '#ededed',
 			borderColor: '#8d8d8d',
 		},
-		disabled: {
-			backgroundColor: '#ffffff',
-			color: '#999999',
-			borderColor: '#dcdcdc',
-			cursor: 'not-allowed',
-		},
 		selectableTile: {
 			shared: {
 				backgroundColor: '#ffffff',
+				focusVisible: {
+					backgroundColor: '#ffffff',
+				},
 				hover: {
 					backgroundColor: '#e6f1f6',
 				},
@@ -49,31 +58,19 @@ export const componentTile = {
 				},
 				selected: {
 					backgroundColor: '#e6f1f6',
+					focusVisible: {
+						backgroundColor: '#e6f1f6',
+					},
 					hover: {
 						backgroundColor: '#c5dfec',
 					},
 					pressed: {
 						backgroundColor: '#8abed7',
 					},
-					focusVisible: {
-						backgroundColor: '#e6f1f6',
-					},
-				},
-				focusVisible: {
-					backgroundColor: '#ffffff',
 				},
 			},
 		},
-		tileIcon: {
-			shared: {
-				flexShrink: 0,
-				marginRight: '0.25rem',
-				color: '#000000',
-				disabled: {
-					color: '#999999',
-				},
-			},
-		},
+		textDecoration: 'none',
 		tileArrow: {
 			shared: {
 				color: '#000000',
@@ -84,27 +81,30 @@ export const componentTile = {
 				marginLeft: 'auto',
 			},
 		},
-	},
-	xs: {
-		width: '180px',
-		minHeight: '56px',
-		paddingX: '0.75rem',
-		paddingY: '0.5rem',
-		gap: '0.75rem',
+		tileIcon: {
+			shared: {
+				color: '#000000',
+				disabled: {
+					color: '#999999',
+				},
+				flexShrink: 0,
+				marginRight: '0.25rem',
+			},
+		},
 	},
 	sm: {
-		width: '280px',
+		gap: '0.75rem',
 		minHeight: '74px',
 		paddingX: '1rem',
 		paddingY: '0.75rem',
-		gap: '0.75rem',
+		width: '280px',
 	},
-	md: {
-		width: '360px',
-		minHeight: '89px',
-		paddingX: '1rem',
-		paddingY: '0.75rem',
-		gap: '1rem',
+	xs: {
+		gap: '0.75rem',
+		minHeight: '56px',
+		paddingX: '0.75rem',
+		paddingY: '0.5rem',
+		width: '180px',
 	},
 };
 export type ComponentTile = typeof componentTile;

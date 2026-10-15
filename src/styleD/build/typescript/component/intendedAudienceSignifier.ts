@@ -3,31 +3,31 @@
  */
 
 export const componentIntendedAudienceSignifier = {
-	display: 'flex',
-	flexDirection: 'row',
-	justifyContent: 'center',
 	alignItems: 'center',
 	borderColor: '#cccccc',
-	borderWidth: '1px',
-	borderStyle: 'solid',
 	borderRadius: '0.125rem',
-	paddingY: '2px',
-	paddingX: '4px',
+	borderStyle: 'solid',
+	borderWidth: '1px',
 	boxSizing: 'border-box',
-	width: 'fit-content',
-	gap: '4px',
-	svg: {
-		height: '12px',
-		width: '16px',
-	},
 	chevron: {
 		fill: '#545454',
 		size: '10px',
 	},
 	color: '#545454',
-	typography: {
-		lineHeight: '1',
+	display: 'flex',
+	flexDirection: 'row',
+	gap: '4px',
+	justifyContent: 'center',
+	paddingX: '4px',
+	paddingY: '2px',
+	svg: {
+		height: '12px',
+		width: '16px',
 	},
+	typography: {
+		lineHeight: 1,
+	},
+	width: 'fit-content',
 };
 export type ComponentIntendedAudienceSignifier =
 	typeof componentIntendedAudienceSignifier;

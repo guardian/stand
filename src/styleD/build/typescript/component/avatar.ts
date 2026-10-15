@@ -3,169 +3,169 @@
  */
 
 export const componentAvatar = {
+	md: {
+		size: '2.5rem',
+		typography: {
+			font: 'normal 700 0.875rem/1 Open Sans',
+			fontWidth: 95,
+			letterSpacing: '-0.0125rem',
+		},
+	},
 	shared: {
-		color: {
-			green: {
-				text: '#24491d',
-				background: '#cde4c9',
-				border: 'unset',
-				hover: {
-					background: '#aed2a6',
-				},
-				active: {
-					background: '#8ec183',
-				},
+		alignItems: 'center',
+		borderRadius: '50%',
+		button: {
+			background: 'none',
+			border: 'none',
+			cursor: 'pointer',
+			disabled: {
+				cursor: 'not-allowed',
 			},
+			padding: '0px',
+		},
+		color: {
 			blue: {
-				text: '#092f62',
+				active: {
+					background: '#699ee5',
+				},
 				background: '#c5d9f4',
 				border: 'unset',
 				hover: {
 					background: '#93b9ec',
 				},
-				active: {
-					background: '#699ee5',
-				},
-			},
-			red: {
-				text: '#65170e',
-				background: '#f5c6c0',
-				border: 'unset',
-				hover: {
-					background: '#eea198',
-				},
-				active: {
-					background: '#e87c6f',
-				},
-			},
-			cyan: {
-				text: '#00344e',
-				background: '#c5dfec',
-				border: 'unset',
-				hover: {
-					background: '#8abed7',
-				},
-				active: {
-					background: '#5ca5c8',
-				},
-			},
-			teal: {
-				text: '#0e2729',
-				background: '#c5dfe1',
-				border: 'unset',
-				hover: {
-					background: '#a0cace',
-				},
-				active: {
-					background: '#7bb5bb',
-				},
+				text: '#092f62',
 			},
 			coolPurple: {
-				text: '#394069',
+				active: {
+					background: '#acb5ee',
+				},
 				background: '#dbdff7',
 				border: 'unset',
 				hover: {
 					background: '#c3caf3',
 				},
-				active: {
-					background: '#acb5ee',
-				},
+				text: '#394069',
 			},
-			warmPurple: {
-				text: '#381350',
-				background: '#dac3e8',
+			cyan: {
+				active: {
+					background: '#5ca5c8',
+				},
+				background: '#c5dfec',
 				border: 'unset',
 				hover: {
-					background: '#c29dd9',
+					background: '#8abed7',
 				},
+				text: '#00344e',
+			},
+			green: {
 				active: {
-					background: '#aa76cb',
+					background: '#8ec183',
 				},
+				background: '#cde4c9',
+				border: 'unset',
+				hover: {
+					background: '#aed2a6',
+				},
+				text: '#24491d',
 			},
 			magenta: {
-				text: '#581734',
+				active: {
+					background: '#d67ca4',
+				},
 				background: '#edc6d7',
 				border: 'unset',
 				hover: {
 					background: '#e2a1be',
 				},
-				active: {
-					background: '#d67ca4',
-				},
+				text: '#581734',
 			},
 			orange: {
-				text: '#693c16',
+				active: {
+					background: '#f9b27c',
+				},
 				background: '#fcddc6',
 				border: 'unset',
 				hover: {
 					background: '#fac7a1',
 				},
-				active: {
-					background: '#f9b27c',
-				},
-			},
-			yellow: {
-				text: '#5b4a0b',
-				background: '#ffedac',
-				border: 'unset',
-				hover: {
-					background: '#f9e396',
-				},
-				active: {
-					background: '#f6d86d',
-				},
+				text: '#693c16',
 			},
 			outlined: {
-				text: '#000000',
+				active: {
+					background: '#dcdcdc',
+				},
 				background: 'none',
 				border: '0.0625rem solid #8d8d8d',
 				hover: {
 					background: '#ededed',
 				},
+				text: '#000000',
+			},
+			red: {
 				active: {
-					background: '#dcdcdc',
+					background: '#e87c6f',
 				},
+				background: '#f5c6c0',
+				border: 'unset',
+				hover: {
+					background: '#eea198',
+				},
+				text: '#65170e',
+			},
+			teal: {
+				active: {
+					background: '#7bb5bb',
+				},
+				background: '#c5dfe1',
+				border: 'unset',
+				hover: {
+					background: '#a0cace',
+				},
+				text: '#0e2729',
+			},
+			warmPurple: {
+				active: {
+					background: '#aa76cb',
+				},
+				background: '#dac3e8',
+				border: 'unset',
+				hover: {
+					background: '#c29dd9',
+				},
+				text: '#381350',
+			},
+			yellow: {
+				active: {
+					background: '#f6d86d',
+				},
+				background: '#ffedac',
+				border: 'unset',
+				hover: {
+					background: '#f9e396',
+				},
+				text: '#5b4a0b',
 			},
 		},
 		display: 'inline-flex',
-		alignItems: 'center',
+		flexShrink: 0,
 		justifyContent: 'center',
-		overflow: 'hidden',
-		flexShrink: '0',
-		borderRadius: '50%',
-		userSelect: 'none',
 		link: {
-			width: 'fit-content',
 			focusVisible: {
 				outline: '0.125rem solid #0072a9',
 				outlineOffset: '0.125rem',
 			},
 			textDecoration: 'none',
+			width: 'fit-content',
 		},
-		button: {
-			background: 'none',
-			border: 'none',
-			padding: '0',
-			cursor: 'pointer',
-			disabled: {
-				cursor: 'not-allowed',
-			},
-		},
+		overflow: 'hidden',
+		userSelect: 'none',
 	},
 	sm: {
 		size: '2rem',
 		typography: {
 			font: 'normal 700 0.75rem/1 Open Sans',
+			fontWidth: 95,
 			letterSpacing: '0rem',
-			fontWidth: 95,
-		},
-	},
-	md: {
-		size: '2.5rem',
-		typography: {
-			font: 'normal 700 0.875rem/1 Open Sans',
-			letterSpacing: '-0.0125rem',
-			fontWidth: 95,
 		},
 	},
 };
