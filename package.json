@@ -683,7 +683,7 @@
 		"lint:staged": "lint-staged",
 		"prepare": "husky",
 		"storybook": "storybook dev -p 6007",
-		"test": "jest && pnpm test:eslint",
+		"test": "pnpm test:eslint && jest",
 		"test:e2e": "playwright test -c playwright-ct.config.ts",
 		"test:eslint": "node --test scripts/eslint/designTokens.test.js",
 		"test:react-matrix": "./scripts/test-deps-matrix.sh",
