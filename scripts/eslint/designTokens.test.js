@@ -48,6 +48,10 @@ tester.run('no-hardcoded-colours', designTokens.rules['no-hardcoded-colours'], {
 			errors: [error('background')],
 		},
 		{
+			code: css('background-image: linear-gradient(red, blue);'),
+			errors: [error('background-image')],
+		},
+		{
 			code: css('fill: oklch(50% 0.1 30); stroke: color(display-p3 1 0 0);'),
 			errors: [error('fill'), error('stroke')],
 		},
@@ -67,8 +71,24 @@ tester.run('no-hardcoded-colours', designTokens.rules['no-hardcoded-colours'], {
 			errors: [error('background-color'), error('border-color')],
 		},
 		{
+			code: `import { css } from '@emotion/react'; css({ backgroundImage: 'linear-gradient(red, blue)' });`,
+			errors: [error('background-image')],
+		},
+		{
+			code: "import { css } from '@emotion/react'; css({ color: `red`, backgroundImage: `linear-gradient(red, blue)` });",
+			errors: [error('color'), error('background-image')],
+		},
+		{
 			code: `<div css={{ color: 'red' }} style={{ backgroundColor: '#fff' }} />;`,
 			errors: [error('color'), error('background-color')],
+		},
+		{
+			code: '<div css={{ color: `red` }} />;',
+			errors: [error('color')],
+		},
+		{
+			code: css('${sharedStyles}\ncolor: red;'),
+			errors: [error('color')],
 		},
 	],
 });
@@ -81,7 +101,9 @@ tester.run('no-hardcoded-spacing', designTokens.rules['no-hardcoded-spacing'], {
 		css('padding: calc(100% - ${theme.padding});'),
 		css('content: "padding: 8px;"; /* gap: 4px; */'),
 		`import { css } from '@emotion/react'; css({ padding: 0, margin: 'auto', gap: theme.gap });`,
+		"import { css } from '@emotion/react'; css({ padding: `5%`, margin: `auto` });",
 		`<div style={{ margin: '-0px', padding: '5%' }} />;`,
+		'<div css={{ padding: `5%`, margin: `auto` }} />;',
 		`const data = { padding: 8 };`,
 		`const css = (x) => x; css\`padding: 8px;\`;`,
 	],
@@ -120,6 +142,18 @@ tester.run('no-hardcoded-spacing', designTokens.rules['no-hardcoded-spacing'], {
 		},
 		{
 			code: `import { css } from '@emotion/react'; css([{ padding: [0, '8px'] }]);`,
+			errors: [error('padding')],
+		},
+		{
+			code: "import { css } from '@emotion/react'; css({ padding: `8px` });",
+			errors: [error('padding')],
+		},
+		{
+			code: '<div css={{ padding: `8px` }} />;',
+			errors: [error('padding')],
+		},
+		{
+			code: css('${sharedStyles}\npadding: 8px;'),
 			errors: [error('padding')],
 		},
 	],
