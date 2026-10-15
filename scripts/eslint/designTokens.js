@@ -67,12 +67,13 @@ function isNonZeroNumericExpression(node, value) {
 }
 
 function isDeclarationValue(text) {
+	const cleaned = maskNonValues(text);
 	const boundary = Math.max(
-		text.lastIndexOf(';'),
-		text.lastIndexOf('{'),
-		text.lastIndexOf('}'),
+		cleaned.lastIndexOf(';'),
+		cleaned.lastIndexOf('{'),
+		cleaned.lastIndexOf('}'),
 	);
-	return /^\s*[-a-z]+\s*:/i.test(text.slice(boundary + 1));
+	return /^\s*[-a-z]+\s*:/i.test(cleaned.slice(boundary + 1));
 }
 
 function isEmotionCss(node, sourceCode) {
