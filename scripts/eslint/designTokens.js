@@ -7,7 +7,7 @@ const namedColours = new Set(
 const spacingProperty =
 	/^(?:(?:margin|padding)(?:-(?:top|right|bottom|left|block(?:-start|-end)?|inline(?:-start|-end)?))?|(?:row-|column-)?gap|space)$/;
 const colourProperty =
-	/^(?:color|background(?:-color)?|border(?:-(?:top|right|bottom|left|block(?:-start|-end)?|inline(?:-start|-end)?))?(?:-color)?|outline(?:-color)?|(?:box|text)-shadow|fill|stroke|(?:caret|accent|text-decoration|text-emphasis|column-rule)(?:-color)?|stop-color|flood-color|lighting-color)$/;
+	/^(?:color|background(?:-(?:color|image))?|border(?:-(?:top|right|bottom|left|block(?:-start|-end)?|inline(?:-start|-end)?))?(?:-color)?|outline(?:-color)?|(?:box|text)-shadow|fill|stroke|(?:caret|accent|text-decoration|text-emphasis|column-rule)(?:-color)?|stop-color|flood-color|lighting-color)$/;
 
 function maskNonValues(value) {
 	return value.replace(
@@ -43,6 +43,9 @@ function staticValue(node) {
 	) {
 		return String(node.value);
 	}
+	if (node.type === 'TemplateLiteral' && node.expressions.length === 0) {
+		return node.quasis[0].value.cooked ?? node.quasis[0].value.raw;
+	}
 	if (node.type === 'UnaryExpression' && ['-', '+'].includes(node.operator)) {
 		const value = staticValue(node.argument);
 		return value !== undefined && !Number.isNaN(Number(value))
@@ -50,6 +53,26 @@ function staticValue(node) {
 			: undefined;
 	}
 	return undefined;
+}
+
+function isNonZeroNumericExpression(node, value) {
+	if (node.type === 'Literal' && typeof node.value === 'number') {
+		return node.value !== 0;
+	}
+	return (
+		node.type === 'UnaryExpression' &&
+		Number.isFinite(Number(value)) &&
+		Number(value) !== 0
+	);
+}
+
+function isDeclarationValue(text) {
+	const boundary = Math.max(
+		text.lastIndexOf(';'),
+		text.lastIndexOf('{'),
+		text.lastIndexOf('}'),
+	);
+	return /^\s*[-a-z]+\s*:/i.test(text.slice(boundary + 1));
 }
 
 function isEmotionCss(node, sourceCode) {
@@ -144,8 +167,9 @@ function createRule(kind) {
 						append(quasi.value.raw, quasi.range[0] + 1);
 						const expression = node.quasi.expressions[index];
 						if (expression) {
+							const value = staticValue(expression);
 							append(
-								staticValue(expression) ?? '__stand_token__',
+								value ?? (isDeclarationValue(text) ? '__stand_token__' : ';'),
 								expression.range[0],
 								false,
 							);
@@ -196,12 +220,7 @@ function createRule(kind) {
 							return (
 								literal !== undefined &&
 								(isLiteral(literal) ||
-									(!isColour &&
-										value.type !== 'Literal' &&
-										Number(literal) !== 0) ||
-									(!isColour &&
-										typeof value.value === 'number' &&
-										value.value !== 0))
+									(!isColour && isNonZeroNumericExpression(value, literal)))
 							);
 						})
 					) {
