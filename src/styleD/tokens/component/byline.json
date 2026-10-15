@@ -1,62 +1,65 @@
 {
 	"component": {
 		"byline": {
-			"color": {
-				"$type": "color",
-				"$value": "{semantic.colors.text.strong}"
-			},
 			"backgroundColor": {
 				"$type": "color",
 				"$value": "{base.colors.neutral.900}"
-			},
-			"readonlyBackgroundColor": {
-				"$type": "color",
-				"$value": "{base.colors.neutral.700}"
 			},
 			"borderColor": {
 				"$type": "color",
 				"$value": "{base.colors.neutral.0}"
 			},
-			"borderWidth": {
-				"$type": "dimension",
-				"$value": "1px"
-			},
 			"borderStyle": {
 				"$type": "strokeStyle",
 				"$value": "solid"
 			},
-			"lineHeight": {
-				"$type": "number",
-				"$value": 1.8
+			"borderWidth": {
+				"$type": "dimension",
+				"$value": {
+					"unit": "px",
+					"value": 1
+				}
 			},
 			"chip": {
-				"color": {
-					"$type": "color",
-					"$value": "{semantic.colors.text.strong}"
-				},
 				"borderColor": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.700}"
 				},
-				"borderWidth": {
+				"borderRadius": {
 					"$type": "dimension",
-					"$value": "1px"
+					"$value": {
+						"unit": "px",
+						"value": 8
+					}
 				},
 				"borderStyle": {
 					"$type": "strokeStyle",
 					"$value": "solid"
 				},
-				"borderRadius": {
+				"borderWidth": {
 					"$type": "dimension",
-					"$value": "8px"
+					"$value": {
+						"unit": "px",
+						"value": 1
+					}
+				},
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.strong}"
 				},
 				"paddingX": {
 					"$type": "dimension",
-					"$value": "4px"
+					"$value": {
+						"unit": "px",
+						"value": 4
+					}
 				},
 				"paddingY": {
 					"$type": "dimension",
-					"$value": "2px"
+					"$value": {
+						"unit": "px",
+						"value": 2
+					}
 				},
 				"selectedBorderColor": {
 					"$type": "color",
@@ -71,39 +74,49 @@
 					"$value": "{semantic.colors.text.strong}"
 				}
 			},
+			"color": {
+				"$type": "color",
+				"$value": "{semantic.colors.text.strong}"
+			},
 			"dropdown": {
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.900}"
+				},
 				"borderColor": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.650}"
-				},
-				"borderWidth": {
-					"$type": "dimension",
-					"$value": "1px"
 				},
 				"borderStyle": {
 					"$type": "strokeStyle",
 					"$value": "solid"
 				},
-				"backgroundColor": {
-					"$type": "color",
-					"$value": "{base.colors.neutral.900}"
+				"borderWidth": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 1
+					}
 				},
 				"li": {
-					"color": {
-						"$type": "color",
-						"$value": "{semantic.colors.text.strong}"
-					},
 					"borderBottomColor": {
 						"$type": "color",
 						"$value": "{base.colors.neutral.650}"
 					},
-					"borderBottomWidth": {
-						"$type": "dimension",
-						"$value": "1px"
-					},
 					"borderBottomStyle": {
 						"$type": "strokeStyle",
 						"$value": "solid"
+					},
+					"borderBottomWidth": {
+						"$type": "dimension",
+						"$value": {
+							"unit": "px",
+							"value": 1
+						}
+					},
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.strong}"
 					},
 					"selectedBackgroundColor": {
 						"$type": "color",
@@ -116,16 +129,27 @@
 				},
 				"maxHeight": {
 					"$type": "dimension",
-					"$value": "320px"
+					"$value": {
+						"unit": "px",
+						"value": 320
+					}
 				}
 			},
 			"invisiblesColor": {
 				"$type": "color",
 				"$value": "{base.colors.neutral.600}"
 			},
+			"lineHeight": {
+				"$type": "lineHeight",
+				"$value": 1.8
+			},
 			"placeholderColor": {
 				"$type": "color",
 				"$value": "{base.colors.neutral.400}"
+			},
+			"readonlyBackgroundColor": {
+				"$type": "color",
+				"$value": "{base.colors.neutral.700}"
 			}
 		}
 	}

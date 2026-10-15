@@ -3,49 +3,49 @@
  */
 
 export const componentAutocomplete = {
+	icon: {
+		color: '#bababa',
+		paddingX: '4px',
+		size: '20px',
+	},
 	input: {
-		color: '#000000',
 		backgroundColor: '#ffffff',
-		borderWidth: '0.0625rem',
-		borderStyle: 'solid',
 		borderColor: '#545454',
-		padding: '0.75rem',
 		borderRadius: '0.25rem',
-		hover: {
-			backgroundColor: '#f6f6f6',
+		borderStyle: 'solid',
+		borderWidth: '0.0625rem',
+		color: '#000000',
+		disabled: {
+			backgroundColor: '#ffffff',
+			border: '0.0625rem solid #dcdcdc',
+			color: '#999999',
+			cursor: 'not-allowed',
 		},
 		focused: {
 			outline: '0.125rem solid #0072a9',
 			outlineOffset: '0.125rem',
 		},
-		disabled: {
-			backgroundColor: '#ffffff',
-			cursor: 'not-allowed',
-			color: '#999999',
-			border: '0.0625rem solid #dcdcdc',
+		hover: {
+			backgroundColor: '#f6f6f6',
 		},
-	},
-	icon: {
-		size: '20px',
-		paddingX: '4px',
-		color: '#bababa',
+		padding: '0.75rem',
 	},
 	listbox: {
-		borderWidth: '0.0625rem',
-		borderStyle: 'solid',
-		borderColor: '#545454',
-		paddingY: '8px',
-		paddingX: '0px',
 		backgroundColor: '#ffffff',
+		borderColor: '#545454',
+		borderStyle: 'solid',
+		borderWidth: '0.0625rem',
 		item: {
-			paddingY: '8px',
-			paddingX: '12px',
-			backgroundHoverColor: '#ededed',
 			backgroundFocusedColor: '#ededed',
+			backgroundHoverColor: '#ededed',
 			color: '#000000',
-			colorHover: '#000000',
 			colorFocused: '#000000',
+			colorHover: '#000000',
+			paddingX: '12px',
+			paddingY: '8px',
 		},
+		paddingX: '0px',
+		paddingY: '8px',
 	},
 };
 export type ComponentAutocomplete = typeof componentAutocomplete;

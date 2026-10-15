@@ -4,8 +4,8 @@
 
 export const componentTemplateComponent = {
 	color: {
-		background: '#b8d8e7',
-		text: '#ffffff',
+		background: '#cde4c9',
+		text: '#24491d',
 	},
 };
 export type ComponentTemplateComponent = typeof componentTemplateComponent;

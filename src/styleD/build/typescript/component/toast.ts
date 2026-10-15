@@ -3,74 +3,74 @@
  */
 
 export const componentToast = {
+	error: {
+		accentColor: '#8c2113',
+		backgroundColor: '#f5c6c0',
+	},
+	information: {
+		accentColor: '#00344e',
+		backgroundColor: '#e8f0fb',
+	},
 	region: {
-		position: 'fixed',
-		right: '1.25rem',
-		top: '1.25rem',
-		zIndex: 1000,
 		display: 'flex',
 		flexDirection: 'column',
 		gap: '0.75rem',
 		outline: 'none',
+		position: 'fixed',
+		right: '1.25rem',
+		top: '1.25rem',
+		zIndex: 1000,
 	},
 	shared: {
-		display: 'grid',
-		alignItems: 'start',
-		gap: '0.75rem',
-		width: '100%',
-		maxWidth: '26.25rem',
-		padding: {
-			top: '0.75rem',
-			right: '0.75rem',
-			bottom: '0.75rem',
-			left: '0.75rem',
-		},
-		borderWidth: '0px',
 		accentBorderWidth: '0.125rem',
-		borderStyle: 'solid',
+		alignItems: 'start',
 		borderRadius: '0.25rem',
+		borderStyle: 'solid',
+		borderWidth: '0px',
 		color: '#000000',
-		shadow: '0 0.125rem 0.375rem 0 rgb(0% 0% 0% / 0.3)',
 		content: {
+			additionalInfoTypography: {
+				font: 'normal 460 0.75rem/1.3 Open Sans',
+				fontWidth: 95,
+				letterSpacing: '0rem',
+			},
 			display: 'flex',
 			flexDirection: 'column',
 			gap: '0.25rem',
-			titleTypography: {
-				font: 'normal 700 0.875rem/1.15 Open Sans',
-				letterSpacing: '-0.0125rem',
-				fontWidth: 95,
-			},
 			subjectTypography: {
 				font: 'normal 460 0.875rem/1.3 Open Sans',
-				letterSpacing: '0rem',
 				fontWidth: 95,
+				letterSpacing: '0rem',
 			},
-			additionalInfoTypography: {
-				font: 'normal 460 0.75rem/1.3 Open Sans',
-				letterSpacing: '0rem',
+			titleTypography: {
+				font: 'normal 700 0.875rem/1.15 Open Sans',
 				fontWidth: 95,
+				letterSpacing: '-0.0125rem',
 			},
 		},
+		display: 'grid',
+		gap: '0.75rem',
+		maxWidth: '26.25rem',
 		media: {
-			size: '4rem',
 			borderRadius: '0.125rem',
+			size: '4rem',
 		},
-	},
-	information: {
-		backgroundColor: '#e8f0fb',
-		accentColor: '#00344e',
+		padding: {
+			bottom: '0.75rem',
+			left: '0.75rem',
+			right: '0.75rem',
+			top: '0.75rem',
+		},
+		shadow: '0px 0.125rem 0.375rem 0px rgb(0% 0% 0% / 0.3)',
+		width: '100%',
 	},
 	success: {
-		backgroundColor: '#cde4c9',
 		accentColor: '#326528',
+		backgroundColor: '#cde4c9',
 	},
 	warning: {
-		backgroundColor: '#ffedac',
 		accentColor: '#433608',
-	},
-	error: {
-		backgroundColor: '#f5c6c0',
-		accentColor: '#8c2113',
+		backgroundColor: '#ffedac',
 	},
 };
 export type ComponentToast = typeof componentToast;

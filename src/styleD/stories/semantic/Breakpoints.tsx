@@ -54,7 +54,10 @@ const parseMin = (value: string): number =>
 
 const getActiveBreakpoint = (width: number): string | null => {
 	let active: string | null = null;
-	for (const [name, min] of Object.entries(semanticBreakpoints)) {
+	const sortedBreakpoints = Object.entries(semanticBreakpoints).sort(
+		([, minA], [, minB]) => parseMin(minA) - parseMin(minB),
+	);
+	for (const [name, min] of sortedBreakpoints) {
 		if (width >= parseMin(min)) {
 			active = name;
 		}
