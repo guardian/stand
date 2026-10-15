@@ -5,7 +5,7 @@ import { BreakingNewsAustralia_Red_2_email } from './fixtures/breakingNews';
 import { HtmlPreviewLoader } from './HtmlPreviewLoader';
 
 const meta = {
-	title: 'Stand/Editorial Components/HtmlPreviewLoader',
+	title: 'Stand/Sharable non-Design System Components/HtmlPreviewLoader',
 	component: HtmlPreviewLoader,
 	parameters: {},
 } satisfies Meta<typeof HtmlPreviewLoader>;

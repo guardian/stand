@@ -38,15 +38,14 @@ Components for the Tools Design System should also:
   - Components are built with React, Emotion and possibly React Aria, but must also be stylable without these dependencies via CSS and/or TS/JS exports.
   - Document CSS-only and TS/JS usage in the component's MDX file (see existing components for the "Custom Component Build" pattern).
 
-### Editorial Components
+### Sharable non-Design System Components
 
-Editorial components should also:
+Sharable non-Design System Components should also:
 
-- Be shared across tools but not yet fully verified or battle-tested by the design systems team, or be shared components that do not fit the design system foundations. A component should not be placed here only because it is used by an editorial tool.
+- Be applicable to be shared across multiple tools but don't need to fit the design system or be verified by the design systems team.
 
 - **Component-focused**
   - Focus on shared UI components that could be reused across multiple (2+) Guardian tools.
-  - Avoid tool-specific components or features.
   - Shared utility functions, hooks, or methods are allowed only if they directly support components.
 
 - **External APIs**
@@ -61,9 +60,9 @@ All new components must:
 - Be developed and showcased in **Storybook**.
   - `pnpm run storybook`
   - Create stories that demonstrate the component's functionality, variations, and edge cases.
-  - The naming convention for stories should follow the pattern of existing components, `Stand/Tools Design System/<Type>/<Name>` or `Stand/Editorial Components/<Component Name>`.
+  - The naming convention for stories should follow the pattern of existing components, `Stand/Tools Design System/<Type>/<Name>` or `Stand/Sharable non-Design System Components/<Component Name>`.
   - Create an accompanying MDX file for documentation, following the pattern of existing components (e.g. `Avatar.mdx`).
-  - Update the component list in the relevant introduction page ([Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs)).
+  - Update the component list in the relevant introduction page ([Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Sharable non-Design System Components](https://guardian.github.io/stand/?path=/docs/stand-sharable-non-design-system-components-introduction--docs)).
 - Be accessible (see below).
 
 ### Scaffold a component
