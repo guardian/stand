@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { sortEntriesByValue } from '../../../util/storybook/sort';
 import { baseSizing } from '../../build/typescript/base/sizing';
 import { semanticColors } from '../../build/typescript/semantic/colors';
 
@@ -58,11 +59,12 @@ const sizingBoxCss = css`
 `;
 
 // Group by px and rem
-const pxTokens = Object.entries(baseSizing).filter(([key]) =>
-	key.endsWith('Px'),
+const pxTokens = sortEntriesByValue(Object.entries(baseSizing)).filter(
+	([key]) => key.endsWith('Px'),
 );
-const remTokens = Object.entries(baseSizing).filter(([key]) =>
-	key.endsWith('Rem'),
+
+const remTokens = sortEntriesByValue(Object.entries(baseSizing)).filter(
+	([key]) => key.endsWith('Rem'),
 );
 
 export const Sizing = () => (

@@ -3,31 +3,10 @@
  */
 
 export const componentAlertBanner = {
-	shared: {
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'space-between',
-		padding: {
-			top: '0',
-			right: '1rem',
-			bottom: '0',
-			left: '1rem',
-		},
-		width: '100%',
-		height: '2.5rem',
-		content: {
-			display: 'flex',
-			justifyContent: 'center',
-			gap: '0.5rem',
-			flex: '1',
-			height: '100%',
-			alignItems: 'center',
-			color: '#000000',
-			typography: {
-				font: 'normal 460 0.875rem/1.3 Open Sans',
-				letterSpacing: '0rem',
-				fontWidth: 95,
-			},
+	error: {
+		backgroundColor: '#f5c6c0',
+		icon: {
+			color: '#8c2113',
 		},
 	},
 	information: {
@@ -35,6 +14,33 @@ export const componentAlertBanner = {
 		icon: {
 			color: '#00344e',
 		},
+	},
+	shared: {
+		alignItems: 'center',
+		content: {
+			alignItems: 'center',
+			color: '#000000',
+			display: 'flex',
+			flex: 1,
+			gap: '0.5rem',
+			height: '100%',
+			justifyContent: 'center',
+			typography: {
+				font: 'normal 460 0.875rem/1.3 Open Sans',
+				fontWidth: 95,
+				letterSpacing: '0rem',
+			},
+		},
+		display: 'flex',
+		height: '2.5rem',
+		justifyContent: 'space-between',
+		padding: {
+			bottom: 0,
+			left: '1rem',
+			right: '1rem',
+			top: 0,
+		},
+		width: '100%',
 	},
 	success: {
 		backgroundColor: '#cde4c9',
@@ -46,12 +52,6 @@ export const componentAlertBanner = {
 		backgroundColor: '#ffedac',
 		icon: {
 			color: '#433608',
-		},
-	},
-	error: {
-		backgroundColor: '#f5c6c0',
-		icon: {
-			color: '#8c2113',
 		},
 	},
 };

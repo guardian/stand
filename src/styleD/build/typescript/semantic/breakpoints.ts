@@ -3,8 +3,8 @@
  */
 
 export const semanticBreakpoints = {
-	sm: '0px',
-	md: '830px',
 	lg: '1056px',
+	md: '830px',
+	sm: '0px',
 };
 export type SemanticBreakpoints = typeof semanticBreakpoints;
