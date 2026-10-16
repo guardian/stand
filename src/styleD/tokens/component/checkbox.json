@@ -3,47 +3,15 @@
 		"checkbox": {
 			"input": {
 				"shared": {
-					"display": {
-						"$type": "string",
-						"$value": "flex"
-					},
-					"position": {
-						"$type": "string",
-						"$value": "relative"
-					},
 					"gap": {
 						"$type": "dimension",
 						"$value": "{base.spacing.8Rem}"
-					},
-					"alignItems": {
-						"$type": "string",
-						"$value": "flex-start"
 					},
 					"color": {
 						"$type": "color",
 						"$value": "{semantic.colors.text.strong}"
 					},
-					"cursor": {
-						"$type": "string",
-						"$value": "pointer"
-					},
 					"indicator": {
-						"display": {
-							"$type": "string",
-							"$value": "flex"
-						},
-						"alignItems": {
-							"$type": "string",
-							"$value": "center"
-						},
-						"justifyContent": {
-							"$type": "string",
-							"$value": "center"
-						},
-						"flexShrink": {
-							"$type": "number",
-							"$value": 0
-						},
 						"border": {
 							"$type": "border",
 							"$value": {
@@ -55,36 +23,6 @@
 						"borderRadius": {
 							"$type": "string",
 							"$value": "{base.radius.corner4Rem}"
-						},
-						"transition": {
-							"$type": "string",
-							"$value": "all 200ms"
-						},
-						"svg": {
-							"fill": {
-								"$type": "color",
-								"$value": "none"
-							}
-						},
-						"check": {
-							"width": {
-								"$type": "string",
-								"$value": "20px"
-							},
-							"height": {
-								"$type": "string",
-								"$value": "20px"
-							}
-						},
-						"indeterminate": {
-							"width": {
-								"$type": "string",
-								"$value": "12px"
-							},
-							"height": {
-								"$type": "string",
-								"$value": "2px"
-							}
 						},
 						"selected": {
 							"backgroundColor": {
@@ -133,12 +71,6 @@
 									"style": "solid"
 								}
 							}
-						}
-					},
-					"label": {
-						"alignSelf": {
-							"$type": "string",
-							"$value": "center"
 						}
 					},
 					"disabled": {
@@ -214,16 +146,6 @@
 				}
 			},
 			"group": {
-				"shared": {
-					"display": {
-						"$type": "string",
-						"$value": "flex"
-					},
-					"flexDirection": {
-						"$type": "string",
-						"$value": "column"
-					}
-				},
 				"sm": {
 					"gap": {
 						"$type": "dimension",

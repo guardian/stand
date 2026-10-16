@@ -1,26 +1,20 @@
 import { Checkbox as RACCheckbox } from 'react-aria-components';
-import { mergeDeep } from '../../util/mergeDeep';
-import {
-	checkboxLabelStyles,
-	checkboxStyles,
-	defaultCheckboxTheme,
-} from './styles';
+import { checkboxLabelStyles, checkboxStyles } from './styles';
 import type { CheckboxProps } from './types';
 
 export function Checkbox({
 	children,
 	size = 'md',
 	isIndeterminate = false,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
 	theme = {},
 	cssOverrides,
 	...props
 }: CheckboxProps) {
-	const mergedTheme = mergeDeep(defaultCheckboxTheme, theme);
-
 	return (
 		<RACCheckbox
 			css={[
-				checkboxStyles(mergedTheme, {
+				checkboxStyles({
 					size,
 					isIndeterminate,
 				}),
@@ -51,7 +45,7 @@ export function Checkbox({
 					)}
 				</div>
 			</>
-			<span css={checkboxLabelStyles(mergedTheme)}>{children}</span>
+			<span css={checkboxLabelStyles}>{children}</span>
 		</RACCheckbox>
 	);
 }

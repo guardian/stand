@@ -5,31 +5,11 @@
 export const componentCheckbox = {
 	input: {
 		shared: {
-			display: 'flex',
-			position: 'relative',
 			gap: '0.5rem',
-			alignItems: 'flex-start',
 			color: '#000000',
-			cursor: 'pointer',
 			indicator: {
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: 'center',
-				flexShrink: 0,
 				border: '0.0625rem solid #545454',
 				borderRadius: '0.25rem',
-				transition: 'all 200ms',
-				svg: {
-					fill: 'none',
-				},
-				check: {
-					width: '20px',
-					height: '20px',
-				},
-				indeterminate: {
-					width: '12px',
-					height: '2px',
-				},
 				selected: {
 					backgroundColor: '#0072a9',
 					border: '0.0625rem solid #0072a9',
@@ -45,9 +25,6 @@ export const componentCheckbox = {
 					backgroundColor: '#b42a19',
 					border: '0.0625rem solid #b42a19',
 				},
-			},
-			label: {
-				alignSelf: 'center',
 			},
 			disabled: {
 				color: '#999999',
@@ -82,10 +59,6 @@ export const componentCheckbox = {
 		},
 	},
 	group: {
-		shared: {
-			display: 'flex',
-			flexDirection: 'column',
-		},
 		sm: {
 			gap: '1rem',
 			marginTop: '0.5rem',
