@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import '../../styleD/build/css/component/checkbox.css';
 import { baseColors } from '../../styleD/build/typescript/base/colors';
 import { Checkbox } from './Checkbox';
 

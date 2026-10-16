@@ -1,0 +1,184 @@
+{
+	"component": {
+		"checkbox": {
+			"input": {
+				"shared": {
+					"gap": {
+						"$type": "dimension",
+						"$value": "{base.spacing.8Rem}"
+					},
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.strong}"
+					},
+					"indicator": {
+						"border": {
+							"$type": "border",
+							"$value": {
+								"color": "{semantic.colors.border.stronger}",
+								"width": "{semantic.sizing.border.default}",
+								"style": "solid"
+							}
+						},
+						"borderRadius": {
+							"$type": "string",
+							"$value": "{base.radius.corner4Rem}"
+						},
+						"selected": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.selectedStrong}"
+							},
+							"border": {
+								"$type": "border",
+								"$value": {
+									"color": "{semantic.colors.border.selected}",
+									"width": "{semantic.sizing.border.default}",
+									"style": "solid"
+								}
+							},
+							"svg": {
+								"fill": {
+									"$type": "color",
+									"$value": "{semantic.colors.text.strongerInverse}"
+								}
+							}
+						},
+						"focusVisible": {
+							"outline": {
+								"$type": "border",
+								"$value": {
+									"color": "{semantic.colors.border.focused}",
+									"width": "{semantic.sizing.border.md}",
+									"style": "solid"
+								}
+							},
+							"outlineOffset": {
+								"$type": "dimension",
+								"$value": "{base.spacing.2Rem}"
+							}
+						},
+						"error": {
+							"backgroundColor": {
+								"$type": "color",
+								"$value": "{semantic.colors.fill.errorStrong}"
+							},
+							"border": {
+								"$type": "border",
+								"$value": {
+									"color": "{semantic.colors.border.error}",
+									"width": "{semantic.sizing.border.default}",
+									"style": "solid"
+								}
+							}
+						}
+					},
+					"disabled": {
+						"color": {
+							"$type": "color",
+							"$value": "{semantic.colors.text.disabled}"
+						},
+						"cursor": {
+							"$type": "string",
+							"$value": "not-allowed"
+						},
+						"indicator": {
+							"border": {
+								"$type": "border",
+								"$value": {
+									"color": "{semantic.colors.border.disabled}",
+									"width": "{semantic.sizing.border.default}",
+									"style": "solid"
+								}
+							},
+							"selected": {
+								"backgroundColor": {
+									"$type": "color",
+									"$value": "{semantic.colors.fill.disabled}"
+								}
+							}
+						}
+					}
+				},
+				"sm": {
+					"typography": {
+						"font": {
+							"$type": "typography",
+							"$value": "{semantic.typography.labelFormInlineSm.font}"
+						},
+						"letterSpacing": {
+							"$type": "dimension",
+							"$value": "{semantic.typography.labelFormInlineSm.letterSpacing}"
+						},
+						"fontWidth": {
+							"$type": "number",
+							"$value": "{semantic.typography.labelFormInlineSm.fontWidth}"
+						}
+					},
+					"indicator": {
+						"size": {
+							"$type": "string",
+							"$value": "{base.sizing.size20Rem}"
+						}
+					}
+				},
+				"md": {
+					"typography": {
+						"font": {
+							"$type": "typography",
+							"$value": "{semantic.typography.labelFormInlineMd.font}"
+						},
+						"letterSpacing": {
+							"$type": "dimension",
+							"$value": "{semantic.typography.labelFormInlineMd.letterSpacing}"
+						},
+						"fontWidth": {
+							"$type": "number",
+							"$value": "{semantic.typography.labelFormInlineMd.fontWidth}"
+						}
+					},
+					"indicator": {
+						"size": {
+							"$type": "string",
+							"$value": "{base.sizing.size24Rem}"
+						}
+					}
+				}
+			},
+			"group": {
+				"sm": {
+					"gap": {
+						"$type": "dimension",
+						"$value": "{base.spacing.16Rem}"
+					},
+					"marginTop": {
+						"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
+						"$type": "dimension",
+						"$value": "{base.spacing.8Rem}"
+					},
+					"marginBottom": {
+						"$description": "spacing between the input itself and the following element (error) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
+						"$type": "dimension",
+						"$value": "{base.spacing.8Rem}"
+					}
+				},
+				"md": {
+					"gap": {
+						"$type": "dimension",
+						"$value": "{base.spacing.20Rem}"
+					},
+					"marginTop": {
+						"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
+						"$type": "dimension",
+						"$value": "{base.spacing.12Rem}"
+					},
+					"marginBottom": {
+						"$description": "spacing between the input itself and the following element (error) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
+						"$type": "dimension",
+						"$value": "{base.spacing.12Rem}"
+					}
+				}
+			}
+		}
+	}
+}
