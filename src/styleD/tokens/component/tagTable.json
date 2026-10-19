@@ -1,6 +1,12 @@
 {
 	"component": {
 		"tagTable": {
+			"dragButton": {
+				"padding": {
+					"$type": "dimension",
+					"$value": "5px"
+				}
+			},
 			"header": {
 				"backgroundColor": {
 					"$type": "color",

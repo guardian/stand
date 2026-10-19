@@ -10,6 +10,11 @@ export const componentByline = {
 	borderWidth: '1px',
 	borderStyle: 'solid',
 	lineHeight: 1.8,
+	editorPadding: '4px',
+	selectedMarkerBackgroundColor: '#dcdcdc',
+	focusedSelectedMarkerBackgroundColor: '#b4d9ff',
+	focusedSelectedInvisibleBackgroundColor: '#b4d8ff',
+	previewMarginTop: '5px',
 	chip: {
 		color: '#000000',
 		borderColor: '#dcdcdc',
@@ -18,6 +23,8 @@ export const componentByline = {
 		borderRadius: '8px',
 		paddingX: '4px',
 		paddingY: '2px',
+		labelMarginLeft: '5px',
+		marginLeft: '3px',
 		selectedBorderColor: '#c5d9f4',
 		taggedBackgroundColor: '#dcdcdc',
 		untaggedColor: '#000000',
@@ -28,6 +35,7 @@ export const componentByline = {
 		borderStyle: 'solid',
 		backgroundColor: '#ffffff',
 		li: {
+			padding: '5px',
 			color: '#000000',
 			borderBottomColor: '#cccccc',
 			borderBottomWidth: '1px',
