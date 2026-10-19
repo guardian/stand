@@ -30,6 +30,15 @@ Populate or update an MDX document so it explains how to use a component, mirror
 - Prefer importing story exports from the component's stories file, then rendering them in the MDX document with Storybook blocks such as Meta, Canvas, and Story exports.
 - Do not add paragraphs linking to https://codesandbox.io.
 
+## Collection and verification metadata
+
+- Follow [Choosing a collection](../../../CONTRIBUTING.md#choosing-a-collection). Tools Design System membership means the component belongs to the core design system and its governance process, not that it has already been verified. Shareable non-Design System Components sit outside that system and do not require design system team verification.
+- Check the component's story title and existing metadata to establish its collection. Keep the story title and MDX metadata consistent; resolve unclear or conflicting placement with the user rather than silently reclassifying an existing component.
+- Import `MetaTable` from `src/util/storybook/MetaTable` using the correct relative path and render it near the component introduction, before "When to use".
+- For Tools Design System components, preserve the existing `designSystemTeamVerified` value. For new, unverified components, use `<MetaTable designSystemTeamVerified={false} />`. Use `true` only with evidence of design system team verification; never infer it from collection membership, design tokens, composition, or a Figma reference.
+- For shareable components, use `<MetaTable collection="Shareable non-Design System Components" />` and omit `designSystemTeamVerified`. Do not describe these components as awaiting design system verification merely because they are in Stand.
+- Preserve existing Figma and React Aria links in `MetaTable` when updating documentation.
+
 ## Props table requirements
 
 - Format the props table in the same style as the Select docs:

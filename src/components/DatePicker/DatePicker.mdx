@@ -13,6 +13,7 @@ import DatePickerStories, {
 } from './DatePicker.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
+import { MetaTable } from '../../util/storybook/MetaTable';
 
 <Meta of={DatePickerStories} />
 
@@ -21,6 +22,14 @@ import { componentName, componentTsx } from './sandbox';
 A date picker component built on [React Aria `DatePicker`](https://react-aria.adobe.com/DatePicker), see their documentation for the full API.
 
 It provides an accessible, labelled date field with a calendar popover, support for descriptions, validation errors, minimum/maximum date constraints, and a disabled state. The month segment displays full month names by default and supports typing the first letters of a month name to select it.
+
+<MetaTable
+	designSystemTeamVerified
+	figmaLink="https://www.figma.com/design/gmHnKr3tOzvnYp1FZeIl4t/Stand--Editorial-tool-Design-System?node-id=1827-9814&m=dev"
+	reactAriaLink="https://react-aria.adobe.com/DatePicker"
+/>
+
+<Canvas layout="padded" of={Default} />
 
 ## When to use
 

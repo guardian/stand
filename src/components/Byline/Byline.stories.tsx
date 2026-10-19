@@ -31,7 +31,7 @@ const disableSnapshot = {
 };
 
 const meta = {
-	title: 'Stand/Editorial Components/Byline',
+	title: 'Stand/Shareable non-Design System Components/Byline',
 	component: Byline,
 	parameters: {},
 	args: {

@@ -24,12 +24,21 @@ import {
 	componentJs,
 	componentTsx,
 } from './sandbox';
+import { MetaTable } from '../../util/storybook/MetaTable';
 
 <Meta of={AvatarLinkStories} />
 
 # AvatarLink
 
 An anchor element styled like the Stand `Avatar` component, and based on the react-aria `Link` component. It displays only a user's profile image or initials in a circular container and keeps link semantics (including `href`, `target`, and `rel`) while sharing the same color variants and sizes as `Avatar`. Refer to React Aria's [Link docs](https://react-aria.adobe.com/Link) for usage guidance.
+
+<MetaTable
+	designSystemTeamVerified
+	figmaLink="https://www.figma.com/design/gmHnKr3tOzvnYp1FZeIl4t/Stand--Editorial-tool-Design-System?node-id=206-2937&m=dev"
+	reactAriaLink="https://react-aria.adobe.com/Link"
+/>
+
+<Canvas layout="padded" of={InitialsMd} />
 
 ## When to use
 

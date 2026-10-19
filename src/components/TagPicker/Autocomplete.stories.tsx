@@ -5,7 +5,7 @@ import type { AutocompleteOption } from './Autocomplete';
 import { Autocomplete } from './Autocomplete';
 
 const meta = {
-	title: 'Stand/Editorial Components/TagPicker/Autocomplete',
+	title: 'Stand/Shareable non-Design System Components/TagPicker/Autocomplete',
 	component: Autocomplete,
 	args: {
 		addSelection: () => {},

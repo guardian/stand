@@ -134,6 +134,9 @@ const printPublishChecklist = (names: NameSet): void => {
 	);
 	console.log(' - Add component documentation, stories, and sandbox examples');
 	console.log(
+		' - Follow CONTRIBUTING.md#choosing-a-collection: confirm the story collection and MDX MetaTable status; use the shareable collection and flag for discussion if unsure',
+	);
+	console.log(
 		' - Add a changeset with `pnpm changeset` to generate the changelog entry',
 	);
 	console.log(' - Run `pnpm build`, `pnpm tsc`, `pnpm lint`, and `pnpm test`');

@@ -22,6 +22,7 @@ import {
 	componentJs,
 	componentTsx,
 } from './sandbox';
+import { MetaTable } from '../../util/storybook/MetaTable';
 
 <Meta of={LayoutStories} />
 
@@ -30,6 +31,10 @@ import {
 Layout is a page-shell component that composes `AlertBanner`, `TopBar`, `Sidebar`, and a main content region into a responsive layout, preferably with a `Grid` in the main content.
 
 It provides consistent structure across tools while allowing each region to be populated with existing Stand components.
+
+<MetaTable designSystemTeamVerified />
+
+<Canvas of={TopBarGrid} />
 
 ## When to use
 

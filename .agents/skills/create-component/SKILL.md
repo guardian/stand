@@ -13,13 +13,15 @@ Create a complete, publishable component contribution rather than stopping at th
 
 Before scaffolding, ask the user for any missing context needed to make the component correctly:
 
-- Component name, purpose, intended users, and whether it belongs in the Tools Design System or Editorial Components. Use the Tools Design System category only for components verified by the design systems team. Use Editorial Components for shared components that do not fit the design system foundations or have not yet been fully verified and battle-tested by the design systems team.
+- Component name, purpose, intended users, and whether it belongs in the Tools Design System or Shareable non-Design System Components. Follow [Choosing a collection](../../../CONTRIBUTING.md#choosing-a-collection): discuss core UI building blocks governed by the Tools Design System with the design system team; use the shareable collection for components reusable across two or more Guardian tools that do not need design system governance. If unsure, start in the shareable collection and flag placement for discussion.
 - A Figma URL or node reference for the design, if one exists.
 - The relevant React Aria component or API link, if the component maps to a React Aria pattern.
 - Required sizes, states, variants, labels, icons, and interaction behavior.
 - Any known usage constraints, peer dependencies, or related existing components to use as references.
 
 Do not invent design or interaction requirements when this context is missing. If the user provides a Figma URL, load the Figma MCP server when needed and use its design context before implementation.
+
+Collection membership and verification are separate. Tools Design System components may be awaiting review; design system verification is not required for the shareable collection. Inclusion in Stand, use of design tokens, or composition of design system components does not imply design system membership or verification.
 
 ## Confirm high-impact changes
 
@@ -31,7 +33,7 @@ Routine work within the new component's generated files, its documented tokens, 
 
 1. Read the repository guidance before making changes:
    - Read `README.md` for installation, compatibility, token, and development commands.
-   - Read `CONTRIBUTING.md` for Tools Design System versus Editorial Components boundaries, generator follow-up steps, exports, accessibility, sandbox testing, and release requirements.
+   - Read `CONTRIBUTING.md` for Tools Design System versus Shareable non-Design System Components boundaries, generator follow-up steps, exports, accessibility, sandbox testing, and release requirements.
    - Treat both documents as the current repository conventions and reconcile any component-specific request with them before proceeding.
 
 2. Run the generator:
@@ -43,6 +45,7 @@ Routine work within the new component's generated files, its documented tokens, 
    Enter the component name as separate words, such as `alert banner`. The generator creates the component folder, implementation templates, stories, MDX, sandbox, token source, and `src/<PascalName>.ts` entrypoint. It also runs `pnpm run build-styled` and prints a follow-up checklist.
 
 3. Read the generated files and compare them with a nearby component of similar behavior. Do not assume the template's behavior, props, peer dependencies, or accessibility are sufficient.
+   - The scaffold defaults to a Tools Design System story title; this is not approval or verification. Confirm the collection and update the story title and MDX metadata to match before publishing.
 
 ## Design-led component requests
 
@@ -86,7 +89,9 @@ For example, a request for a ToggleSwitch based on the React Aria Switch compone
    - Add or update the component MDX using the `update-component-mdx-file` skill.
    - Add or update the sandbox using the `update-component-sandbox-file` skill.
    - Include real props, states, and variants from the implementation and stories.
-   - Add the component to the relevant Storybook introduction page.
+   - Use the matching Storybook title: `Stand/Tools Design System/Components/<Name>` or `Stand/Shareable non-Design System Components/<Name>`.
+   - Include `MetaTable` near the component introduction. For a new, unverified Tools Design System component, use `<MetaTable designSystemTeamVerified={false} />`. Set verification to `true` only with evidence of design system team verification. For a shareable component, use `<MetaTable collection="Shareable non-Design System Components" />` without a verification flag.
+   - Confirm the component appears in the relevant Storybook introduction page's automatically discovered component grid.
    - Ensure the MDX peer dependency section matches the implementation import chain.
 
 9. Prepare the release:

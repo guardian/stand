@@ -2,6 +2,7 @@ import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import ToastStories, { Interactive } from './Toast.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
+import { MetaTable } from '../../util/storybook/MetaTable';
 
 <Meta of={ToastStories} />
 
@@ -10,6 +11,14 @@ import { componentName, componentTsx } from './sandbox';
 A compact surface for announcing timely, non-blocking updates. Toast is built on [React Aria Toast](https://react-aria.adobe.com/Toast), which manages announcements, focus restoration, dismissal timers, and keyboard access to the notification region.
 
 React Aria's Toast implementation is currently in alpha and its API may change before it is stabilised. Stand's Toast API may need to change in response to upstream updates.
+
+<MetaTable
+	designSystemTeamVerified
+	figmaLink="https://www.figma.com/design/gmHnKr3tOzvnYp1FZeIl4t/Stand--Editorial-tool-Design-System?node-id=4785-30382&m=dev"
+	reactAriaLink="https://react-aria.adobe.com/Toast"
+/>
+
+<Canvas layout="padded" of={Interactive} />
 
 ## When to use
 

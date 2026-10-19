@@ -1,4 +1,5 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { MetaTable } from '../../util/storybook/MetaTable';
 import HtmlPreviewLoaderStories, {
 	Default,
 	WithReloadButton,
@@ -26,6 +27,8 @@ import {
 <Meta of={HtmlPreviewLoaderStories} />
 
 # HtmlPreviewLoader
+
+<MetaTable collection="Shareable non-Design System Components" />
 
 The HtmlPreviewLoader component fetches HTML markup, renders it inside an iframe-based preview frame, and surfaces loading, error, and reload states while the preview is being prepared. It is useful for rendering email or document markup in a controlled preview surface.
 

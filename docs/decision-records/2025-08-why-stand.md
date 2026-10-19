@@ -8,7 +8,7 @@ Accepted
 
 ## Context
 
-Across the journalism tools there are components/patterns that are repeated and implemented individually but are not easily sharable. Examples include Byline inputs, tag search, rich text editing, Grid image picker etc.
+Across the journalism tools there are components/patterns that are repeated and implemented individually but are not easily shareable. Examples include Byline inputs, tag search, rich text editing, Grid image picker etc.
 
 ## Options
 
@@ -17,7 +17,7 @@ Across the journalism tools there are components/patterns that are repeated and 
   - Any improvements to a single component isn't shared between similar components
   - New instances will have to reimplement or copy and paste existing code
 - Publish flexible-frontend
-  - Components already almost in a sharable state
+  - Components already almost in a shareable state
   - Components are designed with a look and feel for composer with not much room to modify
   - Reliant on dependencies matching flexible-frontend/composer
 - Create a new component library with the shared components
