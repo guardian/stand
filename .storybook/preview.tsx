@@ -6,13 +6,12 @@
  *
  * See https://www.chromatic.com/docs/turbosnap/troubleshooting/#changedstorybookfiles
  */
-import { Global } from '@emotion/react';
-import { css } from '@emotion/react';
+import { Global, css } from '@emotion/react';
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react-vite';
 import { semanticTypography } from '../src/styleD/build/typescript/semantic/typography';
 import { convertTypographyToEmotionObjectStyle } from '../src/styleD/utils/semantic/typography';
-import '../src/util/reset.css';
+import { GlobalBaseStyles, GlobalResetStyles } from '../src/utils';
 
 const Fonts = css`
     @import url('https://assets.guim.co.uk/fonts/material-symbols/MaterialSymbolsOutlined.css');
@@ -70,7 +69,7 @@ const globalStyles = css`
     }
 `;
 
-const GlobalStyles = () => <Global styles={[Fonts, globalStyles]} />;
+const GlobalStyles = () => <Global styles={[Fonts, globalStyles, GlobalBaseStyles, GlobalResetStyles]} />;
 
 const preview: Preview = {
 	parameters: {
