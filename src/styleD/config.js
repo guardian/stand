@@ -90,6 +90,7 @@ export default {
 				'attribute/cti',
 				'name/camel',
 				'color/hex',
+				'size/rem',
 				'border/css/shorthand',
 				'typography/css/shorthand',
 				'border/css/shorthand',

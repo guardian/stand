@@ -4,18 +4,18 @@
 
 export const componentLink = {
 	shared: {
+		disabled: {
+			color: '#999999',
+		},
+		enabled: {
+			color: '#00496c',
+		},
 		focus: {
 			outline: '0.0625rem solid #0072a9',
 		},
 		hover: {
 			color: '#00344e',
 			cursor: 'pointer',
-		},
-		enabled: {
-			color: '#00496c',
-		},
-		disabled: {
-			color: '#999999',
 		},
 		pressed: {
 			color: '#00202f',

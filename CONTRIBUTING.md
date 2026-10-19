@@ -48,8 +48,8 @@ Components for the Tools Design System should also:
 - Be verified by the design systems team before being treated as part of the supported design system.
 
 - **Follow the design system foundations**
-  - Use the established design tokens (base, semantic, and component-level) rather than hard-coded values.
-  - Prefer [semantic tokens over base tokens](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-semantic-color--docs) wherever possible.
+  - Use semantic tokens to build UI; do not use base tokens or hard-coded design values directly unless explicitly stated in the design
+  - Component tokens should reference semantic tokens. If no semantic token fits, ask the design systems team about adding one.
 
 - **Framework agnostic**
   - Components are built with React, Emotion and possibly React Aria, but must also be stylable without these dependencies via CSS and/or TS/JS exports.
@@ -101,25 +101,45 @@ The scaffold uses the Tools Design System story title by default; this does not 
 
 ## Style Dictionary - Design Tokens
 
-If you are adding or modifying design tokens:
+### Token ownership
 
-1. **Create or edit the token JSON** in `src/styleD/tokens/<group>/<name>.json`.
-   - Use `$type` and `$value` following the [W3C Design Token Community Group format](https://design-tokens.github.io/community-group/format/).
-   - Reference other tokens with `{path.to.token}` syntax (e.g. `"{base.colors.cyan.200}"`).
-   - See `src/styleD/tokens/component/` for existing examples.
+These files are managed in [Tokens Studio](https://tokens.studio/) and are the source of truth for shared Tools Design System tokens:
 
-2. **Run the style dictionary build** to regenerate the output files:
+- `src/styleD/tokens/base/base.json`
+- `src/styleD/tokens/semantic/semantic.json`
+- `src/styleD/tokens/component/component.json`
+
+Do not edit these files directly. Coordinate any changes with the design systems team. Until the planned automated workflow is available, the team pulls updates with the [Tokens Studio CLI](https://documentation-v2.tokens.studio/cli/overview.html) from the project root:
+
+```sh
+studio tokens pull
+pnpm run build-styled
+```
+
+Review both the pulled token files and generated output before committing. Pulling from Figma variables is no longer supported.
+
+All other token JSON files under `src/styleD/tokens/` are local to this project. Contributors should create or edit local component token files only when adding a new component, or changing an unverified Tools Design System component or a Shareable non-Design System Component. Use existing semantic tokens in component tokens wherever possible. Edit the relevant JSON file using `$type` and `$value` in the [W3C Design Token Community Group format](https://design-tokens.github.io/community-group/format/), then run:
 
 ```sh
 pnpm run build-styled
 ```
 
-This produces:
+Commit the source JSON and generated files in `src/styleD/build/` together.
 
-- `src/styleD/build/css/component/<name>.css` – CSS custom properties
-- `src/styleD/build/typescript/component/<name>.ts` – typed JS/TS token object
+Shareable non-Design System Components and unverified Tools Design System components keep their component token files local under `src/styleD/tokens/component/`. When an unverified Tools Design System component is verified, the design systems team moves its tokens to [Tokens Studio](https://tokens.studio/) and removes its local token file. Changes to base or semantic tokens should go through the design systems team; contributors should not edit those token files themselves.
 
-3. **Commit the generated files**: the build outputs in `src/styleD/build/` are committed to the repository and must be kept in sync with the token sources.
+The generated outputs include CSS custom properties under `src/styleD/build/css/` and typed JS/TS token objects under `src/styleD/build/typescript/`.
+
+### Choosing token levels
+
+When building Tools Design System components or single-use components in a consuming project:
+
+- Use semantic tokens to build UI; they express the purpose of a design choice.
+- Do not use base tokens or hard-coded design values directly in UI. Base tokens are the raw foundations used by semantic tokens.
+- Component tokens should reference semantic tokens, and only use base tokens when explicitly necessary by designs.
+- If no semantic token fits the need, ask the design systems team about adding one rather than using a base token or hard-coded value. Contributors should not add or change base or semantic tokens themselves.
+
+These token-level guidelines apply whether tokens are managed in Tokens Studio or locally. Shareable components are outside the Tools Design System governance; their local component tokens may follow the needs of the component.
 
 ## Exports
 

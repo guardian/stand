@@ -5,6 +5,10 @@ export const BasePalette = {
 	render: () => (
 		<ColorPalette>
 			{Object.entries(baseColors).map(([category, shades]) => {
+				// ignore transparent color
+				if (shades === '#00000000') {
+					return null;
+				}
 				return <ColorItem key={category} title={category} colors={shades} />;
 			})}
 		</ColorPalette>

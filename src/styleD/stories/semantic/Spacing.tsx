@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import { sortEntriesByValue } from '../../../util/storybook/sort';
 import { tableStyles } from '../../../util/storybook/styles';
 import { semanticColors } from '../../build/typescript/semantic/colors';
 import { semanticSpacing } from '../../build/typescript/semantic/spacing';
@@ -35,20 +36,22 @@ export const SemanticSpacingTokens = () => (
 				</tr>
 			</thead>
 			<tbody>
-				{Object.entries(semanticSpacing).map(([name, value]) => (
-					<tr key={name}>
-						<td css={tokenNameCss}>{name}</td>
-						<td css={tokenValueCss}>{value}</td>
-						<td>
-							<div
-								css={css`
-									${spacingBarCss}
-									width: ${value};
-								`}
-							/>
-						</td>
-					</tr>
-				))}
+				{sortEntriesByValue(Object.entries(semanticSpacing)).map(
+					([name, value]) => (
+						<tr key={name}>
+							<td css={tokenNameCss}>{name}</td>
+							<td css={tokenValueCss}>{value}</td>
+							<td>
+								<div
+									css={css`
+										${spacingBarCss}
+										width: ${value};
+									`}
+								/>
+							</td>
+						</tr>
+					),
+				)}
 			</tbody>
 		</table>
 	</div>

@@ -1,36 +1,51 @@
 {
 	"component": {
 		"tagPicker": {
-			"shared": {
-				"width": {
-					"$type": "dimension",
-					"$value": "100%"
-				},
+			"offlineSection": {
 				"gap": {
 					"$type": "dimension",
-					"$value": "15px"
+					"$value": {
+						"unit": "px",
+						"value": 4
+					}
+				},
+				"justifyContent": {
+					"$type": "text",
+					"$value": "flex-start"
 				}
 			},
 			"search": {
 				"width": {
 					"$type": "dimension",
-					"$value": "100%"
+					"$value": {
+						"unit": "%",
+						"value": 100
+					}
 				}
 			},
 			"select": {
 				"flexBasis": {
 					"$type": "dimension",
-					"$value": "25%"
+					"$value": {
+						"unit": "%",
+						"value": 25
+					}
 				}
 			},
-			"offlineSection": {
-				"justifyContent": {
-					"$type": "string",
-					"$value": "flex-start"
-				},
+			"shared": {
 				"gap": {
 					"$type": "dimension",
-					"$value": "4px"
+					"$value": {
+						"unit": "px",
+						"value": 15
+					}
+				},
+				"width": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "%",
+						"value": 100
+					}
 				}
 			}
 		}
