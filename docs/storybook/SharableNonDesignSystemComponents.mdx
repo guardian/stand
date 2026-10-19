@@ -1,6 +1,7 @@
-import { Meta, Markdown } from '@storybook/addon-docs/blocks';
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ComponentStoryTable } from '../../src/util/storybook/ComponentStoryTable';
 
-export const editorialStories = Object.values(
+export const sharableStories = Object.values(
 	import.meta.glob('../../src/components/**/*.stories.tsx', {
 		eager: true,
 		query: '?raw',
@@ -17,10 +18,7 @@ export const editorialStories = Object.values(
 	.sort()
 	.map((subPath) => ({
 		label: subPath.split('/').join(' / '),
-		slug: `stand-sharable-non-design-system-components-${subPath
-			.toLowerCase()
-			.replace(/[^a-z0-9]+/g, '-')
-			.replace(/^-|-$/g, '')}`,
+		title: `Stand/Sharable non-Design System Components/${subPath}`,
 	}));
 
 <Meta title="Stand/Sharable non-Design System Components/Introduction" />
@@ -47,8 +45,4 @@ Use the links below to navigate to the documentation for each component, and see
 
 ## Components
 
-<Markdown>
-	{editorialStories
-		.map(({ label, slug }) => `- [${label}](/story/${slug}--default)`)
-		.join('\n')}
-</Markdown>
+<ComponentStoryTable components={sharableStories} />

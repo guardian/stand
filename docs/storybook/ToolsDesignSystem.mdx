@@ -1,4 +1,5 @@
 import { Meta, Markdown } from '@storybook/addon-docs/blocks';
+import { ComponentStoryTable } from '../../src/util/storybook/ComponentStoryTable';
 
 export const tdsStories = Object.values(
 	import.meta.glob('../../src/**/*.stories.tsx', {
@@ -32,6 +33,13 @@ export const toDocLink = ({ category, name }) => {
 
 export const storiesForCategory = (category) =>
 	tdsStories.filter((s) => s.category === category);
+
+export const componentStories = storiesForCategory('Components').map(
+	({ category, name }) => ({
+		title: `Stand/Tools Design System/${category}/${name}`,
+		label: name,
+	}),
+);
 
 <Meta title="Stand/Tools Design System/Introduction" />
 
@@ -79,6 +87,4 @@ Use the links below to navigate to the documentation for each section of the des
 
 ## Components
 
-<Markdown>
-	{storiesForCategory('Components').map(toDocLink).join('\n')}
-</Markdown>
+<ComponentStoryTable components={componentStories} />
