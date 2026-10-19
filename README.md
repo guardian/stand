@@ -194,19 +194,24 @@ The following steps are for **developing the Stand library itself**.
 
 The [Design Tokens](https://www.w3.org/community/design-tokens/) specification provides standards upon which products and design tools can rely for sharing stylistic pieces of a design system at scale.
 
-The project uses [Style Dictionary](https://styledictionary.com/) to manage design tokens.
+The project uses [Style Dictionary](https://styledictionary.com/) to generate CSS and TypeScript token outputs from `src/styleD/tokens/`.
 
-Tokens are defined in `src/styleD/tokens/`, the generated outputs live in `src/styleD/build/`, and both are committed to the repository. During the package build, tsdown copies the build outputs into `dist/styleD/build/` for publishing.
+The shared Tools Design System tokens in `src/styleD/tokens/base/base.json`, `src/styleD/tokens/semantic/semantic.json`, and `src/styleD/tokens/component/component.json` are managed in [Tokens Studio](https://tokens.studio/). All other token JSON files are maintained locally in this project. Shareable components and unverified Tools Design System components keep their component tokens local; after a component is verified, the design systems team moves its tokens to [Tokens Studio](https://tokens.studio/) and removes the local token file.
 
-Most foundation tokens are generated from Figma variables, see `scripts/figma/README.md` for details.
+To change [Tokens Studio](https://tokens.studio/)-managed tokens, coordinate with the design systems team. The current manual process uses the [Tokens Studio CLI](https://documentation-v2.tokens.studio/cli/overview.html) from the project root:
 
-After making changes to any token files, regenerate the outputs and commit them:
+```bash
+studio tokens pull
+pnpm build-styled
+```
+
+Review the pulled source and generated output changes before committing. An automated pull workflow is planned; until it is available, do not edit the managed files directly or pull tokens from Figma variables. For locally maintained token JSON, make changes in the project and regenerate the outputs:
 
 ```bash
 pnpm build-styled
 ```
 
-See the [Style Dictionary documentation](https://guardian.github.io/stand/?path=/docs/style-dictionary--docs) for more details on how we structure and generate the styles.
+See the [Design Tokens documentation](https://guardian.github.io/stand/?path=/docs/design-tokens--docs) for more details on token usage, ownership, and generated outputs.
 
 ## Compatibility
 
@@ -249,7 +254,7 @@ Matrix generation in CI uses the same JSON file in the workflow `../.github/work
 - [Contributing](https://guardian.github.io/stand/?path=/docs/contributing--docs)
 - [Tools Design System Introduction](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs)
 - [Shareable non-Design System Components Introduction](https://guardian.github.io/stand/?path=/docs/stand-shareable-non-design-system-components-introduction--docs)
-- [Style Dictionary](https://guardian.github.io/stand/?path=/docs/style-dictionary--docs)
+- [Design Tokens](https://guardian.github.io/stand/?path=/docs/design-tokens--docs)
 - [Architecture Decision Records](https://guardian.github.io/stand/?path=/docs/architecture-decision-records--docs)
 - [Changelog](https://guardian.github.io/stand/?path=/docs/changelog--docs)
 - [Vision](https://guardian.github.io/stand/?path=/docs/vision--docs)

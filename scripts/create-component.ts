@@ -121,7 +121,19 @@ const printPublishChecklist = (names: NameSet): void => {
 		' - Use a matching React Aria Components primitive when this component represents a valid React Aria pattern',
 	);
 	console.log(
-		` - Define and review component design tokens in src/styleD/tokens/component/${names.camelCase}.json`,
+		` - Define component tokens in src/styleD/tokens/component/${names.camelCase}.json; keep these local for Shareable or unverified components`,
+	);
+	console.log(
+		' - Build UI with semantic tokens; component tokens should reference semantic tokens, not base tokens or hard-coded design values',
+	);
+	console.log(
+		' - If no semantic token fits the need, coordinate with the design systems team about adding one',
+	);
+	console.log(
+		' - Coordinate changes to Tokens Studio (https://tokens.studio/)-managed base/base.json, semantic/semantic.json, and component/component.json with the design systems team; do not edit them directly',
+	);
+	console.log(
+		' - When a Tools Design System component is verified, the design systems team moves its tokens to Tokens Studio (https://tokens.studio/) and removes its local component token file',
 	);
 	console.log(
 		' - Confirm the generated CSS and TypeScript token outputs are correct after running Style Dictionary',
