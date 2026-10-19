@@ -3,29 +3,61 @@
  */
 
 :root {
-	--component-text-input-md-height: 2.5rem;
-	--component-text-input-md-typography-font: normal 460 1rem/1.3 'Open Sans';
-	--component-text-input-md-typography-font-width: 95;
-	--component-text-input-md-typography-letter-spacing: 0rem;
-	--component-text-input-shared-background-color: #ffffff;
-	--component-text-input-shared-border: 0.0625rem solid #545454;
-	--component-text-input-shared-border-radius: 0.25rem;
-	--component-text-input-shared-color: #000000;
 	--component-text-input-shared-cursor: text;
-	--component-text-input-shared-disabled-background-color: #ffffff;
-	--component-text-input-shared-disabled-border: 0.0625rem solid #dcdcdc;
-	--component-text-input-shared-disabled-color: #999999;
 	--component-text-input-shared-disabled-cursor: not-allowed;
-	--component-text-input-shared-error-border: 0.0625rem solid #b42a19;
-	--component-text-input-shared-focused-outline: 0.125rem auto #0072a9;
-	--component-text-input-shared-margin-top: 0.25rem; /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 8px, then margin-top should be 4px */
 	--component-text-input-shared-padding-bottom: 0px;
-	--component-text-input-shared-padding-left: 0.75rem;
-	--component-text-input-shared-padding-right: 0.75rem;
 	--component-text-input-shared-padding-top: 0px;
-	--component-text-input-shared-placeholder-color: #545454;
-	--component-text-input-sm-height: 2rem;
-	--component-text-input-sm-typography-font: normal 460 0.875rem/1.3 'Open Sans';
-	--component-text-input-sm-typography-font-width: 95;
-	--component-text-input-sm-typography-letter-spacing: 0rem;
+	--component-text-input-shared-border-radius: var(--base-radius-corner4-rem);
+	--component-text-input-shared-margin-top: var(
+		--base-spacing-4-rem
+	); /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 8px, then margin-top should be 4px */
+	--component-text-input-shared-padding-left: var(--base-spacing-12-rem);
+	--component-text-input-shared-padding-right: var(--base-spacing-12-rem);
+	--component-text-input-md-height: var(--semantic-sizing-height-md);
+	--component-text-input-md-typography-font: var(
+		--semantic-typography-body-md-font
+	);
+	--component-text-input-md-typography-font-width: var(
+		--semantic-typography-body-md-font-width
+	);
+	--component-text-input-md-typography-letter-spacing: var(
+		--semantic-typography-body-md-letter-spacing
+	);
+	--component-text-input-shared-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-text-input-shared-border: var(--semantic-sizing-border-default)
+		solid var(--semantic-colors-border-stronger);
+	--component-text-input-shared-color: var(--semantic-colors-text-strong);
+	--component-text-input-shared-disabled-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-text-input-shared-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-text-input-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-text-input-shared-error-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-error);
+	--component-text-input-shared-focused-outline: var(
+			--semantic-sizing-border-md
+		)
+		auto var(--semantic-colors-border-focused);
+	--component-text-input-shared-placeholder-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-text-input-sm-height: var(--semantic-sizing-height-sm);
+	--component-text-input-sm-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-text-input-sm-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-text-input-sm-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
 }

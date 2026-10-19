@@ -3,201 +3,389 @@
  */
 
 :root {
-	--component-button-primary-lg-height: 3rem;
-	--component-button-primary-lg-icon-gap: 0.25rem;
-	--component-button-primary-lg-icon-size: 1.5rem;
-	--component-button-primary-lg-icon-button-width: 3rem;
-	--component-button-primary-lg-padding-bottom: 0.25rem;
-	--component-button-primary-lg-padding-left: 1rem;
-	--component-button-primary-lg-padding-right: 1rem;
-	--component-button-primary-lg-padding-top: 0.25rem;
-	--component-button-primary-lg-padding-with-icon-icon-left-left: 0.75rem;
-	--component-button-primary-lg-typography-font: normal 700 1rem/1 'Open Sans';
-	--component-button-primary-lg-typography-font-width: 95;
-	--component-button-primary-lg-typography-letter-spacing: -0.0125rem;
-	--component-button-primary-md-height: 2.5rem;
-	--component-button-primary-md-icon-gap: 0.25rem;
-	--component-button-primary-md-icon-size: 1.25rem;
-	--component-button-primary-md-icon-button-width: 2.5rem;
-	--component-button-primary-md-padding-bottom: 0.25rem;
-	--component-button-primary-md-padding-left: 0.75rem;
-	--component-button-primary-md-padding-right: 0.75rem;
-	--component-button-primary-md-padding-top: 0.25rem;
-	--component-button-primary-md-padding-with-icon-icon-left-left: 0.5rem;
-	--component-button-primary-md-typography-font: normal 700 0.875rem/1
-		'Open Sans';
-	--component-button-primary-md-typography-font-width: 95;
-	--component-button-primary-md-typography-letter-spacing: -0.0125rem;
-	--component-button-primary-shared-active-background-color: #061d3c;
-	--component-button-primary-shared-active-border: 0.0625rem solid #061d3c;
-	--component-button-primary-shared-background-color: #0d4289;
-	--component-button-primary-shared-border: 0.0625rem solid #0d4289;
-	--component-button-primary-shared-border-radius: 0.25rem;
-	--component-button-primary-shared-color: #ffffff;
-	--component-button-primary-shared-disabled-background-color: #dcdcdc;
-	--component-button-primary-shared-disabled-border: 0.0625rem solid #dcdcdc;
-	--component-button-primary-shared-disabled-color: #999999;
-	--component-button-primary-shared-hover-background-color: #092f62;
-	--component-button-primary-shared-hover-border: 0.0625rem solid #092f62;
-	--component-button-primary-sm-height: 2rem;
-	--component-button-primary-sm-icon-gap: 0.25rem;
-	--component-button-primary-sm-icon-size: 1.125rem;
-	--component-button-primary-sm-icon-button-width: 2rem;
-	--component-button-primary-sm-padding-bottom: 0.25rem;
-	--component-button-primary-sm-padding-left: 0.625rem;
-	--component-button-primary-sm-padding-right: 0.625rem;
-	--component-button-primary-sm-padding-top: 0.25rem;
-	--component-button-primary-sm-padding-with-icon-icon-left-left: 0.5rem;
-	--component-button-primary-sm-typography-font: normal 700 0.875rem/1
-		'Open Sans';
-	--component-button-primary-sm-typography-font-width: 95;
-	--component-button-primary-sm-typography-letter-spacing: -0.0125rem;
-	--component-button-primary-xs-height: 1.5rem;
-	--component-button-primary-xs-icon-gap: 0.25rem;
-	--component-button-primary-xs-icon-size: 1.125rem;
-	--component-button-primary-xs-icon-button-width: 1.5rem;
-	--component-button-primary-xs-padding-bottom: 0.25rem;
-	--component-button-primary-xs-padding-left: 0.5rem;
-	--component-button-primary-xs-padding-right: 0.5rem;
-	--component-button-primary-xs-padding-top: 0.25rem;
-	--component-button-primary-xs-padding-with-icon-icon-left-left: 0.25rem;
-	--component-button-primary-xs-typography-font: normal 700 0.75rem/1
-		'Open Sans';
-	--component-button-primary-xs-typography-font-width: 95;
-	--component-button-primary-xs-typography-letter-spacing: 0rem;
-	--component-button-secondary-lg-height: 3rem;
-	--component-button-secondary-lg-icon-gap: 0.25rem;
-	--component-button-secondary-lg-icon-size: 1.5rem;
-	--component-button-secondary-lg-icon-button-width: 3rem;
-	--component-button-secondary-lg-padding-bottom: 0.25rem;
-	--component-button-secondary-lg-padding-left: 1rem;
-	--component-button-secondary-lg-padding-right: 1rem;
-	--component-button-secondary-lg-padding-top: 0.25rem;
-	--component-button-secondary-lg-padding-with-icon-icon-left-left: 0.75rem;
-	--component-button-secondary-lg-typography-font: normal 700 1rem/1 'Open Sans';
-	--component-button-secondary-lg-typography-font-width: 95;
-	--component-button-secondary-lg-typography-letter-spacing: -0.0125rem;
-	--component-button-secondary-md-height: 2.5rem;
-	--component-button-secondary-md-icon-gap: 0.25rem;
-	--component-button-secondary-md-icon-size: 1.25rem;
-	--component-button-secondary-md-icon-button-width: 2.5rem;
-	--component-button-secondary-md-padding-bottom: 0.25rem;
-	--component-button-secondary-md-padding-left: 0.75rem;
-	--component-button-secondary-md-padding-right: 0.75rem;
-	--component-button-secondary-md-padding-top: 0.25rem;
-	--component-button-secondary-md-padding-with-icon-icon-left-left: 0.5rem;
-	--component-button-secondary-md-typography-font: normal 700 0.875rem/1
-		'Open Sans';
-	--component-button-secondary-md-typography-font-width: 95;
-	--component-button-secondary-md-typography-letter-spacing: -0.0125rem;
-	--component-button-secondary-shared-active-background-color: #121212;
-	--component-button-secondary-shared-active-border: 0.0625rem solid #121212;
-	--component-button-secondary-shared-background-color: #545454;
-	--component-button-secondary-shared-border: 0.0625rem solid #545454;
-	--component-button-secondary-shared-border-radius: 0.25rem;
-	--component-button-secondary-shared-color: #ffffff;
-	--component-button-secondary-shared-disabled-background-color: #dcdcdc;
-	--component-button-secondary-shared-disabled-border: 0.0625rem solid #dcdcdc;
-	--component-button-secondary-shared-disabled-color: #999999;
-	--component-button-secondary-shared-hover-background-color: #333333;
-	--component-button-secondary-shared-hover-border: 0.0625rem solid #333333;
-	--component-button-secondary-sm-height: 2rem;
-	--component-button-secondary-sm-icon-gap: 0.25rem;
-	--component-button-secondary-sm-icon-size: 1.125rem;
-	--component-button-secondary-sm-icon-button-width: 2rem;
-	--component-button-secondary-sm-padding-bottom: 0.25rem;
-	--component-button-secondary-sm-padding-left: 0.625rem;
-	--component-button-secondary-sm-padding-right: 0.625rem;
-	--component-button-secondary-sm-padding-top: 0.25rem;
-	--component-button-secondary-sm-padding-with-icon-icon-left-left: 0.5rem;
-	--component-button-secondary-sm-typography-font: normal 700 0.875rem/1
-		'Open Sans';
-	--component-button-secondary-sm-typography-font-width: 95;
-	--component-button-secondary-sm-typography-letter-spacing: -0.0125rem;
-	--component-button-secondary-xs-height: 1.5rem;
-	--component-button-secondary-xs-icon-gap: 0.25rem;
-	--component-button-secondary-xs-icon-size: 1.125rem;
-	--component-button-secondary-xs-icon-button-width: 1.5rem;
-	--component-button-secondary-xs-padding-bottom: 0.25rem;
-	--component-button-secondary-xs-padding-left: 0.5rem;
-	--component-button-secondary-xs-padding-right: 0.5rem;
-	--component-button-secondary-xs-padding-top: 0.25rem;
-	--component-button-secondary-xs-padding-with-icon-icon-left-left: 0.25rem;
-	--component-button-secondary-xs-typography-font: normal 700 0.75rem/1
-		'Open Sans';
-	--component-button-secondary-xs-typography-font-width: 95;
-	--component-button-secondary-xs-typography-letter-spacing: 0rem;
 	--component-button-shared-align-items: center;
 	--component-button-shared-box-shadow: none;
 	--component-button-shared-cursor: pointer;
 	--component-button-shared-disabled-cursor: not-allowed;
 	--component-button-shared-display: inline-flex;
-	--component-button-shared-focus-visible-outline: 0.125rem solid #0072a9;
-	--component-button-shared-focus-visible-outline-offset: 0.125rem;
 	--component-button-shared-justify-content: center;
 	--component-button-shared-text-align: inherit;
 	--component-button-shared-text-decoration: none;
 	--component-button-shared-webkit-appearance: none;
-	--component-button-tertiary-lg-height: 3rem;
-	--component-button-tertiary-lg-icon-gap: 0.25rem;
-	--component-button-tertiary-lg-icon-size: 1.5rem;
-	--component-button-tertiary-lg-icon-button-width: 3rem;
-	--component-button-tertiary-lg-padding-bottom: 0.25rem;
-	--component-button-tertiary-lg-padding-left: 1rem;
-	--component-button-tertiary-lg-padding-right: 1rem;
-	--component-button-tertiary-lg-padding-top: 0.25rem;
-	--component-button-tertiary-lg-padding-with-icon-icon-left-left: 0.75rem;
-	--component-button-tertiary-lg-typography-font: normal 700 1rem/1 'Open Sans';
-	--component-button-tertiary-lg-typography-font-width: 95;
-	--component-button-tertiary-lg-typography-letter-spacing: -0.0125rem;
-	--component-button-tertiary-md-height: 2.5rem;
-	--component-button-tertiary-md-icon-gap: 0.25rem;
-	--component-button-tertiary-md-icon-size: 1.25rem;
-	--component-button-tertiary-md-icon-button-width: 2.5rem;
-	--component-button-tertiary-md-padding-bottom: 0.25rem;
-	--component-button-tertiary-md-padding-left: 0.75rem;
-	--component-button-tertiary-md-padding-right: 0.75rem;
-	--component-button-tertiary-md-padding-top: 0.25rem;
-	--component-button-tertiary-md-padding-with-icon-icon-left-left: 0.5rem;
-	--component-button-tertiary-md-typography-font: normal 700 0.875rem/1
-		'Open Sans';
-	--component-button-tertiary-md-typography-font-width: 95;
-	--component-button-tertiary-md-typography-letter-spacing: -0.0125rem;
-	--component-button-tertiary-shared-active-background-color: #ededed;
-	--component-button-tertiary-shared-active-border: 0.0625rem solid #545454;
 	--component-button-tertiary-shared-background-color: none;
-	--component-button-tertiary-shared-border: 0.0625rem solid #545454;
-	--component-button-tertiary-shared-border-radius: 0.25rem;
-	--component-button-tertiary-shared-color: #000000;
 	--component-button-tertiary-shared-disabled-background-color: none;
-	--component-button-tertiary-shared-disabled-border: 0.0625rem solid #dcdcdc;
-	--component-button-tertiary-shared-disabled-color: #999999;
-	--component-button-tertiary-shared-hover-background-color: #f6f6f6;
-	--component-button-tertiary-shared-hover-border: 0.0625rem solid #545454;
-	--component-button-tertiary-sm-height: 2rem;
-	--component-button-tertiary-sm-icon-gap: 0.25rem;
-	--component-button-tertiary-sm-icon-size: 1.125rem;
-	--component-button-tertiary-sm-icon-button-width: 2rem;
-	--component-button-tertiary-sm-padding-bottom: 0.25rem;
-	--component-button-tertiary-sm-padding-left: 0.625rem;
-	--component-button-tertiary-sm-padding-right: 0.625rem;
-	--component-button-tertiary-sm-padding-top: 0.25rem;
-	--component-button-tertiary-sm-padding-with-icon-icon-left-left: 0.5rem;
-	--component-button-tertiary-sm-typography-font: normal 700 0.875rem/1
-		'Open Sans';
-	--component-button-tertiary-sm-typography-font-width: 95;
-	--component-button-tertiary-sm-typography-letter-spacing: -0.0125rem;
-	--component-button-tertiary-xs-height: 1.5rem;
-	--component-button-tertiary-xs-icon-gap: 0.25rem;
-	--component-button-tertiary-xs-icon-size: 1.125rem;
-	--component-button-tertiary-xs-icon-button-width: 1.5rem;
-	--component-button-tertiary-xs-padding-bottom: 0.25rem;
-	--component-button-tertiary-xs-padding-left: 0.5rem;
-	--component-button-tertiary-xs-padding-right: 0.5rem;
-	--component-button-tertiary-xs-padding-top: 0.25rem;
-	--component-button-tertiary-xs-padding-with-icon-icon-left-left: 0.25rem;
-	--component-button-tertiary-xs-typography-font: normal 700 0.75rem/1
-		'Open Sans';
-	--component-button-tertiary-xs-typography-font-width: 95;
-	--component-button-tertiary-xs-typography-letter-spacing: 0rem;
+	--component-button-primary-lg-icon-gap: var(--base-spacing-4-rem);
+	--component-button-primary-lg-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-primary-lg-padding-left: var(--base-spacing-16-rem);
+	--component-button-primary-lg-padding-right: var(--base-spacing-16-rem);
+	--component-button-primary-lg-padding-top: var(--base-spacing-4-rem);
+	--component-button-primary-lg-padding-with-icon-icon-left-left: var(
+		--base-spacing-12-rem
+	);
+	--component-button-primary-md-icon-gap: var(--base-spacing-4-rem);
+	--component-button-primary-md-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-primary-md-padding-left: var(--base-spacing-12-rem);
+	--component-button-primary-md-padding-right: var(--base-spacing-12-rem);
+	--component-button-primary-md-padding-top: var(--base-spacing-4-rem);
+	--component-button-primary-md-padding-with-icon-icon-left-left: var(
+		--base-spacing-8-rem
+	);
+	--component-button-primary-shared-border-radius: var(
+		--base-radius-corner4-rem
+	);
+	--component-button-primary-sm-icon-gap: var(--base-spacing-4-rem);
+	--component-button-primary-sm-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-primary-sm-padding-left: var(--base-spacing-10-rem);
+	--component-button-primary-sm-padding-right: var(--base-spacing-10-rem);
+	--component-button-primary-sm-padding-top: var(--base-spacing-4-rem);
+	--component-button-primary-sm-padding-with-icon-icon-left-left: var(
+		--base-spacing-8-rem
+	);
+	--component-button-primary-xs-icon-gap: var(--base-spacing-4-rem);
+	--component-button-primary-xs-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-primary-xs-padding-left: var(--base-spacing-8-rem);
+	--component-button-primary-xs-padding-right: var(--base-spacing-8-rem);
+	--component-button-primary-xs-padding-top: var(--base-spacing-4-rem);
+	--component-button-primary-xs-padding-with-icon-icon-left-left: var(
+		--base-spacing-4-rem
+	);
+	--component-button-secondary-lg-icon-gap: var(--base-spacing-4-rem);
+	--component-button-secondary-lg-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-secondary-lg-padding-left: var(--base-spacing-16-rem);
+	--component-button-secondary-lg-padding-right: var(--base-spacing-16-rem);
+	--component-button-secondary-lg-padding-top: var(--base-spacing-4-rem);
+	--component-button-secondary-lg-padding-with-icon-icon-left-left: var(
+		--base-spacing-12-rem
+	);
+	--component-button-secondary-md-icon-gap: var(--base-spacing-4-rem);
+	--component-button-secondary-md-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-secondary-md-padding-left: var(--base-spacing-12-rem);
+	--component-button-secondary-md-padding-right: var(--base-spacing-12-rem);
+	--component-button-secondary-md-padding-top: var(--base-spacing-4-rem);
+	--component-button-secondary-md-padding-with-icon-icon-left-left: var(
+		--base-spacing-8-rem
+	);
+	--component-button-secondary-shared-border-radius: var(
+		--base-radius-corner4-rem
+	);
+	--component-button-secondary-sm-icon-gap: var(--base-spacing-4-rem);
+	--component-button-secondary-sm-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-secondary-sm-padding-left: var(--base-spacing-10-rem);
+	--component-button-secondary-sm-padding-right: var(--base-spacing-10-rem);
+	--component-button-secondary-sm-padding-top: var(--base-spacing-4-rem);
+	--component-button-secondary-sm-padding-with-icon-icon-left-left: var(
+		--base-spacing-8-rem
+	);
+	--component-button-secondary-xs-icon-gap: var(--base-spacing-4-rem);
+	--component-button-secondary-xs-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-secondary-xs-padding-left: var(--base-spacing-8-rem);
+	--component-button-secondary-xs-padding-right: var(--base-spacing-8-rem);
+	--component-button-secondary-xs-padding-top: var(--base-spacing-4-rem);
+	--component-button-secondary-xs-padding-with-icon-icon-left-left: var(
+		--base-spacing-4-rem
+	);
+	--component-button-shared-focus-visible-outline-offset: var(
+		--base-spacing-2-rem
+	);
+	--component-button-tertiary-lg-icon-gap: var(--base-spacing-4-rem);
+	--component-button-tertiary-lg-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-tertiary-lg-padding-left: var(--base-spacing-16-rem);
+	--component-button-tertiary-lg-padding-right: var(--base-spacing-16-rem);
+	--component-button-tertiary-lg-padding-top: var(--base-spacing-4-rem);
+	--component-button-tertiary-lg-padding-with-icon-icon-left-left: var(
+		--base-spacing-12-rem
+	);
+	--component-button-tertiary-md-icon-gap: var(--base-spacing-4-rem);
+	--component-button-tertiary-md-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-tertiary-md-padding-left: var(--base-spacing-12-rem);
+	--component-button-tertiary-md-padding-right: var(--base-spacing-12-rem);
+	--component-button-tertiary-md-padding-top: var(--base-spacing-4-rem);
+	--component-button-tertiary-md-padding-with-icon-icon-left-left: var(
+		--base-spacing-8-rem
+	);
+	--component-button-tertiary-shared-border-radius: var(
+		--base-radius-corner4-rem
+	);
+	--component-button-tertiary-sm-icon-gap: var(--base-spacing-4-rem);
+	--component-button-tertiary-sm-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-tertiary-sm-padding-left: var(--base-spacing-10-rem);
+	--component-button-tertiary-sm-padding-right: var(--base-spacing-10-rem);
+	--component-button-tertiary-sm-padding-top: var(--base-spacing-4-rem);
+	--component-button-tertiary-sm-padding-with-icon-icon-left-left: var(
+		--base-spacing-8-rem
+	);
+	--component-button-tertiary-xs-icon-gap: var(--base-spacing-4-rem);
+	--component-button-tertiary-xs-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-tertiary-xs-padding-left: var(--base-spacing-8-rem);
+	--component-button-tertiary-xs-padding-right: var(--base-spacing-8-rem);
+	--component-button-tertiary-xs-padding-top: var(--base-spacing-4-rem);
+	--component-button-tertiary-xs-padding-with-icon-icon-left-left: var(
+		--base-spacing-4-rem
+	);
+	--component-button-primary-lg-height: var(--semantic-sizing-height-lg);
+	--component-button-primary-lg-icon-size: var(--semantic-sizing-icon-lg);
+	--component-button-primary-lg-icon-button-width: var(
+		--semantic-sizing-height-lg
+	);
+	--component-button-primary-lg-typography-font: var(
+		--semantic-typography-interactive-md-font
+	);
+	--component-button-primary-lg-typography-font-width: var(
+		--semantic-typography-interactive-md-font-width
+	);
+	--component-button-primary-lg-typography-letter-spacing: var(
+		--semantic-typography-interactive-md-letter-spacing
+	);
+	--component-button-primary-md-height: var(--semantic-sizing-height-md);
+	--component-button-primary-md-icon-size: var(--semantic-sizing-icon-md);
+	--component-button-primary-md-icon-button-width: var(
+		--semantic-sizing-height-md
+	);
+	--component-button-primary-md-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-button-primary-md-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-button-primary-md-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-button-primary-shared-active-background-color: var(
+		--semantic-colors-fill-accent-strong-pressed
+	);
+	--component-button-primary-shared-active-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-fill-accent-strong-pressed);
+	--component-button-primary-shared-background-color: var(
+		--semantic-colors-fill-accent-strong
+	);
+	--component-button-primary-shared-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-accent);
+	--component-button-primary-shared-color: var(
+		--semantic-colors-text-stronger-inverse
+	);
+	--component-button-primary-shared-disabled-background-color: var(
+		--semantic-colors-fill-disabled
+	);
+	--component-button-primary-shared-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-button-primary-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-button-primary-shared-hover-background-color: var(
+		--semantic-colors-fill-accent-strong-hover
+	);
+	--component-button-primary-shared-hover-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-fill-accent-strong-hover);
+	--component-button-primary-sm-height: var(--semantic-sizing-height-sm);
+	--component-button-primary-sm-icon-size: var(--semantic-sizing-icon-sm);
+	--component-button-primary-sm-icon-button-width: var(
+		--semantic-sizing-height-sm
+	);
+	--component-button-primary-sm-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-button-primary-sm-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-button-primary-sm-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-button-primary-xs-height: var(--semantic-sizing-height-xs);
+	--component-button-primary-xs-icon-size: var(--semantic-sizing-icon-sm);
+	--component-button-primary-xs-icon-button-width: var(
+		--semantic-sizing-height-xs
+	);
+	--component-button-primary-xs-typography-font: var(
+		--semantic-typography-interactive-xs-font
+	);
+	--component-button-primary-xs-typography-font-width: var(
+		--semantic-typography-interactive-xs-font-width
+	);
+	--component-button-primary-xs-typography-letter-spacing: var(
+		--semantic-typography-interactive-xs-letter-spacing
+	);
+	--component-button-secondary-lg-height: var(--semantic-sizing-height-lg);
+	--component-button-secondary-lg-icon-size: var(--semantic-sizing-icon-lg);
+	--component-button-secondary-lg-icon-button-width: var(
+		--semantic-sizing-height-lg
+	);
+	--component-button-secondary-lg-typography-font: var(
+		--semantic-typography-interactive-md-font
+	);
+	--component-button-secondary-lg-typography-font-width: var(
+		--semantic-typography-interactive-md-font-width
+	);
+	--component-button-secondary-lg-typography-letter-spacing: var(
+		--semantic-typography-interactive-md-letter-spacing
+	);
+	--component-button-secondary-md-height: var(--semantic-sizing-height-md);
+	--component-button-secondary-md-icon-size: var(--semantic-sizing-icon-md);
+	--component-button-secondary-md-icon-button-width: var(
+		--semantic-sizing-height-md
+	);
+	--component-button-secondary-md-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-button-secondary-md-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-button-secondary-md-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-button-secondary-shared-active-background-color: var(
+		--semantic-colors-fill-strong-pressed
+	);
+	--component-button-secondary-shared-active-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-fill-strong-pressed);
+	--component-button-secondary-shared-background-color: var(
+		--semantic-colors-fill-strong
+	);
+	--component-button-secondary-shared-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-stronger);
+	--component-button-secondary-shared-color: var(
+		--semantic-colors-text-stronger-inverse
+	);
+	--component-button-secondary-shared-disabled-background-color: var(
+		--semantic-colors-fill-disabled
+	);
+	--component-button-secondary-shared-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-button-secondary-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-button-secondary-shared-hover-background-color: var(
+		--semantic-colors-fill-strong-hover
+	);
+	--component-button-secondary-shared-hover-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-fill-strong-hover);
+	--component-button-secondary-sm-height: var(--semantic-sizing-height-sm);
+	--component-button-secondary-sm-icon-size: var(--semantic-sizing-icon-sm);
+	--component-button-secondary-sm-icon-button-width: var(
+		--semantic-sizing-height-sm
+	);
+	--component-button-secondary-sm-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-button-secondary-sm-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-button-secondary-sm-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-button-secondary-xs-height: var(--semantic-sizing-height-xs);
+	--component-button-secondary-xs-icon-size: var(--semantic-sizing-icon-sm);
+	--component-button-secondary-xs-icon-button-width: var(
+		--semantic-sizing-height-xs
+	);
+	--component-button-secondary-xs-typography-font: var(
+		--semantic-typography-interactive-xs-font
+	);
+	--component-button-secondary-xs-typography-font-width: var(
+		--semantic-typography-interactive-xs-font-width
+	);
+	--component-button-secondary-xs-typography-letter-spacing: var(
+		--semantic-typography-interactive-xs-letter-spacing
+	);
+	--component-button-shared-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-button-tertiary-lg-height: var(--semantic-sizing-height-lg);
+	--component-button-tertiary-lg-icon-size: var(--semantic-sizing-icon-lg);
+	--component-button-tertiary-lg-icon-button-width: var(
+		--semantic-sizing-height-lg
+	);
+	--component-button-tertiary-lg-typography-font: var(
+		--semantic-typography-interactive-md-font
+	);
+	--component-button-tertiary-lg-typography-font-width: var(
+		--semantic-typography-interactive-md-font-width
+	);
+	--component-button-tertiary-lg-typography-letter-spacing: var(
+		--semantic-typography-interactive-md-letter-spacing
+	);
+	--component-button-tertiary-md-height: var(--semantic-sizing-height-md);
+	--component-button-tertiary-md-icon-size: var(--semantic-sizing-icon-md);
+	--component-button-tertiary-md-icon-button-width: var(
+		--semantic-sizing-height-md
+	);
+	--component-button-tertiary-md-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-button-tertiary-md-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-button-tertiary-md-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-button-tertiary-shared-active-background-color: var(
+		--semantic-colors-fill-weak-pressed
+	);
+	--component-button-tertiary-shared-active-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-stronger);
+	--component-button-tertiary-shared-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-fill-strong);
+	--component-button-tertiary-shared-color: var(--semantic-colors-text-strong);
+	--component-button-tertiary-shared-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-button-tertiary-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-button-tertiary-shared-hover-background-color: var(
+		--semantic-colors-fill-weak-hover
+	);
+	--component-button-tertiary-shared-hover-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-stronger);
+	--component-button-tertiary-sm-height: var(--semantic-sizing-height-sm);
+	--component-button-tertiary-sm-icon-size: var(--semantic-sizing-icon-sm);
+	--component-button-tertiary-sm-icon-button-width: var(
+		--semantic-sizing-height-sm
+	);
+	--component-button-tertiary-sm-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-button-tertiary-sm-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-button-tertiary-sm-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-button-tertiary-xs-height: var(--semantic-sizing-height-xs);
+	--component-button-tertiary-xs-icon-size: var(--semantic-sizing-icon-sm);
+	--component-button-tertiary-xs-icon-button-width: var(
+		--semantic-sizing-height-xs
+	);
+	--component-button-tertiary-xs-typography-font: var(
+		--semantic-typography-interactive-xs-font
+	);
+	--component-button-tertiary-xs-typography-font-width: var(
+		--semantic-typography-interactive-xs-font-width
+	);
+	--component-button-tertiary-xs-typography-letter-spacing: var(
+		--semantic-typography-interactive-xs-letter-spacing
+	);
 }

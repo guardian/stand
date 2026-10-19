@@ -3,7 +3,7 @@
  */
 
 :root {
-	--semantic-radius-corner-md: 0.5rem;
-	--semantic-radius-corner-sm: 0.25rem;
-	--semantic-radius-corner-xs: 0.125rem;
+	--semantic-radius-corner-md: var(--base-radius-corner8-rem);
+	--semantic-radius-corner-sm: var(--base-radius-corner4-rem);
+	--semantic-radius-corner-xs: var(--base-radius-corner2-rem);
 }

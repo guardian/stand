@@ -3,38 +3,16 @@
  */
 
 :root {
-	--component-tabs-tab-md-height: 3rem;
-	--component-tabs-tab-md-typography-font: normal 700 1rem/1.15 'Open Sans';
-	--component-tabs-tab-md-typography-font-width: 95;
-	--component-tabs-tab-md-typography-letter-spacing: -0.03125rem;
 	--component-tabs-tab-shared-align-items: center;
-	--component-tabs-tab-shared-border: 0.0625rem solid #cccccc;
-	--component-tabs-tab-shared-color: #545454;
 	--component-tabs-tab-shared-cursor: pointer;
-	--component-tabs-tab-shared-disabled-color: #999999;
 	--component-tabs-tab-shared-disabled-cursor: not-allowed;
 	--component-tabs-tab-shared-display: inline-flex;
 	--component-tabs-tab-shared-flex-direction: row;
-	--component-tabs-tab-shared-focus-visible-outline: 0.125rem solid #0072a9;
 	--component-tabs-tab-shared-focus-visible-outline-offset: -0.0625rem;
-	--component-tabs-tab-shared-gap: 0.375rem;
 	--component-tabs-tab-shared-justify-content: center;
 	--component-tabs-tab-shared-padding-bottom: 0px;
-	--component-tabs-tab-shared-padding-left: 1rem;
-	--component-tabs-tab-shared-padding-right: 1rem;
 	--component-tabs-tab-shared-padding-top: 0px;
-	--component-tabs-tab-shared-padding-vertical-right: 1.25rem;
-	--component-tabs-tab-shared-padding-with-icon-right: 1.25rem;
-	--component-tabs-tab-shared-padding-with-icon-vertical-right: 1.5rem;
 	--component-tabs-tab-shared-position: relative;
-	--component-tabs-tab-shared-selected-background: #f6f6f6;
-	--component-tabs-tab-shared-selected-border-background: #0072a9;
-	--component-tabs-tab-shared-selected-border-border: 0.5rem solid #0072a9;
-	--component-tabs-tab-shared-selected-border-size: 0.5rem;
-	--component-tabs-tab-sm-height: 2.5rem;
-	--component-tabs-tab-sm-typography-font: normal 700 0.875rem/1.15 'Open Sans';
-	--component-tabs-tab-sm-typography-font-width: 95;
-	--component-tabs-tab-sm-typography-letter-spacing: -0.0125rem;
 	--component-tabs-tab-list-shared-display: flex;
 	--component-tabs-tab-list-shared-orientation-horizontal-flex-direction: row;
 	--component-tabs-tab-list-shared-orientation-vertical-flex-direction: column;
@@ -46,4 +24,59 @@
 	--component-tabs-tabs-shared-orientation-horizontal-flex-direction: column;
 	--component-tabs-tabs-shared-orientation-vertical-flex-direction: row;
 	--component-tabs-tabs-shared-orientation-vertical-width: 100%;
+	--component-tabs-tab-shared-gap: var(--base-spacing-6-rem);
+	--component-tabs-tab-shared-padding-left: var(--base-spacing-16-rem);
+	--component-tabs-tab-shared-padding-right: var(--base-spacing-16-rem);
+	--component-tabs-tab-shared-padding-vertical-right: var(
+		--base-spacing-20-rem
+	);
+	--component-tabs-tab-shared-padding-with-icon-right: var(
+		--base-spacing-20-rem
+	);
+	--component-tabs-tab-shared-padding-with-icon-vertical-right: var(
+		--base-spacing-24-rem
+	);
+	--component-tabs-tab-md-height: var(--semantic-sizing-height-lg);
+	--component-tabs-tab-md-typography-font: var(
+		--semantic-typography-heading-md-font
+	);
+	--component-tabs-tab-md-typography-font-width: var(
+		--semantic-typography-heading-md-font-width
+	);
+	--component-tabs-tab-md-typography-letter-spacing: var(
+		--semantic-typography-heading-md-letter-spacing
+	);
+	--component-tabs-tab-shared-border: var(--semantic-sizing-border-default)
+		solid var(--semantic-colors-border-weak);
+	--component-tabs-tab-shared-color: var(--semantic-colors-text-weak);
+	--component-tabs-tab-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-tabs-tab-shared-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-tabs-tab-shared-selected-background: var(
+		--semantic-colors-bg-raised-level1
+	);
+	--component-tabs-tab-shared-selected-border-background: var(
+		--semantic-colors-border-selected
+	);
+	--component-tabs-tab-shared-selected-border-border: var(
+			--semantic-sizing-border-extra-wide
+		)
+		solid var(--semantic-colors-border-selected);
+	--component-tabs-tab-shared-selected-border-size: var(
+		--semantic-sizing-border-extra-wide
+	);
+	--component-tabs-tab-sm-height: var(--semantic-sizing-height-md);
+	--component-tabs-tab-sm-typography-font: var(
+		--semantic-typography-heading-sm-font
+	);
+	--component-tabs-tab-sm-typography-font-width: var(
+		--semantic-typography-heading-sm-font-width
+	);
+	--component-tabs-tab-sm-typography-letter-spacing: var(
+		--semantic-typography-heading-sm-letter-spacing
+	);
 }

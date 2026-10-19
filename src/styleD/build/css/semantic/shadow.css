@@ -3,5 +3,6 @@
  */
 
 :root {
-	--semantic-shadow-raised: 0px 0.125rem 0.375rem 0px rgb(0% 0% 0% / 0.3);
+	--semantic-shadow-raised: 0px var(--base-spacing-2-rem)
+		var(--base-spacing-6-rem) 0px rgb(0% 0% 0% / 0.3);
 }

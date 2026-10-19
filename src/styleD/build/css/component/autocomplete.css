@@ -3,34 +3,70 @@
  */
 
 :root {
-	--component-autocomplete-icon-color: #bababa;
 	--component-autocomplete-icon-padding-x: 4px;
 	--component-autocomplete-icon-size: 20px;
-	--component-autocomplete-input-background-color: #ffffff;
-	--component-autocomplete-input-border-color: #545454;
-	--component-autocomplete-input-border-radius: 0.25rem;
 	--component-autocomplete-input-border-style: solid;
-	--component-autocomplete-input-border-width: 0.0625rem;
-	--component-autocomplete-input-color: #000000;
-	--component-autocomplete-input-disabled-background-color: #ffffff;
-	--component-autocomplete-input-disabled-border: 0.0625rem solid #dcdcdc;
-	--component-autocomplete-input-disabled-color: #999999;
 	--component-autocomplete-input-disabled-cursor: not-allowed;
-	--component-autocomplete-input-focused-outline: 0.125rem solid #0072a9;
-	--component-autocomplete-input-focused-outline-offset: 0.125rem;
-	--component-autocomplete-input-hover-background-color: #f6f6f6;
-	--component-autocomplete-input-padding: 0.75rem;
-	--component-autocomplete-listbox-background-color: #ffffff;
-	--component-autocomplete-listbox-border-color: #545454;
 	--component-autocomplete-listbox-border-style: solid;
-	--component-autocomplete-listbox-border-width: 0.0625rem;
-	--component-autocomplete-listbox-item-background-focused-color: #ededed;
-	--component-autocomplete-listbox-item-background-hover-color: #ededed;
-	--component-autocomplete-listbox-item-color: #000000;
-	--component-autocomplete-listbox-item-color-focused: #000000;
-	--component-autocomplete-listbox-item-color-hover: #000000;
 	--component-autocomplete-listbox-item-padding-x: 12px;
 	--component-autocomplete-listbox-item-padding-y: 8px;
 	--component-autocomplete-listbox-padding-x: 0px;
 	--component-autocomplete-listbox-padding-y: 8px;
+	--component-autocomplete-icon-color: var(--base-colors-neutral-600);
+	--component-autocomplete-input-border-radius: var(--base-radius-corner4-rem);
+	--component-autocomplete-input-focused-outline-offset: var(
+		--base-spacing-2-rem
+	);
+	--component-autocomplete-input-padding: var(--base-spacing-12-rem);
+	--component-autocomplete-input-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-autocomplete-input-border-color: var(
+		--semantic-colors-border-stronger
+	);
+	--component-autocomplete-input-border-width: var(
+		--semantic-sizing-border-default
+	);
+	--component-autocomplete-input-color: var(--semantic-colors-text-strong);
+	--component-autocomplete-input-disabled-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-autocomplete-input-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-autocomplete-input-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-autocomplete-input-focused-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-autocomplete-input-hover-background-color: var(
+		--semantic-colors-fill-weak-hover
+	);
+	--component-autocomplete-listbox-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-autocomplete-listbox-border-color: var(
+		--semantic-colors-border-stronger
+	);
+	--component-autocomplete-listbox-border-width: var(
+		--semantic-sizing-border-default
+	);
+	--component-autocomplete-listbox-item-background-focused-color: var(
+		--semantic-colors-fill-neutral-weak
+	);
+	--component-autocomplete-listbox-item-background-hover-color: var(
+		--semantic-colors-fill-neutral-weak
+	);
+	--component-autocomplete-listbox-item-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-autocomplete-listbox-item-color-focused: var(
+		--semantic-colors-text-strong
+	);
+	--component-autocomplete-listbox-item-color-hover: var(
+		--semantic-colors-text-strong
+	);
 }

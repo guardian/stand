@@ -3,10 +3,10 @@
  */
 
 :root {
-	--semantic-spacing-stack-lg: 2rem;
-	--semantic-spacing-stack-md: 1rem;
-	--semantic-spacing-stack-sm: 0.75rem;
-	--semantic-spacing-stack-xl: 2.5rem;
-	--semantic-spacing-stack-xs: 0.5rem;
-	--semantic-spacing-stack-xxs: 0.25rem;
+	--semantic-spacing-stack-lg: var(--base-spacing-32-rem);
+	--semantic-spacing-stack-md: var(--base-spacing-16-rem);
+	--semantic-spacing-stack-sm: var(--base-spacing-12-rem);
+	--semantic-spacing-stack-xl: var(--base-spacing-40-rem);
+	--semantic-spacing-stack-xs: var(--base-spacing-8-rem);
+	--semantic-spacing-stack-xxs: var(--base-spacing-4-rem);
 }

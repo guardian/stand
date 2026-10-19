@@ -3,10 +3,10 @@
  */
 
 :root {
-	--component-icon-lg-size: 1.5rem;
-	--component-icon-md-size: 1.25rem;
 	--component-icon-shared-display: inline-flex;
 	--component-icon-shared-user-select: none;
-	--component-icon-sm-size: 1.125rem;
-	--component-icon-xs-size: 0.875rem;
+	--component-icon-lg-size: var(--semantic-sizing-icon-lg);
+	--component-icon-md-size: var(--semantic-sizing-icon-md);
+	--component-icon-sm-size: var(--semantic-sizing-icon-sm);
+	--component-icon-xs-size: var(--semantic-sizing-icon-xs);
 }

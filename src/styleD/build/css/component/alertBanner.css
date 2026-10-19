@@ -3,32 +3,53 @@
  */
 
 :root {
-	--component-alert-banner-error-background-color: #f5c6c0;
-	--component-alert-banner-error-icon-color: #8c2113;
-	--component-alert-banner-information-background-color: #e8f0fb;
-	--component-alert-banner-information-icon-color: #00344e;
 	--component-alert-banner-shared-align-items: center;
 	--component-alert-banner-shared-content-align-items: center;
-	--component-alert-banner-shared-content-color: #000000;
 	--component-alert-banner-shared-content-display: flex;
 	--component-alert-banner-shared-content-flex: 1;
-	--component-alert-banner-shared-content-gap: 0.5rem;
 	--component-alert-banner-shared-content-height: 100%;
 	--component-alert-banner-shared-content-justify-content: center;
-	--component-alert-banner-shared-content-typography-font: normal 460
-		0.875rem/1.3 'Open Sans';
-	--component-alert-banner-shared-content-typography-font-width: 95;
-	--component-alert-banner-shared-content-typography-letter-spacing: 0rem;
 	--component-alert-banner-shared-display: flex;
-	--component-alert-banner-shared-height: 2.5rem;
 	--component-alert-banner-shared-justify-content: space-between;
 	--component-alert-banner-shared-padding-bottom: 0px;
-	--component-alert-banner-shared-padding-left: 1rem;
-	--component-alert-banner-shared-padding-right: 1rem;
 	--component-alert-banner-shared-padding-top: 0px;
 	--component-alert-banner-shared-width: 100%;
-	--component-alert-banner-success-background-color: #cde4c9;
-	--component-alert-banner-success-icon-color: #326528;
-	--component-alert-banner-warning-background-color: #ffedac;
-	--component-alert-banner-warning-icon-color: #433608;
+	--component-alert-banner-shared-content-gap: var(--base-spacing-8-rem);
+	--component-alert-banner-shared-padding-left: var(--base-spacing-16-rem);
+	--component-alert-banner-shared-padding-right: var(--base-spacing-16-rem);
+	--component-alert-banner-error-background-color: var(
+		--semantic-colors-fill-error-weak
+	);
+	--component-alert-banner-error-icon-color: var(--semantic-colors-text-error);
+	--component-alert-banner-information-background-color: var(
+		--semantic-colors-fill-information-weak
+	);
+	--component-alert-banner-information-icon-color: var(
+		--semantic-colors-text-information
+	);
+	--component-alert-banner-shared-content-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-alert-banner-shared-height: var(--semantic-sizing-height-md);
+	--component-alert-banner-success-background-color: var(
+		--semantic-colors-fill-success-weak
+	);
+	--component-alert-banner-success-icon-color: var(
+		--semantic-colors-text-success
+	);
+	--component-alert-banner-warning-background-color: var(
+		--semantic-colors-fill-warning-weak
+	);
+	--component-alert-banner-warning-icon-color: var(
+		--semantic-colors-text-warning
+	);
+	--component-alert-banner-shared-content-typography-font: var(
+		--semantic-typography-help-text-form-md-font
+	);
+	--component-alert-banner-shared-content-typography-font-width: var(
+		--semantic-typography-help-text-form-md-font-width
+	);
+	--component-alert-banner-shared-content-typography-letter-spacing: var(
+		--semantic-typography-help-text-form-md-letter-spacing
+	);
 }

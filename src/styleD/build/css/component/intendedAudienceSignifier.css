@@ -4,22 +4,32 @@
 
 :root {
 	--component-intended-audience-signifier-align-items: center;
-	--component-intended-audience-signifier-border-color: #cccccc;
-	--component-intended-audience-signifier-border-radius: 0.125rem;
 	--component-intended-audience-signifier-border-style: solid;
 	--component-intended-audience-signifier-border-width: 1px;
 	--component-intended-audience-signifier-box-sizing: border-box;
-	--component-intended-audience-signifier-chevron-fill: #545454;
-	--component-intended-audience-signifier-chevron-size: 10px;
-	--component-intended-audience-signifier-color: #545454;
 	--component-intended-audience-signifier-display: flex;
 	--component-intended-audience-signifier-flex-direction: row;
-	--component-intended-audience-signifier-gap: 4px;
 	--component-intended-audience-signifier-justify-content: center;
-	--component-intended-audience-signifier-padding-x: 4px;
-	--component-intended-audience-signifier-padding-y: 2px;
 	--component-intended-audience-signifier-svg-height: 12px;
 	--component-intended-audience-signifier-svg-width: 16px;
 	--component-intended-audience-signifier-typography-line-height: 1;
 	--component-intended-audience-signifier-width: fit-content;
+	--component-intended-audience-signifier-border-radius: var(
+		--base-radius-corner2-rem
+	);
+	--component-intended-audience-signifier-chevron-size: var(
+		--base-spacing-10-px
+	);
+	--component-intended-audience-signifier-gap: var(--base-spacing-4-px);
+	--component-intended-audience-signifier-padding-x: var(--base-spacing-4-px);
+	--component-intended-audience-signifier-padding-y: var(--base-spacing-2-px);
+	--component-intended-audience-signifier-border-color: var(
+		--semantic-colors-border-weak
+	);
+	--component-intended-audience-signifier-chevron-fill: var(
+		--semantic-colors-fill-strong
+	);
+	--component-intended-audience-signifier-color: var(
+		--semantic-colors-text-weak
+	);
 }

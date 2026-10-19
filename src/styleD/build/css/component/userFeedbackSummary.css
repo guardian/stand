@@ -3,21 +3,49 @@
  */
 
 :root {
-	--component-user-feedback-summary-error-border-color: #b42a19;
-	--component-user-feedback-summary-error-color: #8c2113;
-	--component-user-feedback-summary-information-border-color: #1054af;
-	--component-user-feedback-summary-information-color: #092f62;
 	--component-user-feedback-summary-shared-border-style: solid;
-	--component-user-feedback-summary-shared-border-width: 0.0625rem;
-	--component-user-feedback-summary-shared-color: #000000;
-	--component-user-feedback-summary-shared-gap: 0.25rem;
 	--component-user-feedback-summary-shared-max-width: 46ch;
-	--component-user-feedback-summary-shared-padding-bottom: 0.75rem;
-	--component-user-feedback-summary-shared-padding-left: 0.5rem;
-	--component-user-feedback-summary-shared-padding-right: 1rem;
-	--component-user-feedback-summary-shared-padding-top: 0.75rem;
-	--component-user-feedback-summary-success-border-color: #408233;
-	--component-user-feedback-summary-success-color: #326528;
-	--component-user-feedback-summary-warning-border-color: #9a7c11;
-	--component-user-feedback-summary-warning-color: #693c16;
+	--component-user-feedback-summary-shared-gap: var(--base-spacing-4-rem);
+	--component-user-feedback-summary-shared-padding-bottom: var(
+		--base-spacing-12-rem
+	);
+	--component-user-feedback-summary-shared-padding-left: var(
+		--base-spacing-8-rem
+	);
+	--component-user-feedback-summary-shared-padding-right: var(
+		--base-spacing-16-rem
+	);
+	--component-user-feedback-summary-shared-padding-top: var(
+		--base-spacing-12-rem
+	);
+	--component-user-feedback-summary-error-border-color: var(
+		--semantic-colors-border-error
+	);
+	--component-user-feedback-summary-error-color: var(
+		--semantic-colors-text-error
+	);
+	--component-user-feedback-summary-information-border-color: var(
+		--semantic-colors-border-information
+	);
+	--component-user-feedback-summary-information-color: var(
+		--semantic-colors-text-blue
+	);
+	--component-user-feedback-summary-shared-border-width: var(
+		--semantic-sizing-border-default
+	);
+	--component-user-feedback-summary-shared-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-user-feedback-summary-success-border-color: var(
+		--semantic-colors-border-success
+	);
+	--component-user-feedback-summary-success-color: var(
+		--semantic-colors-text-success
+	);
+	--component-user-feedback-summary-warning-border-color: var(
+		--semantic-colors-border-warning
+	);
+	--component-user-feedback-summary-warning-color: var(
+		--semantic-colors-text-orange
+	);
 }

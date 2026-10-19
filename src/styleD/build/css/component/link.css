@@ -3,10 +3,13 @@
  */
 
 :root {
-	--component-link-shared-disabled-color: #999999;
-	--component-link-shared-enabled-color: #00496c;
-	--component-link-shared-focus-outline: 0.0625rem solid #0072a9;
-	--component-link-shared-hover-color: #00344e;
 	--component-link-shared-hover-cursor: pointer;
-	--component-link-shared-pressed-color: #00202f;
+	--component-link-shared-disabled-color: var(--semantic-colors-text-disabled);
+	--component-link-shared-enabled-color: var(--semantic-colors-fill-link);
+	--component-link-shared-focus-outline: var(--semantic-sizing-border-default)
+		solid var(--semantic-colors-border-focused);
+	--component-link-shared-hover-color: var(--semantic-colors-fill-link-hover);
+	--component-link-shared-pressed-color: var(
+		--semantic-colors-fill-link-pressed
+	);
 }

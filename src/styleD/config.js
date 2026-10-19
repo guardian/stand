@@ -84,6 +84,9 @@ export default {
 			transformGroup: 'css',
 			buildPath: 'build/css/',
 			files: generateSplitTokenConfig(fileList, 'css/variables', 'css'),
+			options: {
+				outputReferences: true,
+			},
 		},
 		typescript: {
 			transforms: [

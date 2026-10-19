@@ -4,48 +4,98 @@
 
 :root {
 	--component-sidebar-stepper-navigation-mobile-toggle-shared-align-items: center;
-	--component-sidebar-stepper-navigation-mobile-toggle-shared-background-color: #f6f6f6;
-	--component-sidebar-stepper-navigation-mobile-toggle-shared-border: 0.125rem
-		solid #cccccc;
 	--component-sidebar-stepper-navigation-mobile-toggle-shared-display: flex;
-	--component-sidebar-stepper-navigation-mobile-toggle-shared-height: 4.5rem;
-	--component-sidebar-stepper-navigation-mobile-toggle-shared-hovered-background-color: #ededed;
 	--component-sidebar-stepper-navigation-mobile-toggle-shared-justify-content: space-between;
-	--component-sidebar-stepper-navigation-mobile-toggle-shared-padding-inline: 1rem;
-	--component-sidebar-stepper-navigation-mobile-toggle-shared-pressed-background-color: #e6e6e6;
 	--component-sidebar-stepper-navigation-mobile-toggle-shared-width: 100%;
-	--component-sidebar-stepper-navigation-navigation-shared-border: 0.0625rem
-		solid #8d8d8d;
 	--component-sidebar-stepper-navigation-navigation-shared-flex-direction: column;
 	--component-sidebar-stepper-navigation-navigation-shared-height: 100%;
 	--component-sidebar-stepper-navigation-status-row-shared-align-items: center;
 	--component-sidebar-stepper-navigation-status-row-shared-display: flex;
-	--component-sidebar-stepper-navigation-status-row-shared-gap: 0.375rem;
-	--component-sidebar-stepper-navigation-status-row-shared-icon-complete-color: #326528;
-	--component-sidebar-stepper-navigation-status-row-shared-icon-incomplete-color: #8c2113;
-	--component-sidebar-stepper-navigation-status-row-shared-icon-optional-color: #cde4c9;
-	--component-sidebar-stepper-navigation-status-row-shared-icon-size: 1rem;
-	--component-sidebar-stepper-navigation-status-row-shared-text-color: #545454;
-	--component-sidebar-stepper-navigation-status-row-shared-text-disabled-color: #999999;
-	--component-sidebar-stepper-navigation-step-shared-background-color: #ffffff;
-	--component-sidebar-stepper-navigation-step-shared-border: 0.0625rem solid
-		#cccccc;
-	--component-sidebar-stepper-navigation-step-shared-current-background-color: #f6f6f6;
 	--component-sidebar-stepper-navigation-step-shared-cursor: pointer;
 	--component-sidebar-stepper-navigation-step-shared-disabled-cursor: default;
-	--component-sidebar-stepper-navigation-step-shared-height: 4.5rem;
-	--component-sidebar-stepper-navigation-step-shared-number-column-width: 2rem;
-	--component-sidebar-stepper-navigation-step-shared-text-color: #000000;
-	--component-sidebar-stepper-navigation-step-shared-text-disabled-color: #999999;
-	--component-sidebar-stepper-navigation-step-shared-text-inverse-color: #ffffff;
 	--component-sidebar-stepper-navigation-step-content-shared-display: flex;
 	--component-sidebar-stepper-navigation-step-content-shared-flex-direction: column;
-	--component-sidebar-stepper-navigation-step-content-shared-gap: 0.25rem;
 	--component-sidebar-stepper-navigation-step-content-shared-justify-content: center;
-	--component-sidebar-stepper-navigation-step-content-shared-margin-left: 0.75rem;
 	--component-sidebar-stepper-navigation-step-number-shared-align-items: center;
-	--component-sidebar-stepper-navigation-step-number-shared-background-color: #0072a9;
 	--component-sidebar-stepper-navigation-step-number-shared-display: flex;
 	--component-sidebar-stepper-navigation-step-number-shared-height: 100%;
 	--component-sidebar-stepper-navigation-step-number-shared-justify-content: center;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-height: var(
+		--base-spacing-72-rem
+	);
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-padding-inline: var(
+		--base-spacing-16-rem
+	);
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-pressed-background-color: var(
+		--base-colors-neutral-750
+	);
+	--component-sidebar-stepper-navigation-status-row-shared-gap: var(
+		--base-spacing-6-rem
+	);
+	--component-sidebar-stepper-navigation-status-row-shared-icon-size: var(
+		--base-sizing-size16-rem
+	);
+	--component-sidebar-stepper-navigation-step-shared-background-color: var(
+		--base-colors-neutral-900
+	);
+	--component-sidebar-stepper-navigation-step-shared-height: var(
+		--base-spacing-72-rem
+	);
+	--component-sidebar-stepper-navigation-step-shared-number-column-width: var(
+		--base-spacing-32-rem
+	);
+	--component-sidebar-stepper-navigation-step-content-shared-margin-left: var(
+		--base-spacing-12-rem
+	);
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-background-color: var(
+		--semantic-colors-bg-raised-level1
+	);
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-border: var(
+			--base-sizing-size2-rem
+		)
+		solid var(--semantic-colors-border-weak);
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-hovered-background-color: var(
+		--semantic-colors-bg-raised-level2
+	);
+	--component-sidebar-stepper-navigation-navigation-shared-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-strong);
+	--component-sidebar-stepper-navigation-status-row-shared-icon-complete-color: var(
+		--semantic-colors-text-success
+	);
+	--component-sidebar-stepper-navigation-status-row-shared-icon-incomplete-color: var(
+		--semantic-colors-text-error
+	);
+	--component-sidebar-stepper-navigation-status-row-shared-icon-optional-color: var(
+		--semantic-colors-text-success-inverse
+	);
+	--component-sidebar-stepper-navigation-status-row-shared-text-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-sidebar-stepper-navigation-status-row-shared-text-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-sidebar-stepper-navigation-step-shared-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-weak);
+	--component-sidebar-stepper-navigation-step-shared-current-background-color: var(
+		--semantic-colors-bg-raised-level1
+	);
+	--component-sidebar-stepper-navigation-step-shared-text-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-sidebar-stepper-navigation-step-shared-text-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-sidebar-stepper-navigation-step-shared-text-inverse-color: var(
+		--semantic-colors-text-stronger-inverse
+	);
+	--component-sidebar-stepper-navigation-step-content-shared-gap: var(
+		--semantic-spacing-stack-xxs
+	);
+	--component-sidebar-stepper-navigation-step-number-shared-background-color: var(
+		--semantic-colors-fill-selected-strong
+	);
 }

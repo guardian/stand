@@ -3,19 +3,19 @@
  */
 
 :root {
-	--component-grid-lg-columns: 12;
-	--component-grid-lg-gap: 16px;
-	--component-grid-lg-padding: 24px;
-	--component-grid-md-columns: 12;
-	--component-grid-md-gap: 16px;
-	--component-grid-md-padding: 24px;
 	--component-grid-shared-align-items: stretch;
 	--component-grid-shared-direction: row;
 	--component-grid-shared-display: flex;
 	--component-grid-shared-justify-content: flex-start;
 	--component-grid-shared-width: 100%;
 	--component-grid-shared-wrap: wrap;
-	--component-grid-sm-columns: 12;
-	--component-grid-sm-gap: 16px;
-	--component-grid-sm-padding: 16px;
+	--component-grid-lg-columns: var(--semantic-grid-columns-lg);
+	--component-grid-lg-gap: var(--semantic-grid-gutter-lg-px);
+	--component-grid-lg-padding: var(--semantic-grid-margin-lg-px);
+	--component-grid-md-columns: var(--semantic-grid-columns-md);
+	--component-grid-md-gap: var(--semantic-grid-gutter-md-px);
+	--component-grid-md-padding: var(--semantic-grid-margin-md-px);
+	--component-grid-sm-columns: var(--semantic-grid-columns-sm);
+	--component-grid-sm-gap: var(--semantic-grid-gutter-sm-px);
+	--component-grid-sm-padding: var(--semantic-grid-margin-sm-px);
 }

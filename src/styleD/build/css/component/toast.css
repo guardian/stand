@@ -3,52 +3,81 @@
  */
 
 :root {
-	--component-toast-error-accent-color: #8c2113;
-	--component-toast-error-background-color: #f5c6c0;
-	--component-toast-information-accent-color: #00344e;
-	--component-toast-information-background-color: #e8f0fb;
 	--component-toast-region-display: flex;
 	--component-toast-region-flex-direction: column;
-	--component-toast-region-gap: 0.75rem;
 	--component-toast-region-outline: none;
 	--component-toast-region-position: fixed;
-	--component-toast-region-right: 1.25rem;
-	--component-toast-region-top: 1.25rem;
 	--component-toast-region-z-index: 1000;
-	--component-toast-shared-accent-border-width: 0.125rem;
 	--component-toast-shared-align-items: start;
-	--component-toast-shared-border-radius: 0.25rem;
 	--component-toast-shared-border-style: solid;
 	--component-toast-shared-border-width: 0px;
-	--component-toast-shared-color: #000000;
-	--component-toast-shared-content-additional-info-typography-font: normal 460
-		0.75rem/1.3 'Open Sans';
-	--component-toast-shared-content-additional-info-typography-font-width: 95;
-	--component-toast-shared-content-additional-info-typography-letter-spacing: 0rem;
 	--component-toast-shared-content-display: flex;
 	--component-toast-shared-content-flex-direction: column;
-	--component-toast-shared-content-gap: 0.25rem;
-	--component-toast-shared-content-subject-typography-font: normal 460
-		0.875rem/1.3 'Open Sans';
-	--component-toast-shared-content-subject-typography-font-width: 95;
-	--component-toast-shared-content-subject-typography-letter-spacing: 0rem;
-	--component-toast-shared-content-title-typography-font: normal 700
-		0.875rem/1.15 'Open Sans';
-	--component-toast-shared-content-title-typography-font-width: 95;
-	--component-toast-shared-content-title-typography-letter-spacing: -0.0125rem;
 	--component-toast-shared-display: grid;
-	--component-toast-shared-gap: 0.75rem;
 	--component-toast-shared-max-width: 26.25rem;
-	--component-toast-shared-media-border-radius: 0.125rem;
 	--component-toast-shared-media-size: 4rem;
-	--component-toast-shared-padding-bottom: 0.75rem;
-	--component-toast-shared-padding-left: 0.75rem;
-	--component-toast-shared-padding-right: 0.75rem;
-	--component-toast-shared-padding-top: 0.75rem;
-	--component-toast-shared-shadow: 0px 0.125rem 0.375rem 0px rgb(0% 0% 0% / 0.3);
 	--component-toast-shared-width: 100%;
-	--component-toast-success-accent-color: #326528;
-	--component-toast-success-background-color: #cde4c9;
-	--component-toast-warning-accent-color: #433608;
-	--component-toast-warning-background-color: #ffedac;
+	--component-toast-region-right: var(--base-spacing-20-rem);
+	--component-toast-region-top: var(--base-spacing-20-rem);
+	--component-toast-error-accent-color: var(--semantic-colors-text-error);
+	--component-toast-error-background-color: var(
+		--semantic-colors-fill-error-weak
+	);
+	--component-toast-information-accent-color: var(
+		--semantic-colors-text-information
+	);
+	--component-toast-information-background-color: var(
+		--semantic-colors-fill-information-weak
+	);
+	--component-toast-region-gap: var(--semantic-spacing-stack-sm);
+	--component-toast-shared-accent-border-width: var(
+		--semantic-sizing-border-md
+	);
+	--component-toast-shared-border-radius: var(--semantic-radius-corner-sm);
+	--component-toast-shared-color: var(--semantic-colors-text-strong);
+	--component-toast-shared-content-additional-info-typography-font: var(
+		--semantic-typography-body-xs-font
+	);
+	--component-toast-shared-content-additional-info-typography-font-width: var(
+		--semantic-typography-body-xs-font-width
+	);
+	--component-toast-shared-content-additional-info-typography-letter-spacing: var(
+		--semantic-typography-body-xs-letter-spacing
+	);
+	--component-toast-shared-content-gap: var(--semantic-spacing-stack-xxs);
+	--component-toast-shared-content-subject-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-toast-shared-content-subject-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-toast-shared-content-subject-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--component-toast-shared-content-title-typography-font: var(
+		--semantic-typography-heading-sm-font
+	);
+	--component-toast-shared-content-title-typography-font-width: var(
+		--semantic-typography-heading-sm-font-width
+	);
+	--component-toast-shared-content-title-typography-letter-spacing: var(
+		--semantic-typography-heading-sm-letter-spacing
+	);
+	--component-toast-shared-gap: var(--semantic-spacing-stack-sm);
+	--component-toast-shared-media-border-radius: var(
+		--semantic-radius-corner-xs
+	);
+	--component-toast-shared-padding-bottom: var(--semantic-spacing-stack-sm);
+	--component-toast-shared-padding-left: var(--semantic-spacing-stack-sm);
+	--component-toast-shared-padding-right: var(--semantic-spacing-stack-sm);
+	--component-toast-shared-padding-top: var(--semantic-spacing-stack-sm);
+	--component-toast-shared-shadow: var(--semantic-shadow-raised);
+	--component-toast-success-accent-color: var(--semantic-colors-text-success);
+	--component-toast-success-background-color: var(
+		--semantic-colors-fill-success-weak
+	);
+	--component-toast-warning-accent-color: var(--semantic-colors-text-warning);
+	--component-toast-warning-background-color: var(
+		--semantic-colors-fill-warning-weak
+	);
 }

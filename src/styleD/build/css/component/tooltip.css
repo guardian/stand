@@ -3,11 +3,13 @@
  */
 
 :root {
-	--component-tooltip-shared-background-color: #e8f0fb;
-	--component-tooltip-shared-color: #000000;
-	--component-tooltip-tooltip-border-radius: 0.25rem;
 	--component-tooltip-tooltip-max-width: 26ch;
-	--component-tooltip-tooltip-offset: 1rem;
-	--component-tooltip-tooltip-padding: 1rem;
-	--component-tooltip-trigger-size: 1.25rem;
+	--component-tooltip-tooltip-offset: var(--base-spacing-16-rem);
+	--component-tooltip-tooltip-padding: var(--base-spacing-16-rem);
+	--component-tooltip-trigger-size: var(--base-spacing-20-rem);
+	--component-tooltip-shared-background-color: var(
+		--semantic-colors-fill-information-weak
+	);
+	--component-tooltip-shared-color: var(--semantic-colors-text-strong);
+	--component-tooltip-tooltip-border-radius: var(--semantic-radius-corner-sm);
 }

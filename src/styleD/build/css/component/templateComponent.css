@@ -3,6 +3,8 @@
  */
 
 :root {
-	--component-template-component-color-background: #cde4c9;
-	--component-template-component-color-text: #24491d;
+	--component-template-component-color-background: var(
+		--semantic-colors-fill-green-weak
+	);
+	--component-template-component-color-text: var(--semantic-colors-text-green);
 }

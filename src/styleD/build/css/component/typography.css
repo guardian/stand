@@ -3,5 +3,5 @@
  */
 
 :root {
-	--component-typography-color: #000000;
+	--component-typography-color: var(--semantic-colors-text-strong);
 }

@@ -3,28 +3,58 @@
  */
 
 :root {
-	--component-text-area-md-typography-font: normal 460 1rem/1.3 'Open Sans';
-	--component-text-area-md-typography-font-width: 95;
-	--component-text-area-md-typography-letter-spacing: 0rem;
-	--component-text-area-shared-background-color: #ffffff;
-	--component-text-area-shared-border: 0.0625rem solid #545454;
-	--component-text-area-shared-border-radius: 0.25rem;
-	--component-text-area-shared-color: #000000;
 	--component-text-area-shared-cursor: text;
-	--component-text-area-shared-disabled-background-color: #ffffff;
-	--component-text-area-shared-disabled-border: 0.0625rem solid #dcdcdc;
-	--component-text-area-shared-disabled-color: #999999;
 	--component-text-area-shared-disabled-cursor: not-allowed;
-	--component-text-area-shared-error-border: 0.0625rem solid #b42a19;
-	--component-text-area-shared-focused-outline: 0.125rem auto #0072a9;
 	--component-text-area-shared-height: 144px;
-	--component-text-area-shared-margin-top: 0.25rem; /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 8px, then margin-top should be 4px */
-	--component-text-area-shared-padding-bottom: 0.5rem;
-	--component-text-area-shared-padding-left: 0.75rem;
-	--component-text-area-shared-padding-right: 0.75rem;
-	--component-text-area-shared-padding-top: 0.5rem;
-	--component-text-area-shared-placeholder-color: #545454;
-	--component-text-area-sm-typography-font: normal 460 0.875rem/1.3 'Open Sans';
-	--component-text-area-sm-typography-font-width: 95;
-	--component-text-area-sm-typography-letter-spacing: 0rem;
+	--component-text-area-shared-border-radius: var(--base-radius-corner4-rem);
+	--component-text-area-shared-margin-top: var(
+		--base-spacing-4-rem
+	); /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 8px, then margin-top should be 4px */
+	--component-text-area-shared-padding-bottom: var(--base-spacing-8-rem);
+	--component-text-area-shared-padding-left: var(--base-spacing-12-rem);
+	--component-text-area-shared-padding-right: var(--base-spacing-12-rem);
+	--component-text-area-shared-padding-top: var(--base-spacing-8-rem);
+	--component-text-area-md-typography-font: var(
+		--semantic-typography-body-md-font
+	);
+	--component-text-area-md-typography-font-width: var(
+		--semantic-typography-body-md-font-width
+	);
+	--component-text-area-md-typography-letter-spacing: var(
+		--semantic-typography-body-md-letter-spacing
+	);
+	--component-text-area-shared-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-text-area-shared-border: var(--semantic-sizing-border-default)
+		solid var(--semantic-colors-border-stronger);
+	--component-text-area-shared-color: var(--semantic-colors-text-strong);
+	--component-text-area-shared-disabled-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-text-area-shared-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-text-area-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-text-area-shared-error-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-error);
+	--component-text-area-shared-focused-outline: var(--semantic-sizing-border-md)
+		auto var(--semantic-colors-border-focused);
+	--component-text-area-shared-placeholder-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-text-area-sm-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-text-area-sm-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-text-area-sm-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
 }
