@@ -10,12 +10,21 @@ import TableStories, {
 } from './Table.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
+import { MetaTable } from '../../util/storybook/MetaTable';
 
 <Meta of={TableStories} />
 
 # Table
 
 Table is a composable, responsive data-table built on [React Aria Table](https://react-aria.adobe.com/Table). React Aria provides collection semantics, keyboard navigation, row headers, selection, and sorting, while Stand uses CSS Grid to support table, split, and stacked layouts at its responsive breakpoints.
+
+<MetaTable
+	designSystemTeamVerified={false}
+	figmaLink="https://www.figma.com/design/gmHnKr3tOzvnYp1FZeIl4t/Stand--Editorial-tool-Design-System?node-id=5054-44932&m=dev"
+	reactAriaLink="https://react-aria.adobe.com/Table"
+/>
+
+<Canvas of={StackedOnMobile} />
 
 ## When to use
 

@@ -7,12 +7,21 @@ import ModalStories, {
 } from './Modal.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
+import { MetaTable } from '../../util/storybook/MetaTable';
 
 <Meta of={ModalStories} />
 
 # Modal
 
 A React Aria powered modal overlay that blocks interaction with elements outside it. Built on `ModalOverlay` + `Modal` + `Dialog` from `react-aria-components`. See React Aria guidance in their [Modal docs](https://react-aria.adobe.com/Modal).
+
+<MetaTable
+	designSystemTeamVerified
+	figmaLink="https://www.figma.com/design/gmHnKr3tOzvnYp1FZeIl4t/Stand--Editorial-tool-Design-System?node-id=2630-406&m=dev"
+	reactAriaLink="https://react-aria.adobe.com/Modal"
+/>
+
+<Canvas layout="padded" of={Default} />
 
 ## When to use
 

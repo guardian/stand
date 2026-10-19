@@ -99,7 +99,7 @@ const constrainedTableStyles = css`
 `;
 
 const meta = {
-	title: 'Stand/Sharable non-Design System Components/Table',
+	title: 'Stand/Tools Design System/Components/Table',
 	component: Table,
 	parameters: {
 		layout: 'padded',

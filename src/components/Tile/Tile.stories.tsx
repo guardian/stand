@@ -6,7 +6,7 @@ import { until } from '../../styleD/utils/semantic/mq';
 import { Tile } from './Tile';
 
 const meta = {
-	title: 'Stand/Sharable non-Design System Components/Tile',
+	title: 'Stand/Tools Design System/Components/Tile',
 	component: Tile,
 	parameters: {},
 } satisfies Meta<typeof Tile>;
