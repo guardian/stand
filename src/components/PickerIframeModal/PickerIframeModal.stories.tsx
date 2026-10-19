@@ -9,7 +9,7 @@ import { Typography } from '../Typography/Typography';
 import { PickerIframeModal } from './PickerIframeModal';
 
 const meta = {
-	title: 'Stand/Sharable non-Design System Components/PickerIframeModal',
+	title: 'Stand/Shareable non-Design System Components/PickerIframeModal',
 	component: PickerIframeModal,
 	parameters: {},
 	args: {
@@ -32,7 +32,7 @@ type Story = StoryObj<typeof PickerIframeModal>;
 type DemoPickerDataType = { symbol: string };
 
 const DEMO_IFRAME_PATH =
-	'/iframe.html?id=stand-sharable-non-design-system-components-pickeriframemodal-demopickeriframe--default&viewMode=story';
+	'/iframe.html?id=stand-shareable-non-design-system-components-pickeriframemodal-demopickeriframe--default&viewMode=story';
 
 export const Default = {
 	args: {

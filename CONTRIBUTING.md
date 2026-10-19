@@ -10,18 +10,18 @@ If you want to make changes to existing components, or have suggestions for impr
 
 ## Choosing a collection
 
-**Stand contains two collections:** the **Tools Design System**, our core foundations and UI components, and **Sharable non-Design System Components**, reusable components that sit outside the design system. Both are available through `@guardian/stand`; inclusion in Stand does not imply design-system membership or verification.
+**Stand contains two collections:** the **Tools Design System**, our core foundations and UI components, and **Shareable non-Design System Components**, reusable components that sit outside the design system. Both are available through `@guardian/stand`; inclusion in Stand does not imply design system membership or verification.
 
 Use this guide when adding a component:
 
 - **Core UI building block governed by the Tools Design System?**
-  - Discuss its placement with the design-system team and use the Tools Design System collection. Follow its foundations, accessibility expectations, and review process.
-- **Reusable across two or more Guardian tools, but does not need design-system governance?**
-  - Use Sharable non-Design System Components.
+  - Discuss its placement with the design system team and use the Tools Design System collection. Follow its foundations, accessibility expectations, and review process.
+- **Reusable across two or more Guardian tools, but does not need design system governance?**
+  - Use Shareable non-Design System Components.
 - **Unsure?**
-  - Start in the sharable collection and flag the placement for discussion.
+  - Start in the shareable collection and flag the placement for discussion.
 
-Using design tokens or composing design-system components does not automatically make a component part of the Tools Design System. Collection membership and verification are separate: a design-system component may be awaiting review, while verification is not required for the sharable collection.
+Using design tokens or composing design system components does not automatically make a component part of the Tools Design System. Collection membership and verification are separate: a design system component may be awaiting review, while verification is not required for the shareable collection.
 
 In either collection, keep components reusable and API-agnostic. Consumers should supply external integrations through props or callbacks rather than coupling components to specific services.
 
@@ -55,9 +55,9 @@ Components for the Tools Design System should also:
   - Components are built with React, Emotion and possibly React Aria, but must also be stylable without these dependencies via CSS and/or TS/JS exports.
   - Document CSS-only and TS/JS usage in the component's MDX file (see existing components for the "Custom Component Build" pattern).
 
-### Sharable non-Design System Components
+### Shareable non-Design System Components
 
-Sharable non-Design System Components should also:
+Shareable non-Design System Components should also:
 
 - Be applicable to be shared across multiple tools but don't need to fit the design system or be verified by the design systems team.
 
@@ -77,10 +77,10 @@ All new components must:
 - Be developed and showcased in **Storybook**.
   - `pnpm run storybook`
   - Create stories that demonstrate the component's functionality, variations, and edge cases.
-  - The naming convention for stories should follow the pattern of existing components, `Stand/Tools Design System/<Type>/<Name>` or `Stand/Sharable non-Design System Components/<Component Name>`.
+  - The naming convention for stories should follow the pattern of existing components, `Stand/Tools Design System/<Type>/<Name>` or `Stand/Shareable non-Design System Components/<Component Name>`.
   - Create an accompanying MDX file for documentation, following the pattern of existing components (e.g. `Avatar.mdx`).
-  - Include `MetaTable` in the component docs to show collection membership and verification separately. For Tools Design System components, set `designSystemTeamVerified` to `false` until verified. For sharable components, use `collection="Sharable non-Design System Components"` without a verification flag.
-  - Update the component list in the relevant introduction page ([Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Sharable non-Design System Components](https://guardian.github.io/stand/?path=/docs/stand-sharable-non-design-system-components-introduction--docs)).
+  - Include `MetaTable` in the component docs to show collection membership and verification separately. For Tools Design System components, set `designSystemTeamVerified` to `false` until verified. For shareable components, use `collection="Shareable non-Design System Components"` without a verification flag.
+  - Update the component list in the relevant introduction page ([Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Shareable non-Design System Components](https://guardian.github.io/stand/?path=/docs/stand-shareable-non-design-system-components-introduction--docs)).
 - Be accessible (see below).
 
 ### Scaffold a component

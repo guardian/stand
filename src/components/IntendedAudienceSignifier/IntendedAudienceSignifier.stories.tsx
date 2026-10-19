@@ -4,7 +4,7 @@ import { IntendedAudienceSignifier } from './IntendedAudienceSignifier';
 
 const meta = {
 	title:
-		'Stand/Sharable non-Design System Components/IntendedAudienceSignifier',
+		'Stand/Shareable non-Design System Components/IntendedAudienceSignifier',
 	component: IntendedAudienceSignifier,
 	parameters: {},
 	args: {},

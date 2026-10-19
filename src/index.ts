@@ -4,7 +4,7 @@
  */
 
 /**
- * sharable non-design system components tokens exports
+ * shareable non-design system components tokens exports
  */
 export { componentAutocomplete } from './styleD/build/typescript/component/autocomplete';
 export type { ComponentAutocomplete } from './styleD/build/typescript/component/autocomplete';

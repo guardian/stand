@@ -17,7 +17,7 @@ describe('MetaTable', () => {
 		});
 		expect(collectionLink).toHaveAttribute(
 			'href',
-			'?path=/docs/stand-tools-design-system-introduction--docs',
+			'./?path=/docs/stand-tools-design-system-introduction--docs',
 		);
 		expect(collectionLink).toHaveAttribute('target', '_top');
 		expect(
@@ -39,19 +39,19 @@ describe('MetaTable', () => {
 		).toBeTruthy();
 	});
 
-	it('shows that verification is not required for the sharable collection', () => {
+	it('shows that verification is not required for the shareable collection', () => {
 		const container = document.createElement('div');
 		container.innerHTML = renderToStaticMarkup(
-			<MetaTable collection="Sharable non-Design System Components" />,
+			<MetaTable collection="Shareable non-Design System Components" />,
 		);
 
 		expect(
 			getByRole(container, 'link', {
-				name: 'Sharable non-Design System Components',
+				name: 'Shareable non-Design System Components',
 			}),
 		).toHaveAttribute(
 			'href',
-			'?path=/docs/stand-sharable-non-design-system-components-introduction--docs',
+			'./?path=/docs/stand-shareable-non-design-system-components-introduction--docs',
 		);
 		expect(
 			getByText(container, 'Not required for this collection'),
@@ -60,6 +60,44 @@ describe('MetaTable', () => {
 			queryByText(container, 'Not yet verified by the Design Systems Team'),
 		).toBeNull();
 	});
+
+	it.each([
+		['http://localhost:6007/', 'Tools Design System'],
+		['http://localhost:6007/', 'Shareable non-Design System Components'],
+		['https://guardian.github.io/stand/', 'Tools Design System'],
+		[
+			'https://guardian.github.io/stand/',
+			'Shareable non-Design System Components',
+		],
+	] as const)(
+		'resolves %s collection links to the manager for %s',
+		(base, collection) => {
+			const container = document.createElement('div');
+			container.innerHTML = renderToStaticMarkup(
+				collection === 'Tools Design System' ? (
+					<MetaTable designSystemTeamVerified />
+				) : (
+					<MetaTable collection={collection} />
+				),
+			);
+			const link = getByRole<HTMLAnchorElement>(container, 'link', {
+				name: collection,
+			});
+			const resolved = new URL(
+				link.getAttribute('href') ?? '',
+				`${base}iframe.html?id=component--docs&viewMode=docs`,
+			);
+			const route =
+				collection === 'Tools Design System'
+					? '/docs/stand-tools-design-system-introduction--docs'
+					: '/docs/stand-shareable-non-design-system-components-introduction--docs';
+
+			expect(`${resolved.origin}${resolved.pathname}`).toBe(base);
+			expect(resolved.searchParams.get('path')).toBe(route);
+			expect(resolved.searchParams.has('id')).toBe(false);
+			expect(link).toHaveAttribute('target', '_top');
+		},
+	);
 
 	it('preserves optional design and React Aria links', () => {
 		const container = document.createElement('div');

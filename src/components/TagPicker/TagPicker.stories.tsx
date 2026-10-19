@@ -22,7 +22,7 @@ type StoryArgs = ComponentProps<typeof TagPicker<TagManagerObjectRow>> & {
 type Story = StoryObj<StoryArgs>;
 
 const meta: Meta<StoryArgs> = {
-	title: 'Stand/Sharable non-Design System Components/TagPicker/TagPicker',
+	title: 'Stand/Shareable non-Design System Components/TagPicker/TagPicker',
 	component: TagPicker,
 	args: {
 		// story options

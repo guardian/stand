@@ -3,7 +3,7 @@ import { DemoPickerIframe } from './DemoPickerIframe';
 
 const meta = {
 	title:
-		'Stand/Sharable non-Design System Components/PickerIframeModal/DemoPickerIframe',
+		'Stand/Shareable non-Design System Components/PickerIframeModal/DemoPickerIframe',
 	component: DemoPickerIframe,
 	parameters: {},
 } satisfies Meta<typeof DemoPickerIframe>;

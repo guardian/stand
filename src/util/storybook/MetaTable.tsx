@@ -90,7 +90,7 @@ type CollectionProps =
 			designSystemTeamVerified: boolean;
 	  }
 	| {
-			collection: 'Sharable non-Design System Components';
+			collection: 'Shareable non-Design System Components';
 			designSystemTeamVerified?: never;
 	  };
 
@@ -119,8 +119,8 @@ export const MetaTable = ({
 					<a
 						href={
 							collection === 'Tools Design System'
-								? '?path=/docs/stand-tools-design-system-introduction--docs'
-								: '?path=/docs/stand-sharable-non-design-system-components-introduction--docs'
+								? './?path=/docs/stand-tools-design-system-introduction--docs'
+								: './?path=/docs/stand-shareable-non-design-system-components-introduction--docs'
 						}
 						target="_top"
 					>
@@ -128,7 +128,7 @@ export const MetaTable = ({
 					</a>
 				</td>
 			</tr>
-			{collection === 'Sharable non-Design System Components' ? (
+			{collection === 'Shareable non-Design System Components' ? (
 				<tr>
 					<th scope="row">Verification</th>
 					<td colSpan={2}>Not required for this collection</td>
