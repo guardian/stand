@@ -6,16 +6,22 @@ A tools component library and design system
 
 Any tool should be able to make use of the components as an npm package, [`@guardian/stand`](https://www.npmjs.com/package/@guardian/stand), and developers should feel comfortable [contributing](https://guardian.github.io/stand/?path=/docs/contributing--docs).
 
-This library is split into two main sections:
+**Stand contains two collections:** the **Tools Design System**, our core foundations and UI components, and **Sharable non-Design System Components**, reusable components that sit outside the design system. Both are available through `@guardian/stand`; inclusion in Stand does not imply that the component is part of the design system.
 
 - [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs)
   - The core design system foundations and collection of components used across the Guardian's internal tools.
   - e.g. Colour, Typography, Buttons, Forms, etc.
 - [Sharable non-Design System Components](https://guardian.github.io/stand/?path=/docs/stand-sharable-non-design-system-components-introduction--docs)
-  - A collection of highly specific components that can be shared across tools, but don't need to fit the design system or be verified by the design systems team.
+  - Reusable components outside the core design system. They may use design system styles, but are not required to follow all its guidelines or be verified by the design system team.
   - e.g. Byline editor, Tag picker, etc.
 
-Currently maintained by the P&E DevX E2E team, but open to contributions from anyone in the company. Do reach out for help or to get involved!
+Start with the Tools Design System for general-purpose UI building blocks, and check each component's design system verification status before adopting it. Look in the sharable collection for more specialised reusable components. Using design tokens or composing design system components does not automatically make a component part of the design system.
+
+Contributors should use the [component placement guide](https://guardian.github.io/stand/?path=/docs/contributing--docs#choosing-a-collection) to choose a collection on where to place a new component.
+
+Currently maintained by the P&E Design Systems team, but open to contributions from anyone in the company. Do reach out for help or to get involved!
+
+Find us in the [P&E Design Systems](https://chat.google.com/room/AAAAmwSkXk8) chat.
 
 Stand is built with [React](https://reactjs.org/), [Emotion](https://emotion.sh/docs/introduction), and [TypeScript](https://www.typescriptlang.org/), but the design system is designed to be as framework-agnostic as possible in that styles can be used without these dependencies if needed.
 

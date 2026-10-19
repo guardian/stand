@@ -1,4 +1,5 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { MetaTable } from '../../util/storybook/MetaTable';
 import PaginationStories, {
 	Default,
 	MiddlePage,
@@ -27,6 +28,8 @@ import {
 <Meta of={PaginationStories} />
 
 # Pagination
+
+<MetaTable collection="Sharable non-Design System Components" />
 
 The Pagination component lets users navigate through a large, paginated set of results. It renders previous/next controls, a windowed list of page numbers (with ellipses for truncated ranges) and an optional results summary.
 

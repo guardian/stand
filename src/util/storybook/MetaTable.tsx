@@ -5,9 +5,10 @@ import { Tooltip } from '../../Tooltip';
 
 const UnverifiedBadge = () => (
 	<tr>
+		<th scope="row">Verification</th>
 		<td>
 			<Badge size="sm" color="yellow" weight="strong">
-				Unverified by the Design Systems Team
+				Not yet verified by the Design Systems Team
 			</Badge>
 		</td>
 		<td
@@ -18,10 +19,9 @@ const UnverifiedBadge = () => (
 			`}
 		>
 			<Tooltip>
-				This component was implemented by the community. While it is functional
-				and usable, the design systems team has not yet completed it&apos;s full
-				review, which includes verifying accessibility, implementation, and
-				adherence to design guidelines.
+				This Tools Design System component is awaiting review by the design
+				systems team for accessibility, implementation, and adherence to design
+				guidelines. Collection membership does not mean it has been verified.
 			</Tooltip>
 		</td>
 	</tr>
@@ -29,6 +29,7 @@ const UnverifiedBadge = () => (
 
 const VerifiedBadge = () => (
 	<tr>
+		<th scope="row">Verification</th>
 		<td>
 			<Badge size="sm" color="green" weight="strong">
 				Verified by the Design Systems Team
@@ -53,7 +54,7 @@ const VerifiedBadge = () => (
 
 const FigmaLink = ({ figmaLink }: { figmaLink: string }) => (
 	<tr>
-		<td colSpan={2}>
+		<td colSpan={3}>
 			<LinkButton
 				href={figmaLink}
 				target="_blank"
@@ -69,7 +70,7 @@ const FigmaLink = ({ figmaLink }: { figmaLink: string }) => (
 
 const ReactAriaLink = ({ reactAriaLink }: { reactAriaLink: string }) => (
 	<tr>
-		<td colSpan={2}>
+		<td colSpan={3}>
 			<LinkButton
 				href={reactAriaLink}
 				target="_blank"
@@ -83,11 +84,17 @@ const ReactAriaLink = ({ reactAriaLink }: { reactAriaLink: string }) => (
 	</tr>
 );
 
-interface MetaTableProps {
-	/**
-	 * Whether the component has been verified by the Design Systems Team.
-	 */
-	designSystemTeamVerified: boolean;
+type CollectionProps =
+	| {
+			collection?: 'Tools Design System';
+			designSystemTeamVerified: boolean;
+	  }
+	| {
+			collection: 'Sharable non-Design System Components';
+			designSystemTeamVerified?: never;
+	  };
+
+type MetaTableProps = CollectionProps & {
 	/**
 	 * Link to the Figma design for this component.
 	 */
@@ -96,16 +103,41 @@ interface MetaTableProps {
 	 * Link to the React Aria documentation for this component.
 	 */
 	reactAriaLink?: string;
-}
+};
 
 export const MetaTable = ({
+	collection = 'Tools Design System',
 	designSystemTeamVerified,
 	figmaLink,
 	reactAriaLink,
 }: MetaTableProps) => (
 	<table>
 		<tbody>
-			{designSystemTeamVerified ? <VerifiedBadge /> : <UnverifiedBadge />}
+			<tr>
+				<th scope="row">Collection</th>
+				<td colSpan={2}>
+					<a
+						href={
+							collection === 'Tools Design System'
+								? '?path=/docs/stand-tools-design-system-introduction--docs'
+								: '?path=/docs/stand-sharable-non-design-system-components-introduction--docs'
+						}
+						target="_top"
+					>
+						{collection}
+					</a>
+				</td>
+			</tr>
+			{collection === 'Sharable non-Design System Components' ? (
+				<tr>
+					<th scope="row">Verification</th>
+					<td colSpan={2}>Not required for this collection</td>
+				</tr>
+			) : designSystemTeamVerified ? (
+				<VerifiedBadge />
+			) : (
+				<UnverifiedBadge />
+			)}
 			{figmaLink && <FigmaLink figmaLink={figmaLink} />}
 			{reactAriaLink && <ReactAriaLink reactAriaLink={reactAriaLink} />}
 		</tbody>
