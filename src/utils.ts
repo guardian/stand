@@ -9,7 +9,6 @@ export {
 	convertTypographyToEmotionStringStyle,
 } from './styleD/utils/semantic/typography';
 
-export { GlobalBaseStyles } from './util/base';
 export { GlobalResetStyles } from './util/reset';
 
 export { between, from, until } from './styleD/utils/semantic/mq';

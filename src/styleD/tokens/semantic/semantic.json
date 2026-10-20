@@ -1918,7 +1918,7 @@
 						"fontStyle": "{base.typography.style.normal}",
 						"fontWeight": "{base.typography.weight.openSans.bold}",
 						"letterSpacing": "{base.typography.letterSpacing.denseRem}",
-						"lineHeight": "{base.typography.lineHeight.interactive}"
+						"lineHeight": 1
 					}
 				},
 				"fontWidth": {
@@ -1939,7 +1939,7 @@
 						"fontStyle": "{base.typography.style.normal}",
 						"fontWeight": "{base.typography.weight.openSans.bold}",
 						"letterSpacing": "{base.typography.letterSpacing.denseRem}",
-						"lineHeight": "{base.typography.lineHeight.interactive}"
+						"lineHeight": 1
 					}
 				},
 				"fontWidth": {
@@ -1960,7 +1960,7 @@
 						"fontStyle": "{base.typography.style.normal}",
 						"fontWeight": "{base.typography.weight.openSans.bold}",
 						"letterSpacing": "{base.typography.letterSpacing.defaultRem}",
-						"lineHeight": "{base.typography.lineHeight.interactive}"
+						"lineHeight": 1
 					}
 				},
 				"fontWidth": {

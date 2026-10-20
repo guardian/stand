@@ -458,6 +458,16 @@
 				"default": "./dist/PickerIframeModal.cjs"
 			}
 		},
+		"./Stand": {
+			"import": {
+				"types": "./dist/Stand.d.ts",
+				"default": "./dist/Stand.js"
+			},
+			"require": {
+				"types": "./dist/Stand.d.cts",
+				"default": "./dist/Stand.cjs"
+			}
+		},
 		"./utils": {
 			"import": {
 				"types": "./dist/utils.d.ts",
@@ -664,6 +674,9 @@
 			],
 			"PickerIframeModal": [
 				"./dist/PickerIframeModal.d.ts"
+			],
+			"Stand": [
+				"./dist/Stand.d.ts"
 			]
 		}
 	},

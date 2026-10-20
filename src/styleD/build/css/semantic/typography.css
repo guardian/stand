@@ -631,11 +631,7 @@
 	);
 	--semantic-typography-interactive-md-font: var(--base-typography-style-normal)
 		var(--base-typography-weight-open-sans-bold)
-		var(
-			--base-typography-size-var(--base-typography-line-height-interactive)
-				6-rem
-		)/1
-		var(--base-typography-family-open-sans);
+		var(--base-typography-size-16-rem)/1 var(--base-typography-family-open-sans);
 	--semantic-typography-interactive-md-font-width: var(
 		--base-typography-width-open-sans
 	);
@@ -644,11 +640,7 @@
 	);
 	--semantic-typography-interactive-sm-font: var(--base-typography-style-normal)
 		var(--base-typography-weight-open-sans-bold)
-		var(
-			--base-typography-size-var(--base-typography-line-height-interactive)
-				4-rem
-		)/1
-		var(--base-typography-family-open-sans);
+		var(--base-typography-size-14-rem)/1 var(--base-typography-family-open-sans);
 	--semantic-typography-interactive-sm-font-width: var(
 		--base-typography-width-open-sans
 	);
@@ -657,11 +649,7 @@
 	);
 	--semantic-typography-interactive-xs-font: var(--base-typography-style-normal)
 		var(--base-typography-weight-open-sans-bold)
-		var(
-			--base-typography-size-var(--base-typography-line-height-interactive)
-				2-rem
-		)/1
-		var(--base-typography-family-open-sans);
+		var(--base-typography-size-12-rem)/1 var(--base-typography-family-open-sans);
 	--semantic-typography-interactive-xs-font-width: var(
 		--base-typography-width-open-sans
 	);
