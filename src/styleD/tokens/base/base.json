@@ -1,5 +1,22 @@
 {
 	"base": {
+		"color": {
+			"temp-color": {
+				"$extensions": {
+					"com.figma": {
+						"codeSyntax": {},
+						"hiddenFromPublishing": false,
+						"scopes": ["ALL_SCOPES"]
+					}
+				},
+				"$type": "color",
+				"$value": {
+					"alpha": 1,
+					"colorSpace": "srgb",
+					"components": [1, 0.3411764705882353, 0.13333333333333333]
+				}
+			}
+		},
 		"colors": {
 			"blue": {
 				"100": {
