@@ -101,6 +101,8 @@ The scaffold uses the Tools Design System story title by default; this does not 
 
 ## Style Dictionary - Design Tokens
 
+The **Sync Design Tokens** workflow authenticates using a project-scoped service token. Create a read-capable token in the Tokens Studio project's **Integrations → Service Account Tokens** settings and save it as the repository's `STUDIO_SERVICE_TOKEN` Actions secret. The workflow explicitly passes that secret to the CLI's `STUDIO_SERVICE_TOKEN` environment variable; GitHub secrets and variables are not automatically exported to commands. No OIDC CI integration is needed for this authentication method. Run the workflow manually, optionally choosing a Tokens Studio branch, or trigger it with a `tokens-release` repository dispatch.
+
 If you are adding or modifying design tokens:
 
 1. **Create or edit the token JSON** in `src/styleD/tokens/<group>/<name>.json`.
