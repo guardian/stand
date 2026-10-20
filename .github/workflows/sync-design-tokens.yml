@@ -1,6 +1,8 @@
 name: Sync Design Tokens
 
 on:
+  push:
+    branches: [mm/automate-tokens-studio] # TEMP: remove before merge
   repository_dispatch:
     types: [tokens-release]
   workflow_dispatch:
