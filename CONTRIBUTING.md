@@ -2,15 +2,15 @@
 
 See the [Getting Started docs](https://guardian.github.io/stand/?path=/docs/getting-started--docs) for an overview of the project and setup guidelines.
 
-`@guardian/stand` is a shared component library for Guardian internal/editorial tooling.
+`@guardian/stand` is a design system and shared component library for Guardian internal tooling.
 
 If you think you have a component that could be useful across multiple tools, or would like to contribute to the design system, please consider contributing it here! The general guidelines and principles are outlined below.
 
-If you want to make changes to existing components, or have suggestions for improvements, please also feel free to contribute - reach out to the team if you want to discuss the changes or raise a issue/PR!
+If you want to make changes to existing components, or have suggestions for improvements, please also feel free to contribute - reach out to the Design Systems team if you want to discuss the changes or raise a issue/PR!
 
 ## Choosing a collection
 
-**Stand contains two collections:** the **Tools Design System**, our core foundations and UI components, and **Shareable non-Design System Components**, reusable components that sit outside the design system. Both are available through `@guardian/stand`; inclusion in Stand does not imply design system membership or verification.
+**Stand contains two collections:** the **Tools Design System**, our core foundations and UI components, and **Shareable non-Design System Components**, reusable components that sit outside the design system. Both are available through `@guardian/stand`; inclusion in Stand does not imply design system membership.
 
 Use this guide when adding a component:
 
