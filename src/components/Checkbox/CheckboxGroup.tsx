@@ -1,7 +1,5 @@
-import { Global } from '@emotion/react';
 import React from 'react';
 import { CheckboxGroup as RACCheckboxGroup } from 'react-aria-components';
-import checkboxCss from '../../styleD/build/css/component/checkbox.css?inline';
 import { FormInputContainer } from '../Form/Form';
 import { Checkbox } from './Checkbox';
 import { checkboxGroupStyles } from './styles';
@@ -30,13 +28,10 @@ export function CheckboxGroup({
 	});
 
 	return (
-		<>
-			<Global styles={checkboxCss} />
-			<FormInputContainer as={RACCheckboxGroup} size={size} {...props}>
-				<div css={checkboxGroupStyles({ size }, props.isInvalid)}>
-					{checkboxes}
-				</div>
-			</FormInputContainer>
-		</>
+		<FormInputContainer as={RACCheckboxGroup} size={size} {...props}>
+			<div css={checkboxGroupStyles({ size }, props.isInvalid)}>
+				{checkboxes}
+			</div>
+		</FormInputContainer>
 	);
 }

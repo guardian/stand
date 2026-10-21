@@ -5,6 +5,7 @@ import baseRadius from '../../styleD/build/css/base/radius.css?inline';
 import baseSizing from '../../styleD/build/css/base/sizing.css?inline';
 import baseSpacing from '../../styleD/build/css/base/spacing.css?inline';
 import baseTypography from '../../styleD/build/css/base/typography.css?inline';
+import componentCheckbox from '../../styleD/build/css/component/checkbox.css?inline';
 import semanticBreakpoints from '../../styleD/build/css/semantic/breakpoints.css?inline';
 import semanticColors from '../../styleD/build/css/semantic/colors.css?inline';
 import semanticGrid from '../../styleD/build/css/semantic/grid.css?inline';
@@ -32,6 +33,7 @@ export const Stand = ({ children }: { children: ReactNode }) => {
 					semanticSizing,
 					semanticSpacing,
 					semanticTypography,
+					componentCheckbox,
 				]}
 			/>
 			{children}
