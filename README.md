@@ -198,14 +198,16 @@ The project uses [Style Dictionary](https://styledictionary.com/) to generate CS
 
 The shared Tools Design System tokens in `src/styleD/tokens/base/base.json`, `src/styleD/tokens/semantic/semantic.json`, and `src/styleD/tokens/component/component.json` are managed in [Tokens Studio](https://tokens.studio/). All other token JSON files are maintained locally in this project. Shareable components and unverified Tools Design System components keep their component tokens local; after a component is verified, the design systems team moves its tokens to [Tokens Studio](https://tokens.studio/) and removes the local token file.
 
-To change [Tokens Studio](https://tokens.studio/) managed tokens (verified Design System Components), liaise with the design systems team. The current manual process uses the [Tokens Studio CLI](https://documentation-v2.tokens.studio/cli/overview.html) from the project root to pull the latest tokens and regenerate the Style Dictionary outputs:
+To change [Tokens Studio](https://tokens.studio/) managed tokens (verified Design System Components), liaise with the design systems team. To sync them, run the **Sync Design Tokens** workflow from the Actions tab. Select the branch to create the pull request against, then optionally set the `branch` input to choose the Tokens Studio branch to pull from (defaults to `main`). The workflow pulls the managed tokens, regenerates the Style Dictionary outputs, runs TypeScript and lint checks, and opens a pull request if there are changes. A `tokens-release` repository dispatch also starts the workflow, pulling from the `main` Tokens Studio branch.
+
+For a local pull, use the [Tokens Studio CLI](https://documentation-v2.tokens.studio/cli/overview.html) from the project root, then regenerate the Style Dictionary outputs:
 
 ```bash
 studio tokens pull
 pnpm build-styled
 ```
 
-Review the pulled source and generated output changes before committing. An automated pull workflow is planned; until it is available, do not edit the managed files directly or pull tokens from Figma variables. For locally maintained token JSON, make changes in the project and regenerate the outputs:
+Review pulled source and generated output changes before committing. Do not edit the managed files directly or pull tokens from Figma variables. For locally maintained token JSON, make changes in the project and regenerate the outputs:
 
 ```bash
 pnpm build-styled

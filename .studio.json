@@ -1,14 +1,17 @@
 {
-	"$schema": "https://tokens.studio/schema/cli",
-	"configurations": {
+	"$schema": "https://tokens.studio/schema/cli/v2.json",
+	"outputs": {
 		"stand": {
-			"project": "ef220361-80dc-4645-a671-0d38f9293c6b",
-			"ref": {
-				"type": "branch",
-				"name": "main"
-			},
-			"output": "src/styleD/tokens",
-			"format": "dtcg"
+			"format": "dtcg",
+			"dir": "src/styleD/tokens"
 		}
-	}
+	},
+	"source": {
+		"project": "ef220361-80dc-4645-a671-0d38f9293c6b",
+		"ref": {
+			"type": "branch",
+			"name": "main"
+		}
+	},
+	"version": 2
 }

@@ -67,14 +67,16 @@ These shared Tools Design System token files are managed in [Tokens Studio](http
 
 All other token JSON files in `src/styleD/tokens/` are maintained locally. Shareable non-Design System Components and unverified Tools Design System components keep their component tokens local. Once a Tools Design System component is verified, the design systems team moves its tokens into Tokens Studio and removes the local token file.
 
-Changes to base or semantic tokens, and to the shared verified component tokens in `component.json`, must go through the design systems team. Contributors should not edit these Tokens Studio-managed files directly. Until an automated workflow is available, the team applies agreed changes using the [Tokens Studio CLI](https://documentation-v2.tokens.studio/cli/overview.html) from the project root:
+Changes to base or semantic tokens, and to the shared verified component tokens in `component.json`, must go through the design systems team. Contributors should not edit these Tokens Studio-managed files directly. To sync agreed changes, run the **Sync Design Tokens** workflow from the Actions tab. Choose the branch to create the pull request against, then optionally set the `branch` input to choose the Tokens Studio branch to pull from (defaults to `main`). The workflow pulls the managed tokens, regenerates the Style Dictionary outputs, runs TypeScript and lint checks, and opens a pull request if there are changes. A `tokens-release` repository dispatch also starts the workflow, pulling from the `main` Tokens Studio branch.
+
+For a local pull, use the [Tokens Studio CLI](https://documentation-v2.tokens.studio/cli/overview.html) from the project root:
 
 ```sh
 studio tokens pull
 pnpm run build-styled
 ```
 
-Review the pulled token files and generated outputs before committing. An automated pull workflow is planned but not yet available. Pulling tokens from Figma variables has been removed.
+Review the pulled token files and generated outputs before committing. Pulling tokens from Figma variables has been removed.
 
 For local component tokens, edit the relevant JSON file in `src/styleD/tokens/component/` and rebuild:
 
