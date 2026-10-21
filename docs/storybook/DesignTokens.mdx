@@ -1,0 +1,96 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Design Tokens" />
+
+# Design Tokens
+
+Design tokens are named values for reusable design decisions, such as colours, spacing, typography, and component-specific styles. Stand stores tokens as JSON in `src/styleD/tokens/` and uses [Style Dictionary](https://styledictionary.com/) to generate CSS custom properties and typed TypeScript values.
+
+## Choosing tokens
+
+Stand tokens are grouped into three levels:
+
+- **Base tokens** define raw values such as colours and spacing.
+- **Semantic tokens** give values a purpose, such as text colour or spacing in a layout.
+- **Component tokens** define values used by a specific component.
+
+When building Tools Design System components or one-off UI in a consuming project, use existing semantic tokens wherever possible. Do not use base tokens or hard-coded design values directly in UI unless explicitly necessary. If no semantic token fits, ask the design systems team about adding one; contributors should not change base or semantic tokens themselves.
+
+Contributors should create or edit local component tokens only when adding a new component, or changing an unverified Tools Design System component or a Shareable non-Design System Component. Component tokens should use existing semantic tokens where possible.
+
+### Structuring component tokens
+
+The verified [Button component](/docs/stand-tools-design-system-components-button--docs) is a useful model. Its token structure mirrors the actual API: visual variants (`primary`, `secondary`, `tertiary`), sizes (`xs`, `sm`, `md`, `lg`), and properties shared across sizes or states. A variant has a `shared` group for its colours and interaction states, while each size group contains dimensions, padding, icon spacing, and typography.
+
+For example, this excerpt shows a semantic reference for the primary button's background and medium height, alongside base spacing where no semantic spacing value is used:
+
+```json
+{
+	"component": {
+		"button": {
+			"primary": {
+				"shared": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.accentStrong}"
+					}
+				},
+				"md": {
+					"height": {
+						"$type": "dimension",
+						"$value": "{semantic.sizing.height.md}"
+					},
+					"padding": {
+						"left": {
+							"$type": "dimension",
+							"$value": "{base.spacing.12Rem}"
+						}
+					}
+				}
+			}
+		}
+	}
+}
+```
+
+This is a shortened excerpt of the Button tokens in the Tokens Studio-managed `component.json`; do not edit them directly. For local component tokens, use the same approach: mirror the component's real variants, sizes, and states; put values shared across a group in `shared`; and use semantic references where they exist. Base tokens are appropriate when no semantic token expresses the required value.
+
+For more complex components made up of subcomponents, see [Tabs](/docs/stand-tools-design-system-components-tabs--docs). Its tokens are grouped by subcomponent (`tabs`, `tabList`, `tab`, `tabPanels`, and `tabPanel`), with each group defining the styles relevant to that part of the component.
+
+## Token sources and ownership
+
+These shared Tools Design System token files are managed in [Tokens Studio](https://tokens.studio/):
+
+- `src/styleD/tokens/base/base.json`
+- `src/styleD/tokens/semantic/semantic.json`
+- `src/styleD/tokens/component/component.json`
+
+All other token JSON files in `src/styleD/tokens/` are maintained locally. Shareable non-Design System Components and unverified Tools Design System components keep their component tokens local. Once a Tools Design System component is verified, the design systems team moves its tokens into Tokens Studio and removes the local token file.
+
+Changes to base or semantic tokens, and to the shared verified component tokens in `component.json`, must go through the design systems team. Contributors should not edit these Tokens Studio-managed files directly. Until an automated workflow is available, the team applies agreed changes using the [Tokens Studio CLI](https://documentation-v2.tokens.studio/cli/overview.html) from the project root:
+
+```sh
+studio tokens pull
+pnpm run build-styled
+```
+
+Review the pulled token files and generated outputs before committing. An automated pull workflow is planned but not yet available. Pulling tokens from Figma variables has been removed.
+
+For local component tokens, edit the relevant JSON file in `src/styleD/tokens/component/` and rebuild:
+
+```sh
+pnpm run build-styled
+```
+
+Commit local token changes and generated outputs together. See the [Contributing guidelines](/docs/contributing--docs) for details.
+
+## Style Dictionary outputs
+
+Style Dictionary reads the token JSON files in `src/styleD/tokens/` and writes generated files to `src/styleD/build/`:
+
+- `src/styleD/build/css/` contains CSS custom properties, for use without JavaScript.
+- `src/styleD/build/typescript/` contains typed TypeScript exports for use in JavaScript or TypeScript.
+
+Both source tokens and generated outputs are committed to the repository. The package build copies the generated outputs into `dist/styleD/build/` for publishing. After changing local tokens or pulling Tokens Studio updates, run `pnpm run build-styled` and review the generated files.
+
+See the [Contributing guidelines](/docs/contributing--docs) for how to add local token files and expose component tokens from the package.

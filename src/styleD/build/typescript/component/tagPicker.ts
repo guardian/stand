@@ -3,9 +3,9 @@
  */
 
 export const componentTagPicker = {
-	shared: {
-		width: '100%',
-		gap: '15px',
+	offlineSection: {
+		gap: '4px',
+		justifyContent: 'flex-start',
 	},
 	search: {
 		width: '100%',
@@ -13,9 +13,9 @@ export const componentTagPicker = {
 	select: {
 		flexBasis: '25%',
 	},
-	offlineSection: {
-		justifyContent: 'flex-start',
-		gap: '4px',
+	shared: {
+		gap: '15px',
+		width: '100%',
 	},
 };
 export type ComponentTagPicker = typeof componentTagPicker;

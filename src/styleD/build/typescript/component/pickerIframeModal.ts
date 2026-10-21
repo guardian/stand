@@ -3,30 +3,30 @@
  */
 
 export const componentPickerIframeModal = {
+	headerContents: {
+		alignItems: 'center',
+		display: 'flex',
+		justifyContent: 'space-between',
+	},
 	iframe: {
-		width: '100%',
-		height: '600px',
-		maxHeight: '70vh',
 		backgroundColor: 'unset',
+		height: '600px',
 		margin: {
-			top: '0',
-			right: '0',
-			bottom: '0',
-			left: '0',
+			bottom: '0px',
+			left: '0px',
+			right: '0px',
+			top: '0px',
 		},
+		maxHeight: '70vh',
+		width: '100%',
 	},
 	iframeContainer: {
 		padding: {
-			top: '0',
-			right: '0',
-			bottom: '0',
-			left: '0',
+			bottom: '0px',
+			left: '0px',
+			right: '0px',
+			top: '0px',
 		},
-	},
-	headerContents: {
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'space-between',
 	},
 };
 export type ComponentPickerIframeModal = typeof componentPickerIframeModal;

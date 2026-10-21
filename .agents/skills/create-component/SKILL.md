@@ -73,10 +73,13 @@ For example, a request for a ToggleSwitch based on the React Aria Switch compone
    - Keep CSS-only consumers documented as not requiring React peers when applicable.
 
 6. Define and build design tokens:
-   - Edit `src/styleD/tokens/component/<camelName>.json`.
-   - Prefer existing base and semantic tokens over hard-coded values.
-   - Run `pnpm run build-styled` after token changes.
-   - Review the generated CSS and TypeScript token output.
+   - New components start with local tokens in `src/styleD/tokens/component/<camelName>.json`. Keep tokens local for Shareable non-Design System Components and unverified Tools Design System components.
+   - Use semantic tokens to build Tools Design System UI. Do not use base tokens or hard-coded design values directly in UI; base tokens are the foundation for semantic tokens. Component tokens should reference semantic tokens.
+   - If no semantic token fits the need, coordinate with the design systems team about adding one rather than using a base token or hard-coded value.
+   - The shared files `base/base.json`, `semantic/semantic.json`, and `component/component.json` are managed in [Tokens Studio](https://tokens.studio/); do not edit them directly. Coordinate changes with the design systems team.
+   - When an unverified Tools Design System component is verified, the design systems team moves its tokens into [Tokens Studio](https://tokens.studio/) and removes the local component token file.
+   - For local token changes, run `pnpm run build-styled` and review the generated CSS and TypeScript output.
+   - The current manual [Tokens Studio CLI](https://documentation-v2.tokens.studio/cli/overview.html) update is `studio tokens pull` from the project root, run by the team after coordinating token changes. An automated workflow is planned; do not use the removed Figma variables pull workflow.
 
 7. Complete the public entrypoint and package exports:
    - Use the existing uppercase subpath convention, such as `@guardian/stand/Button`.

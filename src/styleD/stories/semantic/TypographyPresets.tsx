@@ -3,6 +3,31 @@ import { semanticColors } from '../../build/typescript/semantic/colors';
 import { semanticTypography } from '../../build/typescript/semantic/typography';
 import { convertTypographyToEmotionStringStyle } from '../../utils/semantic/typography';
 
+const SIZE_ORDER: Record<string, number> = {
+	Xs: 1,
+	Sm: 2,
+	Md: 3,
+	Lg: 4,
+	Xl: 5,
+	'2Xl': 6,
+};
+
+const SIZE_REGEX = /(2Xl|Xl|Lg|Md|Sm|Xs)$/;
+
+const parsePresetKey = (key: string) => {
+	const match = key.match(SIZE_REGEX);
+	const size = match?.[1];
+
+	if (!size) {
+		return { baseName: key, rank: 99 };
+	}
+
+	return {
+		baseName: key.slice(0, -size.length),
+		rank: SIZE_ORDER[size] ?? 99,
+	};
+};
+
 const tableCss = css`
 	width: 100%;
 	border-collapse: collapse;
@@ -38,14 +63,20 @@ const sampleCss = css`
 	min-width: 200px;
 `;
 
-const convertedPresets = Object.entries(
-	Object.fromEntries(
-		Object.entries(semanticTypography).map(([preset, token]) => [
-			preset,
-			convertTypographyToEmotionStringStyle(token).styles,
-		]),
-	),
-);
+const sortedPresets = Object.entries(semanticTypography)
+	.map(([preset, token]) => ({
+		preset,
+		token,
+		styles: convertTypographyToEmotionStringStyle(token).styles,
+		...parsePresetKey(preset),
+	}))
+	.sort((a, b) => {
+		const nameCompare = a.baseName.localeCompare(b.baseName);
+		if (nameCompare !== 0) {
+			return nameCompare;
+		}
+		return a.rank - b.rank;
+	});
 
 export const TypographyPresets = () => (
 	<table css={tableCss}>
@@ -59,33 +90,24 @@ export const TypographyPresets = () => (
 			</tr>
 		</thead>
 		<tbody>
-			{convertedPresets.map(([preset, styles], index) => {
-				const typographyToken =
-					semanticTypography[preset as keyof typeof semanticTypography];
-
-				const cssFont = typographyToken.font;
-				const letterSpacing = typographyToken.letterSpacing;
-				const fontWidth = typographyToken.fontWidth;
-
-				return (
-					<tr key={`preset-${index}`}>
-						<td css={presetNameCss}>{preset}</td>
-						<td>{cssFont}</td>
-						<td>{letterSpacing}</td>
-						<td>{fontWidth}</td>
-						<td css={sampleCss}>
-							<span
-								css={css`
-									${styles}
-								`}
-								contentEditable
-							>
-								For facts&apos; sake
-							</span>
-						</td>
-					</tr>
-				);
-			})}
+			{sortedPresets.map(({ preset, token, styles }) => (
+				<tr key={preset}>
+					<td css={presetNameCss}>{preset}</td>
+					<td>{token.font}</td>
+					<td>{token.letterSpacing}</td>
+					<td>{token.fontWidth}</td>
+					<td css={sampleCss}>
+						<span
+							css={css`
+								${styles}
+							`}
+							contentEditable
+						>
+							For facts&apos; sake
+						</span>
+					</td>
+				</tr>
+			))}
 		</tbody>
 	</table>
 );
