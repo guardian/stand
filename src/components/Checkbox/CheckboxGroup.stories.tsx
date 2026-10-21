@@ -201,25 +201,25 @@ export const SingleOptionErrorSmall = {
 	),
 } satisfies Story;
 
-export const CustomTheme = {
-	name: 'Custom Theme',
-	args: {
-		label: 'Checkbox Group',
-		description: 'This is a description for the checkbox group.',
-		theme: {
-			shared: {
-				flexDirection: 'row',
-			},
-		},
-	},
-	render: (args) => (
-		<CheckboxGroup {...args}>
-			<Checkbox value="option1">Option 1</Checkbox>
-			<Checkbox value="option2">Option 2</Checkbox>
-			<Checkbox value="option3">Option 3</Checkbox>
-		</CheckboxGroup>
-	),
-} satisfies Story;
+// export const CustomTheme = {
+// 	name: 'Custom Theme',
+// 	args: {
+// 		label: 'Checkbox Group',
+// 		description: 'This is a description for the checkbox group.',
+// 		theme: {
+// 			shared: {
+// 				flexDirection: 'row',
+// 			},
+// 		},
+// 	},
+// 	render: (args) => (
+// 		<CheckboxGroup {...args}>
+// 			<Checkbox value="option1">Option 1</Checkbox>
+// 			<Checkbox value="option2">Option 2</Checkbox>
+// 			<Checkbox value="option3">Option 3</Checkbox>
+// 		</CheckboxGroup>
+// 	),
+// } satisfies Story;
 
 export const CssOverrides = {
 	name: 'CSS Overrides',

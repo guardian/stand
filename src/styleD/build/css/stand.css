@@ -1,0 +1,4020 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--base-colors-blue-50: #061d3c;
+	--base-colors-blue-100: #092f62;
+	--base-colors-blue-200: #0d4289;
+	--base-colors-blue-300: #1054af;
+	--base-colors-blue-400: #1467d6;
+	--base-colors-blue-500: #3e82dd;
+	--base-colors-blue-600: #699ee5;
+	--base-colors-blue-700: #93b9ec;
+	--base-colors-blue-800: #c5d9f4;
+	--base-colors-blue-900: #e8f0fb;
+	--base-colors-cool-purple-50: #232740;
+	--base-colors-cool-purple-100: #394069;
+	--base-colors-cool-purple-200: #485084;
+	--base-colors-cool-purple-300: #6773bb;
+	--base-colors-cool-purple-400: #7d8ce4;
+	--base-colors-cool-purple-500: #94a1e9;
+	--base-colors-cool-purple-600: #acb5ee;
+	--base-colors-cool-purple-700: #c3caf3;
+	--base-colors-cool-purple-800: #dbdff7;
+	--base-colors-cool-purple-900: #f2f4fc;
+	--base-colors-cyan-50: #00202f;
+	--base-colors-cyan-100: #00344e;
+	--base-colors-cyan-200: #00496c;
+	--base-colors-cyan-300: #005d8b;
+	--base-colors-cyan-400: #0072a9;
+	--base-colors-cyan-500: #2e8bb8;
+	--base-colors-cyan-600: #5ca5c8;
+	--base-colors-cyan-700: #8abed7;
+	--base-colors-cyan-800: #c5dfec;
+	--base-colors-cyan-900: #e6f1f6;
+	--base-colors-green-50: #162c11;
+	--base-colors-green-100: #24491d;
+	--base-colors-green-200: #326528;
+	--base-colors-green-300: #408233;
+	--base-colors-green-400: #4e9e3e;
+	--base-colors-green-500: #6eaf61;
+	--base-colors-green-600: #8ec183;
+	--base-colors-green-700: #aed2a6;
+	--base-colors-green-800: #cde4c9;
+	--base-colors-green-900: #edf5ec;
+	--base-colors-magenta-50: #350e20;
+	--base-colors-magenta-100: #581734;
+	--base-colors-magenta-200: #7a2048;
+	--base-colors-magenta-300: #9d295d;
+	--base-colors-magenta-400: #bf3271;
+	--base-colors-magenta-500: #cb578b;
+	--base-colors-magenta-600: #d67ca4;
+	--base-colors-magenta-700: #e2a1be;
+	--base-colors-magenta-800: #edc6d7;
+	--base-colors-magenta-900: #f9ebf1;
+	--base-colors-neutral-0: #000000;
+	--base-colors-neutral-50: #121212;
+	--base-colors-neutral-100: #333333;
+	--base-colors-neutral-200: #545454;
+	--base-colors-neutral-300: #666666;
+	--base-colors-neutral-400: #8d8d8d;
+	--base-colors-neutral-500: #999999;
+	--base-colors-neutral-550: #aeaeae;
+	--base-colors-neutral-600: #bababa;
+	--base-colors-neutral-625: #c1c1c1;
+	--base-colors-neutral-650: #cccccc;
+	--base-colors-neutral-700: #dcdcdc;
+	--base-colors-neutral-750: #e6e6e6;
+	--base-colors-neutral-800: #ededed;
+	--base-colors-neutral-850: #f6f6f6;
+	--base-colors-neutral-900: #ffffff;
+	--base-colors-orange-50: #45260e;
+	--base-colors-orange-100: #693c16;
+	--base-colors-orange-200: #9d5621;
+	--base-colors-orange-300: #c96e2a;
+	--base-colors-orange-400: #f58633;
+	--base-colors-orange-500: #f79c58;
+	--base-colors-orange-600: #f9b27c;
+	--base-colors-orange-700: #fac7a1;
+	--base-colors-orange-800: #fcddc6;
+	--base-colors-orange-900: #fef3eb;
+	--base-colors-red-50: #3d0e08;
+	--base-colors-red-100: #65170e;
+	--base-colors-red-200: #8c2113;
+	--base-colors-red-300: #b42a19;
+	--base-colors-red-400: #db331e;
+	--base-colors-red-500: #e15847;
+	--base-colors-red-600: #e87c6f;
+	--base-colors-red-700: #eea198;
+	--base-colors-red-800: #f5c6c0;
+	--base-colors-red-900: #fbebe9;
+	--base-colors-teal-50: #050e0f;
+	--base-colors-teal-100: #0e2729;
+	--base-colors-teal-200: #174044;
+	--base-colors-teal-300: #287279;
+	--base-colors-teal-400: #318b94;
+	--base-colors-teal-500: #56a0a7;
+	--base-colors-teal-600: #7bb5bb;
+	--base-colors-teal-700: #a0cace;
+	--base-colors-teal-800: #c5dfe1;
+	--base-colors-teal-900: #eaf3f4;
+	--base-colors-transparent: rgba(0, 0, 0, 0);
+	--base-colors-warm-purple-50: #220b30;
+	--base-colors-warm-purple-100: #381350;
+	--base-colors-warm-purple-200: #4e1a6f;
+	--base-colors-warm-purple-300: #64228e;
+	--base-colors-warm-purple-400: #7a29ad;
+	--base-colors-warm-purple-500: #9250bc;
+	--base-colors-warm-purple-600: #aa76cb;
+	--base-colors-warm-purple-700: #c29dd9;
+	--base-colors-warm-purple-800: #dac3e8;
+	--base-colors-warm-purple-900: #f2eaf7;
+	--base-colors-yellow-50: #433608;
+	--base-colors-yellow-100: #5b4a0b;
+	--base-colors-yellow-200: #9a7c11;
+	--base-colors-yellow-300: #c69f16;
+	--base-colors-yellow-400: #f1c21b;
+	--base-colors-yellow-500: #f4cd44;
+	--base-colors-yellow-600: #f6d86d;
+	--base-colors-yellow-700: #f9e396;
+	--base-colors-yellow-800: #ffedac;
+	--base-colors-yellow-900: #fef9e8;
+	--base-radius-corner2-px: 2px;
+	--base-radius-corner2-rem: 0.125rem;
+	--base-radius-corner4-px: 4px;
+	--base-radius-corner4-rem: 0.25rem;
+	--base-radius-corner8-px: 8px;
+	--base-radius-corner8-rem: 0.5rem;
+	--base-sizing-size14-px: 14px;
+	--base-sizing-size14-rem: 0.875rem;
+	--base-sizing-size16-px: 16px;
+	--base-sizing-size16-rem: 1rem;
+	--base-sizing-size18-px: 18px;
+	--base-sizing-size18-rem: 1.125rem;
+	--base-sizing-size1-px: 1px;
+	--base-sizing-size1-rem: 0.0625rem;
+	--base-sizing-size20-px: 20px;
+	--base-sizing-size20-rem: 1.25rem;
+	--base-sizing-size24-px: 24px;
+	--base-sizing-size24-rem: 1.5rem;
+	--base-sizing-size2-px: 2px;
+	--base-sizing-size2-rem: 0.125rem;
+	--base-sizing-size32-px: 32px;
+	--base-sizing-size32-rem: 2rem;
+	--base-sizing-size40-px: 40px;
+	--base-sizing-size40-rem: 2.5rem;
+	--base-sizing-size48-px: 48px;
+	--base-sizing-size48-rem: 3rem;
+	--base-sizing-size8-px: 8px;
+	--base-sizing-size8-rem: 0.5rem;
+	--base-spacing-10-px: 10px;
+	--base-spacing-10-rem: 0.625rem;
+	--base-spacing-12-px: 12px;
+	--base-spacing-12-rem: 0.75rem;
+	--base-spacing-16-px: 16px;
+	--base-spacing-16-rem: 1rem;
+	--base-spacing-20-px: 20px;
+	--base-spacing-20-rem: 1.25rem;
+	--base-spacing-24-px: 24px;
+	--base-spacing-24-rem: 1.5rem;
+	--base-spacing-2-px: 2px;
+	--base-spacing-2-rem: 0.125rem;
+	--base-spacing-32-px: 32px;
+	--base-spacing-32-rem: 2rem;
+	--base-spacing-36-px: 36px;
+	--base-spacing-36-rem: 2.25rem;
+	--base-spacing-40-px: 40px;
+	--base-spacing-40-rem: 2.5rem;
+	--base-spacing-48-px: 48px;
+	--base-spacing-48-rem: 3rem;
+	--base-spacing-4-px: 4px;
+	--base-spacing-4-rem: 0.25rem;
+	--base-spacing-64-px: 64px;
+	--base-spacing-64-rem: 4rem;
+	--base-spacing-6-px: 6px;
+	--base-spacing-6-rem: 0.375rem;
+	--base-spacing-72-px: 72px;
+	--base-spacing-72-rem: 4.5rem;
+	--base-spacing-80-px: 80px;
+	--base-spacing-80-rem: 5rem;
+	--base-spacing-8-px: 8px;
+	--base-spacing-8-rem: 0.5rem;
+	--base-spacing-96-px: 96px;
+	--base-spacing-96-rem: 6rem;
+	--base-typography-family-guardian-headline: 'GH Guardian Headline';
+	--base-typography-family-guardian-text-egyptian: GuardianTextEgyptian;
+	--base-typography-family-open-sans: 'Open Sans';
+	--base-typography-family-open-sans-compact: 'Open Sans';
+	--base-typography-letter-spacing-default-px: 0px;
+	--base-typography-letter-spacing-default-rem: 0rem;
+	--base-typography-letter-spacing-dense-px: -0.2px;
+	--base-typography-letter-spacing-dense-rem: -0.0125rem;
+	--base-typography-letter-spacing-denser-px: -0.5px;
+	--base-typography-letter-spacing-denser-rem: -0.03125rem;
+	--base-typography-letter-spacing-densest-px: -1px;
+	--base-typography-letter-spacing-densest-rem: -0.0625rem;
+	--base-typography-line-height-interactive: 1;
+	--base-typography-line-height-loose: 1.4;
+	--base-typography-line-height-normal: 1.3;
+	--base-typography-line-height-tight: 1.15;
+	--base-typography-size-12-px: 12px;
+	--base-typography-size-12-rem: 0.75rem;
+	--base-typography-size-14-px: 14px;
+	--base-typography-size-14-rem: 0.875rem;
+	--base-typography-size-16-px: 16px;
+	--base-typography-size-16-rem: 1rem;
+	--base-typography-size-18-px: 18px;
+	--base-typography-size-18-rem: 1.125rem;
+	--base-typography-size-20-px: 20px;
+	--base-typography-size-20-rem: 1.25rem;
+	--base-typography-size-24-px: 24px;
+	--base-typography-size-24-rem: 1.5rem;
+	--base-typography-size-28-px: 28px;
+	--base-typography-size-28-rem: 1.75rem;
+	--base-typography-size-32-px: 32px;
+	--base-typography-size-32-rem: 2rem;
+	--base-typography-size-36-px: 36px;
+	--base-typography-size-36-rem: 2.25rem;
+	--base-typography-size-42-px: 42px;
+	--base-typography-size-42-rem: 2.625rem;
+	--base-typography-size-48-px: 48px;
+	--base-typography-size-48-rem: 3rem;
+	--base-typography-style-italic: italic;
+	--base-typography-style-normal: normal;
+	--base-typography-weight-guardian-headline-bold: 700;
+	--base-typography-weight-guardian-text-egyptian-bold: 700;
+	--base-typography-weight-guardian-text-egyptian-normal: 400;
+	--base-typography-weight-open-sans-bold: 700;
+	--base-typography-weight-open-sans-light: 340;
+	--base-typography-weight-open-sans-normal: 460;
+	--base-typography-weight-open-sans-semi-bold: 600;
+	--base-typography-weight-open-sans-compact-bold: 700;
+	--base-typography-weight-open-sans-compact-light: 360;
+	--base-typography-weight-open-sans-compact-normal: 460;
+	--base-typography-weight-open-sans-compact-semi-bold: 600;
+	--base-typography-width-open-sans: 95;
+	--base-typography-width-open-sans-compact: 88;
+	--component-byline-border-style: solid;
+	--component-byline-border-width: 1px;
+	--component-byline-chip-border-radius: 8px;
+	--component-byline-chip-border-style: solid;
+	--component-byline-chip-border-width: 1px;
+	--component-byline-chip-padding-x: 4px;
+	--component-byline-chip-padding-y: 2px;
+	--component-byline-dropdown-border-style: solid;
+	--component-byline-dropdown-border-width: 1px;
+	--component-byline-dropdown-li-border-bottom-style: solid;
+	--component-byline-dropdown-li-border-bottom-width: 1px;
+	--component-byline-dropdown-max-height: 320px;
+	--component-byline-line-height: 1.8;
+	--component-alert-banner-shared-align-items: center;
+	--component-alert-banner-shared-content-align-items: center;
+	--component-alert-banner-shared-content-display: flex;
+	--component-alert-banner-shared-content-flex: 1;
+	--component-alert-banner-shared-content-height: 100%;
+	--component-alert-banner-shared-content-justify-content: center;
+	--component-alert-banner-shared-display: flex;
+	--component-alert-banner-shared-justify-content: space-between;
+	--component-alert-banner-shared-padding-bottom: 0px;
+	--component-alert-banner-shared-padding-top: 0px;
+	--component-alert-banner-shared-width: 100%;
+	--component-autocomplete-icon-padding-x: 4px;
+	--component-autocomplete-icon-size: 20px;
+	--component-autocomplete-input-border-style: solid;
+	--component-autocomplete-input-disabled-cursor: not-allowed;
+	--component-autocomplete-listbox-border-style: solid;
+	--component-autocomplete-listbox-item-padding-x: 12px;
+	--component-autocomplete-listbox-item-padding-y: 8px;
+	--component-autocomplete-listbox-padding-x: 0px;
+	--component-autocomplete-listbox-padding-y: 8px;
+	--component-avatar-shared-align-items: center;
+	--component-avatar-shared-border-radius: 50%;
+	--component-avatar-shared-button-background: none;
+	--component-avatar-shared-button-border: none;
+	--component-avatar-shared-button-cursor: pointer;
+	--component-avatar-shared-button-disabled-cursor: not-allowed;
+	--component-avatar-shared-button-padding: 0px;
+	--component-avatar-shared-color-blue-border: unset;
+	--component-avatar-shared-color-cool-purple-border: unset;
+	--component-avatar-shared-color-cyan-border: unset;
+	--component-avatar-shared-color-green-border: unset;
+	--component-avatar-shared-color-magenta-border: unset;
+	--component-avatar-shared-color-orange-border: unset;
+	--component-avatar-shared-color-outlined-background: none;
+	--component-avatar-shared-color-red-border: unset;
+	--component-avatar-shared-color-teal-border: unset;
+	--component-avatar-shared-color-warm-purple-border: unset;
+	--component-avatar-shared-color-yellow-border: unset;
+	--component-avatar-shared-display: inline-flex;
+	--component-avatar-shared-flex-shrink: 0;
+	--component-avatar-shared-justify-content: center;
+	--component-avatar-shared-link-text-decoration: none;
+	--component-avatar-shared-link-width: fit-content;
+	--component-avatar-shared-overflow: hidden;
+	--component-avatar-shared-user-select: none;
+	--component-badge-shared-align-items: center;
+	--component-badge-shared-display: inline-flex;
+	--component-badge-shared-justify-content: center;
+	--component-badge-size-xs-padding-bottom: 3px;
+	--component-badge-size-xs-padding-top: 1px;
+	--component-button-shared-align-items: center;
+	--component-button-shared-box-shadow: none;
+	--component-button-shared-cursor: pointer;
+	--component-button-shared-disabled-cursor: not-allowed;
+	--component-button-shared-display: inline-flex;
+	--component-button-shared-justify-content: center;
+	--component-button-shared-text-align: inherit;
+	--component-button-shared-text-decoration: none;
+	--component-button-shared-webkit-appearance: none;
+	--component-button-tertiary-shared-background-color: none;
+	--component-button-tertiary-shared-disabled-background-color: none;
+	--component-button-group-display: flex;
+	--component-button-group-flex-direction: column;
+	--component-button-group-flex-wrap: wrap;
+	--component-button-group-justify-content: flex-start;
+	--component-button-group-md-flex-direction: row;
+	--component-button-group-width: 100%;
+	--component-checkbox-input-shared-indicator-check-height: 20px;
+	--component-checkbox-input-shared-indicator-check-width: 20px;
+	--component-checkbox-input-shared-indicator-indeterminate-height: 2px;
+	--component-checkbox-input-shared-indicator-indeterminate-width: 12px;
+	--component-checkbox-input-shared-label-align-self: center;
+	--component-checkbox-input-shared-position: relative;
+	--component-date-picker-calendar-cell-shared-align-items: center;
+	--component-date-picker-calendar-cell-shared-aspect-ratio: 1;
+	--component-date-picker-calendar-cell-shared-cursor: pointer;
+	--component-date-picker-calendar-cell-shared-disabled-cursor: not-allowed;
+	--component-date-picker-calendar-cell-shared-display: flex;
+	--component-date-picker-calendar-cell-shared-justify-content: center;
+	--component-date-picker-calendar-cell-shared-outside-month-display: none;
+	--component-date-picker-calendar-grid-shared-border-collapse: collapse;
+	--component-date-picker-calendar-grid-shared-border-spacing: 0px;
+	--component-date-picker-calendar-grid-shared-th-vertical-align: middle;
+	--component-date-picker-calendar-header-shared-align-items: center;
+	--component-date-picker-calendar-header-shared-button-align-items: center;
+	--component-date-picker-calendar-header-shared-button-aspect-ratio: 1;
+	--component-date-picker-calendar-header-shared-button-border: none;
+	--component-date-picker-calendar-header-shared-button-cursor: pointer;
+	--component-date-picker-calendar-header-shared-button-disabled-cursor: not-allowed;
+	--component-date-picker-calendar-header-shared-button-display: flex;
+	--component-date-picker-calendar-header-shared-button-justify-content: center;
+	--component-date-picker-calendar-header-shared-button-margin-bottom: 0px;
+	--component-date-picker-calendar-header-shared-button-margin-left: 0px;
+	--component-date-picker-calendar-header-shared-button-margin-right: 0px;
+	--component-date-picker-calendar-header-shared-button-margin-top: 0px;
+	--component-date-picker-calendar-header-shared-button-padding-bottom: 0px;
+	--component-date-picker-calendar-header-shared-button-padding-left: 0px;
+	--component-date-picker-calendar-header-shared-button-padding-right: 0px;
+	--component-date-picker-calendar-header-shared-button-padding-top: 0px;
+	--component-date-picker-calendar-header-shared-display: flex;
+	--component-date-picker-calendar-header-shared-justify-content: space-between;
+	--component-date-picker-picker-shared-align-items: center;
+	--component-date-picker-picker-shared-button-align-items: center;
+	--component-date-picker-picker-shared-button-cursor: pointer;
+	--component-date-picker-picker-shared-button-disabled-cursor: not-allowed;
+	--component-date-picker-picker-shared-button-display: flex;
+	--component-date-picker-picker-shared-button-flex: 1;
+	--component-date-picker-picker-shared-button-justify-content: flex-end;
+	--component-date-picker-picker-shared-button-margin-bottom: 0px;
+	--component-date-picker-picker-shared-button-margin-left: 0px;
+	--component-date-picker-picker-shared-button-margin-right: 0px;
+	--component-date-picker-picker-shared-button-margin-top: 0px;
+	--component-date-picker-picker-shared-button-padding-bottom: 0px;
+	--component-date-picker-picker-shared-button-padding-left: 0px;
+	--component-date-picker-picker-shared-button-padding-right: 0px;
+	--component-date-picker-picker-shared-button-padding-top: 0px;
+	--component-date-picker-picker-shared-disabled-cursor: not-allowed;
+	--component-date-picker-picker-shared-display: flex;
+	--component-date-picker-picker-shared-justify-content: space-between;
+	--component-date-picker-picker-shared-padding-bottom: 0px;
+	--component-date-picker-picker-shared-padding-top: 0px;
+	--component-date-picker-picker-shared-width: 100%;
+	--component-date-picker-popover-shared-box-shadow: 0 2px 6px 0
+		rgba(0, 0, 0, 0.3);
+	--component-date-picker-popover-shared-container-padding: 0;
+	--component-date-picker-popover-shared-offset: 8;
+	--component-favicon-align-items: center;
+	--component-favicon-display: inline-flex;
+	--component-favicon-justify-content: center;
+	--component-favicon-user-select: none;
+	--component-form-input-shared-container-display: flex;
+	--component-form-input-shared-container-flex-direction: column;
+	--component-form-input-shared-container-width: 100%;
+	--component-grid-shared-align-items: stretch;
+	--component-grid-shared-direction: row;
+	--component-grid-shared-display: flex;
+	--component-grid-shared-justify-content: flex-start;
+	--component-grid-shared-width: 100%;
+	--component-grid-shared-wrap: wrap;
+	--component-icon-shared-display: inline-flex;
+	--component-icon-shared-user-select: none;
+	--component-inline-message-shared-align-items: center;
+	--component-inline-message-shared-display: inline-flex;
+	--component-inline-message-shared-icon-align-self: flex-start;
+	--component-layout-layout-lg-grid-template-areas: 'alertbanner alertbanner'
+		'topbar topbar' 'sidebar main';
+	--component-layout-layout-lg-grid-template-columns: min-content 1fr;
+	--component-layout-layout-lg-grid-template-rows: min-content min-content 1fr;
+	--component-layout-layout-md-grid-template-areas: 'alertbanner alertbanner'
+		'topbar topbar' 'sidebar main';
+	--component-layout-layout-md-grid-template-columns: min-content 1fr;
+	--component-layout-layout-md-grid-template-rows: min-content min-content 1fr;
+	--component-layout-layout-shared-display: grid;
+	--component-layout-layout-shared-min-height: 100svh;
+	--component-layout-layout-shared-width: 100%;
+	--component-layout-layout-sm-grid-template-areas: 'alertbanner' 'topbar'
+		'sidebar' 'main';
+	--component-layout-layout-sm-grid-template-columns: 1fr;
+	--component-layout-layout-sm-grid-template-rows: min-content min-content
+		min-content 1fr;
+	--component-layout-main-margin-left: auto;
+	--component-layout-main-margin-right: auto;
+	--component-layout-sidebar-md-display: block;
+	--component-layout-sidebar-sm-above-grid-display: block;
+	--component-layout-sidebar-sm-hidden-display: none;
+	--component-link-shared-hover-cursor: pointer;
+	--component-menu-menu-shared-display: flex;
+	--component-menu-menu-shared-flex-direction: column;
+	--component-menu-menu-item-shared-align-items: center;
+	--component-menu-menu-item-shared-aside-align-self: start;
+	--component-menu-menu-item-shared-aside-grid-area: aside;
+	--component-menu-menu-item-shared-aside-justify-self: end;
+	--component-menu-menu-item-shared-description-grid-area: description;
+	--component-menu-menu-item-shared-display: grid;
+	--component-menu-menu-item-shared-focus-visible-outline-offset: -0.125rem;
+	--component-menu-menu-item-shared-grid-template-areas: 'icon label aside';
+	--component-menu-menu-item-shared-grid-template-areas-with-description: 'icon label aside'
+		'. description .';
+	--component-menu-menu-item-shared-grid-template-columns: auto 6fr 1fr;
+	--component-menu-menu-item-shared-hover-outline: none;
+	--component-menu-menu-item-shared-icon-align-self: start;
+	--component-menu-menu-item-shared-icon-grid-area: icon;
+	--component-menu-menu-item-shared-label-grid-area: label;
+	--component-menu-menu-item-shared-last-child-border-bottom: none;
+	--component-menu-menu-popover-md-max-width: 320px;
+	--component-menu-menu-popover-md-width: 100%;
+	--component-menu-menu-popover-shared-overflow: auto;
+	--component-menu-menu-popover-sm-max-width: 200px;
+	--component-menu-menu-popover-sm-width: 100%;
+	--component-menu-menu-section-header-shared-align-items: center;
+	--component-menu-menu-section-header-shared-display: flex;
+	--component-menu-menu-section-header-shared-padding-bottom: 0px;
+	--component-menu-menu-section-header-shared-padding-top: 0px;
+	--component-menu-menu-separator-shared-width: 100%;
+	--component-modal-dialog-children-grid-area: children;
+	--component-modal-dialog-container-display: grid;
+	--component-modal-dialog-container-grid-template-areas: 'dismiss' 'title'
+		'children' 'ctas';
+	--component-modal-dialog-container-grid-template-columns: 1fr;
+	--component-modal-dialog-container-grid-template-rows: auto auto 1fr auto;
+	--component-modal-dialog-ctas-display: flex;
+	--component-modal-dialog-ctas-flex-direction: column;
+	--component-modal-dialog-ctas-grid-area: ctas;
+	--component-modal-dialog-ctas-justify-content: flex-end;
+	--component-modal-dialog-ctas-md-flex-direction: row;
+	--component-modal-dialog-dismiss-border: none;
+	--component-modal-dialog-dismiss-grid-area: dismiss;
+	--component-modal-dialog-dismiss-hovered-background: none;
+	--component-modal-dialog-dismiss-hovered-border: none;
+	--component-modal-dialog-dismiss-margin-left: auto;
+	--component-modal-dialog-title-grid-area: title;
+	--component-modal-modal-box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+	--component-modal-modal-margin-left: 50svw;
+	--component-modal-modal-max-height: 90%;
+	--component-modal-modal-max-width: min(484px, 90svw);
+	--component-modal-modal-position: sticky;
+	--component-modal-modal-top: 50%;
+	--component-modal-modal-translate: -50% -50%;
+	--component-modal-modal-width: max-content;
+	--component-modal-overlay-background-color: rgba(0, 0, 0, 0.4);
+	--component-modal-overlay-height: 100%;
+	--component-modal-overlay-left: 0;
+	--component-modal-overlay-overflow: clip;
+	--component-modal-overlay-position: absolute;
+	--component-modal-overlay-top: 0;
+	--component-modal-overlay-width: 100%;
+	--component-modal-overlay-z-index: 100;
+	--component-radio-group-shared-display: flex;
+	--component-radio-group-shared-indicator-after-border-radius: inherit;
+	--component-radio-group-shared-indicator-after-inset: 0px;
+	--component-radio-group-shared-indicator-after-position: absolute;
+	--component-radio-group-shared-indicator-after-scale: 0;
+	--component-radio-group-shared-indicator-border-radius: 50%;
+	--component-radio-group-shared-indicator-position: relative;
+	--component-radio-group-shared-indicator-selected-after-scale: 0.6;
+	--component-radio-group-shared-orientation-horizontal-flex-direction: row;
+	--component-radio-group-shared-orientation-vertical-flex-direction: column;
+	--component-radio-group-shared-radio-align-items: center;
+	--component-radio-group-shared-radio-display: flex;
+	--component-search-input-md-icon-margin-right: 8px;
+	--component-search-input-shared-cursor: text;
+	--component-search-input-shared-disabled-cursor: not-allowed;
+	--component-search-input-shared-padding-bottom: 0px;
+	--component-search-input-shared-padding-top: 0px;
+	--component-search-input-sm-icon-margin-right: 6px;
+	--component-select-shared-button-align-items: center;
+	--component-select-shared-button-disabled-cursor: not-allowed;
+	--component-select-shared-button-display: flex;
+	--component-select-shared-button-justify-content: space-between;
+	--component-select-shared-container-padding: 0;
+	--component-select-shared-hover-outline: none; /** Override outline focus styles on hover */
+	--component-select-shared-offset: 8;
+	--component-select-shared-option-focused-background-color: inherit;
+	--component-select-shared-option-focused-outline-offset: 0px;
+	--component-select-shared-width: 100%;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-align-items: center;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-display: flex;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-justify-content: space-between;
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-width: 100%;
+	--component-sidebar-stepper-navigation-navigation-shared-flex-direction: column;
+	--component-sidebar-stepper-navigation-navigation-shared-height: 100%;
+	--component-sidebar-stepper-navigation-status-row-shared-align-items: center;
+	--component-sidebar-stepper-navigation-status-row-shared-display: flex;
+	--component-sidebar-stepper-navigation-step-shared-cursor: pointer;
+	--component-sidebar-stepper-navigation-step-shared-disabled-cursor: default;
+	--component-sidebar-stepper-navigation-step-content-shared-display: flex;
+	--component-sidebar-stepper-navigation-step-content-shared-flex-direction: column;
+	--component-sidebar-stepper-navigation-step-content-shared-justify-content: center;
+	--component-sidebar-stepper-navigation-step-number-shared-align-items: center;
+	--component-sidebar-stepper-navigation-step-number-shared-display: flex;
+	--component-sidebar-stepper-navigation-step-number-shared-height: 100%;
+	--component-sidebar-stepper-navigation-step-number-shared-justify-content: center;
+	--component-tabs-tab-shared-align-items: center;
+	--component-tabs-tab-shared-cursor: pointer;
+	--component-tabs-tab-shared-disabled-cursor: not-allowed;
+	--component-tabs-tab-shared-display: inline-flex;
+	--component-tabs-tab-shared-flex-direction: row;
+	--component-tabs-tab-shared-focus-visible-outline-offset: -0.0625rem;
+	--component-tabs-tab-shared-justify-content: center;
+	--component-tabs-tab-shared-padding-bottom: 0px;
+	--component-tabs-tab-shared-padding-top: 0px;
+	--component-tabs-tab-shared-position: relative;
+	--component-tabs-tab-list-shared-display: flex;
+	--component-tabs-tab-list-shared-orientation-horizontal-flex-direction: row;
+	--component-tabs-tab-list-shared-orientation-vertical-flex-direction: column;
+	--component-tabs-tab-panel-shared-position: initial;
+	--component-tabs-tab-panels-shared-overflow: clip;
+	--component-tabs-tab-panels-shared-position: relative;
+	--component-tabs-tabs-shared-display: flex;
+	--component-tabs-tabs-shared-max-width: 100%;
+	--component-tabs-tabs-shared-orientation-horizontal-flex-direction: column;
+	--component-tabs-tabs-shared-orientation-vertical-flex-direction: row;
+	--component-tabs-tabs-shared-orientation-vertical-width: 100%;
+	--component-text-area-shared-cursor: text;
+	--component-text-area-shared-disabled-cursor: not-allowed;
+	--component-text-area-shared-height: 144px;
+	--component-text-input-shared-cursor: text;
+	--component-text-input-shared-disabled-cursor: not-allowed;
+	--component-text-input-shared-padding-bottom: 0px;
+	--component-text-input-shared-padding-top: 0px;
+	--component-toast-region-display: flex;
+	--component-toast-region-flex-direction: column;
+	--component-toast-region-outline: none;
+	--component-toast-region-position: fixed;
+	--component-toast-region-z-index: 1000;
+	--component-toast-shared-align-items: start;
+	--component-toast-shared-border-style: solid;
+	--component-toast-shared-border-width: 0px;
+	--component-toast-shared-content-display: flex;
+	--component-toast-shared-content-flex-direction: column;
+	--component-toast-shared-display: grid;
+	--component-toast-shared-max-width: 26.25rem;
+	--component-toast-shared-media-size: 4rem;
+	--component-toast-shared-width: 100%;
+	--component-toggle-switch-md-thumb-translate-x: 1.75rem;
+	--component-toggle-switch-md-track-width: 3.75rem;
+	--component-toggle-switch-shared-align-items: center;
+	--component-toggle-switch-shared-cursor: pointer;
+	--component-toggle-switch-shared-disabled-cursor: not-allowed;
+	--component-toggle-switch-shared-display: flex;
+	--component-toggle-switch-shared-label-align-items: flex-start;
+	--component-toggle-switch-shared-label-display: flex;
+	--component-toggle-switch-shared-label-flex-direction: column;
+	--component-toggle-switch-shared-thumb-border-radius: 50%;
+	--component-toggle-switch-shared-thumb-transition: transform 200ms;
+	--component-toggle-switch-shared-track-align-items: center;
+	--component-toggle-switch-shared-track-border-radius: 100px;
+	--component-toggle-switch-shared-track-display: flex;
+	--component-toggle-switch-shared-track-transition: background-color 200ms;
+	--component-toggle-switch-sm-track-width: 2.75rem;
+	--component-tooltip-tooltip-max-width: 26ch;
+	--component-top-bar-collapsed-nav-menu-button-border: none;
+	--component-top-bar-collapsed-nav-menu-button-cursor: pointer;
+	--component-top-bar-collapsed-nav-menu-button-margin: 0px;
+	--component-top-bar-collapsed-nav-menu-button-padding: 0px;
+	--component-top-bar-collapsed-nav-menu-popover-container-padding: 0; /** The placement padding that should be applied between the element and its surrounding container. https://react-aria.adobe.com/Popover#popover */
+	--component-top-bar-collapsed-nav-menu-popover-offset: 1; /** The additional offset applied along the main axis between the element and its anchor element. https://react-aria.adobe.com/Popover#popover */
+	--component-top-bar-display: flex;
+	--component-top-bar-item-align-items: center;
+	--component-top-bar-item-display: flex;
+	--component-top-bar-item-height: 100%;
+	--component-top-bar-item-lg-padding-bottom: 0px;
+	--component-top-bar-item-lg-padding-top: 0px;
+	--component-top-bar-item-md-padding-bottom: 0px;
+	--component-top-bar-item-md-padding-top: 0px;
+	--component-top-bar-item-sm-padding-bottom: 0px;
+	--component-top-bar-item-sm-padding-top: 0px;
+	--component-top-bar-justify-content: flex-start;
+	--component-top-bar-navigation-shared-menu-open-height: 64px;
+	--component-top-bar-navigation-shared-menu-open-width: 100%;
+	--component-top-bar-navigation-shared-align-items: center;
+	--component-top-bar-navigation-shared-cursor: pointer;
+	--component-top-bar-navigation-shared-disabled-cursor: not-allowed;
+	--component-top-bar-navigation-shared-display: inline-flex;
+	--component-top-bar-navigation-shared-focus-visible-outline-offset: -0.0625rem;
+	--component-top-bar-navigation-shared-height: 100%;
+	--component-top-bar-navigation-shared-padding-bottom: 0px;
+	--component-top-bar-navigation-shared-padding-top: 0px;
+	--component-top-bar-navigation-shared-position: relative;
+	--component-top-bar-navigation-shared-text-decoration: none;
+	--component-top-bar-spacer-margin-left: auto;
+	--component-top-bar-tool-name-align-items: center;
+	--component-top-bar-tool-name-display: flex;
+	--component-top-bar-tool-name-hover-link-collapsed-justify-content: center;
+	--component-top-bar-tool-name-hover-link-focused-outline-offset: -0.125rem;
+	--component-top-bar-tool-name-hover-link-height: 100%;
+	--component-top-bar-tool-name-hover-link-hover-opacity: 1;
+	--component-top-bar-tool-name-hover-link-opacity: 0;
+	--component-top-bar-tool-name-hover-link-position: absolute;
+	--component-top-bar-tool-name-hover-link-width: 100%;
+	--component-top-bar-tool-name-link-color: unset;
+	--component-top-bar-tool-name-link-height: 100%;
+	--component-top-bar-tool-name-link-position: relative;
+	--component-top-bar-tool-name-link-text-decoration: none;
+	--component-top-bar-tool-name-link-width: 100%;
+	--component-user-feedback-summary-shared-border-style: solid;
+	--component-user-feedback-summary-shared-max-width: 46ch;
+	--component-html-preview-loader-padding-bottom: 0px;
+	--component-html-preview-loader-padding-top: 0px;
+	--component-html-preview-loader-preview-frame-border-style: solid;
+	--component-intended-audience-signifier-align-items: center;
+	--component-intended-audience-signifier-border-style: solid;
+	--component-intended-audience-signifier-border-width: 1px;
+	--component-intended-audience-signifier-box-sizing: border-box;
+	--component-intended-audience-signifier-display: flex;
+	--component-intended-audience-signifier-flex-direction: row;
+	--component-intended-audience-signifier-justify-content: center;
+	--component-intended-audience-signifier-svg-height: 12px;
+	--component-intended-audience-signifier-svg-width: 16px;
+	--component-intended-audience-signifier-typography-line-height: 1;
+	--component-intended-audience-signifier-width: fit-content;
+	--component-pagination-item-border-style: solid;
+	--component-pagination-item-cursor: pointer;
+	--component-pagination-item-disabled-cursor: not-allowed;
+	--component-pagination-item-padding-y: 0px; /** 0 because the item has a fixed height and flex-centers its content; vertical padding would only shrink the content box */
+	--component-pagination-shared-align-items: center;
+	--component-pagination-shared-display: flex;
+	--component-pagination-shared-margin: 0px;
+	--component-pagination-shared-padding: 0px;
+	--component-picker-iframe-modal-header-contents-align-items: center;
+	--component-picker-iframe-modal-header-contents-display: flex;
+	--component-picker-iframe-modal-header-contents-justify-content: space-between;
+	--component-picker-iframe-modal-iframe-background-color: unset;
+	--component-picker-iframe-modal-iframe-height: 600px;
+	--component-picker-iframe-modal-iframe-margin-bottom: 0px;
+	--component-picker-iframe-modal-iframe-margin-left: 0px;
+	--component-picker-iframe-modal-iframe-margin-right: 0px;
+	--component-picker-iframe-modal-iframe-margin-top: 0px;
+	--component-picker-iframe-modal-iframe-max-height: 70vh;
+	--component-picker-iframe-modal-iframe-width: 100%;
+	--component-picker-iframe-modal-iframe-container-padding-bottom: 0px;
+	--component-picker-iframe-modal-iframe-container-padding-left: 0px;
+	--component-picker-iframe-modal-iframe-container-padding-right: 0px;
+	--component-picker-iframe-modal-iframe-container-padding-top: 0px;
+	--component-table-row-focus-visible-outline-offset: -0.0625rem;
+	--component-table-table-width: 100%;
+	--component-tag-picker-offline-section-gap: 4px;
+	--component-tag-picker-offline-section-justify-content: flex-start;
+	--component-tag-picker-search-width: 100%;
+	--component-tag-picker-select-flex-basis: 25%;
+	--component-tag-picker-shared-gap: 15px;
+	--component-tag-picker-shared-width: 100%;
+	--component-tag-table-add-button-font-size: 13px;
+	--component-tag-table-add-button-font-weight: 400;
+	--component-tag-table-add-button-padding-x: 10px;
+	--component-tag-table-add-button-padding-y: 0px;
+	--component-tag-table-cell-border-between-cells-border-style: solid;
+	--component-tag-table-cell-border-between-cells-border-width: 1px;
+	--component-tag-table-cell-first-cell-padding-left: 12px;
+	--component-tag-table-cell-padding-x: 5px;
+	--component-tag-table-cell-padding-y: 3px;
+	--component-tag-table-header-gap: 4px;
+	--component-tag-table-header-padding-bottom: 3px;
+	--component-tag-table-header-padding-left: 12px;
+	--component-tag-table-header-padding-right: 5px;
+	--component-tag-table-header-padding-top: 3px;
+	--component-tag-table-heading-font-weight: 700;
+	--component-tag-table-row-border-bottom-border-style: solid;
+	--component-tag-table-row-border-bottom-border-width: 1px;
+	--component-tag-table-row-height: 28px;
+	--component-tag-table-sub-heading-font-weight: 400;
+	--component-tag-table-type-badge-font-size: 10px;
+	--component-tag-table-type-badge-font-weight: 700;
+	--component-tag-table-type-badge-padding-x: 6px;
+	--component-tag-table-type-badge-padding-y: 2px;
+	--component-tile-md-min-height: 89px;
+	--component-tile-md-width: 360px;
+	--component-tile-shared-align-items: center;
+	--component-tile-shared-border-style: solid;
+	--component-tile-shared-cursor: pointer;
+	--component-tile-shared-disabled-cursor: not-allowed;
+	--component-tile-shared-display: inline-flex;
+	--component-tile-shared-flex-direction: column;
+	--component-tile-shared-justify-content: space-between;
+	--component-tile-shared-max-width: 100%;
+	--component-tile-shared-text-decoration: none;
+	--component-tile-shared-tile-arrow-shared-flex-shrink: 0;
+	--component-tile-shared-tile-arrow-shared-margin-left: auto;
+	--component-tile-shared-tile-icon-shared-flex-shrink: 0;
+	--component-tile-sm-min-height: 74px;
+	--component-tile-sm-width: 280px;
+	--component-tile-xs-min-height: 56px;
+	--component-tile-xs-width: 180px;
+	--component-user-menu-container-width: 300px;
+	--component-user-menu-heading-font-weight: 700;
+	--component-user-menu-heading-padding-bottom: 0px;
+	--component-user-menu-heading-padding-left: 0px;
+	--component-user-menu-heading-padding-right: 0px;
+	--component-user-menu-heading-padding-top: 0px;
+	--component-user-menu-heading-text-align: left;
+	--component-user-menu-label-font-weight: 700;
+	--component-user-menu-label-padding-left: 0px;
+	--component-user-menu-label-padding-right: 0px;
+	--component-user-menu-label-padding-top: 15px;
+	--component-user-menu-label-text-align: left;
+	--semantic-breakpoints-lg: 1056px;
+	--semantic-breakpoints-md: 830px;
+	--semantic-breakpoints-sm: 0px;
+	--semantic-grid-columns-lg: 12;
+	--semantic-grid-columns-md: 12;
+	--semantic-grid-columns-sm: 12;
+	--semantic-grid-gutter-lg-px: 16px;
+	--semantic-grid-gutter-md-px: 16px;
+	--semantic-grid-gutter-sm-px: 16px;
+	--semantic-grid-margin-bottom-lg-px: 64px;
+	--semantic-grid-margin-bottom-md-px: 64px;
+	--semantic-grid-margin-bottom-sm-px: 64px;
+	--semantic-grid-margin-lg-px: 24px;
+	--semantic-grid-margin-md-px: 24px;
+	--semantic-grid-margin-sm-px: 16px;
+	--semantic-grid-margin-top-lg-px: 48px;
+	--semantic-grid-margin-top-md-px: 28px;
+	--semantic-grid-margin-top-sm-px: 24px;
+	--semantic-sizing-floating-ui-max-width-px: 200px;
+	--semantic-sizing-input-max-width-px: 450px;
+	--semantic-sizing-layout-max-width-px: 1584px;
+	--semantic-sizing-sidebar-lg-px: 280px;
+	--semantic-sizing-sidebar-md-px: 200px;
+	--semantic-typography-article-body-bold-italic-md-font-width: 100;
+	--semantic-typography-article-body-bold-md-font-width: 100;
+	--semantic-typography-article-body-italic-md-font-width: 100;
+	--semantic-typography-article-body-md-font-width: 100;
+	--semantic-typography-title-lg-font-width: 100;
+	--semantic-typography-title-md-font-width: 100;
+	--semantic-typography-title-sm-font-width: 100;
+	--semantic-typography-title-xl-font-width: 100;
+	--component-byline-background-color: var(--base-colors-neutral-900);
+	--component-byline-border-color: var(--base-colors-neutral-0);
+	--component-byline-chip-border-color: var(--base-colors-neutral-700);
+	--component-byline-chip-selected-border-color: var(--base-colors-blue-800);
+	--component-byline-chip-tagged-background-color: var(
+		--base-colors-neutral-700
+	);
+	--component-byline-dropdown-background-color: var(--base-colors-neutral-900);
+	--component-byline-dropdown-border-color: var(--base-colors-neutral-650);
+	--component-byline-dropdown-li-border-bottom-color: var(
+		--base-colors-neutral-650
+	);
+	--component-byline-dropdown-li-selected-background-color: var(
+		--base-colors-teal-500
+	);
+	--component-byline-dropdown-li-selected-color: var(--base-colors-neutral-900);
+	--component-byline-invisibles-color: var(--base-colors-neutral-600);
+	--component-byline-placeholder-color: var(--base-colors-neutral-400);
+	--component-byline-readonly-background-color: var(--base-colors-neutral-700);
+	--component-alert-banner-shared-content-gap: var(--base-spacing-8-rem);
+	--component-alert-banner-shared-padding-left: var(--base-spacing-16-rem);
+	--component-alert-banner-shared-padding-right: var(--base-spacing-16-rem);
+	--component-autocomplete-icon-color: var(--base-colors-neutral-600);
+	--component-autocomplete-input-border-radius: var(--base-radius-corner4-rem);
+	--component-autocomplete-input-focused-outline-offset: var(
+		--base-spacing-2-rem
+	);
+	--component-autocomplete-input-padding: var(--base-spacing-12-rem);
+	--component-avatar-md-size: var(--base-sizing-size40-rem);
+	--component-avatar-shared-color-blue-active-background: var(
+		--base-colors-blue-600
+	);
+	--component-avatar-shared-color-blue-hover-background: var(
+		--base-colors-blue-700
+	);
+	--component-avatar-shared-color-cool-purple-active-background: var(
+		--base-colors-cool-purple-600
+	);
+	--component-avatar-shared-color-cool-purple-hover-background: var(
+		--base-colors-cool-purple-700
+	);
+	--component-avatar-shared-color-cyan-active-background: var(
+		--base-colors-cyan-600
+	);
+	--component-avatar-shared-color-cyan-hover-background: var(
+		--base-colors-cyan-700
+	);
+	--component-avatar-shared-color-green-active-background: var(
+		--base-colors-green-600
+	);
+	--component-avatar-shared-color-green-hover-background: var(
+		--base-colors-green-700
+	);
+	--component-avatar-shared-color-magenta-active-background: var(
+		--base-colors-magenta-600
+	);
+	--component-avatar-shared-color-magenta-hover-background: var(
+		--base-colors-magenta-700
+	);
+	--component-avatar-shared-color-orange-active-background: var(
+		--base-colors-orange-600
+	);
+	--component-avatar-shared-color-orange-hover-background: var(
+		--base-colors-orange-700
+	);
+	--component-avatar-shared-color-outlined-active-background: var(
+		--base-colors-neutral-700
+	);
+	--component-avatar-shared-color-outlined-hover-background: var(
+		--base-colors-neutral-800
+	);
+	--component-avatar-shared-color-red-active-background: var(
+		--base-colors-red-600
+	);
+	--component-avatar-shared-color-red-hover-background: var(
+		--base-colors-red-700
+	);
+	--component-avatar-shared-color-teal-active-background: var(
+		--base-colors-teal-600
+	);
+	--component-avatar-shared-color-teal-hover-background: var(
+		--base-colors-teal-700
+	);
+	--component-avatar-shared-color-warm-purple-active-background: var(
+		--base-colors-warm-purple-600
+	);
+	--component-avatar-shared-color-warm-purple-hover-background: var(
+		--base-colors-warm-purple-700
+	);
+	--component-avatar-shared-color-yellow-active-background: var(
+		--base-colors-yellow-600
+	);
+	--component-avatar-shared-color-yellow-hover-background: var(
+		--base-colors-yellow-700
+	);
+	--component-avatar-shared-link-focus-visible-outline-offset: var(
+		--base-spacing-2-rem
+	);
+	--component-avatar-sm-size: var(--base-sizing-size32-rem);
+	--component-badge-size-md-padding-bottom: var(--base-spacing-4-px);
+	--component-badge-size-md-padding-left: var(--base-spacing-10-px);
+	--component-badge-size-md-padding-right: var(--base-spacing-10-px);
+	--component-badge-size-md-padding-top: var(--base-spacing-4-px);
+	--component-badge-size-sm-padding-bottom: var(--base-spacing-4-px);
+	--component-badge-size-sm-padding-left: var(--base-spacing-8-px);
+	--component-badge-size-sm-padding-right: var(--base-spacing-8-px);
+	--component-badge-size-sm-padding-top: var(--base-spacing-4-px);
+	--component-badge-size-xs-padding-left: var(--base-spacing-6-px);
+	--component-badge-size-xs-padding-right: var(--base-spacing-6-px);
+	--component-button-primary-lg-icon-gap: var(--base-spacing-4-rem);
+	--component-button-primary-lg-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-primary-lg-padding-left: var(--base-spacing-16-rem);
+	--component-button-primary-lg-padding-right: var(--base-spacing-16-rem);
+	--component-button-primary-lg-padding-top: var(--base-spacing-4-rem);
+	--component-button-primary-lg-padding-with-icon-icon-left-left: var(
+		--base-spacing-12-rem
+	);
+	--component-button-primary-md-icon-gap: var(--base-spacing-4-rem);
+	--component-button-primary-md-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-primary-md-padding-left: var(--base-spacing-12-rem);
+	--component-button-primary-md-padding-right: var(--base-spacing-12-rem);
+	--component-button-primary-md-padding-top: var(--base-spacing-4-rem);
+	--component-button-primary-md-padding-with-icon-icon-left-left: var(
+		--base-spacing-8-rem
+	);
+	--component-button-primary-shared-border-radius: var(
+		--base-radius-corner4-rem
+	);
+	--component-button-primary-sm-icon-gap: var(--base-spacing-4-rem);
+	--component-button-primary-sm-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-primary-sm-padding-left: var(--base-spacing-10-rem);
+	--component-button-primary-sm-padding-right: var(--base-spacing-10-rem);
+	--component-button-primary-sm-padding-top: var(--base-spacing-4-rem);
+	--component-button-primary-sm-padding-with-icon-icon-left-left: var(
+		--base-spacing-8-rem
+	);
+	--component-button-primary-xs-icon-gap: var(--base-spacing-4-rem);
+	--component-button-primary-xs-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-primary-xs-padding-left: var(--base-spacing-8-rem);
+	--component-button-primary-xs-padding-right: var(--base-spacing-8-rem);
+	--component-button-primary-xs-padding-top: var(--base-spacing-4-rem);
+	--component-button-primary-xs-padding-with-icon-icon-left-left: var(
+		--base-spacing-4-rem
+	);
+	--component-button-secondary-lg-icon-gap: var(--base-spacing-4-rem);
+	--component-button-secondary-lg-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-secondary-lg-padding-left: var(--base-spacing-16-rem);
+	--component-button-secondary-lg-padding-right: var(--base-spacing-16-rem);
+	--component-button-secondary-lg-padding-top: var(--base-spacing-4-rem);
+	--component-button-secondary-lg-padding-with-icon-icon-left-left: var(
+		--base-spacing-12-rem
+	);
+	--component-button-secondary-md-icon-gap: var(--base-spacing-4-rem);
+	--component-button-secondary-md-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-secondary-md-padding-left: var(--base-spacing-12-rem);
+	--component-button-secondary-md-padding-right: var(--base-spacing-12-rem);
+	--component-button-secondary-md-padding-top: var(--base-spacing-4-rem);
+	--component-button-secondary-md-padding-with-icon-icon-left-left: var(
+		--base-spacing-8-rem
+	);
+	--component-button-secondary-shared-border-radius: var(
+		--base-radius-corner4-rem
+	);
+	--component-button-secondary-sm-icon-gap: var(--base-spacing-4-rem);
+	--component-button-secondary-sm-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-secondary-sm-padding-left: var(--base-spacing-10-rem);
+	--component-button-secondary-sm-padding-right: var(--base-spacing-10-rem);
+	--component-button-secondary-sm-padding-top: var(--base-spacing-4-rem);
+	--component-button-secondary-sm-padding-with-icon-icon-left-left: var(
+		--base-spacing-8-rem
+	);
+	--component-button-secondary-xs-icon-gap: var(--base-spacing-4-rem);
+	--component-button-secondary-xs-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-secondary-xs-padding-left: var(--base-spacing-8-rem);
+	--component-button-secondary-xs-padding-right: var(--base-spacing-8-rem);
+	--component-button-secondary-xs-padding-top: var(--base-spacing-4-rem);
+	--component-button-secondary-xs-padding-with-icon-icon-left-left: var(
+		--base-spacing-4-rem
+	);
+	--component-button-shared-focus-visible-outline-offset: var(
+		--base-spacing-2-rem
+	);
+	--component-button-tertiary-lg-icon-gap: var(--base-spacing-4-rem);
+	--component-button-tertiary-lg-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-tertiary-lg-padding-left: var(--base-spacing-16-rem);
+	--component-button-tertiary-lg-padding-right: var(--base-spacing-16-rem);
+	--component-button-tertiary-lg-padding-top: var(--base-spacing-4-rem);
+	--component-button-tertiary-lg-padding-with-icon-icon-left-left: var(
+		--base-spacing-12-rem
+	);
+	--component-button-tertiary-md-icon-gap: var(--base-spacing-4-rem);
+	--component-button-tertiary-md-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-tertiary-md-padding-left: var(--base-spacing-12-rem);
+	--component-button-tertiary-md-padding-right: var(--base-spacing-12-rem);
+	--component-button-tertiary-md-padding-top: var(--base-spacing-4-rem);
+	--component-button-tertiary-md-padding-with-icon-icon-left-left: var(
+		--base-spacing-8-rem
+	);
+	--component-button-tertiary-shared-border-radius: var(
+		--base-radius-corner4-rem
+	);
+	--component-button-tertiary-sm-icon-gap: var(--base-spacing-4-rem);
+	--component-button-tertiary-sm-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-tertiary-sm-padding-left: var(--base-spacing-10-rem);
+	--component-button-tertiary-sm-padding-right: var(--base-spacing-10-rem);
+	--component-button-tertiary-sm-padding-top: var(--base-spacing-4-rem);
+	--component-button-tertiary-sm-padding-with-icon-icon-left-left: var(
+		--base-spacing-8-rem
+	);
+	--component-button-tertiary-xs-icon-gap: var(--base-spacing-4-rem);
+	--component-button-tertiary-xs-padding-bottom: var(--base-spacing-4-rem);
+	--component-button-tertiary-xs-padding-left: var(--base-spacing-8-rem);
+	--component-button-tertiary-xs-padding-right: var(--base-spacing-8-rem);
+	--component-button-tertiary-xs-padding-top: var(--base-spacing-4-rem);
+	--component-button-tertiary-xs-padding-with-icon-icon-left-left: var(
+		--base-spacing-4-rem
+	);
+	--component-checkbox-group-md-gap: var(--base-spacing-20-rem);
+	--component-checkbox-group-md-margin-bottom: var(
+		--base-spacing-12-rem
+	); /** spacing between the input itself and the following element (error) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
+	--component-checkbox-group-md-margin-top: var(
+		--base-spacing-12-rem
+	); /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
+	--component-checkbox-group-sm-gap: var(--base-spacing-16-rem);
+	--component-checkbox-group-sm-margin-bottom: var(
+		--base-spacing-8-rem
+	); /** spacing between the input itself and the following element (error) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
+	--component-checkbox-group-sm-margin-top: var(
+		--base-spacing-8-rem
+	); /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
+	--component-checkbox-input-md-indicator-size: var(--base-sizing-size24-rem);
+	--component-checkbox-input-shared-gap: var(--base-spacing-8-rem);
+	--component-checkbox-input-shared-indicator-border-radius: var(
+		--base-radius-corner4-rem
+	);
+	--component-checkbox-input-shared-indicator-focus-visible-outline-offset: var(
+		--base-spacing-2-rem
+	);
+	--component-checkbox-input-sm-indicator-size: var(--base-sizing-size20-rem);
+	--component-date-picker-calendar-header-shared-button-background-color: var(
+		--base-colors-transparent
+	);
+	--component-date-picker-picker-shared-border-radius: var(
+		--base-radius-corner4-rem
+	);
+	--component-date-picker-picker-shared-button-background-color: var(
+		--base-colors-transparent
+	);
+	--component-date-picker-picker-shared-button-border: 0 solid
+		var(--base-colors-transparent);
+	--component-date-picker-picker-shared-gap: var(--base-spacing-8-rem);
+	--component-date-picker-picker-shared-padding-left: var(
+		--base-spacing-12-rem
+	);
+	--component-date-picker-picker-shared-padding-right: var(
+		--base-spacing-4-rem
+	);
+	--component-date-picker-popover-shared-padding-bottom: var(
+		--base-spacing-4-rem
+	);
+	--component-date-picker-popover-shared-padding-left: var(
+		--base-spacing-4-rem
+	);
+	--component-date-picker-popover-shared-padding-right: var(
+		--base-spacing-4-rem
+	);
+	--component-date-picker-popover-shared-padding-top: var(--base-spacing-4-rem);
+	--component-favicon-color-background: var(--base-colors-cyan-200);
+	--component-favicon-size: var(--base-sizing-size32-rem);
+	--component-favicon-typography-font-width: var(
+		--semantic-typography-title-md-font-width
+	);
+	--component-form-input-shared-container-gap: var(--base-spacing-4-rem);
+	--component-form-input-shared-container-max-width: var(
+		--semantic-sizing-input-max-width-px
+	);
+	--component-grid-lg-columns: var(--semantic-grid-columns-lg);
+	--component-grid-lg-gap: var(--semantic-grid-gutter-lg-px);
+	--component-grid-lg-padding: var(--semantic-grid-margin-lg-px);
+	--component-grid-md-columns: var(--semantic-grid-columns-md);
+	--component-grid-md-gap: var(--semantic-grid-gutter-md-px);
+	--component-grid-md-padding: var(--semantic-grid-margin-md-px);
+	--component-grid-sm-columns: var(--semantic-grid-columns-sm);
+	--component-grid-sm-gap: var(--semantic-grid-gutter-sm-px);
+	--component-grid-sm-padding: var(--semantic-grid-margin-sm-px);
+	--component-inline-message-shared-gap: var(--base-spacing-4-rem);
+	--component-layout-main-lg-padding-bottom: var(
+		--semantic-grid-margin-bottom-lg-px
+	);
+	--component-layout-main-lg-padding-top: var(--semantic-grid-margin-top-lg-px);
+	--component-layout-main-max-width: var(--semantic-sizing-layout-max-width-px);
+	--component-layout-main-md-padding-bottom: var(
+		--semantic-grid-margin-bottom-md-px
+	);
+	--component-layout-main-md-padding-top: var(--semantic-grid-margin-top-md-px);
+	--component-layout-main-sm-padding-bottom: var(
+		--semantic-grid-margin-bottom-sm-px
+	);
+	--component-layout-main-sm-padding-top: var(--semantic-grid-margin-top-sm-px);
+	--component-layout-sidebar-lg-width: var(--semantic-sizing-sidebar-lg-px);
+	--component-layout-sidebar-md-width: var(--semantic-sizing-sidebar-md-px);
+	--component-menu-menu-item-md-icon-line-height: var(
+		--base-typography-line-height-normal
+	);
+	--component-menu-menu-item-shared-gap: var(--base-spacing-4-rem);
+	--component-menu-menu-item-shared-padding-bottom: var(--base-spacing-12-rem);
+	--component-menu-menu-item-shared-padding-left: var(--base-spacing-16-rem);
+	--component-menu-menu-item-shared-padding-right: var(--base-spacing-16-rem);
+	--component-menu-menu-item-shared-padding-top: var(--base-spacing-12-rem);
+	--component-menu-menu-item-sm-icon-line-height: var(
+		--base-typography-line-height-normal
+	);
+	--component-menu-menu-section-header-shared-padding-left: var(
+		--base-spacing-8-rem
+	);
+	--component-menu-menu-section-header-shared-padding-right: var(
+		--base-spacing-8-rem
+	);
+	--component-menu-menu-separator-shared-height: var(--base-sizing-size8-rem);
+	--component-modal-dialog-dismiss-height: var(--base-sizing-size16-rem);
+	--component-modal-dialog-dismiss-width: var(--base-sizing-size16-rem);
+	--component-radio-group-md-gap: var(--base-spacing-20-rem);
+	--component-radio-group-md-indicator-width: var(--base-sizing-size24-rem);
+	--component-radio-group-shared-indicator-focused-outline-offset: var(
+		--base-spacing-2-rem
+	);
+	--component-radio-group-shared-margin-bottom: var(
+		--base-spacing-8-rem
+	); /** spacing between the input itself and the next element (error text) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
+	--component-radio-group-shared-margin-top: var(
+		--base-spacing-8-rem
+	); /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
+	--component-radio-group-shared-radio-gap: var(--base-spacing-8-rem);
+	--component-radio-group-sm-gap: var(--base-spacing-16-rem);
+	--component-radio-group-sm-indicator-width: var(--base-sizing-size20-rem);
+	--component-search-input-shared-border-radius: var(--base-radius-corner4-rem);
+	--component-search-input-shared-margin-top: var(
+		--base-spacing-4-rem
+	); /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 8px, then margin-top should be 4px */
+	--component-search-input-shared-padding-left: var(--base-spacing-12-rem);
+	--component-search-input-shared-padding-right: var(--base-spacing-12-rem);
+	--component-select-shared-button-border-radius: var(
+		--base-radius-corner4-rem
+	);
+	--component-select-shared-button-focused-outline-offset: var(
+		--base-spacing-2-rem
+	);
+	--component-select-shared-button-margin-top: var(--base-spacing-4-rem);
+	--component-select-shared-button-padding-left: var(--base-spacing-12-rem);
+	--component-select-shared-button-padding-right: var(--base-spacing-4-rem);
+	--component-select-shared-option-padding-bottom: var(--base-spacing-12-rem);
+	--component-select-shared-option-padding-left: var(--base-spacing-16-rem);
+	--component-select-shared-option-padding-right: var(--base-spacing-16-rem);
+	--component-select-shared-option-padding-top: var(--base-spacing-12-rem);
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-height: var(
+		--base-spacing-72-rem
+	);
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-padding-inline: var(
+		--base-spacing-16-rem
+	);
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-pressed-background-color: var(
+		--base-colors-neutral-750
+	);
+	--component-sidebar-stepper-navigation-status-row-shared-gap: var(
+		--base-spacing-6-rem
+	);
+	--component-sidebar-stepper-navigation-status-row-shared-icon-size: var(
+		--base-sizing-size16-rem
+	);
+	--component-sidebar-stepper-navigation-step-shared-background-color: var(
+		--base-colors-neutral-900
+	);
+	--component-sidebar-stepper-navigation-step-shared-height: var(
+		--base-spacing-72-rem
+	);
+	--component-sidebar-stepper-navigation-step-shared-number-column-width: var(
+		--base-spacing-32-rem
+	);
+	--component-sidebar-stepper-navigation-step-content-shared-margin-left: var(
+		--base-spacing-12-rem
+	);
+	--component-tabs-tab-shared-gap: var(--base-spacing-6-rem);
+	--component-tabs-tab-shared-padding-left: var(--base-spacing-16-rem);
+	--component-tabs-tab-shared-padding-right: var(--base-spacing-16-rem);
+	--component-tabs-tab-shared-padding-vertical-right: var(
+		--base-spacing-20-rem
+	);
+	--component-tabs-tab-shared-padding-with-icon-right: var(
+		--base-spacing-20-rem
+	);
+	--component-tabs-tab-shared-padding-with-icon-vertical-right: var(
+		--base-spacing-24-rem
+	);
+	--component-text-area-shared-border-radius: var(--base-radius-corner4-rem);
+	--component-text-area-shared-margin-top: var(
+		--base-spacing-4-rem
+	); /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 8px, then margin-top should be 4px */
+	--component-text-area-shared-padding-bottom: var(--base-spacing-8-rem);
+	--component-text-area-shared-padding-left: var(--base-spacing-12-rem);
+	--component-text-area-shared-padding-right: var(--base-spacing-12-rem);
+	--component-text-area-shared-padding-top: var(--base-spacing-8-rem);
+	--component-text-input-shared-border-radius: var(--base-radius-corner4-rem);
+	--component-text-input-shared-margin-top: var(
+		--base-spacing-4-rem
+	); /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 8px, then margin-top should be 4px */
+	--component-text-input-shared-padding-left: var(--base-spacing-12-rem);
+	--component-text-input-shared-padding-right: var(--base-spacing-12-rem);
+	--component-toast-region-right: var(--base-spacing-20-rem);
+	--component-toast-region-top: var(--base-spacing-20-rem);
+	--component-toggle-switch-md-thumb-icon-size: var(--base-sizing-size20-rem);
+	--component-toggle-switch-md-thumb-size: var(--base-sizing-size24-rem);
+	--component-toggle-switch-md-track-height: var(--base-sizing-size32-rem);
+	--component-toggle-switch-shared-gap: var(--base-spacing-8-rem);
+	--component-toggle-switch-shared-label-padding-block: var(
+		--base-spacing-2-rem
+	);
+	--component-toggle-switch-shared-track-focus-visible-outline-offset: var(
+		--base-spacing-2-rem
+	);
+	--component-toggle-switch-shared-track-padding: var(--base-spacing-4-rem);
+	--component-toggle-switch-sm-thumb-icon-size: var(--base-sizing-size16-rem);
+	--component-toggle-switch-sm-thumb-size: var(--base-sizing-size18-rem);
+	--component-toggle-switch-sm-thumb-translate-x: var(--base-spacing-20-rem);
+	--component-toggle-switch-sm-track-height: var(--base-sizing-size24-rem);
+	--component-tooltip-tooltip-offset: var(--base-spacing-16-rem);
+	--component-tooltip-tooltip-padding: var(--base-spacing-16-rem);
+	--component-tooltip-trigger-size: var(--base-spacing-20-rem);
+	--component-top-bar-collapsed-nav-menu-button-background: var(
+		--base-colors-transparent
+	);
+	--component-top-bar-height: var(--base-spacing-64-rem);
+	--component-top-bar-item-lg-padding-left: var(--base-spacing-24-rem);
+	--component-top-bar-item-lg-padding-right: var(--base-spacing-24-rem);
+	--component-top-bar-item-md-padding-left: var(--base-spacing-16-rem);
+	--component-top-bar-item-md-padding-right: var(--base-spacing-16-rem);
+	--component-top-bar-item-sm-padding-left: var(--base-spacing-12-rem);
+	--component-top-bar-item-sm-padding-right: var(--base-spacing-12-rem);
+	--component-top-bar-navigation-menu-indicator-margin-left: var(
+		--base-spacing-2-rem
+	);
+	--component-top-bar-navigation-menu-indicator-margin-top: var(
+		--base-spacing-6-rem
+	);
+	--component-top-bar-navigation-shared-border-top: var(
+			--semantic-sizing-border-extra-wide
+		)
+		solid var(--base-colors-transparent);
+	--component-top-bar-navigation-shared-padding-left: var(
+		--base-spacing-16-rem
+	);
+	--component-top-bar-navigation-shared-padding-right: var(
+		--base-spacing-16-rem
+	);
+	--component-top-bar-navigation-text-margin-left: var(--base-spacing-6-rem);
+	--component-top-bar-navigation-unselected-border-bottom: var(
+			--semantic-sizing-border-extra-wide
+		)
+		solid var(--base-colors-transparent);
+	--component-top-bar-tool-name-divider-height: var(--base-sizing-size32-rem);
+	--component-top-bar-tool-name-gap: var(--base-spacing-8-rem);
+	--component-top-bar-tool-name-hover-link-collapsed-padding-left: var(
+		--base-spacing-4-rem
+	);
+	--component-top-bar-tool-name-hover-link-collapsed-padding-right: var(
+		--base-spacing-4-rem
+	);
+	--component-top-bar-tool-name-hover-link-padding-left: var(
+		--base-spacing-20-rem
+	);
+	--component-top-bar-tool-name-hover-link-padding-right: var(
+		--base-spacing-20-rem
+	);
+	--component-top-bar-tool-name-subsection-gap: var(--base-spacing-2-rem);
+	--component-top-bar-tool-name-typography-font-width: var(
+		--semantic-typography-title-md-font-width
+	);
+	--component-user-feedback-summary-shared-gap: var(--base-spacing-4-rem);
+	--component-user-feedback-summary-shared-padding-bottom: var(
+		--base-spacing-12-rem
+	);
+	--component-user-feedback-summary-shared-padding-left: var(
+		--base-spacing-8-rem
+	);
+	--component-user-feedback-summary-shared-padding-right: var(
+		--base-spacing-16-rem
+	);
+	--component-user-feedback-summary-shared-padding-top: var(
+		--base-spacing-12-rem
+	);
+	--component-html-preview-loader-loading-icon-size: var(--base-spacing-48-rem);
+	--component-html-preview-loader-padding-left: var(--base-spacing-8-rem);
+	--component-html-preview-loader-padding-right: var(--base-spacing-8-rem);
+	--component-html-preview-loader-preview-frame-padding-bottom: var(
+		--base-spacing-8-rem
+	);
+	--component-html-preview-loader-preview-frame-padding-left: var(
+		--base-spacing-8-rem
+	);
+	--component-html-preview-loader-preview-frame-padding-right: var(
+		--base-spacing-8-rem
+	);
+	--component-html-preview-loader-preview-frame-padding-top: var(
+		--base-spacing-8-rem
+	);
+	--component-intended-audience-signifier-border-radius: var(
+		--base-radius-corner2-rem
+	);
+	--component-intended-audience-signifier-chevron-size: var(
+		--base-spacing-10-px
+	);
+	--component-intended-audience-signifier-gap: var(--base-spacing-4-px);
+	--component-intended-audience-signifier-padding-x: var(--base-spacing-4-px);
+	--component-intended-audience-signifier-padding-y: var(--base-spacing-2-px);
+	--component-pagination-ellipsis-min-width: var(--base-spacing-12-px);
+	--component-pagination-item-focus-visible-outline-offset: var(
+		--base-spacing-2-px
+	);
+	--component-pagination-item-padding-x: var(--base-spacing-2-px);
+	--component-pagination-shared-gap: var(--base-spacing-6-px);
+	--component-pagination-summary-margin-left: var(--base-spacing-12-px);
+	--component-table-cell-padding-block: var(--base-spacing-8-rem);
+	--component-table-cell-padding-inline: var(--base-spacing-12-rem);
+	--component-table-compact-label-gap: var(--base-spacing-4-rem);
+	--component-tag-table-cell-border-between-cells-border-color: var(
+		--base-colors-neutral-900
+	);
+	--component-tag-table-header-background-color: var(--base-colors-neutral-700);
+	--component-tag-table-heading-font-size: var(--base-typography-size-14-px);
+	--component-tag-table-row-background-color: var(--base-colors-neutral-800);
+	--component-tag-table-row-background-hover-color: var(
+		--base-colors-neutral-850
+	);
+	--component-tag-table-row-border-bottom-border-color: var(
+		--base-colors-neutral-900
+	);
+	--component-tag-table-row-first-row-background-color: var(
+		--base-colors-green-700
+	);
+	--component-tag-table-row-first-row-background-hover-color: var(
+		--base-colors-green-600
+	);
+	--component-tag-table-sub-heading-font-size: var(
+		--base-typography-size-12-px
+	);
+	--component-tag-table-type-badge-background-color: var(
+		--base-colors-neutral-900
+	);
+	--component-tile-md-gap: var(--base-spacing-16-rem);
+	--component-tile-md-padding-x: var(--base-spacing-16-rem);
+	--component-tile-md-padding-y: var(--base-spacing-12-rem);
+	--component-tile-shared-description-color: var(--base-colors-neutral-300);
+	--component-tile-shared-tile-icon-shared-margin-right: var(
+		--base-spacing-4-rem
+	);
+	--component-tile-sm-gap: var(--base-spacing-12-rem);
+	--component-tile-sm-padding-x: var(--base-spacing-16-rem);
+	--component-tile-sm-padding-y: var(--base-spacing-12-rem);
+	--component-tile-xs-gap: var(--base-spacing-12-rem);
+	--component-tile-xs-padding-x: var(--base-spacing-12-rem);
+	--component-tile-xs-padding-y: var(--base-spacing-8-rem);
+	--component-user-menu-container-background-color: var(
+		--base-colors-neutral-700
+	);
+	--component-user-menu-container-padding-x: var(--base-spacing-4-rem);
+	--component-user-menu-container-padding-y: var(--base-spacing-4-rem);
+	--component-user-menu-heading-font-size: var(--base-typography-size-18-rem);
+	--component-user-menu-label-font-size: var(--base-typography-size-14-rem);
+	--component-user-menu-label-padding-bottom: var(--base-spacing-6-rem);
+	--component-user-menu-toggle-button-base-background-color: var(
+		--base-colors-neutral-800
+	);
+	--component-user-menu-toggle-button-base-border-color: var(
+		--base-colors-neutral-700
+	);
+	--component-user-menu-toggle-button-disabled-background-color: var(
+		--base-colors-neutral-700
+	);
+	--component-user-menu-toggle-button-gap: var(--base-spacing-4-rem);
+	--component-user-menu-toggle-button-selected-border-color: var(
+		--base-colors-blue-200
+	);
+	--semantic-colors-bg-base: var(--base-colors-neutral-900);
+	--semantic-colors-bg-base-inverse: var(--base-colors-neutral-0);
+	--semantic-colors-bg-raised-level1: var(--base-colors-neutral-850);
+	--semantic-colors-bg-raised-level1-inverse: var(--base-colors-neutral-100);
+	--semantic-colors-bg-raised-level2: var(--base-colors-neutral-800);
+	--semantic-colors-bg-raised-level2-inverse: var(--base-colors-neutral-200);
+	--semantic-colors-bg-raised-level3: var(--base-colors-neutral-750);
+	--semantic-colors-bg-raised-level3-inverse: var(--base-colors-neutral-300);
+	--semantic-colors-border-accent: var(--base-colors-blue-200);
+	--semantic-colors-border-disabled: var(--base-colors-neutral-700);
+	--semantic-colors-border-error: var(--base-colors-red-300);
+	--semantic-colors-border-focused: var(--base-colors-cyan-400);
+	--semantic-colors-border-information: var(--base-colors-blue-300);
+	--semantic-colors-border-selected: var(--base-colors-cyan-400);
+	--semantic-colors-border-selected-inverse: var(--base-colors-cyan-700);
+	--semantic-colors-border-strong: var(--base-colors-neutral-400);
+	--semantic-colors-border-strong-inverse: var(--base-colors-neutral-900);
+	--semantic-colors-border-stronger: var(--base-colors-neutral-200);
+	--semantic-colors-border-success: var(--base-colors-green-300);
+	--semantic-colors-border-warning: var(--base-colors-yellow-200);
+	--semantic-colors-border-weak: var(--base-colors-neutral-650);
+	--semantic-colors-border-weaker: var(--base-colors-neutral-800);
+	--semantic-colors-fill-accent-strong: var(--base-colors-blue-200);
+	--semantic-colors-fill-accent-strong-hover: var(--base-colors-blue-100);
+	--semantic-colors-fill-accent-strong-pressed: var(--base-colors-blue-50);
+	--semantic-colors-fill-blue-weak: var(--base-colors-blue-800);
+	--semantic-colors-fill-cool-purple-weak: var(--base-colors-cool-purple-800);
+	--semantic-colors-fill-cyan-weak: var(--base-colors-cyan-800);
+	--semantic-colors-fill-disabled: var(--base-colors-neutral-700);
+	--semantic-colors-fill-disabled-inverse: var(--base-colors-neutral-300);
+	--semantic-colors-fill-draft-strong: var(--base-colors-yellow-400);
+	--semantic-colors-fill-error-medium: var(--base-colors-red-700);
+	--semantic-colors-fill-error-strong: var(--base-colors-red-300);
+	--semantic-colors-fill-error-weak: var(--base-colors-red-800);
+	--semantic-colors-fill-error-weaker: var(--base-colors-red-900);
+	--semantic-colors-fill-green-weak: var(--base-colors-green-800);
+	--semantic-colors-fill-information-weak: var(--base-colors-blue-900);
+	--semantic-colors-fill-link: var(--base-colors-cyan-200);
+	--semantic-colors-fill-link-hover: var(--base-colors-cyan-100);
+	--semantic-colors-fill-link-pressed: var(--base-colors-cyan-50);
+	--semantic-colors-fill-live-weak: var(--base-colors-green-700);
+	--semantic-colors-fill-magenta-weak: var(--base-colors-magenta-800);
+	--semantic-colors-fill-neutral-medium: var(--base-colors-neutral-300);
+	--semantic-colors-fill-neutral-weak: var(--base-colors-neutral-800);
+	--semantic-colors-fill-orange-medium: var(--base-colors-orange-700);
+	--semantic-colors-fill-orange-weak: var(--base-colors-orange-800);
+	--semantic-colors-fill-red-weak: var(--base-colors-red-800);
+	--semantic-colors-fill-selected-hover-strong: var(--base-colors-cyan-200);
+	--semantic-colors-fill-selected-hover-weak: var(--base-colors-cyan-700);
+	--semantic-colors-fill-selected-hover-weaker: var(--base-colors-cyan-800);
+	--semantic-colors-fill-selected-pressed-strong: var(--base-colors-cyan-100);
+	--semantic-colors-fill-selected-pressed-weak: var(--base-colors-cyan-600);
+	--semantic-colors-fill-selected-pressed-weaker: var(--base-colors-cyan-700);
+	--semantic-colors-fill-selected-strong: var(--base-colors-cyan-400);
+	--semantic-colors-fill-selected-weak: var(--base-colors-cyan-800);
+	--semantic-colors-fill-selected-weaker: var(--base-colors-cyan-900);
+	--semantic-colors-fill-strong: var(--base-colors-neutral-200);
+	--semantic-colors-fill-strong-hover: var(--base-colors-neutral-100);
+	--semantic-colors-fill-strong-pressed: var(--base-colors-neutral-50);
+	--semantic-colors-fill-success-strong: var(--base-colors-green-200);
+	--semantic-colors-fill-success-weak: var(--base-colors-green-800);
+	--semantic-colors-fill-teal-weak: var(--base-colors-teal-800);
+	--semantic-colors-fill-unselected-hover-strong: var(--base-colors-cyan-300);
+	--semantic-colors-fill-unselected-hover-weak: var(--base-colors-cyan-800);
+	--semantic-colors-fill-unselected-hover-weaker: var(--base-colors-cyan-900);
+	--semantic-colors-fill-unselected-pressed-strong: var(--base-colors-cyan-200);
+	--semantic-colors-fill-unselected-pressed-weak: var(--base-colors-cyan-700);
+	--semantic-colors-fill-unselected-pressed-weaker: var(--base-colors-cyan-800);
+	--semantic-colors-fill-unselected-strong: var(--base-colors-neutral-900);
+	--semantic-colors-fill-unselected-weak: var(--base-colors-neutral-900);
+	--semantic-colors-fill-unselected-weaker: var(--base-colors-neutral-900);
+	--semantic-colors-fill-warm-purple-weak: var(--base-colors-warm-purple-800);
+	--semantic-colors-fill-warning-weak: var(--base-colors-yellow-800);
+	--semantic-colors-fill-weak: var(--base-colors-neutral-900);
+	--semantic-colors-fill-weak-hover: var(--base-colors-neutral-850);
+	--semantic-colors-fill-weak-pressed: var(--base-colors-neutral-800);
+	--semantic-colors-fill-yellow-weak: var(--base-colors-yellow-800);
+	--semantic-colors-text-blue: var(--base-colors-blue-100);
+	--semantic-colors-text-cool-purple: var(--base-colors-cool-purple-100);
+	--semantic-colors-text-cyan: var(--base-colors-cyan-100);
+	--semantic-colors-text-disabled: var(--base-colors-neutral-500);
+	--semantic-colors-text-error: var(--base-colors-red-200);
+	--semantic-colors-text-green: var(--base-colors-green-100);
+	--semantic-colors-text-information: var(--base-colors-cyan-100);
+	--semantic-colors-text-link: var(--base-colors-cyan-200);
+	--semantic-colors-text-magenta: var(--base-colors-magenta-100);
+	--semantic-colors-text-orange: var(--base-colors-orange-100);
+	--semantic-colors-text-red: var(--base-colors-red-100);
+	--semantic-colors-text-strong: var(--base-colors-neutral-0);
+	--semantic-colors-text-strong-inverse: var(--base-colors-neutral-700);
+	--semantic-colors-text-stronger-inverse: var(--base-colors-neutral-900);
+	--semantic-colors-text-success: var(--base-colors-green-200);
+	--semantic-colors-text-success-inverse: var(--base-colors-green-800);
+	--semantic-colors-text-teal: var(--base-colors-teal-100);
+	--semantic-colors-text-warm-purple: var(--base-colors-warm-purple-100);
+	--semantic-colors-text-warning: var(--base-colors-yellow-50);
+	--semantic-colors-text-weak: var(--base-colors-neutral-200);
+	--semantic-colors-text-weak-inverse: var(--base-colors-neutral-650);
+	--semantic-colors-text-yellow: var(--base-colors-yellow-100);
+	--semantic-radius-corner-md: var(--base-radius-corner8-rem);
+	--semantic-radius-corner-sm: var(--base-radius-corner4-rem);
+	--semantic-radius-corner-xs: var(--base-radius-corner2-rem);
+	--semantic-shadow-raised: 0px var(--base-spacing-2-rem)
+		var(--base-spacing-6-rem) 0px rgb(0% 0% 0% / 0.3);
+	--semantic-sizing-border-default: var(--base-sizing-size1-rem);
+	--semantic-sizing-border-extra-wide: var(--base-sizing-size8-rem);
+	--semantic-sizing-border-md: var(--base-sizing-size2-rem);
+	--semantic-sizing-height-lg: var(--base-sizing-size48-rem);
+	--semantic-sizing-height-md: var(--base-sizing-size40-rem);
+	--semantic-sizing-height-sm: var(--base-sizing-size32-rem);
+	--semantic-sizing-height-xs: var(--base-sizing-size24-rem);
+	--semantic-sizing-height-xxs: var(--base-sizing-size20-rem);
+	--semantic-sizing-height-xxxs: var(--base-sizing-size18-rem);
+	--semantic-sizing-height-xxxxs: var(--base-sizing-size16-rem);
+	--semantic-sizing-icon-lg: var(--base-sizing-size24-rem);
+	--semantic-sizing-icon-md: var(--base-sizing-size20-rem);
+	--semantic-sizing-icon-sm: var(--base-sizing-size18-rem);
+	--semantic-sizing-icon-xs: var(--base-sizing-size14-rem);
+	--semantic-spacing-stack-lg: var(--base-spacing-32-rem);
+	--semantic-spacing-stack-md: var(--base-spacing-16-rem);
+	--semantic-spacing-stack-sm: var(--base-spacing-12-rem);
+	--semantic-spacing-stack-xl: var(--base-spacing-40-rem);
+	--semantic-spacing-stack-xs: var(--base-spacing-8-rem);
+	--semantic-spacing-stack-xxs: var(--base-spacing-4-rem);
+	--semantic-typography-article-body-bold-italic-md-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-guardian-text-egyptian-bold)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-loose)
+		var(--base-typography-family-guardian-text-egyptian);
+	--semantic-typography-article-body-bold-italic-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-article-body-bold-md-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-guardian-text-egyptian-bold)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-loose)
+		var(--base-typography-family-guardian-text-egyptian);
+	--semantic-typography-article-body-bold-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-article-body-italic-md-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-guardian-text-egyptian-normal)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-loose)
+		var(--base-typography-family-guardian-text-egyptian);
+	--semantic-typography-article-body-italic-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-article-body-md-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-guardian-text-egyptian-normal)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-loose)
+		var(--base-typography-family-guardian-text-egyptian);
+	--semantic-typography-article-body-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-bold-lg-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-18-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-bold-lg-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-bold-lg-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-bold-md-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-bold-md-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-bold-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-bold-sm-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-14-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-bold-sm-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-bold-sm-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-bold-xl-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-20-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-bold-xl-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-bold-xl-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-bold-xs-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-12-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-bold-xs-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-bold-xs-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-bold-lg-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-18-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-bold-lg-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-bold-lg-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-bold-md-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-bold-md-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-bold-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-bold-sm-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-14-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-bold-sm-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-bold-sm-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-bold-xl-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-20-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-bold-xl-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-bold-xl-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-bold-xs-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-12-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-bold-xs-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-bold-xs-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-italic-bold-lg-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-18-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-italic-bold-lg-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-italic-bold-lg-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-italic-bold-md-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-italic-bold-md-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-italic-bold-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-italic-bold-sm-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-14-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-italic-bold-sm-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-italic-bold-sm-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-italic-bold-xl-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-20-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-italic-bold-xl-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-italic-bold-xl-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-italic-bold-xs-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-12-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-italic-bold-xs-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-italic-bold-xs-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-italic-lg-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-compact-normal)
+		var(--base-typography-size-18-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-italic-lg-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-italic-lg-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-italic-md-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-compact-normal)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-italic-md-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-italic-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-italic-sm-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-compact-normal)
+		var(--base-typography-size-14-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-italic-sm-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-italic-sm-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-italic-xl-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-compact-normal)
+		var(--base-typography-size-20-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-italic-xl-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-italic-xl-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-italic-xs-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-compact-normal)
+		var(--base-typography-size-12-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-italic-xs-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-italic-xs-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-lg-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-normal)
+		var(--base-typography-size-18-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-lg-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-lg-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-md-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-normal)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-md-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-sm-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-normal)
+		var(--base-typography-size-14-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-sm-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-sm-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-xl-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-normal)
+		var(--base-typography-size-20-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-xl-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-xl-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-compact-xs-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-normal)
+		var(--base-typography-size-12-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-body-compact-xs-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-body-compact-xs-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-italic-bold-lg-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-18-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-italic-bold-lg-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-italic-bold-lg-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-italic-bold-md-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-italic-bold-md-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-italic-bold-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-italic-bold-sm-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-14-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-italic-bold-sm-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-italic-bold-sm-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-italic-bold-xl-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-20-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-italic-bold-xl-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-italic-bold-xl-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-italic-bold-xs-font: var(
+			--base-typography-style-italic
+		)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-12-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-italic-bold-xs-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-italic-bold-xs-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-italic-lg-font: var(--base-typography-style-italic)
+		var(--base-typography-weight-open-sans-normal)
+		var(--base-typography-size-18-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-italic-lg-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-italic-lg-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-italic-md-font: var(--base-typography-style-italic)
+		var(--base-typography-weight-open-sans-normal)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-italic-md-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-italic-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-italic-sm-font: var(--base-typography-style-italic)
+		var(--base-typography-weight-open-sans-normal)
+		var(--base-typography-size-14-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-italic-sm-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-italic-sm-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-italic-xl-font: var(--base-typography-style-italic)
+		var(--base-typography-weight-open-sans-normal)
+		var(--base-typography-size-20-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-italic-xl-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-italic-xl-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-italic-xs-font: var(--base-typography-style-italic)
+		var(--base-typography-weight-open-sans-normal)
+		var(--base-typography-size-12-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-italic-xs-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-italic-xs-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-lg-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-normal)
+		var(--base-typography-size-18-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-lg-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-lg-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-md-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-normal)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-md-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-sm-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-normal)
+		var(--base-typography-size-14-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-sm-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-sm-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-xl-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-normal)
+		var(--base-typography-size-20-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-xl-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-xl-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-body-xs-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-normal)
+		var(--base-typography-size-12-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-body-xs-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-body-xs-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-heading2-xl-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-24-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-heading2-xl-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-heading2-xl-letter-spacing: var(
+		--base-typography-letter-spacing-densest-rem
+	);
+	--semantic-typography-heading-compact2-xl-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-24-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-heading-compact2-xl-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-heading-compact2-xl-letter-spacing: var(
+		--base-typography-letter-spacing-denser-rem
+	);
+	--semantic-typography-heading-compact-lg-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-18-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-heading-compact-lg-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-heading-compact-lg-letter-spacing: var(
+		--base-typography-letter-spacing-dense-rem
+	);
+	--semantic-typography-heading-compact-md-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-heading-compact-md-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-heading-compact-md-letter-spacing: var(
+		--base-typography-letter-spacing-dense-rem
+	);
+	--semantic-typography-heading-compact-sm-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-14-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-heading-compact-sm-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-heading-compact-sm-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-heading-compact-xl-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-20-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-heading-compact-xl-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-heading-compact-xl-letter-spacing: var(
+		--base-typography-letter-spacing-denser-rem
+	);
+	--semantic-typography-heading-compact-xs-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-bold)
+		var(--base-typography-size-12-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-heading-compact-xs-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-heading-compact-xs-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-heading-lg-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-18-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-heading-lg-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-heading-lg-letter-spacing: var(
+		--base-typography-letter-spacing-denser-rem
+	);
+	--semantic-typography-heading-md-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-16-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-heading-md-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-heading-md-letter-spacing: var(
+		--base-typography-letter-spacing-denser-rem
+	);
+	--semantic-typography-heading-sm-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-14-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-heading-sm-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-heading-sm-letter-spacing: var(
+		--base-typography-letter-spacing-dense-rem
+	);
+	--semantic-typography-heading-xl-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-20-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-heading-xl-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-heading-xl-letter-spacing: var(
+		--base-typography-letter-spacing-denser-rem
+	);
+	--semantic-typography-heading-xs-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-12-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-heading-xs-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-heading-xs-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-interactive-md-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-16-rem)/1 var(--base-typography-family-open-sans);
+	--semantic-typography-interactive-md-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-interactive-md-letter-spacing: var(
+		--base-typography-letter-spacing-dense-rem
+	);
+	--semantic-typography-interactive-sm-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-14-rem)/1 var(--base-typography-family-open-sans);
+	--semantic-typography-interactive-sm-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-interactive-sm-letter-spacing: var(
+		--base-typography-letter-spacing-dense-rem
+	);
+	--semantic-typography-interactive-xs-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-bold)
+		var(--base-typography-size-12-rem)/1 var(--base-typography-family-open-sans);
+	--semantic-typography-interactive-xs-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-interactive-xs-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-meta-compact-md-font: var(
+			--base-typography-style-normal
+		)
+		var(--base-typography-weight-open-sans-compact-normal)
+		var(--base-typography-size-12-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans-compact);
+	--semantic-typography-meta-compact-md-font-width: var(
+		--base-typography-width-open-sans-compact
+	);
+	--semantic-typography-meta-compact-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-meta-md-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-open-sans-normal)
+		var(--base-typography-size-12-rem)/var(--base-typography-line-height-normal)
+		var(--base-typography-family-open-sans);
+	--semantic-typography-meta-md-font-width: var(
+		--base-typography-width-open-sans
+	);
+	--semantic-typography-meta-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-title-lg-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-guardian-headline-bold)
+		var(--base-typography-size-24-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-guardian-headline);
+	--semantic-typography-title-lg-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-title-md-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-guardian-headline-bold)
+		var(--base-typography-size-20-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-guardian-headline);
+	--semantic-typography-title-md-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-title-sm-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-guardian-headline-bold)
+		var(--base-typography-size-18-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-guardian-headline);
+	--semantic-typography-title-sm-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--semantic-typography-title-xl-font: var(--base-typography-style-normal)
+		var(--base-typography-weight-guardian-headline-bold)
+		var(--base-typography-size-32-rem)/var(--base-typography-line-height-tight)
+		var(--base-typography-family-guardian-headline);
+	--semantic-typography-title-xl-letter-spacing: var(
+		--base-typography-letter-spacing-default-rem
+	);
+	--component-byline-chip-color: var(--semantic-colors-text-strong);
+	--component-byline-chip-untagged-color: var(--semantic-colors-text-strong);
+	--component-byline-color: var(--semantic-colors-text-strong);
+	--component-byline-dropdown-li-color: var(--semantic-colors-text-strong);
+	--component-alert-banner-error-background-color: var(
+		--semantic-colors-fill-error-weak
+	);
+	--component-alert-banner-error-icon-color: var(--semantic-colors-text-error);
+	--component-alert-banner-information-background-color: var(
+		--semantic-colors-fill-information-weak
+	);
+	--component-alert-banner-information-icon-color: var(
+		--semantic-colors-text-information
+	);
+	--component-alert-banner-shared-content-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-alert-banner-shared-height: var(--semantic-sizing-height-md);
+	--component-alert-banner-success-background-color: var(
+		--semantic-colors-fill-success-weak
+	);
+	--component-alert-banner-success-icon-color: var(
+		--semantic-colors-text-success
+	);
+	--component-alert-banner-warning-background-color: var(
+		--semantic-colors-fill-warning-weak
+	);
+	--component-alert-banner-warning-icon-color: var(
+		--semantic-colors-text-warning
+	);
+	--component-autocomplete-input-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-autocomplete-input-border-color: var(
+		--semantic-colors-border-stronger
+	);
+	--component-autocomplete-input-border-width: var(
+		--semantic-sizing-border-default
+	);
+	--component-autocomplete-input-color: var(--semantic-colors-text-strong);
+	--component-autocomplete-input-disabled-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-autocomplete-input-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-autocomplete-input-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-autocomplete-input-focused-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-autocomplete-input-hover-background-color: var(
+		--semantic-colors-fill-weak-hover
+	);
+	--component-autocomplete-listbox-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-autocomplete-listbox-border-color: var(
+		--semantic-colors-border-stronger
+	);
+	--component-autocomplete-listbox-border-width: var(
+		--semantic-sizing-border-default
+	);
+	--component-autocomplete-listbox-item-background-focused-color: var(
+		--semantic-colors-fill-neutral-weak
+	);
+	--component-autocomplete-listbox-item-background-hover-color: var(
+		--semantic-colors-fill-neutral-weak
+	);
+	--component-autocomplete-listbox-item-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-autocomplete-listbox-item-color-focused: var(
+		--semantic-colors-text-strong
+	);
+	--component-autocomplete-listbox-item-color-hover: var(
+		--semantic-colors-text-strong
+	);
+	--component-avatar-md-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-avatar-md-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-avatar-md-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-avatar-shared-color-blue-background: var(
+		--semantic-colors-fill-blue-weak
+	);
+	--component-avatar-shared-color-blue-text: var(--semantic-colors-text-blue);
+	--component-avatar-shared-color-cool-purple-background: var(
+		--semantic-colors-fill-cool-purple-weak
+	);
+	--component-avatar-shared-color-cool-purple-text: var(
+		--semantic-colors-text-cool-purple
+	);
+	--component-avatar-shared-color-cyan-background: var(
+		--semantic-colors-fill-cyan-weak
+	);
+	--component-avatar-shared-color-cyan-text: var(--semantic-colors-text-cyan);
+	--component-avatar-shared-color-green-background: var(
+		--semantic-colors-fill-green-weak
+	);
+	--component-avatar-shared-color-green-text: var(--semantic-colors-text-green);
+	--component-avatar-shared-color-magenta-background: var(
+		--semantic-colors-fill-magenta-weak
+	);
+	--component-avatar-shared-color-magenta-text: var(
+		--semantic-colors-text-magenta
+	);
+	--component-avatar-shared-color-orange-background: var(
+		--semantic-colors-fill-orange-weak
+	);
+	--component-avatar-shared-color-orange-text: var(
+		--semantic-colors-text-orange
+	);
+	--component-avatar-shared-color-outlined-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-strong);
+	--component-avatar-shared-color-outlined-text: var(
+		--semantic-colors-text-strong
+	);
+	--component-avatar-shared-color-red-background: var(
+		--semantic-colors-fill-red-weak
+	);
+	--component-avatar-shared-color-red-text: var(--semantic-colors-text-red);
+	--component-avatar-shared-color-teal-background: var(
+		--semantic-colors-fill-teal-weak
+	);
+	--component-avatar-shared-color-teal-text: var(--semantic-colors-text-teal);
+	--component-avatar-shared-color-warm-purple-background: var(
+		--semantic-colors-fill-warm-purple-weak
+	);
+	--component-avatar-shared-color-warm-purple-text: var(
+		--semantic-colors-text-warm-purple
+	);
+	--component-avatar-shared-color-yellow-background: var(
+		--semantic-colors-fill-yellow-weak
+	);
+	--component-avatar-shared-color-yellow-text: var(
+		--semantic-colors-text-yellow
+	);
+	--component-avatar-shared-link-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-avatar-sm-typography-font: var(
+		--semantic-typography-interactive-xs-font
+	);
+	--component-avatar-sm-typography-font-width: var(
+		--semantic-typography-interactive-xs-font-width
+	);
+	--component-avatar-sm-typography-letter-spacing: var(
+		--semantic-typography-interactive-xs-letter-spacing
+	);
+	--component-badge-color-green-weight-light-background: var(
+		--semantic-colors-fill-green-weak
+	);
+	--component-badge-color-green-weight-light-color: var(
+		--semantic-colors-text-green
+	);
+	--component-badge-color-green-weight-strong-background: var(
+		--semantic-colors-fill-live-weak
+	);
+	--component-badge-color-green-weight-strong-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-badge-color-grey-weight-light-background: var(
+		--semantic-colors-fill-disabled
+	);
+	--component-badge-color-grey-weight-light-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-badge-color-grey-weight-strong-background: var(
+		--semantic-colors-fill-disabled
+	);
+	--component-badge-color-grey-weight-strong-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-badge-color-orange-weight-light-background: var(
+		--semantic-colors-fill-orange-weak
+	);
+	--component-badge-color-orange-weight-light-color: var(
+		--semantic-colors-text-orange
+	);
+	--component-badge-color-orange-weight-strong-background: var(
+		--semantic-colors-fill-orange-medium
+	);
+	--component-badge-color-orange-weight-strong-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-badge-color-red-weight-light-background: var(
+		--semantic-colors-fill-red-weak
+	);
+	--component-badge-color-red-weight-light-color: var(
+		--semantic-colors-text-red
+	);
+	--component-badge-color-red-weight-strong-background: var(
+		--semantic-colors-fill-error-medium
+	);
+	--component-badge-color-red-weight-strong-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-badge-color-warm-purple-weight-light-background: var(
+		--semantic-colors-fill-warm-purple-weak
+	);
+	--component-badge-color-warm-purple-weight-light-color: var(
+		--semantic-colors-text-warm-purple
+	);
+	--component-badge-color-warm-purple-weight-strong-background: var(
+		--semantic-colors-fill-warm-purple-weak
+	);
+	--component-badge-color-warm-purple-weight-strong-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-badge-color-yellow-weight-light-background: var(
+		--semantic-colors-fill-warning-weak
+	);
+	--component-badge-color-yellow-weight-light-color: var(
+		--semantic-colors-text-yellow
+	);
+	--component-badge-color-yellow-weight-strong-background: var(
+		--semantic-colors-fill-draft-strong
+	);
+	--component-badge-color-yellow-weight-strong-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-badge-size-md-weight-light-typography-font: var(
+		--semantic-typography-body-md-font
+	);
+	--component-badge-size-md-weight-light-typography-font-width: var(
+		--semantic-typography-body-md-font-width
+	);
+	--component-badge-size-md-weight-light-typography-letter-spacing: var(
+		--semantic-typography-body-md-letter-spacing
+	);
+	--component-badge-size-md-weight-strong-typography-font: var(
+		--semantic-typography-heading-md-font
+	);
+	--component-badge-size-md-weight-strong-typography-font-width: var(
+		--semantic-typography-heading-md-font-width
+	);
+	--component-badge-size-md-weight-strong-typography-letter-spacing: var(
+		--semantic-typography-heading-md-letter-spacing
+	);
+	--component-badge-size-sm-weight-light-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-badge-size-sm-weight-light-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-badge-size-sm-weight-light-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--component-badge-size-sm-weight-strong-typography-font: var(
+		--semantic-typography-heading-sm-font
+	);
+	--component-badge-size-sm-weight-strong-typography-font-width: var(
+		--semantic-typography-heading-sm-font-width
+	);
+	--component-badge-size-sm-weight-strong-typography-letter-spacing: var(
+		--semantic-typography-heading-sm-letter-spacing
+	);
+	--component-badge-size-xs-weight-light-typography-font: var(
+		--semantic-typography-body-xs-font
+	);
+	--component-badge-size-xs-weight-light-typography-font-width: var(
+		--semantic-typography-body-xs-font-width
+	);
+	--component-badge-size-xs-weight-light-typography-letter-spacing: var(
+		--semantic-typography-body-xs-letter-spacing
+	);
+	--component-badge-size-xs-weight-strong-typography-font: var(
+		--semantic-typography-heading-xs-font
+	);
+	--component-badge-size-xs-weight-strong-typography-font-width: var(
+		--semantic-typography-heading-xs-font-width
+	);
+	--component-badge-size-xs-weight-strong-typography-letter-spacing: var(
+		--semantic-typography-heading-xs-letter-spacing
+	);
+	--component-button-primary-lg-height: var(--semantic-sizing-height-lg);
+	--component-button-primary-lg-icon-size: var(--semantic-sizing-icon-lg);
+	--component-button-primary-lg-icon-button-width: var(
+		--semantic-sizing-height-lg
+	);
+	--component-button-primary-lg-typography-font: var(
+		--semantic-typography-interactive-md-font
+	);
+	--component-button-primary-lg-typography-font-width: var(
+		--semantic-typography-interactive-md-font-width
+	);
+	--component-button-primary-lg-typography-letter-spacing: var(
+		--semantic-typography-interactive-md-letter-spacing
+	);
+	--component-button-primary-md-height: var(--semantic-sizing-height-md);
+	--component-button-primary-md-icon-size: var(--semantic-sizing-icon-md);
+	--component-button-primary-md-icon-button-width: var(
+		--semantic-sizing-height-md
+	);
+	--component-button-primary-md-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-button-primary-md-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-button-primary-md-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-button-primary-shared-active-background-color: var(
+		--semantic-colors-fill-accent-strong-pressed
+	);
+	--component-button-primary-shared-active-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-fill-accent-strong-pressed);
+	--component-button-primary-shared-background-color: var(
+		--semantic-colors-fill-accent-strong
+	);
+	--component-button-primary-shared-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-accent);
+	--component-button-primary-shared-color: var(
+		--semantic-colors-text-stronger-inverse
+	);
+	--component-button-primary-shared-disabled-background-color: var(
+		--semantic-colors-fill-disabled
+	);
+	--component-button-primary-shared-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-button-primary-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-button-primary-shared-hover-background-color: var(
+		--semantic-colors-fill-accent-strong-hover
+	);
+	--component-button-primary-shared-hover-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-fill-accent-strong-hover);
+	--component-button-primary-sm-height: var(--semantic-sizing-height-sm);
+	--component-button-primary-sm-icon-size: var(--semantic-sizing-icon-sm);
+	--component-button-primary-sm-icon-button-width: var(
+		--semantic-sizing-height-sm
+	);
+	--component-button-primary-sm-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-button-primary-sm-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-button-primary-sm-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-button-primary-xs-height: var(--semantic-sizing-height-xs);
+	--component-button-primary-xs-icon-size: var(--semantic-sizing-icon-sm);
+	--component-button-primary-xs-icon-button-width: var(
+		--semantic-sizing-height-xs
+	);
+	--component-button-primary-xs-typography-font: var(
+		--semantic-typography-interactive-xs-font
+	);
+	--component-button-primary-xs-typography-font-width: var(
+		--semantic-typography-interactive-xs-font-width
+	);
+	--component-button-primary-xs-typography-letter-spacing: var(
+		--semantic-typography-interactive-xs-letter-spacing
+	);
+	--component-button-secondary-lg-height: var(--semantic-sizing-height-lg);
+	--component-button-secondary-lg-icon-size: var(--semantic-sizing-icon-lg);
+	--component-button-secondary-lg-icon-button-width: var(
+		--semantic-sizing-height-lg
+	);
+	--component-button-secondary-lg-typography-font: var(
+		--semantic-typography-interactive-md-font
+	);
+	--component-button-secondary-lg-typography-font-width: var(
+		--semantic-typography-interactive-md-font-width
+	);
+	--component-button-secondary-lg-typography-letter-spacing: var(
+		--semantic-typography-interactive-md-letter-spacing
+	);
+	--component-button-secondary-md-height: var(--semantic-sizing-height-md);
+	--component-button-secondary-md-icon-size: var(--semantic-sizing-icon-md);
+	--component-button-secondary-md-icon-button-width: var(
+		--semantic-sizing-height-md
+	);
+	--component-button-secondary-md-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-button-secondary-md-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-button-secondary-md-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-button-secondary-shared-active-background-color: var(
+		--semantic-colors-fill-strong-pressed
+	);
+	--component-button-secondary-shared-active-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-fill-strong-pressed);
+	--component-button-secondary-shared-background-color: var(
+		--semantic-colors-fill-strong
+	);
+	--component-button-secondary-shared-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-stronger);
+	--component-button-secondary-shared-color: var(
+		--semantic-colors-text-stronger-inverse
+	);
+	--component-button-secondary-shared-disabled-background-color: var(
+		--semantic-colors-fill-disabled
+	);
+	--component-button-secondary-shared-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-button-secondary-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-button-secondary-shared-hover-background-color: var(
+		--semantic-colors-fill-strong-hover
+	);
+	--component-button-secondary-shared-hover-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-fill-strong-hover);
+	--component-button-secondary-sm-height: var(--semantic-sizing-height-sm);
+	--component-button-secondary-sm-icon-size: var(--semantic-sizing-icon-sm);
+	--component-button-secondary-sm-icon-button-width: var(
+		--semantic-sizing-height-sm
+	);
+	--component-button-secondary-sm-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-button-secondary-sm-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-button-secondary-sm-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-button-secondary-xs-height: var(--semantic-sizing-height-xs);
+	--component-button-secondary-xs-icon-size: var(--semantic-sizing-icon-sm);
+	--component-button-secondary-xs-icon-button-width: var(
+		--semantic-sizing-height-xs
+	);
+	--component-button-secondary-xs-typography-font: var(
+		--semantic-typography-interactive-xs-font
+	);
+	--component-button-secondary-xs-typography-font-width: var(
+		--semantic-typography-interactive-xs-font-width
+	);
+	--component-button-secondary-xs-typography-letter-spacing: var(
+		--semantic-typography-interactive-xs-letter-spacing
+	);
+	--component-button-shared-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-button-tertiary-lg-height: var(--semantic-sizing-height-lg);
+	--component-button-tertiary-lg-icon-size: var(--semantic-sizing-icon-lg);
+	--component-button-tertiary-lg-icon-button-width: var(
+		--semantic-sizing-height-lg
+	);
+	--component-button-tertiary-lg-typography-font: var(
+		--semantic-typography-interactive-md-font
+	);
+	--component-button-tertiary-lg-typography-font-width: var(
+		--semantic-typography-interactive-md-font-width
+	);
+	--component-button-tertiary-lg-typography-letter-spacing: var(
+		--semantic-typography-interactive-md-letter-spacing
+	);
+	--component-button-tertiary-md-height: var(--semantic-sizing-height-md);
+	--component-button-tertiary-md-icon-size: var(--semantic-sizing-icon-md);
+	--component-button-tertiary-md-icon-button-width: var(
+		--semantic-sizing-height-md
+	);
+	--component-button-tertiary-md-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-button-tertiary-md-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-button-tertiary-md-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-button-tertiary-shared-active-background-color: var(
+		--semantic-colors-fill-weak-pressed
+	);
+	--component-button-tertiary-shared-active-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-stronger);
+	--component-button-tertiary-shared-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-fill-strong);
+	--component-button-tertiary-shared-color: var(--semantic-colors-text-strong);
+	--component-button-tertiary-shared-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-button-tertiary-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-button-tertiary-shared-hover-background-color: var(
+		--semantic-colors-fill-weak-hover
+	);
+	--component-button-tertiary-shared-hover-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-stronger);
+	--component-button-tertiary-sm-height: var(--semantic-sizing-height-sm);
+	--component-button-tertiary-sm-icon-size: var(--semantic-sizing-icon-sm);
+	--component-button-tertiary-sm-icon-button-width: var(
+		--semantic-sizing-height-sm
+	);
+	--component-button-tertiary-sm-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-button-tertiary-sm-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-button-tertiary-sm-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-button-tertiary-xs-height: var(--semantic-sizing-height-xs);
+	--component-button-tertiary-xs-icon-size: var(--semantic-sizing-icon-sm);
+	--component-button-tertiary-xs-icon-button-width: var(
+		--semantic-sizing-height-xs
+	);
+	--component-button-tertiary-xs-typography-font: var(
+		--semantic-typography-interactive-xs-font
+	);
+	--component-button-tertiary-xs-typography-font-width: var(
+		--semantic-typography-interactive-xs-font-width
+	);
+	--component-button-tertiary-xs-typography-letter-spacing: var(
+		--semantic-typography-interactive-xs-letter-spacing
+	);
+	--component-button-group-gap: var(--semantic-spacing-stack-md);
+	--component-checkbox-input-shared-color: var(--semantic-colors-text-strong);
+	--component-checkbox-input-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-checkbox-input-shared-disabled-indicator-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-checkbox-input-shared-disabled-indicator-selected-background-color: var(
+		--semantic-colors-fill-disabled
+	);
+	--component-checkbox-input-shared-indicator-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-stronger);
+	--component-checkbox-input-shared-indicator-error-background-color: var(
+		--semantic-colors-fill-error-strong
+	);
+	--component-checkbox-input-shared-indicator-error-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-error);
+	--component-checkbox-input-shared-indicator-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-checkbox-input-shared-indicator-selected-background-color: var(
+		--semantic-colors-fill-selected-strong
+	);
+	--component-checkbox-input-shared-indicator-selected-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-selected);
+	--component-checkbox-input-shared-indicator-selected-svg-fill: var(
+		--semantic-colors-text-stronger-inverse
+	);
+	--component-date-picker-calendar-cell-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-date-picker-calendar-cell-shared-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-date-picker-calendar-cell-shared-hovered-background-color: var(
+		--semantic-colors-fill-weak-hover
+	);
+	--component-date-picker-calendar-cell-shared-pressed-background-color: var(
+		--semantic-colors-fill-weak-pressed
+	);
+	--component-date-picker-calendar-cell-shared-selected-background-color: var(
+		--semantic-colors-fill-cyan-weak
+	);
+	--component-date-picker-calendar-cell-shared-width: var(
+		--semantic-sizing-height-md
+	);
+	--component-date-picker-calendar-grid-shared-th-height: var(
+		--semantic-sizing-height-md
+	);
+	--component-date-picker-calendar-grid-shared-th-width: var(
+		--semantic-sizing-height-md
+	);
+	--component-date-picker-calendar-grid-shared-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-date-picker-calendar-grid-shared-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-date-picker-calendar-grid-shared-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--component-date-picker-calendar-header-shared-button-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-date-picker-calendar-header-shared-button-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-date-picker-calendar-header-shared-button-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-date-picker-calendar-header-shared-button-height: var(
+		--semantic-sizing-height-md
+	);
+	--component-date-picker-calendar-header-shared-button-hovered-background-color: var(
+		--semantic-colors-fill-weak-hover
+	);
+	--component-date-picker-calendar-header-shared-button-pressed-background-color: var(
+		--semantic-colors-fill-weak-pressed
+	);
+	--component-date-picker-calendar-header-shared-button-selected-background-color: var(
+		--semantic-colors-fill-cyan-weak
+	);
+	--component-date-picker-calendar-header-shared-button-width: var(
+		--semantic-sizing-height-md
+	);
+	--component-date-picker-calendar-header-shared-typography-font: var(
+		--semantic-typography-heading-sm-font
+	);
+	--component-date-picker-calendar-header-shared-typography-font-width: var(
+		--semantic-typography-heading-sm-font-width
+	);
+	--component-date-picker-calendar-header-shared-typography-letter-spacing: var(
+		--semantic-typography-heading-sm-letter-spacing
+	);
+	--component-date-picker-picker-shared-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-date-picker-picker-shared-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-stronger);
+	--component-date-picker-picker-shared-button-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-date-picker-picker-shared-button-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-date-picker-picker-shared-disabled-background-color: var(
+		--semantic-colors-fill-weak-pressed
+	);
+	--component-date-picker-picker-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-date-picker-picker-shared-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-date-picker-picker-shared-height: var(
+		--semantic-sizing-height-md
+	);
+	--component-date-picker-picker-shared-invalid-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-error);
+	--component-date-picker-popover-shared-background-color: var(
+		--semantic-colors-bg-base
+	);
+	--component-date-picker-segment-shared-placeholder-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-date-picker-segment-shared-placeholder-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-favicon-color-text: var(--semantic-colors-text-stronger-inverse);
+	--component-favicon-typography-font: var(--semantic-typography-title-md-font);
+	--component-favicon-typography-letter-spacing: var(
+		--semantic-typography-title-md-letter-spacing
+	);
+	--component-form-input-shared-description-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-form-input-shared-description-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-form-input-shared-label-color: var(--semantic-colors-text-strong);
+	--component-form-input-shared-label-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-icon-lg-size: var(--semantic-sizing-icon-lg);
+	--component-icon-md-size: var(--semantic-sizing-icon-md);
+	--component-icon-sm-size: var(--semantic-sizing-icon-sm);
+	--component-icon-xs-size: var(--semantic-sizing-icon-xs);
+	--component-inline-message-error-color: var(--semantic-colors-text-error);
+	--component-inline-message-information-color: var(
+		--semantic-colors-text-information
+	);
+	--component-inline-message-shared-icon-size: var(--semantic-sizing-icon-md);
+	--component-inline-message-success-color: var(--semantic-colors-text-success);
+	--component-link-shared-disabled-color: var(--semantic-colors-text-disabled);
+	--component-link-shared-enabled-color: var(--semantic-colors-fill-link);
+	--component-link-shared-focus-outline: var(--semantic-sizing-border-default)
+		solid var(--semantic-colors-border-focused);
+	--component-link-shared-hover-color: var(--semantic-colors-fill-link-hover);
+	--component-link-shared-pressed-color: var(
+		--semantic-colors-fill-link-pressed
+	);
+	--component-menu-menu-shared-background-color: var(--semantic-colors-bg-base);
+	--component-menu-menu-shared-border: var(--semantic-sizing-border-default)
+		solid var(--semantic-colors-border-weak);
+	--component-menu-menu-item-shared-aside-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-menu-menu-item-shared-aside-typography-font: var(
+		--semantic-typography-body-md-font
+	);
+	--component-menu-menu-item-shared-aside-typography-font-width: var(
+		--semantic-typography-body-md-font-width
+	);
+	--component-menu-menu-item-shared-aside-typography-letter-spacing: var(
+		--semantic-typography-body-md-letter-spacing
+	);
+	--component-menu-menu-item-shared-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-menu-menu-item-shared-border-bottom: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-weak);
+	--component-menu-menu-item-shared-description-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-menu-menu-item-shared-description-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-menu-menu-item-shared-description-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-menu-menu-item-shared-description-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--component-menu-menu-item-shared-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-menu-menu-item-shared-hover-background-color: var(
+		--semantic-colors-fill-weak-hover
+	);
+	--component-menu-menu-item-shared-icon-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-menu-menu-item-shared-label-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-menu-menu-item-shared-label-typography-font: var(
+		--semantic-typography-body-md-font
+	);
+	--component-menu-menu-item-shared-label-typography-font-width: var(
+		--semantic-typography-body-md-font-width
+	);
+	--component-menu-menu-item-shared-label-typography-letter-spacing: var(
+		--semantic-typography-body-md-letter-spacing
+	);
+	--component-menu-menu-item-shared-pressed-background-color: var(
+		--semantic-colors-fill-weak-pressed
+	);
+	--component-menu-menu-popover-shared-shadow: var(--semantic-shadow-raised);
+	--component-menu-menu-section-header-md-height: var(
+		--semantic-sizing-height-sm
+	);
+	--component-menu-menu-section-header-md-typography-font: var(
+		--semantic-typography-interactive-md-font
+	);
+	--component-menu-menu-section-header-md-typography-font-width: var(
+		--semantic-typography-interactive-md-font-width
+	);
+	--component-menu-menu-section-header-md-typography-letter-spacing: var(
+		--semantic-typography-interactive-md-letter-spacing
+	);
+	--component-menu-menu-section-header-shared-background-color: var(
+		--semantic-colors-bg-raised-level2
+	);
+	--component-menu-menu-section-header-shared-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-menu-menu-section-header-sm-height: var(
+		--semantic-sizing-height-xs
+	);
+	--component-menu-menu-section-header-sm-typography-font: var(
+		--semantic-typography-interactive-sm-font
+	);
+	--component-menu-menu-section-header-sm-typography-font-width: var(
+		--semantic-typography-interactive-sm-font-width
+	);
+	--component-menu-menu-section-header-sm-typography-letter-spacing: var(
+		--semantic-typography-interactive-sm-letter-spacing
+	);
+	--component-menu-menu-separator-shared-background-color: var(
+		--semantic-colors-border-weaker
+	);
+	--component-modal-dialog-children-margin-bottom: var(
+		--semantic-spacing-stack-xl
+	);
+	--component-modal-dialog-ctas-gap: var(--semantic-spacing-stack-md);
+	--component-modal-dialog-dismiss-margin-bottom: var(
+		--semantic-spacing-stack-md
+	);
+	--component-modal-dialog-title-margin-bottom: var(
+		--semantic-spacing-stack-md
+	);
+	--component-modal-modal-background-color: var(--semantic-colors-bg-base);
+	--component-modal-modal-border-radius: var(--semantic-radius-corner-md);
+	--component-modal-modal-padding-bottom: var(--semantic-spacing-stack-lg);
+	--component-modal-modal-padding-left: var(--semantic-spacing-stack-lg);
+	--component-modal-modal-padding-right: var(--semantic-spacing-stack-lg);
+	--component-modal-modal-padding-top: var(--semantic-spacing-stack-md);
+	--component-radio-group-md-indicator-height: var(--semantic-sizing-height-xs);
+	--component-radio-group-shared-indicator-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-stronger);
+	--component-radio-group-shared-indicator-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-radio-group-shared-indicator-focused-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-radio-group-shared-indicator-invalid-after-background-color: var(
+		--semantic-colors-fill-error-strong
+	);
+	--component-radio-group-shared-indicator-invalid-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-error);
+	--component-radio-group-shared-indicator-selected-after-background-color: var(
+		--semantic-colors-fill-selected-strong
+	);
+	--component-radio-group-shared-indicator-selected-border: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-selected);
+	--component-radio-group-shared-indicator-selected-disabled-after-background-color: var(
+		--semantic-colors-fill-disabled
+	);
+	--component-radio-group-shared-indicator-selected-disabled-border: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-radio-group-shared-indicator-selected-invalid-border: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-error);
+	--component-radio-group-shared-radio-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-radio-group-shared-radio-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-radio-group-sm-indicator-height: var(
+		--semantic-sizing-height-xxs
+	);
+	--component-search-input-md-height: var(--semantic-sizing-height-md);
+	--component-search-input-md-typography-font: var(
+		--semantic-typography-body-md-font
+	);
+	--component-search-input-md-typography-font-width: var(
+		--semantic-typography-body-md-font-width
+	);
+	--component-search-input-md-typography-letter-spacing: var(
+		--semantic-typography-body-md-letter-spacing
+	);
+	--component-search-input-shared-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-search-input-shared-border: var(--semantic-sizing-border-default)
+		solid var(--semantic-colors-border-stronger);
+	--component-search-input-shared-color: var(--semantic-colors-text-strong);
+	--component-search-input-shared-disabled-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-search-input-shared-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-search-input-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-search-input-shared-error-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-error);
+	--component-search-input-shared-focused-outline: var(
+			--semantic-sizing-border-md
+		)
+		auto var(--semantic-colors-border-focused);
+	--component-search-input-shared-placeholder-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-search-input-sm-height: var(--semantic-sizing-height-sm);
+	--component-search-input-sm-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-search-input-sm-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-search-input-sm-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--component-select-md-height: var(--semantic-sizing-height-md);
+	--component-select-md-typography-font: var(
+		--semantic-typography-body-md-font
+	);
+	--component-select-md-typography-font-width: var(
+		--semantic-typography-body-md-font-width
+	);
+	--component-select-md-typography-letter-spacing: var(
+		--semantic-typography-body-md-letter-spacing
+	);
+	--component-select-shared-button-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-select-shared-button-border: var(--semantic-sizing-border-default)
+		solid var(--semantic-colors-border-stronger);
+	--component-select-shared-button-color: var(--semantic-colors-text-strong);
+	--component-select-shared-button-disabled-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-select-shared-button-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-select-shared-button-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-select-shared-button-error-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-error);
+	--component-select-shared-button-focused-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-select-shared-hover-background-color: var(
+		--semantic-colors-fill-weak-hover
+	);
+	--component-select-shared-list-box-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-select-shared-list-box-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-weak);
+	--component-select-shared-list-box-shadow: var(--semantic-shadow-raised);
+	--component-select-shared-option-focused-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-select-shared-pressed-background-color: var(
+		--semantic-colors-fill-weak-pressed
+	);
+	--component-select-sm-height: var(--semantic-sizing-height-sm);
+	--component-select-sm-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-select-sm-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-select-sm-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-background-color: var(
+		--semantic-colors-bg-raised-level1
+	);
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-border: var(
+			--base-sizing-size2-rem
+		)
+		solid var(--semantic-colors-border-weak);
+	--component-sidebar-stepper-navigation-mobile-toggle-shared-hovered-background-color: var(
+		--semantic-colors-bg-raised-level2
+	);
+	--component-sidebar-stepper-navigation-navigation-shared-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-strong);
+	--component-sidebar-stepper-navigation-status-row-shared-icon-complete-color: var(
+		--semantic-colors-text-success
+	);
+	--component-sidebar-stepper-navigation-status-row-shared-icon-incomplete-color: var(
+		--semantic-colors-text-error
+	);
+	--component-sidebar-stepper-navigation-status-row-shared-icon-optional-color: var(
+		--semantic-colors-text-success-inverse
+	);
+	--component-sidebar-stepper-navigation-status-row-shared-text-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-sidebar-stepper-navigation-status-row-shared-text-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-sidebar-stepper-navigation-step-shared-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-weak);
+	--component-sidebar-stepper-navigation-step-shared-current-background-color: var(
+		--semantic-colors-bg-raised-level1
+	);
+	--component-sidebar-stepper-navigation-step-shared-text-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-sidebar-stepper-navigation-step-shared-text-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-sidebar-stepper-navigation-step-shared-text-inverse-color: var(
+		--semantic-colors-text-stronger-inverse
+	);
+	--component-sidebar-stepper-navigation-step-content-shared-gap: var(
+		--semantic-spacing-stack-xxs
+	);
+	--component-sidebar-stepper-navigation-step-number-shared-background-color: var(
+		--semantic-colors-fill-selected-strong
+	);
+	--component-tabs-tab-md-height: var(--semantic-sizing-height-lg);
+	--component-tabs-tab-md-typography-font: var(
+		--semantic-typography-heading-md-font
+	);
+	--component-tabs-tab-md-typography-font-width: var(
+		--semantic-typography-heading-md-font-width
+	);
+	--component-tabs-tab-md-typography-letter-spacing: var(
+		--semantic-typography-heading-md-letter-spacing
+	);
+	--component-tabs-tab-shared-border: var(--semantic-sizing-border-default)
+		solid var(--semantic-colors-border-weak);
+	--component-tabs-tab-shared-color: var(--semantic-colors-text-weak);
+	--component-tabs-tab-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-tabs-tab-shared-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-tabs-tab-shared-selected-background: var(
+		--semantic-colors-bg-raised-level1
+	);
+	--component-tabs-tab-shared-selected-border-background: var(
+		--semantic-colors-border-selected
+	);
+	--component-tabs-tab-shared-selected-border-border: var(
+			--semantic-sizing-border-extra-wide
+		)
+		solid var(--semantic-colors-border-selected);
+	--component-tabs-tab-shared-selected-border-size: var(
+		--semantic-sizing-border-extra-wide
+	);
+	--component-tabs-tab-sm-height: var(--semantic-sizing-height-md);
+	--component-tabs-tab-sm-typography-font: var(
+		--semantic-typography-heading-sm-font
+	);
+	--component-tabs-tab-sm-typography-font-width: var(
+		--semantic-typography-heading-sm-font-width
+	);
+	--component-tabs-tab-sm-typography-letter-spacing: var(
+		--semantic-typography-heading-sm-letter-spacing
+	);
+	--component-template-component-color-background: var(
+		--semantic-colors-fill-green-weak
+	);
+	--component-template-component-color-text: var(--semantic-colors-text-green);
+	--component-text-area-md-typography-font: var(
+		--semantic-typography-body-md-font
+	);
+	--component-text-area-md-typography-font-width: var(
+		--semantic-typography-body-md-font-width
+	);
+	--component-text-area-md-typography-letter-spacing: var(
+		--semantic-typography-body-md-letter-spacing
+	);
+	--component-text-area-shared-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-text-area-shared-border: var(--semantic-sizing-border-default)
+		solid var(--semantic-colors-border-stronger);
+	--component-text-area-shared-color: var(--semantic-colors-text-strong);
+	--component-text-area-shared-disabled-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-text-area-shared-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-text-area-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-text-area-shared-error-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-error);
+	--component-text-area-shared-focused-outline: var(--semantic-sizing-border-md)
+		auto var(--semantic-colors-border-focused);
+	--component-text-area-shared-placeholder-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-text-area-sm-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-text-area-sm-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-text-area-sm-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--component-text-input-md-height: var(--semantic-sizing-height-md);
+	--component-text-input-md-typography-font: var(
+		--semantic-typography-body-md-font
+	);
+	--component-text-input-md-typography-font-width: var(
+		--semantic-typography-body-md-font-width
+	);
+	--component-text-input-md-typography-letter-spacing: var(
+		--semantic-typography-body-md-letter-spacing
+	);
+	--component-text-input-shared-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-text-input-shared-border: var(--semantic-sizing-border-default)
+		solid var(--semantic-colors-border-stronger);
+	--component-text-input-shared-color: var(--semantic-colors-text-strong);
+	--component-text-input-shared-disabled-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-text-input-shared-disabled-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-disabled);
+	--component-text-input-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-text-input-shared-error-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-error);
+	--component-text-input-shared-focused-outline: var(
+			--semantic-sizing-border-md
+		)
+		auto var(--semantic-colors-border-focused);
+	--component-text-input-shared-placeholder-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-text-input-sm-height: var(--semantic-sizing-height-sm);
+	--component-text-input-sm-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-text-input-sm-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-text-input-sm-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--component-text-list-input-column-gap: var(--semantic-spacing-stack-md);
+	--component-text-list-input-column-margin-top: var(
+		--semantic-spacing-stack-xs
+	);
+	--component-text-list-input-label-color: var(--semantic-colors-text-strong);
+	--component-text-list-input-label-gap: var(--semantic-spacing-stack-xs);
+	--component-text-list-input-row-gap: var(--semantic-spacing-stack-xs);
+	--component-toast-error-accent-color: var(--semantic-colors-text-error);
+	--component-toast-error-background-color: var(
+		--semantic-colors-fill-error-weak
+	);
+	--component-toast-information-accent-color: var(
+		--semantic-colors-text-information
+	);
+	--component-toast-information-background-color: var(
+		--semantic-colors-fill-information-weak
+	);
+	--component-toast-region-gap: var(--semantic-spacing-stack-sm);
+	--component-toast-shared-accent-border-width: var(
+		--semantic-sizing-border-md
+	);
+	--component-toast-shared-border-radius: var(--semantic-radius-corner-sm);
+	--component-toast-shared-color: var(--semantic-colors-text-strong);
+	--component-toast-shared-content-additional-info-typography-font: var(
+		--semantic-typography-body-xs-font
+	);
+	--component-toast-shared-content-additional-info-typography-font-width: var(
+		--semantic-typography-body-xs-font-width
+	);
+	--component-toast-shared-content-additional-info-typography-letter-spacing: var(
+		--semantic-typography-body-xs-letter-spacing
+	);
+	--component-toast-shared-content-gap: var(--semantic-spacing-stack-xxs);
+	--component-toast-shared-content-subject-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-toast-shared-content-subject-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-toast-shared-content-subject-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--component-toast-shared-content-title-typography-font: var(
+		--semantic-typography-heading-sm-font
+	);
+	--component-toast-shared-content-title-typography-font-width: var(
+		--semantic-typography-heading-sm-font-width
+	);
+	--component-toast-shared-content-title-typography-letter-spacing: var(
+		--semantic-typography-heading-sm-letter-spacing
+	);
+	--component-toast-shared-gap: var(--semantic-spacing-stack-sm);
+	--component-toast-shared-media-border-radius: var(
+		--semantic-radius-corner-xs
+	);
+	--component-toast-shared-padding-bottom: var(--semantic-spacing-stack-sm);
+	--component-toast-shared-padding-left: var(--semantic-spacing-stack-sm);
+	--component-toast-shared-padding-right: var(--semantic-spacing-stack-sm);
+	--component-toast-shared-padding-top: var(--semantic-spacing-stack-sm);
+	--component-toast-shared-shadow: var(--semantic-shadow-raised);
+	--component-toast-success-accent-color: var(--semantic-colors-text-success);
+	--component-toast-success-background-color: var(
+		--semantic-colors-fill-success-weak
+	);
+	--component-toast-warning-accent-color: var(--semantic-colors-text-warning);
+	--component-toast-warning-background-color: var(
+		--semantic-colors-fill-warning-weak
+	);
+	--component-toggle-switch-shared-color: var(--semantic-colors-text-strong);
+	--component-toggle-switch-shared-description-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-toggle-switch-shared-description-typography-font: var(
+		--semantic-typography-body-xs-font
+	);
+	--component-toggle-switch-shared-description-typography-font-width: var(
+		--semantic-typography-body-xs-font-width
+	);
+	--component-toggle-switch-shared-description-typography-letter-spacing: var(
+		--semantic-typography-body-xs-letter-spacing
+	);
+	--component-toggle-switch-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-toggle-switch-shared-thumb-background-color: var(
+		--semantic-colors-fill-unselected-strong
+	);
+	--component-toggle-switch-shared-thumb-color: var(
+		--semantic-colors-fill-selected-strong
+	);
+	--component-toggle-switch-shared-thumb-disabled-color: var(
+		--semantic-colors-fill-disabled
+	);
+	--component-toggle-switch-shared-track-background-color: var(
+		--semantic-colors-fill-neutral-medium
+	);
+	--component-toggle-switch-shared-track-disabled-background-color: var(
+		--semantic-colors-fill-disabled
+	);
+	--component-toggle-switch-shared-track-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-toggle-switch-shared-track-selected-background-color: var(
+		--semantic-colors-fill-selected-strong
+	);
+	--component-tooltip-shared-background-color: var(
+		--semantic-colors-fill-information-weak
+	);
+	--component-tooltip-shared-color: var(--semantic-colors-text-strong);
+	--component-tooltip-tooltip-border-radius: var(--semantic-radius-corner-sm);
+	--component-top-bar-background-color: var(--semantic-colors-bg-raised-level1);
+	--component-top-bar-border-bottom: var(--semantic-sizing-border-default) solid
+		var(--semantic-colors-border-weak);
+	--component-top-bar-border-left: var(--semantic-sizing-border-default) solid
+		var(--semantic-colors-border-weak);
+	--component-top-bar-border-right: var(--semantic-sizing-border-default) solid
+		var(--semantic-colors-border-weak);
+	--component-top-bar-border-top: var(--semantic-sizing-border-default) solid
+		var(--semantic-colors-border-weak);
+	--component-top-bar-collapsed-nav-menu-button-active-background-color: var(
+		--semantic-colors-bg-raised-level2
+	);
+	--component-top-bar-collapsed-nav-menu-button-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-top-bar-collapsed-nav-menu-button-hovered-background-color: var(
+		--semantic-colors-bg-raised-level2
+	);
+	--component-top-bar-collapsed-nav-menu-popover-background-color: var(
+		--semantic-colors-bg-raised-level1
+	);
+	--component-top-bar-collapsed-nav-menu-popover-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-weak);
+	--component-top-bar-item-border: var(--semantic-sizing-border-default) solid
+		var(--semantic-colors-border-weak);
+	--component-top-bar-navigation-md-typography-font: var(
+		--semantic-typography-heading-md-font
+	);
+	--component-top-bar-navigation-md-typography-font-width: var(
+		--semantic-typography-heading-md-font-width
+	);
+	--component-top-bar-navigation-md-typography-letter-spacing: var(
+		--semantic-typography-heading-md-letter-spacing
+	);
+	--component-top-bar-navigation-selected-border-bottom: var(
+			--semantic-sizing-border-extra-wide
+		)
+		solid var(--semantic-colors-border-selected);
+	--component-top-bar-navigation-selected-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-top-bar-navigation-shared-menu-open-selected-background-color: var(
+		--semantic-colors-bg-raised-level2
+	);
+	--component-top-bar-navigation-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-top-bar-navigation-shared-divider: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-weak);
+	--component-top-bar-navigation-shared-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-top-bar-navigation-sm-typography-font: var(
+		--semantic-typography-heading-sm-font
+	);
+	--component-top-bar-navigation-sm-typography-font-width: var(
+		--semantic-typography-heading-sm-font-width
+	);
+	--component-top-bar-navigation-sm-typography-letter-spacing: var(
+		--semantic-typography-heading-sm-letter-spacing
+	);
+	--component-top-bar-navigation-unselected-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-top-bar-tool-name-color: var(--semantic-colors-text-strong);
+	--component-top-bar-tool-name-divider-border: var(
+			--semantic-sizing-border-default
+		)
+		solid var(--semantic-colors-border-weak);
+	--component-top-bar-tool-name-hover-link-background-color: var(
+		--semantic-colors-fill-accent-strong-hover
+	);
+	--component-top-bar-tool-name-hover-link-color: var(
+		--semantic-colors-text-stronger-inverse
+	);
+	--component-top-bar-tool-name-hover-link-focused-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-top-bar-tool-name-hover-link-pressed-background-color: var(
+		--semantic-colors-fill-accent-strong-pressed
+	);
+	--component-top-bar-tool-name-hover-link-typography-font: var(
+		--semantic-typography-body-bold-sm-font
+	);
+	--component-top-bar-tool-name-hover-link-typography-font-width: var(
+		--semantic-typography-body-bold-sm-font-width
+	);
+	--component-top-bar-tool-name-hover-link-typography-letter-spacing: var(
+		--semantic-typography-body-bold-sm-letter-spacing
+	);
+	--component-top-bar-tool-name-subsection-typography-font: var(
+		--semantic-typography-heading-compact-md-font
+	);
+	--component-top-bar-tool-name-subsection-typography-font-width: var(
+		--semantic-typography-heading-compact-md-font-width
+	);
+	--component-top-bar-tool-name-subsection-typography-letter-spacing: var(
+		--semantic-typography-heading-compact-md-letter-spacing
+	);
+	--component-top-bar-tool-name-typography-font: var(
+		--semantic-typography-title-md-font
+	);
+	--component-top-bar-tool-name-typography-letter-spacing: var(
+		--semantic-typography-title-md-letter-spacing
+	);
+	--component-typography-color: var(--semantic-colors-text-strong);
+	--component-user-feedback-summary-error-border-color: var(
+		--semantic-colors-border-error
+	);
+	--component-user-feedback-summary-error-color: var(
+		--semantic-colors-text-error
+	);
+	--component-user-feedback-summary-information-border-color: var(
+		--semantic-colors-border-information
+	);
+	--component-user-feedback-summary-information-color: var(
+		--semantic-colors-text-blue
+	);
+	--component-user-feedback-summary-shared-border-width: var(
+		--semantic-sizing-border-default
+	);
+	--component-user-feedback-summary-shared-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-user-feedback-summary-success-border-color: var(
+		--semantic-colors-border-success
+	);
+	--component-user-feedback-summary-success-color: var(
+		--semantic-colors-text-success
+	);
+	--component-user-feedback-summary-warning-border-color: var(
+		--semantic-colors-border-warning
+	);
+	--component-user-feedback-summary-warning-color: var(
+		--semantic-colors-text-orange
+	);
+	--component-html-preview-loader-loading-icon-color: var(
+		--semantic-colors-border-strong
+	);
+	--component-html-preview-loader-preview-frame-background-color: var(
+		--semantic-colors-fill-neutral-weak
+	);
+	--component-html-preview-loader-preview-frame-border-color: var(
+		--semantic-colors-border-stronger
+	);
+	--component-html-preview-loader-preview-frame-border-width: var(
+		--semantic-sizing-border-default
+	);
+	--component-html-preview-loader-shared-color-background: var(
+		--semantic-colors-fill-weak
+	);
+	--component-html-preview-loader-shared-color-text: var(
+		--semantic-colors-text-strong
+	);
+	--component-intended-audience-signifier-border-color: var(
+		--semantic-colors-border-weak
+	);
+	--component-intended-audience-signifier-chevron-fill: var(
+		--semantic-colors-fill-strong
+	);
+	--component-intended-audience-signifier-color: var(
+		--semantic-colors-text-weak
+	);
+	--component-pagination-ellipsis-color: var(--semantic-colors-text-weak);
+	--component-pagination-item-active-background-color: var(
+		--semantic-colors-fill-weak-pressed
+	);
+	--component-pagination-item-background-color: var(
+		--semantic-colors-fill-weak
+	);
+	--component-pagination-item-border-color: var(--semantic-colors-border-weak);
+	--component-pagination-item-border-radius: var(--semantic-radius-corner-sm);
+	--component-pagination-item-border-width: var(
+		--semantic-sizing-border-default
+	);
+	--component-pagination-item-color: var(--semantic-colors-text-strong);
+	--component-pagination-item-current-background-color: var(
+		--semantic-colors-fill-selected-strong
+	);
+	--component-pagination-item-current-border-color: var(
+		--semantic-colors-border-selected
+	);
+	--component-pagination-item-current-color: var(
+		--semantic-colors-text-stronger-inverse
+	);
+	--component-pagination-item-current-typography-font: var(
+		--semantic-typography-heading-sm-font
+	);
+	--component-pagination-item-current-typography-font-width: var(
+		--semantic-typography-heading-sm-font-width
+	);
+	--component-pagination-item-current-typography-letter-spacing: var(
+		--semantic-typography-heading-sm-letter-spacing
+	);
+	--component-pagination-item-disabled-background-color: var(
+		--semantic-colors-fill-disabled
+	);
+	--component-pagination-item-disabled-border-color: var(
+		--semantic-colors-border-disabled
+	);
+	--component-pagination-item-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-pagination-item-focus-visible-outline-color: var(
+		--semantic-colors-border-focused
+	);
+	--component-pagination-item-focus-visible-outline-width: var(
+		--semantic-sizing-border-md
+	);
+	--component-pagination-item-height: var(--semantic-sizing-height-xs);
+	--component-pagination-item-hover-background-color: var(
+		--semantic-colors-fill-weak-hover
+	);
+	--component-pagination-item-hover-border-color: var(
+		--semantic-colors-border-weak
+	);
+	--component-pagination-item-min-width: var(--semantic-sizing-height-xs);
+	--component-pagination-item-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-pagination-item-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-pagination-item-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--component-pagination-summary-color: var(--semantic-colors-text-weak);
+	--component-pagination-summary-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-pagination-summary-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-pagination-summary-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--component-table-cell-typography-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--component-table-cell-typography-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--component-table-cell-typography-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--component-table-column-header-min-height: var(--semantic-sizing-height-lg);
+	--component-table-column-header-typography-font: var(
+		--semantic-typography-body-bold-sm-font
+	);
+	--component-table-column-header-typography-font-width: var(
+		--semantic-typography-body-bold-sm-font-width
+	);
+	--component-table-column-header-typography-letter-spacing: var(
+		--semantic-typography-body-bold-sm-letter-spacing
+	);
+	--component-table-compact-label-color: var(--semantic-colors-text-weak);
+	--component-table-compact-label-typography-font: var(
+		--semantic-typography-body-xs-font
+	);
+	--component-table-compact-label-typography-font-width: var(
+		--semantic-typography-body-xs-font-width
+	);
+	--component-table-compact-label-typography-letter-spacing: var(
+		--semantic-typography-body-xs-letter-spacing
+	);
+	--component-table-header-background-color: var(
+		--semantic-colors-bg-raised-level2
+	);
+	--component-table-header-border: var(--semantic-sizing-border-default) solid
+		var(--semantic-colors-border-weak);
+	--component-table-row-background-color: var(--semantic-colors-bg-base);
+	--component-table-row-border: var(--semantic-sizing-border-default) solid
+		var(--semantic-colors-border-weak);
+	--component-table-row-focus-visible-outline: var(--semantic-sizing-border-md)
+		solid var(--semantic-colors-border-focused);
+	--component-table-row-hover-background-color: var(
+		--semantic-colors-bg-raised-level1
+	);
+	--component-table-table-background-color: var(--semantic-colors-bg-base);
+	--component-table-table-border: var(--semantic-sizing-border-default) solid
+		var(--semantic-colors-border-weak);
+	--component-table-table-border-radius: var(--semantic-radius-corner-sm);
+	--component-table-table-color: var(--semantic-colors-text-strong);
+	--component-tag-table-add-button-background-color: var(
+		--semantic-colors-fill-strong
+	);
+	--component-tag-table-add-button-background-hover-color: var(
+		--semantic-colors-fill-strong-hover
+	);
+	--component-tag-table-add-button-color: var(
+		--semantic-colors-text-stronger-inverse
+	);
+	--component-tag-table-type-badge-color: var(--semantic-colors-text-strong);
+	--component-tile-shared-arrow-color: var(--semantic-colors-text-strong);
+	--component-tile-shared-background-color: var(--semantic-colors-bg-base);
+	--component-tile-shared-border-color: var(--semantic-colors-border-strong);
+	--component-tile-shared-border-radius: var(--semantic-radius-corner-sm);
+	--component-tile-shared-border-width: var(--semantic-sizing-border-default);
+	--component-tile-shared-color: var(--semantic-colors-text-strong);
+	--component-tile-shared-disabled-background-color: var(
+		--semantic-colors-bg-base
+	);
+	--component-tile-shared-disabled-border-color: var(
+		--semantic-colors-border-disabled
+	);
+	--component-tile-shared-disabled-color: var(--semantic-colors-text-disabled);
+	--component-tile-shared-focus-visible-outline: var(
+			--semantic-sizing-border-md
+		)
+		solid var(--semantic-colors-border-focused);
+	--component-tile-shared-focus-visible-outline-offset: var(
+		--semantic-sizing-border-md
+	);
+	--component-tile-shared-gap: var(--semantic-spacing-stack-xs);
+	--component-tile-shared-hover-background-color: var(
+		--semantic-colors-bg-raised-level1
+	);
+	--component-tile-shared-hover-border-color: var(
+		--semantic-colors-border-strong
+	);
+	--component-tile-shared-pressed-background-color: var(
+		--semantic-colors-bg-raised-level2
+	);
+	--component-tile-shared-pressed-border-color: var(
+		--semantic-colors-border-strong
+	);
+	--component-tile-shared-selectable-tile-shared-background-color: var(
+		--semantic-colors-fill-unselected-weaker
+	);
+	--component-tile-shared-selectable-tile-shared-focus-visible-background-color: var(
+		--semantic-colors-fill-unselected-weaker
+	);
+	--component-tile-shared-selectable-tile-shared-hover-background-color: var(
+		--semantic-colors-fill-unselected-hover-weaker
+	);
+	--component-tile-shared-selectable-tile-shared-pressed-background-color: var(
+		--semantic-colors-fill-unselected-pressed-weaker
+	);
+	--component-tile-shared-selectable-tile-shared-selected-background-color: var(
+		--semantic-colors-fill-selected-weaker
+	);
+	--component-tile-shared-selectable-tile-shared-selected-focus-visible-background-color: var(
+		--semantic-colors-fill-selected-weaker
+	);
+	--component-tile-shared-selectable-tile-shared-selected-hover-background-color: var(
+		--semantic-colors-fill-selected-hover-weaker
+	);
+	--component-tile-shared-selectable-tile-shared-selected-pressed-background-color: var(
+		--semantic-colors-fill-selected-pressed-weaker
+	);
+	--component-tile-shared-tile-arrow-shared-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-tile-shared-tile-arrow-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--component-tile-shared-tile-icon-shared-color: var(
+		--semantic-colors-text-strong
+	);
+	--component-tile-shared-tile-icon-shared-disabled-color: var(
+		--semantic-colors-text-disabled
+	);
+	--semantic-typography-help-text-form-compact-md-font: var(
+		--semantic-typography-body-compact-sm-font
+	);
+	--semantic-typography-help-text-form-compact-md-font-width: var(
+		--semantic-typography-body-compact-sm-font-width
+	);
+	--semantic-typography-help-text-form-compact-md-letter-spacing: var(
+		--semantic-typography-body-compact-sm-letter-spacing
+	);
+	--semantic-typography-help-text-form-md-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--semantic-typography-help-text-form-md-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--semantic-typography-help-text-form-md-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--semantic-typography-label-form-compact-md-font: var(
+		--semantic-typography-heading-compact-md-font
+	);
+	--semantic-typography-label-form-compact-md-font-width: var(
+		--semantic-typography-heading-compact-md-font-width
+	);
+	--semantic-typography-label-form-compact-md-letter-spacing: var(
+		--semantic-typography-heading-compact-md-letter-spacing
+	);
+	--semantic-typography-label-form-compact-sm-font: var(
+		--semantic-typography-heading-compact-sm-font
+	);
+	--semantic-typography-label-form-compact-sm-font-width: var(
+		--semantic-typography-heading-compact-sm-font-width
+	);
+	--semantic-typography-label-form-compact-sm-letter-spacing: var(
+		--semantic-typography-heading-compact-sm-letter-spacing
+	);
+	--semantic-typography-label-form-inline-compact-md-font: var(
+		--semantic-typography-body-compact-md-font
+	);
+	--semantic-typography-label-form-inline-compact-md-font-width: var(
+		--semantic-typography-body-compact-md-font-width
+	);
+	--semantic-typography-label-form-inline-compact-md-letter-spacing: var(
+		--semantic-typography-body-compact-md-letter-spacing
+	);
+	--semantic-typography-label-form-inline-compact-sm-font: var(
+		--semantic-typography-body-compact-sm-font
+	);
+	--semantic-typography-label-form-inline-compact-sm-font-width: var(
+		--semantic-typography-body-compact-sm-font-width
+	);
+	--semantic-typography-label-form-inline-compact-sm-letter-spacing: var(
+		--semantic-typography-body-compact-sm-letter-spacing
+	);
+	--semantic-typography-label-form-inline-md-font: var(
+		--semantic-typography-body-md-font
+	);
+	--semantic-typography-label-form-inline-md-font-width: var(
+		--semantic-typography-body-md-font-width
+	);
+	--semantic-typography-label-form-inline-md-letter-spacing: var(
+		--semantic-typography-body-md-letter-spacing
+	);
+	--semantic-typography-label-form-inline-sm-font: var(
+		--semantic-typography-body-sm-font
+	);
+	--semantic-typography-label-form-inline-sm-font-width: var(
+		--semantic-typography-body-sm-font-width
+	);
+	--semantic-typography-label-form-inline-sm-letter-spacing: var(
+		--semantic-typography-body-sm-letter-spacing
+	);
+	--semantic-typography-label-form-md-font: var(
+		--semantic-typography-heading-md-font
+	);
+	--semantic-typography-label-form-md-font-width: var(
+		--semantic-typography-heading-md-font-width
+	);
+	--semantic-typography-label-form-md-letter-spacing: var(
+		--semantic-typography-heading-md-letter-spacing
+	);
+	--semantic-typography-label-form-sm-font: var(
+		--semantic-typography-heading-sm-font
+	);
+	--semantic-typography-label-form-sm-font-width: var(
+		--semantic-typography-heading-sm-font-width
+	);
+	--semantic-typography-label-form-sm-letter-spacing: var(
+		--semantic-typography-heading-sm-letter-spacing
+	);
+	--component-alert-banner-shared-content-typography-font: var(
+		--semantic-typography-help-text-form-md-font
+	);
+	--component-alert-banner-shared-content-typography-font-width: var(
+		--semantic-typography-help-text-form-md-font-width
+	);
+	--component-alert-banner-shared-content-typography-letter-spacing: var(
+		--semantic-typography-help-text-form-md-letter-spacing
+	);
+	--component-checkbox-input-md-typography-font: var(
+		--semantic-typography-label-form-inline-md-font
+	);
+	--component-checkbox-input-md-typography-font-width: var(
+		--semantic-typography-label-form-inline-md-font-width
+	);
+	--component-checkbox-input-md-typography-letter-spacing: var(
+		--semantic-typography-label-form-inline-md-letter-spacing
+	);
+	--component-checkbox-input-sm-typography-font: var(
+		--semantic-typography-label-form-inline-sm-font
+	);
+	--component-checkbox-input-sm-typography-font-width: var(
+		--semantic-typography-label-form-inline-sm-font-width
+	);
+	--component-checkbox-input-sm-typography-letter-spacing: var(
+		--semantic-typography-label-form-inline-sm-letter-spacing
+	);
+	--component-form-input-md-label-typography-font: var(
+		--semantic-typography-label-form-md-font
+	);
+	--component-form-input-md-label-typography-font-width: var(
+		--semantic-typography-label-form-md-font-width
+	);
+	--component-form-input-md-label-typography-letter-spacing: var(
+		--semantic-typography-label-form-md-letter-spacing
+	);
+	--component-form-input-shared-description-typography-font: var(
+		--semantic-typography-help-text-form-md-font
+	);
+	--component-form-input-shared-description-typography-font-width: var(
+		--semantic-typography-help-text-form-md-font-width
+	);
+	--component-form-input-shared-description-typography-letter-spacing: var(
+		--semantic-typography-help-text-form-md-letter-spacing
+	);
+	--component-form-input-sm-label-typography-font: var(
+		--semantic-typography-label-form-sm-font
+	);
+	--component-form-input-sm-label-typography-font-width: var(
+		--semantic-typography-label-form-sm-font-width
+	);
+	--component-form-input-sm-label-typography-letter-spacing: var(
+		--semantic-typography-label-form-sm-letter-spacing
+	);
+	--component-inline-message-shared-typography-font: var(
+		--semantic-typography-help-text-form-md-font
+	);
+	--component-inline-message-shared-typography-font-width: var(
+		--semantic-typography-help-text-form-md-font-width
+	);
+	--component-inline-message-shared-typography-letter-spacing: var(
+		--semantic-typography-help-text-form-md-letter-spacing
+	);
+	--component-menu-menu-item-md-icon-size: var(--component-icon-md-size);
+	--component-menu-menu-item-sm-icon-size: var(--component-icon-sm-size);
+	--component-radio-group-md-typography-font: var(
+		--semantic-typography-label-form-inline-md-font
+	);
+	--component-radio-group-md-typography-font-width: var(
+		--semantic-typography-label-form-inline-md-font-width
+	);
+	--component-radio-group-md-typography-letter-spacing: var(
+		--semantic-typography-label-form-inline-md-letter-spacing
+	);
+	--component-radio-group-sm-typography-font: var(
+		--semantic-typography-label-form-inline-sm-font
+	);
+	--component-radio-group-sm-typography-font-width: var(
+		--semantic-typography-label-form-inline-sm-font-width
+	);
+	--component-radio-group-sm-typography-letter-spacing: var(
+		--semantic-typography-label-form-inline-sm-letter-spacing
+	);
+	--component-text-list-input-label-typography-font: var(
+		--semantic-typography-label-form-md-font
+	);
+	--component-text-list-input-label-typography-font-width: var(
+		--semantic-typography-label-form-md-font-width
+	);
+	--component-text-list-input-label-typography-letter-spacing: var(
+		--semantic-typography-label-form-md-letter-spacing
+	);
+	--component-toggle-switch-md-typography-font: var(
+		--semantic-typography-label-form-inline-md-font
+	);
+	--component-toggle-switch-md-typography-font-width: var(
+		--semantic-typography-label-form-inline-md-font-width
+	);
+	--component-toggle-switch-md-typography-letter-spacing: var(
+		--semantic-typography-label-form-inline-md-letter-spacing
+	);
+	--component-toggle-switch-sm-typography-font: var(
+		--semantic-typography-label-form-inline-sm-font
+	);
+	--component-toggle-switch-sm-typography-font-width: var(
+		--semantic-typography-label-form-inline-sm-font-width
+	);
+	--component-toggle-switch-sm-typography-letter-spacing: var(
+		--semantic-typography-label-form-inline-sm-letter-spacing
+	);
+}

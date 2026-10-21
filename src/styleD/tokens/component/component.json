@@ -2128,16 +2128,6 @@
 						"$value": "{base.spacing.12Rem}"
 					}
 				},
-				"shared": {
-					"display": {
-						"$type": "text",
-						"$value": "flex"
-					},
-					"flexDirection": {
-						"$type": "text",
-						"$value": "column"
-					}
-				},
 				"sm": {
 					"gap": {
 						"$type": "dimension",
@@ -2179,26 +2169,14 @@
 					}
 				},
 				"shared": {
-					"alignItems": {
-						"$type": "text",
-						"$value": "flex-start"
-					},
 					"color": {
 						"$type": "color",
 						"$value": "{semantic.colors.text.strong}"
-					},
-					"cursor": {
-						"$type": "text",
-						"$value": "pointer"
 					},
 					"disabled": {
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.disabled}"
-						},
-						"cursor": {
-							"$type": "text",
-							"$value": "not-allowed"
 						},
 						"indicator": {
 							"border": {
@@ -2217,19 +2195,11 @@
 							}
 						}
 					},
-					"display": {
-						"$type": "text",
-						"$value": "flex"
-					},
 					"gap": {
 						"$type": "dimension",
 						"$value": "{base.spacing.8Rem}"
 					},
 					"indicator": {
-						"alignItems": {
-							"$type": "text",
-							"$value": "center"
-						},
 						"border": {
 							"$type": "border",
 							"$value": {
@@ -2258,10 +2228,6 @@
 								}
 							}
 						},
-						"display": {
-							"$type": "text",
-							"$value": "flex"
-						},
 						"error": {
 							"backgroundColor": {
 								"$type": "color",
@@ -2275,10 +2241,6 @@
 									"width": "{semantic.sizing.border.default}"
 								}
 							}
-						},
-						"flexShrink": {
-							"$type": "number",
-							"$value": 0
 						},
 						"focusVisible": {
 							"outline": {
@@ -2310,10 +2272,6 @@
 								}
 							}
 						},
-						"justifyContent": {
-							"$type": "text",
-							"$value": "center"
-						},
 						"selected": {
 							"backgroundColor": {
 								"$type": "color",
@@ -2333,16 +2291,6 @@
 									"$value": "{semantic.colors.text.strongerInverse}"
 								}
 							}
-						},
-						"svg": {
-							"fill": {
-								"$type": "text",
-								"$value": "none"
-							}
-						},
-						"transition": {
-							"$type": "text",
-							"$value": "all 200ms"
 						}
 					},
 					"label": {

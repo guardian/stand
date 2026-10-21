@@ -1,20 +1,16 @@
 import React from 'react';
 import { CheckboxGroup as RACCheckboxGroup } from 'react-aria-components';
-import { mergeDeep } from '../../util/mergeDeep';
 import { FormInputContainer } from '../Form/Form';
 import { Checkbox } from './Checkbox';
-import { checkboxGroupStyles, defaultCheckboxTheme } from './styles';
+import { checkboxGroupStyles } from './styles';
 import type { CheckboxGroupProps, CheckboxProps } from './types';
 
 export function CheckboxGroup({
 	size = 'md',
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
 	theme = {},
 	...props
 }: CheckboxGroupProps) {
-	const mergedTheme = mergeDeep(defaultCheckboxTheme, {
-		group: theme,
-	});
-
 	const checkboxes: React.ReactElement[] = [];
 
 	// only allow Checkbox components as children of CheckboxGroup and apply theme and size props to them
@@ -33,7 +29,7 @@ export function CheckboxGroup({
 
 	return (
 		<FormInputContainer as={RACCheckboxGroup} size={size} {...props}>
-			<div css={checkboxGroupStyles(mergedTheme, { size }, props.isInvalid)}>
+			<div css={checkboxGroupStyles({ size }, props.isInvalid)}>
 				{checkboxes}
 			</div>
 		</FormInputContainer>

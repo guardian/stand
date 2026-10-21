@@ -11,4 +11,4 @@ export {
 
 export { GlobalResetStyles } from './util/reset';
 
-export { from, until, between } from './styleD/utils/semantic/mq';
+export { between, from, until } from './styleD/utils/semantic/mq';
