@@ -1,4 +1,4 @@
-import { baseColors } from '@guardian/stand';
+import { baseColors } from '../../styleD/build/typescript/base/colors';
 
 interface Props {
 	color?: string;
