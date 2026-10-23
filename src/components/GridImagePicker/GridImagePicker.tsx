@@ -41,6 +41,8 @@ export const GridImagePicker = ({
 	hideDisabledButtons = false,
 	noPageUrlButton = false,
 	initialFailure,
+	maximumAssetSize,
+	minimumAssetSize,
 }: GridImagePickerProps) => {
 	const mergedTheme = mergeDeep(defaultGridImagePickerTheme, theme);
 	const [gridPageOpen, seGridPageOpen] = useState<'search' | 'image'>();
@@ -69,7 +71,7 @@ export const GridImagePicker = ({
 			return;
 		}
 		setCropId(crop.id);
-		const asset = extractAsset(crop);
+		const asset = extractAsset(crop, minimumAssetSize, maximumAssetSize);
 		const imageAssetUrl = asset?.file;
 
 		if (!imageAssetUrl) {

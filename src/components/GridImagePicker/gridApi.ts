@@ -19,20 +19,31 @@ export const validateGridData = (
 	return {};
 };
 
-const DESIRED_MINIMUM_ASSET_WIDTH = 200;
-export const extractAsset = (crop: CropData): CropAsset | undefined => {
+export const extractAsset = (
+	crop: CropData,
+	minimumSize: number | undefined,
+	maximumSize: number | undefined,
+): CropAsset | undefined => {
 	const assetsSmallestFirst = crop.assets?.sort(
 		(assetA, assetB) =>
 			(assetA.dimensions?.width ?? 0) - (assetB.dimensions?.width ?? 0),
 	);
-	const assetToUse =
-		assetsSmallestFirst?.find(
-			(asset) =>
-				asset.dimensions?.width &&
-				asset.dimensions.width >= DESIRED_MINIMUM_ASSET_WIDTH,
-		) ?? assetsSmallestFirst?.pop();
+	const matchingAsset = assetsSmallestFirst?.find(
+		(asset) =>
+			asset.dimensions?.width &&
+			asset.dimensions.width >= (minimumSize ?? 200) &&
+			asset.dimensions.width <= (maximumSize ?? Infinity),
+	);
 
-	return assetToUse;
+	if (matchingAsset) {
+		return matchingAsset;
+	}
+
+	if (minimumSize && !maximumSize) {
+		return assetsSmallestFirst?.pop();
+	}
+
+	return assetsSmallestFirst?.shift();
 };
 
 export const isFiveFourCrop = (crop: CropData): boolean | undefined => {

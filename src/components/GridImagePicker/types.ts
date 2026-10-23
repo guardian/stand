@@ -34,4 +34,6 @@ export type GridImagePickerProps = DefaultProps<GridImagePickerTheme> & {
 	hideDisabledButtons?: boolean;
 	noPageUrlButton?: boolean;
 	initialFailure?: string;
+	maximumAssetSize?: number;
+	minimumAssetSize?: number;
 };
