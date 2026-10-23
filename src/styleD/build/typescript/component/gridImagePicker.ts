@@ -4,9 +4,10 @@
 
 export const componentGridImagePicker = {
 	container: {
-		background: 'none',
-		gap: '1rem',
-		padding: '1rem',
+		columnGap: '0.75rem',
+		rowGap: '0.25rem',
+		padding: '0.25rem',
+		width: '350px',
 	},
 	imagePreview: {
 		background: '#ededed',

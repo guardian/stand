@@ -2,17 +2,21 @@
 	"component": {
 		"gridImagePicker": {
 			"container": {
-				"background": {
-					"$type": "color",
-					"$value": "none"
-				},
-				"gap": {
+				"columnGap": {
 					"$type": "dimension",
-					"$value": "{semantic.spacing.stackMd}"
+					"$value": "{semantic.spacing.stackSm}"
+				},
+				"rowGap": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackXxs}"
 				},
 				"padding": {
 					"$type": "dimension",
-					"$value": "{semantic.spacing.stackMd}"
+					"$value": "{semantic.spacing.stackXxs}"
+				},
+				"width": {
+					"$type": "dimension",
+					"$value": "350px"
 				}
 			},
 			"imagePreview": {

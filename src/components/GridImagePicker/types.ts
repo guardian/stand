@@ -31,4 +31,7 @@ export type GridImagePickerProps = DefaultProps<GridImagePickerTheme> & {
 	initialValues?: ImageAssetParams;
 	noThumbnail?: boolean;
 	gridImageSourceDomain?: string;
+	hideDisabledButtons?: boolean;
+	noPageUrlButton?: boolean;
+	initialFailure?: string;
 };

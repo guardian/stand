@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { mergeDeep } from '../../util/mergeDeep';
 import { Button } from '../Button/Button';
-import { Icon } from '../Icon/Icon';
 import { InlineMessage } from '../InlineMessage/InlineMessage';
-import { Link } from '../Link/Link';
+import { LinkButton } from '../LinkButton/LinkButton';
 import { PickerIframeModal } from '../PickerIframeModal/PickerIframeModal';
 import { CopyTextButton } from './CopyTextButton';
 import {
@@ -20,9 +19,14 @@ import {
 	getImageSearchPage,
 } from './gridUri';
 import {
+	copyButtonStyles,
+	cropButtonStyles,
 	defaultGridImagePickerTheme,
+	errorStyles,
 	gridImagePickerStyles,
+	imageButtonStyles,
 	imagePreviewStyles,
+	linkButtonStyles,
 } from './styles';
 import type { GridImagePickerProps, ImageAndCrop } from './types';
 
@@ -34,10 +38,13 @@ export const GridImagePicker = ({
 	initialValues,
 	noThumbnail,
 	theme = {},
+	hideDisabledButtons = false,
+	noPageUrlButton = false,
+	initialFailure,
 }: GridImagePickerProps) => {
 	const mergedTheme = mergeDeep(defaultGridImagePickerTheme, theme);
 	const [gridPageOpen, seGridPageOpen] = useState<'search' | 'image'>();
-	const [failureFeedback, setFailureFeedBack] = useState<string>();
+	const [failureFeedback, setFailureFeedBack] = useState(initialFailure);
 
 	const [assetUrl, setAssetUrl] = useState(initialValues?.assetUrl);
 	const [imageId, setImageId] = useState(initialValues?.imageId);
@@ -87,30 +94,48 @@ export const GridImagePicker = ({
 			: getImageSearchPage(gridUri)
 		: undefined;
 
+	const imageButtonLabel = imageId ? 'Change Image' : 'Pick Image';
+
 	return (
 		<section css={gridImagePickerStyles(mergedTheme)}>
-			{!noThumbnail && (
-				<div css={imagePreviewStyles(mergedTheme)}>
-					{previewUrl ? (
-						<img src={previewUrl} alt="image preview" />
-					) : (
-						<Icon symbol="replace_image" size="lg" />
-					)}
-				</div>
-			)}
-
 			<Button
-				icon={<GridIcon />}
+				cssOverrides={imageButtonStyles}
+				icon={noThumbnail ? <GridIcon /> : undefined}
+				theme={{
+					shared: {},
+					primary: {
+						shared: {},
+						md: {
+							...(noThumbnail ? {} : { height: 'unseet' }),
+						},
+					},
+				}}
+				aria-label={imageButtonLabel}
 				onClick={() => {
 					seGridPageOpen('search');
 					setFailureFeedBack(undefined);
 				}}
 			>
-				Pick Image
+				{noThumbnail ? (
+					<span>{imageButtonLabel}</span>
+				) : (
+					<div css={imagePreviewStyles(mergedTheme)}>
+						{previewUrl ? (
+							<img src={previewUrl} alt="image preview" />
+						) : (
+							<>
+								<GridIcon />
+								<span>{imageButtonLabel}</span>
+							</>
+						)}
+					</div>
+				)}
 			</Button>
 
-			{imageId && (
+			{(imageId ?? !hideDisabledButtons) && (
 				<Button
+					isDisabled={!imageId}
+					cssOverrides={cropButtonStyles}
 					icon="crop"
 					onClick={() => {
 						seGridPageOpen('image');
@@ -121,19 +146,27 @@ export const GridImagePicker = ({
 				</Button>
 			)}
 
-			<div>
-				{gridUiLink && (
-					<>
-						<Link target="_blank" href={gridUiLink}>
-							open {cropId ? 'crop' : 'image'} page
-						</Link>
+			{!noPageUrlButton && (gridUiLink ?? !hideDisabledButtons) && (
+				<>
+					<LinkButton
+						isDisabled={!gridUiLink}
+						variant="secondary"
+						target="_blank"
+						href={gridUiLink}
+						cssOverrides={linkButtonStyles}
+					>
+						open {cropId ? 'crop' : 'image'} page
+					</LinkButton>
+					<div css={copyButtonStyles}>
 						<CopyTextButton textToCopy={gridUiLink} label="copy link" />
-					</>
-				)}
-			</div>
+					</div>
+				</>
+			)}
 
 			{failureFeedback && (
-				<InlineMessage level="error">{failureFeedback}</InlineMessage>
+				<InlineMessage cssOverrides={errorStyles} level="error">
+					{failureFeedback}
+				</InlineMessage>
 			)}
 			<PickerIframeModal
 				showOpenInNewTabButton

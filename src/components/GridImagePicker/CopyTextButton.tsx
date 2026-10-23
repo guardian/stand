@@ -3,7 +3,7 @@ import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
 
 interface CopyTextButtonProps {
-	textToCopy: string;
+	textToCopy?: string;
 	label: string;
 	onClick?: () => void;
 }
@@ -35,18 +35,17 @@ const buttonLabel = (status: CopyStatus, labelWhenReady: string) => {
 const CopyTextButton = ({
 	textToCopy,
 	label,
-	onClick = () => {
-		// Default onClick does nothing.
-		// (Nicer than having it potentially be undefined,
-		// and therefore needing guard clauses when we reference it.)
-	},
+	onClick,
 }: CopyTextButtonProps) => {
 	const [copyStatus, setCopyStatus] = useState<'done' | 'fail' | 'ready'>(
 		'ready',
 	);
 
 	const handleClick = () => {
-		onClick();
+		onClick?.();
+		if (!textToCopy) {
+			return;
+		}
 		navigator.clipboard
 			.writeText(textToCopy)
 			.then(() => {
@@ -60,6 +59,8 @@ const CopyTextButton = ({
 
 	return (
 		<Button
+			isDisabled={!textToCopy}
+			variant="secondary"
 			aria-live="polite"
 			aria-label={buttonLabel(copyStatus, label)}
 			onBlur={() => {

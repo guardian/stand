@@ -17,21 +17,32 @@ export const gridImagePickerStyles = (
 	theme: GridImagePickerTheme,
 ): SerializedStyles => {
 	return css`
-		background-color: ${theme.container.background};
-		display: flex;
-		gap: ${theme.container.gap};
+		display: grid;
+		width: ${theme.container.width};
+		column-gap: ${theme.container.columnGap};
+		row-gap: ${theme.container.rowGap};
 		padding: ${theme.container.padding};
 		align-items: center;
+
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: min-content;
+
+		grid-template-areas:
+			'image image'
+			'crop  crop'
+			'link  copy'
+			'error error';
 	`;
 };
 
 export const imagePreviewStyles = ({
+	container,
 	imagePreview,
 }: GridImagePickerTheme): SerializedStyles => {
 	return css`
-		background-color: ${imagePreview.background};
 		padding: ${imagePreview.padding};
 		width: ${imagePreview.maxWidth};
+		max-width: ${container.width};
 		height: ${imagePreview.maxHeight};
 		display: flex;
 		justify-content: center;
@@ -44,3 +55,27 @@ export const imagePreviewStyles = ({
 		}
 	`;
 };
+
+export const copyButtonStyles = {
+	gridArea: 'copy',
+	display: 'flex',
+	button: {
+		flex: 1,
+	},
+};
+
+export const linkButtonStyles = css({
+	gridArea: 'link',
+});
+
+export const cropButtonStyles = css({
+	gridArea: 'crop',
+});
+
+export const imageButtonStyles = css({
+	gridArea: 'image',
+});
+
+export const errorStyles = css({
+	gridArea: 'error',
+});
