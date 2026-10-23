@@ -3,49 +3,49 @@
  */
 
 export const componentSearchInput = {
+	md: {
+		height: '2.5rem',
+		iconMarginRight: '8px',
+		typography: {
+			font: 'normal 460 1rem/1.3 Open Sans',
+			fontWidth: 95,
+			letterSpacing: '0rem',
+		},
+	},
 	shared: {
+		backgroundColor: '#ffffff',
+		border: '0.0625rem solid #545454',
+		borderRadius: '0.25rem',
 		color: '#000000',
 		cursor: 'text',
-		padding: {
-			top: '0',
-			right: '0.75rem',
-			bottom: '0',
-			left: '0.75rem',
-		},
-		marginTop: '0.25rem',
-		borderRadius: '0.25rem',
-		border: '0.0625rem solid #545454',
-		backgroundColor: '#ffffff',
-		placeholderColor: '#545454',
 		disabled: {
 			backgroundColor: '#ffffff',
-			cursor: 'not-allowed',
-			color: '#999999',
 			border: '0.0625rem solid #dcdcdc',
-		},
-		focused: {
-			outline: '0.125rem auto #0072a9',
+			color: '#999999',
+			cursor: 'not-allowed',
 		},
 		error: {
 			border: '0.0625rem solid #b42a19',
 		},
+		focused: {
+			outline: '0.125rem auto #0072a9',
+		},
+		marginTop: '0.25rem',
+		padding: {
+			bottom: '0px',
+			left: '0.75rem',
+			right: '0.75rem',
+			top: '0px',
+		},
+		placeholderColor: '#545454',
 	},
 	sm: {
 		height: '2rem',
 		iconMarginRight: '6px',
 		typography: {
 			font: 'normal 460 0.875rem/1.3 Open Sans',
-			letterSpacing: '0rem',
 			fontWidth: 95,
-		},
-	},
-	md: {
-		height: '2.5rem',
-		iconMarginRight: '8px',
-		typography: {
-			font: 'normal 460 1rem/1.3 Open Sans',
 			letterSpacing: '0rem',
-			fontWidth: 95,
 		},
 	},
 };

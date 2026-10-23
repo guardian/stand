@@ -1,4 +1,5 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { MetaTable } from '../../util/storybook/MetaTable';
 import TemplateComponentStories, {
 	Default,
 	CustomMessage,
@@ -21,6 +22,10 @@ import {
 <Meta of={TemplateComponentStories} />
 
 # TemplateComponent
+
+{/* Choose the collection using the Contributing guide. For shareable components, use collection="Shareable non-Design System Components" and omit the verification flag. */}
+
+<MetaTable designSystemTeamVerified={false} />
 
 The TemplateComponent component [[enter description of purpose]].
 

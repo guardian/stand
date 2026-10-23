@@ -3,60 +3,60 @@
  */
 
 export const componentTagTable = {
-	header: {
-		backgroundColor: '#dcdcdc',
-		paddingTop: '3px',
-		paddingRight: '5px',
-		paddingBottom: '3px',
-		paddingLeft: '12px',
-		gap: '4px',
-	},
-	heading: {
-		fontWeight: 700,
-		fontSize: '14px',
-	},
-	subHeading: {
+	addButton: {
+		backgroundColor: '#545454',
+		backgroundHoverColor: '#333333',
+		color: '#ffffff',
+		fontSize: '13px',
 		fontWeight: 400,
-		fontSize: '12px',
+		paddingX: '10px',
+		paddingY: '0px',
 	},
 	cell: {
+		borderBetweenCells: {
+			borderColor: '#ffffff',
+			borderStyle: 'solid',
+			borderWidth: '1px',
+		},
+		firstCellPaddingLeft: '12px',
 		paddingX: '5px',
 		paddingY: '3px',
-		firstCellPaddingLeft: '12px',
-		borderBetweenCells: {
-			borderWidth: '1px',
-			borderStyle: 'solid',
-			borderColor: '#ffffff',
-		},
+	},
+	header: {
+		backgroundColor: '#dcdcdc',
+		gap: '4px',
+		paddingBottom: '3px',
+		paddingLeft: '12px',
+		paddingRight: '5px',
+		paddingTop: '3px',
+	},
+	heading: {
+		fontSize: '14px',
+		fontWeight: 700,
 	},
 	row: {
-		height: '28px',
 		backgroundColor: '#ededed',
 		backgroundHoverColor: '#f6f6f6',
 		borderBottom: {
-			borderWidth: '1px',
-			borderStyle: 'solid',
 			borderColor: '#ffffff',
+			borderStyle: 'solid',
+			borderWidth: '1px',
 		},
 		firstRowBackgroundColor: '#aed2a6',
 		firstRowBackgroundHoverColor: '#8ec183',
+		height: '28px',
 	},
-	addButton: {
-		color: '#ffffff',
-		paddingX: '10px',
-		paddingY: '0px',
-		backgroundColor: '#545454',
-		backgroundHoverColor: '#333333',
+	subHeading: {
+		fontSize: '12px',
 		fontWeight: 400,
-		fontSize: '13px',
 	},
 	typeBadge: {
-		color: '#000000',
 		backgroundColor: '#ffffff',
+		color: '#000000',
+		fontSize: '10px',
+		fontWeight: 700,
 		paddingX: '6px',
 		paddingY: '2px',
-		fontWeight: 700,
-		fontSize: '10px',
 	},
 };
 export type ComponentTagTable = typeof componentTagTable;

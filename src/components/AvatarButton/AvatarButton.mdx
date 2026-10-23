@@ -24,12 +24,21 @@ import {
 	componentJs,
 	componentTsx,
 } from './sandbox';
+import { MetaTable } from '../../util/storybook/MetaTable';
 
 <Meta of={AvatarButtonStories} />
 
 # AvatarButton
 
 A React Aria powered button styled like the Stand `Avatar` component. It displays a user's profile image or initials in a circular container and keeps disabled state handling, and render props for pending interactions while sharing the same color variants and sizes as `Avatar`. See React Aria guidance in their [Button docs](https://react-aria.adobe.com/Button).
+
+<MetaTable
+	designSystemTeamVerified
+	figmaLink="https://www.figma.com/design/gmHnKr3tOzvnYp1FZeIl4t/Stand--Editorial-tool-Design-System?node-id=206-2937&m=dev"
+	reactAriaLink="https://react-aria.adobe.com/Button"
+/>
+
+<Canvas layout="padded" of={InitialsMd} />
 
 ## When to use
 

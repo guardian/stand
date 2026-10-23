@@ -4,9 +4,9 @@
 
 :root {
 	--base-radius-corner2-px: 2px;
-	--base-radius-corner4-px: 4px;
-	--base-radius-corner8-px: 8px;
 	--base-radius-corner2-rem: 0.125rem;
+	--base-radius-corner4-px: 4px;
 	--base-radius-corner4-rem: 0.25rem;
+	--base-radius-corner8-px: 8px;
 	--base-radius-corner8-rem: 0.5rem;
 }

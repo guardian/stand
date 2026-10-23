@@ -3,90 +3,90 @@
  */
 
 export const componentRadioGroup = {
-	shared: {
-		marginTop: '0.5rem',
-		marginBottom: '0.5rem',
-		display: 'flex',
-		orientation: {
-			vertical: {
-				flexDirection: 'column',
-			},
-			horizontal: {
-				flexDirection: 'row',
-			},
-		},
-		radio: {
-			color: '#000000',
-			disabled: {
-				color: '#999999',
-			},
-			display: 'flex',
-			alignItems: 'center',
-			gap: '0.5rem',
-		},
+	md: {
+		gap: '1.25rem',
 		indicator: {
-			position: 'relative',
+			height: '1.5rem',
+			width: '1.5rem',
+		},
+		typography: {
+			font: 'normal 460 1rem/1.3 Open Sans',
+			fontWidth: 95,
+			letterSpacing: '0rem',
+		},
+	},
+	shared: {
+		display: 'flex',
+		indicator: {
 			after: {
-				position: 'absolute',
 				borderRadius: 'inherit',
 				inset: '0px',
-				scale: '0',
+				position: 'absolute',
+				scale: 0,
 			},
-			borderRadius: '50%',
 			border: '0.0625rem solid #545454',
+			borderRadius: '50%',
+			disabled: {
+				border: '0.0625rem solid #dcdcdc',
+			},
 			focused: {
 				outline: '0.125rem solid #0072a9',
 				outlineOffset: '0.125rem',
 			},
 			invalid: {
-				border: '0.0625rem solid #b42a19',
 				after: {
 					backgroundColor: '#b42a19',
 				},
+				border: '0.0625rem solid #b42a19',
 			},
-			disabled: {
-				border: '0.0625rem solid #dcdcdc',
-			},
+			position: 'relative',
 			selected: {
 				after: {
 					backgroundColor: '#0072a9',
 					scale: 0.6,
 				},
 				border: '0.125rem solid #0072a9',
-				invalid: {
-					border: '0.125rem solid #b42a19',
-				},
 				disabled: {
-					border: '0.125rem solid #dcdcdc',
 					after: {
 						backgroundColor: '#dcdcdc',
 					},
+					border: '0.125rem solid #dcdcdc',
+				},
+				invalid: {
+					border: '0.125rem solid #b42a19',
 				},
 			},
+		},
+		marginBottom: '0.5rem',
+		marginTop: '0.5rem',
+		orientation: {
+			horizontal: {
+				flexDirection: 'row',
+			},
+			vertical: {
+				flexDirection: 'column',
+			},
+		},
+		radio: {
+			alignItems: 'center',
+			color: '#000000',
+			disabled: {
+				color: '#999999',
+			},
+			display: 'flex',
+			gap: '0.5rem',
 		},
 	},
 	sm: {
 		gap: '1rem',
+		indicator: {
+			height: '1.25rem',
+			width: '1.25rem',
+		},
 		typography: {
 			font: 'normal 460 0.875rem/1.3 Open Sans',
-			letterSpacing: '0rem',
 			fontWidth: 95,
-		},
-		indicator: {
-			width: '1.25rem',
-			height: '1.25rem',
-		},
-	},
-	md: {
-		gap: '1.25rem',
-		typography: {
-			font: 'normal 460 1rem/1.3 Open Sans',
 			letterSpacing: '0rem',
-			fontWidth: 95,
-		},
-		indicator: {
-			width: '1.5rem',
-			height: '1.5rem',
 		},
 	},
 };

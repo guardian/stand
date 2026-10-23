@@ -3,19 +3,19 @@
  */
 
 export const componentFavicon = {
+	alignItems: 'center',
 	color: {
 		background: '#00496c',
 		text: '#ffffff',
 	},
-	size: '2rem',
 	display: 'inline-flex',
-	alignItems: 'center',
 	justifyContent: 'center',
-	userSelect: 'none',
+	size: '2rem',
 	typography: {
 		font: 'normal 700 1.25rem/1.15 GH Guardian Headline',
-		letterSpacing: '0rem',
 		fontWidth: 100,
+		letterSpacing: '0rem',
 	},
+	userSelect: 'none',
 };
 export type ComponentFavicon = typeof componentFavicon;

@@ -2,11 +2,28 @@
 
 See the [Getting Started docs](https://guardian.github.io/stand/?path=/docs/getting-started--docs) for an overview of the project and setup guidelines.
 
-`@guardian/stand` is a shared component library for Guardian internal/editorial tooling.
+`@guardian/stand` is a design system and shared component library for Guardian internal tooling.
 
 If you think you have a component that could be useful across multiple tools, or would like to contribute to the design system, please consider contributing it here! The general guidelines and principles are outlined below.
 
-If you want to make changes to existing components, or have suggestions for improvements, please also feel free to contribute - reach out to the team if you want to discuss the changes or raise a issue/PR!
+If you want to make changes to existing components, or have suggestions for improvements, please also feel free to contribute - reach out to the Design Systems team if you want to discuss the changes or raise a issue/PR!
+
+## Choosing a collection
+
+**Stand contains two collections:** the **Tools Design System**, our core foundations and UI components, and **Shareable non-Design System Components**, reusable components that sit outside the design system. Both are available through `@guardian/stand`; inclusion in Stand does not imply design system membership.
+
+Use this guide when adding a component:
+
+- **Core UI building block governed by the Tools Design System?**
+  - Discuss its placement with the design system team and use the Tools Design System collection. Follow its foundations, accessibility expectations, and review process.
+- **Reusable across two or more Guardian tools, but does not need design system governance?**
+  - Use Shareable non-Design System Components.
+- **Unsure?**
+  - Start in the shareable collection and flag the placement for discussion.
+
+Using design tokens or composing design system components does not automatically make a component part of the Tools Design System. Collection membership and verification are separate: a design system component may be awaiting review, while verification is not required for the shareable collection.
+
+In either collection, keep components reusable and API-agnostic. Consumers should supply external integrations through props or callbacks rather than coupling components to specific services.
 
 ## Guidelines
 
@@ -31,22 +48,21 @@ Components for the Tools Design System should also:
 - Be verified by the design systems team before being treated as part of the supported design system.
 
 - **Follow the design system foundations**
-  - Use the established design tokens (base, semantic, and component-level) rather than hard-coded values.
-  - Prefer [semantic tokens over base tokens](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-semantic-color--docs) wherever possible.
+  - Use semantic tokens to build UI; do not use base tokens or hard-coded design values directly unless explicitly stated in the design
+  - Component tokens should reference semantic tokens. If no semantic token fits, ask the design systems team about adding one.
 
 - **Framework agnostic**
   - Components are built with React, Emotion and possibly React Aria, but must also be stylable without these dependencies via CSS and/or TS/JS exports.
   - Document CSS-only and TS/JS usage in the component's MDX file (see existing components for the "Custom Component Build" pattern).
 
-### Editorial Components
+### Shareable non-Design System Components
 
-Editorial components should also:
+Shareable non-Design System Components should also:
 
-- Be shared across tools but not yet fully verified or battle-tested by the design systems team, or be shared components that do not fit the design system foundations. A component should not be placed here only because it is used by an editorial tool.
+- Be applicable to be shared across multiple tools but don't need to fit the design system or be verified by the design systems team.
 
 - **Component-focused**
   - Focus on shared UI components that could be reused across multiple (2+) Guardian tools.
-  - Avoid tool-specific components or features.
   - Shared utility functions, hooks, or methods are allowed only if they directly support components.
 
 - **External APIs**
@@ -61,9 +77,10 @@ All new components must:
 - Be developed and showcased in **Storybook**.
   - `pnpm run storybook`
   - Create stories that demonstrate the component's functionality, variations, and edge cases.
-  - The naming convention for stories should follow the pattern of existing components, `Stand/Tools Design System/<Type>/<Name>` or `Stand/Editorial Components/<Component Name>`.
+  - The naming convention for stories should follow the pattern of existing components, `Stand/Tools Design System/<Type>/<Name>` or `Stand/Shareable non-Design System Components/<Component Name>`.
   - Create an accompanying MDX file for documentation, following the pattern of existing components (e.g. `Avatar.mdx`).
-  - Update the component list in the relevant introduction page ([Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs)).
+  - Include `MetaTable` in the component docs to show collection membership and verification separately. For Tools Design System components, set `designSystemTeamVerified` to `false` until verified. For shareable components, use `collection="Shareable non-Design System Components"` without a verification flag.
+  - Update the component list in the relevant introduction page ([Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Shareable non-Design System Components](https://guardian.github.io/stand/?path=/docs/stand-shareable-non-design-system-components-introduction--docs)).
 - Be accessible (see below).
 
 ### Scaffold a component
@@ -80,27 +97,49 @@ When prompted, enter the component name in words, for example `alert banner`. Th
 
 The script does not add the component to the package exports or root token exports. Follow the steps in the [Exports](#exports) section and complete the checklist printed by the generator.
 
+The scaffold uses the Tools Design System story title by default; this does not imply approval or verification. Before publishing, follow [Choosing a collection](#choosing-a-collection), update the story title if needed, and set the matching collection and verification status in the generated MDX metadata.
+
 ## Style Dictionary - Design Tokens
 
-If you are adding or modifying design tokens:
+### Token ownership
 
-1. **Create or edit the token JSON** in `src/styleD/tokens/<group>/<name>.json`.
-   - Use `$type` and `$value` following the [W3C Design Token Community Group format](https://design-tokens.github.io/community-group/format/).
-   - Reference other tokens with `{path.to.token}` syntax (e.g. `"{base.colors.cyan.200}"`).
-   - See `src/styleD/tokens/component/` for existing examples.
+These files are managed in [Tokens Studio](https://tokens.studio/) and are the source of truth for shared Tools Design System tokens:
 
-2. **Run the style dictionary build** to regenerate the output files:
+- `src/styleD/tokens/base/base.json`
+- `src/styleD/tokens/semantic/semantic.json`
+- `src/styleD/tokens/component/component.json`
+
+Do not edit these files directly. Coordinate any changes with the design systems team. Until the planned automated workflow is available, the team pulls updates with the [Tokens Studio CLI](https://documentation-v2.tokens.studio/cli/overview.html) from the project root:
+
+```sh
+studio tokens pull
+pnpm run build-styled
+```
+
+Review both the pulled token files and generated output before committing. Pulling from Figma variables is no longer supported.
+
+All other token JSON files under `src/styleD/tokens/` are local to this project. Contributors should create or edit local component token files only when adding a new component, or changing an unverified Tools Design System component or a Shareable non-Design System Component. Use existing semantic tokens in component tokens wherever possible. Edit the relevant JSON file using `$type` and `$value` in the [W3C Design Token Community Group format](https://design-tokens.github.io/community-group/format/), then run:
 
 ```sh
 pnpm run build-styled
 ```
 
-This produces:
+Commit the source JSON and generated files in `src/styleD/build/` together.
 
-- `src/styleD/build/css/component/<name>.css` – CSS custom properties
-- `src/styleD/build/typescript/component/<name>.ts` – typed JS/TS token object
+Shareable non-Design System Components and unverified Tools Design System components keep their component token files local under `src/styleD/tokens/component/`. When an unverified Tools Design System component is verified, the design systems team moves its tokens to [Tokens Studio](https://tokens.studio/) and removes its local token file. Changes to base or semantic tokens should go through the design systems team; contributors should not edit those token files themselves.
 
-3. **Commit the generated files**: the build outputs in `src/styleD/build/` are committed to the repository and must be kept in sync with the token sources.
+The generated outputs include CSS custom properties under `src/styleD/build/css/` and typed JS/TS token objects under `src/styleD/build/typescript/`.
+
+### Choosing token levels
+
+When building Tools Design System components or single-use components in a consuming project:
+
+- Use semantic tokens to build UI; they express the purpose of a design choice.
+- Do not use base tokens or hard-coded design values directly in UI. Base tokens are the raw foundations used by semantic tokens.
+- Component tokens should reference semantic tokens, and only use base tokens when explicitly necessary by designs.
+- If no semantic token fits the need, ask the design systems team about adding one rather than using a base token or hard-coded value. Contributors should not add or change base or semantic tokens themselves.
+
+These token-level guidelines apply whether tokens are managed in Tokens Studio or locally. Shareable components are outside the Tools Design System governance; their local component tokens may follow the needs of the component.
 
 ## Exports
 

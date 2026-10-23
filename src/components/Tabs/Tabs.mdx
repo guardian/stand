@@ -8,12 +8,21 @@ import TabsStories, {
 } from './Tabs.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
+import { MetaTable } from '../../util/storybook/MetaTable';
 
 <Meta of={TabsStories} />
 
 # Tabs
 
 A React Aria powered tabs component that follows Stand design and accessibility defaults. It supports horizontal and vertical orientations, disabled tabs, icons, and two sizes. See React Aria guidance in their [Tabs docs](https://react-aria.adobe.com/Tabs).
+
+<MetaTable
+	designSystemTeamVerified
+	figmaLink="https://www.figma.com/design/gmHnKr3tOzvnYp1FZeIl4t/Stand--Editorial-tool-Design-System?node-id=2609-7216&m=dev"
+	reactAriaLink="https://react-aria.adobe.com/Tabs"
+/>
+
+<Canvas layout="padded" of={Default} />
 
 ## When to use
 

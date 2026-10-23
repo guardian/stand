@@ -4,17 +4,17 @@
 
 export const componentTooltip = {
 	shared: {
-		color: '#000000',
 		backgroundColor: '#e8f0fb',
+		color: '#000000',
+	},
+	tooltip: {
+		borderRadius: '0.25rem',
+		maxWidth: '26ch',
+		offset: '1rem',
+		padding: '1rem',
 	},
 	trigger: {
 		size: '1.25rem',
-	},
-	tooltip: {
-		offset: '1rem',
-		padding: '1rem',
-		maxWidth: '26ch',
-		borderRadius: '0.25rem',
 	},
 };
 export type ComponentTooltip = typeof componentTooltip;

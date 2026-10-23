@@ -3,6 +3,6 @@
  */
 
 export const semanticShadow = {
-	raised: '0 0.125rem 0.375rem 0 rgb(0% 0% 0% / 0.3)',
+	raised: '0px 0.125rem 0.375rem 0px rgb(0% 0% 0% / 0.3)',
 };
 export type SemanticShadow = typeof semanticShadow;

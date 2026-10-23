@@ -4,18 +4,24 @@ _Find what you need on the (news)stand!_
 
 A tools component library and design system
 
-Any tool should be able to make use of the components as an npm package, [`@guardian/stand`](https://www.npmjs.com/package/@guardian/stand), and developers should feel comfortable [contributing](https://guardian.github.io/stand/?path=/docs/contributing--docs).
+Any tool should be able to make use of the components and design system as an npm package, [`@guardian/stand`](https://www.npmjs.com/package/@guardian/stand), and developers should feel comfortable [contributing](https://guardian.github.io/stand/?path=/docs/contributing--docs).
 
-This library is split into two main sections:
+**Stand contains two collections:** the **Tools Design System**, our core design system foundations and UI components, and **Shareable non-Design System Components**, reusable components that sit outside the design system. Both are available through `@guardian/stand`; inclusion in Stand does not imply that the component is part of the design system.
 
 - [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs)
-  - The core design system and components used across the Guardian's internal tools.
+  - The core design system foundations and collection of components used across the Guardian's internal tools.
   - e.g. Colour, Typography, Buttons, Forms, etc.
-- [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs)
-  - A collection of highly specific components shared across a smaller number of tools.
+- [Shareable non-Design System Components](https://guardian.github.io/stand/?path=/docs/stand-shareable-non-design-system-components-introduction--docs)
+  - Reusable components outside the core design system. They may use design system styles, but are not required to follow all its guidelines or be verified by the design system team.
   - e.g. Byline editor, Tag picker, etc.
 
-Currently maintained by the P&E DevX E2E team, but open to contributions from anyone in the company. Do reach out for help or to get involved!
+Start with the Tools Design System collection for general-purpose UI building blocks. Look in the shareable components collection for more specialised reusable components. Using design tokens or composing design system components does not automatically make a component part of the design system.
+
+Contributors should use the [component placement guide](https://guardian.github.io/stand/?path=/docs/contributing--docs#choosing-a-collection) to choose a collection on where to place a new component.
+
+Currently maintained by the P&E Design Systems team, but open to contributions from anyone in the company. Do reach out for help or to get involved!
+
+Find us in the [P&E Design Systems](https://chat.google.com/room/AAAAmwSkXk8) chat.
 
 Stand is built with [React](https://reactjs.org/), [Emotion](https://emotion.sh/docs/introduction), and [TypeScript](https://www.typescriptlang.org/), but the design system is designed to be as framework-agnostic as possible in that styles can be used without these dependencies if needed.
 
@@ -72,7 +78,7 @@ You can still use design tokens and styles from the Tools Design System. Import 
 
 **My project doesn't use JavaScript at all:**
 
-You can import CSS variables from the package, provided your build process supports importing CSS from `node_modules`. See the "Custom Component Build" section in each component's documentation.
+You can import CSS variables from the package, provided your build process supports importing CSS from `node_modules`. See the "Custom Component Build" section in each component's documentation. Not every component supports an interactive custom build, but the CSS variables are available if you only need the styles.
 
 ### Fonts
 
@@ -133,7 +139,7 @@ Rounded and Sharp styles are also available. For those, and for using SVG icons 
 
 ## Usage
 
-See the [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) and [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs) documentation for details.
+See the [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) and [Shareable non-Design System Components](https://guardian.github.io/stand/?path=/docs/stand-shareable-non-design-system-components-introduction--docs) documentation for details.
 
 ## Contributing
 
@@ -141,7 +147,7 @@ See the [Contributing guidelines](https://guardian.github.io/stand/?path=/docs/c
 
 ## Getting Started
 
-> If you are looking to **use Stand in your project**, see the [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Editorial Components](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs) documentation for installation and usage instructions.
+> If you are looking to **use Stand in your project**, see the [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) or [Shareable non-Design System Components](https://guardian.github.io/stand/?path=/docs/stand-shareable-non-design-system-components-introduction--docs) documentation for installation and usage instructions.
 
 The following steps are for **developing the Stand library itself**.
 
@@ -188,19 +194,24 @@ The following steps are for **developing the Stand library itself**.
 
 The [Design Tokens](https://www.w3.org/community/design-tokens/) specification provides standards upon which products and design tools can rely for sharing stylistic pieces of a design system at scale.
 
-The project uses [Style Dictionary](https://styledictionary.com/) to manage design tokens.
+The project uses [Style Dictionary](https://styledictionary.com/) to generate CSS and TypeScript token outputs from `src/styleD/tokens/`.
 
-Tokens are defined in `src/styleD/tokens/`, the generated outputs live in `src/styleD/build/`, and both are committed to the repository. During the package build, tsdown copies the build outputs into `dist/styleD/build/` for publishing.
+The shared Tools Design System tokens in `src/styleD/tokens/base/base.json`, `src/styleD/tokens/semantic/semantic.json`, and `src/styleD/tokens/component/component.json` are managed in [Tokens Studio](https://tokens.studio/). All other token JSON files are maintained locally in this project. Shareable components and unverified Tools Design System components keep their component tokens local; after a component is verified, the design systems team moves its tokens to [Tokens Studio](https://tokens.studio/) and removes the local token file.
 
-Most foundation tokens are generated from Figma variables, see `scripts/figma/README.md` for details.
+To change [Tokens Studio](https://tokens.studio/) managed tokens (verified Design System Components), liaise with the design systems team. The current manual process uses the [Tokens Studio CLI](https://documentation-v2.tokens.studio/cli/overview.html) from the project root to pull the latest tokens and regenerate the Style Dictionary outputs:
 
-After making changes to any token files, regenerate the outputs and commit them:
+```bash
+studio tokens pull
+pnpm build-styled
+```
+
+Review the pulled source and generated output changes before committing. An automated pull workflow is planned; until it is available, do not edit the managed files directly or pull tokens from Figma variables. For locally maintained token JSON, make changes in the project and regenerate the outputs:
 
 ```bash
 pnpm build-styled
 ```
 
-See the [Style Dictionary documentation](https://guardian.github.io/stand/?path=/docs/style-dictionary--docs) for more details on how we structure and generate the styles.
+See the [Design Tokens documentation](https://guardian.github.io/stand/?path=/docs/design-tokens--docs) for more details on token usage, ownership, and generated outputs.
 
 ## Compatibility
 
@@ -242,8 +253,8 @@ Matrix generation in CI uses the same JSON file in the workflow `../.github/work
 - [Getting Started](https://guardian.github.io/stand/?path=/docs/getting-started--docs)
 - [Contributing](https://guardian.github.io/stand/?path=/docs/contributing--docs)
 - [Tools Design System Introduction](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs)
-- [Editorial Components Introduction](https://guardian.github.io/stand/?path=/docs/stand-editorial-components-introduction--docs)
-- [Style Dictionary](https://guardian.github.io/stand/?path=/docs/style-dictionary--docs)
+- [Shareable non-Design System Components Introduction](https://guardian.github.io/stand/?path=/docs/stand-shareable-non-design-system-components-introduction--docs)
+- [Design Tokens](https://guardian.github.io/stand/?path=/docs/design-tokens--docs)
 - [Architecture Decision Records](https://guardian.github.io/stand/?path=/docs/architecture-decision-records--docs)
 - [Changelog](https://guardian.github.io/stand/?path=/docs/changelog--docs)
 - [Vision](https://guardian.github.io/stand/?path=/docs/vision--docs)

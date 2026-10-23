@@ -6,12 +6,20 @@ import SidebarStepperNavigationStories, {
 } from './SidebarStepperNavigation.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
+import { MetaTable } from '../../util/storybook/MetaTable';
 
 <Meta of={SidebarStepperNavigationStories} />
 
 # Sidebar Stepper Navigation
 
 A React Aria powered sidebar navigation for multi-step workflows. It shows the current step, completion status, and only enables navigation when the workflow allows it. On smaller screens, it collapses behind a toggle.
+
+<MetaTable
+	designSystemTeamVerified
+	figmaLink="https://www.figma.com/design/gmHnKr3tOzvnYp1FZeIl4t/Stand--Editorial-tool-Design-System?node-id=672-4310&m=dev"
+/>
+
+<Canvas layout="padded" of={Default} />
 
 ## When to use
 

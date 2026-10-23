@@ -5,6 +5,6 @@
 		"declaration": false,
 		"emitDeclarationOnly": false
 	},
-	"include": ["src/**/*"],
+	"include": ["src/**/*", "jest-setup-after-env.ts"],
 	"exclude": ["dist", "node_modules", "playwright", "**/*.stories.tsx"]
 }

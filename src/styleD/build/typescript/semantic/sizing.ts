@@ -3,38 +3,38 @@
  */
 
 export const semanticSizing = {
-	height: {
-		xxxxs: '1rem',
-		xxxs: '1.125rem',
-		xxs: '1.25rem',
-		xs: '1.5rem',
-		sm: '2rem',
-		md: '2.5rem',
-		lg: '3rem',
-	},
-	icon: {
-		xs: '0.875rem',
-		sm: '1.125rem',
-		md: '1.25rem',
-		lg: '1.5rem',
-	},
 	border: {
 		default: '0.0625rem',
-		md: '0.125rem',
 		extraWide: '0.5rem',
+		md: '0.125rem',
 	},
-	sidebar: {
-		mdPx: '200px',
-		lgPx: '280px',
+	floatingUi: {
+		maxWidthPx: '200px',
 	},
-	layout: {
-		maxWidthPx: '1584px',
+	height: {
+		lg: '3rem',
+		md: '2.5rem',
+		sm: '2rem',
+		xs: '1.5rem',
+		xxs: '1.25rem',
+		xxxs: '1.125rem',
+		xxxxs: '1rem',
+	},
+	icon: {
+		lg: '1.5rem',
+		md: '1.25rem',
+		sm: '1.125rem',
+		xs: '0.875rem',
 	},
 	input: {
 		maxWidthPx: '450px',
 	},
-	floatingUi: {
-		maxWidthPx: '200px',
+	layout: {
+		maxWidthPx: '1584px',
+	},
+	sidebar: {
+		lgPx: '280px',
+		mdPx: '200px',
 	},
 };
 export type SemanticSizing = typeof semanticSizing;

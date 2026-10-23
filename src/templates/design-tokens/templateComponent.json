@@ -8,7 +8,7 @@
 				},
 				"text": {
 					"$type": "color",
-					"$value": "hotpink"
+					"$value": "{semantic.colors.text.green}"
 				}
 			}
 		}

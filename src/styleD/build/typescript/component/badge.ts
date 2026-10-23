@@ -3,117 +3,26 @@
  */
 
 export const componentBadge = {
-	shared: {
-		display: 'inline-flex',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	size: {
-		md: {
-			padding: {
-				top: '4px',
-				right: '10px',
-				bottom: '4px',
-				left: '10px',
-			},
-			weight: {
-				strong: {
-					typography: {
-						font: 'normal 700 1rem/1.15 Open Sans',
-						letterSpacing: '-0.03125rem',
-						fontWidth: 95,
-					},
-				},
-				light: {
-					typography: {
-						font: 'normal 460 1rem/1.3 Open Sans',
-						letterSpacing: '0rem',
-						fontWidth: 95,
-					},
-				},
-			},
-		},
-		sm: {
-			padding: {
-				top: '4px',
-				right: '8px',
-				bottom: '4px',
-				left: '8px',
-			},
-			weight: {
-				strong: {
-					typography: {
-						font: 'normal 700 0.875rem/1.15 Open Sans',
-						letterSpacing: '-0.0125rem',
-						fontWidth: 95,
-					},
-				},
-				light: {
-					typography: {
-						font: 'normal 460 0.875rem/1.3 Open Sans',
-						letterSpacing: '0rem',
-						fontWidth: 95,
-					},
-				},
-			},
-		},
-		xs: {
-			padding: {
-				top: '1px',
-				right: '6px',
-				bottom: '3px',
-				left: '6px',
-			},
-			weight: {
-				strong: {
-					typography: {
-						font: 'normal 700 0.75rem/1.15 Open Sans',
-						letterSpacing: '0rem',
-						fontWidth: 95,
-					},
-				},
-				light: {
-					typography: {
-						font: 'normal 460 0.75rem/1.3 Open Sans',
-						letterSpacing: '0rem',
-						fontWidth: 95,
-					},
-				},
-			},
-		},
-	},
 	color: {
 		green: {
 			weight: {
-				strong: {
-					background: '#aed2a6',
-					color: '#000000',
-				},
 				light: {
 					background: '#cde4c9',
 					color: '#24491d',
 				},
-			},
-		},
-		yellow: {
-			weight: {
 				strong: {
-					background: '#f1c21b',
+					background: '#aed2a6',
 					color: '#000000',
-				},
-				light: {
-					background: '#ffedac',
-					color: '#5b4a0b',
 				},
 			},
 		},
 		grey: {
 			weight: {
-				strong: {
+				light: {
 					background: '#dcdcdc',
 					color: '#000000',
 				},
-				light: {
+				strong: {
 					background: '#dcdcdc',
 					color: '#000000',
 				},
@@ -121,37 +30,128 @@ export const componentBadge = {
 		},
 		orange: {
 			weight: {
-				strong: {
-					background: '#fac7a1',
-					color: '#000000',
-				},
 				light: {
 					background: '#fcddc6',
 					color: '#693c16',
 				},
-			},
-		},
-		warmPurple: {
-			weight: {
 				strong: {
-					background: '#dac3e8',
+					background: '#fac7a1',
 					color: '#000000',
-				},
-				light: {
-					background: '#dac3e8',
-					color: '#381350',
 				},
 			},
 		},
 		red: {
 			weight: {
+				light: {
+					background: '#f5c6c0',
+					color: '#65170e',
+				},
 				strong: {
 					background: '#eea198',
 					color: '#000000',
 				},
+			},
+		},
+		warmPurple: {
+			weight: {
 				light: {
-					background: '#f5c6c0',
-					color: '#65170e',
+					background: '#dac3e8',
+					color: '#381350',
+				},
+				strong: {
+					background: '#dac3e8',
+					color: '#000000',
+				},
+			},
+		},
+		yellow: {
+			weight: {
+				light: {
+					background: '#ffedac',
+					color: '#5b4a0b',
+				},
+				strong: {
+					background: '#f1c21b',
+					color: '#000000',
+				},
+			},
+		},
+	},
+	shared: {
+		alignItems: 'center',
+		display: 'inline-flex',
+		justifyContent: 'center',
+	},
+	size: {
+		md: {
+			padding: {
+				bottom: '4px',
+				left: '10px',
+				right: '10px',
+				top: '4px',
+			},
+			weight: {
+				light: {
+					typography: {
+						font: 'normal 460 1rem/1.3 Open Sans',
+						fontWidth: 95,
+						letterSpacing: '0rem',
+					},
+				},
+				strong: {
+					typography: {
+						font: 'normal 700 1rem/1.15 Open Sans',
+						fontWidth: 95,
+						letterSpacing: '-0.03125rem',
+					},
+				},
+			},
+		},
+		sm: {
+			padding: {
+				bottom: '4px',
+				left: '8px',
+				right: '8px',
+				top: '4px',
+			},
+			weight: {
+				light: {
+					typography: {
+						font: 'normal 460 0.875rem/1.3 Open Sans',
+						fontWidth: 95,
+						letterSpacing: '0rem',
+					},
+				},
+				strong: {
+					typography: {
+						font: 'normal 700 0.875rem/1.15 Open Sans',
+						fontWidth: 95,
+						letterSpacing: '-0.0125rem',
+					},
+				},
+			},
+		},
+		xs: {
+			padding: {
+				bottom: '3px',
+				left: '6px',
+				right: '6px',
+				top: '1px',
+			},
+			weight: {
+				light: {
+					typography: {
+						font: 'normal 460 0.75rem/1.3 Open Sans',
+						fontWidth: 95,
+						letterSpacing: '0rem',
+					},
+				},
+				strong: {
+					typography: {
+						font: 'normal 700 0.75rem/1.15 Open Sans',
+						fontWidth: 95,
+						letterSpacing: '0rem',
+					},
 				},
 			},
 		},

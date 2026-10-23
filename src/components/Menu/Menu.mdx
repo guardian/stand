@@ -19,14 +19,23 @@ import {
 	componentJs,
 	componentTsx,
 } from './sandbox';
+import { MetaTable } from '../../util/storybook/MetaTable';
 
 <Meta of={MenuStories} />
 
 # Menu
 
-A dropdown menu component built on [React Aria](https://react-spectrum.adobe.com/react-aria/Menu.html).
+A dropdown menu component built on [React Aria](https://react-spectrum.adobe.com/react-aria/Menu).
 The `Menu` component combines a trigger element with a popover containing `MenuItem`, `MenuSection`, and `MenuSeparator` sub-components.
 It supports single and multiple selection modes, icons, descriptions, keyboard navigation, and full accessibility out of the box.
+
+<MetaTable
+	designSystemTeamVerified
+	figmaLink="https://www.figma.com/design/gmHnKr3tOzvnYp1FZeIl4t/Stand--Editorial-tool-Design-System?node-id=460-13439&m=dev"
+	reactAriaLink="https://react-aria.adobe.com/Menu"
+/>
+
+<Canvas layout="padded" of={SizeMdDefault} />
 
 ## When to use
 
