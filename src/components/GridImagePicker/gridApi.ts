@@ -46,18 +46,22 @@ export const extractAsset = (
 	return assetsSmallestFirst?.shift();
 };
 
-export const isFiveFourCrop = (crop: CropData): boolean | undefined => {
+const checkAspect = (
+	crop: CropData,
+	aspectRatio: AspectRatio,
+	aspectX: number,
+	aspectY: number,
+) => {
 	const { specification, master } = crop;
 	if (specification?.aspectRatio) {
-		return specification.aspectRatio === '5:4';
+		return specification.aspectRatio === aspectRatio;
 	}
-
 	const { width, height } = master?.dimensions ?? {};
 	if (!width || !height) {
 		return undefined;
 	}
-	const aspectRatio = width / height;
-	return Math.abs(aspectRatio - 5 / 4) < 0.05;
+
+	return Math.abs(width / height - aspectX / aspectY) < 0.05;
 };
 
 export const checkCropHasAllowedAspectRatio = (
@@ -67,11 +71,23 @@ export const checkCropHasAllowedAspectRatio = (
 	if (!allowedAspectRatios) {
 		return true;
 	}
-
-	// TO DO - add more
-	if (allowedAspectRatios.includes('5:4') && isFiveFourCrop(crop)) {
+	if (allowedAspectRatios.includes('5:4') && checkAspect(crop, '5:4', 5, 4)) {
 		return true;
 	}
-
+	if (allowedAspectRatios.includes('4:5') && checkAspect(crop, '4:5', 4, 5)) {
+		return true;
+	}
+	if (allowedAspectRatios.includes('1:1') && checkAspect(crop, '1:1', 1, 1)) {
+		return true;
+	}
+	if (allowedAspectRatios.includes('5:3') && checkAspect(crop, '5:3', 5, 3)) {
+		return true;
+	}
+	if (
+		allowedAspectRatios.includes('16:9') &&
+		checkAspect(crop, '16:9', 16, 9)
+	) {
+		return true;
+	}
 	return false;
 };

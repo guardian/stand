@@ -15,7 +15,7 @@ export type ImageAndCrop = {
 	image: ImageData;
 };
 
-export type AspectRatio = '5:4';
+export type AspectRatio = '5:4' | '5:3' | '4:5' | '1:1' | '16:9';
 
 export type ImageAssetParams = {
 	imageId: string;
