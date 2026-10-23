@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const specification = z.object({
+const specification = z.object({
 	aspectRatio: z.string().optional(),
 	bounds: z
 		.object({
@@ -11,9 +11,8 @@ export const specification = z.object({
 		})
 		.optional(),
 });
-export type Specification = z.infer<typeof specification>;
 
-export const cropAsset = z.object({
+const cropAsset = z.object({
 	secureUrl: z.string().optional(),
 	file: z.string(),
 	mimeType: z.string().optional(),
@@ -26,7 +25,7 @@ export const cropAsset = z.object({
 });
 export type CropAsset = z.infer<typeof cropAsset>;
 
-export const cropData = z.object({
+const cropData = z.object({
 	id: z.string(),
 	specification: specification.optional(),
 	master: cropAsset.optional(),
@@ -34,7 +33,7 @@ export const cropData = z.object({
 });
 export type CropData = z.infer<typeof cropData>;
 
-export const imageData = z.object({
+const gridImageData = z.object({
 	id: z.string(),
 	metadata: z
 		.object({
@@ -59,13 +58,12 @@ export const imageData = z.object({
 		.optional(),
 	exports: z.optional(cropData.array()),
 });
-export type ImageData = z.infer<typeof imageData>;
+export type GridImageData = z.infer<typeof gridImageData>;
 
-export const gridImage = z.object({
+const gridImage = z.object({
 	uri: z.string().optional(),
-	data: imageData.optional(),
+	data: gridImageData.optional(),
 });
-export type GridImage = z.infer<typeof gridImage>;
 
 export const gridImageResponse = z
 	.object({
@@ -77,19 +75,3 @@ export const gridImageResponse = z
 			.optional(),
 	})
 	.strict();
-export type GridImageResponse = z.infer<typeof gridImageResponse>;
-
-export const gridImageCollectionResponse = z.object({
-	images: gridImageResponse.array(),
-});
-
-export const gridDataTransfer = z.object({
-	'text/plain': z.string().optional(),
-	'text/uri-list': z.string().optional(),
-	'text/html': z.string().optional(),
-	'application/vnd.mediaservice.kahuna.image': z.string().optional(),
-	'application/vnd.asset-handle+json': z.string().optional(),
-	'application/vnd.mediaservice.image+json': z.string().optional(),
-	'application/vnd.mediaservice.kahuna.uri': z.string().optional(),
-	'application/vnd.mediaservice.crops+json': z.string().optional(),
-});
