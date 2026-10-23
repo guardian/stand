@@ -690,6 +690,9 @@
 		"tsc": "tsc",
 		"tsc6": "tsc6"
 	},
+	"dependencies": {
+		"zod": "^4.6.5"
+	},
 	"devDependencies": {
 		"@arethetypeswrong/core": "0.18.5",
 		"@changesets/cli": "3.0.3",
