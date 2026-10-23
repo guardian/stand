@@ -13,26 +13,22 @@ import {
 } from './gridApi';
 import { GridIcon } from './GridIcon';
 import {
+	getCropPageUrl,
+	getCropSelectPage,
+	getGridImageUrl,
+	getImageOrCropPageUrl,
+	getImageSearchPage,
+} from './gridUri';
+import {
 	defaultGridImagePickerTheme,
 	gridImagePickerStyles,
 	imagePreviewStyles,
 } from './styles';
 import type { GridImagePickerProps, ImageAndCrop } from './types';
 
-const getCropPageUrl = (gridUri: string, imageId: string, cropId: string) =>
-	`${gridUri}/images/${imageId}?crop=${cropId}`;
-
-const getImageOrCropPageUrl = (
-	gridUri: string,
-	imageId: string,
-	cropId?: string,
-) =>
-	cropId
-		? getCropPageUrl(gridUri, imageId, cropId)
-		: `${gridUri}/images/${imageId}`;
-
 export const GridImagePicker = ({
 	gridUri,
+	gridImageSourceDomain,
 	handleCropData,
 	allowedAspectRatios,
 	initialValues,
@@ -41,26 +37,31 @@ export const GridImagePicker = ({
 }: GridImagePickerProps) => {
 	const mergedTheme = mergeDeep(defaultGridImagePickerTheme, theme);
 	const [gridPageOpen, seGridPageOpen] = useState<'search' | 'image'>();
-	const [lastImageId, setLastImageId] = useState(initialValues?.imageId);
-	const [lastCropId, setLastCropId] = useState(initialValues?.cropId);
-	const [imageAssetUrl, setImageAssetUrl] = useState(
-		initialValues?.imageAssetUrl,
-	);
 	const [failureFeedback, setFailureFeedBack] = useState<string>();
 
-	const gridUiLink =
-		lastImageId && getImageOrCropPageUrl(gridUri, lastImageId, lastCropId);
+	const [assetUrl, setAssetUrl] = useState(initialValues?.assetUrl);
+	const [imageId, setImageId] = useState(initialValues?.imageId);
+	const [cropId, setCropId] = useState(initialValues?.cropId);
+	const [imageSize, setImageSize] = useState(initialValues?.imageSize);
+
+	const gridUiLink = imageId && getImageOrCropPageUrl(gridUri, imageId, cropId);
+
+	const previewUrl =
+		assetUrl ??
+		(cropId && imageId && gridImageSourceDomain
+			? getGridImageUrl(gridImageSourceDomain, imageId, cropId, imageSize)
+			: undefined);
 
 	const handleImageAndCrop = ({ crop, image }: ImageAndCrop) => {
-		setLastImageId(image.id);
+		setImageId(image.id);
 		if (!checkCropHasAllowedAspectRatio(crop, allowedAspectRatios)) {
-			setLastCropId(undefined);
+			setCropId(undefined);
 			setFailureFeedBack(
 				`Please select crop with the right aspect rato (${allowedAspectRatios?.join(' or ')})`,
 			);
 			return;
 		}
-		setLastCropId(crop.id);
+		setCropId(crop.id);
 		const asset = extractAsset(crop);
 		const imageAssetUrl = asset?.file;
 
@@ -68,7 +69,8 @@ export const GridImagePicker = ({
 			setFailureFeedBack('Could not identify file to use');
 			return;
 		}
-		setImageAssetUrl(imageAssetUrl);
+		setImageSize(asset.dimensions?.width);
+		setAssetUrl(asset.file);
 
 		handleCropData({
 			crop,
@@ -80,17 +82,17 @@ export const GridImagePicker = ({
 	};
 
 	const iframeHref = gridPageOpen
-		? lastImageId && gridPageOpen === 'image'
-			? `${gridUri}/images/${lastImageId}?cropType=all&defaultCropType=landscape`
-			: `${gridUri}/search?cropType=all&defaultCropType=landscape`
+		? imageId && gridPageOpen === 'image'
+			? getCropSelectPage(gridUri, imageId)
+			: getImageSearchPage(gridUri)
 		: undefined;
 
 	return (
 		<section css={gridImagePickerStyles(mergedTheme)}>
 			{!noThumbnail && (
 				<div css={imagePreviewStyles(mergedTheme)}>
-					{imageAssetUrl ? (
-						<img src={imageAssetUrl} alt="image preview" />
+					{previewUrl ? (
+						<img src={previewUrl} alt="image preview" />
 					) : (
 						<Icon symbol="replace_image" size="lg" />
 					)}
@@ -107,7 +109,7 @@ export const GridImagePicker = ({
 				Pick Image
 			</Button>
 
-			{lastImageId && (
+			{imageId && (
 				<Button
 					icon="crop"
 					onClick={() => {
@@ -123,7 +125,7 @@ export const GridImagePicker = ({
 				{gridUiLink && (
 					<>
 						<Link target="_blank" href={gridUiLink}>
-							open {lastCropId ? 'crop' : 'image'} page
+							open {cropId ? 'crop' : 'image'} page
 						</Link>
 						<CopyTextButton textToCopy={gridUiLink} label="copy link" />
 					</>

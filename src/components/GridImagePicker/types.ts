@@ -17,14 +17,18 @@ export type ImageAndCrop = {
 
 export type AspectRatio = '5:4';
 
+export type ImageAssetParams = {
+	imageId: string;
+	cropId: string;
+	imageSize?: number;
+	assetUrl?: string;
+};
+
 export type GridImagePickerProps = DefaultProps<GridImagePickerTheme> & {
 	handleCropData: (data: CropPickData) => void;
 	gridUri: string;
 	allowedAspectRatios?: AspectRatio[];
-	initialValues?: {
-		imageAssetUrl: string;
-		imageId: string;
-		cropId: string;
-	};
+	initialValues?: ImageAssetParams;
 	noThumbnail?: boolean;
+	gridImageSourceDomain?: string;
 };
