@@ -116,7 +116,7 @@ export const WithButtonsMenuNavigation = {
 								marginTop: '0',
 							},
 						}}
-						cssOverrides={css`
+						dangerouslyOverrideCss={css`
 							width: 100px;
 						`}
 						placeholder="Search"
@@ -205,14 +205,14 @@ export const CustomTheme = {
 	),
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	render: () => (
 		<TopBar
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				border: 4px solid ${baseColors.cyan['300']};
 			`}
 		>
-			<TopBarToolName name="CssOverrides" favicon={{ letter: 'C' }} />
+			<TopBarToolName name="DangerouslyOverrideCss" favicon={{ letter: 'C' }} />
 			<TopBarContainerLeft>
 				<TopBarItem>Top Bar</TopBarItem>
 			</TopBarContainerLeft>

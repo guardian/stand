@@ -221,7 +221,7 @@ export const SelectableWithColor = {
 		onSelectionChange: () => undefined,
 		children: 'Editorial',
 		description: 'Unavailable',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			&[data-selected] {
 				background-color: ${baseColors.magenta[900]};
 			}
@@ -308,7 +308,7 @@ export const MultiSelectTileSelectedWithColor = {
 		children: 'News',
 		icon: 'breaking_news',
 		description: 'Selected with a custom background',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			&[data-selected] {
 				background-color: ${baseColors.magenta[900]};
 			}

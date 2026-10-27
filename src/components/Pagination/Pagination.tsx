@@ -37,7 +37,7 @@ export const Pagination = ({
 	collapseBelow = 'md',
 	labels,
 	theme,
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 }: PaginationProps) => {
 	const mergedTheme = mergeDeep(defaultPaginationTheme, theme ?? {});
@@ -74,7 +74,7 @@ export const Pagination = ({
 		<nav
 			aria-label={mergedLabels.nav}
 			className={className}
-			css={[paginationStyles(mergedTheme), cssOverrides]}
+			css={[paginationStyles(mergedTheme), dangerouslyOverrideCss]}
 		>
 			<IconButton
 				variant="secondary"
@@ -83,7 +83,7 @@ export const Pagination = ({
 				ariaLabel={mergedLabels.previous}
 				isDisabled={page <= 1}
 				onPress={() => goTo(page - 1)}
-				cssOverrides={arrowStyles(mergedTheme)}
+				dangerouslyOverrideCss={arrowStyles(mergedTheme)}
 			/>
 			<ul css={listStyles(mergedTheme, collapseBelow)}>
 				{items.map((item, index) => {
@@ -121,7 +121,7 @@ export const Pagination = ({
 				ariaLabel={mergedLabels.next}
 				isDisabled={page >= totalPages}
 				onPress={() => goTo(page + 1)}
-				cssOverrides={arrowStyles(mergedTheme)}
+				dangerouslyOverrideCss={arrowStyles(mergedTheme)}
 			/>
 			{showSummary && (
 				<span css={summaryStyles(mergedTheme, collapseBelow)}>{summary}</span>

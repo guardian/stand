@@ -39,14 +39,14 @@ function Popover({
 	size = 'md',
 	children,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: MenuPopoverProps) {
 	const mergedTheme = mergeDeep(defaultMenuPopoverTheme, theme);
 
 	return (
 		<ReactAriaPopover
-			css={[menuPopoverStyles(mergedTheme, { size }), cssOverrides]}
+			css={[menuPopoverStyles(mergedTheme, { size }), dangerouslyOverrideCss]}
 			{...props}
 		>
 			{children}
@@ -56,7 +56,7 @@ function Popover({
 
 export function MenuSeparator({
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: MenuSeparatorProps) {
 	const mergedTheme = mergeDeep(defaultMenuSeparatorTheme, theme);
@@ -64,7 +64,7 @@ export function MenuSeparator({
 	return (
 		<ReactAriaSeparator
 			orientation="horizontal"
-			css={[menuSeparatorStyles(mergedTheme), cssOverrides]}
+			css={[menuSeparatorStyles(mergedTheme), dangerouslyOverrideCss]}
 			{...props}
 		/>
 	);
@@ -78,7 +78,7 @@ export function MenuSection({
 	name,
 	size = 'md',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	children,
 	...props
 }: MenuSectionProps) {
@@ -105,7 +105,7 @@ export function MenuSection({
 	});
 
 	return (
-		<ReactAriaMenuSection css={[cssOverrides]} {...props}>
+		<ReactAriaMenuSection css={[dangerouslyOverrideCss]} {...props}>
 			{name && (
 				<Header css={menuSectionHeaderStyles(mergedTheme, { size })}>
 					<span>{name}</span>
@@ -123,7 +123,7 @@ export function MenuItem({
 	icon,
 	size = 'md',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: MenuItemProps) {
 	const mergedTheme = mergeDeep(defaultMenuItemTheme, theme);
@@ -133,7 +133,10 @@ export function MenuItem({
 
 	return (
 		<ReactAriaMenuItem
-			css={[menuItemStyles(mergedTheme, { description }), cssOverrides]}
+			css={[
+				menuItemStyles(mergedTheme, { description }),
+				dangerouslyOverrideCss,
+			]}
 			{...props}
 			textValue={textValue}
 		>
@@ -143,7 +146,7 @@ export function MenuItem({
 					{icon && selectionMode === 'none' ? (
 						<Icon
 							size={size}
-							cssOverrides={menuItemIconStyles(mergedTheme, { size })}
+							dangerouslyOverrideCss={menuItemIconStyles(mergedTheme, { size })}
 						>
 							{icon}
 						</Icon>
@@ -152,28 +155,28 @@ export function MenuItem({
 						<Icon
 							size={size}
 							symbol="check_box"
-							cssOverrides={menuItemIconStyles(mergedTheme, { size })}
+							dangerouslyOverrideCss={menuItemIconStyles(mergedTheme, { size })}
 						/>
 					) : null}
 					{!isSelected && selectionMode === 'multiple' ? (
 						<Icon
 							size={size}
 							symbol="check_box_outline_blank"
-							cssOverrides={menuItemIconStyles(mergedTheme, { size })}
+							dangerouslyOverrideCss={menuItemIconStyles(mergedTheme, { size })}
 						/>
 					) : null}
 					{isSelected && selectionMode === 'single' ? (
 						<Icon
 							size={size}
 							symbol="radio_button_checked"
-							cssOverrides={menuItemIconStyles(mergedTheme, { size })}
+							dangerouslyOverrideCss={menuItemIconStyles(mergedTheme, { size })}
 						/>
 					) : null}
 					{!isSelected && selectionMode === 'single' ? (
 						<Icon
 							size={size}
 							symbol="radio_button_unchecked"
-							cssOverrides={menuItemIconStyles(mergedTheme, { size })}
+							dangerouslyOverrideCss={menuItemIconStyles(mergedTheme, { size })}
 						/>
 					) : null}
 					{/* Label */}
@@ -198,7 +201,7 @@ export function Menu({
 	popoverProps,
 	menuTriggerProps,
 	children,
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: MenuProps) {
 	const mergedTheme = mergeDeep(defaultMenuTheme, theme);
@@ -248,7 +251,10 @@ export function Menu({
 				size={size}
 				{...popoverProps}
 			>
-				<ReactAriaMenu css={[menuStyles(mergedTheme), cssOverrides]} {...props}>
+				<ReactAriaMenu
+					css={[menuStyles(mergedTheme), dangerouslyOverrideCss]}
+					{...props}
+				>
 					{menu}
 				</ReactAriaMenu>
 			</Popover>

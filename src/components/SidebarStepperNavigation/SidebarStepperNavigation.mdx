@@ -7,6 +7,7 @@ import SidebarStepperNavigationStories, {
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={SidebarStepperNavigationStories} />
 
@@ -87,14 +88,14 @@ import { SidebarStepperNavigation } from '@guardian/stand/SidebarStepperNavigati
 
 ## Props
 
-| Name            | Type                                      | Required | Default   | Description                                                        |
-| --------------- | ----------------------------------------- | -------- | --------- | ------------------------------------------------------------------ |
-| `currentStepId` | `string`                                  | No       | N/A       | Identifier of the current step.                                    |
-| `stepNavConfig` | `StepNavConfig`                           | Yes      | N/A       | Steps and whether the workflow permits non-linear navigation.      |
-| `onPress`       | `(stepId: string) => void`                | Yes      | N/A       | Called when an eligible step is pressed.                           |
-| `stepNavTitle`  | `string`                                  | No       | `'Steps'` | Accessible navigation label and mobile toggle title.               |
-| `theme`         | `SidebarStepperNavigationTheme` (partial) | No       | N/A       | Overrides the generated component design tokens for this instance. |
-| `cssOverrides`  | `SerializedStyles \| SerializedStyles[]`  | No       | N/A       | Emotion styles applied to the navigation element.                  |
+| Name                     | Type                                      | Required | Default   | Description                                                        |
+| ------------------------ | ----------------------------------------- | -------- | --------- | ------------------------------------------------------------------ |
+| `currentStepId`          | `string`                                  | No       | N/A       | Identifier of the current step.                                    |
+| `stepNavConfig`          | `StepNavConfig`                           | Yes      | N/A       | Steps and whether the workflow permits non-linear navigation.      |
+| `onPress`                | `(stepId: string) => void`                | Yes      | N/A       | Called when an eligible step is pressed.                           |
+| `stepNavTitle`           | `string`                                  | No       | `'Steps'` | Accessible navigation label and mobile toggle title.               |
+| `theme`                  | `SidebarStepperNavigationTheme` (partial) | No       | N/A       | Overrides the generated component design tokens for this instance. |
+| `dangerouslyOverrideCss` | `SerializedStyles \| SerializedStyles[]`  | No       | N/A       | Escape hatch for custom CSS; see warning below.                    |
 
 ### `StepNavConfig`
 
@@ -131,7 +132,7 @@ import { SidebarStepperNavigation } from '@guardian/stand/SidebarStepperNavigati
 
 ## Customisation
 
-We recommend using the SidebarStepperNavigation component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the SidebarStepperNavigation component as provided, but it can be customised using the `theme` prop as required.
 
 ### Theme
 
@@ -158,9 +159,11 @@ const theme: SidebarStepperNavigationTheme = {
 />;
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the `SidebarStepperNavigation` component, if the theme prop is not sufficient:
+<DangerouslyOverrideCssWarning />
+
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the `SidebarStepperNavigation` component, if the theme prop is not sufficient:
 
 ```tsx
 import { css } from '@emotion/react';
@@ -168,7 +171,7 @@ import { SidebarStepperNavigation } from '@guardian/stand/SidebarStepperNavigati
 
 <SidebarStepperNavigation
 	/* other required props */
-	cssOverrides={css`
+	dangerouslyOverrideCss={css`
 		min-width: 18rem;
 	`}
 />;

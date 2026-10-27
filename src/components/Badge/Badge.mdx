@@ -2,7 +2,7 @@ import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import BadgeStories, {
 	BadgeTable,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './Badge.stories';
 import {
 	SandboxReact,
@@ -17,6 +17,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={BadgeStories} />
 
@@ -65,15 +66,15 @@ import type { BadgeProps, BadgeTheme } from '@guardian/stand/Badge';
 
 ## Props
 
-| Name           | Type                                                     | Required | Default  | Description                            |
-| -------------- | -------------------------------------------------------- | -------- | -------- | -------------------------------------- |
-| `size`         | `xs`, `sm`, `md`                                         | No       | `md`     | Size variant of the badge              |
-| `color`        | `green`, `yellow`, `grey`, `orange`, `warmPurple`, `red` | No       | `green`  | Color variant of the badge             |
-| `weight`       | `strong`, `light`                                        | No       | `strong` | Weight variant of the badge            |
-| `theme`        | `BadgeTheme`                                             | No       | N/A      | Custom theme overrides for the Badge   |
-| `cssOverrides` | `SerializedStyles`                                       | No       | N/A      | Custom CSS styles for the Badge        |
-| `className`    | `string`                                                 | No       | N/A      | Additional class name(s) for the Badge |
-| `children`     | `React.ReactNode`                                        | No       | N/A      | Content to render inside the badge     |
+| Name                     | Type                                                     | Required | Default  | Description                                     |
+| ------------------------ | -------------------------------------------------------- | -------- | -------- | ----------------------------------------------- |
+| `size`                   | `xs`, `sm`, `md`                                         | No       | `md`     | Size variant of the badge                       |
+| `color`                  | `green`, `yellow`, `grey`, `orange`, `warmPurple`, `red` | No       | `green`  | Color variant of the badge                      |
+| `weight`                 | `strong`, `light`                                        | No       | `strong` | Weight variant of the badge                     |
+| `theme`                  | `BadgeTheme`                                             | No       | N/A      | Custom theme overrides for the Badge            |
+| `dangerouslyOverrideCss` | `SerializedStyles`                                       | No       | N/A      | Escape hatch for custom CSS; see warning below. |
+| `className`              | `string`                                                 | No       | N/A      | Additional class name(s) for the Badge          |
+| `children`               | `React.ReactNode`                                        | No       | N/A      | Content to render inside the badge              |
 
 ## Stories
 
@@ -83,7 +84,7 @@ import type { BadgeProps, BadgeTheme } from '@guardian/stand/Badge';
 
 ## Customisation
 
-We recommend using the Badge component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the Badge component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -120,11 +121,13 @@ const customTheme: BadgeTheme = {
 const Component = () => <Badge theme={customTheme}>Custom theme badge</Badge>;
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the Badge component, if the theme prop is not sufficient:
+<DangerouslyOverrideCssWarning />
 
-<Canvas layout="padded" of={CssOverrides} />
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the Badge component, if the theme prop is not sufficient:
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ```tsx
 import { Badge } from '@guardian/stand/Badge';
@@ -135,7 +138,7 @@ const customStyles = css`
 `;
 
 const Component = () => (
-	<Badge cssOverrides={customStyles}>CSS Override Badge</Badge>
+	<Badge dangerouslyOverrideCss={customStyles}>CSS Override Badge</Badge>
 );
 ```
 

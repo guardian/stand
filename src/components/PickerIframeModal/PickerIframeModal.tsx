@@ -30,7 +30,7 @@ export function PickerIframeModal<DataType>({
 	handleData,
 	closeModal,
 	closeAfterHandling = true,
-	cssOverrides,
+	dangerouslyOverrideCss,
 	showOpenInNewTabButton,
 	modalTheme = {
 		overlay: { position: 'fixed' },
@@ -84,7 +84,7 @@ export function PickerIframeModal<DataType>({
 				}
 			}}
 			theme={modalTheme}
-			cssOverrides={cssOverrides}
+			dangerouslyOverrideCss={dangerouslyOverrideCss}
 		>
 			<Dialog theme={dialogTheme.container}>
 				<Dialog.Dismiss theme={dialogTheme.dismiss} ariaLabel="Close Modal" />
