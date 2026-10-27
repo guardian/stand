@@ -151,7 +151,7 @@ export const componentAvatar = {
 		justifyContent: 'center',
 		link: {
 			focusVisible: {
-				outline: '0.125rem solid #0072a9',
+				outline: '0.125rem solid #5ca5c8',
 				outlineOffset: '0.125rem',
 			},
 			textDecoration: 'none',

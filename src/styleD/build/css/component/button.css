@@ -31,11 +31,11 @@
 	--component-button-primary-shared-active-background-color: #061d3c;
 	--component-button-primary-shared-active-border: 0.0625rem solid #061d3c;
 	--component-button-primary-shared-background-color: #0d4289;
-	--component-button-primary-shared-border: 0.0625rem solid #0d4289;
+	--component-button-primary-shared-border: 0.0625rem solid #c5d9f4;
 	--component-button-primary-shared-border-radius: 0.25rem;
 	--component-button-primary-shared-color: #ffffff;
 	--component-button-primary-shared-disabled-background-color: #dcdcdc;
-	--component-button-primary-shared-disabled-border: 0.0625rem solid #dcdcdc;
+	--component-button-primary-shared-disabled-border: 0.0625rem solid #666666;
 	--component-button-primary-shared-disabled-color: #999999;
 	--component-button-primary-shared-hover-background-color: #092f62;
 	--component-button-primary-shared-hover-border: 0.0625rem solid #092f62;
@@ -97,7 +97,7 @@
 	--component-button-secondary-shared-border-radius: 0.25rem;
 	--component-button-secondary-shared-color: #ffffff;
 	--component-button-secondary-shared-disabled-background-color: #dcdcdc;
-	--component-button-secondary-shared-disabled-border: 0.0625rem solid #dcdcdc;
+	--component-button-secondary-shared-disabled-border: 0.0625rem solid #666666;
 	--component-button-secondary-shared-disabled-color: #999999;
 	--component-button-secondary-shared-hover-background-color: #333333;
 	--component-button-secondary-shared-hover-border: 0.0625rem solid #333333;
@@ -132,7 +132,7 @@
 	--component-button-shared-cursor: pointer;
 	--component-button-shared-disabled-cursor: not-allowed;
 	--component-button-shared-display: inline-flex;
-	--component-button-shared-focus-visible-outline: 0.125rem solid #0072a9;
+	--component-button-shared-focus-visible-outline: 0.125rem solid #5ca5c8;
 	--component-button-shared-focus-visible-outline-offset: 0.125rem;
 	--component-button-shared-justify-content: center;
 	--component-button-shared-text-align: inherit;
@@ -170,7 +170,7 @@
 	--component-button-tertiary-shared-border-radius: 0.25rem;
 	--component-button-tertiary-shared-color: #000000;
 	--component-button-tertiary-shared-disabled-background-color: none;
-	--component-button-tertiary-shared-disabled-border: 0.0625rem solid #dcdcdc;
+	--component-button-tertiary-shared-disabled-border: 0.0625rem solid #666666;
 	--component-button-tertiary-shared-disabled-color: #999999;
 	--component-button-tertiary-shared-hover-background-color: #f6f6f6;
 	--component-button-tertiary-shared-hover-border: 0.0625rem solid #545454;

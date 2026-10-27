@@ -19,12 +19,12 @@
 	--component-tile-shared-cursor: pointer;
 	--component-tile-shared-description-color: #666666;
 	--component-tile-shared-disabled-background-color: #ffffff;
-	--component-tile-shared-disabled-border-color: #dcdcdc;
+	--component-tile-shared-disabled-border-color: #666666;
 	--component-tile-shared-disabled-color: #999999;
 	--component-tile-shared-disabled-cursor: not-allowed;
 	--component-tile-shared-display: inline-flex;
 	--component-tile-shared-flex-direction: column;
-	--component-tile-shared-focus-visible-outline: 0.125rem solid #0072a9;
+	--component-tile-shared-focus-visible-outline: 0.125rem solid #5ca5c8;
 	--component-tile-shared-focus-visible-outline-offset: 0.125rem;
 	--component-tile-shared-gap: 0.5rem;
 	--component-tile-shared-hover-background-color: #f6f6f6;

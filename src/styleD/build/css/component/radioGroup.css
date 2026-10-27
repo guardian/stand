@@ -17,13 +17,13 @@
 	--component-radio-group-shared-indicator-border: 0.0625rem solid #545454;
 	--component-radio-group-shared-indicator-border-radius: 50%;
 	--component-radio-group-shared-indicator-disabled-border: 0.0625rem solid
-		#dcdcdc;
+		#666666;
 	--component-radio-group-shared-indicator-focused-outline: 0.125rem solid
-		#0072a9;
+		#5ca5c8;
 	--component-radio-group-shared-indicator-focused-outline-offset: 0.125rem;
 	--component-radio-group-shared-indicator-invalid-after-background-color: #b42a19;
 	--component-radio-group-shared-indicator-invalid-border: 0.0625rem solid
-		#b42a19;
+		#eea198;
 	--component-radio-group-shared-indicator-position: relative;
 	--component-radio-group-shared-indicator-selected-after-background-color: #0072a9;
 	--component-radio-group-shared-indicator-selected-after-scale: 0.6;
@@ -31,9 +31,9 @@
 		#0072a9;
 	--component-radio-group-shared-indicator-selected-disabled-after-background-color: #dcdcdc;
 	--component-radio-group-shared-indicator-selected-disabled-border: 0.125rem
-		solid #dcdcdc;
+		solid #666666;
 	--component-radio-group-shared-indicator-selected-invalid-border: 0.125rem
-		solid #b42a19;
+		solid #eea198;
 	--component-radio-group-shared-margin-bottom: 0.5rem; /** spacing between the input itself and the next element (error text) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
 	--component-radio-group-shared-margin-top: 0.5rem; /** spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px */
 	--component-radio-group-shared-orientation-horizontal-flex-direction: row;

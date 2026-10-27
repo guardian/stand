@@ -10,7 +10,7 @@
 	--component-date-picker-calendar-cell-shared-disabled-cursor: not-allowed;
 	--component-date-picker-calendar-cell-shared-display: flex;
 	--component-date-picker-calendar-cell-shared-focus-visible-outline: 0.125rem
-		solid #0072a9;
+		solid #5ca5c8;
 	--component-date-picker-calendar-cell-shared-hovered-background-color: #f6f6f6;
 	--component-date-picker-calendar-cell-shared-justify-content: center;
 	--component-date-picker-calendar-cell-shared-outside-month-display: none;
@@ -42,7 +42,7 @@
 	--component-date-picker-calendar-header-shared-button-disabled-cursor: not-allowed;
 	--component-date-picker-calendar-header-shared-button-display: flex;
 	--component-date-picker-calendar-header-shared-button-focus-visible-outline: 0.125rem
-		solid #0072a9;
+		solid #5ca5c8;
 	--component-date-picker-calendar-header-shared-button-height: 2.5rem;
 	--component-date-picker-calendar-header-shared-button-hovered-background-color: #f6f6f6;
 	--component-date-picker-calendar-header-shared-button-justify-content: center;
@@ -95,10 +95,10 @@
 	--component-date-picker-picker-shared-disabled-cursor: not-allowed;
 	--component-date-picker-picker-shared-display: flex;
 	--component-date-picker-picker-shared-focus-visible-outline: 0.125rem solid
-		#0072a9;
+		#5ca5c8;
 	--component-date-picker-picker-shared-gap: 0.5rem;
 	--component-date-picker-picker-shared-height: 2.5rem;
-	--component-date-picker-picker-shared-invalid-border: 0.0625rem solid #b42a19;
+	--component-date-picker-picker-shared-invalid-border: 0.0625rem solid #eea198;
 	--component-date-picker-picker-shared-justify-content: space-between;
 	--component-date-picker-picker-shared-padding-bottom: 0px;
 	--component-date-picker-picker-shared-padding-left: 0.75rem;
@@ -116,5 +116,5 @@
 	--component-date-picker-popover-shared-padding-top: 0.25rem;
 	--component-date-picker-segment-shared-placeholder-color: #545454;
 	--component-date-picker-segment-shared-placeholder-focus-visible-outline: 0.125rem
-		solid #0072a9;
+		solid #5ca5c8;
 }

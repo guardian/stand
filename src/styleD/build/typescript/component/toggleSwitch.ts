@@ -61,7 +61,7 @@ export const componentToggleSwitch = {
 			},
 			display: 'flex',
 			focusVisible: {
-				outline: '0.125rem solid #0072a9',
+				outline: '0.125rem solid #5ca5c8',
 				outlineOffset: '0.125rem',
 			},
 			padding: '0.25rem',

@@ -99,7 +99,7 @@ export const componentTopBar = {
 			display: 'inline-flex',
 			divider: '0.0625rem solid #cccccc',
 			focusVisible: {
-				outline: '0.125rem solid #0072a9',
+				outline: '0.125rem solid #5ca5c8',
 				outlineOffset: '-0.0625rem',
 			},
 			height: '100%',
@@ -150,7 +150,7 @@ export const componentTopBar = {
 			},
 			color: '#ffffff',
 			focused: {
-				outline: '0.125rem solid #0072a9',
+				outline: '0.125rem solid #5ca5c8',
 				outlineOffset: '-0.125rem',
 			},
 			height: '100%',

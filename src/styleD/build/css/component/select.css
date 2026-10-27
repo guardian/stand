@@ -13,12 +13,12 @@
 	--component-select-shared-button-border-radius: 0.25rem;
 	--component-select-shared-button-color: #000000;
 	--component-select-shared-button-disabled-background-color: #ffffff;
-	--component-select-shared-button-disabled-border: 0.0625rem solid #dcdcdc;
+	--component-select-shared-button-disabled-border: 0.0625rem solid #666666;
 	--component-select-shared-button-disabled-color: #999999;
 	--component-select-shared-button-disabled-cursor: not-allowed;
 	--component-select-shared-button-display: flex;
-	--component-select-shared-button-error-border: 0.0625rem solid #b42a19;
-	--component-select-shared-button-focused-outline: 0.125rem solid #0072a9;
+	--component-select-shared-button-error-border: 0.0625rem solid #eea198;
+	--component-select-shared-button-focused-outline: 0.125rem solid #5ca5c8;
 	--component-select-shared-button-focused-outline-offset: 0.125rem;
 	--component-select-shared-button-justify-content: space-between;
 	--component-select-shared-button-margin-top: 0.25rem;
@@ -33,7 +33,7 @@
 		rgb(0% 0% 0% / 0.3);
 	--component-select-shared-offset: 8;
 	--component-select-shared-option-focused-background-color: inherit;
-	--component-select-shared-option-focused-outline: 0.125rem solid #0072a9;
+	--component-select-shared-option-focused-outline: 0.125rem solid #5ca5c8;
 	--component-select-shared-option-focused-outline-offset: 0px;
 	--component-select-shared-option-padding-bottom: 0.75rem;
 	--component-select-shared-option-padding-left: 1rem;

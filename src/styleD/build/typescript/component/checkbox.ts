@@ -38,7 +38,7 @@ export const componentCheckbox = {
 				color: '#999999',
 				cursor: 'not-allowed',
 				indicator: {
-					border: '0.0625rem solid #dcdcdc',
+					border: '0.0625rem solid #666666',
 					selected: {
 						backgroundColor: '#dcdcdc',
 					},
@@ -57,11 +57,11 @@ export const componentCheckbox = {
 				display: 'flex',
 				error: {
 					backgroundColor: '#b42a19',
-					border: '0.0625rem solid #b42a19',
+					border: '0.0625rem solid #eea198',
 				},
 				flexShrink: 0,
 				focusVisible: {
-					outline: '0.125rem solid #0072a9',
+					outline: '0.125rem solid #5ca5c8',
 					outlineOffset: '0.125rem',
 				},
 				indeterminate: {

@@ -30,12 +30,12 @@ export const componentPagination = {
 		cursor: 'pointer',
 		disabled: {
 			backgroundColor: '#dcdcdc',
-			borderColor: '#dcdcdc',
+			borderColor: '#666666',
 			color: '#999999',
 			cursor: 'not-allowed',
 		},
 		focusVisible: {
-			outlineColor: '#0072a9',
+			outlineColor: '#5ca5c8',
 			outlineOffset: '2px',
 			outlineWidth: '0.125rem',
 		},

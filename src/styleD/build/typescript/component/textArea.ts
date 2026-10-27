@@ -18,15 +18,15 @@ export const componentTextArea = {
 		cursor: 'text',
 		disabled: {
 			backgroundColor: '#ffffff',
-			border: '0.0625rem solid #dcdcdc',
+			border: '0.0625rem solid #666666',
 			color: '#999999',
 			cursor: 'not-allowed',
 		},
 		error: {
-			border: '0.0625rem solid #b42a19',
+			border: '0.0625rem solid #eea198',
 		},
 		focused: {
-			outline: '0.125rem auto #0072a9',
+			outline: '0.125rem auto #5ca5c8',
 		},
 		height: '144px',
 		marginTop: '0.25rem',

@@ -37,7 +37,7 @@ export const componentTable = {
 		backgroundColor: '#ffffff',
 		border: '0.0625rem solid #cccccc',
 		focusVisible: {
-			outline: '0.125rem solid #0072a9',
+			outline: '0.125rem solid #5ca5c8',
 			outlineOffset: '-0.0625rem',
 		},
 		hoverBackgroundColor: '#f6f6f6',

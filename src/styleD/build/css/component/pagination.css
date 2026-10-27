@@ -21,10 +21,10 @@
 	--component-pagination-item-current-typography-letter-spacing: -0.0125rem;
 	--component-pagination-item-cursor: pointer;
 	--component-pagination-item-disabled-background-color: #dcdcdc;
-	--component-pagination-item-disabled-border-color: #dcdcdc;
+	--component-pagination-item-disabled-border-color: #666666;
 	--component-pagination-item-disabled-color: #999999;
 	--component-pagination-item-disabled-cursor: not-allowed;
-	--component-pagination-item-focus-visible-outline-color: #0072a9;
+	--component-pagination-item-focus-visible-outline-color: #5ca5c8;
 	--component-pagination-item-focus-visible-outline-offset: 2px;
 	--component-pagination-item-focus-visible-outline-width: 0.125rem;
 	--component-pagination-item-height: 1.5rem;

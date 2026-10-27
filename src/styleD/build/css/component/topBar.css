@@ -59,7 +59,7 @@
 	--component-top-bar-navigation-shared-display: inline-flex;
 	--component-top-bar-navigation-shared-divider: 0.0625rem solid #cccccc;
 	--component-top-bar-navigation-shared-focus-visible-outline: 0.125rem solid
-		#0072a9;
+		#5ca5c8;
 	--component-top-bar-navigation-shared-focus-visible-outline-offset: -0.0625rem;
 	--component-top-bar-navigation-shared-height: 100%;
 	--component-top-bar-navigation-shared-padding-bottom: 0px;
@@ -89,7 +89,7 @@
 	--component-top-bar-tool-name-hover-link-collapsed-padding-right: 0.25rem;
 	--component-top-bar-tool-name-hover-link-color: #ffffff;
 	--component-top-bar-tool-name-hover-link-focused-outline: 0.125rem solid
-		#0072a9;
+		#5ca5c8;
 	--component-top-bar-tool-name-hover-link-focused-outline-offset: -0.125rem;
 	--component-top-bar-tool-name-hover-link-height: 100%;
 	--component-top-bar-tool-name-hover-link-hover-opacity: 1;

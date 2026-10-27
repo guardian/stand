@@ -23,14 +23,14 @@ export const componentTile = {
 		descriptionColor: '#666666',
 		disabled: {
 			backgroundColor: '#ffffff',
-			borderColor: '#dcdcdc',
+			borderColor: '#666666',
 			color: '#999999',
 			cursor: 'not-allowed',
 		},
 		display: 'inline-flex',
 		flexDirection: 'column',
 		focusVisible: {
-			outline: '0.125rem solid #0072a9',
+			outline: '0.125rem solid #5ca5c8',
 			outlineOffset: '0.125rem',
 		},
 		gap: '0.5rem',

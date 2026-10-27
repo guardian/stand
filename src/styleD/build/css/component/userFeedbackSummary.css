@@ -3,9 +3,9 @@
  */
 
 :root {
-	--component-user-feedback-summary-error-border-color: #b42a19;
+	--component-user-feedback-summary-error-border-color: #eea198;
 	--component-user-feedback-summary-error-color: #8c2113;
-	--component-user-feedback-summary-information-border-color: #1054af;
+	--component-user-feedback-summary-information-border-color: #93b9ec;
 	--component-user-feedback-summary-information-color: #092f62;
 	--component-user-feedback-summary-shared-border-style: solid;
 	--component-user-feedback-summary-shared-border-width: 0.0625rem;

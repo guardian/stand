@@ -17,12 +17,12 @@ export const componentAutocomplete = {
 		color: '#000000',
 		disabled: {
 			backgroundColor: '#ffffff',
-			border: '0.0625rem solid #dcdcdc',
+			border: '0.0625rem solid #666666',
 			color: '#999999',
 			cursor: 'not-allowed',
 		},
 		focused: {
-			outline: '0.125rem solid #0072a9',
+			outline: '0.125rem solid #5ca5c8',
 			outlineOffset: '0.125rem',
 		},
 		hover: {

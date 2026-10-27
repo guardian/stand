@@ -4,11 +4,11 @@
 
 export const componentUserFeedbackSummary = {
 	error: {
-		borderColor: '#b42a19',
+		borderColor: '#eea198',
 		color: '#8c2113',
 	},
 	information: {
-		borderColor: '#1054af',
+		borderColor: '#93b9ec',
 		color: '#092f62',
 	},
 	shared: {

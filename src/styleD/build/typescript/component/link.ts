@@ -11,7 +11,7 @@ export const componentLink = {
 			color: '#00496c',
 		},
 		focus: {
-			outline: '0.0625rem solid #0072a9',
+			outline: '0.0625rem solid #5ca5c8',
 		},
 		hover: {
 			color: '#00344e',

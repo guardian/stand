@@ -15,7 +15,7 @@ export const componentDatePicker = {
 				},
 				display: 'flex',
 				focusVisible: {
-					outline: '0.125rem solid #0072a9',
+					outline: '0.125rem solid #5ca5c8',
 				},
 				hovered: {
 					backgroundColor: '#f6f6f6',
@@ -65,7 +65,7 @@ export const componentDatePicker = {
 					},
 					display: 'flex',
 					focusVisible: {
-						outline: '0.125rem solid #0072a9',
+						outline: '0.125rem solid #5ca5c8',
 					},
 					height: '2.5rem',
 					hovered: {
@@ -141,12 +141,12 @@ export const componentDatePicker = {
 			},
 			display: 'flex',
 			focusVisible: {
-				outline: '0.125rem solid #0072a9',
+				outline: '0.125rem solid #5ca5c8',
 			},
 			gap: '0.5rem',
 			height: '2.5rem',
 			invalid: {
-				border: '0.0625rem solid #b42a19',
+				border: '0.0625rem solid #eea198',
 			},
 			justifyContent: 'space-between',
 			padding: {
@@ -177,7 +177,7 @@ export const componentDatePicker = {
 			placeholder: {
 				color: '#545454',
 				focusVisible: {
-					outline: '0.125rem solid #0072a9',
+					outline: '0.125rem solid #5ca5c8',
 				},
 			},
 		},

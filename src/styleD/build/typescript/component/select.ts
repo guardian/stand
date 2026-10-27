@@ -20,16 +20,16 @@ export const componentSelect = {
 			color: '#000000',
 			disabled: {
 				backgroundColor: '#ffffff',
-				border: '0.0625rem solid #dcdcdc',
+				border: '0.0625rem solid #666666',
 				color: '#999999',
 				cursor: 'not-allowed',
 			},
 			display: 'flex',
 			error: {
-				border: '0.0625rem solid #b42a19',
+				border: '0.0625rem solid #eea198',
 			},
 			focused: {
-				outline: '0.125rem solid #0072a9',
+				outline: '0.125rem solid #5ca5c8',
 				outlineOffset: '0.125rem',
 			},
 			justifyContent: 'space-between',
@@ -51,7 +51,7 @@ export const componentSelect = {
 		option: {
 			focused: {
 				backgroundColor: 'inherit',
-				outline: '0.125rem solid #0072a9',
+				outline: '0.125rem solid #5ca5c8',
 				outlineOffset: '0px',
 			},
 			paddingBottom: '0.75rem',

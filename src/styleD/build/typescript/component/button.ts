@@ -62,12 +62,12 @@ export const componentButton = {
 				border: '0.0625rem solid #061d3c',
 			},
 			backgroundColor: '#0d4289',
-			border: '0.0625rem solid #0d4289',
+			border: '0.0625rem solid #c5d9f4',
 			borderRadius: '0.25rem',
 			color: '#ffffff',
 			disabled: {
 				backgroundColor: '#dcdcdc',
-				border: '0.0625rem solid #dcdcdc',
+				border: '0.0625rem solid #666666',
 				color: '#999999',
 			},
 			hover: {
@@ -192,7 +192,7 @@ export const componentButton = {
 			color: '#ffffff',
 			disabled: {
 				backgroundColor: '#dcdcdc',
-				border: '0.0625rem solid #dcdcdc',
+				border: '0.0625rem solid #666666',
 				color: '#999999',
 			},
 			hover: {
@@ -262,7 +262,7 @@ export const componentButton = {
 		},
 		display: 'inline-flex',
 		focusVisible: {
-			outline: '0.125rem solid #0072a9',
+			outline: '0.125rem solid #5ca5c8',
 			outlineOffset: '0.125rem',
 		},
 		justifyContent: 'center',
@@ -334,7 +334,7 @@ export const componentButton = {
 			color: '#000000',
 			disabled: {
 				backgroundColor: 'none',
-				border: '0.0625rem solid #dcdcdc',
+				border: '0.0625rem solid #666666',
 				color: '#999999',
 			},
 			hover: {

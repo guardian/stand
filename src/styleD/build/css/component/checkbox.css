@@ -21,7 +21,7 @@
 	--component-checkbox-input-shared-disabled-color: #999999;
 	--component-checkbox-input-shared-disabled-cursor: not-allowed;
 	--component-checkbox-input-shared-disabled-indicator-border: 0.0625rem solid
-		#dcdcdc;
+		#666666;
 	--component-checkbox-input-shared-disabled-indicator-selected-background-color: #dcdcdc;
 	--component-checkbox-input-shared-display: flex;
 	--component-checkbox-input-shared-gap: 0.5rem;
@@ -33,10 +33,10 @@
 	--component-checkbox-input-shared-indicator-display: flex;
 	--component-checkbox-input-shared-indicator-error-background-color: #b42a19;
 	--component-checkbox-input-shared-indicator-error-border: 0.0625rem solid
-		#b42a19;
+		#eea198;
 	--component-checkbox-input-shared-indicator-flex-shrink: 0;
 	--component-checkbox-input-shared-indicator-focus-visible-outline: 0.125rem
-		solid #0072a9;
+		solid #5ca5c8;
 	--component-checkbox-input-shared-indicator-focus-visible-outline-offset: 0.125rem;
 	--component-checkbox-input-shared-indicator-indeterminate-height: 2px;
 	--component-checkbox-input-shared-indicator-indeterminate-width: 12px;

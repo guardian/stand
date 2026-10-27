@@ -27,17 +27,17 @@ export const componentRadioGroup = {
 			border: '0.0625rem solid #545454',
 			borderRadius: '50%',
 			disabled: {
-				border: '0.0625rem solid #dcdcdc',
+				border: '0.0625rem solid #666666',
 			},
 			focused: {
-				outline: '0.125rem solid #0072a9',
+				outline: '0.125rem solid #5ca5c8',
 				outlineOffset: '0.125rem',
 			},
 			invalid: {
 				after: {
 					backgroundColor: '#b42a19',
 				},
-				border: '0.0625rem solid #b42a19',
+				border: '0.0625rem solid #eea198',
 			},
 			position: 'relative',
 			selected: {
@@ -50,10 +50,10 @@ export const componentRadioGroup = {
 					after: {
 						backgroundColor: '#dcdcdc',
 					},
-					border: '0.125rem solid #dcdcdc',
+					border: '0.125rem solid #666666',
 				},
 				invalid: {
-					border: '0.125rem solid #b42a19',
+					border: '0.125rem solid #eea198',
 				},
 			},
 		},
