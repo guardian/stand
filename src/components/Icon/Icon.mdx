@@ -2,7 +2,7 @@ import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import IconStories, {
 	IconTable,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './Icon.stories';
 import {
 	SandboxReact,
@@ -17,6 +17,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={IconStories} />
 
@@ -151,16 +152,16 @@ const CustomIcon = () => (
 
 ## Props
 
-| Name           | Type                                | Required    | Default | Description                                                                                                                                                 |
-| -------------- | ----------------------------------- | ----------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `symbol`       | `MaterialSymbol`                    | Conditional | N/A     | Name of the Material Symbol to display (e.g., "home", "add"). Uses the `MaterialSymbol` type for type safety. Alternative to providing the icon as a child. |
-| `children`     | `ReactNode` \| `MaterialSymbol`     | Conditional | N/A     | Icon content - either a Material Symbol name (typed as `MaterialSymbol`), an SVG component (ReactNode), or left empty if using `symbol`.                    |
-| `size`         | `'xs'` \|`'sm'` \| `'md'` \| `'lg'` | No          | `'md'`  | Controls the icon dimensions.                                                                                                                               |
-| `fill`         | `string`                            | No          | N/A     | Fill/color of the icon. Default is to inherit from text color or icon defaults.                                                                             |
-| `alt`          | `string`                            | Conditional | N/A     | Alternative text for screen readers. Required if the icon conveys meaning on its own. Omit for decorative icons alongside text.                             |
-| `theme`        | `IconTheme` (partial)               | No          | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                                     |
-| `cssOverrides` | `SerializedStyles`                  | No          | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                  |
-| `className`    | `string`                            | No          | N/A     | Additional class name(s) for the icon. For Material Symbols, combines with `material-symbols`.                                                              |
+| Name                     | Type                                | Required    | Default | Description                                                                                                                                                 |
+| ------------------------ | ----------------------------------- | ----------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `symbol`                 | `MaterialSymbol`                    | Conditional | N/A     | Name of the Material Symbol to display (e.g., "home", "add"). Uses the `MaterialSymbol` type for type safety. Alternative to providing the icon as a child. |
+| `children`               | `ReactNode` \| `MaterialSymbol`     | Conditional | N/A     | Icon content - either a Material Symbol name (typed as `MaterialSymbol`), an SVG component (ReactNode), or left empty if using `symbol`.                    |
+| `size`                   | `'xs'` \|`'sm'` \| `'md'` \| `'lg'` | No          | `'md'`  | Controls the icon dimensions.                                                                                                                               |
+| `fill`                   | `string`                            | No          | N/A     | Fill/color of the icon. Default is to inherit from text color or icon defaults.                                                                             |
+| `alt`                    | `string`                            | Conditional | N/A     | Alternative text for screen readers. Required if the icon conveys meaning on its own. Omit for decorative icons alongside text.                             |
+| `theme`                  | `IconTheme` (partial)               | No          | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                                     |
+| `dangerouslyOverrideCss` | `SerializedStyles`                  | No          | N/A     | Escape hatch for custom CSS; see warning below.                                                                                                             |
+| `className`              | `string`                            | No          | N/A     | Additional class name(s) for the icon. For Material Symbols, combines with `material-symbols`.                                                              |
 
 **`size`**
 
@@ -195,7 +196,7 @@ Provide alternative text to describe the icon's meaning for screen readers:
 
 ## Customisation
 
-We recommend using the default theme. When needed, use the `theme` or `cssOverrides` props.
+We recommend using the default theme. When needed, use the `theme` prop.
 
 ### Custom theme
 
@@ -223,9 +224,11 @@ const Component = () => (
 );
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-<Canvas layout="padded" of={CssOverrides} />
+<DangerouslyOverrideCssWarning />
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ```tsx
 import { Icon } from '@guardian/stand/Icon';
@@ -239,7 +242,11 @@ const customStyles = css`
 `;
 
 const Component = () => (
-	<Icon size="lg" fill={baseColors.neutral[900]} cssOverrides={customStyles}>
+	<Icon
+		size="lg"
+		fill={baseColors.neutral[900]}
+		dangerouslyOverrideCss={customStyles}
+	>
 		home
 	</Icon>
 );

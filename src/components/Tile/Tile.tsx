@@ -60,14 +60,14 @@ function TileContent({
 			<div css={tileContentStyles(theme, { size })}>
 				<div css={tileTextStyles(theme)}>
 					{icon && (
-						<Icon size={size} cssOverrides={tileIconStyles(theme)}>
+						<Icon size={size} dangerouslyOverrideCss={tileIconStyles(theme)}>
 							{icon}
 						</Icon>
 					)}
 					<Typography
 						variant={typography}
 						theme={{ color: theme.shared.color }}
-						cssOverrides={tileTitleStyles(theme)}
+						dangerouslyOverrideCss={tileTitleStyles(theme)}
 					>
 						{children}
 					</Typography>
@@ -76,7 +76,7 @@ function TileContent({
 					<Icon
 						symbol={indicator}
 						size={size}
-						cssOverrides={tileArrowStyles(theme)}
+						dangerouslyOverrideCss={tileArrowStyles(theme)}
 					/>
 				)}
 			</div>
@@ -87,7 +87,7 @@ function TileContent({
 						<Typography
 							variant={descriptionTypography}
 							theme={{ color: theme.shared.descriptionColor }}
-							cssOverrides={tileDescriptionStyles(theme)}
+							dangerouslyOverrideCss={tileDescriptionStyles(theme)}
 						>
 							{description}
 						</Typography>
@@ -96,7 +96,7 @@ function TileContent({
 						<Icon
 							symbol={indicator}
 							size={size}
-							cssOverrides={tileArrowStyles(theme)}
+							dangerouslyOverrideCss={tileArrowStyles(theme)}
 						/>
 					)}
 				</div>
@@ -107,7 +107,7 @@ function TileContent({
 
 function ClickableLinkTile({
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	children,
 	description,
 	typography,
@@ -121,7 +121,7 @@ function ClickableLinkTile({
 	return (
 		<ReactAriaLink
 			{...props}
-			css={[tileStyles(mergedTheme, { size }), cssOverrides]}
+			css={[tileStyles(mergedTheme, { size }), dangerouslyOverrideCss]}
 		>
 			<TileContent
 				{...{
@@ -145,7 +145,7 @@ function SelectionTile({
 	isSelected,
 	onSelectionChange,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	children,
 	description,
 	typography,
@@ -171,7 +171,10 @@ function SelectionTile({
 			aria-pressed={isSelected}
 			data-selected={isSelected || undefined}
 			onPress={handlePress}
-			css={[selectableTileStyles(mergedTheme, { size }), cssOverrides]}
+			css={[
+				selectableTileStyles(mergedTheme, { size }),
+				dangerouslyOverrideCss,
+			]}
 		>
 			<TileContent
 				{...{

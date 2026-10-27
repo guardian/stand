@@ -7,7 +7,7 @@ import SelectStories, {
 	WithError,
 	WithHelpText,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 	RenderWithAsterisk,
 	WithIdProp,
 	MultiSelect,
@@ -27,6 +27,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={SelectStories} />
 
@@ -97,20 +98,20 @@ import type {
 
 ## Props
 
-| Name                 | Type                           | Required | Default    | Description                                                                                                                                                           |
-| -------------------- | ------------------------------ | -------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `size`               | `'md'` \| `'sm'`               | No       | `'md'`     | Controls button height and typography.                                                                                                                                |
-| `label`              | `string`                       | Yes      | N/A        | Visible label rendered above the select.                                                                                                                              |
-| `renderLabel`        | `(label: string) => ReactNode` | No       | N/A        | Custom render function for the label. Receives the `label` string and returns a ReactNode for visual enhancement                                                      |
-| `contextualHelpText` | `string`                       | No       | N/A        | Optional contextual help text.                                                                                                                                        |
-| `errorMessage`       | `string`                       | Yes      | N/A        | A validation error message.                                                                                                                                           |
-| `placement`          | `Placement`                    | No       | N/A        | The placement of the options container element with respect to select input.                                                                                          |
-| `shouldFlip`         | `boolean`                      | No       | N/A        | Whether the element options container element flip its orientation (e.g. top to bottom or left to right) when there is insufficient room for it to render completely. |
-| `selectionMode`      | `'single'` \| `'multiple'`     | No       | `'single'` | The selection mode. In 'multiple' mode multiple options can be selected at the same time.                                                                             |
-| `children`           | `React.ReactNode`              | No       | N/A        | Options to render in the dropdown, only `Option` components are accepted.                                                                                             |
-| `theme`              | `SelectTheme`                  | No       | N/A        | Custom theme overrides.                                                                                                                                               |
-| `cssOverrides`       | `SerializedStyles`             | No       | N/A        | Custom CSS styles.                                                                                                                                                    |
-| `className`          | `string`                       | No       | N/A        | Additional class name(s).                                                                                                                                             |
+| Name                     | Type                           | Required | Default    | Description                                                                                                                                                           |
+| ------------------------ | ------------------------------ | -------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `size`                   | `'md'` \| `'sm'`               | No       | `'md'`     | Controls button height and typography.                                                                                                                                |
+| `label`                  | `string`                       | Yes      | N/A        | Visible label rendered above the select.                                                                                                                              |
+| `renderLabel`            | `(label: string) => ReactNode` | No       | N/A        | Custom render function for the label. Receives the `label` string and returns a ReactNode for visual enhancement                                                      |
+| `contextualHelpText`     | `string`                       | No       | N/A        | Optional contextual help text.                                                                                                                                        |
+| `errorMessage`           | `string`                       | Yes      | N/A        | A validation error message.                                                                                                                                           |
+| `placement`              | `Placement`                    | No       | N/A        | The placement of the options container element with respect to select input.                                                                                          |
+| `shouldFlip`             | `boolean`                      | No       | N/A        | Whether the element options container element flip its orientation (e.g. top to bottom or left to right) when there is insufficient room for it to render completely. |
+| `selectionMode`          | `'single'` \| `'multiple'`     | No       | `'single'` | The selection mode. In 'multiple' mode multiple options can be selected at the same time.                                                                             |
+| `children`               | `React.ReactNode`              | No       | N/A        | Options to render in the dropdown, only `Option` components are accepted.                                                                                             |
+| `theme`                  | `SelectTheme`                  | No       | N/A        | Custom theme overrides.                                                                                                                                               |
+| `dangerouslyOverrideCss` | `SerializedStyles`             | No       | N/A        | Escape hatch for custom CSS; see warning below.                                                                                                                       |
+| `className`              | `string`                       | No       | N/A        | Additional class name(s).                                                                                                                                             |
 
 ## Option props
 
@@ -187,7 +188,7 @@ When an option is selected, React Aria emits the option's `id` as the value. Sta
 
 ## Customisation
 
-We recommend using the Select component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the Select component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -217,9 +218,11 @@ const Component = () => (
 
 <Canvas layout="padded" of={CustomTheme} />
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the Select component:
+<DangerouslyOverrideCssWarning />
+
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the Select component:
 
 ```tsx
 import { Select } from '@guardian/stand/Select';
@@ -235,12 +238,12 @@ button {
 \`;
 
 const Component = () =>
-	<Select label="Select" cssOverrides={customStyles}>
+	<Select label="Select" dangerouslyOverrideCss={customStyles}>
 		<Option>Option</Option
 	</Select>;
 ```
 
-<Canvas layout="padded" of={CssOverrides} />
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ## Custom Component Build
 

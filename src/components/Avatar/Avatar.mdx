@@ -8,7 +8,7 @@ import AvatarStories, {
 	ImageWithFallback,
 	DefaultColors,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './Avatar.stories';
 import {
 	SandboxReact,
@@ -23,6 +23,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={AvatarStories} />
 
@@ -86,16 +87,16 @@ import type { AvatarProps, AvatarTheme } from '@guardian/stand/Avatar';
 
 ## Props
 
-| Name           | Type               | Required    | Default                         | Description                                    |
-| -------------- | ------------------ | ----------- | ------------------------------- | ---------------------------------------------- |
-| `size`         | `'sm'` \| `'md'`   | No          | `'md'`                          | Size of the avatar.                            |
-| `color`        | Various            | No          | Deterministic based on initials | Color of the avatar.                           |
-| `initials`     | `string`           | Conditional | N/A                             | Initials to display when no image is provided. |
-| `src`          | `string`           | Conditional | N/A                             | URL of the avatar image.                       |
-| `alt`          | `string`           | Conditional | N/A                             | Alt text for the image for accessibility.      |
-| `theme`        | `AvatarTheme`      | No          | N/A                             | Custom theme overrides for the avatar.         |
-| `cssOverrides` | `SerializedStyles` | No          | N/A                             | Custom CSS styles for the avatar.              |
-| `className`    | `string`           | No          | N/A                             | Additional class name(s) for the avatar.       |
+| Name                     | Type               | Required    | Default                         | Description                                     |
+| ------------------------ | ------------------ | ----------- | ------------------------------- | ----------------------------------------------- |
+| `size`                   | `'sm'` \| `'md'`   | No          | `'md'`                          | Size of the avatar.                             |
+| `color`                  | Various            | No          | Deterministic based on initials | Color of the avatar.                            |
+| `initials`               | `string`           | Conditional | N/A                             | Initials to display when no image is provided.  |
+| `src`                    | `string`           | Conditional | N/A                             | URL of the avatar image.                        |
+| `alt`                    | `string`           | Conditional | N/A                             | Alt text for the image for accessibility.       |
+| `theme`                  | `AvatarTheme`      | No          | N/A                             | Custom theme overrides for the avatar.          |
+| `dangerouslyOverrideCss` | `SerializedStyles` | No          | N/A                             | Escape hatch for custom CSS; see warning below. |
+| `className`              | `string`           | No          | N/A                             | Additional class name(s) for the avatar.        |
 
 When using `src`, the `alt` prop is required for accessibility.
 When not using `src`, the `initials` prop is required.
@@ -157,7 +158,7 @@ When an image fails to load, the avatar falls back to displaying initials:
 
 ## Customisation
 
-We recommend using the Avatar component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the Avatar component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -189,11 +190,13 @@ const Component = () => (
 );
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the Avatar component, if the theme prop is not sufficient:
+<DangerouslyOverrideCssWarning />
 
-<Canvas layout="padded" of={CssOverrides} />
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the Avatar component, if the theme prop is not sufficient:
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ```tsx
 import { Avatar } from '@guardian/stand/Avatar';
@@ -206,7 +209,12 @@ const customStyles = css`
 `;
 
 const Component = () => (
-	<Avatar initials="CO" size="md" color="red" cssOverrides={customStyles} />
+	<Avatar
+		initials="CO"
+		size="md"
+		color="red"
+		dangerouslyOverrideCss={customStyles}
+	/>
 );
 ```
 

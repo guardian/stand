@@ -412,9 +412,9 @@ export const WithTheme: Story = {
 	},
 };
 
-export const WithCssOverrides: Story = {
+export const WithDangerouslyOverrideCss: Story = {
 	args: {
-		cssOverrides: css({
+		dangerouslyOverrideCss: css({
 			borderTop: '4px dashed lavender',
 			borderBottom: '4px dashed lavender',
 			padding: 5,

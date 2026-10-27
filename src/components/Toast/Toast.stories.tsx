@@ -93,7 +93,7 @@ const ThemeIsolationExample = () => {
 										accentColor: '#1054af',
 									},
 								},
-								cssOverrides: css`
+								dangerouslyOverrideCss: css`
 									border-left-width: 0.5rem;
 								`,
 							}

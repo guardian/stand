@@ -59,7 +59,7 @@ export const WithCustomHeader: Story = {
 			<span css={{ display: 'flex', alignItems: 'center', gap: 5 }}>
 				Some Tags
 				<Icon
-					cssOverrides={css({
+					dangerouslyOverrideCss={css({
 						backgroundColor: 'skyblue',
 						borderRadius: '50%',
 					})}

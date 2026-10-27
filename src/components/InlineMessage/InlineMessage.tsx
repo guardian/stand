@@ -15,7 +15,7 @@ export function InlineMessage({
 	hideIcon = false,
 	icon,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 	slot,
 	...props
@@ -40,14 +40,17 @@ export function InlineMessage({
 
 	return (
 		<div
-			css={[inlineMessageStyles(mergedTheme, { level }), cssOverrides]}
+			css={[
+				inlineMessageStyles(mergedTheme, { level }),
+				dangerouslyOverrideCss,
+			]}
 			className={className}
 			{...props}
 		>
 			{!hideIcon && (
 				<Icon
 					fill={mergedTheme[level].color}
-					cssOverrides={inlineMessageIconStyles(mergedTheme)}
+					dangerouslyOverrideCss={inlineMessageIconStyles(mergedTheme)}
 					size="md"
 				>
 					{determinedIcon}

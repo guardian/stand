@@ -105,10 +105,10 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	args: {
 		fetchHtml: fetchBreakingNewsHtml,
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			margin: 0 auto;
 			max-width: 700px;
 			border: 4px dotted black;

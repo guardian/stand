@@ -26,7 +26,7 @@ export function TopBarNavigation({
 	isDisabled,
 	alignment = 'left',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 	_menuOpen,
 	...props
@@ -53,7 +53,7 @@ export function TopBarNavigation({
 								css={[
 									topBarNavigationStyles(mergedTheme, isSelected, _menuOpen),
 									topBarNavigationTypographyStyles(mergedTheme, size),
-									cssOverrides,
+									dangerouslyOverrideCss,
 								]}
 								className={className}
 								{...props}
@@ -79,7 +79,7 @@ export function TopBarNavigation({
 					css={[
 						topBarNavigationStyles(mergedTheme, isSelected, _menuOpen),
 						topBarNavigationTypographyStyles(mergedTheme, size),
-						cssOverrides,
+						dangerouslyOverrideCss,
 					]}
 					href={href}
 					onPress={onPress}

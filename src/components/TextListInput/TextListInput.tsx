@@ -21,7 +21,7 @@ export const TextListInput = ({
 	errorMessage,
 	onChange,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 }: TextListInputProps) => {
 	const [textListItems, setTextListItems] = useState<string[]>(initialData);
@@ -48,7 +48,7 @@ export const TextListInput = ({
 
 	const mergedTheme = mergeDeep(defaultTextListInputTheme, theme);
 	return (
-		<fieldset css={cssOverrides} className={className}>
+		<fieldset css={dangerouslyOverrideCss} className={className}>
 			<legend css={labelStyles(mergedTheme)}>
 				{label}
 				{textListItems.length > 0 && (

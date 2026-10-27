@@ -25,16 +25,16 @@ export const Basic = {
 	name: 'Basic',
 	render: (args) => (
 		<Grid {...args}>
-			<Item size={8} cssOverrides={demoItemStyles}>
+			<Item size={8} dangerouslyOverrideCss={demoItemStyles}>
 				size=8
 			</Item>
-			<Item size={4} cssOverrides={demoItemStyles}>
+			<Item size={4} dangerouslyOverrideCss={demoItemStyles}>
 				size=4
 			</Item>
-			<Item size={4} cssOverrides={demoItemStyles}>
+			<Item size={4} dangerouslyOverrideCss={demoItemStyles}>
 				size=4
 			</Item>
-			<Item size={8} cssOverrides={demoItemStyles}>
+			<Item size={8} dangerouslyOverrideCss={demoItemStyles}>
 				size=8
 			</Item>
 		</Grid>
@@ -45,13 +45,22 @@ export const Responsive = {
 	name: 'Responsive',
 	render: (args) => (
 		<Grid {...args}>
-			<Item size={{ sm: 12, md: 6, lg: 4 }} cssOverrides={demoItemStyles}>
+			<Item
+				size={{ sm: 12, md: 6, lg: 4 }}
+				dangerouslyOverrideCss={demoItemStyles}
+			>
 				sm=12 md=6 lg=4
 			</Item>
-			<Item size={{ sm: 12, md: 6, lg: 4 }} cssOverrides={demoItemStyles}>
+			<Item
+				size={{ sm: 12, md: 6, lg: 4 }}
+				dangerouslyOverrideCss={demoItemStyles}
+			>
 				sm=12 md=6 lg=4
 			</Item>
-			<Item size={{ sm: 12, md: 6, lg: 4 }} cssOverrides={demoItemStyles}>
+			<Item
+				size={{ sm: 12, md: 6, lg: 4 }}
+				dangerouslyOverrideCss={demoItemStyles}
+			>
 				sm=12 md=6 lg=4
 			</Item>
 		</Grid>
@@ -62,13 +71,13 @@ export const AutoSize = {
 	name: 'Auto size',
 	render: (args) => (
 		<Grid {...args}>
-			<Item size="auto" cssOverrides={demoItemStyles}>
+			<Item size="auto" dangerouslyOverrideCss={demoItemStyles}>
 				size=auto (shrinks to content)
 			</Item>
-			<Item size={6} cssOverrides={demoItemStyles}>
+			<Item size={6} dangerouslyOverrideCss={demoItemStyles}>
 				size=6
 			</Item>
-			<Item size="auto" cssOverrides={demoItemStyles}>
+			<Item size="auto" dangerouslyOverrideCss={demoItemStyles}>
 				size=auto (shrinks to content)
 			</Item>
 		</Grid>
@@ -79,13 +88,13 @@ export const GrowSize = {
 	name: 'Grow size',
 	render: (args) => (
 		<Grid {...args}>
-			<Item size="grow" cssOverrides={demoItemStyles}>
+			<Item size="grow" dangerouslyOverrideCss={demoItemStyles}>
 				size=grow
 			</Item>
-			<Item size={6} cssOverrides={demoItemStyles}>
+			<Item size={6} dangerouslyOverrideCss={demoItemStyles}>
 				size=6
 			</Item>
-			<Item size="grow" cssOverrides={demoItemStyles}>
+			<Item size="grow" dangerouslyOverrideCss={demoItemStyles}>
 				size=grow
 			</Item>
 		</Grid>
@@ -96,16 +105,16 @@ export const Offset = {
 	name: 'Offset',
 	render: (args) => (
 		<Grid {...args}>
-			<Item size={6} offset={3} cssOverrides={demoItemStyles}>
+			<Item size={6} offset={3} dangerouslyOverrideCss={demoItemStyles}>
 				size=6 offset=3
 			</Item>
-			<Item size={4} offset={4} cssOverrides={demoItemStyles}>
+			<Item size={4} offset={4} dangerouslyOverrideCss={demoItemStyles}>
 				size=4 offset=4
 			</Item>
-			<Item size={4} cssOverrides={demoItemStyles}>
+			<Item size={4} dangerouslyOverrideCss={demoItemStyles}>
 				size=4
 			</Item>
-			<Item size={4} offset="auto" cssOverrides={demoItemStyles}>
+			<Item size={4} offset="auto" dangerouslyOverrideCss={demoItemStyles}>
 				size=4 offset=auto
 			</Item>
 		</Grid>
@@ -119,14 +128,14 @@ export const ResponsiveOffset = {
 			<Item
 				size={6}
 				offset={{ sm: 0, md: 3, lg: 0 }}
-				cssOverrides={demoItemStyles}
+				dangerouslyOverrideCss={demoItemStyles}
 			>
 				size=6 offset=&#123;sm:0 md:3 lg:0&#125;
 			</Item>
 			<Item
 				size={4}
 				offset={{ sm: 0, md: 'auto', lg: 4 }}
-				cssOverrides={demoItemStyles}
+				dangerouslyOverrideCss={demoItemStyles}
 			>
 				size=4 offset=&#123;sm:0 md:auto lg:4&#125;
 			</Item>
@@ -141,14 +150,14 @@ export const ResponsiveOffsetAndSize = {
 			<Item
 				size={{ sm: 12, md: 6, lg: 4 }}
 				offset={{ sm: 0, md: 3, lg: 2 }}
-				cssOverrides={demoItemStyles}
+				dangerouslyOverrideCss={demoItemStyles}
 			>
 				size=&#123;sm:12 md:6 lg:4&#125; offset=&#123;sm:0 md:3 lg:2&#125;
 			</Item>
 			<Item
 				size={{ sm: 12, md: 6, lg: 4 }}
 				offset={{ sm: 0, md: 0, lg: 2 }}
-				cssOverrides={demoItemStyles}
+				dangerouslyOverrideCss={demoItemStyles}
 			>
 				size=&#123;sm:12 md:6 lg:4&#125; offset=&#123;sm:0 md:0 lg:2&#125;
 			</Item>
@@ -171,29 +180,29 @@ export const CustomTheme = {
 				lg: { gap: '16px' },
 			}}
 		>
-			<Item size={6} cssOverrides={demoItemStyles}>
+			<Item size={6} dangerouslyOverrideCss={demoItemStyles}>
 				Column one
 			</Item>
-			<Item size={6} cssOverrides={demoItemStyles}>
+			<Item size={6} dangerouslyOverrideCss={demoItemStyles}>
 				Column two
 			</Item>
 		</Grid>
 	),
 } satisfies Story;
 
-export const CssOverrides = {
-	name: 'CSS overrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	render: (args) => (
 		<Grid
 			{...args}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				padding-block: 24px;
 			`}
 		>
-			<Item size={8} cssOverrides={demoItemStyles}>
+			<Item size={8} dangerouslyOverrideCss={demoItemStyles}>
 				Primary content
 			</Item>
-			<Item size={4} cssOverrides={demoItemStyles}>
+			<Item size={4} dangerouslyOverrideCss={demoItemStyles}>
 				Sidebar
 			</Item>
 		</Grid>

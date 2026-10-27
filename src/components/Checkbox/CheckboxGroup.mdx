@@ -12,7 +12,7 @@ import CheckboxGroupStories, {
 	GroupErrorSmall,
 	SingleOptionErrorSmall,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 	RenderWithAsterisk,
 } from './CheckboxGroup.stories';
 import {
@@ -28,6 +28,7 @@ import {
 	componentTsx,
 } from './checkboxGroupSandbox.ts';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={CheckboxGroupStories} />
 
@@ -114,7 +115,7 @@ See [React Aria `CheckboxGroup`](https://react-aria.adobe.com/CheckboxGroup) pro
 | `children`                | `React.ReactElement<CheckboxProps>[]`      | No       | N/A     | Only `Checkbox` components are accepted; other elements are silently ignored.                                    |
 | `theme`                   | `CheckboxTheme['group']` (partial)         | No       | N/A     | Override Stand tokens for the group container; merged over the default theme.                                    |
 | `formInputContainerTheme` | `FormInputContainerTheme` (partial)        | No       | N/A     | Override Stand tokens for the wrapping label and description container.                                          |
-| `cssOverrides`            | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                       |
+| `dangerouslyOverrideCss`  | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below.                                                                  |
 | `className`               | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria CheckboxGroup element.                                      |
 | `...props`                | `ReactAria CheckboxGroup` props            | No       | N/A     | All other props from `react-aria-components` `CheckboxGroup` (e.g. `value`, `onChange`).                         |
 
@@ -172,7 +173,7 @@ See [React Aria `CheckboxGroup`](https://react-aria.adobe.com/CheckboxGroup) pro
 
 ## Customisation
 
-We recommend using the CheckboxGroup component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the CheckboxGroup component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -200,11 +201,13 @@ const Component = () => (
 
 To customise the label and description container, use `formInputContainerTheme`.
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the CheckboxGroup component:
+<DangerouslyOverrideCssWarning />
 
-<Canvas layout="padded" of={CssOverrides} />
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the CheckboxGroup component:
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ```tsx
 import { Checkbox, CheckboxGroup } from '@guardian/stand/Checkbox';
@@ -217,7 +220,7 @@ const customStyles = css`
 `;
 
 const Component = () => (
-	<CheckboxGroup label="Options" cssOverrides={customStyles}>
+	<CheckboxGroup label="Options" dangerouslyOverrideCss={customStyles}>
 		<Checkbox value="a">Option A</Checkbox>
 		<Checkbox value="b">Option B</Checkbox>
 	</CheckboxGroup>

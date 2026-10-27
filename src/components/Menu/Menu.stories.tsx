@@ -281,8 +281,8 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
-	name: 'css overrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	render: () => {
 		const menuStyles = css`
 			padding: ${baseSpacing['16Px']};
@@ -303,8 +303,8 @@ export const CssOverrides = {
 		return (
 			<>
 				<Menu
-					cssOverrides={menuStyles}
-					popoverProps={{ cssOverrides: menuPopoverStyles }}
+					dangerouslyOverrideCss={menuStyles}
+					popoverProps={{ dangerouslyOverrideCss: menuPopoverStyles }}
 				>
 					<MenuToggle>
 						<IconButton symbol="settings" ariaLabel="Open menu" />
@@ -316,7 +316,7 @@ export const CssOverrides = {
 							label="Long menu label which wraps in multiple lines"
 							description="Another quite lengthy description that spans multiple lines too"
 							aside={<Keyboard>⌘O</Keyboard>}
-							cssOverrides={menuItemStyles}
+							dangerouslyOverrideCss={menuItemStyles}
 						/>
 						{/* rename */}
 						<MenuItem
@@ -324,33 +324,33 @@ export const CssOverrides = {
 							icon="edit"
 							label="Rename"
 							description="Rename the file"
-							cssOverrides={menuItemStyles}
+							dangerouslyOverrideCss={menuItemStyles}
 						/>
 						{/* duplicate */}
 						<MenuItem
 							onAction={() => alert('duplicate')}
 							label="	Duplicate"
-							cssOverrides={menuItemStyles}
+							dangerouslyOverrideCss={menuItemStyles}
 							aside={<Keyboard>⌘D</Keyboard>}
 						/>
 						{/* delete */}
 						<MenuItem
 							onAction={() => alert('delete')}
 							label="Delete"
-							cssOverrides={menuItemStyles}
+							dangerouslyOverrideCss={menuItemStyles}
 						/>
 					</MenuSection>
-					<MenuSeparator cssOverrides={menuSeparatorStyles} />
+					<MenuSeparator dangerouslyOverrideCss={menuSeparatorStyles} />
 					<MenuSection>
 						<MenuItem
 							id="files"
 							label="Show files"
-							cssOverrides={menuItemStyles}
+							dangerouslyOverrideCss={menuItemStyles}
 						/>
 						<MenuItem
 							id="folders"
 							label="Show folders"
-							cssOverrides={menuItemStyles}
+							dangerouslyOverrideCss={menuItemStyles}
 						/>
 					</MenuSection>
 				</Menu>

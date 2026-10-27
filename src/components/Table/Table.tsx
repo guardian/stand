@@ -39,7 +39,7 @@ export function Table({
 	columns,
 	headerVisibleFrom = 'lg',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	children,
 	...props
 }: TableProps) {
@@ -49,7 +49,10 @@ export function Table({
 		<TableContext.Provider
 			value={{ columns, headerVisibleFrom, theme: mergedTheme }}
 		>
-			<RACTable css={[tableStyles(mergedTheme), cssOverrides]} {...props}>
+			<RACTable
+				css={[tableStyles(mergedTheme), dangerouslyOverrideCss]}
+				{...props}
+			>
 				{children}
 			</RACTable>
 		</TableContext.Provider>
@@ -58,7 +61,7 @@ export function Table({
 
 export function TableHeader<T extends object = object>({
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	children,
 	...props
 }: TableHeaderProps<T>) {
@@ -73,7 +76,7 @@ export function TableHeader<T extends object = object>({
 					context.columns,
 					context.headerVisibleFrom,
 				),
-				cssOverrides,
+				dangerouslyOverrideCss,
 			]}
 			{...props}
 		>
@@ -83,12 +86,12 @@ export function TableHeader<T extends object = object>({
 }
 
 export function TableBody<T extends object = object>({
-	cssOverrides,
+	dangerouslyOverrideCss,
 	children,
 	...props
 }: TableBodyProps<T>) {
 	return (
-		<RACTableBody css={[tableBodyStyles, cssOverrides]} {...props}>
+		<RACTableBody css={[tableBodyStyles, dangerouslyOverrideCss]} {...props}>
 			{children}
 		</RACTableBody>
 	);
@@ -96,7 +99,7 @@ export function TableBody<T extends object = object>({
 
 export function TableRow<T extends object = object>({
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	children,
 	...props
 }: TableRowProps<T>) {
@@ -105,7 +108,10 @@ export function TableRow<T extends object = object>({
 
 	return (
 		<RACRow
-			css={[tableRowStyles(mergedTheme, context.columns), cssOverrides]}
+			css={[
+				tableRowStyles(mergedTheme, context.columns),
+				dangerouslyOverrideCss,
+			]}
 			{...props}
 		>
 			{children}
@@ -115,7 +121,7 @@ export function TableRow<T extends object = object>({
 
 export function TableColumnHeader({
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	children,
 	...props
 }: TableColumnHeaderProps) {
@@ -124,7 +130,7 @@ export function TableColumnHeader({
 
 	return (
 		<RACColumn
-			css={[tableColumnHeaderStyles(mergedTheme), cssOverrides]}
+			css={[tableColumnHeaderStyles(mergedTheme), dangerouslyOverrideCss]}
 			{...props}
 		>
 			{children}
@@ -137,7 +143,7 @@ export function TableCell({
 	gridColumn,
 	gridRow,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	children,
 	...props
 }: TableCellProps) {
@@ -146,7 +152,10 @@ export function TableCell({
 
 	return (
 		<RACCell
-			css={[tableCellStyles(mergedTheme, gridColumn, gridRow), cssOverrides]}
+			css={[
+				tableCellStyles(mergedTheme, gridColumn, gridRow),
+				dangerouslyOverrideCss,
+			]}
 			{...props}
 		>
 			{composeRenderProps(children, (children) => (

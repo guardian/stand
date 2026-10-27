@@ -5,7 +5,7 @@ import FaviconStories, {
 	IconSvg,
 	Image,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './Favicon.stories';
 import {
 	SandboxReact,
@@ -20,6 +20,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={FaviconStories} />
 
@@ -76,15 +77,15 @@ import type { FaviconProps, FaviconTheme } from '@guardian/stand/Favicon';
 
 ## Props
 
-| Name           | Type                                                              | Required    | Default | Description                                                                                                                           |
-| -------------- | ----------------------------------------------------------------- | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| `letter`       | `string`                                                          | Conditional | N/A     | Letter to render in the favicon.                                                                                                      |
-| `icon`         | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>` | Conditional | N/A     | Icon rendered inside the favicon. Accepts a `MaterialSymbol` name or a non-string `ReactNode` (e.g. an SVG element). Size is default. |
-| `src`          | `string`                                                          | Conditional | N/A     | URL of the favicon image.                                                                                                             |
-| `alt`          | `string`                                                          | Conditional | N/A     | Alt text for the image for accessibility.                                                                                             |
-| `theme`        | `FaviconTheme`                                                    | No          | N/A     | Custom theme overrides for the favicon.                                                                                               |
-| `cssOverrides` | `SerializedStyles`                                                | No          | N/A     | Custom CSS styles for the favicon.                                                                                                    |
-| `className`    | `string`                                                          | No          | N/A     | Additional class name(s) for the favicon.                                                                                             |
+| Name                     | Type                                                              | Required    | Default | Description                                                                                                                           |
+| ------------------------ | ----------------------------------------------------------------- | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| `letter`                 | `string`                                                          | Conditional | N/A     | Letter to render in the favicon.                                                                                                      |
+| `icon`                   | `IconProps['symbol']` \| `Exclude<IconProps['children'], string>` | Conditional | N/A     | Icon rendered inside the favicon. Accepts a `MaterialSymbol` name or a non-string `ReactNode` (e.g. an SVG element). Size is default. |
+| `src`                    | `string`                                                          | Conditional | N/A     | URL of the favicon image.                                                                                                             |
+| `alt`                    | `string`                                                          | Conditional | N/A     | Alt text for the image for accessibility.                                                                                             |
+| `theme`                  | `FaviconTheme`                                                    | No          | N/A     | Custom theme overrides for the favicon.                                                                                               |
+| `dangerouslyOverrideCss` | `SerializedStyles`                                                | No          | N/A     | Escape hatch for custom CSS; see warning below.                                                                                       |
+| `className`              | `string`                                                          | No          | N/A     | Additional class name(s) for the favicon.                                                                                             |
 
 One of `letter`, `icon` and `src` must be supplied. When using `src`, the `alt` prop is required for accessibility.
 
@@ -108,7 +109,7 @@ One of `letter`, `icon` and `src` must be supplied. When using `src`, the `alt` 
 
 ## Customisation
 
-We recommend using the Favicon component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the Favicon component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -133,11 +134,13 @@ const customTheme: FaviconTheme = {
 const Component = () => <Favicon letter="C" theme={customTheme} />;
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the Favicon component, if the theme prop is not sufficient:
+<DangerouslyOverrideCssWarning />
 
-<Canvas layout="padded" of={CssOverrides} />
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the Favicon component, if the theme prop is not sufficient:
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ```tsx
 import { Favicon } from '@guardian/stand/Favicon';
@@ -151,7 +154,9 @@ const customStyles = css`
 	border-radius: ${baseRadius.corner4Px};
 `;
 
-const Component = () => <Favicon letter="O" cssOverrides={customStyles} />;
+const Component = () => (
+	<Favicon letter="O" dangerouslyOverrideCss={customStyles} />
+);
 ```
 
 ## Custom Component Build

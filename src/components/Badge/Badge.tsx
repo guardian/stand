@@ -7,7 +7,7 @@ export const Badge = ({
 	color = 'green',
 	weight = 'strong',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	children,
 	...props
 }: BadgeProps) => {
@@ -15,7 +15,10 @@ export const Badge = ({
 
 	return (
 		<span
-			css={[badgeStyles(mergedTheme, { color, size, weight }), cssOverrides]}
+			css={[
+				badgeStyles(mergedTheme, { color, size, weight }),
+				dangerouslyOverrideCss,
+			]}
 			{...props}
 		>
 			{children}
