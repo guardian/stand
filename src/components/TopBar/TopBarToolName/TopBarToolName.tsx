@@ -24,13 +24,13 @@ function ToolName({
 	subsectionIcon,
 	collapseBelow = 'lg',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 }: TopBarToolNameProps) {
 	const mergedTheme = mergeDeep(defaultToolNameTheme, theme);
 
 	return (
 		<TopBarItem alignment="left" size="sm">
-			<div css={[toolNameStyles(mergedTheme), cssOverrides]}>
+			<div css={[toolNameStyles(mergedTheme), dangerouslyOverrideCss]}>
 				<Favicon {...favicon} />
 				<div css={[toolNameTypography(mergedTheme, { collapseBelow })]}>
 					{name}

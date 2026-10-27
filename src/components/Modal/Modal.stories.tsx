@@ -212,19 +212,19 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	args: {},
 	render: (args) => (
 		<DialogTrigger>
 			<Button>Open Modal</Button>
 			<Modal
 				{...args}
-				cssOverrides={css`
+				dangerouslyOverrideCss={css`
 					border: 2px solid red;
 				`}
 			>
 				<Dialog
-					cssOverrides={css`
+					dangerouslyOverrideCss={css`
 						font-family: monospace;
 					`}
 				>

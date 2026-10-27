@@ -71,8 +71,8 @@ export interface TagTableProps<R extends Row> {
 	headerContent?: ReactNode;
 	/** `theme` - Used to customise the look and feel of the TagTable component */
 	theme?: DeepPartial<ComponentTagTable>;
-	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
-	cssOverrides?: SerializedStyles;
+	/** `dangerouslyOverrideCss` - Escape hatch for styling that doesn't fall into the theme */
+	dangerouslyOverrideCss?: SerializedStyles;
 }
 
 const TypeBadge = (type: string, theme?: DeepPartial<ComponentTagTable>) => {
@@ -146,7 +146,7 @@ export function TagTable<R extends Row>({
 	renderWhenEmpty,
 	headerContent,
 	theme,
-	cssOverrides,
+	dangerouslyOverrideCss,
 }: TagTableProps<R>) {
 	const canDrag = !!onReorder;
 
@@ -211,7 +211,7 @@ export function TagTable<R extends Row>({
 	}
 
 	return (
-		<div css={cssOverrides}>
+		<div css={dangerouslyOverrideCss}>
 			{(!!heading || !!subHeading || !!headerContent) && (
 				<div css={headerStyles(theme)}>
 					{(!!heading || !!subHeading) && (

@@ -17,7 +17,7 @@ export function AlertBanner({
 	closeButtonProps,
 	children,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 	...props
 }: AlertBannerProps) {
@@ -43,7 +43,7 @@ export function AlertBanner({
 
 	return (
 		<div
-			css={[alertBannerStyles(mergedTheme, { level }), cssOverrides]}
+			css={[alertBannerStyles(mergedTheme, { level }), dangerouslyOverrideCss]}
 			className={className}
 			{...props}
 		>

@@ -3,7 +3,7 @@ import ButtonGroupStories, {
 	Default,
 	Small,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './ButtonGroup.stories';
 import {
 	SandboxReact,
@@ -18,6 +18,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={ButtonGroupStories} />
 
@@ -68,23 +69,23 @@ const Example = () => (
 
 ## Props
 
-| Name           | Type                                 | Required | Default | Description                                    |
-| -------------- | ------------------------------------ | -------- | ------- | ---------------------------------------------- |
-| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'` | No       | `'md'`  | Sets the size of the buttons within the group. |
-| `theme`        | `ButtonGroupTheme`                   | No       | N/A     | Custom theme overrides for the ButtonGroup.    |
-| `cssOverrides` | `SerializedStyles`                   | No       | N/A     | Custom CSS styles for the ButtonGroup.         |
-| `className`    | `string`                             | No       | N/A     | Additional class name(s) for the ButtonGroup.  |
+| Name                     | Type                                 | Required | Default | Description                                     |
+| ------------------------ | ------------------------------------ | -------- | ------- | ----------------------------------------------- |
+| `size`                   | `'xs'` \| `'sm'` \| `'md'` \| `'lg'` | No       | `'md'`  | Sets the size of the buttons within the group.  |
+| `theme`                  | `ButtonGroupTheme`                   | No       | N/A     | Custom theme overrides for the ButtonGroup.     |
+| `dangerouslyOverrideCss` | `SerializedStyles`                   | No       | N/A     | Escape hatch for custom CSS; see warning below. |
+| `className`              | `string`                             | No       | N/A     | Additional class name(s) for the ButtonGroup.   |
 
 ## Stories
 
 <Canvas layout="padded" of={Default} />
 <Canvas layout="padded" of={Small} />
 <Canvas layout="padded" of={CustomTheme} />
-<Canvas layout="padded" of={CssOverrides} />
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ## Customisation
 
-We recommend using the ButtonGroup component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the ButtonGroup component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -110,11 +111,13 @@ const Component = () => (
 );
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the ButtonGroup component, if the theme prop is not sufficient:
+<DangerouslyOverrideCssWarning />
 
-<Canvas layout="padded" of={CssOverrides} />
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the ButtonGroup component, if the theme prop is not sufficient:
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ```tsx
 import { ButtonGroup } from '@guardian/stand/ButtonGroup';
@@ -128,7 +131,7 @@ const customStyles = css`
 `;
 
 const Component = () => (
-	<ButtonGroup cssOverrides={customStyles}>
+	<ButtonGroup dangerouslyOverrideCss={customStyles}>
 		<Button variant="tertiary">Stay on this step</Button>
 		<Button>Discard changes and skip</Button>
 	</ButtonGroup>

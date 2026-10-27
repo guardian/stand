@@ -12,7 +12,7 @@ export function Checkbox({
 	size = 'md',
 	isIndeterminate = false,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: CheckboxProps) {
 	const mergedTheme = mergeDeep(defaultCheckboxTheme, theme);
@@ -24,7 +24,7 @@ export function Checkbox({
 					size,
 					isIndeterminate,
 				}),
-				cssOverrides,
+				dangerouslyOverrideCss,
 			]}
 			{...props}
 		>

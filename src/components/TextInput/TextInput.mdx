@@ -25,6 +25,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={TextInputStories} />
 
@@ -113,7 +114,7 @@ const Example = () => (
 | `theme`                   | `TextInputTheme` (partial)                 | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                     |
 | `placeholder`             | `string`                                   | No       | N/A     | Temporary text that occupies the text input when it is empty.                                                                               |
 | `formInputContainerTheme` | `FormInputContainerTheme` (partial)        | No       | N/A     | Override Stand tokens for the wrapping label and description container.                                                                     |
-| `cssOverrides`            | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                  |
+| `dangerouslyOverrideCss`  | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below.                                                                                             |
 | `className`               | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria TextField element.                                                                     |
 | `...props`                | `ReactAria TextField` props                | No       | N/A     | All other props from `react-aria-components` [`TextField`](https://react-aria.adobe.com/TextField) (e.g. `value`, `onChange`, `autoFocus`). |
 
@@ -165,7 +166,7 @@ const Example = () => (
 
 ## Customisation
 
-We recommend using the TextInput component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the TextInput component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -189,9 +190,11 @@ const customTheme: Partial<TextInputTheme> = {
 const Component = () => <TextInput label="Email" theme={customTheme} />;
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the TextInput component:
+<DangerouslyOverrideCssWarning />
+
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the TextInput component:
 
 ```tsx
 import { TextInput } from '@guardian/stand/TextInput';
@@ -202,7 +205,7 @@ const customStyles = css\`
 \`;
 
 const Component = () => (
-	<TextInput label="Notes" cssOverrides={customStyles} />
+	<TextInput label="Notes" dangerouslyOverrideCss={customStyles} />
 );
 ```
 

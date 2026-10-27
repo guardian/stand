@@ -110,9 +110,9 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	args: {
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			button {
 				color: ${baseColors.red[300]};
 				border: 3px solid ${baseColors.red[800]};

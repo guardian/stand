@@ -195,14 +195,14 @@ export const CustomTheme = {
 	),
 } satisfies Story;
 
-export const CssOverrides = {
-	name: 'CSS overrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	render: () => (
 		<Table
 			aria-label="People"
 			columns={{ sm: 'minmax(120px, 2fr) minmax(100px, 1fr) auto' }}
 			headerVisibleFrom="sm"
-			cssOverrides={constrainedTableStyles}
+			dangerouslyOverrideCss={constrainedTableStyles}
 		>
 			<TableHeader>
 				<TableColumnHeader isRowHeader>Name</TableColumnHeader>
@@ -362,12 +362,15 @@ export const RealWorldExample = {
 						<TableCell
 							gridColumn={{ sm: '1', md: '1', lg: '1' }}
 							gridRow={{ md: '1 / span 5', lg: 'auto' }}
-							cssOverrides={alertCellStyles}
+							dangerouslyOverrideCss={alertCellStyles}
 						>
 							<img src={alert.image} alt="" css={alertImageStyles} />
 							<div css={alertTextStyles}>
 								<Link href="#">{alert.title}</Link>
-								<Typography variant="bodyXs" cssOverrides={metadataStyles}>
+								<Typography
+									variant="bodyXs"
+									dangerouslyOverrideCss={metadataStyles}
+								>
 									<Icon
 										symbol={alert.channel === 'App alert' ? 'mobile' : 'mail'}
 									/>

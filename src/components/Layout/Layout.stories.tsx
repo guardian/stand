@@ -64,7 +64,7 @@ const TopBarExample = (
 							marginTop: '0',
 						},
 					}}
-					cssOverrides={css`
+					dangerouslyOverrideCss={css`
 						width: 100px;
 					`}
 					placeholder="Search"
@@ -86,7 +86,7 @@ const GridExample = (
 	<Grid>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -94,7 +94,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -102,7 +102,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -110,7 +110,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -118,7 +118,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -126,7 +126,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -134,7 +134,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -142,7 +142,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -150,7 +150,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -158,7 +158,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -166,7 +166,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -174,7 +174,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -182,7 +182,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -190,7 +190,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -198,7 +198,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -206,7 +206,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -214,7 +214,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -222,7 +222,7 @@ const GridExample = (
 		</Item>
 		<Item
 			size={{ sm: 12, md: 6, lg: 4 }}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				height: 10svh;
 			`}
 		>
@@ -515,11 +515,11 @@ export const CustomTheme = {
 	),
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	render: (args) => (
 		<Layout
 			{...args}
-			cssOverrides={css`
+			dangerouslyOverrideCss={css`
 				border: 2px dashed #9aa0a6;
 				border-radius: 8px;
 				overflow: hidden;

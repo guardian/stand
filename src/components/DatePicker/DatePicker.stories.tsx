@@ -115,12 +115,12 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
-	name: 'CSS Overrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	args: {
 		label: 'Select a date',
 		description: 'Please select a date from the calendar',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			border: 0.125rem solid ${baseColors.red[500]};
 			border-radius: 0.5rem;
 		`,

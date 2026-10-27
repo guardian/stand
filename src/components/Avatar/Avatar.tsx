@@ -20,7 +20,7 @@ export function Avatar({
 	size = 'md',
 	color,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: AvatarProps) {
 	const mergedTheme = mergeDeep(defaultAvatarTheme, theme);
@@ -42,7 +42,7 @@ export function Avatar({
 		<div
 			css={[
 				avatarStyles(mergedTheme, { size, color: avatarColor }),
-				cssOverrides,
+				dangerouslyOverrideCss,
 			]}
 			role="img"
 			aria-label={

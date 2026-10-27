@@ -1,5 +1,6 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 import HtmlPreviewLoaderStories, {
 	Default,
 	WithReloadButton,
@@ -9,7 +10,7 @@ import HtmlPreviewLoaderStories, {
 	Loading,
 	WithError,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './HtmlPreviewLoader.stories';
 import {
 	SandboxReact,
@@ -74,18 +75,18 @@ export const Component = () => (
 
 ## Props
 
-| Name              | Type                          | Required | Default                | Description                                                               |
-| ----------------- | ----------------------------- | -------- | ---------------------- | ------------------------------------------------------------------------- |
-| `fetchHtml`       | `{ (): Promise<string> }`     | Yes      | N/A                    | Function that resolves to the HTML string to render in the preview frame. |
-| `title`           | `ReactNode`                   | Yes      | N/A                    | Title content shown above the preview.                                    |
-| `minHeight`       | `number`                      | No       | `600`                  | Minimum height of the preview frame in pixels.                            |
-| `widthOptions`    | `number[]`                    | No       | `[320, 375, 425, 650]` | Available frame widths shown in the width selector.                       |
-| `defaultWidth`    | `number`                      | No       | `425`                  | Initial width used for the preview frame.                                 |
-| `frameBackground` | `CSSProperties['background']` | No       | `'white'`              | Background applied to the iframe.                                         |
-| `allowReloading`  | `boolean`                     | No       | `false`                | Shows a reload button when the preview can be refreshed.                  |
-| `theme`           | `HtmlPreviewLoaderTheme`      | No       | `undefined`            | Theme overrides for the HtmlPreviewLoader.                                |
-| `cssOverrides`    | `SerializedStyles`            | No       | `undefined`            | Custom CSS styles applied to the wrapper.                                 |
-| `className`       | `string`                      | No       | `undefined`            | Additional class name(s) for the HtmlPreviewLoader.                       |
+| Name                     | Type                          | Required | Default                | Description                                                               |
+| ------------------------ | ----------------------------- | -------- | ---------------------- | ------------------------------------------------------------------------- |
+| `fetchHtml`              | `{ (): Promise<string> }`     | Yes      | N/A                    | Function that resolves to the HTML string to render in the preview frame. |
+| `title`                  | `ReactNode`                   | Yes      | N/A                    | Title content shown above the preview.                                    |
+| `minHeight`              | `number`                      | No       | `600`                  | Minimum height of the preview frame in pixels.                            |
+| `widthOptions`           | `number[]`                    | No       | `[320, 375, 425, 650]` | Available frame widths shown in the width selector.                       |
+| `defaultWidth`           | `number`                      | No       | `425`                  | Initial width used for the preview frame.                                 |
+| `frameBackground`        | `CSSProperties['background']` | No       | `'white'`              | Background applied to the iframe.                                         |
+| `allowReloading`         | `boolean`                     | No       | `false`                | Shows a reload button when the preview can be refreshed.                  |
+| `theme`                  | `HtmlPreviewLoaderTheme`      | No       | `undefined`            | Theme overrides for the HtmlPreviewLoader.                                |
+| `dangerouslyOverrideCss` | `SerializedStyles`            | No       | `undefined`            | Escape hatch for custom CSS; see warning below.                           |
+| `className`              | `string`                      | No       | `undefined`            | Additional class name(s) for the HtmlPreviewLoader.                       |
 
 ## Stories
 
@@ -121,13 +122,15 @@ export const Component = () => (
 
 <Canvas layout="padded" of={CustomTheme} />
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-<Canvas layout="padded" of={CssOverrides} />
+<DangerouslyOverrideCssWarning />
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ## Customisation
 
-We recommend using the HtmlPreviewLoader component as provided, but it can be customised with the `theme` or `cssOverrides` props when the default styling needs to be adjusted.
+We recommend using the HtmlPreviewLoader component as provided, but it can be customised with the `theme` prop when the default styling needs to be adjusted.
 
 ### Custom theme
 
@@ -159,9 +162,11 @@ const Component = () => (
 );
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the HtmlPreviewLoader component when the theme prop is not sufficient:
+<DangerouslyOverrideCssWarning />
+
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the HtmlPreviewLoader component when the theme prop is not sufficient:
 
 ```tsx
 import { HtmlPreviewLoader } from '@guardian/stand/HtmlPreviewLoader';
@@ -177,7 +182,7 @@ const Component = () => (
 	<HtmlPreviewLoader
 		fetchHtml={async () => '<div>Preview</div>'}
 		title="Preview"
-		cssOverrides={customStyles}
+		dangerouslyOverrideCss={customStyles}
 	/>
 );
 ```
