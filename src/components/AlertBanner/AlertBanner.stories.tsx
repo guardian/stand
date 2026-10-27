@@ -192,12 +192,12 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
-	name: 'CSS Overrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	args: {
 		level: 'success',
 		children: 'Changes published successfully.',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			box-shadow: inset 0 -2px 0 currentColor;
 			text-transform: uppercase;
 			letter-spacing: 0.04em;

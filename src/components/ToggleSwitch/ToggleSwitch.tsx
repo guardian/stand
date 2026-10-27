@@ -17,14 +17,14 @@ export function ToggleSwitch({
 	description,
 	size = 'md',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: ToggleSwitchProps) {
 	const mergedTheme = mergeDeep(defaultToggleSwitchTheme, theme);
 
 	return (
 		<RACSwitch
-			css={[toggleSwitchStyles(mergedTheme, { size }), cssOverrides]}
+			css={[toggleSwitchStyles(mergedTheme, { size }), dangerouslyOverrideCss]}
 			{...props}
 		>
 			{({ isSelected, isDisabled, isFocusVisible }) => (
@@ -47,7 +47,7 @@ export function ToggleSwitch({
 							<Icon
 								symbol="check"
 								size={size === 'sm' ? 'sm' : 'md'}
-								cssOverrides={toggleSwitchIconStyles(isSelected)}
+								dangerouslyOverrideCss={toggleSwitchIconStyles(isSelected)}
 							/>
 						</div>
 					</div>

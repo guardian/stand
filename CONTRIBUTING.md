@@ -35,7 +35,8 @@ The following guidelines apply to all components:
 
 - **Styling**
   - Components should ship with **unstyled** or **sensible default styles**.
-  - Consumers must be able to easily customise appearance via Emotion `cssOverrides` or their own theming.
+  - Consumers should customise appearance through the `theme` prop.
+  - Provide `dangerouslyOverrideCss` as an escape hatch for styling that the theme cannot express. CSS overrides make components harder to maintain and update, and may cause them to no longer follow design system conventions.
   - Each component should define its own design tokens, which are used to generate both CSS custom properties and typed TypeScript/JavaScript exports.
 
 - **Performance**

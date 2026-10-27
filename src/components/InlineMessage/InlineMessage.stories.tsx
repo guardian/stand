@@ -76,11 +76,11 @@ export const CustomTheme = {
 	},
 };
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	args: {
 		children: 'Message with CSS overrides',
 		level: 'success',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			background-color: ${baseColors.green[50]};
 			padding: 16px;
 			border-radius: 4px;

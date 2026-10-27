@@ -102,7 +102,7 @@ export function TopBar({
 		containerLeft: 'lg',
 	},
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 	navAriaLabel = 'Top bar',
 	...props
@@ -208,7 +208,7 @@ export function TopBar({
 
 	return (
 		<div
-			css={[topBarStyles(mergedTheme), cssOverrides]}
+			css={[topBarStyles(mergedTheme), dangerouslyOverrideCss]}
 			className={className}
 			{...props}
 		>

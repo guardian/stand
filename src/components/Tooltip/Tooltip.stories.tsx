@@ -54,9 +54,9 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	args: {
-		cssOverrides: css(css`
+		dangerouslyOverrideCss: css(css`
 			span {
 				font-size: 1.25rem;
 			}

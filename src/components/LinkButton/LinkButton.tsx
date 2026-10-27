@@ -11,7 +11,7 @@ export function LinkButton({
 	variant = 'primary',
 	size = 'md',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	icon,
 	...props
 }: LinkButtonProps) {
@@ -24,7 +24,7 @@ export function LinkButton({
 			{...props}
 			css={[
 				linkButtonStyles(mergedTheme, { variant, size }, !!icon),
-				cssOverrides,
+				dangerouslyOverrideCss,
 			]}
 		>
 			{composeRenderProps(props.children, (children) => (

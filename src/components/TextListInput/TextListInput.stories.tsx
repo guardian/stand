@@ -84,11 +84,11 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	args: {
 		label: 'Text list',
 		initialData: ['Item 1', 'Item 2'],
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			input,
 			button {
 				color: ${baseColors.blue[200]};

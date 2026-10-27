@@ -14,7 +14,7 @@ export function IconLinkButton({
 	symbol,
 	ariaLabel,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: IconLinkButtonProps) {
 	const mergedTheme = mergeDeep(defaultIconLinkButtonTheme, theme);
@@ -36,7 +36,7 @@ export function IconLinkButton({
 			aria-label={ariaLabel}
 			css={[
 				iconLinkButtonStyles(mergedTheme, { variant, size }, false, true),
-				cssOverrides,
+				dangerouslyOverrideCss,
 			]}
 		>
 			{composeRenderProps(props.children, (children) => (

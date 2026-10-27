@@ -189,11 +189,11 @@ export const CustomTheme = {
 	},
 };
 
-export const CssOverrides = {
-	name: 'CSS Overrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	args: {
 		children: 'Checkbox with CSS overrides',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			svg {
 				fill: ${baseColors.neutral[800]};
 			}

@@ -11,7 +11,7 @@ export function Button({
 	variant = 'primary',
 	size = 'md',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	icon,
 	...props
 }: ButtonProps) {
@@ -22,7 +22,10 @@ export function Button({
 	return (
 		<ReactAriaButton
 			{...props}
-			css={[buttonStyles(mergedTheme, { variant, size }, !!icon), cssOverrides]}
+			css={[
+				buttonStyles(mergedTheme, { variant, size }, !!icon),
+				dangerouslyOverrideCss,
+			]}
 		>
 			{composeRenderProps(props.children, (children) => (
 				// TODO: isPending (loading) state - see https://react-aria.adobe.com/Button

@@ -26,6 +26,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={TextAreaStories} />
 
@@ -84,7 +85,7 @@ const Example = () => <TextArea size="sm" label="Description" />;
 | `theme`                   | `TextAreaTheme`                     | No       | N/A     | Custom theme overrides.                                                                                                                     |
 | `placeholder`             | `string`                            | No       | N/A     | Temporary text that occupies the text area when it is empty.                                                                                |
 | `formInputContainerTheme` | `FormInputContainerTheme` (partial) | No       | N/A     | Override Stand tokens for the wrapping label and description container.                                                                     |
-| `cssOverrides`            | `SerializedStyles`                  | No       | N/A     | Custom CSS styles.                                                                                                                          |
+| `dangerouslyOverrideCss`  | `SerializedStyles`                  | No       | N/A     | Escape hatch for custom CSS; see warning below.                                                                                             |
 | `className`               | `string`                            | No       | N/A     | Additional class name(s).                                                                                                                   |
 | `...props`                | `ReactAria TextField` props         | No       | N/A     | All other props from `react-aria-components` [`TextField`](https://react-aria.adobe.com/TextField) (e.g. `value`, `onChange`, `autoFocus`). |
 
@@ -140,7 +141,7 @@ const Example = () => <TextArea size="sm" label="Description" />;
 
 ## Customisation
 
-We recommend using the TextArea component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the TextArea component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -163,9 +164,11 @@ const customTheme: Partial<TextAreaTheme> = {
 const Component = () => <TextArea theme={customTheme}>Hello</TextArea>;
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the TextArea component:
+<DangerouslyOverrideCssWarning />
+
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the TextArea component:
 
 ```tsx
 import { TextArea } from '@guardian/stand/TextArea';
@@ -175,7 +178,7 @@ const customStyles = css\`
 	font-style: italic;
 \`;
 
-const Component = () => <TextArea cssOverrides={customStyles}>Hello</TextArea>;
+const Component = () => <TextArea dangerouslyOverrideCss={customStyles}>Hello</TextArea>;
 ```
 
 ## Custom Component Build

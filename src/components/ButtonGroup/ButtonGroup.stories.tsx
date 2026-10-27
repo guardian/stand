@@ -39,9 +39,9 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	args: {
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
 			margin: ${baseSpacing['8Rem']};
 			padding: ${baseSpacing['8Rem']};

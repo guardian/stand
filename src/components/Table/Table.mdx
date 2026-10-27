@@ -1,6 +1,6 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import TableStories, {
-	CssOverrides,
+	DangerouslyOverrideCss,
 	CustomTheme,
 	Default,
 	RealWorldExample,
@@ -11,6 +11,7 @@ import TableStories, {
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={TableStories} />
 
@@ -87,29 +88,29 @@ Give every table an accessible name with `aria-label` or `aria-labelledby`. Keep
 
 ## Table Props
 
-| Name                | Type                                     | Required | Default | Description                                                |
-| ------------------- | ---------------------------------------- | -------- | ------- | ---------------------------------------------------------- |
-| `children`          | `ReactNode`                              | No       | N/A     | Header and body composition.                               |
-| `columns`           | `Partial<Record<Breakpoint, string>>`    | Yes      | N/A     | CSS Grid tracks by breakpoint. Values cascade upward.      |
-| `headerVisibleFrom` | `'sm' \| 'md' \| 'lg'`                   | No       | `'lg'`  | Breakpoint at which the visible column header is restored. |
-| `aria-label`        | `string`                                 | No       | N/A     | Accessible name when `aria-labelledby` is not used.        |
-| `theme`             | `TableTheme`                             | No       | N/A     | Deeply partial override of generated Table design tokens.  |
-| `cssOverrides`      | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Emotion styles applied after the component's base styles.  |
+| Name                     | Type                                     | Required | Default | Description                                                |
+| ------------------------ | ---------------------------------------- | -------- | ------- | ---------------------------------------------------------- |
+| `children`               | `ReactNode`                              | No       | N/A     | Header and body composition.                               |
+| `columns`                | `Partial<Record<Breakpoint, string>>`    | Yes      | N/A     | CSS Grid tracks by breakpoint. Values cascade upward.      |
+| `headerVisibleFrom`      | `'sm' \| 'md' \| 'lg'`                   | No       | `'lg'`  | Breakpoint at which the visible column header is restored. |
+| `aria-label`             | `string`                                 | No       | N/A     | Accessible name when `aria-labelledby` is not used.        |
+| `theme`                  | `TableTheme`                             | No       | N/A     | Deeply partial override of generated Table design tokens.  |
+| `dangerouslyOverrideCss` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below.            |
 
 Table also accepts React Aria `TableProps`, including selection, sorting, row actions, and drag-and-drop hooks.
 
 ## TableCell Props
 
-| Name           | Type                                     | Required | Default | Description                                                         |
-| -------------- | ---------------------------------------- | -------- | ------- | ------------------------------------------------------------------- |
-| `children`     | `ReactNode`                              | No       | N/A     | Cell content.                                                       |
-| `compactLabel` | `ReactNode`                              | No       | N/A     | Visual label shown while the real column header is visually hidden. |
-| `gridColumn`   | `Partial<Record<Breakpoint, string>>`    | No       | N/A     | Responsive CSS `grid-column` placement.                             |
-| `gridRow`      | `Partial<Record<Breakpoint, string>>`    | No       | N/A     | Responsive CSS `grid-row` placement.                                |
-| `theme`        | `TableTheme`                             | No       | N/A     | Deeply partial local token override.                                |
-| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Emotion styles applied after the component's base styles.           |
+| Name                     | Type                                     | Required | Default | Description                                                         |
+| ------------------------ | ---------------------------------------- | -------- | ------- | ------------------------------------------------------------------- |
+| `children`               | `ReactNode`                              | No       | N/A     | Cell content.                                                       |
+| `compactLabel`           | `ReactNode`                              | No       | N/A     | Visual label shown while the real column header is visually hidden. |
+| `gridColumn`             | `Partial<Record<Breakpoint, string>>`    | No       | N/A     | Responsive CSS `grid-column` placement.                             |
+| `gridRow`                | `Partial<Record<Breakpoint, string>>`    | No       | N/A     | Responsive CSS `grid-row` placement.                                |
+| `theme`                  | `TableTheme`                             | No       | N/A     | Deeply partial local token override.                                |
+| `dangerouslyOverrideCss` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below.                     |
 
-`TableHeader`, `TableRow`, and `TableColumnHeader` expose their corresponding React Aria props plus local `theme` and `cssOverrides` props. `TableBody` exposes its React Aria props and `cssOverrides`; it has no visual tokens of its own to theme.
+`TableHeader`, `TableRow`, and `TableColumnHeader` expose their corresponding React Aria props plus local `theme` and `dangerouslyOverrideCss` props. `TableBody` exposes its React Aria props and `dangerouslyOverrideCss`; it has no visual tokens of its own to theme.
 
 ## Stories
 
@@ -147,7 +148,7 @@ Choose the narrowest customization API that fits the change:
 | ------------------------------------------------------- | ---------------------------------------------------------------------- |
 | `columns`, `headerVisibleFrom`, `gridColumn`, `gridRow` | Responsive table structure and cell placement.                         |
 | `theme`                                                 | Reusable visual decisions represented by Table design tokens.          |
-| `cssOverrides`                                          | One-off CSS, layout constraints, or styles outside the token contract. |
+| `dangerouslyOverrideCss`                                | One-off CSS, layout constraints, or styles outside the token contract. |
 | `children`                                              | Composing content and other Stand components inside cells.             |
 
 ### Custom theme
@@ -181,11 +182,13 @@ const customTheme: TableTheme = {
 
 The complete token groups are `table`, `header`, `row`, `cell`, `columnHeader`, and `compactLabel`. Import `componentTable` from `@guardian/stand/Table` to inspect the resolved defaults. Prefer semantic Stand tokens when creating a shared theme.
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-`cssOverrides` is applied after the default styles. It is available on every Table component, including `TableBody`, and accepts one Emotion `SerializedStyles` value or an array.
+<DangerouslyOverrideCssWarning />
 
-<Canvas of={CssOverrides} />
+`dangerouslyOverrideCss` is applied after the default styles. It is available on every Table component, including `TableBody`, and accepts one Emotion `SerializedStyles` value or an array.
+
+<Canvas of={DangerouslyOverrideCss} />
 
 ```tsx
 import { css } from '@emotion/react';
@@ -199,13 +202,13 @@ const constrainedTableStyles = css`
 <Table
 	aria-label="People"
 	columns={{ sm: '2fr 1fr auto' }}
-	cssOverrides={constrainedTableStyles}
+	dangerouslyOverrideCss={constrainedTableStyles}
 >
 	{/* Header and body */}
 </Table>;
 ```
 
-Use `columns` for shared breakpoint track definitions and `gridColumn` or `gridRow` for responsive cell placement rather than recreating those rules in `cssOverrides`.
+Use `columns` for shared breakpoint track definitions and `gridColumn` or `gridRow` for responsive cell placement rather than recreating those rules in `dangerouslyOverrideCss`.
 
 The component intentionally does not prescribe a data model, column count, or cell content. Existing Stand components can be composed inside any cell.
 
