@@ -7,13 +7,7 @@ import type {
 } from 'react-aria-components';
 import type { DefaultPropsWithChildren } from '../../util/types';
 import type { IconProps } from '../Icon/types';
-import type {
-	TabListTheme,
-	TabPanelsTheme,
-	TabPanelTheme,
-	TabsTheme,
-	TabTheme,
-} from './styles';
+import type { TabsTheme, TabTheme } from './styles';
 
 export interface TabsProps
 	extends
@@ -29,10 +23,7 @@ export interface TabsProps
 
 export interface TabListProps
 	extends
-		DefaultPropsWithChildren<
-			TabListTheme,
-			RACTabListProps<object>['className']
-		>,
+		DefaultPropsWithChildren<never, RACTabListProps<object>['className']>,
 		Omit<RACTabListProps<object>, 'children'> {
 	/**
 	 * Orientation of the tabs. Can be either 'horizontal' or 'vertical'.
@@ -72,10 +63,7 @@ export interface TabProps
 
 export interface TabPanelsProps
 	extends
-		DefaultPropsWithChildren<
-			TabPanelsTheme,
-			RACTabPanelsProps<object>['className']
-		>,
+		DefaultPropsWithChildren<never, RACTabPanelsProps<object>['className']>,
 		Omit<RACTabPanelsProps<object>, 'children'> {
 	/**
 	 * Orientation of the tabs. Can be either 'horizontal' or 'vertical'.
@@ -93,5 +81,5 @@ export interface TabPanelsProps
 
 export interface TabPanelProps
 	extends
-		DefaultPropsWithChildren<TabPanelTheme, RACTabPanelProps['className']>,
+		DefaultPropsWithChildren<never, RACTabPanelProps['className']>,
 		Omit<RACTabPanelProps, 'children'> {}

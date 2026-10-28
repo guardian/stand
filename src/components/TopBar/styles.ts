@@ -17,8 +17,8 @@ export const topBarStyles = (theme: TopBarTheme): SerializedStyles => {
 		border-right: ${theme.borderRight};
 		border-bottom: ${theme.borderBottom};
 		border-left: ${theme.borderLeft};
-		display: ${theme.display};
-		justify-content: ${theme.justifyContent};
+		display: flex;
+		justify-content: flex-start;
 	`;
 };
 
@@ -30,7 +30,7 @@ export const topBarContainerStyles = (
 	}: { collapseBelow?: Breakpoint; showUntil?: Breakpoint } = {},
 ): SerializedStyles => {
 	return css`
-		display: ${theme.display};
+		display: flex;
 
 		${
 			collapseBelow &&
@@ -52,9 +52,9 @@ export const topBarContainerStyles = (
 	`;
 };
 
-export const topBarSpacerStyles = (theme: TopBarTheme): SerializedStyles => {
+export const topBarSpacerStyles = (): SerializedStyles => {
 	return css`
-		margin-left: ${theme.spacer.marginLeft};
+		margin-left: auto;
 	`;
 };
 
@@ -67,7 +67,7 @@ export const topBarCollapsedNavMenuButtonStyles = (
 		padding: ${theme.collapsedNavMenu.button.padding};
 		background: ${theme.collapsedNavMenu.button.background};
 		border: ${theme.collapsedNavMenu.button.border};
-		cursor: ${theme.collapsedNavMenu.button.cursor};
+		cursor: pointer;
 
 		&[data-hovered] {
 			background-color: ${

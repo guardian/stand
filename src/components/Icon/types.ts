@@ -1,6 +1,6 @@
 import type { MaterialSymbol } from '../../fonts/materialSymbolsTypes';
 import type { DefaultPropsWithChildren } from '../../util/types';
-import type { IconTheme } from './Styles';
+import type { IconTheme } from './styles';
 
 export type { MaterialSymbol } from '../../fonts/materialSymbolsTypes';
 

@@ -13,22 +13,22 @@ export const componentTabs = {
 			},
 		},
 		shared: {
-			alignItems: 'center',
+			// alignItems: 'center',
 			border: '0.0625rem solid #cccccc',
 			color: '#545454',
-			cursor: 'pointer',
+			// cursor: 'pointer',
 			disabled: {
 				color: '#999999',
-				cursor: 'not-allowed',
+				// cursor: 'not-allowed',
 			},
-			display: 'inline-flex',
-			flexDirection: 'row',
+			// display: 'inline-flex',
+			// flexDirection: 'row',
 			focusVisible: {
 				outline: '0.125rem solid #0072a9',
 				outlineOffset: '-0.0625rem',
 			},
 			gap: '0.375rem',
-			justifyContent: 'center',
+			// justifyContent: 'center',
 			padding: {
 				bottom: '0px',
 				left: '1rem',
@@ -40,7 +40,7 @@ export const componentTabs = {
 					verticalRight: '1.5rem',
 				},
 			},
-			position: 'relative',
+			// position: 'relative',
 			selected: {
 				background: '#f6f6f6',
 				border: {
@@ -59,40 +59,40 @@ export const componentTabs = {
 			},
 		},
 	},
-	tabList: {
-		shared: {
-			display: 'flex',
-			orientation: {
-				horizontal: {
-					flexDirection: 'row',
-				},
-				vertical: {
-					flexDirection: 'column',
-				},
-			},
-		},
-	},
-	tabPanel: {
-		shared: {
-			position: 'initial',
-		},
-	},
-	tabPanels: {
-		shared: {
-			overflow: 'clip',
-			position: 'relative',
-		},
-	},
+	// tabList: {
+	// 	// shared: {
+	// 	// 	// display: 'flex',
+	// 	// 	orientation: {
+	// 	// 		horizontal: {
+	// 	// 			flexDirection: 'row',
+	// 	// 		},
+	// 	// 		vertical: {
+	// 	// 			flexDirection: 'column',
+	// 	// 		},
+	// 	// 	},
+	// 	// },
+	// },
+	// tabPanel: {
+	// 	shared: {
+	// 		position: 'initial',
+	// 	},
+	// },
+	// tabPanels: {
+	// 	shared: {
+	// 		overflow: 'clip',
+	// 		position: 'relative',
+	// 	},
+	// },
 	tabs: {
 		shared: {
-			display: 'flex',
+			// display: 'flex',
 			maxWidth: '100%',
 			orientation: {
-				horizontal: {
-					flexDirection: 'column',
-				},
+				// horizontal: {
+				// 	flexDirection: 'column',
+				// },
 				vertical: {
-					flexDirection: 'row',
+					// flexDirection: 'row',
 					width: '100%',
 				},
 			},

@@ -20,9 +20,9 @@ export const componentToggleSwitch = {
 		},
 	},
 	shared: {
-		alignItems: 'center',
+		// alignItems: 'center',
 		color: '#000000',
-		cursor: 'pointer',
+		// cursor: 'pointer',
 		description: {
 			color: '#545454',
 			typography: {
@@ -33,14 +33,14 @@ export const componentToggleSwitch = {
 		},
 		disabled: {
 			color: '#999999',
-			cursor: 'not-allowed',
+			// cursor: 'not-allowed',
 		},
-		display: 'flex',
+		// display: 'flex',
 		gap: '0.5rem',
 		label: {
-			alignItems: 'flex-start',
-			display: 'flex',
-			flexDirection: 'column',
+			// alignItems: 'flex-start',
+			// display: 'flex',
+			// flexDirection: 'column',
 			paddingBlock: '0.125rem',
 		},
 		thumb: {
@@ -50,16 +50,16 @@ export const componentToggleSwitch = {
 			disabled: {
 				color: '#dcdcdc',
 			},
-			transition: 'transform 200ms',
+			// transition: 'transform 200ms',
 		},
 		track: {
-			alignItems: 'center',
+			// alignItems: 'center',
 			backgroundColor: '#666666',
 			borderRadius: '100px',
 			disabled: {
 				backgroundColor: '#dcdcdc',
 			},
-			display: 'flex',
+			// display: 'flex',
 			focusVisible: {
 				outline: '0.125rem solid #0072a9',
 				outlineOffset: '0.125rem',
@@ -68,7 +68,7 @@ export const componentToggleSwitch = {
 			selected: {
 				backgroundColor: '#0072a9',
 			},
-			transition: 'background-color 200ms',
+			// transition: 'background-color 200ms',
 		},
 	},
 	sm: {

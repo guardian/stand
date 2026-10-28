@@ -23,20 +23,20 @@ export const toolNameHoverLinkStyles = (
 		${convertTypographyToEmotionStringStyle(theme.hoverLink.typography)}
 		background-color: ${theme.hoverLink.backgroundColor};
 		color: ${theme.hoverLink.color};
-		align-items: ${theme.alignItems};
+		align-items: center;
 		padding-left: ${theme.hoverLink.paddingLeft};
 		padding-right: ${theme.hoverLink.paddingRight};
-		display: ${theme.display};
+		display: flex;
 		opacity: ${theme.hoverLink.opacity};
 
-		position: ${theme.hoverLink.position};
+		position: absolute;
 		width: ${theme.hoverLink.width};
 		height: ${theme.hoverLink.height};
 
 		${until[collapseBelow]} {
 			padding-left: ${theme.hoverLink.collapsed.paddingLeft};
 			padding-right: ${theme.hoverLink.collapsed.paddingRight};
-			justify-content: ${theme.hoverLink.collapsed.justifyContent};
+			justify-content: center;
 		}
 	`;
 };
@@ -67,9 +67,9 @@ export const toolNameLinkStyles = (
 	theme: TopBarToolNameTheme,
 ): SerializedStyles => {
 	return css`
-		text-decoration: ${theme.link.textDecoration};
+		text-decoration: none;
 		color: ${theme.link.color};
-		position: ${theme.link.position};
+		position: relative;
 
 		/* Show the first element - the hover text */
 		&[data-hovered] :first-of-type {
@@ -91,8 +91,8 @@ export const toolNameStyles = (
 	theme: TopBarToolNameTheme,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.display};
-		align-items: ${theme.alignItems};
+		display: flex;
+		align-items: center;
 		gap: ${theme.gap};
 		color: ${theme.color};
 	`;
@@ -128,8 +128,8 @@ export const subsectionStyles = (
 	{ collapseBelow }: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.display};
-		align-items: ${theme.alignItems};
+		display: flex;
+		align-items: center;
 		gap: ${theme.subsection.gap};
 		${until[collapseBelow]} {
 			display: none;

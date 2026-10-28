@@ -20,9 +20,9 @@ export const IconStyles = (
 			mode: 'text' | 'svg';
 		},
 ) => css`
-	display: ${theme.shared.display};
+	display: inline-flex;
 	font-size: ${theme[size].size};
-	user-select: ${theme.shared.userSelect};
+	user-select: none;
 	${fill ? `color: ${fill};` : ''}
 
 	${

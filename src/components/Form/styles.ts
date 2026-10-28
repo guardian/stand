@@ -16,8 +16,8 @@ export const formInputContainerStyles = (
 	{ fluid }: FormInputContainerDefaultProps<{ className?: unknown }, unknown>,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.shared.container.display};
-		flex-direction: ${theme.shared.container.flexDirection};
+		display: flex;
+		flex-direction: column;
 		gap: ${theme.shared.container.gap};
 		width: ${theme.shared.container.width};
 		${

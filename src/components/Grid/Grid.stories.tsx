@@ -162,10 +162,6 @@ export const CustomTheme = {
 		<Grid
 			{...args}
 			theme={{
-				shared: {
-					justifyContent: 'space-between',
-					alignItems: 'flex-start',
-				},
 				sm: { gap: '8px' },
 				md: { gap: '16px' },
 				lg: { gap: '16px' },

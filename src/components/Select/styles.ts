@@ -71,9 +71,9 @@ export const buttonStyles = (
 	{ size, isInvalid }: Required<Pick<SelectProps, 'size' | 'isInvalid'>>,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.shared.button.display};
-		justify-content: ${theme.shared.button.justifyContent};
-		align-items: ${theme.shared.button.alignItems};
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		background-color: ${theme.shared.button.backgroundColor};
 		border: ${theme.shared.button.border};
 		border-radius: ${theme.shared.button.borderRadius};
@@ -98,7 +98,7 @@ export const buttonStyles = (
 		}
 
 		&[data-disabled] {
-			cursor: ${theme.shared.button.disabled.cursor};
+			cursor: not-allowed;
 			background-color: ${theme.shared.button.disabled.backgroundColor};
 			color: ${theme.shared.button.disabled.color};
 			border: ${theme.shared.button.disabled.border};

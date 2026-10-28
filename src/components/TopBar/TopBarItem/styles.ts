@@ -16,8 +16,8 @@ export const topBarItemStyles = (
 	_menuOpen?: boolean,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.display};
-		align-items: ${theme.alignItems};
+		display: flex;
+		align-items: center;
 		height: ${theme.height};
 		padding: ${theme[size].padding.top} ${theme[size].padding.right}
 			${theme[size].padding.bottom} ${theme[size].padding.left};
