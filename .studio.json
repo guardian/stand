@@ -5,7 +5,7 @@
 			"project": "ef220361-80dc-4645-a671-0d38f9293c6b",
 			"ref": {
 				"type": "branch",
-				"name": "main"
+				"name": "mm-next-remove-layout-tokens"
 			},
 			"output": "src/styleD/tokens",
 			"format": "dtcg"

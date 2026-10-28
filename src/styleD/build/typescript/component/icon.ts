@@ -9,10 +9,6 @@ export const componentIcon = {
 	md: {
 		size: '1.25rem',
 	},
-	// shared: {
-	// 	display: 'inline-flex',
-	// 	userSelect: 'none',
-	// },
 	sm: {
 		size: '1.125rem',
 	},

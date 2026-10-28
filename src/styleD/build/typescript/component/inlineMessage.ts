@@ -10,11 +10,8 @@ export const componentInlineMessage = {
 		color: '#00344e',
 	},
 	shared: {
-		// alignItems: 'center',
-		// display: 'inline-flex',
 		gap: '0.25rem',
 		icon: {
-			// alignSelf: 'flex-start',
 			size: '1.25rem',
 		},
 		typography: {
