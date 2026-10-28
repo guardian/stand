@@ -14,12 +14,12 @@ export const componentGrid = {
 		padding: '24px',
 	},
 	shared: {
-		alignItems: 'stretch',
-		direction: 'row',
-		display: 'flex',
-		justifyContent: 'flex-start',
+		// alignItems: 'stretch',
+		// direction: 'row',
+		// display: 'flex',
+		// justifyContent: 'flex-start',
 		width: '100%',
-		wrap: 'wrap',
+		// wrap: 'wrap',
 	},
 	sm: {
 		columns: 12,

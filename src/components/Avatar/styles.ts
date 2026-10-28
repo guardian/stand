@@ -22,17 +22,17 @@ export const avatarStyles = (
 	{ size, color }: Required<Pick<AvatarProps, 'size' | 'color'>>,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.shared.display};
-		align-items: ${theme.shared.alignItems};
-		justify-content: ${theme.shared.justifyContent};
-		overflow: ${theme.shared.overflow};
-		flex-shrink: ${theme.shared.flexShrink};
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		flex-shrink: 0;
 		border-radius: ${theme.shared.borderRadius};
 		background-color: ${theme.shared.color[color].background};
 		width: ${theme[size].size};
 		height: ${theme[size].size};
 		border: ${theme.shared.color[color].border};
-		user-select: ${theme.shared.userSelect};
+		user-select: none;
 		color: ${theme.shared.color[color].text};
 		${convertTypographyToEmotionStringStyle(theme[size].typography)}
 

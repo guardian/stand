@@ -9,9 +9,6 @@ import {
 import { mergeDeep } from '../../util/mergeDeep';
 import { Icon } from '../Icon/Icon';
 import {
-	defaultTabListTheme,
-	defaultTabPanelsTheme,
-	defaultTabPanelTheme,
 	defaultTabsTheme,
 	defaultTabTheme,
 	tabListStyles,
@@ -77,12 +74,9 @@ function TabList({
 	children,
 	orientation = 'horizontal',
 	size = 'md',
-	theme = {},
 	dangerouslyOverrideCss,
 	...props
 }: TabListProps) {
-	const mergedTheme = mergeDeep(defaultTabListTheme, theme);
-
 	const tabs: React.ReactElement[] = [];
 
 	// Only Tab components are allowed as direct children of TabList
@@ -103,7 +97,7 @@ function TabList({
 
 	return (
 		<ReactAriaTabList
-			css={[tabListStyles(mergedTheme), dangerouslyOverrideCss]}
+			css={[tabListStyles(), dangerouslyOverrideCss]}
 			{...props}
 		>
 			{tabs}
@@ -140,12 +134,9 @@ function Tab({
 
 function TabPanels({
 	children,
-	theme = {},
 	dangerouslyOverrideCss,
 	...props
 }: TabPanelsProps) {
-	const mergedTheme = mergeDeep(defaultTabPanelsTheme, theme);
-
 	const panels: React.ReactElement[] = [];
 
 	// Only TabPanel components are allowed as direct children of TabPanels
@@ -160,7 +151,7 @@ function TabPanels({
 
 	return (
 		<ReactAriaTabPanels
-			css={[tabPanelsStyles(mergedTheme), dangerouslyOverrideCss]}
+			css={[tabPanelsStyles(), dangerouslyOverrideCss]}
 			{...props}
 		>
 			{panels}
@@ -170,15 +161,12 @@ function TabPanels({
 
 function TabPanel({
 	children,
-	theme = {},
 	dangerouslyOverrideCss,
 	...props
 }: TabPanelProps) {
-	const mergedTheme = mergeDeep(defaultTabPanelTheme, theme);
-
 	return (
 		<ReactAriaTabPanel
-			css={[tabPanelStyles(mergedTheme), dangerouslyOverrideCss]}
+			css={[tabPanelStyles(), dangerouslyOverrideCss]}
 			{...props}
 		>
 			{children}

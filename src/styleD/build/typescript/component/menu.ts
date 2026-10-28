@@ -7,8 +7,8 @@ export const componentMenu = {
 		shared: {
 			backgroundColor: '#ffffff',
 			border: '0.0625rem solid #cccccc',
-			display: 'flex',
-			flexDirection: 'column',
+			// display: 'flex',
+			// flexDirection: 'column',
 		},
 	},
 	menuItem: {
@@ -19,12 +19,12 @@ export const componentMenu = {
 			},
 		},
 		shared: {
-			alignItems: 'center',
+			// alignItems: 'center',
 			aside: {
-				alignSelf: 'start',
+				// alignSelf: 'start',
 				color: '#000000',
-				gridArea: 'aside',
-				justifySelf: 'end',
+				// gridArea: 'aside',
+				// justifySelf: 'end',
 				typography: {
 					font: 'normal 460 1rem/1.3 Open Sans',
 					fontWidth: 95,
@@ -35,34 +35,34 @@ export const componentMenu = {
 			borderBottom: '0.0625rem solid #cccccc',
 			description: {
 				color: '#545454',
-				gridArea: 'description',
+				// gridArea: 'description',
 				typography: {
 					font: 'normal 460 0.875rem/1.3 Open Sans',
 					fontWidth: 95,
 					letterSpacing: '0rem',
 				},
 			},
-			display: 'grid',
+			// display: 'grid',
 			focusVisible: {
 				outline: '0.125rem solid #0072a9',
 				outlineOffset: '-0.125rem',
 			},
 			gap: '0.25rem',
-			gridTemplateAreas: "'icon label aside'",
-			gridTemplateAreasWithDescription: "'icon label aside' '. description .'",
+			// gridTemplateAreas: "'icon label aside'",
+			// gridTemplateAreasWithDescription: "'icon label aside' '. description .'",
 			gridTemplateColumns: 'auto 6fr 1fr',
 			hover: {
 				backgroundColor: '#f6f6f6',
-				outline: 'none',
+				// outline: 'none',
 			},
 			icon: {
-				alignSelf: 'start',
+				// alignSelf: 'start',
 				color: '#545454',
-				gridArea: 'icon',
+				// gridArea: 'icon',
 			},
 			label: {
 				color: '#000000',
-				gridArea: 'label',
+				// gridArea: 'label',
 				typography: {
 					font: 'normal 460 1rem/1.3 Open Sans',
 					fontWidth: 95,
@@ -95,7 +95,7 @@ export const componentMenu = {
 			width: '100%',
 		},
 		shared: {
-			overflow: 'auto',
+			// overflow: 'auto',
 			shadow: '0px 0.125rem 0.375rem 0px rgb(0% 0% 0% / 0.3)',
 		},
 		sm: {
@@ -114,10 +114,10 @@ export const componentMenu = {
 				},
 			},
 			shared: {
-				alignItems: 'center',
+				// alignItems: 'center',
 				backgroundColor: '#ededed',
 				color: '#000000',
-				display: 'flex',
+				// display: 'flex',
 				padding: {
 					bottom: '0px',
 					left: '0.5rem',

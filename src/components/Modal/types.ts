@@ -20,7 +20,7 @@ export type ModalProps = DefaultProps<
 	ReactAriaModalProps;
 
 export type DialogProps = DefaultProps<
-	DialogTheme['container'],
+	never,
 	ReactAriaDialogProps['className']
 > &
 	ReactAriaDialogProps;

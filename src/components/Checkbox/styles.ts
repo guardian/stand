@@ -19,11 +19,11 @@ export const checkboxStyles = (
 	}: Required<Pick<CheckboxProps, 'size' | 'isIndeterminate'>>,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.input.shared.display};
-		position: ${theme.input.shared.position};
-		align-items: ${theme.input.shared.alignItems};
+		display: flex;
+		position: relative;
+		align-items: flex-start;
 		gap: ${theme.input.shared.gap};
-		cursor: ${theme.input.shared.cursor};
+		cursor: pointer;
 		${convertTypographyToEmotionStringStyle(theme.input[size].typography)}
 		color: ${theme.input.shared.color};
 
@@ -32,11 +32,11 @@ export const checkboxStyles = (
 			height: ${theme.input[size].indicator.size};
 			border: ${theme.input.shared.indicator.border};
 			border-radius: ${theme.input.shared.indicator.borderRadius};
-			display: ${theme.input.shared.indicator.display};
-			align-items: ${theme.input.shared.indicator.alignItems};
-			justify-content: ${theme.input.shared.indicator.justifyContent};
-			flex-shrink: ${theme.input.shared.indicator.flexShrink};
-			transition: ${theme.input.shared.indicator.transition};
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0;
+			transition: all 200ms;
 		}
 
 		svg {
@@ -51,7 +51,7 @@ export const checkboxStyles = (
 					: theme.input.shared.indicator.check.height
 			};
 			fill: ${theme.input.shared.indicator.svg.fill};
-			transition: ${theme.input.shared.indicator.transition};
+			transition: all 200ms;
 		}
 
 		&[data-focus-visible] {
@@ -79,7 +79,7 @@ export const checkboxStyles = (
 
 		&[data-disabled] {
 			color: ${theme.input.shared.disabled.color};
-			cursor: ${theme.input.shared.disabled.cursor};
+			cursor: not-allowed;
 
 			.checkbox-indicator {
 				border: ${theme.input.shared.disabled.indicator.border};
@@ -110,9 +110,9 @@ export const checkboxStyles = (
 	`;
 };
 
-export const checkboxLabelStyles = (theme: CheckboxTheme): SerializedStyles => {
+export const checkboxLabelStyles = (): SerializedStyles => {
 	return css`
-		align-self: ${theme.input.shared.label.alignSelf};
+		align-self: center;
 	`;
 };
 
@@ -122,8 +122,8 @@ export const checkboxGroupStyles = (
 	hasError?: boolean,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.group.shared.display};
-		flex-direction: ${theme.group.shared.flexDirection};
+		display: flex;
+		flex-direction: column;
 		gap: ${theme.group[size].gap};
 		margin-top: ${theme.group[size].marginTop};
 		${

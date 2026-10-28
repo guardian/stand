@@ -77,11 +77,11 @@ export const componentBadge = {
 			},
 		},
 	},
-	shared: {
-		alignItems: 'center',
-		display: 'inline-flex',
-		justifyContent: 'center',
-	},
+	// shared: {
+	// 	alignItems: 'center',
+	// 	display: 'inline-flex',
+	// 	justifyContent: 'center',
+	// },
 	size: {
 		md: {
 			padding: {

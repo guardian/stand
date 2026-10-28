@@ -12,15 +12,15 @@ export const componentAvatar = {
 		},
 	},
 	shared: {
-		alignItems: 'center',
+		// alignItems: 'center',
 		borderRadius: '50%',
 		button: {
 			background: 'none',
 			border: 'none',
-			cursor: 'pointer',
-			disabled: {
-				cursor: 'not-allowed',
-			},
+			// cursor: 'pointer',
+			// disabled: {
+			// cursor: 'not-allowed',
+			// },
 			padding: '0px',
 		},
 		color: {
@@ -146,19 +146,19 @@ export const componentAvatar = {
 				text: '#5b4a0b',
 			},
 		},
-		display: 'inline-flex',
-		flexShrink: '0',
-		justifyContent: 'center',
+		// display: 'inline-flex',
+		// flexShrink: '0',
+		// justifyContent: 'center',
 		link: {
 			focusVisible: {
 				outline: '0.125rem solid #0072a9',
 				outlineOffset: '0.125rem',
 			},
-			textDecoration: 'none',
+			// textDecoration: 'none',
 			width: 'fit-content',
 		},
-		overflow: 'hidden',
-		userSelect: 'none',
+		// overflow: 'hidden',
+		// userSelect: 'none',
 	},
 	sm: {
 		size: '2rem',

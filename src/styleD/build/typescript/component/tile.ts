@@ -11,7 +11,7 @@ export const componentTile = {
 		width: '360px',
 	},
 	shared: {
-		alignItems: 'center',
+		// alignItems: 'center',
 		arrowColor: '#000000',
 		backgroundColor: '#ffffff',
 		borderColor: '#8d8d8d',
@@ -19,16 +19,16 @@ export const componentTile = {
 		borderStyle: 'solid',
 		borderWidth: '0.0625rem',
 		color: '#000000',
-		cursor: 'pointer',
+		// cursor: 'pointer',
 		descriptionColor: '#666666',
 		disabled: {
 			backgroundColor: '#ffffff',
 			borderColor: '#dcdcdc',
 			color: '#999999',
-			cursor: 'not-allowed',
+			// cursor: 'not-allowed',
 		},
-		display: 'inline-flex',
-		flexDirection: 'column',
+		// display: 'inline-flex',
+		// flexDirection: 'column',
 		focusVisible: {
 			outline: '0.125rem solid #0072a9',
 			outlineOffset: '0.125rem',
@@ -38,7 +38,7 @@ export const componentTile = {
 			backgroundColor: '#f6f6f6',
 			borderColor: '#8d8d8d',
 		},
-		justifyContent: 'space-between',
+		// justifyContent: 'space-between',
 		maxWidth: '100%',
 		pressed: {
 			backgroundColor: '#ededed',
@@ -70,7 +70,7 @@ export const componentTile = {
 				},
 			},
 		},
-		textDecoration: 'none',
+		// textDecoration: 'none',
 		tileArrow: {
 			shared: {
 				color: '#000000',
@@ -78,7 +78,7 @@ export const componentTile = {
 					color: '#999999',
 				},
 				flexShrink: 0,
-				marginLeft: 'auto',
+				// marginLeft: 'auto',
 			},
 		},
 		tileIcon: {

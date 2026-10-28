@@ -497,10 +497,9 @@ export const CustomTheme = {
 		<Layout
 			{...args}
 			theme={{
-				sm: {
-					gridTemplateAreas: `'grid' 'topbar' 'sidebar'`,
-					gridTemplateColumns: '1fr',
-					gridTemplateRows: 'auto auto auto',
+				shared: {
+					minHeight: '50svh',
+					width: '50svw',
 				},
 			}}
 		>

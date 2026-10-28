@@ -18,8 +18,8 @@ export const radioGroupStyles = (
 	}: Required<Pick<RadioGroupProps, 'size' | 'orientation'>>,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.shared.display};
-		flex-direction: ${theme.shared.orientation.vertical.flexDirection};
+		display: flex;
+		flex-direction: column;
 		gap: ${theme[size].gap};
 		margin-top: ${theme.shared.marginTop};
 		margin-bottom: ${theme.shared.marginBottom};
@@ -27,7 +27,7 @@ export const radioGroupStyles = (
 		${
 			orientation === 'horizontal' &&
 			css`
-				flex-direction: ${theme.shared.orientation.horizontal.flexDirection};
+				flex-direction: row;
 			`
 		}
 	`;
@@ -38,8 +38,8 @@ export const radioStyles = (
 	{ size, isInvalid }: Required<Pick<RadioGroupProps, 'size' | 'isInvalid'>>,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.shared.radio.display};
-		align-items: ${theme.shared.radio.alignItems};
+		display: flex;
+		align-items: center;
 		gap: ${theme.shared.radio.gap};
 		${convertTypographyToEmotionStringStyle(theme[size].typography)}
 		color: ${theme.shared.radio.color};
@@ -92,7 +92,7 @@ export const radioIndicatorStyles = (
 	{ size, isInvalid }: Required<Pick<RadioGroupProps, 'size' | 'isInvalid'>>,
 ): SerializedStyles => {
 	return css`
-		position: ${theme.shared.indicator.position};
+		position: relative;
 		width: ${theme[size].indicator.width};
 		height: ${theme[size].indicator.height};
 		border-radius: ${theme.shared.indicator.borderRadius};
@@ -104,10 +104,10 @@ export const radioIndicatorStyles = (
 
 		&::after {
 			content: '';
-			position: ${theme.shared.indicator.after.position};
-			border-radius: ${theme.shared.indicator.after.borderRadius};
-			inset: ${theme.shared.indicator.after.inset};
-			scale: ${theme.shared.indicator.after.scale};
+			position: absolute;
+			border-radius: inherit;
+			inset: 0px;
+			scale: 0;
 		}
 	`;
 };
