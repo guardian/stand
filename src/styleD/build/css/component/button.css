@@ -127,17 +127,8 @@
 		'Open Sans';
 	--component-button-secondary-xs-typography-font-width: 95;
 	--component-button-secondary-xs-typography-letter-spacing: 0rem;
-	--component-button-shared-align-items: center;
-	--component-button-shared-box-shadow: none;
-	--component-button-shared-cursor: pointer;
-	--component-button-shared-disabled-cursor: not-allowed;
-	--component-button-shared-display: inline-flex;
 	--component-button-shared-focus-visible-outline: 0.125rem solid #0072a9;
 	--component-button-shared-focus-visible-outline-offset: 0.125rem;
-	--component-button-shared-justify-content: center;
-	--component-button-shared-text-align: inherit;
-	--component-button-shared-text-decoration: none;
-	--component-button-shared-webkit-appearance: none;
 	--component-button-tertiary-lg-height: 3rem;
 	--component-button-tertiary-lg-icon-gap: 0.25rem;
 	--component-button-tertiary-lg-icon-size: 1.5rem;

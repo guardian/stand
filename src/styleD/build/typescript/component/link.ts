@@ -15,7 +15,6 @@ export const componentLink = {
 		},
 		hover: {
 			color: '#00344e',
-			// cursor: 'pointer',
 		},
 		pressed: {
 			color: '#00202f',
