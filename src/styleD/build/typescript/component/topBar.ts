@@ -16,7 +16,7 @@ export const componentTopBar = {
 			background: '#00000000',
 			border: 'none',
 			color: '#000000',
-			cursor: 'pointer',
+			// cursor: 'pointer',
 			hovered: {
 				backgroundColor: '#ededed',
 			},
@@ -30,12 +30,12 @@ export const componentTopBar = {
 			offset: 1,
 		},
 	},
-	display: 'flex',
+	// display: 'flex',
 	height: '4rem',
 	item: {
-		alignItems: 'center',
+		// alignItems: 'center',
 		border: '0.0625rem solid #cccccc',
-		display: 'flex',
+		// display: 'flex',
 		height: '100%',
 		lg: {
 			padding: {
@@ -62,7 +62,7 @@ export const componentTopBar = {
 			},
 		},
 	},
-	justifyContent: 'flex-start',
+	// justifyContent: 'flex-start',
 	navigation: {
 		md: {
 			typography: {
@@ -89,14 +89,14 @@ export const componentTopBar = {
 				},
 				width: '100%',
 			},
-			alignItems: 'center',
+			// alignItems: 'center',
 			borderTop: '0.5rem solid #00000000',
-			cursor: 'pointer',
+			// cursor: 'pointer',
 			disabled: {
 				color: '#999999',
-				cursor: 'not-allowed',
+				// cursor: 'not-allowed',
 			},
-			display: 'inline-flex',
+			// display: 'inline-flex',
 			divider: '0.0625rem solid #cccccc',
 			focusVisible: {
 				outline: '0.125rem solid #0072a9',
@@ -109,8 +109,8 @@ export const componentTopBar = {
 				right: '1rem',
 				top: '0px',
 			},
-			position: 'relative',
-			textDecoration: 'none',
+			// position: 'relative',
+			// textDecoration: 'none',
 		},
 		sm: {
 			typography: {
@@ -129,13 +129,13 @@ export const componentTopBar = {
 			color: '#545454',
 		},
 	},
-	spacer: {
-		marginLeft: 'auto',
-	},
+	// spacer: {
+	// 	marginLeft: 'auto',
+	// },
 	toolName: {
-		alignItems: 'center',
+		// alignItems: 'center',
 		color: '#000000',
-		display: 'flex',
+		// display: 'flex',
 		divider: {
 			border: '0.0625rem solid #cccccc',
 			height: '2rem',
@@ -144,7 +144,7 @@ export const componentTopBar = {
 		hoverLink: {
 			backgroundColor: '#092f62',
 			collapsed: {
-				justifyContent: 'center',
+				// justifyContent: 'center',
 				paddingLeft: '0.25rem',
 				paddingRight: '0.25rem',
 			},
@@ -160,7 +160,7 @@ export const componentTopBar = {
 			opacity: 0,
 			paddingLeft: '1.25rem',
 			paddingRight: '1.25rem',
-			position: 'absolute',
+			// position: 'absolute',
 			pressed: {
 				backgroundColor: '#061d3c',
 			},
@@ -174,8 +174,8 @@ export const componentTopBar = {
 		link: {
 			color: 'unset',
 			height: '100%',
-			position: 'relative',
-			textDecoration: 'none',
+			// position: 'relative',
+			// textDecoration: 'none',
 			width: '100%',
 		},
 		subsection: {

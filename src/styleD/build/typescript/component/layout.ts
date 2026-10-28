@@ -4,28 +4,28 @@
 
 export const componentLayout = {
 	layout: {
-		lg: {
-			gridTemplateAreas:
-				"'alertbanner alertbanner'\n'topbar topbar'\n'sidebar main'",
-			gridTemplateColumns: 'min-content 1fr',
-			gridTemplateRows: 'min-content min-content 1fr',
-		},
-		md: {
-			gridTemplateAreas:
-				"'alertbanner alertbanner'\n'topbar topbar'\n'sidebar main'",
-			gridTemplateColumns: 'min-content 1fr',
-			gridTemplateRows: 'min-content min-content 1fr',
-		},
+		// 	lg: {
+		// 		gridTemplateAreas:
+		// 			"'alertbanner alertbanner'\n'topbar topbar'\n'sidebar main'",
+		// 		gridTemplateColumns: 'min-content 1fr',
+		// 		gridTemplateRows: 'min-content min-content 1fr',
+		// 	},
+		// 	md: {
+		// 		gridTemplateAreas:
+		// 			"'alertbanner alertbanner'\n'topbar topbar'\n'sidebar main'",
+		// 		gridTemplateColumns: 'min-content 1fr',
+		// 		gridTemplateRows: 'min-content min-content 1fr',
+		// 	},
 		shared: {
-			display: 'grid',
+			// display: 'grid',
 			minHeight: '100svh',
 			width: '100%',
 		},
-		sm: {
-			gridTemplateAreas: "'alertbanner'\n'topbar'\n'sidebar'\n'main'",
-			gridTemplateColumns: '1fr',
-			gridTemplateRows: 'min-content min-content min-content 1fr',
-		},
+		// 	sm: {
+		// 		gridTemplateAreas: "'alertbanner'\n'topbar'\n'sidebar'\n'main'",
+		// 		gridTemplateColumns: '1fr',
+		// 		gridTemplateRows: 'min-content min-content min-content 1fr',
+		// 	},
 	},
 	main: {
 		lg: {
@@ -34,8 +34,8 @@ export const componentLayout = {
 				top: '48px',
 			},
 		},
-		marginLeft: 'auto',
-		marginRight: 'auto',
+		// marginLeft: 'auto',
+		// marginRight: 'auto',
 		maxWidth: '1584px',
 		md: {
 			padding: {
@@ -55,17 +55,17 @@ export const componentLayout = {
 			width: '280px',
 		},
 		md: {
-			display: 'block',
+			// display: 'block',
 			width: '200px',
 		},
-		sm: {
-			aboveGrid: {
-				display: 'block',
-			},
-			hidden: {
-				display: 'none',
-			},
-		},
+		// sm: {
+		// aboveGrid: {
+		// 	display: 'block',
+		// },
+		// hidden: {
+		// 	display: 'none',
+		// },
+		// },
 	},
 };
 export type ComponentLayout = typeof componentLayout;

@@ -15,8 +15,8 @@ export type MenuTheme = Prettify<ComponentMenu['menu']>;
 export type PartialMenuTheme = Prettify<DeepPartial<MenuTheme>>;
 export const defaultMenuTheme: MenuTheme = componentMenu.menu;
 export const menuStyles = (theme: MenuTheme): SerializedStyles => css`
-	display: ${theme.shared.display};
-	flex-direction: ${theme.shared.flexDirection};
+	display: flex;
+	flex-direction: column;
 	border: ${theme.shared.border};
 	background: ${theme.shared.backgroundColor};
 `;
@@ -30,8 +30,8 @@ export const menuSectionHeaderStyles = (
 	theme: MenuSectionTheme,
 	{ size }: Required<Pick<MenuSectionProps, 'size'>>,
 ): SerializedStyles => css`
-	display: ${theme.header.shared.display};
-	align-items: ${theme.header.shared.alignItems};
+	display: flex;
+	align-items: center;
 	padding: ${theme.header.shared.padding.top}
 		${theme.header.shared.padding.right} ${theme.header.shared.padding.bottom}
 		${theme.header.shared.padding.left};
@@ -49,15 +49,13 @@ export const menuItemStyles = (
 	theme: MenuItemTheme,
 	{ description }: Pick<MenuItemProps, 'description'>,
 ): SerializedStyles => css`
-	display: ${theme.shared.display};
+	display: grid;
 	grid-template-columns: ${theme.shared.gridTemplateColumns};
 	grid-template-areas: ${
-		description
-			? theme.shared.gridTemplateAreasWithDescription
-			: theme.shared.gridTemplateAreas
+		description ? "'icon label aside' '. description .'" : "'icon label aside'"
 	};
 	gap: ${theme.shared.gap};
-	align-items: ${theme.shared.alignItems};
+	align-items: center;
 	padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
 		${theme.shared.padding.bottom} ${theme.shared.padding.left};
 	border-bottom: ${theme.shared.borderBottom};
@@ -71,7 +69,7 @@ export const menuItemStyles = (
 		background-color: ${theme.shared.hover.backgroundColor};
 	}
 	&[data-hovered] {
-		outline: ${theme.shared.hover.outline};
+		outline: none;
 	}
 
 	/* Override default browser focus behaviour */
@@ -96,8 +94,8 @@ export const menuItemIconStyles = (
 	theme: MenuItemTheme,
 	{ size }: Required<Pick<MenuItemProps, 'size'>>,
 ): SerializedStyles => css`
-	grid-area: ${theme.shared.icon.gridArea};
-	align-self: ${theme.shared.icon.alignSelf};
+	grid-area: icon;
+	align-self: start;
 	color: ${theme.shared.icon.color};
 	/* Ensure the line-height matches the font line-height of the label for alignment */
 	line-height: ${theme[size].icon.lineHeight};
@@ -105,23 +103,23 @@ export const menuItemIconStyles = (
 export const menuItemLabelStyles = (
 	theme: MenuItemTheme,
 ): SerializedStyles => css`
-	grid-area: ${theme.shared.label.gridArea};
+	grid-area: label;
 	color: ${theme.shared.label.color};
 	${convertTypographyToEmotionStringStyle(theme.shared.label.typography)}
 `;
 export const menuItemDescriptionStyles = (
 	theme: MenuItemTheme,
 ): SerializedStyles => css`
-	grid-area: ${theme.shared.description.gridArea};
+	grid-area: description;
 	color: ${theme.shared.description.color};
 	${convertTypographyToEmotionStringStyle(theme.shared.description.typography)}
 `;
 export const menuItemAsideStyles = (
 	theme: MenuItemTheme,
 ): SerializedStyles => css`
-	grid-area: ${theme.shared.aside.gridArea};
-	justify-self: ${theme.shared.aside.justifySelf};
-	align-self: ${theme.shared.aside.alignSelf};
+	grid-area: aside;
+	justify-self: end;
+	align-self: start;
 	color: ${theme.shared.aside.color};
 	${convertTypographyToEmotionStringStyle(theme.shared.aside.typography)}
 `;
@@ -150,7 +148,7 @@ export const menuPopoverStyles = (
 	theme: MenuPopoverTheme,
 	{ size }: Required<Pick<MenuPopoverProps, 'size'>>,
 ): SerializedStyles => css`
-	overflow: ${theme.shared.overflow};
+	overflow: auto;
 	max-width: ${theme[size].maxWidth};
 	width: ${theme[size].width};
 	box-shadow: ${theme.shared.shadow};

@@ -7,9 +7,7 @@ import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semant
 import type { DeepPartial, Prettify } from '../../util/types';
 import type { BadgeProps } from './types';
 
-export type BadgeTheme = Prettify<
-	Pick<ComponentBadge, 'size' | 'color' | 'shared'>
->;
+export type BadgeTheme = Prettify<Pick<ComponentBadge, 'size' | 'color'>>;
 export type PartialBadgeTheme = Prettify<DeepPartial<BadgeTheme>>;
 export const defaultBadgeTheme: BadgeTheme = componentBadge;
 
@@ -27,9 +25,9 @@ export const badgeStyles = (
 	const colorVariant = theme.color[color].weight[weight];
 
 	return css`
-		display: ${theme.shared.display};
-		align-items: ${theme.shared.alignItems};
-		justify-content: ${theme.shared.justifyContent};
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 		padding-top: ${padding.top};
 		padding-right: ${padding.right};
 		padding-bottom: ${padding.bottom};

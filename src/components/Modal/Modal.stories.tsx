@@ -168,10 +168,10 @@ export const CustomTheme = {
 
 		const buttonsTheme: PartialDialogTheme['ctas'] = {
 			gap: '1rem',
-			justifyContent: 'flex-start',
-			md: {
-				flexDirection: 'row-reverse',
-			},
+			// justifyContent: 'flex-start',
+			// md: {
+			// 	flexDirection: 'row-reverse',
+			// },
 		};
 
 		return (
