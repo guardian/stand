@@ -11,23 +11,23 @@ export type ToastLevel = keyof Omit<ToastTheme, 'region' | 'shared'>;
 export const defaultToastTheme: ToastTheme = componentToast;
 
 export const toastRegionStyles = (theme: ToastTheme): SerializedStyles => css`
-	position: ${theme.region.position};
+	position: fixed;
 	right: ${theme.region.right};
 	top: ${theme.region.top};
 	width: calc(100vw - ${theme.region.right} - ${theme.region.right});
 	max-width: ${theme.shared.maxWidth};
-	z-index: ${theme.region.zIndex};
-	display: ${theme.region.display};
-	flex-direction: ${theme.region.flexDirection};
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
 	gap: ${theme.region.gap};
-	outline: ${theme.region.outline};
+	outline: none;
 `;
 
 export const toastStyles = (
 	theme: ToastTheme,
 	{ hasLeadingVisual, level }: { hasLeadingVisual: boolean; level: ToastLevel },
 ): SerializedStyles => css`
-	display: ${theme.shared.display};
+	display: grid;
 	grid-template-columns: ${
 		hasLeadingVisual ? 'auto minmax(0, 1fr) auto' : 'minmax(0, 1fr) auto'
 	};
@@ -48,8 +48,8 @@ export const toastStyles = (
 `;
 
 export const toastContentStyles = (theme: ToastTheme): SerializedStyles => css`
-	display: ${theme.shared.content.display};
-	flex-direction: ${theme.shared.content.flexDirection};
+	display: flex;
+	flex-direction: column;
 	gap: ${theme.shared.content.gap};
 	min-width: 0;
 	overflow-wrap: anywhere;
@@ -62,8 +62,8 @@ export const toastTitleStyles = (theme: ToastTheme): SerializedStyles => css`
 export const toastDescriptionStyles = (
 	theme: ToastTheme,
 ): SerializedStyles => css`
-	display: ${theme.shared.content.display};
-	flex-direction: ${theme.shared.content.flexDirection};
+	display: flex;
+	flex-direction: column;
 	gap: ${theme.shared.content.gap};
 `;
 

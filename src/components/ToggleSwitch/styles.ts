@@ -27,25 +27,25 @@ export const toggleSwitchStyles = (
 	theme: ToggleSwitchTheme,
 	{ size }: Required<Pick<ToggleSwitchProps, 'size'>>,
 ): SerializedStyles => css`
-	display: ${theme.shared.display};
-	align-items: ${theme.shared.alignItems};
+	display: flex;
+	align-items: center;
 	gap: ${theme.shared.gap};
-	cursor: ${theme.shared.cursor};
+	cursor: pointer;
 	${convertTypographyToEmotionStringStyle(theme[size].typography)}
 	color: ${theme.shared.color};
 
 	&[data-disabled] {
 		color: ${theme.shared.disabled.color};
-		cursor: ${theme.shared.disabled.cursor};
+		cursor: not-allowed;
 	}
 `;
 
 export const toggleSwitchLabelStyles = (
 	theme: ToggleSwitchTheme,
 ): SerializedStyles => css`
-	display: ${theme.shared.label.display};
-	flex-direction: ${theme.shared.label.flexDirection};
-	align-items: ${theme.shared.label.alignItems};
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 	padding-block: ${theme.shared.label.paddingBlock};
 `;
 
@@ -76,14 +76,14 @@ export const toggleSwitchTrackStyles = (
 	}
 
 	return css`
-		display: ${theme.shared.track.display};
-		align-items: ${theme.shared.track.alignItems};
+		display: flex;
+		align-items: center;
 		width: ${theme[size].track.width};
 		height: ${theme[size].track.height};
 		padding: ${theme.shared.track.padding};
 		border-radius: ${theme.shared.track.borderRadius};
 		background-color: ${backgroundColor};
-		transition: ${theme.shared.track.transition};
+		transition: background-color 200ms;
 		${
 			isFocusVisible &&
 			css`
@@ -115,7 +115,7 @@ export const toggleSwitchThumbStyles = (
 	transform: ${
 		isSelected ? `translateX(${theme[size].thumb.translateX})` : 'none'
 	};
-	transition: ${theme.shared.thumb.transition};
+	transition: transform 200ms;
 `;
 
 export const toggleSwitchIconStyles = (

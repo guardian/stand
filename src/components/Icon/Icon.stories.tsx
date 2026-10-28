@@ -147,10 +147,6 @@ export const CustomTheme = {
 		children: 'home',
 		size: 'md',
 		theme: {
-			shared: {
-				display: 'block',
-				userSelect: 'all',
-			},
 			md: {
 				size: baseSizing.size48Rem,
 			},

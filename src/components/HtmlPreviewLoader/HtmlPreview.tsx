@@ -58,7 +58,6 @@ export const HtmlPreview = ({
 							shared: {
 								container: {
 									width: 'unset',
-									flexDirection: 'row',
 								},
 							},
 						}}

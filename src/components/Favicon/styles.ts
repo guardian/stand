@@ -14,12 +14,12 @@ export const defaultFaviconTheme: FaviconTheme = componentFavicon;
 export const faviconStyles = (theme: FaviconTheme): SerializedStyles => {
 	return css`
 		background-color: ${theme.color.background};
-		display: ${theme.display};
-		align-items: ${theme.alignItems};
-		justify-content: ${theme.justifyContent};
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 		width: ${theme.size};
 		height: ${theme.size};
-		user-select: ${theme.userSelect};
+		user-select: none;
 	`;
 };
 

@@ -1,5 +1,5 @@
 import { mergeDeep } from '../../util/mergeDeep';
-import { defaultIconTheme, IconStyles } from './Styles';
+import { defaultIconTheme, IconStyles } from './styles';
 import type { IconProps } from './types';
 
 export function Icon({
