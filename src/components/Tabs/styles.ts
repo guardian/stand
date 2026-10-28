@@ -13,16 +13,16 @@ export const defaultTabsTheme: TabsTheme = componentTabs.tabs;
 
 export const tabsStyles = (theme: TabsTheme): SerializedStyles => {
 	return css`
-		display: ${theme.shared.display};
+		display: flex;
 		max-width: ${theme.shared.maxWidth};
 
 		&[data-orientation='vertical'] {
-			flex-direction: ${theme.shared.orientation.vertical.flexDirection};
+			flex-direction: row;
 			width: ${theme.shared.orientation.vertical.width};
 		}
 
 		&[data-orientation='horizontal'] {
-			flex-direction: ${theme.shared.orientation.horizontal.flexDirection};
+			flex-direction: column;
 		}
 	`;
 };
@@ -43,14 +43,14 @@ export const tabStyles = (
 	const hasIcon = !!icon;
 
 	return css`
-		position: ${theme.shared.position};
-		display: ${theme.shared.display};
+		position: relative;
+		display: inline-flex;
 		gap: ${theme.shared.gap};
 		height: ${theme[size].height};
-		cursor: ${theme.shared.cursor};
-		flex-direction: ${theme.shared.flexDirection};
-		justify-content: ${theme.shared.justifyContent};
-		align-items: ${theme.shared.alignItems};
+		cursor: pointer;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
 		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
 			${theme.shared.padding.bottom} ${theme.shared.padding.left};
 		${
@@ -63,7 +63,7 @@ export const tabStyles = (
 		${convertTypographyToEmotionStringStyle(theme[size].typography)}
 
 		&[data-disabled] {
-			cursor: ${theme.shared.disabled.cursor};
+			cursor: not-allowed;
 			color: ${theme.shared.disabled.color};
 		}
 
@@ -137,47 +137,32 @@ export const tabStyles = (
 	`;
 };
 
-export type TabListTheme = Prettify<ComponentTabs['tabList']>;
-export type PartialTabListTheme = DeepPartial<TabListTheme>;
-
-export const defaultTabListTheme: TabListTheme = componentTabs.tabList;
-
-export const tabListStyles = (theme: TabListTheme): SerializedStyles => {
+export const tabListStyles = (): SerializedStyles => {
 	return css`
-		display: ${theme.shared.display};
+		display: flex;
 
 		&[data-orientation='horizontal'] {
-			flex-direction: ${theme.shared.orientation.horizontal.flexDirection};
+			flex-direction: row;
 		}
 
 		&[data-orientation='vertical'] {
-			flex-direction: ${theme.shared.orientation.vertical.flexDirection};
+			flex-direction: column;
 		}
 	`;
 };
 
-export type TabPanelsTheme = Prettify<ComponentTabs['tabPanels']>;
-export type PartialTabPanelsTheme = DeepPartial<TabPanelsTheme>;
-
-export const defaultTabPanelsTheme: TabPanelsTheme = componentTabs.tabPanels;
-
-export const tabPanelsStyles = (theme: TabPanelsTheme): SerializedStyles => {
+export const tabPanelsStyles = (): SerializedStyles => {
 	return css`
-		position: ${theme.shared.position};
+		position: relative;
 		height: var(--tab-panel-height, auto);
 		width: var(--tab-panel-width, auto);
-		overflow: ${theme.shared.overflow};
+		overflow: clip;
 	`;
 };
 
-export type TabPanelTheme = Prettify<ComponentTabs['tabPanel']>;
-export type PartialTabPanelTheme = DeepPartial<TabPanelTheme>;
-
-export const defaultTabPanelTheme: TabPanelTheme = componentTabs.tabPanel;
-
-export const tabPanelStyles = (theme: TabPanelTheme): SerializedStyles => {
+export const tabPanelStyles = (): SerializedStyles => {
 	return css`
 		/* TODO: Designs to be provided for tab panel */
-		position: ${theme.shared.position};
+		position: initial;
 	`;
 };

@@ -19,15 +19,15 @@ export const buttonStyles = (
 ): SerializedStyles => {
 	return css`
 		/* button/link button reset styles */
-		display: ${theme.shared.display};
-		-webkit-appearance: ${theme.shared.webkitAppearance};
-		text-align: ${theme.shared.textAlign};
-		box-shadow: ${theme.shared.boxShadow};
-		text-decoration: ${theme.shared.textDecoration};
+		display: inline-flex;
+		-webkit-appearance: none;
+		text-align: inherit;
+		box-shadow: none;
+		text-decoration: none;
 		/* button component styles */
-		cursor: ${theme.shared.cursor};
-		justify-content: ${theme.shared.justifyContent};
-		align-items: ${theme.shared.alignItems};
+		cursor: pointer;
+		justify-content: center;
+		align-items: center;
 		color: ${theme[variant].shared.color};
 		background: ${theme[variant].shared.backgroundColor};
 		height: ${theme[variant][size].height};
@@ -74,7 +74,7 @@ export const buttonStyles = (
 
 		&[data-disabled],
 		&:disabled {
-			cursor: ${theme.shared.disabled.cursor};
+			cursor: not-allowed;
 			color: ${theme[variant].shared.disabled.color};
 			background: ${theme[variant].shared.disabled.backgroundColor};
 			border: ${theme[variant].shared.disabled.border};

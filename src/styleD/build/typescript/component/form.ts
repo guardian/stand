@@ -15,8 +15,6 @@ export const componentForm = {
 		},
 		shared: {
 			container: {
-				display: 'flex',
-				flexDirection: 'column',
 				gap: '0.25rem',
 				maxWidth: '450px',
 				width: '100%',

@@ -20,7 +20,7 @@ export const textInputStyles = (
 		border-radius: ${theme.shared.borderRadius};
 		border: ${theme.shared.border};
 		color: ${theme.shared.color};
-		cursor: ${theme.shared.cursor};
+		cursor: text;
 		height: ${theme[size].height};
 		margin-top: ${theme.shared.marginTop};
 		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
@@ -34,7 +34,7 @@ export const textInputStyles = (
 			background-color: ${theme.shared.disabled.backgroundColor};
 			border: ${theme.shared.disabled.border};
 			color: ${theme.shared.disabled.color};
-			cursor: ${theme.shared.disabled.cursor};
+			cursor: not-allowed;
 
 			::placeholder {
 				color: ${theme.shared.disabled.color};

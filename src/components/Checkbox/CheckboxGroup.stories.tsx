@@ -207,8 +207,11 @@ export const CustomTheme = {
 		label: 'Checkbox Group',
 		description: 'This is a description for the checkbox group.',
 		theme: {
-			shared: {
-				flexDirection: 'row',
+			md: {
+				gap: '3rem',
+			},
+			sm: {
+				gap: '2rem',
 			},
 		},
 	},

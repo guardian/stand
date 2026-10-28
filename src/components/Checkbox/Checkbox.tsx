@@ -51,7 +51,7 @@ export function Checkbox({
 					)}
 				</div>
 			</>
-			<span css={checkboxLabelStyles(mergedTheme)}>{children}</span>
+			<span css={checkboxLabelStyles()}>{children}</span>
 		</RACCheckbox>
 	);
 }

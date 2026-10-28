@@ -20,9 +20,9 @@ export const topBarNavigationStyles = (
 	_menuOpen?: boolean,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.shared.display};
-		position: ${theme.shared.position};
-		align-items: ${theme.shared.alignItems};
+		display: inline-flex;
+		position: relative;
+		align-items: center;
 		height: ${theme.shared.height};
 		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
 			${theme.shared.padding.bottom} ${theme.shared.padding.left};
@@ -32,7 +32,7 @@ export const topBarNavigationStyles = (
 
 		&[data-hovered],
 		&:hover {
-			cursor: ${theme.shared.cursor};
+			cursor: pointer;
 		}
 
 		&[data-focus-visible],
@@ -42,7 +42,7 @@ export const topBarNavigationStyles = (
 		}
 
 		&[data-disabled] {
-			cursor: ${theme.shared.disabled.cursor};
+			cursor: not-allowed;
 			color: ${theme.shared.disabled.color};
 		}
 
@@ -94,7 +94,7 @@ export const topBarNavigationStyles = (
 					`
 		}
 
-		text-decoration: ${theme.shared.textDecoration};
+		text-decoration: none;
 	`;
 };
 

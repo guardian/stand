@@ -268,12 +268,7 @@ export function TopBar({
 				{leftSide}
 			</nav>
 			{/* RHS - topBarSpacerStyles pushes content to the right */}
-			<div
-				css={[
-					topBarSpacerStyles(mergedTheme),
-					topBarContainerStyles(mergedTheme),
-				]}
-			>
+			<div css={[topBarSpacerStyles(), topBarContainerStyles(mergedTheme)]}>
 				{rightSide}
 			</div>
 			<div css={topBarContainerStyles(mergedTheme)}>{avatar}</div>

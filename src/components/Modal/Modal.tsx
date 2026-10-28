@@ -55,12 +55,9 @@ export const DialogTrigger = (props: DialogTriggerProps) => {
 
 const DialogRoot = ({
 	children,
-	theme = {},
 	dangerouslyOverrideCss,
 	...props
 }: DialogProps) => {
-	const mergedTheme = mergeDeep(defaultDialogTheme.container, theme);
-
 	const filteredChildren = React.Children.toArray(
 		// React.Children.toArray doesn't accept a render-prop function; pass undefined if children is a function
 		// In all cases anyway we'll be passing in component children and not a render-prop function, so this is just to satisfy the type checker
@@ -84,10 +81,7 @@ const DialogRoot = ({
 		.filter((child) => child !== false);
 
 	return (
-		<ReactAriaDialog
-			css={[dialogStyles(mergedTheme), dangerouslyOverrideCss]}
-			{...props}
-		>
+		<ReactAriaDialog css={[dialogStyles(), dangerouslyOverrideCss]} {...props}>
 			{filteredChildren}
 		</ReactAriaDialog>
 	);

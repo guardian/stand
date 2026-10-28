@@ -50,7 +50,7 @@ export function InlineMessage({
 			{!hideIcon && (
 				<Icon
 					fill={mergedTheme[level].color}
-					dangerouslyOverrideCss={inlineMessageIconStyles(mergedTheme)}
+					dangerouslyOverrideCss={inlineMessageIconStyles()}
 					size="md"
 				>
 					{determinedIcon}
