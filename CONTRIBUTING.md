@@ -50,6 +50,7 @@ Components for the Tools Design System should also:
 - **Follow the design system foundations**
   - Use semantic tokens to build UI; do not use base tokens or hard-coded design values directly unless explicitly stated in the design
   - Component tokens should reference semantic tokens. If no semantic token fits, ask the design systems team about adding one.
+  - CSS implementation and reset defaults (for example, `display: flex` or `cursor: pointer`) do not need to be tokens unless they represent a reusable design decision. Keep deliberate visual values such as spacing, dimensions, typography, and colors tokenised where they belong to the component's design contract.
 
 - **Framework agnostic**
   - Components are built with React, Emotion and possibly React Aria, but must also be stylable without these dependencies via CSS and/or TS/JS exports.

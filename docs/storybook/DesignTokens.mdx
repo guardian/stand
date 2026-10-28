@@ -16,6 +16,8 @@ Stand tokens are grouped into three levels:
 
 When building Tools Design System components or one-off UI in a consuming project, use existing semantic tokens wherever possible. Do not use base tokens or hard-coded design values directly in UI unless explicitly necessary. If no semantic token fits, ask the design systems team about adding one; contributors should not change base or semantic tokens themselves.
 
+Not every CSS declaration is a design token. Structural implementation and reset defaults such as `display: flex`, `cursor: pointer`, or `text-align: inherit` can live in component CSS when they are not reusable design decisions. Keep deliberate, reusable visual choices—such as spacing, dimensions, typography, and colors—in tokens when they belong to the component's design contract.
+
 Contributors should create or edit local component tokens only when adding a new component, or changing an unverified Tools Design System component or a Shareable non-Design System Component. Component tokens should use existing semantic tokens where possible.
 
 ### Structuring component tokens
