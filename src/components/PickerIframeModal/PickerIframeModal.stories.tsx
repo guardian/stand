@@ -52,7 +52,6 @@ export const CustomModalTheme = {
 		title: 'CustomModalTheme',
 		modalTheme: {
 			modal: {
-				position: 'absolute',
 				width: '600px',
 				maxWidth: '60vw',
 				backgroundColor: semanticColors.fill.tealWeak,
@@ -62,7 +61,6 @@ export const CustomModalTheme = {
 				},
 			},
 			overlay: {
-				position: 'fixed',
 				backgroundColor: 'rgba(0, 255, 0, 0.10)',
 			},
 		},
@@ -74,7 +72,6 @@ export const CustomDialogTheme = {
 		title: 'Custom Dialog Theme Story',
 		dialogTheme: {
 			title: {
-				gridArea: 'ctas',
 				marginBottom: semanticSpacing.stackXl,
 			},
 			children: {

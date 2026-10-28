@@ -17,7 +17,7 @@ export const linkStyles = (theme: LinkTheme): SerializedStyles => {
 		${theme.shared.enabled};
 		&[data-hovered] {
 			color: ${theme.shared.hover.color};
-			cursor: ${theme.shared.hover.cursor};
+			cursor: pointer;
 		}
 		&[data-pressed] {
 			color: ${theme.shared.pressed.color};

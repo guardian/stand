@@ -15,10 +15,10 @@ export const tileStyles = (
 	theme: TileTheme,
 	{ size }: { size: TileSize },
 ): SerializedStyles => css`
-	display: ${theme.shared.display};
-	flex-direction: ${theme.shared.flexDirection};
-	align-items: ${theme.shared.alignItems};
-	justify-content: ${theme.shared.justifyContent};
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
 	gap: ${theme.shared.gap};
 	min-height: ${theme[size].minHeight};
 	padding: ${theme[size].paddingY} ${theme[size].paddingX};
@@ -27,8 +27,8 @@ export const tileStyles = (
 	border-radius: ${theme.shared.borderRadius};
 	background-color: ${theme.shared.backgroundColor};
 	color: ${theme.shared.color};
-	text-decoration: ${theme.shared.textDecoration};
-	cursor: ${theme.shared.cursor};
+	text-decoration: none;
+	cursor: pointer;
 	width: ${theme[size].width};
 	max-width: ${theme.shared.maxWidth};
 	box-sizing: border-box;
@@ -63,7 +63,7 @@ export const tileStyles = (
 		color: ${theme.shared.disabled.color};
 		border-color: ${theme.shared.disabled.borderColor};
 		background-color: ${theme.shared.disabled.backgroundColor};
-		cursor: ${theme.shared.disabled.cursor};
+		cursor: not-allowed;
 	}
 `;
 
@@ -112,7 +112,7 @@ export const selectableTileStyles = (
 		color: ${theme.shared.disabled.color};
 		border-color: ${theme.shared.disabled.borderColor};
 		background-color: ${theme.shared.disabled.backgroundColor};
-		cursor: ${theme.shared.disabled.cursor};
+		cursor: not-allowed;
 	}
 `;
 

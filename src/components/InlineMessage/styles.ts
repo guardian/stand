@@ -16,17 +16,15 @@ export const inlineMessageStyles = (
 	{ level }: Required<Pick<InlineMessageProps, 'level'>>,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.shared.display};
-		align-items: ${theme.shared.alignItems};
+		display: inline-flex;
+		align-items: center;
 		gap: ${theme.shared.gap};
 		color: ${theme[level].color};
 	`;
 };
 
-export const inlineMessageIconStyles = (
-	theme: InlineMessageTheme,
-): SerializedStyles => {
+export const inlineMessageIconStyles = (): SerializedStyles => {
 	return css`
-		align-self: ${theme.shared.icon.alignSelf};
+		align-self: flex-start;
 	`;
 };
