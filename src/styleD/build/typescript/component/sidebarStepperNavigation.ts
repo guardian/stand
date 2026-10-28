@@ -5,7 +5,6 @@
 export const componentSidebarStepperNavigation = {
 	mobileToggle: {
 		shared: {
-			// alignItems: 'center',
 			backgroundColor: '#f6f6f6',
 			border: '0.125rem solid #cccccc',
 			display: 'flex',
@@ -13,7 +12,6 @@ export const componentSidebarStepperNavigation = {
 			hovered: {
 				backgroundColor: '#ededed',
 			},
-			// justifyContent: 'space-between',
 			paddingInline: '1rem',
 			pressed: {
 				backgroundColor: '#e6e6e6',
@@ -24,13 +22,11 @@ export const componentSidebarStepperNavigation = {
 	navigation: {
 		shared: {
 			border: '0.0625rem solid #8d8d8d',
-			// flexDirection: 'column',
 			height: '100%',
 		},
 	},
 	statusRow: {
 		shared: {
-			// alignItems: 'center',
 			display: 'flex',
 			gap: '0.375rem',
 			icon: {
@@ -50,8 +46,6 @@ export const componentSidebarStepperNavigation = {
 			backgroundColor: '#ffffff',
 			border: '0.0625rem solid #cccccc',
 			currentBackgroundColor: '#f6f6f6',
-			// cursor: 'pointer',
-			// disabledCursor: 'default',
 			height: '4.5rem',
 			numberColumnWidth: '2rem',
 			text: {
@@ -63,20 +57,14 @@ export const componentSidebarStepperNavigation = {
 	},
 	stepContent: {
 		shared: {
-			// display: 'flex',
-			// flexDirection: 'column',
 			gap: '0.25rem',
-			// justifyContent: 'center',
 			marginLeft: '0.75rem',
 		},
 	},
 	stepNumber: {
 		shared: {
-			// alignItems: 'center',
 			backgroundColor: '#0072a9',
-			// display: 'flex',
 			height: '100%',
-			// justifyContent: 'center',
 		},
 	},
 };

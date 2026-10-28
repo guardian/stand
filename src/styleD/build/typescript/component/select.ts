@@ -13,7 +13,6 @@ export const componentSelect = {
 	},
 	shared: {
 		button: {
-			// alignItems: 'center',
 			backgroundColor: '#ffffff',
 			border: '0.0625rem solid #545454',
 			borderRadius: '0.25rem',
@@ -22,9 +21,7 @@ export const componentSelect = {
 				backgroundColor: '#ffffff',
 				border: '0.0625rem solid #dcdcdc',
 				color: '#999999',
-				// cursor: 'not-allowed',
 			},
-			// display: 'flex',
 			error: {
 				border: '0.0625rem solid #b42a19',
 			},
@@ -32,7 +29,6 @@ export const componentSelect = {
 				outline: '0.125rem solid #0072a9',
 				outlineOffset: '0.125rem',
 			},
-			// justifyContent: 'space-between',
 			marginTop: '0.25rem',
 			paddingLeft: '0.75rem',
 			paddingRight: '0.25rem',

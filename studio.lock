@@ -3,115 +3,35 @@
 # Commit this file to version control.
 
 version = 2
-generated_at = "2026-10-19T15:18:45Z"
+generated_at = "2026-10-28T08:59:52Z"
 cli_version = "dev"
 
 [[dependencies]]
   name = "stand"
   project = "ef220361-80dc-4645-a671-0d38f9293c6b"
   ref_type = "branch"
-  ref_name = "main"
-  content_hash = "sha256:6522dc5bdceed8b483aea7046c4a4ce2f8ada722708c89dac7dc03c2488a8a99"
-  updated_at = "2026-10-19T15:18:45Z"
+  ref_name = "mm-next-remove-layout-tokens"
+  content_hash = "sha256:060d093f29c12044aa0c0935677b3e8e71223d40bd65d69b3b2af1b00efa6e60"
+  updated_at = "2026-10-28T08:59:52Z"
 
   [[dependencies.files]]
     path = "base/base.json"
-    hash = "sha256:039f92151a548ebcbf2016cf6575b91d62324d0b0ee7fd5d8116c4bb949461dc"
+    hash = "sha256:cc4995fe57ddb802ad9b59654eef8462a558a96c31ddd278be7d3d738d1ecd69"
     size = 49540
     tokens = 0
-    modified_at = "2026-10-19T15:18:45Z"
-
-  [[dependencies.files]]
-    path = "component/byline.json"
-    hash = "sha256:22139cd461123b499dda82bb40fef101ded8d321bb531222b47343e7a22b3776"
-    size = 3072
-    tokens = 0
-    modified_at = "2026-10-19T15:08:18Z"
 
   [[dependencies.files]]
     path = "component/component.json"
-    hash = "sha256:2fd2e041810b47d4beddec1e50b6cb6e90546eb8d17e23ca763cbbab56ad7593"
-    size = 189422
+    hash = "sha256:e55ae6811494a25ddcf34c727d265b0be4c4680879913788452a841ace6f5ff9"
+    size = 165040
     tokens = 0
-    modified_at = "2026-10-19T15:18:45Z"
-
-  [[dependencies.files]]
-    path = "component/htmlPreviewLoader.json"
-    hash = "sha256:f9cb277c40a1209ffebd407a01ea1ba44fda25cacad6d1e75092edc667b540e3"
-    size = 1677
-    tokens = 0
-    modified_at = "2026-10-19T15:08:18Z"
-
-  [[dependencies.files]]
-    path = "component/intendedAudienceSignifier.json"
-    hash = "sha256:1dc391a718771340d08a1d370c5b11171936290cef827a0a865d627e1d42ab5d"
-    size = 1710
-    tokens = 0
-    modified_at = "2026-10-19T15:17:57Z"
-
-  [[dependencies.files]]
-    path = "component/pagination.json"
-    hash = "sha256:6060a988ebb7b90d380f13da546532fbbaab97c76404be2935e2c1a510870c30"
-    size = 4675
-    tokens = 0
-    modified_at = "2026-10-19T15:08:18Z"
-
-  [[dependencies.files]]
-    path = "component/pickerIframeModel.json"
-    hash = "sha256:f62b54b2ab9c165e89ef577d6d328fe036c548a39636d6ba4bdba538368a9340"
-    size = 1746
-    tokens = 0
-    modified_at = "2026-10-19T15:08:18Z"
-
-  [[dependencies.files]]
-    path = "component/table.json"
-    hash = "sha256:1525aafa752600c38290d480b9bbdfdbbc23c244b9ab05ef04e717472f1e8d86"
-    size = 3375
-    tokens = 0
-    modified_at = "2026-10-19T15:08:18Z"
-
-  [[dependencies.files]]
-    path = "component/tagPicker.json"
-    hash = "sha256:7108d90b2f0717c23c65d7b2ac57c61b53378b58a7277c515334c3dd1dfeffa5"
-    size = 765
-    tokens = 0
-    modified_at = "2026-10-19T15:08:18Z"
-
-  [[dependencies.files]]
-    path = "component/tagTable.json"
-    hash = "sha256:c90fbbb80f558bd2afa092027a0ab303a87440dfcd2c3801463b53fc85f230e4"
-    size = 4071
-    tokens = 0
-    modified_at = "2026-10-19T15:08:18Z"
-
-  [[dependencies.files]]
-    path = "component/templateComponent.json"
-    hash = "sha256:9125c4a603581db8e607cc5e7a794163d01e76f2478f8381bc4c9b20dbab0675"
-    size = 260
-    tokens = 0
-    modified_at = "2026-10-19T15:08:18Z"
-
-  [[dependencies.files]]
-    path = "component/tile.json"
-    hash = "sha256:fd542e5dbec997def541e0556b6ec4f45a4b87811c7888b790c39946acb1fb0c"
-    size = 6392
-    tokens = 0
-    modified_at = "2026-10-19T15:08:18Z"
-
-  [[dependencies.files]]
-    path = "component/userMenu.json"
-    hash = "sha256:9e42ffdacb5051011c8ac5c33daf70153149e7e8b94fad38d8c0ad4298fc90db"
-    size = 2403
-    tokens = 0
-    modified_at = "2026-10-19T15:08:18Z"
 
   [[dependencies.files]]
     path = "semantic/semantic.json"
-    hash = "sha256:5d6eda957ef188a204c18f00b0f03acf76b11809d63a89daf6369073400470bc"
+    hash = "sha256:c632fb51a06b391f8424f32fc170345dbe093c885a4d3b5cd082670438a15117"
     size = 72310
     tokens = 0
-    modified_at = "2026-10-19T15:18:45Z"
 
 [integrity]
-  lockfile_hash = "sha256:13e1eabe21bdf5e2c9e4a2fb76364c092fd7439547d14ad773f01397a2625eba"
+  lockfile_hash = "sha256:8f26a902899c987d06cb8d2cc983b534541a1fa64c3bcd18630a93e767659fa5"
   algorithm = "sha256"
