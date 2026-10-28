@@ -30,10 +30,6 @@
 				}
 			},
 			"shared": {
-				"alignItems": {
-					"$type": "text",
-					"$value": "center"
-				},
 				"arrowColor": {
 					"$type": "color",
 					"$value": "{semantic.colors.text.strong}"
@@ -62,10 +58,6 @@
 					"$type": "color",
 					"$value": "{semantic.colors.text.strong}"
 				},
-				"cursor": {
-					"$type": "text",
-					"$value": "pointer"
-				},
 				"descriptionColor": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.300}"
@@ -82,19 +74,7 @@
 					"color": {
 						"$type": "color",
 						"$value": "{semantic.colors.text.disabled}"
-					},
-					"cursor": {
-						"$type": "text",
-						"$value": "not-allowed"
 					}
-				},
-				"display": {
-					"$type": "text",
-					"$value": "inline-flex"
-				},
-				"flexDirection": {
-					"$type": "text",
-					"$value": "column"
 				},
 				"focusVisible": {
 					"outline": {
@@ -123,10 +103,6 @@
 						"$type": "color",
 						"$value": "{semantic.colors.border.strong}"
 					}
-				},
-				"justifyContent": {
-					"$type": "text",
-					"$value": "space-between"
 				},
 				"maxWidth": {
 					"$type": "dimension",
@@ -195,10 +171,6 @@
 						}
 					}
 				},
-				"textDecoration": {
-					"$type": "text",
-					"$value": "none"
-				},
 				"tileArrow": {
 					"shared": {
 						"color": {
@@ -214,10 +186,6 @@
 						"flexShrink": {
 							"$type": "number",
 							"$value": 0
-						},
-						"marginLeft": {
-							"$type": "text",
-							"$value": "auto"
 						}
 					}
 				},
