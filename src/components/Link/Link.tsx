@@ -9,7 +9,7 @@ export function Link({
 	children,
 	typography = 'bodySm',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 	...props
 }: LinkProps) {
@@ -22,7 +22,7 @@ export function Link({
 					{ variant: typography },
 				),
 				linkStyles(mergedTheme),
-				cssOverrides,
+				dangerouslyOverrideCss,
 			]}
 			className={className}
 			{...props}

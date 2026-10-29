@@ -8,7 +8,7 @@ import UserFeedbackSummaryStories, {
 	NoHelpText,
 	CustomIcon,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './UserFeedbackSummary.stories';
 import {
 	SandboxReact,
@@ -23,6 +23,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={UserFeedbackSummaryStories} />
 
@@ -83,16 +84,16 @@ import type {
 
 ## Props
 
-| Name           | Type                                                 | Required | Default | Description                                                              |
-| -------------- | ---------------------------------------------------- | -------- | ------- | ------------------------------------------------------------------------ |
-| `level`        | `'error' \| 'warning' \| 'success' \| 'information'` | Yes      | N/A     | The severity level of the message which determines its styling and icon. |
-| `title`        | `string`                                             | Yes      | N/A     | Title of the feedback summary message.                                   |
-| `children`     | `React.ReactNode`                                    | No       | N/A     | Optional descriptive help text rendered below the title.                 |
-| `hideIcon`     | `boolean`                                            | No       | `false` | Hides the default icon associated with the message level.                |
-| `icon`         | `string \| SVGElement`                               | No       | N/A     | Override the default icon with a custom Material Symbol or SVG element.  |
-| `theme`        | `Partial<UserFeedbackSummaryTheme>`                  | No       | N/A     | Custom theme overrides for design tokens.                                |
-| `cssOverrides` | `SerializedStyles \| SerializedStyles[]`             | No       | N/A     | Custom Emotion CSS styles applied to the root element.                   |
-| `className`    | `string`                                             | No       | N/A     | Additional class name(s) applied to the root element.                    |
+| Name                     | Type                                                 | Required | Default | Description                                                              |
+| ------------------------ | ---------------------------------------------------- | -------- | ------- | ------------------------------------------------------------------------ |
+| `level`                  | `'error' \| 'warning' \| 'success' \| 'information'` | Yes      | N/A     | The severity level of the message which determines its styling and icon. |
+| `title`                  | `string`                                             | Yes      | N/A     | Title of the feedback summary message.                                   |
+| `children`               | `React.ReactNode`                                    | No       | N/A     | Optional descriptive help text rendered below the title.                 |
+| `hideIcon`               | `boolean`                                            | No       | `false` | Hides the default icon associated with the message level.                |
+| `icon`                   | `string \| SVGElement`                               | No       | N/A     | Override the default icon with a custom Material Symbol or SVG element.  |
+| `theme`                  | `Partial<UserFeedbackSummaryTheme>`                  | No       | N/A     | Custom theme overrides for design tokens.                                |
+| `dangerouslyOverrideCss` | `SerializedStyles \| SerializedStyles[]`             | No       | N/A     | Escape hatch for custom CSS; see warning below.                          |
+| `className`              | `string`                                             | No       | N/A     | Additional class name(s) applied to the root element.                    |
 
 ## Stories
 
@@ -104,11 +105,11 @@ import type {
 <Canvas layout="padded" of={NoHelpText} />
 <Canvas layout="padded" of={CustomIcon} />
 <Canvas layout="padded" of={CustomTheme} />
-<Canvas layout="padded" of={CssOverrides} />
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ## Customisation
 
-We recommend using the UserFeedbackSummary component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the UserFeedbackSummary component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -139,11 +140,13 @@ const Component = () => (
 );
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the UserFeedbackSummary component:
+<DangerouslyOverrideCssWarning />
 
-<Canvas layout="padded" of={CssOverrides} />
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the UserFeedbackSummary component:
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ```tsx
 import { UserFeedbackSummary } from '@guardian/stand/UserFeedbackSummary';
@@ -159,7 +162,7 @@ const Component = () => (
 	<UserFeedbackSummary
 		level="error"
 		title="User feedback with CSS overrides"
-		cssOverrides={customStyles}
+		dangerouslyOverrideCss={customStyles}
 	>
 		Additional help text can be provided here
 	</UserFeedbackSummary>

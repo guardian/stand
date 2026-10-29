@@ -103,14 +103,14 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
-	name: 'cssOverrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	args: {
 		children: 'add',
 		variant: 'primary',
 		size: 'md',
 		ariaLabel: 'Add',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			width: 100%;
 			padding-inline: ${baseSpacing['24Rem']};
 		`,

@@ -64,7 +64,7 @@ export function ToastRegion({
 export function Toast({
 	toast,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 	...props
 }: ToastProps) {
@@ -81,8 +81,10 @@ export function Toast({
 	} = toast.content;
 	const hasIcon = showIcon && !thumbnail;
 	const hasLeadingVisual = Boolean(thumbnail) || hasIcon;
-	const { cssOverrides: dismissCssOverrides, ...remainingDismissButtonProps } =
-		dismissButtonProps ?? {};
+	const {
+		dangerouslyOverrideCss: dismissDangerouslyOverrideCss,
+		...remainingDismissButtonProps
+	} = dismissButtonProps ?? {};
 
 	return (
 		<ReactAriaToast
@@ -92,7 +94,7 @@ export function Toast({
 					hasLeadingVisual,
 					level,
 				}),
-				cssOverrides,
+				dangerouslyOverrideCss,
 			]}
 			className={className}
 			{...props}
@@ -100,7 +102,10 @@ export function Toast({
 			{thumbnail ? (
 				<div css={toastMediaStyles(mergedTheme)}>{thumbnail}</div>
 			) : hasIcon ? (
-				<Icon size="md" cssOverrides={toastIconStyles(mergedTheme, { level })}>
+				<Icon
+					size="md"
+					dangerouslyOverrideCss={toastIconStyles(mergedTheme, { level })}
+				>
 					{icon}
 				</Icon>
 			) : null}
@@ -127,13 +132,13 @@ export function Toast({
 				symbol="close"
 				ariaLabel="Dismiss notification"
 				{...remainingDismissButtonProps}
-				cssOverrides={
-					dismissCssOverrides
+				dangerouslyOverrideCss={
+					dismissDangerouslyOverrideCss
 						? [
 								toastDismissStyles(),
-								...(Array.isArray(dismissCssOverrides)
-									? dismissCssOverrides
-									: [dismissCssOverrides]),
+								...(Array.isArray(dismissDangerouslyOverrideCss)
+									? dismissDangerouslyOverrideCss
+									: [dismissDangerouslyOverrideCss]),
 							]
 						: toastDismissStyles()
 				}

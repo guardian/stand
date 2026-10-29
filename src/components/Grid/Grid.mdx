@@ -2,7 +2,7 @@ import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import GridStories, {
 	AutoSize,
 	Basic,
-	CssOverrides,
+	DangerouslyOverrideCss,
 	CustomTheme,
 	GrowSize,
 	Offset,
@@ -23,6 +23,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={GridStories} />
 
@@ -80,13 +81,13 @@ For accessibility landmarks, only use `as="main"` when it is the single primary 
 
 ## Grid Props
 
-| Name           | Type                                     | Required | Default | Description                                                       |
-| -------------- | ---------------------------------------- | -------- | ------- | ----------------------------------------------------------------- |
-| `children`     | `React.ReactNode`                        | No       | N/A     | Content to render inside the container.                           |
-| `as`           | `React.ElementType`                      | No       | `'div'` | Element used to render the Grid container.                        |
-| `theme`        | `GridTheme`                              | No       | N/A     | Theme tokens controlling columns, gap, and container flex layout. |
-| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Custom CSS styles.                                                |
-| `className`    | `string`                                 | No       | N/A     | Additional class name(s).                                         |
+| Name                     | Type                                     | Required | Default | Description                                                       |
+| ------------------------ | ---------------------------------------- | -------- | ------- | ----------------------------------------------------------------- |
+| `children`               | `React.ReactNode`                        | No       | N/A     | Content to render inside the container.                           |
+| `as`                     | `React.ElementType`                      | No       | `'div'` | Element used to render the Grid container.                        |
+| `theme`                  | `GridTheme`                              | No       | N/A     | Theme tokens controlling columns, gap, and container flex layout. |
+| `dangerouslyOverrideCss` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below.                   |
+| `className`              | `string`                                 | No       | N/A     | Additional class name(s).                                         |
 
 Container layout values such as `direction`, `wrap`, `justifyContent`, and `alignItems` now come from the `theme` prop rather than direct component props.
 
@@ -131,14 +132,14 @@ The `GridTheme` type is structured with a `shared` key for flex layout propertie
 
 ## Item Props
 
-| Name           | Type                                     | Required | Default | Description                                              |
-| -------------- | ---------------------------------------- | -------- | ------- | -------------------------------------------------------- |
-| `children`     | `React.ReactNode`                        | No       | N/A     | Content to render inside the grid item.                  |
-| `size`         | `number \| 'auto' \| 'grow' \| object`   | No       | N/A     | Item width as columns, auto width, grow, or breakpoints. |
-| `offset`       | `number \| 'auto' \| object`             | No       | N/A     | Item offset as columns, auto push, or breakpoints.       |
-| `theme`        | `GridTheme`                              | No       | N/A     | Custom theme overrides.                                  |
-| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Custom CSS styles.                                       |
-| `className`    | `string`                                 | No       | N/A     | Additional class name(s).                                |
+| Name                     | Type                                     | Required | Default | Description                                              |
+| ------------------------ | ---------------------------------------- | -------- | ------- | -------------------------------------------------------- |
+| `children`               | `React.ReactNode`                        | No       | N/A     | Content to render inside the grid item.                  |
+| `size`                   | `number \| 'auto' \| 'grow' \| object`   | No       | N/A     | Item width as columns, auto width, grow, or breakpoints. |
+| `offset`                 | `number \| 'auto' \| object`             | No       | N/A     | Item offset as columns, auto push, or breakpoints.       |
+| `theme`                  | `GridTheme`                              | No       | N/A     | Custom theme overrides.                                  |
+| `dangerouslyOverrideCss` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below.          |
+| `className`              | `string`                                 | No       | N/A     | Additional class name(s).                                |
 
 ## Stories
 
@@ -172,7 +173,7 @@ The `GridTheme` type is structured with a `shared` key for flex layout propertie
 
 ## Customisation
 
-We recommend using the Grid component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the Grid component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -202,11 +203,13 @@ const Component = () => (
 );
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the Grid component:
+<DangerouslyOverrideCssWarning />
 
-<Canvas of={CssOverrides} />
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the Grid component:
+
+<Canvas of={DangerouslyOverrideCss} />
 
 ```tsx
 import { Grid, Item } from '@guardian/stand/Grid';
@@ -217,7 +220,7 @@ const customStyles = css\`
 \`;
 
 const Component = () => (
-	<Grid cssOverrides={customStyles}>
+	<Grid dangerouslyOverrideCss={customStyles}>
 		<Item size={8}>Primary content</Item>
 		<Item size={4}>Sidebar</Item>
 	</Grid>

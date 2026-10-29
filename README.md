@@ -141,6 +141,10 @@ Rounded and Sharp styles are also available. For those, and for using SVG icons 
 
 See the [Tools Design System](https://guardian.github.io/stand/?path=/docs/stand-tools-design-system-introduction--docs) and [Shareable non-Design System Components](https://guardian.github.io/stand/?path=/docs/stand-shareable-non-design-system-components-introduction--docs) documentation for details.
 
+### Customisation
+
+Prefer the `theme` prop to customise components using their typed design tokens. See the [CSS override decision record](docs/decision-records/2026-10-dangerously-override-css.md) for the trade-offs of `dangerouslyOverrideCss`.
+
 ## Contributing
 
 See the [Contributing guidelines](https://guardian.github.io/stand/?path=/docs/contributing--docs) for guidelines on contributing to this project. Project setup and common tasks are listed below.

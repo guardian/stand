@@ -221,12 +221,12 @@ export const CustomTheme = {
 	),
 } satisfies Story;
 
-export const CssOverrides = {
-	name: 'CSS Overrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	args: {
 		label: 'Checkbox Group',
 		description: 'This is a description for the checkbox group.',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			& > div:not(:last-child) {
 				border-bottom: 1px solid #e0e0e0;
 			}

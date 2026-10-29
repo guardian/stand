@@ -13,6 +13,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={TopBarItemStories} />
 
@@ -55,13 +56,13 @@ import type { TopBarItemProps, TopBarItemTheme } from '@guardian/stand/TopBar';
 
 ## Props
 
-| Name           | Type                  | Required | Default  | Description                             |
-| -------------- | --------------------- | -------- | -------- | --------------------------------------- |
-| `children`     | `React.ReactNode`     | No       | N/A      | Content to render inside the component. |
-| `alignment`    | `'left'` \| `'right'` | No       | `'left'` | Content to render inside the component. |
-| `theme`        | `TopBarItemTheme`     | No       | N/A      | Custom theme overrides.                 |
-| `cssOverrides` | `SerializedStyles`    | No       | N/A      | Custom CSS styles.                      |
-| `className`    | `string`              | No       | N/A      | Additional class name(s).               |
+| Name                     | Type                  | Required | Default  | Description                                     |
+| ------------------------ | --------------------- | -------- | -------- | ----------------------------------------------- |
+| `children`               | `React.ReactNode`     | No       | N/A      | Content to render inside the component.         |
+| `alignment`              | `'left'` \| `'right'` | No       | `'left'` | Content to render inside the component.         |
+| `theme`                  | `TopBarItemTheme`     | No       | N/A      | Custom theme overrides.                         |
+| `dangerouslyOverrideCss` | `SerializedStyles`    | No       | N/A      | Escape hatch for custom CSS; see warning below. |
+| `className`              | `string`              | No       | N/A      | Additional class name(s).                       |
 
 ## Stories
 
@@ -71,7 +72,7 @@ import type { TopBarItemProps, TopBarItemTheme } from '@guardian/stand/TopBar';
 
 ## Customisation
 
-We recommend using the TopBarItem component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the TopBarItem component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -88,9 +89,11 @@ const customTheme: Partial<TopBarItemTheme> = {
 const Component = () => <TopBarItem theme={customTheme}>Hello</TopBarItem>;
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the TopBarItem component:
+<DangerouslyOverrideCssWarning />
+
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the TopBarItem component:
 
 ```tsx
 import { TopBarItem } from '@guardian/stand/top-bar-item';
@@ -100,7 +103,7 @@ const customStyles = css\`
 	// custom styles here
 \`;
 
-const Component = () => <TopBarItem cssOverrides={customStyles}>Hello</TopBarItem>;
+const Component = () => <TopBarItem dangerouslyOverrideCss={customStyles}>Hello</TopBarItem>;
 ```
 
 ## Custom Component Build

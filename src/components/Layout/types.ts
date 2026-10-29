@@ -46,6 +46,11 @@ export interface SidebarProps
 
 export interface LayoutSlotProps extends React.HTMLAttributes<HTMLElement> {
 	children?: React.ReactNode;
-	cssOverrides?: SerializedStyles | SerializedStyles[];
+	/**
+	 * Escape hatch for custom CSS. Prefer the `theme` prop on themed components.
+	 * CSS overrides make components harder to maintain and update, and may cause
+	 * them to no longer follow design system conventions.
+	 */
+	dangerouslyOverrideCss?: SerializedStyles | SerializedStyles[];
 	as?: React.ElementType;
 }

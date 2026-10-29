@@ -16,7 +16,7 @@ export const UserFeedbackSummary = ({
 	hideIcon = false,
 	icon,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 	...props
 }: UserFeedbackSummaryProps) => {
@@ -41,7 +41,10 @@ export const UserFeedbackSummary = ({
 
 	return (
 		<div
-			css={[userFeedbackSummaryStyles(mergedTheme, { level }), cssOverrides]}
+			css={[
+				userFeedbackSummaryStyles(mergedTheme, { level }),
+				dangerouslyOverrideCss,
+			]}
 			className={className}
 			{...props}
 		>

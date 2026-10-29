@@ -5,11 +5,12 @@ import TooltipStories, {
 	PlacementTop,
 	PlacementBottom,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './Tooltip.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={TooltipStories} />
 
@@ -56,12 +57,12 @@ const Example = () => <Tooltip placement="end">Tooltip text</Tooltip>;
 
 ## Props
 
-| Name           | Type                                          | Required | Default | Description                               |
-| -------------- | --------------------------------------------- | -------- | ------- | ----------------------------------------- |
-| `placement`    | `'top'` \| `'bottom'` \| `'start'` \| `'end'` | No       | 'end'   | Position of tooltip relative to trigger.  |
-| `theme`        | `TooltipTheme`                                | No       | N/A     | Custom theme overrides for the Tooltip.   |
-| `cssOverrides` | `SerializedStyles`                            | No       | N/A     | Custom CSS styles for the Tooltip.        |
-| `className`    | `string`                                      | No       | N/A     | Additional class name(s) for the Tooltip. |
+| Name                     | Type                                          | Required | Default | Description                                     |
+| ------------------------ | --------------------------------------------- | -------- | ------- | ----------------------------------------------- |
+| `placement`              | `'top'` \| `'bottom'` \| `'start'` \| `'end'` | No       | 'end'   | Position of tooltip relative to trigger.        |
+| `theme`                  | `TooltipTheme`                                | No       | N/A     | Custom theme overrides for the Tooltip.         |
+| `dangerouslyOverrideCss` | `SerializedStyles`                            | No       | N/A     | Escape hatch for custom CSS; see warning below. |
+| `className`              | `string`                                      | No       | N/A     | Additional class name(s) for the Tooltip.       |
 
 ## Stories
 
@@ -72,7 +73,7 @@ const Example = () => <Tooltip placement="end">Tooltip text</Tooltip>;
 
 ## Customisation
 
-We recommend using the Tooltip component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the Tooltip component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -100,11 +101,13 @@ const customTheme: TooltipTheme = {
 const Component = () => <Tooltip theme={customTheme}>Tooltip text</Tooltip>;
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the Tooltip component, if the theme prop is not sufficient:
+<DangerouslyOverrideCssWarning />
 
-<Canvas layout="padded" of={CssOverrides} />
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the Tooltip component, if the theme prop is not sufficient:
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ```tsx
 import { Tooltip } from '@guardian/stand/Tooltip';
@@ -124,7 +127,7 @@ const customStyles = css`
 `;
 
 const Component = () => (
-	<Tooltip cssOverrides={customStyles}>Tooltip text</Tooltip>
+	<Tooltip dangerouslyOverrideCss={customStyles}>Tooltip text</Tooltip>
 );
 ```
 

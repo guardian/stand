@@ -35,14 +35,14 @@ import type {
 export const Modal = ({
 	theme = {},
 	children,
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: ModalProps) => {
 	const mergedTheme = mergeDeep(defaultModalTheme, theme);
 
 	return (
 		<ReactAriaModalOverlay css={modalOverlayStyles(mergedTheme)} {...props}>
-			<ReactAriaModal css={[modalStyles(mergedTheme), cssOverrides]}>
+			<ReactAriaModal css={[modalStyles(mergedTheme), dangerouslyOverrideCss]}>
 				{children}
 			</ReactAriaModal>
 		</ReactAriaModalOverlay>
@@ -56,7 +56,7 @@ export const DialogTrigger = (props: DialogTriggerProps) => {
 const DialogRoot = ({
 	children,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: DialogProps) => {
 	const mergedTheme = mergeDeep(defaultDialogTheme.container, theme);
@@ -84,7 +84,10 @@ const DialogRoot = ({
 		.filter((child) => child !== false);
 
 	return (
-		<ReactAriaDialog css={[dialogStyles(mergedTheme), cssOverrides]} {...props}>
+		<ReactAriaDialog
+			css={[dialogStyles(mergedTheme), dangerouslyOverrideCss]}
+			{...props}
+		>
 			{filteredChildren}
 		</ReactAriaDialog>
 	);
@@ -94,7 +97,7 @@ const DialogHeader = ({
 	variant = 'headingLg',
 	element = 'h2',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: DialogHeaderProps) => {
 	const mergedTheme = mergeDeep(defaultDialogTheme.title, theme);
@@ -108,11 +111,11 @@ const DialogHeader = ({
 			css={[
 				typographyStyles(defaultTypographyTheme, { variant }),
 				dialogHeadingStyles(mergedTheme),
-				...(cssOverrides == null
+				...(dangerouslyOverrideCss == null
 					? []
-					: Array.isArray(cssOverrides)
-						? cssOverrides
-						: [cssOverrides]),
+					: Array.isArray(dangerouslyOverrideCss)
+						? dangerouslyOverrideCss
+						: [dangerouslyOverrideCss]),
 			]}
 		/>
 	);
@@ -121,7 +124,7 @@ const DialogHeader = ({
 const DialogButtons = ({
 	children,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: DialogButtonsProps) => {
 	const mergedTheme = mergeDeep(defaultDialogTheme.ctas, theme);
@@ -143,7 +146,10 @@ const DialogButtons = ({
 		.filter((child) => child !== false);
 
 	return (
-		<div css={[dialogButtonsStyles(mergedTheme), cssOverrides]} {...props}>
+		<div
+			css={[dialogButtonsStyles(mergedTheme), dangerouslyOverrideCss]}
+			{...props}
+		>
 			{buttons}
 		</div>
 	);
@@ -152,12 +158,15 @@ const DialogButtons = ({
 const DialogContent = ({
 	children,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: DialogContentProps) => {
 	const mergedTheme = mergeDeep(defaultDialogTheme.children, theme);
 	return (
-		<div css={[dialogContentStyles(mergedTheme), cssOverrides]} {...props}>
+		<div
+			css={[dialogContentStyles(mergedTheme), dangerouslyOverrideCss]}
+			{...props}
+		>
 			{children}
 		</div>
 	);
@@ -176,7 +185,7 @@ const DialogDismiss = ({
 			size={size}
 			symbol={symbol}
 			variant={variant}
-			cssOverrides={dialogDismissStyles(mergedTheme)}
+			dangerouslyOverrideCss={dialogDismissStyles(mergedTheme)}
 			slot="close"
 			{...props}
 		/>

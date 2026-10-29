@@ -113,10 +113,10 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	args: {
-		title: 'CssOverrides',
-		cssOverrides: css({
+		title: 'DangerouslyOverrideCss',
+		dangerouslyOverrideCss: css({
 			border: '8px dotted black',
 			background: 'repeating-linear-gradient(45deg, yellow, skyblue 100px)',
 			borderTopLeftRadius: 50,
