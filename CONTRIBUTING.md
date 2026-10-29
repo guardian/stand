@@ -109,7 +109,9 @@ These files are managed in [Tokens Studio](https://tokens.studio/) and are the s
 - `src/styleD/tokens/semantic/semantic.json`
 - `src/styleD/tokens/component/component.json`
 
-Do not edit these files directly. Coordinate any changes with the design systems team. Until the planned automated workflow is available, the team pulls updates with the [Tokens Studio CLI](https://documentation-v2.tokens.studio/cli/overview.html) from the project root:
+Do not edit these files directly. Coordinate any changes with the design systems team. To sync agreed changes, run the **Sync Design Tokens** workflow from the Actions tab. Choose the branch to create the pull request against, then optionally set the `branch` input to choose the Tokens Studio branch to pull from (defaults to `main`). The workflow pulls the managed tokens, regenerates the Style Dictionary outputs, runs TypeScript and lint checks, and opens a pull request if there are changes. A `tokens-release` repository dispatch also starts the workflow, pulling from the `main` Tokens Studio branch.
+
+For a local pull, use the [Tokens Studio CLI](https://documentation-v2.tokens.studio/cli/overview.html) from the project root:
 
 ```sh
 studio tokens pull
