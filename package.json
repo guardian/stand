@@ -458,6 +458,16 @@
 				"default": "./dist/PickerIframeModal.cjs"
 			}
 		},
+		"./GridImagePicker": {
+			"import": {
+				"types": "./dist/GridImagePicker.d.ts",
+				"default": "./dist/GridImagePicker.js"
+			},
+			"require": {
+				"types": "./dist/GridImagePicker.d.cts",
+				"default": "./dist/GridImagePicker.cjs"
+			}
+		},
 		"./utils": {
 			"import": {
 				"types": "./dist/utils.d.ts",
@@ -664,6 +674,9 @@
 			],
 			"PickerIframeModal": [
 				"./dist/PickerIframeModal.d.ts"
+			],
+			"GridImagePicker": [
+				"./dist/GridImagePicker.d.ts"
 			]
 		}
 	},
