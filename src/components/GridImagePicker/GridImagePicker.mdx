@@ -1,0 +1,156 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import GridImagePickerStories, {
+	Default,
+	WithNoDisabledControls,
+	WithNoLinkButtons,
+	WithFiveFourCrop,
+	EmptyWithNoThumbnail,
+	WithFiveFourCropNoThumbnail,
+	WithFiveFourCropLargePreview,
+	WithLargePreview,
+	WithExtremeCrop,
+	WithExtremeCropAndLargePreview,
+	WithFailure,
+} from './GridImagePicker.stories';
+
+<Meta of={GridImagePickerStories} />
+
+# GridImagePicker
+
+`GridImagePicker` lets editors search GRID, select an image and crop, and return the selected crop and image asset to the calling application. It can also show a preview and links to the selected image or crop in GRID.
+
+## When to use
+
+- When an editorial workflow needs to select an image and crop from GRID.
+- When the selected crop details and asset URL need to be handled by the host application.
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+`react-aria-components` is used indirectly by the buttons and modal used inside the picker. See the `peerDependencies` section of `package.json` for compatible versions.
+
+## Example usage
+
+```tsx
+import { GridImagePicker } from '@guardian/stand/GridImagePicker';
+import type { GridImagePickerProps } from '@guardian/stand/GridImagePicker';
+
+const handleCropData: GridImagePickerProps['handleCropData'] = (data) => {
+	console.log('Selected image asset:', data.imageAssetUrl);
+	console.log('GRID crop page:', data.cropPageUrl);
+};
+
+const ImagePicker = () => (
+	<GridImagePicker
+		gridUri="https://media.example.com"
+		gridImageSourceDomain="https://images.example.com"
+		allowedAspectRatios={['5:4']}
+		handleCropData={handleCropData}
+	/>
+);
+```
+
+`gridUri` should point to the GRID instance used by your application. Set `gridImageSourceDomain` to enable a preview generated from the selected image and crop. The callback receives the selected `image`, `crop`, extracted `asset`, and the crop page and asset URLs.
+
+## Props
+
+| Name                    | Type                                           | Required | Default | Description                                                                                                                                                                |
+| ----------------------- | ---------------------------------------------- | -------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `gridUri`               | `string`                                       | Yes      | N/A     | Base URL for the GRID instance.                                                                                                                                            |
+| `handleCropData`        | `GridImagePickerProps['handleCropData']`       | Yes      | N/A     | Called with the selected image, crop, asset, and related URLs after a valid selection.                                                                                     |
+| `allowedAspectRatios`   | ('5:4' \| '5:3' \| '4:5' \| '1:1' \| '16:9')[] | No       | N/A     | Restricts selection to the listed crop aspect ratios.                                                                                                                      |
+| `initialValues`         | `GridImagePickerProps['initialValues']`        | No       | N/A     | Sets the initial image and crop IDs, and optionally the asset URL and image width.                                                                                         |
+| `noThumbnail`           | `boolean`                                      | No       | `false` | Shows a compact image-picker button instead of the image preview.                                                                                                          |
+| `gridImageSourceDomain` | `string`                                       | No       | N/A     | Base URL used to construct an image preview when `initialValues.assetUrl` is not provided.                                                                                 |
+| `hideDisabledButtons`   | `boolean`                                      | No       | `false` | Hides crop and page-link controls until an image or crop is selected.                                                                                                      |
+| `noPageUrlButton`       | `boolean`                                      | No       | `false` | Hides the GRID page link and copy-link controls.                                                                                                                           |
+| `initialFailure`        | `string`                                       | No       | N/A     | Displays an initial error message below the controls.                                                                                                                      |
+| `maximumAssetSize`      | `number`                                       | No       | N/A     | the maximum desired width of the asset to select in pixels. If set, the smallest asset or at least `minimumAssetSize`, but not more than will be returned maximumAssetSize |
+| `minimumAssetSize`      | `number`                                       | No       | N/A     | the minimum desired width of the asset to select in pixels. If not set, the smallest asset of 200px or more or the largest asset will be returned                          |
+| `theme`                 | `GridImagePickerProps['theme']`                | No       | `{}`    | Partial theme overrides for the picker and image preview.                                                                                                                  |
+
+`initialValues` requires `imageId` and `cropId`; `imageSize` and `assetUrl` are optional. The `handleCropData` callback receives an object containing `asset`, `crop`, `image`, `cropPageUrl`, and `imageAssetUrl`.
+
+## Stories
+
+### Default
+
+<Canvas layout="padded" of={Default} />
+
+### Hide disabled controls
+
+<Canvas layout="padded" of={WithNoDisabledControls} />
+
+### Hide GRID page links
+
+<Canvas layout="padded" of={WithNoLinkButtons} />
+
+### Start with a 5:4 crop
+
+<Canvas layout="padded" of={WithFiveFourCrop} />
+
+### Empty picker without a thumbnail
+
+<Canvas layout="padded" of={EmptyWithNoThumbnail} />
+
+### 5:4 crop without a thumbnail
+
+<Canvas layout="padded" of={WithFiveFourCropNoThumbnail} />
+
+### 5:4 crop with a larger preview
+
+<Canvas layout="padded" of={WithFiveFourCropLargePreview} />
+
+### Empty picker with a larger preview
+
+<Canvas layout="padded" of={WithLargePreview} />
+
+### Start with an extreme crop
+
+<Canvas layout="padded" of={WithExtremeCrop} />
+
+### Extreme crop with a larger preview
+
+<Canvas layout="padded" of={WithExtremeCropAndLargePreview} />
+
+### Initial failure message
+
+<Canvas layout="padded" of={WithFailure} />
+
+## Customisation
+
+The `theme` prop accepts partial overrides. Use it to adjust the picker width or preview dimensions while keeping the component's behaviour and layout.
+
+### Custom theme
+
+```tsx
+import { GridImagePicker } from '@guardian/stand/GridImagePicker';
+import type { GridImagePickerProps } from '@guardian/stand/GridImagePicker';
+
+const theme: GridImagePickerProps['theme'] = {
+	container: {
+		width: '525px',
+	},
+	imagePreview: {
+		maxHeight: '400px',
+		maxWidth: '500px',
+	},
+};
+
+const ImagePicker = () => (
+	<GridImagePicker
+		gridUri="https://media.example.com"
+		handleCropData={(data) => console.log(data)}
+		theme={theme}
+	/>
+);
+```
+
+## Custom Component Build
+
+The `GridImagePicker` design tokens can inform the styling of a custom image-picker tile, but they do not implement GRID search, crop selection, or the selection callback. A functional custom picker needs to provide its own UI and GRID integration. The Stand component handles this interaction in React, including receiving and validating the selected image and crop.

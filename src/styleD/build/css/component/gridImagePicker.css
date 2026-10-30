@@ -1,0 +1,14 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+	--component-grid-image-picker-container-column-gap: 0.75rem;
+	--component-grid-image-picker-container-row-gap: 0.25rem;
+	--component-grid-image-picker-container-padding: 0.25rem;
+	--component-grid-image-picker-container-width: 350px;
+	--component-grid-image-picker-image-preview-background: #ededed;
+	--component-grid-image-picker-image-preview-padding: 0.5rem;
+	--component-grid-image-picker-image-preview-max-width: 150px;
+	--component-grid-image-picker-image-preview-max-height: 100px;
+}
