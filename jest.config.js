@@ -10,4 +10,5 @@ export default {
 		...tsJestTransformCfg,
 	},
 	modulePathIgnorePatterns: ['playwright'],
+	testPathIgnorePatterns: ['/node_modules/', '/scripts/eslint/'],
 };

@@ -2,6 +2,7 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentTile } from '../../styleD/build/typescript/component/tile';
 import { componentTile } from '../../styleD/build/typescript/component/tile';
+import { semanticSpacing } from '../../styleD/build/typescript/semantic/spacing';
 import { until } from '../../styleD/utils/semantic/mq';
 import type { DeepPartial, Prettify } from '../../util/types';
 
@@ -134,7 +135,7 @@ export const tileTextStyles = (theme: TileTheme): SerializedStyles => css`
 	display: flex;
 	align-items: center;
 	min-width: 0;
-	gap: 0.5rem;
+	gap: ${semanticSpacing.stackXs};
 `;
 
 export const tileTitleStyles = (theme: TileTheme): SerializedStyles => css`
@@ -165,7 +166,7 @@ export const tileBottomRowStyles = (): SerializedStyles => css`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: 0.5rem;
+	gap: ${semanticSpacing.stackXs};
 	width: 100%;
 	min-width: 0;
 `;
@@ -183,7 +184,7 @@ export const tileArrowStyles = (theme: TileTheme): SerializedStyles => css`
 export const tileIconStyles = (theme: TileTheme): SerializedStyles => css`
 	color: ${theme.shared.tileIcon.shared.color};
 	flex-shrink: 0;
-	margin-right: 0.25rem;
+	margin-right: ${theme.shared.tileIcon.shared.marginRight};
 
 	[data-disabled] & {
 		color: ${theme.shared.tileIcon.shared.disabled.color};

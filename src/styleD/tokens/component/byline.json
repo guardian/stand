@@ -20,6 +20,26 @@
 					"value": 1
 				}
 			},
+			"editorPadding": {
+				"$type": "dimension",
+				"$value": "{base.spacing.4Px}"
+			},
+			"selectedMarkerBackgroundColor": {
+				"$type": "color",
+				"$value": "{base.colors.neutral.700}"
+			},
+			"focusedSelectedMarkerBackgroundColor": {
+				"$type": "color",
+				"$value": "#b4d9ff"
+			},
+			"focusedSelectedInvisibleBackgroundColor": {
+				"$type": "color",
+				"$value": "#b4d8ff"
+			},
+			"previewMarginTop": {
+				"$type": "dimension",
+				"$value": "5px"
+			},
 			"chip": {
 				"borderColor": {
 					"$type": "color",
@@ -61,6 +81,14 @@
 						"value": 2
 					}
 				},
+				"labelMarginLeft": {
+					"$type": "dimension",
+					"$value": "5px"
+				},
+				"marginLeft": {
+					"$type": "dimension",
+					"$value": "3px"
+				},
 				"selectedBorderColor": {
 					"$type": "color",
 					"$value": "{base.colors.blue.800}"
@@ -99,6 +127,10 @@
 					}
 				},
 				"li": {
+					"padding": {
+						"$type": "dimension",
+						"$value": "5px"
+					},
 					"borderBottomColor": {
 						"$type": "color",
 						"$value": "{base.colors.neutral.650}"
