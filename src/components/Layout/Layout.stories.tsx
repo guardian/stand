@@ -499,7 +499,7 @@ export const CustomTheme = {
 			theme={{
 				shared: {
 					minHeight: '50svh',
-					width: '50svw',
+					width: '75svw',
 				},
 			}}
 		>
