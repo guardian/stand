@@ -45,7 +45,7 @@ jobs:
           pnpm run build-storybook
 
       - name: Chromatic - Stand Component Library
-        uses: chromaui/action@5bcadb5104b09e360e210c54f95a7437c2d82bab # v18.13.3
+        uses: chromaui/action@80379940a37537422d4419aa4c9578673b8bcd34 # v18.13.9
         with:
           projectToken: ${{ secrets.STAND_CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
