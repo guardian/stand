@@ -4,7 +4,7 @@
 		"project": "ef220361-80dc-4645-a671-0d38f9293c6b",
 		"ref": {
 			"type": "branch",
-			"name": "mm-next-remove-layout-tokens"
+			"name": "next"
 		}
 	},
 	"outputs": {

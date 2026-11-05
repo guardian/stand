@@ -3,70 +3,18 @@
 # Commit this file to version control.
 
 version = 2
-generated_at = "2026-11-05T15:09:45Z"
-cli_version = "dev"
+generated_at = "2026-11-05T16:16:47Z"
+cli_version = "0.3.2"
+dependencies = []
 
-[[dependencies]]
+[[exports]]
   name = "stand"
-  project = "ef220361-80dc-4645-a671-0d38f9293c6b"
-  ref_type = "branch"
-  ref_name = "mm-next-remove-layout-tokens"
-  content_hash = "sha256:060d093f29c12044aa0c0935677b3e8e71223d40bd65d69b3b2af1b00efa6e60"
-  updated_at = "2026-10-28T08:59:52Z"
-
-  [[dependencies.files]]
-    path = "base/base.json"
-    hash = "sha256:cc4995fe57ddb802ad9b59654eef8462a558a96c31ddd278be7d3d738d1ecd69"
-    size = 49540
-    tokens = 0
-
-  [[dependencies.files]]
-    path = "component/component.json"
-    hash = "sha256:e55ae6811494a25ddcf34c727d265b0be4c4680879913788452a841ace6f5ff9"
-    size = 165040
-    tokens = 0
-
-  [[dependencies.files]]
-    path = "semantic/semantic.json"
-    hash = "sha256:c632fb51a06b391f8424f32fc170345dbe093c885a4d3b5cd082670438a15117"
-    size = 72310
-    tokens = 0
-
-[[exports]]
-  name = "tokens"
   inline = true
   source_ref_type = "branch"
-  source_ref_name = "mm-next-remove-layout-tokens"
+  source_ref_name = "next"
   preset_hash = "sha256:047c3de5945ae2f7e85725e840721b3dd2df359f35143dfdf75078dcd7c5d468"
   output_hash = "sha256:38e3e80ab97b0d1a1f2e2e0030aefea9e8a19eac4d80ee7c678a24437635c368"
-  updated_at = "2026-11-05T14:54:25Z"
-
-  [[exports.files]]
-    path = "base/base.json"
-    hash = "sha256:cc4995fe57ddb802ad9b59654eef8462a558a96c31ddd278be7d3d738d1ecd69"
-    size = 49540
-    tokens = 0
-
-  [[exports.files]]
-    path = "component/component.json"
-    hash = "sha256:e55ae6811494a25ddcf34c727d265b0be4c4680879913788452a841ace6f5ff9"
-    size = 165040
-    tokens = 0
-
-  [[exports.files]]
-    path = "semantic/semantic.json"
-    hash = "sha256:c632fb51a06b391f8424f32fc170345dbe093c885a4d3b5cd082670438a15117"
-    size = 72310
-    tokens = 0
-
-[[exports]]
-  name = "tokens-dtcg"
-  inline = true
-  source_ref_type = "branch"
-  source_ref_name = "mm-next-remove-layout-tokens"
-  preset_hash = "sha256:047c3de5945ae2f7e85725e840721b3dd2df359f35143dfdf75078dcd7c5d468"
-  output_hash = "sha256:38e3e80ab97b0d1a1f2e2e0030aefea9e8a19eac4d80ee7c678a24437635c368"
-  updated_at = "2026-11-05T15:09:45Z"
+  updated_at = "2026-11-05T16:16:47Z"
 
   [[exports.files]]
     path = "base/base.json"
@@ -87,5 +35,5 @@ cli_version = "dev"
     tokens = 0
 
 [integrity]
-  lockfile_hash = "sha256:1b5988fa0c11609c13a700636b99045cebdea13d5d77c890a2d9fcaafba82b6c"
+  lockfile_hash = "sha256:aeca7561f893323f8d0f0e4db60432d25aa30cec3c05b28be5019bf9490d5ae8"
   algorithm = "sha256"
