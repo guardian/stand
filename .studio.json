@@ -1,11 +1,5 @@
 {
-	"$schema": "https://tokens.studio/schema/cli/v2.json",
-	"outputs": {
-		"stand": {
-			"format": "dtcg",
-			"dir": "src/styleD/tokens"
-		}
-	},
+	"version": 2,
 	"source": {
 		"project": "ef220361-80dc-4645-a671-0d38f9293c6b",
 		"ref": {
@@ -13,5 +7,12 @@
 			"name": "mm-next-remove-layout-tokens"
 		}
 	},
-	"version": 2
+	"outputs": {
+		"stand": {
+			"format": "dtcg",
+			"dir": "src/styleD/tokens"
+		}
+	},
+	"$schema": "https://tokens.studio/schema/cli/v2.json",
+	"host": "https://api-production.tokens.studio"
 }
