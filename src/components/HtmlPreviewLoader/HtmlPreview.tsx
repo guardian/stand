@@ -63,6 +63,7 @@ export const HtmlPreview = ({
 						}}
 						dangerouslyOverrideCss={css({
 							alignItems: 'center',
+							flexDirection: 'row',
 						})}
 						value={String(frameWidth)}
 						onChange={(value) => setFrameWidth(Number(value))}
