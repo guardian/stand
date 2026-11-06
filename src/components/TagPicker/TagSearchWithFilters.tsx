@@ -8,7 +8,7 @@ import type { DeepPartial } from '../../util/types';
 import type { AutocompleteProps } from './Autocomplete';
 import { Autocomplete } from './Autocomplete';
 import {
-	filterSelectCssOverrides,
+	filterSelectDangerouslyOverrideCss,
 	modifyFilterSelectTheme,
 	tagSearchWithFilterStyles,
 } from './styles';
@@ -23,7 +23,11 @@ type TagSearchWithFiltersProps<T extends Tag = Tag> = {
 	testIdPrefix?: string;
 } & Omit<
 	AutocompleteProps<T>,
-	'onTextInputChange' | 'value' | 'theme' | 'cssOverrides' | 'data-testid'
+	| 'onTextInputChange'
+	| 'value'
+	| 'theme'
+	| 'dangerouslyOverrideCss'
+	| 'data-testid'
 >;
 
 export function TagSearchWithFilters<T extends Tag = Tag>({
@@ -63,7 +67,7 @@ export function TagSearchWithFilters<T extends Tag = Tag>({
 		<div css={tagSearchWithFilterStyles(theme)}>
 			<Autocomplete
 				{...tagAutocompleteProps}
-				cssOverrides={css({ flex: 1 })}
+				dangerouslyOverrideCss={css({ flex: 1 })}
 				onTextInputChange={setQueryText}
 				addSelection={(tag) => {
 					addSelection(tag);
@@ -79,7 +83,7 @@ export function TagSearchWithFilters<T extends Tag = Tag>({
 				<Select
 					aria-label="tag filter options"
 					theme={modifyFilterSelectTheme(selectTheme)}
-					cssOverrides={filterSelectCssOverrides(theme)}
+					dangerouslyOverrideCss={filterSelectDangerouslyOverrideCss(theme)}
 					isDisabled={disabled}
 					value={filterValue}
 					placement="bottom right"

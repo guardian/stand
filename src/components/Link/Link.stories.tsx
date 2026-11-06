@@ -46,11 +46,11 @@ export const BodyBold = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	args: {
 		children: 'Link',
 		href: 'https://www.theguardian.com',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			text-decoration: none;
 			color: ${baseColors.orange[400]};
 		`,

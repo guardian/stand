@@ -31,9 +31,9 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	args: {
-		cssOverrides: css({
+		dangerouslyOverrideCss: css({
 			color: 'red',
 			border: '4px dotted black',
 			padding: 5,

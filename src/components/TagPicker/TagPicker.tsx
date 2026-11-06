@@ -72,8 +72,12 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	autoCompleteTheme?: DeepPartial<ComponentAutocomplete>;
 	selectTheme?: DeepPartial<ComponentSelect>;
 
-	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
-	cssOverrides?: SerializedStyles;
+	/**
+	 * Escape hatch for custom CSS. Prefer the `theme` prop.
+	 * CSS overrides make components harder to maintain and update, and may cause
+	 * them to no longer follow design system conventions.
+	 */
+	dangerouslyOverrideCss?: SerializedStyles;
 };
 
 /**
@@ -130,7 +134,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 	proposedTagTableTheme,
 	autoCompleteTheme,
 	selectTheme,
-	cssOverrides,
+	dangerouslyOverrideCss,
 	testId = 'tag-picker',
 }: TagPickerProps<T>) {
 	const selectedTagIds = tags.map(({ id }) => id);
@@ -147,7 +151,10 @@ export function TagPicker<T extends TagRow = TagRow>({
 	);
 
 	return (
-		<div css={[tagPickerStyles(theme), cssOverrides]} data-testid={testId}>
+		<div
+			css={[tagPickerStyles(theme), dangerouslyOverrideCss]}
+			data-testid={testId}
+		>
 			<TagSearchWithFilters
 				icon={searchIcon}
 				onSearch={onSearch}
@@ -194,7 +201,7 @@ export function TagPicker<T extends TagRow = TagRow>({
 									onClick={() => addTag(tag)}
 									variant="tertiary"
 									size="sm"
-									cssOverrides={css({
+									dangerouslyOverrideCss={css({
 										justifyContent:
 											theme?.offlineSection?.justifyContent ?? 'flex-start',
 									})}

@@ -2,7 +2,7 @@ import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import IconButtonStories, {
 	IconButtonTable,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './IconButton.stories';
 import {
 	SandboxReact,
@@ -17,6 +17,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={IconButtonStories} />
 
@@ -85,18 +86,18 @@ const Example = () => (
 
 ## Props
 
-| Name           | Type                                             | Required    | Default     | Description                                                                                                                                                                        |
-| -------------- | ------------------------------------------------ | ----------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `symbol`       | `MaterialSymbol`                                 | Conditional | N/A         | Name of the Material Symbol to display (e.g., "add", "delete"). Uses the `MaterialSymbol` type for type safety. Alternative to providing the icon as a child.                      |
-| `children`     | `ReactNode` \| `MaterialSymbol` \| `RenderProps` | Conditional | N/A         | Icon content - either a Material Symbol name (typed as `MaterialSymbol`), an SVG component, or left empty if using `symbol`. Render props receive `{ isPending }` from React Aria. |
-| `size`         | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`             | No          | `'md'`      | Controls the button dimensions. Icon size adjusts automatically (sm for xs buttons, otherwise matches button size).                                                                |
-| `variant`      | `'primary'` \| `'secondary'` \| `'tertiary'`     | No          | `'primary'` | Chooses the colour scheme and interaction states.                                                                                                                                  |
-| `isDisabled`   | `boolean`                                        | No          | `false`     | Disables interaction and applies disabled styling.                                                                                                                                 |
-| `theme`        | `IconButtonTheme` (partial)                      | No          | N/A         | Override Stand tokens for this instance; merged over the default theme.                                                                                                            |
-| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`       | No          | N/A         | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                                                         |
-| `className`    | `string`                                         | No          | N/A         | Optional class name forwarded to the root React Aria button.                                                                                                                       |
-| `ariaLabel`    | `string`                                         | Yes         | N/A         | Accessible label for screen readers. Required for icon-only buttons to ensure accessibility.                                                                                       |
-| `...props`     | `ReactAria Button` props                         | No          | N/A         | All other props from `react-aria-components` `Button` (e.g. `type`, `autoFocus`, event handlers).                                                                                  |
+| Name                     | Type                                             | Required    | Default     | Description                                                                                                                                                                        |
+| ------------------------ | ------------------------------------------------ | ----------- | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `symbol`                 | `MaterialSymbol`                                 | Conditional | N/A         | Name of the Material Symbol to display (e.g., "add", "delete"). Uses the `MaterialSymbol` type for type safety. Alternative to providing the icon as a child.                      |
+| `children`               | `ReactNode` \| `MaterialSymbol` \| `RenderProps` | Conditional | N/A         | Icon content - either a Material Symbol name (typed as `MaterialSymbol`), an SVG component, or left empty if using `symbol`. Render props receive `{ isPending }` from React Aria. |
+| `size`                   | `'xs'` \| `'sm'` \| `'md'` \| `'lg'`             | No          | `'md'`      | Controls the button dimensions. Icon size adjusts automatically (sm for xs buttons, otherwise matches button size).                                                                |
+| `variant`                | `'primary'` \| `'secondary'` \| `'tertiary'`     | No          | `'primary'` | Chooses the colour scheme and interaction states.                                                                                                                                  |
+| `isDisabled`             | `boolean`                                        | No          | `false`     | Disables interaction and applies disabled styling.                                                                                                                                 |
+| `theme`                  | `IconButtonTheme` (partial)                      | No          | N/A         | Override Stand tokens for this instance; merged over the default theme.                                                                                                            |
+| `dangerouslyOverrideCss` | `SerializedStyles` \| `SerializedStyles[]`       | No          | N/A         | Escape hatch for custom CSS; see warning below.                                                                                                                                    |
+| `className`              | `string`                                         | No          | N/A         | Optional class name forwarded to the root React Aria button.                                                                                                                       |
+| `ariaLabel`              | `string`                                         | Yes         | N/A         | Accessible label for screen readers. Required for icon-only buttons to ensure accessibility.                                                                                       |
+| `...props`               | `ReactAria Button` props                         | No          | N/A         | All other props from `react-aria-components` `Button` (e.g. `type`, `autoFocus`, event handlers).                                                                                  |
 
 **`size` and `variant`**
 
@@ -127,7 +128,7 @@ The Icon component nested inside IconButton automatically adjusts:
 
 ## Customisation
 
-We recommend using the default theme. When needed, use the `theme` or `cssOverrides` props.
+We recommend using the default theme. When needed, use the `theme` prop.
 
 ### Custom theme
 
@@ -168,9 +169,11 @@ const Component = () => (
 );
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-<Canvas layout="padded" of={CssOverrides} />
+<DangerouslyOverrideCssWarning />
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ```tsx
 import { IconButton } from '@guardian/stand/IconButton';
@@ -186,7 +189,7 @@ const Component = () => (
 	<IconButton
 		variant="primary"
 		size="sm"
-		cssOverrides={customStyles}
+		dangerouslyOverrideCss={customStyles}
 		ariaLabel="Add item"
 	>
 		add

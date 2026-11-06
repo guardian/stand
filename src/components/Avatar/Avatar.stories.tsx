@@ -92,13 +92,13 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
-	name: 'cssOverrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	args: {
 		initials: 'CO',
 		size: 'md',
 		color: 'red',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
 			margin: ${baseSpacing['8Rem']};
 		`,

@@ -24,6 +24,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={ToggleSwitchStories} />
 
@@ -78,17 +79,17 @@ const Example = () => (
 
 See [React Aria `Switch` props](https://react-aria.adobe.com/Switch#api) for the full API, plus the additional props listed below.
 
-| Name              | Type                                       | Required | Default | Description                                        |
-| ----------------- | ------------------------------------------ | -------- | ------- | -------------------------------------------------- |
-| `children`        | `React.ReactNode`                          | No       | N/A     | Label content rendered beside the switch.          |
-| `description`     | `React.ReactNode`                          | No       | N/A     | Supporting text rendered below the label.          |
-| `size`            | `'md'` \| `'sm'`                           | No       | `'md'`  | Controls the switch and label size.                |
-| `isSelected`      | `boolean`                                  | No       | N/A     | Controlled selected state.                         |
-| `defaultSelected` | `boolean`                                  | No       | N/A     | Default selected state for uncontrolled use.       |
-| `isDisabled`      | `boolean`                                  | No       | `false` | Disables interaction and applies disabled styling. |
-| `theme`           | `ToggleSwitchTheme` (partial)              | No       | N/A     | Override Stand tokens for this instance.           |
-| `cssOverrides`    | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level Emotion override.                        |
-| `...props`        | `React Aria Switch` props                  | No       | N/A     | Other props such as `onChange` and `autoFocus`.    |
+| Name                     | Type                                       | Required | Default | Description                                        |
+| ------------------------ | ------------------------------------------ | -------- | ------- | -------------------------------------------------- |
+| `children`               | `React.ReactNode`                          | No       | N/A     | Label content rendered beside the switch.          |
+| `description`            | `React.ReactNode`                          | No       | N/A     | Supporting text rendered below the label.          |
+| `size`                   | `'md'` \| `'sm'`                           | No       | `'md'`  | Controls the switch and label size.                |
+| `isSelected`             | `boolean`                                  | No       | N/A     | Controlled selected state.                         |
+| `defaultSelected`        | `boolean`                                  | No       | N/A     | Default selected state for uncontrolled use.       |
+| `isDisabled`             | `boolean`                                  | No       | `false` | Disables interaction and applies disabled styling. |
+| `theme`                  | `ToggleSwitchTheme` (partial)              | No       | N/A     | Override Stand tokens for this instance.           |
+| `dangerouslyOverrideCss` | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below.    |
+| `...props`               | `React Aria Switch` props                  | No       | N/A     | Other props such as `onChange` and `autoFocus`.    |
 
 ## Stories
 
@@ -134,7 +135,7 @@ See [React Aria `Switch` props](https://react-aria.adobe.com/Switch#api) for the
 
 ## Customisation
 
-Use the `theme` prop to override ToggleSwitch tokens, or `cssOverrides` for low-level Emotion overrides.
+<DangerouslyOverrideCssWarning />
 
 ## Custom Component Build
 

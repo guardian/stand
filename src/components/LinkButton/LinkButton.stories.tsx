@@ -106,13 +106,13 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
-	name: 'cssOverrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	args: {
-		children: 'CSSOverrides LinkButton',
+		children: 'DangerouslyOverrideCss LinkButton',
 		variant: 'primary',
 		size: 'md',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			width: 100%;
 			text-transform: full-width;
 			font-variant: small-caps;

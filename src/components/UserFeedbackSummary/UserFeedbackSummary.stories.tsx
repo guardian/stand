@@ -91,12 +91,12 @@ export const CustomTheme = {
 	},
 };
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	args: {
 		level: 'error',
 		title: 'User feedback with CSS overrides',
 		children: 'Additional help text can be provided here',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			padding: ${baseSpacing['6Rem']};
 			background-color: ${baseColors.red[900]};
 		`,

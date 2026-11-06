@@ -10,7 +10,7 @@ export const defaultAvatarLinkTheme: AvatarTheme = defaultAvatarTheme;
 
 export const avatarLinkStyles = (theme: AvatarLinkTheme): SerializedStyles => {
 	return css`
-		display: ${theme.shared.display};
+		display: inline-flex;
 		width: ${theme.shared.link.width};
 
 		&[data-focus-visible],
@@ -20,6 +20,6 @@ export const avatarLinkStyles = (theme: AvatarLinkTheme): SerializedStyles => {
 			border-radius: ${theme.shared.borderRadius};
 		}
 
-		text-decoration: ${theme.shared.link.textDecoration};
+		text-decoration: none;
 	`;
 };

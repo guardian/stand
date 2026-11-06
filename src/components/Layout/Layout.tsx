@@ -24,11 +24,14 @@ import type {
 const LayoutAlertBanner = ({
 	as: Component = 'aside',
 	children,
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: LayoutSlotProps) => {
 	return (
-		<Component css={[alertBannerLayoutStyles(), cssOverrides]} {...props}>
+		<Component
+			css={[alertBannerLayoutStyles(), dangerouslyOverrideCss]}
+			{...props}
+		>
 			{children}
 		</Component>
 	);
@@ -40,11 +43,11 @@ const LayoutAlertBanner = ({
 const LayoutTopBar = ({
 	as: Component = 'header',
 	children,
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: LayoutSlotProps) => {
 	return (
-		<Component css={[topBarLayoutStyles(), cssOverrides]} {...props}>
+		<Component css={[topBarLayoutStyles(), dangerouslyOverrideCss]} {...props}>
 			{children}
 		</Component>
 	);
@@ -62,7 +65,7 @@ function LayoutSidebar({
 	children,
 	layoutSmBreakpoint = 'hidden',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: SidebarProps) {
 	const mergedTheme = mergeDeep(defaultSidebarTheme, theme);
@@ -72,7 +75,7 @@ function LayoutSidebar({
 			css={[
 				sidebarLayoutStyles(),
 				sidebarStyles(mergedTheme, { layoutSmBreakpoint }),
-				cssOverrides,
+				dangerouslyOverrideCss,
 			]}
 			{...props}
 		>
@@ -91,7 +94,7 @@ function LayoutMain({
 	paddingTop = true,
 	paddingBottom = true,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: MainProps) {
 	const mergedTheme = mergeDeep(defaultMainTheme, theme);
@@ -100,7 +103,7 @@ function LayoutMain({
 		<Component
 			css={[
 				mainLayoutStyles(mergedTheme, { fluid, paddingTop, paddingBottom }),
-				cssOverrides,
+				dangerouslyOverrideCss,
 			]}
 			{...props}
 		>
@@ -136,13 +139,13 @@ function LayoutMain({
 function LayoutRoot({
 	children,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: LayoutProps) {
 	const mergedTheme = mergeDeep(defaultLayoutTheme, theme);
 
 	return (
-		<div css={[layoutStyles(mergedTheme), cssOverrides]} {...props}>
+		<div css={[layoutStyles(mergedTheme), dangerouslyOverrideCss]} {...props}>
 			{children}
 		</div>
 	);

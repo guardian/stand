@@ -12,12 +12,12 @@ export const avatarButtonStyles = (
 	theme: AvatarButtonTheme,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.shared.display};
+		display: inline-flex;
 		width: ${theme.shared.link.width};
 		background: ${theme.shared.button.background};
 		border: ${theme.shared.button.border};
 		padding: ${theme.shared.button.padding};
-		cursor: ${theme.shared.button.cursor};
+		cursor: pointer;
 		&[data-focus-visible],
 		&:focus-visible {
 			outline: ${theme.shared.link.focusVisible.outline};
@@ -26,7 +26,7 @@ export const avatarButtonStyles = (
 		}
 		&[data-disabled],
 		&:disabled {
-			cursor: ${theme.shared.button.disabled.cursor};
+			cursor: not-allowed;
 		}
 	`;
 };

@@ -6,7 +6,7 @@ import InlineMessageStories, {
 	CustomIcon,
 	HideIcon,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './InlineMessage.stories';
 import {
 	SandboxReact,
@@ -21,6 +21,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={InlineMessageStories} />
 
@@ -95,15 +96,15 @@ import type {
 
 ## Props
 
-| Name           | Type                                     | Required | Default | Description                                                                                                                               |
-| -------------- | ---------------------------------------- | -------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `level`        | `'error' \| 'success' \| 'information'`  | Yes      | N/A     | The severity level of the message. Determines colour and default icon.                                                                    |
-| `children`     | `React.ReactNode`                        | No       | N/A     | The message content to render inside the component.                                                                                       |
-| `hideIcon`     | `boolean`                                | No       | `false` | When `true`, hides the default icon associated with the message level.                                                                    |
-| `icon`         | `string \| SVGElement`                   | No       | N/A     | Overrides the default icon, for example if you're not using Material Symbols. Accepts a Material Symbols name (string) or an SVG element. |
-| `theme`        | `Partial<InlineMessageTheme>`            | No       | N/A     | Custom theme overrides for design tokens.                                                                                                 |
-| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Custom Emotion CSS styles applied to the root element.                                                                                    |
-| `className`    | `string`                                 | No       | N/A     | Additional class name(s) applied to the root element.                                                                                     |
+| Name                     | Type                                     | Required | Default | Description                                                                                                                               |
+| ------------------------ | ---------------------------------------- | -------- | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `level`                  | `'error' \| 'success' \| 'information'`  | Yes      | N/A     | The severity level of the message. Determines colour and default icon.                                                                    |
+| `children`               | `React.ReactNode`                        | No       | N/A     | The message content to render inside the component.                                                                                       |
+| `hideIcon`               | `boolean`                                | No       | `false` | When `true`, hides the default icon associated with the message level.                                                                    |
+| `icon`                   | `string \| SVGElement`                   | No       | N/A     | Overrides the default icon, for example if you're not using Material Symbols. Accepts a Material Symbols name (string) or an SVG element. |
+| `theme`                  | `Partial<InlineMessageTheme>`            | No       | N/A     | Custom theme overrides for design tokens.                                                                                                 |
+| `dangerouslyOverrideCss` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below.                                                                                           |
+| `className`              | `string`                                 | No       | N/A     | Additional class name(s) applied to the root element.                                                                                     |
 
 ## Stories
 
@@ -129,7 +130,7 @@ import type {
 
 ## Customisation
 
-We recommend using the InlineMessage component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the InlineMessage component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -155,11 +156,13 @@ const Component = () => (
 );
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the InlineMessage component:
+<DangerouslyOverrideCssWarning />
 
-<Canvas layout="padded" of={CssOverrides} />
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the InlineMessage component:
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ```tsx
 import { css } from '@emotion/react';
@@ -173,7 +176,7 @@ const customStyles = css`
 `;
 
 const Component = () => (
-	<InlineMessage level="information" cssOverrides={customStyles}>
+	<InlineMessage level="information" dangerouslyOverrideCss={customStyles}>
 		Your session will expire soon
 	</InlineMessage>
 );

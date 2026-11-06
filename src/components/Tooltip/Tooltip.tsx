@@ -20,7 +20,7 @@ export const Tooltip = ({
 	children,
 	placement = 'end',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 	...props
 }: TooltipProps) => {
@@ -34,7 +34,7 @@ export const Tooltip = ({
 				<Icon size="xs" symbol="question_mark" />
 			</ReactAriaButton>
 			<ReactAriaTooltip
-				css={[tooltipStyles(mergedTheme), cssOverrides]}
+				css={[tooltipStyles(mergedTheme), dangerouslyOverrideCss]}
 				placement={placement}
 				className={className}
 			>

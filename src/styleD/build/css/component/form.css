@@ -7,8 +7,6 @@
 		'Open Sans';
 	--component-form-input-md-label-typography-font-width: 95;
 	--component-form-input-md-label-typography-letter-spacing: -0.03125rem;
-	--component-form-input-shared-container-display: flex;
-	--component-form-input-shared-container-flex-direction: column;
 	--component-form-input-shared-container-gap: 0.25rem;
 	--component-form-input-shared-container-max-width: 450px;
 	--component-form-input-shared-container-width: 100%;

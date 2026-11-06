@@ -3,6 +3,7 @@ import ToastStories, { Interactive } from './Toast.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={ToastStories} />
 
@@ -93,7 +94,7 @@ Content passed to `toastQueue.add` has these properties:
 | `icon`               | `IconProps['symbol'] \| Exclude<IconProps['children'], string>` | No       | Level   | Replaces the icon associated with the level.                   |
 | `dismissButtonProps` | `Partial<IconButtonProps>`                                      | No       | N/A     | Props for the dismiss button.                                  |
 
-`toastProps` supports the [React Aria Toast API](https://react-aria.adobe.com/Toast#toast), plus `theme` and `cssOverrides` for visual customization.
+`toastProps` supports the [React Aria Toast API](https://react-aria.adobe.com/Toast#toast), plus `theme` and `dangerouslyOverrideCss` for visual customization.
 
 The region is fixed 20px from the top-right of the viewport. On narrow screens, its width contracts to preserve 20px space on both sides.
 
@@ -105,7 +106,7 @@ The region is fixed 20px from the top-right of the viewport. On narrow screens, 
 
 ## Customisation
 
-Use `toastProps.theme` for token-level changes and `toastProps.cssOverrides` for one-off layout adjustments.
+<DangerouslyOverrideCssWarning />
 
 ## Custom Component Build
 

@@ -17,10 +17,11 @@ export interface DefaultProps<ThemeType, ClassNameType = undefined> {
 		? string | undefined
 		: ClassNameType;
 	/**
-	 * If the theme does not cover all use cases, you can use this prop to
-	 * override component styles by passing in the result of [emotion's `css` function/prop](https://emotion.sh/docs/introduction).
+	 * Escape hatch for custom CSS using [Emotion's `css` function](https://emotion.sh/docs/introduction).
+	 * Prefer the `theme` prop. CSS overrides make components harder to maintain
+	 * and update, and may cause them to no longer follow design system conventions.
 	 */
-	cssOverrides?: SerializedStyles | SerializedStyles[];
+	dangerouslyOverrideCss?: SerializedStyles | SerializedStyles[];
 }
 
 export interface DefaultPropsWithChildren<

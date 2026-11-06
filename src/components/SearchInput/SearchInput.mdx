@@ -18,6 +18,7 @@ import {
 } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={SearchInputStories} />
 
@@ -107,7 +108,7 @@ const Example = () => (
 | `theme`                   | `SearchInputTheme` (partial)               | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                         |
 | `placeholder`             | `string`                                   | No       | N/A     | Temporary text that occupies the search input when it is empty.                                                                                 |
 | `formInputContainerTheme` | `FormInputContainerTheme` (partial)        | No       | N/A     | Override Stand tokens for the wrapping label and description container.                                                                         |
-| `cssOverrides`            | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                      |
+| `dangerouslyOverrideCss`  | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below.                                                                                                 |
 | `className`               | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria SearchField element.                                                                       |
 | `...props`                | `ReactAria SearchField` props              | No       | N/A     | All other props from `react-aria-components` [`SearchField`](https://react-aria.adobe.com/SearchField) (e.g. `value`, `onChange`, `autoFocus`). |
 
@@ -155,7 +156,7 @@ const Example = () => (
 
 ## Customisation
 
-We recommend using the SearchInput component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the SearchInput component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -179,9 +180,11 @@ const customTheme: Partial<SearchInputTheme> = {
 const Component = () => <SearchInput label="Email" theme={customTheme} />;
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the SearchInput component:
+<DangerouslyOverrideCssWarning />
+
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the SearchInput component:
 
 ```tsx
 import { SearchInput } from '@guardian/stand/SearchInput';
@@ -192,7 +195,7 @@ const customStyles = css\`
 \`;
 
 const Component = () => (
-	<SearchInput label="Notes" cssOverrides={customStyles} />
+	<SearchInput label="Notes" dangerouslyOverrideCss={customStyles} />
 );
 ```
 

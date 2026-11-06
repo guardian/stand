@@ -22,7 +22,7 @@ export const Favicon = (props: FaviconProps) => {
 
 	if ('src' in props && !imageError) {
 		return (
-			<div css={[faviconStyles(mergedTheme), props.cssOverrides]}>
+			<div css={[faviconStyles(mergedTheme), props.dangerouslyOverrideCss]}>
 				<img
 					src={props.src}
 					alt={props.alt}
@@ -39,7 +39,7 @@ export const Favicon = (props: FaviconProps) => {
 				css={[
 					faviconStyles(mergedTheme),
 					faviconTypographyStyles(mergedTheme),
-					props.cssOverrides,
+					props.dangerouslyOverrideCss,
 				]}
 			>
 				{displayLetter}
@@ -48,7 +48,7 @@ export const Favicon = (props: FaviconProps) => {
 	}
 	if ('icon' in props) {
 		return (
-			<div css={[faviconStyles(mergedTheme), props.cssOverrides]}>
+			<div css={[faviconStyles(mergedTheme), props.dangerouslyOverrideCss]}>
 				<Icon fill={mergedTheme.color.text}>{props.icon}</Icon>
 			</div>
 		);

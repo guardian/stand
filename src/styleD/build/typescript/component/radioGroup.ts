@@ -16,14 +16,7 @@ export const componentRadioGroup = {
 		},
 	},
 	shared: {
-		display: 'flex',
 		indicator: {
-			after: {
-				borderRadius: 'inherit',
-				inset: '0px',
-				position: 'absolute',
-				scale: 0,
-			},
 			border: '0.0625rem solid #545454',
 			borderRadius: '50%',
 			disabled: {
@@ -39,7 +32,6 @@ export const componentRadioGroup = {
 				},
 				border: '0.0625rem solid #b42a19',
 			},
-			position: 'relative',
 			selected: {
 				after: {
 					backgroundColor: '#0072a9',
@@ -59,21 +51,11 @@ export const componentRadioGroup = {
 		},
 		marginBottom: '0.5rem',
 		marginTop: '0.5rem',
-		orientation: {
-			horizontal: {
-				flexDirection: 'row',
-			},
-			vertical: {
-				flexDirection: 'column',
-			},
-		},
 		radio: {
-			alignItems: 'center',
 			color: '#000000',
 			disabled: {
 				color: '#999999',
 			},
-			display: 'flex',
 			gap: '0.5rem',
 		},
 	},

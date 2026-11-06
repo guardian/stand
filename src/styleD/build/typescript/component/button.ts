@@ -254,21 +254,10 @@ export const componentButton = {
 		},
 	},
 	shared: {
-		alignItems: 'center',
-		boxShadow: 'none',
-		cursor: 'pointer',
-		disabled: {
-			cursor: 'not-allowed',
-		},
-		display: 'inline-flex',
 		focusVisible: {
 			outline: '0.125rem solid #0072a9',
 			outlineOffset: '0.125rem',
 		},
-		justifyContent: 'center',
-		textAlign: 'inherit',
-		textDecoration: 'none',
-		webkitAppearance: 'none',
 	},
 	tertiary: {
 		lg: {

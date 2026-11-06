@@ -15,12 +15,10 @@ export const componentTextArea = {
 		border: '0.0625rem solid #545454',
 		borderRadius: '0.25rem',
 		color: '#000000',
-		cursor: 'text',
 		disabled: {
 			backgroundColor: '#ffffff',
 			border: '0.0625rem solid #dcdcdc',
 			color: '#999999',
-			cursor: 'not-allowed',
 		},
 		error: {
 			border: '0.0625rem solid #b42a19',

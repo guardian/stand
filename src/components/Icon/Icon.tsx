@@ -1,5 +1,5 @@
 import { mergeDeep } from '../../util/mergeDeep';
-import { defaultIconTheme, IconStyles } from './Styles';
+import { defaultIconTheme, IconStyles } from './styles';
 import type { IconProps } from './types';
 
 export function Icon({
@@ -9,7 +9,7 @@ export function Icon({
 	alt,
 	symbol,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 }: IconProps) {
 	const mergedTheme = mergeDeep(defaultIconTheme, theme);
@@ -20,7 +20,7 @@ export function Icon({
 				className={`material-symbols ${className ?? ''}`}
 				css={[
 					IconStyles(mergedTheme, { size, fill, mode: 'text' }),
-					cssOverrides,
+					dangerouslyOverrideCss,
 				]}
 				{...(alt
 					? { role: 'img', 'aria-label': alt }
@@ -34,7 +34,10 @@ export function Icon({
 	return (
 		<span
 			className={className}
-			css={[IconStyles(mergedTheme, { size, fill, mode: 'svg' }), cssOverrides]}
+			css={[
+				IconStyles(mergedTheme, { size, fill, mode: 'svg' }),
+				dangerouslyOverrideCss,
+			]}
 			{...(alt ? { role: 'img', 'aria-label': alt } : { 'aria-hidden': true })}
 		>
 			{children}

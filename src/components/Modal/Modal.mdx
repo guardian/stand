@@ -3,11 +3,12 @@ import ModalStories, {
 	Default,
 	Controlled,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './Modal.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={ModalStories} />
 
@@ -152,25 +153,25 @@ Renders a `react-aria-components` `Heading` with `slot="title"`, which labels th
 
 Renders the close (`×`) `IconButton` with `slot="close"`. Must be placed explicitly as a child of `Dialog`. Accepts all `IconButtonProps` except `theme`, which is replaced with the local dialog dismiss theme.
 
-| Name           | Type                                         | Required | Default         | Description                                                 |
-| -------------- | -------------------------------------------- | -------- | --------------- | ----------------------------------------------------------- |
-| `theme`        | `PartialDialogTheme['dismiss']`              | No       | N/A             | Override design tokens for the dismiss button.              |
-| `ariaLabel`    | `string`                                     | No       | `'Close Modal'` | Accessible label for the button.                            |
-| `size`         | `'xsm'` \| `'sm'` \| `'md'` \| `'lg'`        | No       | `'lg'`          | Size variant of the icon button.                            |
-| `variant`      | `'primary'` \| `'secondary'` \| `'tertiary'` | No       | `'tertiary'`    | Visual variant of the icon button.                          |
-| `symbol`       | `MaterialSymbol`                             | No       | `'close'`       | Material symbol icon name.                                  |
-| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]`   | No       | N/A             | Emotion CSS overrides.                                      |
-| `...props`     | `IconButtonProps`                            | No       | N/A             | All other `IconButtonProps` (e.g. `onPress`, `isDisabled`). |
+| Name                     | Type                                         | Required | Default         | Description                                                 |
+| ------------------------ | -------------------------------------------- | -------- | --------------- | ----------------------------------------------------------- |
+| `theme`                  | `PartialDialogTheme['dismiss']`              | No       | N/A             | Override design tokens for the dismiss button.              |
+| `ariaLabel`              | `string`                                     | No       | `'Close Modal'` | Accessible label for the button.                            |
+| `size`                   | `'xsm'` \| `'sm'` \| `'md'` \| `'lg'`        | No       | `'lg'`          | Size variant of the icon button.                            |
+| `variant`                | `'primary'` \| `'secondary'` \| `'tertiary'` | No       | `'tertiary'`    | Visual variant of the icon button.                          |
+| `symbol`                 | `MaterialSymbol`                             | No       | `'close'`       | Material symbol icon name.                                  |
+| `dangerouslyOverrideCss` | `SerializedStyles` \| `SerializedStyles[]`   | No       | N/A             | Escape hatch for custom CSS; see warning below.             |
+| `...props`               | `IconButtonProps`                            | No       | N/A             | All other `IconButtonProps` (e.g. `onPress`, `isDisabled`). |
 
 ### `Dialog.Content`
 
 The main body area of the dialog.
 
-| Name           | Type                                       | Required | Default | Description                                  |
-| -------------- | ------------------------------------------ | -------- | ------- | -------------------------------------------- |
-| `children`     | `ReactNode`                                | No       | N/A     | Content of the dialog body.                  |
-| `theme`        | `PartialDialogTheme['children']`           | No       | N/A     | Override design tokens for the content area. |
-| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Emotion CSS overrides for the area.          |
+| Name                     | Type                                       | Required | Default | Description                                     |
+| ------------------------ | ------------------------------------------ | -------- | ------- | ----------------------------------------------- |
+| `children`               | `ReactNode`                                | No       | N/A     | Content of the dialog body.                     |
+| `theme`                  | `PartialDialogTheme['children']`           | No       | N/A     | Override design tokens for the content area.    |
+| `dangerouslyOverrideCss` | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below. |
 
 ### `Dialog.Buttons`
 
@@ -178,11 +179,11 @@ The action area of the dialog. Only `Button`, `AvatarButton`, and `IconButton` c
 
 Use `slot="close"` on any button to have React Aria automatically close the modal when it is pressed.
 
-| Name           | Type                                       | Required | Default | Description                                         |
-| -------------- | ------------------------------------------ | -------- | ------- | --------------------------------------------------- |
-| `children`     | `ReactNode`                                | No       | N/A     | `Button`, `AvatarButton`, or `IconButton` elements. |
-| `theme`        | `PartialDialogTheme['ctas']`               | No       | N/A     | Override design tokens for the buttons area.        |
-| `cssOverrides` | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Emotion CSS overrides for the area.                 |
+| Name                     | Type                                       | Required | Default | Description                                         |
+| ------------------------ | ------------------------------------------ | -------- | ------- | --------------------------------------------------- |
+| `children`               | `ReactNode`                                | No       | N/A     | `Button`, `AvatarButton`, or `IconButton` elements. |
+| `theme`                  | `PartialDialogTheme['ctas']`               | No       | N/A     | Override design tokens for the buttons area.        |
+| `dangerouslyOverrideCss` | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below.     |
 
 ## Stories
 
@@ -196,7 +197,7 @@ Use `slot="close"` on any button to have React Aria automatically close the moda
 
 ## Customisation
 
-We recommend using the Modal component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the Modal component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -252,9 +253,11 @@ const Component = () => (
 
 <Canvas layout="padded" of={CustomTheme} />
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the Modal or Dialog component:
+<DangerouslyOverrideCssWarning />
+
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the Modal or Dialog component:
 
 ```tsx
 import { css } from '@emotion/react';
@@ -269,7 +272,7 @@ const modalStyles = css`
 const Component = () => (
 	<DialogTrigger>
 		<Button>Open Modal</Button>
-		<Modal cssOverrides={modalStyles}>
+		<Modal dangerouslyOverrideCss={modalStyles}>
 			<Dialog>
 				<Dialog.Header>Confirm action</Dialog.Header>
 				<Dialog.Content>Are you sure you want to continue?</Dialog.Content>
@@ -285,7 +288,7 @@ const Component = () => (
 );
 ```
 
-<Canvas layout="padded" of={CssOverrides} />
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ## Custom Component Build
 

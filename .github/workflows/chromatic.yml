@@ -2,7 +2,7 @@ on:
   push:
     branches: ['main']
   pull_request:
-    branches: ['main']
+    branches: ['main', 'next'] # next should be removed once it's no longer used
     types:
       - opened
       - synchronize
@@ -16,9 +16,12 @@ permissions:
 jobs:
   chromatic:
     runs-on: ubuntu-24.04-arm
-    # Run Chromatic only if `run_chromatic` label has been applied or we're
-    # pushing to `main`.
-    if: contains(github.event.pull_request.labels.*.name, 'run_chromatic')  ||  github.ref == 'refs/heads/main'
+    # Run for labeled PRs targeting `main` or `next`, pushes to `main`,
+    # or manual runs on any branch.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.pull_request.labels.*.name, 'run_chromatic') ||
+      github.ref == 'refs/heads/main'
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

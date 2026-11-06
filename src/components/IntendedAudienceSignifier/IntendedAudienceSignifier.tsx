@@ -46,7 +46,7 @@ export function IntendedAudienceSignifier({
 	source,
 	target,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 	...props
 }: IntendedAudienceSignifierProps) {
@@ -60,7 +60,10 @@ export function IntendedAudienceSignifier({
 		<div
 			{...props}
 			className={className}
-			css={[intendedAudienceSignifierStyles(mergedTheme), cssOverrides]}
+			css={[
+				intendedAudienceSignifierStyles(mergedTheme),
+				dangerouslyOverrideCss,
+			]}
 			title={title}
 		>
 			{target && source ? (

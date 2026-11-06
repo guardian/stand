@@ -151,7 +151,7 @@ export const tagSearchWithFilterStyles = (
 	`;
 };
 
-export const filterSelectCssOverrides = (
+export const filterSelectDangerouslyOverrideCss = (
 	partialTheme: DeepPartial<ComponentTagPicker> = {},
 ): SerializedStyles => {
 	const theme = mergeDeep(componentTagPicker, partialTheme);

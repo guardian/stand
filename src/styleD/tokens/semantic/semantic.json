@@ -91,13 +91,13 @@
 					"$type": "color",
 					"$value": "{base.colors.neutral.400}"
 				},
-				"strongInverse": {
-					"$type": "color",
-					"$value": "{base.colors.neutral.900}"
-				},
 				"stronger": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.200}"
+				},
+				"strongInverse": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.900}"
 				},
 				"success": {
 					"$type": "color",
@@ -387,13 +387,13 @@
 					"$type": "color",
 					"$value": "{base.colors.neutral.0}"
 				},
-				"strongInverse": {
-					"$type": "color",
-					"$value": "{base.colors.neutral.700}"
-				},
 				"strongerInverse": {
 					"$type": "color",
 					"$value": "{base.colors.neutral.900}"
+				},
+				"strongInverse": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.700}"
 				},
 				"success": {
 					"$type": "color",

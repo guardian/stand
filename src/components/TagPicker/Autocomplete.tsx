@@ -54,8 +54,8 @@ export interface AutocompleteProps<
 	addFirstOnEnter?: boolean;
 	/** `theme` - Used to customise the look and feel of the Autocomplete component */
 	theme?: DeepPartial<ComponentAutocomplete>;
-	/** `cssOverrides` - Escape hatch for styling that doesn't fall into the theme */
-	cssOverrides?: SerializedStyles;
+	/** `dangerouslyOverrideCss` - Escape hatch for styling that doesn't fall into the theme */
+	dangerouslyOverrideCss?: SerializedStyles;
 
 	/** An icon to render to the right of the input */
 	icon?: ReactNode;
@@ -165,7 +165,7 @@ export function Autocomplete<
 	'data-testid': dataTestId,
 	loadingIcon,
 	theme,
-	cssOverrides,
+	dangerouslyOverrideCss,
 	addFirstOnEnter,
 	symbol,
 	icon,
@@ -186,7 +186,7 @@ export function Autocomplete<
 				css`
 					position: relative;
 				`,
-				cssOverrides,
+				dangerouslyOverrideCss,
 			]}
 		>
 			<ComboBox

@@ -6,7 +6,7 @@ export function TopBarItem({
 	children,
 	alignment = 'left',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 	size = 'md',
 	_menuOpen,
@@ -18,7 +18,7 @@ export function TopBarItem({
 		<div
 			css={[
 				topBarItemStyles(mergedTheme, alignment, { size }, _menuOpen),
-				cssOverrides,
+				dangerouslyOverrideCss,
 			]}
 			className={className}
 			{...props}

@@ -8,12 +8,13 @@ import DatePickerStories, {
 	SelectedDate,
 	Invalid,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 	RenderWithAsterisk,
 } from './DatePicker.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
 import { componentName, componentTsx } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={DatePickerStories} />
 
@@ -113,7 +114,7 @@ import type {
 | `onChange`                | `(value: DateValue \| null) => void`       | No       | N/A     | Callback fired when the selected date changes.                                                                                                     |
 | `theme`                   | `DatePickerTheme` (partial)                | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                            |
 | `formInputContainerTheme` | `FormInputContainerTheme` (partial)        | No       | N/A     | Override Stand tokens for the wrapping label and description container.                                                                            |
-| `cssOverrides`            | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                                                                         |
+| `dangerouslyOverrideCss`  | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below.                                                                                                    |
 | `className`               | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria DatePicker element.                                                                           |
 | `...props`                | `ReactAria DatePicker` props               | No       | N/A     | All other props from `react-aria-components` [`DatePicker`](https://react-aria.adobe.com/DatePicker) (e.g. `autoFocus`, `isOpen`, `onOpenChange`). |
 
@@ -157,7 +158,7 @@ Reverts the month segment to React Aria's default numeric month behaviour:
 
 ## Customisation
 
-We recommend using the DatePicker component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the DatePicker component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -184,11 +185,13 @@ const Component = () => (
 );
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the DatePicker component:
+<DangerouslyOverrideCssWarning />
 
-<Canvas layout="padded" of={CssOverrides} />
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the DatePicker component:
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ```tsx
 import { DatePicker } from '@guardian/stand/DatePicker';
@@ -200,7 +203,7 @@ const customStyles = css\`
 \`;
 
 const Component = () => (
-	<DatePicker label="Select a date" cssOverrides={customStyles} />
+	<DatePicker label="Select a date" dangerouslyOverrideCss={customStyles} />
 );
 ```
 

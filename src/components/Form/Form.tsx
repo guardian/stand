@@ -26,7 +26,7 @@ export function FormInputContainer<C extends AllowedContainer>({
 	isDisabled = false,
 	theme = {},
 	formInputContainerTheme,
-	cssOverrides,
+	dangerouslyOverrideCss,
 	children,
 	...props
 }: FormInputContainerDefaultProps<ComponentPropsWithRef<C>> & {
@@ -44,7 +44,10 @@ export function FormInputContainer<C extends AllowedContainer>({
 
 	return (
 		<Tag
-			css={[formInputContainerStyles(mergedTheme, { fluid }), cssOverrides]}
+			css={[
+				formInputContainerStyles(mergedTheme, { fluid }),
+				dangerouslyOverrideCss,
+			]}
 			isDisabled={isDisabled}
 			{...(props as AllowedContainerProps)}
 		>

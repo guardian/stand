@@ -71,12 +71,12 @@ export const UKAndGlobalStoryWithCustomTheme = {
 	},
 } satisfies Story;
 
-export const AUSAndGlobalWithCSSOverrides = {
-	name: 'AUSAndGlobalWithCSSOverrides',
+export const AUSAndGlobalWithDangerouslyOverrideCss = {
+	name: 'AUSAndGlobalWithDangerouslyOverrideCss',
 	args: {
 		source: 'au',
 		target: 'global',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			border-color: #0000ffff;
 			background-color: pink;
 		`,
@@ -111,7 +111,7 @@ export const DontKnowStoryAUSLargeIconTheme = {
 	args: {
 		source: 'au',
 		theme: largeIconTheme,
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			font-size: 28px;
 		`,
 	},

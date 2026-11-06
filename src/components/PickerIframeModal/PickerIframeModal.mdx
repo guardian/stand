@@ -1,12 +1,13 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 import PickerIframeModalStories, {
 	Default,
 	WithOwnTabButton,
 	CustomModalTheme,
 	CustomDialogTheme,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 	InteractiveExample,
 } from './PickerIframeModal.stories';
 import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
@@ -96,10 +97,12 @@ const Example = () => {
 | `dialogTheme`            | `DeepPartial<DialogTheme>`                      | No       | N/A     | Overrides for dialog spacing, title, dismiss button, and content styling.                        |
 | `showOpenInNewTabButton` | `boolean`                                       | No       | `false` | Shows a link button to open the iframe URL in a new tab.                                         |
 | `theme`                  | `DeepPartial<PickerIframeModalTheme>`           | No       | N/A     | Overrides for the iframe and container spacing tokens.                                           |
-| `cssOverrides`           | `SerializedStyles \| SerializedStyles[]`        | No       | N/A     | Emotion overrides for the modal root.                                                            |
+| `dangerouslyOverrideCss` | `SerializedStyles \| SerializedStyles[]`        | No       | N/A     | Escape hatch for custom CSS; see warning below.                                                  |
 | `className`              | `string`                                        | No       | N/A     | Optional class name forwarded through the default props contract.                                |
 
 ### Modal and dialog customisation
+
+<DangerouslyOverrideCssWarning />
 
 Use `modalTheme` and `dialogTheme` to control the modal shell and its inner layout:
 

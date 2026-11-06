@@ -17,7 +17,7 @@ import CheckboxStories, {
 	SmallDisabledSelected,
 	SmallDisabledIndeterminate,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './Checkbox.stories';
 import {
 	SandboxReact,
@@ -32,6 +32,7 @@ import {
 	componentTsx,
 } from './checkboxSandbox.ts';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={CheckboxStories} />
 
@@ -99,20 +100,20 @@ const Example = () => (
 
 See [React Aria `Checkbox`](https://react-aria.adobe.com/Checkbox) props for the full API, plus the additional props listed below.
 
-| Name              | Type                                       | Required | Default | Description                                                                                             |
-| ----------------- | ------------------------------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------- |
-| `children`        | `React.ReactNode`                          | No       | N/A     | Label content rendered beside the checkbox indicator.                                                   |
-| `size`            | `'md'` \| `'sm'`                           | No       | `'md'`  | Controls the indicator size and typography.                                                             |
-| `isSelected`      | `boolean`                                  | No       | N/A     | Controlled checked state.                                                                               |
-| `defaultSelected` | `boolean`                                  | No       | N/A     | Default checked state (uncontrolled).                                                                   |
-| `isIndeterminate` | `boolean`                                  | No       | `false` | Renders the indeterminate (dash) indicator. The checkbox must also be selected for this to take effect. |
-| `isInvalid`       | `boolean`                                  | No       | `false` | Applies error border and background styling to the indicator.                                           |
-| `isDisabled`      | `boolean`                                  | No       | `false` | Disables interaction and applies disabled styling.                                                      |
-| `value`           | `string`                                   | No       | N/A     | The value submitted in a form or read by a parent `CheckboxGroup`.                                      |
-| `theme`           | `CheckboxTheme` (partial)                  | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                 |
-| `cssOverrides`    | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Low-level escape hatch for Emotion overrides when theming is insufficient.                              |
-| `className`       | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria Checkbox element.                                  |
-| `...props`        | `ReactAria Checkbox` props                 | No       | N/A     | All other props from `react-aria-components` `Checkbox` (e.g. `onChange`, `autoFocus`).                 |
+| Name                     | Type                                       | Required | Default | Description                                                                                             |
+| ------------------------ | ------------------------------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------- |
+| `children`               | `React.ReactNode`                          | No       | N/A     | Label content rendered beside the checkbox indicator.                                                   |
+| `size`                   | `'md'` \| `'sm'`                           | No       | `'md'`  | Controls the indicator size and typography.                                                             |
+| `isSelected`             | `boolean`                                  | No       | N/A     | Controlled checked state.                                                                               |
+| `defaultSelected`        | `boolean`                                  | No       | N/A     | Default checked state (uncontrolled).                                                                   |
+| `isIndeterminate`        | `boolean`                                  | No       | `false` | Renders the indeterminate (dash) indicator. The checkbox must also be selected for this to take effect. |
+| `isInvalid`              | `boolean`                                  | No       | `false` | Applies error border and background styling to the indicator.                                           |
+| `isDisabled`             | `boolean`                                  | No       | `false` | Disables interaction and applies disabled styling.                                                      |
+| `value`                  | `string`                                   | No       | N/A     | The value submitted in a form or read by a parent `CheckboxGroup`.                                      |
+| `theme`                  | `CheckboxTheme` (partial)                  | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                 |
+| `dangerouslyOverrideCss` | `SerializedStyles` \| `SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below.                                                         |
+| `className`              | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria Checkbox element.                                  |
+| `...props`               | `ReactAria Checkbox` props                 | No       | N/A     | All other props from `react-aria-components` `Checkbox` (e.g. `onChange`, `autoFocus`).                 |
 
 ## Stories
 
@@ -182,7 +183,7 @@ See [React Aria `Checkbox`](https://react-aria.adobe.com/Checkbox) props for the
 
 ## Customisation
 
-We recommend using the Checkbox component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the Checkbox component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -213,11 +214,13 @@ const Component = () => (
 );
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the Checkbox component:
+<DangerouslyOverrideCssWarning />
 
-<Canvas layout="padded" of={CssOverrides} />
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the Checkbox component:
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ```tsx
 import { baseColors } from '@guardian/stand';
@@ -231,7 +234,9 @@ const customStyles = css`
 `;
 
 const Component = () => (
-	<Checkbox cssOverrides={customStyles}>Custom styled checkbox</Checkbox>
+	<Checkbox dangerouslyOverrideCss={customStyles}>
+		Custom styled checkbox
+	</Checkbox>
 );
 ```
 

@@ -18,6 +18,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={TypographyStories} />
 
@@ -64,14 +65,14 @@ import type { Typography, TypographyTheme } from '@guardian/stand/Typography';
 
 ## Props
 
-| Name           | Type               | Required | Default | Description                                                                                                                                                                                 |
-| -------------- | ------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `element`      | Various            | Yes      | N/A     | HTML element to render with font applied to.                                                                                                                                                |
-| `variant`      | Various            | Yes      | N/A     | Font variant to apply as a CSS style to the element. See the list of variants from [typography tokens presets](/docs/stand-tools-design-system-semantic-typography--docs#typography-tokens) |
-| `children`     | `ReactNode`        | No       | N/A     | Content to render inside the supplied HTML element.                                                                                                                                         |
-| `theme`        | `TypographyTheme`  | No       | N/A     | Custom theme overrides for the typography.                                                                                                                                                  |
-| `cssOverrides` | `SerializedStyles` | No       | N/A     | Custom CSS styles for the typography.                                                                                                                                                       |
-| `className`    | `string`           | No       | N/A     | Additional class name(s) for the typography.                                                                                                                                                |
+| Name                     | Type               | Required | Default | Description                                                                                                                                                                                 |
+| ------------------------ | ------------------ | -------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `element`                | Various            | Yes      | N/A     | HTML element to render with font applied to.                                                                                                                                                |
+| `variant`                | Various            | Yes      | N/A     | Font variant to apply as a CSS style to the element. See the list of variants from [typography tokens presets](/docs/stand-tools-design-system-semantic-typography--docs#typography-tokens) |
+| `children`               | `ReactNode`        | No       | N/A     | Content to render inside the supplied HTML element.                                                                                                                                         |
+| `theme`                  | `TypographyTheme`  | No       | N/A     | Custom theme overrides for the typography.                                                                                                                                                  |
+| `dangerouslyOverrideCss` | `SerializedStyles` | No       | N/A     | Escape hatch for custom CSS; see warning below.                                                                                                                                             |
+| `className`              | `string`           | No       | N/A     | Additional class name(s) for the typography.                                                                                                                                                |
 
 ## Stories
 
@@ -111,9 +112,11 @@ const Component = () => (
 );
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the rendered element.
+<DangerouslyOverrideCssWarning />
+
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the rendered element.
 
 ## Custom Component Build
 

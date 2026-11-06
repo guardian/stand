@@ -23,10 +23,7 @@ export type {
 } from './components/Tabs/types';
 export type {
 	PartialTabsTheme as TabsTheme,
-	PartialTabListTheme as TabListTheme,
 	PartialTabTheme as TabTheme,
-	PartialTabPanelsTheme as TabPanelsTheme,
-	PartialTabPanelTheme as TabPanelTheme,
 } from './components/Tabs/styles';
 export { componentTabs } from './styleD/build/typescript/component/tabs';
 export type { ComponentTabs } from './styleD/build/typescript/component/tabs';

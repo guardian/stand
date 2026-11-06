@@ -12,7 +12,9 @@ export const TemplateComponent = (props: TemplateComponentProps) => {
 	);
 
 	return (
-		<div css={[templateComponentStyles(mergedTheme), props.cssOverrides]}>
+		<div
+			css={[templateComponentStyles(mergedTheme), props.dangerouslyOverrideCss]}
+		>
 			<p>template component</p>
 			<p>{props.message ?? 'hello world'}</p>
 		</div>

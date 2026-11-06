@@ -19,8 +19,8 @@
 	--semantic-colors-border-selected: #0072a9;
 	--semantic-colors-border-selected-inverse: #8abed7;
 	--semantic-colors-border-strong: #8d8d8d;
-	--semantic-colors-border-strong-inverse: #ffffff;
 	--semantic-colors-border-stronger: #545454;
+	--semantic-colors-border-strong-inverse: #ffffff;
 	--semantic-colors-border-success: #408233;
 	--semantic-colors-border-warning: #9a7c11;
 	--semantic-colors-border-weak: #cccccc;
@@ -92,8 +92,8 @@
 	--semantic-colors-text-orange: #693c16;
 	--semantic-colors-text-red: #65170e;
 	--semantic-colors-text-strong: #000000;
-	--semantic-colors-text-strong-inverse: #dcdcdc;
 	--semantic-colors-text-stronger-inverse: #ffffff;
+	--semantic-colors-text-strong-inverse: #dcdcdc;
 	--semantic-colors-text-success: #326528;
 	--semantic-colors-text-success-inverse: #cde4c9;
 	--semantic-colors-text-teal: #0e2729;

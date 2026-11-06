@@ -67,11 +67,11 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
-	name: 'cssOverrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	args: {
 		letter: 'O',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
 			background-color: ${baseColors.orange[700]};
 			color: ${baseColors.warmPurple[300]};

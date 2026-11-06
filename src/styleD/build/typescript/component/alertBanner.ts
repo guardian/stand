@@ -16,24 +16,17 @@ export const componentAlertBanner = {
 		},
 	},
 	shared: {
-		alignItems: 'center',
 		content: {
-			alignItems: 'center',
 			color: '#000000',
-			display: 'flex',
-			flex: '1',
 			gap: '0.5rem',
 			height: '100%',
-			justifyContent: 'center',
 			typography: {
 				font: 'normal 460 0.875rem/1.3 Open Sans',
 				fontWidth: 95,
 				letterSpacing: '0rem',
 			},
 		},
-		display: 'flex',
 		height: '2.5rem',
-		justifyContent: 'space-between',
 		padding: {
 			bottom: '0px',
 			left: '1rem',

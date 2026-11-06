@@ -147,12 +147,12 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	args: {
 		text: 'Navigation',
 		icon: 'file_upload',
 		isSelected: true,
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			background-color: ${semanticColors.fill.strongHover};
 			color: ${semanticColors.text.strongInverse};
 		`,

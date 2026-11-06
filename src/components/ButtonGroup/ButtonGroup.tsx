@@ -9,7 +9,7 @@ export const ButtonGroup = ({
 	size = 'md',
 	theme = {},
 	children,
-	cssOverrides,
+	dangerouslyOverrideCss,
 }: ButtonGroupProps) => {
 	const mergedTheme = mergeDeep(defaultButtonGroupTheme, theme);
 
@@ -30,6 +30,8 @@ export const ButtonGroup = ({
 	});
 
 	return (
-		<div css={[buttonGroupStyles(mergedTheme), cssOverrides]}>{buttons}</div>
+		<div css={[buttonGroupStyles(mergedTheme), dangerouslyOverrideCss]}>
+			{buttons}
+		</div>
 	);
 };

@@ -51,8 +51,8 @@ export const mainLayoutStyles = (
 				? ''
 				: css`
 						max-width: ${theme.maxWidth};
-						margin-left: ${theme.marginLeft};
-						margin-right: ${theme.marginRight};
+						margin-left: auto;
+						margin-right: auto;
 					`
 		}
 		${
@@ -94,24 +94,24 @@ export const mainLayoutStyles = (
 
 export const layoutStyles = (theme: LayoutTheme): SerializedStyles => {
 	return css`
-		display: ${theme.shared.display};
+		display: grid;
 		min-height: ${theme.shared.minHeight};
 		width: ${theme.shared.width};
 
-		grid-template-areas: ${theme.sm.gridTemplateAreas};
-		grid-template-columns: ${theme.sm.gridTemplateColumns};
-		grid-template-rows: ${theme.sm.gridTemplateRows};
+		grid-template-areas: 'alertbanner' 'topbar' 'sidebar' 'main';
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content min-content min-content 1fr;
 
 		${from.md} {
-			grid-template-areas: ${theme.md.gridTemplateAreas};
-			grid-template-columns: ${theme.md.gridTemplateColumns};
-			grid-template-rows: ${theme.md.gridTemplateRows};
+			grid-template-areas: 'alertbanner alertbanner' 'topbar topbar' 'sidebar main';
+			grid-template-columns: min-content 1fr;
+			grid-template-rows: min-content min-content 1fr;
 		}
 
 		${from.lg} {
-			grid-template-areas: ${theme.lg.gridTemplateAreas};
-			grid-template-columns: ${theme.lg.gridTemplateColumns};
-			grid-template-rows: ${theme.lg.gridTemplateRows};
+			grid-template-areas: 'alertbanner alertbanner' 'topbar topbar' 'sidebar main';
+			grid-template-columns: min-content 1fr;
+			grid-template-rows: min-content min-content 1fr;
 		}
 	`;
 };
@@ -126,18 +126,18 @@ export const sidebarStyles = (
 				switch (layoutSmBreakpoint) {
 					case 'above-grid':
 						return css`
-							display: ${theme.sm.aboveGrid.display};
+							display: block;
 						`;
 					case 'hidden':
 						return css`
-							display: ${theme.sm.hidden.display};
+							display: none;
 						`;
 				}
 			})()}
 		}
 
 		${from.md} {
-			display: ${theme.md.display};
+			display: block;
 			width: ${theme.md.width};
 		}
 

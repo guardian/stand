@@ -1,10 +1,11 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 import TemplateComponentStories, {
 	Default,
 	CustomMessage,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './TemplateComponent.stories';
 import {
 	SandboxReact,
@@ -67,23 +68,23 @@ import type { TemplateComponentProps, TemplateComponentTheme } from '@guardian/s
 
 ## Props
 
-| Name           | Type                     | Required | Default       | Description                                         |
-| -------------- | ------------------------ | -------- | ------------- | --------------------------------------------------- |
-| `message`      | `string`                 | No       | "hello world" | string to render in the TemplateComponent.          |
-| `theme`        | `TemplateComponentTheme` | No       | N/A           | Custom theme overrides for the TemplateComponent.   |
-| `cssOverrides` | `SerializedStyles`       | No       | N/A           | Custom CSS styles for the TemplateComponent.        |
-| `className`    | `string`                 | No       | N/A           | Additional class name(s) for the TemplateComponent. |
+| Name                     | Type                     | Required | Default       | Description                                         |
+| ------------------------ | ------------------------ | -------- | ------------- | --------------------------------------------------- |
+| `message`                | `string`                 | No       | "hello world" | string to render in the TemplateComponent.          |
+| `theme`                  | `TemplateComponentTheme` | No       | N/A           | Custom theme overrides for the TemplateComponent.   |
+| `dangerouslyOverrideCss` | `SerializedStyles`       | No       | N/A           | Escape hatch for custom CSS; see warning below.     |
+| `className`              | `string`                 | No       | N/A           | Additional class name(s) for the TemplateComponent. |
 
 ## Stories
 
 <Canvas layout="padded" of={Default} />
 <Canvas layout="padded" of={CustomMessage} />
 <Canvas layout="padded" of={CustomTheme} />
-<Canvas layout="padded" of={CssOverrides} />
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ## Customisation
 
-We recommend using the TemplateComponent component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the TemplateComponent component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -108,11 +109,13 @@ const customTheme: TemplateComponentTheme = {
 const Component = () => <TemplateComponent letter="C" theme={customTheme} />;
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the TemplateComponent component, if the theme prop is not sufficient:
+<DangerouslyOverrideCssWarning />
 
-<Canvas layout="padded" of={CssOverrides} />
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the TemplateComponent component, if the theme prop is not sufficient:
+
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ```tsx
 import { TemplateComponent } from '@guardian/stand/TemplateComponent';
@@ -127,7 +130,7 @@ const customStyles = css`
 `;
 
 const Component = () => (
-	<TemplateComponent letter="O" cssOverrides={customStyles} />
+	<TemplateComponent letter="O" dangerouslyOverrideCss={customStyles} />
 );
 ```
 

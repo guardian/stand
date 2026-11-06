@@ -12,14 +12,9 @@ export const componentToast = {
 		backgroundColor: '#e8f0fb',
 	},
 	region: {
-		display: 'flex',
-		flexDirection: 'column',
 		gap: '0.75rem',
-		outline: 'none',
-		position: 'fixed',
 		right: '1.25rem',
 		top: '1.25rem',
-		zIndex: 1000,
 	},
 	shared: {
 		accentBorderWidth: '0.125rem',
@@ -34,8 +29,6 @@ export const componentToast = {
 				fontWidth: 95,
 				letterSpacing: '0rem',
 			},
-			display: 'flex',
-			flexDirection: 'column',
 			gap: '0.25rem',
 			subjectTypography: {
 				font: 'normal 460 0.875rem/1.3 Open Sans',
@@ -48,7 +41,6 @@ export const componentToast = {
 				letterSpacing: '-0.0125rem',
 			},
 		},
-		display: 'grid',
 		gap: '0.75rem',
 		maxWidth: '26.25rem',
 		media: {

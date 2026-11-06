@@ -7,7 +7,7 @@ export const Typography = ({
 	element = 'span',
 	variant = 'bodyMd',
 	children,
-	cssOverrides,
+	dangerouslyOverrideCss,
 	theme = {},
 	...props
 }: TypographyProps) => {
@@ -16,7 +16,7 @@ export const Typography = ({
 	return (
 		<ReactAriaText
 			elementType={element}
-			css={[typographyStyles(mergedTheme, { variant }), cssOverrides]}
+			css={[typographyStyles(mergedTheme, { variant }), dangerouslyOverrideCss]}
 			{...props}
 		>
 			{children}

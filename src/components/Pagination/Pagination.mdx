@@ -1,5 +1,6 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 import PaginationStories, {
 	Default,
 	MiddlePage,
@@ -84,21 +85,21 @@ const Example = () => {
 
 ## Props
 
-| Name            | Type                                         | Required | Default | Description                                                                                         |
-| --------------- | -------------------------------------------- | -------- | ------- | --------------------------------------------------------------------------------------------------- |
-| `currentPage`   | `number`                                     | Yes      | N/A     | The currently active page (1-based).                                                                |
-| `totalItems`    | `number`                                     | Yes      | N/A     | Total number of items across all pages.                                                             |
-| `pageSize`      | `number`                                     | Yes      | N/A     | Number of items per page. Used to derive the total page count.                                      |
-| `onPageChange`  | `(page: number) => void`                     | Yes      | N/A     | Called with the requested page when the user navigates.                                             |
-| `siblingCount`  | `number`                                     | No       | `1`     | Number of page buttons to show either side of the current page.                                     |
-| `boundaryCount` | `number`                                     | No       | `1`     | Number of page buttons to always show at the start and end.                                         |
-| `showSummary`   | `boolean`                                    | No       | `true`  | Whether to render the results summary.                                                              |
-| `renderSummary` | `(info: PaginationSummaryInfo) => ReactNode` | No       | N/A     | Render prop to customise the results summary text.                                                  |
-| `collapseBelow` | `Breakpoint` (`'sm' \| 'md' \| 'lg'`)        | No       | `'md'`  | Below this breakpoint the page list + summary collapse to a compact prev/next + "Page X of Y" view. |
-| `labels`        | `PaginationLabels`                           | No       | N/A     | Overrides for the accessible labels (nav, previous, next, page, status).                            |
-| `theme`         | `PaginationTheme`                            | No       | N/A     | Custom theme overrides for the Pagination.                                                          |
-| `cssOverrides`  | `SerializedStyles`                           | No       | N/A     | Custom CSS styles for the Pagination.                                                               |
-| `className`     | `string`                                     | No       | N/A     | Additional class name(s) for the Pagination.                                                        |
+| Name                     | Type                                         | Required | Default | Description                                                                                         |
+| ------------------------ | -------------------------------------------- | -------- | ------- | --------------------------------------------------------------------------------------------------- |
+| `currentPage`            | `number`                                     | Yes      | N/A     | The currently active page (1-based).                                                                |
+| `totalItems`             | `number`                                     | Yes      | N/A     | Total number of items across all pages.                                                             |
+| `pageSize`               | `number`                                     | Yes      | N/A     | Number of items per page. Used to derive the total page count.                                      |
+| `onPageChange`           | `(page: number) => void`                     | Yes      | N/A     | Called with the requested page when the user navigates.                                             |
+| `siblingCount`           | `number`                                     | No       | `1`     | Number of page buttons to show either side of the current page.                                     |
+| `boundaryCount`          | `number`                                     | No       | `1`     | Number of page buttons to always show at the start and end.                                         |
+| `showSummary`            | `boolean`                                    | No       | `true`  | Whether to render the results summary.                                                              |
+| `renderSummary`          | `(info: PaginationSummaryInfo) => ReactNode` | No       | N/A     | Render prop to customise the results summary text.                                                  |
+| `collapseBelow`          | `Breakpoint` (`'sm' \| 'md' \| 'lg'`)        | No       | `'md'`  | Below this breakpoint the page list + summary collapse to a compact prev/next + "Page X of Y" view. |
+| `labels`                 | `PaginationLabels`                           | No       | N/A     | Overrides for the accessible labels (nav, previous, next, page, status).                            |
+| `theme`                  | `PaginationTheme`                            | No       | N/A     | Custom theme overrides for the Pagination.                                                          |
+| `dangerouslyOverrideCss` | `SerializedStyles`                           | No       | N/A     | Escape hatch for custom CSS; see warning below.                                                     |
+| `className`              | `string`                                     | No       | N/A     | Additional class name(s) for the Pagination.                                                        |
 
 ## Stories
 
@@ -126,7 +127,7 @@ On narrow screens a full page-number list would overflow horizontally. To avoid 
 
 ## Customisation
 
-We recommend using the Pagination component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the Pagination component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -157,9 +158,11 @@ const Component = () => (
 );
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the Pagination component's root `nav`, if the theme prop is not sufficient:
+<DangerouslyOverrideCssWarning />
+
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the Pagination component's root `nav`, if the theme prop is not sufficient:
 
 ```tsx
 import { Pagination } from '@guardian/stand/Pagination';
@@ -176,7 +179,7 @@ const Component = () => (
 		pageSize={20}
 		totalItems={400}
 		onPageChange={() => {}}
-		cssOverrides={customStyles}
+		dangerouslyOverrideCss={customStyles}
 	/>
 );
 ```
