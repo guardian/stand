@@ -3,9 +3,8 @@ import {
 	composeRenderProps,
 	Button as ReactAriaButton,
 } from 'react-aria-components';
-import { mergeDeep } from '../../util/mergeDeep';
 import { Icon } from '../Icon/Icon';
-import { defaultIconButtonTheme, iconButtonStyles } from './styles';
+import { iconButtonStyles } from './styles';
 import type { IconButtonProps } from './types';
 
 export function IconButton({
@@ -13,11 +12,11 @@ export function IconButton({
 	size = 'md',
 	symbol,
 	ariaLabel,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
 	theme = {},
 	dangerouslyOverrideCss,
 	...props
 }: IconButtonProps) {
-	const mergedTheme = mergeDeep(defaultIconButtonTheme, theme);
 	const buttonRef = useRef<HTMLButtonElement>(null);
 
 	// Set the title attribute for accessibility and tooltip support
@@ -35,7 +34,7 @@ export function IconButton({
 			ref={buttonRef}
 			aria-label={ariaLabel}
 			css={[
-				iconButtonStyles(mergedTheme, { variant, size }, false, true),
+				iconButtonStyles({ variant, size }, false, true),
 				dangerouslyOverrideCss,
 			]}
 		>
