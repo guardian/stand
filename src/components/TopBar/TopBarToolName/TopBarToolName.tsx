@@ -23,26 +23,21 @@ function ToolName({
 	subsection,
 	subsectionIcon,
 	collapseBelow = 'lg',
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
 	theme = {},
 	dangerouslyOverrideCss,
 }: TopBarToolNameProps) {
-	const mergedTheme = mergeDeep(defaultToolNameTheme, theme);
-
 	return (
 		<TopBarItem alignment="left" size="sm">
-			<div css={[toolNameStyles(mergedTheme), dangerouslyOverrideCss]}>
+			<div css={[toolNameStyles(), dangerouslyOverrideCss]}>
 				<Favicon {...favicon} />
-				<div css={[toolNameTypography(mergedTheme, { collapseBelow })]}>
-					{name}
-				</div>
+				<div css={[toolNameTypography({ collapseBelow })]}>{name}</div>
 				{subsection && (
 					<>
-						<div css={dividerStyles(mergedTheme, { collapseBelow })}>
-							&nbsp;
-						</div>
-						<div css={subsectionStyles(mergedTheme, { collapseBelow })}>
+						<div css={dividerStyles({ collapseBelow })}>&nbsp;</div>
+						<div css={subsectionStyles({ collapseBelow })}>
 							{subsectionIcon && <Icon size="sm">{subsectionIcon}</Icon>}
-							<div css={subsectionTypography(mergedTheme)}>{subsection}</div>
+							<div css={subsectionTypography()}>{subsection}</div>
 						</div>
 					</>
 				)}
@@ -64,13 +59,13 @@ export const TopBarToolName = ({
 	) {
 		return (
 			<ReactAriaLink
-				css={toolNameLinkStyles(mergedTheme)}
+				css={toolNameLinkStyles()}
 				href={props.href}
 				onPress={props.onPress}
 			>
 				<div
 					css={[
-						toolNameHoverLinkStyles(mergedTheme, {
+						toolNameHoverLinkStyles({
 							collapseBelow,
 						}),
 					]}

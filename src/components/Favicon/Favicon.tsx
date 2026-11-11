@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import { mergeDeep } from '../../util/mergeDeep';
 import { Icon } from '../Icon/Icon';
 import {
-	defaultFaviconTheme,
 	faviconImageStyles,
 	faviconStyles,
 	faviconTypographyStyles,
@@ -10,8 +8,6 @@ import {
 import type { FaviconProps } from './types';
 
 export const Favicon = (props: FaviconProps) => {
-	const mergedTheme = mergeDeep(defaultFaviconTheme, props.theme ?? {});
-
 	const [imageError, setImageError] = useState(false);
 
 	const handleImageError = () => {
@@ -22,7 +18,7 @@ export const Favicon = (props: FaviconProps) => {
 
 	if ('src' in props && !imageError) {
 		return (
-			<div css={[faviconStyles(mergedTheme), props.dangerouslyOverrideCss]}>
+			<div css={[faviconStyles(), props.dangerouslyOverrideCss]}>
 				<img
 					src={props.src}
 					alt={props.alt}
@@ -37,8 +33,8 @@ export const Favicon = (props: FaviconProps) => {
 		return (
 			<div
 				css={[
-					faviconStyles(mergedTheme),
-					faviconTypographyStyles(mergedTheme),
+					faviconStyles(),
+					faviconTypographyStyles(),
 					props.dangerouslyOverrideCss,
 				]}
 			>
@@ -48,8 +44,8 @@ export const Favicon = (props: FaviconProps) => {
 	}
 	if ('icon' in props) {
 		return (
-			<div css={[faviconStyles(mergedTheme), props.dangerouslyOverrideCss]}>
-				<Icon fill={mergedTheme.color.text}>{props.icon}</Icon>
+			<div css={[faviconStyles(), props.dangerouslyOverrideCss]}>
+				<Icon fill={'var(--component-favicon-color-text)'}>{props.icon}</Icon>
 			</div>
 		);
 	}

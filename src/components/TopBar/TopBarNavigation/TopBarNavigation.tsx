@@ -1,10 +1,8 @@
 import { Link, Pressable } from 'react-aria-components';
-import { mergeDeep } from '../../../util/mergeDeep';
 import { Icon } from '../../Icon/Icon';
 import type { MaterialSymbol } from '../../Icon/types';
 import { Menu, MenuToggle } from '../../Menu/Menu';
 import {
-	defaultTopBarNavigationTheme,
 	topBarMenuIndicatorStyles,
 	topBarNavigationDividerStyles,
 	topBarNavigationStyles,
@@ -25,19 +23,17 @@ export function TopBarNavigation({
 	onPress,
 	isDisabled,
 	alignment = 'left',
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
 	theme = {},
 	dangerouslyOverrideCss,
 	className,
 	_menuOpen,
 	...props
 }: TopBarNavigationProps) {
-	const mergedTheme = mergeDeep(defaultTopBarNavigationTheme, theme);
 	const iconSize = size === 'md' ? 'lg' : 'sm';
 
 	return (
-		<div
-			css={topBarNavigationDividerStyles(mergedTheme, { alignment }, _menuOpen)}
-		>
+		<div css={topBarNavigationDividerStyles({ alignment }, _menuOpen)}>
 			{menuChildren ? (
 				<Menu
 					popoverProps={{
@@ -51,8 +47,8 @@ export function TopBarNavigation({
 								role="button"
 								data-disabled={isDisabled ? true : undefined}
 								css={[
-									topBarNavigationStyles(mergedTheme, isSelected, _menuOpen),
-									topBarNavigationTypographyStyles(mergedTheme, size),
+									topBarNavigationStyles(isSelected, _menuOpen),
+									topBarNavigationTypographyStyles(size),
 									dangerouslyOverrideCss,
 								]}
 								className={className}
@@ -60,13 +56,13 @@ export function TopBarNavigation({
 							>
 								<Icon size={iconSize}>{icon}</Icon>
 								<span
-									css={topBarNavigationTextStyles(mergedTheme, {
+									css={topBarNavigationTextStyles({
 										hasIcon: !!icon,
 									})}
 								>
 									{text}
 								</span>
-								<div css={topBarMenuIndicatorStyles(mergedTheme)}>
+								<div css={topBarMenuIndicatorStyles()}>
 									<Icon size={iconSize}>{menuIndicator}</Icon>
 								</div>
 							</span>
@@ -77,8 +73,8 @@ export function TopBarNavigation({
 			) : (
 				<Link
 					css={[
-						topBarNavigationStyles(mergedTheme, isSelected, _menuOpen),
-						topBarNavigationTypographyStyles(mergedTheme, size),
+						topBarNavigationStyles(isSelected, _menuOpen),
+						topBarNavigationTypographyStyles(size),
 						dangerouslyOverrideCss,
 					]}
 					href={href}
@@ -88,9 +84,7 @@ export function TopBarNavigation({
 					{...props}
 				>
 					<Icon size={iconSize}>{icon}</Icon>
-					<span
-						css={topBarNavigationTextStyles(mergedTheme, { hasIcon: !!icon })}
-					>
+					<span css={topBarNavigationTextStyles({ hasIcon: !!icon })}>
 						{text}
 					</span>
 				</Link>

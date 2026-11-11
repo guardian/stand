@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { mergeDeep } from '../../util/mergeDeep';
-import { avatarImageStyles, avatarStyles, defaultAvatarTheme } from './styles';
+import { avatarImageStyles, avatarStyles } from './styles';
 import { avatarColors, type AvatarColors, type AvatarProps } from './types';
 
 // deterministically pick a color based on the first 2 characters of input string
@@ -19,12 +18,11 @@ export function Avatar({
 	alt,
 	size = 'md',
 	color,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
 	theme = {},
 	dangerouslyOverrideCss,
 	...props
 }: AvatarProps) {
-	const mergedTheme = mergeDeep(defaultAvatarTheme, theme);
-
 	const [imageError, setImageError] = useState(false);
 
 	const handleImageError = () => {
@@ -40,10 +38,7 @@ export function Avatar({
 
 	return (
 		<div
-			css={[
-				avatarStyles(mergedTheme, { size, color: avatarColor }),
-				dangerouslyOverrideCss,
-			]}
+			css={[avatarStyles({ size, color: avatarColor }), dangerouslyOverrideCss]}
 			role="img"
 			aria-label={
 				alt ??
