@@ -70,6 +70,39 @@ const globalStyles = css`
     }
 `;
 
+export const globalTypes = {
+	theme: {
+		name: 'Theme',
+		description: 'Switch global Stand theme',
+		defaultValue: 'blue',
+		toolbar: {
+			icon: 'paintbrush',
+			items: [
+				{ value: 'blue', title: 'Blue' },
+				{ value: 'coolPurple', title: 'Cool Purple' },
+				{ value: 'cyan', title: 'Cyan' },
+				{ value: 'orange', title: 'Orange' },
+				{ value: 'teal', title: 'Teal' },
+				{ value: 'warmPurple', title: 'Warm Purple' },
+				{ value: 'magenta', title: 'Magenta' },
+			],
+			showName: true,
+		},
+	},
+	mode: {
+		name: 'Mode',
+		description: 'Switch global Stand mode',
+		defaultValue: 'light',
+		toolbar: {
+			items: [
+				{ value: 'light', icon: 'circlehollow', title: 'Light' },
+				{ value: 'dark', icon: 'circle', title: 'Dark' },
+			],
+			showName: true,
+		},
+	},
+}
+
 const preview: Preview = {
 	parameters: {
 		controls: {
@@ -85,8 +118,8 @@ const preview: Preview = {
 	},
 	decorators: [
 		// Wrap all stories with Stand provider and apply global styles
-		Story => (
-			<Stand theme="orange" mode="light">
+		(Story, context) => (
+			<Stand theme={context.globals.theme} mode={context.globals.mode}>
 				<Global styles={[Fonts, globalStyles, GlobalResetStyles]} />
 				<Story />
 			</Stand>
