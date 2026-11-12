@@ -3,7 +3,6 @@ import { css } from '@emotion/react';
 import type { ComponentSelect } from '../../styleD/build/typescript/component/select';
 import { componentSelect } from '../../styleD/build/typescript/component/select';
 import type { DeepPartial, Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
 import type { ListBoxProps, SelectProps } from './types';
 
 export type SelectTheme = Prettify<ComponentSelect>;
@@ -18,20 +17,20 @@ export const popoverStyles = (): SerializedStyles => {
 	`;
 };
 
-export const listBoxItemStyles = (theme: SelectTheme): SerializedStyles => {
+export const listBoxItemStyles = (): SerializedStyles => {
 	return css`
-		padding-left: ${theme.shared.option.paddingLeft};
-		padding-right: ${theme.shared.option.paddingRight};
-		padding-top: ${theme.shared.option.paddingTop};
-		padding-bottom: ${theme.shared.option.paddingBottom};
+		padding-left: var(--component-select-shared-option-padding-left);
+		padding-right: var(--component-select-shared-option-padding-right);
+		padding-top: var(--component-select-shared-option-padding-top);
+		padding-bottom: var(--component-select-shared-option-padding-bottom);
 
 		&[data-hovered] {
-			outline: ${theme.shared.hover.outline};
+			outline: var(--component-select-shared-hover-outline);
 		}
 
 		/* Hovering adds data-focused and the item stays focused after hovering away */
 		&[data-focused] {
-			background-color: ${theme.shared.hover.backgroundColor};
+			background-color: var(--component-select-shared-hover-background-color);
 		}
 
 		/* Override default browser focus behaviour */
@@ -40,71 +39,98 @@ export const listBoxItemStyles = (theme: SelectTheme): SerializedStyles => {
 		}
 
 		&[data-focus-visible] {
-			outline: ${theme.shared.option.focused.outline};
-			outline-offset: ${theme.shared.option.focused.outlineOffset};
-			background-color: ${theme.shared.option.focused.backgroundColor};
+			outline: var(--component-select-shared-option-focused-outline);
+			outline-offset: var(
+				--component-select-shared-option-focused-outline-offset
+			);
+			background-color: var(
+				--component-select-shared-option-focused-background-color
+			);
 		}
 
 		/* Must be last to take precedence */
 		&[data-pressed] {
-			background-color: ${theme.shared.pressed.backgroundColor};
+			background-color: var(--component-select-shared-pressed-background-color);
 		}
 	`;
 };
 
-export const listBoxStyles = (
-	theme: SelectTheme,
-	{ size }: { size: ListBoxProps['size'] },
-): SerializedStyles => {
+export const listBoxStyles = ({
+	size,
+}: {
+	size: ListBoxProps['size'];
+}): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(theme[size].typography)}
-		background-color: ${theme.shared.listBox.backgroundColor};
-		border: ${theme.shared.listBox.border};
-		box-shadow: ${theme.shared.listBox.shadow};
-		width: ${theme.shared.width};
+		background-color: var(--component-select-shared-list-box-background-color);
+		border: var(--component-select-shared-list-box-border);
+		box-shadow: var(--component-select-shared-list-box-shadow);
+		width: var(--component-select-shared-width);
 		outline: none;
+		font: normal var(--component-select-${size}-typography-font-font-weight)
+			var(--component-select-${size}-typography-font-font-size)/var(
+				--component-select-${size}-typography-font-line-height
+			)
+			var(--component-select-${size}-typography-font-font-family);
+		letter-spacing: var(
+			--component-select-${size}-typography-font-letter-spacing
+		);
+		font-variation-settings: 'wdth'
+			var(--component-select-${size}-typography-font-width);
 	`;
 };
 
-export const buttonStyles = (
-	theme: SelectTheme,
-	{ size, isInvalid }: Required<Pick<SelectProps, 'size' | 'isInvalid'>>,
-): SerializedStyles => {
+export const buttonStyles = ({
+	size,
+	isInvalid,
+}: Required<Pick<SelectProps, 'size' | 'isInvalid'>>): SerializedStyles => {
 	return css`
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background-color: ${theme.shared.button.backgroundColor};
-		border: ${theme.shared.button.border};
-		border-radius: ${theme.shared.button.borderRadius};
-		height: ${theme[size].height};
-		padding-left: ${theme.shared.button.paddingLeft};
-		padding-right: ${theme.shared.button.paddingRight};
-		margin-top: ${theme.shared.button.marginTop};
-		${convertTypographyToEmotionStringStyle(theme[size].typography)}
-		color: ${theme.shared.button.color};
+		background-color: var(--component-select-shared-button-background-color);
+		border: var(--component-select-shared-button-border);
+		border-radius: var(--component-select-shared-button-border-radius);
+		height: var(--component-select-${size}-height);
+		padding-left: var(--component-select-shared-button-padding-left);
+		padding-right: var(--component-select-shared-button-padding-right);
+		margin-top: var(--component-select-shared-button-margin-top);
+		color: var(--component-select-shared-button-color);
+		font: normal var(--component-select-${size}-typography-font-font-weight)
+			var(--component-select-${size}-typography-font-font-size)/var(
+				--component-select-${size}-typography-font-line-height
+			)
+			var(--component-select-${size}-typography-font-font-family);
+		letter-spacing: var(
+			--component-select-${size}-typography-font-letter-spacing
+		);
+		font-variation-settings: 'wdth'
+			var(--component-select-${size}-typography-font-width);
 
 		&[data-hovered] {
-			background-color: ${theme.shared.hover.backgroundColor};
+			background-color: var(--component-select-shared-hover-background-color);
 		}
 
 		&[data-pressed] {
-			background-color: ${theme.shared.pressed.backgroundColor};
+			background-color: var(--component-select-shared-pressed-background-color);
 		}
 
 		&[data-focus-visible] {
-			outline: ${theme.shared.button.focused.outline};
-			outline-offset: ${theme.shared.button.focused.outlineOffset};
+			outline: var(--component-select-shared-button-focused-outline);
+			outline-offset: var(
+				--component-select-shared-button-focused-outline-offset
+			);
 		}
 
 		&[data-disabled] {
 			cursor: not-allowed;
-			background-color: ${theme.shared.button.disabled.backgroundColor};
-			color: ${theme.shared.button.disabled.color};
-			border: ${theme.shared.button.disabled.border};
+			background-color: var(
+				--component-select-shared-button-disabled-background-color
+			);
+			color: var(--component-select-shared-button-disabled-color);
+			border: var(--component-select-shared-button-disabled-border);
 		}
 
-		${isInvalid ? `border: ${theme.shared.button.error.border};` : ``}
+		${isInvalid ? `border: var(--component-select-shared-button-error-border);` : ``}
 	`;
 };
 

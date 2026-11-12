@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import { useState } from 'react';
 import { Button } from 'react-aria-components';
 import { mergeDeep } from '../../util/mergeDeep';
@@ -158,7 +159,6 @@ function buildStepAriaLabel(
 }
 
 function getStepNumberColor(
-	theme: SidebarStepperNavigationTheme,
 	isHovered: boolean,
 	isCurrent: boolean,
 	isDisabled: boolean,
@@ -179,21 +179,22 @@ function StepNumber({
 	isHovered,
 	isCurrent,
 	isDisabled,
-	theme,
 }: {
 	stepNumber: number;
 	isHovered: boolean;
 	isCurrent: boolean;
 	isDisabled: boolean;
-	theme: SidebarStepperNavigationTheme;
 }) {
 	return (
 		<Typography
 			element="div"
-			theme={{
-				color: getStepNumberColor(theme, isHovered, isCurrent, isDisabled),
-			}}
-			dangerouslyOverrideCss={stepNumberStyles(isHovered, isCurrent)}
+			// TODO: Use theme instead of CSS overrides
+			dangerouslyOverrideCss={[
+				stepNumberStyles(isHovered, isCurrent),
+				css`
+					color: ${getStepNumberColor(isHovered, isCurrent, isDisabled)};
+				`,
+			]}
 		>
 			{stepNumber}
 		</Typography>
@@ -230,7 +231,6 @@ function Step({
 						isHovered={isHovered}
 						isCurrent={isCurrent}
 						isDisabled={isDisabled}
-						theme={theme}
 					/>
 					<div css={stepContentStyles()}>
 						<Typography
