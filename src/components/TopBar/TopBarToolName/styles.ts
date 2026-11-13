@@ -5,7 +5,10 @@ import {
 	type ComponentTopBar,
 } from '../../../styleD/build/typescript/component/topBar';
 import type { DeepPartial, Prettify } from '../../../util/types';
-import { until } from '../../../utils';
+import {
+	convertCSSTypographyToEmotionStringStyle,
+	until,
+} from '../../../utils';
 import type { TopBarToolNameProps } from './types';
 
 export type TopBarToolNameTheme = Prettify<ComponentTopBar['toolName']>;
@@ -19,19 +22,7 @@ export const toolNameHoverLinkStyles = ({
 	collapseBelow,
 }: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>): SerializedStyles => {
 	return css`
-		font: normal
-			var(--component-top-bar-tool-name-hover-link-typography-font-font-weight)
-			var(
-				--component-top-bar-tool-name-hover-link-typography-font-font-size
-			)/var(
-				--component-top-bar-tool-name-hover-link-typography-font-line-height
-			)
-			var(--component-top-bar-tool-name-hover-link-typography-font-font-family);
-		letter-spacing: var(
-			--component-top-bar-tool-name-hover-link-typography-font-letter-spacing
-		);
-		font-variation-settings: 'wdth'
-			var(--component-top-bar-tool-name-hover-link-typography-font-width);
+		${convertCSSTypographyToEmotionStringStyle(`--component-top-bar-tool-name-hover-link`)}
 		background-color: var(
 			--component-top-bar-tool-name-hover-link-background-color
 		);
@@ -119,16 +110,7 @@ export const toolNameTypography = ({
 	collapseBelow,
 }: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>): SerializedStyles => {
 	return css`
-		font: normal var(--component-top-bar-tool-name-typography-font-font-weight)
-			var(--component-top-bar-tool-name-typography-font-font-size)/var(
-				--component-top-bar-tool-name-typography-font-line-height
-			)
-			var(--component-top-bar-tool-name-typography-font-font-family);
-		letter-spacing: var(
-			--component-top-bar-tool-name-typography-font-letter-spacing
-		);
-		font-variation-settings: 'wdth'
-			var(--component-top-bar-tool-name-typography-font-width);
+		${convertCSSTypographyToEmotionStringStyle(`--component-top-bar-tool-name`)}
 		${until[collapseBelow]} {
 			display: none;
 		}
@@ -162,18 +144,6 @@ export const subsectionStyles = ({
 
 export const subsectionTypography = (): SerializedStyles => {
 	return css`
-		font: normal
-			var(--component-top-bar-tool-name-subsection-typography-font-font-weight)
-			var(
-				--component-top-bar-tool-name-subsection-typography-font-font-size
-			)/var(
-				--component-top-bar-tool-name-subsection-typography-font-line-height
-			)
-			var(--component-top-bar-tool-name-subsection-typography-font-font-family);
-		letter-spacing: var(
-			--component-top-bar-tool-name-subsection-typography-font-letter-spacing
-		);
-		font-variation-settings: 'wdth'
-			var(--component-top-bar-tool-name-subsection-typography-font-width);
+		${convertCSSTypographyToEmotionStringStyle(`--component-top-bar-tool-name-subsection`)}
 	`;
 };

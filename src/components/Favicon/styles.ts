@@ -4,6 +4,7 @@ import {
 	componentFavicon,
 	type ComponentFavicon,
 } from '../../styleD/build/typescript/component/favicon';
+import { convertCSSTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../util/types';
 
 export type FaviconTheme = Prettify<ComponentFavicon>;
@@ -25,14 +26,7 @@ export const faviconStyles = (): SerializedStyles => {
 export const faviconTypographyStyles = (): SerializedStyles => {
 	return css`
 		color: var(--component-favicon-color-text);
-		font: normal var(--component-favicon-typography-font-font-weight)
-			var(--component-favicon-typography-font-font-size)/var(
-				--component-favicon-typography-font-line-height
-			)
-			var(--component-favicon-typography-font-font-family);
-		letter-spacing: var(--component-favicon-typography-font-letter-spacing);
-		font-variation-settings: 'wdth'
-			var(--component-favicon-typography-font-width);
+		${convertCSSTypographyToEmotionStringStyle(`--component-favicon`)}
 	`;
 };
 

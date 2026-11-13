@@ -2,6 +2,7 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentAvatar } from '../../styleD/build/typescript/component/avatar';
 import { componentAvatar } from '../../styleD/build/typescript/component/avatar';
+import { convertCSSTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../util/types';
 import type { AvatarProps } from './types';
 
@@ -37,16 +38,7 @@ export const avatarStyles = ({
 		border: var(--component-avatar-shared-color-${color}-border);
 		user-select: none;
 		color: var(--component-avatar-shared-color-${color}-text);
-		font: normal var(--component-avatar-${size}-typography-font-font-weight)
-			var(--component-avatar-${size}-typography-font-font-size)/var(
-				--component-avatar-${size}-typography-font-line-height
-			)
-			var(--component-avatar-${size}-typography-font-font-family);
-		letter-spacing: var(
-			--component-avatar-${size}-typography-font-letter-spacing
-		);
-		font-variation-settings: 'wdth'
-			var(--component-avatar-${size}-typography-font-width);
+		${convertCSSTypographyToEmotionStringStyle(`--component-avatar-${size}`)}
 
 		&[data-avatar-context='interactive']:hover {
 			background-color: var(

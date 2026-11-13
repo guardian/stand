@@ -2,6 +2,7 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentTopBar } from '../../../styleD/build/typescript/component/topBar';
 import { componentTopBar } from '../../../styleD/build/typescript/component/topBar';
+import { convertCSSTypographyToEmotionStringStyle } from '../../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../../util/types';
 import type { TopBarNavigationProps } from './types';
 
@@ -142,17 +143,7 @@ export const topBarNavigationTypographyStyles = (
 	size: 'md' | 'sm',
 ): SerializedStyles => {
 	return css`
-		font: normal
-			var(--component-top-bar-navigation-${size}-typography-font-font-weight)
-			var(--component-top-bar-navigation-${size}-typography-font-font-size)/var(
-				--component-top-bar-navigation-${size}-typography-font-line-height
-			)
-			var(--component-top-bar-navigation-${size}-typography-font-font-family);
-		letter-spacing: var(
-			--component-top-bar-navigation-${size}-typography-font-letter-spacing
-		);
-		font-variation-settings: 'wdth'
-			var(--component-top-bar-navigation-${size}-typography-font-width);
+		${convertCSSTypographyToEmotionStringStyle(`--component-top-bar-navigation-${size}`)}
 	`;
 };
 

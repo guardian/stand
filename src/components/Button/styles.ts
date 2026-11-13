@@ -2,6 +2,7 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentButton } from '../../styleD/build/typescript/component/button';
 import { componentButton } from '../../styleD/build/typescript/component/button';
+import { convertCSSTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../util/types';
 import type { ButtonProps } from './types';
 
@@ -33,17 +34,7 @@ export const buttonStyles = (
 			var(--component-button-${variant}-${size}-padding-right)
 			var(--component-button-${variant}-${size}-padding-bottom)
 			var(--component-button-${variant}-${size}-padding-left);
-		font: normal
-			var(--component-button-${variant}-${size}-typography-font-font-weight)
-			var(--component-button-${variant}-${size}-typography-font-font-size)/var(
-				--component-button-${variant}-${size}-typography-font-line-height
-			)
-			var(--component-button-${variant}-${size}-typography-font-font-family);
-		letter-spacing: var(
-			--component-button-${variant}-${size}-typography-font-letter-spacing
-		);
-		font-variation-settings: 'wdth'
-			var(--component-button-${variant}-${size}-typography-font-width);
+		${convertCSSTypographyToEmotionStringStyle(`--component-button-${variant}-${size}`)}
 		border: var(--component-button-${variant}-shared-border);
 		border-radius: var(--component-button-${variant}-shared-border-radius);
 

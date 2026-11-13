@@ -2,6 +2,7 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentSelect } from '../../styleD/build/typescript/component/select';
 import { componentSelect } from '../../styleD/build/typescript/component/select';
+import { convertCSSTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../util/types';
 import type { ListBoxProps, SelectProps } from './types';
 
@@ -66,16 +67,7 @@ export const listBoxStyles = ({
 		box-shadow: var(--component-select-shared-list-box-shadow);
 		width: var(--component-select-shared-width);
 		outline: none;
-		font: normal var(--component-select-${size}-typography-font-font-weight)
-			var(--component-select-${size}-typography-font-font-size)/var(
-				--component-select-${size}-typography-font-line-height
-			)
-			var(--component-select-${size}-typography-font-font-family);
-		letter-spacing: var(
-			--component-select-${size}-typography-font-letter-spacing
-		);
-		font-variation-settings: 'wdth'
-			var(--component-select-${size}-typography-font-width);
+		${convertCSSTypographyToEmotionStringStyle(`--component-select-${size}`)}
 	`;
 };
 
@@ -95,16 +87,7 @@ export const buttonStyles = ({
 		padding-right: var(--component-select-shared-button-padding-right);
 		margin-top: var(--component-select-shared-button-margin-top);
 		color: var(--component-select-shared-button-color);
-		font: normal var(--component-select-${size}-typography-font-font-weight)
-			var(--component-select-${size}-typography-font-font-size)/var(
-				--component-select-${size}-typography-font-line-height
-			)
-			var(--component-select-${size}-typography-font-font-family);
-		letter-spacing: var(
-			--component-select-${size}-typography-font-letter-spacing
-		);
-		font-variation-settings: 'wdth'
-			var(--component-select-${size}-typography-font-width);
+		${convertCSSTypographyToEmotionStringStyle(`--component-select-${size}`)}
 
 		&[data-hovered] {
 			background-color: var(--component-select-shared-hover-background-color);

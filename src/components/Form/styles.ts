@@ -2,6 +2,7 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentForm } from '../../styleD/build/typescript/component/form';
 import { componentForm } from '../../styleD/build/typescript/component/form';
+import { convertCSSTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { Prettify } from '../../util/types';
 import type { FormInputContainerDefaultProps } from './types';
 
@@ -39,17 +40,7 @@ export const formInputLabelStyles = ({
 }): SerializedStyles => {
 	return css`
 		color: var(--component-form-input-shared-label-color);
-		font: normal
-			var(--component-form-input-${size}-label-typography-font-font-weight)
-			var(--component-form-input-${size}-label-typography-font-font-size)/var(
-				--component-form-input-${size}-label-typography-font-line-height
-			)
-			var(--component-form-input-${size}-label-typography-font-font-family);
-		letter-spacing: var(
-			--component-form-input-${size}-label-typography-font-letter-spacing
-		);
-		font-variation-settings: 'wdth'
-			var(--component-form-input-${size}-label-typography-font-width);
+		${convertCSSTypographyToEmotionStringStyle(`--component-form-input-${size}-label`)}
 		${
 			isDisabled &&
 			css`
@@ -66,20 +57,7 @@ export const formInputDescriptionStyles = ({
 }): SerializedStyles => {
 	return css`
 		color: var(--component-form-input-shared-description-color);
-		font: normal
-			var(--component-form-input-shared-description-typography-font-font-weight)
-			var(
-				--component-form-input-shared-description-typography-font-font-size
-			)/var(
-				--component-form-input-shared-description-typography-font-line-height
-			)
-			var(--component-form-input-shared-description-typography-font-font-family);
-		letter-spacing: var(
-			--component-form-input-shared-description-typography-font-letter-spacing
-		);
-		font-variation-settings: 'wdth'
-			var(--component-form-input-shared-description-typography-font-width);
-
+		${convertCSSTypographyToEmotionStringStyle(`--component-form-input-shared-description`)}
 		${
 			isDisabled &&
 			css`
