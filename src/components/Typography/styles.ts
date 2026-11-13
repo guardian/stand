@@ -19,5 +19,5 @@ export const typographyStyles = (
 	{ variant }: Required<Pick<TypographyProps, 'variant'>>,
 ): SerializedStyles => css`
 	${convertTypographyToEmotionStringStyle(semanticTypography[variant])}
-	color: ${theme.color};
+	color: var(--component-typography-color);
 `;

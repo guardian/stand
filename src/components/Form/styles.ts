@@ -2,8 +2,8 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentForm } from '../../styleD/build/typescript/component/form';
 import { componentForm } from '../../styleD/build/typescript/component/form';
+import { convertCSSTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
 import type { FormInputContainerDefaultProps } from './types';
 
 export type FormInputContainerTheme = Prettify<ComponentForm['input']>;
@@ -11,64 +11,57 @@ export type FormInputContainerTheme = Prettify<ComponentForm['input']>;
 export const defaultFormInputContainerTheme: FormInputContainerTheme =
 	componentForm.input;
 
-export const formInputContainerStyles = (
-	theme: FormInputContainerTheme,
-	{ fluid }: FormInputContainerDefaultProps<{ className?: unknown }, unknown>,
-): SerializedStyles => {
+export const formInputContainerStyles = ({
+	fluid,
+}: FormInputContainerDefaultProps<
+	{ className?: unknown },
+	unknown
+>): SerializedStyles => {
 	return css`
 		display: flex;
 		flex-direction: column;
-		gap: ${theme.shared.container.gap};
-		width: ${theme.shared.container.width};
+		gap: var(--component-form-input-shared-container-gap);
+		width: var(--component-form-input-shared-container-width);
 		${
 			!fluid &&
 			css`
-				max-width: ${theme.shared.container.maxWidth};
+				max-width: var(--component-form-input-shared-container-max-width);
 			`
 		}
 	`;
 };
 
-export const formInputLabelStyles = (
-	theme: FormInputContainerTheme,
-	{
-		isDisabled,
-		size,
-	}: {
-		size: keyof Omit<FormInputContainerTheme, 'shared'>;
-		isDisabled?: boolean;
-	},
-): SerializedStyles => {
+export const formInputLabelStyles = ({
+	isDisabled,
+	size,
+}: {
+	size: keyof Omit<FormInputContainerTheme, 'shared'>;
+	isDisabled?: boolean;
+}): SerializedStyles => {
 	return css`
-		color: ${theme.shared.label.color};
-		${convertTypographyToEmotionStringStyle(theme[size].label.typography)}
-
+		color: var(--component-form-input-shared-label-color);
+		${convertCSSTypographyToEmotionStringStyle(`--component-form-input-${size}-label`)}
 		${
 			isDisabled &&
 			css`
-				color: ${theme.shared.label.disabled.color};
+				color: var(--component-form-input-shared-label-disabled-color);
 			`
 		}
 	`;
 };
 
-export const formInputDescriptionStyles = (
-	theme: FormInputContainerTheme,
-	{
-		isDisabled,
-	}: {
-		isDisabled?: boolean;
-	},
-): SerializedStyles => {
+export const formInputDescriptionStyles = ({
+	isDisabled,
+}: {
+	isDisabled?: boolean;
+}): SerializedStyles => {
 	return css`
-		color: ${theme.shared.description.color};
-		${convertTypographyToEmotionStringStyle(
-			theme.shared.description.typography,
-		)}
+		color: var(--component-form-input-shared-description-color);
+		${convertCSSTypographyToEmotionStringStyle(`--component-form-input-shared-description`)}
 		${
 			isDisabled &&
 			css`
-				color: ${theme.shared.description.disabled.color};
+				color: var(--component-form-input-shared-description-disabled-color);
 			`
 		}
 	`;

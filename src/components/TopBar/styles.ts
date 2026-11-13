@@ -9,26 +9,26 @@ export type TopBarTheme = Prettify<ComponentTopBar>;
 export type PartialTopBarTheme = Prettify<DeepPartial<TopBarTheme>>;
 export const defaultTopBarTheme: TopBarTheme = componentTopBar;
 
-export const topBarStyles = (theme: TopBarTheme): SerializedStyles => {
+export const topBarStyles = (): SerializedStyles => {
 	return css`
-		background-color: ${theme.backgroundColor};
-		height: ${theme.height};
-		border-top: ${theme.borderTop};
-		border-right: ${theme.borderRight};
-		border-bottom: ${theme.borderBottom};
-		border-left: ${theme.borderLeft};
+		background-color: var(--component-top-bar-background-color);
+		height: var(--component-top-bar-height);
+		border-top: var(--component-top-bar-border-top);
+		border-right: var(--component-top-bar-border-right);
+		border-bottom: var(--component-top-bar-border-bottom);
+		border-left: var(--component-top-bar-border-left);
 		display: flex;
 		justify-content: flex-start;
 	`;
 };
 
-export const topBarContainerStyles = (
-	theme: TopBarTheme,
-	{
-		collapseBelow,
-		showUntil,
-	}: { collapseBelow?: Breakpoint; showUntil?: Breakpoint } = {},
-): SerializedStyles => {
+export const topBarContainerStyles = ({
+	collapseBelow,
+	showUntil,
+}: {
+	collapseBelow?: Breakpoint;
+	showUntil?: Breakpoint;
+} = {}): SerializedStyles => {
 	return css`
 		display: flex;
 
@@ -59,37 +59,38 @@ export const topBarSpacerStyles = (): SerializedStyles => {
 };
 
 export const topBarCollapsedNavMenuButtonStyles = (
-	theme: TopBarTheme,
 	menuOpen?: boolean,
 ): SerializedStyles => {
 	return css`
-		margin: ${theme.collapsedNavMenu.button.margin};
-		padding: ${theme.collapsedNavMenu.button.padding};
-		background: ${theme.collapsedNavMenu.button.background};
-		border: ${theme.collapsedNavMenu.button.border};
+		margin: var(--component-top-bar-collapsed-nav-menu-button-margin);
+		padding: var(--component-top-bar-collapsed-nav-menu-button-padding);
+		background: var(--component-top-bar-collapsed-nav-menu-button-background);
+		border: var(--component-top-bar-collapsed-nav-menu-button-border);
 		cursor: pointer;
 
 		&[data-hovered] {
-			background-color: ${
-				theme.collapsedNavMenu.button.hovered.backgroundColor
-			};
+			background-color: var(
+				--component-top-bar-collapsed-nav-menu-button-hovered-background-color
+			);
 		}
 
 		${
 			menuOpen &&
 			css`
-				background-color: ${theme.collapsedNavMenu.button.active.backgroundColor};
+				background-color: var(
+					--component-top-bar-collapsed-nav-menu-button-active-background-color
+				);
 			`
 		}
 	`;
 };
 
-export const topBarCollapsedNavMenuPopoverStyles = (
-	theme: TopBarTheme,
-): SerializedStyles => {
+export const topBarCollapsedNavMenuPopoverStyles = (): SerializedStyles => {
 	return css`
-		background-color: ${theme.collapsedNavMenu.popover.backgroundColor};
-		border-left: ${theme.collapsedNavMenu.popover.border};
-		border-right: ${theme.collapsedNavMenu.popover.border};
+		background-color: var(
+			--component-top-bar-collapsed-nav-menu-popover-background-color
+		);
+		border-left: var(--component-top-bar-collapsed-nav-menu-popover-border);
+		border-right: var(--component-top-bar-collapsed-nav-menu-popover-border);
 	`;
 };

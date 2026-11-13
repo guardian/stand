@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import { useState } from 'react';
 import { Button } from 'react-aria-components';
 import { mergeDeep } from '../../util/mergeDeep';
@@ -45,27 +46,34 @@ function StatusRow({
 	icon,
 	iconColor,
 	isDisabled,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
 	theme,
 }: StatusRowProps & { theme: SidebarStepperNavigationTheme }) {
 	return (
-		<div css={statusRowStyles(theme)}>
+		<div css={statusRowStyles()}>
 			<Typography
 				variant="bodySm"
 				element="span"
 				theme={{
 					color: isDisabled
-						? theme.statusRow.shared.text.disabledColor
-						: theme.statusRow.shared.text.color,
+						? 'var(--component-sidebar-stepper-navigation-status-row-shared-text-disabled-color)'
+						: 'var(--component-sidebar-stepper-navigation-status-row-shared-text-color)',
 				}}
 			>
 				{label}
 			</Typography>
 			<Icon
 				fill={
-					isDisabled ? theme.statusRow.shared.text.disabledColor : iconColor
+					isDisabled
+						? 'var(--component-sidebar-stepper-navigation-status-row-shared-text-disabled-color)'
+						: iconColor
 				}
 				size="sm"
-				theme={{ sm: { size: theme.statusRow.shared.icon.size } }}
+				theme={{
+					sm: {
+						size: 'var(--component-sidebar-stepper-navigation-status-row-shared-icon-size)',
+					},
+				}}
 				symbol={icon}
 			/>
 		</div>
@@ -89,7 +97,9 @@ function CompletionCaption({
 				<StatusRow
 					label="Optional"
 					isDisabled={isDisabled}
-					iconColor={theme.statusRow.shared.icon.optionalColor}
+					iconColor={
+						'var(--component-sidebar-stepper-navigation-status-row-shared-icon-optional-color)'
+					}
 					icon="circle"
 					theme={theme}
 				/>
@@ -99,7 +109,9 @@ function CompletionCaption({
 				<StatusRow
 					label="Complete"
 					isDisabled={isDisabled}
-					iconColor={theme.statusRow.shared.icon.completeColor}
+					iconColor={
+						'var(--component-sidebar-stepper-navigation-status-row-shared-icon-complete-color)'
+					}
 					icon="check_circle"
 					theme={theme}
 				/>
@@ -109,7 +121,9 @@ function CompletionCaption({
 				<StatusRow
 					label="Incomplete"
 					isDisabled={isDisabled}
-					iconColor={theme.statusRow.shared.icon.incompleteColor}
+					iconColor={
+						'var(--component-sidebar-stepper-navigation-status-row-shared-icon-incomplete-color)'
+					}
 					icon="warning"
 					theme={theme}
 				/>
@@ -145,20 +159,19 @@ function buildStepAriaLabel(
 }
 
 function getStepNumberColor(
-	theme: SidebarStepperNavigationTheme,
 	isHovered: boolean,
 	isCurrent: boolean,
 	isDisabled: boolean,
 ) {
 	if (isHovered || isCurrent) {
-		return theme.step.shared.text.inverseColor;
+		return 'var(--component-sidebar-stepper-navigation-step-shared-text-inverse-color)';
 	}
 
 	if (isDisabled) {
-		return theme.step.shared.text.disabledColor;
+		return 'var(--component-sidebar-stepper-navigation-step-shared-text-disabled-color)';
 	}
 
-	return theme.step.shared.text.color;
+	return 'var(--component-sidebar-stepper-navigation-step-shared-text-color)';
 }
 
 function StepNumber({
@@ -166,21 +179,22 @@ function StepNumber({
 	isHovered,
 	isCurrent,
 	isDisabled,
-	theme,
 }: {
 	stepNumber: number;
 	isHovered: boolean;
 	isCurrent: boolean;
 	isDisabled: boolean;
-	theme: SidebarStepperNavigationTheme;
 }) {
 	return (
 		<Typography
 			element="div"
-			theme={{
-				color: getStepNumberColor(theme, isHovered, isCurrent, isDisabled),
-			}}
-			dangerouslyOverrideCss={stepNumberStyles(theme, isHovered, isCurrent)}
+			// TODO: Use theme instead of CSS overrides
+			dangerouslyOverrideCss={[
+				stepNumberStyles(isHovered, isCurrent),
+				css`
+					color: ${getStepNumberColor(isHovered, isCurrent, isDisabled)};
+				`,
+			]}
 		>
 			{stepNumber}
 		</Typography>
@@ -199,12 +213,12 @@ function Step({
 }: StepProps) {
 	const descriptionTypographyColor =
 		isCurrent || !isDisabled
-			? theme.step.shared.text.color
-			: theme.step.shared.text.disabledColor;
+			? 'var(--component-sidebar-stepper-navigation-step-shared-text-color)'
+			: 'var(--component-sidebar-stepper-navigation-step-shared-text-disabled-color)';
 
 	return (
 		<Button
-			css={[buttonStyleReset, stepButtonStyles(theme, isCurrent, isDisabled)]}
+			css={[buttonStyleReset, stepButtonStyles(isCurrent, isDisabled)]}
 			isDisabled={isDisabled}
 			aria-label={ariaLabel}
 			aria-current={isCurrent ? 'step' : undefined}
@@ -217,9 +231,8 @@ function Step({
 						isHovered={isHovered}
 						isCurrent={isCurrent}
 						isDisabled={isDisabled}
-						theme={theme}
 					/>
-					<div css={stepContentStyles(theme)}>
+					<div css={stepContentStyles()}>
 						<Typography
 							element="div"
 							theme={{ color: descriptionTypographyColor }}
@@ -281,7 +294,7 @@ export function SidebarStepperNavigation({
 				onPress={() => setIsOpen((open) => !open)}
 				aria-expanded={isOpen}
 				aria-controls={stepNavId}
-				css={[buttonStyleReset, mobileToggleStyles(mergedTheme)]}
+				css={[buttonStyleReset, mobileToggleStyles()]}
 			>
 				<Typography element="div" variant="bodyBoldSm">
 					{mobileToggleLabel}
@@ -292,7 +305,7 @@ export function SidebarStepperNavigation({
 				/>
 			</Button>
 			<nav
-				css={[navigationStyles(mergedTheme, isOpen), dangerouslyOverrideCss]}
+				css={[navigationStyles(isOpen), dangerouslyOverrideCss]}
 				aria-label={stepNavTitle}
 				id={stepNavId}
 				className={className}

@@ -5,7 +5,10 @@ import {
 	type ComponentTopBar,
 } from '../../../styleD/build/typescript/component/topBar';
 import type { DeepPartial, Prettify } from '../../../util/types';
-import { convertTypographyToEmotionStringStyle, until } from '../../../utils';
+import {
+	convertCSSTypographyToEmotionStringStyle,
+	until,
+} from '../../../utils';
 import type { TopBarToolNameProps } from './types';
 
 export type TopBarToolNameTheme = Prettify<ComponentTopBar['toolName']>;
@@ -15,27 +18,32 @@ export type PartialTopBarToolNameTheme = Prettify<
 export const defaultToolNameTheme: TopBarToolNameTheme =
 	componentTopBar.toolName;
 
-export const toolNameHoverLinkStyles = (
-	theme: TopBarToolNameTheme,
-	{ collapseBelow }: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>,
-): SerializedStyles => {
+export const toolNameHoverLinkStyles = ({
+	collapseBelow,
+}: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(theme.hoverLink.typography)}
-		background-color: ${theme.hoverLink.backgroundColor};
-		color: ${theme.hoverLink.color};
+		${convertCSSTypographyToEmotionStringStyle(`--component-top-bar-tool-name-hover-link`)}
+		background-color: var(
+			--component-top-bar-tool-name-hover-link-background-color
+		);
+		color: var(--component-top-bar-tool-name-hover-link-color);
 		align-items: center;
-		padding-left: ${theme.hoverLink.paddingLeft};
-		padding-right: ${theme.hoverLink.paddingRight};
+		padding-left: var(--component-top-bar-tool-name-hover-link-padding-left);
+		padding-right: var(--component-top-bar-tool-name-hover-link-padding-right);
 		display: flex;
-		opacity: ${theme.hoverLink.opacity};
+		opacity: var(--component-top-bar-tool-name-hover-link-opacity);
 
 		position: absolute;
-		width: ${theme.hoverLink.width};
-		height: ${theme.hoverLink.height};
+		width: var(--component-top-bar-tool-name-hover-link-width);
+		height: var(--component-top-bar-tool-name-hover-link-height);
 
 		${until[collapseBelow]} {
-			padding-left: ${theme.hoverLink.collapsed.paddingLeft};
-			padding-right: ${theme.hoverLink.collapsed.paddingRight};
+			padding-left: var(
+				--component-top-bar-tool-name-hover-link-collapsed-padding-left
+			);
+			padding-right: var(
+				--component-top-bar-tool-name-hover-link-collapsed-padding-right
+			);
 			justify-content: center;
 		}
 	`;
@@ -63,84 +71,79 @@ export const toolNameHoverLinkTextCollapsedStyles = ({
 	`;
 };
 
-export const toolNameLinkStyles = (
-	theme: TopBarToolNameTheme,
-): SerializedStyles => {
+export const toolNameLinkStyles = (): SerializedStyles => {
 	return css`
 		text-decoration: none;
-		color: ${theme.link.color};
+		color: var(--component-top-bar-tool-name-link-color);
 		position: relative;
 
 		/* Show the first element - the hover text */
 		&[data-hovered] :first-of-type {
-			opacity: ${theme.hoverLink.hover.opacity};
+			opacity: var(--component-top-bar-tool-name-hover-link-hover-opacity);
 		}
 
 		&[data-pressed] :first-of-type {
-			background-color: ${theme.hoverLink.pressed.backgroundColor};
+			background-color: var(
+				--component-top-bar-tool-name-hover-link-pressed-background-color
+			);
 		}
 
 		&[data-focus-visible] {
-			outline: ${theme.hoverLink.focused.outline};
-			outline-offset: ${theme.hoverLink.focused.outlineOffset};
+			outline: var(--component-top-bar-tool-name-hover-link-focused-outline);
+			outline-offset: var(
+				--component-top-bar-tool-name-hover-link-focused-outline-offset
+			);
 		}
 	`;
 };
 
-export const toolNameStyles = (
-	theme: TopBarToolNameTheme,
-): SerializedStyles => {
+export const toolNameStyles = (): SerializedStyles => {
 	return css`
 		display: flex;
 		align-items: center;
-		gap: ${theme.gap};
-		color: ${theme.color};
+		gap: var(--component-top-bar-tool-name-gap);
+		color: var(--component-top-bar-tool-name-color);
 	`;
 };
 
-export const toolNameTypography = (
-	theme: TopBarToolNameTheme,
-	{ collapseBelow }: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>,
-): SerializedStyles => {
+export const toolNameTypography = ({
+	collapseBelow,
+}: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(theme.typography)}
+		${convertCSSTypographyToEmotionStringStyle(`--component-top-bar-tool-name`)}
 		${until[collapseBelow]} {
 			display: none;
 		}
 	`;
 };
 
-export const dividerStyles = (
-	theme: TopBarToolNameTheme,
-	{ collapseBelow }: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>,
-): SerializedStyles => {
+export const dividerStyles = ({
+	collapseBelow,
+}: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>): SerializedStyles => {
 	return css`
-		border-right: ${theme.divider.border};
-		height: ${theme.divider.height};
+		border-right: var(--component-top-bar-tool-name-divider-border);
+		height: var(--component-top-bar-tool-name-divider-height);
 		${until[collapseBelow]} {
 			display: none;
 		}
 	`;
 };
 
-export const subsectionStyles = (
-	theme: TopBarToolNameTheme,
-	{ collapseBelow }: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>,
-): SerializedStyles => {
+export const subsectionStyles = ({
+	collapseBelow,
+}: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>): SerializedStyles => {
 	return css`
 		display: flex;
 		align-items: center;
-		gap: ${theme.subsection.gap};
+		gap: var(--component-top-bar-tool-name-subsection-gap);
 		${until[collapseBelow]} {
 			display: none;
 		}
 	`;
 };
 
-export const subsectionTypography = (
-	theme: TopBarToolNameTheme,
-): SerializedStyles => {
+export const subsectionTypography = (): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(theme.subsection.typography)}
+		${convertCSSTypographyToEmotionStringStyle(`--component-top-bar-tool-name-subsection`)}
 	`;
 };

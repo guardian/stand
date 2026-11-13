@@ -208,7 +208,7 @@ export function TopBar({
 
 	return (
 		<div
-			css={[topBarStyles(mergedTheme), dangerouslyOverrideCss]}
+			css={[topBarStyles(), dangerouslyOverrideCss]}
 			className={className}
 			{...props}
 		>
@@ -216,7 +216,7 @@ export function TopBar({
 			{leftSideMenuItems.length > 0 && (
 				<nav
 					aria-label={navAriaLabel}
-					css={topBarContainerStyles(mergedTheme, {
+					css={topBarContainerStyles({
 						showUntil: collapseBelow.containerLeft,
 					})}
 				>
@@ -229,7 +229,7 @@ export function TopBar({
 						<ReactAriaButton
 							aria-label="Navigation Menu"
 							ref={buttonRef}
-							css={topBarCollapsedNavMenuButtonStyles(mergedTheme, menuOpen)}
+							css={topBarCollapsedNavMenuButtonStyles(menuOpen)}
 						>
 							<TopBarItem
 								alignment="left"
@@ -246,7 +246,7 @@ export function TopBar({
 							</TopBarItem>
 						</ReactAriaButton>
 						<ReactAriaPopover
-							css={topBarCollapsedNavMenuPopoverStyles(mergedTheme)}
+							css={topBarCollapsedNavMenuPopoverStyles()}
 							offset={mergedTheme.collapsedNavMenu.popover.offset}
 							containerPadding={
 								mergedTheme.collapsedNavMenu.popover.containerPadding
@@ -258,20 +258,20 @@ export function TopBar({
 					</ReactAriaDialogTrigger>
 				</nav>
 			)}
-			<div css={topBarContainerStyles(mergedTheme)}>{toolName}</div>
+			<div css={topBarContainerStyles()}>{toolName}</div>
 			<nav
 				aria-label={navAriaLabel}
-				css={topBarContainerStyles(mergedTheme, {
+				css={topBarContainerStyles({
 					collapseBelow: collapseBelow.containerLeft,
 				})}
 			>
 				{leftSide}
 			</nav>
 			{/* RHS - topBarSpacerStyles pushes content to the right */}
-			<div css={[topBarSpacerStyles(), topBarContainerStyles(mergedTheme)]}>
+			<div css={[topBarSpacerStyles(), topBarContainerStyles()]}>
 				{rightSide}
 			</div>
-			<div css={topBarContainerStyles(mergedTheme)}>{avatar}</div>
+			<div css={topBarContainerStyles()}>{avatar}</div>
 		</div>
 	);
 }

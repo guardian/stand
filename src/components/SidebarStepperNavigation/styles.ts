@@ -27,39 +27,49 @@ export const buttonStyleReset = css`
 	margin: 0;
 `;
 
-export const mobileToggleStyles = (
-	theme: SidebarStepperNavigationTheme,
-): SerializedStyles => css`
-	border-bottom: ${theme.mobileToggle.shared.border};
-	display: ${theme.mobileToggle.shared.display};
+export const mobileToggleStyles = (): SerializedStyles => css`
+	border-bottom: var(
+		--component-sidebar-stepper-navigation-mobile-toggle-shared-border
+	);
+	display: var(
+		--component-sidebar-stepper-navigation-mobile-toggle-shared-display
+	);
 	align-items: center;
 	justify-content: space-between;
-	height: ${theme.mobileToggle.shared.height};
-	padding: 0 ${theme.mobileToggle.shared.paddingInline};
-	width: ${theme.mobileToggle.shared.width};
-	background-color: ${theme.mobileToggle.shared.backgroundColor};
+	height: var(
+		--component-sidebar-stepper-navigation-mobile-toggle-shared-height
+	);
+	padding: 0
+		var(
+			--component-sidebar-stepper-navigation-mobile-toggle-shared-padding-inline
+		);
+	width: var(--component-sidebar-stepper-navigation-mobile-toggle-shared-width);
+	background-color: var(
+		--component-sidebar-stepper-navigation-mobile-toggle-shared-background-color
+	);
 
 	${from.md} {
 		display: none;
 	}
 
 	&[data-hovered] {
-		background-color: ${theme.mobileToggle.shared.hovered.backgroundColor};
+		background-color: var(
+			--component-sidebar-stepper-navigation-mobile-toggle-shared-hovered-background-color
+		);
 	}
 
 	&[data-pressed] {
-		background-color: ${theme.mobileToggle.shared.pressed.backgroundColor};
+		background-color: var(
+			--component-sidebar-stepper-navigation-mobile-toggle-shared-pressed-background-color
+		);
 	}
 `;
 
-export const navigationStyles = (
-	theme: SidebarStepperNavigationTheme,
-	isOpen: boolean,
-): SerializedStyles => css`
-	border-right: ${theme.navigation.shared.border};
+export const navigationStyles = (isOpen: boolean): SerializedStyles => css`
+	border-right: var(--component-sidebar-stepper-navigation-shared-border);
 	display: ${isOpen ? 'flex' : 'none'};
 	flex-direction: column;
-	height: ${theme.navigation.shared.height};
+	height: var(--component-sidebar-stepper-navigation-shared-height);
 
 	${from.md} {
 		display: flex;
@@ -72,22 +82,22 @@ export const listStyles = css`
 	margin: 0;
 `;
 
-export const statusRowStyles = (theme: SidebarStepperNavigationTheme) => css`
-	display: ${theme.statusRow.shared.display};
-	gap: ${theme.statusRow.shared.gap};
+export const statusRowStyles = () => css`
+	display: var(
+		--component-sidebar-stepper-navigation-status-row-shared-display
+	);
+	gap: var(--component-sidebar-stepper-navigation-status-row-shared-gap);
 	align-items: center;
 `;
 
-export const stepNumberStyles = (
-	theme: SidebarStepperNavigationTheme,
-	isHovered: boolean,
-	isCurrent: boolean,
-) => css`
-	width: ${theme.step.shared.numberColumnWidth};
-	height: ${theme.stepNumber.shared.height};
+export const stepNumberStyles = (isHovered: boolean, isCurrent: boolean) => css`
+	width: var(
+		--component-sidebar-stepper-navigation-step-shared-number-column-width
+	);
+	height: var(--component-sidebar-stepper-navigation-step-number-shared-height);
 	background-color: ${
 		isCurrent || isHovered
-			? theme.stepNumber.shared.backgroundColor
+			? 'var(--component-sidebar-stepper-navigation-step-number-shared-background-color)'
 			: 'transparent'
 	};
 	display: flex;
@@ -96,32 +106,37 @@ export const stepNumberStyles = (
 `;
 
 export const stepButtonStyles = (
-	theme: SidebarStepperNavigationTheme,
 	isCurrent: boolean,
 	isDisabled: boolean,
 ) => css`
 	background-color: ${
 		isCurrent
-			? theme.step.shared.currentBackgroundColor
-			: theme.step.shared.backgroundColor
+			? 'var(--component-sidebar-stepper-navigation-step-shared-current-background-color)'
+			: 'var(--component-sidebar-stepper-navigation-step-shared-background-color)'
 	};
-	height: ${theme.step.shared.height};
+	height: var(--component-sidebar-stepper-navigation-step-shared-height);
 	cursor: ${isDisabled ? 'default' : 'pointer'};
-	border-bottom: ${theme.step.shared.border};
+	border-bottom: var(--component-sidebar-stepper-navigation-step-shared-border);
 	display: grid;
-	grid-template-columns: ${theme.step.shared.numberColumnWidth} 1fr;
+	grid-template-columns:
+		var(--component-sidebar-stepper-navigation-step-shared-number-column-width)
+		1fr;
 	text-align: left;
 	width: 100%;
 
 	&[data-pressed] {
-		background-color: ${theme.step.shared.currentBackgroundColor};
+		background-color: var(
+			--component-sidebar-stepper-navigation-step-shared-current-background-color
+		);
 	}
 `;
 
-export const stepContentStyles = (theme: SidebarStepperNavigationTheme) => css`
-	gap: ${theme.stepContent.shared.gap};
+export const stepContentStyles = () => css`
+	gap: var(--component-sidebar-stepper-navigation-step-content-shared-gap);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-left: ${theme.stepContent.shared.marginLeft};
+	margin-left: var(
+		--component-sidebar-stepper-navigation-step-content-shared-margin-left
+	);
 `;

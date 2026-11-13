@@ -26,3 +26,23 @@ export const convertTypographyToEmotionObjectStyle = (
 		fontVariationSettings: `"wdth" ${typography.fontWidth}`,
 	};
 };
+
+/**
+ * TODO: Update when generated CSS is in the correct shape. Typography tokens
+ * should include a `-typography-font` token which avoids having to manually
+ * construct the value from the individual properties as below. Font style
+ * should also be included.
+ */
+export const convertCSSTypographyToEmotionStringStyle = (
+	prefix: string,
+): SerializedStyles => {
+	return css`
+		font: normal var(${prefix}-typography-font-font-weight)
+			var(${prefix}-typography-font-font-size)/var(
+				${prefix}-typography-font-line-height
+			)
+			var(${prefix}-typography-font-font-family);
+		letter-spacing: var(${prefix}-typography-font-letter-spacing);
+		font-variation-settings: \"wdth\" var(${prefix}-typography-font-width);
+	`;
+};

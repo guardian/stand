@@ -2,8 +2,8 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentTopBar } from '../../../styleD/build/typescript/component/topBar';
 import { componentTopBar } from '../../../styleD/build/typescript/component/topBar';
+import { convertCSSTypographyToEmotionStringStyle } from '../../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../../utils';
 import type { TopBarNavigationProps } from './types';
 
 export type TopBarNavigationTheme = Prettify<ComponentTopBar['navigation']>;
@@ -15,7 +15,6 @@ export const defaultTopBarNavigationTheme: TopBarNavigationTheme =
 	componentTopBar.navigation;
 
 export const topBarNavigationStyles = (
-	theme: TopBarNavigationTheme,
 	selected: boolean,
 	_menuOpen?: boolean,
 ): SerializedStyles => {
@@ -23,11 +22,15 @@ export const topBarNavigationStyles = (
 		display: inline-flex;
 		position: relative;
 		align-items: center;
-		height: ${theme.shared.height};
-		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
-			${theme.shared.padding.bottom} ${theme.shared.padding.left};
+		height: var(--component-top-bar-navigation-shared-height);
+		padding: var(--component-top-bar-navigation-shared-padding-top)
+			var(--component-top-bar-navigation-shared-padding-right)
+			var(--component-top-bar-navigation-shared-padding-bottom)
+			var(--component-top-bar-navigation-shared-padding-left);
 		color: ${
-			selected ? `${theme.selected.color}` : `${theme.unselected.color}`
+			selected
+				? `var(--component-top-bar-navigation-selected-color)`
+				: `var(--component-top-bar-navigation-unselected-color)`
 		};
 
 		&[data-hovered],
@@ -37,58 +40,72 @@ export const topBarNavigationStyles = (
 
 		&[data-focus-visible],
 		&:focus-visible {
-			outline: ${theme.shared.focusVisible.outline};
-			outline-offset: ${theme.shared.focusVisible.outlineOffset};
+			outline: var(--component-top-bar-navigation-shared-focus-visible-outline);
+			outline-offset: var(
+				--component-top-bar-navigation-shared-focus-visible-outline-offset
+			);
 		}
 
 		&[data-disabled] {
 			cursor: not-allowed;
-			color: ${theme.shared.disabled.color};
+			color: var(--component-top-bar-navigation-shared-disabled-color);
 		}
 
 		${
 			_menuOpen
 				? css`
-						border-right: ${theme.shared.borderTop};
-						border-left: ${theme.unselected.borderBottom};
+						border-right: var(--component-top-bar-navigation-shared-border-top);
+						border-left: var(
+							--component-top-bar-navigation-unselected-border-bottom
+						);
 						width: 100%;
 
 						&[data-hovered],
 						&:hover {
-							border-left: ${theme.selected.borderBottom};
+							border-left: var(
+								--component-top-bar-navigation-selected-border-bottom
+							);
 						}
 
 						&[data-focus-visible],
 						&:focus-visible {
-							border-left: ${theme.selected.borderBottom};
+							border-left: var(
+								--component-top-bar-navigation-selected-border-bottom
+							);
 						}
 
 						${
 							selected &&
 							`
-						border-left: ${theme.selected.borderBottom};
-						background-color: ${theme.shared._menuOpen.selected.backgroundColor};
+						border-left: var(--component-top-bar-navigation-selected-border-bottom);
+						background-color: var(--component-top-bar-navigation-shared-_menuOpen-selected-background-color);
 					`
 						}
 					`
 				: css`
-						border-top: ${theme.shared.borderTop};
-						border-bottom: ${theme.unselected.borderBottom};
+						border-top: var(--component-top-bar-navigation-shared-border-top);
+						border-bottom: var(
+							--component-top-bar-navigation-unselected-border-bottom
+						);
 
 						&[data-hovered],
 						&:hover {
-							border-bottom: ${theme.selected.borderBottom};
+							border-bottom: var(
+								--component-top-bar-navigation-selected-border-bottom
+							);
 						}
 
 						&[data-focus-visible],
 						&:focus-visible {
-							border-bottom: ${theme.selected.borderBottom};
+							border-bottom: var(
+								--component-top-bar-navigation-selected-border-bottom
+							);
 						}
 
 						${
 							selected &&
 							`
-						border-bottom: ${theme.selected.borderBottom};
+						border-bottom: var(--component-top-bar-navigation-selected-border-bottom);
 					`
 						}
 					`
@@ -99,49 +116,40 @@ export const topBarNavigationStyles = (
 };
 
 export const topBarNavigationDividerStyles = (
-	theme: TopBarNavigationTheme,
 	{ alignment }: Required<Pick<TopBarNavigationProps, 'alignment'>>,
 	_menuOpen?: boolean,
 ): SerializedStyles => css`
 	${
 		_menuOpen
 			? css`
-					height: ${theme.shared._menuOpen.height};
-					border-bottom: ${theme.shared.divider};
+					height: var(--component-top-bar-navigation-shared-menu-open-height);
+					border-bottom: var(--component-top-bar-navigation-shared-divider);
 				`
 			: css`
-					${alignment === 'left' ? 'border-right' : 'border-left'}: ${
-						theme.shared.divider
-					};
+					${alignment === 'left' ? 'border-right' : 'border-left'}: var(--component-top-bar-navigation-shared-divider);
 				`
 	}
 `;
 
-export const topBarNavigationTextStyles = (
-	theme: TopBarNavigationTheme,
-	{ hasIcon }: { hasIcon: boolean },
-): SerializedStyles => css`
-	${hasIcon && `margin-left: ${theme.text.margin.left};`}
+export const topBarNavigationTextStyles = ({
+	hasIcon,
+}: {
+	hasIcon: boolean;
+}): SerializedStyles => css`
+	${hasIcon && `margin-left: var(--component-top-bar-navigation-text-margin-left);`}
 `;
 
 export const topBarNavigationTypographyStyles = (
-	theme: TopBarNavigationTheme,
 	size: 'md' | 'sm',
 ): SerializedStyles => {
-	return size == 'md'
-		? css`
-				${convertTypographyToEmotionStringStyle(theme.md.typography)}
-			`
-		: css`
-				${convertTypographyToEmotionStringStyle(theme.sm.typography)}
-			`;
+	return css`
+		${convertCSSTypographyToEmotionStringStyle(`--component-top-bar-navigation-${size}`)}
+	`;
 };
 
-export const topBarMenuIndicatorStyles = (
-	theme: TopBarNavigationTheme,
-): SerializedStyles => {
+export const topBarMenuIndicatorStyles = (): SerializedStyles => {
 	return css`
-		margin-top: ${theme.menuIndicator.margin.top};
-		margin-left: ${theme.menuIndicator.margin.left};
+		margin-top: var(--component-top-bar-navigation-menu-indicator-margin-top);
+		margin-left: var(--component-top-bar-navigation-menu-indicator-margin-left);
 	`;
 };

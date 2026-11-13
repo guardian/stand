@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { Fragment } from 'react';
 import { baseColors, baseSpacing } from '../..';
 import { tableStyles } from '../../util/storybook/styles';
 import { LinkButton } from './LinkButton';
@@ -48,8 +49,8 @@ export const LinkButtonTable = {
 			</thead>
 			<tbody>
 				{variants.map((variant) => (
-					<>
-						<tr key={`${variant}-enabled`}>
+					<Fragment key={`${variant}-enabled`}>
+						<tr>
 							<td>
 								<code>{variant}</code> (enabled)
 							</td>
@@ -73,7 +74,7 @@ export const LinkButtonTable = {
 								</td>
 							))}
 						</tr>
-					</>
+					</Fragment>
 				))}
 			</tbody>
 		</table>
