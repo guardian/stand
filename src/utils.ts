@@ -5,10 +5,11 @@
  */
 
 export {
-	convertCSSTypographyToEmotionStringStyle,
 	convertTypographyToEmotionObjectStyle,
 	convertTypographyToEmotionStringStyle,
 } from './styleD/utils/semantic/typography';
+
+export { convertCSSTypographyToEmotionStringStyle } from './util/typography';
 
 export { GlobalResetStyles } from './util/reset';
 
