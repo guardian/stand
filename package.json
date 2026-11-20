@@ -687,7 +687,7 @@
 		"build": "tsdown",
 		"build-storybook": "storybook build",
 		"build-styled": "rimraf ./src/styleD/build && cd src/styleD && node build.js && pnpm run format:fix",
-		"build-terrazzo": "rimraf ./src/terrazzo/build && cd src/terrazzo && tsx build.ts && pnpm run format:fix",
+		"build-terrazzo": "rimraf ./src/terrazzo/build && tsx ./src/terrazzo/build.ts && pnpm run format:fix",
 		"create-component": "npx ts-node ./scripts/create-component.ts",
 		"format:check": "prettier --check .",
 		"format:fix": "prettier --write .",
