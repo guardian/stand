@@ -1,0 +1,103 @@
+{
+	"theme": {
+		"dark": {
+			"color": {
+				"50": {
+					"$type": "color",
+					"$value": "{base.dark.colors.magenta.50}"
+				},
+				"100": {
+					"$type": "color",
+					"$value": "{base.dark.colors.magenta.100}"
+				},
+				"200": {
+					"$type": "color",
+					"$value": "{base.dark.colors.magenta.200}"
+				},
+				"300": {
+					"$type": "color",
+					"$value": "{base.dark.colors.magenta.300}"
+				},
+				"400": {
+					"$type": "color",
+					"$value": "{base.dark.colors.magenta.400}"
+				},
+				"500": {
+					"$type": "color",
+					"$value": "{base.dark.colors.magenta.500}"
+				},
+				"600": {
+					"$type": "color",
+					"$value": "{base.dark.colors.magenta.600}"
+				},
+				"700": {
+					"$type": "color",
+					"$value": "{base.dark.colors.magenta.700}"
+				},
+				"800": {
+					"$type": "color",
+					"$value": "{base.dark.colors.magenta.800}"
+				},
+				"900": {
+					"$type": "color",
+					"$value": "{base.dark.colors.magenta.900}"
+				}
+			}
+		},
+		"light": {
+			"color": {
+				"50": {
+					"$extensions": {
+						"com.figma": {
+							"codeSyntax": {},
+							"hiddenFromPublishing": false,
+							"scopes": ["ALL_SCOPES"]
+						}
+					},
+					"$type": "color",
+					"$value": "{base.light.colors.magenta.50}"
+				},
+				"100": {
+					"$type": "color",
+					"$value": "{base.light.colors.magenta.100}"
+				},
+				"200": {
+					"$type": "color",
+					"$value": "{base.light.colors.magenta.200}"
+				},
+				"300": {
+					"$type": "color",
+					"$value": "{base.light.colors.magenta.300}"
+				},
+				"400": {
+					"$type": "color",
+					"$value": "{base.light.colors.magenta.400}"
+				},
+				"500": {
+					"$type": "color",
+					"$value": "{base.light.colors.magenta.500}"
+				},
+				"600": {
+					"$type": "color",
+					"$value": "{base.light.colors.magenta.600}"
+				},
+				"700": {
+					"$type": "color",
+					"$value": "{base.light.colors.magenta.700}"
+				},
+				"800": {
+					"$type": "color",
+					"$value": "{base.light.colors.magenta.800}"
+				},
+				"900": {
+					"$type": "color",
+					"$value": "{base.light.colors.magenta.900}"
+				},
+				"950": {
+					"$type": "color",
+					"$value": "{base.light.colors.magenta.950}"
+				}
+			}
+		}
+	}
+}

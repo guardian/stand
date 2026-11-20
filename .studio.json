@@ -10,7 +10,7 @@
 	"outputs": {
 		"stand": {
 			"format": "dtcg",
-			"dir": "src/styleD/tokens"
+			"dir": "src/terrazzo/tokens"
 		}
 	},
 	"$schema": "https://tokens.studio/schema/cli/v2.json",

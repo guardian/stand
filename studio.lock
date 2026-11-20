@@ -3,7 +3,7 @@
 # Commit this file to version control.
 
 version = 2
-generated_at = "2026-11-05T16:16:47Z"
+generated_at = "2026-11-17T15:35:41Z"
 cli_version = "0.3.2"
 dependencies = []
 
@@ -13,27 +13,81 @@ dependencies = []
   source_ref_type = "branch"
   source_ref_name = "next"
   preset_hash = "sha256:047c3de5945ae2f7e85725e840721b3dd2df359f35143dfdf75078dcd7c5d468"
-  output_hash = "sha256:38e3e80ab97b0d1a1f2e2e0030aefea9e8a19eac4d80ee7c678a24437635c368"
-  updated_at = "2026-11-05T16:16:47Z"
+  output_hash = "sha256:902556802504459895df9a25a87b0ef2e2f602dc8baafa0e48c904f30332a7ba"
+  updated_at = "2026-11-17T15:35:41Z"
 
   [[exports.files]]
     path = "base/base.json"
-    hash = "sha256:cc4995fe57ddb802ad9b59654eef8462a558a96c31ddd278be7d3d738d1ecd69"
-    size = 49540
+    hash = "sha256:a26133fb8b119eeae919bc644cf2acb428d966338fa6a36bea2516a35350e5e0"
+    size = 96245
+    tokens = 0
+
+  [[exports.files]]
+    path = "color-theme/blue.json"
+    hash = "sha256:a8807876eda7e20fc246f66b598f8d72813b339b902338c754aa2589f24cb6a7"
+    size = 2573
+    tokens = 0
+
+  [[exports.files]]
+    path = "color-theme/coolPurple.json"
+    hash = "sha256:38c0709f1c78bd9a9d377aaf52c87589870a1f27fdc6b6797650cf07ee1f051c"
+    size = 2699
+    tokens = 0
+
+  [[exports.files]]
+    path = "color-theme/cyan.json"
+    hash = "sha256:11c526a0c0fd0f9eead83466b9635921b4aa8c1ff8d94125545aea3a809a230d"
+    size = 2573
+    tokens = 0
+
+  [[exports.files]]
+    path = "color-theme/magenta.json"
+    hash = "sha256:913576624a777d248952444265c0ba1288bfb0de95babfd3b75e5a1727f0c440"
+    size = 2636
+    tokens = 0
+
+  [[exports.files]]
+    path = "color-theme/orange.json"
+    hash = "sha256:059c502b5be8427412856437df22077512100357006a230b827907b449c0ec80"
+    size = 2615
+    tokens = 0
+
+  [[exports.files]]
+    path = "color-theme/teal.json"
+    hash = "sha256:c3c77227d5b70030526ec5e8ba6387e680d62931c13858e323022a188eba4f67"
+    size = 2573
+    tokens = 0
+
+  [[exports.files]]
+    path = "color-theme/warmPurple.json"
+    hash = "sha256:e0a97bf744170078fc7093d61de0803210644d826c3b95c122c80d6f14fb6dab"
+    size = 2699
     tokens = 0
 
   [[exports.files]]
     path = "component/component.json"
-    hash = "sha256:e55ae6811494a25ddcf34c727d265b0be4c4680879913788452a841ace6f5ff9"
-    size = 165040
+    hash = "sha256:d1c099d36792cb7c2a52f0cf18e494b31dec94d63acff22856edf9e77ffc9c63"
+    size = 166192
+    tokens = 0
+
+  [[exports.files]]
+    path = "mode/dark.json"
+    hash = "sha256:1da8c38a99af1c35c1a3e041658a97f9a865744f6c208ef87fb55729f67fbda3"
+    size = 19923
+    tokens = 0
+
+  [[exports.files]]
+    path = "mode/light.json"
+    hash = "sha256:27ba13e068b8b54cb6b38086f4c428ea216426a24707526ee8b98c02374e94a0"
+    size = 20087
     tokens = 0
 
   [[exports.files]]
     path = "semantic/semantic.json"
-    hash = "sha256:c632fb51a06b391f8424f32fc170345dbe093c885a4d3b5cd082670438a15117"
-    size = 72310
+    hash = "sha256:e02aa61d235f0a0dc24dc0b15112ed292760fec29177677f974430dfe2f94e43"
+    size = 61243
     tokens = 0
 
 [integrity]
-  lockfile_hash = "sha256:aeca7561f893323f8d0f0e4db60432d25aa30cec3c05b28be5019bf9490d5ae8"
+  lockfile_hash = "sha256:1ef792ecbf5f34992069eea390f7a76b87cf1cde2e1ab6d58274278e3eccb55c"
   algorithm = "sha256"
