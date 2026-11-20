@@ -1,0 +1,42 @@
+{
+	"component": {
+		"gridImagePicker": {
+			"container": {
+				"columnGap": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackSm}"
+				},
+				"rowGap": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackXxs}"
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackXxs}"
+				},
+				"width": {
+					"$type": "dimension",
+					"$value": "350px"
+				}
+			},
+			"imagePreview": {
+				"background": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.neutralWeak}"
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackXs}"
+				},
+				"maxWidth": {
+					"$type": "dimension",
+					"$value": "150px"
+				},
+				"maxHeight": {
+					"$type": "dimension",
+					"$value": "100px"
+				}
+			}
+		}
+	}
+}
