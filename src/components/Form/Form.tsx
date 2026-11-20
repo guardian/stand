@@ -1,9 +1,7 @@
 import type { ComponentPropsWithRef, ComponentType } from 'react';
 import { FieldError, Label } from 'react-aria-components';
 import { InlineMessage } from '../../InlineMessage';
-import { mergeDeep } from '../../util/mergeDeep';
 import {
-	defaultFormInputContainerTheme,
 	formInputContainerStyles,
 	formInputDescriptionStyles,
 	formInputLabelStyles,
@@ -24,7 +22,9 @@ export function FormInputContainer<C extends AllowedContainer>({
 	description,
 	error,
 	isDisabled = false,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
 	theme = {},
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
 	formInputContainerTheme,
 	dangerouslyOverrideCss,
 	children,
@@ -36,28 +36,21 @@ export function FormInputContainer<C extends AllowedContainer>({
 		return null;
 	}
 
-	const mergedTheme = mergeDeep(
-		mergeDeep(defaultFormInputContainerTheme, theme),
-		formInputContainerTheme ?? {},
-	);
 	const Tag = Component as ComponentType<AllowedContainerProps>;
 
 	return (
 		<Tag
-			css={[
-				formInputContainerStyles(mergedTheme, { fluid }),
-				dangerouslyOverrideCss,
-			]}
+			css={[formInputContainerStyles({ fluid }), dangerouslyOverrideCss]}
 			isDisabled={isDisabled}
 			{...(props as AllowedContainerProps)}
 		>
 			{label && (
-				<Label css={formInputLabelStyles(mergedTheme, { size, isDisabled })}>
+				<Label css={formInputLabelStyles({ size, isDisabled })}>
 					{renderLabel ? renderLabel(label) : label}
 				</Label>
 			)}
 			{description && (
-				<div css={formInputDescriptionStyles(mergedTheme, { isDisabled })}>
+				<div css={formInputDescriptionStyles({ isDisabled })}>
 					{description}
 				</div>
 			)}

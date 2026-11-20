@@ -4,31 +4,29 @@ import {
 	componentFavicon,
 	type ComponentFavicon,
 } from '../../styleD/build/typescript/component/favicon';
+import { convertCSSTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
 
 export type FaviconTheme = Prettify<ComponentFavicon>;
 export type PartialFaviconTheme = Prettify<DeepPartial<FaviconTheme>>;
 export const defaultFaviconTheme: FaviconTheme = componentFavicon;
 
-export const faviconStyles = (theme: FaviconTheme): SerializedStyles => {
+export const faviconStyles = (): SerializedStyles => {
 	return css`
-		background-color: ${theme.color.background};
+		background-color: var(--component-favicon-color-background);
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		width: ${theme.size};
-		height: ${theme.size};
+		width: var(--component-favicon-size);
+		height: var(--component-favicon-size);
 		user-select: none;
 	`;
 };
 
-export const faviconTypographyStyles = (
-	theme: FaviconTheme,
-): SerializedStyles => {
+export const faviconTypographyStyles = (): SerializedStyles => {
 	return css`
-		color: ${theme.color.text};
-		${convertTypographyToEmotionStringStyle(theme.typography)}
+		color: var(--component-favicon-color-text);
+		${convertCSSTypographyToEmotionStringStyle(`--component-favicon`)}
 	`;
 };
 

@@ -25,14 +25,19 @@ import {
 } from './styles';
 import type { ListBoxProps, OptionProps, SelectProps } from './types';
 
-export function Option({ children, theme = {}, id, ...props }: OptionProps) {
-	const mergedTheme = mergeDeep(defaultSelectTheme, theme);
+export function Option({
+	children,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
+	theme = {},
+	id,
+	...props
+}: OptionProps) {
 	const resolvedId = id ?? children;
 	const resolvedTextValue = props.textValue ?? children;
 
 	return (
 		<ReactAriaListBoxItem
-			css={listBoxItemStyles(mergedTheme)}
+			css={listBoxItemStyles()}
 			id={resolvedId}
 			textValue={resolvedTextValue}
 			{...props}
@@ -57,8 +62,12 @@ export function Option({ children, theme = {}, id, ...props }: OptionProps) {
 	);
 }
 
-function ListBox({ children, size, theme = {} }: ListBoxProps) {
-	const mergedTheme = mergeDeep(defaultSelectTheme, theme);
+function ListBox({
+	children,
+	size,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
+	theme = {},
+}: ListBoxProps) {
 	const items: React.ReactElement[] = [];
 
 	React.Children.forEach(children, (child, index) => {
@@ -74,9 +83,7 @@ function ListBox({ children, size, theme = {} }: ListBoxProps) {
 	});
 
 	return (
-		<ReactAriaListBox css={listBoxStyles(mergedTheme, { size })}>
-			{items}
-		</ReactAriaListBox>
+		<ReactAriaListBox css={listBoxStyles({ size })}>{items}</ReactAriaListBox>
 	);
 }
 
@@ -98,7 +105,7 @@ export function Select({
 			isInvalid={isInvalid}
 			{...props}
 		>
-			<Button css={buttonStyles(mergedTheme, { size, isInvalid })}>
+			<Button css={buttonStyles({ size, isInvalid })}>
 				<SelectValue css={valueListStyles()}>
 					{({ state, defaultChildren }) => {
 						if (state.selectedItems.length === 0) {

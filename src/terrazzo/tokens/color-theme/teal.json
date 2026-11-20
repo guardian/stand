@@ -1,0 +1,103 @@
+{
+	"theme": {
+		"dark": {
+			"color": {
+				"50": {
+					"$type": "color",
+					"$value": "{base.dark.colors.teal.50}"
+				},
+				"100": {
+					"$type": "color",
+					"$value": "{base.dark.colors.teal.100}"
+				},
+				"200": {
+					"$type": "color",
+					"$value": "{base.dark.colors.teal.200}"
+				},
+				"300": {
+					"$type": "color",
+					"$value": "{base.dark.colors.teal.300}"
+				},
+				"400": {
+					"$type": "color",
+					"$value": "{base.dark.colors.teal.400}"
+				},
+				"500": {
+					"$type": "color",
+					"$value": "{base.dark.colors.teal.500}"
+				},
+				"600": {
+					"$type": "color",
+					"$value": "{base.dark.colors.teal.600}"
+				},
+				"700": {
+					"$type": "color",
+					"$value": "{base.dark.colors.teal.700}"
+				},
+				"800": {
+					"$type": "color",
+					"$value": "{base.dark.colors.teal.800}"
+				},
+				"900": {
+					"$type": "color",
+					"$value": "{base.dark.colors.teal.900}"
+				}
+			}
+		},
+		"light": {
+			"color": {
+				"50": {
+					"$extensions": {
+						"com.figma": {
+							"codeSyntax": {},
+							"hiddenFromPublishing": false,
+							"scopes": ["ALL_SCOPES"]
+						}
+					},
+					"$type": "color",
+					"$value": "{base.light.colors.teal.50}"
+				},
+				"100": {
+					"$type": "color",
+					"$value": "{base.light.colors.teal.100}"
+				},
+				"200": {
+					"$type": "color",
+					"$value": "{base.light.colors.teal.200}"
+				},
+				"300": {
+					"$type": "color",
+					"$value": "{base.light.colors.teal.300}"
+				},
+				"400": {
+					"$type": "color",
+					"$value": "{base.light.colors.teal.400}"
+				},
+				"500": {
+					"$type": "color",
+					"$value": "{base.light.colors.teal.500}"
+				},
+				"600": {
+					"$type": "color",
+					"$value": "{base.light.colors.teal.600}"
+				},
+				"700": {
+					"$type": "color",
+					"$value": "{base.light.colors.teal.700}"
+				},
+				"800": {
+					"$type": "color",
+					"$value": "{base.light.colors.teal.800}"
+				},
+				"900": {
+					"$type": "color",
+					"$value": "{base.light.colors.teal.900}"
+				},
+				"950": {
+					"$type": "color",
+					"$value": "{base.light.colors.teal.950}"
+				}
+			}
+		}
+	}
+}

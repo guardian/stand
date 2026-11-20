@@ -2,7 +2,7 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentButton } from '../../styleD/build/typescript/component/button';
 import { componentButton } from '../../styleD/build/typescript/component/button';
-import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
+import { convertCSSTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../util/types';
 import type { ButtonProps } from './types';
 
@@ -12,7 +12,6 @@ export type PartialButtonTheme = Prettify<DeepPartial<ButtonTheme>>;
 export const defaultButtonTheme: ButtonTheme = componentButton;
 
 export const buttonStyles = (
-	theme: ButtonTheme,
 	{ size, variant }: Required<Pick<ButtonProps, 'size' | 'variant'>>,
 	hasIcon = false,
 	isIconButton = false,
@@ -28,56 +27,66 @@ export const buttonStyles = (
 		cursor: pointer;
 		justify-content: center;
 		align-items: center;
-		color: ${theme[variant].shared.color};
-		background: ${theme[variant].shared.backgroundColor};
-		height: ${theme[variant][size].height};
-		padding: ${theme[variant][size].padding.top}
-			${theme[variant][size].padding.right}
-			${theme[variant][size].padding.bottom}
-			${theme[variant][size].padding.left};
-		${convertTypographyToEmotionStringStyle(theme[variant][size].typography)}
-		border: ${theme[variant].shared.border};
-		border-radius: ${theme[variant].shared.borderRadius};
+		color: var(--component-button-${variant}-shared-color);
+		background: var(--component-button-${variant}-shared-background-color);
+		height: var(--component-button-${variant}-${size}-height);
+		padding: var(--component-button-${variant}-${size}-padding-top)
+			var(--component-button-${variant}-${size}-padding-right)
+			var(--component-button-${variant}-${size}-padding-bottom)
+			var(--component-button-${variant}-${size}-padding-left);
+		${convertCSSTypographyToEmotionStringStyle(`--component-button-${variant}-${size}`)}
+		border: var(--component-button-${variant}-shared-border);
+		border-radius: var(--component-button-${variant}-shared-border-radius);
 
 		${
 			hasIcon &&
 			css`
-				padding-left: ${theme[variant][size].padding.withIcon.iconLeft.left};
-				gap: ${theme[variant][size].icon.gap};
+				padding-left: var(
+					--component-button-${variant}-${size}-padding-with-icon-icon-left-left
+				);
+				gap: var(--component-button-${variant}-${size}-icon-gap);
 			`
 		}
 
 		${
 			isIconButton &&
 			css`
-				width: ${theme[variant][size].iconButton.width};
+				width: var(--component-button-${variant}-${size}-icon-button-width);
 				padding: 0;
 			`
 		}
 
 		&[data-hovered], &:hover {
-			background: ${theme[variant].shared.hover.backgroundColor};
-			border: ${theme[variant].shared.hover.border};
+			background: var(
+				--component-button-${variant}-shared-hover-background-color
+			);
+			border: var(--component-button-${variant}-shared-hover-border);
 		}
 
 		&[data-pressed],
 		&:active {
-			background: ${theme[variant].shared.active.backgroundColor};
-			border: ${theme[variant].shared.active.border};
+			background: var(
+				--component-button-${variant}-shared-active-background-color
+			);
+			border: var(--component-button-${variant}-shared-active-border);
 		}
 
 		&[data-focus-visible],
 		&:focus-visible {
-			outline: ${theme.shared.focusVisible.outline};
-			outline-offset: ${theme.shared.focusVisible.outlineOffset};
+			outline: var(--component-button-shared-focus-visible-outline);
+			outline-offset: var(
+				--component-button-shared-focus-visible-outline-offset
+			);
 		}
 
 		&[data-disabled],
 		&:disabled {
 			cursor: not-allowed;
-			color: ${theme[variant].shared.disabled.color};
-			background: ${theme[variant].shared.disabled.backgroundColor};
-			border: ${theme[variant].shared.disabled.border};
+			color: var(--component-button-${variant}-shared-disabled-color);
+			background: var(
+				--component-button-${variant}-shared-disabled-background-color
+			);
+			border: var(--component-button-${variant}-shared-disabled-border);
 		}
 	`;
 };

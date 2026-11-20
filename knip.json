@@ -1,5 +1,14 @@
 {
 	"$schema": "https://unpkg.com/knip@6/schema.json",
 	"entry": ["src/*.ts", "scripts/**/*.ts", "src/styleD/*.js"],
-	"ignore": ["src/templates/component/styles.ts"]
+	"ignore": [
+		"src/templates/component/styles.ts",
+		"src/components/Favicon/styles.ts",
+		"src/components/Form/styles.ts",
+		"src/components/IconButton/styles.ts",
+		"src/components/IconLinkButton/styles.ts",
+		"src/components/LinkButton/Styles.tsx",
+		"src/components/TopBar/TopBarItem/styles.ts",
+		"src/components/TopBar/TopBarNavigation/styles.ts"
+	]
 }
