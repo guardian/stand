@@ -1,10 +1,10 @@
-import { mergeDeep } from '../../../util/mergeDeep';
-import { defaultTopBarItemTheme, topBarItemStyles } from './styles';
+import { topBarItemStyles } from './styles';
 import type { TopBarItemProps } from './types';
 
 export function TopBarItem({
 	children,
 	alignment = 'left',
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
 	theme = {},
 	dangerouslyOverrideCss,
 	className,
@@ -12,12 +12,10 @@ export function TopBarItem({
 	_menuOpen,
 	...props
 }: TopBarItemProps) {
-	const mergedTheme = mergeDeep(defaultTopBarItemTheme, theme);
-
 	return (
 		<div
 			css={[
-				topBarItemStyles(mergedTheme, alignment, { size }, _menuOpen),
+				topBarItemStyles(alignment, { size }, _menuOpen),
 				dangerouslyOverrideCss,
 			]}
 			className={className}

@@ -1,0 +1,54 @@
+{
+	"$schema": "https://www.designtokens.org/schemas/2025.10/resolver.json",
+	"name": "Guardian Pulse",
+	"version": "2025.10",
+	"sets": {
+		"base": {
+			"sources": [{ "$ref": "./tokens/base/base.json" }]
+		},
+		"semantic": {
+			"sources": [{ "$ref": "./tokens/semantic/semantic.json" }]
+		},
+		"component": {
+			"sources": [{ "$ref": "./tokens/component/component.json" }]
+		}
+	},
+	"modifiers": {
+		"theme": {
+			"contexts": {
+				"blue": [{ "$ref": "./tokens/color-theme/blue.json" }],
+				"coolPurple": [{ "$ref": "./tokens/color-theme/coolPurple.json" }],
+				"cyan": [{ "$ref": "./tokens/color-theme/cyan.json" }],
+				"magenta": [{ "$ref": "./tokens/color-theme/magenta.json" }],
+				"orange": [{ "$ref": "./tokens/color-theme/orange.json" }],
+				"teal": [{ "$ref": "./tokens/color-theme/teal.json" }],
+				"warmPurple": [{ "$ref": "./tokens/color-theme/warmPurple.json" }]
+			},
+			"default": "blue"
+		},
+		"mode": {
+			"contexts": {
+				"light": [{ "$ref": "./tokens/mode/light.json" }],
+				"dark": [{ "$ref": "./tokens/mode/dark.json" }]
+			},
+			"default": "light"
+		}
+	},
+	"resolutionOrder": [
+		{
+			"$ref": "#/sets/base"
+		},
+		{
+			"$ref": "#/sets/semantic"
+		},
+		{
+			"$ref": "#/modifiers/theme"
+		},
+		{
+			"$ref": "#/modifiers/mode"
+		},
+		{
+			"$ref": "#/sets/component"
+		}
+	]
+}

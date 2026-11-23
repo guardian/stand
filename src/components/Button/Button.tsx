@@ -2,30 +2,25 @@ import {
 	composeRenderProps,
 	Button as ReactAriaButton,
 } from 'react-aria-components';
-import { mergeDeep } from '../../util/mergeDeep';
 import { Icon } from '../Icon/Icon';
-import { buttonStyles, defaultButtonTheme } from './styles';
+import { buttonStyles } from './styles';
 import type { ButtonProps } from './types';
 
 export function Button({
 	variant = 'primary',
 	size = 'md',
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
 	theme = {},
 	dangerouslyOverrideCss,
 	icon,
 	...props
 }: ButtonProps) {
-	const mergedTheme = mergeDeep(defaultButtonTheme, theme);
-
 	const iconSize = size === 'xs' ? 'sm' : size; // icon size is sm for xs buttons, otherwise same as button size
 
 	return (
 		<ReactAriaButton
 			{...props}
-			css={[
-				buttonStyles(mergedTheme, { variant, size }, !!icon),
-				dangerouslyOverrideCss,
-			]}
+			css={[buttonStyles({ variant, size }, !!icon), dangerouslyOverrideCss]}
 		>
 			{composeRenderProps(props.children, (children) => (
 				// TODO: isPending (loading) state - see https://react-aria.adobe.com/Button

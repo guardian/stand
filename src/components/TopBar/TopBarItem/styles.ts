@@ -10,7 +10,6 @@ export type PartialTopBarItemTheme = Prettify<DeepPartial<TopBarItemTheme>>;
 export const defaultTopBarItemTheme: TopBarItemTheme = componentTopBar.item;
 
 export const topBarItemStyles = (
-	theme: TopBarItemTheme,
 	alignment: 'left' | 'right',
 	{ size }: Required<Pick<TopBarItemProps, 'size'>>,
 	_menuOpen?: boolean,
@@ -18,21 +17,23 @@ export const topBarItemStyles = (
 	return css`
 		display: flex;
 		align-items: center;
-		height: ${theme.height};
-		padding: ${theme[size].padding.top} ${theme[size].padding.right}
-			${theme[size].padding.bottom} ${theme[size].padding.left};
+		height: var(--component-top-bar-item-height);
+		padding: var(--component-top-bar-item-${size}-padding-top)
+			var(--component-top-bar-item-${size}-padding-right)
+			var(--component-top-bar-item-${size}-padding-bottom)
+			var(--component-top-bar-item-${size}-padding-left);
 
 		${
 			_menuOpen
 				? css`
 						height: 64px;
 						justify-content: center;
-						border-bottom: ${theme.border};
+						border-bottom: var(--component-top-bar-item-border);
 					`
 				: css`
 						${
 							alignment === 'left' ? 'border-right' : 'border-left'
-						}: ${theme.border};
+						}: var(--component-top-bar-item-border);
 						${alignment === 'right' && 'margin-left: auto'};
 					`
 		}

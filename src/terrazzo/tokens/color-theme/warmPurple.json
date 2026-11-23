@@ -1,0 +1,103 @@
+{
+	"theme": {
+		"dark": {
+			"color": {
+				"50": {
+					"$type": "color",
+					"$value": "{base.dark.colors.warmPurple.50}"
+				},
+				"100": {
+					"$type": "color",
+					"$value": "{base.dark.colors.warmPurple.100}"
+				},
+				"200": {
+					"$type": "color",
+					"$value": "{base.dark.colors.warmPurple.200}"
+				},
+				"300": {
+					"$type": "color",
+					"$value": "{base.dark.colors.warmPurple.300}"
+				},
+				"400": {
+					"$type": "color",
+					"$value": "{base.dark.colors.warmPurple.400}"
+				},
+				"500": {
+					"$type": "color",
+					"$value": "{base.dark.colors.warmPurple.500}"
+				},
+				"600": {
+					"$type": "color",
+					"$value": "{base.dark.colors.warmPurple.600}"
+				},
+				"700": {
+					"$type": "color",
+					"$value": "{base.dark.colors.warmPurple.700}"
+				},
+				"800": {
+					"$type": "color",
+					"$value": "{base.dark.colors.warmPurple.800}"
+				},
+				"900": {
+					"$type": "color",
+					"$value": "{base.dark.colors.warmPurple.900}"
+				}
+			}
+		},
+		"light": {
+			"color": {
+				"50": {
+					"$extensions": {
+						"com.figma": {
+							"codeSyntax": {},
+							"hiddenFromPublishing": false,
+							"scopes": ["ALL_SCOPES"]
+						}
+					},
+					"$type": "color",
+					"$value": "{base.light.colors.warmPurple.50}"
+				},
+				"100": {
+					"$type": "color",
+					"$value": "{base.light.colors.warmPurple.100}"
+				},
+				"200": {
+					"$type": "color",
+					"$value": "{base.light.colors.warmPurple.200}"
+				},
+				"300": {
+					"$type": "color",
+					"$value": "{base.light.colors.warmPurple.300}"
+				},
+				"400": {
+					"$type": "color",
+					"$value": "{base.light.colors.warmPurple.400}"
+				},
+				"500": {
+					"$type": "color",
+					"$value": "{base.light.colors.warmPurple.500}"
+				},
+				"600": {
+					"$type": "color",
+					"$value": "{base.light.colors.warmPurple.600}"
+				},
+				"700": {
+					"$type": "color",
+					"$value": "{base.light.colors.warmPurple.700}"
+				},
+				"800": {
+					"$type": "color",
+					"$value": "{base.light.colors.warmPurple.800}"
+				},
+				"900": {
+					"$type": "color",
+					"$value": "{base.light.colors.warmPurple.900}"
+				},
+				"950": {
+					"$type": "color",
+					"$value": "{base.light.colors.warmPurple.950}"
+				}
+			}
+		}
+	}
+}

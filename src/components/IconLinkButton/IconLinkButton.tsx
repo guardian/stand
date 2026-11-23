@@ -3,9 +3,8 @@ import {
 	composeRenderProps,
 	Link as ReactAriaLink,
 } from 'react-aria-components';
-import { mergeDeep } from '../../util/mergeDeep';
 import { Icon } from '../Icon/Icon';
-import { defaultIconLinkButtonTheme, iconLinkButtonStyles } from './styles';
+import { iconLinkButtonStyles } from './styles';
 import type { IconLinkButtonProps } from './types';
 
 export function IconLinkButton({
@@ -13,11 +12,11 @@ export function IconLinkButton({
 	size = 'md',
 	symbol,
 	ariaLabel,
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars -- theming support is being reworked
 	theme = {},
 	dangerouslyOverrideCss,
 	...props
 }: IconLinkButtonProps) {
-	const mergedTheme = mergeDeep(defaultIconLinkButtonTheme, theme);
 	const linkRef = useRef<HTMLAnchorElement>(null);
 
 	// Set the title attribute for accessibility and tooltip support
@@ -35,7 +34,7 @@ export function IconLinkButton({
 			ref={linkRef}
 			aria-label={ariaLabel}
 			css={[
-				iconLinkButtonStyles(mergedTheme, { variant, size }, false, true),
+				iconLinkButtonStyles({ variant, size }, false, true),
 				dangerouslyOverrideCss,
 			]}
 		>

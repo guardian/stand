@@ -8,11 +8,11 @@
  */
 import { Global } from '@emotion/react';
 import { css } from '@emotion/react';
-import { withThemeFromJSXProvider } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react-vite';
+import { Stand } from '../src/Stand';
 import { semanticTypography } from '../src/styleD/build/typescript/semantic/typography';
 import { convertTypographyToEmotionObjectStyle } from '../src/styleD/utils/semantic/typography';
-import '../src/util/reset.css';
+import { GlobalResetStyles } from '../src/utils';
 
 const Fonts = css`
     @import url('https://assets.guim.co.uk/fonts/material-symbols/MaterialSymbolsOutlined.css');
@@ -70,7 +70,38 @@ const globalStyles = css`
     }
 `;
 
-const GlobalStyles = () => <Global styles={[Fonts, globalStyles]} />;
+export const globalTypes = {
+	theme: {
+		name: 'Theme',
+		description: 'Switch global Stand theme',
+		defaultValue: 'blue',
+		toolbar: {
+			icon: 'paintbrush',
+			items: [
+				{ value: 'blue', title: 'Blue' },
+				{ value: 'coolPurple', title: 'Cool Purple' },
+				{ value: 'cyan', title: 'Cyan' },
+				{ value: 'orange', title: 'Orange' },
+				{ value: 'teal', title: 'Teal' },
+				{ value: 'warmPurple', title: 'Warm Purple' },
+				{ value: 'magenta', title: 'Magenta' },
+			],
+			showName: true,
+		},
+	},
+	mode: {
+		name: 'Mode',
+		description: 'Switch global Stand mode',
+		defaultValue: 'light',
+		toolbar: {
+			items: [
+				{ value: 'light', icon: 'circlehollow', title: 'Light' },
+				{ value: 'dark', icon: 'circle', title: 'Dark' },
+			],
+			showName: true,
+		},
+	},
+}
 
 const preview: Preview = {
 	parameters: {
@@ -86,9 +117,13 @@ const preview: Preview = {
 		}
 	},
 	decorators: [
-		withThemeFromJSXProvider({
-			GlobalStyles, // Adds GlobalStyles to all stories
-		}),
+		// Wrap all stories with Stand provider and apply global styles
+		(Story, context) => (
+			<Stand theme={context.globals.theme} mode={context.globals.mode}>
+				<Global styles={[Fonts, globalStyles, GlobalResetStyles]} />
+				<Story />
+			</Stand>
+		)
 	],
 };
 
