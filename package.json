@@ -723,7 +723,7 @@
 		"jest-environment-jsdom": "30.5.2",
 		"knip": "^6.46.1",
 		"lint-staged": "17.6.1",
-		"prettier": "3.9.10",
+		"prettier": "3.10.1",
 		"prosemirror-dropcursor": "1.8.2",
 		"prosemirror-history": "1.4.1",
 		"prosemirror-keymap": "1.2.2",
