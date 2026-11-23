@@ -2,8 +2,8 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentForm } from '../../styleD/build/typescript/component/form';
 import { componentForm } from '../../styleD/build/typescript/component/form';
-import { convertCSSTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { Prettify } from '../../util/types';
+import { convertCSSTypographyToEmotionStringStyle } from '../../utils';
 import type { FormInputContainerDefaultProps } from './types';
 
 export type FormInputContainerTheme = Prettify<ComponentForm['input']>;

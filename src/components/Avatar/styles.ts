@@ -2,8 +2,8 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentAvatar } from '../../styleD/build/typescript/component/avatar';
 import { componentAvatar } from '../../styleD/build/typescript/component/avatar';
-import { convertCSSTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../util/types';
+import { convertCSSTypographyToEmotionStringStyle } from '../../utils';
 import type { AvatarProps } from './types';
 
 export type AvatarTheme = Prettify<ComponentAvatar>;

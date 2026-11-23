@@ -2,8 +2,8 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentTopBar } from '../../../styleD/build/typescript/component/topBar';
 import { componentTopBar } from '../../../styleD/build/typescript/component/topBar';
-import { convertCSSTypographyToEmotionStringStyle } from '../../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../../util/types';
+import { convertCSSTypographyToEmotionStringStyle } from '../../../utils';
 import type { TopBarNavigationProps } from './types';
 
 export type TopBarNavigationTheme = Prettify<ComponentTopBar['navigation']>;

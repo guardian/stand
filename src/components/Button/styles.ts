@@ -2,8 +2,8 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentButton } from '../../styleD/build/typescript/component/button';
 import { componentButton } from '../../styleD/build/typescript/component/button';
-import { convertCSSTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../util/types';
+import { convertCSSTypographyToEmotionStringStyle } from '../../utils';
 import type { ButtonProps } from './types';
 
 export type ButtonTheme = Prettify<ComponentButton>;

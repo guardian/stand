@@ -2,8 +2,8 @@ import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { ComponentSelect } from '../../styleD/build/typescript/component/select';
 import { componentSelect } from '../../styleD/build/typescript/component/select';
-import { convertCSSTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../util/types';
+import { convertCSSTypographyToEmotionStringStyle } from '../../utils';
 import type { ListBoxProps, SelectProps } from './types';
 
 export type SelectTheme = Prettify<ComponentSelect>;

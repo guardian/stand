@@ -4,8 +4,8 @@ import {
 	componentFavicon,
 	type ComponentFavicon,
 } from '../../styleD/build/typescript/component/favicon';
-import { convertCSSTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../util/types';
+import { convertCSSTypographyToEmotionStringStyle } from '../../utils';
 
 export type FaviconTheme = Prettify<ComponentFavicon>;
 export type PartialFaviconTheme = Prettify<DeepPartial<FaviconTheme>>;
