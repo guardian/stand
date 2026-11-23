@@ -707,7 +707,7 @@
 		"@storybook/addon-themes": "10.6.7",
 		"@storybook/react-vite": "10.6.7",
 		"@testing-library/dom": "^10.4.2",
-		"@testing-library/jest-dom": "7.0.1",
+		"@testing-library/jest-dom": "8.0.0",
 		"@tsdown/css": "0.23.7",
 		"@types/jest": "30.0.0",
 		"@types/node": "24.19.2",
