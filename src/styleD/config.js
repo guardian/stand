@@ -83,7 +83,12 @@ export default {
 		css: {
 			transformGroup: 'css',
 			buildPath: 'build/css/',
-			files: generateSplitTokenConfig(fileList, 'css/variables', 'css'),
+			files: [
+				{
+					destination: 'stand.css',
+					format: 'css/variables',
+				},
+			],
 		},
 		typescript: {
 			transforms: [
