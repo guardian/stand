@@ -12,8 +12,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS, use the `button` css (./component/button.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { IconLinkButton } from './components/IconLinkButton/IconLinkButton';
 export type { IconLinkButtonProps } from './components/IconLinkButton/types';
