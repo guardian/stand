@@ -44,7 +44,7 @@ export const Component = () => (
 `;
 
 // Menu - Custom component - CSS example
-export const componentCss = /* css */ `@import '@guardian/stand/component/menu.css';
+export const componentCss = /* css */ `@import '@guardian/stand/stand.css';
 @import "@guardian/stand/fonts/MaterialSymbolsOutlined.css";
 
 /* Popover container */

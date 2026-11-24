@@ -30,11 +30,7 @@ export const Component = () => (
 // Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the user feedback summary styles */
-@import '@guardian/stand/component/userFeedbackSummary.css';
-@import "@guardian/stand/component/icon.css";
-@import '@guardian/stand/semantic/typography.css';
-@import '@guardian/stand/base/spacing.css';
-@import '@guardian/stand/base/sizing.css';
+@import '@guardian/stand/stand.css';
 
 /* example setup of user feedback summary style */
 .stand-user-feedback-summary {

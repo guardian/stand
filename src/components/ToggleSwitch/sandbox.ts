@@ -14,7 +14,7 @@ export const Component = () => (
 `;
 
 export const componentCss = /* css */ `
-@import "@guardian/stand/component/toggleSwitch.css";
+@import "@guardian/stand/stand.css";
 
 .stand-toggle-switch {
 	display: var(--component-toggle-switch-shared-display);
