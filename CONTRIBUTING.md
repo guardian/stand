@@ -160,9 +160,9 @@ export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
 ```
 
-2. **Update `package.json`**: Three separate sections must be updated:
+2. **Update `package.json`**: Two separate sections must be updated:
 
-   **`exports`**: add the JS subpath and, if a CSS build exists, the CSS subpath:
+   **`exports`**: add the JS subpath:
 
    ```json
    "./Avatar": {
@@ -175,7 +175,6 @@ export type { ComponentAvatar } from './styleD/build/typescript/component/avatar
        "default": "./dist/Avatar.cjs"
      }
    },
-   "./component/avatar.css": "./dist/styleD/build/css/component/avatar.css"
    ```
 
 **`typesVersions`**: Required for TypeScript consumers using `moduleResolution: node` (legacy):

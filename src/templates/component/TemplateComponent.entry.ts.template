@@ -11,8 +11,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/templateComponent.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { TemplateComponent } from './components/TemplateComponent/TemplateComponent';
 export type { TemplateComponentProps } from './components/TemplateComponent/types';

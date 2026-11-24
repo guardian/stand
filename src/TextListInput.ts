@@ -10,8 +10,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/textListInput.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { TextListInput } from './components/TextListInput/TextListInput';
 export type { TextListInputProps } from './components/TextListInput/types';

@@ -8,8 +8,7 @@
  * - `typescript`
  * - `react-aria-components`
  *
- * If you only need the built CSS (./component/toggleSwitch.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { ToggleSwitch } from './components/ToggleSwitch/ToggleSwitch';
 export type { ToggleSwitchProps } from './components/ToggleSwitch/types';

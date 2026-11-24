@@ -10,8 +10,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/avatar.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { AvatarLink } from './components/AvatarLink/AvatarLink';
 export type { AvatarLinkProps } from './components/AvatarLink/types';

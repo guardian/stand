@@ -9,8 +9,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/buttonGroup.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { ButtonGroup } from './components/ButtonGroup/ButtonGroup';
 export type { ButtonGroupProps } from './components/ButtonGroup/types';

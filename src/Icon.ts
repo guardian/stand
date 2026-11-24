@@ -9,8 +9,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/icon.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  *
  * You'll also need to install a set of icons to use the Icon component.
  *

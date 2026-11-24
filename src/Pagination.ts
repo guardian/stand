@@ -10,8 +10,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/pagination.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { Pagination } from './components/Pagination/Pagination';
 export type {

@@ -97,8 +97,7 @@ const GlobalCss = `
 @import '@guardian/stand/util/reset.css';
 @import url('https://assets.guim.co.uk/fonts/open-sans/OpenSans.css');
 @import "@guardian/stand/fonts/MaterialSymbolsOutlined.css";
-@import '@guardian/stand/semantic/typography.css';
-@import '@guardian/stand/base/spacing.css';
+@import '@guardian/stand/stand.css';
 @font-face {
 	font-family: 'GH Guardian Headline';
 	src: url('https://assets.guim.co.uk/static/frontend/fonts/guardian-headline/full-not-hinted/GHGuardianHeadline-Bold.woff2')

@@ -19,9 +19,7 @@ export const Component = () => (
 // Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the templateComponent styles */
-@import '@guardian/stand/component/templateComponent.css';
-/* import the icon styles if using the icon variant of the templateComponent component */
-@import "@guardian/stand/component/icon.css";
+@import '@guardian/stand/stand.css';
 
 /* example setup of templateComponent style */
 .stand-template-component {
