@@ -30,7 +30,7 @@ export const Component = () => (
 // IntendedAudienceSignifier - Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the intended audience signifier styles */
-@import '@guardian/stand/component/intendedAudienceSignifier.css';
+@import '@guardian/stand/stand.css';
 
 .stand-intended-audience-signifier {
 	color: var(--component-intended-audience-signifier-color);

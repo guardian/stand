@@ -19,7 +19,7 @@ export const Component = () => (
 // Grid - Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the grid styles */
-@import '@guardian/stand/component/grid.css';
+@import '@guardian/stand/stand.css';
 
 .stand-grid-container {
 	--gap: var(--component-grid-sm-gap);

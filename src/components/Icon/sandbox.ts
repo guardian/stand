@@ -36,10 +36,8 @@ export const Component = () => (
 
 // Custom component - CSS example
 export const componentCss = /* css */ `
-/* import the icon styles */
-@import '@guardian/stand/component/icon.css';
-/* color styles for customisation */
-@import "@guardian/stand/base/colors.css";
+/* import the icon styles and color styles for customisation */
+@import '@guardian/stand/stand.css';
 
 .container {
   display: flex;

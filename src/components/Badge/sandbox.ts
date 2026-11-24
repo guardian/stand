@@ -22,7 +22,7 @@ export const Component = () => (
 // Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the badge styles */
-@import '@guardian/stand/component/badge.css';
+@import '@guardian/stand/stand.css';
 
 /* example setup of badge style */
 .stand-badge {
@@ -63,7 +63,7 @@ const badgeStyles = \`
 	padding-left: \${componentBadge.size.md.padding.left};
 	font: \${componentBadge.size.md.weight.strong.typography.font};
 	letter-spacing: \${componentBadge.size.md.weight.strong.typography.letterSpacing};
-	font-variation-settings: 'wdth' 
+	font-variation-settings: 'wdth'
 	\${componentBadge.size.md.weight.strong.typography.fontWidth};
 \`;
 

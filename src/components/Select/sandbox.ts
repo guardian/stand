@@ -29,8 +29,7 @@ export const Component = () => (
 // Select - Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the select styles */
-@import '@guardian/stand/component/select.css';
-@import '@guardian/stand/component/form.css';
+@import '@guardian/stand/stand.css';
 
 .stand-select-container {
 	display: var(--component-form-input-shared-container-display);

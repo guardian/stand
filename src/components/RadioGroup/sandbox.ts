@@ -18,8 +18,7 @@ export const Component = () => (
 // RadioGroup - Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the radiogroup styles */
-@import '@guardian/stand/component/radioGroup.css';
-@import '@guardian/stand/component/form.css';
+@import '@guardian/stand/stand.css';
 
 /* form input container styles */
 

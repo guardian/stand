@@ -21,7 +21,7 @@ export const Component = () => {
 `;
 
 // AvatarButton - Custom component - CSS example
-export const componentCss = /* css */ `@import "@guardian/stand/component/avatar.css";
+export const componentCss = /* css */ `@import "@guardian/stand/stand.css";
 
     /* example setup of AvatarButton style using md size and blue color */
     .stand-AvatarButton {

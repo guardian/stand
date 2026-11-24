@@ -19,9 +19,7 @@ export const Component = () => {
 `;
 
 // Toolname - Custom component - CSS example
-export const componentCss = /* css */ `@import "@guardian/stand/component/topBar.css";
-	/* import the favicon styles */
-	@import '@guardian/stand/component/favicon.css';
+export const componentCss = /* css */ `@import "@guardian/stand/stand.css";
 
     /* example setup of tool name */
     .stand-topbar-toolname {
