@@ -9,8 +9,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/grid.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { Grid } from './components/Grid/Grid';
 export { Item } from './components/Grid/Grid';

@@ -10,8 +10,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/tooltip.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { Tooltip } from './components/Tooltip/Tooltip';
 export type { TooltipProps } from './components/Tooltip/types';

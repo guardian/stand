@@ -16,7 +16,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/byline.css), you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { Byline } from './components/Byline/Byline';
 export type { BylineModel } from './components/Byline/lib';

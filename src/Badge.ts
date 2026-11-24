@@ -9,8 +9,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/badge.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { Badge } from './components/Badge/Badge';
 export type { BadgeProps } from './components/Badge/types';

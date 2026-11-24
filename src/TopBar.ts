@@ -10,8 +10,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/topBar.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { componentTopBar } from './styleD/build/typescript/component/topBar';
 export type { ComponentTopBar } from './styleD/build/typescript/component/topBar';

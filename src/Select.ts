@@ -10,8 +10,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/select.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { Option, Select } from './components/Select/Select';
 export type { OptionProps, SelectProps } from './components/Select/types';

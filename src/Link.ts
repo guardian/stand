@@ -9,8 +9,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/link.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { Link } from './components/Link/Link';
 export type { LinkProps } from './components/Link/types';
