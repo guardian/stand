@@ -6,10 +6,10 @@
  *
  * See https://www.chromatic.com/docs/turbosnap/troubleshooting/#changedstorybookfiles
  */
-import { Global } from '@emotion/react';
-import { css } from '@emotion/react';
+import { Global, css } from '@emotion/react';
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react-vite';
+import '../src/styleD/build/css/stand.css';
 import { semanticTypography } from '../src/styleD/build/typescript/semantic/typography';
 import { convertTypographyToEmotionObjectStyle } from '../src/styleD/utils/semantic/typography';
 import '../src/util/reset.css';
