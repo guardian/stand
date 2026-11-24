@@ -27,7 +27,7 @@ export const Component = () => (
 `;
 
 // Custom component - CSS example
-export const componentCss = /* css */ `@import '@guardian/stand/component/htmlPreviewLoader.css';
+export const componentCss = /* css */ `@import '@guardian/stand/stand.css';
 
 .stand-html-preview-loader {
 	padding-top: var(--component-html-preview-loader-padding-top);

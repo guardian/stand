@@ -28,9 +28,7 @@ export const Component = () => (
 // Checkbox - Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the checkbox, form, inline message styles */
-@import '@guardian/stand/component/inlineMessage.css';
-@import '@guardian/stand/component/form.css';
-@import '@guardian/stand/component/checkbox.css';
+@import '@guardian/stand/stand.css';
 
 /* inline message styles - error */
 .stand-inline-message {

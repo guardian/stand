@@ -22,7 +22,7 @@ export const Component = () => (
 // Checkbox - Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the checkbox styles */
-@import "@guardian/stand/component/checkbox.css";
+@import "@guardian/stand/stand.css";
 
 .stand-checkbox {
   display: var(--component-checkbox-input-shared-display);

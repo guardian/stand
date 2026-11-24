@@ -21,10 +21,8 @@ export const Component = () => {
 
 // Custom component - CSS example
 export const componentCss = /* css */ `
-/* import the pagination styles */
-@import '@guardian/stand/component/pagination.css';
-/* import the icon styles for the previous/next arrows */
-@import "@guardian/stand/component/icon.css";
+/* import the pagination styles and icon styles for the previous/next arrows */
+@import '@guardian/stand/stand.css';
 
 .stand-pagination {
 	display: var(--component-pagination-shared-display);

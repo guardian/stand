@@ -35,7 +35,7 @@ export const Component = () => (
 `;
 
 // Custom component - CSS example
-export const componentCss = /* css */ `@import '@guardian/stand/component/button.css';
+export const componentCss = /* css */ `@import '@guardian/stand/stand.css';
 
     /* shared button styles for all variants */
     .stand-button {

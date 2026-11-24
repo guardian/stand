@@ -35,7 +35,7 @@ export const Component = () => (
 // InlineMessage - Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the inlinemessage styles */
-@import '@guardian/stand/component/inlineMessage.css';
+@import '@guardian/stand/stand.css';
 
 .stand-inline-message {
   display: var(--component-inline-message-shared-display);
