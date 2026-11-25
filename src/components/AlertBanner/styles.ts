@@ -1,14 +1,13 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentAlertBanner } from '../../styleD/build/typescript/component/alertBanner';
-import { componentAlertBanner } from '../../styleD/build/typescript/component/alertBanner';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 import type { AlertBannerProps } from './types';
 
-export type AlertBannerTheme = Prettify<ComponentAlertBanner>;
+export type AlertBannerTheme = Prettify<(typeof component)['alertBanner']>;
 export type PartialAlertBannerTheme = Prettify<DeepPartial<AlertBannerTheme>>;
-export const defaultAlertBannerTheme: AlertBannerTheme = componentAlertBanner;
+export const defaultAlertBannerTheme: AlertBannerTheme = component.alertBanner;
 
 export const alertBannerStyles = (
 	theme: AlertBannerTheme,
@@ -37,6 +36,6 @@ export const alertBannerContentStyles = (
 		align-items: center;
 		flex: 1;
 		color: ${theme.shared.content.color};
-		${convertTypographyToEmotionStringStyle(theme.shared.content.typography)}
+		${convertTypographyToCssString(theme.shared.content.typography)}
 	`;
 };
