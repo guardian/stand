@@ -1,0 +1,53 @@
+{
+	"component": {
+		"tagPicker": {
+			"offlineSection": {
+				"gap": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 4
+					}
+				},
+				"justifyContent": {
+					"$type": "text",
+					"$value": "flex-start"
+				}
+			},
+			"search": {
+				"width": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "%",
+						"value": 100
+					}
+				}
+			},
+			"select": {
+				"flexBasis": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "%",
+						"value": 25
+					}
+				}
+			},
+			"shared": {
+				"gap": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 15
+					}
+				},
+				"width": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "%",
+						"value": 100
+					}
+				}
+			}
+		}
+	}
+}
