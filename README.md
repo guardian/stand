@@ -151,14 +151,22 @@ See the [Contributing guidelines](https://guardian.github.io/stand/?path=/docs/c
 
 The following steps are for **developing the Stand library itself**.
 
-1. **Install dependencies:**
+1. **Install the development tools:** Install [mise](https://mise.jdx.dev/getting-started.html), then from the project root run:
+
+   ```bash
+   mise install
+   ```
+
+   Mise reads the Node version from `.nvmrc` and the pnpm version from the `packageManager` field in `package.json`, as CI does. Activate mise in your shell as described in its [installation guide](https://mise.jdx.dev/getting-started.html#activate-mise), or prefix commands with `mise exec --` (for example, `mise exec -- pnpm install`).
+
+2. **Install dependencies:**
 
    ```bash
    # With pnpm
    pnpm install
    ```
 
-2. **Run Storybook**: Most development is done within Storybook, which provides a live environment for building and testing components in isolation:
+3. **Run Storybook**: Most development is done within Storybook, which provides a live environment for building and testing components in isolation:
 
    ```bash
    pnpm storybook
@@ -166,7 +174,7 @@ The following steps are for **developing the Stand library itself**.
 
    This will start Storybook at `http://localhost:6007`. See the [contributing guidelines](https://guardian.github.io/stand/?path=/docs/contributing--docs) for how to add new components and stories.
 
-3. **Build** the package for publishing:
+4. **Build** the package for publishing:
 
    ```bash
    pnpm build
@@ -178,7 +186,7 @@ The following steps are for **developing the Stand library itself**.
    pnpm build-styled
    ```
 
-4. **Test:**
+5. **Test:**
 
    ```bash
    pnpm test                 # unit tests (Jest)
