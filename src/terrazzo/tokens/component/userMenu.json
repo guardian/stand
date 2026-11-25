@@ -1,0 +1,130 @@
+{
+	"component": {
+		"userMenu": {
+			"container": {
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.700}"
+				},
+				"paddingX": {
+					"$type": "dimension",
+					"$value": "{base.spacing.4Rem}"
+				},
+				"paddingY": {
+					"$type": "dimension",
+					"$value": "{base.spacing.4Rem}"
+				},
+				"width": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 300
+					}
+				}
+			},
+			"heading": {
+				"fontSize": {
+					"$type": "dimension",
+					"$value": "{base.typography.size.18Rem}"
+				},
+				"fontWeight": {
+					"$type": "number",
+					"$value": 700
+				},
+				"paddingBottom": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 0
+					}
+				},
+				"paddingLeft": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 0
+					}
+				},
+				"paddingRight": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 0
+					}
+				},
+				"paddingTop": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 0
+					}
+				},
+				"textAlign": {
+					"$type": "alignment",
+					"$value": "left"
+				}
+			},
+			"label": {
+				"fontSize": {
+					"$type": "dimension",
+					"$value": "{base.typography.size.14Rem}"
+				},
+				"fontWeight": {
+					"$type": "number",
+					"$value": 700
+				},
+				"paddingBottom": {
+					"$type": "dimension",
+					"$value": "{base.spacing.6Rem}"
+				},
+				"paddingLeft": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 0
+					}
+				},
+				"paddingRight": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 0
+					}
+				},
+				"paddingTop": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 15
+					}
+				},
+				"textAlign": {
+					"$type": "alignment",
+					"$value": "left"
+				}
+			},
+			"toggleButton": {
+				"baseBackgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.800}"
+				},
+				"baseBorderColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.700}"
+				},
+				"disabledBackgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.700}"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{base.spacing.4Rem}"
+				},
+				"selectedBorderColor": {
+					"$type": "color",
+					"$value": "{base.colors.blue.200}"
+				}
+			}
+		}
+	}
+}
