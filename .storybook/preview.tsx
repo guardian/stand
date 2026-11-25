@@ -9,9 +9,9 @@
 import { Global, css } from '@emotion/react';
 import { withThemeFromJSXProvider } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react-vite';
-import '../src/styleD/build/css/stand.css';
-import { semanticTypography } from '../src/styleD/build/typescript/semantic/typography';
-import { convertTypographyToEmotionObjectStyle } from '../src/styleD/utils/semantic/typography';
+import '../src/terrazzo/build/stand.css';
+import { semantic } from '../src/terrazzo/build/stand';
+import { convertTypographyToCssString } from '../src/utils';
 import '../src/util/reset.css';
 
 const Fonts = css`
@@ -59,14 +59,10 @@ const Fonts = css`
 	}
 `;
 
-const globalFont = {
-	color: '#292929',
-	...convertTypographyToEmotionObjectStyle(semanticTypography.bodySm),
-};
-
 const globalStyles = css`
     body {
-        ${globalFont}
+			color: #292929;
+			${convertTypographyToCssString(semantic.typography.bodySm)};
     }
 `;
 

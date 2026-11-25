@@ -2,6 +2,7 @@ import type { PathLike } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { build, defineConfig, parse } from '@terrazzo/parser';
 import css from '@terrazzo/plugin-css';
+import cssInJs from '@terrazzo/plugin-css-in-js';
 
 const config: ReturnType<typeof defineConfig> = defineConfig(
 	{
@@ -10,6 +11,9 @@ const config: ReturnType<typeof defineConfig> = defineConfig(
 		plugins: [
 			css({
 				filename: 'stand.css',
+			}),
+			cssInJs({
+				filename: 'stand.js',
 			}),
 		],
 		lint: {
