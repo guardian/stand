@@ -1,0 +1,208 @@
+{
+	"component": {
+		"pagination": {
+			"ellipsis": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.weak}"
+				},
+				"minWidth": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12Px}"
+				}
+			},
+			"item": {
+				"active": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.weakPressed}"
+					}
+				},
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.weak}"
+				},
+				"borderColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.border.weak}"
+				},
+				"borderRadius": {
+					"$type": "dimension",
+					"$value": "{semantic.radius.cornerSm}"
+				},
+				"borderStyle": {
+					"$type": "text",
+					"$value": "solid"
+				},
+				"borderWidth": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.border.default}"
+				},
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.strong}"
+				},
+				"current": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.selectedStrong}"
+					},
+					"borderColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.selected}"
+					},
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.strongerInverse}"
+					},
+					"typography": {
+						"font": {
+							"$type": "typography",
+							"$value": "{semantic.typography.headingSm.font}"
+						},
+						"fontWidth": {
+							"$type": "number",
+							"$value": "{semantic.typography.headingSm.fontWidth}"
+						},
+						"letterSpacing": {
+							"$type": "dimension",
+							"$value": "{semantic.typography.headingSm.letterSpacing}"
+						}
+					}
+				},
+				"cursor": {
+					"$type": "text",
+					"$value": "pointer"
+				},
+				"disabled": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.disabled}"
+					},
+					"borderColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.disabled}"
+					},
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.disabled}"
+					},
+					"cursor": {
+						"$type": "text",
+						"$value": "not-allowed"
+					}
+				},
+				"focusVisible": {
+					"outlineColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.focused}"
+					},
+					"outlineOffset": {
+						"$type": "dimension",
+						"$value": "{base.spacing.2Px}"
+					},
+					"outlineWidth": {
+						"$type": "dimension",
+						"$value": "{semantic.sizing.border.md}"
+					}
+				},
+				"height": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.xs}"
+				},
+				"hover": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.weakHover}"
+					},
+					"borderColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.weak}"
+					}
+				},
+				"minWidth": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.xs}"
+				},
+				"paddingX": {
+					"$type": "dimension",
+					"$value": "{base.spacing.2Px}"
+				},
+				"paddingY": {
+					"$description": "0 because the item has a fixed height and flex-centers its content; vertical padding would only shrink the content box",
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 0
+					}
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodySm.font}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.bodySm.fontWidth}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.bodySm.letterSpacing}"
+					}
+				}
+			},
+			"shared": {
+				"alignItems": {
+					"$type": "text",
+					"$value": "center"
+				},
+				"display": {
+					"$type": "text",
+					"$value": "flex"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": "{base.spacing.6Px}"
+				},
+				"margin": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 0
+					}
+				},
+				"padding": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 0
+					}
+				}
+			},
+			"summary": {
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.weak}"
+				},
+				"marginLeft": {
+					"$type": "dimension",
+					"$value": "{base.spacing.12Px}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodySm.font}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.bodySm.fontWidth}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.bodySm.letterSpacing}"
+					}
+				}
+			}
+		}
+	}
+}

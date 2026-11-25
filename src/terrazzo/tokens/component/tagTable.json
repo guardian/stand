@@ -1,0 +1,223 @@
+{
+	"component": {
+		"tagTable": {
+			"addButton": {
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.strong}"
+				},
+				"backgroundHoverColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.strongHover}"
+				},
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.strongerInverse}"
+				},
+				"fontSize": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 13
+					}
+				},
+				"fontWeight": {
+					"$type": "number",
+					"$value": 400
+				},
+				"paddingX": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 10
+					}
+				},
+				"paddingY": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 0
+					}
+				}
+			},
+			"cell": {
+				"borderBetweenCells": {
+					"borderColor": {
+						"$type": "color",
+						"$value": "{base.colors.neutral.900}"
+					},
+					"borderStyle": {
+						"$type": "strokeStyle",
+						"$value": "solid"
+					},
+					"borderWidth": {
+						"$type": "dimension",
+						"$value": {
+							"unit": "px",
+							"value": 1
+						}
+					}
+				},
+				"firstCellPaddingLeft": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 12
+					}
+				},
+				"paddingX": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 5
+					}
+				},
+				"paddingY": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 3
+					}
+				}
+			},
+			"header": {
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.700}"
+				},
+				"gap": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 4
+					}
+				},
+				"paddingBottom": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 3
+					}
+				},
+				"paddingLeft": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 12
+					}
+				},
+				"paddingRight": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 5
+					}
+				},
+				"paddingTop": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 3
+					}
+				}
+			},
+			"heading": {
+				"fontSize": {
+					"$type": "dimension",
+					"$value": "{base.typography.size.14Px}"
+				},
+				"fontWeight": {
+					"$type": "number",
+					"$value": 700
+				}
+			},
+			"row": {
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.800}"
+				},
+				"backgroundHoverColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.850}"
+				},
+				"borderBottom": {
+					"borderColor": {
+						"$type": "color",
+						"$value": "{base.colors.neutral.900}"
+					},
+					"borderStyle": {
+						"$type": "strokeStyle",
+						"$value": "solid"
+					},
+					"borderWidth": {
+						"$type": "dimension",
+						"$value": {
+							"unit": "px",
+							"value": 1
+						}
+					}
+				},
+				"firstRowBackgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.green.700}"
+				},
+				"firstRowBackgroundHoverColor": {
+					"$type": "color",
+					"$value": "{base.colors.green.600}"
+				},
+				"height": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 28
+					}
+				}
+			},
+			"subHeading": {
+				"fontSize": {
+					"$type": "dimension",
+					"$value": "{base.typography.size.12Px}"
+				},
+				"fontWeight": {
+					"$type": "number",
+					"$value": 400
+				}
+			},
+			"typeBadge": {
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{base.colors.neutral.900}"
+				},
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.strong}"
+				},
+				"fontSize": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 10
+					}
+				},
+				"fontWeight": {
+					"$type": "number",
+					"$value": 700
+				},
+				"paddingX": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 6
+					}
+				},
+				"paddingY": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 2
+					}
+				}
+			}
+		}
+	}
+}
