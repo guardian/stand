@@ -1,13 +1,13 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import { componentUserMenu } from '../../styleD/build/typescript/component/userMenu';
+import { component } from '../../terrazzo/build/stand';
 import { mergeDeep } from '../../util/mergeDeep';
 import type { PartialUserMenuTheme } from './theme';
 
 export const userMenuStyles = (
 	partialTheme: PartialUserMenuTheme = {},
 ): SerializedStyles => {
-	const { container } = mergeDeep(componentUserMenu, partialTheme);
+	const { container } = mergeDeep(component.userMenu, partialTheme);
 
 	return css`
 		background-color: ${container.backgroundColor};
@@ -24,7 +24,7 @@ export const userMenuStyles = (
 export const userMenuHeadingStyles = (
 	partialTheme: PartialUserMenuTheme = {},
 ): SerializedStyles => {
-	const { heading } = mergeDeep(componentUserMenu, partialTheme);
+	const { heading } = mergeDeep(component.userMenu, partialTheme);
 
 	return css`
 		font-weight: ${heading.fontWeight};
@@ -40,7 +40,7 @@ export const userMenuHeadingStyles = (
 export const toggleButtonStackedGroupStyles = (
 	partialTheme: PartialUserMenuTheme = {},
 ): SerializedStyles => {
-	const { toggleButton } = mergeDeep(componentUserMenu, partialTheme);
+	const { toggleButton } = mergeDeep(component.userMenu, partialTheme);
 	return css`
 		display: flex;
 		flex-direction: column;
@@ -51,7 +51,7 @@ export const toggleButtonStackedGroupStyles = (
 export const radioGroupLabelStyles = (
 	partialTheme: PartialUserMenuTheme = {},
 ): SerializedStyles => {
-	const { label } = mergeDeep(componentUserMenu, partialTheme);
+	const { label } = mergeDeep(component.userMenu, partialTheme);
 
 	return css`
 		font-weight: ${label.fontWeight};
@@ -67,7 +67,7 @@ export const radioGroupLabelStyles = (
 export const toggleButtonRowsGroupStyles = (
 	partialTheme: PartialUserMenuTheme = {},
 ): SerializedStyles => {
-	const { toggleButton } = mergeDeep(componentUserMenu, partialTheme);
+	const { toggleButton } = mergeDeep(component.userMenu, partialTheme);
 	return css`
 		display: flex;
 		flex-direction: row;
@@ -80,7 +80,7 @@ export const toggleButtonRowsGroupStyles = (
 export const toggleButtonStyles = (
 	partialTheme: PartialUserMenuTheme = {},
 ): SerializedStyles => {
-	const { toggleButton } = mergeDeep(componentUserMenu, partialTheme);
+	const { toggleButton } = mergeDeep(component.userMenu, partialTheme);
 
 	return css`
 		border-radius: 0;
