@@ -1,13 +1,12 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentTile } from '../../styleD/build/typescript/component/tile';
-import { componentTile } from '../../styleD/build/typescript/component/tile';
-import { until } from '../../styleD/utils/semantic/mq';
+import { component } from '../../terrazzo/build/stand';
+import { until } from '../../terrazzo/utils/mq';
 import type { DeepPartial, Prettify } from '../../util/types';
 
-export type TileTheme = Prettify<ComponentTile>;
+export type TileTheme = Prettify<typeof component.tile>;
 export type PartialTileTheme = Prettify<DeepPartial<TileTheme>>;
-export const defaultTileTheme: TileTheme = componentTile;
+export const defaultTileTheme: TileTheme = component.tile;
 
 type TileSize = keyof Omit<TileTheme, 'shared'>;
 

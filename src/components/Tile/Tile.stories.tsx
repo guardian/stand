@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
-import { until } from '../../styleD/utils/semantic/mq';
+import { base } from '../../terrazzo/build/stand';
+import { until } from '../../terrazzo/utils/mq';
 import { Tile } from './Tile';
 
 const meta = {
@@ -102,7 +102,7 @@ export const WithDifferentBackgroundColor = {
 		size: 'md',
 		theme: {
 			shared: {
-				backgroundColor: baseColors.magenta[900],
+				backgroundColor: base.colors.magenta[900],
 			},
 		},
 	},
@@ -223,10 +223,10 @@ export const SelectableWithColor = {
 		description: 'Unavailable',
 		dangerouslyOverrideCss: css`
 			&[data-selected] {
-				background-color: ${baseColors.magenta[900]};
+				background-color: ${base.colors.magenta[900]};
 			}
 			&[data-hovered][data-selected] {
-				background-color: ${baseColors.magenta[700]};
+				background-color: ${base.colors.magenta[700]};
 			}
 		`,
 	},
@@ -310,10 +310,10 @@ export const MultiSelectTileSelectedWithColor = {
 		description: 'Selected with a custom background',
 		dangerouslyOverrideCss: css`
 			&[data-selected] {
-				background-color: ${baseColors.magenta[900]};
+				background-color: ${base.colors.magenta[900]};
 			}
 			&[data-hovered][data-selected] {
-				background-color: ${baseColors.magenta[700]};
+				background-color: ${base.colors.magenta[700]};
 			}
 		`,
 	},
