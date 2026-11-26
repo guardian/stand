@@ -24,6 +24,8 @@ export type { ComponentPickerIframeModal } from './styleD/build/typescript/compo
 /**
  * design system components tokens exports
  */
+export { componentNumberInput } from './styleD/build/typescript/component/numberInput';
+export type { ComponentNumberInput } from './styleD/build/typescript/component/numberInput';
 export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
 export { componentBadge } from './styleD/build/typescript/component/badge';

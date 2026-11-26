@@ -208,6 +208,16 @@
 				"default": "./dist/SearchInput.cjs"
 			}
 		},
+		"./NumberInput": {
+			"import": {
+				"types": "./dist/NumberInput.d.ts",
+				"default": "./dist/NumberInput.js"
+			},
+			"require": {
+				"types": "./dist/NumberInput.d.cts",
+				"default": "./dist/NumberInput.cjs"
+			}
+		},
 		"./TextInput": {
 			"import": {
 				"types": "./dist/TextInput.d.ts",
@@ -505,6 +515,7 @@
 		"./component/select.css": "./dist/styleD/build/css/component/select.css",
 		"./component/searchInput.css": "./dist/styleD/build/css/component/searchInput.css",
 		"./component/textInput.css": "./dist/styleD/build/css/component/textInput.css",
+		"./component/numberInput.css": "./dist/styleD/build/css/component/numberInput.css",
 		"./component/radioGroup.css": "./dist/styleD/build/css/component/radioGroup.css",
 		"./component/checkbox.css": "./dist/styleD/build/css/component/checkbox.css",
 		"./component/toggleSwitch.css": "./dist/styleD/build/css/component/toggleSwitch.css",
@@ -604,6 +615,9 @@
 			],
 			"TextInput": [
 				"./dist/TextInput.d.ts"
+			],
+			"NumberInput": [
+				"./dist/NumberInput.d.ts"
 			],
 			"RadioGroup": [
 				"./dist/RadioGroup.d.ts"
