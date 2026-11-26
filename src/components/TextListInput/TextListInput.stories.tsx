@@ -1,8 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
-import { baseSizing } from '../../styleD/build/typescript/base/sizing';
-import { semanticSpacing } from '../../styleD/build/typescript/semantic/spacing';
+import { base, semantic } from '../../terrazzo/build/stand';
 import { TextListInput } from './TextListInput';
 
 const meta = {
@@ -72,13 +70,13 @@ export const CustomTheme = {
 		initialData: ['Item 1', 'Item 2'],
 		theme: {
 			label: {
-				color: baseColors.orange[200],
+				color: base.colors.orange[200],
 			},
 			row: {
-				gap: semanticSpacing['stackXxs'],
+				gap: semantic.spacing['stackXxs'],
 			},
 			column: {
-				gap: semanticSpacing['stackXxs'],
+				gap: semantic.spacing['stackXxs'],
 			},
 		},
 	},
@@ -91,8 +89,8 @@ export const DangerouslyOverrideCss = {
 		dangerouslyOverrideCss: css`
 			input,
 			button {
-				color: ${baseColors.blue[200]};
-				border: ${baseSizing.size1Rem} solid ${baseColors.blue[600]};
+				color: ${base.colors.blue[200]};
+				border: ${base.sizing.size1Rem} solid ${base.colors.blue[600]};
 			}
 		`,
 	},

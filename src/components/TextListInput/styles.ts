@@ -1,25 +1,22 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import {
-	componentTextListInput,
-	type ComponentTextListInput,
-} from '../../styleD/build/typescript/component/textListInput';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 
-export type TextListInputTheme = Prettify<ComponentTextListInput>;
+export type TextListInputTheme = Prettify<typeof component.textListInput>;
 export type PartialTextListInputTheme = Prettify<
 	DeepPartial<TextListInputTheme>
 >;
 export const defaultTextListInputTheme: TextListInputTheme =
-	componentTextListInput;
+	component.textListInput;
 
 export const labelStyles = (theme: TextListInputTheme): SerializedStyles => css`
 	display: flex;
 	align-items: center;
 	gap: ${theme.label.gap};
 	color: ${theme.label.color};
-	${convertTypographyToEmotionStringStyle(theme.label.typography)}
+	${convertTypographyToCssString(theme.label.typography)}
 `;
 
 export const columnStyles = (
