@@ -1,15 +1,14 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentAvatar } from '../../styleD/build/typescript/component/avatar';
-import { componentAvatar } from '../../styleD/build/typescript/component/avatar';
-import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
+import { convertTypographyToCssString } from '../../utils';
 import type { AvatarProps } from './types';
 
-export type AvatarTheme = Prettify<ComponentAvatar>;
+export type AvatarTheme = Prettify<(typeof component)['avatar']>;
 export type PartialAvatarTheme = Prettify<DeepPartial<AvatarTheme>>;
 
-export const defaultAvatarTheme: AvatarTheme = componentAvatar;
+export const defaultAvatarTheme: AvatarTheme = component.avatar;
 
 export const avatarImageStyles = css`
 	width: 100%;
@@ -34,7 +33,7 @@ export const avatarStyles = (
 		border: ${theme.shared.color[color].border};
 		user-select: none;
 		color: ${theme.shared.color[color].text};
-		${convertTypographyToEmotionStringStyle(theme[size].typography)}
+		${convertTypographyToCssString(theme[size].typography)}
 
 		&[data-avatar-context='interactive']:hover {
 			background-color: ${theme.shared.color[color].hover.background};

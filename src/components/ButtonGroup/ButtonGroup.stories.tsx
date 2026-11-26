@@ -1,10 +1,7 @@
 // import { css } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
-import { baseSizing } from '../../styleD/build/typescript/base/sizing';
-import { baseSpacing } from '../../styleD/build/typescript/base/spacing';
-import { semanticSpacing } from '../../styleD/build/typescript/semantic/spacing';
+import { base, semantic } from '../../terrazzo/build/stand';
 import { Button } from '../Button/Button';
 import { ButtonGroup } from './ButtonGroup';
 
@@ -33,7 +30,7 @@ export const Small = {
 export const CustomTheme = {
 	args: {
 		theme: {
-			gap: semanticSpacing['stackXs'],
+			gap: semantic.spacing['stackXs'],
 		},
 	},
 } satisfies Story;
@@ -41,9 +38,9 @@ export const CustomTheme = {
 export const DangerouslyOverrideCss = {
 	args: {
 		dangerouslyOverrideCss: css`
-			border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
-			margin: ${baseSpacing['8Rem']};
-			padding: ${baseSpacing['8Rem']};
+			border: ${base.sizing.size2Rem} solid ${base.colors.red[500]};
+			margin: ${base.spacing['8Rem']};
+			padding: ${base.spacing['8Rem']};
 		`,
 	},
 } satisfies Story;

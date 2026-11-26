@@ -1,5 +1,5 @@
 import { Link as ReactAriaLink } from 'react-aria-components';
-import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
+import { semantic } from '../../terrazzo/build/stand';
 import { mergeDeep } from '../../util/mergeDeep';
 import { typographyStyles } from '../Typography/styles';
 import { defaultLinkTheme, linkStyles } from './styles';
@@ -18,7 +18,7 @@ export function Link({
 		<ReactAriaLink
 			css={[
 				typographyStyles(
-					{ color: semanticColors.text.strong },
+					{ color: semantic.colors.text.strong },
 					{ variant: typography },
 				),
 				linkStyles(mergedTheme),

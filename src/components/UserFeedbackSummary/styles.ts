@@ -1,20 +1,17 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import { baseSizing } from '../../styleD/build/typescript/base/sizing';
-import { baseSpacing } from '../../styleD/build/typescript/base/spacing';
-import {
-	componentUserFeedbackSummary,
-	type ComponentUserFeedbackSummary,
-} from '../../styleD/build/typescript/component/userFeedbackSummary';
+import { base, component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
 import type { UserFeedbackSummaryProps } from './types';
 
-export type UserFeedbackSummaryTheme = Prettify<ComponentUserFeedbackSummary>;
+export type UserFeedbackSummaryTheme = Prettify<
+	typeof component.userFeedbackSummary
+>;
 export type PartialUserFeedbackSummaryTheme = Prettify<
 	DeepPartial<UserFeedbackSummaryTheme>
 >;
 export const defaultUserFeedbackSummaryTheme: UserFeedbackSummaryTheme =
-	componentUserFeedbackSummary;
+	component.userFeedbackSummary;
 
 export const userFeedbackSummaryStyles = (
 	theme: UserFeedbackSummaryTheme,
@@ -37,6 +34,6 @@ export const userFeedbackSummaryStyles = (
 export const textLayoutStyles = css`
 	display: flex;
 	flex-direction: column;
-	gap: ${baseSpacing['4Rem']};
-	margin-top: ${baseSizing['size1Rem']};
+	gap: ${base.spacing['4Rem']};
+	margin-top: ${base.sizing['size1Rem']};
 `;

@@ -1,15 +1,14 @@
 import { css, type SerializedStyles } from '@emotion/react';
-import {
-	componentBadge,
-	type ComponentBadge,
-} from '../../styleD/build/typescript/component/badge';
-import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
+import { convertTypographyToCssString } from '../../utils';
 import type { BadgeProps } from './types';
 
-export type BadgeTheme = Prettify<Pick<ComponentBadge, 'size' | 'color'>>;
+export type BadgeTheme = Prettify<
+	Pick<typeof component.badge, 'size' | 'color'>
+>;
 export type PartialBadgeTheme = Prettify<DeepPartial<BadgeTheme>>;
-export const defaultBadgeTheme: BadgeTheme = componentBadge;
+export const defaultBadgeTheme: BadgeTheme = component.badge;
 
 export const badgeStyles = (
 	theme: BadgeTheme,
@@ -32,7 +31,7 @@ export const badgeStyles = (
 		padding-right: ${padding.right};
 		padding-bottom: ${padding.bottom};
 		padding-left: ${padding.left};
-		${convertTypographyToEmotionStringStyle(typography)}
+		${convertTypographyToCssString(typography)}
 		color: ${colorVariant.color};
 		background-color: ${colorVariant.background};
 	`;

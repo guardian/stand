@@ -12,7 +12,7 @@ import { EditorState } from 'prosemirror-state';
 import { EditorView } from 'prosemirror-view';
 import type { FocusEventHandler, MouseEvent } from 'react';
 import { useEffect, useRef, useState } from 'react';
-import type { ComponentByline } from '../../styleD/build/typescript/component/byline';
+import type { component } from '../../terrazzo/build/stand';
 import type { DeepPartial } from '../../util/types';
 import type {
 	BylineModel,
@@ -42,7 +42,7 @@ import {
 
 type BylineProps = {
 	/** `theme` - Used to customise the look and feel of the Byline component */
-	theme?: DeepPartial<ComponentByline>;
+	theme?: DeepPartial<typeof component.byline>;
 	/** `allowUntaggedContributors` - Whether to allow untagged contributors in the byline */
 	allowUntaggedContributors?: boolean;
 	/** `contributorLimit` - Maximum number of tagged/untagged contributors allowed in the byline */

@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
-import { semanticSizing } from '../../styleD/build/typescript/semantic/sizing';
-import { from } from '../../styleD/utils/semantic/mq';
+import { semantic } from '../../terrazzo/build/stand';
+import { from } from '../../terrazzo/utils/mq';
 import { AlertBanner } from '../AlertBanner/AlertBanner';
 import { Avatar } from '../Avatar/Avatar';
 import { Button } from '../Button/Button';
@@ -234,7 +234,7 @@ const GridExample = (
 const sidebarExampleStyles = css`
 	padding: 4px 8px;
 	background-color: #f0f0f0;
-	height: ${semanticSizing.height.md};
+	height: ${semantic.sizing.height.md};
 
 	${from.md} {
 		height: 100%;

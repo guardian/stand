@@ -1,8 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
-import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
-import { semanticSizing } from '../../styleD/build/typescript/semantic/sizing';
+import { base, semantic } from '../../terrazzo/build/stand';
 import { TextInput } from '../../TextInput';
 import { Avatar } from '../Avatar/Avatar';
 import { Button } from '../Button/Button';
@@ -139,39 +137,39 @@ export const CustomTheme = {
 	render: () => (
 		<TopBar
 			theme={{
-				backgroundColor: baseColors.cyan[200],
-				borderTop: `${semanticSizing.border.default} solid ${semanticColors.border.strong}`,
-				borderRight: `${semanticSizing.border.default} solid ${semanticColors.border.strong}`,
-				borderBottom: `${semanticSizing.border.default} solid ${semanticColors.border.weak}`,
-				borderLeft: `${semanticSizing.border.default} solid ${semanticColors.border.strong}`,
+				backgroundColor: base.colors.cyan[200],
+				borderTop: `${semantic.sizing.border.default} solid ${semantic.colors.border.strong}`,
+				borderRight: `${semantic.sizing.border.default} solid ${semantic.colors.border.strong}`,
+				borderBottom: `${semantic.sizing.border.default} solid ${semantic.colors.border.weak}`,
+				borderLeft: `${semantic.sizing.border.default} solid ${semantic.colors.border.strong}`,
 
 				collapsedNavMenu: {
 					button: {
-						color: semanticColors.text.strongerInverse,
-						active: { backgroundColor: baseColors.cyan[100] },
-						hovered: { backgroundColor: baseColors.cyan[100] },
+						color: semantic.colors.text.strongerInverse,
+						active: { backgroundColor: base.colors.cyan[100] },
+						hovered: { backgroundColor: base.colors.cyan[100] },
 					},
 					popover: {
-						backgroundColor: baseColors.cyan[200],
+						backgroundColor: base.colors.cyan[200],
 					},
 				},
 				toolName: {
-					color: semanticColors.text.strongerInverse,
+					color: semantic.colors.text.strongerInverse,
 				},
 				navigation: {
 					shared: {
-						_menuOpen: {
+						menuOpen: {
 							selected: {
-								backgroundColor: baseColors.cyan[100],
+								backgroundColor: base.colors.cyan[100],
 							},
 						},
 					},
 					selected: {
-						color: semanticColors.text.strongerInverse,
-						borderBottom: `${semanticSizing.border.extraWide} solid ${semanticColors.border.selectedInverse}`,
+						color: semantic.colors.text.strongerInverse,
+						borderBottom: `${semantic.sizing.border.extraWide} solid ${semantic.colors.border.selectedInverse}`,
 					},
 					unselected: {
-						color: semanticColors.text.strongerInverse,
+						color: semantic.colors.text.strongerInverse,
 					},
 				},
 			}}
@@ -182,8 +180,8 @@ export const CustomTheme = {
 					letter: 'D',
 					theme: {
 						color: {
-							background: baseColors.cyan[100],
-							text: baseColors.cyan[900],
+							background: base.colors.cyan[100],
+							text: base.colors.cyan[900],
 						},
 					},
 				}}
@@ -209,7 +207,7 @@ export const DangerouslyOverrideCss = {
 	render: () => (
 		<TopBar
 			dangerouslyOverrideCss={css`
-				border: 4px solid ${baseColors.cyan['300']};
+				border: 4px solid ${base.colors.cyan['300']};
 			`}
 		>
 			<TopBarToolName name="DangerouslyOverrideCss" favicon={{ letter: 'C' }} />

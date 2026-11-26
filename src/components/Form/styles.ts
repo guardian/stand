@@ -1,15 +1,14 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentForm } from '../../styleD/build/typescript/component/form';
-import { componentForm } from '../../styleD/build/typescript/component/form';
+import { component } from '../../terrazzo/build/stand';
 import type { Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 import type { FormInputContainerDefaultProps } from './types';
 
-export type FormInputContainerTheme = Prettify<ComponentForm['input']>;
+export type FormInputContainerTheme = Prettify<typeof component.form.input>;
 
 export const defaultFormInputContainerTheme: FormInputContainerTheme =
-	componentForm.input;
+	component.form.input;
 
 export const formInputContainerStyles = (
 	theme: FormInputContainerTheme,
@@ -41,7 +40,7 @@ export const formInputLabelStyles = (
 ): SerializedStyles => {
 	return css`
 		color: ${theme.shared.label.color};
-		${convertTypographyToEmotionStringStyle(theme[size].label.typography)}
+		${convertTypographyToCssString(theme[size].label.typography)}
 
 		${
 			isDisabled &&
@@ -62,9 +61,7 @@ export const formInputDescriptionStyles = (
 ): SerializedStyles => {
 	return css`
 		color: ${theme.shared.description.color};
-		${convertTypographyToEmotionStringStyle(
-			theme.shared.description.typography,
-		)}
+		${convertTypographyToCssString(theme.shared.description.typography)}
 		${
 			isDisabled &&
 			css`

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors, baseSpacing } from '../..';
+import { base } from '../../terrazzo/build/stand';
 import { tableStyles } from '../../util/storybook/styles';
 import { IconLinkButton } from './IconLinkButton';
 
@@ -92,16 +92,16 @@ export const CustomTheme = {
 		theme: {
 			primary: {
 				shared: {
-					backgroundColor: baseColors.coolPurple[200],
-					color: baseColors.coolPurple[900],
-					border: `2px solid ${baseColors.coolPurple[700]}`,
+					backgroundColor: base.colors.coolPurple[200],
+					color: base.colors.coolPurple[900],
+					border: `2px solid ${base.colors.coolPurple[700]}`,
 					hover: {
-						backgroundColor: baseColors.coolPurple[300],
-						border: `2px solid ${baseColors.coolPurple[700]}`,
+						backgroundColor: base.colors.coolPurple[300],
+						border: `2px solid ${base.colors.coolPurple[700]}`,
 					},
 					active: {
-						backgroundColor: baseColors.coolPurple[400],
-						border: `2px solid ${baseColors.coolPurple[700]}`,
+						backgroundColor: base.colors.coolPurple[400],
+						border: `2px solid ${base.colors.coolPurple[700]}`,
 					},
 				},
 			},
@@ -118,7 +118,7 @@ export const DangerouslyOverrideCss = {
 		ariaLabel: 'Add',
 		dangerouslyOverrideCss: css`
 			width: 100%;
-			padding-inline: ${baseSpacing['24Rem']};
+			padding-inline: ${base.spacing['24Rem']};
 		`,
 	},
 } satisfies Story;

@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import HomeIcon from '@material-design-icons/svg/outlined/home.svg?react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors, baseSizing, baseSpacing, semanticSizing } from '../..';
+import { base, semantic } from '../../terrazzo/build/stand';
 import { tableStyles } from '../../util/storybook/styles';
 import { Icon } from './Icon';
 
@@ -51,19 +51,35 @@ export const IconTable = {
 					<td>Material Symbols (font icons)</td>
 					<td>
 						<Icon size="xs" symbol="home"></Icon>
-						<Icon size="xs" fill={baseColors.magenta[400]} symbol="home"></Icon>
+						<Icon
+							size="xs"
+							fill={base.colors.magenta[400]}
+							symbol="home"
+						></Icon>
 					</td>
 					<td>
 						<Icon size="sm" symbol="home"></Icon>
-						<Icon size="sm" fill={baseColors.magenta[400]} symbol="home"></Icon>
+						<Icon
+							size="sm"
+							fill={base.colors.magenta[400]}
+							symbol="home"
+						></Icon>
 					</td>
 					<td>
 						<Icon size="md" symbol="home"></Icon>
-						<Icon size="md" fill={baseColors.magenta[400]} symbol="home"></Icon>
+						<Icon
+							size="md"
+							fill={base.colors.magenta[400]}
+							symbol="home"
+						></Icon>
 					</td>
 					<td>
 						<Icon size="lg" symbol="home"></Icon>
-						<Icon size="lg" fill={baseColors.magenta[400]} symbol="home"></Icon>
+						<Icon
+							size="lg"
+							fill={base.colors.magenta[400]}
+							symbol="home"
+						></Icon>
 					</td>
 				</tr>
 				<tr>
@@ -72,7 +88,7 @@ export const IconTable = {
 						<Icon size="xs">
 							<HomeIcon />
 						</Icon>
-						<Icon size="xs" fill={baseColors.magenta[400]}>
+						<Icon size="xs" fill={base.colors.magenta[400]}>
 							<HomeIcon />
 						</Icon>
 					</td>
@@ -80,7 +96,7 @@ export const IconTable = {
 						<Icon size="sm">
 							<HomeIcon />
 						</Icon>
-						<Icon size="sm" fill={baseColors.magenta[400]}>
+						<Icon size="sm" fill={base.colors.magenta[400]}>
 							<HomeIcon />
 						</Icon>
 					</td>
@@ -88,7 +104,7 @@ export const IconTable = {
 						<Icon size="md">
 							<HomeIcon />
 						</Icon>
-						<Icon size="md" fill={baseColors.magenta[400]}>
+						<Icon size="md" fill={base.colors.magenta[400]}>
 							<HomeIcon />
 						</Icon>
 					</td>
@@ -96,7 +112,7 @@ export const IconTable = {
 						<Icon size="lg">
 							<HomeIcon />
 						</Icon>
-						<Icon size="lg" fill={baseColors.magenta[400]}>
+						<Icon size="lg" fill={base.colors.magenta[400]}>
 							<HomeIcon />
 						</Icon>
 					</td>
@@ -107,7 +123,7 @@ export const IconTable = {
 						<Icon size="xs">
 							<HomeSvg />
 						</Icon>
-						<Icon size="xs" fill={baseColors.magenta[400]}>
+						<Icon size="xs" fill={base.colors.magenta[400]}>
 							<HomeSvg />
 						</Icon>
 					</td>
@@ -115,7 +131,7 @@ export const IconTable = {
 						<Icon size="sm">
 							<HomeSvg />
 						</Icon>
-						<Icon size="sm" fill={baseColors.magenta[400]}>
+						<Icon size="sm" fill={base.colors.magenta[400]}>
 							<HomeSvg />
 						</Icon>
 					</td>
@@ -123,7 +139,7 @@ export const IconTable = {
 						<Icon size="md">
 							<HomeSvg />
 						</Icon>
-						<Icon size="md" fill={baseColors.magenta[400]}>
+						<Icon size="md" fill={base.colors.magenta[400]}>
 							<HomeSvg />
 						</Icon>
 					</td>
@@ -131,7 +147,7 @@ export const IconTable = {
 						<Icon size="lg">
 							<HomeSvg />
 						</Icon>
-						<Icon size="lg" fill={baseColors.magenta[400]}>
+						<Icon size="lg" fill={base.colors.magenta[400]}>
 							<HomeSvg />
 						</Icon>
 					</td>
@@ -148,7 +164,7 @@ export const CustomTheme = {
 		size: 'md',
 		theme: {
 			md: {
-				size: baseSizing.size48Rem,
+				size: base.sizing.size48Rem,
 			},
 		},
 	},
@@ -159,11 +175,11 @@ export const DangerouslyOverrideCss = {
 	args: {
 		children: 'home',
 		size: 'lg',
-		fill: baseColors.neutral[900],
+		fill: base.colors.neutral[900],
 		dangerouslyOverrideCss: css`
-			padding: ${baseSpacing['4Rem']};
-			background-color: ${baseColors.yellow[400]};
-			border-radius: ${semanticSizing.border.extraWide};
+			padding: ${base.spacing['4Rem']};
+			background-color: ${base.colors.yellow[400]};
+			border-radius: ${semantic.sizing.border.extraWide};
 		`,
 	},
 } satisfies Story;

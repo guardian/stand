@@ -1,15 +1,12 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import {
-	componentFavicon,
-	type ComponentFavicon,
-} from '../../styleD/build/typescript/component/favicon';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 
-export type FaviconTheme = Prettify<ComponentFavicon>;
+export type FaviconTheme = Prettify<(typeof component)['favicon']>;
 export type PartialFaviconTheme = Prettify<DeepPartial<FaviconTheme>>;
-export const defaultFaviconTheme: FaviconTheme = componentFavicon;
+export const defaultFaviconTheme: FaviconTheme = component.favicon;
 
 export const faviconStyles = (theme: FaviconTheme): SerializedStyles => {
 	return css`
@@ -28,7 +25,7 @@ export const faviconTypographyStyles = (
 ): SerializedStyles => {
 	return css`
 		color: ${theme.color.text};
-		${convertTypographyToEmotionStringStyle(theme.typography)}
+		${convertTypographyToCssString(theme.typography)}
 	`;
 };
 

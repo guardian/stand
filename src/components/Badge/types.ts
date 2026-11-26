@@ -1,13 +1,13 @@
-import { componentBadge } from '../../styleD/build/typescript/component/badge';
+import { component } from '../../terrazzo/build/stand';
 import type { DefaultPropsWithChildren } from '../../util/types';
 import type { BadgeTheme } from './styles';
 
-export type BadgeColors = keyof typeof componentBadge.color;
-export type BadgeSizes = keyof typeof componentBadge.size;
-type BadgeWeights = keyof typeof componentBadge.size.md.weight;
+export type BadgeColors = keyof typeof component.badge.color;
+export type BadgeSizes = keyof typeof component.badge.size;
+type BadgeWeights = keyof typeof component.badge.size.md.weight;
 
-export const badgeColors = Object.keys(componentBadge.color) as BadgeColors[];
-export const badgeSizes = Object.keys(componentBadge.size) as BadgeSizes[];
+export const badgeColors = Object.keys(component.badge.color) as BadgeColors[];
+export const badgeSizes = Object.keys(component.badge.size) as BadgeSizes[];
 
 export interface BadgeProps extends DefaultPropsWithChildren<BadgeTheme> {
 	/**

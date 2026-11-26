@@ -1,14 +1,11 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import {
-	componentTooltip,
-	type ComponentTooltip,
-} from '../../styleD/build/typescript/component/tooltip';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
 
-export type TooltipTheme = Prettify<ComponentTooltip>;
+export type TooltipTheme = Prettify<typeof component.tooltip>;
 export type PartialTooltipTheme = Prettify<DeepPartial<TooltipTheme>>;
-export const defaultTooltipTheme: TooltipTheme = componentTooltip;
+export const defaultTooltipTheme: TooltipTheme = component.tooltip;
 
 export const tooltipTriggerStyles = (
 	theme: TooltipTheme,

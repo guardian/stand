@@ -6,6 +6,7 @@ import {
 } from 'react-aria-components';
 import { AvatarButton } from '../../AvatarButton';
 import { AvatarLink } from '../../AvatarLink';
+import componentTokens from '../../terrazzo/tokens/component/component.json';
 import type { TopBarToolNameProps } from '../../TopBar';
 import { mergeDeep } from '../../util/mergeDeep';
 import { useResize } from '../../util/useResize';
@@ -105,6 +106,10 @@ export function TopBar({
 	dangerouslyOverrideCss,
 	className,
 	navAriaLabel = 'Top bar',
+	offset = componentTokens.component.topBar.collapsedNavMenu.popover.offset
+		.$value,
+	containerPadding = componentTokens.component.topBar.collapsedNavMenu.popover
+		.containerPadding.$value,
 	...props
 }: TopBarProps) {
 	const [menuOpen, setMenuOpen] = React.useState(false);
@@ -216,7 +221,7 @@ export function TopBar({
 			{leftSideMenuItems.length > 0 && (
 				<nav
 					aria-label={navAriaLabel}
-					css={topBarContainerStyles(mergedTheme, {
+					css={topBarContainerStyles({
 						showUntil: collapseBelow.containerLeft,
 					})}
 				>
@@ -247,10 +252,8 @@ export function TopBar({
 						</ReactAriaButton>
 						<ReactAriaPopover
 							css={topBarCollapsedNavMenuPopoverStyles(mergedTheme)}
-							offset={mergedTheme.collapsedNavMenu.popover.offset}
-							containerPadding={
-								mergedTheme.collapsedNavMenu.popover.containerPadding
-							}
+							offset={offset}
+							containerPadding={containerPadding}
 							shouldFlip={false}
 						>
 							{leftSideMenuItems}
@@ -258,20 +261,20 @@ export function TopBar({
 					</ReactAriaDialogTrigger>
 				</nav>
 			)}
-			<div css={topBarContainerStyles(mergedTheme)}>{toolName}</div>
+			<div css={topBarContainerStyles()}>{toolName}</div>
 			<nav
 				aria-label={navAriaLabel}
-				css={topBarContainerStyles(mergedTheme, {
+				css={topBarContainerStyles({
 					collapseBelow: collapseBelow.containerLeft,
 				})}
 			>
 				{leftSide}
 			</nav>
 			{/* RHS - topBarSpacerStyles pushes content to the right */}
-			<div css={[topBarSpacerStyles(), topBarContainerStyles(mergedTheme)]}>
+			<div css={[topBarSpacerStyles(), topBarContainerStyles()]}>
 				{rightSide}
 			</div>
-			<div css={topBarContainerStyles(mergedTheme)}>{avatar}</div>
+			<div css={topBarContainerStyles()}>{avatar}</div>
 		</div>
 	);
 }

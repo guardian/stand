@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
+import { base } from '../../terrazzo/build/stand';
 import { Checkbox } from './Checkbox';
 
 const meta = {
@@ -178,8 +178,8 @@ export const CustomTheme = {
 				shared: {
 					indicator: {
 						selected: {
-							backgroundColor: baseColors.coolPurple[500],
-							border: `0.0625rem solid ${baseColors.coolPurple[700]}`,
+							backgroundColor: base.colors.coolPurple[500],
+							border: `0.0625rem solid ${base.colors.coolPurple[700]}`,
 						},
 					},
 				},
@@ -195,7 +195,7 @@ export const DangerouslyOverrideCss = {
 		children: 'Checkbox with CSS overrides',
 		dangerouslyOverrideCss: css`
 			svg {
-				fill: ${baseColors.neutral[800]};
+				fill: ${base.colors.neutral[800]};
 			}
 		`,
 	},

@@ -1,26 +1,25 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import {
-	componentTopBar,
-	type ComponentTopBar,
-} from '../../../styleD/build/typescript/component/topBar';
+import { component } from '../../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../../util/types';
-import { convertTypographyToEmotionStringStyle, until } from '../../../utils';
+import { convertTypographyToCssString, until } from '../../../utils';
 import type { TopBarToolNameProps } from './types';
 
-export type TopBarToolNameTheme = Prettify<ComponentTopBar['toolName']>;
+export type TopBarToolNameTheme = Prettify<
+	(typeof component.topBar)['toolName']
+>;
 export type PartialTopBarToolNameTheme = Prettify<
 	DeepPartial<TopBarToolNameTheme>
 >;
 export const defaultToolNameTheme: TopBarToolNameTheme =
-	componentTopBar.toolName;
+	component.topBar.toolName;
 
 export const toolNameHoverLinkStyles = (
 	theme: TopBarToolNameTheme,
 	{ collapseBelow }: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>,
 ): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(theme.hoverLink.typography)}
+		${convertTypographyToCssString(theme.hoverLink.typography)}
 		background-color: ${theme.hoverLink.backgroundColor};
 		color: ${theme.hoverLink.color};
 		align-items: center;
@@ -103,7 +102,7 @@ export const toolNameTypography = (
 	{ collapseBelow }: Required<Pick<TopBarToolNameProps, 'collapseBelow'>>,
 ): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(theme.typography)}
+		${convertTypographyToCssString(theme.typography)}
 		${until[collapseBelow]} {
 			display: none;
 		}
@@ -141,6 +140,6 @@ export const subsectionTypography = (
 	theme: TopBarToolNameTheme,
 ): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(theme.subsection.typography)}
+		${convertTypographyToCssString(theme.subsection.typography)}
 	`;
 };

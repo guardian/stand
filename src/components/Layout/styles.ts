@@ -1,22 +1,21 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentLayout } from '../../styleD/build/typescript/component/layout';
-import { componentLayout } from '../../styleD/build/typescript/component/layout';
-import { from } from '../../styleD/utils/semantic/mq';
+import { component } from '../../terrazzo/build/stand';
+import { from } from '../../terrazzo/utils/mq';
 import type { DeepPartial, Prettify } from '../../util/types';
 import type { MainProps, SidebarProps } from './types';
 
-export type LayoutTheme = Prettify<ComponentLayout['layout']>;
+export type LayoutTheme = Prettify<typeof component.layout.layout>;
 export type PartialLayoutTheme = Prettify<DeepPartial<LayoutTheme>>;
-export const defaultLayoutTheme: LayoutTheme = componentLayout['layout'];
+export const defaultLayoutTheme: LayoutTheme = component.layout.layout;
 
-export type SidebarTheme = Prettify<ComponentLayout['sidebar']>;
+export type SidebarTheme = Prettify<typeof component.layout.sidebar>;
 export type PartialSidebarTheme = Prettify<DeepPartial<SidebarTheme>>;
-export const defaultSidebarTheme: SidebarTheme = componentLayout['sidebar'];
+export const defaultSidebarTheme: SidebarTheme = component.layout.sidebar;
 
-export type MainTheme = Prettify<ComponentLayout['main']>;
+export type MainTheme = Prettify<typeof component.layout.main>;
 export type PartialMainTheme = Prettify<DeepPartial<MainTheme>>;
-export const defaultMainTheme: MainTheme = componentLayout['main'];
+export const defaultMainTheme: MainTheme = component.layout.main;
 
 export const alertBannerLayoutStyles = (): SerializedStyles => {
 	return css`

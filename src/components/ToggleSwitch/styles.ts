@@ -1,17 +1,16 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import type { SwitchRenderProps } from 'react-aria-components';
-import type { ComponentToggleSwitch } from '../../styleD/build/typescript/component/toggleSwitch';
-import { componentToggleSwitch } from '../../styleD/build/typescript/component/toggleSwitch';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 import type { ToggleSwitchProps } from './types';
 
-export type ToggleSwitchTheme = Prettify<ComponentToggleSwitch>;
+export type ToggleSwitchTheme = Prettify<typeof component.toggleSwitch>;
 export type PartialToggleSwitchTheme = Prettify<DeepPartial<ToggleSwitchTheme>>;
 
 export const defaultToggleSwitchTheme: ToggleSwitchTheme =
-	componentToggleSwitch;
+	component.toggleSwitch;
 
 type ToggleSwitchTrackState = Pick<
 	SwitchRenderProps,
@@ -31,7 +30,7 @@ export const toggleSwitchStyles = (
 	align-items: center;
 	gap: ${theme.shared.gap};
 	cursor: pointer;
-	${convertTypographyToEmotionStringStyle(theme[size].typography)}
+	${convertTypographyToCssString(theme[size].typography)}
 	color: ${theme.shared.color};
 
 	&[data-disabled] {
@@ -52,7 +51,7 @@ export const toggleSwitchLabelStyles = (
 export const toggleSwitchDescriptionStyles = (
 	theme: ToggleSwitchTheme,
 ): SerializedStyles => css`
-	${convertTypographyToEmotionStringStyle(theme.shared.description.typography)}
+	${convertTypographyToCssString(theme.shared.description.typography)}
 	color: ${theme.shared.description.color};
 `;
 

@@ -1,4 +1,6 @@
-import type { ComponentUserMenu } from '../../styleD/build/typescript/component/userMenu';
+import type { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
 
-export type PartialUserMenuTheme = Prettify<DeepPartial<ComponentUserMenu>>;
+export type PartialUserMenuTheme = Prettify<
+	DeepPartial<typeof component.userMenu>
+>;
