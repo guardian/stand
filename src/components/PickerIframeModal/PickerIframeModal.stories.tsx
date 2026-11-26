@@ -1,9 +1,7 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
-import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
-import { semanticSizing } from '../../styleD/build/typescript/semantic/sizing';
-import { semanticSpacing } from '../../styleD/build/typescript/semantic/spacing';
+import { semantic } from '../../terrazzo/build/stand';
 import { Button } from '../Button/Button';
 import { Typography } from '../Typography/Typography';
 import { PickerIframeModal } from './PickerIframeModal';
@@ -54,10 +52,10 @@ export const CustomModalTheme = {
 			modal: {
 				width: '600px',
 				maxWidth: '60vw',
-				backgroundColor: semanticColors.fill.tealWeak,
+				backgroundColor: semantic.colors.fill.tealWeak,
 				boxShadow: '16px 8px 6px 6px rgba(0, 0, 0, 0.50)',
 				padding: {
-					bottom: semanticSpacing.stackSm,
+					bottom: semantic.spacing.stackSm,
 				},
 			},
 			overlay: {
@@ -72,16 +70,16 @@ export const CustomDialogTheme = {
 		title: 'Custom Dialog Theme Story',
 		dialogTheme: {
 			title: {
-				marginBottom: semanticSpacing.stackXl,
+				marginBottom: semantic.spacing.stackXl,
 			},
 			children: {
-				marginBottom: semanticSpacing.stackXl,
+				marginBottom: semantic.spacing.stackXl,
 			},
 			dismiss: {
-				border: `${semanticSizing.border.extraWide} solid ${semanticColors.border.weak}`,
-				height: semanticSpacing.stackXl,
+				border: `${semantic.sizing.border.extraWide} solid ${semantic.colors.border.weak}`,
+				height: semantic.spacing.stackXl,
 				hovered: {
-					border: `${semanticSizing.border.extraWide} solid ${semanticColors.border.selected}`,
+					border: `${semantic.sizing.border.extraWide} solid ${semantic.colors.border.selected}`,
 				},
 			},
 		},
@@ -95,7 +93,7 @@ export const CustomTheme = {
 			iframe: {
 				width: '50%',
 				height: '800px',
-				backgroundColor: semanticColors.fill.tealWeak,
+				backgroundColor: semantic.colors.fill.tealWeak,
 				margin: {
 					left: 'auto',
 					right: 'auto',
@@ -103,7 +101,7 @@ export const CustomTheme = {
 			},
 			iframeContainer: {
 				padding: {
-					bottom: semanticSpacing.stackMd,
+					bottom: semantic.spacing.stackMd,
 				},
 			},
 		},
@@ -134,7 +132,7 @@ export const InteractiveExample = {
 					<Typography variant="heading2Xl" element="h2">
 						Pick food
 					</Typography>
-					<div css={{ display: 'flex', gap: semanticSpacing.stackXl }}>
+					<div css={{ display: 'flex', gap: semantic.spacing.stackXl }}>
 						<Button onPress={() => setHref(absoluteHref)}>Open modal</Button>
 						<div>
 							<Typography variant="bodyBoldXl">

@@ -1,17 +1,16 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import {
-	componentPickerIframeModal,
-	type ComponentPickerIframeModal,
-} from '../../styleD/build/typescript/component/pickerIframeModal';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
 
-export type PickerIframeModalTheme = Prettify<ComponentPickerIframeModal>;
+export type PickerIframeModalTheme = Prettify<
+	typeof component.pickerIframeModal
+>;
 export type PartialPickerIframeModalTheme = Prettify<
 	DeepPartial<PickerIframeModalTheme>
 >;
 export const defaultPickerIframeModalTheme: PickerIframeModalTheme =
-	componentPickerIframeModal;
+	component.pickerIframeModal;
 
 export const iframeStyles = (
 	theme: PickerIframeModalTheme,

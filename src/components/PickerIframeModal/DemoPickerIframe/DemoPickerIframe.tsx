@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from '../../../Button';
 import type { IconButtonProps } from '../../../IconButton';
 import { IconButton } from '../../../IconButton';
-import { semanticSpacing } from '../../../styleD/build/typescript/semantic/spacing';
+import { semantic } from '../../../terrazzo/build/stand';
 import { Typography } from '../../../Typography';
 
 const PostButton = ({
@@ -33,10 +33,10 @@ export const DemoPickerIframe = () => {
 		<div
 			css={{
 				height: '100vh',
-				padding: semanticSpacing.stackMd,
+				padding: semantic.spacing.stackMd,
 				display: 'flex',
 				flexDirection: 'column',
-				gap: semanticSpacing.stackLg,
+				gap: semantic.spacing.stackLg,
 			}}
 		>
 			<Typography variant="titleXl" element="h1">
@@ -51,7 +51,7 @@ export const DemoPickerIframe = () => {
 					These buttons will post a message to the parent in the format expected
 					by the Modal.
 				</Typography>
-				<div css={{ display: 'flex', gap: semanticSpacing.stackMd }}>
+				<div css={{ display: 'flex', gap: semantic.spacing.stackMd }}>
 					<PostButton symbol="brunch_dining" post={doPost} />
 					<PostButton symbol="bakery_dining" post={doPost} />
 					<PostButton symbol="ramen_dining" post={doPost} />
@@ -70,7 +70,7 @@ export const DemoPickerIframe = () => {
 					Modal will ignore them
 				</Typography>
 
-				<div css={{ display: 'flex', gap: semanticSpacing.stackMd }}>
+				<div css={{ display: 'flex', gap: semantic.spacing.stackMd }}>
 					<Button
 						onClick={doPost({
 							action: 'save preference',
