@@ -1,24 +1,23 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentSearchInput } from '../../styleD/build/typescript/component/searchInput';
-import { componentSearchInput } from '../../styleD/build/typescript/component/searchInput';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 import type { SearchInputProps } from './types';
 
-export type SearchInputTheme = Prettify<ComponentSearchInput>;
+export type SearchInputTheme = Prettify<typeof component.searchInput>;
 export type PartialSearchInputTheme = Prettify<
-	DeepPartial<ComponentSearchInput>
+	DeepPartial<typeof component.searchInput>
 >;
 
-export const defaultSearchInputTheme: SearchInputTheme = componentSearchInput;
+export const defaultSearchInputTheme: SearchInputTheme = component.searchInput;
 
 export const searchInputStyles = (
 	theme: SearchInputTheme,
 	{ size, isInvalid }: Required<Pick<SearchInputProps, 'size' | 'isInvalid'>>,
 ): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(theme[size].typography)}
+		${convertTypographyToCssString(theme[size].typography)}
 		background-color: ${theme.shared.backgroundColor};
 		border-radius: ${theme.shared.borderRadius};
 		border: ${theme.shared.border};
@@ -38,7 +37,7 @@ export const searchInputStyles = (
 		}
 
 		& input {
-			${convertTypographyToEmotionStringStyle(theme[size].typography)}
+			${convertTypographyToCssString(theme[size].typography)}
 			background-color: transparent;
 			border-radius: 0;
 			border: 0;
