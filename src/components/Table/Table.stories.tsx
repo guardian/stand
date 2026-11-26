@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseSpacing } from '../../styleD/build/typescript/base/spacing';
-import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
+import { base, semantic } from '../../terrazzo/build/stand';
 import { Badge } from '../Badge/Badge';
 import { Icon } from '../Icon/Icon';
 import { Link } from '../Link/Link';
@@ -54,16 +53,16 @@ const alerts = [
 
 const alertCellStyles = css`
 	display: grid;
-	grid-template-columns: ${baseSpacing['48Px']} minmax(0, 1fr);
-	gap: ${baseSpacing['12Px']};
+	grid-template-columns: ${base.spacing['48Px']} minmax(0, 1fr);
+	gap: ${base.spacing['12Px']};
 	align-items: center;
 	align-self: start;
 `;
 
 const alertImageStyles = css`
 	display: block;
-	width: ${baseSpacing['48Px']};
-	height: ${baseSpacing['40Px']};
+	width: ${base.spacing['48Px']};
+	height: ${base.spacing['40Px']};
 	object-fit: cover;
 `;
 
@@ -71,26 +70,26 @@ const alertTextStyles = css`
 	display: flex;
 	min-width: 0;
 	flex-direction: column;
-	gap: ${baseSpacing['2Px']};
+	gap: ${base.spacing['2Px']};
 `;
 
 const metadataStyles = css`
 	display: flex;
 	align-items: center;
-	gap: ${baseSpacing['4Px']};
-	color: ${semanticColors.text.weak};
+	gap: ${base.spacing['4Px']};
+	color: ${semantic.colors.text.weak};
 `;
 
 const regionsStyles = css`
 	display: flex;
 	flex-wrap: wrap;
-	gap: ${baseSpacing['4Px']};
+	gap: ${base.spacing['4Px']};
 `;
 
 const valueWithTooltipStyles = css`
 	display: flex;
 	align-items: center;
-	gap: ${baseSpacing['4Px']};
+	gap: ${base.spacing['4Px']};
 `;
 
 const constrainedTableStyles = css`
@@ -166,14 +165,14 @@ export const CustomTheme = {
 			headerVisibleFrom="sm"
 			theme={{
 				table: {
-					border: `1px solid ${semanticColors.border.information}`,
+					border: `1px solid ${semantic.colors.border.information}`,
 				},
 				header: {
-					backgroundColor: semanticColors.fill.informationWeak,
-					border: `1px solid ${semanticColors.border.information}`,
+					backgroundColor: semantic.colors.fill.informationWeak,
+					border: `1px solid ${semantic.colors.border.information}`,
 				},
 				row: {
-					hoverBackgroundColor: semanticColors.fill.selectedWeaker,
+					hoverBackgroundColor: semantic.colors.fill.selectedWeaker,
 				},
 			}}
 		>

@@ -1,19 +1,15 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import {
-	componentTable,
-	type ComponentTable,
-} from '../../styleD/build/typescript/component/table';
-import { from, until } from '../../styleD/utils/semantic/mq';
-import type { Breakpoint } from '../../styleD/utils/semantic/mq';
-import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
+import { component } from '../../terrazzo/build/stand';
+import { type Breakpoint, from, until } from '../../terrazzo/utils/mq';
 import type { DeepPartial, Prettify } from '../../util/types';
+import { convertTypographyToCssString } from '../../utils';
 
-export type TableTheme = Prettify<ComponentTable>;
+export type TableTheme = Prettify<typeof component.table>;
 export type PartialTableTheme = Prettify<DeepPartial<TableTheme>>;
 export type ResponsiveTableValue<T> = Partial<Record<Breakpoint, T>>;
 
-export const defaultTableTheme: TableTheme = componentTable;
+export const defaultTableTheme: TableTheme = component.table;
 
 const responsiveValue = <T>(
 	value: ResponsiveTableValue<T>,
@@ -133,7 +129,7 @@ export const tableColumnHeaderStyles = (
 	min-height: ${theme.columnHeader.minHeight};
 	align-content: center;
 	padding: ${theme.cell.paddingBlock} ${theme.cell.paddingInline};
-	${convertTypographyToEmotionStringStyle(theme.columnHeader.typography)}
+	${convertTypographyToCssString(theme.columnHeader.typography)}
 
 	text-align: left;
 `;
@@ -181,7 +177,7 @@ export const tableCellStyles = (
 	box-sizing: border-box;
 	overflow-wrap: anywhere;
 	padding: ${theme.cell.paddingBlock} ${theme.cell.paddingInline};
-	${convertTypographyToEmotionStringStyle(theme.cell.typography)}
+	${convertTypographyToCssString(theme.cell.typography)}
 	${responsivePlacementStyles(gridColumn, gridRow)}
 `;
 
@@ -192,7 +188,7 @@ export const compactLabelStyles = (
 	display: inline;
 	margin-right: ${theme.compactLabel.gap};
 	color: ${theme.compactLabel.color};
-	${convertTypographyToEmotionStringStyle(theme.compactLabel.typography)}
+	${convertTypographyToCssString(theme.compactLabel.typography)}
 
 	${from[headerVisibleFrom]} {
 		display: none;

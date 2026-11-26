@@ -7,7 +7,7 @@ import type {
 	TableHeaderProps as RACTableHeaderProps,
 	TableProps as RACTableProps,
 } from 'react-aria-components';
-import type { Breakpoint } from '../../styleD/utils/semantic/mq';
+import type { Breakpoint } from '../../terrazzo/utils/mq';
 import type { DefaultPropsWithChildren } from '../../util/types';
 import type { TableTheme } from './styles';
 
