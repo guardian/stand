@@ -1,17 +1,16 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css, keyframes } from '@emotion/react';
-import {
-	componentHtmlPreviewLoader,
-	type ComponentHtmlPreviewLoader,
-} from '../../styleD/build/typescript/component/htmlPreviewLoader';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
 
-export type HtmlPreviewLoaderTheme = Prettify<ComponentHtmlPreviewLoader>;
+export type HtmlPreviewLoaderTheme = Prettify<
+	typeof component.htmlPreviewLoader
+>;
 export type PartialHtmlPreviewLoaderTheme = Prettify<
 	DeepPartial<HtmlPreviewLoaderTheme>
 >;
 export const defaultHtmlPreviewLoaderTheme: HtmlPreviewLoaderTheme =
-	componentHtmlPreviewLoader;
+	component.htmlPreviewLoader;
 
 export const htmlPreviewLoaderStyles = (
 	theme: HtmlPreviewLoaderTheme,
@@ -63,7 +62,7 @@ export const iframeStyle = (isNotLoaded: boolean): SerializedStyles => {
 			isNotLoaded
 				? `
 			filter: blur(3px);
-			pointer-events: none;	
+			pointer-events: none;
 		`
 				: ''
 		}
