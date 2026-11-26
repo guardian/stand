@@ -1,15 +1,12 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import {
-	componentButtonGroup,
-	type ComponentButtonGroup,
-} from '../../styleD/build/typescript/component/buttonGroup';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
 import { from } from '../../utils';
 
-export type ButtonGroupTheme = Prettify<ComponentButtonGroup>;
+export type ButtonGroupTheme = Prettify<typeof component.buttonGroup>;
 export type PartialButtonGroupTheme = Prettify<DeepPartial<ButtonGroupTheme>>;
-export const defaultButtonGroupTheme: ButtonGroupTheme = componentButtonGroup;
+export const defaultButtonGroupTheme: ButtonGroupTheme = component.buttonGroup;
 
 export const buttonGroupStyles = (
 	theme: ButtonGroupTheme,
