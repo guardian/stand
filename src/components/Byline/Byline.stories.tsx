@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
+import { base } from '../../terrazzo/build/stand';
 import { Byline } from './Byline';
 import { contributors } from './contributorsFixture';
 import type { TaggedContributor } from './lib';
@@ -74,7 +74,7 @@ export const WithTheme = {
 					color: 'rgba(255, 255, 255, 0.87)',
 					borderBottomStyle: 'none',
 					selectedColor: 'rgba(255, 255, 255, 0.87)',
-					selectedBackgroundColor: baseColors.coolPurple[500],
+					selectedBackgroundColor: base.colors.coolPurple[500],
 				},
 			},
 		},
