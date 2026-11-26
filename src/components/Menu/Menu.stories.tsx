@@ -1,9 +1,9 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Keyboard } from 'react-aria-components';
-import { baseColors, baseSizing, baseSpacing } from '../..';
 import { IconButton } from '../../IconButton';
 import type { ComponentMenu } from '../../Menu';
+import { base } from '../../terrazzo/build/stand';
 import type { DeepPartial } from '../../util/types';
 import { Menu, MenuItem, MenuSection, MenuSeparator, MenuToggle } from './Menu';
 
@@ -186,45 +186,45 @@ export const CustomTheme = {
 		const theme: DeepPartial<ComponentMenu> = {
 			menu: {
 				shared: {
-					border: `${baseSizing.size8Px} solid ${baseColors.orange[900]}`,
-					backgroundColor: baseColors.orange[50],
+					border: `${base.sizing.size8Px} solid ${base.colors.orange[900]}`,
+					backgroundColor: base.colors.orange[50],
 				},
 			},
 			menuItem: {
 				shared: {
 					hover: {
-						backgroundColor: baseColors.orange[100],
+						backgroundColor: base.colors.orange[100],
 					},
 					label: {
-						color: baseColors.orange[900],
+						color: base.colors.orange[900],
 					},
 					aside: {
-						color: baseColors.orange[700],
+						color: base.colors.orange[700],
 					},
 					icon: {
-						color: baseColors.orange[900],
+						color: base.colors.orange[900],
 					},
 					description: {
-						color: baseColors.orange[700],
+						color: base.colors.orange[700],
 					},
 				},
 			},
 			menuSection: {
 				header: {
 					shared: {
-						backgroundColor: baseColors.orange[50],
-						color: baseColors.orange[900],
+						backgroundColor: base.colors.orange[50],
+						color: base.colors.orange[900],
 					},
 				},
 			},
 			menuSeparator: {
 				shared: {
-					backgroundColor: baseColors.orange[200],
+					backgroundColor: base.colors.orange[200],
 				},
 			},
 			menuPopover: {
 				shared: {
-					shadow: `0 ${baseSizing.size2Px} ${baseSizing.size16Px} 0 rgb(255 165 0 / 0.3)`,
+					shadow: `0 ${base.sizing.size2Px} ${base.sizing.size16Px} 0 rgb(255 165 0 / 0.3)`,
 				},
 			},
 		};
@@ -285,7 +285,7 @@ export const DangerouslyOverrideCss = {
 	name: 'dangerouslyOverrideCss',
 	render: () => {
 		const menuStyles = css`
-			padding: ${baseSpacing['16Px']};
+			padding: ${base.spacing['16Px']};
 		`;
 
 		const menuPopoverStyles = css`
@@ -293,11 +293,11 @@ export const DangerouslyOverrideCss = {
 		`;
 
 		const menuItemStyles = css`
-			padding: ${baseSpacing['8Px']} ${baseSpacing['16Px']};
+			padding: ${base.spacing['8Px']} ${base.spacing['16Px']};
 		`;
 
 		const menuSeparatorStyles = css`
-			filter: drop-shadow(0 1px 0 ${baseColors.blue[500]});
+			filter: drop-shadow(0 1px 0 ${base.colors.blue[500]});
 		`;
 
 		return (
