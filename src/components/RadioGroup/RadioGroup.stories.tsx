@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../..';
+import { base } from '../../terrazzo/build/stand';
 import { Radio, RadioGroup } from './RadioGroup';
 
 const meta = {
@@ -130,11 +130,11 @@ export const CustomTheme = {
 				theme={{
 					shared: {
 						radio: {
-							color: baseColors.warmPurple[300],
+							color: base.colors.warmPurple[300],
 						},
 
 						indicator: {
-							border: `2px dashed ${baseColors.warmPurple[100]}`,
+							border: `2px dashed ${base.colors.warmPurple[100]}`,
 						},
 					},
 				}}
@@ -157,8 +157,8 @@ export const DangerouslyOverrideCss = {
 				description="Optional contextual help text"
 				size="sm"
 				dangerouslyOverrideCss={css`
-					border: 2px solid ${baseColors.coolPurple[700]};
-					background-color: ${baseColors.coolPurple[900]};
+					border: 2px solid ${base.colors.coolPurple[700]};
+					background-color: ${base.colors.coolPurple[900]};
 				`}
 			>
 				<Radio value="Test">Option 1</Radio>

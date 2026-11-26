@@ -1,14 +1,13 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentRadioGroup } from '../../styleD/build/typescript/component/radioGroup';
-import { componentRadioGroup } from '../../styleD/build/typescript/component/radioGroup';
+import { component } from '../../terrazzo/build/stand';
 import type { Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 import type { RadioGroupProps } from './types';
 
-export type RadioGroupTheme = Prettify<ComponentRadioGroup>;
+export type RadioGroupTheme = Prettify<typeof component.radioGroup>;
 
-export const defaultRadioGroupTheme: RadioGroupTheme = componentRadioGroup;
+export const defaultRadioGroupTheme: RadioGroupTheme = component.radioGroup;
 
 export const radioGroupStyles = (
 	theme: RadioGroupTheme,
@@ -41,7 +40,7 @@ export const radioStyles = (
 		display: flex;
 		align-items: center;
 		gap: ${theme.shared.radio.gap};
-		${convertTypographyToEmotionStringStyle(theme[size].typography)}
+		${convertTypographyToCssString(theme[size].typography)}
 		color: ${theme.shared.radio.color};
 
 		&[data-disabled] {
