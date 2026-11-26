@@ -1,23 +1,19 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import { semanticTypography } from '../..';
-import {
-	componentTypography,
-	type ComponentTypography,
-} from '../../styleD/build/typescript/component/typography';
+import { component, semantic } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 import type { TypographyProps } from './types';
 
-export type TypographyTheme = Prettify<ComponentTypography>;
+export type TypographyTheme = Prettify<typeof component.typography>;
 export type PartialTypographyTheme = Prettify<DeepPartial<TypographyTheme>>;
 
-export const defaultTypographyTheme: TypographyTheme = componentTypography;
+export const defaultTypographyTheme: TypographyTheme = component.typography;
 
 export const typographyStyles = (
 	theme: TypographyTheme,
 	{ variant }: Required<Pick<TypographyProps, 'variant'>>,
 ): SerializedStyles => css`
-	${convertTypographyToEmotionStringStyle(semanticTypography[variant])}
+	${convertTypographyToCssString(semantic.typography[variant])}
 	color: ${theme.color};
 `;

@@ -1,10 +1,10 @@
 import type { JSX } from 'react';
 import type { TextProps as ReactAriaTextProps } from 'react-aria-components';
-import type { SemanticTypography } from '../../styleD/build/typescript/semantic/typography';
+import type { semantic } from '../../terrazzo/build/stand';
 import type { DefaultProps } from '../../util/types';
 import type { TypographyTheme } from './styles';
 
-export type TypographyVariant = keyof SemanticTypography;
+export type TypographyVariant = keyof typeof semantic.typography;
 export type TypographyElement = keyof JSX.IntrinsicElements | (string & {});
 
 export interface TypographyProps
