@@ -7,6 +7,7 @@ export default [
 	{
 		ignores: [
 			'dist',
+			'mocks',
 			'node_modules',
 			'playwright',
 			'.storybook',
