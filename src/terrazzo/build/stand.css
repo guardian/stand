@@ -4347,12 +4347,14 @@
 	--component-user-menu-heading-padding-left: 0px;
 	--component-user-menu-heading-padding-right: 0px;
 	--component-user-menu-heading-padding-top: 0px;
+	--component-user-menu-heading-text-align: left;
 	--component-user-menu-label-font-size: var(--base-typography-size-14-rem);
 	--component-user-menu-label-font-weight: 700;
 	--component-user-menu-label-padding-bottom: var(--base-spacing-6-rem);
 	--component-user-menu-label-padding-left: 0px;
 	--component-user-menu-label-padding-right: 0px;
 	--component-user-menu-label-padding-top: 15px;
+	--component-user-menu-label-text-align: left;
 	--component-user-menu-toggle-button-base-background-color: var(
 		--base-colors-neutral-800
 	);

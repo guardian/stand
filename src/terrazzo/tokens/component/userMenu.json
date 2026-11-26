@@ -60,7 +60,7 @@
 					}
 				},
 				"textAlign": {
-					"$type": "alignment",
+					"$type": "text",
 					"$value": "left"
 				}
 			},
@@ -99,7 +99,7 @@
 					}
 				},
 				"textAlign": {
-					"$type": "alignment",
+					"$type": "text",
 					"$value": "left"
 				}
 			},
