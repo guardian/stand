@@ -1,15 +1,14 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentTabs } from '../../styleD/build/typescript/component/tabs';
-import { componentTabs } from '../../styleD/build/typescript/component/tabs';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 import type { TabProps } from './types';
 
-export type TabsTheme = Prettify<ComponentTabs['tabs']>;
+export type TabsTheme = Prettify<typeof component.tabs.tabs>;
 export type PartialTabsTheme = DeepPartial<TabsTheme>;
 
-export const defaultTabsTheme: TabsTheme = componentTabs.tabs;
+export const defaultTabsTheme: TabsTheme = component.tabs.tabs;
 
 export const tabsStyles = (theme: TabsTheme): SerializedStyles => {
 	return css`
@@ -27,10 +26,10 @@ export const tabsStyles = (theme: TabsTheme): SerializedStyles => {
 	`;
 };
 
-export type TabTheme = Prettify<ComponentTabs['tab']>;
+export type TabTheme = Prettify<typeof component.tabs.tab>;
 export type PartialTabTheme = DeepPartial<TabTheme>;
 
-export const defaultTabTheme: TabTheme = componentTabs.tab;
+export const defaultTabTheme: TabTheme = component.tabs.tab;
 
 export const tabStyles = (
 	theme: TabTheme,
@@ -60,7 +59,7 @@ export const tabStyles = (
 			`
 		}
 		color: ${theme.shared.color};
-		${convertTypographyToEmotionStringStyle(theme[size].typography)}
+		${convertTypographyToCssString(theme[size].typography)}
 
 		&[data-disabled] {
 			cursor: not-allowed;
