@@ -13,7 +13,7 @@ import {
 	TableHeader,
 	useDragAndDrop,
 } from 'react-aria-components';
-import type { ComponentTagTable } from '../../styleD/build/typescript/component/tagTable';
+import type { component } from '../../terrazzo/build/stand';
 import type { DeepPartial } from '../../util/types';
 import type { TagRow } from '../TagPicker/types';
 import {
@@ -70,12 +70,15 @@ export interface TagTableProps<R extends Row> {
 	/** `headerContent` - the content to render in the table's header. */
 	headerContent?: ReactNode;
 	/** `theme` - Used to customise the look and feel of the TagTable component */
-	theme?: DeepPartial<ComponentTagTable>;
+	theme?: DeepPartial<typeof component.tagTable>;
 	/** `dangerouslyOverrideCss` - Escape hatch for styling that doesn't fall into the theme */
 	dangerouslyOverrideCss?: SerializedStyles;
 }
 
-const TypeBadge = (type: string, theme?: DeepPartial<ComponentTagTable>) => {
+const TypeBadge = (
+	type: string,
+	theme?: DeepPartial<typeof component.tagTable>,
+) => {
 	return <span css={typeBadgeStyles(theme)}>{type}</span>;
 };
 const defaultCanRemove = () => true;

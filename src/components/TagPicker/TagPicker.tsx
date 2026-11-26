@@ -1,9 +1,7 @@
 import { css, type SerializedStyles } from '@emotion/react';
 import type { ReactElement, ReactNode } from 'react';
 import { Button } from '../../Button';
-import type { ComponentSelect } from '../../Select';
-import type { ComponentTagPicker } from '../../styleD/build/typescript/component/tagPicker';
-import type { ComponentAutocomplete, ComponentTagTable } from '../../TagPicker';
+import type { component } from '../../terrazzo/build/stand';
 import type { DeepPartial } from '../../util/types';
 import { InlineMessage } from '../InlineMessage/InlineMessage';
 import { TagTable } from '../TagTable/TagTable';
@@ -66,11 +64,11 @@ export type TagPickerProps<T extends TagRow = TagRow> = {
 	proposedTagsSubHeading?: string;
 
 	/** `theme` - Used to customise the look and feel of the TagPicker component */
-	theme?: DeepPartial<ComponentTagPicker>;
-	tagTableTheme?: DeepPartial<ComponentTagTable>;
-	proposedTagTableTheme?: DeepPartial<ComponentTagTable>;
-	autoCompleteTheme?: DeepPartial<ComponentAutocomplete>;
-	selectTheme?: DeepPartial<ComponentSelect>;
+	theme?: DeepPartial<typeof component.tagPicker>;
+	tagTableTheme?: DeepPartial<typeof component.tagTable>;
+	proposedTagTableTheme?: DeepPartial<typeof component.tagTable>;
+	autoCompleteTheme?: DeepPartial<typeof component.autocomplete>;
+	selectTheme?: DeepPartial<typeof component.select>;
 
 	/**
 	 * Escape hatch for custom CSS. Prefer the `theme` prop.

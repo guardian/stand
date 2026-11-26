@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import type { Key } from 'react-aria-components';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
+import { base } from '../../terrazzo/build/stand';
 import { Option, Select } from './Select';
 
 const meta: Meta<typeof Select> = {
@@ -94,8 +94,8 @@ export const CustomTheme = {
 		theme: {
 			shared: {
 				button: {
-					color: baseColors.coolPurple[200],
-					backgroundColor: baseColors.coolPurple[800],
+					color: base.colors.coolPurple[200],
+					backgroundColor: base.colors.coolPurple[800],
 				},
 				option: {
 					paddingLeft: '3rem',
@@ -103,7 +103,14 @@ export const CustomTheme = {
 			},
 			md: {
 				typography: {
-					font: 'normal 700 1rem/1.3 monospace',
+					font: {
+						fontFamily: 'monospace',
+						fontWeight: '700',
+						fontSize: '1rem',
+						lineHeight: '1.3',
+						fontStyle: 'normal',
+						letterSpacing: 'normal',
+					},
 				},
 			},
 		},
@@ -114,8 +121,8 @@ export const DangerouslyOverrideCss = {
 	args: {
 		dangerouslyOverrideCss: css`
 			button {
-				color: ${baseColors.red[300]};
-				border: 3px solid ${baseColors.red[800]};
+				color: ${base.colors.red[300]};
+				border: 3px solid ${base.colors.red[800]};
 			}
 		`,
 	},

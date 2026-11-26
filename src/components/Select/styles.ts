@@ -1,15 +1,20 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentSelect } from '../../styleD/build/typescript/component/select';
-import { componentSelect } from '../../styleD/build/typescript/component/select';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 import type { ListBoxProps, SelectProps } from './types';
 
-export type SelectTheme = Prettify<ComponentSelect>;
+type TerrazzoSelectTheme = typeof component.select;
+
+export type SelectTheme = Prettify<
+	Omit<TerrazzoSelectTheme, 'shared'> & {
+		shared: Omit<TerrazzoSelectTheme['shared'], 'offset' | 'containerPadding'>;
+	}
+>;
 export type PartialSelectTheme = Prettify<DeepPartial<SelectTheme>>;
 
-export const defaultSelectTheme: SelectTheme = componentSelect;
+export const defaultSelectTheme: SelectTheme = component.select;
 
 export const popoverStyles = (): SerializedStyles => {
 	return css`
@@ -57,7 +62,7 @@ export const listBoxStyles = (
 	{ size }: { size: ListBoxProps['size'] },
 ): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(theme[size].typography)}
+		${convertTypographyToCssString(theme[size].typography)}
 		background-color: ${theme.shared.listBox.backgroundColor};
 		border: ${theme.shared.listBox.border};
 		box-shadow: ${theme.shared.listBox.shadow};
@@ -81,7 +86,7 @@ export const buttonStyles = (
 		padding-left: ${theme.shared.button.paddingLeft};
 		padding-right: ${theme.shared.button.paddingRight};
 		margin-top: ${theme.shared.button.marginTop};
-		${convertTypographyToEmotionStringStyle(theme[size].typography)}
+		${convertTypographyToCssString(theme[size].typography)}
 		color: ${theme.shared.button.color};
 
 		&[data-hovered] {

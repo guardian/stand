@@ -27,6 +27,16 @@ export interface ListBoxProps
 export type SelectProps = FormInputContainerDefaultProps<
 	RACSelectProps<object, 'single' | 'multiple'> & {
 		/**
+		 * Distance in pixels between the options popover and the select input.
+		 * Default: 8
+		 */
+		offset?: RACPopoverProps['offset'];
+		/**
+		 * Minimum distance in pixels between the options popover and its container.
+		 * Default: 0
+		 */
+		containerPadding?: RACPopoverProps['containerPadding'];
+		/**
 		 * The placement of the options container element with respect to select input.
 		 * @default
 		 * 'bottom'

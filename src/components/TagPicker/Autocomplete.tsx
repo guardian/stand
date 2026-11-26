@@ -13,7 +13,7 @@ import {
 } from 'react-aria-components';
 import type { IconProps } from '../../Icon';
 import { Icon } from '../../Icon';
-import type { ComponentAutocomplete } from '../../styleD/build/typescript/component/autocomplete';
+import type { component } from '../../terrazzo/build/stand';
 import type { DeepPartial } from '../../util/types';
 import {
 	autocompleteInputStyles,
@@ -53,7 +53,7 @@ export interface AutocompleteProps<
 	//** `addFirstOnEnter` - Whether to add the first option when the user hits the "Enter" key */
 	addFirstOnEnter?: boolean;
 	/** `theme` - Used to customise the look and feel of the Autocomplete component */
-	theme?: DeepPartial<ComponentAutocomplete>;
+	theme?: DeepPartial<typeof component.autocomplete>;
 	/** `dangerouslyOverrideCss` - Escape hatch for styling that doesn't fall into the theme */
 	dangerouslyOverrideCss?: SerializedStyles;
 

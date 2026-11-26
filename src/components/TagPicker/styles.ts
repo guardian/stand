@@ -1,20 +1,14 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentTagPicker } from '../../styleD/build//typescript/component/tagPicker';
-import { componentTagPicker } from '../../styleD/build//typescript/component/tagPicker';
-import {
-	type ComponentAutocomplete,
-	componentAutocomplete,
-} from '../../styleD/build/typescript/component/autocomplete';
-import type { ComponentSelect } from '../../styleD/build/typescript/component/select';
+import { component } from '../../terrazzo/build/stand';
 import { mergeDeep } from '../../util/mergeDeep';
 import type { DeepPartial } from '../../util/types';
 
 export const autocompleteInputStyles = (
 	hasIcon: boolean,
-	partialTheme: DeepPartial<ComponentAutocomplete> = {},
+	partialTheme: DeepPartial<typeof component.autocomplete> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentAutocomplete, partialTheme);
+	const theme = mergeDeep(component.autocomplete, partialTheme);
 
 	return css`
 		width: 100%;
@@ -54,9 +48,9 @@ export const autocompleteInputStyles = (
 };
 
 export const listboxStyles = (
-	partialTheme: DeepPartial<ComponentAutocomplete> = {},
+	partialTheme: DeepPartial<typeof component.autocomplete> = {},
 ) => {
-	const theme = mergeDeep(componentAutocomplete, partialTheme);
+	const theme = mergeDeep(component.autocomplete, partialTheme);
 
 	return css`
 		padding: ${theme.listbox.paddingY} ${theme.listbox.paddingX};
@@ -70,9 +64,9 @@ export const listboxStyles = (
 };
 
 export const listboxItemStyles = (
-	partialTheme: DeepPartial<ComponentAutocomplete> = {},
+	partialTheme: DeepPartial<typeof component.autocomplete> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentAutocomplete, partialTheme);
+	const theme = mergeDeep(component.autocomplete, partialTheme);
 
 	return css`
 		padding: ${theme.listbox.item.paddingY} ${theme.listbox.item.paddingX};
@@ -90,9 +84,9 @@ export const listboxItemStyles = (
 };
 
 export const listboxInfoStyles = (
-	partialTheme: DeepPartial<ComponentAutocomplete> = {},
+	partialTheme: DeepPartial<typeof component.autocomplete> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentAutocomplete, partialTheme);
+	const theme = mergeDeep(component.autocomplete, partialTheme);
 
 	return css`
 		padding: ${theme.listbox.item.paddingY} ${theme.listbox.item.paddingX};
@@ -100,9 +94,9 @@ export const listboxInfoStyles = (
 };
 
 export const iconStyles = (
-	partialTheme: DeepPartial<ComponentAutocomplete> = {},
+	partialTheme: DeepPartial<typeof component.autocomplete> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentAutocomplete, partialTheme);
+	const theme = mergeDeep(component.autocomplete, partialTheme);
 
 	return css`
 		pointer-events: none;
@@ -116,9 +110,9 @@ export const iconStyles = (
 };
 
 export const tagPickerStyles = (
-	partialTheme: DeepPartial<ComponentTagPicker> = {},
+	partialTheme: DeepPartial<typeof component.tagPicker> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagPicker, partialTheme);
+	const theme = mergeDeep(component.tagPicker, partialTheme);
 
 	return css`
 		display: flex;
@@ -129,9 +123,9 @@ export const tagPickerStyles = (
 };
 
 export const offlineSectionStyles = (
-	partialTheme: DeepPartial<ComponentTagPicker> = {},
+	partialTheme: DeepPartial<typeof component.tagPicker> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagPicker, partialTheme);
+	const theme = mergeDeep(component.tagPicker, partialTheme);
 	return css`
 		display: flex;
 		flex-direction: column;
@@ -140,9 +134,9 @@ export const offlineSectionStyles = (
 };
 
 export const tagSearchWithFilterStyles = (
-	partialTheme: DeepPartial<ComponentTagPicker> = {},
+	partialTheme: DeepPartial<typeof component.tagPicker> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagPicker, partialTheme);
+	const theme = mergeDeep(component.tagPicker, partialTheme);
 
 	return css`
 		width: ${theme.search.width};
@@ -152,9 +146,9 @@ export const tagSearchWithFilterStyles = (
 };
 
 export const filterSelectDangerouslyOverrideCss = (
-	partialTheme: DeepPartial<ComponentTagPicker> = {},
+	partialTheme: DeepPartial<typeof component.tagPicker> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagPicker, partialTheme);
+	const theme = mergeDeep(component.tagPicker, partialTheme);
 
 	return css`
 		flex-basis: ${theme.select.flexBasis};
@@ -166,8 +160,8 @@ export const filterSelectDangerouslyOverrideCss = (
 };
 
 export const modifyFilterSelectTheme = (
-	selectTheme: DeepPartial<ComponentSelect>,
-): DeepPartial<ComponentSelect> => {
+	selectTheme: DeepPartial<typeof component.select>,
+): DeepPartial<typeof component.select> => {
 	return mergeDeep(
 		{
 			shared: {

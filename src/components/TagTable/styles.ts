@@ -1,16 +1,13 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import {
-	type ComponentTagTable,
-	componentTagTable,
-} from '../../styleD/build/typescript/component/tagTable';
+import { component } from '../../terrazzo/build/stand';
 import { mergeDeep } from '../../util/mergeDeep';
 import type { DeepPartial } from '../../util/types';
 
 export const tagTableHeaderStyles = (
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<typeof component.tagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(component.tagTable, partialTheme);
 
 	return css`
 		background-color: ${theme.header.backgroundColor};
@@ -24,9 +21,9 @@ export const tagTableHeaderStyles = (
 };
 
 export const tagTableHeaderTextStyles = (
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<typeof component.tagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(component.tagTable, partialTheme);
 
 	return css`
 		display: flex;
@@ -36,9 +33,9 @@ export const tagTableHeaderTextStyles = (
 };
 
 export const tagTableHeadingStyles = (
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<typeof component.tagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(component.tagTable, partialTheme);
 
 	return css`
 		font-weight: ${theme.heading.fontWeight};
@@ -47,9 +44,9 @@ export const tagTableHeadingStyles = (
 };
 
 export const tagTableSubHeadingStyles = (
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<typeof component.tagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(component.tagTable, partialTheme);
 
 	return css`
 		font-weight: ${theme.subHeading.fontWeight};
@@ -58,9 +55,9 @@ export const tagTableSubHeadingStyles = (
 };
 
 export const tagTableCellStyles = (
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<typeof component.tagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(component.tagTable, partialTheme);
 
 	return css`
 		padding: ${theme.cell.paddingY} ${theme.cell.paddingX};
@@ -81,9 +78,9 @@ export const tagTableCellStyles = (
 export const tagTableRowStyles = (
 	canDrag: boolean,
 	highlightFirstRow: boolean,
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<typeof component.tagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(component.tagTable, partialTheme);
 
 	return css`
 		background-color: ${theme.row.backgroundColor};
@@ -116,9 +113,9 @@ export const tagTableRowStyles = (
 
 export const tagTableStyles = (
 	highlightFirstRow: boolean,
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<typeof component.tagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(component.tagTable, partialTheme);
 
 	return css`
 		width: 100%;
@@ -148,9 +145,9 @@ export const tagTableRemoveButtonStyles = css`
 `;
 
 export const tagTableAddButtonStyles = (
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<typeof component.tagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(component.tagTable, partialTheme);
 
 	return css`
 		:hover {
@@ -195,9 +192,9 @@ export const tagTableDragButtonStyles = css`
 `;
 
 export const tagTableTypeBadgeStyles = (
-	partialTheme: DeepPartial<ComponentTagTable> = {},
+	partialTheme: DeepPartial<typeof component.tagTable> = {},
 ): SerializedStyles => {
-	const theme = mergeDeep(componentTagTable, partialTheme);
+	const theme = mergeDeep(component.tagTable, partialTheme);
 
 	return css`
 		white-space: nowrap;

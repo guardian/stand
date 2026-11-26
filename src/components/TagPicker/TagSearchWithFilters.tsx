@@ -1,9 +1,7 @@
 import { css } from '@emotion/react';
 import { useEffect, useRef, useState } from 'react';
-import type { ComponentSelect } from '../../Select';
 import { Option, Select } from '../../Select';
-import type { ComponentAutocomplete } from '../../styleD/build/typescript/component/autocomplete';
-import type { ComponentTagPicker } from '../../styleD/build/typescript/component/tagPicker';
+import type { component } from '../../terrazzo/build/stand';
 import type { DeepPartial } from '../../util/types';
 import type { AutocompleteProps } from './Autocomplete';
 import { Autocomplete } from './Autocomplete';
@@ -17,9 +15,9 @@ import type { FilterOption, Tag } from './types';
 type TagSearchWithFiltersProps<T extends Tag = Tag> = {
 	onSearch: { (queryText: string, filterValue?: string): void };
 	filterOptions?: FilterOption[];
-	theme?: DeepPartial<ComponentTagPicker>;
-	autoCompleteTheme?: DeepPartial<ComponentAutocomplete>;
-	selectTheme?: DeepPartial<ComponentSelect>;
+	theme?: DeepPartial<typeof component.tagPicker>;
+	autoCompleteTheme?: DeepPartial<typeof component.autocomplete>;
+	selectTheme?: DeepPartial<typeof component.select>;
 	testIdPrefix?: string;
 } & Omit<
 	AutocompleteProps<T>,

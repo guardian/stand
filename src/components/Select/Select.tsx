@@ -8,6 +8,7 @@ import {
 	Select as ReactAriaSelect,
 	SelectValue,
 } from 'react-aria-components';
+import componentTokens from '../../terrazzo/tokens/component/component.json';
 import { intersperse } from '../../util/intersperse';
 import { mergeDeep } from '../../util/mergeDeep';
 import { Checkbox } from '../Checkbox/Checkbox';
@@ -86,6 +87,9 @@ export function Select({
 	theme = {},
 	placement,
 	shouldFlip,
+	offset = componentTokens.component.select.shared.offset.$value,
+	containerPadding = componentTokens.component.select.shared.containerPadding
+		.$value,
 	children,
 	...props
 }: SelectProps) {
@@ -131,8 +135,8 @@ export function Select({
 				css={popoverStyles()}
 				placement={placement}
 				shouldFlip={shouldFlip}
-				offset={mergedTheme.shared.offset}
-				containerPadding={mergedTheme.shared.containerPadding}
+				offset={offset}
+				containerPadding={containerPadding}
 			>
 				<ListBox size={size} theme={mergedTheme}>
 					{children}

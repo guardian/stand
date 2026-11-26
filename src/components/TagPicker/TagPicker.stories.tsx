@@ -373,7 +373,11 @@ export const WithTheme: Story = {
 			},
 			md: {
 				typography: {
-					font: 'italic 1rem fantasy',
+					font: {
+						fontStyle: 'italic',
+						fontSize: '1rem',
+						fontFamily: 'fantasy',
+					},
 				},
 			},
 		},
@@ -397,11 +401,11 @@ export const WithTheme: Story = {
 				backgroundColor: 'pink',
 			},
 			heading: {
-				fontWeight: 100,
+				fontWeight: '100',
 				fontSize: '1.5rem',
 			},
 			subHeading: {
-				fontWeight: 600,
+				fontWeight: '600',
 				fontSize: '1.25rem',
 			},
 			row: {
