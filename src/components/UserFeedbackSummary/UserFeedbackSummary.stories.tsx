@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
-import { baseSpacing } from '../../styleD/build/typescript/base/spacing';
+import { base } from '../../terrazzo/build/stand';
 import { UserFeedbackSummary } from './UserFeedbackSummary';
 
 const meta = {
@@ -84,8 +83,8 @@ export const CustomTheme = {
 		children: 'Additional help text can be provided here',
 		theme: {
 			information: {
-				color: baseColors.orange[400],
-				borderColor: baseColors.orange[500],
+				color: base.colors.orange[400],
+				borderColor: base.colors.orange[500],
 			},
 		},
 	},
@@ -97,8 +96,8 @@ export const DangerouslyOverrideCss = {
 		title: 'User feedback with CSS overrides',
 		children: 'Additional help text can be provided here',
 		dangerouslyOverrideCss: css`
-			padding: ${baseSpacing['6Rem']};
-			background-color: ${baseColors.red[900]};
+			padding: ${base.spacing['6Rem']};
+			background-color: ${base.colors.red[900]};
 		`,
 	},
 };
