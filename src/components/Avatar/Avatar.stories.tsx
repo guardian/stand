@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors, baseSizing, baseSpacing } from '../..';
+import { base } from '../../terrazzo/build/stand';
 import { Avatar } from './Avatar';
 import type { AvatarColors } from './types';
 import { avatarColors } from './types';
@@ -80,13 +80,13 @@ export const CustomTheme = {
 			shared: {
 				color: {
 					blue: {
-						background: baseColors.blue[100],
-						text: baseColors.neutral[900],
+						background: base.colors.blue[100],
+						text: base.colors.neutral[900],
 					},
 				},
 			},
 			md: {
-				size: baseSizing.size48Rem,
+				size: base.sizing.size48Rem,
 			},
 		},
 	},
@@ -99,8 +99,8 @@ export const DangerouslyOverrideCss = {
 		size: 'md',
 		color: 'red',
 		dangerouslyOverrideCss: css`
-			border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
-			margin: ${baseSpacing['8Rem']};
+			border: ${base.sizing.size2Rem} solid ${base.colors.red[500]};
+			margin: ${base.spacing['8Rem']};
 		`,
 	},
 } satisfies Story;

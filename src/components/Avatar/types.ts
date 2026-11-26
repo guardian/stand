@@ -1,8 +1,9 @@
-import type { ComponentAvatar } from '../../styleD/build/typescript/component/avatar';
+import type { component } from '../../terrazzo/build/stand';
 import type { DefaultProps } from '../../util/types';
 import type { AvatarTheme } from './styles';
 
-export type AvatarColors = keyof ComponentAvatar['shared']['color'];
+export type AvatarColors =
+	keyof (typeof component)['avatar']['shared']['color'];
 
 export const avatarColors: AvatarColors[] = [
 	'blue',
