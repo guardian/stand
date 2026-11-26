@@ -1,15 +1,14 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentButton } from '../../styleD/build/typescript/component/button';
-import { componentButton } from '../../styleD/build/typescript/component/button';
-import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
+import { convertTypographyToCssString } from '../../utils';
 import type { ButtonProps } from './types';
 
-export type ButtonTheme = Prettify<ComponentButton>;
+export type ButtonTheme = Prettify<typeof component.button>;
 export type PartialButtonTheme = Prettify<DeepPartial<ButtonTheme>>;
 
-export const defaultButtonTheme: ButtonTheme = componentButton;
+export const defaultButtonTheme: ButtonTheme = component.button;
 
 export const buttonStyles = (
 	theme: ButtonTheme,
@@ -35,7 +34,7 @@ export const buttonStyles = (
 			${theme[variant][size].padding.right}
 			${theme[variant][size].padding.bottom}
 			${theme[variant][size].padding.left};
-		${convertTypographyToEmotionStringStyle(theme[variant][size].typography)}
+		${convertTypographyToCssString(theme[variant][size].typography)}
 		border: ${theme[variant].shared.border};
 		border-radius: ${theme[variant].shared.borderRadius};
 
