@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors, baseSpacing } from '../..';
+import { base } from '../../terrazzo/build/stand';
 import { tableStyles } from '../../util/storybook/styles';
 import { Badge } from './Badge';
 import { badgeColors, badgeSizes } from './types';
@@ -115,8 +115,8 @@ const customThemeParams = {
 		green: {
 			weight: {
 				strong: {
-					background: baseColors.coolPurple[200],
-					color: baseColors.coolPurple[900],
+					background: base.colors.coolPurple[200],
+					color: base.colors.coolPurple[900],
 				},
 			},
 		},
@@ -124,8 +124,8 @@ const customThemeParams = {
 	size: {
 		md: {
 			padding: {
-				left: baseSpacing['8Px'],
-				right: baseSpacing['40Px'],
+				left: base.spacing['8Px'],
+				right: base.spacing['40Px'],
 			},
 		},
 	},
