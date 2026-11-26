@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors, baseRadius, baseSizing } from '../..';
+import { base } from '../../terrazzo/build/stand';
 import { Favicon } from './Favicon';
 
 // from source: https://github.com/guardian/csnx/blob/main/libs/%40guardian/source/src/react-components/__generated__/icons/SvgHomeHouseOutlined.tsx
@@ -60,8 +60,8 @@ export const CustomTheme = {
 		letter: 'C',
 		theme: {
 			color: {
-				background: baseColors.coolPurple[700],
-				text: baseColors.orange[300],
+				background: base.colors.coolPurple[700],
+				text: base.colors.orange[300],
 			},
 		},
 	},
@@ -72,10 +72,10 @@ export const DangerouslyOverrideCss = {
 	args: {
 		letter: 'O',
 		dangerouslyOverrideCss: css`
-			border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
-			background-color: ${baseColors.orange[700]};
-			color: ${baseColors.warmPurple[300]};
-			border-radius: ${baseRadius.corner4Px};
+			border: ${base.sizing.size2Rem} solid ${base.colors.red[500]};
+			background-color: ${base.colors.orange[700]};
+			color: ${base.colors.warmPurple[300]};
+			border-radius: ${base.radius.corner4Px};
 		`,
 	},
 };

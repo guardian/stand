@@ -71,7 +71,7 @@ export const CustomTheme = {
 					background: baseColors.coolPurple[700],
 					text: baseColors.orange[300],
 				},
-				typography: semanticTypography.bodyItalicLg,
+				// typography: semanticTypography.bodyItalicLg,
 			},
 		},
 		theme: {
