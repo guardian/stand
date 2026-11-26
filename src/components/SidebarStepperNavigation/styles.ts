@@ -1,20 +1,18 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import {
-	componentSidebarStepperNavigation,
-	type ComponentSidebarStepperNavigation,
-} from '../../styleD/build/typescript/component/sidebarStepperNavigation';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
 import { from } from '../../utils';
 
-export type SidebarStepperNavigationTheme =
-	Prettify<ComponentSidebarStepperNavigation>;
+export type SidebarStepperNavigationTheme = Prettify<
+	typeof component.sidebarStepperNavigation
+>;
 export type PartialSidebarStepperNavigationTheme = Prettify<
 	DeepPartial<SidebarStepperNavigationTheme>
 >;
 
 export const defaultSidebarStepperNavigationTheme: SidebarStepperNavigationTheme =
-	componentSidebarStepperNavigation;
+	component.sidebarStepperNavigation;
 
 export const buttonStyleReset = css`
 	appearance: none;
