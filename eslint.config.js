@@ -2,6 +2,7 @@ import guardian from '@guardian/eslint-config';
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
 import checkFile from 'eslint-plugin-check-file';
 import storybook from 'eslint-plugin-storybook';
+import { designTokens } from './scripts/eslint/designTokens.js';
 
 export default [
 	{
@@ -46,6 +47,17 @@ export default [
 						'The file "{{ target }}" does not match the "{{ pattern }}" pattern.',
 				},
 			],
+		},
+	},
+	{
+		files: ['src/components/**/*.{ts,tsx}'],
+		ignores: ['**/*.stories.{ts,tsx}', '**/*.test.{ts,tsx}', '**/sandbox.ts'],
+		plugins: {
+			'design-tokens': designTokens,
+		},
+		rules: {
+			'design-tokens/no-hardcoded-colours': 'error',
+			'design-tokens/no-hardcoded-spacing': 'error',
 		},
 	},
 	{

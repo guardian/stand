@@ -1,5 +1,6 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
+import { baseSpacing } from '../../styleD/build/typescript/base/spacing';
 import {
 	type ComponentTagTable,
 	componentTagTable,
@@ -174,7 +175,7 @@ export const tagTableAddButtonStyles = (
 		width: fit-content;
 		line-height: 1;
 		flex-direction: row;
-		gap: 8px;
+		gap: ${baseSpacing['8Px']};
 		background-color: ${theme.addButton.backgroundColor};
 		display: inline-flex;
 	`;
@@ -183,7 +184,7 @@ export const tagTableAddButtonStyles = (
 export const tagTableDragButtonStyles = css`
 	background: none;
 	border: none;
-	padding: 5px;
+	padding: ${componentTagTable.dragButton.padding};
 	margin: 0;
 	display: flex;
 	align-items: center;

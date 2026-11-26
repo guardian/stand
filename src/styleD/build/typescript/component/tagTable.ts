@@ -3,6 +3,9 @@
  */
 
 export const componentTagTable = {
+	dragButton: {
+		padding: '5px',
+	},
 	addButton: {
 		backgroundColor: '#545454',
 		backgroundHoverColor: '#333333',

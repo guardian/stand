@@ -93,8 +93,8 @@ export const toggleButtonStyles = (
 		}
 
 		&[data-focus-visible] {
-			outline-offset: 1px;
-			outline: 2px solid blue;
+			outline-offset: ${toggleButton.focusVisible.outlineOffset};
+			outline: ${toggleButton.focusVisible.outline};
 		}
 
 		&[data-selected] {
