@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
+import { base } from '../../terrazzo/build/stand';
 import { InlineMessage } from './InlineMessage';
 
 const meta = {
@@ -70,7 +70,7 @@ export const CustomTheme = {
 		level: 'error',
 		theme: {
 			error: {
-				color: baseColors.orange[400],
+				color: base.colors.orange[400],
 			},
 		},
 	},
@@ -81,7 +81,7 @@ export const DangerouslyOverrideCss = {
 		children: 'Message with CSS overrides',
 		level: 'success',
 		dangerouslyOverrideCss: css`
-			background-color: ${baseColors.green[50]};
+			background-color: ${base.colors.green[50]};
 			padding: 16px;
 			border-radius: 4px;
 		`,

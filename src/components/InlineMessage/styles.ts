@@ -1,15 +1,14 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentInlineMessage } from '../../styleD/build/typescript/component/inlineMessage';
-import { componentInlineMessage } from '../../styleD/build/typescript/component/inlineMessage';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
 import type { InlineMessageProps } from './types';
 
-export type InlineMessageTheme = Prettify<ComponentInlineMessage>;
+export type InlineMessageTheme = Prettify<typeof component.inlineMessage>;
 export type PartialInlineMessageTheme = DeepPartial<InlineMessageTheme>;
 
 export const defaultInlineMessageTheme: InlineMessageTheme =
-	componentInlineMessage;
+	component.inlineMessage;
 
 export const inlineMessageStyles = (
 	theme: InlineMessageTheme,
