@@ -1,9 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../../styleD/build/typescript/base/colors';
-import { baseRadius } from '../../../styleD/build/typescript/base/radius';
-import { baseSizing } from '../../../styleD/build/typescript/base/sizing';
-import { semanticTypography } from '../../../styleD/build/typescript/semantic/typography';
+import { base, semantic } from '../../../terrazzo/build/stand';
 import { TopBarToolName } from './TopBarToolName';
 
 const meta = {
@@ -68,16 +65,16 @@ export const CustomTheme = {
 			letter: 'S',
 			theme: {
 				color: {
-					background: baseColors.coolPurple[700],
-					text: baseColors.orange[300],
+					background: base.colors.coolPurple[700],
+					text: base.colors.orange[300],
 				},
 				// typography: semanticTypography.bodyItalicLg,
 			},
 		},
 		theme: {
-			typography: semanticTypography.articleBodyBoldItalicMd,
+			typography: semantic.typography.articleBodyBoldItalicMd,
 			subsection: {
-				typography: semanticTypography.metaCompactMd,
+				typography: semantic.typography.metaCompactMd,
 			},
 		},
 	},
@@ -91,10 +88,10 @@ export const DangerouslyOverrideCss = {
 			letter: 'S',
 		},
 		dangerouslyOverrideCss: css`
-			border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
-			background-color: ${baseColors.orange[700]};
-			color: ${baseColors.warmPurple[300]};
-			border-radius: ${baseRadius.corner4Px};
+			border: ${base.sizing.size2Rem} solid ${base.colors.red[500]};
+			background-color: ${base.colors.orange[700]};
+			color: ${base.colors.warmPurple[300]};
+			border-radius: ${base.radius.corner4Px};
 		`,
 	},
 } satisfies Story;

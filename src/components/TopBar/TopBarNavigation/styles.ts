@@ -1,18 +1,19 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentTopBar } from '../../../styleD/build/typescript/component/topBar';
-import { componentTopBar } from '../../../styleD/build/typescript/component/topBar';
+import { component } from '../../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../../utils';
+import { convertTypographyToCssString } from '../../../utils';
 import type { TopBarNavigationProps } from './types';
 
-export type TopBarNavigationTheme = Prettify<ComponentTopBar['navigation']>;
+export type TopBarNavigationTheme = Prettify<
+	(typeof component.topBar)['navigation']
+>;
 export type PartialTopBarNavigationTheme = Prettify<
 	DeepPartial<TopBarNavigationTheme>
 >;
 
 export const defaultTopBarNavigationTheme: TopBarNavigationTheme =
-	componentTopBar.navigation;
+	component.topBar.navigation;
 
 export const topBarNavigationStyles = (
 	theme: TopBarNavigationTheme,
@@ -67,7 +68,7 @@ export const topBarNavigationStyles = (
 							selected &&
 							`
 						border-left: ${theme.selected.borderBottom};
-						background-color: ${theme.shared._menuOpen.selected.backgroundColor};
+						background-color: ${theme.shared.menuOpen.selected.backgroundColor};
 					`
 						}
 					`
@@ -106,7 +107,7 @@ export const topBarNavigationDividerStyles = (
 	${
 		_menuOpen
 			? css`
-					height: ${theme.shared._menuOpen.height};
+					height: ${theme.shared.menuOpen.height};
 					border-bottom: ${theme.shared.divider};
 				`
 			: css`
@@ -130,10 +131,10 @@ export const topBarNavigationTypographyStyles = (
 ): SerializedStyles => {
 	return size == 'md'
 		? css`
-				${convertTypographyToEmotionStringStyle(theme.md.typography)}
+				${convertTypographyToCssString(theme.md.typography)}
 			`
 		: css`
-				${convertTypographyToEmotionStringStyle(theme.sm.typography)}
+				${convertTypographyToCssString(theme.sm.typography)}
 			`;
 };
 

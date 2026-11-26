@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../../styleD/build/typescript/base/colors';
-import { semanticColors } from '../../../styleD/build/typescript/semantic/colors';
+import { base, semantic } from '../../../terrazzo/build/stand';
 import { tableStyles } from '../../../util/storybook/styles';
 import { MenuItem, MenuSection } from '../../Menu/Menu';
 import { TopBarNavigation } from './TopBarNavigation';
@@ -140,8 +139,8 @@ export const CustomTheme = {
 		isSelected: true,
 		theme: {
 			selected: {
-				color: baseColors.blue[200],
-				borderBottom: `1px solid ${baseColors.coolPurple[700]}`,
+				color: base.colors.blue[200],
+				borderBottom: `1px solid ${base.colors.coolPurple[700]}`,
 			},
 		},
 	},
@@ -153,8 +152,8 @@ export const DangerouslyOverrideCss = {
 		icon: 'file_upload',
 		isSelected: true,
 		dangerouslyOverrideCss: css`
-			background-color: ${semanticColors.fill.strongHover};
-			color: ${semanticColors.text.strongInverse};
+			background-color: ${semantic.colors.fill.strongHover};
+			color: ${semantic.colors.text.strongInverse};
 		`,
 	},
 } satisfies Story;

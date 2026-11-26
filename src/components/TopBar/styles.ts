@@ -1,13 +1,26 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentTopBar } from '../../styleD/build/typescript/component/topBar';
-import { componentTopBar } from '../../styleD/build/typescript/component/topBar';
-import { type Breakpoint, from, until } from '../../styleD/utils/semantic/mq';
+import { component } from '../../terrazzo/build/stand';
+import { type Breakpoint, from, until } from '../../terrazzo/utils/mq';
 import type { DeepPartial, Prettify } from '../../util/types';
 
-export type TopBarTheme = Prettify<ComponentTopBar>;
+type TerrazzoTopBarTheme = typeof component.topBar;
+
+export type TopBarTheme = Prettify<
+	Omit<TerrazzoTopBarTheme, 'collapsedNavMenu'> & {
+		collapsedNavMenu: Omit<
+			TerrazzoTopBarTheme['collapsedNavMenu'],
+			'popover'
+		> & {
+			popover: Omit<
+				TerrazzoTopBarTheme['collapsedNavMenu']['popover'],
+				'offset' | 'containerPadding'
+			>;
+		};
+	}
+>;
 export type PartialTopBarTheme = Prettify<DeepPartial<TopBarTheme>>;
-export const defaultTopBarTheme: TopBarTheme = componentTopBar;
+export const defaultTopBarTheme: TopBarTheme = component.topBar;
 
 export const topBarStyles = (theme: TopBarTheme): SerializedStyles => {
 	return css`
@@ -22,13 +35,13 @@ export const topBarStyles = (theme: TopBarTheme): SerializedStyles => {
 	`;
 };
 
-export const topBarContainerStyles = (
-	theme: TopBarTheme,
-	{
-		collapseBelow,
-		showUntil,
-	}: { collapseBelow?: Breakpoint; showUntil?: Breakpoint } = {},
-): SerializedStyles => {
+export const topBarContainerStyles = ({
+	collapseBelow,
+	showUntil,
+}: {
+	collapseBelow?: Breakpoint;
+	showUntil?: Breakpoint;
+} = {}): SerializedStyles => {
 	return css`
 		display: flex;
 

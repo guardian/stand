@@ -31,6 +31,7 @@ A top bar that provides information about the tool, the current state and naviga
 <MetaTable
 	designSystemTeamVerified
 	figmaLink="https://www.figma.com/design/gmHnKr3tOzvnYp1FZeIl4t/Stand--Editorial-tool-Design-System?node-id=464-15693&m=dev"
+	reactAriaLink="https://react-aria.adobe.com/Popover"
 />
 
 <Canvas layout="padded" of={Default} />
@@ -46,6 +47,7 @@ A top bar that provides information about the tool, the current state and naviga
 - `@emotion/react`
 - `react`
 - `react-dom`
+- `react-aria-components`
 - `typescript`
 
 See the `peerDependencies` section of `package.json` for compatible versions.
@@ -98,9 +100,13 @@ The children will be rendered in the following order from left to right:
 | ------------------------ | ------------------------------------------------------- | -------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `children`               | `React.ReactNode`                                       | No       | N/A                                       | Content to render inside the component. Only children of type `TopBarToolName`, `Avatar`, `TopBarContainerLeft` or `TopBarContainerRight` will be rendered. |
 | `collapseBelow`          | `{ toolName?: Breakpoint; containerLeft?: Breakpoint }` | No       | `{ toolName: 'lg', containerLeft: 'lg' }` | Controls at which breakpoint each section collapses. See [Responsive behaviour](#responsive-behaviour).                                                     |
+| `offset`                 | `number`                                                | No       | `1`                                       | Distance in pixels between the collapsed navigation popover and its trigger.                                                                                |
+| `containerPadding`       | `number`                                                | No       | `0`                                       | Minimum distance in pixels between the collapsed navigation popover and its container.                                                                      |
 | `theme`                  | `TopBarTheme`                                           | No       | N/A                                       | Custom theme overrides.                                                                                                                                     |
 | `dangerouslyOverrideCss` | `SerializedStyles`                                      | No       | N/A                                       | Escape hatch for custom CSS; see warning below.                                                                                                             |
 | `className`              | `string`                                                | No       | N/A                                       | Additional class name(s).                                                                                                                                   |
+
+The collapsed navigation uses a [React Aria Popover](https://react-aria.adobe.com/Popover#api).
 
 ### `TopBarContainerLeft` / `TopBarContainerRight` props
 
