@@ -20,7 +20,7 @@ test('associates the label and description and provides named steppers', async (
 			defaultValue={4}
 		/>,
 	);
-	const input = page.locator('.react-aria-Input');
+	const input = page.getByRole('textbox', { name: 'Quantity' });
 	await expect(input).toHaveAccessibleName('Quantity');
 	await expect(input).toHaveAccessibleDescription('Choose a quantity.');
 	await expect(input).toHaveValue('4');
@@ -34,9 +34,13 @@ test('increments and decrements an uncontrolled value', async ({
 }) => {
 	await mount(<NumberInput label="Quantity" defaultValue={4} />);
 	await page.getByRole('button', { name: /Increase/ }).click();
-	await expect(page.locator('.react-aria-Input')).toHaveValue('5');
+	await expect(page.getByRole('textbox', { name: 'Quantity' })).toHaveValue(
+		'5',
+	);
 	await page.getByRole('button', { name: /Decrease/ }).click();
-	await expect(page.locator('.react-aria-Input')).toHaveValue('4');
+	await expect(page.getByRole('textbox', { name: 'Quantity' })).toHaveValue(
+		'4',
+	);
 });
 
 test('commits typed values and clamps them to bounds on blur', async ({
@@ -44,7 +48,7 @@ test('commits typed values and clamps them to bounds on blur', async ({
 	page,
 }) => {
 	await mount(<NumberInput label="Quantity" minValue={2} maxValue={10} />);
-	const input = page.locator('.react-aria-Input');
+	const input = page.getByRole('textbox', { name: 'Quantity' });
 	await input.fill('7');
 	await input.blur();
 	await expect(input).toHaveValue('7');
@@ -66,7 +70,7 @@ test('disables steppers at their respective bounds without disabling the field',
 	const increment = page.getByRole('button', { name: /Increase/ });
 	const decrement = page.getByRole('button', { name: /Decrease/ });
 	await expect(decrement).toBeDisabled();
-	await expect(page.locator('.react-aria-Input')).toBeEnabled();
+	await expect(page.getByRole('textbox', { name: 'Quantity' })).toBeEnabled();
 	await increment.click();
 	await expect(increment).toBeDisabled();
 	await expect(decrement).toBeEnabled();
@@ -86,7 +90,7 @@ test('uses fractional steps starting at the minimum', async ({
 			formatOptions={{ maximumFractionDigits: 1 }}
 		/>,
 	);
-	const input = page.locator('.react-aria-Input');
+	const input = page.getByRole('textbox', { name: 'Distance' });
 	await page.getByRole('button', { name: /Increase/ }).click();
 	await expect(input).toHaveValue('2');
 	await page.getByRole('button', { name: /Decrease/ }).click();
@@ -106,7 +110,7 @@ test('supports arrow keys and Home and End', async ({ mount, page }) => {
 			step={2}
 		/>,
 	);
-	const input = page.locator('.react-aria-Input');
+	const input = page.getByRole('textbox', { name: 'Quantity' });
 	await input.press('ArrowUp');
 	await expect(input).toHaveValue('6');
 	await input.press('ArrowDown');
@@ -122,7 +126,7 @@ test('supports controlled updates and reports an empty value as NaN', async ({
 	page,
 }) => {
 	await mount(<ControlledNumberInput />);
-	const input = page.locator('.react-aria-Input');
+	const input = page.getByRole('textbox', { name: 'Quantity' });
 	await page.getByRole('button', { name: /Increase/ }).click();
 	await expect(page.getByTestId('value')).toHaveText('5');
 	await page.getByRole('button', { name: 'Set value to eight' }).click();
@@ -135,7 +139,7 @@ test('supports controlled updates and reports an empty value as NaN', async ({
 
 test('rejects non-numeric characters', async ({ mount, page }) => {
 	await mount(<NumberInput label="Quantity" defaultValue={4} />);
-	const input = page.locator('.react-aria-Input');
+	const input = page.getByRole('textbox', { name: 'Quantity' });
 	await input.press('End');
 	await input.press('a');
 	await input.press('b');
@@ -145,7 +149,7 @@ test('rejects non-numeric characters', async ({ mount, page }) => {
 
 test('disables the input and both steppers', async ({ mount, page }) => {
 	await mount(<NumberInput label="Quantity" defaultValue={4} isDisabled />);
-	await expect(page.locator('.react-aria-Input')).toBeDisabled();
+	await expect(page.getByRole('textbox', { name: 'Quantity' })).toBeDisabled();
 	await expect(page.getByRole('button', { name: /Increase/ })).toBeDisabled();
 	await expect(page.getByRole('button', { name: /Decrease/ })).toBeDisabled();
 	await expect(page.getByRole('group')).toHaveAttribute('data-disabled');
@@ -156,7 +160,7 @@ test('read-only values cannot be changed by keyboard or steppers', async ({
 	page,
 }) => {
 	await mount(<NumberInput label="Quantity" defaultValue={4} isReadOnly />);
-	const input = page.locator('.react-aria-Input');
+	const input = page.getByRole('textbox', { name: 'Quantity' });
 	await expect(input).toHaveAttribute('readonly');
 	await input.press('ArrowUp');
 	await expect(input).toHaveValue('4');
@@ -171,7 +175,7 @@ test('exposes invalid state and an associated error message', async ({
 	await mount(
 		<NumberInput label="Quantity" isInvalid error="Enter a valid quantity." />,
 	);
-	await expect(page.locator('.react-aria-Input')).toHaveAttribute(
+	await expect(page.getByRole('textbox', { name: 'Quantity' })).toHaveAttribute(
 		'aria-invalid',
 		'true',
 	);
