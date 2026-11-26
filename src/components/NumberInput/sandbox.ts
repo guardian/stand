@@ -33,7 +33,7 @@ export const componentCss = /* css */ `@import '@guardian/stand/component/number
 	box-sizing: border-box;
 	display: flex;
 	align-items: center;
-	max-width: var(--component-form-input-shared-container-max-width);
+	max-width: var(--component-number-input-shared-max-width);
 	height: var(--component-number-input-md-height);
 	margin-top: var(--component-number-input-shared-margin-top);
 	background: var(--component-number-input-shared-background-color);
@@ -110,7 +110,7 @@ export const componentJs = /* javascript */ `import { componentNumberInput, comp
 const theme = componentNumberInput;
 document.getElementById('app').innerHTML = \`
 	<label for="quantity" style="font: \${componentForm.input.md.label.typography.font}">Quantity</label>
-	<div style="box-sizing: border-box; display: flex; align-items: center; max-width: \${componentForm.input.shared.container.maxWidth}; height: \${theme.md.height}; margin-top: \${theme.shared.marginTop}; border: \${theme.shared.border}; border-radius: \${theme.shared.borderRadius}; background: \${theme.shared.backgroundColor}; color: \${theme.shared.color}">
+	<div style="box-sizing: border-box; display: flex; align-items: center; max-width: \${theme.shared.maxWidth}; height: \${theme.md.height}; margin-top: \${theme.shared.marginTop}; border: \${theme.shared.border}; border-radius: \${theme.shared.borderRadius}; background: \${theme.shared.backgroundColor}; color: \${theme.shared.color}">
 		<input id="quantity" type="number" value="4" min="0" max="10" style="box-sizing: border-box; flex: 1; width: 100%; min-width: 0; height: 100%; padding: 0 \${theme.shared.paddingInline}; border: 0; background: transparent; color: inherit; font: \${theme.md.typography.font}; appearance: textfield" />
 		<button type="button" data-action="decrement" aria-label="Decrement quantity" style="display: inline-flex; align-items: center; justify-content: center; align-self: stretch; flex: 0 0 \${theme.md.buttonWidth}; padding: 0; border: 0; background: transparent; color: \${theme.shared.button.color}">
 			<span class="material-symbols" aria-hidden="true" style="font-size: \${componentIcon.md.size}">remove</span>

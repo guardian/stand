@@ -58,6 +58,13 @@
 				}
 			},
 			"shared": {
+				"maxWidth": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 190
+					}
+				},
 				"backgroundColor": {
 					"$type": "color",
 					"$value": "{semantic.colors.fill.weak}"

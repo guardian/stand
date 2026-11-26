@@ -24,6 +24,7 @@ export const componentNumberInput = {
 		},
 	},
 	shared: {
+		maxWidth: '190px',
 		backgroundColor: '#ffffff',
 		color: '#000000',
 		placeholderColor: '#545454',

@@ -20,7 +20,9 @@ export function NumberInput({
 }: NumberInputProps) {
 	const mergedTheme = mergeDeep(defaultNumberInputTheme, theme);
 	const containerTheme = mergeDeep(
-		defaultFormInputContainerTheme,
+		mergeDeep(defaultFormInputContainerTheme, {
+			shared: { container: { maxWidth: mergedTheme.shared.maxWidth } },
+		}),
 		formInputContainerTheme ?? {},
 	);
 
@@ -29,7 +31,7 @@ export function NumberInput({
 			as={NumberField}
 			size={size}
 			isDisabled={isDisabled}
-			formInputContainerTheme={formInputContainerTheme}
+			formInputContainerTheme={containerTheme}
 			{...props}
 		>
 			{description && (

@@ -34,6 +34,8 @@ import {
 
 A numeric input built on [React Aria NumberField](https://react-aria.adobe.com/NumberField), styled for Stand. Users can type a value or adjust it with decrement and increment buttons.
 
+Both sizes have a maximum width of 190px and shrink to fit narrower containers. Use `fluid` to fill the available width instead.
+
 <MetaTable
 	designSystemTeamVerified={false}
 	reactAriaLink="https://react-aria.adobe.com/NumberField"
@@ -184,7 +186,7 @@ import { NumberInput } from '@guardian/stand/NumberInput';
 <NumberInput
 	label="Quantity"
 	cssOverrides={css`
-		max-width: 12rem;
+		max-width: 10rem;
 	`}
 />;
 ```

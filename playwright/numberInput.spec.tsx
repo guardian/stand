@@ -212,4 +212,44 @@ for (const [size, height] of [
 		await mount(<NumberInput label="Quantity" size={size} />);
 		await expect(page.getByRole('group')).toHaveCSS('height', height);
 	});
+
+	test(`limits the ${size} control to 190px`, async ({ mount, page }) => {
+		await mount(
+			<div style={{ width: 500 }}>
+				<NumberInput label="Quantity" size={size} />
+			</div>,
+		);
+		await expect(page.getByRole('group')).toHaveCSS('width', '190px');
+	});
+
+	test(`shrinks the ${size} control to fit a narrower container`, async ({
+		mount,
+		page,
+	}) => {
+		await mount(
+			<div style={{ width: 150 }}>
+				<NumberInput label="Quantity" size={size} />
+			</div>,
+		);
+		await expect(page.getByRole('group')).toHaveCSS('width', '150px');
+	});
 }
+
+test('fluid removes the default maximum width', async ({ mount, page }) => {
+	await mount(
+		<div style={{ width: 500 }}>
+			<NumberInput label="Quantity" fluid />
+		</div>,
+	);
+	await expect(page.getByRole('group')).toHaveCSS('width', '500px');
+});
+
+test('allows overriding the maximum width through the component theme', async ({
+	mount,
+	page,
+}) => {
+	await mount(
+		<NumberInput label="Quantity" theme={{ shared: { maxWidth: '170px' } }} />,
+	);
+	await expect(page.getByRole('group')).toHaveCSS('width', '170px');
+});

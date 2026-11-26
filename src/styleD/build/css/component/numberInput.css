@@ -16,6 +16,7 @@
 		'Open Sans';
 	--component-number-input-sm-typography-font-width: 95;
 	--component-number-input-sm-typography-letter-spacing: 0rem;
+	--component-number-input-shared-max-width: 190px;
 	--component-number-input-shared-background-color: #ffffff;
 	--component-number-input-shared-color: #000000;
 	--component-number-input-shared-placeholder-color: #545454;
