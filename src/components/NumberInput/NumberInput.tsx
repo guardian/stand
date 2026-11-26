@@ -45,11 +45,11 @@ export function NumberInput({
 			<Group css={numberInputStyles(mergedTheme, { size })}>
 				<Input placeholder={placeholder} />
 				<Button slot="decrement">
-					<Icon symbol="remove" size={size === 'sm' ? 'sm' : 'md'} />
+					<Icon symbol="remove" size={size} />
 				</Button>
 				<span className="number-input-divider" aria-hidden="true" />
 				<Button slot="increment">
-					<Icon symbol="add" size={size === 'sm' ? 'sm' : 'md'} />
+					<Icon symbol="add" size={size} />
 				</Button>
 			</Group>
 		</FormInputContainer>

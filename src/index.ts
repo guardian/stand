@@ -24,8 +24,6 @@ export type { ComponentPickerIframeModal } from './styleD/build/typescript/compo
 /**
  * design system components tokens exports
  */
-export { componentNumberInput } from './styleD/build/typescript/component/numberInput';
-export type { ComponentNumberInput } from './styleD/build/typescript/component/numberInput';
 export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
 export { componentBadge } from './styleD/build/typescript/component/badge';
@@ -90,6 +88,8 @@ export { componentSidebarStepperNavigation } from './styleD/build/typescript/com
 export type { ComponentSidebarStepperNavigation } from './styleD/build/typescript/component/sidebarStepperNavigation';
 export { componentTextListInput } from './styleD/build/typescript/component/textListInput';
 export type { ComponentTextListInput } from './styleD/build/typescript/component/textListInput';
+export { componentNumberInput } from './styleD/build/typescript/component/numberInput';
+export type { ComponentNumberInput } from './styleD/build/typescript/component/numberInput';
 
 /**
  * style dictionary exports - base
