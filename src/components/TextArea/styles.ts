@@ -1,21 +1,20 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentTextArea } from '../../styleD/build/typescript/component/textArea';
-import { componentTextArea } from '../../styleD/build/typescript/component/textArea';
+import { component } from '../../terrazzo/build/stand';
 import type { Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 import type { TextAreaProps } from './types';
 
-export type TextAreaTheme = Prettify<ComponentTextArea>;
+export type TextAreaTheme = Prettify<typeof component.textArea>;
 
-export const defaultTextAreaTheme: TextAreaTheme = componentTextArea;
+export const defaultTextAreaTheme: TextAreaTheme = component.textArea;
 
 export const textAreaStyles = (
 	theme: TextAreaTheme,
 	{ size, isInvalid }: Required<Pick<TextAreaProps, 'size' | 'isInvalid'>>,
 ): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(theme[size].typography)}
+		${convertTypographyToCssString(theme[size].typography)}
 		background-color: ${theme.shared.backgroundColor};
 		border-radius: ${theme.shared.borderRadius};
 		border: ${theme.shared.border};
