@@ -1,0 +1,173 @@
+{
+	"component": {
+		"numberInput": {
+			"md": {
+				"height": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.md}"
+				},
+				"buttonWidth": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.sm}"
+				},
+				"dividerHeight": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.xs}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodyMd.font}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.bodyMd.fontWidth}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.bodyMd.letterSpacing}"
+					}
+				}
+			},
+			"sm": {
+				"height": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.sm}"
+				},
+				"buttonWidth": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.xs}"
+				},
+				"dividerHeight": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.xxs}"
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodySm.font}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.bodySm.fontWidth}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.bodySm.letterSpacing}"
+					}
+				}
+			},
+			"shared": {
+				"maxWidth": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 190
+					}
+				},
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.weak}"
+				},
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.strong}"
+				},
+				"placeholderColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.weak}"
+				},
+				"border": {
+					"$type": "border",
+					"$value": {
+						"color": "{semantic.colors.border.stronger}",
+						"style": "solid",
+						"width": "{semantic.sizing.border.default}"
+					}
+				},
+				"borderRadius": {
+					"$type": "dimension",
+					"$value": "{semantic.radius.cornerSm}"
+				},
+				"marginTop": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackXxs}"
+				},
+				"paddingInline": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackSm}"
+				},
+				"button": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.weak}"
+					},
+					"hovered": {
+						"backgroundColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.fill.weakHover}"
+						}
+					},
+					"pressed": {
+						"backgroundColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.fill.weakPressed}"
+						}
+					}
+				},
+				"divider": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.strong}"
+					},
+					"width": {
+						"$type": "dimension",
+						"$value": "{semantic.sizing.border.default}"
+					}
+				},
+				"disabled": {
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.disabled}"
+					},
+					"border": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.disabled}",
+							"style": "solid",
+							"width": "{semantic.sizing.border.default}"
+						}
+					},
+					"dividerColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.disabled}"
+					}
+				},
+				"error": {
+					"border": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.error}",
+							"style": "solid",
+							"width": "{semantic.sizing.border.default}"
+						}
+					}
+				},
+				"focused": {
+					"outline": {
+						"$type": "border",
+						"$value": {
+							"color": "{semantic.colors.border.focused}",
+							"style": "auto",
+							"width": "{semantic.sizing.border.md}"
+						}
+					},
+					"offset": {
+						"$type": "dimension",
+						"$value": "{semantic.sizing.border.md}"
+					}
+				}
+			}
+		}
+	}
+}

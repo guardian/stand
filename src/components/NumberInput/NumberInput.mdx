@@ -1,0 +1,212 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { MetaTable } from '../../util/storybook/MetaTable';
+import NumberInputStories, {
+	Default,
+	SmallSize,
+	Fluid,
+	WithDescription,
+	Empty,
+	Bounded,
+	DecimalSteps,
+	Disabled,
+	ReadOnly,
+	Invalid,
+	Required,
+	Controlled,
+	CustomTheme,
+} from './NumberInput.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={NumberInputStories} />
+
+# NumberInput
+
+A numeric input built on [React Aria NumberField](https://react-aria.adobe.com/NumberField), styled for Stand. Users can type a value or adjust it with decrement and increment buttons.
+
+Both sizes have a maximum width of 190px and shrink to fit narrower containers. Use `fluid` to fill the available width instead.
+
+<MetaTable
+	designSystemTeamVerified={false}
+	reactAriaLink="https://react-aria.adobe.com/NumberField"
+/>
+
+<Canvas layout="padded" of={Default} />
+
+## When to use
+
+- For quantities, counts or measurements where increasing and decreasing a value is useful.
+- For numeric values with optional minimum, maximum, step or locale-aware formatting.
+- Use TextInput instead for identifiers such as telephone numbers or postcodes, where numeric arithmetic is not meaningful.
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See `peerDependencies` in `package.json` for compatible versions. Load the [Material Symbols font](?path=/docs/stand-tools-design-system-components-icon--docs) for the stepper icons.
+
+CSS-only consumers do not need React or Emotion.
+
+## Example usage
+
+<SandboxReact
+	flowColumn
+	componentName={componentName}
+	componentTsx={componentTsx}
+/>
+
+```tsx
+import { NumberInput } from '@guardian/stand/NumberInput';
+import type {
+	NumberInputProps,
+	NumberInputTheme,
+} from '@guardian/stand/NumberInput';
+
+<NumberInput
+	label="Quantity"
+	description="Choose a quantity between 0 and 10."
+	defaultValue={4}
+	minValue={0}
+	maxValue={10}
+/>;
+```
+
+Use `value` and `onChange` for a controlled input. React Aria commits typed values on blur or stepping, applies bounds and snaps to the nearest step. Clearing the field reports `NaN`; check `Number.isNaN(value)` rather than treating an empty field as zero. Characters that cannot form a number in the current locale are rejected by React Aria.
+
+Arrow Up and Arrow Down adjust the value. Home and End move to the configured minimum and maximum. Formatting and parsing follow the locale; use React Aria's `I18nProvider` to set a specific locale.
+
+## Props
+
+| Name                      | Type                                       | Required    | Default | Description                                                                                                                                                          |
+| ------------------------- | ------------------------------------------ | ----------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `size`                    | `'md'` \| `'sm'`                           | No          | `'md'`  | Controls height, typography and stepper size.                                                                                                                        |
+| `label`                   | `string`                                   | Conditional | N/A     | Visible label. Supply `aria-label` or `aria-labelledby` if omitted.                                                                                                  |
+| `renderLabel`             | `(label: string) => ReactNode`             | No          | N/A     | Customises the visible label while retaining its text.                                                                                                               |
+| `description`             | `string`                                   | No          | N/A     | Helper text associated with the input.                                                                                                                               |
+| `value`                   | `number`                                   | No          | N/A     | Controlled value.                                                                                                                                                    |
+| `defaultValue`            | `number`                                   | No          | N/A     | Initial uncontrolled value.                                                                                                                                          |
+| `onChange`                | `(value: number) => void`                  | No          | N/A     | Called when the committed value changes; an empty input reports `NaN`.                                                                                               |
+| `minValue`                | `number`                                   | No          | N/A     | Minimum permitted value.                                                                                                                                             |
+| `maxValue`                | `number`                                   | No          | N/A     | Maximum permitted value.                                                                                                                                             |
+| `step`                    | `number`                                   | No          | `1`     | Increment size, starting from the minimum or zero.                                                                                                                   |
+| `formatOptions`           | `Intl.NumberFormatOptions`                 | No          | N/A     | Locale-aware number formatting and supported fractional precision.                                                                                                   |
+| `placeholder`             | `string`                                   | No          | N/A     | Hint displayed when empty; not a substitute for a label.                                                                                                             |
+| `isDisabled`              | `boolean`                                  | No          | `false` | Disables input and stepper interaction.                                                                                                                              |
+| `isReadOnly`              | `boolean`                                  | No          | `false` | Allows reading and selection without changing the value.                                                                                                             |
+| `isRequired`              | `boolean`                                  | No          | `false` | Requires a value for form submission.                                                                                                                                |
+| `isInvalid`               | `boolean`                                  | No          | `false` | Applies invalid styling and accessibility state.                                                                                                                     |
+| `error`                   | `string`                                   | No          | N/A     | Message displayed when the field is invalid.                                                                                                                         |
+| `fluid`                   | `boolean`                                  | No          | `false` | Removes the standard form-field maximum width.                                                                                                                       |
+| `theme`                   | `NumberInputTheme`                         | No          | N/A     | Deep partial overrides for the numeric control tokens.                                                                                                               |
+| `formInputContainerTheme` | `DeepPartial<FormInputContainerTheme>`     | No          | N/A     | Overrides label, description and container tokens.                                                                                                                   |
+| `cssOverrides`            | `SerializedStyles` \| `SerializedStyles[]` | No          | N/A     | Emotion overrides applied to the root element.                                                                                                                       |
+| `className`               | `NumberFieldProps['className']`            | No          | N/A     | Root class name or React Aria render function.                                                                                                                       |
+| `...props`                | `NumberFieldProps`                         | No          | N/A     | Other [React Aria NumberField props](https://react-aria.adobe.com/NumberField#api), including `name`, `validate`, `validationBehavior` and accessibility attributes. |
+
+Stepper accessible names are supplied and localised by React Aria.
+
+## Stories
+
+### Default
+
+<Canvas layout="padded" of={Default} />
+
+### Small size
+
+<Canvas layout="padded" of={SmallSize} />
+
+### Fluid
+
+<Canvas layout="padded" of={Fluid} />
+
+### With description
+
+<Canvas layout="padded" of={WithDescription} />
+
+### Empty and placeholder
+
+<Canvas layout="padded" of={Empty} />
+
+### Bounds
+
+<Canvas layout="padded" of={Bounded} />
+
+### Decimal steps
+
+<Canvas layout="padded" of={DecimalSteps} />
+
+### Disabled
+
+<Canvas layout="padded" of={Disabled} />
+
+### Read only
+
+<Canvas layout="padded" of={ReadOnly} />
+
+### Invalid
+
+<Canvas layout="padded" of={Invalid} />
+
+### Required
+
+<Canvas layout="padded" of={Required} />
+
+### Controlled
+
+<Canvas layout="padded" of={Controlled} />
+
+### Custom theme
+
+<Canvas layout="padded" of={CustomTheme} />
+
+## Customisation
+
+Use `theme` for the numeric control and `formInputContainerTheme` for its label, description and wrapper. For example, the Custom theme story sets `theme={{ shared: { borderRadius: '0' } }}`.
+
+Use `cssOverrides` for layout adjustments:
+
+```tsx
+import { css } from '@emotion/react';
+import { NumberInput } from '@guardian/stand/NumberInput';
+
+<NumberInput
+	label="Quantity"
+	cssOverrides={css`
+		max-width: 10rem;
+	`}
+/>;
+```
+
+## Custom Component Build
+
+The CSS and JavaScript token exports support custom implementations without React or Emotion. These examples demonstrate styling, not an equivalent replacement for React Aria's accessibility, validation and locale-aware interactions. The CSS-only example's stepper buttons are visual only; the JavaScript example uses native `stepDown()` and `stepUp()`.
+
+### CSS
+
+Import `@guardian/stand/component/numberInput.css` and `@guardian/stand/component/form.css`. These provide CSS variables, not ready-made component classes.
+
+<SandboxCss
+	componentName={componentName}
+	componentCss={componentCss}
+	componentHtml={componentHtml}
+/>
+
+### JavaScript
+
+Use `componentNumberInput` and its type `ComponentNumberInput` from `@guardian/stand`, or from `@guardian/stand/NumberInput`.
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
