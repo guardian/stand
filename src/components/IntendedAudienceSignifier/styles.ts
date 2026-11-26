@@ -1,14 +1,14 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentIntendedAudienceSignifier } from '../../styleD/build/typescript/component/intendedAudienceSignifier';
-import { componentIntendedAudienceSignifier } from '../../styleD/build/typescript/component/intendedAudienceSignifier';
+import { component } from '../../terrazzo/build/stand';
 import type { Prettify } from '../../util/types';
 
-export type IntendedAudienceSignifierTheme =
-	Prettify<ComponentIntendedAudienceSignifier>;
+export type IntendedAudienceSignifierTheme = Prettify<
+	typeof component.intendedAudienceSignifier
+>;
 
 export const defaultIntendedAudienceSignifierTheme: IntendedAudienceSignifierTheme =
-	componentIntendedAudienceSignifier;
+	component.intendedAudienceSignifier;
 
 export const intendedAudienceSignifierStyles = (
 	theme: IntendedAudienceSignifierTheme,
