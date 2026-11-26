@@ -3286,6 +3286,7 @@ export const component: {
 			paddingLeft: string;
 			paddingRight: string;
 			paddingTop: string;
+			textAlign: string;
 		};
 		label: {
 			fontSize: string;
@@ -3294,6 +3295,7 @@ export const component: {
 			paddingLeft: string;
 			paddingRight: string;
 			paddingTop: string;
+			textAlign: string;
 		};
 		toggleButton: {
 			baseBackgroundColor: string;
