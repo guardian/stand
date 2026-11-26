@@ -78,6 +78,16 @@
 				"default": "./dist/Button.cjs"
 			}
 		},
+		"./ToggleButtonGroup": {
+			"import": {
+				"types": "./dist/ToggleButtonGroup.d.ts",
+				"default": "./dist/ToggleButtonGroup.js"
+			},
+			"require": {
+				"types": "./dist/ToggleButtonGroup.d.cts",
+				"default": "./dist/ToggleButtonGroup.cjs"
+			}
+		},
 		"./ButtonGroup": {
 			"import": {
 				"types": "./dist/ButtonGroup.d.ts",
@@ -495,6 +505,7 @@
 		"./component/pagination.css": "./dist/styleD/build/css/component/pagination.css",
 		"./component/button.css": "./dist/styleD/build/css/component/button.css",
 		"./component/buttonGroup.css": "./dist/styleD/build/css/component/buttonGroup.css",
+		"./component/toggleButtonGroup.css": "./dist/styleD/build/css/component/toggleButtonGroup.css",
 		"./component/typography.css": "./dist/styleD/build/css/component/typography.css",
 		"./component/icon.css": "./dist/styleD/build/css/component/icon.css",
 		"./component/favicon.css": "./dist/styleD/build/css/component/favicon.css",
@@ -550,6 +561,9 @@
 			],
 			"ButtonGroup": [
 				"./dist/ButtonGroup.d.ts"
+			],
+			"ToggleButtonGroup": [
+				"./dist/ToggleButtonGroup.d.ts"
 			],
 			"LinkButton": [
 				"./dist/LinkButton.d.ts"

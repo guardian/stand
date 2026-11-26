@@ -1,0 +1,209 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { MetaTable } from '../../util/storybook/MetaTable';
+import ToggleButtonGroupStories, {
+	Default,
+	OptionalSelection,
+	Controlled,
+	OtherLabels,
+	Disabled,
+	DisabledItem,
+	DisabledSelectedItem,
+	SelectedPositions,
+	CustomTheme,
+	CssOverrides,
+} from './ToggleButtonGroup.stories';
+import {
+	SandboxReact,
+	SandboxCss,
+	SandboxJs,
+} from '../../util/storybook/sandbox/Sandbox';
+import {
+	componentName,
+	componentCss,
+	componentHtml,
+	componentJs,
+	componentTsx,
+} from './sandbox';
+
+<Meta of={ToggleButtonGroupStories} />
+
+# ToggleButtonGroup
+
+A connected, horizontal segmented control built on [React Aria ToggleButtonGroup and ToggleButton](https://react-aria.adobe.com/ToggleButtonGroup).
+It supports a single selected option, with controlled or uncontrolled selection.
+
+<MetaTable
+	designSystemTeamVerified={false}
+	figmaLink="https://www.figma.com/design/jD7ZXQ2hmna9qQjUBu3ioH/Newsletter-pilot?node-id=6155-33515&m=dev"
+	reactAriaLink="https://react-aria.adobe.com/ToggleButtonGroup"
+/>
+
+## When to use
+
+- To choose between a small number of related options, such as preview widths or time periods.
+- Use Tabs instead when each choice opens an associated content panel, or RadioGroup for a radio-style form field.
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+CSS-only consumers do not need these peers.
+
+Load Open Sans using the [Getting Started font guidance](?path=/docs/getting-started--docs).
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import {
+	ToggleButtonGroup,
+	ToggleButton,
+} from '@guardian/stand/ToggleButtonGroup';
+
+<ToggleButtonGroup
+	aria-label="Preview width"
+	defaultSelectedKeys={['650']}
+	disallowEmptySelection
+	onSelectionChange={(keys) => console.log([...keys])}
+>
+	<ToggleButton id="320">320</ToggleButton>
+	<ToggleButton id="375">375</ToggleButton>
+	<ToggleButton id="425">425</ToggleButton>
+	<ToggleButton id="650">650</ToggleButton>
+</ToggleButtonGroup>;
+```
+
+Supply an accessible group name using `aria-label`, or `aria-labelledby` pointing to a visible label.
+Each `ToggleButton` needs a unique string or number `id`; the visible label does not determine its value.
+Keep item labels stable when selected so assistive technology can announce selection.
+
+## Props
+
+| Name                             | Type                                       | Required    | Default | Description                                                                                |
+| -------------------------------- | ------------------------------------------ | ----------- | ------- | ------------------------------------------------------------------------------------------ |
+| `aria-label` / `aria-labelledby` | `string`                                   | Conditional | N/A     | Provide one to name the group.                                                             |
+| `children`                       | `ReactNode` or render function             | Yes         | N/A     | `ToggleButton` items, optionally inside a fragment.                                        |
+| `selectedKeys`                   | `Iterable<Key>`                            | No          | N/A     | Controlled selection, containing at most one item id.                                      |
+| `defaultSelectedKeys`            | `Iterable<Key>`                            | No          | Empty   | Initial uncontrolled selection, containing at most one item id.                            |
+| `onSelectionChange`              | `(keys: Set<Key>) => void`                 | No          | N/A     | Called with the selected ids, or an empty set when cleared.                                |
+| `disallowEmptySelection`         | `boolean`                                  | No          | `false` | Prevents clearing the current selection. Initialise a selection when a choice is required. |
+| `isDisabled`                     | `boolean`                                  | No          | `false` | Disables every item.                                                                       |
+| `theme`                          | `ToggleButtonGroupTheme`                   | No          | N/A     | Token overrides inherited by items.                                                        |
+| `cssOverrides`                   | `SerializedStyles` or `SerializedStyles[]` | No          | N/A     | Styles applied to the group.                                                               |
+| `className`                      | `string` or render function                | No          | N/A     | Class name applied to the group.                                                           |
+
+Selection is always single and orientation is always horizontal; Stand does not expose `selectionMode` or `orientation`.
+Other props and render functions follow the [React Aria ToggleButtonGroup API](https://react-aria.adobe.com/ToggleButtonGroup#api).
+React Aria's single-selection mode exposes a `radiogroup` with `radio` semantics on native buttons, not radio inputs. Stand preserves these semantics.
+Arrow keys move focus between enabled items; Space or Enter selects the focused item.
+
+### ToggleButton props
+
+| Name           | Type                                       | Required | Default | Description                                                      |
+| -------------- | ------------------------------------------ | -------- | ------- | ---------------------------------------------------------------- |
+| `id`           | `string` or `number`                       | Yes      | N/A     | Selection identifier within the group.                           |
+| `children`     | `ReactNode` or render function             | Yes      | N/A     | Visible label. For icon-only content, also provide `aria-label`. |
+| `isDisabled`   | `boolean`                                  | No       | `false` | Disables this item.                                              |
+| `theme`        | `ToggleButtonGroupTheme`                   | No       | N/A     | Overrides inherited group tokens for this item.                  |
+| `cssOverrides` | `SerializedStyles` or `SerializedStyles[]` | No       | N/A     | Styles applied to this item.                                     |
+| `className`    | `string` or render function                | No       | N/A     | Class name applied to this item.                                 |
+
+Use these items within `ToggleButtonGroup`; selection is managed by the group, not item-level `isSelected`, `defaultSelected` or `onChange` props.
+Other interaction props follow the [React Aria ToggleButton API](https://react-aria.adobe.com/ToggleButton#api).
+
+## Stories
+
+### Newsletter preview widths
+
+<Canvas layout="padded" of={Default} />
+
+### Optional selection
+
+Click the selected item again to clear it.
+
+<Canvas layout="padded" of={OptionalSelection} />
+
+### Controlled selection
+
+<Canvas layout="padded" of={Controlled} />
+
+### Other labels and values
+
+<Canvas layout="padded" of={OtherLabels} />
+
+### Disabled group
+
+<Canvas layout="padded" of={Disabled} />
+
+### Disabled individual item
+
+<Canvas layout="padded" of={DisabledItem} />
+
+### Disabled selected item
+
+<Canvas layout="padded" of={DisabledSelectedItem} />
+
+### Selected positions
+
+Hover items to inspect their hover state. Use Tab and arrow keys to inspect keyboard focus, then Space or Enter to select.
+All selected positions preserve the connected shape and rounded outer corners.
+
+<Canvas layout="padded" of={SelectedPositions} />
+
+## Customisation
+
+### Custom theme
+
+Group token overrides are inherited by all items. Item-level overrides take precedence.
+Use current Stand semantic tokens; the reference design predates the current selected fill colour.
+
+<Canvas layout="padded" of={CustomTheme} />
+
+```tsx
+import { semanticColors } from '@guardian/stand';
+import type { ToggleButtonGroupTheme } from '@guardian/stand/ToggleButtonGroup';
+
+const theme: ToggleButtonGroupTheme = {
+	item: {
+		selected: {
+			backgroundColor: semanticColors.fill.greenWeak,
+			borderColor: semanticColors.border.success,
+			color: semanticColors.text.green,
+		},
+	},
+};
+```
+
+### CSS overrides
+
+This example fills the available width and gives each segment equal space.
+
+<Canvas layout="padded" of={CssOverrides} />
+
+## Custom Component Build
+
+The CSS export provides design-token variables, not a pre-styled component or selection behaviour.
+If building without React/Emotion, you are responsible for selection state, accessible names, selection announcements and keyboard behaviour.
+The following custom examples use native buttons and are styling examples, not replacements for React Aria's group behaviour.
+
+### CSS
+
+Import `@guardian/stand/component/toggleButtonGroup.css` and use its variables:
+
+<SandboxCss
+	componentName={componentName}
+	componentHtml={componentHtml}
+	componentCss={componentCss}
+/>
+
+### TypeScript/JavaScript
+
+Use `componentToggleButtonGroup` and the `ComponentToggleButtonGroup` type from `@guardian/stand/ToggleButtonGroup` or `@guardian/stand`:
+
+<SandboxJs componentName={componentName} componentJs={componentJs} />
