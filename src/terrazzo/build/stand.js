@@ -4001,6 +4001,7 @@ export const component = {
 			paddingLeft: 'var(--component-user-menu-heading-padding-left)',
 			paddingRight: 'var(--component-user-menu-heading-padding-right)',
 			paddingTop: 'var(--component-user-menu-heading-padding-top)',
+			textAlign: 'var(--component-user-menu-heading-text-align)',
 		},
 		label: {
 			fontSize: 'var(--component-user-menu-label-font-size)',
@@ -4009,6 +4010,7 @@ export const component = {
 			paddingLeft: 'var(--component-user-menu-label-padding-left)',
 			paddingRight: 'var(--component-user-menu-label-padding-right)',
 			paddingTop: 'var(--component-user-menu-label-padding-top)',
+			textAlign: 'var(--component-user-menu-label-text-align)',
 		},
 		toggleButton: {
 			baseBackgroundColor:
