@@ -1,19 +1,18 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import {
-	componentModal,
-	type ComponentModal,
-} from '../../styleD/build/typescript/component/modal';
-import { semanticTypography } from '../../styleD/build/typescript/semantic/typography';
-import { from } from '../../styleD/utils/semantic/mq';
-import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
+import { component } from '../../terrazzo/build/stand';
+import { semantic } from '../../terrazzo/build/stand';
+import { from } from '../../terrazzo/utils/mq';
 import type { DeepPartial, Prettify } from '../../util/types';
+import { convertTypographyToCssString } from '../../utils';
 
-export type ModalTheme = Prettify<Pick<ComponentModal, 'modal' | 'overlay'>>;
+export type ModalTheme = Prettify<
+	Pick<typeof component.modal, 'modal' | 'overlay'>
+>;
 export type PartialModalTheme = Prettify<DeepPartial<ModalTheme>>;
 export const defaultModalTheme: ModalTheme = {
-	modal: componentModal.modal,
-	overlay: componentModal.overlay,
+	modal: component.modal.modal,
+	overlay: component.modal.overlay,
 };
 
 export const modalOverlayStyles = (theme: ModalTheme): SerializedStyles => {
@@ -48,9 +47,9 @@ export const modalStyles = (theme: ModalTheme): SerializedStyles => {
 	`;
 };
 
-export type DialogTheme = Prettify<ComponentModal['dialog']>;
+export type DialogTheme = Prettify<typeof component.modal.dialog>;
 export type PartialDialogTheme = Prettify<DeepPartial<DialogTheme>>;
-export const defaultDialogTheme: DialogTheme = componentModal.dialog;
+export const defaultDialogTheme: DialogTheme = component.modal.dialog;
 
 export const dialogStyles = (): SerializedStyles => {
 	return css`
@@ -94,7 +93,7 @@ export const dialogContentStyles = (
 	return css`
 		grid-area: children;
 		margin-bottom: ${theme.marginBottom};
-		${convertTypographyToEmotionStringStyle(semanticTypography.bodyMd)}
+		${convertTypographyToCssString(semantic.typography.bodyMd)}
 	`;
 };
 

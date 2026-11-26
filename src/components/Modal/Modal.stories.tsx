@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import React from 'react';
-import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
+import { semantic } from '../../terrazzo/build/stand';
 import { Button } from '../Button/Button';
 import { Dialog, DialogTrigger, Modal } from './Modal';
 import type {
@@ -154,7 +154,7 @@ export const CustomTheme = {
 				backgroundColor: 'rgba(150, 50, 150, 0.5)',
 			},
 			modal: {
-				backgroundColor: semanticColors.bg.raisedLevel1,
+				backgroundColor: semantic.colors.bg.raisedLevel1,
 			},
 		};
 
