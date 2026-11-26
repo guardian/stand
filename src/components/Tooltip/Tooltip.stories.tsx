@@ -1,7 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
-import { semanticRadius } from '../../styleD/build/typescript/semantic/radius';
+import { base, semantic } from '../../terrazzo/build/stand';
 import { Tooltip } from './Tooltip';
 
 const meta = {
@@ -44,11 +43,11 @@ export const CustomTheme = {
 	args: {
 		theme: {
 			shared: {
-				color: baseColors.orange[900],
-				backgroundColor: baseColors.orange[50],
+				color: base.colors.orange[900],
+				backgroundColor: base.colors.orange[50],
 			},
 			tooltip: {
-				borderRadius: semanticRadius.cornerMd,
+				borderRadius: semantic.radius.cornerMd,
 			},
 		},
 	},
