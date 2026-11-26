@@ -1,15 +1,12 @@
 import { css, type SerializedStyles } from '@emotion/react';
-import {
-	componentPagination,
-	type ComponentPagination,
-} from '../../styleD/build/typescript/component/pagination';
-import { type Breakpoint, until } from '../../styleD/utils/semantic/mq';
-import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
+import { component } from '../../terrazzo/build/stand';
+import { type Breakpoint, until } from '../../terrazzo/utils/mq';
 import type { DeepPartial, Prettify } from '../../util/types';
+import { convertTypographyToCssString } from '../../utils';
 
-export type PaginationTheme = Prettify<ComponentPagination>;
+export type PaginationTheme = Prettify<typeof component.pagination>;
 export type PartialPaginationTheme = Prettify<DeepPartial<PaginationTheme>>;
-export const defaultPaginationTheme: PaginationTheme = componentPagination;
+export const defaultPaginationTheme: PaginationTheme = component.pagination;
 
 export const paginationStyles = (
 	theme: PaginationTheme,
@@ -58,7 +55,7 @@ export const itemStyles = (
 		};
 		color: ${isCurrent ? item.current.color : item.color};
 		cursor: ${isCurrent ? 'default' : item.cursor};
-		${convertTypographyToEmotionStringStyle(typography)}
+		${convertTypographyToCssString(typography)}
 
 		&[data-hovered]:not([aria-current='page']) {
 			background-color: ${item.hover.backgroundColor};
@@ -110,7 +107,7 @@ export const summaryStyles = (
 	margin-left: ${theme.summary.marginLeft};
 	color: ${theme.summary.color};
 	white-space: nowrap;
-	${convertTypographyToEmotionStringStyle(theme.summary.typography)}
+	${convertTypographyToCssString(theme.summary.typography)}
 
 	${until[collapseBelow]} {
 		display: none;
@@ -127,7 +124,7 @@ export const compactStatusStyles = (
 	text-align: center;
 	white-space: nowrap;
 	color: ${theme.summary.color};
-	${convertTypographyToEmotionStringStyle(theme.summary.typography)}
+	${convertTypographyToCssString(theme.summary.typography)}
 
 	${until[collapseBelow]} {
 		display: block;

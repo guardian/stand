@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { Breakpoint } from '../../styleD/utils/semantic/mq';
+import type { Breakpoint } from '../../terrazzo/utils/mq';
 import type { DefaultProps } from '../../util/types';
 import type { PaginationTheme } from './styles';
 
