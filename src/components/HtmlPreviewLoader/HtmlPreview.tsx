@@ -33,7 +33,7 @@ export const HtmlPreview = ({
 	defaultWidth = 425,
 	frameBackground = 'white',
 	allowReloading = false,
-	cssOverrides,
+	dangerouslyOverrideCss,
 	theme,
 }: HtmlPreviewProps) => {
 	const mergedTheme = mergeDeep(defaultHtmlPreviewLoaderTheme, theme ?? {});
@@ -42,7 +42,7 @@ export const HtmlPreview = ({
 		allowReloading && !errorMessage && !isLoading && !!attemptLoad;
 
 	return (
-		<div css={[htmlPreviewLoaderStyles(mergedTheme), cssOverrides]}>
+		<div css={[htmlPreviewLoaderStyles(mergedTheme), dangerouslyOverrideCss]}>
 			<header css={headerStyles()}>
 				{typeof title === 'string' ? (
 					<Typography variant="titleMd">{title}</Typography>
@@ -58,12 +58,12 @@ export const HtmlPreview = ({
 							shared: {
 								container: {
 									width: 'unset',
-									flexDirection: 'row',
 								},
 							},
 						}}
-						cssOverrides={css({
+						dangerouslyOverrideCss={css({
 							alignItems: 'center',
+							flexDirection: 'row',
 						})}
 						value={String(frameWidth)}
 						onChange={(value) => setFrameWidth(Number(value))}
@@ -118,7 +118,7 @@ export const HtmlPreview = ({
 					<Icon
 						css={loadingIconStyle(mergedTheme)}
 						symbol="progress_activity"
-						cssOverrides={spinAnimationStyle()}
+						dangerouslyOverrideCss={spinAnimationStyle()}
 					/>
 				</div>
 			)}

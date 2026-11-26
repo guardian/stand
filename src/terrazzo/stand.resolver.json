@@ -1,0 +1,40 @@
+{
+	"$schema": "https://www.designtokens.org/schemas/2025.10/resolver.json",
+	"name": "Guardian Pulse",
+	"version": "2025.10",
+	"sets": {
+		"base": {
+			"sources": [{ "$ref": "./tokens/base/base.json" }]
+		},
+		"semantic": {
+			"sources": [{ "$ref": "./tokens/semantic/semantic.json" }]
+		},
+		"component": {
+			"sources": [
+				{ "$ref": "./tokens/component/component.json" },
+				{ "$ref": "./tokens/component/byline.json" },
+				{ "$ref": "./tokens/component/htmlPreviewLoader.json" },
+				{ "$ref": "./tokens/component/intendedAudienceSignifier.json" },
+				{ "$ref": "./tokens/component/pagination.json" },
+				{ "$ref": "./tokens/component/pickerIframeModel.json" },
+				{ "$ref": "./tokens/component/table.json" },
+				{ "$ref": "./tokens/component/tagPicker.json" },
+				{ "$ref": "./tokens/component/tagTable.json" },
+				{ "$ref": "./tokens/component/templateComponent.json" },
+				{ "$ref": "./tokens/component/tile.json" },
+				{ "$ref": "./tokens/component/userMenu.json" }
+			]
+		}
+	},
+	"resolutionOrder": [
+		{
+			"$ref": "#/sets/base"
+		},
+		{
+			"$ref": "#/sets/semantic"
+		},
+		{
+			"$ref": "#/sets/component"
+		}
+	]
+}

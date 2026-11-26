@@ -23,7 +23,7 @@ export const searchInputStyles = (
 		border-radius: ${theme.shared.borderRadius};
 		border: ${theme.shared.border};
 		color: ${theme.shared.color};
-		cursor: ${theme.shared.cursor};
+		cursor: text;
 		height: ${theme[size].height};
 		margin-top: ${theme.shared.marginTop};
 		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
@@ -43,7 +43,7 @@ export const searchInputStyles = (
 			border-radius: 0;
 			border: 0;
 			color: ${theme.shared.color};
-			cursor: ${theme.shared.cursor};
+			cursor: text;
 			height: ${theme[size].height};
 			margin: 0;
 			padding: 0;
@@ -55,7 +55,7 @@ export const searchInputStyles = (
 
 			&[data-disabled] {
 				color: ${theme.shared.disabled.color};
-				cursor: ${theme.shared.disabled.cursor};
+				cursor: not-allowed;
 
 				::placeholder {
 					color: ${theme.shared.disabled.color};
@@ -86,7 +86,7 @@ export const searchInputStyles = (
 			background-color: ${theme.shared.disabled.backgroundColor};
 			border: ${theme.shared.disabled.border};
 			color: ${theme.shared.disabled.color};
-			cursor: ${theme.shared.disabled.cursor};
+			cursor: not-allowed;
 
 			::placeholder {
 				color: ${theme.shared.disabled.color};

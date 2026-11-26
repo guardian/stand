@@ -35,7 +35,8 @@ The following guidelines apply to all components:
 
 - **Styling**
   - Components should ship with **unstyled** or **sensible default styles**.
-  - Consumers must be able to easily customise appearance via Emotion `cssOverrides` or their own theming.
+  - Consumers should customise appearance through the `theme` prop.
+  - Provide `dangerouslyOverrideCss` as an escape hatch for styling that the theme cannot express. CSS overrides make components harder to maintain and update, and may cause them to no longer follow design system conventions.
   - Each component should define its own design tokens, which are used to generate both CSS custom properties and typed TypeScript/JavaScript exports.
 
 - **Performance**
@@ -50,6 +51,7 @@ Components for the Tools Design System should also:
 - **Follow the design system foundations**
   - Use semantic tokens to build UI; do not use base tokens or hard-coded design values directly unless explicitly stated in the design
   - Component tokens should reference semantic tokens. If no semantic token fits, ask the design systems team about adding one.
+  - CSS implementation and reset defaults (for example, `display: flex` or `cursor: pointer`) do not need to be tokens unless they represent a reusable design decision. Keep deliberate visual values such as spacing, dimensions, typography, and colors tokenised where they belong to the component's design contract.
 
 - **Framework agnostic**
   - Components are built with React, Emotion and possibly React Aria, but must also be stylable without these dependencies via CSS and/or TS/JS exports.
@@ -158,9 +160,9 @@ export { componentAvatar } from './styleD/build/typescript/component/avatar';
 export type { ComponentAvatar } from './styleD/build/typescript/component/avatar';
 ```
 
-2. **Update `package.json`**: Three separate sections must be updated:
+2. **Update `package.json`**: Two separate sections must be updated:
 
-   **`exports`**: add the JS subpath and, if a CSS build exists, the CSS subpath:
+   **`exports`**: add the JS subpath:
 
    ```json
    "./Avatar": {
@@ -173,7 +175,6 @@ export type { ComponentAvatar } from './styleD/build/typescript/component/avatar
        "default": "./dist/Avatar.cjs"
      }
    },
-   "./component/avatar.css": "./dist/styleD/build/css/component/avatar.css"
    ```
 
 **`typesVersions`**: Required for TypeScript consumers using `moduleResolution: node` (legacy):

@@ -142,13 +142,13 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
-	name: 'cssOverrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	args: {
 		size: 'md',
 		color: 'green',
 		weight: 'strong',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			font-variant: small-caps;
 		`,
 		children: 'CSS Override Badge',

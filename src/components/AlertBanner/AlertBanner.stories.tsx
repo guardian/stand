@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
+import { base } from '../../terrazzo/build/stand';
 import { AlertBanner } from './AlertBanner';
 
 const meta = {
@@ -181,23 +181,23 @@ export const CustomTheme = {
 		children: 'Unable to save changes.',
 		theme: {
 			error: {
-				backgroundColor: baseColors.red[100],
+				backgroundColor: base.colors.red[100],
 			},
 			shared: {
 				content: {
-					color: baseColors.red[700],
+					color: base.colors.red[700],
 				},
 			},
 		},
 	},
 } satisfies Story;
 
-export const CssOverrides = {
-	name: 'CSS Overrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	args: {
 		level: 'success',
 		children: 'Changes published successfully.',
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			box-shadow: inset 0 -2px 0 currentColor;
 			text-transform: uppercase;
 			letter-spacing: 0.04em;

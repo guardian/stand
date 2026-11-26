@@ -10,8 +10,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/checkbox.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { Checkbox } from './components/Checkbox/Checkbox';
 export { CheckboxGroup } from './components/Checkbox/CheckboxGroup';

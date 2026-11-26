@@ -12,8 +12,7 @@ export const Component = () => (
 //Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the styles */
-@import '@guardian/stand/component/topBar.css';
-@import '@guardian/stand/component/favicon.css';
+@import '@guardian/stand/stand.css';
 
 .stand-top-bar {
 	display: var(--component-top-bar-display);

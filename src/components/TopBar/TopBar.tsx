@@ -102,7 +102,7 @@ export function TopBar({
 		containerLeft: 'lg',
 	},
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 	navAriaLabel = 'Top bar',
 	...props
@@ -208,7 +208,7 @@ export function TopBar({
 
 	return (
 		<div
-			css={[topBarStyles(mergedTheme), cssOverrides]}
+			css={[topBarStyles(mergedTheme), dangerouslyOverrideCss]}
 			className={className}
 			{...props}
 		>
@@ -268,12 +268,7 @@ export function TopBar({
 				{leftSide}
 			</nav>
 			{/* RHS - topBarSpacerStyles pushes content to the right */}
-			<div
-				css={[
-					topBarSpacerStyles(mergedTheme),
-					topBarContainerStyles(mergedTheme),
-				]}
-			>
+			<div css={[topBarSpacerStyles(), topBarContainerStyles(mergedTheme)]}>
 				{rightSide}
 			</div>
 			<div css={topBarContainerStyles(mergedTheme)}>{avatar}</div>

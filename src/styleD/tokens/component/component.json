@@ -26,26 +26,10 @@
 				}
 			},
 			"shared": {
-				"alignItems": {
-					"$type": "text",
-					"$value": "center"
-				},
 				"content": {
-					"alignItems": {
-						"$type": "text",
-						"$value": "center"
-					},
 					"color": {
 						"$type": "color",
 						"$value": "{semantic.colors.text.strong}"
-					},
-					"display": {
-						"$type": "text",
-						"$value": "flex"
-					},
-					"flex": {
-						"$type": "text",
-						"$value": "1"
 					},
 					"gap": {
 						"$type": "dimension",
@@ -57,10 +41,6 @@
 							"unit": "%",
 							"value": 100
 						}
-					},
-					"justifyContent": {
-						"$type": "text",
-						"$value": "center"
 					},
 					"typography": {
 						"font": {
@@ -77,17 +57,9 @@
 						}
 					}
 				},
-				"display": {
-					"$type": "text",
-					"$value": "flex"
-				},
 				"height": {
 					"$type": "dimension",
 					"$value": "{semantic.sizing.height.md}"
-				},
-				"justifyContent": {
-					"$type": "text",
-					"$value": "space-between"
 				},
 				"padding": {
 					"bottom": {
@@ -330,10 +302,6 @@
 				}
 			},
 			"shared": {
-				"alignItems": {
-					"$type": "text",
-					"$value": "center"
-				},
 				"borderRadius": {
 					"$type": "dimension",
 					"$value": {
@@ -349,16 +317,6 @@
 					"border": {
 						"$type": "text",
 						"$value": "none"
-					},
-					"cursor": {
-						"$type": "text",
-						"$value": "pointer"
-					},
-					"disabled": {
-						"cursor": {
-							"$type": "text",
-							"$value": "not-allowed"
-						}
 					},
 					"padding": {
 						"$type": "dimension",
@@ -667,18 +625,6 @@
 						}
 					}
 				},
-				"display": {
-					"$type": "text",
-					"$value": "inline-flex"
-				},
-				"flexShrink": {
-					"$type": "text",
-					"$value": "0"
-				},
-				"justifyContent": {
-					"$type": "text",
-					"$value": "center"
-				},
 				"link": {
 					"focusVisible": {
 						"outline": {
@@ -694,22 +640,10 @@
 							"$value": "{base.spacing.2Rem}"
 						}
 					},
-					"textDecoration": {
-						"$type": "text",
-						"$value": "none"
-					},
 					"width": {
 						"$type": "text",
 						"$value": "fit-content"
 					}
-				},
-				"overflow": {
-					"$type": "text",
-					"$value": "hidden"
-				},
-				"userSelect": {
-					"$type": "text",
-					"$value": "none"
 				}
 			},
 			"sm": {
@@ -878,20 +812,6 @@
 							}
 						}
 					}
-				}
-			},
-			"shared": {
-				"alignItems": {
-					"$type": "text",
-					"$value": "center"
-				},
-				"display": {
-					"$type": "text",
-					"$value": "inline-flex"
-				},
-				"justifyContent": {
-					"$type": "text",
-					"$value": "center"
 				}
 			},
 			"size": {
@@ -1703,28 +1623,6 @@
 				}
 			},
 			"shared": {
-				"alignItems": {
-					"$type": "text",
-					"$value": "center"
-				},
-				"boxShadow": {
-					"$type": "text",
-					"$value": "none"
-				},
-				"cursor": {
-					"$type": "text",
-					"$value": "pointer"
-				},
-				"disabled": {
-					"cursor": {
-						"$type": "text",
-						"$value": "not-allowed"
-					}
-				},
-				"display": {
-					"$type": "text",
-					"$value": "inline-flex"
-				},
 				"focusVisible": {
 					"outline": {
 						"$type": "border",
@@ -1738,22 +1636,6 @@
 						"$type": "dimension",
 						"$value": "{base.spacing.2Rem}"
 					}
-				},
-				"justifyContent": {
-					"$type": "text",
-					"$value": "center"
-				},
-				"textAlign": {
-					"$type": "text",
-					"$value": "inherit"
-				},
-				"textDecoration": {
-					"$type": "text",
-					"$value": "none"
-				},
-				"webkitAppearance": {
-					"$type": "text",
-					"$value": "none"
 				}
 			},
 			"tertiary": {
@@ -2076,31 +1958,9 @@
 			}
 		},
 		"buttonGroup": {
-			"display": {
-				"$type": "text",
-				"$value": "flex"
-			},
-			"flexDirection": {
-				"$type": "text",
-				"$value": "column"
-			},
-			"flexWrap": {
-				"$type": "text",
-				"$value": "wrap"
-			},
 			"gap": {
 				"$type": "dimension",
 				"$value": "{semantic.spacing.stackMd}"
-			},
-			"justifyContent": {
-				"$type": "text",
-				"$value": "flex-start"
-			},
-			"md": {
-				"flexDirection": {
-					"$type": "text",
-					"$value": "row"
-				}
 			},
 			"width": {
 				"$type": "dimension",
@@ -2126,16 +1986,6 @@
 						"$description": "spacing between the input itself and the previous element (label or description) minus the flex gap (default 4px), e.g. if the spacing between label and input should be 12px, then margin-top should be 8px",
 						"$type": "dimension",
 						"$value": "{base.spacing.12Rem}"
-					}
-				},
-				"shared": {
-					"display": {
-						"$type": "text",
-						"$value": "flex"
-					},
-					"flexDirection": {
-						"$type": "text",
-						"$value": "column"
 					}
 				},
 				"sm": {
@@ -2179,26 +2029,14 @@
 					}
 				},
 				"shared": {
-					"alignItems": {
-						"$type": "text",
-						"$value": "flex-start"
-					},
 					"color": {
 						"$type": "color",
 						"$value": "{semantic.colors.text.strong}"
-					},
-					"cursor": {
-						"$type": "text",
-						"$value": "pointer"
 					},
 					"disabled": {
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.disabled}"
-						},
-						"cursor": {
-							"$type": "text",
-							"$value": "not-allowed"
 						},
 						"indicator": {
 							"border": {
@@ -2217,19 +2055,11 @@
 							}
 						}
 					},
-					"display": {
-						"$type": "text",
-						"$value": "flex"
-					},
 					"gap": {
 						"$type": "dimension",
 						"$value": "{base.spacing.8Rem}"
 					},
 					"indicator": {
-						"alignItems": {
-							"$type": "text",
-							"$value": "center"
-						},
 						"border": {
 							"$type": "border",
 							"$value": {
@@ -2258,10 +2088,6 @@
 								}
 							}
 						},
-						"display": {
-							"$type": "text",
-							"$value": "flex"
-						},
 						"error": {
 							"backgroundColor": {
 								"$type": "color",
@@ -2275,10 +2101,6 @@
 									"width": "{semantic.sizing.border.default}"
 								}
 							}
-						},
-						"flexShrink": {
-							"$type": "number",
-							"$value": 0
 						},
 						"focusVisible": {
 							"outline": {
@@ -2310,10 +2132,6 @@
 								}
 							}
 						},
-						"justifyContent": {
-							"$type": "text",
-							"$value": "center"
-						},
 						"selected": {
 							"backgroundColor": {
 								"$type": "color",
@@ -2339,21 +2157,7 @@
 								"$type": "text",
 								"$value": "none"
 							}
-						},
-						"transition": {
-							"$type": "text",
-							"$value": "all 200ms"
 						}
-					},
-					"label": {
-						"alignSelf": {
-							"$type": "text",
-							"$value": "center"
-						}
-					},
-					"position": {
-						"$type": "text",
-						"$value": "relative"
 					}
 				},
 				"sm": {
@@ -2384,31 +2188,11 @@
 			"calendar": {
 				"cell": {
 					"shared": {
-						"alignItems": {
-							"$type": "text",
-							"$value": "center"
-						},
-						"aspectRatio": {
-							"$type": "text",
-							"$value": "1"
-						},
-						"cursor": {
-							"$type": "text",
-							"$value": "pointer"
-						},
 						"disabled": {
 							"color": {
 								"$type": "color",
 								"$value": "{semantic.colors.text.disabled}"
-							},
-							"cursor": {
-								"$type": "text",
-								"$value": "not-allowed"
 							}
-						},
-						"display": {
-							"$type": "text",
-							"$value": "flex"
 						},
 						"focusVisible": {
 							"outline": {
@@ -2424,16 +2208,6 @@
 							"backgroundColor": {
 								"$type": "color",
 								"$value": "{semantic.colors.fill.weakHover}"
-							}
-						},
-						"justifyContent": {
-							"$type": "text",
-							"$value": "center"
-						},
-						"outsideMonth": {
-							"display": {
-								"$type": "text",
-								"$value": "none"
 							}
 						},
 						"pressed": {
@@ -2456,10 +2230,6 @@
 				},
 				"grid": {
 					"shared": {
-						"borderCollapse": {
-							"$type": "text",
-							"$value": "collapse"
-						},
 						"borderSpacing": {
 							"$type": "dimension",
 							"$value": {
@@ -2471,10 +2241,6 @@
 							"height": {
 								"$type": "dimension",
 								"$value": "{semantic.sizing.height.md}"
-							},
-							"verticalAlign": {
-								"$type": "text",
-								"$value": "middle"
 							},
 							"width": {
 								"$type": "dimension",
@@ -2499,19 +2265,7 @@
 				},
 				"header": {
 					"shared": {
-						"alignItems": {
-							"$type": "text",
-							"$value": "center"
-						},
 						"button": {
-							"alignItems": {
-								"$type": "text",
-								"$value": "center"
-							},
-							"aspectRatio": {
-								"$type": "text",
-								"$value": "1"
-							},
 							"backgroundColor": {
 								"$type": "color",
 								"$value": "{base.colors.transparent}"
@@ -2524,23 +2278,11 @@
 								"$type": "color",
 								"$value": "{semantic.colors.text.weak}"
 							},
-							"cursor": {
-								"$type": "text",
-								"$value": "pointer"
-							},
 							"disabled": {
 								"color": {
 									"$type": "color",
 									"$value": "{semantic.colors.text.disabled}"
-								},
-								"cursor": {
-									"$type": "text",
-									"$value": "not-allowed"
 								}
-							},
-							"display": {
-								"$type": "text",
-								"$value": "flex"
 							},
 							"focusVisible": {
 								"outline": {
@@ -2561,10 +2303,6 @@
 									"$type": "color",
 									"$value": "{semantic.colors.fill.weakHover}"
 								}
-							},
-							"justifyContent": {
-								"$type": "text",
-								"$value": "center"
 							},
 							"margin": {
 								"bottom": {
@@ -2643,14 +2381,6 @@
 								"$value": "{semantic.sizing.height.md}"
 							}
 						},
-						"display": {
-							"$type": "text",
-							"$value": "flex"
-						},
-						"justifyContent": {
-							"$type": "text",
-							"$value": "space-between"
-						},
 						"typography": {
 							"font": {
 								"$type": "typography",
@@ -2670,10 +2400,6 @@
 			},
 			"picker": {
 				"shared": {
-					"alignItems": {
-						"$type": "text",
-						"$value": "center"
-					},
 					"backgroundColor": {
 						"$type": "color",
 						"$value": "{semantic.colors.fill.weak}"
@@ -2691,10 +2417,6 @@
 						"$value": "{base.radius.corner4Rem}"
 					},
 					"button": {
-						"alignItems": {
-							"$type": "text",
-							"$value": "center"
-						},
 						"backgroundColor": {
 							"$type": "color",
 							"$value": "{base.colors.transparent}"
@@ -2718,31 +2440,11 @@
 							"$type": "color",
 							"$value": "{semantic.colors.text.weak}"
 						},
-						"cursor": {
-							"$type": "text",
-							"$value": "pointer"
-						},
 						"disabled": {
 							"color": {
 								"$type": "color",
 								"$value": "{semantic.colors.text.disabled}"
-							},
-							"cursor": {
-								"$type": "text",
-								"$value": "not-allowed"
 							}
-						},
-						"display": {
-							"$type": "text",
-							"$value": "flex"
-						},
-						"flex": {
-							"$type": "text",
-							"$value": "1"
-						},
-						"justifyContent": {
-							"$type": "text",
-							"$value": "flex-end"
 						},
 						"margin": {
 							"bottom": {
@@ -2813,15 +2515,7 @@
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.disabled}"
-						},
-						"cursor": {
-							"$type": "text",
-							"$value": "not-allowed"
 						}
-					},
-					"display": {
-						"$type": "text",
-						"$value": "flex"
 					},
 					"focusVisible": {
 						"outline": {
@@ -2850,10 +2544,6 @@
 								"width": "{semantic.sizing.border.default}"
 							}
 						}
-					},
-					"justifyContent": {
-						"$type": "text",
-						"$value": "space-between"
 					},
 					"padding": {
 						"bottom": {
@@ -2948,10 +2638,6 @@
 			}
 		},
 		"favicon": {
-			"alignItems": {
-				"$type": "text",
-				"$value": "center"
-			},
 			"color": {
 				"background": {
 					"$type": "color",
@@ -2961,14 +2647,6 @@
 					"$type": "color",
 					"$value": "{semantic.colors.text.strongerInverse}"
 				}
-			},
-			"display": {
-				"$type": "text",
-				"$value": "inline-flex"
-			},
-			"justifyContent": {
-				"$type": "text",
-				"$value": "center"
 			},
 			"size": {
 				"$type": "dimension",
@@ -2987,10 +2665,6 @@
 					"$type": "dimension",
 					"$value": "{semantic.typography.titleMd.letterSpacing}"
 				}
-			},
-			"userSelect": {
-				"$type": "text",
-				"$value": "none"
 			}
 		},
 		"form": {
@@ -3029,14 +2703,6 @@
 				},
 				"shared": {
 					"container": {
-						"display": {
-							"$type": "text",
-							"$value": "flex"
-						},
-						"flexDirection": {
-							"$type": "text",
-							"$value": "column"
-						},
 						"gap": {
 							"$type": "dimension",
 							"$value": "{base.spacing.4Rem}"
@@ -3156,32 +2822,12 @@
 				}
 			},
 			"shared": {
-				"alignItems": {
-					"$type": "text",
-					"$value": "stretch"
-				},
-				"direction": {
-					"$type": "text",
-					"$value": "row"
-				},
-				"display": {
-					"$type": "text",
-					"$value": "flex"
-				},
-				"justifyContent": {
-					"$type": "text",
-					"$value": "flex-start"
-				},
 				"width": {
 					"$type": "dimension",
 					"$value": {
 						"unit": "%",
 						"value": 100
 					}
-				},
-				"wrap": {
-					"$type": "text",
-					"$value": "wrap"
 				}
 			},
 			"sm": {
@@ -3212,16 +2858,6 @@
 					"$value": "{semantic.sizing.icon.md}"
 				}
 			},
-			"shared": {
-				"display": {
-					"$type": "text",
-					"$value": "inline-flex"
-				},
-				"userSelect": {
-					"$type": "text",
-					"$value": "none"
-				}
-			},
 			"sm": {
 				"size": {
 					"$type": "dimension",
@@ -3249,23 +2885,11 @@
 				}
 			},
 			"shared": {
-				"alignItems": {
-					"$type": "text",
-					"$value": "center"
-				},
-				"display": {
-					"$type": "text",
-					"$value": "inline-flex"
-				},
 				"gap": {
 					"$type": "dimension",
 					"$value": "{base.spacing.4Rem}"
 				},
 				"icon": {
-					"alignSelf": {
-						"$type": "text",
-						"$value": "flex-start"
-					},
 					"size": {
 						"$type": "dimension",
 						"$value": "{semantic.sizing.icon.md}"
@@ -3295,39 +2919,7 @@
 		},
 		"layout": {
 			"layout": {
-				"lg": {
-					"gridTemplateAreas": {
-						"$type": "text",
-						"$value": "'alertbanner alertbanner'\n'topbar topbar'\n'sidebar main'"
-					},
-					"gridTemplateColumns": {
-						"$type": "text",
-						"$value": "min-content 1fr"
-					},
-					"gridTemplateRows": {
-						"$type": "text",
-						"$value": "min-content min-content 1fr"
-					}
-				},
-				"md": {
-					"gridTemplateAreas": {
-						"$type": "text",
-						"$value": "'alertbanner alertbanner'\n'topbar topbar'\n'sidebar main'"
-					},
-					"gridTemplateColumns": {
-						"$type": "text",
-						"$value": "min-content 1fr"
-					},
-					"gridTemplateRows": {
-						"$type": "text",
-						"$value": "min-content min-content 1fr"
-					}
-				},
 				"shared": {
-					"display": {
-						"$type": "text",
-						"$value": "grid"
-					},
 					"minHeight": {
 						"$type": "dimension",
 						"$value": {
@@ -3341,20 +2933,6 @@
 							"unit": "%",
 							"value": 100
 						}
-					}
-				},
-				"sm": {
-					"gridTemplateAreas": {
-						"$type": "text",
-						"$value": "'alertbanner'\n'topbar'\n'sidebar'\n'main'"
-					},
-					"gridTemplateColumns": {
-						"$type": "text",
-						"$value": "1fr"
-					},
-					"gridTemplateRows": {
-						"$type": "text",
-						"$value": "min-content min-content min-content 1fr"
 					}
 				}
 			},
@@ -3370,14 +2948,6 @@
 							"$value": "{semantic.grid.margin.topLgPx}"
 						}
 					}
-				},
-				"marginLeft": {
-					"$type": "text",
-					"$value": "auto"
-				},
-				"marginRight": {
-					"$type": "text",
-					"$value": "auto"
 				},
 				"maxWidth": {
 					"$type": "dimension",
@@ -3416,27 +2986,9 @@
 					}
 				},
 				"md": {
-					"display": {
-						"$type": "text",
-						"$value": "block"
-					},
 					"width": {
 						"$type": "dimension",
 						"$value": "{semantic.sizing.sidebar.mdPx}"
-					}
-				},
-				"sm": {
-					"aboveGrid": {
-						"display": {
-							"$type": "text",
-							"$value": "block"
-						}
-					},
-					"hidden": {
-						"display": {
-							"$type": "text",
-							"$value": "none"
-						}
 					}
 				}
 			}
@@ -3469,10 +3021,6 @@
 					"color": {
 						"$type": "color",
 						"$value": "{semantic.colors.fill.linkHover}"
-					},
-					"cursor": {
-						"$type": "text",
-						"$value": "pointer"
 					}
 				},
 				"pressed": {
@@ -3497,14 +3045,6 @@
 							"style": "solid",
 							"width": "{semantic.sizing.border.default}"
 						}
-					},
-					"display": {
-						"$type": "text",
-						"$value": "flex"
-					},
-					"flexDirection": {
-						"$type": "text",
-						"$value": "column"
 					}
 				}
 			},
@@ -3522,26 +3062,10 @@
 					}
 				},
 				"shared": {
-					"alignItems": {
-						"$type": "text",
-						"$value": "center"
-					},
 					"aside": {
-						"alignSelf": {
-							"$type": "text",
-							"$value": "start"
-						},
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.strong}"
-						},
-						"gridArea": {
-							"$type": "text",
-							"$value": "aside"
-						},
-						"justifySelf": {
-							"$type": "text",
-							"$value": "end"
 						},
 						"typography": {
 							"font": {
@@ -3575,10 +3099,6 @@
 							"$type": "color",
 							"$value": "{semantic.colors.text.weak}"
 						},
-						"gridArea": {
-							"$type": "text",
-							"$value": "description"
-						},
 						"typography": {
 							"font": {
 								"$type": "typography",
@@ -3593,10 +3113,6 @@
 								"$value": "{semantic.typography.bodySm.letterSpacing}"
 							}
 						}
-					},
-					"display": {
-						"$type": "text",
-						"$value": "grid"
 					},
 					"focusVisible": {
 						"outline": {
@@ -3619,14 +3135,6 @@
 						"$type": "dimension",
 						"$value": "{base.spacing.4Rem}"
 					},
-					"gridTemplateAreas": {
-						"$type": "text",
-						"$value": "'icon label aside'"
-					},
-					"gridTemplateAreasWithDescription": {
-						"$type": "text",
-						"$value": "'icon label aside' '. description .'"
-					},
 					"gridTemplateColumns": {
 						"$type": "text",
 						"$value": "auto 6fr 1fr"
@@ -3635,41 +3143,18 @@
 						"backgroundColor": {
 							"$type": "color",
 							"$value": "{semantic.colors.fill.weakHover}"
-						},
-						"outline": {
-							"$extensions": {
-								"com.figma": {
-									"codeSyntax": {},
-									"hiddenFromPublishing": false,
-									"scopes": ["ALL_SCOPES"]
-								}
-							},
-							"$type": "text",
-							"$value": "none"
 						}
 					},
 					"icon": {
-						"alignSelf": {
-							"$type": "text",
-							"$value": "start"
-						},
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.weak}"
-						},
-						"gridArea": {
-							"$type": "text",
-							"$value": "icon"
 						}
 					},
 					"label": {
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.strong}"
-						},
-						"gridArea": {
-							"$type": "text",
-							"$value": "label"
 						},
 						"typography": {
 							"font": {
@@ -3755,10 +3240,6 @@
 					}
 				},
 				"shared": {
-					"overflow": {
-						"$type": "text",
-						"$value": "auto"
-					},
 					"shadow": {
 						"$type": "shadow",
 						"$value": "{semantic.shadow.raised}"
@@ -3804,10 +3285,6 @@
 						}
 					},
 					"shared": {
-						"alignItems": {
-							"$type": "text",
-							"$value": "center"
-						},
 						"backgroundColor": {
 							"$type": "color",
 							"$value": "{semantic.colors.bg.raisedLevel2}"
@@ -3815,10 +3292,6 @@
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.strong}"
-						},
-						"display": {
-							"$type": "text",
-							"$value": "flex"
 						},
 						"padding": {
 							"bottom": {
@@ -3890,69 +3363,21 @@
 		"modal": {
 			"dialog": {
 				"children": {
-					"gridArea": {
-						"$type": "text",
-						"$value": "children"
-					},
 					"marginBottom": {
 						"$type": "dimension",
 						"$value": "{semantic.spacing.stackXl}"
 					}
 				},
-				"container": {
-					"display": {
-						"$type": "text",
-						"$value": "grid"
-					},
-					"gridTemplateAreas": {
-						"$type": "text",
-						"$value": "'dismiss' 'title' 'children' 'ctas'"
-					},
-					"gridTemplateColumns": {
-						"$type": "text",
-						"$value": "1fr"
-					},
-					"gridTemplateRows": {
-						"$type": "text",
-						"$value": "auto auto 1fr auto"
-					}
-				},
 				"ctas": {
-					"display": {
-						"$type": "text",
-						"$value": "flex"
-					},
-					"flexDirection": {
-						"$type": "text",
-						"$value": "column"
-					},
 					"gap": {
 						"$type": "dimension",
 						"$value": "{semantic.spacing.stackMd}"
-					},
-					"gridArea": {
-						"$type": "text",
-						"$value": "ctas"
-					},
-					"justifyContent": {
-						"$type": "text",
-						"$value": "flex-end"
-					},
-					"md": {
-						"flexDirection": {
-							"$type": "text",
-							"$value": "row"
-						}
 					}
 				},
 				"dismiss": {
 					"border": {
 						"$type": "text",
 						"$value": "none"
-					},
-					"gridArea": {
-						"$type": "text",
-						"$value": "dismiss"
 					},
 					"height": {
 						"$type": "dimension",
@@ -3982,10 +3407,6 @@
 					}
 				},
 				"title": {
-					"gridArea": {
-						"$type": "text",
-						"$value": "title"
-					},
 					"marginBottom": {
 						"$type": "dimension",
 						"$value": "{semantic.spacing.stackMd}"
@@ -4004,13 +3425,6 @@
 				"boxShadow": {
 					"$type": "text",
 					"$value": "0 2px 6px 0 rgba(0, 0, 0, 0.30)"
-				},
-				"marginLeft": {
-					"$type": "dimension",
-					"$value": {
-						"unit": "svw",
-						"value": 50
-					}
 				},
 				"maxHeight": {
 					"$type": "dimension",
@@ -4041,21 +3455,6 @@
 						"$value": "{semantic.spacing.stackMd}"
 					}
 				},
-				"position": {
-					"$type": "text",
-					"$value": "sticky"
-				},
-				"top": {
-					"$type": "dimension",
-					"$value": {
-						"unit": "%",
-						"value": 50
-					}
-				},
-				"translate": {
-					"$type": "text",
-					"$value": "-50% -50%"
-				},
 				"width": {
 					"$type": "text",
 					"$value": "max-content"
@@ -4077,32 +3476,12 @@
 						"value": 100
 					}
 				},
-				"left": {
-					"$type": "number",
-					"$value": 0
-				},
-				"overflow": {
-					"$type": "text",
-					"$value": "clip"
-				},
-				"position": {
-					"$type": "text",
-					"$value": "absolute"
-				},
-				"top": {
-					"$type": "number",
-					"$value": 0
-				},
 				"width": {
 					"$type": "dimension",
 					"$value": {
 						"unit": "%",
 						"value": 100
 					}
-				},
-				"zIndex": {
-					"$type": "number",
-					"$value": 100
 				}
 			}
 		},
@@ -4138,32 +3517,7 @@
 				}
 			},
 			"shared": {
-				"display": {
-					"$type": "text",
-					"$value": "flex"
-				},
 				"indicator": {
-					"after": {
-						"borderRadius": {
-							"$type": "text",
-							"$value": "inherit"
-						},
-						"inset": {
-							"$type": "dimension",
-							"$value": {
-								"unit": "px",
-								"value": 0
-							}
-						},
-						"position": {
-							"$type": "text",
-							"$value": "absolute"
-						},
-						"scale": {
-							"$type": "number",
-							"$value": 0
-						}
-					},
 					"border": {
 						"$type": "border",
 						"$value": {
@@ -4218,10 +3572,6 @@
 								"width": "{semantic.sizing.border.default}"
 							}
 						}
-					},
-					"position": {
-						"$type": "text",
-						"$value": "relative"
 					},
 					"selected": {
 						"after": {
@@ -4280,25 +3630,7 @@
 					"$type": "dimension",
 					"$value": "{base.spacing.8Rem}"
 				},
-				"orientation": {
-					"horizontal": {
-						"flexDirection": {
-							"$type": "text",
-							"$value": "row"
-						}
-					},
-					"vertical": {
-						"flexDirection": {
-							"$type": "text",
-							"$value": "column"
-						}
-					}
-				},
 				"radio": {
-					"alignItems": {
-						"$type": "text",
-						"$value": "center"
-					},
 					"color": {
 						"$type": "color",
 						"$value": "{semantic.colors.text.strong}"
@@ -4308,10 +3640,6 @@
 							"$type": "color",
 							"$value": "{semantic.colors.text.disabled}"
 						}
-					},
-					"display": {
-						"$type": "text",
-						"$value": "flex"
 					},
 					"gap": {
 						"$type": "dimension",
@@ -4413,10 +3741,6 @@
 					"$type": "color",
 					"$value": "{semantic.colors.text.strong}"
 				},
-				"cursor": {
-					"$type": "text",
-					"$value": "text"
-				},
 				"disabled": {
 					"backgroundColor": {
 						"$type": "color",
@@ -4433,10 +3757,6 @@
 					"color": {
 						"$type": "color",
 						"$value": "{semantic.colors.text.disabled}"
-					},
-					"cursor": {
-						"$type": "text",
-						"$value": "not-allowed"
 					}
 				},
 				"error": {
@@ -4558,10 +3878,6 @@
 			},
 			"shared": {
 				"button": {
-					"alignItems": {
-						"$type": "text",
-						"$value": "center"
-					},
 					"backgroundColor": {
 						"$type": "color",
 						"$value": "{semantic.colors.fill.weak}"
@@ -4598,15 +3914,7 @@
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.disabled}"
-						},
-						"cursor": {
-							"$type": "text",
-							"$value": "not-allowed"
 						}
-					},
-					"display": {
-						"$type": "text",
-						"$value": "flex"
 					},
 					"error": {
 						"border": {
@@ -4631,10 +3939,6 @@
 							"$type": "dimension",
 							"$value": "{base.spacing.2Rem}"
 						}
-					},
-					"justifyContent": {
-						"$type": "text",
-						"$value": "space-between"
 					},
 					"marginTop": {
 						"$type": "dimension",
@@ -4770,10 +4074,6 @@
 		"sidebarStepperNavigation": {
 			"mobileToggle": {
 				"shared": {
-					"alignItems": {
-						"$type": "text",
-						"$value": "center"
-					},
 					"backgroundColor": {
 						"$type": "color",
 						"$value": "{semantic.colors.bg.raisedLevel1}"
@@ -4799,10 +4099,6 @@
 							"$type": "color",
 							"$value": "{semantic.colors.bg.raisedLevel2}"
 						}
-					},
-					"justifyContent": {
-						"$type": "text",
-						"$value": "space-between"
 					},
 					"paddingInline": {
 						"$type": "dimension",
@@ -4833,10 +4129,6 @@
 							"width": "{semantic.sizing.border.default}"
 						}
 					},
-					"flexDirection": {
-						"$type": "text",
-						"$value": "column"
-					},
 					"height": {
 						"$type": "dimension",
 						"$value": {
@@ -4848,10 +4140,6 @@
 			},
 			"statusRow": {
 				"shared": {
-					"alignItems": {
-						"$type": "text",
-						"$value": "center"
-					},
 					"display": {
 						"$type": "text",
 						"$value": "flex"
@@ -4908,14 +4196,6 @@
 						"$type": "color",
 						"$value": "{semantic.colors.bg.raisedLevel1}"
 					},
-					"cursor": {
-						"$type": "text",
-						"$value": "pointer"
-					},
-					"disabledCursor": {
-						"$type": "text",
-						"$value": "default"
-					},
 					"height": {
 						"$type": "dimension",
 						"$value": "{base.spacing.72Rem}"
@@ -4942,21 +4222,9 @@
 			},
 			"stepContent": {
 				"shared": {
-					"display": {
-						"$type": "text",
-						"$value": "flex"
-					},
-					"flexDirection": {
-						"$type": "text",
-						"$value": "column"
-					},
 					"gap": {
 						"$type": "dimension",
 						"$value": "{semantic.spacing.stackXxs}"
-					},
-					"justifyContent": {
-						"$type": "text",
-						"$value": "center"
 					},
 					"marginLeft": {
 						"$type": "dimension",
@@ -4966,17 +4234,9 @@
 			},
 			"stepNumber": {
 				"shared": {
-					"alignItems": {
-						"$type": "text",
-						"$value": "center"
-					},
 					"backgroundColor": {
 						"$type": "color",
 						"$value": "{semantic.colors.fill.selectedStrong}"
-					},
-					"display": {
-						"$type": "text",
-						"$value": "flex"
 					},
 					"height": {
 						"$type": "dimension",
@@ -4984,10 +4244,6 @@
 							"unit": "%",
 							"value": 100
 						}
-					},
-					"justifyContent": {
-						"$type": "text",
-						"$value": "center"
 					}
 				}
 			}
@@ -5015,10 +4271,6 @@
 					}
 				},
 				"shared": {
-					"alignItems": {
-						"$type": "text",
-						"$value": "center"
-					},
 					"border": {
 						"$type": "border",
 						"$value": {
@@ -5031,27 +4283,11 @@
 						"$type": "color",
 						"$value": "{semantic.colors.text.weak}"
 					},
-					"cursor": {
-						"$type": "text",
-						"$value": "pointer"
-					},
 					"disabled": {
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.disabled}"
-						},
-						"cursor": {
-							"$type": "text",
-							"$value": "not-allowed"
 						}
-					},
-					"display": {
-						"$type": "text",
-						"$value": "inline-flex"
-					},
-					"flexDirection": {
-						"$type": "text",
-						"$value": "row"
 					},
 					"focusVisible": {
 						"outline": {
@@ -5073,10 +4309,6 @@
 					"gap": {
 						"$type": "dimension",
 						"$value": "{base.spacing.6Rem}"
-					},
-					"justifyContent": {
-						"$type": "text",
-						"$value": "center"
 					},
 					"padding": {
 						"bottom": {
@@ -5115,10 +4347,6 @@
 								"$value": "{base.spacing.24Rem}"
 							}
 						}
-					},
-					"position": {
-						"$type": "text",
-						"$value": "relative"
 					},
 					"selected": {
 						"background": {
@@ -5166,54 +4394,8 @@
 					}
 				}
 			},
-			"tabList": {
-				"shared": {
-					"display": {
-						"$type": "text",
-						"$value": "flex"
-					},
-					"orientation": {
-						"horizontal": {
-							"flexDirection": {
-								"$type": "text",
-								"$value": "row"
-							}
-						},
-						"vertical": {
-							"flexDirection": {
-								"$type": "text",
-								"$value": "column"
-							}
-						}
-					}
-				}
-			},
-			"tabPanel": {
-				"shared": {
-					"position": {
-						"$type": "text",
-						"$value": "initial"
-					}
-				}
-			},
-			"tabPanels": {
-				"shared": {
-					"overflow": {
-						"$type": "text",
-						"$value": "clip"
-					},
-					"position": {
-						"$type": "text",
-						"$value": "relative"
-					}
-				}
-			},
 			"tabs": {
 				"shared": {
-					"display": {
-						"$type": "text",
-						"$value": "flex"
-					},
 					"maxWidth": {
 						"$type": "dimension",
 						"$value": {
@@ -5222,17 +4404,7 @@
 						}
 					},
 					"orientation": {
-						"horizontal": {
-							"flexDirection": {
-								"$type": "text",
-								"$value": "column"
-							}
-						},
 						"vertical": {
-							"flexDirection": {
-								"$type": "text",
-								"$value": "row"
-							},
 							"width": {
 								"$type": "dimension",
 								"$value": {
@@ -5323,10 +4495,6 @@
 					"$type": "color",
 					"$value": "{semantic.colors.text.strong}"
 				},
-				"cursor": {
-					"$type": "text",
-					"$value": "text"
-				},
 				"disabled": {
 					"backgroundColor": {
 						"$type": "color",
@@ -5343,10 +4511,6 @@
 					"color": {
 						"$type": "color",
 						"$value": "{semantic.colors.text.disabled}"
-					},
-					"cursor": {
-						"$type": "text",
-						"$value": "not-allowed"
 					}
 				},
 				"error": {
@@ -5470,10 +4634,6 @@
 					"$type": "color",
 					"$value": "{semantic.colors.text.strong}"
 				},
-				"cursor": {
-					"$type": "text",
-					"$value": "text"
-				},
 				"disabled": {
 					"backgroundColor": {
 						"$type": "color",
@@ -5490,10 +4650,6 @@
 					"color": {
 						"$type": "color",
 						"$value": "{semantic.colors.text.disabled}"
-					},
-					"cursor": {
-						"$type": "text",
-						"$value": "not-allowed"
 					}
 				},
 				"error": {
@@ -5635,25 +4791,9 @@
 				}
 			},
 			"region": {
-				"display": {
-					"$type": "text",
-					"$value": "flex"
-				},
-				"flexDirection": {
-					"$type": "text",
-					"$value": "column"
-				},
 				"gap": {
 					"$type": "dimension",
 					"$value": "{semantic.spacing.stackSm}"
-				},
-				"outline": {
-					"$type": "text",
-					"$value": "none"
-				},
-				"position": {
-					"$type": "text",
-					"$value": "fixed"
 				},
 				"right": {
 					"$type": "dimension",
@@ -5662,10 +4802,6 @@
 				"top": {
 					"$type": "dimension",
 					"$value": "{base.spacing.20Rem}"
-				},
-				"zIndex": {
-					"$type": "number",
-					"$value": 1000
 				}
 			},
 			"shared": {
@@ -5711,14 +4847,6 @@
 							"$value": "{semantic.typography.bodyXs.letterSpacing}"
 						}
 					},
-					"display": {
-						"$type": "text",
-						"$value": "flex"
-					},
-					"flexDirection": {
-						"$type": "text",
-						"$value": "column"
-					},
 					"gap": {
 						"$type": "dimension",
 						"$value": "{semantic.spacing.stackXxs}"
@@ -5751,10 +4879,6 @@
 							"$value": "{semantic.typography.headingSm.letterSpacing}"
 						}
 					}
-				},
-				"display": {
-					"$type": "text",
-					"$value": "grid"
 				},
 				"gap": {
 					"$type": "dimension",
@@ -5879,17 +5003,9 @@
 				}
 			},
 			"shared": {
-				"alignItems": {
-					"$type": "text",
-					"$value": "center"
-				},
 				"color": {
 					"$type": "color",
 					"$value": "{semantic.colors.text.strong}"
-				},
-				"cursor": {
-					"$type": "text",
-					"$value": "pointer"
 				},
 				"description": {
 					"color": {
@@ -5915,33 +5031,13 @@
 					"color": {
 						"$type": "color",
 						"$value": "{semantic.colors.text.disabled}"
-					},
-					"cursor": {
-						"$type": "text",
-						"$value": "not-allowed"
 					}
-				},
-				"display": {
-					"$type": "text",
-					"$value": "flex"
 				},
 				"gap": {
 					"$type": "dimension",
 					"$value": "{base.spacing.8Rem}"
 				},
 				"label": {
-					"alignItems": {
-						"$type": "text",
-						"$value": "flex-start"
-					},
-					"display": {
-						"$type": "text",
-						"$value": "flex"
-					},
-					"flexDirection": {
-						"$type": "text",
-						"$value": "column"
-					},
 					"paddingBlock": {
 						"$type": "dimension",
 						"$value": "{base.spacing.2Rem}"
@@ -5968,17 +5064,9 @@
 							"$type": "color",
 							"$value": "{semantic.colors.fill.disabled}"
 						}
-					},
-					"transition": {
-						"$type": "text",
-						"$value": "transform 200ms"
 					}
 				},
 				"track": {
-					"alignItems": {
-						"$type": "text",
-						"$value": "center"
-					},
 					"backgroundColor": {
 						"$type": "color",
 						"$value": "{semantic.colors.fill.neutralMedium}"
@@ -5995,10 +5083,6 @@
 							"$type": "color",
 							"$value": "{semantic.colors.fill.disabled}"
 						}
-					},
-					"display": {
-						"$type": "text",
-						"$value": "flex"
 					},
 					"focusVisible": {
 						"outline": {
@@ -6023,10 +5107,6 @@
 							"$type": "color",
 							"$value": "{semantic.colors.fill.selectedStrong}"
 						}
-					},
-					"transition": {
-						"$type": "text",
-						"$value": "background-color 200ms"
 					}
 				}
 			},
@@ -6177,10 +5257,6 @@
 						"$type": "color",
 						"$value": "{semantic.colors.text.strong}"
 					},
-					"cursor": {
-						"$type": "text",
-						"$value": "pointer"
-					},
 					"hovered": {
 						"backgroundColor": {
 							"$type": "color",
@@ -6227,19 +5303,11 @@
 					}
 				}
 			},
-			"display": {
-				"$type": "text",
-				"$value": "flex"
-			},
 			"height": {
 				"$type": "dimension",
 				"$value": "{base.spacing.64Rem}"
 			},
 			"item": {
-				"alignItems": {
-					"$type": "text",
-					"$value": "center"
-				},
 				"border": {
 					"$type": "border",
 					"$value": {
@@ -6247,10 +5315,6 @@
 						"style": "solid",
 						"width": "{semantic.sizing.border.default}"
 					}
-				},
-				"display": {
-					"$type": "text",
-					"$value": "flex"
 				},
 				"height": {
 					"$type": "dimension",
@@ -6338,10 +5402,6 @@
 					}
 				}
 			},
-			"justifyContent": {
-				"$type": "text",
-				"$value": "flex-start"
-			},
 			"navigation": {
 				"md": {
 					"typography": {
@@ -6408,10 +5468,6 @@
 							}
 						}
 					},
-					"alignItems": {
-						"$type": "text",
-						"$value": "center"
-					},
 					"borderTop": {
 						"$extensions": {
 							"com.figma": {
@@ -6427,23 +5483,11 @@
 							"width": "{semantic.sizing.border.extraWide}"
 						}
 					},
-					"cursor": {
-						"$type": "text",
-						"$value": "pointer"
-					},
 					"disabled": {
 						"color": {
 							"$type": "color",
 							"$value": "{semantic.colors.text.disabled}"
-						},
-						"cursor": {
-							"$type": "text",
-							"$value": "not-allowed"
 						}
-					},
-					"display": {
-						"$type": "text",
-						"$value": "inline-flex"
 					},
 					"divider": {
 						"$type": "border",
@@ -6500,14 +5544,6 @@
 								"value": 0
 							}
 						}
-					},
-					"position": {
-						"$type": "text",
-						"$value": "relative"
-					},
-					"textDecoration": {
-						"$type": "text",
-						"$value": "none"
 					}
 				},
 				"sm": {
@@ -6549,24 +5585,10 @@
 					}
 				}
 			},
-			"spacer": {
-				"marginLeft": {
-					"$type": "text",
-					"$value": "auto"
-				}
-			},
 			"toolName": {
-				"alignItems": {
-					"$type": "text",
-					"$value": "center"
-				},
 				"color": {
 					"$type": "color",
 					"$value": "{semantic.colors.text.strong}"
-				},
-				"display": {
-					"$type": "text",
-					"$value": "flex"
 				},
 				"divider": {
 					"border": {
@@ -6592,10 +5614,6 @@
 						"$value": "{semantic.colors.fill.accentStrongHover}"
 					},
 					"collapsed": {
-						"justifyContent": {
-							"$type": "text",
-							"$value": "center"
-						},
 						"paddingLeft": {
 							"$type": "dimension",
 							"$value": "{base.spacing.4Rem}"
@@ -6651,10 +5669,6 @@
 						"$type": "dimension",
 						"$value": "{base.spacing.20Rem}"
 					},
-					"position": {
-						"$type": "text",
-						"$value": "absolute"
-					},
 					"pressed": {
 						"backgroundColor": {
 							"$type": "color",
@@ -6694,14 +5708,6 @@
 							"unit": "%",
 							"value": 100
 						}
-					},
-					"position": {
-						"$type": "text",
-						"$value": "relative"
-					},
-					"textDecoration": {
-						"$type": "text",
-						"$value": "none"
 					},
 					"width": {
 						"$type": "dimension",

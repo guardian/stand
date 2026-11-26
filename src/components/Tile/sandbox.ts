@@ -20,7 +20,8 @@ export const Component = () => (
 // Custom component - CSS example
 export const componentCss = /* css */ `
 /* import tile styles */
-@import '@guardian/stand/component/tile.css';
+@import '@guardian/stand/stand.css';
+
 .stand-clickable-tile {
 	display: inline-flex;
 	align-items: center;

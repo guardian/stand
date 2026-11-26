@@ -11,10 +11,10 @@ export const defaultDatePickerTheme: DatePickerTheme = componentDatePicker;
 
 export const datePickerStyles = (theme: DatePickerTheme): SerializedStyles => {
 	return css`
-		display: ${theme.picker.shared.display};
+		display: flex;
 		width: ${theme.picker.shared.width};
-		justify-content: ${theme.picker.shared.justifyContent};
-		align-items: ${theme.picker.shared.alignItems};
+		justify-content: space-between;
+		align-items: center;
 		height: ${theme.picker.shared.height};
 		border-radius: ${theme.picker.shared.borderRadius};
 		border: ${theme.picker.shared.border};
@@ -26,7 +26,7 @@ export const datePickerStyles = (theme: DatePickerTheme): SerializedStyles => {
 		padding-bottom: ${theme.picker.shared.padding.bottom};
 
 		button {
-			flex: ${theme.picker.shared.button.flex};
+			flex: 1;
 			background-color: ${theme.picker.shared.button.backgroundColor};
 			border: ${theme.picker.shared.button.border};
 			padding-left: ${theme.picker.shared.button.padding.left};
@@ -37,14 +37,14 @@ export const datePickerStyles = (theme: DatePickerTheme): SerializedStyles => {
 			margin-right: ${theme.picker.shared.button.margin.right};
 			margin-top: ${theme.picker.shared.button.margin.top};
 			margin-bottom: ${theme.picker.shared.button.margin.bottom};
-			display: ${theme.picker.shared.button.display};
-			align-items: ${theme.picker.shared.button.alignItems};
-			justify-content: ${theme.picker.shared.button.justifyContent};
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
 			color: ${theme.picker.shared.button.color};
-			cursor: ${theme.picker.shared.button.cursor};
+			cursor: pointer;
 
 			&[data-disabled] {
-				cursor: ${theme.picker.shared.button.disabled.cursor};
+				cursor: not-allowed;
 				color: ${theme.picker.shared.button.disabled.color};
 			}
 
@@ -58,7 +58,7 @@ export const datePickerStyles = (theme: DatePickerTheme): SerializedStyles => {
 		}
 
 		&[data-disabled] {
-			cursor: ${theme.picker.shared.disabled.cursor};
+			cursor: not-allowed;
 			color: ${theme.picker.shared.disabled.color};
 			background-color: ${theme.picker.shared.disabled.backgroundColor};
 		}
@@ -95,9 +95,9 @@ export const calendarHeaderStyles = (
 	theme: DatePickerTheme,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.calendar.header.shared.display};
-		align-items: ${theme.calendar.header.shared.alignItems};
-		justify-content: ${theme.calendar.header.shared.justifyContent};
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		${convertTypographyToEmotionStringStyle(
 			theme.calendar.header.shared.typography,
 		)}
@@ -113,14 +113,14 @@ export const calendarHeaderStyles = (
 				${theme.calendar.header.shared.button.margin.right}
 				${theme.calendar.header.shared.button.margin.bottom}
 				${theme.calendar.header.shared.button.margin.left};
-			display: ${theme.calendar.header.shared.button.display};
-			align-items: ${theme.calendar.header.shared.button.alignItems};
-			justify-content: ${theme.calendar.header.shared.button.justifyContent};
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			color: ${theme.calendar.header.shared.button.color};
-			cursor: ${theme.calendar.header.shared.button.cursor};
+			cursor: pointer;
 			width: ${theme.calendar.header.shared.button.width};
 			height: ${theme.calendar.header.shared.button.height};
-			aspect-ratio: ${theme.calendar.header.shared.button.aspectRatio};
+			aspect-ratio: 1;
 
 			&[data-hovered] {
 				background-color: ${
@@ -145,7 +145,7 @@ export const calendarHeaderStyles = (
 			}
 
 			&[data-disabled] {
-				cursor: ${theme.calendar.header.shared.button.disabled.cursor};
+				cursor: not-allowed;
 				color: ${theme.calendar.header.shared.button.disabled.color};
 			}
 		}
@@ -160,13 +160,13 @@ export const calendarGridStyles = (
 			theme.calendar.grid.shared.typography,
 		)}
 
-		border-collapse: ${theme.calendar.grid.shared.borderCollapse};
+		border-collapse: collapse;
 		border-spacing: ${theme.calendar.grid.shared.borderSpacing};
 
 		th {
 			width: ${theme.calendar.grid.shared.th.width};
 			height: ${theme.calendar.grid.shared.th.height};
-			vertical-align: ${theme.calendar.grid.shared.th.verticalAlign};
+			vertical-align: middle;
 		}
 	`;
 };
@@ -176,14 +176,14 @@ export const calendarCellStyles = (
 ): SerializedStyles => {
 	return css`
 		width: ${theme.calendar.cell.shared.width};
-		aspect-ratio: ${theme.calendar.cell.shared.aspectRatio};
-		display: ${theme.calendar.cell.shared.display};
-		align-items: ${theme.calendar.cell.shared.alignItems};
-		justify-content: ${theme.calendar.cell.shared.justifyContent};
-		cursor: ${theme.calendar.cell.shared.cursor};
+		aspect-ratio: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
 
 		&[data-outside-month] {
-			display: ${theme.calendar.cell.shared.outsideMonth.display};
+			display: none;
 		}
 
 		&[data-hovered] {
@@ -207,7 +207,7 @@ export const calendarCellStyles = (
 		}
 
 		&[data-disabled] {
-			cursor: ${theme.calendar.cell.shared.disabled.cursor};
+			cursor: not-allowed;
 			color: ${theme.calendar.cell.shared.disabled.color};
 		}
 	`;

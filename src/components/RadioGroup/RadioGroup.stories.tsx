@@ -149,14 +149,14 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	render: () => {
 		return (
 			<RadioGroup
 				label="Label"
 				description="Optional contextual help text"
 				size="sm"
-				cssOverrides={css`
+				dangerouslyOverrideCss={css`
 					border: 2px solid ${baseColors.coolPurple[700]};
 					background-color: ${baseColors.coolPurple[900]};
 				`}

@@ -32,8 +32,8 @@ export const mobileToggleStyles = (
 ): SerializedStyles => css`
 	border-bottom: ${theme.mobileToggle.shared.border};
 	display: ${theme.mobileToggle.shared.display};
-	align-items: ${theme.mobileToggle.shared.alignItems};
-	justify-content: ${theme.mobileToggle.shared.justifyContent};
+	align-items: center;
+	justify-content: space-between;
 	height: ${theme.mobileToggle.shared.height};
 	padding: 0 ${theme.mobileToggle.shared.paddingInline};
 	width: ${theme.mobileToggle.shared.width};
@@ -58,7 +58,7 @@ export const navigationStyles = (
 ): SerializedStyles => css`
 	border-right: ${theme.navigation.shared.border};
 	display: ${isOpen ? 'flex' : 'none'};
-	flex-direction: ${theme.navigation.shared.flexDirection};
+	flex-direction: column;
 	height: ${theme.navigation.shared.height};
 
 	${from.md} {
@@ -75,7 +75,7 @@ export const listStyles = css`
 export const statusRowStyles = (theme: SidebarStepperNavigationTheme) => css`
 	display: ${theme.statusRow.shared.display};
 	gap: ${theme.statusRow.shared.gap};
-	align-items: ${theme.statusRow.shared.alignItems};
+	align-items: center;
 `;
 
 export const stepNumberStyles = (
@@ -90,9 +90,9 @@ export const stepNumberStyles = (
 			? theme.stepNumber.shared.backgroundColor
 			: 'transparent'
 	};
-	display: ${theme.stepNumber.shared.display};
-	align-items: ${theme.stepNumber.shared.alignItems};
-	justify-content: ${theme.stepNumber.shared.justifyContent};
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;
 
 export const stepButtonStyles = (
@@ -106,9 +106,7 @@ export const stepButtonStyles = (
 			: theme.step.shared.backgroundColor
 	};
 	height: ${theme.step.shared.height};
-	cursor: ${
-		isDisabled ? theme.step.shared.disabledCursor : theme.step.shared.cursor
-	};
+	cursor: ${isDisabled ? 'default' : 'pointer'};
 	border-bottom: ${theme.step.shared.border};
 	display: grid;
 	grid-template-columns: ${theme.step.shared.numberColumnWidth} 1fr;
@@ -122,8 +120,8 @@ export const stepButtonStyles = (
 
 export const stepContentStyles = (theme: SidebarStepperNavigationTheme) => css`
 	gap: ${theme.stepContent.shared.gap};
-	display: ${theme.stepContent.shared.display};
-	flex-direction: ${theme.stepContent.shared.flexDirection};
-	justify-content: ${theme.stepContent.shared.justifyContent};
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	margin-left: ${theme.stepContent.shared.marginLeft};
 `;

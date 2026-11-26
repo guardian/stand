@@ -170,12 +170,12 @@ const sizeStyles = (
 
 export const gridStyles = (theme: GridTheme): SerializedStyles => {
 	return css`
-		display: ${theme.shared.display};
+		display: flex;
 		width: ${theme.shared.width};
-		flex-direction: ${theme.shared.direction};
-		flex-wrap: ${theme.shared.wrap};
-		justify-content: ${theme.shared.justifyContent};
-		align-items: ${theme.shared.alignItems};
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: stretch;
 
 		${from.sm} {
 			gap: ${theme.sm.gap};

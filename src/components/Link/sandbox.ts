@@ -12,7 +12,7 @@ export const Component = () => (
 // Link - Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the link styles */
-@import '@guardian/stand/component/link.css';
+@import '@guardian/stand/stand.css';
 
 .stand-typography-body-sm {
 	font: var(--semantic-typography-body-sm-font);

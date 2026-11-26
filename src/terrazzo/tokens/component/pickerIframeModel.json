@@ -1,0 +1,109 @@
+{
+	"component": {
+		"pickerIframeModal": {
+			"headerContents": {
+				"alignItems": {
+					"$type": "text",
+					"$value": "center"
+				},
+				"display": {
+					"$type": "text",
+					"$value": "flex"
+				},
+				"justifyContent": {
+					"$type": "text",
+					"$value": "space-between"
+				}
+			},
+			"iframe": {
+				"backgroundColor": {
+					"$type": "text",
+					"$value": "unset"
+				},
+				"height": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "px",
+						"value": 600
+					}
+				},
+				"margin": {
+					"bottom": {
+						"$type": "dimension",
+						"$value": {
+							"unit": "px",
+							"value": 0
+						}
+					},
+					"left": {
+						"$type": "dimension",
+						"$value": {
+							"unit": "px",
+							"value": 0
+						}
+					},
+					"right": {
+						"$type": "dimension",
+						"$value": {
+							"unit": "px",
+							"value": 0
+						}
+					},
+					"top": {
+						"$type": "dimension",
+						"$value": {
+							"unit": "px",
+							"value": 0
+						}
+					}
+				},
+				"maxHeight": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "vh",
+						"value": 70
+					}
+				},
+				"width": {
+					"$type": "dimension",
+					"$value": {
+						"unit": "%",
+						"value": 100
+					}
+				}
+			},
+			"iframeContainer": {
+				"padding": {
+					"bottom": {
+						"$type": "dimension",
+						"$value": {
+							"unit": "px",
+							"value": 0
+						}
+					},
+					"left": {
+						"$type": "dimension",
+						"$value": {
+							"unit": "px",
+							"value": 0
+						}
+					},
+					"right": {
+						"$type": "dimension",
+						"$value": {
+							"unit": "px",
+							"value": 0
+						}
+					},
+					"top": {
+						"$type": "dimension",
+						"$value": {
+							"unit": "px",
+							"value": 0
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -26,7 +26,7 @@ export const Component = () => (
 // AlertBanner - Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the alertbanner styles */
-@import '@guardian/stand/component/alertBanner.css';
+@import '@guardian/stand/stand.css';
 
 .stand-alert-banner {
 	display: var(--component-alert-banner-shared-display);

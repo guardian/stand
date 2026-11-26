@@ -20,8 +20,7 @@ export const Component = () => (
 `;
 
 // Custom component - CSS example
-export const componentCss = /* css */ `@import '@guardian/stand/component/typography.css';
-	@import '@guardian/stand/semantic/typography.css';
+export const componentCss = /* css */ `@import '@guardian/stand/stand.css';
 
     /* shared typography styles for all variants */
     .stand-typography {

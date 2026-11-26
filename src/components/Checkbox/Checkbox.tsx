@@ -12,7 +12,7 @@ export function Checkbox({
 	size = 'md',
 	isIndeterminate = false,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	...props
 }: CheckboxProps) {
 	const mergedTheme = mergeDeep(defaultCheckboxTheme, theme);
@@ -24,7 +24,7 @@ export function Checkbox({
 					size,
 					isIndeterminate,
 				}),
-				cssOverrides,
+				dangerouslyOverrideCss,
 			]}
 			{...props}
 		>
@@ -51,7 +51,7 @@ export function Checkbox({
 					)}
 				</div>
 			</>
-			<span css={checkboxLabelStyles(mergedTheme)}>{children}</span>
+			<span css={checkboxLabelStyles()}>{children}</span>
 		</RACCheckbox>
 	);
 }

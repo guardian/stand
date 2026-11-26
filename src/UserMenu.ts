@@ -10,8 +10,7 @@
  *
  * See the `peerDependencies` section of package.json for compatible versions.
  *
- * If you only need the built CSS (./component/userMenu.css, ./component/userMenu.css),
- * you don't need to install these.
+ * If you only need the built CSS you don't need to install these.
  */
 export { UserMenu } from './components/UserMenu/UserMenu';
 export type { PartialUserMenuTheme as UserMenuTheme } from './components/UserMenu/theme';

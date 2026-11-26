@@ -34,14 +34,13 @@ export const CustomTheme = {
 	args: {
 		theme: {
 			gap: semanticSpacing['stackXs'],
-			justifyContent: 'flex-end',
 		},
 	},
 } satisfies Story;
 
-export const CssOverrides = {
+export const DangerouslyOverrideCss = {
 	args: {
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			border: ${baseSizing.size2Rem} solid ${baseColors.red[500]};
 			margin: ${baseSpacing['8Rem']};
 			padding: ${baseSpacing['8Rem']};

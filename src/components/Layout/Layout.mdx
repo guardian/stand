@@ -1,7 +1,7 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import LayoutStories, {
 	AlertBannerTopBarGridSidebarAboveGridSm,
-	CssOverrides,
+	DangerouslyOverrideCss,
 	CustomTheme,
 	TopBarGridFixed,
 	TopBarGrid,
@@ -23,6 +23,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={LayoutStories} />
 
@@ -105,25 +106,25 @@ Each slot is a thin wrapper that applies the correct grid-area styles and render
 
 ## Layout Props
 
-| Name           | Type                                     | Required | Default | Description                                                                 |
-| -------------- | ---------------------------------------- | -------- | ------- | --------------------------------------------------------------------------- |
-| `children`     | `React.ReactNode`                        | No       | N/A     | Slot wrappers such as `Layout.TopBar`, `Layout.Sidebar`, and `Layout.Main`. |
-| `theme`        | `LayoutTheme`                            | No       | N/A     | Theme token overrides for layout grid structure across breakpoints.         |
-| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Custom CSS styles.                                                          |
-| `className`    | `string`                                 | No       | N/A     | Additional class name(s).                                                   |
+| Name                     | Type                                     | Required | Default | Description                                                                 |
+| ------------------------ | ---------------------------------------- | -------- | ------- | --------------------------------------------------------------------------- |
+| `children`               | `React.ReactNode`                        | No       | N/A     | Slot wrappers such as `Layout.TopBar`, `Layout.Sidebar`, and `Layout.Main`. |
+| `theme`                  | `LayoutTheme`                            | No       | N/A     | Theme token overrides for layout grid structure across breakpoints.         |
+| `dangerouslyOverrideCss` | `SerializedStyles \| SerializedStyles[]` | No       | N/A     | Escape hatch for custom CSS; see warning below.                             |
+| `className`              | `string`                                 | No       | N/A     | Additional class name(s).                                                   |
 
 ## Sidebar Props
 
 Use `Layout.Sidebar` to fill the sidebar region.
 
-| Name                 | Type                                     | Required | Default    | Description                                                |
-| -------------------- | ---------------------------------------- | -------- | ---------- | ---------------------------------------------------------- |
-| `children`           | `React.ReactNode`                        | No       | N/A        | Content to render inside the sidebar.                      |
-| `layoutSmBreakpoint` | `'above-grid' \| 'hidden'`               | No       | `'hidden'` | Sidebar behavior at the `sm` breakpoint.                   |
-| `as`                 | `React.ElementType`                      | No       | `'aside'`  | Element or component used to render the sidebar container. |
-| `theme`              | `SidebarTheme`                           | No       | N/A        | Theme token overrides for sidebar styles.                  |
-| `cssOverrides`       | `SerializedStyles \| SerializedStyles[]` | No       | N/A        | Custom CSS styles.                                         |
-| `className`          | `string`                                 | No       | N/A        | Additional class name(s).                                  |
+| Name                     | Type                                     | Required | Default    | Description                                                |
+| ------------------------ | ---------------------------------------- | -------- | ---------- | ---------------------------------------------------------- |
+| `children`               | `React.ReactNode`                        | No       | N/A        | Content to render inside the sidebar.                      |
+| `layoutSmBreakpoint`     | `'above-grid' \| 'hidden'`               | No       | `'hidden'` | Sidebar behavior at the `sm` breakpoint.                   |
+| `as`                     | `React.ElementType`                      | No       | `'aside'`  | Element or component used to render the sidebar container. |
+| `theme`                  | `SidebarTheme`                           | No       | N/A        | Theme token overrides for sidebar styles.                  |
+| `dangerouslyOverrideCss` | `SerializedStyles \| SerializedStyles[]` | No       | N/A        | Escape hatch for custom CSS; see warning below.            |
+| `className`              | `string`                                 | No       | N/A        | Additional class name(s).                                  |
 
 `Layout.Sidebar` also forwards standard HTML attributes (for example `id`, `role`, `aria-*`, and `data-*`) to the rendered container.
 
@@ -151,14 +152,14 @@ import { SidebarStepperNavigation } from '@guardian/stand/SidebarStepperNavigati
 
 Use `Layout.Main` for the primary page content region.
 
-| Name           | Type                                     | Required | Default  | Description                                                                      |
-| -------------- | ---------------------------------------- | -------- | -------- | -------------------------------------------------------------------------------- |
-| `children`     | `React.ReactNode`                        | No       | N/A      | Content to render in the main area (typically a `Grid`).                         |
-| `fluid`        | `boolean`                                | No       | `true`   | When `false`, constrains main width and centers content using main theme tokens. |
-| `as`           | `React.ElementType`                      | No       | `'main'` | Element or component used to render the main container.                          |
-| `theme`        | `MainTheme`                              | No       | N/A      | Theme token overrides for main region width and margins.                         |
-| `cssOverrides` | `SerializedStyles \| SerializedStyles[]` | No       | N/A      | Custom CSS styles.                                                               |
-| `className`    | `string`                                 | No       | N/A      | Additional class name(s).                                                        |
+| Name                     | Type                                     | Required | Default  | Description                                                                      |
+| ------------------------ | ---------------------------------------- | -------- | -------- | -------------------------------------------------------------------------------- |
+| `children`               | `React.ReactNode`                        | No       | N/A      | Content to render in the main area (typically a `Grid`).                         |
+| `fluid`                  | `boolean`                                | No       | `true`   | When `false`, constrains main width and centers content using main theme tokens. |
+| `as`                     | `React.ElementType`                      | No       | `'main'` | Element or component used to render the main container.                          |
+| `theme`                  | `MainTheme`                              | No       | N/A      | Theme token overrides for main region width and margins.                         |
+| `dangerouslyOverrideCss` | `SerializedStyles \| SerializedStyles[]` | No       | N/A      | Escape hatch for custom CSS; see warning below.                                  |
+| `className`              | `string`                                 | No       | N/A      | Additional class name(s).                                                        |
 
 `Layout.Main` also forwards standard HTML attributes (for example `id`, `role`, `aria-*`, and `data-*`) to the rendered container.
 
@@ -213,7 +214,7 @@ Use this for global page-level status or messaging combined with full shell comp
 
 ## Customisation
 
-We recommend using the Layout component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the Layout component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -236,11 +237,13 @@ const customTheme: Partial<LayoutTheme> = {
 const Component = () => <Layout theme={customTheme}>{...}</Layout>;
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the Layout component:
+<DangerouslyOverrideCssWarning />
 
-<Canvas of={CssOverrides} />
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the Layout component:
+
+<Canvas of={DangerouslyOverrideCss} />
 
 ```tsx
 import { Layout } from '@guardian/stand/Layout';
@@ -252,7 +255,7 @@ const customStyles = css`
 	overflow: hidden;
 `;
 
-const Component = () => <Layout cssOverrides={customStyles}>{...}</Layout>;
+const Component = () => <Layout dangerouslyOverrideCss={customStyles}>{...}</Layout>;
 ```
 
 ## Custom Component Build

@@ -16,7 +16,6 @@ export const componentTopBar = {
 			background: '#00000000',
 			border: 'none',
 			color: '#000000',
-			cursor: 'pointer',
 			hovered: {
 				backgroundColor: '#ededed',
 			},
@@ -30,12 +29,9 @@ export const componentTopBar = {
 			offset: 1,
 		},
 	},
-	display: 'flex',
 	height: '4rem',
 	item: {
-		alignItems: 'center',
 		border: '0.0625rem solid #cccccc',
-		display: 'flex',
 		height: '100%',
 		lg: {
 			padding: {
@@ -62,7 +58,6 @@ export const componentTopBar = {
 			},
 		},
 	},
-	justifyContent: 'flex-start',
 	navigation: {
 		md: {
 			typography: {
@@ -89,14 +84,10 @@ export const componentTopBar = {
 				},
 				width: '100%',
 			},
-			alignItems: 'center',
 			borderTop: '0.5rem solid #00000000',
-			cursor: 'pointer',
 			disabled: {
 				color: '#999999',
-				cursor: 'not-allowed',
 			},
-			display: 'inline-flex',
 			divider: '0.0625rem solid #cccccc',
 			focusVisible: {
 				outline: '0.125rem solid #0072a9',
@@ -109,8 +100,6 @@ export const componentTopBar = {
 				right: '1rem',
 				top: '0px',
 			},
-			position: 'relative',
-			textDecoration: 'none',
 		},
 		sm: {
 			typography: {
@@ -129,13 +118,8 @@ export const componentTopBar = {
 			color: '#545454',
 		},
 	},
-	spacer: {
-		marginLeft: 'auto',
-	},
 	toolName: {
-		alignItems: 'center',
 		color: '#000000',
-		display: 'flex',
 		divider: {
 			border: '0.0625rem solid #cccccc',
 			height: '2rem',
@@ -144,7 +128,6 @@ export const componentTopBar = {
 		hoverLink: {
 			backgroundColor: '#092f62',
 			collapsed: {
-				justifyContent: 'center',
 				paddingLeft: '0.25rem',
 				paddingRight: '0.25rem',
 			},
@@ -160,7 +143,6 @@ export const componentTopBar = {
 			opacity: 0,
 			paddingLeft: '1.25rem',
 			paddingRight: '1.25rem',
-			position: 'absolute',
 			pressed: {
 				backgroundColor: '#061d3c',
 			},
@@ -174,8 +156,6 @@ export const componentTopBar = {
 		link: {
 			color: 'unset',
 			height: '100%',
-			position: 'relative',
-			textDecoration: 'none',
 			width: '100%',
 		},
 		subsection: {

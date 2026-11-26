@@ -1,23 +1,22 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentAlertBanner } from '../../styleD/build/typescript/component/alertBanner';
-import { componentAlertBanner } from '../../styleD/build/typescript/component/alertBanner';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 import type { AlertBannerProps } from './types';
 
-export type AlertBannerTheme = Prettify<ComponentAlertBanner>;
+export type AlertBannerTheme = Prettify<(typeof component)['alertBanner']>;
 export type PartialAlertBannerTheme = Prettify<DeepPartial<AlertBannerTheme>>;
-export const defaultAlertBannerTheme: AlertBannerTheme = componentAlertBanner;
+export const defaultAlertBannerTheme: AlertBannerTheme = component.alertBanner;
 
 export const alertBannerStyles = (
 	theme: AlertBannerTheme,
 	{ level }: Required<Pick<AlertBannerProps, 'level'>>,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.shared.display};
-		align-items: ${theme.shared.alignItems};
-		justify-content: ${theme.shared.justifyContent};
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		width: ${theme.shared.width};
 		height: ${theme.shared.height};
 		padding: ${theme.shared.padding.top} ${theme.shared.padding.right}
@@ -30,13 +29,13 @@ export const alertBannerContentStyles = (
 	theme: AlertBannerTheme,
 ): SerializedStyles => {
 	return css`
-		display: ${theme.shared.content.display};
-		justify-content: ${theme.shared.content.justifyContent};
+		display: flex;
+		justify-content: center;
 		gap: ${theme.shared.content.gap};
 		height: ${theme.shared.content.height};
-		align-items: ${theme.shared.content.alignItems};
-		flex: ${theme.shared.content.flex};
+		align-items: center;
+		flex: 1;
 		color: ${theme.shared.content.color};
-		${convertTypographyToEmotionStringStyle(theme.shared.content.typography)}
+		${convertTypographyToCssString(theme.shared.content.typography)}
 	`;
 };

@@ -5,14 +5,17 @@ import type { GridProps, ItemProps } from './types';
 export function Grid({
 	children,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	as: Component = 'div',
 	...props
 }: GridProps) {
 	const mergedTheme = mergeDeep(defaultGridTheme, theme);
 
 	return (
-		<Component css={[gridStyles(mergedTheme), cssOverrides]} {...props}>
+		<Component
+			css={[gridStyles(mergedTheme), dangerouslyOverrideCss]}
+			{...props}
+		>
 			{children}
 		</Component>
 	);
@@ -21,7 +24,7 @@ export function Grid({
 export function Item({
 	children,
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	size,
 	offset,
 	...props
@@ -30,7 +33,7 @@ export function Item({
 
 	return (
 		<div
-			css={[itemStyles(mergedTheme, { size, offset }), cssOverrides]}
+			css={[itemStyles(mergedTheme, { size, offset }), dangerouslyOverrideCss]}
 			{...props}
 		>
 			{children}

@@ -33,8 +33,7 @@ export const Component = () => (
 // Layout - Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the layout styles */
-@import '@guardian/stand/component/layout.css';
-@import '@guardian/stand/semantic/breakpoints.css';
+@import '@guardian/stand/stand.css';
 
 /*
  * Use the TopBar and Grid/Item custom CSS examples from their respective

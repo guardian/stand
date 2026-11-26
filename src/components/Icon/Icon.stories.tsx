@@ -147,10 +147,6 @@ export const CustomTheme = {
 		children: 'home',
 		size: 'md',
 		theme: {
-			shared: {
-				display: 'block',
-				userSelect: 'all',
-			},
 			md: {
 				size: baseSizing.size48Rem,
 			},
@@ -158,13 +154,13 @@ export const CustomTheme = {
 	},
 } satisfies Story;
 
-export const CssOverrides = {
-	name: 'cssOverrides',
+export const DangerouslyOverrideCss = {
+	name: 'dangerouslyOverrideCss',
 	args: {
 		children: 'home',
 		size: 'lg',
 		fill: baseColors.neutral[900],
-		cssOverrides: css`
+		dangerouslyOverrideCss: css`
 			padding: ${baseSpacing['4Rem']};
 			background-color: ${baseColors.yellow[400]};
 			border-radius: ${semanticSizing.border.extraWide};

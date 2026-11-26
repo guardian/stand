@@ -5,7 +5,7 @@ import LinkStories, {
 	Default,
 	Disabled,
 	CustomTheme,
-	CssOverrides,
+	DangerouslyOverrideCss,
 } from './Link.stories';
 import {
 	SandboxReact,
@@ -20,6 +20,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={LinkStories} />
 
@@ -71,16 +72,16 @@ import type { LinkProps, LinkTheme } from '@guardian/stand/Link';
 
 ## Props
 
-| Name           | Type                             | Required | Default   | Description                                                       |
-| -------------- | -------------------------------- | -------- | --------- | ----------------------------------------------------------------- |
-| `children`     | `React.ReactNode`                | No       | N/A       | Content to render inside the component.                           |
-| `href`         | `string`                         | No       | N/A       | Link destination URL.                                             |
-| `theme`        | `LinkTheme`                      | No       | N/A       | Custom theme overrides.                                           |
-| `cssOverrides` | `SerializedStyles`               | No       | N/A       | Custom CSS styles.                                                |
-| `className`    | `string`                         | No       | N/A       | Additional class name(s).                                         |
-| `isDisabled`   | `boolean`                        | No       | `false`   | Disables interaction and applies disabled styling to the link.    |
-| `typography`   | `TypographyVariant`              | No       | `body-sm` | Typography variant to apply to the link text.                     |
-| `...props`     | `Omit<RACLinkProps, 'children'>` | No       | N/A       | All additional props supported by `react-aria-components` `Link`. |
+| Name                     | Type                             | Required | Default   | Description                                                       |
+| ------------------------ | -------------------------------- | -------- | --------- | ----------------------------------------------------------------- |
+| `children`               | `React.ReactNode`                | No       | N/A       | Content to render inside the component.                           |
+| `href`                   | `string`                         | No       | N/A       | Link destination URL.                                             |
+| `theme`                  | `LinkTheme`                      | No       | N/A       | Custom theme overrides.                                           |
+| `dangerouslyOverrideCss` | `SerializedStyles`               | No       | N/A       | Escape hatch for custom CSS; see warning below.                   |
+| `className`              | `string`                         | No       | N/A       | Additional class name(s).                                         |
+| `isDisabled`             | `boolean`                        | No       | `false`   | Disables interaction and applies disabled styling to the link.    |
+| `typography`             | `TypographyVariant`              | No       | `body-sm` | Typography variant to apply to the link text.                     |
+| `...props`               | `Omit<RACLinkProps, 'children'>` | No       | N/A       | All additional props supported by `react-aria-components` `Link`. |
 
 ## Stories
 
@@ -106,11 +107,11 @@ import type { LinkProps, LinkTheme } from '@guardian/stand/Link';
 
 ### Css Overrides
 
-<Canvas layout="padded" of={CssOverrides} />
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ## Customisation
 
-We recommend using the Link component as provided, but it can be customised using the `theme`, `cssOverrides` or `typography` props as required.
+We recommend using the Link component as provided, but it can be customised using the `theme` or `typography` props as required.
 
 ### Custom theme
 
@@ -143,9 +144,11 @@ const customTheme: Partial<LinkTheme> = {
 const Component = () => <Link theme={customTheme}>Hello</Link>;
 ```
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the Link component:
+<DangerouslyOverrideCssWarning />
+
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the Link component:
 
 ```tsx
 import { Link } from '@guardian/stand/Link';
@@ -155,7 +158,7 @@ const customStyles = css\`
 	text-decoration-thickness: 50px;
 \`;
 
-const Component = () => <Link cssOverrides={customStyles}>Hello</Link>;
+const Component = () => <Link dangerouslyOverrideCss={customStyles}>Hello</Link>;
 ```
 
 ### Typography

@@ -15,9 +15,7 @@ export const Component = () => (
 // TextArea - Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the textarea, form and inline message styles */
-@import '@guardian/stand/component/inlineMessage.css';
-@import '@guardian/stand/component/form.css';
-@import '@guardian/stand/component/textArea.css';
+@import '@guardian/stand/stand.css';
 
 /* inline message styles - error */
 .stand-inline-message {

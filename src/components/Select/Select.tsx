@@ -43,7 +43,7 @@ export function Option({ children, theme = {}, id, ...props }: OptionProps) {
 						isSelected={isSelected}
 						isReadOnly
 						excludeFromTabOrder
-						cssOverrides={css`
+						dangerouslyOverrideCss={css`
 							cursor: auto;
 						`}
 					>

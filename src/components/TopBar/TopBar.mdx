@@ -1,6 +1,6 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import TopBarStories, {
-	CssOverrides,
+	DangerouslyOverrideCss,
 	CustomTheme,
 	Default,
 	WithTopNavigation,
@@ -20,6 +20,7 @@ import {
 	componentTsx,
 } from './sandbox';
 import { MetaTable } from '../../util/storybook/MetaTable';
+import { DangerouslyOverrideCssWarning } from '../../util/storybook/DangerouslyOverrideCssWarning';
 
 <Meta of={TopBarStories} />
 
@@ -93,13 +94,13 @@ The children will be rendered in the following order from left to right:
 
 ### Props
 
-| Name            | Type                                                    | Required | Default                                   | Description                                                                                                                                                 |
-| --------------- | ------------------------------------------------------- | -------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `children`      | `React.ReactNode`                                       | No       | N/A                                       | Content to render inside the component. Only children of type `TopBarToolName`, `Avatar`, `TopBarContainerLeft` or `TopBarContainerRight` will be rendered. |
-| `collapseBelow` | `{ toolName?: Breakpoint; containerLeft?: Breakpoint }` | No       | `{ toolName: 'lg', containerLeft: 'lg' }` | Controls at which breakpoint each section collapses. See [Responsive behaviour](#responsive-behaviour).                                                     |
-| `theme`         | `TopBarTheme`                                           | No       | N/A                                       | Custom theme overrides.                                                                                                                                     |
-| `cssOverrides`  | `SerializedStyles`                                      | No       | N/A                                       | Custom CSS styles.                                                                                                                                          |
-| `className`     | `string`                                                | No       | N/A                                       | Additional class name(s).                                                                                                                                   |
+| Name                     | Type                                                    | Required | Default                                   | Description                                                                                                                                                 |
+| ------------------------ | ------------------------------------------------------- | -------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `children`               | `React.ReactNode`                                       | No       | N/A                                       | Content to render inside the component. Only children of type `TopBarToolName`, `Avatar`, `TopBarContainerLeft` or `TopBarContainerRight` will be rendered. |
+| `collapseBelow`          | `{ toolName?: Breakpoint; containerLeft?: Breakpoint }` | No       | `{ toolName: 'lg', containerLeft: 'lg' }` | Controls at which breakpoint each section collapses. See [Responsive behaviour](#responsive-behaviour).                                                     |
+| `theme`                  | `TopBarTheme`                                           | No       | N/A                                       | Custom theme overrides.                                                                                                                                     |
+| `dangerouslyOverrideCss` | `SerializedStyles`                                      | No       | N/A                                       | Escape hatch for custom CSS; see warning below.                                                                                                             |
+| `className`              | `string`                                                | No       | N/A                                       | Additional class name(s).                                                                                                                                   |
 
 ### `TopBarContainerLeft` / `TopBarContainerRight` props
 
@@ -163,7 +164,7 @@ The right container does not currently have a collapse behaviour, but this may b
 
 ## Customisation
 
-We recommend using the TopBar component as provided, but it can be customised using the `theme` or `cssOverrides` props as required.
+We recommend using the TopBar component as provided, but it can be customised using the `theme` prop as required.
 
 ### Custom theme
 
@@ -227,9 +228,11 @@ const Component = () => (
 
 <Canvas layout="padded" of={CustomTheme} />
 
-### CSS overrides
+### Dangerous CSS overrides (discouraged)
 
-The `cssOverrides` prop allows you to pass custom CSS to the TopBar component:
+<DangerouslyOverrideCssWarning />
+
+The `dangerouslyOverrideCss` prop allows you to pass custom CSS to the TopBar component:
 
 ```tsx
 import { TopBar } from '@guardian/stand/TopBar';
@@ -241,8 +244,8 @@ const customStyles = css\`
 \`;
 
 const Component = () =>
-	<TopBar cssOverrides={customStyles}>
-		<TopBarToolName name="CssOverrides" favicon={{ letter: 'C' }} />
+	<TopBar dangerouslyOverrideCss={customStyles}>
+		<TopBarToolName name="DangerouslyOverrideCss" favicon={{ letter: 'C' }} />
 		<TopBarContainerLeft>
 			<TopBarItem>Hello</TopBarItem>
 		</TopBarContainerLeft>
@@ -250,7 +253,7 @@ const Component = () =>
 ;
 ```
 
-<Canvas layout="padded" of={CssOverrides} />
+<Canvas layout="padded" of={DangerouslyOverrideCss} />
 
 ## Custom Component Build
 

@@ -3,6 +3,7 @@ export const componentName = 'IntendedAudienceSignifier';
 
 // IntendedAudienceSignifier - React sandbox example
 export const componentTsx = /* javascript */ `import { IntendedAudienceSignifier } from '@guardian/stand/IntendedAudienceSignifier';
+import { css } from '@emotion/react';
 
 export const Component = () => (
 	<>
@@ -16,7 +17,7 @@ export const Component = () => (
 		<IntendedAudienceSignifier source="us" target="global" />
 		<IntendedAudienceSignifier source="au" target="global" />
 		<IntendedAudienceSignifier source="uk" target="global" theme={{ color: '#c70000' }} />
-		<IntendedAudienceSignifier source="au" target="global" cssOverrides={{ borderColor: '#0000FF',alignItems: 'flex-end' }}/>
+		<IntendedAudienceSignifier source="au" target="global" dangerouslyOverrideCss={css({ borderColor: '#0000FF', alignItems: 'flex-end' })}/>
 		<IntendedAudienceSignifier source="uk" />
 		<IntendedAudienceSignifier source="us" />
 		<IntendedAudienceSignifier source="au" />
@@ -29,7 +30,7 @@ export const Component = () => (
 // IntendedAudienceSignifier - Custom component - CSS example
 export const componentCss = /* css */ `
 /* import the intended audience signifier styles */
-@import '@guardian/stand/component/intendedAudienceSignifier.css';
+@import '@guardian/stand/stand.css';
 
 .stand-intended-audience-signifier {
 	color: var(--component-intended-audience-signifier-color);

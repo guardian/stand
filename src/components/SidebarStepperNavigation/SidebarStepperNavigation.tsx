@@ -180,7 +180,7 @@ function StepNumber({
 			theme={{
 				color: getStepNumberColor(theme, isHovered, isCurrent, isDisabled),
 			}}
-			cssOverrides={stepNumberStyles(theme, isHovered, isCurrent)}
+			dangerouslyOverrideCss={stepNumberStyles(theme, isHovered, isCurrent)}
 		>
 			{stepNumber}
 		</Typography>
@@ -247,7 +247,7 @@ export function SidebarStepperNavigation({
 	onPress,
 	stepNavTitle = 'Steps',
 	theme = {},
-	cssOverrides,
+	dangerouslyOverrideCss,
 	className,
 }: SidebarStepperNavigationProps) {
 	const mergedTheme = mergeDeep(defaultSidebarStepperNavigationTheme, theme);
@@ -292,7 +292,7 @@ export function SidebarStepperNavigation({
 				/>
 			</Button>
 			<nav
-				css={[navigationStyles(mergedTheme, isOpen), cssOverrides]}
+				css={[navigationStyles(mergedTheme, isOpen), dangerouslyOverrideCss]}
 				aria-label={stepNavTitle}
 				id={stepNavId}
 				className={className}
