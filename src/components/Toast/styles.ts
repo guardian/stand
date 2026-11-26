@@ -1,14 +1,13 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentToast } from '../../styleD/build/typescript/component/toast';
-import { componentToast } from '../../styleD/build/typescript/component/toast';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 
-export type ToastTheme = Prettify<ComponentToast>;
+export type ToastTheme = Prettify<typeof component.toast>;
 export type PartialToastTheme = Prettify<DeepPartial<ToastTheme>>;
 export type ToastLevel = keyof Omit<ToastTheme, 'region' | 'shared'>;
-export const defaultToastTheme: ToastTheme = componentToast;
+export const defaultToastTheme: ToastTheme = component.toast;
 
 export const toastRegionStyles = (theme: ToastTheme): SerializedStyles => css`
 	position: fixed;
@@ -56,7 +55,7 @@ export const toastContentStyles = (theme: ToastTheme): SerializedStyles => css`
 `;
 
 export const toastTitleStyles = (theme: ToastTheme): SerializedStyles => css`
-	${convertTypographyToEmotionStringStyle(theme.shared.content.titleTypography)}
+	${convertTypographyToCssString(theme.shared.content.titleTypography)}
 `;
 
 export const toastDescriptionStyles = (
@@ -68,17 +67,13 @@ export const toastDescriptionStyles = (
 `;
 
 export const toastSubjectStyles = (theme: ToastTheme): SerializedStyles => css`
-	${convertTypographyToEmotionStringStyle(
-		theme.shared.content.subjectTypography,
-	)}
+	${convertTypographyToCssString(theme.shared.content.subjectTypography)}
 `;
 
 export const toastAdditionalInfoStyles = (
 	theme: ToastTheme,
 ): SerializedStyles => css`
-	${convertTypographyToEmotionStringStyle(
-		theme.shared.content.additionalInfoTypography,
-	)}
+	${convertTypographyToCssString(theme.shared.content.additionalInfoTypography)}
 `;
 
 export const toastIconStyles = (
