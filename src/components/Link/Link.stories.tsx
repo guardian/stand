@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
+import { base } from '../../terrazzo/build/stand';
 import { Link } from './Link';
 
 const meta = {
@@ -52,7 +52,7 @@ export const DangerouslyOverrideCss = {
 		href: 'https://www.theguardian.com',
 		dangerouslyOverrideCss: css`
 			text-decoration: none;
-			color: ${baseColors.orange[400]};
+			color: ${base.colors.orange[400]};
 		`,
 	},
 } satisfies Story;
