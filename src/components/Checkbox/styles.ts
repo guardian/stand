@@ -1,15 +1,14 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentCheckbox } from '../../styleD/build/typescript/component/checkbox';
-import { componentCheckbox } from '../../styleD/build/typescript/component/checkbox';
+import { component } from '../../terrazzo/build/stand';
 import type { DeepPartial, Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 import type { CheckboxGroupProps, CheckboxProps } from './types';
 
-export type CheckboxTheme = Prettify<ComponentCheckbox>;
+export type CheckboxTheme = Prettify<typeof component.checkbox>;
 export type PartialCheckboxTheme = Prettify<DeepPartial<CheckboxTheme>>;
 
-export const defaultCheckboxTheme: CheckboxTheme = componentCheckbox;
+export const defaultCheckboxTheme: CheckboxTheme = component.checkbox;
 
 export const checkboxStyles = (
 	theme: CheckboxTheme,
@@ -24,7 +23,7 @@ export const checkboxStyles = (
 		align-items: flex-start;
 		gap: ${theme.input.shared.gap};
 		cursor: pointer;
-		${convertTypographyToEmotionStringStyle(theme.input[size].typography)}
+		${convertTypographyToCssString(theme.input[size].typography)}
 		color: ${theme.input.shared.color};
 
 		.checkbox-indicator {
