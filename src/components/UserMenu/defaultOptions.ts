@@ -1,5 +1,4 @@
-import { baseSpacing } from '../../styleD/build/typescript/base/spacing';
-import { baseTypography } from '../../styleD/build/typescript/base/typography';
+import { base } from '../../terrazzo/build/stand';
 import type { Option } from './model';
 
 const textSizes: Option[] = [
@@ -8,7 +7,7 @@ const textSizes: Option[] = [
 		label: 'Small',
 		description: 'Compact reading',
 		labelStyle: {
-			fontSize: baseTypography.size['12Rem'],
+			fontSize: base.typography.size['12Rem'],
 		},
 	},
 	{
@@ -16,7 +15,7 @@ const textSizes: Option[] = [
 		label: 'Medium',
 		description: 'Standard reading',
 		labelStyle: {
-			fontSize: baseTypography.size['16Rem'],
+			fontSize: base.typography.size['16Rem'],
 		},
 	},
 	{
@@ -24,7 +23,7 @@ const textSizes: Option[] = [
 		label: 'Large',
 		description: 'Comfortable reading',
 		labelStyle: {
-			fontSize: baseTypography.size['20Rem'],
+			fontSize: base.typography.size['20Rem'],
 		},
 	},
 ];
@@ -35,8 +34,8 @@ const fontFamilies: Option[] = [
 		label: 'Guardian Text Egyptian',
 		description: 'Classic Guardian Serif',
 		labelStyle: {
-			fontFamily: baseTypography.family.guardianTextEgyptian,
-			fontSize: baseTypography.size['20Rem'],
+			fontFamily: base.typography.family.guardianTextEgyptian,
+			fontSize: base.typography.size['20Rem'],
 		},
 	},
 	{
@@ -44,8 +43,8 @@ const fontFamilies: Option[] = [
 		label: 'Open Sans Compact',
 		description: 'Compact Sans-Serif',
 		labelStyle: {
-			fontFamily: baseTypography.family.openSansCompact,
-			fontSize: baseTypography.size['20Rem'],
+			fontFamily: base.typography.family.openSansCompact,
+			fontSize: base.typography.size['20Rem'],
 		},
 	},
 	{
@@ -53,8 +52,8 @@ const fontFamilies: Option[] = [
 		label: 'Open Sans',
 		description: 'Sans-Serif',
 		labelStyle: {
-			fontFamily: baseTypography.family.openSans,
-			fontSize: baseTypography.size['20Rem'],
+			fontFamily: base.typography.family.openSans,
+			fontSize: base.typography.size['20Rem'],
 		},
 	},
 ];
@@ -64,7 +63,7 @@ const colorSchemes: Option[] = [
 		id: 'white',
 		buttonStyle: {
 			backgroundColor: 'white',
-			padding: baseSpacing['10Rem'],
+			padding: base.spacing['10Rem'],
 		},
 		isDefault: true,
 	},
@@ -72,35 +71,35 @@ const colorSchemes: Option[] = [
 		id: 'cream',
 		buttonStyle: {
 			backgroundColor: 'antiquewhite',
-			padding: baseSpacing['10Rem'],
+			padding: base.spacing['10Rem'],
 		},
 	},
 	{
 		id: 'green',
 		buttonStyle: {
 			backgroundColor: 'lightgreen',
-			padding: baseSpacing['10Rem'],
+			padding: base.spacing['10Rem'],
 		},
 	},
 	{
 		id: 'pink',
 		buttonStyle: {
 			backgroundColor: 'pink',
-			padding: baseSpacing['10Rem'],
+			padding: base.spacing['10Rem'],
 		},
 	},
 	{
 		id: 'blue',
 		buttonStyle: {
 			backgroundColor: 'skyblue',
-			padding: baseSpacing['10Rem'],
+			padding: base.spacing['10Rem'],
 		},
 	},
 	{
 		id: 'orange',
 		buttonStyle: {
 			backgroundColor: 'orange',
-			padding: baseSpacing['10Rem'],
+			padding: base.spacing['10Rem'],
 		},
 	},
 ];
