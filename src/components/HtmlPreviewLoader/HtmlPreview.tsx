@@ -1,19 +1,21 @@
-import { css } from '@emotion/react';
 import { useState } from 'react';
 import { mergeDeep } from '../../util/mergeDeep';
 import { AlertBanner } from '../AlertBanner/AlertBanner';
 import { Button } from '../Button/Button';
 import { Icon } from '../Icon/Icon';
-import { Radio, RadioGroup } from '../RadioGroup/RadioGroup';
+import {
+	SegmentedControl,
+	SegmentedControlItem,
+} from '../SegmentedControl/SegmentedControl';
 import { Typography } from '../Typography/Typography';
 import {
 	alertBannerContentsStyle,
 	centeredStyle,
 	defaultHtmlPreviewLoaderTheme,
-	headerStyles,
 	htmlPreviewLoaderStyles,
 	iframeStyle,
 	loadingIconStyle,
+	previewColumnStyle,
 	previewFrameStyle,
 	reloadButtonStyle,
 	spinAnimationStyle,
@@ -43,39 +45,15 @@ export const HtmlPreview = ({
 
 	return (
 		<div css={[htmlPreviewLoaderStyles(mergedTheme), cssOverrides]}>
-			<header css={headerStyles()}>
-				{typeof title === 'string' ? (
-					<Typography variant="titleMd">{title}</Typography>
-				) : (
-					title
-				)}
-				{widthOptions.length > 0 && (
-					<RadioGroup
-						size="sm"
-						label="width"
-						orientation="horizontal"
-						formInputContainerTheme={{
-							shared: {
-								container: {
-									width: 'unset',
-									flexDirection: 'row',
-								},
-							},
-						}}
-						cssOverrides={css({
-							alignItems: 'center',
-						})}
-						value={String(frameWidth)}
-						onChange={(value) => setFrameWidth(Number(value))}
-					>
-						{widthOptions.map((width, index) => (
-							<Radio key={index} value={String(width)}>
-								{width}px
-							</Radio>
-						))}
-					</RadioGroup>
-				)}
-			</header>
+			{title ? (
+				<header>
+					{typeof title === 'string' ? (
+						<Typography variant="heading2Xl">{title}</Typography>
+					) : (
+						title
+					)}
+				</header>
+			) : null}
 
 			<div
 				css={[
@@ -85,19 +63,38 @@ export const HtmlPreview = ({
 					},
 				]}
 			>
-				{html && (
-					<iframe
-						sandbox=""
-						style={{
-							minWidth: frameWidth,
-							maxWidth: frameWidth,
-							background: frameBackground,
-						}}
-						css={iframeStyle(isLoading || !!errorMessage)}
-						title="preview"
-						srcDoc={html}
-					/>
-				)}
+				<div
+					css={previewColumnStyle(mergedTheme)}
+					style={{ width: frameWidth }}
+				>
+					{widthOptions.length > 0 && (
+						<SegmentedControl
+							aria-label="Preview width"
+							selectedKey={frameWidth}
+							onSelectionChange={(key) => setFrameWidth(Number(key))}
+						>
+							{widthOptions.map((width) => (
+								<SegmentedControlItem key={width} id={width}>
+									{width}
+								</SegmentedControlItem>
+							))}
+						</SegmentedControl>
+					)}
+
+					{html && (
+						<iframe
+							sandbox=""
+							style={{
+								minWidth: frameWidth,
+								maxWidth: frameWidth,
+								background: frameBackground,
+							}}
+							css={iframeStyle(isLoading || !!errorMessage)}
+							title="preview"
+							srcDoc={html}
+						/>
+					)}
+				</div>
 
 				{showReloadButton && (
 					<div css={reloadButtonStyle(mergedTheme)}>

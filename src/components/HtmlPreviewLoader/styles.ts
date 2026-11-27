@@ -23,16 +23,25 @@ export const htmlPreviewLoaderStyles = (
 		padding-bottom: ${theme.paddingBottom};
 		padding-left: ${theme.paddingLeft};
 		padding-right: ${theme.paddingRight};
+		border-color: ${theme.borderColor};
+		border-style: ${theme.borderStyle};
+		border-width: ${theme.borderWidth};
+		display: flex;
+		flex-direction: column;
+		gap: ${theme.gap};
 		position: relative;
 	`;
 };
 
-export const headerStyles = (): SerializedStyles => {
+export const previewColumnStyle = ({
+	gap,
+}: HtmlPreviewLoaderTheme): SerializedStyles => {
 	return css`
 		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
-		justify-content: space-between;
+		flex-direction: column;
+		align-items: flex-start;
+		flex-shrink: 0;
+		gap: ${gap};
 	`;
 };
 
@@ -58,6 +67,8 @@ export const previewFrameStyle = ({
 export const iframeStyle = (isNotLoaded: boolean): SerializedStyles => {
 	return css`
 		border: none;
+		flex: 1;
+		align-self: stretch;
 		transition: 'filter 0.25s';
 		${
 			isNotLoaded

@@ -34,6 +34,12 @@ export const componentCss = /* css */ `@import '@guardian/stand/component/htmlPr
 	padding-right: var(--component-html-preview-loader-padding-right);
 	padding-bottom: var(--component-html-preview-loader-padding-bottom);
 	padding-left: var(--component-html-preview-loader-padding-left);
+	border-width: var(--component-html-preview-loader-border-width);
+	border-style: var(--component-html-preview-loader-border-style);
+	border-color: var(--component-html-preview-loader-border-color);
+	display: flex;
+	flex-direction: column;
+	gap: var(--component-html-preview-loader-gap);
 	background: var(--component-html-preview-loader-shared-color-background);
 	color: var(--component-html-preview-loader-shared-color-text);
 }
@@ -65,6 +71,12 @@ const styles = \`
 	padding-right: \${componentHtmlPreviewLoader.paddingRight};
 	padding-bottom: \${componentHtmlPreviewLoader.paddingBottom};
 	padding-left: \${componentHtmlPreviewLoader.paddingLeft};
+	border-width: \${componentHtmlPreviewLoader.borderWidth};
+	border-style: \${componentHtmlPreviewLoader.borderStyle};
+	border-color: \${componentHtmlPreviewLoader.borderColor};
+	display: flex;
+	flex-direction: column;
+	gap: \${componentHtmlPreviewLoader.gap};
 	background: \${componentHtmlPreviewLoader.shared.color.background};
 	color: \${componentHtmlPreviewLoader.shared.color.text};
 \`;

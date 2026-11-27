@@ -1,6 +1,22 @@
 {
 	"component": {
 		"htmlPreviewLoader": {
+			"borderColor": {
+				"$type": "color",
+				"$value": "{semantic.colors.border.weak}"
+			},
+			"borderStyle": {
+				"$type": "strokeStyle",
+				"$value": "solid"
+			},
+			"borderWidth": {
+				"$type": "dimension",
+				"$value": "{semantic.sizing.border.default}"
+			},
+			"gap": {
+				"$type": "dimension",
+				"$value": "{semantic.spacing.stackMd}"
+			},
 			"loadingIcon": {
 				"color": {
 					"$type": "color",
@@ -13,34 +29,28 @@
 			},
 			"paddingBottom": {
 				"$type": "dimension",
-				"$value": {
-					"unit": "px",
-					"value": 0
-				}
+				"$value": "{semantic.spacing.stackMd}"
 			},
 			"paddingLeft": {
 				"$type": "dimension",
-				"$value": "{base.spacing.8Rem}"
+				"$value": "{semantic.spacing.stackMd}"
 			},
 			"paddingRight": {
 				"$type": "dimension",
-				"$value": "{base.spacing.8Rem}"
+				"$value": "{semantic.spacing.stackMd}"
 			},
 			"paddingTop": {
 				"$type": "dimension",
-				"$value": {
-					"unit": "px",
-					"value": 0
-				}
+				"$value": "{semantic.spacing.stackMd}"
 			},
 			"previewFrame": {
 				"backgroundColor": {
 					"$type": "color",
-					"$value": "{semantic.colors.fill.neutralWeak}"
+					"$value": "{base.colors.transparent}"
 				},
 				"borderColor": {
 					"$type": "color",
-					"$value": "{semantic.colors.border.stronger}"
+					"$value": "{base.colors.transparent}"
 				},
 				"borderStyle": {
 					"$type": "strokeStyle",
