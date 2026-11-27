@@ -15,7 +15,7 @@ const meta = {
 		defaultSelectedKey: 425,
 		children: widths.map((width) => (
 			<SegmentedControlItem key={width} id={width}>
-				{`${width}px`}
+				{width}
 			</SegmentedControlItem>
 		)),
 	},

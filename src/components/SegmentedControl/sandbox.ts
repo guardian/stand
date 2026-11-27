@@ -14,7 +14,7 @@ export const Component = () => {
 				onSelectionChange={setSelectedKey}
 			>
 				{[320, 375, 425, 650].map((width) => (
-					<SegmentedControlItem key={width} id={width}>{width}px</SegmentedControlItem>
+					<SegmentedControlItem key={width} id={width}>{width}</SegmentedControlItem>
 				))}
 			</SegmentedControl>
 			<p>Preview width: {selectedKey}px</p>
