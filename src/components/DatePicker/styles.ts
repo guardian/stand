@@ -1,13 +1,19 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentDatePicker } from '../../styleD/build/typescript/component/datePicker';
-import { componentDatePicker } from '../../styleD/build/typescript/component/datePicker';
+import { component } from '../../terrazzo/build/stand';
 import type { Prettify } from '../../util/types';
-import { convertTypographyToEmotionStringStyle } from '../../utils';
+import { convertTypographyToCssString } from '../../utils';
 
-export type DatePickerTheme = Prettify<ComponentDatePicker>;
+export type DatePickerTheme = Prettify<
+	Omit<typeof component.datePicker, 'popover'> & {
+		popover: Omit<
+			typeof component.datePicker.popover,
+			'offset' | 'containerPadding'
+		>;
+	}
+>;
 
-export const defaultDatePickerTheme: DatePickerTheme = componentDatePicker;
+export const defaultDatePickerTheme: DatePickerTheme = component.datePicker;
 
 export const datePickerStyles = (theme: DatePickerTheme): SerializedStyles => {
 	return css`
@@ -98,9 +104,7 @@ export const calendarHeaderStyles = (
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		${convertTypographyToEmotionStringStyle(
-			theme.calendar.header.shared.typography,
-		)}
+		${convertTypographyToCssString(theme.calendar.header.shared.typography)}
 
 		button {
 			background-color: ${theme.calendar.header.shared.button.backgroundColor};
@@ -156,9 +160,7 @@ export const calendarGridStyles = (
 	theme: DatePickerTheme,
 ): SerializedStyles => {
 	return css`
-		${convertTypographyToEmotionStringStyle(
-			theme.calendar.grid.shared.typography,
-		)}
+		${convertTypographyToCssString(theme.calendar.grid.shared.typography)}
 
 		border-collapse: collapse;
 		border-spacing: ${theme.calendar.grid.shared.borderSpacing};

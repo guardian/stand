@@ -111,6 +111,8 @@ import type {
 | `maxValue`                | `DateValue`                                | No       | N/A     | The maximum selectable date.                                                                                                                       |
 | `value`                   | `DateValue`                                | No       | N/A     | The controlled selected date value.                                                                                                                |
 | `defaultValue`            | `DateValue`                                | No       | N/A     | The default (uncontrolled) selected date value.                                                                                                    |
+| `offset`                  | `number`                                   | No       | `8`     | Distance in pixels between the calendar popover and the date input.                                                                                |
+| `containerPadding`        | `number`                                   | No       | `0`     | Minimum distance in pixels between the calendar popover and its container.                                                                         |
 | `onChange`                | `(value: DateValue \| null) => void`       | No       | N/A     | Callback fired when the selected date changes.                                                                                                     |
 | `theme`                   | `DatePickerTheme` (partial)                | No       | N/A     | Override Stand tokens for this instance; merged over the default theme.                                                                            |
 | `formInputContainerTheme` | `FormInputContainerTheme` (partial)        | No       | N/A     | Override Stand tokens for the wrapping label and description container.                                                                            |
@@ -118,7 +120,7 @@ import type {
 | `className`               | `string`                                   | No       | N/A     | Optional class name forwarded to the root React Aria DatePicker element.                                                                           |
 | `...props`                | `ReactAria DatePicker` props               | No       | N/A     | All other props from `react-aria-components` [`DatePicker`](https://react-aria.adobe.com/DatePicker) (e.g. `autoFocus`, `isOpen`, `onOpenChange`). |
 
-Note: `granularity` and `hideTimeZone` are fixed internally and cannot be overridden. Use a separate TimePicker component if time selection is required.
+Note: `granularity` and `hideTimeZone` are fixed internally and cannot be overridden. Use a separate TimePicker component if time selection is required. The `offset` and `containerPadding` props replace the corresponding values in `theme.popover.shared`.
 
 ## Stories
 

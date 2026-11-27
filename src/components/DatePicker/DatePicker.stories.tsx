@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 import { CalendarDate } from '@internationalized/date';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { baseColors } from '../../styleD/build/typescript/base/colors';
+import { base } from '../../terrazzo/build/stand';
 import { DatePicker } from './DatePicker';
 
 const meta = {
@@ -107,7 +107,7 @@ export const CustomTheme = {
 		theme: {
 			picker: {
 				shared: {
-					border: `0.0625rem solid ${baseColors.coolPurple[500]}`,
+					border: `0.0625rem solid ${base.colors.coolPurple[500]}`,
 					borderRadius: '0.5rem',
 				},
 			},
@@ -121,7 +121,7 @@ export const DangerouslyOverrideCss = {
 		label: 'Select a date',
 		description: 'Please select a date from the calendar',
 		dangerouslyOverrideCss: css`
-			border: 0.125rem solid ${baseColors.red[500]};
+			border: 0.125rem solid ${base.colors.red[500]};
 			border-radius: 0.5rem;
 		`,
 	},

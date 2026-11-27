@@ -19,6 +19,7 @@ import {
 	Heading as RACHeading,
 	Popover as RACPopover,
 } from 'react-aria-components';
+import componentTokens from '../../terrazzo/tokens/component/component.json';
 import { mergeDeep } from '../../util/mergeDeep';
 import { FormInputContainer } from '../Form/Form';
 import { Icon } from '../Icon/Icon';
@@ -226,6 +227,9 @@ function Calendar({ theme = {}, ...props }: CalendarProps) {
 export function DatePicker({
 	isInvalid,
 	locale = 'en-GB',
+	offset = componentTokens.component.datePicker.popover.shared.offset.$value,
+	containerPadding = componentTokens.component.datePicker.popover.shared
+		.containerPadding.$value,
 	useMonthTextInput = true,
 	theme = {},
 	...props
@@ -263,8 +267,8 @@ export function DatePicker({
 			</RACGroup>
 			<RACPopover
 				css={datePickerPopoverStyles(mergedTheme)}
-				offset={mergedTheme.popover.shared.offset}
-				containerPadding={mergedTheme.popover.shared.containerPadding}
+				offset={offset}
+				containerPadding={containerPadding}
 				shouldFlip={false}
 			>
 				<Calendar theme={mergedTheme} />

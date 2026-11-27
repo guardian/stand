@@ -2,6 +2,7 @@ import type {
 	DateValue,
 	CalendarProps as RACCalendarProps,
 	DatePickerProps as RACDatePickerProps,
+	PopoverProps as RACPopoverProps,
 } from 'react-aria-components';
 import type { DefaultProps } from '../../util/types';
 import type { FormInputContainerDefaultProps } from '../Form/types';
@@ -26,6 +27,16 @@ export interface DatePickerProps extends FormInputContainerDefaultProps<
 	 * See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale for more details on supported locales and formatting options.
 	 */
 	locale?: string;
+	/**
+	 * Distance in pixels between the calendar popover and the date input.
+	 * Default: 8
+	 */
+	offset?: RACPopoverProps['offset'];
+	/**
+	 * Minimum distance in pixels between the calendar popover and its container.
+	 * Default: 0
+	 */
+	containerPadding?: RACPopoverProps['containerPadding'];
 }
 
 export type CalendarProps = DefaultProps<
