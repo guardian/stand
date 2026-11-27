@@ -7,18 +7,8 @@ import SegmentedControlStories, {
 	CustomTheme,
 	CssOverrides,
 } from './SegmentedControl.stories';
-import {
-	SandboxReact,
-	SandboxCss,
-	SandboxJs,
-} from '../../util/storybook/sandbox/Sandbox';
-import {
-	componentName,
-	componentCss,
-	componentHtml,
-	componentJs,
-	componentTsx,
-} from './sandbox';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
 
 <Meta of={SegmentedControlStories} />
 
@@ -153,22 +143,7 @@ This example fills the available width and gives each segment equal space.
 
 ## Custom Component Build
 
-The CSS export provides design-token variables, not a pre-styled component or selection behaviour.
-If building without React/Emotion, you are responsible for selection state, accessible names, selection announcements and keyboard behaviour.
-The following custom examples use native buttons and are styling examples, not replacements for React Aria's group behaviour.
+Due to its interactive behaviour (single selection, keyboard navigation and accessibility semantics), SegmentedControl is only available as a React component with Emotion for styling.
 
-### CSS
-
-Import `@guardian/stand/component/segmentedControl.css` and use its variables:
-
-<SandboxCss
-	componentName={componentName}
-	componentHtml={componentHtml}
-	componentCss={componentCss}
-/>
-
-### TypeScript/JavaScript
-
-Use `componentSegmentedControl` and the `ComponentSegmentedControl` type from `@guardian/stand/SegmentedControl` or `@guardian/stand`:
-
-<SandboxJs componentName={componentName} componentJs={componentJs} />
+If you need a segmented control outside React, you would need to build your own and replicate React Aria's behaviour.
+The design tokens are available as CSS variables from `@guardian/stand/component/segmentedControl.css`, and as `componentSegmentedControl` from `@guardian/stand/SegmentedControl` or `@guardian/stand`.
