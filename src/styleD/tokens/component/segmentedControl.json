@@ -79,20 +79,6 @@
 						"$type": "color",
 						"$value": "{semantic.colors.text.strong}"
 					},
-					"typography": {
-						"font": {
-							"$type": "typography",
-							"$value": "{component.segmentedControl.item.typography.font}"
-						},
-						"fontWidth": {
-							"$type": "number",
-							"$value": "{component.segmentedControl.item.typography.fontWidth}"
-						},
-						"letterSpacing": {
-							"$type": "dimension",
-							"$value": "{component.segmentedControl.item.typography.letterSpacing}"
-						}
-					},
 					"hover": {
 						"backgroundColor": {
 							"$type": "color",
@@ -117,21 +103,7 @@
 					},
 					"outlineOffset": {
 						"$type": "dimension",
-						"$value": "{semantic.spacing.stackXxs}"
-					}
-				},
-				"disabled": {
-					"backgroundColor": {
-						"$type": "color",
-						"$value": "{semantic.colors.fill.disabled}"
-					},
-					"borderColor": {
-						"$type": "color",
-						"$value": "{semantic.colors.border.disabled}"
-					},
-					"color": {
-						"$type": "color",
-						"$value": "{semantic.colors.text.disabled}"
+						"$value": "{semantic.sizing.border.md}"
 					}
 				}
 			}

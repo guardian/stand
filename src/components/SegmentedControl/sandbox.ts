@@ -4,21 +4,20 @@ export const componentTsx = /* javascript */ `import { useState } from 'react';
 import { SegmentedControl, SegmentedControlItem } from '@guardian/stand/SegmentedControl';
 
 export const Component = () => {
-	const [selectedKeys, setSelectedKeys] = useState(new Set(['board']));
+	const [selectedKey, setSelectedKey] = useState('board');
 
 	return (
 		<>
 			<SegmentedControl
 				aria-label="View mode"
-				selectedKeys={selectedKeys}
-				onSelectionChange={setSelectedKeys}
-				disallowEmptySelection
+				selectedKey={selectedKey}
+				onSelectionChange={setSelectedKey}
 			>
 				{['List', 'Grid', 'Gallery', 'Board'].map((view) => (
 					<SegmentedControlItem key={view} id={view.toLowerCase()}>{view}</SegmentedControlItem>
 				))}
 			</SegmentedControl>
-			<p>Selected view: {[...selectedKeys].join(', ')}</p>
+			<p>Selected view: {selectedKey}</p>
 		</>
 	);
 };
@@ -89,10 +88,6 @@ export const componentCss = /* css */ `@import '@guardian/stand/component/segmen
 	background: var(--component-segmented-control-item-selected-background-color);
 	border-color: var(--component-segmented-control-item-selected-border-color);
 	color: var(--component-segmented-control-item-selected-color);
-	font: var(--component-segmented-control-item-selected-typography-font);
-	font-variation-settings: "wdth" var(--component-segmented-control-item-selected-typography-font-width);
-	letter-spacing: var(--component-segmented-control-item-selected-typography-letter-spacing);
-	line-height: var(--component-segmented-control-item-line-height);
 }
 
 .stand-segmented-control > button[aria-pressed="true"]:hover {
@@ -103,13 +98,6 @@ export const componentCss = /* css */ `@import '@guardian/stand/component/segmen
 	z-index: 2;
 	outline: var(--component-segmented-control-item-focus-visible-outline-width) solid var(--component-segmented-control-item-focus-visible-outline-color);
 	outline-offset: var(--component-segmented-control-item-focus-visible-outline-offset);
-}
-
-.stand-segmented-control > button:disabled {
-	background: var(--component-segmented-control-item-disabled-background-color);
-	border-color: var(--component-segmented-control-item-disabled-border-color);
-	color: var(--component-segmented-control-item-disabled-color);
-	cursor: not-allowed;
 }
 `;
 
@@ -181,10 +169,6 @@ style.textContent = \`
 		background: \${theme.item.selected.backgroundColor};
 		border-color: \${theme.item.selected.borderColor};
 		color: \${theme.item.selected.color};
-		font: \${theme.item.selected.typography.font};
-		font-variation-settings: "wdth" \${theme.item.selected.typography.fontWidth};
-		letter-spacing: \${theme.item.selected.typography.letterSpacing};
-		line-height: \${theme.item.lineHeight};
 	}
 	.stand-segmented-control > button[aria-pressed="true"]:hover {
 		background: \${theme.item.selected.hover.backgroundColor};
@@ -201,7 +185,7 @@ document.getElementById('app').innerHTML = \`${componentHtml}\`;
 const group = document.querySelector('.stand-segmented-control');
 group.addEventListener('click', (event) => {
 	const selected = event.target.closest('button');
-	if (!selected || selected.disabled) return;
+	if (!selected) return;
 	for (const button of group.querySelectorAll('button')) {
 		button.setAttribute('aria-pressed', String(button === selected));
 	}

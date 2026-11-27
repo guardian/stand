@@ -17,6 +17,9 @@ const ThemeContext = createContext(defaultSegmentedControlTheme);
 export function SegmentedControl({
 	theme = {},
 	cssOverrides,
+	selectedKey,
+	defaultSelectedKey,
+	onSelectionChange,
 	...props
 }: SegmentedControlProps) {
 	const mergedTheme: SegmentedControlTheme = mergeDeep(
@@ -30,6 +33,17 @@ export function SegmentedControl({
 				{...props}
 				selectionMode="single"
 				orientation="horizontal"
+				disallowEmptySelection
+				selectedKeys={selectedKey !== undefined ? [selectedKey] : undefined}
+				defaultSelectedKeys={
+					defaultSelectedKey !== undefined ? [defaultSelectedKey] : undefined
+				}
+				onSelectionChange={(keys) => {
+					const [key] = keys;
+					if (key !== undefined) {
+						onSelectionChange?.(key);
+					}
+				}}
 				css={[segmentedControlStyles(mergedTheme), cssOverrides]}
 			/>
 		</ThemeContext.Provider>

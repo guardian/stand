@@ -2,13 +2,7 @@ import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import { MetaTable } from '../../util/storybook/MetaTable';
 import SegmentedControlStories, {
 	Default,
-	FigmaDesign,
-	OptionalSelection,
 	Controlled,
-	OtherLabels,
-	Disabled,
-	DisabledItem,
-	DisabledSelectedItem,
 	SelectedPositions,
 	CustomTheme,
 	CssOverrides,
@@ -30,22 +24,21 @@ import {
 
 # SegmentedControl
 
-A connected, horizontal segmented control built on [React Aria ToggleButtonGroup and ToggleButton](https://react-aria.adobe.com/ToggleButtonGroup).
-The public name follows the design terminology; React Aria's toggle buttons are the underlying implementation.
-It supports a single selected option, with controlled or uncontrolled selection.
-The default appearance matches Figma's Small / Condensed variant: 32px-high segments,
-12px regular-weight Open Sans Compact labels and a blue selected fill and border.
-Selecting an item does not change its label weight or width.
+A connected, horizontal set of options where exactly one is selected, built on [React Aria ToggleButtonGroup and ToggleButton](https://react-aria.adobe.com/ToggleButtonGroup).
+The API follows [React Spectrum's SegmentedControl](https://react-spectrum.adobe.com/SegmentedControl): selection is a single item `id`, and once an item is selected it cannot be cleared.
+
+Currently only Figma's Small / Condensed text variant is implemented: 32px-high segments with 12px Open Sans Compact labels.
+XSmall, default font width and icon variants are not yet supported.
 
 <MetaTable
 	designSystemTeamVerified={false}
-	figmaLink="https://www.figma.com/design/jD7ZXQ2hmna9qQjUBu3ioH/Newsletter-pilot?node-id=6155-33515&m=dev"
+	figmaLink="https://www.figma.com/design/gmHnKr3tOzvnYp1FZeIl4t/Stand--Editorial-tool-Design-System?node-id=2740-4774&m=dev"
 	reactAriaLink="https://react-aria.adobe.com/ToggleButtonGroup"
 />
 
 ## When to use
 
-- To choose between a small number of related options, such as view modes, display density or time periods.
+- To switch between a small number of related options, such as view modes or time periods.
 - Use Tabs instead when each choice opens an associated content panel, or RadioGroup for a radio-style form field.
 
 ## Peer dependencies
@@ -73,9 +66,8 @@ import {
 
 <SegmentedControl
 	aria-label="View mode"
-	defaultSelectedKeys={['board']}
-	disallowEmptySelection
-	onSelectionChange={(keys) => console.log([...keys])}
+	defaultSelectedKey="board"
+	onSelectionChange={(key) => console.log(key)}
 >
 	<SegmentedControlItem id="list">List</SegmentedControlItem>
 	<SegmentedControlItem id="grid">Grid</SegmentedControlItem>
@@ -85,42 +77,36 @@ import {
 ```
 
 Supply an accessible group name using `aria-label`, or `aria-labelledby` pointing to a visible label.
-Each `SegmentedControlItem` needs a unique string or number `id`; the visible label does not determine its value.
-Keep item labels stable when selected so assistive technology can announce selection.
+Each `SegmentedControlItem` needs a unique string or number `id`.
 
 ## Props
 
-| Name                             | Type                                       | Required    | Default | Description                                                                                |
-| -------------------------------- | ------------------------------------------ | ----------- | ------- | ------------------------------------------------------------------------------------------ |
-| `aria-label` / `aria-labelledby` | `string`                                   | Conditional | N/A     | Provide one to name the group.                                                             |
-| `children`                       | `ReactNode` or render function             | Yes         | N/A     | `SegmentedControlItem` items, optionally inside a fragment.                                |
-| `selectedKeys`                   | `Iterable<Key>`                            | No          | N/A     | Controlled selection, containing at most one item id.                                      |
-| `defaultSelectedKeys`            | `Iterable<Key>`                            | No          | Empty   | Initial uncontrolled selection, containing at most one item id.                            |
-| `onSelectionChange`              | `(keys: Set<Key>) => void`                 | No          | N/A     | Called with the selected ids, or an empty set when cleared.                                |
-| `disallowEmptySelection`         | `boolean`                                  | No          | `false` | Prevents clearing the current selection. Initialise a selection when a choice is required. |
-| `isDisabled`                     | `boolean`                                  | No          | `false` | Disables every item.                                                                       |
-| `theme`                          | `SegmentedControlTheme`                    | No          | N/A     | Token overrides inherited by items.                                                        |
-| `cssOverrides`                   | `SerializedStyles` or `SerializedStyles[]` | No          | N/A     | Styles applied to the group.                                                               |
-| `className`                      | `string` or render function                | No          | N/A     | Class name applied to the group.                                                           |
+| Name                             | Type                                       | Required    | Default | Description                                                 |
+| -------------------------------- | ------------------------------------------ | ----------- | ------- | ----------------------------------------------------------- |
+| `aria-label` / `aria-labelledby` | `string`                                   | Conditional | N/A     | Provide one to name the group.                              |
+| `children`                       | `ReactNode`                                | Yes         | N/A     | `SegmentedControlItem` items, optionally inside a fragment. |
+| `selectedKey`                    | `Key`                                      | No          | N/A     | The `id` of the selected item (controlled).                 |
+| `defaultSelectedKey`             | `Key`                                      | No          | N/A     | The `id` of the initially selected item (uncontrolled).     |
+| `onSelectionChange`              | `(key: Key) => void`                       | No          | N/A     | Called with the `id` of the newly selected item.            |
+| `theme`                          | `SegmentedControlTheme`                    | No          | N/A     | Token overrides inherited by items.                         |
+| `cssOverrides`                   | `SerializedStyles` or `SerializedStyles[]` | No          | N/A     | Styles applied to the group.                                |
+| `className`                      | `string` or render function                | No          | N/A     | Class name applied to the group.                            |
 
-Selection is always single and orientation is always horizontal; Stand does not expose `selectionMode` or `orientation`.
-Other props and render functions follow the [React Aria ToggleButtonGroup API](https://react-aria.adobe.com/ToggleButtonGroup#api).
-React Aria's single-selection mode exposes a `radiogroup` with `radio` semantics on native buttons, not radio inputs. Stand preserves these semantics.
-Arrow keys move focus between enabled items; Space or Enter selects the focused item.
+Other props follow the [React Aria ToggleButtonGroup API](https://react-aria.adobe.com/ToggleButtonGroup#api).
+The group uses React Aria's single-selection semantics: a `radiogroup` of `radio` buttons.
+Arrow keys move focus between items; Space or Enter selects the focused item.
 
 ### SegmentedControlItem props
 
-| Name           | Type                                       | Required | Default | Description                                                      |
-| -------------- | ------------------------------------------ | -------- | ------- | ---------------------------------------------------------------- |
-| `id`           | `string` or `number`                       | Yes      | N/A     | Selection identifier within the group.                           |
-| `children`     | `ReactNode` or render function             | Yes      | N/A     | Visible label. For icon-only content, also provide `aria-label`. |
-| `isDisabled`   | `boolean`                                  | No       | `false` | Disables this item.                                              |
-| `theme`        | `SegmentedControlTheme`                    | No       | N/A     | Overrides inherited group tokens for this item.                  |
-| `cssOverrides` | `SerializedStyles` or `SerializedStyles[]` | No       | N/A     | Styles applied to this item.                                     |
-| `className`    | `string` or render function                | No       | N/A     | Class name applied to this item.                                 |
+| Name           | Type                                       | Required | Default | Description                                     |
+| -------------- | ------------------------------------------ | -------- | ------- | ----------------------------------------------- |
+| `id`           | `string` or `number`                       | Yes      | N/A     | Selection identifier within the group.          |
+| `children`     | `ReactNode`                                | Yes      | N/A     | Visible label.                                  |
+| `theme`        | `SegmentedControlTheme`                    | No       | N/A     | Overrides inherited group tokens for this item. |
+| `cssOverrides` | `SerializedStyles` or `SerializedStyles[]` | No       | N/A     | Styles applied to this item.                    |
+| `className`    | `string` or render function                | No       | N/A     | Class name applied to this item.                |
 
-Use these items within `SegmentedControl`; selection is managed by the group, not item-level `isSelected`, `defaultSelected` or `onChange` props.
-Other interaction props follow the [React Aria ToggleButton API](https://react-aria.adobe.com/ToggleButton#api).
+Other props follow the [React Aria ToggleButton API](https://react-aria.adobe.com/ToggleButton#api).
 
 ## Stories
 
@@ -128,40 +114,11 @@ Other interaction props follow the [React Aria ToggleButton API](https://react-a
 
 <Canvas layout="padded" of={Default} />
 
-### Small condensed design reference
-
-<Canvas layout="padded" of={FigmaDesign} />
-
-### Optional selection
-
-Click the selected item again to clear it.
-
-<Canvas layout="padded" of={OptionalSelection} />
-
-### Controlled selection
+### Controlled
 
 <Canvas layout="padded" of={Controlled} />
 
-### Other labels and values
-
-<Canvas layout="padded" of={OtherLabels} />
-
-### Disabled group
-
-<Canvas layout="padded" of={Disabled} />
-
-### Disabled individual item
-
-<Canvas layout="padded" of={DisabledItem} />
-
-### Disabled selected item
-
-<Canvas layout="padded" of={DisabledSelectedItem} />
-
 ### Selected positions
-
-Hover items to inspect their hover state. Use Tab and arrow keys to inspect keyboard focus, then Space or Enter to select.
-All selected positions preserve the connected shape and rounded outer corners.
 
 <Canvas layout="padded" of={SelectedPositions} />
 
@@ -170,7 +127,6 @@ All selected positions preserve the connected shape and rounded outer corners.
 ### Custom theme
 
 Group token overrides are inherited by all items. Item-level overrides take precedence.
-The defaults use Stand semantic tokens for the design's neutral and selected colours.
 
 <Canvas layout="padded" of={CustomTheme} />
 

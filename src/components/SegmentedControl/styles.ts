@@ -84,8 +84,6 @@ export const segmentedControlItemStyles = (
 		background-color: ${theme.item.selected.backgroundColor};
 		border-color: ${theme.item.selected.borderColor};
 		color: ${theme.item.selected.color};
-		${convertTypographyToEmotionStringStyle(theme.item.selected.typography)}
-		line-height: ${theme.item.lineHeight};
 	}
 
 	&[data-selected][data-hovered] {
@@ -103,22 +101,10 @@ export const segmentedControlItemStyles = (
 		outline-offset: ${theme.item.focusVisible.outlineOffset};
 	}
 
-	&[data-disabled] {
-		background-color: ${theme.item.disabled.backgroundColor};
-		border-color: ${theme.item.disabled.borderColor};
-		color: ${theme.item.disabled.color};
-		cursor: not-allowed;
-	}
-
 	@media (forced-colors: active) {
 		&[data-selected] {
 			border-color: Highlight;
 			color: Highlight;
-		}
-
-		&[data-disabled] {
-			border-color: GrayText;
-			color: GrayText;
 		}
 
 		&[data-focus-visible] {

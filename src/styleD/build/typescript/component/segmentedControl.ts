@@ -30,11 +30,6 @@ export const componentSegmentedControl = {
 			backgroundColor: '#c5dfec',
 			borderColor: '#0072a9',
 			color: '#000000',
-			typography: {
-				font: 'normal 460 0.75rem/1.3 Open Sans',
-				fontWidth: 88,
-				letterSpacing: '0rem',
-			},
 			hover: {
 				backgroundColor: '#8abed7',
 			},
@@ -45,12 +40,7 @@ export const componentSegmentedControl = {
 		focusVisible: {
 			outlineWidth: '0.125rem',
 			outlineColor: '#0072a9',
-			outlineOffset: '0.25rem',
-		},
-		disabled: {
-			backgroundColor: '#dcdcdc',
-			borderColor: '#dcdcdc',
-			color: '#999999',
+			outlineOffset: '0.125rem',
 		},
 	},
 };

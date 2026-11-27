@@ -10,8 +10,7 @@ const meta = {
 	component: SegmentedControl,
 	args: {
 		'aria-label': 'View mode',
-		defaultSelectedKeys: ['board'],
-		disallowEmptySelection: true,
+		defaultSelectedKey: 'board',
 		children: ['List', 'Grid', 'Gallery', 'Board'].map((view) => (
 			<SegmentedControlItem key={view} id={view.toLowerCase()}>
 				{view}
@@ -24,81 +23,19 @@ type Story = StoryObj<typeof SegmentedControl>;
 
 export const Default = {} satisfies Story;
 
-export const FigmaDesign = {
-	name: 'Small condensed (Figma)',
-	args: {
-		'aria-label': 'Design reference',
-		defaultSelectedKeys: ['second'],
-		children: ['first', 'second', 'third', 'fourth'].map((id) => (
-			<SegmentedControlItem key={id} id={id}>
-				Label
-			</SegmentedControlItem>
-		)),
-	},
-} satisfies Story;
-
-export const OptionalSelection = {
-	args: {
-		defaultSelectedKeys: [],
-		disallowEmptySelection: false,
-	},
-} satisfies Story;
-
 export const Controlled = {
-	render: function ControlledGroup(args) {
-		const [selectedKeys, setSelectedKeys] = useState<Set<Key>>(
-			new Set(['board']),
-		);
+	render: function ControlledSegmentedControl(args) {
+		const [selectedKey, setSelectedKey] = useState<Key>('board');
 		return (
 			<>
 				<SegmentedControl
 					{...args}
-					selectedKeys={selectedKeys}
-					onSelectionChange={setSelectedKeys}
+					selectedKey={selectedKey}
+					onSelectionChange={setSelectedKey}
 				/>
-				<p>Selected view: {[...selectedKeys].join(', ')}</p>
+				<p>Selected view: {selectedKey}</p>
 			</>
 		);
-	},
-} satisfies Story;
-
-export const OtherLabels = {
-	args: {
-		'aria-label': 'Time period',
-		defaultSelectedKeys: ['week'],
-		children: (
-			<>
-				<SegmentedControlItem id="day">Day</SegmentedControlItem>
-				<SegmentedControlItem id="week">Week</SegmentedControlItem>
-				<SegmentedControlItem id="month">Month</SegmentedControlItem>
-			</>
-		),
-	},
-} satisfies Story;
-
-export const Disabled = {
-	args: { isDisabled: true },
-} satisfies Story;
-
-export const DisabledItem = {
-	args: {
-		children: (
-			<>
-				<SegmentedControlItem id="list">List</SegmentedControlItem>
-				<SegmentedControlItem id="grid" isDisabled>
-					Grid
-				</SegmentedControlItem>
-				<SegmentedControlItem id="gallery">Gallery</SegmentedControlItem>
-				<SegmentedControlItem id="board">Board</SegmentedControlItem>
-			</>
-		),
-	},
-} satisfies Story;
-
-export const DisabledSelectedItem = {
-	args: {
-		defaultSelectedKeys: ['grid'],
-		children: DisabledItem.args.children,
 	},
 } satisfies Story;
 
@@ -110,7 +47,7 @@ export const SelectedPositions = {
 					{...args}
 					key={selected}
 					aria-label={`View mode, ${selected} selected`}
-					defaultSelectedKeys={[selected]}
+					defaultSelectedKey={selected}
 				/>
 			))}
 		</div>
