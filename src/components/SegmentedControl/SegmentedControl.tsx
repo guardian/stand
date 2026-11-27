@@ -5,22 +5,22 @@ import {
 } from 'react-aria-components';
 import { mergeDeep } from '../../util/mergeDeep';
 import {
-	defaultToggleButtonGroupTheme,
-	toggleButtonGroupStyles,
-	toggleButtonStyles,
+	defaultSegmentedControlTheme,
+	segmentedControlItemStyles,
+	segmentedControlStyles,
 } from './styles';
-import type { ToggleButtonGroupTheme } from './styles';
-import type { ToggleButtonGroupProps, ToggleButtonProps } from './types';
+import type { SegmentedControlTheme } from './styles';
+import type { SegmentedControlItemProps, SegmentedControlProps } from './types';
 
-const ThemeContext = createContext(defaultToggleButtonGroupTheme);
+const ThemeContext = createContext(defaultSegmentedControlTheme);
 
-export function ToggleButtonGroup({
+export function SegmentedControl({
 	theme = {},
 	cssOverrides,
 	...props
-}: ToggleButtonGroupProps) {
-	const mergedTheme: ToggleButtonGroupTheme = mergeDeep(
-		defaultToggleButtonGroupTheme,
+}: SegmentedControlProps) {
+	const mergedTheme: SegmentedControlTheme = mergeDeep(
+		defaultSegmentedControlTheme,
 		theme,
 	);
 
@@ -30,23 +30,23 @@ export function ToggleButtonGroup({
 				{...props}
 				selectionMode="single"
 				orientation="horizontal"
-				css={[toggleButtonGroupStyles(mergedTheme), cssOverrides]}
+				css={[segmentedControlStyles(mergedTheme), cssOverrides]}
 			/>
 		</ThemeContext.Provider>
 	);
 }
 
-export function ToggleButton({
+export function SegmentedControlItem({
 	theme = {},
 	cssOverrides,
 	...props
-}: ToggleButtonProps) {
+}: SegmentedControlItemProps) {
 	const mergedTheme = mergeDeep(useContext(ThemeContext), theme);
 
 	return (
 		<RACToggleButton
 			{...props}
-			css={[toggleButtonStyles(mergedTheme), cssOverrides]}
+			css={[segmentedControlItemStyles(mergedTheme), cssOverrides]}
 		/>
 	);
 }

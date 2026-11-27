@@ -1,14 +1,30 @@
 import { useState } from 'react';
 import type { Key } from 'react-aria-components';
 import {
-	ToggleButton,
-	ToggleButtonGroup,
-} from '../src/components/ToggleButtonGroup/ToggleButtonGroup';
-import type { ToggleButtonGroupProps } from '../src/components/ToggleButtonGroup/types';
+	SegmentedControl,
+	SegmentedControlItem,
+} from '../src/SegmentedControl';
+import type { SegmentedControlProps } from '../src/SegmentedControl';
 
-interface WidthSelectorProps extends ToggleButtonGroupProps {
+interface WidthSelectorProps extends SegmentedControlProps {
 	onSelectedValuesChange?: (keys: Key[]) => void;
 	disabledItem?: Key;
+}
+
+export function DesignReferenceSelector() {
+	return (
+		<SegmentedControl
+			aria-label="Design reference"
+			defaultSelectedKeys={['second']}
+			disallowEmptySelection
+		>
+			{['first', 'second', 'third', 'fourth'].map((id) => (
+				<SegmentedControlItem key={id} id={id}>
+					Label
+				</SegmentedControlItem>
+			))}
+		</SegmentedControl>
+	);
 }
 
 export function WidthSelector({
@@ -18,7 +34,7 @@ export function WidthSelector({
 	...props
 }: WidthSelectorProps) {
 	return (
-		<ToggleButtonGroup
+		<SegmentedControl
 			aria-label="Preview width"
 			defaultSelectedKeys={['650']}
 			{...props}
@@ -27,13 +43,13 @@ export function WidthSelector({
 				onSelectedValuesChange?.([...keys]);
 			}}
 		>
-			<ToggleButton id="320">320</ToggleButton>
-			<ToggleButton id="375" isDisabled={disabledItem === '375'}>
+			<SegmentedControlItem id="320">320</SegmentedControlItem>
+			<SegmentedControlItem id="375" isDisabled={disabledItem === '375'}>
 				375
-			</ToggleButton>
-			<ToggleButton id="425">425</ToggleButton>
-			<ToggleButton id="650">650</ToggleButton>
-		</ToggleButtonGroup>
+			</SegmentedControlItem>
+			<SegmentedControlItem id="425">425</SegmentedControlItem>
+			<SegmentedControlItem id="650">650</SegmentedControlItem>
+		</SegmentedControl>
 	);
 }
 
@@ -59,7 +75,7 @@ export function LabelledNumericSelector() {
 	return (
 		<>
 			<span id="width-label">Display size</span>
-			<ToggleButtonGroup
+			<SegmentedControl
 				aria-labelledby="width-label"
 				selectedKeys={selectedKeys}
 				onSelectionChange={setSelectedKeys}
@@ -67,18 +83,20 @@ export function LabelledNumericSelector() {
 			>
 				{() => (
 					<>
-						<ToggleButton id={320}>{() => 'Compact'}</ToggleButton>
-						<ToggleButton
+						<SegmentedControlItem id={320}>
+							{() => 'Compact'}
+						</SegmentedControlItem>
+						<SegmentedControlItem
 							id={650}
 							className={({ isSelected }) =>
 								isSelected ? 'selected-item' : 'item'
 							}
 						>
 							Full width
-						</ToggleButton>
+						</SegmentedControlItem>
 					</>
 				)}
-			</ToggleButtonGroup>
+			</SegmentedControl>
 			<output aria-label="Numeric selection">
 				{[...selectedKeys].join(', ')}
 			</output>
@@ -89,15 +107,18 @@ export function LabelledNumericSelector() {
 export function ThemedSelector() {
 	return (
 		<>
-			<ToggleButtonGroup
+			<SegmentedControl
 				aria-label="Theme example"
 				theme={{ item: { color: 'rgb(36, 73, 29)' } }}
 			>
-				<ToggleButton id="one">One</ToggleButton>
-				<ToggleButton id="two" theme={{ item: { color: 'rgb(105, 60, 22)' } }}>
+				<SegmentedControlItem id="one">One</SegmentedControlItem>
+				<SegmentedControlItem
+					id="two"
+					theme={{ item: { color: 'rgb(105, 60, 22)' } }}
+				>
 					Two
-				</ToggleButton>
-			</ToggleButtonGroup>
+				</SegmentedControlItem>
+			</SegmentedControl>
 			<WidthSelector />
 		</>
 	);

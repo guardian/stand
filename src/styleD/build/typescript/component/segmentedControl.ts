@@ -2,7 +2,7 @@
  * Do not edit directly, this file was auto-generated.
  */
 
-export const componentToggleButtonGroup = {
+export const componentSegmentedControl = {
 	group: {
 		backgroundColor: '#ededed',
 		borderRadius: '0.25rem',
@@ -17,7 +17,7 @@ export const componentToggleButtonGroup = {
 		lineHeight: 1,
 		typography: {
 			font: 'normal 460 0.75rem/1.3 Open Sans',
-			fontWidth: 95,
+			fontWidth: 88,
 			letterSpacing: '0rem',
 		},
 		hover: {
@@ -31,8 +31,8 @@ export const componentToggleButtonGroup = {
 			borderColor: '#0072a9',
 			color: '#000000',
 			typography: {
-				font: 'normal 700 0.75rem/1 Open Sans',
-				fontWidth: 95,
+				font: 'normal 460 0.75rem/1.3 Open Sans',
+				fontWidth: 88,
 				letterSpacing: '0rem',
 			},
 			hover: {
@@ -54,4 +54,4 @@ export const componentToggleButtonGroup = {
 		},
 	},
 };
-export type ComponentToggleButtonGroup = typeof componentToggleButtonGroup;
+export type ComponentSegmentedControl = typeof componentSegmentedControl;

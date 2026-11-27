@@ -78,14 +78,14 @@
 				"default": "./dist/Button.cjs"
 			}
 		},
-		"./ToggleButtonGroup": {
+		"./SegmentedControl": {
 			"import": {
-				"types": "./dist/ToggleButtonGroup.d.ts",
-				"default": "./dist/ToggleButtonGroup.js"
+				"types": "./dist/SegmentedControl.d.ts",
+				"default": "./dist/SegmentedControl.js"
 			},
 			"require": {
-				"types": "./dist/ToggleButtonGroup.d.cts",
-				"default": "./dist/ToggleButtonGroup.cjs"
+				"types": "./dist/SegmentedControl.d.cts",
+				"default": "./dist/SegmentedControl.cjs"
 			}
 		},
 		"./ButtonGroup": {
@@ -505,7 +505,7 @@
 		"./component/pagination.css": "./dist/styleD/build/css/component/pagination.css",
 		"./component/button.css": "./dist/styleD/build/css/component/button.css",
 		"./component/buttonGroup.css": "./dist/styleD/build/css/component/buttonGroup.css",
-		"./component/toggleButtonGroup.css": "./dist/styleD/build/css/component/toggleButtonGroup.css",
+		"./component/segmentedControl.css": "./dist/styleD/build/css/component/segmentedControl.css",
 		"./component/typography.css": "./dist/styleD/build/css/component/typography.css",
 		"./component/icon.css": "./dist/styleD/build/css/component/icon.css",
 		"./component/favicon.css": "./dist/styleD/build/css/component/favicon.css",
@@ -562,8 +562,8 @@
 			"ButtonGroup": [
 				"./dist/ButtonGroup.d.ts"
 			],
-			"ToggleButtonGroup": [
-				"./dist/ToggleButtonGroup.d.ts"
+			"SegmentedControl": [
+				"./dist/SegmentedControl.d.ts"
 			],
 			"LinkButton": [
 				"./dist/LinkButton.d.ts"

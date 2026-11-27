@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/unbound-method -- playwright mount */
 import {
 	ControlledWidthSelector,
+	DesignReferenceSelector,
 	LabelledNumericSelector,
 	ThemedSelector,
 	WidthSelector,
-} from './toggle-button-group.mock';
+} from './segmented-control.mock';
 import playwrightComponentTestReact from './playwrightImport';
 
 const { expect, test } = playwrightComponentTestReact;
@@ -213,7 +214,7 @@ test('renders connected 32px segments with rounded outer corners and state style
 	for (const [index, box] of boxes.entries()) {
 		const previous = boxes[index - 1];
 		if (previous) {
-			expect(box.x).toBeCloseTo(previous.x + previous.width - 1);
+			expect(box.x).toBeCloseTo(previous.x + previous.width);
 		}
 	}
 	await expect(last).toHaveCSS('background-color', 'rgb(197, 223, 236)');
@@ -231,4 +232,55 @@ test('renders connected 32px segments with rounded outer corners and state style
 	await group.screenshot({
 		path: testInfo.outputPath('segmented-control.png'),
 	});
+});
+
+test('matches the small condensed design without resizing when selection changes', async ({
+	mount,
+	page,
+}, testInfo) => {
+	await mount(<DesignReferenceSelector />);
+	const group = page.getByRole('radiogroup', { name: 'Design reference' });
+	const buttons = group.getByRole('radio');
+	const widths = await buttons.evaluateAll((items) =>
+		items.map((item) => item.getBoundingClientRect().width),
+	);
+
+	for (const button of await buttons.all()) {
+		await expect(button).toHaveCSS('height', '32px');
+		await expect(button).toHaveCSS('font-size', '12px');
+		await expect(button).toHaveCSS('font-weight', '460');
+		await expect(button).toHaveCSS('font-variation-settings', '"wdth" 88');
+		await expect(button).toHaveCSS('line-height', '12px');
+		await expect(button).toHaveCSS('padding-left', '11px');
+		await expect(button).toHaveCSS('padding-right', '11px');
+	}
+
+	await expect(buttons.nth(1)).toBeChecked();
+	await expect(buttons.nth(1)).toHaveCSS(
+		'background-color',
+		'rgb(197, 223, 236)',
+	);
+	await expect(buttons.nth(1)).toHaveCSS('border-color', 'rgb(0, 114, 169)');
+	await expect(buttons.nth(1)).toHaveCSS('color', 'rgb(0, 0, 0)');
+	await expect(buttons.nth(0)).toHaveCSS('color', 'rgb(84, 84, 84)');
+	await expect(buttons.nth(0)).toHaveCSS(
+		'background-color',
+		'rgb(237, 237, 237)',
+	);
+	expect(
+		await buttons
+			.nth(2)
+			.evaluate((button) => getComputedStyle(button, '::after').height),
+	).toBe('24px');
+	await group.screenshot({ path: testInfo.outputPath('figma-design.png') });
+
+	for (const button of await buttons.all()) {
+		await button.click();
+		await expect(button).toBeChecked();
+		expect(
+			await buttons.evaluateAll((items) =>
+				items.map((item) => item.getBoundingClientRect().width),
+			),
+		).toEqual(widths);
+	}
 });

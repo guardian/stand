@@ -1,7 +1,8 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import { MetaTable } from '../../util/storybook/MetaTable';
-import ToggleButtonGroupStories, {
+import SegmentedControlStories, {
 	Default,
+	FigmaDesign,
 	OptionalSelection,
 	Controlled,
 	OtherLabels,
@@ -11,7 +12,7 @@ import ToggleButtonGroupStories, {
 	SelectedPositions,
 	CustomTheme,
 	CssOverrides,
-} from './ToggleButtonGroup.stories';
+} from './SegmentedControl.stories';
 import {
 	SandboxReact,
 	SandboxCss,
@@ -25,12 +26,16 @@ import {
 	componentTsx,
 } from './sandbox';
 
-<Meta of={ToggleButtonGroupStories} />
+<Meta of={SegmentedControlStories} />
 
-# ToggleButtonGroup
+# SegmentedControl
 
 A connected, horizontal segmented control built on [React Aria ToggleButtonGroup and ToggleButton](https://react-aria.adobe.com/ToggleButtonGroup).
+The public name follows the design terminology; React Aria's toggle buttons are the underlying implementation.
 It supports a single selected option, with controlled or uncontrolled selection.
+The default appearance matches Figma's Small / Condensed variant: 32px-high segments,
+12px regular-weight Open Sans Compact labels and a blue selected fill and border.
+Selecting an item does not change its label weight or width.
 
 <MetaTable
 	designSystemTeamVerified={false}
@@ -62,25 +67,25 @@ Load Open Sans using the [Getting Started font guidance](?path=/docs/getting-sta
 
 ```tsx
 import {
-	ToggleButtonGroup,
-	ToggleButton,
-} from '@guardian/stand/ToggleButtonGroup';
+	SegmentedControl,
+	SegmentedControlItem,
+} from '@guardian/stand/SegmentedControl';
 
-<ToggleButtonGroup
+<SegmentedControl
 	aria-label="Preview width"
 	defaultSelectedKeys={['650']}
 	disallowEmptySelection
 	onSelectionChange={(keys) => console.log([...keys])}
 >
-	<ToggleButton id="320">320</ToggleButton>
-	<ToggleButton id="375">375</ToggleButton>
-	<ToggleButton id="425">425</ToggleButton>
-	<ToggleButton id="650">650</ToggleButton>
-</ToggleButtonGroup>;
+	<SegmentedControlItem id="320">320</SegmentedControlItem>
+	<SegmentedControlItem id="375">375</SegmentedControlItem>
+	<SegmentedControlItem id="425">425</SegmentedControlItem>
+	<SegmentedControlItem id="650">650</SegmentedControlItem>
+</SegmentedControl>;
 ```
 
 Supply an accessible group name using `aria-label`, or `aria-labelledby` pointing to a visible label.
-Each `ToggleButton` needs a unique string or number `id`; the visible label does not determine its value.
+Each `SegmentedControlItem` needs a unique string or number `id`; the visible label does not determine its value.
 Keep item labels stable when selected so assistive technology can announce selection.
 
 ## Props
@@ -88,13 +93,13 @@ Keep item labels stable when selected so assistive technology can announce selec
 | Name                             | Type                                       | Required    | Default | Description                                                                                |
 | -------------------------------- | ------------------------------------------ | ----------- | ------- | ------------------------------------------------------------------------------------------ |
 | `aria-label` / `aria-labelledby` | `string`                                   | Conditional | N/A     | Provide one to name the group.                                                             |
-| `children`                       | `ReactNode` or render function             | Yes         | N/A     | `ToggleButton` items, optionally inside a fragment.                                        |
+| `children`                       | `ReactNode` or render function             | Yes         | N/A     | `SegmentedControlItem` items, optionally inside a fragment.                                |
 | `selectedKeys`                   | `Iterable<Key>`                            | No          | N/A     | Controlled selection, containing at most one item id.                                      |
 | `defaultSelectedKeys`            | `Iterable<Key>`                            | No          | Empty   | Initial uncontrolled selection, containing at most one item id.                            |
 | `onSelectionChange`              | `(keys: Set<Key>) => void`                 | No          | N/A     | Called with the selected ids, or an empty set when cleared.                                |
 | `disallowEmptySelection`         | `boolean`                                  | No          | `false` | Prevents clearing the current selection. Initialise a selection when a choice is required. |
 | `isDisabled`                     | `boolean`                                  | No          | `false` | Disables every item.                                                                       |
-| `theme`                          | `ToggleButtonGroupTheme`                   | No          | N/A     | Token overrides inherited by items.                                                        |
+| `theme`                          | `SegmentedControlTheme`                    | No          | N/A     | Token overrides inherited by items.                                                        |
 | `cssOverrides`                   | `SerializedStyles` or `SerializedStyles[]` | No          | N/A     | Styles applied to the group.                                                               |
 | `className`                      | `string` or render function                | No          | N/A     | Class name applied to the group.                                                           |
 
@@ -103,18 +108,18 @@ Other props and render functions follow the [React Aria ToggleButtonGroup API](h
 React Aria's single-selection mode exposes a `radiogroup` with `radio` semantics on native buttons, not radio inputs. Stand preserves these semantics.
 Arrow keys move focus between enabled items; Space or Enter selects the focused item.
 
-### ToggleButton props
+### SegmentedControlItem props
 
 | Name           | Type                                       | Required | Default | Description                                                      |
 | -------------- | ------------------------------------------ | -------- | ------- | ---------------------------------------------------------------- |
 | `id`           | `string` or `number`                       | Yes      | N/A     | Selection identifier within the group.                           |
 | `children`     | `ReactNode` or render function             | Yes      | N/A     | Visible label. For icon-only content, also provide `aria-label`. |
 | `isDisabled`   | `boolean`                                  | No       | `false` | Disables this item.                                              |
-| `theme`        | `ToggleButtonGroupTheme`                   | No       | N/A     | Overrides inherited group tokens for this item.                  |
+| `theme`        | `SegmentedControlTheme`                    | No       | N/A     | Overrides inherited group tokens for this item.                  |
 | `cssOverrides` | `SerializedStyles` or `SerializedStyles[]` | No       | N/A     | Styles applied to this item.                                     |
 | `className`    | `string` or render function                | No       | N/A     | Class name applied to this item.                                 |
 
-Use these items within `ToggleButtonGroup`; selection is managed by the group, not item-level `isSelected`, `defaultSelected` or `onChange` props.
+Use these items within `SegmentedControl`; selection is managed by the group, not item-level `isSelected`, `defaultSelected` or `onChange` props.
 Other interaction props follow the [React Aria ToggleButton API](https://react-aria.adobe.com/ToggleButton#api).
 
 ## Stories
@@ -122,6 +127,10 @@ Other interaction props follow the [React Aria ToggleButton API](https://react-a
 ### Newsletter preview widths
 
 <Canvas layout="padded" of={Default} />
+
+### Small condensed design reference
+
+<Canvas layout="padded" of={FigmaDesign} />
 
 ### Optional selection
 
@@ -161,15 +170,15 @@ All selected positions preserve the connected shape and rounded outer corners.
 ### Custom theme
 
 Group token overrides are inherited by all items. Item-level overrides take precedence.
-Use current Stand semantic tokens; the reference design predates the current selected fill colour.
+The defaults use Stand semantic tokens for the design's neutral and selected colours.
 
 <Canvas layout="padded" of={CustomTheme} />
 
 ```tsx
 import { semanticColors } from '@guardian/stand';
-import type { ToggleButtonGroupTheme } from '@guardian/stand/ToggleButtonGroup';
+import type { SegmentedControlTheme } from '@guardian/stand/SegmentedControl';
 
-const theme: ToggleButtonGroupTheme = {
+const theme: SegmentedControlTheme = {
 	item: {
 		selected: {
 			backgroundColor: semanticColors.fill.greenWeak,
@@ -194,7 +203,7 @@ The following custom examples use native buttons and are styling examples, not r
 
 ### CSS
 
-Import `@guardian/stand/component/toggleButtonGroup.css` and use its variables:
+Import `@guardian/stand/component/segmentedControl.css` and use its variables:
 
 <SandboxCss
 	componentName={componentName}
@@ -204,6 +213,6 @@ Import `@guardian/stand/component/toggleButtonGroup.css` and use its variables:
 
 ### TypeScript/JavaScript
 
-Use `componentToggleButtonGroup` and the `ComponentToggleButtonGroup` type from `@guardian/stand/ToggleButtonGroup` or `@guardian/stand`:
+Use `componentSegmentedControl` and the `ComponentSegmentedControl` type from `@guardian/stand/SegmentedControl` or `@guardian/stand`:
 
 <SandboxJs componentName={componentName} componentJs={componentJs} />

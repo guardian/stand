@@ -1,21 +1,21 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
 import {
-	componentToggleButtonGroup,
-	type ComponentToggleButtonGroup,
-} from '../../styleD/build/typescript/component/toggleButtonGroup';
+	componentSegmentedControl,
+	type ComponentSegmentedControl,
+} from '../../styleD/build/typescript/component/segmentedControl';
 import { convertTypographyToEmotionStringStyle } from '../../styleD/utils/semantic/typography';
 import type { DeepPartial, Prettify } from '../../util/types';
 
-export type ToggleButtonGroupTheme = Prettify<ComponentToggleButtonGroup>;
-export type PartialToggleButtonGroupTheme = Prettify<
-	DeepPartial<ComponentToggleButtonGroup>
+export type SegmentedControlTheme = Prettify<ComponentSegmentedControl>;
+export type PartialSegmentedControlTheme = Prettify<
+	DeepPartial<ComponentSegmentedControl>
 >;
-export const defaultToggleButtonGroupTheme: ToggleButtonGroupTheme =
-	componentToggleButtonGroup;
+export const defaultSegmentedControlTheme: SegmentedControlTheme =
+	componentSegmentedControl;
 
-export const toggleButtonGroupStyles = (
-	theme: ToggleButtonGroupTheme,
+export const segmentedControlStyles = (
+	theme: SegmentedControlTheme,
 ): SerializedStyles => css`
 	display: inline-flex;
 	align-items: stretch;
@@ -23,8 +23,8 @@ export const toggleButtonGroupStyles = (
 	background-color: ${theme.group.backgroundColor};
 `;
 
-export const toggleButtonStyles = (
-	theme: ToggleButtonGroupTheme,
+export const segmentedControlItemStyles = (
+	theme: SegmentedControlTheme,
 ): SerializedStyles => css`
 	appearance: none;
 	box-sizing: border-box;
@@ -34,7 +34,7 @@ export const toggleButtonStyles = (
 	position: relative;
 	margin: 0;
 	height: ${theme.item.height};
-	padding: 0 ${theme.item.paddingInline};
+	padding: 0 calc(${theme.item.paddingInline} - ${theme.item.borderWidth});
 	border: ${theme.item.borderWidth} solid ${theme.item.borderColor};
 	border-inline-color: transparent;
 	border-radius: 0;
@@ -44,10 +44,6 @@ export const toggleButtonStyles = (
 	line-height: ${theme.item.lineHeight};
 	white-space: nowrap;
 	cursor: pointer;
-
-	&:not(:first-child) {
-		margin-inline-start: calc(-1 * ${theme.item.borderWidth});
-	}
 
 	&:first-child {
 		border-inline-start-color: ${theme.item.borderColor};

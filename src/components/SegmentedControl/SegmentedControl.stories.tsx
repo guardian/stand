@@ -3,27 +3,40 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { useState } from 'react';
 import type { Key } from 'react-aria-components';
 import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
-import { ToggleButton, ToggleButtonGroup } from './ToggleButtonGroup';
+import { SegmentedControl, SegmentedControlItem } from './SegmentedControl';
 
 const meta = {
-	title: 'Stand/Tools Design System/Components/ToggleButtonGroup',
-	component: ToggleButtonGroup,
+	title: 'Stand/Tools Design System/Components/SegmentedControl',
+	component: SegmentedControl,
 	args: {
 		'aria-label': 'Preview width',
 		defaultSelectedKeys: ['650'],
 		disallowEmptySelection: true,
 		children: ['320', '375', '425', '650'].map((width) => (
-			<ToggleButton key={width} id={width}>
+			<SegmentedControlItem key={width} id={width}>
 				{width}
-			</ToggleButton>
+			</SegmentedControlItem>
 		)),
 	},
-} satisfies Meta<typeof ToggleButtonGroup>;
+} satisfies Meta<typeof SegmentedControl>;
 
-type Story = StoryObj<typeof ToggleButtonGroup>;
+type Story = StoryObj<typeof SegmentedControl>;
 
 export const Default = {
 	name: 'Newsletter preview widths',
+} satisfies Story;
+
+export const FigmaDesign = {
+	name: 'Small condensed (Figma)',
+	args: {
+		'aria-label': 'Design reference',
+		defaultSelectedKeys: ['second'],
+		children: ['first', 'second', 'third', 'fourth'].map((id) => (
+			<SegmentedControlItem key={id} id={id}>
+				Label
+			</SegmentedControlItem>
+		)),
+	},
 } satisfies Story;
 
 export const OptionalSelection = {
@@ -40,7 +53,7 @@ export const Controlled = {
 		);
 		return (
 			<>
-				<ToggleButtonGroup
+				<SegmentedControl
 					{...args}
 					selectedKeys={selectedKeys}
 					onSelectionChange={setSelectedKeys}
@@ -57,9 +70,9 @@ export const OtherLabels = {
 		defaultSelectedKeys: ['week'],
 		children: (
 			<>
-				<ToggleButton id="day">Day</ToggleButton>
-				<ToggleButton id="week">Week</ToggleButton>
-				<ToggleButton id="month">Month</ToggleButton>
+				<SegmentedControlItem id="day">Day</SegmentedControlItem>
+				<SegmentedControlItem id="week">Week</SegmentedControlItem>
+				<SegmentedControlItem id="month">Month</SegmentedControlItem>
 			</>
 		),
 	},
@@ -73,12 +86,12 @@ export const DisabledItem = {
 	args: {
 		children: (
 			<>
-				<ToggleButton id="320">320</ToggleButton>
-				<ToggleButton id="375" isDisabled>
+				<SegmentedControlItem id="320">320</SegmentedControlItem>
+				<SegmentedControlItem id="375" isDisabled>
 					375
-				</ToggleButton>
-				<ToggleButton id="425">425</ToggleButton>
-				<ToggleButton id="650">650</ToggleButton>
+				</SegmentedControlItem>
+				<SegmentedControlItem id="425">425</SegmentedControlItem>
+				<SegmentedControlItem id="650">650</SegmentedControlItem>
 			</>
 		),
 	},
@@ -95,7 +108,7 @@ export const SelectedPositions = {
 	render: (args) => (
 		<div css={css({ display: 'grid', gap: '1rem', justifyItems: 'start' })}>
 			{['320', '375', '425', '650'].map((selected) => (
-				<ToggleButtonGroup
+				<SegmentedControl
 					{...args}
 					key={selected}
 					aria-label={`Preview width, ${selected} selected`}

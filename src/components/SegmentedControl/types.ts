@@ -4,19 +4,16 @@ import type {
 	ToggleButtonProps as RACToggleButtonProps,
 } from 'react-aria-components';
 import type { DefaultProps } from '../../util/types';
-import type { ToggleButtonGroupTheme } from './styles';
+import type { SegmentedControlTheme } from './styles';
 
-export interface ToggleButtonGroupProps
+export interface SegmentedControlProps
 	extends
-		DefaultProps<
-			ToggleButtonGroupTheme,
-			RACToggleButtonGroupProps['className']
-		>,
+		DefaultProps<SegmentedControlTheme, RACToggleButtonGroupProps['className']>,
 		Omit<RACToggleButtonGroupProps, 'selectionMode' | 'orientation'> {}
 
-export interface ToggleButtonProps
+export interface SegmentedControlItemProps
 	extends
-		DefaultProps<ToggleButtonGroupTheme, RACToggleButtonProps['className']>,
+		DefaultProps<SegmentedControlTheme, RACToggleButtonProps['className']>,
 		Omit<
 			RACToggleButtonProps,
 			'id' | 'isSelected' | 'defaultSelected' | 'onChange'

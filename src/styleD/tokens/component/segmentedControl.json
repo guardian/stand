@@ -1,6 +1,6 @@
 {
 	"component": {
-		"toggleButtonGroup": {
+		"segmentedControl": {
 			"group": {
 				"backgroundColor": {
 					"$type": "color",
@@ -43,15 +43,15 @@
 				"typography": {
 					"font": {
 						"$type": "typography",
-						"$value": "{semantic.typography.bodyXs.font}"
+						"$value": "{semantic.typography.bodyCompactXs.font}"
 					},
 					"fontWidth": {
 						"$type": "number",
-						"$value": "{semantic.typography.bodyXs.fontWidth}"
+						"$value": "{semantic.typography.bodyCompactXs.fontWidth}"
 					},
 					"letterSpacing": {
 						"$type": "dimension",
-						"$value": "{semantic.typography.bodyXs.letterSpacing}"
+						"$value": "{semantic.typography.bodyCompactXs.letterSpacing}"
 					}
 				},
 				"hover": {
@@ -82,15 +82,15 @@
 					"typography": {
 						"font": {
 							"$type": "typography",
-							"$value": "{semantic.typography.interactiveXs.font}"
+							"$value": "{component.segmentedControl.item.typography.font}"
 						},
 						"fontWidth": {
 							"$type": "number",
-							"$value": "{semantic.typography.interactiveXs.fontWidth}"
+							"$value": "{component.segmentedControl.item.typography.fontWidth}"
 						},
 						"letterSpacing": {
 							"$type": "dimension",
-							"$value": "{semantic.typography.interactiveXs.letterSpacing}"
+							"$value": "{component.segmentedControl.item.typography.letterSpacing}"
 						}
 					},
 					"hover": {
