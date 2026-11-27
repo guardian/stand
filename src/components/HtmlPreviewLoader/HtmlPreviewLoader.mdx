@@ -36,7 +36,7 @@ The HtmlPreviewLoader component fetches HTML markup, renders it inside an iframe
 
 - When you need to preview HTML content such as email templates or document markup in the UI.
 - When the preview content is loaded asynchronously and should show loading or error feedback.
-- When the preview should support width switching and an optional reload affordance.
+- When the preview should support width switching (via a segmented control above the preview) and an optional reload affordance.
 
 ## Peer dependencies
 
@@ -77,9 +77,9 @@ export const Component = () => (
 | Name              | Type                          | Required | Default                | Description                                                               |
 | ----------------- | ----------------------------- | -------- | ---------------------- | ------------------------------------------------------------------------- |
 | `fetchHtml`       | `{ (): Promise<string> }`     | Yes      | N/A                    | Function that resolves to the HTML string to render in the preview frame. |
-| `title`           | `ReactNode`                   | Yes      | N/A                    | Title content shown above the preview.                                    |
+| `title`           | `ReactNode`                   | Yes      | N/A                    | Title content shown above the preview. Pass markup to include a subtitle. |
 | `minHeight`       | `number`                      | No       | `600`                  | Minimum height of the preview frame in pixels.                            |
-| `widthOptions`    | `number[]`                    | No       | `[320, 375, 425, 650]` | Available frame widths shown in the width selector.                       |
+| `widthOptions`    | `number[]`                    | No       | `[320, 375, 425, 650]` | Frame widths offered in the segmented control. Pass `[]` to hide it.      |
 | `defaultWidth`    | `number`                      | No       | `425`                  | Initial width used for the preview frame.                                 |
 | `frameBackground` | `CSSProperties['background']` | No       | `'white'`              | Background applied to the iframe.                                         |
 | `allowReloading`  | `boolean`                     | No       | `false`                | Shows a reload button when the preview can be refreshed.                  |
