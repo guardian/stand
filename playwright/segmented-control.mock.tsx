@@ -6,7 +6,7 @@ import {
 } from '../src/SegmentedControl';
 import type { SegmentedControlProps } from '../src/SegmentedControl';
 
-interface WidthSelectorProps extends SegmentedControlProps {
+interface ExampleSegmentedControlProps extends SegmentedControlProps {
 	onSelectedValuesChange?: (keys: Key[]) => void;
 	disabledItem?: Key;
 }
@@ -27,43 +27,45 @@ export function DesignReferenceSelector() {
 	);
 }
 
-export function WidthSelector({
+export function ExampleSegmentedControl({
 	onSelectedValuesChange,
 	onSelectionChange,
 	disabledItem,
 	...props
-}: WidthSelectorProps) {
+}: ExampleSegmentedControlProps) {
 	return (
 		<SegmentedControl
-			aria-label="Preview width"
-			defaultSelectedKeys={['650']}
+			aria-label="View mode"
+			defaultSelectedKeys={['board']}
 			{...props}
 			onSelectionChange={(keys) => {
 				onSelectionChange?.(keys);
 				onSelectedValuesChange?.([...keys]);
 			}}
 		>
-			<SegmentedControlItem id="320">320</SegmentedControlItem>
-			<SegmentedControlItem id="375" isDisabled={disabledItem === '375'}>
-				375
+			<SegmentedControlItem id="list">List</SegmentedControlItem>
+			<SegmentedControlItem id="grid" isDisabled={disabledItem === 'grid'}>
+				Grid
 			</SegmentedControlItem>
-			<SegmentedControlItem id="425">425</SegmentedControlItem>
-			<SegmentedControlItem id="650">650</SegmentedControlItem>
+			<SegmentedControlItem id="gallery">Gallery</SegmentedControlItem>
+			<SegmentedControlItem id="board">Board</SegmentedControlItem>
 		</SegmentedControl>
 	);
 }
 
-export function ControlledWidthSelector() {
-	const [selectedKeys, setSelectedKeys] = useState<Set<Key>>(new Set(['650']));
+export function ControlledSegmentedControl() {
+	const [selectedKeys, setSelectedKeys] = useState<Set<Key>>(
+		new Set(['board']),
+	);
 	return (
 		<>
-			<WidthSelector
+			<ExampleSegmentedControl
 				selectedKeys={selectedKeys}
 				onSelectionChange={setSelectedKeys}
 				disallowEmptySelection
 			/>
 			<output aria-label="Selection">{[...selectedKeys].join(', ')}</output>
-			<button onClick={() => setSelectedKeys(new Set(['320']))}>
+			<button onClick={() => setSelectedKeys(new Set(['list']))}>
 				Reset selection
 			</button>
 		</>
@@ -71,28 +73,28 @@ export function ControlledWidthSelector() {
 }
 
 export function LabelledNumericSelector() {
-	const [selectedKeys, setSelectedKeys] = useState<Set<Key>>(new Set([320]));
+	const [selectedKeys, setSelectedKeys] = useState<Set<Key>>(new Set([1]));
 	return (
 		<>
-			<span id="width-label">Display size</span>
+			<span id="density-label">Display density</span>
 			<SegmentedControl
-				aria-labelledby="width-label"
+				aria-labelledby="density-label"
 				selectedKeys={selectedKeys}
 				onSelectionChange={setSelectedKeys}
 				disallowEmptySelection
 			>
 				{() => (
 					<>
-						<SegmentedControlItem id={320}>
+						<SegmentedControlItem id={1}>
 							{() => 'Compact'}
 						</SegmentedControlItem>
 						<SegmentedControlItem
-							id={650}
+							id={2}
 							className={({ isSelected }) =>
 								isSelected ? 'selected-item' : 'item'
 							}
 						>
-							Full width
+							Comfortable
 						</SegmentedControlItem>
 					</>
 				)}
@@ -119,7 +121,7 @@ export function ThemedSelector() {
 					Two
 				</SegmentedControlItem>
 			</SegmentedControl>
-			<WidthSelector />
+			<ExampleSegmentedControl />
 		</>
 	);
 }

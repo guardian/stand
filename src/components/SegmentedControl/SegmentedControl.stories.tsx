@@ -9,12 +9,12 @@ const meta = {
 	title: 'Stand/Tools Design System/Components/SegmentedControl',
 	component: SegmentedControl,
 	args: {
-		'aria-label': 'Preview width',
-		defaultSelectedKeys: ['650'],
+		'aria-label': 'View mode',
+		defaultSelectedKeys: ['board'],
 		disallowEmptySelection: true,
-		children: ['320', '375', '425', '650'].map((width) => (
-			<SegmentedControlItem key={width} id={width}>
-				{width}
+		children: ['List', 'Grid', 'Gallery', 'Board'].map((view) => (
+			<SegmentedControlItem key={view} id={view.toLowerCase()}>
+				{view}
 			</SegmentedControlItem>
 		)),
 	},
@@ -22,9 +22,7 @@ const meta = {
 
 type Story = StoryObj<typeof SegmentedControl>;
 
-export const Default = {
-	name: 'Newsletter preview widths',
-} satisfies Story;
+export const Default = {} satisfies Story;
 
 export const FigmaDesign = {
 	name: 'Small condensed (Figma)',
@@ -49,7 +47,7 @@ export const OptionalSelection = {
 export const Controlled = {
 	render: function ControlledGroup(args) {
 		const [selectedKeys, setSelectedKeys] = useState<Set<Key>>(
-			new Set(['650']),
+			new Set(['board']),
 		);
 		return (
 			<>
@@ -58,7 +56,7 @@ export const Controlled = {
 					selectedKeys={selectedKeys}
 					onSelectionChange={setSelectedKeys}
 				/>
-				<p>Selected width: {[...selectedKeys].join(', ')}</p>
+				<p>Selected view: {[...selectedKeys].join(', ')}</p>
 			</>
 		);
 	},
@@ -86,12 +84,12 @@ export const DisabledItem = {
 	args: {
 		children: (
 			<>
-				<SegmentedControlItem id="320">320</SegmentedControlItem>
-				<SegmentedControlItem id="375" isDisabled>
-					375
+				<SegmentedControlItem id="list">List</SegmentedControlItem>
+				<SegmentedControlItem id="grid" isDisabled>
+					Grid
 				</SegmentedControlItem>
-				<SegmentedControlItem id="425">425</SegmentedControlItem>
-				<SegmentedControlItem id="650">650</SegmentedControlItem>
+				<SegmentedControlItem id="gallery">Gallery</SegmentedControlItem>
+				<SegmentedControlItem id="board">Board</SegmentedControlItem>
 			</>
 		),
 	},
@@ -99,7 +97,7 @@ export const DisabledItem = {
 
 export const DisabledSelectedItem = {
 	args: {
-		defaultSelectedKeys: ['375'],
+		defaultSelectedKeys: ['grid'],
 		children: DisabledItem.args.children,
 	},
 } satisfies Story;
@@ -107,11 +105,11 @@ export const DisabledSelectedItem = {
 export const SelectedPositions = {
 	render: (args) => (
 		<div css={css({ display: 'grid', gap: '1rem', justifyItems: 'start' })}>
-			{['320', '375', '425', '650'].map((selected) => (
+			{['list', 'grid', 'gallery', 'board'].map((selected) => (
 				<SegmentedControl
 					{...args}
 					key={selected}
-					aria-label={`Preview width, ${selected} selected`}
+					aria-label={`View mode, ${selected} selected`}
 					defaultSelectedKeys={[selected]}
 				/>
 			))}

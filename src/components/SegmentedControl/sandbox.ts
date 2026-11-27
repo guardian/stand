@@ -4,21 +4,21 @@ export const componentTsx = /* javascript */ `import { useState } from 'react';
 import { SegmentedControl, SegmentedControlItem } from '@guardian/stand/SegmentedControl';
 
 export const Component = () => {
-	const [selectedKeys, setSelectedKeys] = useState(new Set(['650']));
+	const [selectedKeys, setSelectedKeys] = useState(new Set(['board']));
 
 	return (
 		<>
 			<SegmentedControl
-				aria-label="Preview width"
+				aria-label="View mode"
 				selectedKeys={selectedKeys}
 				onSelectionChange={setSelectedKeys}
 				disallowEmptySelection
 			>
-				{['320', '375', '425', '650'].map((width) => (
-					<SegmentedControlItem key={width} id={width}>{width}</SegmentedControlItem>
+				{['List', 'Grid', 'Gallery', 'Board'].map((view) => (
+					<SegmentedControlItem key={view} id={view.toLowerCase()}>{view}</SegmentedControlItem>
 				))}
 			</SegmentedControl>
-			<p>Selected width: {[...selectedKeys].join(', ')}</p>
+			<p>Selected view: {[...selectedKeys].join(', ')}</p>
 		</>
 	);
 };
@@ -113,11 +113,11 @@ export const componentCss = /* css */ `@import '@guardian/stand/component/segmen
 }
 `;
 
-export const componentHtml = /* html */ `<div class="stand-segmented-control" role="group" aria-label="Preview width">
-	<button type="button" aria-pressed="false">320</button>
-	<button type="button" aria-pressed="false">375</button>
-	<button type="button" aria-pressed="false">425</button>
-	<button type="button" aria-pressed="true">650</button>
+export const componentHtml = /* html */ `<div class="stand-segmented-control" role="group" aria-label="View mode">
+	<button type="button" aria-pressed="false">List</button>
+	<button type="button" aria-pressed="false">Grid</button>
+	<button type="button" aria-pressed="false">Gallery</button>
+	<button type="button" aria-pressed="true">Board</button>
 </div>
 `;
 

@@ -45,7 +45,7 @@ Selecting an item does not change its label weight or width.
 
 ## When to use
 
-- To choose between a small number of related options, such as preview widths or time periods.
+- To choose between a small number of related options, such as view modes, display density or time periods.
 - Use Tabs instead when each choice opens an associated content panel, or RadioGroup for a radio-style form field.
 
 ## Peer dependencies
@@ -72,15 +72,15 @@ import {
 } from '@guardian/stand/SegmentedControl';
 
 <SegmentedControl
-	aria-label="Preview width"
-	defaultSelectedKeys={['650']}
+	aria-label="View mode"
+	defaultSelectedKeys={['board']}
 	disallowEmptySelection
 	onSelectionChange={(keys) => console.log([...keys])}
 >
-	<SegmentedControlItem id="320">320</SegmentedControlItem>
-	<SegmentedControlItem id="375">375</SegmentedControlItem>
-	<SegmentedControlItem id="425">425</SegmentedControlItem>
-	<SegmentedControlItem id="650">650</SegmentedControlItem>
+	<SegmentedControlItem id="list">List</SegmentedControlItem>
+	<SegmentedControlItem id="grid">Grid</SegmentedControlItem>
+	<SegmentedControlItem id="gallery">Gallery</SegmentedControlItem>
+	<SegmentedControlItem id="board">Board</SegmentedControlItem>
 </SegmentedControl>;
 ```
 
@@ -124,7 +124,7 @@ Other interaction props follow the [React Aria ToggleButton API](https://react-a
 
 ## Stories
 
-### Newsletter preview widths
+### Default
 
 <Canvas layout="padded" of={Default} />
 
