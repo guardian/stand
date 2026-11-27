@@ -34,6 +34,8 @@ export { componentButton } from './styleD/build/typescript/component/button';
 export type { ComponentButton } from './styleD/build/typescript/component/button';
 export { componentButtonGroup } from './styleD/build/typescript/component/buttonGroup';
 export type { ComponentButtonGroup } from './styleD/build/typescript/component/buttonGroup';
+export { componentSegmentedControl } from './styleD/build/typescript/component/segmentedControl';
+export type { ComponentSegmentedControl } from './styleD/build/typescript/component/segmentedControl';
 export { componentCheckbox } from './styleD/build/typescript/component/checkbox';
 export type { ComponentCheckbox } from './styleD/build/typescript/component/checkbox';
 export { componentToggleSwitch } from './styleD/build/typescript/component/toggleSwitch';

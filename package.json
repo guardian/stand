@@ -78,6 +78,16 @@
 				"default": "./dist/Button.cjs"
 			}
 		},
+		"./SegmentedControl": {
+			"import": {
+				"types": "./dist/SegmentedControl.d.ts",
+				"default": "./dist/SegmentedControl.js"
+			},
+			"require": {
+				"types": "./dist/SegmentedControl.d.cts",
+				"default": "./dist/SegmentedControl.cjs"
+			}
+		},
 		"./ButtonGroup": {
 			"import": {
 				"types": "./dist/ButtonGroup.d.ts",
@@ -495,6 +505,7 @@
 		"./component/pagination.css": "./dist/styleD/build/css/component/pagination.css",
 		"./component/button.css": "./dist/styleD/build/css/component/button.css",
 		"./component/buttonGroup.css": "./dist/styleD/build/css/component/buttonGroup.css",
+		"./component/segmentedControl.css": "./dist/styleD/build/css/component/segmentedControl.css",
 		"./component/typography.css": "./dist/styleD/build/css/component/typography.css",
 		"./component/icon.css": "./dist/styleD/build/css/component/icon.css",
 		"./component/favicon.css": "./dist/styleD/build/css/component/favicon.css",
@@ -550,6 +561,9 @@
 			],
 			"ButtonGroup": [
 				"./dist/ButtonGroup.d.ts"
+			],
+			"SegmentedControl": [
+				"./dist/SegmentedControl.d.ts"
 			],
 			"LinkButton": [
 				"./dist/LinkButton.d.ts"

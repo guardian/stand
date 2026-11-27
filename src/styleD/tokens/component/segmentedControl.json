@@ -1,0 +1,112 @@
+{
+	"component": {
+		"segmentedControl": {
+			"group": {
+				"backgroundColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.fill.neutralWeak}"
+				},
+				"borderRadius": {
+					"$type": "dimension",
+					"$value": "{semantic.radius.cornerSm}"
+				}
+			},
+			"item": {
+				"height": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.height.sm}"
+				},
+				"paddingInline": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackSm}"
+				},
+				"separatorInset": {
+					"$type": "dimension",
+					"$value": "{semantic.spacing.stackXxs}"
+				},
+				"borderWidth": {
+					"$type": "dimension",
+					"$value": "{semantic.sizing.border.default}"
+				},
+				"borderColor": {
+					"$type": "color",
+					"$value": "{semantic.colors.border.weak}"
+				},
+				"color": {
+					"$type": "color",
+					"$value": "{semantic.colors.text.weak}"
+				},
+				"lineHeight": {
+					"$type": "number",
+					"$value": 1
+				},
+				"typography": {
+					"font": {
+						"$type": "typography",
+						"$value": "{semantic.typography.bodyCompactXs.font}"
+					},
+					"fontWidth": {
+						"$type": "number",
+						"$value": "{semantic.typography.bodyCompactXs.fontWidth}"
+					},
+					"letterSpacing": {
+						"$type": "dimension",
+						"$value": "{semantic.typography.bodyCompactXs.letterSpacing}"
+					}
+				},
+				"hover": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.unselectedHoverWeak}"
+					}
+				},
+				"pressed": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.unselectedPressedWeak}"
+					}
+				},
+				"selected": {
+					"backgroundColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.fill.selectedWeak}"
+					},
+					"borderColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.selected}"
+					},
+					"color": {
+						"$type": "color",
+						"$value": "{semantic.colors.text.strong}"
+					},
+					"hover": {
+						"backgroundColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.fill.selectedHoverWeak}"
+						}
+					},
+					"pressed": {
+						"backgroundColor": {
+							"$type": "color",
+							"$value": "{semantic.colors.fill.selectedPressedWeak}"
+						}
+					}
+				},
+				"focusVisible": {
+					"outlineWidth": {
+						"$type": "dimension",
+						"$value": "{semantic.sizing.border.md}"
+					},
+					"outlineColor": {
+						"$type": "color",
+						"$value": "{semantic.colors.border.focused}"
+					},
+					"outlineOffset": {
+						"$type": "dimension",
+						"$value": "{semantic.sizing.border.md}"
+					}
+				}
+			}
+		}
+	}
+}

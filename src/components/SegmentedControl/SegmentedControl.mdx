@@ -1,0 +1,149 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { MetaTable } from '../../util/storybook/MetaTable';
+import SegmentedControlStories, {
+	Default,
+	Controlled,
+	SelectedPositions,
+	CustomTheme,
+	CssOverrides,
+} from './SegmentedControl.stories';
+import { SandboxReact } from '../../util/storybook/sandbox/Sandbox';
+import { componentName, componentTsx } from './sandbox';
+
+<Meta of={SegmentedControlStories} />
+
+# SegmentedControl
+
+A connected, horizontal set of options where exactly one is selected, built on [React Aria ToggleButtonGroup and ToggleButton](https://react-aria.adobe.com/ToggleButtonGroup).
+The API follows [React Spectrum's SegmentedControl](https://react-spectrum.adobe.com/SegmentedControl): selection is a single item `id`, and once an item is selected it cannot be cleared.
+
+Currently only Figma's Small / Condensed text variant is implemented: 32px-high segments with 12px Open Sans Compact labels.
+XSmall, default font width and icon variants are not yet supported.
+
+<MetaTable
+	designSystemTeamVerified={false}
+	figmaLink="https://www.figma.com/design/gmHnKr3tOzvnYp1FZeIl4t/Stand--Editorial-tool-Design-System?node-id=2740-4774&m=dev"
+	reactAriaLink="https://react-aria.adobe.com/ToggleButtonGroup"
+/>
+
+## When to use
+
+- To switch between a small number of related options, such as preview widths or time periods.
+- Use Tabs instead when each choice opens an associated content panel, or RadioGroup for a radio-style form field.
+
+## Peer dependencies
+
+- `@emotion/react`
+- `react`
+- `react-dom`
+- `react-aria-components`
+- `typescript`
+
+See the `peerDependencies` section of `package.json` for compatible versions.
+CSS-only consumers do not need these peers.
+
+Load Open Sans using the [Getting Started font guidance](?path=/docs/getting-started--docs).
+
+## Example usage
+
+<SandboxReact componentName={componentName} componentTsx={componentTsx} />
+
+```tsx
+import {
+	SegmentedControl,
+	SegmentedControlItem,
+} from '@guardian/stand/SegmentedControl';
+
+<SegmentedControl
+	aria-label="Preview width"
+	defaultSelectedKey={425}
+	onSelectionChange={(key) => console.log(key)}
+>
+	<SegmentedControlItem id={320}>320</SegmentedControlItem>
+	<SegmentedControlItem id={375}>375</SegmentedControlItem>
+	<SegmentedControlItem id={425}>425</SegmentedControlItem>
+	<SegmentedControlItem id={650}>650</SegmentedControlItem>
+</SegmentedControl>;
+```
+
+Supply an accessible group name using `aria-label`, or `aria-labelledby` pointing to a visible label.
+Each `SegmentedControlItem` needs a unique string or number `id`.
+
+## Props
+
+| Name                             | Type                                       | Required    | Default | Description                                                 |
+| -------------------------------- | ------------------------------------------ | ----------- | ------- | ----------------------------------------------------------- |
+| `aria-label` / `aria-labelledby` | `string`                                   | Conditional | N/A     | Provide one to name the group.                              |
+| `children`                       | `ReactNode`                                | Yes         | N/A     | `SegmentedControlItem` items, optionally inside a fragment. |
+| `selectedKey`                    | `Key`                                      | No          | N/A     | The `id` of the selected item (controlled).                 |
+| `defaultSelectedKey`             | `Key`                                      | No          | N/A     | The `id` of the initially selected item (uncontrolled).     |
+| `onSelectionChange`              | `(key: Key) => void`                       | No          | N/A     | Called with the `id` of the newly selected item.            |
+| `theme`                          | `SegmentedControlTheme`                    | No          | N/A     | Token overrides inherited by items.                         |
+| `cssOverrides`                   | `SerializedStyles` or `SerializedStyles[]` | No          | N/A     | Styles applied to the group.                                |
+| `className`                      | `string` or render function                | No          | N/A     | Class name applied to the group.                            |
+
+Other props follow the [React Aria ToggleButtonGroup API](https://react-aria.adobe.com/ToggleButtonGroup#api).
+The group uses React Aria's single-selection semantics: a `radiogroup` of `radio` buttons.
+Arrow keys move focus between items; Space or Enter selects the focused item.
+
+### SegmentedControlItem props
+
+| Name           | Type                                       | Required | Default | Description                                     |
+| -------------- | ------------------------------------------ | -------- | ------- | ----------------------------------------------- |
+| `id`           | `string` or `number`                       | Yes      | N/A     | Selection identifier within the group.          |
+| `children`     | `ReactNode`                                | Yes      | N/A     | Visible label.                                  |
+| `theme`        | `SegmentedControlTheme`                    | No       | N/A     | Overrides inherited group tokens for this item. |
+| `cssOverrides` | `SerializedStyles` or `SerializedStyles[]` | No       | N/A     | Styles applied to this item.                    |
+| `className`    | `string` or render function                | No       | N/A     | Class name applied to this item.                |
+
+Other props follow the [React Aria ToggleButton API](https://react-aria.adobe.com/ToggleButton#api).
+
+## Stories
+
+### Default
+
+<Canvas layout="padded" of={Default} />
+
+### Controlled
+
+<Canvas layout="padded" of={Controlled} />
+
+### Selected positions
+
+<Canvas layout="padded" of={SelectedPositions} />
+
+## Customisation
+
+### Custom theme
+
+Group token overrides are inherited by all items. Item-level overrides take precedence.
+
+<Canvas layout="padded" of={CustomTheme} />
+
+```tsx
+import { semanticColors } from '@guardian/stand';
+import type { SegmentedControlTheme } from '@guardian/stand/SegmentedControl';
+
+const theme: SegmentedControlTheme = {
+	item: {
+		selected: {
+			backgroundColor: semanticColors.fill.greenWeak,
+			borderColor: semanticColors.border.success,
+			color: semanticColors.text.green,
+		},
+	},
+};
+```
+
+### CSS overrides
+
+This example fills the available width and gives each segment equal space.
+
+<Canvas layout="padded" of={CssOverrides} />
+
+## Custom Component Build
+
+Due to its interactive behaviour (single selection, keyboard navigation and accessibility semantics), SegmentedControl is only available as a React component with Emotion for styling.
+
+If you need a segmented control outside React, you would need to build your own and replicate React Aria's behaviour.
+The design tokens are available as CSS variables from `@guardian/stand/component/segmentedControl.css`, and as `componentSegmentedControl` from `@guardian/stand/SegmentedControl` or `@guardian/stand`.
