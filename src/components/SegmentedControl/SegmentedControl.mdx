@@ -28,7 +28,7 @@ XSmall, default font width and icon variants are not yet supported.
 
 ## When to use
 
-- To switch between a small number of related options, such as view modes or time periods.
+- To switch between a small number of related options, such as preview widths or time periods.
 - Use Tabs instead when each choice opens an associated content panel, or RadioGroup for a radio-style form field.
 
 ## Peer dependencies
@@ -55,14 +55,14 @@ import {
 } from '@guardian/stand/SegmentedControl';
 
 <SegmentedControl
-	aria-label="View mode"
-	defaultSelectedKey="board"
+	aria-label="Preview width"
+	defaultSelectedKey={425}
 	onSelectionChange={(key) => console.log(key)}
 >
-	<SegmentedControlItem id="list">List</SegmentedControlItem>
-	<SegmentedControlItem id="grid">Grid</SegmentedControlItem>
-	<SegmentedControlItem id="gallery">Gallery</SegmentedControlItem>
-	<SegmentedControlItem id="board">Board</SegmentedControlItem>
+	<SegmentedControlItem id={320}>320px</SegmentedControlItem>
+	<SegmentedControlItem id={375}>375px</SegmentedControlItem>
+	<SegmentedControlItem id={425}>425px</SegmentedControlItem>
+	<SegmentedControlItem id={650}>650px</SegmentedControlItem>
 </SegmentedControl>;
 ```
 

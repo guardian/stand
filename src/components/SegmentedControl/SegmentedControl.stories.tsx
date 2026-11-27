@@ -5,15 +5,17 @@ import type { Key } from 'react-aria-components';
 import { semanticColors } from '../../styleD/build/typescript/semantic/colors';
 import { SegmentedControl, SegmentedControlItem } from './SegmentedControl';
 
+const widths = [320, 375, 425, 650];
+
 const meta = {
 	title: 'Stand/Tools Design System/Components/SegmentedControl',
 	component: SegmentedControl,
 	args: {
-		'aria-label': 'View mode',
-		defaultSelectedKey: 'board',
-		children: ['List', 'Grid', 'Gallery', 'Board'].map((view) => (
-			<SegmentedControlItem key={view} id={view.toLowerCase()}>
-				{view}
+		'aria-label': 'Preview width',
+		defaultSelectedKey: 425,
+		children: widths.map((width) => (
+			<SegmentedControlItem key={width} id={width}>
+				{`${width}px`}
 			</SegmentedControlItem>
 		)),
 	},
@@ -25,7 +27,7 @@ export const Default = {} satisfies Story;
 
 export const Controlled = {
 	render: function ControlledSegmentedControl(args) {
-		const [selectedKey, setSelectedKey] = useState<Key>('board');
+		const [selectedKey, setSelectedKey] = useState<Key>(425);
 		return (
 			<>
 				<SegmentedControl
@@ -33,7 +35,7 @@ export const Controlled = {
 					selectedKey={selectedKey}
 					onSelectionChange={setSelectedKey}
 				/>
-				<p>Selected view: {selectedKey}</p>
+				<p>Preview width: {selectedKey}px</p>
 			</>
 		);
 	},
@@ -42,11 +44,11 @@ export const Controlled = {
 export const SelectedPositions = {
 	render: (args) => (
 		<div css={css({ display: 'grid', gap: '1rem', justifyItems: 'start' })}>
-			{['list', 'grid', 'gallery', 'board'].map((selected) => (
+			{widths.map((selected) => (
 				<SegmentedControl
 					{...args}
 					key={selected}
-					aria-label={`View mode, ${selected} selected`}
+					aria-label={`Preview width, ${selected}px selected`}
 					defaultSelectedKey={selected}
 				/>
 			))}
