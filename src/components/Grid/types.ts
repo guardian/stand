@@ -1,10 +1,10 @@
 import type { ElementType, HTMLAttributes } from 'react';
-import type { Breakpoint } from '../../styleD/utils/semantic/mq';
+import type { Breakpoint } from '../../terrazzo/utils/mq';
 import type { DefaultPropsWithChildren } from '../../util/types';
 import type { GridTheme } from './styles';
 
 export type ResponsiveGridValue<T> = Partial<Record<Breakpoint, T>>;
-export type GridSizeValue = number | 'auto' | 'grow';
+export type GridSizeValue = number | string;
 export type GridOffsetValue = number | 'auto';
 
 export interface GridProps

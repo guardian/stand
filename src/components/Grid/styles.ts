@@ -1,16 +1,15 @@
 import type { SerializedStyles } from '@emotion/react';
 import { css } from '@emotion/react';
-import type { ComponentGrid } from '../../styleD/build/typescript/component/grid';
-import { componentGrid } from '../../styleD/build/typescript/component/grid';
-import { from } from '../../styleD/utils/semantic/mq';
-import type { Breakpoint } from '../../styleD/utils/semantic/mq';
+import { component } from '../../terrazzo/build/stand';
+import type { Breakpoint } from '../../terrazzo/utils/mq';
+import { from } from '../../terrazzo/utils/mq';
 import type { DeepPartial, Prettify } from '../../util/types';
 import type { GridOffsetValue, GridSizeValue, ItemProps } from './types';
 
-export type GridTheme = Prettify<ComponentGrid>;
+export type GridTheme = Prettify<typeof component.grid>;
 export type PartialGridTheme = Prettify<DeepPartial<GridTheme>>;
 
-export const defaultGridTheme: GridTheme = componentGrid;
+export const defaultGridTheme: GridTheme = component.grid;
 
 type ResponsiveGridSize = Partial<Record<Breakpoint, GridSizeValue>>;
 type ResponsiveGridOffset = Partial<Record<Breakpoint, GridOffsetValue>>;
@@ -25,8 +24,8 @@ const isResponsiveOffset = (
 	offset: GridItemOwnerState['offset'],
 ): offset is ResponsiveGridOffset => typeof offset === 'object';
 
-const clampToColumns = (value: number, columns: number): number =>
-	Math.max(0, Math.min(value, columns));
+const clampToColumns = (value: string | number, columns: string): string =>
+	`clamp(0, ${value}, ${columns})`;
 
 /**
  * Computes the left margin needed to offset an item by a given number of grid columns.
@@ -40,8 +39,8 @@ const clampToColumns = (value: number, columns: number): number =>
  * `((100% - (columns - 1) * gap) * offset / columns) + offset * gap`
  */
 const numericOffsetMargin = (
-	offset: number,
-	columns: number,
+	offset: string,
+	columns: string,
 	gap: string,
 ): string =>
 	`calc(((100% - (${columns} - 1) * ${gap}) * ${offset} / ${columns}) + ${offset} * ${gap})`;
@@ -57,7 +56,7 @@ const numericOffsetMargin = (
  * Formula:
  * `((100% - (columns - 1) * gap) * size / columns) + (size - 1) * gap`
  */
-const numericSizeWidth = (size: number, columns: number, gap: string): string =>
+const numericSizeWidth = (size: string, columns: string, gap: string): string =>
 	`calc(((100% - (${columns} - 1) * ${gap}) * ${size} / ${columns}) + (${size} - 1) * ${gap})`;
 
 /**
